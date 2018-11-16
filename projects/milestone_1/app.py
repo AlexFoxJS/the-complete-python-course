@@ -29,7 +29,7 @@ movie = {
 
 
 def menu():
-	user_input = input("Enter 'a' to add a movie, '1' to see your movies, 'f' to find a movie, and 'q' to quit:")
+	user_input = input("Enter 'a' to add a movie, 'l' to see your movies, 'f' to find a movie, and 'q' to quit:")
 
 	while user_input != 'q':
 		if user_input == 'a':
@@ -41,7 +41,7 @@ def menu():
 		else:
 			print('Unknown command, try again.')
 
-		user_input = input("Enter 'a' to add a movie, '1' to see your movies, 'f' to find a movie, and 'q' to quit:")
+		user_input = input("\nEnter 'a' to add a movie, 'l' to see your movies, 'f' to find a movie, and 'q' to quit:")
 
 
 def add_movie():
@@ -56,10 +56,17 @@ def add_movie():
 	})
 
 
-# def show_movie():
-#
-#
-#
+def show_movie():
+	for movie in movies:
+		show_movie_details(movie)
+
+
+def show_movie_details(movie):
+	print(f"Name: {movie['name']}")
+	print(f"Director: {movie['direction']}")
+	print(f"Release year: {movie['year']}")
+
+
 # def find_movie():
 
 
