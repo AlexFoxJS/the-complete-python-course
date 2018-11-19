@@ -1,4 +1,4 @@
-class RuntimeErrorWithCode(TypeError):
+class RuntimeErrorWithCode(BaseException):
 	"""
 	Error description:
 	- Exception raised when a specific error code is needed.
