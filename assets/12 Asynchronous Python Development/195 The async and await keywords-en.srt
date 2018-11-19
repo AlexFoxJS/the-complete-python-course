@@ -1,0 +1,472 @@
+1
+00:00:00,280 --> 00:00:01,679
+<v ->[Jose Salvatierra] Hi welcome back.</v>
+
+2
+00:00:01,679 --> 00:00:05,541
+In this video we're going to introduce async and await.
+
+3
+00:00:05,541 --> 00:00:09,906
+These two pieces of syntax are fairly new in Python
+
+4
+00:00:09,906 --> 00:00:13,691
+and they are extremely used nowadays
+
+5
+00:00:13,691 --> 00:00:16,025
+whenever you write any Python code
+
+6
+00:00:16,025 --> 00:00:19,211
+that uses asynchronous development.
+
+7
+00:00:19,211 --> 00:00:21,766
+For example, there are many Python frameworks
+
+8
+00:00:21,766 --> 00:00:24,115
+and sort of libraries that you can use
+
+9
+00:00:24,115 --> 00:00:28,620
+that allow you to run things together more or less
+
+10
+00:00:28,620 --> 00:00:32,701
+all in the same thread but yielding to one another
+
+11
+00:00:32,701 --> 00:00:34,845
+in order to avoid waiting times.
+
+12
+00:00:34,845 --> 00:00:37,512
+And nobody understood yield from
+
+13
+00:00:39,399 --> 00:00:43,320
+so a new keyword was invented in order
+
+14
+00:00:43,320 --> 00:00:45,403
+to get rid of yield from.
+
+15
+00:00:46,256 --> 00:00:50,568
+And this keyword is called the await keyword.
+
+16
+00:00:50,568 --> 00:00:53,415
+So we're going to rewrite this code,
+
+17
+00:00:53,415 --> 00:00:54,959
+it's going to be a small rewrite,
+
+18
+00:00:54,959 --> 00:00:57,397
+in order to use async and await
+
+19
+00:00:57,397 --> 00:01:01,685
+and you'll see how suddenly it just makes a lot more sense.
+
+20
+00:01:01,685 --> 00:01:06,592
+So let's rewrite this to use the new Python syntax
+
+21
+00:01:06,592 --> 00:01:09,146
+and you'll see how it makes a lot more sense.
+
+22
+00:01:09,146 --> 00:01:13,729
+We are going to essentially leave this exactly the same
+
+23
+00:01:15,014 --> 00:01:18,207
+but we now must tell Python that this
+
+24
+00:01:18,207 --> 00:01:21,574
+is not a generator that can somehow accept data.
+
+25
+00:01:21,574 --> 00:01:24,824
+We now have to say this is a coroutine.
+
+26
+00:01:25,905 --> 00:01:28,655
+So we say @coroutine and it's red
+
+27
+00:01:30,834 --> 00:01:31,733
+because it doesn't know what it is
+
+28
+00:01:31,733 --> 00:01:36,539
+so we have to import it, so from types import coroutine.
+
+29
+00:01:36,539 --> 00:01:38,250
+And then it likes it.
+
+30
+00:01:38,250 --> 00:01:40,205
+You must do this in order for us
+
+31
+00:01:40,205 --> 00:01:42,705
+to be able to do the following
+
+32
+00:01:43,961 --> 00:01:45,378
+which is await_g.
+
+33
+00:01:48,762 --> 00:01:53,762
+It doesn't like this because you must do async def there.
+
+34
+00:01:54,059 --> 00:01:56,987
+Now that we've got our async function
+
+35
+00:01:56,987 --> 00:02:01,295
+this tells Python that it can await coroutines.
+
+36
+00:02:01,295 --> 00:02:02,839
+And when we await a coroutine
+
+37
+00:02:02,839 --> 00:02:06,296
+that is exactly the same as yield from.
+
+38
+00:02:06,296 --> 00:02:09,296
+Now we can accept data via this send
+
+39
+00:02:10,617 --> 00:02:14,012
+that gets passed over to g which is this generator here
+
+40
+00:02:14,012 --> 00:02:16,636
+this coroutine which accepts it through the yield
+
+41
+00:02:16,636 --> 00:02:21,508
+and gets sent to greeting and then it prints things out.
+
+42
+00:02:21,508 --> 00:02:26,508
+Notice that when we await the same way as when we yield from
+
+43
+00:02:26,784 --> 00:02:30,617
+this waits for this entire function to finish.
+
+44
+00:02:31,950 --> 00:02:35,068
+So here the while loop, essentially this is waiting
+
+45
+00:02:35,068 --> 00:02:37,447
+for the entire while loop to finish.
+
+46
+00:02:37,447 --> 00:02:39,143
+But it can suspend halfway through,
+
+47
+00:02:39,143 --> 00:02:41,645
+that's the whole point of the yield.
+
+48
+00:02:41,645 --> 00:02:44,918
+So, when you send something, this gets passed over
+
+49
+00:02:44,918 --> 00:02:47,535
+to g, which then resumes the function
+
+50
+00:02:47,535 --> 00:02:50,533
+after the yield and then if you go back
+
+51
+00:02:50,533 --> 00:02:54,478
+over to the start of the yield and then it suspends
+
+52
+00:02:54,478 --> 00:02:56,686
+and this function this line here
+
+53
+00:02:56,686 --> 00:02:59,989
+still hasn't finished running.
+
+54
+00:02:59,989 --> 00:03:03,476
+When you send some more, then it gets passed over to g
+
+55
+00:03:03,476 --> 00:03:05,903
+and then it continues this function running.
+
+56
+00:03:05,903 --> 00:03:08,313
+But await_g still hasn't finished running
+
+57
+00:03:08,313 --> 00:03:10,896
+until this coroutine has ended.
+
+58
+00:03:11,889 --> 00:03:14,116
+If we print something like Starting
+
+59
+00:03:14,116 --> 00:03:16,729
+and here something like Ending
+
+60
+00:03:16,729 --> 00:03:17,920
+you'll see what I mean.
+
+61
+00:03:17,920 --> 00:03:21,745
+If we press play, you can see that we print Starting
+
+62
+00:03:21,745 --> 00:03:23,666
+but Ending is never printed out
+
+63
+00:03:23,666 --> 00:03:27,450
+because we've not finished running the coroutine.
+
+64
+00:03:27,450 --> 00:03:31,998
+The coroutine has a loop and it continues running
+
+65
+00:03:31,998 --> 00:03:34,343
+until friends is empty and we've not gone
+
+66
+00:03:34,343 --> 00:03:35,951
+through all of the friends, we've only gone
+
+67
+00:03:35,951 --> 00:03:38,201
+through two of the friends with our two greetings.
+
+68
+00:03:38,201 --> 00:03:39,277
+If we wanted to go through all of the friends
+
+69
+00:03:39,277 --> 00:03:42,444
+we can do that and just by doing this.
+
+70
+00:03:43,399 --> 00:03:46,370
+And now if we run this again you can see
+
+71
+00:03:46,370 --> 00:03:48,417
+that we get Ending at the end
+
+72
+00:03:48,417 --> 00:03:50,705
+and then we get our StopIteration
+
+73
+00:03:50,705 --> 00:03:53,410
+because the coroutine ended and you know
+
+74
+00:03:53,410 --> 00:03:55,409
+when you end the coroutine or a generator
+
+75
+00:03:55,409 --> 00:03:59,837
+you get a StopIteration to signal that this is the end.
+
+76
+00:03:59,837 --> 00:04:00,964
+So this is really important.
+
+77
+00:04:00,964 --> 00:04:03,285
+The await, just like yield from,
+
+78
+00:04:03,285 --> 00:04:04,780
+they are exactly the same thing,
+
+79
+00:04:04,780 --> 00:04:08,718
+waits for this to finish but you can suspend
+
+80
+00:04:08,718 --> 00:04:10,968
+the function in the middle.
+
+81
+00:04:12,765 --> 00:04:14,820
+So a slightly better way of going about this
+
+82
+00:04:14,820 --> 00:04:19,633
+could be that instead of sending arbitrary greetings there
+
+83
+00:04:19,633 --> 00:04:22,226
+one of the great things is, you can send,
+
+84
+00:04:22,226 --> 00:04:23,809
+for example, Hello.
+
+85
+00:04:25,298 --> 00:04:29,298
+But then you can get another thing from the user
+
+86
+00:04:31,399 --> 00:04:35,638
+and then you can do greeter.send(greeting).
+
+87
+00:04:35,638 --> 00:04:38,584
+And then you can sort of copy them and paste them again.
+
+88
+00:04:38,584 --> 00:04:41,495
+This is now proper multitasking.
+
+89
+00:04:41,495 --> 00:04:45,257
+Because when you run it, now you get the user to type
+
+90
+00:04:45,257 --> 00:04:48,112
+and as soon as the user types,
+
+91
+00:04:48,112 --> 00:04:50,456
+this then continues running the function above
+
+92
+00:04:50,456 --> 00:04:53,789
+and it prints out, oh Sorry, Jose, Jose.
+
+93
+00:04:54,766 --> 00:04:55,599
+Howdy.
+
+94
+00:04:57,261 --> 00:04:58,579
+Howdy Charlie.
+
+95
+00:04:58,579 --> 00:05:00,082
+And then your programme ends.
+
+96
+00:05:00,082 --> 00:05:02,178
+We've now gone through all of our friends.
+
+97
+00:05:02,178 --> 00:05:05,095
+So this how the programme ends there.
+
+98
+00:05:06,496 --> 00:05:10,009
+There are more uses, many more uses of course,
+
+99
+00:05:10,009 --> 00:05:12,691
+for this async and await syntax
+
+100
+00:05:12,691 --> 00:05:16,405
+and for concurrent programming in Python as a whole.
+
+101
+00:05:16,405 --> 00:05:19,596
+So all you've seen so far is some sort
+
+102
+00:05:19,596 --> 00:05:22,732
+of abstract examples I've just shown you there
+
+103
+00:05:22,732 --> 00:05:23,852
+but we need to look at a way
+
+104
+00:05:23,852 --> 00:05:27,726
+to use these functions in the real world.
+
+105
+00:05:27,726 --> 00:05:29,119
+In the next video I'm going to suggest
+
+106
+00:05:29,119 --> 00:05:32,463
+that you watch a few talks, and those talks
+
+107
+00:05:32,463 --> 00:05:35,754
+again will walk you through what async and await mean
+
+108
+00:05:35,754 --> 00:05:37,934
+and how you do concurrency in Python
+
+109
+00:05:37,934 --> 00:05:41,664
+and they will also include some real world examples.
+
+110
+00:05:41,664 --> 00:05:45,626
+And then afterwards we're working to add some more content
+
+111
+00:05:45,626 --> 00:05:49,407
+on the course about some real world examples
+
+112
+00:05:49,407 --> 00:05:51,490
+of using async and await.
+
+113
+00:05:52,449 --> 00:05:55,032
+So if that's not yet in the course
+
+114
+00:05:55,032 --> 00:05:58,992
+just check back later on and we will be adding it in.
+
+115
+00:05:58,992 --> 00:06:00,373
+Hopefully though, now you understand
+
+116
+00:06:00,373 --> 00:06:02,373
+how async and await work
+
+117
+00:06:03,282 --> 00:06:06,718
+and that's by using these generators.
+
+118
+00:06:06,718 --> 00:06:10,006
+With that said, I'll see you in the next video.
+

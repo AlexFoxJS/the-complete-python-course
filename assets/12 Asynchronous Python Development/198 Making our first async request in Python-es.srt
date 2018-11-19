@@ -1,0 +1,1164 @@
+1
+00:00:00,090 --> 00:00:01,260
+Jos: Hola y bienvenido de nuevo.
+
+2
+00:00:01,260 --> 00:00:05,050
+Hagamos nuestra primera solicitud con aiohttp.
+
+3
+00:00:05,960 --> 00:00:09,400
+Aqu, en este proyecto, voy a crear un
+
+4
+00:00:09,400 --> 00:00:13,050
+nuevo archivo solo para probar aiohttp y se
+
+5
+00:00:13,050 --> 00:00:15,290
+llamar async_request. py.
+
+6
+00:00:15,290 --> 00:00:18,240
+Por cierto, el cdigo para esto est vinculado en clase
+
+7
+00:00:18,240 --> 00:00:21,553
+y est disponible, tal vez en una configuracin ligeramente diferente, pero
+
+8
+00:00:21,553 --> 00:00:24,350
+no obstante, habr una carpeta de ejemplos para que pueda
+
+9
+00:00:24,350 --> 00:00:26,340
+ver estos cdigos que vamos a escribir
+
+10
+00:00:26,340 --> 00:00:28,300
+sobre estas conferencias y luego, por supuesto,
+
+11
+00:00:28,300 --> 00:00:30,260
+en al final tambin cuando convertimos todo
+
+12
+00:00:30,260 --> 00:00:31,660
+en un scrapper asncrono, tambin
+
+13
+00:00:31,660 --> 00:00:33,410
+est disponible el cdigo completo.
+
+14
+00:00:34,880 --> 00:00:37,795
+Por lo tanto, para hacer nuestra primera
+
+15
+00:00:37,795 --> 00:00:40,300
+solicitud web, lo primero que tenemos
+
+16
+00:00:40,300 --> 00:00:43,560
+que hacer es, por supuesto, instalar aiohttp.
+
+17
+00:00:43,560 --> 00:00:45,860
+Ahora, vamos a ver cmo
+
+18
+00:00:46,900 --> 00:00:49,960
+manejar las dependencias en los proyectos
+
+19
+00:00:49,960 --> 00:00:52,950
+Python un poco mejor, pero por
+
+20
+00:00:52,950 --> 00:00:56,680
+ahora vamos a seguir instalando cosas directamente en
+
+21
+00:00:56,680 --> 00:01:00,470
+PyCharm haciendo, ya sabes, yendo a nuestro proyecto,
+
+22
+00:01:00,470 --> 00:01:03,930
+Project Interpreter, y all con plus instalando aiohttp.
+
+23
+00:01:06,000 --> 00:01:08,250
+La versin actual que estoy usando es 3. 0. 5.
+
+24
+00:01:09,260 --> 00:01:11,180
+esto tal vez sea diferente cuando lo
+
+25
+00:01:11,180 --> 00:01:14,311
+est usando, pero no se preocupe, si hay algn cambio de
+
+26
+00:01:14,311 --> 00:01:17,294
+rotura volveremos a grabar con una nueva versin y pronto.
+
+27
+00:01:17,294 --> 00:01:20,940
+Entonces, si instalas esto y notas que las cosas no funcionan del modo
+
+28
+00:01:20,940 --> 00:01:22,440
+que esperamos solo digas en
+
+29
+00:01:22,440 --> 00:01:24,230
+el curso Q y A, lo
+
+30
+00:01:24,230 --> 00:01:26,230
+volveremos a registrar tan pronto como sea posible.
+
+31
+00:01:26,230 --> 00:01:28,250
+De acuerdo, solo instale este paquete y esto
+
+32
+00:01:28,250 --> 00:01:29,957
+es todo lo que necesitamos para instalar.
+
+33
+00:01:29,957 --> 00:01:33,090
+Y cuando est instalado, puede cerrar esta ventana
+
+34
+00:01:35,200 --> 00:01:36,980
+y podemos comenzar a usarla.
+
+35
+00:01:38,360 --> 00:01:39,960
+Entonces eso es todo, hecho.
+
+36
+00:01:39,960 --> 00:01:44,860
+Podemos presionar OK y ahora podemos importar aiohttp.
+
+37
+00:01:46,230 --> 00:01:50,760
+Empecemos por buscar una sola pgina.
+
+38
+00:01:50,760 --> 00:01:53,250
+Lo primero que tenemos que hacer es crear
+
+39
+00:01:53,250 --> 00:01:54,890
+la coroutine y esto es
+
+40
+00:01:54,890 --> 00:01:58,030
+como un generador que puede suspender y reanudar su ejecucin
+
+41
+00:01:58,030 --> 00:01:59,880
+en cualquier momento usando await.
+
+42
+00:01:59,880 --> 00:02:02,880
+As que vamos a hacer async def fetch_page.
+
+43
+00:02:04,179 --> 00:02:05,190
+Y lo que vamos a pasar
+
+44
+00:02:05,190 --> 00:02:06,990
+a travs de esta funcin es la URL que queremos recuperar.
+
+45
+00:02:08,270 --> 00:02:10,190
+Ahora, lo siguiente que
+
+46
+00:02:10,190 --> 00:02:15,000
+hacemos es decir a aiohttp para crear una sesin de cliente.
+
+47
+00:02:15,000 --> 00:02:17,670
+Una sesin de cliente bsicamente crea un grupo de
+
+48
+00:02:17,670 --> 00:02:20,560
+conexiones y las coloca en un grupo, ms o menos
+
+49
+00:02:20,560 --> 00:02:22,270
+como un grupo de subprocesos, excepto
+
+50
+00:02:22,270 --> 00:02:25,040
+que es un grupo de conexiones, por lo que podemos
+
+51
+00:02:25,040 --> 00:02:27,710
+reutilizarlas sin tener que crear nuevas conexiones cada vez.
+
+52
+00:02:27,710 --> 00:02:30,290
+Entonces, lo que vamos a hacer es un poco de una nueva sintaxis.
+
+53
+00:02:30,290 --> 00:02:34,940
+async_with aiohttp. ClientSession como sesin.
+
+54
+00:02:38,796 --> 00:02:41,050
+Todo lo que est sucediendo aqu es
+
+55
+00:02:41,050 --> 00:02:43,565
+que estamos haciendo un administrador de contexto normal,
+
+56
+00:02:43,565 --> 00:02:45,800
+estamos creando este nuevo ClientSession que es
+
+57
+00:02:45,800 --> 00:02:49,320
+un grupo de conexiones y tambin un almacenamiento de cookies.
+
+58
+00:02:49,320 --> 00:02:51,880
+Vamos a hablar ms sobre eso pronto.
+
+59
+00:02:52,870 --> 00:02:57,325
+Lo llamamos sesin, pero como es asincrnico, lo que ocurre
+
+60
+00:02:57,325 --> 00:03:00,332
+en un administrador de contexto asncrono es
+
+61
+00:03:00,332 --> 00:03:04,380
+que puede tener rendimiento all, en los mtodos de
+
+62
+00:03:04,380 --> 00:03:06,530
+salida o en ambos.
+
+63
+00:03:06,530 --> 00:03:08,830
+Entonces, bsicamente, es solo una forma
+
+64
+00:03:08,830 --> 00:03:12,220
+de suspender potencialmente la ejecucin del administrador de contexto
+
+65
+00:03:12,220 --> 00:03:14,590
+cuando se inicia o suspender cuando
+
+66
+00:03:14,590 --> 00:03:15,510
+termina y reanudarlo.
+
+67
+00:03:15,510 --> 00:03:20,510
+Solo agrega como un nuevo punto donde puede suspender y reanudar solo en caso de que quiera
+
+68
+00:03:21,240 --> 00:03:22,530
+hacer algo que era
+
+69
+00:03:22,530 --> 00:03:25,420
+un trabajo pesado dentro del administrador de contexto, le permite
+
+70
+00:03:25,420 --> 00:03:27,200
+suspender y reanudar al inicio o
+
+71
+00:03:27,200 --> 00:03:28,980
+al final del administrador de contexto.
+
+72
+00:03:28,980 --> 00:03:32,210
+Esa es la nica diferencia con el administrador de contexto normal y
+
+73
+00:03:32,210 --> 00:03:33,710
+el administrador de contexto asincrnico.
+
+74
+00:03:35,270 --> 00:03:39,740
+Para obtener ms informacin sobre esto, en lugar de ingresar
+
+75
+00:03:43,220 --> 00:03:47,300
+y salir, los nuevos mtodos son aenter y aexit.
+
+76
+00:03:49,480 --> 00:03:51,530
+De acuerdo, no vamos a profundizar
+
+77
+00:03:51,530 --> 00:03:53,680
+demasiado en la creacin de nuestros
+
+78
+00:03:53,680 --> 00:03:56,370
+propios gestores de contexto asincrnicos, solo que ahora
+
+79
+00:03:56,370 --> 00:04:01,095
+si quieres crear un administrador asncrono, puedes esperar o ceder en l, y debes
+
+80
+00:04:01,095 --> 00:04:03,300
+usar aenter y aitit en su lugar.
+
+81
+00:04:03,300 --> 00:04:04,600
+de entrar y salir.
+
+82
+00:04:05,570 --> 00:04:07,730
+Ahora que solo un poco de un lado all.
+
+83
+00:04:07,730 --> 00:04:11,100
+Esto lo vamos a hacer de manera sincronizada con la sesin. obtener y vamos
+
+84
+00:04:11,100 --> 00:04:14,040
+a obtener la URL como respuesta.
+
+85
+00:04:14,040 --> 00:04:16,900
+Y luego vamos a devolver la respuesta. cdigo de estado.
+
+86
+00:04:18,450 --> 00:04:20,920
+Esta puede ser nuestra primera tarea.
+
+87
+00:04:20,920 --> 00:04:24,876
+Esta es una rutina central, que antes que nada
+
+88
+00:04:24,876 --> 00:04:28,790
+crea una sesin, luego recibe la URL que pasamos.
+
+89
+00:04:28,790 --> 00:04:31,377
+Esto le pide al servidor los contenidos, llama
+
+90
+00:04:31,377 --> 00:04:35,540
+una respuesta y luego devuelve la respuesta. estado.
+
+91
+00:04:35,540 --> 00:04:37,450
+Pero, por supuesto, antes de responder, antes de
+
+92
+00:04:37,450 --> 00:04:38,990
+devolver la respuesta. estado,
+
+93
+00:04:38,990 --> 00:04:43,990
+puede suspenderse potencialmente aqu o aqu, cuando
+
+94
+00:04:44,390 --> 00:04:47,350
+se inicia o cuando termina.
+
+95
+00:04:47,350 --> 00:04:49,598
+Entonces, cuando podemos, por ejemplo,
+
+96
+00:04:49,598 --> 00:04:53,620
+obtener la URL o enviar la solicitud al servidor y
+
+97
+00:04:53,620 --> 00:04:56,950
+luego suspenderla mientras esperamos que los datos vuelvan.
+
+98
+00:04:56,950 --> 00:05:00,010
+Cuando los datos vuelvan, estaremos en la salida, lo sentimos,
+
+99
+00:05:00,010 --> 00:05:03,189
+al final de la seccin de entrada del generador y
+
+100
+00:05:03,189 --> 00:05:05,130
+podremos continuar la ejecucin y luego
+
+101
+00:05:05,130 --> 00:05:06,590
+podremos obtener este estado.
+
+102
+00:05:06,590 --> 00:05:10,340
+Y esto no es asncrono, esto es solo un retorno normal.
+
+103
+00:05:10,340 --> 00:05:12,350
+Entonces la funcin terminara all.
+
+104
+00:05:13,743 --> 00:05:15,850
+Ahora, el nico objetivo de
+
+105
+00:05:15,850 --> 00:05:19,410
+asyncio y estas funciones asncronas es suspender potencialmente
+
+106
+00:05:19,410 --> 00:05:22,800
+la ejecucin en cualquier punto y reanudarla despus.
+
+107
+00:05:22,800 --> 00:05:24,680
+Colocar estas cosas en los lugares
+
+108
+00:05:24,680 --> 00:05:27,620
+correctos significa que podemos suspender la ejecucin cuando estamos esperando
+
+109
+00:05:27,620 --> 00:05:31,010
+y podemos reanudar la ejecucin una vez que queremos dejar de esperar.
+
+110
+00:05:34,230 --> 00:05:36,679
+Ahora debemos tener un planificador
+
+111
+00:05:36,679 --> 00:05:41,679
+de tareas que har el. enviar o el siguiente.
+
+112
+00:05:41,740 --> 00:05:45,850
+Recuerda esto solo cede, rinde desde dentro de aqu que
+
+113
+00:05:45,850 --> 00:05:48,830
+son esperas que son rendimientos desde entonces, as
+
+114
+00:05:48,830 --> 00:05:52,090
+que necesitamos algo que va a hacer este
+
+115
+00:05:52,090 --> 00:05:53,950
+envo o esto a continuacin.
+
+116
+00:05:53,950 --> 00:05:57,850
+Y ahora, a partir de Python 3. 4, creo, tenemos eso, que
+
+117
+00:05:57,850 --> 00:05:59,780
+es la biblioteca asyncio.
+
+118
+00:06:01,020 --> 00:06:02,630
+Si has visto esa charla, que
+
+119
+00:06:02,630 --> 00:06:05,560
+espero que hayas hecho, habrs visto asyncio mencionado un par de veces.
+
+120
+00:06:05,560 --> 00:06:07,990
+La biblioteca asyncio viene construida en
+
+121
+00:06:07,990 --> 00:06:11,320
+Python y es muy pequea, bueno, no es
+
+122
+00:06:11,320 --> 00:06:13,910
+tan pequea, pero es bastante pequea,
+
+123
+00:06:13,910 --> 00:06:16,520
+lo que tenemos que saber y
+
+124
+00:06:16,520 --> 00:06:20,570
+nos permite programar y administrar estas rutinas conjuntas, estas tareas.
+
+125
+00:06:20,570 --> 00:06:22,560
+Es muy directo de usar, al menos
+
+126
+00:06:22,560 --> 00:06:25,080
+de la manera en que vamos a hacerlo ahora.
+
+127
+00:06:25,080 --> 00:06:27,798
+Hay un poco ms que
+
+128
+00:06:27,798 --> 00:06:31,107
+usar que lo que cubrimos, pero
+
+129
+00:06:31,107 --> 00:06:35,150
+para usarlo, de alguna manera es bastante directo.
+
+130
+00:06:35,150 --> 00:06:37,675
+Todo lo que hacemos es obtener un event_loop
+
+131
+00:06:37,675 --> 00:06:41,060
+y luego hacemos un bucle. run_until_complete (fetch_page) por
+
+132
+00:06:42,830 --> 00:06:45,730
+ejemplo, google. com.
+
+133
+00:06:48,750 --> 00:06:53,730
+Cuando llamas a fetch_page no obtienes la respuesta. estado.
+
+134
+00:06:53,730 --> 00:06:55,870
+Ya lo sabemos por lo que hemos visto antes.
+
+135
+00:06:55,870 --> 00:06:57,690
+Cuando llamas a fetch_page, lo que obtienes
+
+136
+00:06:57,690 --> 00:06:59,140
+es un objeto de co-rutina.
+
+137
+00:07:00,086 --> 00:07:03,240
+Entonces, en realidad, esto no est dando la respuesta, a pesar de
+
+138
+00:07:03,240 --> 00:07:04,770
+que estamos llamando a la funcin.
+
+139
+00:07:04,770 --> 00:07:06,680
+Todo lo que est haciendo
+
+140
+00:07:06,680 --> 00:07:11,680
+es crear la co-rutina en el fondo que luego puede enviar o al lado.
+
+141
+00:07:11,900 --> 00:07:14,210
+Cuando haces eso, de alguna manera
+
+142
+00:07:14,210 --> 00:07:16,420
+pasa por cada currculum y respuesta.
+
+143
+00:07:16,420 --> 00:07:18,460
+Entonces, qu est haciendo este
+
+144
+00:07:18,460 --> 00:07:20,610
+run_until_complete? Est usando este event_loop
+
+145
+00:07:20,610 --> 00:07:23,700
+para continuar continuamente con esta funcin hasta
+
+146
+00:07:23,700 --> 00:07:24,700
+que est completa.
+
+147
+00:07:27,907 --> 00:07:29,670
+Para que podamos ejecutar esto, podemos hacer clic
+
+148
+00:07:29,670 --> 00:07:31,920
+con el botn derecho en la solicitud asincrnica y ejecutarla.
+
+149
+00:07:31,920 --> 00:07:34,340
+Y, por supuesto, realmente no imprimimos
+
+150
+00:07:34,340 --> 00:07:39,340
+nada, pero podemos imprimir la respuesta. estado aqu y vers
+
+151
+00:07:40,070 --> 00:07:42,320
+que algo vuelve.
+
+152
+00:07:43,490 --> 00:07:45,560
+S, 200, lo que significa que todo est bien.
+
+153
+00:07:45,560 --> 00:07:47,937
+Como puede ver, esto se ejecut.
+
+154
+00:07:47,937 --> 00:07:51,940
+As que esta es la forma ms sencilla de que podamos obtener
+
+155
+00:07:51,940 --> 00:07:56,300
+un event_loop y ejecutar una tarea, y una tarea es solo una funcin
+
+156
+00:07:56,300 --> 00:07:57,810
+asncrona que se ha definido.
+
+157
+00:07:57,810 --> 00:07:59,620
+De acuerdo, todo lo que necesitamos es obtener
+
+158
+00:07:59,620 --> 00:08:01,180
+event_loop y ejecutarlo hasta que est completo.
+
+159
+00:08:03,670 --> 00:08:06,080
+Si quera hacer ms solicitudes asncronas,
+
+160
+00:08:06,080 --> 00:08:07,780
+lo haremos tambin ahora.
+
+161
+00:08:07,780 --> 00:08:10,620
+Lo primero que vamos a hacer es importar el tiempo
+
+162
+00:08:10,620 --> 00:08:13,530
+para que podamos dejar de medir cunto tiempo lleva esto.
+
+163
+00:08:13,530 --> 00:08:16,770
+Entonces, antes de hacer cualquiera de la sesin o algo as, vamos a
+
+164
+00:08:16,770 --> 00:08:19,090
+hacer que page_start sea tiempo. hora.
+
+165
+00:08:20,370 --> 00:08:25,370
+Y justo antes de que regresemos, vamos a imprimir que
+
+166
+00:08:27,870 --> 00:08:32,170
+la pgina tom tiempo. tiempo menos page_start.
+
+167
+00:08:33,800 --> 00:08:38,020
+Lo llamo estado, eso debera comenzar all.
+
+168
+00:08:39,140 --> 00:08:43,220
+De acuerdo, si ejecutamos esto de nuevo, ver que dice que la
+
+169
+00:08:43,220 --> 00:08:45,420
+pgina tom 0. 17 segundos.
+
+170
+00:08:45,420 --> 00:08:46,840
+Entonces fue bastante rpido.
+
+171
+00:08:46,840 --> 00:08:48,920
+El programa en general tom un
+
+172
+00:08:48,920 --> 00:08:51,653
+poco ms de tiempo, pero eso se debe
+
+173
+00:08:51,653 --> 00:08:55,640
+a que implica crear event_loop y comenzar nuevas tareas, programarlas, etc.
+
+174
+00:08:55,640 --> 00:08:59,604
+Pero la solicitud de la pgina solo tom 0. 17 segundos.
+
+175
+00:08:59,604 --> 00:09:03,560
+Si redondeas esto usando la biblioteca de solicitudes como
+
+176
+00:09:03,560 --> 00:09:06,460
+hicimos anteriormente, tomara ms o menos la
+
+177
+00:09:06,460 --> 00:09:07,960
+misma cantidad de tiempo.
+
+178
+00:09:07,960 --> 00:09:10,080
+De acuerdo, no habra diferencia, solo
+
+179
+00:09:10,080 --> 00:09:12,138
+porque todo lo que estamos
+
+180
+00:09:12,138 --> 00:09:14,816
+haciendo aqu es ejecutar una sola solicitud.
+
+181
+00:09:14,816 --> 00:09:18,800
+Sin embargo, si desea ejecutar varias solicitudes, podemos
+
+182
+00:09:18,800 --> 00:09:20,830
+hacerlo con mucha facilidad.
+
+183
+00:09:20,830 --> 00:09:22,388
+Diramos algo as como tareas, y
+
+184
+00:09:22,388 --> 00:09:24,650
+ahora haremos una lista de comprensin en la
+
+185
+00:09:24,650 --> 00:09:28,340
+que vamos a buscar fetch_page en Google. com para i
+
+186
+00:09:28,340 --> 00:09:31,250
+en el rango 50, digamos.
+
+187
+00:09:32,720 --> 00:09:35,826
+De acuerdo, entonces ahora tenemos 50 objetos de
+
+188
+00:09:35,826 --> 00:09:37,680
+co-rutina que necesitan ser ejecutados.
+
+189
+00:09:38,820 --> 00:09:40,410
+Entonces, cmo vamos a hacer eso?
+
+190
+00:09:40,410 --> 00:09:44,170
+Bueno, vamos a decir loop. ejecutar todas estas tareas
+
+191
+00:09:44,170 --> 00:09:46,151
+hasta que se hayan completado.
+
+192
+00:09:46,151 --> 00:09:49,470
+Pero solo podemos pasar una nica
+
+193
+00:09:49,470 --> 00:09:51,816
+tarea a la funcin run_until_complete.
+
+194
+00:09:51,816 --> 00:09:56,610
+Asyncio viene con una funcin bastante til que nos permite juntar un
+
+195
+00:09:56,610 --> 00:10:00,220
+conjunto de tareas y ejecutarlas como una sola tarea,
+
+196
+00:10:00,220 --> 00:10:02,440
+para que sea un poco ms
+
+197
+00:10:02,440 --> 00:10:04,570
+fcil hacer esto y todo
+
+198
+00:10:04,570 --> 00:10:07,650
+lo dems es asncio. reunir.
+
+199
+00:10:07,650 --> 00:10:11,680
+Y vamos a pasar todas las tareas como argumentos.
+
+200
+00:10:11,680 --> 00:10:16,680
+Por lo tanto, sern tareas (0), tareas (1), tareas (2), tareas (3)
+
+201
+00:10:17,520 --> 00:10:19,590
+y as sucesivamente hasta 50.
+
+202
+00:10:19,590 --> 00:10:22,661
+O como ya sabes, podemos usar el
+
+203
+00:10:22,661 --> 00:10:26,180
+desempaquetado de argumentos para hacer tareas de estrella.
+
+204
+00:10:27,290 --> 00:10:31,240
+De acuerdo, ahora como parte de esto tambin voy a cronometrar esto.
+
+205
+00:10:31,240 --> 00:10:34,940
+As que voy a decir que el comienzo es el momento. el tiempo y el final
+
+206
+00:10:34,940 --> 00:10:39,850
+van a tomarse todo el tiempo. tiempo menos inicio.
+
+207
+00:10:41,050 --> 00:10:46,000
+Observe que solo estoy midiendo el loop_run_until_complete.
+
+208
+00:10:46,000 --> 00:10:48,280
+No estoy midiendo las tareas de creacin,
+
+209
+00:10:48,280 --> 00:10:50,108
+porque esto es bastante instantneo.
+
+210
+00:10:50,108 --> 00:10:53,889
+No hay solicitudes realmente estn sucediendo en esta lnea.
+
+211
+00:10:53,889 --> 00:10:56,560
+Solo se han creado las rutinas principales.
+
+212
+00:10:56,560 --> 00:10:58,410
+Entonces, cuando dejamos de
+
+213
+00:10:58,410 --> 00:11:01,310
+ejecutarlos, este hace el. enviar a la primera
+
+214
+00:11:01,310 --> 00:11:03,530
+tarea y la ejecuta hasta el asyncio.
+
+215
+00:11:03,530 --> 00:11:06,254
+Luego, eso se suspende y esto pasa al segundo
+
+216
+00:11:06,254 --> 00:11:08,500
+y lo mueve hasta all, luego se
+
+217
+00:11:08,500 --> 00:11:09,900
+suspende y pasa al tercero.
+
+218
+00:11:09,900 --> 00:11:13,536
+Entonces, antes que nada, las 50 tareas terminarn aqu.
+
+219
+00:11:13,536 --> 00:11:15,997
+Luego, uno a uno, sern trasladados aqu.
+
+220
+00:11:15,997 --> 00:11:19,370
+Y luego, uno por uno, regresarn.
+
+221
+00:11:19,370 --> 00:11:22,940
+Pero, por supuesto, pueden tomar diferentes cantidades de tiempo.
+
+222
+00:11:22,940 --> 00:11:27,500
+As que una solicitud para google. com puede tomar 0. 5 segundos si
+
+223
+00:11:27,500 --> 00:11:28,750
+es muy lento.
+
+224
+00:11:28,750 --> 00:11:30,712
+Otro puede tomar 0. 1 segundos
+
+225
+00:11:30,712 --> 00:11:32,550
+Entonces, tan pronto como empiece
+
+226
+00:11:32,550 --> 00:11:37,550
+a hacer esto y solo reanude la ejecucin cuando est listo para hacerlo,
+
+227
+00:11:37,590 --> 00:11:40,040
+ver que estas tareas no necesariamente
+
+228
+00:11:40,040 --> 00:11:41,970
+terminarn en el mismo orden.
+
+229
+00:11:41,970 --> 00:11:44,150
+Y est bien, as que vamos a presionar play.
+
+230
+00:11:45,670 --> 00:11:47,943
+Y como pueden ver, eso fue extremadamente rpido.
+
+231
+00:11:47,943 --> 00:11:52,943
+Tenemos algunas tareas que tomaron 0. 32 segundos, y cuando terminan ms o
+
+232
+00:11:53,250 --> 00:11:56,291
+menos en orden podemos ver que en la parte
+
+233
+00:11:56,291 --> 00:12:00,168
+inferior algo de eso tom 0. 46 segundos y
+
+234
+00:12:00,168 --> 00:12:04,473
+en total tom 0. 48 segundos.
+
+235
+00:12:04,473 --> 00:12:07,150
+No es la suma de todas estas
+
+236
+00:12:07,150 --> 00:12:10,580
+cosas, sino la ms larga ms un par de milisegundos
+
+237
+00:12:10,580 --> 00:12:12,750
+solo para configurar el ciclo de
+
+238
+00:12:12,750 --> 00:12:15,923
+eventos y hacer la programacin de las tareas, etc.
+
+239
+00:12:15,923 --> 00:12:18,920
+As que esto es sorprendente, porque ahora, en
+
+240
+00:12:18,920 --> 00:12:21,810
+lugar de tener que esperar a que
+
+241
+00:12:21,810 --> 00:12:24,010
+cada pgina termine antes de obtener
+
+242
+00:12:24,010 --> 00:12:26,670
+la siguiente, bsicamente enviaremos las 50 solicitudes
+
+243
+00:12:26,670 --> 00:12:30,050
+a Google y solo esperaremos hasta que vuelvan.
+
+244
+00:12:31,870 --> 00:12:33,570
+Y, por supuesto, eso
+
+245
+00:12:33,570 --> 00:12:38,550
+depender de si Google puede manejar 50 solicitudes al mismo tiempo.
+
+246
+00:12:38,550 --> 00:12:42,800
+Google es una empresa enorme, tiene muchos servidores y
+
+247
+00:12:42,800 --> 00:12:45,910
+puede gestionar 50 solicitudes al mismo tiempo.
+
+248
+00:12:45,910 --> 00:12:48,430
+Otros sitios web no podrn gestionar 50 solicitudes
+
+249
+00:12:48,430 --> 00:12:49,550
+al mismo tiempo y,
+
+250
+00:12:49,550 --> 00:12:51,160
+si lo haces, puedes romperlas.
+
+251
+00:12:51,160 --> 00:12:52,500
+En realidad, puede interrumpir
+
+252
+00:12:52,500 --> 00:12:57,500
+el sitio o pueden decir que no, no puede hacer 50 solicitudes a la vez.
+
+253
+00:12:57,670 --> 00:13:00,530
+Ser muy lento en
+
+254
+00:13:00,530 --> 00:13:04,780
+responderle para evitar que rompa su servidor.
+
+255
+00:13:04,780 --> 00:13:07,150
+As que ese es un par de cosas sobre las que debes tener cuidado.
+
+256
+00:13:07,150 --> 00:13:10,003
+Pero como puede ver con Google, esto es
+
+257
+00:13:10,003 --> 00:13:13,961
+todo lo que necesita para obtener 50 pginas de forma asincrnica.
+
+258
+00:13:13,961 --> 00:13:16,202
+Entonces, nuevamente, lo que hemos
+
+259
+00:13:16,202 --> 00:13:21,202
+hecho es crear nuestra tarea y usar aiohttp, que admite esta async_with
+
+260
+00:13:22,156 --> 00:13:26,110
+declaraciones, hemos creado nuestra sesin y luego hemos utilizado
+
+261
+00:13:26,110 --> 00:13:29,900
+eso que nos da un conjunto de conexiones para
+
+262
+00:13:29,900 --> 00:13:31,690
+obtener cada URL que pasamos.
+
+263
+00:13:31,690 --> 00:13:34,610
+Y al final hemos devuelto una respuesta. cdigo de estado, eso
+
+264
+00:13:34,610 --> 00:13:37,518
+es solo para recuperar algo de all.
+
+265
+00:13:37,518 --> 00:13:39,470
+Y luego, para ejecutarlos,
+
+266
+00:13:39,470 --> 00:13:42,997
+tenemos un event_loop desde el framework asyncio.
+
+267
+00:13:42,997 --> 00:13:47,584
+Hemos creado todas nuestras tareas, que son solo estas funciones y luego
+
+268
+00:13:47,584 --> 00:13:50,460
+las hemos ejecutado todas hasta que se
+
+269
+00:13:50,460 --> 00:13:52,740
+completen utilizando asyncio. reunir.
+
+270
+00:13:52,740 --> 00:13:54,910
+Y gather recoge todas nuestras
+
+271
+00:13:54,910 --> 00:13:58,900
+tareas y les permite ejecutar como una en este run_until_complete.
+
+272
+00:13:58,900 --> 00:14:01,440
+De lo contrario, tendras que ejecutar run_until_complete una vez
+
+273
+00:14:01,440 --> 00:14:04,520
+para cada tarea, lo que sera un poco ms tedioso.
+
+274
+00:14:04,520 --> 00:14:06,882
+Entonces asyncio. reunir, bastante bueno para eso.
+
+275
+00:14:06,882 --> 00:14:10,050
+Ahora eso es todo por este video.
+
+276
+00:14:10,050 --> 00:14:13,090
+Solo quera mostrarte cmo hacer
+
+277
+00:14:13,090 --> 00:14:14,976
+estas solicitudes asncronas.
+
+278
+00:14:14,976 --> 00:14:18,870
+Sintase libre de comparar esto con su cdigo sncrono.
+
+279
+00:14:18,870 --> 00:14:20,820
+Si te abres Por cierto, puede
+
+280
+00:14:20,820 --> 00:14:22,660
+ver que este es un cdigo sincrnico.
+
+281
+00:14:22,660 --> 00:14:25,100
+Entonces, si reemplazas esto por un google. com y ponga
+
+282
+00:14:25,100 --> 00:14:27,480
+un par de funciones de sincronizacin aqu,
+
+283
+00:14:27,480 --> 00:14:28,900
+ver cunto tarda eso.
+
+284
+00:14:28,900 --> 00:14:33,329
+Son aproximadamente 10 segundos, mientras que esto fue aproximadamente 0. 5 segundos.
+
+285
+00:14:33,329 --> 00:14:35,530
+Entonces, lo que vamos a hacer es que hagamos
+
+286
+00:14:35,530 --> 00:14:36,850
+esto un poco ms eficiente.
+
+287
+00:14:36,850 --> 00:14:39,650
+Obtenga un par de funciones aqu para
+
+288
+00:14:39,650 --> 00:14:42,340
+tratar de obtener varias pginas ms eficientemente
+
+289
+00:14:42,340 --> 00:14:44,980
+y luego pasaremos a convertir nuestro raspador
+
+290
+00:14:44,980 --> 00:14:46,850
+en un raspado asincrnico.
+
+291
+00:14:46,850 --> 00:14:48,430
+Te ver en el prximo video.
+

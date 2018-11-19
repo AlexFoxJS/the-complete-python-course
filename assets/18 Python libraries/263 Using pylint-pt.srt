@@ -1,0 +1,1136 @@
+1
+00:00:00,200 --> 00:00:01,710
+Jos: Ol, e bem vindo de volta.
+
+2
+00:00:01,710 --> 00:00:04,380
+Neste vdeo, vamos olhar para o Pylint e
+
+3
+00:00:04,380 --> 00:00:06,860
+o que  e como voc pode us-lo.
+
+4
+00:00:06,860 --> 00:00:07,900
+O que eu
+
+5
+00:00:07,900 --> 00:00:10,560
+fiz foi criar um novo projeto aqui
+
+6
+00:00:10,560 --> 00:00:12,255
+no PyCharm, e vou te
+
+7
+00:00:12,255 --> 00:00:15,170
+mostrar um cdigo que o Pylint iria reclamar.
+
+8
+00:00:15,170 --> 00:00:17,483
+Eu vou criar um arquivo chamado app. py.
+
+9
+00:00:17,483 --> 00:00:21,320
+E ento vamos fazer algo como app
+
+10
+00:00:21,320 --> 00:00:26,320
+ o nome do frasco, se name  igual
+
+11
+00:00:29,110 --> 00:00:33,837
+a main e app. corre.
+
+12
+00:00:37,420 --> 00:00:39,430
+Ento, voc pode ver que h
+
+13
+00:00:39,430 --> 00:00:41,505
+alguns erros nesse cdigo, tenho certeza.
+
+14
+00:00:41,505 --> 00:00:44,080
+E em primeiro lugar, temos o
+
+15
+00:00:44,080 --> 00:00:48,430
+frasco aqui, mas no importamos o FLask no topo do arquivo.
+
+16
+00:00:48,430 --> 00:00:52,910
+E tambm nos esquecemos de colocar nossos dois pontos aps a instruo if.
+
+17
+00:00:52,910 --> 00:00:56,470
+Ento, isso no  cdigo Python vlido, exatamente.
+
+18
+00:00:56,470 --> 00:00:59,040
+Mas PyCharm percebe que provavelmente queramos escrever cdigo Python,
+
+19
+00:00:59,040 --> 00:01:02,511
+porque o nosso arquivo termina em. py.
+
+20
+00:01:02,511 --> 00:01:05,128
+E, portanto, em vez de apenas dizer,
+
+21
+00:01:05,128 --> 00:01:08,100
+isso  um jargo completo, diz que
+
+22
+00:01:08,100 --> 00:01:10,530
+voc pode ter cometido alguns erros.
+
+23
+00:01:10,530 --> 00:01:12,960
+ claro, talvez no tenhamos cometido alguns erros e
+
+24
+00:01:12,960 --> 00:01:14,950
+talvez essa outra linguagem de programao muito semelhante
+
+25
+00:01:14,950 --> 00:01:17,059
+ao Python, que na verdade no  Python.
+
+26
+00:01:17,059 --> 00:01:20,550
+E isso seria timo, mas sob a suposio
+
+27
+00:01:20,550 --> 00:01:22,470
+de que estamos codificando
+
+28
+00:01:22,470 --> 00:01:24,780
+em Python, isso tem alguns problemas.
+
+29
+00:01:24,780 --> 00:01:26,140
+O que  que esquecemos
+
+30
+00:01:26,140 --> 00:01:30,150
+de importar o FLask, ou melhor, o FLask  algo que o Python no
+
+31
+00:01:30,150 --> 00:01:32,380
+sabe o que , pode ser uma varivel.
+
+32
+00:01:32,380 --> 00:01:34,870
+Por exemplo, voc poderia definir o FLask
+
+33
+00:01:34,870 --> 00:01:36,163
+como outra coisa.
+
+34
+00:01:37,000 --> 00:01:38,461
+E ento no se queixaria do
+
+35
+00:01:38,461 --> 00:01:39,880
+fato de o FLask no existir.
+
+36
+00:01:39,880 --> 00:01:42,050
+Ele iria reclamar, voc est chamando isso
+
+37
+00:01:42,050 --> 00:01:44,470
+usando os colchetes, mas isso  uma string.
+
+38
+00:01:44,470 --> 00:01:46,570
+Ento, no sabe o que voc est fazendo.
+
+39
+00:01:46,570 --> 00:01:49,210
+E assim, de qualquer forma, esse  o problema atual.
+
+40
+00:01:49,210 --> 00:01:51,130
+ isso, FLask no est definido.
+
+41
+00:01:51,130 --> 00:01:52,774
+Isso significa que nos esquecemos
+
+42
+00:01:52,774 --> 00:01:55,220
+de import-lo ou nos esquecemos de defini-lo.
+
+43
+00:01:55,220 --> 00:01:56,490
+E tambm, h um problema claro
+
+44
+00:01:56,490 --> 00:01:58,120
+aqui, que  o esquecimento do clon.
+
+45
+00:01:58,120 --> 00:02:01,093
+E Pycharm diz que voc esqueceu um clon aqui.
+
+46
+00:02:02,730 --> 00:02:07,730
+Ento, PyCharm tem uma maneira de determinar de alguma forma que
+
+47
+00:02:07,900 --> 00:02:10,400
+essas duas coisas aqui so problemas.
+
+48
+00:02:10,400 --> 00:02:11,233
+Certo.
+
+49
+00:02:11,233 --> 00:02:13,960
+E, este  um programa de computador,
+
+50
+00:02:13,960 --> 00:02:17,500
+como tal, ele deve ter algum tipo de programa
+
+51
+00:02:17,500 --> 00:02:20,150
+ou algum cdigo dentro do PyCharm que
+
+52
+00:02:20,150 --> 00:02:23,321
+nos diga que essas duas coisas so problemas.
+
+53
+00:02:23,321 --> 00:02:26,800
+E PyCharm tem sua prpria maneira de fazer isso,
+
+54
+00:02:26,800 --> 00:02:29,790
+mas existem maneiras mais padronizadas de fazer isso
+
+55
+00:02:29,790 --> 00:02:30,710
+fora do PyCharm.
+
+56
+00:02:30,710 --> 00:02:32,380
+Existem maneiras de descobrir
+
+57
+00:02:32,380 --> 00:02:35,720
+problemas dentro de um arquivo fora do PyCharm.
+
+58
+00:02:35,720 --> 00:02:38,400
+E  para isso que serve um linter.
+
+59
+00:02:38,400 --> 00:02:40,930
+Um linter essencialmente passa pelo seu arquivo
+
+60
+00:02:40,930 --> 00:02:42,890
+e aplica um monte de regras.
+
+61
+00:02:42,890 --> 00:02:46,340
+E se alguma das suas linhas falhar nessa regra,
+
+62
+00:02:46,340 --> 00:02:48,397
+diz que h um problema aqui.
+
+63
+00:02:48,397 --> 00:02:50,900
+Nesse caso, ele passaria por esses arquivos e
+
+64
+00:02:50,900 --> 00:02:52,820
+diria que o Flask no est definido.
+
+65
+00:02:52,820 --> 00:02:54,830
+E ento, passaria por este aqui e diria
+
+66
+00:02:54,830 --> 00:02:56,980
+que voc est perdendo um ponto-e-vrgula, um clon ali.
+
+67
+00:02:57,870 --> 00:03:01,030
+Ento, vamos em frente em um terminal e
+
+68
+00:03:01,030 --> 00:03:04,000
+vamos instalar o linter mais popular em Python.
+
+69
+00:03:04,000 --> 00:03:05,950
+E vamos passar por esse arquivo
+
+70
+00:03:05,950 --> 00:03:07,920
+e vamos ver o que ele diz.
+
+71
+00:03:07,920 --> 00:03:10,143
+Vamos abrir um terminal agora mesmo.
+
+72
+00:03:11,180 --> 00:03:13,440
+Ns temos um terminal aqui, e
+
+73
+00:03:13,440 --> 00:03:17,969
+a primeira coisa que vamos fazer  navegar at a pasta
+
+74
+00:03:17,969 --> 00:03:21,400
+que contm nosso arquivo que acabamos de escrever.
+
+75
+00:03:21,400 --> 00:03:24,400
+Ento, se voc se lembra, vamos fazer c, d,
+
+76
+00:03:24,400 --> 00:03:26,330
+e ento vamos digitar o
+
+77
+00:03:26,330 --> 00:03:28,810
+caminho que nos levar  nossa pasta.
+
+78
+00:03:28,810 --> 00:03:33,810
+Ento, no meu caso,  no Dropbox, teclado, cursos, curso
+
+79
+00:03:34,110 --> 00:03:36,406
+completo do Python, seo 18.
+
+80
+00:03:36,406 --> 00:03:37,740
+ onde estamos agora.
+
+81
+00:03:37,740 --> 00:03:40,603
+E ento estamos no cdigo de vdeo Pylint e terminamos.
+
+82
+00:03:41,460 --> 00:03:44,570
+Ento este  o caminho para o meu projeto.
+
+83
+00:03:44,570 --> 00:03:47,140
+E observe como o projeto  chamado
+
+84
+00:03:47,140 --> 00:03:49,920
+de fim, antes de estruturarmos o cdigo
+
+85
+00:03:49,920 --> 00:03:51,850
+do curso um pouco melhor.
+
+86
+00:03:51,850 --> 00:03:56,333
+Ento, se digitarmos l, s ou dir, se voc estiver no Windows.
+
+87
+00:03:57,330 --> 00:04:00,080
+Voc ver que voc tem app dot p, y, aqui.
+
+88
+00:04:00,080 --> 00:04:04,261
+Ento,  a que o nosso arquivo existe em nosso disco.
+
+89
+00:04:04,261 --> 00:04:07,754
+Voc pode,  claro, navegar para esse caminho
+
+90
+00:04:07,754 --> 00:04:10,970
+usando um explorador visual ou grfico, como
+
+91
+00:04:10,970 --> 00:04:13,863
+o Windows Explorer ou o Finder.
+
+92
+00:04:13,863 --> 00:04:15,970
+Mas para usar o linter,
+
+93
+00:04:15,970 --> 00:04:17,170
+precisamos do terminal.
+
+94
+00:04:17,170 --> 00:04:19,040
+Ento, vamos navegar usando o
+
+95
+00:04:19,040 --> 00:04:21,043
+terminal e depois instalar o Pylint.
+
+96
+00:04:21,898 --> 00:04:24,190
+Se voc tiver apenas uma verso
+
+97
+00:04:24,190 --> 00:04:27,044
+do Python instalada, i. e voc nunca instalou
+
+98
+00:04:27,044 --> 00:04:30,730
+o Python alm de uma nica verso, voc vai fazer
+
+99
+00:04:30,730 --> 00:04:32,317
+pip instalar o Pylint.
+
+100
+00:04:33,226 --> 00:04:34,970
+Se voc tiver vrias verses
+
+101
+00:04:34,970 --> 00:04:37,410
+do Python instaladas, certifique-se de selecionar a
+
+102
+00:04:37,410 --> 00:04:38,940
+correta com o pip.
+
+103
+00:04:38,940 --> 00:04:41,140
+Ento, isso pode ser pip trs, se voc
+
+104
+00:04:41,140 --> 00:04:42,830
+tiver duas verses do Python instaladas.
+
+105
+00:04:42,830 --> 00:04:45,070
+Um Python dois e um Python trs.
+
+106
+00:04:45,070 --> 00:04:47,804
+Ou, pode at ser pip trs ponto seis, se
+
+107
+00:04:47,804 --> 00:04:50,350
+voc tiver vrias verses do Python trs instalado.
+
+108
+00:04:50,350 --> 00:04:52,440
+Ns passamos por isso mais cedo no curso.
+
+109
+00:04:52,440 --> 00:04:54,306
+Ento, novamente, apenas um breve lembrete aqui.
+
+110
+00:04:54,306 --> 00:04:56,913
+No meu caso, vou instalar o Pylint usando
+
+111
+00:04:56,913 --> 00:05:00,450
+Python three point six, porque essa  a verso mais
+
+112
+00:05:00,450 --> 00:05:03,110
+recente do Python na qual o Pylint funciona.
+
+113
+00:05:03,110 --> 00:05:05,832
+No momento da gravao, o Pylint no
+
+114
+00:05:05,832 --> 00:05:07,950
+funcionava em Python trs pontos sete.
+
+115
+00:05:07,950 --> 00:05:09,849
+Ento, apenas algo para se manter em mente.
+
+116
+00:05:09,849 --> 00:05:11,890
+ possvel que no momento em
+
+117
+00:05:11,890 --> 00:05:13,940
+que voc est assistindo isso j funcione.
+
+118
+00:05:13,940 --> 00:05:16,730
+Ento, vamos fazer pip de trs pontos seis, instalar o Pylint.
+
+119
+00:05:16,730 --> 00:05:18,650
+E ento eu acho que vai me
+
+120
+00:05:18,650 --> 00:05:21,270
+dizer que j est satisfeito porque, eu j o instalei.
+
+121
+00:05:21,270 --> 00:05:23,260
+Mas se voc no tiver instalado, ele lhe dir.
+
+122
+00:05:23,260 --> 00:05:25,895
+E o progresso acabaria por instal-lo.
+
+123
+00:05:25,895 --> 00:05:28,280
+A prxima coisa que voc quer
+
+124
+00:05:28,280 --> 00:05:32,330
+fazer,  digitar qual Pylint, e isso, porque quando voc instala
+
+125
+00:05:32,330 --> 00:05:35,900
+o Pylint usando o pip, ele vai colocar um programa
+
+126
+00:05:35,900 --> 00:05:37,297
+executvel no seu caminho.
+
+127
+00:05:37,297 --> 00:05:40,340
+Ento, voc ser capaz de fazer qual Pylint
+
+128
+00:05:40,340 --> 00:05:43,250
+e este Pylint aqui  o programa
+
+129
+00:05:43,250 --> 00:05:45,100
+Pylint que agora podemos executar.
+
+130
+00:05:45,100 --> 00:05:47,560
+E se aqui voc chegar, programa no encontrado,
+
+131
+00:05:47,560 --> 00:05:50,500
+ou voc no conseguir nada, ento certifique-se de que
+
+132
+00:05:50,500 --> 00:05:52,160
+o Pylint foi instalado corretamente.
+
+133
+00:05:52,160 --> 00:05:53,870
+E certifique-se de que
+
+134
+00:05:53,870 --> 00:05:58,870
+a pasta Python com trs barras de seis pontos esteja em seu caminho.
+
+135
+00:05:59,390 --> 00:06:01,000
+Mais uma vez, analisamos isso mais cedo
+
+136
+00:06:01,000 --> 00:06:03,040
+no curso, acredito que tenha sido a seo 13.
+
+137
+00:06:03,040 --> 00:06:03,930
+Ento, basta voltar
+
+138
+00:06:03,930 --> 00:06:06,300
+se voc precisa se lembrar de como isso funciona.
+
+139
+00:06:06,300 --> 00:06:08,290
+Mas se voc conseguir alguma coisa aqui quando voc
+
+140
+00:06:08,290 --> 00:06:11,387
+digita qual Pylint, que por sinal no tenho certeza se funciona no Windows.
+
+141
+00:06:11,387 --> 00:06:14,930
+Mas, no entanto, se isso funcionar, ou se voc puder
+
+142
+00:06:14,930 --> 00:06:17,146
+simplesmente digitar Pylint e descobrir algo.
+
+143
+00:06:17,146 --> 00:06:19,953
+Isso significa que o Pylint est funcionando, est instalado corretamente.
+
+144
+00:06:19,953 --> 00:06:23,449
+E o que voc sai quando digita Pylint  apenas a ajuda.
+
+145
+00:06:23,449 --> 00:06:26,370
+Tipo de como voc trabalha e como voc o
+
+146
+00:06:26,370 --> 00:06:27,940
+executa e assim por diante.
+
+147
+00:06:27,940 --> 00:06:30,800
+Para a maioria das suas corridas, voc no
+
+148
+00:06:30,800 --> 00:06:32,550
+precisar de todas essas opes.
+
+149
+00:06:32,550 --> 00:06:34,570
+Tudo o que voc precisa fazer  Pylint
+
+150
+00:06:34,570 --> 00:06:36,070
+e, em seguida, fornecer seu aplicativo.
+
+151
+00:06:36,070 --> 00:06:37,670
+Ento, neste caso, vou
+
+152
+00:06:37,670 --> 00:06:40,290
+digitar Pylint, espao, no ponto p, y.
+
+153
+00:06:40,290 --> 00:06:44,015
+E isso me diz os problemas que esto no arquivo.
+
+154
+00:06:44,015 --> 00:06:46,440
+Ento aqui diz que no foi encontrado nenhum arquivo de configurao.
+
+155
+00:06:46,440 --> 00:06:48,231
+Ento, est usando a configurao
+
+156
+00:06:48,231 --> 00:06:53,231
+padro e, em seguida, ele est dizendo na linha 3, h uma sintaxe invlida.
+
+157
+00:06:53,430 --> 00:06:55,167
+Dizendo erro de sintaxe.
+
+158
+00:06:55,167 --> 00:06:57,229
+Ento, o que podemos fazer 
+
+159
+00:06:57,229 --> 00:07:01,880
+seguir em frente e abrir a linha 3 e ver o que acontece l.
+
+160
+00:07:01,880 --> 00:07:05,770
+E voc perceber que ele diz, linha 3, erro de sintaxe.
+
+161
+00:07:05,770 --> 00:07:08,900
+O fato de voc ter visto um erro de sintaxe
+
+162
+00:07:08,900 --> 00:07:11,930
+na linha 3, deve imediatamente levar voc a olhar para
+
+163
+00:07:11,930 --> 00:07:14,577
+a linha 3, e usar todo o seu
+
+164
+00:07:14,577 --> 00:07:17,100
+poder cerebral determinando qual poderia ser o problema.
+
+165
+00:07:17,100 --> 00:07:20,140
+Porque PyCharm nos diz que h um clon esperado, no temos que
+
+166
+00:07:20,140 --> 00:07:21,530
+usar muito poder do crebro.
+
+167
+00:07:21,530 --> 00:07:23,070
+Mas se voc estiver usando um
+
+168
+00:07:23,070 --> 00:07:25,350
+editor diferente que talvez no tenha lhe dito isso,
+
+169
+00:07:25,350 --> 00:07:27,340
+basta olhar para ele com cuidado e ter
+
+170
+00:07:27,340 --> 00:07:29,950
+certeza de que no perdeu nada que o PyCharm consideraria essencial.
+
+171
+00:07:29,950 --> 00:07:32,010
+Neste caso,  um clon.
+
+172
+00:07:32,010 --> 00:07:33,780
+Ento podemos adicionar nosso clon l.
+
+173
+00:07:33,780 --> 00:07:37,923
+E ento, volte ao nosso terminal e execute o Pylint novamente.
+
+174
+00:07:39,056 --> 00:07:41,490
+E agora, temos mais alguns erros.
+
+175
+00:07:41,490 --> 00:07:45,323
+Observe que o Pylint percorre o arquivo Python primeiro.
+
+176
+00:07:45,323 --> 00:07:50,323
+E analisa que, se voc no tem uma sintaxe vlida, como o ponto e vrgula faltando,
+
+177
+00:07:50,720 --> 00:07:53,390
+o Pylint no pode processar o arquivo e
+
+178
+00:07:53,390 --> 00:07:55,641
+no pode dizer o que est errado.
+
+179
+00:07:55,641 --> 00:07:59,280
+Por isso, s lhe diz erro de sintaxe se
+
+180
+00:07:59,280 --> 00:08:02,930
+houver uma sintaxe invlida, como cdigo Python invlido adequado.
+
+181
+00:08:02,930 --> 00:08:06,160
+Mas se voc tiver um cdigo Python vlido que est
+
+182
+00:08:06,160 --> 00:08:07,210
+faltando algumas coisas.
+
+183
+00:08:07,210 --> 00:08:08,710
+Ser capaz de fazer isso.
+
+184
+00:08:08,710 --> 00:08:10,210
+E agora, aqui voc pode ver
+
+185
+00:08:10,210 --> 00:08:11,650
+que isso diz trs coisas diferentes.
+
+186
+00:08:11,650 --> 00:08:14,141
+Ele diz que est faltando um mdulo
+
+187
+00:08:14,141 --> 00:08:16,640
+docstring, o aplicativo de nome constante no
+
+188
+00:08:16,640 --> 00:08:18,840
+est de acordo com o estilo de
+
+189
+00:08:18,840 --> 00:08:21,720
+nomenclatura em maisculas, e tambm a varivel indefinida Flask.
+
+190
+00:08:21,720 --> 00:08:23,626
+Ento, podemos consertar essas trs coisas.
+
+191
+00:08:23,626 --> 00:08:26,630
+Vamos voltar e comear com o primeiro.
+
+192
+00:08:26,630 --> 00:08:28,568
+O mdulo ausente docstring.
+
+193
+00:08:28,568 --> 00:08:31,160
+Cada arquivo em Python, supostamente, de
+
+194
+00:08:31,160 --> 00:08:34,188
+acordo com a Pylint, tem um pequeno
+
+195
+00:08:34,188 --> 00:08:37,870
+comentrio no topo que usa aspas triplas.
+
+196
+00:08:37,870 --> 00:08:40,657
+Explicando sobre o que  este arquivo.
+
+197
+00:08:40,657 --> 00:08:43,250
+Assim, podemos escrever um breve comentrio aqui,
+
+198
+00:08:43,250 --> 00:08:45,893
+explicando o que o aplicativo p, y, faz.
+
+199
+00:08:50,220 --> 00:08:51,053
+Aqui vamos ns.
+
+200
+00:08:51,053 --> 00:08:53,158
+Isso foi um pouco mais difcil do que deveria.
+
+201
+00:08:53,158 --> 00:08:54,440
+E  isso.
+
+202
+00:08:54,440 --> 00:08:56,360
+Agora, se voltarmos para o Pylint e
+
+203
+00:08:56,360 --> 00:08:59,751
+o rodarmos novamente, voc ver que agora s temos duas coisas.
+
+204
+00:08:59,751 --> 00:09:03,641
+Anteriormente, nosso cdigo tinha uma pontuao de menos 13.
+
+205
+00:09:03,641 --> 00:09:05,810
+Agora, tem uma pontuao de menos 10.
+
+206
+00:09:05,810 --> 00:09:06,960
+Ento estamos melhorando.
+
+207
+00:09:06,960 --> 00:09:08,620
+No  muito bom.
+
+208
+00:09:08,620 --> 00:09:10,270
+Agora, temos um aplicativo nomeado constante
+
+209
+00:09:10,270 --> 00:09:12,367
+que no est em conformidade com o
+
+210
+00:09:12,367 --> 00:09:15,640
+estilo de nomenclatura em letras maisculas e temos a varivel indefinida Flask.
+
+211
+00:09:15,640 --> 00:09:19,160
+A varivel indefinida Flask  substancialmente pior coisa, do que um
+
+212
+00:09:19,160 --> 00:09:21,990
+aplicativo de nome constante no est em conformidade com
+
+213
+00:09:21,990 --> 00:09:23,960
+o estilo de nomeao de maisculas.
+
+214
+00:09:23,960 --> 00:09:26,750
+Como voc pode ver isso aqui  uma coisa de estilo.
+
+215
+00:09:26,750 --> 00:09:30,110
+Isso aqui  um erro adequado.
+
+216
+00:09:30,110 --> 00:09:31,572
+Ento, vamos
+
+217
+00:09:31,572 --> 00:09:35,700
+voltar e consertar a varivel faltante Flask.
+
+218
+00:09:35,700 --> 00:09:38,700
+Abaixo da docstring, podemos colocar do
+
+219
+00:09:38,700 --> 00:09:41,070
+Flask, importar o Flask.
+
+220
+00:09:41,070 --> 00:09:42,410
+Certifique-se de ter o
+
+221
+00:09:42,410 --> 00:09:44,620
+Flask instalado, se quiser copiar junto comigo.
+
+222
+00:09:44,620 --> 00:09:45,453
+Mas, no entanto,
+
+223
+00:09:45,453 --> 00:09:47,010
+como voc pode ver, importa o Flask.
+
+224
+00:09:47,010 --> 00:09:49,240
+Agora no temos uma varivel indefinida.
+
+225
+00:09:49,240 --> 00:09:51,423
+Podemos voltar ao Pylint e execut-lo novamente.
+
+226
+00:09:52,870 --> 00:09:54,870
+E agora voc pode ver que o nosso
+
+227
+00:09:54,870 --> 00:09:57,850
+cdigo realmente fica no positivo, e temos sete pontos cinco em cada 10.
+
+228
+00:09:57,850 --> 00:10:00,204
+Isso significa que o cdigo ser
+
+229
+00:10:00,204 --> 00:10:03,410
+executado e ser como fizemos no passado.
+
+230
+00:10:03,410 --> 00:10:05,760
+Mas diz que o aplicativo nomeado constante no est em
+
+231
+00:10:05,760 --> 00:10:07,492
+conformidade com o estilo de nomeao de maisculas.
+
+232
+00:10:07,492 --> 00:10:11,290
+Agora, isso  uma coisa de estilo, ento voc no precisa fazer isso.
+
+233
+00:10:11,290 --> 00:10:12,949
+Da mesma forma que voc no
+
+234
+00:10:12,949 --> 00:10:15,165
+precisa adicionar uma docstring ao seu arquivo.
+
+235
+00:10:15,165 --> 00:10:18,613
+Mas o que isto est dizendo  que voc est definindo o
+
+236
+00:10:19,720 --> 00:10:21,100
+aplicativo e, em seguida, voc
+
+237
+00:10:21,100 --> 00:10:25,440
+nunca est fazendo a qualquer momento no restante do arquivo, app  igual a algo.
+
+238
+00:10:25,440 --> 00:10:29,260
+Ento, voc nunca est fazendo o app igual a qualquer outra coisa.
+
+239
+00:10:29,260 --> 00:10:32,950
+Isso significa que o aplicativo  uma constante.
+
+240
+00:10:32,950 --> 00:10:35,170
+Uma constante que nunca muda.
+
+241
+00:10:35,170 --> 00:10:39,464
+E no Python, as constantes so sempre nomeadas
+
+242
+00:10:39,464 --> 00:10:42,040
+usando todas as letras maisculas.
+
+243
+00:10:42,040 --> 00:10:46,610
+Ento seja algo assim, ento, se voltarmos
+
+244
+00:10:46,610 --> 00:10:48,520
+para o Pylint,
+
+245
+00:10:48,520 --> 00:10:50,800
+teremos 10 de 10.
+
+246
+00:10:50,800 --> 00:10:54,370
+No h problemas, seu cdigo foi classificado como 10 em 10.
+
+247
+00:10:54,370 --> 00:10:56,443
+O que  incrvel, essencialmente.
+
+248
+00:10:58,010 --> 00:11:01,050
+No Flask, isso no  uma coisa muito comum de se fazer.
+
+249
+00:11:01,050 --> 00:11:05,766
+Normalmente, voc nomearia seu aplicativo principal como aplicativo, em letras minsculas.
+
+250
+00:11:05,766 --> 00:11:08,750
+Mas o Pylint no gosta muito disso.
+
+251
+00:11:08,750 --> 00:11:12,960
+Ento, s queria dizer que o estilo  algo que varia dependendo da linguagem
+
+252
+00:11:12,960 --> 00:11:15,227
+que voc est usando e das pessoas com
+
+253
+00:11:15,227 --> 00:11:17,771
+quem voc est trabalhando e assim por diante.
+
+254
+00:11:17,771 --> 00:11:21,720
+E tambm, voc pode nomear sua varivel como uma
+
+255
+00:11:21,720 --> 00:11:23,433
+coisa toda em maisculas
+
+256
+00:11:23,433 --> 00:11:26,892
+aqui, mas se voc quiser fazer alteraes.
+
+257
+00:11:26,892 --> 00:11:29,430
+O linter no sabe disso.
+
+258
+00:11:29,430 --> 00:11:30,970
+O linter no sabe que
+
+259
+00:11:30,970 --> 00:11:33,150
+no futuro voc vai querer mudar essa varivel.
+
+260
+00:11:33,150 --> 00:11:34,800
+Ento, se voc s
+
+261
+00:11:34,800 --> 00:11:37,693
+tem esse cdigo, isso  uma constante,
+
+262
+00:11:37,693 --> 00:11:41,570
+use todas as letras maisculas se voc quiser no
+
+263
+00:11:41,570 --> 00:11:46,488
+futuro fazer alteraes, como, por exemplo, app for igual a cinco, isso
+
+264
+00:11:46,488 --> 00:11:48,580
+seria agora um estilo invlido.
+
+265
+00:11:48,580 --> 00:11:51,320
+Voc deveria ter usado letras minsculas.
+
+266
+00:11:51,320 --> 00:11:53,750
+Ento, o linter no  todo poderoso e tudo v.
+
+267
+00:11:53,750 --> 00:11:56,100
+Apenas faz recomendaes.
+
+268
+00:11:56,100 --> 00:11:59,180
+E muitas vezes essas recomendaes so coisas que
+
+269
+00:11:59,180 --> 00:12:00,930
+voc deveria realmente ouvir.
+
+270
+00:12:00,930 --> 00:12:02,630
+E, especialmente se essas recomendaes forem
+
+271
+00:12:02,630 --> 00:12:04,210
+problemas em seu cdigo que voc
+
+272
+00:12:04,210 --> 00:12:06,510
+precisa corrigir, caso contrrio, ele no ser executado.
+
+273
+00:12:06,510 --> 00:12:09,380
+Mas as recomendaes de estilo podem s vezes ser ignoradas,
+
+274
+00:12:09,380 --> 00:12:10,213
+se voc preferir.
+
+275
+00:12:11,630 --> 00:12:15,894
+Ok, observe que um lembrete, PyCharm tem seu prprio linter.
+
+276
+00:12:15,894 --> 00:12:16,727
+Ento voc no precisa
+
+277
+00:12:16,727 --> 00:12:18,730
+usar o Pylint se estiver trabalhando com o PyCharm.
+
+278
+00:12:18,730 --> 00:12:21,900
+Mas algumas pessoas gostam de usar outros IDEs
+
+279
+00:12:21,900 --> 00:12:26,900
+que talvez no tenham um bom tratamento de erros, como o PyCharm.
+
+280
+00:12:26,980 --> 00:12:29,580
+E nesses casos, usar o Pylint pode ser muito til.
+
+281
+00:12:30,760 --> 00:12:31,730
+Ento,  isso para este vdeo.
+
+282
+00:12:31,730 --> 00:12:33,730
+S queria mostrar rapidamente como
+
+283
+00:12:33,730 --> 00:12:35,730
+usar um linter em Python.
+
+284
+00:12:35,730 --> 00:12:38,363
+Espero que tenha gostado, e eu vou te ver no prximo.
+

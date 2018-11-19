@@ -1,0 +1,472 @@
+1
+00:00:00,230 --> 00:00:01,470
+<v Jose>Hi, welcome back.</v>
+
+2
+00:00:01,470 --> 00:00:04,190
+In this video we're going to be constructing our menu.
+
+3
+00:00:04,190 --> 00:00:07,040
+It's going to be really straight forward.
+
+4
+00:00:07,040 --> 00:00:08,950
+What we're going to do is we're gonna give the user
+
+5
+00:00:08,950 --> 00:00:10,940
+some choices to make.
+
+6
+00:00:10,940 --> 00:00:12,520
+And I'm gonna paste in here
+
+7
+00:00:12,520 --> 00:00:14,400
+what exactly the choice is gonna be.
+
+8
+00:00:16,120 --> 00:00:18,900
+So let's say the user has these choices.
+
+9
+00:00:18,900 --> 00:00:22,020
+They can enter one of the following, the character b,
+
+10
+00:00:22,020 --> 00:00:25,040
+to look at five star books, the best books.
+
+11
+00:00:25,040 --> 00:00:27,090
+C to look at the five cheapest books
+
+12
+00:00:27,090 --> 00:00:29,020
+or the ten cheapest books,
+
+13
+00:00:29,020 --> 00:00:33,440
+N to just get the next of level book on the collection.
+
+14
+00:00:33,440 --> 00:00:35,860
+Let's say catalogue here.
+
+15
+00:00:36,760 --> 00:00:38,920
+And they can type q to exit.
+
+16
+00:00:38,920 --> 00:00:40,510
+And then they're gonna enter their choice.
+
+17
+00:00:40,510 --> 00:00:43,130
+So you know exactly how to do this now.
+
+18
+00:00:44,210 --> 00:00:45,870
+You have all the tools you need.
+
+19
+00:00:47,210 --> 00:00:49,480
+This one here has not been implemented for you,
+
+20
+00:00:49,480 --> 00:00:51,560
+how to get the next available book in the catalogue,
+
+21
+00:00:51,560 --> 00:00:54,870
+but I'm sure you can use generators to do this.
+
+22
+00:00:56,120 --> 00:00:59,596
+So give it a go, try to implement this menu yourself.
+
+23
+00:00:59,596 --> 00:01:04,080
+Allow the user to get cheapest books, five star books,
+
+24
+00:01:04,080 --> 00:01:06,980
+the next book, and also run that on a loop so that
+
+25
+00:01:06,980 --> 00:01:09,340
+they can always exit the application.
+
+26
+00:01:14,747 --> 00:01:18,520
+I hope you managed, let's get started on creating our menus.
+
+27
+00:01:18,520 --> 00:01:22,270
+So down here I'm going to create our menu property here.
+
+28
+00:01:23,650 --> 00:01:27,700
+And I'm gonna say user input is input of user choice.
+
+29
+00:01:28,920 --> 00:01:33,920
+While the user input is not q we're going to run our menu.
+
+30
+00:01:34,120 --> 00:01:38,810
+So we're gonna say if user input is equal to b,
+
+31
+00:01:38,810 --> 00:01:40,550
+we're gonna print the best books.
+
+32
+00:01:41,960 --> 00:01:46,510
+Elif the user input is equal to c we are gonna print
+
+33
+00:01:46,510 --> 00:01:47,820
+the cheapest books.
+
+34
+00:01:49,380 --> 00:01:54,380
+Elif the user input is equal to n we're going to somehow
+
+35
+00:01:54,640 --> 00:01:55,880
+get the next book.
+
+36
+00:01:57,030 --> 00:01:59,100
+We're gonna implement that in a moment.
+
+37
+00:01:59,100 --> 00:02:04,100
+Else we're going to print Please choose a valid command.
+
+38
+00:02:04,170 --> 00:02:05,680
+I think that's a reasonable thing to do.
+
+39
+00:02:05,680 --> 00:02:10,680
+And finally we're gonna once again give them the choice
+
+40
+00:02:10,910 --> 00:02:14,470
+to give us another thing that they want to do.
+
+41
+00:02:14,470 --> 00:02:19,470
+Then at the very end we're going to run the menu.
+
+42
+00:02:20,080 --> 00:02:22,910
+Let's implement the get next book function.
+
+43
+00:02:25,480 --> 00:02:28,784
+All that we have to do in order to get the next book
+
+44
+00:02:28,784 --> 00:02:33,030
+is create the generator on the books.
+
+45
+00:02:39,580 --> 00:02:44,580
+And then get next book can just print out the next of that.
+
+46
+00:02:48,420 --> 00:02:52,580
+That is how simple it can be using generators.
+
+47
+00:02:52,580 --> 00:02:55,360
+You don't have to worry about what was the last book
+
+48
+00:02:55,360 --> 00:02:58,640
+you looked at or keeping an index or something
+
+49
+00:02:58,640 --> 00:03:00,900
+of how many books you've gone through.
+
+50
+00:03:00,900 --> 00:03:03,760
+No, just create a generator for the list.
+
+51
+00:03:03,760 --> 00:03:07,800
+Very efficient because it doesn't actually do anything
+
+52
+00:03:07,800 --> 00:03:10,600
+until you start getting the next book.
+
+53
+00:03:10,600 --> 00:03:13,570
+So it doesn't take up any memory or not a lot of memory.
+
+54
+00:03:13,570 --> 00:03:16,680
+It's not completely free but it's essentially free.
+
+55
+00:03:16,680 --> 00:03:18,640
+It doesn't take up any processing power.
+
+56
+00:03:18,640 --> 00:03:21,420
+Every time you press next it just gives you the next book
+
+57
+00:03:21,420 --> 00:03:22,850
+in that generator.
+
+58
+00:03:22,850 --> 00:03:25,200
+It doesn't exactly go through the entire list
+
+59
+00:03:25,200 --> 00:03:26,300
+or anything like that.
+
+60
+00:03:27,500 --> 00:03:31,015
+So that's a great way of setting up this
+
+61
+00:03:31,015 --> 00:03:33,100
+getting the next of something.
+
+62
+00:03:35,320 --> 00:03:37,020
+Let's run it and see what happens.
+
+63
+00:03:39,100 --> 00:03:41,050
+I get to enter one of the following.
+
+64
+00:03:41,050 --> 00:03:45,680
+Let's type b and then I see sort of the best books
+
+65
+00:03:45,680 --> 00:03:48,520
+in here, five star books, four star books.
+
+66
+00:03:48,520 --> 00:03:51,620
+It's pretty awesome, maybe I wanna buy one of these.
+
+67
+00:03:51,620 --> 00:03:53,850
+C, you can look at the cheapest books, just in case
+
+68
+00:03:53,850 --> 00:03:58,850
+you are wanting to spend a little less money on a book.
+
+69
+00:03:59,280 --> 00:04:02,370
+Some of them are not so good, but others are pretty good.
+
+70
+00:04:02,370 --> 00:04:04,300
+Maybe you can find something good there.
+
+71
+00:04:04,300 --> 00:04:06,450
+And if you just wanna go through the books,
+
+72
+00:04:07,560 --> 00:04:10,600
+just press n, and then you get one, A Light in the Attic
+
+73
+00:04:10,600 --> 00:04:12,515
+and again Tipping the Velvet.
+
+74
+00:04:12,515 --> 00:04:14,400
+It's not a very good one.
+
+75
+00:04:15,428 --> 00:04:18,890
+Soumission I guess that's French, or maybe it's some
+
+76
+00:04:18,890 --> 00:04:21,430
+sort of weird just submission thing.
+
+77
+00:04:21,430 --> 00:04:23,420
+And also not very good.
+
+78
+00:04:23,420 --> 00:04:24,380
+And that's it.
+
+79
+00:04:24,380 --> 00:04:27,480
+Now you cannot go back on the catalogue.
+
+80
+00:04:27,480 --> 00:04:29,820
+I'll leave that to you to implement,
+
+81
+00:04:29,820 --> 00:04:31,640
+but this is how you can see the different things
+
+82
+00:04:31,640 --> 00:04:32,680
+that are in the catalogue.
+
+83
+00:04:32,680 --> 00:04:35,130
+I guess you could go back just by scrolling up.
+
+84
+00:04:35,130 --> 00:04:36,960
+That works too.
+
+85
+00:04:36,960 --> 00:04:39,040
+Then you can press q to terminate.
+
+86
+00:04:40,930 --> 00:04:42,440
+Okay so there are a few more improvements
+
+87
+00:04:42,440 --> 00:04:44,030
+we're gonna make on this project.
+
+88
+00:04:44,030 --> 00:04:46,080
+The first improvement we're gonna make is we are
+
+89
+00:04:46,080 --> 00:04:48,900
+going to scrape all of the pages in the catalogue,
+
+90
+00:04:48,900 --> 00:04:50,230
+not just one.
+
+91
+00:04:50,230 --> 00:04:52,190
+That way we're gonna get a much larger collection.
+
+92
+00:04:52,190 --> 00:04:54,940
+So we're gonna look at how to scrape multiple pages,
+
+93
+00:04:54,940 --> 00:04:57,870
+how to go through different pages of this site.
+
+94
+00:04:59,060 --> 00:05:01,815
+And we can also add logging just so it's easier
+
+95
+00:05:01,815 --> 00:05:04,190
+to spot when things go wrong and also
+
+96
+00:05:04,190 --> 00:05:06,120
+what's going on in the programme.
+
+97
+00:05:06,120 --> 00:05:08,720
+I'd encourage you to try to do these too.
+
+98
+00:05:08,720 --> 00:05:10,870
+Particularly the logging because we've already
+
+99
+00:05:10,870 --> 00:05:11,703
+looked at logging.
+
+100
+00:05:11,703 --> 00:05:12,620
+You know it's quite simple.
+
+101
+00:05:12,620 --> 00:05:14,700
+All you have to do is import logging,
+
+102
+00:05:14,700 --> 00:05:17,430
+set up the logger, and start logging in different places.
+
+103
+00:05:17,430 --> 00:05:20,579
+I encourage you to do that and try to set up the
+
+104
+00:05:20,579 --> 00:05:22,820
+looking at different pages if you can.
+
+105
+00:05:22,820 --> 00:05:26,560
+But if not, just wait and we will do it here.
+
+106
+00:05:26,560 --> 00:05:29,280
+For the logging, one of the most important things
+
+107
+00:05:29,280 --> 00:05:32,590
+about logging and why I'm recommending that you do it
+
+108
+00:05:33,930 --> 00:05:38,340
+is deciding where to log and what to log.
+
+109
+00:05:39,396 --> 00:05:42,220
+Because you can log at every line and that's gonna
+
+110
+00:05:42,220 --> 00:05:44,580
+make your code look really ugly.
+
+111
+00:05:44,580 --> 00:05:48,470
+Or you can log too little and then you're not going
+
+112
+00:05:48,470 --> 00:05:49,900
+to get enough information.
+
+113
+00:05:51,170 --> 00:05:53,740
+Definitely keep an eye out for that.
+
+114
+00:05:53,740 --> 00:05:55,340
+Try to implement the logging yourself.
+
+115
+00:05:55,340 --> 00:05:58,200
+Then we'll go back in the video and do it here.
+
+116
+00:05:58,200 --> 00:06:00,920
+Just so you can see how much I would log
+
+117
+00:06:00,920 --> 00:06:02,020
+and where I would log.
+
+118
+00:06:03,310 --> 00:06:06,260
+That's it for this video, so we'll see you on the next one.
+

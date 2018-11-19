@@ -1,0 +1,232 @@
+1
+00:00:00,000 --> 00:00:01,490
+Instrutor: Ol, e bem vindo de volta.
+
+2
+00:00:01,490 --> 00:00:02,750
+Neste vdeo, vamos
+
+3
+00:00:02,750 --> 00:00:05,900
+configurar nosso projeto para redigir as cotaes.
+
+4
+00:00:05,900 --> 00:00:07,440
+Bem, eu criei um
+
+5
+00:00:07,440 --> 00:00:09,230
+novo projeto chamado Scraping Quotes.
+
+6
+00:00:09,230 --> 00:00:12,220
+O cdigo ao qual est vinculado na palestra, e
+
+7
+00:00:12,220 --> 00:00:15,330
+assim sinta-se  vontade para dar uma olhada nele
+
+8
+00:00:15,330 --> 00:00:19,090
+se quiser, mas eu recomendo que voc passe pelos poucos vdeos
+
+9
+00:00:19,090 --> 00:00:21,580
+aqui e antes de entrar no cdigo.
+
+10
+00:00:21,580 --> 00:00:22,610
+Porque a maneira como
+
+11
+00:00:22,610 --> 00:00:24,840
+vamos estruturar o aplicativo pode ser um pouco
+
+12
+00:00:24,840 --> 00:00:27,878
+diferente ou mais complicada do que outras coisas que fizemos antes.
+
+13
+00:00:27,878 --> 00:00:30,100
+Ns vamos criar um novo arquivo
+
+14
+00:00:30,100 --> 00:00:31,740
+Python, que ser o app.
+
+15
+00:00:32,640 --> 00:00:35,180
+Este ser o ponto de entrada da nossa aplicao.
+
+16
+00:00:35,180 --> 00:00:37,150
+Ns vamos estar executando este arquivo.
+
+17
+00:00:38,090 --> 00:00:40,830
+Ns tambm vamos criar alguns pacotes.
+
+18
+00:00:40,830 --> 00:00:43,940
+Ns vamos criar um pacote de pginas.
+
+19
+00:00:43,940 --> 00:00:45,510
+Ns vamos criar um
+
+20
+00:00:45,510 --> 00:00:48,810
+novo pacote tambm no topo chamado localizadores.
+
+21
+00:00:48,810 --> 00:00:51,570
+Assim, observe como nosso projeto de
+
+22
+00:00:51,570 --> 00:00:55,400
+cotaes de raspagem contm localizadores, pginas e aplicativo
+
+23
+00:00:55,400 --> 00:00:56,880
+e, finalmente, tambm
+
+24
+00:00:56,880 --> 00:00:59,380
+criaremos um pacote final chamado analisadores.
+
+25
+00:01:00,400 --> 00:01:03,330
+Ento agora ele contm trs pacotes
+
+26
+00:01:03,330 --> 00:01:05,940
+diferentes; localizadores, pginas, analisadores e aplicativo.
+
+27
+00:01:07,410 --> 00:01:10,210
+O objetivo destes  separar as
+
+28
+00:01:10,210 --> 00:01:13,000
+diferentes partes do nosso programa.
+
+29
+00:01:13,000 --> 00:01:14,923
+Os localizadores vo conter,
+
+30
+00:01:14,923 --> 00:01:17,830
+voc adivinhou, os localizadores de onde as
+
+31
+00:01:17,830 --> 00:01:21,410
+coisas esto no html, como podemos encontrar coisas.
+
+32
+00:01:21,410 --> 00:01:24,800
+As pginas vo conter o cdigo para usar
+
+33
+00:01:24,800 --> 00:01:28,920
+esses localizadores para encontrar coisas especficas em uma pgina.
+
+34
+00:01:28,920 --> 00:01:32,240
+E, finalmente, os analisadores so muito semelhantes s pginas,
+
+35
+00:01:32,240 --> 00:01:35,370
+mas para coisas especficas com as quais queremos trabalhar.
+
+36
+00:01:35,370 --> 00:01:36,830
+Agora tudo bem.
+
+37
+00:01:36,830 --> 00:01:39,340
+Ento vamos criar alguns arquivos.
+
+38
+00:01:39,340 --> 00:01:42,350
+Para os localizadores, vamos criar dois arquivos;
+
+39
+00:01:42,350 --> 00:01:43,650
+localizadores de cotao
+
+40
+00:01:45,350 --> 00:01:48,680
+e tambm um localizador de pginas de cotao.
+
+41
+00:01:51,020 --> 00:01:53,720
+Os localizadores de cotao so aqueles
+
+42
+00:01:53,720 --> 00:01:56,190
+localizadores usados quando queremos extrair
+
+43
+00:01:56,190 --> 00:01:58,810
+informaes de uma nica cotao.
+
+44
+00:01:58,810 --> 00:02:01,040
+Os localizadores de pginas de cotao so os
+
+45
+00:02:01,040 --> 00:02:03,670
+localizadores para quando queremos extrair as cotaes de uma pgina.
+
+46
+00:02:04,910 --> 00:02:09,010
+Nas pginas, vamos criar uma pgina de cotaes.
+
+47
+00:02:09,010 --> 00:02:11,630
+Isso conter algum cdigo relacionado  obteno de
+
+48
+00:02:11,630 --> 00:02:13,470
+dados da pgina de cotaes,
+
+49
+00:02:13,470 --> 00:02:15,870
+que  a pgina principal que vimos
+
+50
+00:02:15,870 --> 00:02:17,390
+anteriormente no vdeo anterior.
+
+51
+00:02:17,390 --> 00:02:20,460
+E, finalmente, os analisadores vo conter
+
+52
+00:02:20,460 --> 00:02:23,751
+uma citao, citao, e isso vai obter
+
+53
+00:02:23,751 --> 00:02:27,760
+uma marca, e ser capaz de encontrar dados
+
+54
+00:02:27,760 --> 00:02:29,860
+de cotao dentro dessa tag.
+
+55
+00:02:29,860 --> 00:02:32,500
+Ok, vamos passar para o prximo
+
+56
+00:02:32,500 --> 00:02:34,700
+vdeo onde vamos comear a
+
+57
+00:02:34,700 --> 00:02:39,500
+escrever alguns desses localizadores comparando e encontrando coisas usando o navegador.
+
+58
+00:02:39,500 --> 00:02:41,050
+Eu vou te ver no prximo vdeo.
+

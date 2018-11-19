@@ -1,0 +1,776 @@
+1
+00:00:00,200 --> 00:00:01,140
+Instrutor: Ol, e bem vindo de volta.
+
+2
+00:00:01,140 --> 00:00:04,290
+Neste vdeo estamos falando de herana.
+
+3
+00:00:04,290 --> 00:00:05,710
+E se isso te assusta
+
+4
+00:00:05,710 --> 00:00:07,980
+porque parece um pouco avanado, no se preocupe.
+
+5
+00:00:07,980 --> 00:00:10,170
+A herana  muito fcil de entender,
+
+6
+00:00:10,170 --> 00:00:12,340
+pelo menos em algum nvel, e vamos
+
+7
+00:00:12,340 --> 00:00:13,960
+falar sobre coisas mais avanadas
+
+8
+00:00:13,960 --> 00:00:15,770
+ medida que avanamos no curso.
+
+9
+00:00:15,770 --> 00:00:18,420
+Imagine que voc tenha essa aula de estudante.
+
+10
+00:00:18,420 --> 00:00:20,640
+Algo muito parecido com o que definimos antes.
+
+11
+00:00:20,640 --> 00:00:23,290
+Ele tem um mtodo init que recebe um nome
+
+12
+00:00:23,290 --> 00:00:25,600
+e uma escola e os atribui a duas
+
+13
+00:00:25,600 --> 00:00:27,870
+propriedades, alm de criar uma propriedade marks, que
+
+14
+00:00:27,870 --> 00:00:29,160
+ uma lista vazia.
+
+15
+00:00:30,410 --> 00:00:33,240
+E tambm tem um mtodo mdio; Eu sempre
+
+16
+00:00:33,240 --> 00:00:35,410
+quero cham-los de funes, um mtodo
+
+17
+00:00:35,410 --> 00:00:38,800
+de mdia que retorna a mdia de marcas de auto-pontos.
+
+18
+00:00:40,460 --> 00:00:43,870
+Agora, imagine que voc queira adicionar mais alguma funcionalidade
+
+19
+00:00:43,870 --> 00:00:46,030
+a outra classe, que pode ser
+
+20
+00:00:46,030 --> 00:00:48,440
+uma classe de alunos em atividade.
+
+21
+00:00:48,440 --> 00:00:50,250
+Um estudante que trabalha  exatamente
+
+22
+00:00:50,250 --> 00:00:53,430
+o mesmo que um estudante, mas tambm tem um salrio.
+
+23
+00:00:53,430 --> 00:00:54,263
+Vamos fazer isso.
+
+24
+00:00:57,204 --> 00:00:58,620
+Aqui est a turma do aluno
+
+25
+00:00:58,620 --> 00:01:00,410
+que trabalha e tambm tem um mtodo init.
+
+26
+00:01:01,810 --> 00:01:04,560
+Considerando que leva um nome, uma escola e um salrio.
+
+27
+00:01:08,080 --> 00:01:11,060
+Agora, o mesmo que acima, ns vamos ter auto nome
+
+28
+00:01:11,060 --> 00:01:14,085
+do mesmo nome, auto dot escola  igual a escola,
+
+29
+00:01:14,085 --> 00:01:16,840
+marcas auto-ponto  igual a lista vazia, e agora
+
+30
+00:01:16,840 --> 00:01:19,470
+uma nova linha auto-salrio  igual a salrio.
+
+31
+00:01:20,580 --> 00:01:23,903
+Sempre que voc est tentando coisas como esta
+
+32
+00:01:23,903 --> 00:01:27,583
+que  uma cpia exata de algo que voc
+
+33
+00:01:27,583 --> 00:01:31,230
+tem acima, voc deve saber que algo est errado.
+
+34
+00:01:31,230 --> 00:01:33,530
+Algo pode ser melhor,
+
+35
+00:01:33,530 --> 00:01:35,963
+particularmente em Python, onde
+
+36
+00:01:35,963 --> 00:01:39,620
+a duplicao no  to comum.
+
+37
+00:01:39,620 --> 00:01:42,650
+Sempre h maneiras de tornar seu cdigo menos duplicado.
+
+38
+00:01:44,381 --> 00:01:47,540
+Ns tambm temos que definir, 
+
+39
+00:01:48,798 --> 00:01:52,320
+claro, esse mtodo mdio, onde ele vai
+
+40
+00:01:52,320 --> 00:01:55,720
+devolver tudo como o conhecemos, assim.
+
+41
+00:01:57,130 --> 00:02:02,130
+Agora, se criarmos um estudante que trabalhe Rolf, que v para o MIT
+
+42
+00:02:02,770 --> 00:02:06,860
+e tenha um salrio de 15 pontos 50, poderemos, 
+
+43
+00:02:06,860 --> 00:02:09,780
+claro, imprimir o salrio de Rolf, e
+
+44
+00:02:10,990 --> 00:02:14,470
+isso dar ao salrio 15. 5
+
+45
+00:02:14,470 --> 00:02:16,550
+Observe como o Python descarta o ltimo
+
+46
+00:02:16,550 --> 00:02:18,650
+zero porque  um zero, e tudo bem.
+
+47
+00:02:19,570 --> 00:02:21,560
+Ento, novamente, nada de novo est acontecendo aqui
+
+48
+00:02:21,560 --> 00:02:22,790
+estudante de trabalho criou o
+
+49
+00:02:22,790 --> 00:02:25,120
+novo objeto em branco, colocou em si mesmo.
+
+50
+00:02:25,120 --> 00:02:26,930
+Rolf, MIT e 15. 50 foram
+
+51
+00:02:26,930 --> 00:02:29,540
+para o nome, escola e salrio, respectivamente.
+
+52
+00:02:29,540 --> 00:02:32,430
+E criamos quatro propriedades: auto-ponto,
+
+53
+00:02:32,430 --> 00:02:34,660
+auto-ponto, auto-ponto e auto-ponto.
+
+54
+00:02:34,660 --> 00:02:37,840
+E ns demos alguns valores: nome, escola e salrio.
+
+55
+00:02:37,840 --> 00:02:39,430
+Esses so os parmetros.
+
+56
+00:02:39,430 --> 00:02:42,790
+E ento a lista de marcas, a ser inicializada com.
+
+57
+00:02:42,790 --> 00:02:44,930
+Se ns quisssemos adicionar algumas marcas,
+
+58
+00:02:44,930 --> 00:02:48,075
+ns teramos que fazer Rolf dot marks dot
+
+59
+00:02:48,075 --> 00:02:49,720
+append 56, por exemplo.
+
+60
+00:02:51,530 --> 00:02:54,280
+E ento poderamos calcular a mdia dessas marcas.
+
+61
+00:02:55,570 --> 00:02:57,200
+Ento voc pode ver que
+
+62
+00:02:57,200 --> 00:02:59,810
+h muita duplicao entre nossos alunos, que tem nome,
+
+63
+00:02:59,810 --> 00:03:02,370
+escola e notas, e uma funo mdia, e nosso
+
+64
+00:03:02,370 --> 00:03:04,530
+aluno profissional, que  exatamente o mesmo.
+
+65
+00:03:04,530 --> 00:03:06,650
+A nica coisa que ns adicionamos  o salrio.
+
+66
+00:03:09,560 --> 00:03:13,700
+Ento, poderamos usar herana para remover
+
+67
+00:03:13,700 --> 00:03:15,440
+a duplicao.
+
+68
+00:03:16,570 --> 00:03:17,850
+Veja como vai ser.
+
+69
+00:03:17,850 --> 00:03:20,350
+Eu vou reimplementar a classe estudantil trabalhando
+
+70
+00:03:20,350 --> 00:03:23,100
+usando herana para reduzir a duplicao, ento vamos
+
+71
+00:03:24,137 --> 00:03:25,950
+falar sobre o que est acontecendo.
+
+72
+00:03:25,950 --> 00:03:28,050
+Ento, ns temos nossos alunos de
+
+73
+00:03:28,050 --> 00:03:32,160
+classe, e queremos fazer isso estender para a classe de estudantes.
+
+74
+00:03:32,160 --> 00:03:34,700
+O que isso vai significar 
+
+75
+00:03:34,700 --> 00:03:38,120
+que a turma do aluno em funcionamento se
+
+76
+00:03:38,120 --> 00:03:40,290
+tornar uma cpia exata do
+
+77
+00:03:40,290 --> 00:03:43,290
+aluno, mas poderemos modificar mtodos especficos, se quisermos.
+
+78
+00:03:43,290 --> 00:03:44,930
+A maneira como voc faz
+
+79
+00:03:44,930 --> 00:03:48,910
+isso  adicionar alguns colchetes no final e digitar no aluno.
+
+80
+00:03:48,910 --> 00:03:51,140
+Agora, estudante de trabalho  uma
+
+81
+00:03:51,140 --> 00:03:53,290
+turma que  filho do aluno.
+
+82
+00:03:53,290 --> 00:03:55,180
+Estende estudante.
+
+83
+00:03:57,130 --> 00:04:01,061
+Assim, podemos excluir o mtodo mdio.
+
+84
+00:04:01,061 --> 00:04:01,894
+(apito) Completamente
+
+85
+00:04:01,894 --> 00:04:02,727
+desaparecido.
+
+86
+00:04:02,727 --> 00:04:05,610
+Mas, estudante de trabalho ainda tem um
+
+87
+00:04:05,610 --> 00:04:08,660
+mtodo de mdia s no est l.
+
+88
+00:04:08,660 --> 00:04:12,200
+Agora  diretamente herdado do aluno.
+
+89
+00:04:12,200 --> 00:04:13,240
+Exatamente o mesmo.
+
+90
+00:04:13,240 --> 00:04:14,480
+Imagine que  uma cpia disso.
+
+91
+00:04:14,480 --> 00:04:15,410
+Nada mudou.
+
+92
+00:04:16,770 --> 00:04:18,832
+Ento, e o mtodo init, ento?
+
+93
+00:04:18,832 --> 00:04:20,840
+Ns temos nome e escola, que
+
+94
+00:04:20,840 --> 00:04:23,610
+so apenas cpias deles, no podemos simplesmente delet-los?
+
+95
+00:04:23,610 --> 00:04:25,230
+E apenas mantenha o salrio?
+
+96
+00:04:26,530 --> 00:04:28,200
+Isso seria timo.
+
+97
+00:04:28,200 --> 00:04:29,510
+Eu serei honesto.
+
+98
+00:04:29,510 --> 00:04:31,040
+Seria timo se pudssemos
+
+99
+00:04:31,040 --> 00:04:32,910
+fazer isso, mas infelizmente no.
+
+100
+00:04:32,910 --> 00:04:35,800
+Porque quando o aluno trabalha agora  chamado,
+
+101
+00:04:35,800 --> 00:04:37,840
+a mesma coisa acontece como antes.
+
+102
+00:04:37,840 --> 00:04:40,440
+E vazio, objeto em branco 
+
+103
+00:04:40,440 --> 00:04:45,440
+criado, dado a si mesmo, e agora o salrio  Rolf.
+
+104
+00:04:46,290 --> 00:04:49,074
+MIT e 15. 50 no tem nenhum
+
+105
+00:04:49,074 --> 00:04:51,810
+argumento correspondente, ento ns obtemos um erro: Tambm
+
+106
+00:04:51,810 --> 00:04:52,920
+pode argumentos posicionais
+
+107
+00:04:52,920 --> 00:04:54,190
+para chamada de construtor.
+
+108
+00:04:55,090 --> 00:04:57,640
+Ento no, voc no pode fazer isso infelizmente.
+
+109
+00:04:58,710 --> 00:05:01,040
+Mas o que voc pode fazer
+
+110
+00:05:01,040 --> 00:05:04,050
+agora  que voc tem esse objeto vazio
+
+111
+00:05:04,050 --> 00:05:06,580
+aqui, voc pode chamar o mtodo
+
+112
+00:05:06,580 --> 00:05:09,470
+init do aluno e faz-lo passar por
+
+113
+00:05:09,470 --> 00:05:12,140
+essa inicializao de auto-ponto, auto-ponto e auto-ponto.
+
+114
+00:05:12,140 --> 00:05:15,380
+A maneira como voc faz isso  um modo levemente confuso.
+
+115
+00:05:15,380 --> 00:05:16,390
+Voc diz super.
+
+116
+00:05:17,420 --> 00:05:20,140
+Super  a classe pai.
+
+117
+00:05:20,140 --> 00:05:21,780
+Neste caso, estudante.
+
+118
+00:05:22,640 --> 00:05:25,130
+E voc pode ento, esta  a nica
+
+119
+00:05:25,130 --> 00:05:26,970
+vez quando voc vai chamar o
+
+120
+00:05:26,970 --> 00:05:29,990
+mtodo init manualmente, nos dando um super, que  o
+
+121
+00:05:29,990 --> 00:05:32,569
+aluno da classe pai, ponto dunder init, abrir
+
+122
+00:05:32,569 --> 00:05:34,460
+e fechar colchetes, e aqui voc
+
+123
+00:05:34,460 --> 00:05:36,520
+vai colocar o nome e a escola.
+
+124
+00:05:39,630 --> 00:05:42,400
+Ento, o que est acontecendo  que
+
+125
+00:05:42,400 --> 00:05:45,310
+voc est apenas pulando para este mtodo init.
+
+126
+00:05:45,310 --> 00:05:48,030
+E eu ainda  o objeto atual com o qual
+
+127
+00:05:48,030 --> 00:05:48,870
+voc est lidando.
+
+128
+00:05:48,870 --> 00:05:51,310
+Esse  Rolf, esse estudante que trabalha.
+
+129
+00:05:52,860 --> 00:05:56,940
+Ento agora voc chama o mtodo init da classe pai.
+
+130
+00:05:56,940 --> 00:05:59,870
+Isso inicializa o nome, a escola e as marcas.
+
+131
+00:05:59,870 --> 00:06:01,040
+Ento voc volta aqui
+
+132
+00:06:01,040 --> 00:06:02,340
+e voc inicia o salrio.
+
+133
+00:06:03,480 --> 00:06:05,740
+E essa  uma forma muito mais concisa
+
+134
+00:06:05,740 --> 00:06:07,700
+de escrever sua turma de alunos que
+
+135
+00:06:07,700 --> 00:06:10,580
+trabalham, que  apenas uma extenso da turma de alunos.
+
+136
+00:06:10,580 --> 00:06:12,900
+Apenas adiciona uma nova propriedade a ela.
+
+137
+00:06:15,400 --> 00:06:17,950
+Observe como voc pode imprimir o
+
+138
+00:06:17,950 --> 00:06:20,250
+salrio de Rolf, mas voc tambm
+
+139
+00:06:20,250 --> 00:06:25,250
+pode fazer as marcas de pontos Rolf adicionando 57, as marcas de pontos
+
+140
+00:06:27,280 --> 00:06:31,320
+Rolf adicionando 99, e voc pode imprimir a mdia l.
+
+141
+00:06:31,320 --> 00:06:32,390
+Ah, eu pressionei salvar.
+
+142
+00:06:32,390 --> 00:06:33,223
+Eu sempre fao isso.
+
+143
+00:06:33,223 --> 00:06:34,320
+Me desculpe por isso.
+
+144
+00:06:34,320 --> 00:06:35,330
+Ento voc pode execut-lo.
+
+145
+00:06:35,330 --> 00:06:37,370
+E 78 ponto zero sai.
+
+146
+00:06:37,370 --> 00:06:39,460
+Isso  totalmente bom porque
+
+147
+00:06:39,460 --> 00:06:41,554
+isso significa que nosso aluno
+
+148
+00:06:41,554 --> 00:06:46,554
+que trabalha tem esse mtodo mdio definido aqui, e isso 
+
+149
+00:06:46,930 --> 00:06:48,500
+tudo de bom.
+
+150
+00:06:48,500 --> 00:06:50,670
+ apenas herdado da classe estudantil, ao
+
+151
+00:06:50,670 --> 00:06:52,370
+invs de ter que defini-lo.
+
+152
+00:06:54,470 --> 00:06:57,480
+Essa  a base da herana.
+
+153
+00:06:58,910 --> 00:07:03,910
+E a maneira de estender a aula 
+
+154
+00:07:04,280 --> 00:07:08,459
+que agora voc pode definir outra coisa,
+
+155
+00:07:08,459 --> 00:07:10,400
+como salrio semanal.
+
+156
+00:07:13,480 --> 00:07:16,090
+E isso vai devolver os
+
+157
+00:07:16,090 --> 00:07:20,110
+salrios do prprio ponto 37 pontos cinco.
+
+158
+00:07:20,110 --> 00:07:22,170
+Assim, o horrio normal de trabalho no
+
+159
+00:07:22,170 --> 00:07:23,970
+Reino Unido, 37 pontos cinco horas.
+
+160
+00:07:23,970 --> 00:07:27,600
+Ento agora voc pode imprimir o salrio semanal do Rolf dot,
+
+161
+00:07:27,600 --> 00:07:30,220
+e isso vai lhe dar o salrio de
+
+162
+00:07:30,220 --> 00:07:31,540
+Rolf 37. 5
+
+163
+00:07:34,010 --> 00:07:36,360
+Importante, se voc criar, eu vou adicionar
+
+164
+00:07:37,200 --> 00:07:39,510
+algumas linhas l, ento  um pouco
+
+165
+00:07:39,510 --> 00:07:40,360
+mais fcil de
+
+166
+00:07:40,360 --> 00:07:43,680
+ler, se voc criar Anna, sendo uma estudante normal, em
+
+167
+00:07:45,010 --> 00:07:47,890
+Oxford, observe como ela no recebe um salrio porque
+
+168
+00:07:47,890 --> 00:07:49,960
+o construtor do aluno  ainda
+
+169
+00:07:49,960 --> 00:07:50,793
+aqui em cima.
+
+170
+00:07:50,793 --> 00:07:52,180
+Esta classe ainda  totalmente vlida.
+
+171
+00:07:52,180 --> 00:07:54,390
+No deixa de ser til.
+
+172
+00:07:54,390 --> 00:07:55,760
+No toma um
+
+173
+00:07:55,760 --> 00:07:58,030
+salrio, no tem uma propriedade salarial.
+
+174
+00:07:58,030 --> 00:08:03,030
+Ento, agora, se voc fizer o salrio semanal de Anna, isso vai
+
+175
+00:08:03,590 --> 00:08:05,490
+lhe dar um erro.
+
+176
+00:08:05,490 --> 00:08:07,670
+E vai dizer que o objeto estudantil no
+
+177
+00:08:07,670 --> 00:08:09,400
+tem nenhum atributo de salrio semanal.
+
+178
+00:08:09,400 --> 00:08:13,560
+Esta funo, aqui, no est definida para o aluno.
+
+179
+00:08:13,560 --> 00:08:15,650
+S  definido no aluno que trabalha.
+
+180
+00:08:16,510 --> 00:08:18,430
+Isso vai de cima para baixo.
+
+181
+00:08:18,430 --> 00:08:21,690
+Estudante de trabalho recebe material do aluno, mas
+
+182
+00:08:21,690 --> 00:08:22,840
+no o contrrio.
+
+183
+00:08:22,840 --> 00:08:25,840
+O aluno no recebe nada do aluno que trabalha.
+
+184
+00:08:25,840 --> 00:08:27,540
+Ok, importante lembrar.
+
+185
+00:08:29,150 --> 00:08:30,440
+ isso para este vdeo.
+
+186
+00:08:30,440 --> 00:08:32,100
+Agora, no prximo vdeo,
+
+187
+00:08:32,100 --> 00:08:35,770
+vamos dar uma olhada no decorador da propriedade.
+
+188
+00:08:35,770 --> 00:08:38,140
+Ns no vamos falar sobre o que so
+
+189
+00:08:38,140 --> 00:08:39,800
+decoradores, mas o que vamos falar
+
+190
+00:08:39,800 --> 00:08:42,800
+ sobre o fato de termos esse salrio semanal aqui, e
+
+191
+00:08:42,800 --> 00:08:44,890
+ uma funo que no aceita argumentos
+
+192
+00:08:44,890 --> 00:08:45,960
+alm de si mesmo.
+
+193
+00:08:46,890 --> 00:08:50,510
+Ento, h alguma simplificao que podemos fazer aqui.
+
+194
+00:08:50,510 --> 00:08:52,660
+Vamos falar sobre isso no prximo vdeo.
+

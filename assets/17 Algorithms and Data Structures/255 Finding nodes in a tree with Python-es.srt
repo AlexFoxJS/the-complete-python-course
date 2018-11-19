@@ -1,0 +1,300 @@
+1
+00:00:00,220 --> 00:00:02,300
+Jos: Hola, y bienvenido de nuevo.
+
+2
+00:00:02,300 --> 00:00:03,510
+En este video, vamos
+
+3
+00:00:03,510 --> 00:00:06,203
+a ver cmo encontrar un nodo en nuestro rbol binario.
+
+4
+00:00:07,550 --> 00:00:08,660
+Encontrar un nodo
+
+5
+00:00:08,660 --> 00:00:10,760
+en realidad va a ser realmente
+
+6
+00:00:10,760 --> 00:00:13,220
+sencillo porque ya hemos analizado la adicin
+
+7
+00:00:13,220 --> 00:00:16,303
+de nodos, as que sabemos cmo navegar nuestro rbol.
+
+8
+00:00:18,470 --> 00:00:21,590
+Vamos a crear aqu un mtodo de bsqueda, y
+
+9
+00:00:21,590 --> 00:00:23,820
+vamos a buscar un valor especfico
+
+10
+00:00:23,820 --> 00:00:25,810
+que ser un nmero entero.
+
+11
+00:00:25,810 --> 00:00:29,490
+Tenga en cuenta que los valores de nuestros nodos son todos enteros, por lo
+
+12
+00:00:29,490 --> 00:00:31,010
+que el valor que estamos buscando
+
+13
+00:00:31,010 --> 00:00:32,710
+va a ser un nmero entero tambin.
+
+14
+00:00:33,980 --> 00:00:35,710
+Vamos a hacer casi
+
+15
+00:00:35,710 --> 00:00:37,990
+exactamente igual que el mtodo add.
+
+16
+00:00:37,990 --> 00:00:39,640
+Vamos a comenzar en la cabeza.
+
+17
+00:00:42,160 --> 00:00:45,750
+Y mientras existe, vamos a decir, si el valor que
+
+18
+00:00:45,750 --> 00:00:47,670
+estamos buscando, observe que este
+
+19
+00:00:47,670 --> 00:00:49,430
+es el parmetro aqu, es
+
+20
+00:00:49,430 --> 00:00:52,713
+exactamente igual al valor del nodo actual, ahora no
+
+21
+00:00:53,820 --> 00:00:55,360
+vamos a generar un error.
+
+22
+00:00:55,360 --> 00:00:57,830
+Vamos a decir "lo encontraste", verdad?
+
+23
+00:00:57,830 --> 00:00:59,570
+Este es el valor que estamos buscando.
+
+24
+00:00:59,570 --> 00:01:01,450
+Si existe, significa que estamos bien. El valor que estamos buscando es mayor que
+
+25
+00:01:01,450 --> 00:01:03,443
+As que vamos a devolver el nodo actual. Si el valor del nodo actual, tenemos que movernos
+
+26
+00:01:05,860 --> 00:01:07,510
+De otra manera. el. correctamente porque estamos buscando algo que debe
+
+27
+00:01:07,510 --> 00:01:08,650
+estar a la derecha de
+
+28
+00:01:10,170 --> 00:01:11,210
+este nodo actual.
+
+29
+00:01:11,210 --> 00:01:13,403
+Entonces diramos current_node = current_node. derecho.
+
+30
+00:01:14,950 --> 00:01:16,860
+Y, por ltimo, si no es igual a, y no
+
+31
+00:01:16,860 --> 00:01:18,690
+es mayor que, eso significa que debe ser menor que.
+
+32
+00:01:18,690 --> 00:01:22,440
+El nodo actual es current_node. izquierda.
+
+33
+00:01:22,440 --> 00:01:26,043
+Finalmente, si llegamos al
+
+34
+00:01:26,950 --> 00:01:30,500
+final del ciclo y no encontramos nada, vamos
+
+35
+00:01:30,500 --> 00:01:32,840
+a generar un error de bsqueda.
+
+36
+00:01:32,840 --> 00:01:34,983
+Voy a decir que
+
+37
+00:01:36,440 --> 00:01:39,500
+en el nodo con valor, no se encontr el valor.
+
+38
+00:01:39,500 --> 00:01:41,480
+Ahora, fjate cmo, aqu acabamos de
+
+39
+00:01:41,480 --> 00:01:43,840
+usar "else" dentro de este si elif
+
+40
+00:01:43,840 --> 00:01:47,343
+else porque el valor, la primera verificacin era el valor
+
+41
+00:01:48,190 --> 00:01:50,083
+igual al valor del nodo actual.
+
+42
+00:01:51,350 --> 00:01:54,440
+La segunda verificacin fue que el valor
+
+43
+00:01:54,440 --> 00:01:57,970
+es mayor que el valor del nodo actual.
+
+44
+00:01:57,970 --> 00:01:59,520
+Lo nico que queda es cuando el valor es
+
+45
+00:01:59,520 --> 00:02:00,820
+menor que el valor del nodo actual.
+
+46
+00:02:00,820 --> 00:02:02,330
+Entonces podemos usar "else". "Tambin podramos hacer
+
+47
+00:02:02,330 --> 00:02:03,810
+lo mismo aqu,
+
+48
+00:02:03,810 --> 00:02:05,660
+en nuestro complemento.
+
+49
+00:02:05,660 --> 00:02:08,480
+Entonces, una vez ms, si el valor del nodo es igual al valor actual del
+
+50
+00:02:08,480 --> 00:02:10,160
+nodo, generaremos un error.
+
+51
+00:02:10,160 --> 00:02:12,060
+Si es menor que, vamos a la izquierda.
+
+52
+00:02:12,060 --> 00:02:13,563
+Lo nico que queda es cuando no es igual a,
+
+53
+00:02:14,520 --> 00:02:15,958
+no menos que, eso significa que debe ser mayor que.
+
+54
+00:02:15,958 --> 00:02:19,000
+Nos movemos a la derecha.
+
+55
+00:02:19,000 --> 00:02:21,073
+Bueno?
+
+56
+00:02:21,940 --> 00:02:24,980
+As es como se encuentran los nodos en un rbol
+
+57
+00:02:24,980 --> 00:02:27,950
+binario, as que sigamos y volvamos a nuestra aplicacin. py e print
+
+58
+00:02:27,950 --> 00:02:28,783
+(rbol. find (11)), y
+
+59
+00:02:29,730 --> 00:02:30,563
+vemos que eso
+
+60
+00:02:31,430 --> 00:02:34,260
+imprime el nodo 11 que se encontr en nuestro rbol.
+
+61
+00:02:34,260 --> 00:02:38,100
+As que solo quera guiarte en la implementacin
+
+62
+00:02:38,100 --> 00:02:39,350
+de este rbol
+
+63
+00:02:42,300 --> 00:02:45,400
+binario porque es una pregunta frecuente en las entrevistas y, ya sabes,
+
+64
+00:02:45,400 --> 00:02:46,750
+en los desafos del cdigo.
+
+65
+00:02:49,410 --> 00:02:50,960
+Adems, es muy utilizado
+
+66
+00:02:50,960 --> 00:02:53,830
+en partes especficas del desarrollo de software,
+
+67
+00:02:53,830 --> 00:02:56,270
+por lo que es interesante saberlo.
+
+68
+00:02:56,270 --> 00:02:59,450
+Afortunadamente, disfrut aprendiendo acerca de esta estructura de datos
+
+69
+00:02:59,450 --> 00:03:02,770
+ms avanzada, as como de la complejidad y la
+
+70
+00:03:02,770 --> 00:03:04,060
+realizacin de bsquedas binarias.
+
+71
+00:03:04,060 --> 00:03:05,960
+Gracias por acompaarme, y nos vemos en el prximo video.
+
+72
+00:03:05,960 --> 00:03:07,800
+&nbsp;
+
+73
+00:03:07,800 --> 00:03:10,630
+&nbsp;
+
+74
+00:03:10,630 --> 00:03:15,630
+&nbsp;
+
+75
+00:03:15,680 --> 00:03:18,580
+&nbsp;
+

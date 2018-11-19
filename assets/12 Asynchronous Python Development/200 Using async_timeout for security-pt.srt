@@ -1,0 +1,148 @@
+1
+00:00:00,140 --> 00:00:01,140
+Jos: Ol, bem vindo de volta.
+
+2
+00:00:01,140 --> 00:00:04,980
+Apenas um aparte rpido para avis-lo de algo que
+
+3
+00:00:04,980 --> 00:00:06,830
+pode acontecer nesses programas assncronos.
+
+4
+00:00:07,880 --> 00:00:09,910
+Porque estamos rodando until_complete e
+
+5
+00:00:11,110 --> 00:00:13,890
+estamos reunindo todas as tarefas aqui, potencialmente
+
+6
+00:00:13,890 --> 00:00:17,130
+se uma tarefa levar muito tempo ou demorar
+
+7
+00:00:17,130 --> 00:00:21,850
+alguns minutos ou algumas horas para que o servidor responda, ns
+
+8
+00:00:21,850 --> 00:00:25,630
+queremos dizer, voc sabe , se demorar mais de
+
+9
+00:00:25,630 --> 00:00:28,260
+30 segundos, eu s quero encerrar
+
+10
+00:00:28,260 --> 00:00:31,210
+isso e trat-lo como um erro.
+
+11
+00:00:31,210 --> 00:00:33,610
+s vezes os servidores no lhe enviaro um erro,
+
+12
+00:00:33,610 --> 00:00:34,550
+eles simplesmente no
+
+13
+00:00:34,550 --> 00:00:37,850
+lhe enviaro nada e voc aguardar o contedo por um longo tempo.
+
+14
+00:00:37,850 --> 00:00:39,790
+Esse run_until-complete significa que o seu
+
+15
+00:00:39,790 --> 00:00:42,200
+programa no ser concludo at que todas
+
+16
+00:00:42,200 --> 00:00:44,700
+as tarefas tenham lhe dado alguma coisa.
+
+17
+00:00:45,980 --> 00:00:48,560
+Portanto, pode ser um pouco perigoso se voc
+
+18
+00:00:48,560 --> 00:00:53,560
+no tiver nada a dizer sobre o tempo limite aps o nmero X de segundos.
+
+19
+00:00:53,730 --> 00:00:56,660
+Aiohttp na ltima verso vem com
+
+20
+00:00:56,660 --> 00:00:59,050
+algo chamado async_timeout que voc
+
+21
+00:00:59,050 --> 00:01:00,870
+pode importar, async_timeout, que
+
+22
+00:01:02,190 --> 00:01:05,440
+voc pode usar como um tempo limite
+
+23
+00:01:05,440 --> 00:01:07,010
+em um ambiente assncrono.
+
+24
+00:01:07,010 --> 00:01:10,420
+Voc pode apenas dizer assncrono com async_timeout. tempo esgotado.
+
+25
+00:01:16,130 --> 00:01:19,480
+Talvez 10 segundos, 10 segundos  um nmero bastante
+
+26
+00:01:19,480 --> 00:01:20,510
+razovel, eu acho.
+
+27
+00:01:20,510 --> 00:01:24,550
+Ento, agora, se esta sesso. pegue leva mais de 10 segundos, ele
+
+28
+00:01:24,550 --> 00:01:26,820
+ser cancelado e uma exceo ser levantada.
+
+29
+00:01:26,820 --> 00:01:28,550
+E como eu disse, isso pode
+
+30
+00:01:28,550 --> 00:01:31,020
+ser muito til para quando algo demora muito tempo.
+
+31
+00:01:31,020 --> 00:01:33,230
+Para o Google, isso no vai ser um
+
+32
+00:01:33,230 --> 00:01:35,760
+problema, mas talvez para um livro de scraping e
+
+33
+00:01:35,760 --> 00:01:37,910
+negcios, poderia ser um pouco de um problema.
+
+34
+00:01:38,970 --> 00:01:40,710
+Ento,  isso para este vdeo, s
+
+35
+00:01:40,710 --> 00:01:42,920
+queria compartilhar com voc este async_timeout como algo que
+
+36
+00:01:42,920 --> 00:01:44,400
+existe e que voc pode usar.
+
+37
+00:01:44,400 --> 00:01:45,850
+Eu vejo voc no prximo.
+

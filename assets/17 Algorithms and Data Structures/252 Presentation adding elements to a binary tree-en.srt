@@ -1,0 +1,544 @@
+1
+00:00:00,120 --> 00:00:01,950
+<v Jose>Hi, and welcome back.</v>
+
+2
+00:00:01,950 --> 00:00:04,720
+In this video, we're going to look at adding new nodes
+
+3
+00:00:04,720 --> 00:00:06,770
+to a binary tree.
+
+4
+00:00:06,770 --> 00:00:10,793
+So this is the first step in constructing binary trees.
+
+5
+00:00:11,890 --> 00:00:15,500
+Adding to a binary tree is actually surprisingly simple,
+
+6
+00:00:15,500 --> 00:00:17,683
+in its sort of basic way.
+
+7
+00:00:18,980 --> 00:00:21,410
+We just have to make sure we add things
+
+8
+00:00:21,410 --> 00:00:23,713
+to the correct side of the tree.
+
+9
+00:00:24,750 --> 00:00:27,803
+For example, let's add the number five to this tree.
+
+10
+00:00:30,110 --> 00:00:32,710
+Notice that the tree here has a starting point,
+
+11
+00:00:32,710 --> 00:00:37,480
+what we call a head, or a root, of 14.
+
+12
+00:00:37,480 --> 00:00:41,840
+Then to the left it's got nine, nine has 13 to the right,
+
+13
+00:00:41,840 --> 00:00:44,810
+14 to the right has 22, and then 34.
+
+14
+00:00:44,810 --> 00:00:48,230
+We know where five should go, right, which is
+
+15
+00:00:48,230 --> 00:00:50,113
+to the left of nine.
+
+16
+00:00:51,390 --> 00:00:54,763
+But how do we tell Python to put it there?
+
+17
+00:00:56,290 --> 00:00:58,640
+We're gonna start with our new_node.
+
+18
+00:00:58,640 --> 00:01:00,370
+That is gonna be this node object.
+
+19
+00:01:00,370 --> 00:01:04,850
+A node object has three values, three properties.
+
+20
+00:01:04,850 --> 00:01:06,380
+One, which is value.
+
+21
+00:01:06,380 --> 00:01:09,310
+That's essentially the value we're trying to add,
+
+22
+00:01:09,310 --> 00:01:12,430
+and then it's got two other properties, left and right.
+
+23
+00:01:12,430 --> 00:01:14,960
+Those are the nodes that it has
+
+24
+00:01:14,960 --> 00:01:16,050
+to the left and to the right,
+
+25
+00:01:16,050 --> 00:01:18,510
+so we're starting with our new_node
+
+26
+00:01:18,510 --> 00:01:20,710
+that has nothing to the left, nothing to the right,
+
+27
+00:01:20,710 --> 00:01:24,170
+it's not even added yet, and a value of 5.
+
+28
+00:01:24,170 --> 00:01:26,939
+And we're also gonna start with our current_node,
+
+29
+00:01:26,939 --> 00:01:30,420
+which is gonna be the head of our tree.
+
+30
+00:01:30,420 --> 00:01:32,820
+Let's say the tree is self,
+
+31
+00:01:32,820 --> 00:01:35,313
+and the head is gonna be the node 14.
+
+32
+00:01:36,640 --> 00:01:41,570
+The first thing we must do is start a while loop.
+
+33
+00:01:41,570 --> 00:01:42,700
+We're going to start a while loop
+
+34
+00:01:42,700 --> 00:01:44,630
+because we're going to navigate
+
+35
+00:01:44,630 --> 00:01:46,610
+through potentially many nodes,
+
+36
+00:01:46,610 --> 00:01:49,403
+until we find the one that we wanna add to.
+
+37
+00:01:51,050 --> 00:01:52,400
+So we're gonna start a while loop,
+
+38
+00:01:52,400 --> 00:01:54,430
+and inside the while loop we're gonna say,
+
+39
+00:01:54,430 --> 00:01:56,363
+do we wanna go left or right?
+
+40
+00:01:58,120 --> 00:02:01,890
+So, if the new_node's value, which is five,
+
+41
+00:02:01,890 --> 00:02:04,150
+is less than the current_node's value,
+
+42
+00:02:04,150 --> 00:02:08,620
+which is 14, then we will wanna move left.
+
+43
+00:02:08,620 --> 00:02:11,750
+So, the first thing we do is add this if statement.
+
+44
+00:02:11,750 --> 00:02:16,080
+Is the new_node smaller than the current_node or RAT?
+
+45
+00:02:16,080 --> 00:02:20,320
+The answer is yes, so, yes.
+
+46
+00:02:20,320 --> 00:02:21,700
+What do we do?
+
+47
+00:02:21,700 --> 00:02:24,500
+We're gonna say, if the current_node,
+
+48
+00:02:24,500 --> 00:02:27,853
+which is 14, has a left node,
+
+49
+00:02:29,760 --> 00:02:33,310
+then we're gonna move to that node, okay?
+
+50
+00:02:33,310 --> 00:02:37,120
+So, if current_node.left is asking Python,
+
+51
+00:02:37,120 --> 00:02:42,120
+is the node 14, left node something other than none?
+
+52
+00:02:42,880 --> 00:02:45,240
+And at this point in time, it's yes,
+
+53
+00:02:45,240 --> 00:02:48,120
+because 14 has a left node, which is nine,
+
+54
+00:02:48,120 --> 00:02:49,240
+so what do we do?
+
+55
+00:02:49,240 --> 00:02:52,900
+We say current_node, which currently is 14,
+
+56
+00:02:52,900 --> 00:02:57,050
+is now gonna be equal to the current_node's left.
+
+57
+00:02:57,050 --> 00:03:00,723
+So we're essentially saying, move me to nine.
+
+58
+00:03:01,940 --> 00:03:03,290
+And that's what we do here.
+
+59
+00:03:04,630 --> 00:03:07,670
+Then, we go back to the top of the while loop.
+
+60
+00:03:07,670 --> 00:03:11,110
+So, current_node is now nine,
+
+61
+00:03:11,110 --> 00:03:13,613
+because we've set it to be the 14's left.
+
+62
+00:03:14,760 --> 00:03:16,160
+Once again, we ask ourselves,
+
+63
+00:03:16,160 --> 00:03:20,430
+is the new_node's value less than the current_node's value?
+
+64
+00:03:20,430 --> 00:03:23,620
+So new_node is five, current_node is nine,
+
+65
+00:03:23,620 --> 00:03:25,313
+so the answer to this is yes.
+
+66
+00:03:26,470 --> 00:03:31,100
+Then we're gonna ask ourselves, is there a left node
+
+67
+00:03:31,100 --> 00:03:31,953
+on current_node?
+
+68
+00:03:33,310 --> 00:03:35,940
+The answer's no, so we need a little bit more code here.
+
+69
+00:03:35,940 --> 00:03:39,860
+We can see that there is something not there,
+
+70
+00:03:39,860 --> 00:03:43,480
+so we are gonna add an else to our if.
+
+71
+00:03:43,480 --> 00:03:47,930
+So if the current_node's left exists, we move there.
+
+72
+00:03:47,930 --> 00:03:52,890
+If it doesn't exist, we say that the current_node's left
+
+73
+00:03:52,890 --> 00:03:56,033
+is now the new_node that we wanna add.
+
+74
+00:03:58,640 --> 00:04:03,640
+So, we put the five there, at the left of current_node,
+
+75
+00:04:04,580 --> 00:04:05,443
+and that's it.
+
+76
+00:04:06,630 --> 00:04:10,350
+Now nothing's missing there, but we don't want
+
+77
+00:04:10,350 --> 00:04:13,230
+to continue going through our loop.
+
+78
+00:04:13,230 --> 00:04:17,220
+Because we've added our new_node, that's it,
+
+79
+00:04:17,220 --> 00:04:18,140
+we are done.
+
+80
+00:04:18,140 --> 00:04:20,540
+So what we're gonna do here, is we're gonna add a break.
+
+81
+00:04:20,540 --> 00:04:23,510
+We looked at this early in the course.
+
+82
+00:04:23,510 --> 00:04:26,600
+A break is used to exit a loop.
+
+83
+00:04:26,600 --> 00:04:29,230
+So at this point, we set the left node
+
+84
+00:04:29,230 --> 00:04:32,460
+of nine to be the new_node,
+
+85
+00:04:32,460 --> 00:04:34,550
+that means we've added a node.
+
+86
+00:04:34,550 --> 00:04:38,490
+We wanna now stop going through our multiple nodes.
+
+87
+00:04:38,490 --> 00:04:41,053
+All we wanna do is now terminate, so we break.
+
+88
+00:04:42,960 --> 00:04:44,900
+Also something to take into consideration,
+
+89
+00:04:44,900 --> 00:04:47,780
+is what if the new_node's value
+
+90
+00:04:47,780 --> 00:04:50,820
+was not less than the current_node's value?
+
+91
+00:04:50,820 --> 00:04:52,100
+This if statement here,
+
+92
+00:04:52,100 --> 00:04:54,860
+we've got if new_node value is less than current_node value,
+
+93
+00:04:54,860 --> 00:04:56,360
+we go left,
+
+94
+00:04:56,360 --> 00:04:58,680
+but what if it's greater than the current_node's value?
+
+95
+00:04:58,680 --> 00:05:00,460
+We wanna go right.
+
+96
+00:05:00,460 --> 00:05:05,460
+So, we are gonna have an elif there to do just that.
+
+97
+00:05:05,550 --> 00:05:09,290
+Notice how now all the lefts have been changed to rights.
+
+98
+00:05:09,290 --> 00:05:10,260
+All that happens is,
+
+99
+00:05:10,260 --> 00:05:13,010
+if the new_node is greater than the current_node,
+
+100
+00:05:13,010 --> 00:05:16,860
+for example, let's say we were tryin' to add 21,
+
+101
+00:05:16,860 --> 00:05:19,010
+this would be true, so we would move right,
+
+102
+00:05:19,010 --> 00:05:21,590
+because it has a right node.
+
+103
+00:05:21,590 --> 00:05:23,370
+Then we would be at 22.
+
+104
+00:05:23,370 --> 00:05:25,100
+Once again we would go through our loop,
+
+105
+00:05:25,100 --> 00:05:27,670
+and now 21 would be less than 22,
+
+106
+00:05:27,670 --> 00:05:30,913
+so we would go in here and set 21 down here.
+
+107
+00:05:32,440 --> 00:05:34,840
+Hopefully, this makes some sense.
+
+108
+00:05:34,840 --> 00:05:35,950
+We're gonna look at some code,
+
+109
+00:05:35,950 --> 00:05:37,370
+and hopefully that'll help as well,
+
+110
+00:05:37,370 --> 00:05:40,453
+and sort of cement this knowledge.
+
+111
+00:05:41,620 --> 00:05:43,830
+And of course, something else that can happen
+
+112
+00:05:43,830 --> 00:05:46,740
+is that we try to add a node that has a value
+
+113
+00:05:46,740 --> 00:05:50,623
+that isn't less than or greater than a node.
+
+114
+00:05:51,520 --> 00:05:54,460
+That may happen if we try to add a new_node
+
+115
+00:05:54,460 --> 00:05:59,460
+that has a value exactly equal to an existing node.
+
+116
+00:05:59,670 --> 00:06:02,260
+So what we wanna do in that case is of course
+
+117
+00:06:02,260 --> 00:06:05,200
+to avoid duplicate elements.
+
+118
+00:06:05,200 --> 00:06:07,770
+As soon as your tree starts having duplicate elements,
+
+119
+00:06:07,770 --> 00:06:09,690
+you start running into some problems.
+
+120
+00:06:09,690 --> 00:06:12,780
+Do you put the node left or right?
+
+121
+00:06:12,780 --> 00:06:15,530
+So we don't want two of the same elements in a binary tree.
+
+122
+00:06:15,530 --> 00:06:18,140
+All we have to do is add another if statement there
+
+123
+00:06:18,140 --> 00:06:21,450
+at the top, saying raise a ValueError,
+
+124
+00:06:21,450 --> 00:06:22,960
+if the new_node's value is equal
+
+125
+00:06:22,960 --> 00:06:24,240
+to the current_node's value.
+
+126
+00:06:24,240 --> 00:06:28,210
+So as you go through the tree, if you encounter a situation
+
+127
+00:06:28,210 --> 00:06:30,470
+where the value you're tryin' to add is the same
+
+128
+00:06:30,470 --> 00:06:32,870
+as an existing element, you can raise an error,
+
+129
+00:06:32,870 --> 00:06:34,103
+or print something out.
+
+130
+00:06:36,130 --> 00:06:37,100
+That's it for this video.
+
+131
+00:06:37,100 --> 00:06:40,870
+I wanted to show you how to add new_nodes to a tree.
+
+132
+00:06:40,870 --> 00:06:42,910
+Now we're gonna go into some code,
+
+133
+00:06:42,910 --> 00:06:46,890
+and work on creating our binary tree class,
+
+134
+00:06:46,890 --> 00:06:50,100
+where we can find elements, add elements,
+
+135
+00:06:50,100 --> 00:06:54,500
+as well as print the tree out using our Inorder traversal.
+
+136
+00:06:54,500 --> 00:06:55,450
+I'll see you there.
+

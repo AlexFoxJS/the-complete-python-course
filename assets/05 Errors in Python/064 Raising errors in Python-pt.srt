@@ -1,0 +1,896 @@
+1
+00:00:00,340 --> 00:00:01,490
+-: Ol, e bem vindo de volta.
+
+2
+00:00:01,490 --> 00:00:04,740
+Neste vdeo, estamos analisando o aumento de erros no Python.
+
+3
+00:00:04,740 --> 00:00:07,640
+Na ltima palestra, mostrei a sintaxe rapidamente, mas
+
+4
+00:00:07,640 --> 00:00:09,780
+vamos repetir isso neste vdeo e
+
+5
+00:00:09,780 --> 00:00:12,530
+dar alguns exemplos para que voc saiba em
+
+6
+00:00:12,530 --> 00:00:15,090
+quais cenrios voc deve estar causando erros.
+
+7
+00:00:15,090 --> 00:00:16,710
+E tambm, vou apresentar uma nova
+
+8
+00:00:16,710 --> 00:00:19,260
+parte da sintaxe do Python que acho muito legal.
+
+9
+00:00:19,260 --> 00:00:21,550
+Ento, vamos clicar com o boto direito em nosso projeto
+
+10
+00:00:21,550 --> 00:00:24,370
+que acabamos de criar em pyshon e criar um novo arquivo em Python.
+
+11
+00:00:24,370 --> 00:00:26,910
+E mais uma vez vou chamar de app. py.
+
+12
+00:00:26,910 --> 00:00:29,740
+Este  um nome muito popular para o seu primeiro ou
+
+13
+00:00:29,740 --> 00:00:32,370
+o seu arquivo mais importante em Python que voc vai executar.
+
+14
+00:00:32,370 --> 00:00:34,750
+Ento voc pode clicar com o boto direito do mouse e execut-lo.
+
+15
+00:00:34,750 --> 00:00:38,580
+Normalmente, esse arquivo seria chamado de app. py ou executar. py,  apenas um
+
+16
+00:00:39,810 --> 00:00:43,160
+nome para o seu arquivo principal e mais importante.
+
+17
+00:00:44,350 --> 00:00:47,700
+Digamos que tenhamos um cdigo para uma garagem.
+
+18
+00:00:49,130 --> 00:00:51,850
+Ele armazena carros e voc pode adicionar carros a ele.
+
+19
+00:00:51,850 --> 00:00:56,130
+Vamos definir uma garagem de classe que tenha um mtodo
+
+20
+00:00:57,170 --> 00:01:01,770
+init e que seja auto-definida. carros para serem chamados de carros.
+
+21
+00:01:01,770 --> 00:01:04,030
+Desculpe, ser igual a uma lista vazia.
+
+22
+00:01:04,030 --> 00:01:08,010
+A propsito, observe como, na tentativa de reduzir
+
+23
+00:01:08,010 --> 00:01:11,790
+qualquer erro de indentao ou tabulao, eu disse
+
+24
+00:01:11,790 --> 00:01:16,690
+ao pyshon para me mostrar qualquer caractere oculto ou caracteres invisveis.
+
+25
+00:01:16,690 --> 00:01:19,660
+Voc tem esses pequenos pontos pequenos que
+
+26
+00:01:19,660 --> 00:01:23,650
+voc mal consegue ver sem estar em um vdeo.
+
+27
+00:01:23,650 --> 00:01:26,160
+Voc certamente no pode v-los muito bem em vdeo,
+
+28
+00:01:26,160 --> 00:01:28,040
+mas voc tambm tem essas linhas aqui.
+
+29
+00:01:28,040 --> 00:01:29,810
+Ento voc tem esses pontos, que so muito
+
+30
+00:01:29,810 --> 00:01:32,040
+pequenos, eu vou ampliar o vdeo s para que voc
+
+31
+00:01:32,040 --> 00:01:33,820
+possa ver, e voc tem essa linha aqui.
+
+32
+00:01:33,820 --> 00:01:37,240
+A linha informa onde um nvel de recuo
+
+33
+00:01:38,420 --> 00:01:40,300
+comea ou onde  mantido.
+
+34
+00:01:40,300 --> 00:01:43,020
+Os pontos mostram os espaos, ento voc sabe que
+
+35
+00:01:43,020 --> 00:01:44,550
+no so guias, so espaos.
+
+36
+00:01:46,194 --> 00:01:49,010
+Portanto, se adicionarmos outra linha aqui, observe
+
+37
+00:01:50,680 --> 00:01:53,980
+como agora temos uma linha cinza de trs
+
+38
+00:01:53,980 --> 00:01:57,480
+linhas e trs linhas que nos informa que o
+
+39
+00:01:57,480 --> 00:01:59,780
+recuo  mantido por tudo isso.
+
+40
+00:02:02,430 --> 00:02:04,920
+Ento essa garagem tem um mtodo init.
+
+41
+00:02:04,920 --> 00:02:06,860
+Tem um mtodo len.
+
+42
+00:02:07,910 --> 00:02:11,220
+Isso retorna len auto. carros.
+
+43
+00:02:12,210 --> 00:02:14,560
+E tambm tem um mtodo add_car
+
+44
+00:02:14,560 --> 00:02:18,070
+que inclui um carro que vamos adicionar como argumento.
+
+45
+00:02:18,070 --> 00:02:21,550
+No entanto, ainda no tivemos a chance de trabalhar muito nisso, ento
+
+46
+00:02:21,550 --> 00:02:24,030
+o que vamos fazer  imprimir: "Este mtodo 
+
+47
+00:02:24,030 --> 00:02:26,680
+um trabalho em andamento. "Este obviamente no 
+
+48
+00:02:28,320 --> 00:02:30,130
+o jeito certo de faz-lo,
+
+49
+00:02:30,130 --> 00:02:33,970
+como voc sabe agora, mas ento vamos dizer que estamos usando
+
+50
+00:02:35,500 --> 00:02:37,920
+esta garagem, ento vamos dizer que a
+
+51
+00:02:37,920 --> 00:02:42,140
+garagem ford  garagem, e depois ford. add_car Fiesta E ento
+
+52
+00:02:44,010 --> 00:02:45,680
+ns queremos imprimir
+
+53
+00:02:45,680 --> 00:02:48,470
+o len de ford.
+
+54
+00:02:50,430 --> 00:02:54,000
+Agora, esse mtodo aqui vai imprimir algo na tela, mas
+
+55
+00:02:54,000 --> 00:02:56,550
+se no estivssemos realmente prestando ateno, se
+
+56
+00:02:56,550 --> 00:03:00,420
+estivssemos, por exemplo, salvando essa coisa aqui em um arquivo ou
+
+57
+00:03:00,420 --> 00:03:03,150
+em um banco de dados, podemos no perceber
+
+58
+00:03:03,150 --> 00:03:06,710
+que isso est imprimindo algo para fora, ns apenas veramos
+
+59
+00:03:06,710 --> 00:03:08,780
+que isso  zero toda vez.
+
+60
+00:03:08,780 --> 00:03:09,690
+Vamos executar nosso aplicativo.
+
+61
+00:03:13,080 --> 00:03:14,420
+E como voc pode ver aqui,
+
+62
+00:03:14,420 --> 00:03:15,720
+ele diz: "Esse mtodo  um
+
+63
+00:03:15,720 --> 00:03:18,030
+trabalho em andamento". Primeiro de tudo, e depois diz apenas zero.
+
+64
+00:03:18,030 --> 00:03:20,940
+No importa quantos carros adicionemos, tudo o que veremos :
+
+65
+00:03:20,940 --> 00:03:22,460
+"Este mtodo  um trabalho
+
+66
+00:03:22,460 --> 00:03:23,780
+em andamento" Repetidas vezes.
+
+67
+00:03:23,780 --> 00:03:26,340
+E se estivssemos salvando esse tamanho em um banco de
+
+68
+00:03:26,340 --> 00:03:29,830
+dados ou apenas em um arquivo ou em algum lugar, seria sempre zero.
+
+69
+00:03:29,830 --> 00:03:31,880
+Se voc execut-lo, ento voc pode se perguntar: "Ei, o
+
+70
+00:03:31,880 --> 00:03:33,430
+que est acontecendo aqui? "E ento
+
+71
+00:03:33,430 --> 00:03:34,610
+voc ter que executar
+
+72
+00:03:34,610 --> 00:03:37,940
+o programa manualmente assim em PyCharm para ver as impresses,
+
+73
+00:03:37,940 --> 00:03:40,520
+e ento voc ver" Ah, ok este mtodo,
+
+74
+00:03:40,520 --> 00:03:44,330
+este cdigo no est funcionando ainda. "Ento, em vez disso,
+
+75
+00:03:44,330 --> 00:03:47,740
+ claro, podemos gerar um erro.
+
+76
+00:03:47,740 --> 00:03:50,230
+Podemos aumentar e tudo que voc faz
+
+77
+00:03:51,810 --> 00:03:55,040
+ aumentar e, em seguida, digite um NotImplementedError.
+
+78
+00:03:56,200 --> 00:03:59,440
+E ento voc tem colchetes, ento voc est criando
+
+79
+00:03:59,440 --> 00:04:02,380
+uma nova instncia NotImplementedError, esta  uma classe,
+
+80
+00:04:02,380 --> 00:04:03,570
+voc est criando
+
+81
+00:04:03,570 --> 00:04:06,970
+um novo objeto do tipo NotImplementedError, e voc est aumentando isso.
+
+82
+00:04:06,970 --> 00:04:09,550
+Dentro dos suportes, voc pode colocar uma mensagem pequena, Ns
+
+83
+00:04:10,970 --> 00:04:15,970
+vamos dizer, "Ns no podemos adicionar carros  garagem ainda. "Agora, quando voc executar o aplicativo,
+
+84
+00:04:16,450 --> 00:04:18,910
+o que eu vou fazer, pressionando
+
+85
+00:04:18,910 --> 00:04:22,890
+no topo aqui, voc recebe o seu bom rastro de volta.
+
+86
+00:04:22,890 --> 00:04:23,770
+Em seguida, diz: "NotImplementedError:
+
+87
+00:04:23,770 --> 00:04:27,270
+Ainda no podemos adicionar carros  garagem. "Ento ele diz
+
+88
+00:04:27,270 --> 00:04:30,030
+onde esse erro aconteceu.
+
+89
+00:04:30,030 --> 00:04:33,100
+Levante NotImplementedError aqui, fizemos manualmente.
+
+90
+00:04:33,960 --> 00:04:38,510
+Ele diz a linha 9, em add_car, ento essa  a linha 9 do nosso
+
+91
+00:04:38,510 --> 00:04:40,190
+cdigo dentro da funo add_car.
+
+92
+00:04:41,130 --> 00:04:42,880
+Agora, onde esta funo foi chamada?
+
+93
+00:04:42,880 --> 00:04:47,260
+Onde essa funo originalmente aconteceu?
+
+94
+00:04:47,260 --> 00:04:49,520
+Na linha 13, aqui
+
+95
+00:04:49,520 --> 00:04:52,100
+e vau. add_car Fiesta Ento, como voc
+
+96
+00:04:52,100 --> 00:04:54,700
+pode ver, o erro aconteceu aqui, dentro desta funo Esta
+
+97
+00:04:54,700 --> 00:04:55,940
+funo foi chamada aqui.
+
+98
+00:04:55,940 --> 00:04:59,280
+Por isso, ele informa todas as funes e
+
+99
+00:04:59,280 --> 00:05:02,500
+partes do arquivo onde esse erro passou.
+
+100
+00:05:02,500 --> 00:05:06,650
+De ser levantado at atingir o nvel do arquivo.
+
+101
+00:05:06,650 --> 00:05:08,890
+Ento so dois lugares agora.
+
+102
+00:05:09,940 --> 00:05:12,150
+Ento isso  muito melhor, porque agora, quando rodarmos o programa,
+
+103
+00:05:12,150 --> 00:05:14,050
+ele vai falhar, no vamos salvar nada no banco
+
+104
+00:05:14,050 --> 00:05:15,220
+de dados, e vamos dizer: "Ah,
+
+105
+00:05:15,220 --> 00:05:18,090
+tudo bem, ele caiu, vamos investigar. "Ns veramos
+
+106
+00:05:18,090 --> 00:05:21,080
+que um NotImplementedError foi gerado.
+
+107
+00:05:21,080 --> 00:05:22,230
+E isso  tudo de bom.
+
+108
+00:05:24,870 --> 00:05:26,050
+Ento  assim que voc levanta um erro.
+
+109
+00:05:26,050 --> 00:05:28,970
+Voc usa uma palavra chave, ento voc cria um novo objeto,
+
+110
+00:05:28,970 --> 00:05:31,910
+voc pode colocar algo dentro dos parnteses que ser a mensagem.
+
+111
+00:05:33,120 --> 00:05:36,010
+Digamos que ns adicionemos outra classe.
+
+112
+00:05:36,950 --> 00:05:39,540
+Isso vai ser uma classe de tipo carro.
+
+113
+00:05:41,870 --> 00:05:44,010
+E isso  fazer uma marca
+
+114
+00:05:47,330 --> 00:05:48,840
+e um modelo como parmetros.
+
+115
+00:05:51,880 --> 00:05:55,210
+E ento tambm vai ter uma funo repr, claro,
+
+116
+00:05:55,210 --> 00:05:57,510
+porque voc sempre quer essas coisas.
+
+117
+00:05:57,510 --> 00:06:00,380
+E vai devolver um
+
+118
+00:06:00,380 --> 00:06:04,270
+carro sozinho. fazer e auto. modelo assim.
+
+119
+00:06:05,530 --> 00:06:07,210
+Ento isso  apenas uma representao de um carro.
+
+120
+00:06:07,210 --> 00:06:08,930
+Lembre-se da funo repr dunder,
+
+121
+00:06:10,480 --> 00:06:12,320
+voc pode imprimir o objeto
+
+122
+00:06:12,320 --> 00:06:15,030
+carro e imprimir algo parecido com isso.
+
+123
+00:06:15,030 --> 00:06:15,863
+OK.
+
+124
+00:06:17,550 --> 00:06:21,600
+Agora, a funo add_car aqui deve aceitar apenas
+
+125
+00:06:22,990 --> 00:06:24,210
+o parmetro
+
+126
+00:06:25,320 --> 00:06:28,390
+que  um objeto de carro.
+
+127
+00:06:29,690 --> 00:06:30,900
+Ento, como voc faz isso?
+
+128
+00:06:31,790 --> 00:06:33,870
+Bem bastante simples, na
+
+129
+00:06:33,870 --> 00:06:37,960
+verdade, existe uma funo embutida em python chamada isinstance.
+
+130
+00:06:39,750 --> 00:06:44,750
+Isistance informa se a varivel que voc fornece  uma instncia
+
+131
+00:06:45,140 --> 00:06:47,540
+do tipo que voc fornece.
+
+132
+00:06:47,540 --> 00:06:49,370
+Ento esta  a varivel, carro.
+
+133
+00:06:49,370 --> 00:06:52,320
+Esse  o tipo, que  a classe Car com capital C.
+
+134
+00:06:53,350 --> 00:06:58,350
+Ento, se no for isinstance, ento se o carro no for uma instncia do
+
+135
+00:06:58,520 --> 00:07:01,070
+Car, vamos gerar um erro de tipo.
+
+136
+00:07:01,070 --> 00:07:04,280
+Ns diremos: "Tentamos adicionar um nome
+
+137
+00:07:05,780 --> 00:07:07,630
+de" classe de
+
+138
+00:07:07,630 --> 00:07:08,480
+carro "
+
+139
+00:07:10,160 --> 00:07:12,010
+garagem", mas voc
+
+140
+00:07:12,010 --> 00:07:13,040
+s pode
+
+141
+00:07:14,130 --> 00:07:17,250
+"adicionar objetos Car. "Ento  um pouco
+
+142
+00:07:17,250 --> 00:07:19,150
+mais uma mensagem l.
+
+143
+00:07:20,390 --> 00:07:23,010
+E tudo que fiz foi formatado na corda e
+
+144
+00:07:23,010 --> 00:07:25,050
+no carro. _classe_. _name_
+
+145
+00:07:25,050 --> 00:07:29,210
+Esse  o nome da classe da varivel.
+
+146
+00:07:29,210 --> 00:07:32,780
+Ento, se isso fosse uma string, isso imprimiria str.
+
+147
+00:07:32,780 --> 00:07:33,960
+Se esta fosse
+
+148
+00:07:33,960 --> 00:07:37,130
+uma aula, se fosse um carro, imprimiria o carro.
+
+149
+00:07:38,370 --> 00:07:40,870
+Este  apenas um bom pedao de
+
+150
+00:07:40,870 --> 00:07:43,720
+construo que voc pode acessar para praticamente qualquer varivel.
+
+151
+00:07:43,720 --> 00:07:45,680
+Isso lhe d a classe da varivel,
+
+152
+00:07:45,680 --> 00:07:48,200
+e isso lhe d o nome da classe.
+
+153
+00:07:48,200 --> 00:07:50,090
+Ento, estamos tentando adicionar isso  garagem,
+
+154
+00:07:50,090 --> 00:07:52,130
+mas voc s pode adicionar objetos de carro.
+
+155
+00:07:52,130 --> 00:07:53,340
+E ento, claro,
+
+156
+00:07:53,340 --> 00:07:55,810
+no vamos lanar um erro NotImplememntedError.
+
+157
+00:07:55,810 --> 00:08:00,020
+Agora aqui podemos dizer eu. carros. acrescentar (carro) E voc pode se
+
+158
+00:08:00,020 --> 00:08:01,570
+perguntar: "Bem, por que voc" no coloca
+
+159
+00:08:01,570 --> 00:08:03,360
+isso em outra coisa? "Voc
+
+160
+00:08:03,360 --> 00:08:04,260
+no precisa.
+
+161
+00:08:05,120 --> 00:08:08,210
+Se o carro no  uma instncia da classe Car, ns
+
+162
+00:08:08,210 --> 00:08:09,530
+vamos levantar o erro, e
+
+163
+00:08:09,530 --> 00:08:11,190
+isso vai quebrar o nosso programa.
+
+164
+00:08:11,190 --> 00:08:14,560
+Ns nunca vamos alcanar essa linha se isso acontecer.
+
+165
+00:08:14,560 --> 00:08:18,760
+Se, no entanto,  uma instncia, no vai entrar aqui,
+
+166
+00:08:18,760 --> 00:08:20,590
+e  s ir aqui.
+
+167
+00:08:20,590 --> 00:08:22,730
+Ento voc no precisa de mais
+
+168
+00:08:22,730 --> 00:08:25,100
+nada, porque o nico caminho - existem
+
+169
+00:08:25,100 --> 00:08:26,270
+apenas dois caminhos.
+
+170
+00:08:26,270 --> 00:08:29,700
+Um em que isso no  executado porque voc gerou o erro e o
+
+171
+00:08:29,700 --> 00:08:31,220
+outro onde isso  executado, e
+
+172
+00:08:31,220 --> 00:08:33,460
+ a que voc deseja que ele seja executado.
+
+173
+00:08:33,460 --> 00:08:34,750
+Ento isso  suficiente.
+
+174
+00:08:35,970 --> 00:08:40,850
+Ento, mais uma vez, vamos tentar adicionar esse carro de seqncia de caracteres.
+
+175
+00:08:42,150 --> 00:08:44,730
+E observe como agora, recebemos um bom trao aqui
+
+176
+00:08:44,730 --> 00:08:48,390
+que diz "tentei adicionar um str na garagem", mas voc s pode
+
+177
+00:08:48,390 --> 00:08:50,280
+adicionar objetos Car. "E eu acho
+
+178
+00:08:51,276 --> 00:08:53,630
+que  uma mensagem de erro bem legal.
+
+179
+00:08:53,630 --> 00:08:55,100
+Ento o que voc pode fazer?
+
+180
+00:08:55,100 --> 00:08:59,220
+Bem, voc pode criar um novo objeto de carro.
+
+181
+00:08:59,220 --> 00:09:03,250
+Vamos dizer carro, este vai ser um Ford Fiesta,
+
+182
+00:09:03,250 --> 00:09:06,610
+e ento voc vai adicionar aquele carro, que
+
+183
+00:09:06,610 --> 00:09:10,070
+ um objeto de carro, na funo add_car.
+
+184
+00:09:10,070 --> 00:09:14,480
+Novamente, o valor da varivel car  um objeto Car.
+
+185
+00:09:14,480 --> 00:09:16,050
+E  isso que voc est
+
+186
+00:09:16,050 --> 00:09:17,860
+teleportando para essa varivel de carro.
+
+187
+00:09:20,060 --> 00:09:22,680
+Portanto, o valor da varivel car agora
+
+188
+00:09:22,680 --> 00:09:25,830
+est sendo atribudo a essa varivel de carro aqui.
+
+189
+00:09:25,830 --> 00:09:29,140
+E ento voc vai usar isso aqui dentro.
+
+190
+00:09:29,140 --> 00:09:30,850
+Ento agora podemos execut-lo.
+
+191
+00:09:30,850 --> 00:09:31,870
+E tudo funciona.
+
+192
+00:09:31,870 --> 00:09:34,240
+Ns podemos imprimir o len de ford.
+
+193
+00:09:35,120 --> 00:09:37,280
+E voc ver que um  impresso, o
+
+194
+00:09:37,280 --> 00:09:38,350
+que  muito bom.
+
+195
+00:09:40,270 --> 00:09:42,470
+Isso est gerando erros no Python.
+
+196
+00:09:42,470 --> 00:09:43,800
+ muito simples.
+
+197
+00:09:43,800 --> 00:09:47,240
+Tudo que voc precisa fazer , quando voc quer que um
+
+198
+00:09:47,240 --> 00:09:51,860
+erro acontea, crie um objeto, lembre-se dos parnteses, e dentro dos parnteses, se voc
+
+199
+00:09:51,860 --> 00:09:54,620
+quiser,  totalmente opcional, voc pode colocar uma mensagem
+
+200
+00:09:54,620 --> 00:09:57,800
+legal para quando o erro erro  levantado, a pessoa
+
+201
+00:09:57,800 --> 00:10:00,930
+que est escrevendo o cdigo sabe o que aconteceu.
+
+202
+00:10:02,350 --> 00:10:05,220
+Erros so mais teis para desenvolvedores.
+
+203
+00:10:05,220 --> 00:10:06,730
+Claro, se seus usurios - se
+
+204
+00:10:06,730 --> 00:10:08,450
+algum estava baixando esse cdigo pela internet
+
+205
+00:10:08,450 --> 00:10:11,150
+dizendo: "Eu vou dirigir minha garagem. " claro que isso
+
+206
+00:10:11,150 --> 00:10:12,500
+ um pouco bsico
+
+207
+00:10:12,500 --> 00:10:15,950
+para isso, mas se algum estava baixando seu cdigo e o
+
+208
+00:10:15,950 --> 00:10:19,020
+usando, eles encontram um erro de tipo, podem no
+
+209
+00:10:19,020 --> 00:10:21,040
+ser muito teis para eles porque
+
+210
+00:10:21,040 --> 00:10:23,520
+no dizem nada a eles, no so desenvolvedores.
+
+211
+00:10:23,520 --> 00:10:26,040
+Portanto, os erros so mais teis para desenvolvedores.
+
+212
+00:10:26,040 --> 00:10:28,470
+Quando voc est escrevendo cdigo, ou quando algum
+
+213
+00:10:28,470 --> 00:10:30,900
+est ajudando voc a escrever cdigo, trabalhar em
+
+214
+00:10:31,760 --> 00:10:34,450
+equipe, ter erros legais pode ser realmente til, porque
+
+215
+00:10:34,450 --> 00:10:37,200
+quando voc cometer um erro ou fizer algo incorretamente,
+
+216
+00:10:37,200 --> 00:10:40,390
+voc receber um erro rapidamente e Conseguirei consertar isso.
+
+217
+00:10:40,390 --> 00:10:42,550
+Se voc no obtiver erros e, em
+
+218
+00:10:42,550 --> 00:10:45,820
+vez disso, imprimir as coisas como fizemos anteriormente, talvez nunca descubra
+
+219
+00:10:45,820 --> 00:10:48,380
+que isso no est funcionando at voc ver que
+
+220
+00:10:48,380 --> 00:10:50,640
+o programa no faz o que estava esperando.
+
+221
+00:10:50,640 --> 00:10:52,860
+Ento, eleve erros, use-os.
+
+222
+00:10:52,860 --> 00:10:54,810
+Eles sero seus melhores amigos em pouco tempo.
+
+223
+00:10:55,980 --> 00:10:58,400
+Ento  isso para este vdeo, levantando erros no Python.
+
+224
+00:10:58,400 --> 00:10:59,850
+Eu vejo voc no prximo.
+

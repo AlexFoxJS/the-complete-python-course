@@ -1,0 +1,360 @@
+1
+00:00:00,120 --> 00:00:01,330
+Jos: Hola, y bienvenido de nuevo.
+
+2
+00:00:01,330 --> 00:00:04,670
+Quera decirte en este video cmo iniciar sesin en un archivo y
+
+3
+00:00:04,670 --> 00:00:05,800
+tambin un par de
+
+4
+00:00:05,800 --> 00:00:07,980
+cosas sobre la estructura de estos registradores.
+
+5
+00:00:08,850 --> 00:00:11,730
+Para iniciar sesin en un archivo, es muy sencillo.
+
+6
+00:00:11,730 --> 00:00:14,490
+Todo lo que tiene que hacer es
+
+7
+00:00:15,330 --> 00:00:18,640
+en este BasicConfig aqu, agregue otro argumento llamado filename.
+
+8
+00:00:18,640 --> 00:00:22,840
+Y esto puede ser, por ejemplo, registros. txt, muy simple.
+
+9
+00:00:22,840 --> 00:00:26,350
+Usted hace esto, ejecuta su aplicacin y luego ve registros. txt aqu, y
+
+10
+00:00:26,350 --> 00:00:28,700
+contiene tus registros.
+
+11
+00:00:28,700 --> 00:00:30,730
+Por lo tanto, cuando inicie sesin en
+
+12
+00:00:30,730 --> 00:00:33,930
+su aplicacin, definitivamente se recomienda que inicie sesin en un
+
+13
+00:00:33,930 --> 00:00:36,560
+archivo separado, de modo que lo principal es que
+
+14
+00:00:36,560 --> 00:00:40,180
+los usuarios no puedan ver sus registros y tambin mantener sus registros
+
+15
+00:00:40,180 --> 00:00:43,430
+en orden para que pueda luego puede revisarlos ms adelante.
+
+16
+00:00:43,430 --> 00:00:45,110
+Esto es particularmente importante cuando
+
+17
+00:00:45,110 --> 00:00:47,280
+desarrollamos aplicaciones web y cosas as que
+
+18
+00:00:47,280 --> 00:00:50,400
+se ejecutan durante un largo perodo de tiempo, y necesita
+
+19
+00:00:50,400 --> 00:00:52,510
+los registros para poder rastrear problemas.
+
+20
+00:00:52,510 --> 00:00:54,610
+Vamos a ver el desarrollo de aplicaciones web en
+
+21
+00:00:54,610 --> 00:00:57,560
+una seccin posterior, as que es por eso que lo menciono ahora.
+
+22
+00:00:58,410 --> 00:01:00,680
+Lo siguiente que quera decir es,
+
+23
+00:01:00,680 --> 00:01:03,120
+muy rpido, cmo estn estructurados estos registradores.
+
+24
+00:01:03,120 --> 00:01:05,750
+Aqu tenemos algo llamado test_logger.
+
+25
+00:01:05,750 --> 00:01:08,740
+Pero normalmente llamaras a esto algo as como __name__.
+
+26
+00:01:10,770 --> 00:01:14,320
+Eso es solo para que cada mdulo tenga su propio registrador
+
+27
+00:01:14,320 --> 00:01:17,570
+separado, y usted tiene un poco ms, ms o menos,
+
+28
+00:01:17,570 --> 00:01:20,020
+flexibilidad con la operacin de los registradores.
+
+29
+00:01:20,020 --> 00:01:25,020
+Sin embargo, tambin es muy popular para usted llamar a su registrador algo as como, por
+
+30
+00:01:25,270 --> 00:01:28,100
+ejemplo, digamos que esta aplicacin hizo algo as como
+
+31
+00:01:28,100 --> 00:01:30,380
+el manejo de libros o algo as.
+
+32
+00:01:30,380 --> 00:01:33,310
+Usted llama a este registrador libros, por ejemplo.
+
+33
+00:01:33,310 --> 00:01:35,590
+Y luego es bastante popular
+
+34
+00:01:35,590 --> 00:01:38,750
+que cuando vaya a una parte diferente
+
+35
+00:01:38,750 --> 00:01:42,050
+de su aplicacin, obtendr otro registrador y lo
+
+36
+00:01:42,050 --> 00:01:44,770
+llame como libros. base de datos, por ejemplo.
+
+37
+00:01:44,770 --> 00:01:46,970
+Digamos que est en el archivo de la base de datos y est
+
+38
+00:01:46,970 --> 00:01:49,500
+en un nuevo archivo llamado base de datos. py o algo, y
+
+39
+00:01:49,500 --> 00:01:51,540
+quieres obtener un registrador diferente para
+
+40
+00:01:51,540 --> 00:01:53,940
+los registros relacionados con una base de datos.
+
+41
+00:01:55,120 --> 00:02:00,120
+Cuando haces libros. base de datos, esto es en realidad un
+
+42
+00:02:01,120 --> 00:02:05,690
+registrador infantil, por lo que obtienes otro registrador, que es un registrador infantil de libros.
+
+43
+00:02:05,690 --> 00:02:08,630
+Cualquier configuracin que tenga en el registrador de libros, ser heredada
+
+44
+00:02:08,630 --> 00:02:10,919
+por el registrador de la base de datos, no
+
+45
+00:02:10,919 --> 00:02:12,730
+con los libros. registrador de base de datos.
+
+46
+00:02:12,730 --> 00:02:15,440
+Por lo tanto, es normal estructurar estos registradores de esa manera,
+
+47
+00:02:15,440 --> 00:02:18,220
+y algunas veces terminas con algunos nombres de registradores bastante largos.
+
+48
+00:02:18,220 --> 00:02:19,910
+Eso est totalmente bien.
+
+49
+00:02:19,910 --> 00:02:22,860
+Pero, nuevamente, tambin es muy popular llamarlos como __name__, y
+
+50
+00:02:24,130 --> 00:02:26,160
+luego se les llama despus del mdulo
+
+51
+00:02:26,160 --> 00:02:28,340
+en el que estn operando actualmente o, de
+
+52
+00:02:28,340 --> 00:02:30,250
+hecho, la ruta de importacin, como saben.
+
+53
+00:02:31,140 --> 00:02:34,570
+Entonces, o bien es muy popular, y mencionar rpidamente que
+
+54
+00:02:34,570 --> 00:02:38,260
+hay ms sobre los madereros de los que he cubierto, y
+
+55
+00:02:38,260 --> 00:02:40,590
+hay cosas como manipuladores y cosas as
+
+56
+00:02:40,590 --> 00:02:43,150
+que puedes ver, pero para ser honesto,
+
+57
+00:02:43,150 --> 00:02:47,060
+esto es suficiente para el aplicaciones que construiremos, y, de hecho,
+
+58
+00:02:47,060 --> 00:02:48,960
+para aplicaciones ms avanzadas y, de
+
+59
+00:02:48,960 --> 00:02:50,800
+hecho, tambin para aplicaciones profesionales.
+
+60
+00:02:50,800 --> 00:02:52,870
+Tienes algunas funcionalidades ms avanzadas, pero
+
+61
+00:02:52,870 --> 00:02:54,940
+no las he usado tan a menudo.
+
+62
+00:02:56,480 --> 00:02:58,950
+Una cosa ms que voy a decir ahora tambin,
+
+63
+00:02:58,950 --> 00:03:00,590
+si quieres formar el tiempo de
+
+64
+00:03:00,590 --> 00:03:02,180
+una manera particular, puedes hacer eso.
+
+65
+00:03:02,180 --> 00:03:07,180
+Puede hacer datefmt = y aqu, puede ingresar formatos como lo
+
+66
+00:03:07,230 --> 00:03:11,410
+hara con el mtodo de tiempo de formato de
+
+67
+00:03:11,410 --> 00:03:15,690
+cadena, strftime, para que pueda ejecutar el guin D, guin
+
+68
+00:03:15,690 --> 00:03:19,080
+M, guin Y,% H,% M,% S, por ejemplo.
+
+69
+00:03:19,980 --> 00:03:22,300
+Y luego esto sera formateado de forma ligeramente diferente.
+
+70
+00:03:22,300 --> 00:03:24,840
+Si miramos los registros ahora, puede ver
+
+71
+00:03:24,840 --> 00:03:28,600
+que estos antiguos tienen la fecha completa, incluidos los milisegundos
+
+72
+00:03:28,600 --> 00:03:31,870
+all, y estos son un poco ms razonables.
+
+73
+00:03:31,870 --> 00:03:34,530
+Tambin tenga en cuenta que cuando ejecuta su aplicacin
+
+74
+00:03:34,530 --> 00:03:37,310
+varias veces, los registros no se pierden, por lo que
+
+75
+00:03:37,310 --> 00:03:40,780
+los registros se agregan, y esa es una caracterstica muy buena tambin,
+
+76
+00:03:40,780 --> 00:03:42,840
+en caso de que su aplicacin falle
+
+77
+00:03:42,840 --> 00:03:45,230
+o algo as, y luego se reinicia automticamente
+
+78
+00:03:45,230 --> 00:03:47,370
+como lo haremos en el futuro, sus
+
+79
+00:03:47,370 --> 00:03:48,730
+registros no se perdern por eso.
+
+80
+00:03:48,730 --> 00:03:50,680
+Sin embargo, por supuesto, el archivo puede crecer
+
+81
+00:03:50,680 --> 00:03:53,480
+bastante, as que eso es algo que debes tener en cuenta.
+
+82
+00:03:54,350 --> 00:03:55,700
+Est bien, eso es todo por este video.
+
+83
+00:03:55,700 --> 00:03:58,000
+Ahora puede usar el inicio de sesin en sus aplicaciones.
+
+84
+00:03:58,000 --> 00:04:01,480
+Y, sinceramente, no necesitas nada ms.
+
+85
+00:04:01,480 --> 00:04:04,690
+A medida que aprende ms Python, y mientras trabaja con
+
+86
+00:04:04,690 --> 00:04:07,700
+otras personas, puede encontrar situaciones en las que utiliza
+
+87
+00:04:07,700 --> 00:04:10,040
+alguna otra caracterstica del mdulo de registro.
+
+88
+00:04:10,040 --> 00:04:12,350
+Pero, sinceramente, todava no he tenido esa situacin.
+
+89
+00:04:13,280 --> 00:04:14,630
+As que eso es todo por
+
+90
+00:04:14,630 --> 00:04:16,280
+este video, y nos vemos en el prximo.
+

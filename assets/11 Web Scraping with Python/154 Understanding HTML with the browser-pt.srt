@@ -1,0 +1,564 @@
+1
+00:00:00,120 --> 00:00:01,500
+Jos: Ol, e bem vindo de volta.
+
+2
+00:00:01,500 --> 00:00:04,730
+Neste vdeo, estamos falando sobre como ver
+
+3
+00:00:04,730 --> 00:00:08,530
+o HTML usando seu navegador para saber como
+
+4
+00:00:08,530 --> 00:00:11,380
+cri-lo e como analis-lo e como compreend-lo.
+
+5
+00:00:11,380 --> 00:00:15,600
+O que tenho aqui so os livros deste site. raspar. com.
+
+6
+00:00:17,640 --> 00:00:20,010
+Qual  um site que foi
+
+7
+00:00:20,010 --> 00:00:22,240
+projetado especificamente para praticar raspagem.
+
+8
+00:00:22,240 --> 00:00:26,820
+Scraping  o ato de carregar uma pgina usando Python
+
+9
+00:00:26,820 --> 00:00:30,670
+ou outra linguagem de programao e extrair dados dela.
+
+10
+00:00:31,660 --> 00:00:34,210
+Ento essa pgina foi projetada para raspar, o que
+
+11
+00:00:34,210 --> 00:00:36,300
+significa que voc est livre para us-la
+
+12
+00:00:36,300 --> 00:00:39,380
+para raspagem, praticar, dar uma chance e ver o que acontece.
+
+13
+00:00:40,460 --> 00:00:43,040
+Agora, antes mesmo de pensar em baixar
+
+14
+00:00:43,040 --> 00:00:46,850
+a pgina usando o Python, voc precisa entender o que
+
+15
+00:00:46,850 --> 00:00:49,150
+est acontecendo em um navegador.
+
+16
+00:00:49,150 --> 00:00:51,040
+Porque o que est acontecendo no Python  muito
+
+17
+00:00:51,040 --> 00:00:52,590
+parecido com o que acontece no navegador.
+
+18
+00:00:53,440 --> 00:00:55,640
+Ento sempre que o seu navegador carregar uma pgina, como
+
+19
+00:00:55,640 --> 00:00:59,120
+se voc fosse para livros. raspar. com, na
+
+20
+00:00:59,120 --> 00:01:01,420
+verdade, est baixando a pgina.
+
+21
+00:01:01,420 --> 00:01:04,920
+Ele est perguntando ao local onde a pgina est
+
+22
+00:01:04,920 --> 00:01:07,020
+hospedada, onde a pgina mora.
+
+23
+00:01:07,020 --> 00:01:09,780
+Ento ele est pedindo para baixar os dados nele.
+
+24
+00:01:09,780 --> 00:01:11,610
+No armazena a pgina em seus
+
+25
+00:01:11,610 --> 00:01:12,770
+downloads ou algo assim.
+
+26
+00:01:12,770 --> 00:01:15,420
+Mas a pgina  baixada para que o navegador possa us-la.
+
+27
+00:01:16,446 --> 00:01:19,640
+E tambm podemos fazer com que o Python faa o download de uma
+
+28
+00:01:19,640 --> 00:01:22,890
+pgina e isso d ao Python a capacidade de examinar o cdigo e
+
+29
+00:01:22,890 --> 00:01:25,400
+examinar o HTML, examinar o contedo da pgina e ver
+
+30
+00:01:25,400 --> 00:01:26,410
+o que est l.
+
+31
+00:01:27,350 --> 00:01:29,440
+Podemos carregar uma pgina HTML com o
+
+32
+00:01:29,440 --> 00:01:32,140
+Python e isso nos dar o HTML como uma string.
+
+33
+00:01:32,140 --> 00:01:35,420
+E ento podemos analis-lo e podemos extrair dados dele.
+
+34
+00:01:35,420 --> 00:01:38,240
+O ato de fazer tudo isso, desde baixar a
+
+35
+00:01:38,240 --> 00:01:40,470
+pgina at extrair dados,  chamado de raspagem.
+
+36
+00:01:41,670 --> 00:01:44,210
+Ento, quando voc carrega a pgina usando seu navegador, eu
+
+37
+00:01:44,210 --> 00:01:46,750
+recomendo usar o Google Chrome para isso, a propsito.
+
+38
+00:01:46,750 --> 00:01:49,510
+Se voc no tem o Google Chrome, aconselho usar o Chrome.
+
+39
+00:01:49,510 --> 00:01:52,900
+ o melhor navegador para desenvolvimento web em geral.
+
+40
+00:01:53,910 --> 00:01:57,830
+Voc pode selecionar ou encontrar o que voc deseja extrair.
+
+41
+00:01:57,830 --> 00:02:00,810
+Ento imagine que voc queria usar o Python para obter o preo,
+
+42
+00:02:02,120 --> 00:02:04,960
+ento o que voc faria seria clicar com o boto direito
+
+43
+00:02:04,960 --> 00:02:06,910
+do mouse e pressionar o boto inspecionar.
+
+44
+00:02:08,950 --> 00:02:11,960
+O que voc consegue ento  esta janela lateral.
+
+45
+00:02:11,960 --> 00:02:13,350
+Pode estar no fundo,
+
+46
+00:02:13,350 --> 00:02:16,550
+ou pode estar em uma janela totalmente separada.
+
+47
+00:02:16,550 --> 00:02:19,380
+Mas voc tem algo que se parece muito
+
+48
+00:02:19,380 --> 00:02:22,780
+com isso e o que voc tem aqui na esquerda
+
+49
+00:02:22,780 --> 00:02:26,210
+, eu vou apenas aumentar um pouco para vocs verem.
+
+50
+00:02:26,210 --> 00:02:29,800
+O que voc tem aqui  esquerda, esta  a direita,
+
+51
+00:02:29,800 --> 00:02:31,610
+esta  a esquerda, e aqui
+
+52
+00:02:31,610 --> 00:02:34,060
+voc tem algumas coisas extras na parte inferior.
+
+53
+00:02:34,060 --> 00:02:36,890
+O que voc tem aqui  o HTML da pgina.
+
+54
+00:02:36,890 --> 00:02:39,530
+Esta  a totalidade do contedo da pgina.
+
+55
+00:02:40,640 --> 00:02:43,280
+Como voc pode ver, ele comea aqui com HTML
+
+56
+00:02:45,140 --> 00:02:47,540
+e, em seguida, voc tem a tag head,
+
+57
+00:02:47,540 --> 00:02:50,750
+voc tem a tag body, que tem o conjunto principal de contedo.
+
+58
+00:02:51,620 --> 00:02:54,430
+Voc tem um cabealho, que  uma
+
+59
+00:02:54,430 --> 00:02:57,130
+tag HTML para o topo da pgina,
+
+60
+00:02:57,130 --> 00:03:00,350
+e ento voc tem vrios componentes aninhados diferentes.
+
+61
+00:03:00,350 --> 00:03:03,920
+Voc tem um div, que  apenas um bloco de contedo.
+
+62
+00:03:03,920 --> 00:03:06,820
+Esse div tem outro bloco de
+
+63
+00:03:06,820 --> 00:03:10,120
+contedo e tem algum tipo de lista.
+
+64
+00:03:10,120 --> 00:03:12,860
+UL significa lista no ordenada.
+
+65
+00:03:12,860 --> 00:03:16,440
+E  isso aqui, esse po ralado, essa 
+
+66
+00:03:16,440 --> 00:03:19,130
+a pgina em que voc est atualmente.
+
+67
+00:03:19,130 --> 00:03:21,730
+Voc tem ento outro div, no interior.
+
+68
+00:03:21,730 --> 00:03:23,280
+Voc tem um monte de outras coisas.
+
+69
+00:03:23,280 --> 00:03:24,560
+Voc pode usar o Google
+
+70
+00:03:24,560 --> 00:03:27,220
+Chrome aqui para ver facilmente o que cada elemento .
+
+71
+00:03:27,220 --> 00:03:30,150
+Por exemplo, este aparte aqui  o tipo de
+
+72
+00:03:30,150 --> 00:03:32,210
+bit  esquerda que tem a
+
+73
+00:03:32,210 --> 00:03:34,800
+navegao, diferentes tipos de livros que voc pode
+
+74
+00:03:34,800 --> 00:03:35,950
+ver, e ento voc
+
+75
+00:03:35,950 --> 00:03:38,950
+tem esse aqui que  o resto da pgina.
+
+76
+00:03:38,950 --> 00:03:41,080
+Ento, se voc pudesse apenas ver
+
+77
+00:03:42,010 --> 00:03:44,100
+isso, e voc quisesse obter o
+
+78
+00:03:44,100 --> 00:03:45,650
+preo, voc meio que
+
+79
+00:03:45,650 --> 00:03:48,620
+passaria por aqui e descobriria essa seo azul.
+
+80
+00:03:48,620 --> 00:03:50,840
+ aqui que voc
+
+81
+00:03:50,840 --> 00:03:52,750
+est interessado nesta seo.
+
+82
+00:03:52,750 --> 00:03:56,070
+Ento voc meio que entraria e encontraria essa div.
+
+83
+00:03:56,070 --> 00:03:57,390
+Voc veria ento este
+
+84
+00:03:57,390 --> 00:04:00,810
+UL, mas o que voc est interessado no est aqui.
+
+85
+00:04:00,810 --> 00:04:04,230
+Ento voc olharia para essa div, o preo est dentro dessa
+
+86
+00:04:04,230 --> 00:04:06,190
+div porque est dentro da rea azul.
+
+87
+00:04:07,300 --> 00:04:09,040
+Ento voc olha para este
+
+88
+00:04:09,040 --> 00:04:12,230
+lado, a coisa azul no inclui o preo, ento
+
+89
+00:04:12,230 --> 00:04:14,300
+provavelmente no est aqui dentro.
+
+90
+00:04:14,300 --> 00:04:17,000
+Ento voc encontraria este div, e
+
+91
+00:04:17,000 --> 00:04:20,560
+este div contm o preo, ento voc pode
+
+92
+00:04:20,560 --> 00:04:23,530
+entrar nele abrindo e navegando at encontrar
+
+93
+00:04:23,530 --> 00:04:26,600
+a seo em que est interessado.
+
+94
+00:04:26,600 --> 00:04:29,830
+Ento voc encontraria a seo, ento voc encontraria este
+
+95
+00:04:29,830 --> 00:04:33,460
+div, ento, esse item de lista, este artigo, e ento
+
+96
+00:04:33,460 --> 00:04:35,500
+voc tem o preo eventualmente.
+
+97
+00:04:35,500 --> 00:04:37,410
+E ento voc pode encontr-lo.
+
+98
+00:04:37,410 --> 00:04:40,610
+Ento, o que encontramos aqui 
+
+99
+00:04:40,610 --> 00:04:44,093
+essencialmente a hierarquia de elementos que acabam
+
+100
+00:04:44,093 --> 00:04:46,800
+contendo o que nos interessa.
+
+101
+00:04:46,800 --> 00:04:51,800
+Ento, como voc pode ver, temos o P que contm o preo e que est dentro de
+
+102
+00:04:52,150 --> 00:04:54,370
+uma div, que est dentro de um artigo
+
+103
+00:04:54,370 --> 00:04:55,670
+e assim por diante.
+
+104
+00:04:55,670 --> 00:04:57,420
+Ento, isso ser muito importante
+
+105
+00:04:57,420 --> 00:04:58,730
+para voc entender o
+
+106
+00:04:58,730 --> 00:05:00,380
+HTML quando fizer o download.
+
+107
+00:05:02,200 --> 00:05:04,930
+O interessante tambm  que voc pode
+
+108
+00:05:04,930 --> 00:05:07,400
+ver que h muitos elementos semelhantes.
+
+109
+00:05:07,400 --> 00:05:10,460
+E isso  um para cada livro na pgina.
+
+110
+00:05:10,460 --> 00:05:12,810
+Voc pode ver que, ao passar sobre
+
+111
+00:05:12,810 --> 00:05:14,590
+eles, diferentes livros so selecionados.
+
+112
+00:05:15,480 --> 00:05:17,510
+E cada um desses elementos  um livro.
+
+113
+00:05:17,510 --> 00:05:19,100
+Ento, se voc quiser carregar
+
+114
+00:05:19,100 --> 00:05:20,930
+o preo de todos os
+
+115
+00:05:20,930 --> 00:05:23,070
+elementos no site, uma vez que
+
+116
+00:05:23,070 --> 00:05:25,240
+voc tenha conseguido baixar o HTML,
+
+117
+00:05:25,240 --> 00:05:28,880
+que vamos ver em breve, tudo que voc precisa fazer 
+
+118
+00:05:28,880 --> 00:05:32,352
+encontrar cada elemento LI com estas classes aqui e isso
+
+119
+00:05:32,352 --> 00:05:33,950
+vai te dou todos os livros.
+
+120
+00:05:33,950 --> 00:05:36,790
+Bem, ele vai te dar objetos de tag
+
+121
+00:05:36,790 --> 00:05:39,720
+em Beautiful Soup para cada um dos livros.
+
+122
+00:05:39,720 --> 00:05:41,460
+Ento, para cada um dos livros, voc
+
+123
+00:05:41,460 --> 00:05:43,010
+poderia pass-lo para a classe que
+
+124
+00:05:43,010 --> 00:05:46,080
+criamos e analisar o preo, e o nome e assim por diante.
+
+125
+00:05:46,080 --> 00:05:48,553
+Ento voc pode comear a trabalhar com esses
+
+126
+00:05:48,553 --> 00:05:51,320
+livros em Python, em vez de em HTML.
+
+127
+00:05:53,990 --> 00:05:58,680
+Ok, agora, quando voc quiser extrair os dados e
+
+128
+00:05:58,680 --> 00:06:00,220
+us-los no Python,
+
+129
+00:06:00,220 --> 00:06:03,460
+no  suficiente carreg-los no navegador.
+
+130
+00:06:03,460 --> 00:06:06,500
+Claro que voc precisa fazer com que o Python faa isso.
+
+131
+00:06:06,500 --> 00:06:08,550
+E para fazer isso, vamos
+
+132
+00:06:08,550 --> 00:06:11,090
+instalar outra biblioteca chamada requests, que
+
+133
+00:06:11,090 --> 00:06:13,580
+ usada para, essencialmente, solicitar alguns
+
+134
+00:06:13,580 --> 00:06:16,650
+dados de uma pgina e baix-los.
+
+135
+00:06:16,650 --> 00:06:19,520
+Para que voc possa us-lo, olh-lo, imprimi-lo
+
+136
+00:06:19,520 --> 00:06:21,810
+ou qualquer coisa que quiser.
+
+137
+00:06:21,810 --> 00:06:24,440
+Ento essa biblioteca ser usada para obter
+
+138
+00:06:24,440 --> 00:06:28,580
+o contedo da pgina, este HTML, e ento usaremos o Beautiful
+
+139
+00:06:28,580 --> 00:06:31,410
+Soup para entender isso e extrair os dados.
+
+140
+00:06:31,410 --> 00:06:33,410
+Vamos ver isso no prximo vdeo.
+
+141
+00:06:33,410 --> 00:06:34,510
+Ento te vejo l.
+

@@ -1,0 +1,244 @@
+1
+00:00:00,000 --> 00:00:03,000
+Ol e bem vindo de volta! Neste vdeo vamos falar
+
+2
+00:00:03,000 --> 00:00:06,000
+sobre como obter o tamanho de uma lista.
+
+3
+00:00:06,000 --> 00:00:09,000
+No ltimo vdeo, vimos brevemente como obter a
+
+4
+00:00:09,000 --> 00:00:12,000
+soma total de diferentes elementos em uma lista.
+
+5
+00:00:12,000 --> 00:00:15,000
+Por exemplo, se temos uma lista
+
+6
+00:00:15,000 --> 00:00:18,000
+chamada "graus", e isso tem os
+
+7
+00:00:18,000 --> 00:00:21,000
+elementos [95, 50, 75 e 100].
+
+8
+00:00:21,000 --> 00:00:24,000
+Vimos que poderamos fazer sum ()
+
+9
+00:00:24,000 --> 00:00:27,000
+e, em seguida, dentro dos colchetes
+
+10
+00:00:27,000 --> 00:00:30,000
+da soma, poderamos colocar a lista
+
+11
+00:00:30,000 --> 00:00:33,000
+de notas e dizemos algo como
+
+12
+00:00:33,000 --> 00:00:36,000
+total  isso, e ento podemos
+
+13
+00:00:36,000 --> 00:00:39,000
+imprimir o total para fora e
+
+14
+00:00:39,000 --> 00:00:42,000
+isso calcularia a soma total de cada elemento aqui.
+
+15
+00:00:42,000 --> 00:00:45,000
+Ento nos daria 95 + 50 +
+
+16
+00:00:45,000 --> 00:00:48,000
+75 + 100. Eu estava prestes a adicionar tudo na
+
+17
+00:00:48,000 --> 00:00:50,000
+minha cabea, mas depois percebi que no posso fazer isso!
+
+18
+00:00:50,000 --> 00:00:53,000
+Ento, se corrermos isso, podemos ver
+
+19
+00:00:53,000 --> 00:00:56,000
+que temos 320 ao lado.
+
+20
+00:00:56,000 --> 00:00:59,000
+Agora, como voc pode ver, essa
+
+21
+00:00:59,000 --> 00:01:02,000
+lista tem 4 elementos, certo?
+
+22
+00:01:02,000 --> 00:01:05,000
+Tem 95, 50, 75 e 100.
+
+23
+00:01:05,000 --> 00:01:08,000
+Existem 4 elementos distintos
+
+24
+00:01:08,000 --> 00:01:11,000
+nesta lista. Ento, se
+
+25
+00:01:11,000 --> 00:01:14,000
+quisermos saber quantos elementos
+
+26
+00:01:14,000 --> 00:01:17,000
+existem, podemos fazer isso
+
+27
+00:01:17,000 --> 00:01:20,000
+calculando o tamanho da lista.
+
+28
+00:01:20,000 --> 00:01:23,000
+Ento, poderamos fazer algo como, por
+
+29
+00:01:23,000 --> 00:01:26,000
+exemplo, comprimento  igual a len
+
+30
+00:01:26,000 --> 00:01:29,000
+de notas. Ento, assim como a
+
+31
+00:01:29,000 --> 00:01:32,000
+soma nos d a soma total de
+
+32
+00:01:32,000 --> 00:01:35,000
+todos os elementos, len nos d a
+
+33
+00:01:35,000 --> 00:01:38,000
+contagem total de elementos - quantos elementos existem.
+
+34
+00:01:38,000 --> 00:01:41,000
+Ento podemos imprimir o comprimento, e voc ver
+
+35
+00:01:41,000 --> 00:01:44,000
+que obtemos 320 e depois 4 aqui ao lado.
+
+36
+00:01:44,000 --> 00:01:47,000
+Essas duas coisas aqui, vamos olhar para elas
+
+37
+00:01:47,000 --> 00:01:50,000
+com muito mais detalhes durante o resto do
+
+38
+00:01:50,000 --> 00:01:53,000
+curso, mas elas so muito teis - e
+
+39
+00:01:53,000 --> 00:01:56,000
+de fato voc pode precisar desta para o prximo exerccio.
+
+40
+00:01:56,000 --> 00:01:59,000
+H mais coisas que podemos fazer alm de sum
+
+41
+00:01:59,000 --> 00:02:02,000
+() e len (), e novamente, aprenderemos sobre outras
+
+42
+00:02:02,000 --> 00:02:05,000
+coisas que voc pode fazer com listas e outras
+
+43
+00:02:05,000 --> 00:02:06,800
+colees mais tarde no curso.
+
+44
+00:02:06,800 --> 00:02:09,800
+E a propsito, esse len () e
+
+45
+00:02:09,800 --> 00:02:12,800
+essa soma () funcionam em listas, mas
+
+46
+00:02:12,800 --> 00:02:15,800
+eles tambm trabalham em tuplas, ento, se
+
+47
+00:02:15,800 --> 00:02:18,800
+fizermos a nossa lista de notas, torn-la
+
+48
+00:02:18,800 --> 00:02:20,800
+uma tupla, isso ainda funcionar bem.
+
+49
+00:02:20,800 --> 00:02:23,800
+E o len () tambm funciona em
+
+50
+00:02:23,800 --> 00:02:26,800
+dicionrios e conjuntos. Assim, voc tambm pode
+
+51
+00:02:26,800 --> 00:02:29,800
+saber quantos elementos existem em um dicionrio ou conjunto.
+
+52
+00:02:29,800 --> 00:02:32,800
+Geralmente, eu aconselho que voc brinque com essas coisas
+
+53
+00:02:32,800 --> 00:02:35,800
+e d uma chance - veja onde elas funcionam,
+
+54
+00:02:35,800 --> 00:02:38,800
+onde elas no funcionam - porque  uma maneira
+
+55
+00:02:38,800 --> 00:02:41,800
+muito boa de se acostumar e lidar com tudo
+
+56
+00:02:41,800 --> 00:02:44,800
+o que existe. fazer na programao; brincando com ele
+
+57
+00:02:44,800 --> 00:02:47,800
+e dando uma chance. No entanto, temos um
+
+58
+00:02:47,800 --> 00:02:50,800
+prximo exerccio de codificao, ento, por favor, resolva
+
+59
+00:02:50,800 --> 00:02:53,800
+esse problema - voc precisar usar a palavra-chave
+
+60
+00:02:53,800 --> 00:02:56,800
+len () nele, ento d uma chance e
+
+61
+00:02:56,800 --> 00:02:59,800
+depois volte e continuaremos. Eu vou te ver em breve!
+

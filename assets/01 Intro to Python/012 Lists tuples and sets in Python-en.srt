@@ -1,0 +1,1356 @@
+1
+00:00:00,540 --> 00:00:01,820
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,820 --> 00:00:04,750
+It's really great to have you back in the course.
+
+3
+00:00:04,750 --> 00:00:05,750
+In this video, we're going to look
+
+4
+00:00:05,750 --> 00:00:08,490
+at three essential parts of Python.
+
+5
+00:00:08,490 --> 00:00:12,570
+These are called data structures or collections.
+
+6
+00:00:12,570 --> 00:00:14,300
+Data structures or collections,
+
+7
+00:00:14,300 --> 00:00:16,160
+also sometimes called sequences.
+
+8
+00:00:16,160 --> 00:00:17,895
+Also called iterables.
+
+9
+00:00:17,895 --> 00:00:20,100
+We're gonna find a bunch of names for them.
+
+10
+00:00:20,100 --> 00:00:24,010
+I'm gonna call them lists, tuples and sets
+
+11
+00:00:24,010 --> 00:00:27,020
+because those are the names of these three things.
+
+12
+00:00:27,020 --> 00:00:29,980
+So far, we've looked at having variables,
+
+13
+00:00:29,980 --> 00:00:32,070
+like this string here, hello,
+
+14
+00:00:33,110 --> 00:00:36,400
+but what if we wanted to store, for example,
+
+15
+00:00:37,710 --> 00:00:42,140
+more than one string inside a single thing?
+
+16
+00:00:42,140 --> 00:00:45,280
+For example, let's say we wanted some greetings.
+
+17
+00:00:48,340 --> 00:00:50,890
+We can store a single greeting, like nice to meet you,
+
+18
+00:00:50,890 --> 00:00:53,240
+and we know how to do that already
+
+19
+00:00:53,240 --> 00:00:58,240
+or if we wanted to store friends, we could store one, Rolf,
+
+20
+00:00:58,270 --> 00:01:01,500
+but if we wanted to add more friends or more greetings,
+
+21
+00:01:01,500 --> 00:01:06,500
+friend two, Anna, and we have friend three
+
+22
+00:01:07,920 --> 00:01:09,410
+and it would be me.
+
+23
+00:01:10,870 --> 00:01:12,830
+Obviously, if you have a lot of friends,
+
+24
+00:01:12,830 --> 00:01:15,160
+this, very quickly, gets really difficult.
+
+25
+00:01:15,160 --> 00:01:17,450
+You'll have a lot of variables and dealing with them
+
+26
+00:01:17,450 --> 00:01:18,810
+in your programme is going to be difficult.
+
+27
+00:01:18,810 --> 00:01:19,643
+Trust me.
+
+28
+00:01:19,643 --> 00:01:20,890
+I know we've not looked at this yet,
+
+29
+00:01:20,890 --> 00:01:22,240
+but if you have a lot of variables,
+
+30
+00:01:22,240 --> 00:01:25,570
+all meaning similar things, it's going to get tricky.
+
+31
+00:01:25,570 --> 00:01:28,920
+So instead, what we can do is store them inside
+
+32
+00:01:28,920 --> 00:01:31,770
+one of these collections that allow us
+
+33
+00:01:31,770 --> 00:01:34,270
+to store multiple things within the same variable.
+
+34
+00:01:36,400 --> 00:01:39,510
+I'm gonna create this variable called my list variable
+
+35
+00:01:39,510 --> 00:01:41,790
+and then I'm gonna use square brackets.
+
+36
+00:01:41,790 --> 00:01:44,610
+This is an opening and a closing square bracket
+
+37
+00:01:44,610 --> 00:01:48,410
+and inside them, we can put whatever we want,
+
+38
+00:01:48,410 --> 00:01:52,010
+like hello, but then we can use a comma,
+
+39
+00:01:52,010 --> 00:01:54,070
+outside of the string, important.
+
+40
+00:01:54,070 --> 00:01:57,530
+Make sure you have the string, then a comma outside of it
+
+41
+00:01:57,530 --> 00:02:02,530
+and then we can have more greetings in these strings.
+
+42
+00:02:02,560 --> 00:02:05,240
+So now, this is a rather bizarre thing
+
+43
+00:02:05,240 --> 00:02:07,230
+because we've got our single variable,
+
+44
+00:02:07,230 --> 00:02:11,590
+which now, itself, contains three things.
+
+45
+00:02:11,590 --> 00:02:13,930
+It contains these three strings.
+
+46
+00:02:13,930 --> 00:02:18,670
+But important, the variable is the entire thing, okay?
+
+47
+00:02:18,670 --> 00:02:20,870
+The variable is not one of these strings.
+
+48
+00:02:20,870 --> 00:02:23,750
+The variable is not the strings joined together
+
+49
+00:02:23,750 --> 00:02:24,880
+or anything like that.
+
+50
+00:02:24,880 --> 00:02:28,270
+This list is a thing in Python
+
+51
+00:02:28,270 --> 00:02:31,690
+and this thing contains three strings inside of it.
+
+52
+00:02:31,690 --> 00:02:32,680
+So it's a really useful thing,
+
+53
+00:02:32,680 --> 00:02:35,480
+as we're gonna look at shortly.
+
+54
+00:02:37,080 --> 00:02:40,520
+Instead of variables, we have topples or tuples.
+
+55
+00:02:40,520 --> 00:02:42,390
+I never know how to say this.
+
+56
+00:02:42,390 --> 00:02:44,400
+I'm going to say tuples and that could be wrong,
+
+57
+00:02:44,400 --> 00:02:45,899
+so apologies.
+
+58
+00:02:45,899 --> 00:02:50,899
+And this is the same thing, but it is inside single
+
+59
+00:02:50,987 --> 00:02:53,910
+or normal brackets, as opposed to square brackets
+
+60
+00:02:54,950 --> 00:02:58,440
+and then we have sets, my set variable
+
+61
+00:02:58,440 --> 00:03:01,090
+and that's also the same, but inside curly braces.
+
+62
+00:03:02,600 --> 00:03:06,480
+Why they're not called curly brackets, I will never know.
+
+63
+00:03:06,480 --> 00:03:07,950
+Maybe they are and I'm just wrong,
+
+64
+00:03:07,950 --> 00:03:09,600
+calling them curly braces.
+
+65
+00:03:09,600 --> 00:03:11,280
+They've always been curly braces to me,
+
+66
+00:03:11,280 --> 00:03:14,390
+so I will stick to calling them curly braces.
+
+67
+00:03:16,070 --> 00:03:19,120
+Okay, we have our three different variables here
+
+68
+00:03:19,120 --> 00:03:21,220
+and I've said every time that we've created one of these,
+
+69
+00:03:21,220 --> 00:03:24,530
+I've said it's the same thing but a different bracket.
+
+70
+00:03:24,530 --> 00:03:26,070
+That's not really true, of course.
+
+71
+00:03:26,070 --> 00:03:27,140
+If that were the case,
+
+72
+00:03:27,140 --> 00:03:29,480
+that would be a pretty useless feature of the language
+
+73
+00:03:29,480 --> 00:03:31,570
+to be able to have these different brackets
+
+74
+00:03:31,570 --> 00:03:32,920
+all meaning the same thing.
+
+75
+00:03:33,780 --> 00:03:34,860
+So throughout the video,
+
+76
+00:03:34,860 --> 00:03:37,170
+we're going to look at how they're different.
+
+77
+00:03:38,130 --> 00:03:41,220
+First of all, let's print them out.
+
+78
+00:03:42,800 --> 00:03:44,670
+My tuple variable.
+
+79
+00:03:44,670 --> 00:03:45,503
+My set variable.
+
+80
+00:03:45,503 --> 00:03:48,010
+Let's print them out and see what comes out
+
+81
+00:03:48,010 --> 00:03:48,910
+on the other side.
+
+82
+00:03:50,360 --> 00:03:54,880
+Okay, now, nothing terribly exciting,
+
+83
+00:03:54,880 --> 00:03:57,380
+except there's something pretty exciting
+
+84
+00:03:57,380 --> 00:03:59,900
+that you may or may not have noticed there.
+
+85
+00:03:59,900 --> 00:04:02,100
+What is exciting about the three things
+
+86
+00:04:02,100 --> 00:04:03,450
+that are being printed out?
+
+87
+00:04:05,510 --> 00:04:07,260
+Pause the video and think about it.
+
+88
+00:04:10,820 --> 00:04:14,180
+Hopefully you noticed that the first two
+
+89
+00:04:14,180 --> 00:04:18,430
+are in the order we put them in, but the last one is not.
+
+90
+00:04:18,430 --> 00:04:23,200
+The last one is mangled, so why is that?
+
+91
+00:04:23,200 --> 00:04:27,330
+Well, we are going to explain that very shortly.
+
+92
+00:04:27,330 --> 00:04:32,070
+The last one is mangled because sets are unordered.
+
+93
+00:04:32,070 --> 00:04:36,370
+They lose the order, depending on which version of Python
+
+94
+00:04:36,370 --> 00:04:37,970
+you're using and so on and so forth.
+
+95
+00:04:37,970 --> 00:04:40,780
+There's a few reasons, but essentially,
+
+96
+00:04:40,780 --> 00:04:44,460
+you cannot rely on them to have any specific order
+
+97
+00:04:44,460 --> 00:04:47,560
+and in this case, you can see that it is not ordered.
+
+98
+00:04:50,780 --> 00:04:55,780
+Now, we can also have short double variables.
+
+99
+00:04:56,090 --> 00:04:57,940
+We're gonna look at exactly what sets are
+
+100
+00:04:57,940 --> 00:05:00,400
+and why they're interesting in a moment, by the way.
+
+101
+00:05:00,400 --> 00:05:04,190
+And then we've got this hello tuple.
+
+102
+00:05:04,190 --> 00:05:05,260
+Let's print it out.
+
+103
+00:05:09,180 --> 00:05:10,760
+Let's print this tuple out.
+
+104
+00:05:10,760 --> 00:05:12,880
+What do you think is going to come out of this tuple?
+
+105
+00:05:12,880 --> 00:05:16,550
+Remember, tuples are tuples because they have
+
+106
+00:05:16,550 --> 00:05:18,190
+these brackets around them
+
+107
+00:05:18,190 --> 00:05:19,910
+and that's how we know they're tuples.
+
+108
+00:05:21,120 --> 00:05:24,130
+And you can see that, up here, my tuple variable,
+
+109
+00:05:24,130 --> 00:05:25,926
+when we printed it out, it still was a tuple.
+
+110
+00:05:25,926 --> 00:05:27,520
+It's still got the brackets out there
+
+111
+00:05:27,520 --> 00:05:31,240
+and it's got the commas, so Python knows this is a tuple.
+
+112
+00:05:32,510 --> 00:05:34,860
+What do you think is gonna be printed out here?
+
+113
+00:05:38,340 --> 00:05:39,640
+Let's run it and find out.
+
+114
+00:05:41,690 --> 00:05:43,040
+Oh, I think I pressed stop.
+
+115
+00:05:43,040 --> 00:05:45,180
+I pressed it too many times.
+
+116
+00:05:45,180 --> 00:05:46,110
+There you go.
+
+117
+00:05:46,110 --> 00:05:48,400
+So this is just hello.
+
+118
+00:05:48,400 --> 00:05:50,260
+This is just a string.
+
+119
+00:05:50,260 --> 00:05:51,870
+No tuples involved.
+
+120
+00:05:52,860 --> 00:05:55,130
+And the reason for that is, of course,
+
+121
+00:05:55,130 --> 00:05:58,630
+the brackets are a mathematical operator.
+
+122
+00:05:58,630 --> 00:06:02,330
+Imagine we'd done seven plus five times eight.
+
+123
+00:06:03,380 --> 00:06:05,010
+We don't want this to be a tuple.
+
+124
+00:06:05,010 --> 00:06:07,550
+We want this to be 12?
+
+125
+00:06:07,550 --> 00:06:09,100
+12, 12, that's correct.
+
+126
+00:06:09,100 --> 00:06:11,090
+We want this to be 12 times eight.
+
+127
+00:06:11,090 --> 00:06:13,940
+We want this to be a mathematical thing.
+
+128
+00:06:13,940 --> 00:06:17,810
+So our tuple hello really wasn't a tuple
+
+129
+00:06:17,810 --> 00:06:21,860
+because Python doesn't know whether we want to treat this
+
+130
+00:06:21,860 --> 00:06:25,450
+as something of priority in a mathematical operation
+
+131
+00:06:25,450 --> 00:06:27,130
+or whether we want this to be a tuple.
+
+132
+00:06:27,130 --> 00:06:28,090
+It doesn't know.
+
+133
+00:06:28,090 --> 00:06:29,760
+So how do we tell it?
+
+134
+00:06:29,760 --> 00:06:32,480
+Just put the comma at the end and then you can run it
+
+135
+00:06:32,480 --> 00:06:34,010
+and you'll see that it's now a tuple.
+
+136
+00:06:34,010 --> 00:06:36,060
+Now, Python knows that this contains brackets
+
+137
+00:06:36,060 --> 00:06:37,490
+and it's a tuple and so on.
+
+138
+00:06:38,410 --> 00:06:43,410
+In fact, something I don't particularly like about Python,
+
+139
+00:06:44,860 --> 00:06:45,990
+this is one of the few things
+
+140
+00:06:45,990 --> 00:06:47,990
+that I don't like about Python,
+
+141
+00:06:47,990 --> 00:06:51,300
+is you can make the tuple without the brackets,
+
+142
+00:06:51,300 --> 00:06:52,840
+just by putting the comma at the end.
+
+143
+00:06:52,840 --> 00:06:57,380
+So I think this is pretty silly, but nobody asked me
+
+144
+00:06:57,380 --> 00:06:58,810
+when they were making the language.
+
+145
+00:06:58,810 --> 00:07:00,900
+So you can do this too and this has confused
+
+146
+00:07:00,900 --> 00:07:04,210
+many of my students because in some languages,
+
+147
+00:07:04,210 --> 00:07:07,780
+you put commas at the end of things, as you do,
+
+148
+00:07:07,780 --> 00:07:09,260
+and if you do that in Python,
+
+149
+00:07:09,260 --> 00:07:10,770
+you're gonna end up with tuples everywhere
+
+150
+00:07:10,770 --> 00:07:12,050
+and you probably don't want that,
+
+151
+00:07:12,050 --> 00:07:15,370
+so just be careful when you put commas in places.
+
+152
+00:07:16,270 --> 00:07:17,830
+Just by doing this, you're making a tuple,
+
+153
+00:07:17,830 --> 00:07:20,750
+so this is the same, these two are the same thing.
+
+154
+00:07:20,750 --> 00:07:22,630
+These two are tuples.
+
+155
+00:07:22,630 --> 00:07:24,120
+Probably don't want to do that.
+
+156
+00:07:24,120 --> 00:07:26,500
+I always recommend that you stick to the brackets.
+
+157
+00:07:26,500 --> 00:07:28,940
+If you want a tuple, put the brackets in.
+
+158
+00:07:28,940 --> 00:07:30,674
+It just makes things a bit easier.
+
+159
+00:07:30,674 --> 00:07:32,460
+It's easier to miss this comma out.
+
+160
+00:07:32,460 --> 00:07:34,530
+If the font size is small and so far
+
+161
+00:07:34,530 --> 00:07:38,210
+you've got some dust on your screen, you maybe won't see it.
+
+162
+00:07:38,210 --> 00:07:40,470
+So, keep to the brackets, if you can.
+
+163
+00:07:41,600 --> 00:07:46,560
+Okay, so important, if you put a hash symbol in,
+
+164
+00:07:46,560 --> 00:07:49,410
+you can type anything you want and it will not run.
+
+165
+00:07:49,410 --> 00:07:50,930
+I don't know if I've said this before,
+
+166
+00:07:50,930 --> 00:07:53,280
+but this is called a comment and it won't run,
+
+167
+00:07:53,280 --> 00:07:54,870
+so you can do that if you want, for example,
+
+168
+00:07:54,870 --> 00:07:56,970
+to separate various sections and so forth.
+
+169
+00:07:59,640 --> 00:08:02,840
+Let's print the first item of this variable.
+
+170
+00:08:02,840 --> 00:08:03,960
+Let's print out hello.
+
+171
+00:08:06,700 --> 00:08:08,400
+Of course, this would be cheating,
+
+172
+00:08:09,540 --> 00:08:11,493
+and that's too easy.
+
+173
+00:08:11,493 --> 00:08:15,340
+We're gonna actually print this item inside this list.
+
+174
+00:08:15,340 --> 00:08:18,910
+The way we do that is we get my list variable,
+
+175
+00:08:20,230 --> 00:08:22,335
+and then using square bracket notation,
+
+176
+00:08:22,335 --> 00:08:24,640
+which in Python is called a subscript.
+
+177
+00:08:24,640 --> 00:08:26,740
+This is called a subscript.
+
+178
+00:08:28,560 --> 00:08:30,930
+That may be important later on.
+
+179
+00:08:30,930 --> 00:08:34,610
+We're gonna give it the index of the thing we want to access
+
+180
+00:08:34,610 --> 00:08:39,610
+so really we're accessing the zeroth element of this list.
+
+181
+00:08:39,650 --> 00:08:41,940
+The zeroth element is the first one.
+
+182
+00:08:42,940 --> 00:08:45,000
+Programming can be quite confusing.
+
+183
+00:08:45,000 --> 00:08:48,410
+We start counting from zero, so zero is the first element,
+
+184
+00:08:48,410 --> 00:08:51,360
+one is the second element and two is the third element.
+
+185
+00:08:51,360 --> 00:08:53,240
+It's very confusing because usually,
+
+186
+00:08:53,240 --> 00:08:56,050
+zero should be the zeroth element,
+
+187
+00:08:56,050 --> 00:08:59,100
+but normal people don't say that sort of stuff.
+
+188
+00:08:59,100 --> 00:09:02,490
+Also, my tuple variable, zero is the same thing.
+
+189
+00:09:02,490 --> 00:09:05,200
+It can also access the first element of that
+
+190
+00:09:05,200 --> 00:09:06,820
+and this is also called a subscript
+
+191
+00:09:06,820 --> 00:09:09,180
+and you also use square bracket notation.
+
+192
+00:09:09,180 --> 00:09:11,050
+Don't go using normal brackets.
+
+193
+00:09:11,050 --> 00:09:12,410
+That would be extremely confusing.
+
+194
+00:09:12,410 --> 00:09:14,860
+So always use square bracket notation
+
+195
+00:09:14,860 --> 00:09:18,310
+when you want to access a particular element of something.
+
+196
+00:09:18,310 --> 00:09:19,870
+We can run this and you can see
+
+197
+00:09:19,870 --> 00:09:22,270
+that hello gets printed out in both cases there.
+
+198
+00:09:23,320 --> 00:09:25,470
+Something you cannot do, however,
+
+199
+00:09:25,470 --> 00:09:28,520
+and I'm pretty sure you'll know why.
+
+200
+00:09:28,520 --> 00:09:29,900
+You cannot do this.
+
+201
+00:09:29,900 --> 00:09:33,050
+You cannot access the zeroth element of my set variable
+
+202
+00:09:33,050 --> 00:09:35,910
+and that's to do with something I said just a moment ago,
+
+203
+00:09:35,910 --> 00:09:38,700
+that sets do not have a guaranteed order.
+
+204
+00:09:39,660 --> 00:09:40,670
+So in different computers,
+
+205
+00:09:40,670 --> 00:09:42,570
+the set could be in a different order.
+
+206
+00:09:43,870 --> 00:09:46,760
+So why is that related to not being able to access
+
+207
+00:09:46,760 --> 00:09:47,990
+the zeroth element?
+
+208
+00:09:50,130 --> 00:09:51,780
+Well, the answer is we don't know
+
+209
+00:09:51,780 --> 00:09:53,390
+which one's gonna be the zeroth element,
+
+210
+00:09:53,390 --> 00:09:56,690
+so, we can't really access it because it's going to be
+
+211
+00:09:56,690 --> 00:09:57,910
+a different thing in every computer,
+
+212
+00:09:57,910 --> 00:09:59,620
+so this doesn't really make sense
+
+213
+00:09:59,620 --> 00:10:01,790
+unless you're only running this programme in your computer
+
+214
+00:10:01,790 --> 00:10:06,020
+and nowhere else and you always use the same Python version.
+
+215
+00:10:06,020 --> 00:10:08,560
+This is a recipe for disaster.
+
+216
+00:10:08,560 --> 00:10:09,820
+Depending on where you run your code,
+
+217
+00:10:09,820 --> 00:10:11,660
+it's gonna be a different thing.
+
+218
+00:10:11,660 --> 00:10:12,800
+So, we can't do this.
+
+219
+00:10:12,800 --> 00:10:15,438
+If you do this, it'll give you an error.
+
+220
+00:10:15,438 --> 00:10:19,870
+It says set object does not support indexing.
+
+221
+00:10:19,870 --> 00:10:22,520
+By the way, this thing that I said was called a subscript,
+
+222
+00:10:22,520 --> 00:10:24,900
+it is, but it's also called indexing
+
+223
+00:10:24,900 --> 00:10:28,200
+because you're accessing an element by its index.
+
+224
+00:10:28,200 --> 00:10:30,590
+So you can't do that in sets.
+
+225
+00:10:30,590 --> 00:10:32,720
+Again, you just put a hash in front
+
+226
+00:10:32,720 --> 00:10:35,170
+and that means it's not gonna run afterwards.
+
+227
+00:10:37,220 --> 00:10:40,110
+Moving on to some more things you can do with lists
+
+228
+00:10:40,110 --> 00:10:41,870
+is you can modify lists.
+
+229
+00:10:41,870 --> 00:10:43,280
+So we can get this list here
+
+230
+00:10:43,280 --> 00:10:45,290
+and add a new element at the end of it.
+
+231
+00:10:46,890 --> 00:10:49,930
+So my list variable dot append another string.
+
+232
+00:10:55,650 --> 00:10:57,420
+So we can append a string.
+
+233
+00:10:57,420 --> 00:10:59,410
+Append just means add at the end.
+
+234
+00:11:00,250 --> 00:11:01,880
+And then we can print it out and of course,
+
+235
+00:11:01,880 --> 00:11:04,450
+you'll see that now we get the list printed out,
+
+236
+00:11:04,450 --> 00:11:07,730
+but it contains an extra element at the end, another string.
+
+237
+00:11:07,730 --> 00:11:11,510
+Do notice, however, that the print out at the start
+
+238
+00:11:11,510 --> 00:11:14,450
+still contains only three elements because we printed it out
+
+239
+00:11:14,450 --> 00:11:17,410
+before we added the extra string.
+
+240
+00:11:17,410 --> 00:11:21,380
+So only from line 19 onwards
+
+241
+00:11:21,380 --> 00:11:24,000
+does the variable contain four elements.
+
+242
+00:11:24,000 --> 00:11:26,330
+Before that, it contains three elements.
+
+243
+00:11:26,330 --> 00:11:27,690
+That's important in Python.
+
+244
+00:11:27,690 --> 00:11:29,960
+Of course, it runs from top to bottom,
+
+245
+00:11:29,960 --> 00:11:32,920
+so it's important to remember where you're doing things
+
+246
+00:11:32,920 --> 00:11:36,280
+so that you know that your variables
+
+247
+00:11:36,280 --> 00:11:38,130
+are gonna contain the correct values.
+
+248
+00:11:40,413 --> 00:11:45,413
+Now, something you cannot do is append to a tuple.
+
+249
+00:11:49,361 --> 00:11:52,940
+I can already feel that I have been saying this
+
+250
+00:11:52,940 --> 00:11:54,980
+inconsistently throughout the entire video.
+
+251
+00:11:54,980 --> 00:11:56,490
+I apologise.
+
+252
+00:11:56,490 --> 00:11:59,360
+If we run this, it will also give us an error.
+
+253
+00:11:59,360 --> 00:12:04,360
+Now it says the tuple object has no attribute append.
+
+254
+00:12:05,510 --> 00:12:07,990
+Now, this is a rather confusing error message.
+
+255
+00:12:07,990 --> 00:12:12,920
+All it's saying is you cannot append to a tuple.
+
+256
+00:12:12,920 --> 00:12:13,870
+Apologies for that.
+
+257
+00:12:15,170 --> 00:12:20,170
+But that is an interesting segue into what this dot means.
+
+258
+00:12:22,110 --> 00:12:24,520
+This dot is pretty useful.
+
+259
+00:12:24,520 --> 00:12:27,460
+It allows us to access something
+
+260
+00:12:27,460 --> 00:12:29,980
+that is inside this variable.
+
+261
+00:12:30,920 --> 00:12:33,795
+It is different from subscript because it doesn't give us
+
+262
+00:12:33,795 --> 00:12:36,180
+one of the elements in the variable,
+
+263
+00:12:36,180 --> 00:12:41,180
+but it lets us do things that are going to affect the list.
+
+264
+00:12:41,320 --> 00:12:45,110
+In this case, append is going to add something to this list.
+
+265
+00:12:46,240 --> 00:12:48,230
+So you can think of this dot, for now,
+
+266
+00:12:48,230 --> 00:12:51,570
+at least until we explain it further, which we will do soon,
+
+267
+00:12:51,570 --> 00:12:56,290
+as this list is going to do something
+
+268
+00:12:56,290 --> 00:12:58,390
+and that's likely going to affect it.
+
+269
+00:12:59,390 --> 00:13:04,046
+So the append functionality here, this thing we're doing
+
+270
+00:13:04,046 --> 00:13:07,140
+is part of the list variable.
+
+271
+00:13:09,550 --> 00:13:12,850
+Now, you cannot append to a tuple, or topple,
+
+272
+00:13:12,850 --> 00:13:17,670
+but what you can do is you can reassign,
+
+273
+00:13:17,670 --> 00:13:19,270
+you can certainly...
+
+274
+00:13:22,290 --> 00:13:24,980
+Sorry, let me just be consistent here.
+
+275
+00:13:26,120 --> 00:13:29,670
+You can add your tuple variable to another tuple
+
+276
+00:13:29,670 --> 00:13:32,020
+and that's going to also join them together
+
+277
+00:13:34,860 --> 00:13:38,890
+and you can reassign that to my tuple variable.
+
+278
+00:13:38,890 --> 00:13:40,450
+So notice this is not an error.
+
+279
+00:13:40,450 --> 00:13:42,277
+You say my tuple variable equals
+
+280
+00:13:42,277 --> 00:13:44,010
+my tuple variable of something else.
+
+281
+00:13:44,010 --> 00:13:46,840
+That's totally fine because this runs first,
+
+282
+00:13:46,840 --> 00:13:49,340
+then it gets assigned to this.
+
+283
+00:13:49,340 --> 00:13:50,300
+So this is okay.
+
+284
+00:13:50,300 --> 00:13:52,260
+This tuple has three elements.
+
+285
+00:13:52,260 --> 00:13:55,140
+We're gonna add it to another tuple that has one element.
+
+286
+00:13:55,140 --> 00:13:57,600
+The result is gonna be a tuple with four elements,
+
+287
+00:13:57,600 --> 00:14:00,800
+but important, the original tuple,
+
+288
+00:14:00,800 --> 00:14:02,240
+this one with three elements,
+
+289
+00:14:02,240 --> 00:14:03,640
+remains unchanged.
+
+290
+00:14:03,640 --> 00:14:06,180
+All that we've done is we've created a brand new one
+
+291
+00:14:06,180 --> 00:14:10,110
+that has four elements, whereas, with my list variable,
+
+292
+00:14:10,110 --> 00:14:13,100
+we did modify this list.
+
+293
+00:14:13,100 --> 00:14:14,930
+We added an extra element here.
+
+294
+00:14:14,930 --> 00:14:17,960
+We did not create a new list with four elements.
+
+295
+00:14:17,960 --> 00:14:21,781
+That may sound extremely weird and probably don't care,
+
+296
+00:14:21,781 --> 00:14:24,420
+but you may care later on.
+
+297
+00:14:24,420 --> 00:14:25,310
+We'll come back to it,
+
+298
+00:14:25,310 --> 00:14:27,260
+so don't worry too much about it for now.
+
+299
+00:14:28,470 --> 00:14:30,530
+Okay, of course we can print this out
+
+300
+00:14:30,530 --> 00:14:33,870
+and you'll see that you now have a tuple with four elements.
+
+301
+00:14:33,870 --> 00:14:35,050
+Good.
+
+302
+00:14:35,050 --> 00:14:37,780
+Finally, you cannot append to a set.
+
+303
+00:14:37,780 --> 00:14:41,220
+Again, we don't know which way the end is,
+
+304
+00:14:41,220 --> 00:14:43,908
+so you can't append something at the end of the set
+
+305
+00:14:43,908 --> 00:14:45,330
+'cause you don't know what that is
+
+306
+00:14:45,330 --> 00:14:47,260
+but you can add an element to a set.
+
+307
+00:14:47,260 --> 00:14:49,640
+My set variable dot add, hello
+
+308
+00:14:50,490 --> 00:14:52,540
+and then print my set variable.
+
+309
+00:14:53,810 --> 00:14:55,197
+Okay?
+
+310
+00:14:55,197 --> 00:14:57,297
+So you can do this and let's print it out.
+
+311
+00:14:59,270 --> 00:15:02,490
+Wait a minute, we've still got three elements in our set.
+
+312
+00:15:02,490 --> 00:15:04,980
+Same as before, even though we've added hello,
+
+313
+00:15:05,910 --> 00:15:07,360
+but we only have one hello.
+
+314
+00:15:09,800 --> 00:15:12,090
+Here's the key thing about sets.
+
+315
+00:15:12,090 --> 00:15:15,050
+I mean, lists, you know, they're fine, they're cool.
+
+316
+00:15:16,720 --> 00:15:19,150
+Tuples, you cannot modify them.
+
+317
+00:15:19,150 --> 00:15:24,150
+Sets, they're unordered and they're also removing duplicates
+
+318
+00:15:25,920 --> 00:15:28,570
+so you cannot have duplicates in a set.
+
+319
+00:15:28,570 --> 00:15:33,200
+In this case, if you add hello twice, you don't add it.
+
+320
+00:15:33,200 --> 00:15:34,910
+It's just not there.
+
+321
+00:15:34,910 --> 00:15:36,550
+We can do that again if you don't believe me.
+
+322
+00:15:36,550 --> 00:15:38,790
+We'll copy that, paste it in.
+
+323
+00:15:40,850 --> 00:15:44,850
+And notice how the set still has only three elements.
+
+324
+00:15:44,850 --> 00:15:48,010
+So, sets, you cannot have duplicates
+
+325
+00:15:48,010 --> 00:15:49,610
+and they don't have any order,
+
+326
+00:15:49,610 --> 00:15:52,450
+and tuples, you cannot modify them.
+
+327
+00:15:52,450 --> 00:15:55,960
+Lists, you can do anything you'll be able to think of.
+
+328
+00:15:55,960 --> 00:15:57,590
+You can modify them, you can extend them,
+
+329
+00:15:57,590 --> 00:16:00,610
+you can append to them, you can get
+
+330
+00:16:00,610 --> 00:16:03,080
+a particular element from them and so on.
+
+331
+00:16:04,480 --> 00:16:09,320
+Anyway, this was a reasonably brief
+
+332
+00:16:09,320 --> 00:16:12,450
+overview video of these collections.
+
+333
+00:16:12,450 --> 00:16:15,230
+They're going to be very handy as we move on
+
+334
+00:16:15,230 --> 00:16:18,400
+into more advanced topics in Python.
+
+335
+00:16:18,400 --> 00:16:21,780
+So bear with me while it's not really clear
+
+336
+00:16:21,780 --> 00:16:24,390
+why you care about these things,
+
+337
+00:16:24,390 --> 00:16:27,180
+we're gonna discover what they're useful for
+
+338
+00:16:27,180 --> 00:16:30,500
+and we're gonna build some projects with them very shortly.
+
+339
+00:16:30,500 --> 00:16:33,000
+So with that said, I'll see you on the next video.
+

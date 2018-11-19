@@ -1,0 +1,732 @@
+1
+00:00:00,330 --> 00:00:01,550
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,550 --> 00:00:04,450
+In this video, we're going to look at how to use decorators
+
+3
+00:00:04,450 --> 00:00:07,440
+that they themselves take parameters.
+
+4
+00:00:07,440 --> 00:00:09,490
+In the last video, we looked at how we can get
+
+5
+00:00:09,490 --> 00:00:11,960
+the function to take a parameter.
+
+6
+00:00:11,960 --> 00:00:13,330
+Now in this video, we're going to look at
+
+7
+00:00:13,330 --> 00:00:15,580
+how to get the decorator to take a parameter.
+
+8
+00:00:16,797 --> 00:00:19,440
+In the last video, when we wanted to make our function
+
+9
+00:00:19,440 --> 00:00:22,570
+take a parameter, all we did was
+
+10
+00:00:23,720 --> 00:00:26,130
+put in the parameter that we wanna use,
+
+11
+00:00:26,130 --> 00:00:29,060
+put it inside the function that will replace our function,
+
+12
+00:00:29,060 --> 00:00:31,700
+so that they have the same signature,
+
+13
+00:00:31,700 --> 00:00:35,320
+and then, of course, call the original function
+
+14
+00:00:35,320 --> 00:00:39,960
+with that parameter at the point of using it.
+
+15
+00:00:39,960 --> 00:00:42,460
+Then, of course, you'll wanna be able to use
+
+16
+00:00:44,120 --> 00:00:46,610
+the parameter, when you require.
+
+17
+00:00:48,120 --> 00:00:51,990
+So this is how you can get the function to take a parameter
+
+18
+00:00:51,990 --> 00:00:55,210
+but we said that it wasn't very generic and it's not.
+
+19
+00:00:55,210 --> 00:00:58,180
+We're gonna learn how to make it more generic soon.
+
+20
+00:00:59,370 --> 00:01:00,800
+But really, there's another problem,
+
+21
+00:01:00,800 --> 00:01:04,420
+which is that if your access_level is guest,
+
+22
+00:01:04,420 --> 00:01:05,760
+you don't have access.
+
+23
+00:01:05,760 --> 00:01:09,260
+If your access_level is admin, you do.
+
+24
+00:01:09,260 --> 00:01:12,390
+And that is hard coded here in the decorator.
+
+25
+00:01:13,620 --> 00:01:15,810
+But what if you wanted to change this decorator
+
+26
+00:01:15,810 --> 00:01:19,110
+so that other users could access it?
+
+27
+00:01:19,110 --> 00:01:23,360
+Like, for example, just normal users.
+
+28
+00:01:23,360 --> 00:01:26,370
+You could of course, go to this decorator and say
+
+29
+00:01:26,370 --> 00:01:27,880
+if user, you can access.
+
+30
+00:01:29,300 --> 00:01:31,520
+But this is a bit limiting,
+
+31
+00:01:31,520 --> 00:01:34,512
+because whoever uses a decorator,
+
+32
+00:01:34,512 --> 00:01:38,070
+can not decide what access_level
+
+33
+00:01:38,070 --> 00:01:40,740
+you can access a function with.
+
+34
+00:01:40,740 --> 00:01:42,720
+So what I'm saying is I would like to
+
+35
+00:01:42,720 --> 00:01:44,630
+be able to modify this decorator
+
+36
+00:01:46,030 --> 00:01:48,490
+to say, admin, for example.
+
+37
+00:01:50,140 --> 00:01:52,840
+And now this function will only be accessible
+
+38
+00:01:52,840 --> 00:01:55,990
+by users who have an access_level of admin.
+
+39
+00:01:58,740 --> 00:02:00,240
+So this is what we want to do.
+
+40
+00:02:01,260 --> 00:02:04,690
+But we must do something that makes this decorator
+
+41
+00:02:04,690 --> 00:02:06,120
+a little bit more complicated,
+
+42
+00:02:06,120 --> 00:02:08,190
+in order to be able to do this.
+
+43
+00:02:09,430 --> 00:02:13,320
+Remember, a decorator is a function that takes in a function
+
+44
+00:02:14,160 --> 00:02:16,280
+and returns another function.
+
+45
+00:02:17,460 --> 00:02:19,590
+That function that it returns
+
+46
+00:02:19,590 --> 00:02:22,240
+must call the original function
+
+47
+00:02:22,240 --> 00:02:23,870
+and it can also do other things.
+
+48
+00:02:23,870 --> 00:02:25,710
+In this case it only calls it
+
+49
+00:02:25,710 --> 00:02:28,140
+if the user's access_level is user.
+
+50
+00:02:30,070 --> 00:02:31,800
+So this must not change.
+
+51
+00:02:31,800 --> 00:02:36,800
+So we know that and we also know that when we have anything,
+
+52
+00:02:37,590 --> 00:02:41,300
+followed by a pair of brackets, this is a function call.
+
+53
+00:02:42,210 --> 00:02:44,600
+Let's forget about the @ for a moment.
+
+54
+00:02:44,600 --> 00:02:47,030
+If you saw this in Python,
+
+55
+00:02:47,030 --> 00:02:50,530
+you'd think this must be some sort of function call.
+
+56
+00:02:50,530 --> 00:02:52,100
+Because it's got the brackets.
+
+57
+00:02:52,100 --> 00:02:56,120
+So there must be a function called user_has_permission
+
+58
+00:02:56,120 --> 00:02:58,320
+and that function must have a parameter
+
+59
+00:02:59,200 --> 00:03:02,190
+and I am passing this argument to that parameter, admin.
+
+60
+00:03:03,320 --> 00:03:04,970
+And I'd say you would be correct.
+
+61
+00:03:05,820 --> 00:03:10,820
+In, I believe, all cases this means that in Python.
+
+62
+00:03:11,120 --> 00:03:13,310
+Brackets means there's a function call.
+
+63
+00:03:15,360 --> 00:03:18,710
+And, therefore, there must be a parameter in the function
+
+64
+00:03:18,710 --> 00:03:20,370
+in order to be able to pass this in.
+
+65
+00:03:20,370 --> 00:03:21,360
+But there is not.
+
+66
+00:03:21,360 --> 00:03:24,680
+Because here the function is this.
+
+67
+00:03:25,620 --> 00:03:28,470
+This is the parameter, this is the argument.
+
+68
+00:03:28,470 --> 00:03:31,140
+So there's nothing to take in the admin.
+
+69
+00:03:31,140 --> 00:03:34,180
+Another thing that I notice when I do this is
+
+70
+00:03:34,180 --> 00:03:36,350
+when we use our decorator normally,
+
+71
+00:03:36,350 --> 00:03:38,300
+there is no set of brackets.
+
+72
+00:03:39,320 --> 00:03:40,530
+Hmm.
+
+73
+00:03:40,530 --> 00:03:42,000
+But this is clearly a function,
+
+74
+00:03:42,000 --> 00:03:44,640
+so why is there no set of brackets at the end?
+
+75
+00:03:46,500 --> 00:03:50,870
+Well because the decorator syntax does it for us.
+
+76
+00:03:50,870 --> 00:03:55,870
+We do my_function = user_has_permission(my_function)
+
+77
+00:03:56,070 --> 00:04:00,390
+Okay, this decorator syntax does this function call for us.
+
+78
+00:04:00,390 --> 00:04:02,850
+That's part of its usefulness.
+
+79
+00:04:04,560 --> 00:04:06,410
+So what happens when we do this then?
+
+80
+00:04:10,630 --> 00:04:15,330
+This now replaces what previously was not a function call.
+
+81
+00:04:17,210 --> 00:04:21,330
+So when we do this, we are doing this.
+
+82
+00:04:21,330 --> 00:04:24,180
+We are calling the user_has_permission function,
+
+83
+00:04:25,050 --> 00:04:29,690
+that has to return a function that we then call,
+
+84
+00:04:29,690 --> 00:04:31,810
+with the original function as an argument.
+
+85
+00:04:33,660 --> 00:04:36,050
+So at this point is, you know, mind blown.
+
+86
+00:04:36,050 --> 00:04:38,220
+What the hell is going on here?
+
+87
+00:04:38,220 --> 00:04:41,350
+And it can get quite confusing because,
+
+88
+00:04:41,350 --> 00:04:44,070
+like they say in the movie Inception,
+
+89
+00:04:44,070 --> 00:04:45,970
+you know, we have to go deeper.
+
+90
+00:04:46,850 --> 00:04:48,810
+We have to go another level deep.
+
+91
+00:04:48,810 --> 00:04:52,150
+Because previously we have a decorator
+
+92
+00:04:52,150 --> 00:04:53,570
+that returns a function.
+
+93
+00:04:55,010 --> 00:04:57,100
+And the decorator takes in the function.
+
+94
+00:04:58,240 --> 00:05:03,240
+Now we need a function that returns a function,
+
+95
+00:05:03,760 --> 00:05:05,410
+that takes in a function,
+
+96
+00:05:05,410 --> 00:05:07,156
+which then returns another function.
+
+97
+00:05:07,156 --> 00:05:09,400
+(laughs) So this is pretty ridiculous.
+
+98
+00:05:09,400 --> 00:05:12,330
+Let's write some code out to make this a bit more clear.
+
+99
+00:05:13,430 --> 00:05:18,130
+We are going to do a sort of third level.
+
+100
+00:05:20,600 --> 00:05:24,240
+And this is actually going to be access_level.
+
+101
+00:05:26,280 --> 00:05:28,810
+We are going to indent all of that
+
+102
+00:05:28,810 --> 00:05:32,270
+and then we're going to return user_has_permission.
+
+103
+00:05:33,870 --> 00:05:35,300
+Okay.
+
+104
+00:05:35,300 --> 00:05:36,133
+So.
+
+105
+00:05:37,440 --> 00:05:40,050
+What is happening now is that
+
+106
+00:05:40,050 --> 00:05:42,000
+the decorator we're calling now
+
+107
+00:05:42,000 --> 00:05:45,360
+is going to be called third_level, okay?
+
+108
+00:05:48,320 --> 00:05:50,010
+It's not a good name for a decorator,
+
+109
+00:05:50,010 --> 00:05:51,140
+we're gonna change it in a moment,
+
+110
+00:05:51,140 --> 00:05:52,330
+I just didn't wanna change
+
+111
+00:05:52,330 --> 00:05:54,760
+too many things at once for you guys.
+
+112
+00:05:54,760 --> 00:05:57,030
+We've got the third_level decorator,
+
+113
+00:05:57,030 --> 00:06:01,830
+which gets called, essentially, like this.
+
+114
+00:06:01,830 --> 00:06:06,180
+So the third_level function takes in
+
+115
+00:06:06,180 --> 00:06:07,990
+the access_level, which is admin.
+
+116
+00:06:10,060 --> 00:06:13,300
+Inside this function we define another function.
+
+117
+00:06:15,110 --> 00:06:18,530
+This function is the one that takes in a function, okay?
+
+118
+00:06:19,470 --> 00:06:23,360
+So third_level returns the function
+
+119
+00:06:23,360 --> 00:06:24,840
+that takes in a function.
+
+120
+00:06:24,840 --> 00:06:27,130
+When we call third_level,
+
+121
+00:06:27,130 --> 00:06:30,620
+we get a function that takes in a function.
+
+122
+00:06:31,460 --> 00:06:33,640
+So we have a function call,
+
+123
+00:06:33,640 --> 00:06:35,490
+and this function is going into func.
+
+124
+00:06:38,230 --> 00:06:40,260
+I know there is a lot of brackets here,
+
+125
+00:06:41,680 --> 00:06:44,398
+but essentially, what we are doing is doing this,
+
+126
+00:06:44,398 --> 00:06:48,880
+user_has_permission is third_level of admin.
+
+127
+00:06:48,880 --> 00:06:51,560
+And then we're back to what we know.
+
+128
+00:06:54,721 --> 00:06:55,554
+That.
+
+129
+00:06:56,544 --> 00:06:58,020
+This is essentially what's happening,
+
+130
+00:06:58,020 --> 00:07:00,310
+but only one line, when you do this.
+
+131
+00:07:02,060 --> 00:07:06,190
+Now because it's got the brackets, this is a function call
+
+132
+00:07:06,190 --> 00:07:09,700
+that evaluates before the decorator runs.
+
+133
+00:07:09,700 --> 00:07:14,020
+So we create a function that takes in this access_level
+
+134
+00:07:14,020 --> 00:07:16,130
+and the great thing is that then we can use it,
+
+135
+00:07:16,130 --> 00:07:20,550
+so instead of user, we can replace it by access_level.
+
+136
+00:07:22,430 --> 00:07:25,420
+But we end up with three functions, one inside another.
+
+137
+00:07:28,040 --> 00:07:29,930
+Hopefully this makes a bit of sense.
+
+138
+00:07:29,930 --> 00:07:33,800
+It can be quite a tricky thing to fully understand.
+
+139
+00:07:33,800 --> 00:07:35,840
+But think of it in this way.
+
+140
+00:07:35,840 --> 00:07:40,050
+What we're doing is we are calling the function,
+
+141
+00:07:40,050 --> 00:07:44,230
+giving it an access_level parameter, sorry, an argument.
+
+142
+00:07:44,230 --> 00:07:46,640
+Then that creates another function,
+
+143
+00:07:46,640 --> 00:07:48,470
+and that is our decorator.
+
+144
+00:07:49,330 --> 00:07:50,610
+Normally when we call a decorator,
+
+145
+00:07:50,610 --> 00:07:52,120
+we don't have the brackets.
+
+146
+00:07:53,060 --> 00:07:56,340
+So that gives us the decorator, which just acts as normal,
+
+147
+00:07:56,340 --> 00:07:57,780
+takes in the function
+
+148
+00:07:57,780 --> 00:08:01,230
+and then wraps around it and returns another function
+
+149
+00:08:01,230 --> 00:08:02,970
+that does things and then calls
+
+150
+00:08:02,970 --> 00:08:06,090
+the original function in here with any arguments.
+
+151
+00:08:06,090 --> 00:08:09,410
+The benefit is that we can use any argument
+
+152
+00:08:09,410 --> 00:08:11,780
+that we passed to the original decorator,
+
+153
+00:08:12,650 --> 00:08:14,400
+like the access_level in this case.
+
+154
+00:08:15,370 --> 00:08:19,340
+So if we now, you know, do print(my_function('movies')).
+
+155
+00:08:22,482 --> 00:08:27,310
+Notice how the third_level decorator has the argument admin
+
+156
+00:08:27,310 --> 00:08:28,860
+and our access_level is user,
+
+157
+00:08:28,860 --> 00:08:31,150
+when we get run this, we get none.
+
+158
+00:08:31,150 --> 00:08:35,060
+But if we change this to user and we run this,
+
+159
+00:08:35,060 --> 00:08:39,580
+we now get password for the movies panel is 1234.
+
+160
+00:08:40,770 --> 00:08:42,970
+So as you can see, this is being used there.
+
+161
+00:08:44,040 --> 00:08:46,991
+Normally the names would be
+
+162
+00:08:46,991 --> 00:08:50,580
+user_has_permission would be the decorator that you use.
+
+163
+00:08:50,580 --> 00:08:53,130
+And inside it you would define a function
+
+164
+00:08:53,130 --> 00:08:56,490
+that can be called anything you want, really,
+
+165
+00:08:56,490 --> 00:08:57,390
+like my_decorator.
+
+166
+00:08:58,240 --> 00:09:00,890
+And then that would be what's returned at the end.
+
+167
+00:09:00,890 --> 00:09:04,480
+So very important, user_has_permission
+
+168
+00:09:04,480 --> 00:09:07,310
+defines a function and then returns it.
+
+169
+00:09:08,190 --> 00:09:12,110
+The decorator defines a function and then returns it.
+
+170
+00:09:12,110 --> 00:09:14,080
+It's very important that the indentation levels
+
+171
+00:09:14,080 --> 00:09:15,860
+are all correct in here.
+
+172
+00:09:15,860 --> 00:09:19,720
+The innermost function must call the original function,
+
+173
+00:09:21,200 --> 00:09:22,190
+so that it's a decorator.
+
+174
+00:09:22,190 --> 00:09:24,610
+Otherwise it's just a higher order function.
+
+175
+00:09:26,070 --> 00:09:27,970
+Hopefully this makes sense.
+
+176
+00:09:27,970 --> 00:09:32,970
+We have looked at how to add arguments to a decorator,
+
+177
+00:09:33,020 --> 00:09:34,960
+and that has meant adding a third level
+
+178
+00:09:34,960 --> 00:09:36,660
+of function definitions inside it.
+
+179
+00:09:38,020 --> 00:09:40,420
+If you have any questions, please ask in the course Q&amp;A.
+
+180
+00:09:40,420 --> 00:09:42,130
+We'd be more than happy to help you.
+
+181
+00:09:42,130 --> 00:09:43,890
+We don't want this to be confusing.
+
+182
+00:09:43,890 --> 00:09:47,020
+But the truth is it can be a bit tricky.
+
+183
+00:09:47,020 --> 00:09:49,520
+So with that said, I'll see you on the next video.
+

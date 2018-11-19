@@ -1,0 +1,972 @@
+1
+00:00:00,120 --> 00:00:01,430
+<v Narrator>Hi and welcome back.</v>
+
+2
+00:00:01,430 --> 00:00:05,130
+In this video we're talking about special methods.
+
+3
+00:00:05,130 --> 00:00:09,370
+In a class, as we've seen, not all methods are the same.
+
+4
+00:00:09,370 --> 00:00:10,990
+Python sometimes makes a distinction
+
+5
+00:00:10,990 --> 00:00:13,400
+depending on the method name.
+
+6
+00:00:13,400 --> 00:00:16,410
+Here's an example of one of those methods.
+
+7
+00:00:17,410 --> 00:00:19,930
+That's def dunder init method.
+
+8
+00:00:26,590 --> 00:00:28,936
+The dunder init method gets called for you
+
+9
+00:00:28,936 --> 00:00:31,300
+when you create a new object.
+
+10
+00:00:31,300 --> 00:00:34,660
+The new blank object is parsed to self
+
+11
+00:00:34,660 --> 00:00:36,610
+and the name is whatever you put inside
+
+12
+00:00:36,610 --> 00:00:38,810
+your constructors arguments.
+
+13
+00:00:39,960 --> 00:00:42,400
+And then we've sort of defined a new property
+
+14
+00:00:42,400 --> 00:00:45,390
+as hight self and viewed in the value of our parameter.
+
+15
+00:00:46,680 --> 00:00:50,900
+So the dunder init method is a special method
+
+16
+00:00:50,900 --> 00:00:53,840
+because Python calls it for you automatically
+
+17
+00:00:54,760 --> 00:00:56,270
+when you create an object, you don't have
+
+18
+00:00:56,270 --> 00:00:57,380
+to call it yourself.
+
+19
+00:00:58,370 --> 00:01:01,930
+So here's a couple other interesting, special methods.
+
+20
+00:01:01,930 --> 00:01:05,530
+First of all, let's define a list of movies.
+
+21
+00:01:10,590 --> 00:01:12,310
+What do you think is going to happen
+
+22
+00:01:12,310 --> 00:01:15,900
+when I print out the movies class?
+
+23
+00:01:16,890 --> 00:01:19,780
+Now, we looked at printing the student's class earlier
+
+24
+00:01:19,780 --> 00:01:22,960
+and you got some sort of student thing printed out.
+
+25
+00:01:22,960 --> 00:01:25,480
+What is the movie's class?
+
+26
+00:01:27,440 --> 00:01:28,360
+Is it an error?
+
+27
+00:01:31,650 --> 00:01:34,824
+Well as you can see, we get a class list.
+
+28
+00:01:34,824 --> 00:01:36,560
+That's some pretty bizarre functionality there.
+
+29
+00:01:36,560 --> 00:01:40,920
+Does this mean that a list is somehow an object?
+
+30
+00:01:42,340 --> 00:01:47,280
+Yes, pretty much everything in Python is an object.
+
+31
+00:01:47,280 --> 00:01:49,520
+And this list is no different.
+
+32
+00:01:49,520 --> 00:01:52,270
+Only we've not had to create it using
+
+33
+00:01:52,270 --> 00:01:54,730
+this constructor like students type thing.
+
+34
+00:01:55,590 --> 00:01:57,630
+Instead, Python's created it for us automatically
+
+35
+00:01:57,630 --> 00:01:59,800
+when we use this syntax.
+
+36
+00:02:00,760 --> 00:02:05,760
+You can, however, print for example, hi dot class,
+
+37
+00:02:06,400 --> 00:02:10,140
+and that's gonna give you a string class, see str.
+
+38
+00:02:11,920 --> 00:02:15,330
+So everything is an object in Python.
+
+39
+00:02:16,450 --> 00:02:20,510
+What does it mean for a list to be an object?
+
+40
+00:02:20,510 --> 00:02:22,530
+Well, it means that everything we can do
+
+41
+00:02:22,530 --> 00:02:26,070
+with a list, we can do with our own classes.
+
+42
+00:02:27,713 --> 00:02:28,680
+So here's an example.
+
+43
+00:02:28,680 --> 00:02:31,510
+We can print out the len of movies.
+
+44
+00:02:33,010 --> 00:02:36,630
+Okay, now we know that movies is an object.
+
+45
+00:02:36,630 --> 00:02:38,400
+So what is going on behind the scenes
+
+46
+00:02:38,400 --> 00:02:42,520
+that is allowing us to call this len function,
+
+47
+00:02:42,520 --> 00:02:46,030
+give it the movies object and it's given us two.
+
+48
+00:02:47,720 --> 00:02:49,350
+Well, let's do it.
+
+49
+00:02:50,345 --> 00:02:51,540
+Let's create a class garage.
+
+50
+00:02:53,473 --> 00:02:56,500
+And in it we're going to define an init method.
+
+51
+00:02:56,500 --> 00:03:00,070
+That is going to define self dot cars to be an empty list.
+
+52
+00:03:03,904 --> 00:03:05,780
+Now, we can create our garage,
+
+53
+00:03:07,028 --> 00:03:08,350
+let's say Ford is gonna be in garage.
+
+54
+00:03:09,270 --> 00:03:13,720
+And now this Ford has a, Ford.cars
+
+55
+00:03:13,720 --> 00:03:17,920
+has this cars property here, that is gonna
+
+56
+00:03:17,920 --> 00:03:20,515
+print out an empty list when we print it out,
+
+57
+00:03:20,515 --> 00:03:22,320
+because that's what we've assigned it to.
+
+58
+00:03:22,320 --> 00:03:27,320
+However, we can add, we can say Ford.cars.append fiesta.
+
+59
+00:03:28,280 --> 00:03:33,280
+And Ford.cars.append focus for example.
+
+60
+00:03:33,400 --> 00:03:34,940
+Then when we run this programme again,
+
+61
+00:03:34,940 --> 00:03:38,360
+now we get a list of two items, fiesta and focus.
+
+62
+00:03:40,570 --> 00:03:45,570
+Now what if I wanted to do len of Ford.
+
+63
+00:03:46,330 --> 00:03:47,960
+Ford is the garage one but I want
+
+64
+00:03:47,960 --> 00:03:50,270
+to get the len of Ford, because that's
+
+65
+00:03:50,270 --> 00:03:53,510
+gonna tell me how many cars there are inside my garage.
+
+66
+00:03:54,800 --> 00:03:59,470
+Of course, when we run this, we get a type error.
+
+67
+00:03:59,470 --> 00:04:02,380
+Object of type garage has no len.
+
+68
+00:04:02,380 --> 00:04:04,080
+Okay, that's an interesting error.
+
+69
+00:04:05,440 --> 00:04:08,480
+It tells us that Python cannot calculate the len
+
+70
+00:04:08,480 --> 00:04:09,870
+of this garage, because it doesn't know
+
+71
+00:04:09,870 --> 00:04:11,790
+what the len of the garage is meant to be,
+
+72
+00:04:11,790 --> 00:04:13,990
+what it's meant to mean, even.
+
+73
+00:04:15,430 --> 00:04:18,720
+So in order to tell Python that this garage
+
+74
+00:04:18,720 --> 00:04:23,720
+has a length, we have to define another dunder method.
+
+75
+00:04:24,050 --> 00:04:26,901
+And that's underscore underscore len underscore underscore.
+
+76
+00:04:26,901 --> 00:04:30,830
+Again it takes you to self, like all methods do
+
+77
+00:04:31,779 --> 00:04:33,900
+and then it has to return the length of the garage.
+
+78
+00:04:33,900 --> 00:04:36,860
+In this case, how many cars there are.
+
+79
+00:04:36,860 --> 00:04:39,450
+So it's gonna return the length of self.cars.
+
+80
+00:04:40,760 --> 00:04:42,700
+Now when we run this programme again,
+
+81
+00:04:42,700 --> 00:04:44,470
+we'll see that two gets printed out
+
+82
+00:04:44,470 --> 00:04:46,880
+even though we've called len of Ford
+
+83
+00:04:47,941 --> 00:04:51,210
+our garage object instead of len of Ford.cars.
+
+84
+00:04:52,540 --> 00:04:55,070
+That's because when we call len,
+
+85
+00:04:55,070 --> 00:04:58,280
+ford comes over to here, self and then
+
+86
+00:04:58,280 --> 00:05:00,680
+we return the length of self.cars.
+
+87
+00:05:02,080 --> 00:05:06,320
+The list also has this dunder len method
+
+88
+00:05:06,320 --> 00:05:10,970
+that gives us the number of items in the list.
+
+89
+00:05:10,970 --> 00:05:15,180
+That's just a slightly more complicated definition,
+
+90
+00:05:15,180 --> 00:05:17,080
+but nonetheless, what we have to know
+
+91
+00:05:17,080 --> 00:05:19,980
+is that this len dunder method allows
+
+92
+00:05:19,980 --> 00:05:22,330
+us to do something and return a value
+
+93
+00:05:22,330 --> 00:05:24,580
+that we get returned to us when we call
+
+94
+00:05:24,580 --> 00:05:27,680
+the len function on our object.
+
+95
+00:05:31,550 --> 00:05:36,550
+Let's do something like, for example ford zero.
+
+96
+00:05:38,580 --> 00:05:41,500
+Ford zero should give us the first car
+
+97
+00:05:41,500 --> 00:05:43,230
+in the queue of cars that we're working
+
+98
+00:05:43,230 --> 00:05:44,500
+with for example.
+
+99
+00:05:44,500 --> 00:05:45,770
+In this case, it should be fiesta
+
+100
+00:05:45,770 --> 00:05:48,180
+because that's the first car we appended.
+
+101
+00:05:48,180 --> 00:05:50,760
+Of course if we run this, we'll get
+
+102
+00:05:50,760 --> 00:05:53,860
+that garage object does not support indexing.
+
+103
+00:05:53,860 --> 00:05:56,440
+Remember, this is accessing something by an index,
+
+104
+00:05:56,440 --> 00:05:57,900
+Python calls it indexing.
+
+105
+00:05:58,970 --> 00:06:00,160
+What to do?
+
+106
+00:06:00,160 --> 00:06:03,280
+Well you guessed it, we'll define another dunder method.
+
+107
+00:06:04,150 --> 00:06:06,100
+Here's a challenge for you.
+
+108
+00:06:06,100 --> 00:06:08,280
+Pause the video and go an find out
+
+109
+00:06:08,280 --> 00:06:12,510
+how you can index your own custom object.
+
+110
+00:06:12,510 --> 00:06:14,720
+It's gonna be a bit of a challenge, a bit tricky,
+
+111
+00:06:14,720 --> 00:06:16,070
+but I'm sure you can do it.
+
+112
+00:06:19,090 --> 00:06:21,100
+Okay, I'm sure you got that.
+
+113
+00:06:21,100 --> 00:06:23,420
+We have to define a new dunder method.
+
+114
+00:06:24,540 --> 00:06:26,540
+And this time it's called get item.
+
+115
+00:06:27,850 --> 00:06:30,170
+And it takes self of course, the object
+
+116
+00:06:30,170 --> 00:06:31,910
+that we're calling this on.
+
+117
+00:06:31,910 --> 00:06:36,410
+And it also takes the index that we're trying to access, i.
+
+118
+00:06:37,280 --> 00:06:39,280
+So remember, this is just another
+
+119
+00:06:39,280 --> 00:06:44,280
+way of calling ford.getitem, with ford,
+
+120
+00:06:44,560 --> 00:06:49,090
+sorry, garage.getitem with ford and zero.
+
+121
+00:06:50,330 --> 00:06:54,240
+Okay, this is syntactic sugar for this.
+
+122
+00:06:55,867 --> 00:06:56,860
+What we're doing is calling the get i's
+
+123
+00:06:56,860 --> 00:06:59,230
+and the function of the garage class
+
+124
+00:06:59,230 --> 00:07:00,820
+and we're parsing to it the ford object
+
+125
+00:07:00,820 --> 00:07:02,770
+that we've created and the index we want
+
+126
+00:07:02,770 --> 00:07:04,730
+to access, which is zero.
+
+127
+00:07:04,730 --> 00:07:09,730
+And all we have to do is return self.cars.i,
+
+128
+00:07:10,000 --> 00:07:11,480
+so the car's i.
+
+129
+00:07:12,320 --> 00:07:15,000
+And that's gonna give us the i index
+
+130
+00:07:15,000 --> 00:07:17,310
+of the self.cars list.
+
+131
+00:07:17,310 --> 00:07:18,143
+Let's run it.
+
+132
+00:07:19,877 --> 00:07:22,970
+And there you have it, we get fiesta back.
+
+133
+00:07:22,970 --> 00:07:26,270
+So these are two pretty important dunder methods
+
+134
+00:07:26,270 --> 00:07:29,820
+that can be quite useful in many circumstances.
+
+135
+00:07:29,820 --> 00:07:33,734
+Whenever you want an object that will store things
+
+136
+00:07:33,734 --> 00:07:37,550
+and that you can access, these two methods
+
+137
+00:07:37,550 --> 00:07:38,900
+can be pretty useful.
+
+138
+00:07:38,900 --> 00:07:42,130
+Now, as soon as you've implemented the len and get item
+
+139
+00:07:42,130 --> 00:07:46,340
+methods, some new functionality gets unlocked.
+
+140
+00:07:46,340 --> 00:07:50,380
+And that is, that you can iterate over your garage.
+
+141
+00:07:51,880 --> 00:07:54,270
+You can use a four loop on your garage.
+
+142
+00:07:54,270 --> 00:07:57,850
+But only when you have these two methods defined.
+
+143
+00:07:57,850 --> 00:07:59,160
+Because Python is gonna use these
+
+144
+00:07:59,160 --> 00:08:01,200
+two methods in the background of the ford loop
+
+145
+00:08:01,200 --> 00:08:03,070
+in order to iterate over it.
+
+146
+00:08:04,420 --> 00:08:07,180
+And there you have it, you get fiesta and focus.
+
+147
+00:08:09,090 --> 00:08:10,790
+So it's some pretty cool stuff.
+
+148
+00:08:10,790 --> 00:08:12,500
+The first time I learned about this
+
+149
+00:08:12,500 --> 00:08:16,710
+I was, pardon the expression, flabbergasted.
+
+150
+00:08:16,710 --> 00:08:19,776
+Because I really didn't know much about these
+
+151
+00:08:19,776 --> 00:08:23,070
+dunder methods, and it's pretty interesting,
+
+152
+00:08:23,070 --> 00:08:25,110
+because everything you can do in Python,
+
+153
+00:08:25,110 --> 00:08:28,930
+all the built in functions like len and some,
+
+154
+00:08:28,930 --> 00:08:31,460
+and all the constructs like for,
+
+155
+00:08:31,460 --> 00:08:35,790
+are all built on objects having these special methods.
+
+156
+00:08:36,660 --> 00:08:39,440
+And so learning about these is really exciting.
+
+157
+00:08:39,440 --> 00:08:43,160
+And we will learn about them as we go along the course.
+
+158
+00:08:43,160 --> 00:08:47,130
+But I wanted to give you another two special
+
+159
+00:08:50,316 --> 00:08:53,620
+methods, in fact, that are the dunder repr
+
+160
+00:08:53,620 --> 00:08:55,520
+and dunder string.
+
+161
+00:08:56,390 --> 00:08:58,870
+So let's implement dunder repr.
+
+162
+00:08:58,870 --> 00:09:01,430
+This is how you define the repr.
+
+163
+00:09:01,430 --> 00:09:04,080
+And this repr should be used to print
+
+164
+00:09:04,080 --> 00:09:06,950
+out a string representing the object.
+
+165
+00:09:08,530 --> 00:09:11,770
+So let's once again, put self in here.
+
+166
+00:09:11,770 --> 00:09:15,390
+And we can return, I'm sorry, I said this
+
+167
+00:09:15,390 --> 00:09:17,240
+should be used to print out a string, that's a lie.
+
+168
+00:09:17,240 --> 00:09:18,850
+It should be used to return a string,
+
+169
+00:09:18,850 --> 00:09:20,350
+that represents the object.
+
+170
+00:09:22,357 --> 00:09:26,770
+So we can define this as being a garage.
+
+171
+00:09:26,770 --> 00:09:28,930
+And inside of it we're gonna put self.cars.
+
+172
+00:09:30,180 --> 00:09:32,680
+That really represents our garage.
+
+173
+00:09:32,680 --> 00:09:34,680
+It's a garage object and it has
+
+174
+00:09:34,680 --> 00:09:36,230
+this list of cars inside of it.
+
+175
+00:09:39,740 --> 00:09:44,470
+The dunder string should be used
+
+176
+00:09:44,470 --> 00:09:49,130
+to return a string that tells the user
+
+177
+00:09:49,130 --> 00:09:50,810
+some information about this garage,
+
+178
+00:09:50,810 --> 00:09:54,610
+such that if you were to print the object out,
+
+179
+00:09:54,610 --> 00:09:57,850
+the user might gain some useful insights
+
+180
+00:09:57,850 --> 00:10:00,010
+about the garage you're printing out.
+
+181
+00:10:01,550 --> 00:10:04,034
+So in this case we should return something like f.
+
+182
+00:10:04,034 --> 00:10:09,034
+And garage with len of self cars.
+
+183
+00:10:12,320 --> 00:10:15,070
+Notice how the repr, the dunder repr
+
+184
+00:10:15,070 --> 00:10:19,410
+returns a sort of codified version of this garage.
+
+185
+00:10:19,410 --> 00:10:20,730
+It includes everything we need,
+
+186
+00:10:20,730 --> 00:10:23,140
+in order to represent this object.
+
+187
+00:10:23,140 --> 00:10:26,880
+And the str method turns something
+
+188
+00:10:26,880 --> 00:10:28,390
+that a user might want to read.
+
+189
+00:10:28,390 --> 00:10:30,740
+That's really the difference between these two.
+
+190
+00:10:32,446 --> 00:10:34,260
+Notice how here we've accessed len of self.
+
+191
+00:10:34,260 --> 00:10:36,690
+I love this, self is the object.
+
+192
+00:10:36,690 --> 00:10:38,390
+So when you call len of self, you're really
+
+193
+00:10:38,390 --> 00:10:41,330
+calling the len method that you defined up here.
+
+194
+00:10:42,670 --> 00:10:46,830
+Now when you print ford down here, you see
+
+195
+00:10:48,360 --> 00:10:52,020
+the str gets used, garage with two cars.
+
+196
+00:10:53,590 --> 00:10:57,010
+So when does the dunder repr method get used?
+
+197
+00:10:58,440 --> 00:11:00,482
+The dunder repr method gets used
+
+198
+00:11:00,482 --> 00:11:04,770
+particularly when you are coding.
+
+199
+00:11:04,770 --> 00:11:06,640
+When you're using a debugger, we're gonna
+
+200
+00:11:06,640 --> 00:11:09,670
+learn what that is in a few sessions time,
+
+201
+00:11:09,670 --> 00:11:11,960
+it can be really useful for you to look
+
+202
+00:11:11,960 --> 00:11:15,150
+at the object and understand exactly
+
+203
+00:11:15,150 --> 00:11:18,340
+what it is made up of, in this case cars.
+
+204
+00:11:18,340 --> 00:11:19,950
+As we look into debugging, we're gonna
+
+205
+00:11:19,950 --> 00:11:23,780
+look more at the repr function and why it can be useful.
+
+206
+00:11:23,780 --> 00:11:25,720
+So don't worry too much about it for now,
+
+207
+00:11:25,720 --> 00:11:27,080
+just know that the str function
+
+208
+00:11:27,080 --> 00:11:30,660
+can be really useful when printing things out to a user.
+
+209
+00:11:30,660 --> 00:11:33,620
+However, if you are only going to implement
+
+210
+00:11:33,620 --> 00:11:36,710
+one of these two, choose the repr.
+
+211
+00:11:38,080 --> 00:11:41,220
+You can just delete the repr.
+
+212
+00:11:41,220 --> 00:11:46,220
+You can turn the str into a repr, delete this repr here.
+
+213
+00:11:48,730 --> 00:11:51,310
+And make it print something a user will want to see.
+
+214
+00:11:51,310 --> 00:11:52,830
+And this is a better approach,
+
+215
+00:11:52,830 --> 00:11:55,090
+when you now print ford, it's gonna
+
+216
+00:11:56,270 --> 00:11:59,024
+call the repr function instead of the str function.
+
+217
+00:11:59,024 --> 00:12:00,450
+Because repr is sort of a bit more important.
+
+218
+00:12:00,450 --> 00:12:03,660
+So if you're only gonna implement one, implement the repr.
+
+219
+00:12:03,660 --> 00:12:07,030
+But of course, if you can implement both
+
+220
+00:12:07,030 --> 00:12:10,840
+one for a more code oriented description,
+
+221
+00:12:10,840 --> 00:12:13,570
+and the other one for a more user oriented description,
+
+222
+00:12:13,570 --> 00:12:14,790
+this is much better.
+
+223
+00:12:15,670 --> 00:12:18,310
+I am a strong proponent, that every class
+
+224
+00:12:18,310 --> 00:12:23,000
+you create should have a repr and an str methods.
+
+225
+00:12:25,160 --> 00:12:27,290
+There's many more magic dunder methods
+
+226
+00:12:27,290 --> 00:12:32,020
+you can implement, including some to add objects together.
+
+227
+00:12:32,020 --> 00:12:34,660
+After all, integers are also objects.
+
+228
+00:12:34,660 --> 00:12:37,420
+You can overload what boolean operators do.
+
+229
+00:12:37,420 --> 00:12:39,700
+You can make your objects callable.
+
+230
+00:12:39,700 --> 00:12:41,930
+And you can do things like add context managers.
+
+231
+00:12:41,930 --> 00:12:44,330
+We're gonna look at what those are, and much, much more.
+
+232
+00:12:44,330 --> 00:12:45,940
+We'll be learning about a lot of these
+
+233
+00:12:45,940 --> 00:12:47,470
+dunder methods throughout the course
+
+234
+00:12:47,470 --> 00:12:49,870
+because this again, is the most comprehensive
+
+235
+00:12:49,870 --> 00:12:51,980
+Python course that you can take.
+
+236
+00:12:51,980 --> 00:12:54,890
+So I want to cover everything about Python.
+
+237
+00:12:55,810 --> 00:12:56,690
+That's it for this video.
+
+238
+00:12:56,690 --> 00:12:58,140
+I know it's getting a bit more advanced,
+
+239
+00:12:58,140 --> 00:13:00,020
+so you're still with me.
+
+240
+00:13:00,020 --> 00:13:01,730
+When we get to building our next project
+
+241
+00:13:01,730 --> 00:13:04,490
+everything's gonna be a bit clearer.
+
+242
+00:13:04,490 --> 00:13:05,690
+So that's it for this video.
+
+243
+00:13:05,690 --> 00:13:07,140
+I'll see you on the next one.
+

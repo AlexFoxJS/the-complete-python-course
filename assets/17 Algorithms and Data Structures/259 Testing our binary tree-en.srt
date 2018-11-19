@@ -1,0 +1,232 @@
+1
+00:00:00,418 --> 00:00:01,318
+<v Jose>Hi, welcome back.</v>
+
+2
+00:00:01,318 --> 00:00:03,797
+In this video, we're just going to check our binary tree,
+
+3
+00:00:03,797 --> 00:00:05,548
+Make sure it's all working.
+
+4
+00:00:05,548 --> 00:00:08,791
+'Cause the last few videos were pretty intense.
+
+5
+00:00:08,791 --> 00:00:11,049
+What I've written here is just, you know,
+
+6
+00:00:11,049 --> 00:00:12,305
+importing our libraries.
+
+7
+00:00:12,305 --> 00:00:16,274
+Create a new binary tree with six at the head.
+
+8
+00:00:16,274 --> 00:00:18,775
+And then, I've created a few nodes:
+
+9
+00:00:18,775 --> 00:00:21,707
+five, three, nine, seven, eight, 7.5, 12 and 11
+
+10
+00:00:21,707 --> 00:00:24,588
+and I have added them to the tree in order
+
+11
+00:00:24,588 --> 00:00:27,809
+and then with deleting nine, which is up here,
+
+12
+00:00:27,809 --> 00:00:29,659
+and then we are printing the tree out.
+
+13
+00:00:29,659 --> 00:00:33,742
+So, this tree, I am just going to move this here,
+
+14
+00:00:34,861 --> 00:00:37,123
+hide this, there we go.
+
+15
+00:00:37,123 --> 00:00:40,373
+This tree starts at six then adds five,
+
+16
+00:00:41,776 --> 00:00:44,024
+which is going to be added to the left of six.
+
+17
+00:00:44,024 --> 00:00:45,061
+Then adds three, which is going to be added
+
+18
+00:00:45,061 --> 00:00:46,343
+to the left of five.
+
+19
+00:00:46,343 --> 00:00:48,821
+Then adds nine which is going to be added to the left,
+
+20
+00:00:48,821 --> 00:00:50,382
+to the right, of six.
+
+21
+00:00:50,382 --> 00:00:51,982
+Then adds seven which is going to be added
+
+22
+00:00:51,982 --> 00:00:53,844
+to the left of nine.
+
+23
+00:00:53,844 --> 00:00:55,358
+Then adds eight which is going to be added
+
+24
+00:00:55,358 --> 00:00:56,817
+to the right of seven.
+
+25
+00:00:56,817 --> 00:01:00,038
+Then add 7.5 which is going to be added
+
+26
+00:01:00,038 --> 00:01:01,392
+to the left of eight.
+
+27
+00:01:01,392 --> 00:01:04,413
+So, it's reconstructing this tree here
+
+28
+00:01:04,413 --> 00:01:07,634
+just because we are then going to delete nine
+
+29
+00:01:07,634 --> 00:01:11,407
+and we're going to print the tree in order.
+
+30
+00:01:11,407 --> 00:01:14,740
+Hopefully, what we see is an eight here.
+
+31
+00:01:15,745 --> 00:01:16,744
+This deleted.
+
+32
+00:01:16,744 --> 00:01:17,788
+This deleted.
+
+33
+00:01:17,788 --> 00:01:19,515
+And this pointing there.
+
+34
+00:01:19,515 --> 00:01:21,766
+This is what we want to see.
+
+35
+00:01:21,766 --> 00:01:25,274
+Let's find out, with run the app.
+
+36
+00:01:25,274 --> 00:01:27,470
+And we get, it would be nice if we got, you know,
+
+37
+00:01:27,470 --> 00:01:30,730
+a nicely printed tree out so we wouldn't have to
+
+38
+00:01:30,730 --> 00:01:33,460
+delve into our algorithm to know what the structure is.
+
+39
+00:01:33,460 --> 00:01:36,808
+Nonetheless, we get, in order of left to right,
+
+40
+00:01:36,808 --> 00:01:40,517
+three, which is here, five, which is here,
+
+41
+00:01:40,517 --> 00:01:42,431
+six, which is here.
+
+42
+00:01:42,431 --> 00:01:45,231
+Then, we go right and then we go left,
+
+43
+00:01:45,231 --> 00:01:48,066
+because every new node the first thing we do is we go left.
+
+44
+00:01:48,066 --> 00:01:50,985
+So, we get seven, then we go left, nothing there.
+
+45
+00:01:50,985 --> 00:01:53,870
+We go right, 7.5, then we go back to the top
+
+46
+00:01:53,870 --> 00:01:54,946
+and we get eight.
+
+47
+00:01:54,946 --> 00:01:58,946
+Then we get right and we go left 11 and then 12.
+
+48
+00:02:00,462 --> 00:02:04,129
+So, as you can see, our delete method works.
+
+49
+00:02:04,979 --> 00:02:07,803
+Which is, pretty awesome first of all.
+
+50
+00:02:07,803 --> 00:02:12,803
+But also, you can try to delete your one child and no child
+
+51
+00:02:13,239 --> 00:02:16,443
+branches as well if you want to give it a go.
+
+52
+00:02:16,443 --> 00:02:20,322
+And now you know exactly how to implement a binary tree.
+
+53
+00:02:20,322 --> 00:02:22,110
+If you get asked in an interview, or a coding challenge,
+
+54
+00:02:22,110 --> 00:02:24,536
+or anything like that, you can do it and also,
+
+55
+00:02:24,536 --> 00:02:27,654
+I hope you found it interesting just to learn a bit more
+
+56
+00:02:27,654 --> 00:02:31,908
+about some in depth computer science concepts.
+
+57
+00:02:31,908 --> 00:02:34,401
+Thanks for joining me in this video, and I'll see you
+
+58
+00:02:34,401 --> 00:02:35,423
+in the next one.
+

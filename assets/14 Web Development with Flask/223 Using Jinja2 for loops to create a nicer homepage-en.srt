@@ -1,0 +1,632 @@
+1
+00:00:00,210 --> 00:00:01,740
+<v Instructor>Hi there and welcome back.</v>
+
+2
+00:00:01,740 --> 00:00:03,900
+In this video I wanted to show you how to create a nice
+
+3
+00:00:03,900 --> 00:00:05,600
+homepage for your blog,
+
+4
+00:00:05,600 --> 00:00:07,610
+so that you don't just get "Hello, world!"
+
+5
+00:00:07,610 --> 00:00:08,720
+when you arrive here.
+
+6
+00:00:09,740 --> 00:00:12,200
+We're gonna show your blog,
+
+7
+00:00:12,200 --> 00:00:14,940
+and also a list of the posts that are available in your
+
+8
+00:00:14,940 --> 00:00:17,400
+blog right now for people to read.
+
+9
+00:00:17,400 --> 00:00:18,780
+Let's go and do that.
+
+10
+00:00:18,780 --> 00:00:21,740
+Going back over to PyCharm, we're gonna stop our app
+
+11
+00:00:21,740 --> 00:00:22,710
+and close it down.
+
+12
+00:00:23,630 --> 00:00:25,690
+And then instead of returning "Hello, world!"
+
+13
+00:00:25,690 --> 00:00:29,140
+here, we're going to return render_template.
+
+14
+00:00:29,140 --> 00:00:32,624
+And what we're gonna render is home.jinja2.
+
+15
+00:00:32,624 --> 00:00:36,240
+And to this home.jinja2 we're gonna pass the posts
+
+16
+00:00:36,240 --> 00:00:39,590
+that we currently have available in our in-memory database
+
+17
+00:00:39,590 --> 00:00:40,900
+which is this dictionary.
+
+18
+00:00:40,900 --> 00:00:43,000
+So we're gonna say posts equal posts.
+
+19
+00:00:44,020 --> 00:00:46,890
+Now we have this template that will have access to all our
+
+20
+00:00:46,890 --> 00:00:49,760
+posts, so we can go and create it,
+
+21
+00:00:51,700 --> 00:00:55,620
+and then make it do what we want it to do.
+
+22
+00:00:55,620 --> 00:00:56,920
+So the first we're gonna do,
+
+23
+00:00:56,920 --> 00:01:01,920
+extends base.jinja2, and then the block content.
+
+24
+00:01:04,760 --> 00:01:06,780
+Make sure to not leave any spaces in endblock,
+
+25
+00:01:06,780 --> 00:01:09,330
+and you know to spell these things correctly
+
+26
+00:01:09,330 --> 00:01:11,090
+using lower-case letters.
+
+27
+00:01:11,090 --> 00:01:12,970
+Then we can in here put
+
+28
+00:01:12,970 --> 00:01:15,560
+what we want our homepage to be like.
+
+29
+00:01:15,560 --> 00:01:17,750
+This, by the way, is something I really love about
+
+30
+00:01:17,750 --> 00:01:20,460
+the development workflow with Flask.
+
+31
+00:01:20,460 --> 00:01:23,910
+You define your route, what your user can access,
+
+32
+00:01:23,910 --> 00:01:27,100
+and then with a simple function that just renders a template
+
+33
+00:01:27,100 --> 00:01:28,890
+and give it some information,
+
+34
+00:01:28,890 --> 00:01:31,360
+you can go and create a template that shows the user
+
+35
+00:01:31,360 --> 00:01:32,580
+exactly what you want.
+
+36
+00:01:33,630 --> 00:01:37,700
+So in this case we're gonna say h1 welcome to your blog,
+
+37
+00:01:39,680 --> 00:01:42,410
+and then we're gonna do h2 posts,
+
+38
+00:01:44,340 --> 00:01:47,660
+and now we're gonna put in an unordered list.
+
+39
+00:01:47,660 --> 00:01:51,870
+An unordered list in HTML is just a bullet point list.
+
+40
+00:01:51,870 --> 00:01:56,870
+And in here we're gonna put an li tag for our first post.
+
+41
+00:01:57,500 --> 00:02:01,640
+So we're gonna say the li tag is a list item,
+
+42
+00:02:01,640 --> 00:02:05,010
+the a tag is an anchor tag, a link.
+
+43
+00:02:05,010 --> 00:02:08,940
+The href is the URL that this link goes to,
+
+44
+00:02:08,940 --> 00:02:09,920
+or the endpoint.
+
+45
+00:02:10,800 --> 00:02:13,100
+So slash post, slash zero.
+
+46
+00:02:14,040 --> 00:02:18,850
+Then in here we're gonna type in Post 1, for example.
+
+47
+00:02:18,850 --> 00:02:21,640
+Then we're gonna close the a tag, close the li tag.
+
+48
+00:02:24,140 --> 00:02:26,400
+When users go to our homepage now,
+
+49
+00:02:26,400 --> 00:02:31,350
+they're going to see this big title, slightly smaller title,
+
+50
+00:02:31,350 --> 00:02:33,090
+and then some bullet points
+
+51
+00:02:33,090 --> 00:02:35,970
+with one element in the bullet points,
+
+52
+00:02:35,970 --> 00:02:40,060
+which is a link to the first post that exists.
+
+53
+00:02:40,060 --> 00:02:42,450
+Let's go and run our app,
+
+54
+00:02:42,450 --> 00:02:45,330
+and then go back to here and refresh it.
+
+55
+00:02:47,995 --> 00:02:50,560
+Ope, I misspelt that, I didn't notice that,
+
+56
+00:02:50,560 --> 00:02:51,990
+we can rename it.
+
+57
+00:02:51,990 --> 00:02:54,740
+Homa.jinja2, home.jinja2, there we go.
+
+58
+00:02:54,740 --> 00:02:56,640
+Remember to stop your app, restart it.
+
+59
+00:02:58,300 --> 00:03:01,220
+There you have it, that was mildly anticlimactic,
+
+60
+00:03:01,220 --> 00:03:02,400
+I did not spot that.
+
+61
+00:03:02,400 --> 00:03:05,900
+Welcome to your blog, and then Posts, slightly smaller font,
+
+62
+00:03:05,900 --> 00:03:07,890
+then you have your first post here.
+
+63
+00:03:07,890 --> 00:03:10,190
+You click on it, it goes to your post.
+
+64
+00:03:11,320 --> 00:03:12,190
+Great stuff.
+
+65
+00:03:12,190 --> 00:03:15,750
+Except, if we go and add a new post,
+
+66
+00:03:21,030 --> 00:03:26,010
+and you know, we go back to the homepage, it's not there.
+
+67
+00:03:26,010 --> 00:03:27,940
+Of course, it shouldn't be there.
+
+68
+00:03:27,940 --> 00:03:28,930
+Our homepage...
+
+69
+00:03:28,930 --> 00:03:30,680
+We can stop the app by the way.
+
+70
+00:03:30,680 --> 00:03:33,550
+Our homepage is only rendering this list here.
+
+71
+00:03:33,550 --> 00:03:36,880
+This list doesn't depend on our posts at all,
+
+72
+00:03:36,880 --> 00:03:40,353
+it's just a static HTML, we've not told it to
+
+73
+00:03:40,353 --> 00:03:43,030
+you know, have one of these for each post
+
+74
+00:03:43,030 --> 00:03:44,600
+or anything like that.
+
+75
+00:03:44,600 --> 00:03:45,640
+So let's do it.
+
+76
+00:03:46,950 --> 00:03:49,980
+In jinja2 you actually have forloops as well,
+
+77
+00:03:49,980 --> 00:03:53,900
+and they look extremely similar, the same basically,
+
+78
+00:03:53,900 --> 00:03:55,180
+to Python loops.
+
+79
+00:03:56,240 --> 00:04:00,920
+But in jinja you have to start with these percent sign,
+
+80
+00:04:01,850 --> 00:04:06,440
+then you can say for post id, post in posts.items.
+
+81
+00:04:06,440 --> 00:04:09,500
+This is us iterating over a dictionary,
+
+82
+00:04:10,440 --> 00:04:12,010
+and then at the end of the forloop
+
+83
+00:04:12,010 --> 00:04:14,010
+you have to type this endfor.
+
+84
+00:04:14,010 --> 00:04:16,110
+Normally in Python you would have a colon,
+
+85
+00:04:17,020 --> 00:04:19,510
+and then you have some indentation,
+
+86
+00:04:19,510 --> 00:04:21,260
+and the at then end of the indented block,
+
+87
+00:04:21,260 --> 00:04:23,710
+Python would know you've reached the end of the forloop.
+
+88
+00:04:23,710 --> 00:04:25,020
+But jinja does not know that,
+
+89
+00:04:25,020 --> 00:04:27,380
+because HTML doesn't care about indentation.
+
+90
+00:04:27,380 --> 00:04:29,200
+So that's why you have this forloop,
+
+91
+00:04:29,200 --> 00:04:30,410
+and it is endfor.
+
+92
+00:04:30,410 --> 00:04:33,210
+Whatever goes inside here
+
+93
+00:04:34,080 --> 00:04:37,470
+doesn't have to be indented, but I just like it better.
+
+94
+00:04:37,470 --> 00:04:42,370
+We'll repeat once for every posts.items.
+
+95
+00:04:42,370 --> 00:04:45,610
+Remember when you do post an item you get the post id
+
+96
+00:04:45,610 --> 00:04:47,430
+and the post content.
+
+97
+00:04:47,430 --> 00:04:49,430
+So here instead of this href,
+
+98
+00:04:50,370 --> 00:04:52,580
+we can do something a bit more complicated,
+
+99
+00:04:52,580 --> 00:04:54,040
+which is URL_for.
+
+100
+00:04:56,182 --> 00:04:59,850
+You can use Flask's URL for here to generate a link,
+
+101
+00:05:00,938 --> 00:05:03,120
+the post page passing in.
+
+102
+00:05:03,120 --> 00:05:05,810
+The post id parameter that it needs,
+
+103
+00:05:06,840 --> 00:05:09,160
+and of course the value of that post id
+
+104
+00:05:09,160 --> 00:05:11,240
+is the id inside our dictionary.
+
+105
+00:05:12,410 --> 00:05:17,410
+Instead of post1, we can have post title there.
+
+106
+00:05:21,300 --> 00:05:23,540
+So this is looking slightly uglier,
+
+107
+00:05:23,540 --> 00:05:26,740
+but all that's happening here is that we have this href,
+
+108
+00:05:26,740 --> 00:05:29,170
+which is the URL that we're linking to,
+
+109
+00:05:29,170 --> 00:05:31,840
+and that is this.
+
+110
+00:05:31,840 --> 00:05:35,610
+This in jinja2 is gonna get replaced for the URL that
+
+111
+00:05:35,610 --> 00:05:37,470
+takes us to this function.
+
+112
+00:05:37,470 --> 00:05:39,530
+And that takes in a post id,
+
+113
+00:05:39,530 --> 00:05:41,480
+which we're getting from our iteration.
+
+114
+00:05:42,740 --> 00:05:46,070
+Inside the a tag which starts here and ends here,
+
+115
+00:05:46,070 --> 00:05:48,890
+we have the post title as something else
+
+116
+00:05:48,890 --> 00:05:51,090
+that the jinja template is going to replace.
+
+117
+00:05:52,100 --> 00:05:53,630
+So we're gonna see for each post,
+
+118
+00:05:53,630 --> 00:05:57,160
+a link to it, and the post title being linked.
+
+119
+00:05:58,180 --> 00:06:00,060
+Let's start our app again,
+
+120
+00:06:00,060 --> 00:06:03,670
+and go over to Chrome, we're gonna refresh.
+
+121
+00:06:03,670 --> 00:06:06,840
+Now you can see that the first post is called Hello, world,
+
+122
+00:06:06,840 --> 00:06:09,840
+because that's the title of our first post in our database.
+
+123
+00:06:12,760 --> 00:06:14,560
+If we go and create a new post,
+
+124
+00:06:22,490 --> 00:06:25,280
+we go to that page, then we can delete this stuff there
+
+125
+00:06:25,280 --> 00:06:27,210
+and go back to the homepage,
+
+126
+00:06:27,210 --> 00:06:30,690
+and now you have another item in your list.
+
+127
+00:06:32,130 --> 00:06:34,480
+Of course, if you stop and start the app again,
+
+128
+00:06:34,480 --> 00:06:38,690
+that will be gone because this is an in-memory database.
+
+129
+00:06:38,690 --> 00:06:41,990
+It doesn't persist between executions,
+
+130
+00:06:41,990 --> 00:06:44,590
+but if you've done the earlier sections of this course,
+
+131
+00:06:44,590 --> 00:06:46,580
+you know how to replace this
+
+132
+00:06:46,580 --> 00:06:49,750
+for a SQL I database for example.
+
+133
+00:06:49,750 --> 00:06:52,580
+So it could be that straightforward.
+
+134
+00:06:52,580 --> 00:06:56,280
+Instead of retrieving and saving things to this dictionary,
+
+135
+00:06:56,280 --> 00:06:58,950
+you could retrieve them and save them from a SQL I database,
+
+136
+00:06:58,950 --> 00:07:00,160
+and now you've got yourself
+
+137
+00:07:00,160 --> 00:07:02,840
+a pretty stable blogging platform in there.
+
+138
+00:07:03,786 --> 00:07:08,090
+And of course, there are countless websites to develop.
+
+139
+00:07:08,090 --> 00:07:11,470
+Some that exist already, some that do not exist already.
+
+140
+00:07:11,470 --> 00:07:13,400
+Use your imagination and feel free to develop
+
+141
+00:07:13,400 --> 00:07:14,440
+anything you want.
+
+142
+00:07:15,320 --> 00:07:18,320
+Of course there's much more to learn about Flask
+
+143
+00:07:18,320 --> 00:07:20,740
+and about web development as a whole.
+
+144
+00:07:20,740 --> 00:07:23,220
+How to style your pages a bit nicer,
+
+145
+00:07:23,220 --> 00:07:26,610
+how to use JavaScript to include user interactions in pages.
+
+146
+00:07:26,610 --> 00:07:28,590
+There are more things to learn about Flask,
+
+147
+00:07:28,590 --> 00:07:30,180
+like how to log users in,
+
+148
+00:07:30,180 --> 00:07:33,650
+and how to remember them when they come back, and so forth.
+
+149
+00:07:33,650 --> 00:07:36,790
+This course is not meant to give you an in-depth explanation
+
+150
+00:07:36,790 --> 00:07:38,550
+on Flask, but it is a subject
+
+151
+00:07:38,550 --> 00:07:40,140
+I feel really passionate about.
+
+152
+00:07:40,140 --> 00:07:43,150
+And I think really, it's a great thing to know
+
+153
+00:07:43,150 --> 00:07:45,660
+in today's world of technology.
+
+154
+00:07:45,660 --> 00:07:47,020
+Websites are everywhere,
+
+155
+00:07:47,020 --> 00:07:50,330
+and if you are interested in learning about web development,
+
+156
+00:07:50,330 --> 00:07:53,130
+then it's a great place to start.
+
+157
+00:07:54,120 --> 00:07:55,520
+Hopefully this was interesting,
+
+158
+00:07:55,520 --> 00:07:57,270
+and I'll see you on the next video.
+

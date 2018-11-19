@@ -1,0 +1,300 @@
+1
+00:00:00,066 --> 00:00:02,364
+<v Jose>Hi and welcome back, in this video we're going to</v>
+
+2
+00:00:02,364 --> 00:00:06,331
+be creating our locator files by getting data out of the
+
+3
+00:00:06,331 --> 00:00:08,248
+HTML here using Chrome.
+
+4
+00:00:10,637 --> 00:00:13,894
+So we said that earlier we've got two locator files in our
+
+5
+00:00:13,894 --> 00:00:18,727
+project, the quote locators, and the quotes page locators.
+
+6
+00:00:19,693 --> 00:00:23,194
+The quotes page is this page you see here, and the HTML
+
+7
+00:00:23,194 --> 00:00:28,194
+is down here on the right, so let's centre on the HTML,
+
+8
+00:00:28,418 --> 00:00:32,168
+and look at what the quote page has to offer.
+
+9
+00:00:33,063 --> 00:00:36,551
+We have a bunch of quotes in divs, and as you can see
+
+10
+00:00:36,551 --> 00:00:40,801
+they are each down here, so the page is essentially
+
+11
+00:00:42,420 --> 00:00:46,477
+something that contains these quotes, and it also contains
+
+12
+00:00:46,477 --> 00:00:50,953
+a few other things like the tags and a title, and so forth.
+
+13
+00:00:50,953 --> 00:00:55,859
+For our project, the quotes page is going to allow us to
+
+14
+00:00:55,859 --> 00:00:59,109
+retrieve these divs here, these quotes.
+
+15
+00:01:01,855 --> 00:01:06,278
+Now then, the quote locators are going to be the locators
+
+16
+00:01:06,278 --> 00:01:08,861
+that are within a single quote.
+
+17
+00:01:10,266 --> 00:01:14,202
+So our quotes page has only to worry about finding this
+
+18
+00:01:14,202 --> 00:01:17,738
+div, and this div, and this div, and so forth, and then
+
+19
+00:01:17,738 --> 00:01:22,683
+we're gonna give that entire element, to our quote locators
+
+20
+00:01:22,683 --> 00:01:26,235
+and they're gonna be able to find, this span, this other
+
+21
+00:01:26,235 --> 00:01:30,902
+author, and also the tags, so let's go over into PyCharm
+
+22
+00:01:32,104 --> 00:01:36,354
+and start by creating the quotes page locators, OK?
+
+23
+00:01:41,352 --> 00:01:44,296
+So, go over quotes_page_locators and we're gonna create
+
+24
+00:01:44,296 --> 00:01:49,154
+a class here called QuotesPageLocators, and all this is
+
+25
+00:01:49,154 --> 00:01:52,705
+gonna contain is a single constant, a constant in Python,
+
+26
+00:01:52,705 --> 00:01:56,027
+I'm not sure if we've mentioned this before, is normally
+
+27
+00:01:56,027 --> 00:01:59,586
+a variable that's all in upper case, and this is gonna
+
+28
+00:01:59,586 --> 00:02:04,253
+contain "div.quote", and if we go back to Chrome, we can
+
+29
+00:02:05,350 --> 00:02:09,338
+see that "div.quote" is going to give us this div here,
+
+30
+00:02:09,338 --> 00:02:11,579
+with this "class" quote.
+
+31
+00:02:11,579 --> 00:02:15,190
+But if we find many of them, it's gonna give us this one,
+
+32
+00:02:15,190 --> 00:02:18,289
+this one, this one, this one, it's gonna give us all of
+
+33
+00:02:18,289 --> 00:02:20,466
+these in this page.
+
+34
+00:02:20,466 --> 00:02:24,349
+So when we use that locator, we'll be able to find
+
+35
+00:02:24,349 --> 00:02:29,156
+all of these divs, for each div, we're going to use
+
+36
+00:02:29,156 --> 00:02:34,156
+the locators in here, so if we now go to the quote locators,
+
+37
+00:02:35,042 --> 00:02:39,709
+we're going to create some quote locators, and these
+
+38
+00:02:39,709 --> 00:02:43,436
+are going to be one for each thing that we want to extract
+
+39
+00:02:43,436 --> 00:02:44,812
+from a quote.
+
+40
+00:02:44,812 --> 00:02:46,479
+So that's an author,
+
+41
+00:02:50,532 --> 00:02:54,365
+a content or a quote, and also a tags locator.
+
+42
+00:02:55,913 --> 00:03:00,597
+OK, let's fill these in, the author, content, and tags.
+
+43
+00:03:00,597 --> 00:03:04,411
+So for the author, we're going to look for this small
+
+44
+00:03:04,411 --> 00:03:09,150
+class "author", this tag here, so if we go back to PyCharm,
+
+45
+00:03:09,150 --> 00:03:13,535
+in the author we can put "small.author", that's going to
+
+46
+00:03:13,535 --> 00:03:18,535
+look again for the "small" tag that has class "author".
+
+47
+00:03:18,868 --> 00:03:21,897
+For the content, we are looking for "span" with a class
+
+48
+00:03:21,897 --> 00:03:22,730
+of "text",
+
+49
+00:03:26,809 --> 00:03:30,849
+and finally for the tags, we are looking for a "div"
+
+50
+00:03:30,849 --> 00:03:34,629
+that has class "tags", this one here, but we are actually
+
+51
+00:03:34,629 --> 00:03:37,885
+looking for each of these "a" tags, so that we can extract
+
+52
+00:03:37,885 --> 00:03:41,194
+the different tags that are in there.
+
+53
+00:03:41,194 --> 00:03:44,520
+So we're gonna look for "div.tags", and inside it
+
+54
+00:03:44,520 --> 00:03:48,787
+"a.tag", and we're gonna find multiple of them.
+
+55
+00:03:48,787 --> 00:03:53,287
+So there's gonna be "div.tags", and in it "a.tag", OK?
+
+56
+00:03:56,293 --> 00:04:00,124
+These are locators so given one of these quotes, with
+
+57
+00:04:00,124 --> 00:04:03,607
+this locator, we'll be able to find the author.
+
+58
+00:04:03,607 --> 00:04:07,194
+So once again, going back to the HTML, given one of these
+
+59
+00:04:07,194 --> 00:04:11,723
+quotes, one of these divs specifically, these locators are
+
+60
+00:04:11,723 --> 00:04:15,849
+unique enough that we'll be able to find the quote contents
+
+61
+00:04:15,849 --> 00:04:20,551
+using "span.text", the author using "small.author",
+
+62
+00:04:20,551 --> 00:04:23,801
+and the tags using "div.tags", "a.tag".
+
+63
+00:04:25,654 --> 00:04:29,904
+Now if we were given this entire page, we would not know
+
+64
+00:04:29,904 --> 00:04:33,176
+whether to extract the quote contents from the first quote
+
+65
+00:04:33,176 --> 00:04:35,856
+or from the second quote, or from the third quote, and
+
+66
+00:04:35,856 --> 00:04:39,447
+so forth, so what we're going to do, is we are going to give
+
+67
+00:04:39,447 --> 00:04:44,434
+our, a parser, what's gonna use those locators, only one
+
+68
+00:04:44,434 --> 00:04:47,952
+of these divs, and then with that one, it's gonna be able to
+
+69
+00:04:47,952 --> 00:04:50,860
+find the correct element, and we're gonna treat them
+
+70
+00:04:50,860 --> 00:04:53,786
+independently, I know this doesn't make much sense just yet,
+
+71
+00:04:53,786 --> 00:04:57,721
+but believe me, as we progress through this app, it's going
+
+72
+00:04:57,721 --> 00:05:00,386
+to make more and more sense, for now, just trust me that
+
+73
+00:05:00,386 --> 00:05:03,921
+this is the way to go forward, and let's go over to the
+
+74
+00:05:03,921 --> 00:05:08,168
+next video, where we're going to look at creating our pages.
+
+75
+00:05:08,168 --> 00:05:09,390
+I'll see you there.
+

@@ -1,0 +1,360 @@
+1
+00:00:00,100 --> 00:00:01,250
+Narrador Masculino: Ol e bem vindo de volta.
+
+2
+00:00:01,250 --> 00:00:02,450
+Neste vdeo,
+
+3
+00:00:02,450 --> 00:00:06,370
+vamos procurar separar os localizadores em classes.
+
+4
+00:00:06,370 --> 00:00:10,280
+Ento, o que vamos fazer no 
+
+5
+00:00:10,280 --> 00:00:13,280
+codificar esses localizadores na classe ParsedItem.
+
+6
+00:00:14,870 --> 00:00:19,460
+O ParsedItem  o item que representa os
+
+7
+00:00:19,460 --> 00:00:22,550
+dados que esto no html.
+
+8
+00:00:22,550 --> 00:00:27,000
+No deve representar tambm como obter esses dados.
+
+9
+00:00:27,000 --> 00:00:30,540
+Ento, como obter esses dados deve estar em um lugar diferente.
+
+10
+00:00:30,540 --> 00:00:31,620
+Ento, vamos criar
+
+11
+00:00:31,620 --> 00:00:34,440
+uma nova classe, que vou chamar ParsedItemLocators.
+
+12
+00:00:38,466 --> 00:00:40,310
+E eu coloquei em um docstring
+
+13
+00:00:40,310 --> 00:00:41,520
+aqui para minhas anotaes.
+
+14
+00:00:41,520 --> 00:00:43,600
+Apenas,  um pouco mais fcil para voc.
+
+15
+00:00:43,600 --> 00:00:45,810
+Veja este item na pgina html.
+
+16
+00:00:45,810 --> 00:00:47,910
+Isso nos permite ver facilmente o
+
+17
+00:00:47,910 --> 00:00:50,500
+que nosso cdigo estaria observando, bem como alter-lo
+
+18
+00:00:50,500 --> 00:00:52,920
+rapidamente se notarmos que agora  diferente.
+
+19
+00:00:52,920 --> 00:00:54,580
+Ento, isso pode no fazer muito sentido at que
+
+20
+00:00:54,580 --> 00:00:55,620
+eu comece a escrever aqui.
+
+21
+00:00:55,620 --> 00:00:59,730
+Name Locator ser o artigo do pod de produto
+
+22
+00:00:59,730 --> 00:01:00,730
+h3 a.
+
+23
+00:01:02,450 --> 00:01:05,250
+Ok, esse  o localizador que usamos aqui para o nome.
+
+24
+00:01:06,250 --> 00:01:08,380
+E se isso mudar?
+
+25
+00:01:08,380 --> 00:01:10,970
+O site muda e quando voltarmos o html,
+
+26
+00:01:10,970 --> 00:01:12,170
+ um pouco diferente?
+
+27
+00:01:13,821 --> 00:01:17,080
+O ParsedItem no deve se importar porque o
+
+28
+00:01:17,080 --> 00:01:20,260
+ParsedItem representa o item em si e no
+
+29
+00:01:20,260 --> 00:01:22,610
+como obter os dados dele.
+
+30
+00:01:23,770 --> 00:01:27,240
+Ento, essa  uma distino pequena, mas importante.
+
+31
+00:01:27,240 --> 00:01:30,600
+E tudo sobre como voc pensa no seu programa, como
+
+32
+00:01:30,600 --> 00:01:32,840
+as diferentes partes do seu programa interagem
+
+33
+00:01:32,840 --> 00:01:34,180
+umas com as outras.
+
+34
+00:01:34,180 --> 00:01:37,100
+Separando o como e o que vai
+
+35
+00:01:37,100 --> 00:01:39,420
+tornar seus programas muito mais simples.
+
+36
+00:01:39,420 --> 00:01:41,490
+E tambm mais simples de trabalhar.
+
+37
+00:01:41,490 --> 00:01:43,130
+Ento, em vez de colocar uma string
+
+38
+00:01:43,130 --> 00:01:45,730
+aqui, vamos fazer o ParsedItemLocators. NOME LOCATOR.
+
+39
+00:01:47,900 --> 00:01:50,990
+Estes potencialmente e provavelmente seriam em arquivos
+
+40
+00:01:50,990 --> 00:01:51,840
+diferentes completamente.
+
+41
+00:01:51,840 --> 00:01:53,380
+Neste caso, estou deixando-os em um
+
+42
+00:01:53,380 --> 00:01:55,290
+arquivo apenas por simplicidade, mas eles provavelmente
+
+43
+00:01:55,290 --> 00:01:58,280
+estariam em dois arquivos diferentes, um para os localizadores e outro
+
+44
+00:01:58,280 --> 00:01:59,400
+para o item.
+
+45
+00:02:01,000 --> 00:02:04,100
+A coisa boa  que, desde que o site no mude
+
+46
+00:02:04,100 --> 00:02:06,010
+de forma massiva, por exemplo, se eles
+
+47
+00:02:06,010 --> 00:02:07,440
+simplesmente removerem essa classe e
+
+48
+00:02:07,440 --> 00:02:08,670
+talvez adicionarem uma classe
+
+49
+00:02:08,670 --> 00:02:10,940
+diferente ou algo assim, voc no precisa olhar
+
+50
+00:02:10,940 --> 00:02:13,720
+o item e ler atravs de todo esse cdigo.
+
+51
+00:02:13,720 --> 00:02:16,440
+No, tudo que voc precisa fazer
+
+52
+00:02:16,440 --> 00:02:21,440
+ ir ao site, descobrir o novo localizador de HTML e alter-lo.
+
+53
+00:02:21,700 --> 00:02:23,770
+Ento,  muito direto.
+
+54
+00:02:23,770 --> 00:02:25,520
+Ento, vamos fazer isso para os
+
+55
+00:02:25,520 --> 00:02:27,600
+outros e, mais uma vez, vou copi-los
+
+56
+00:02:27,600 --> 00:02:28,920
+s para poupar algum tempo.
+
+57
+00:02:28,920 --> 00:02:31,300
+Eu acho que voc est ficando muito melhor
+
+58
+00:02:31,300 --> 00:02:32,690
+na programao nesta fase do
+
+59
+00:02:32,690 --> 00:02:35,130
+curso, ento acho que posso copiar algum cdigo das
+
+60
+00:02:35,130 --> 00:02:36,820
+minhas anotaes e economizar um tempo.
+
+61
+00:02:36,820 --> 00:02:39,510
+Ento, temos nosso link, preo e localizador de
+
+62
+00:02:39,510 --> 00:02:41,840
+classificao e, em seguida, vamos substitu-los aqui.
+
+63
+00:02:41,840 --> 00:02:46,550
+E ento este  o ParsedItemLocators. LINK LOCATOR.
+
+64
+00:02:48,420 --> 00:02:51,160
+ParsedItemLocators. LOCALIZADOR DE PREOS.
+
+65
+00:02:52,540 --> 00:02:57,540
+E tambm, o ParsedItemLocators. LOCATOR DE RATING.
+
+66
+00:02:59,100 --> 00:03:04,100
+Agora, h algumas coisas nesses mtodos aqui, como esse padro ou
+
+67
+00:03:05,080 --> 00:03:09,180
+essa classe que estamos filtrando, que poderiam estar em
+
+68
+00:03:09,180 --> 00:03:12,020
+outro lugar, para que o item
+
+69
+00:03:12,020 --> 00:03:14,600
+realmente no importe de onde est
+
+70
+00:03:14,600 --> 00:03:15,790
+vindo .
+
+71
+00:03:15,790 --> 00:03:17,910
+Mas, s vezes, isso no
+
+72
+00:03:17,910 --> 00:03:19,940
+ vivel e outras vezes
+
+73
+00:03:19,940 --> 00:03:23,130
+ complicado demais para valer a pena.
+
+74
+00:03:23,130 --> 00:03:25,430
+Ento, por todos os meios, tente fazer
+
+75
+00:03:25,430 --> 00:03:26,680
+isso se quiser, mas
+
+76
+00:03:26,680 --> 00:03:28,530
+eu deixaria assim e eu acho
+
+77
+00:03:28,530 --> 00:03:32,290
+que essa  uma tima maneira de separar o item na pgina
+
+78
+00:03:32,290 --> 00:03:34,710
+de como voc vai extrair os dados e
+
+79
+00:03:34,710 --> 00:03:37,780
+, mais ou menos, o que o item representa.
+
+80
+00:03:37,780 --> 00:03:39,450
+Ento, espero que isso faa um pouco de sentido.
+
+81
+00:03:39,450 --> 00:03:42,880
+Essa maneira de separar as preocupaes  algo que
+
+82
+00:03:42,880 --> 00:03:45,070
+fazemos o tempo todo e
+
+83
+00:03:45,070 --> 00:03:46,750
+ assim que estruturamos
+
+84
+00:03:46,750 --> 00:03:48,730
+nossos testes no trabalho, profissionalmente.
+
+85
+00:03:48,730 --> 00:03:51,350
+E assim,  definitivamente uma tima maneira de
+
+86
+00:03:51,350 --> 00:03:54,070
+fazer isso e vai simplificar muito o seu cdigo.
+
+87
+00:03:54,070 --> 00:03:56,490
+Espero que isso faa sentido e vejo
+
+88
+00:03:56,490 --> 00:03:59,820
+vocs no prximo vdeo, onde vamos comear a procurar recuperar
+
+89
+00:03:59,820 --> 00:04:01,700
+a pgina usando outra biblioteca.
+
+90
+00:04:01,700 --> 00:04:02,650
+Eu te vejo l.
+

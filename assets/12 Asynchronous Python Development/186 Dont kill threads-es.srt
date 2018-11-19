@@ -1,0 +1,172 @@
+1
+00:00:00,050 --> 00:00:01,227
+Instructor: Hola, bienvenido de nuevo.
+
+2
+00:00:01,227 --> 00:00:02,652
+En este video, solo quera
+
+3
+00:00:02,652 --> 00:00:04,728
+contarte un poco sobre matar a los hilos.
+
+4
+00:00:04,728 --> 00:00:07,210
+He vuelto aqu en el cdigo del cdigo
+
+5
+00:00:07,210 --> 00:00:09,579
+antes de usar ThreadPoolExecutor, y me doy cuenta
+
+6
+00:00:09,579 --> 00:00:11,602
+de que tenemos thread1. inicio y
+
+7
+00:00:11,602 --> 00:00:13,111
+thread2. comienzo.
+
+8
+00:00:13,111 --> 00:00:15,634
+Luego tenemos espacio para escribir ms cdigo,
+
+9
+00:00:15,634 --> 00:00:17,797
+y luego esperamos a que terminen.
+
+10
+00:00:17,797 --> 00:00:21,002
+Dentro de este espacio aqu, puedes escribir un cdigo
+
+11
+00:00:21,002 --> 00:00:25,127
+para matar el hilo, por ejemplo, si cumple algunos criterios o tal
+
+12
+00:00:25,127 --> 00:00:28,070
+vez ya no lo necesites o algo as.
+
+13
+00:00:28,070 --> 00:00:31,596
+Podras escribir algn cdigo para matar el
+
+14
+00:00:31,596 --> 00:00:34,199
+hilo, pero no deberas hacer eso.
+
+15
+00:00:34,199 --> 00:00:38,530
+No mates un hilo. Espere a que termine.
+
+16
+00:00:38,530 --> 00:00:43,440
+Si matas un hilo manualmente sin ser muy cuidadoso, lo que puede
+
+17
+00:00:43,440 --> 00:00:47,991
+suceder es que tu hilo haya adquirido el GIL, lo mates
+
+18
+00:00:47,991 --> 00:00:52,010
+antes de liberar el GIL, y entonces lo que
+
+19
+00:00:52,010 --> 00:00:55,466
+tienes es que el GIL se ha ido.
+
+20
+00:00:55,466 --> 00:00:56,995
+Ningn otro hilo puede recogerlo
+
+21
+00:00:56,995 --> 00:00:58,713
+porque no fue lanzado antes.
+
+22
+00:00:58,713 --> 00:01:01,880
+Los hilos no liberarn los
+
+23
+00:01:03,062 --> 00:01:04,710
+recursos simplemente matndolos.
+
+24
+00:01:04,710 --> 00:01:06,527
+Debe liberar los recursos manualmente
+
+25
+00:01:06,527 --> 00:01:09,205
+en el propio cdigo de la secuencia.
+
+26
+00:01:09,205 --> 00:01:10,916
+Si tienes el hilo y se ha
+
+27
+00:01:10,916 --> 00:01:12,782
+iniciado, y est usando el GIL y
+
+28
+00:01:12,782 --> 00:01:15,832
+luego lo matas, el GIL se ha ido, ningn otro hilo puede
+
+29
+00:01:15,832 --> 00:01:18,016
+obtener el GIL, tu programa Python se detendr.
+
+30
+00:01:18,016 --> 00:01:20,275
+No terminar, porque el hilo aqu
+
+31
+00:01:20,275 --> 00:01:22,314
+estar esperando a terminar, pero
+
+32
+00:01:22,314 --> 00:01:24,579
+no podr hacer nada, y si
+
+33
+00:01:24,579 --> 00:01:27,142
+eso sucede, si tiene un recurso que
+
+34
+00:01:27,142 --> 00:01:30,698
+se est utilizando y nada ms puede usarlo, esto
+
+35
+00:01:30,698 --> 00:01:32,924
+se llama un punto muerto en
+
+36
+00:01:32,924 --> 00:01:35,209
+la informtica, y es algo malo.
+
+37
+00:01:35,209 --> 00:01:37,725
+Entonces, solo ten cuidado No mates los hilos.
+
+38
+00:01:37,725 --> 00:01:39,531
+Y eso es todo lo que digo.
+
+39
+00:01:39,531 --> 00:01:41,683
+No mate los hilos, no es fcil de
+
+40
+00:01:41,683 --> 00:01:43,212
+hacer, y no lo recomiendo.
+
+41
+00:01:43,212 --> 00:01:45,143
+Si matas hilos, vas a tener problemas,
+
+42
+00:01:45,143 --> 00:01:46,662
+as que no lo hagas.
+
+43
+00:01:46,662 --> 00:01:48,767
+Eso es todo por este video. Te ver en el prximo.
+

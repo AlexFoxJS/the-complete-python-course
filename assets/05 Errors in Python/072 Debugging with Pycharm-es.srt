@@ -1,0 +1,1484 @@
+1
+00:00:00,110 --> 00:00:01,274
+-: Hola bienvenido.
+
+2
+00:00:01,274 --> 00:00:03,507
+En este video estamos hablando de depuracin.
+
+3
+00:00:03,507 --> 00:00:06,764
+Particularmente, usando el depurador de pycharm.
+
+4
+00:00:06,764 --> 00:00:08,516
+El trmino depuracin en realidad
+
+5
+00:00:08,516 --> 00:00:11,693
+proviene de una de las primeras computadoras que se construy.
+
+6
+00:00:11,693 --> 00:00:13,979
+Ya sabes, la computadora en
+
+7
+00:00:13,979 --> 00:00:17,148
+el da eran gigantes masivos, ocupando cuartos enteros.
+
+8
+00:00:17,148 --> 00:00:20,815
+Y su cableado en realidad fue expuesto.
+
+9
+00:00:22,005 --> 00:00:26,338
+Resulta que una polilla vol a uno de los cables
+
+10
+00:00:27,353 --> 00:00:29,972
+y algunos de los transistores all.
+
+11
+00:00:29,972 --> 00:00:32,152
+Caus el cortocircuito.
+
+12
+00:00:32,152 --> 00:00:35,204
+Por lo tanto, el trmino depuracin fue acuado.
+
+13
+00:00:35,204 --> 00:00:38,742
+En realidad, elimina los errores de los cables o,
+
+14
+00:00:38,742 --> 00:00:40,404
+en nuestro caso, del
+
+15
+00:00:40,404 --> 00:00:45,209
+cdigo, para que nuestros programas no se cuelguen y no funcionen mal.
+
+16
+00:00:45,209 --> 00:00:47,192
+As que vamos a tratar
+
+17
+00:00:47,192 --> 00:00:50,714
+de eliminar cualquier error de, por ejemplo, nuestro programa aqu.
+
+18
+00:00:50,714 --> 00:00:53,252
+Y imaginemos que nuestro error es que
+
+19
+00:00:53,252 --> 00:00:56,335
+hemos olvidado este clic de mtricas y deberan
+
+20
+00:00:59,881 --> 00:01:01,177
+ser clics porque as
+
+21
+00:01:01,177 --> 00:01:03,034
+es como son los datos.
+
+22
+00:01:03,034 --> 00:01:04,379
+Entonces, imaginemos que no
+
+23
+00:01:04,379 --> 00:01:05,939
+lo sabemos y estamos tratando
+
+24
+00:01:05,939 --> 00:01:07,971
+de descubrir cmo podra ser este
+
+25
+00:01:07,971 --> 00:01:11,481
+problema, o de qu podra ser la causa de este error.
+
+26
+00:01:11,481 --> 00:01:15,986
+Naturalmente, tenemos un buen manejo de excepciones aqu, pero como puede ver,
+
+27
+00:01:15,986 --> 00:01:18,769
+no hemos vuelto a plantear la excepcin.
+
+28
+00:01:18,769 --> 00:01:21,764
+Entonces, todo lo que veremos son valores incorrectos proporcionados.
+
+29
+00:01:21,764 --> 00:01:22,983
+Vamos a revisar nuestro cdigo
+
+30
+00:01:22,983 --> 00:01:25,240
+y dems, y no vamos a encontrar nada.
+
+31
+00:01:25,240 --> 00:01:26,802
+Finalmente llegamos al punto
+
+32
+00:01:26,802 --> 00:01:29,475
+en el que vamos a tener que depurar.
+
+33
+00:01:29,475 --> 00:01:33,892
+Para depurar, qu hacer es asegurarse de que se selecciona
+
+34
+00:01:35,730 --> 00:01:39,813
+el archivo correcto, haga clic derecho y presione depurar.
+
+35
+00:01:41,267 --> 00:01:45,004
+Ahora, la depuracin ejecutar su aplicacin,
+
+36
+00:01:45,004 --> 00:01:47,769
+su archivo de forma normal.
+
+37
+00:01:47,769 --> 00:01:51,269
+Entonces, en este momento, si hacemos clic derecho y depuramos,
+
+38
+00:01:52,451 --> 00:01:54,006
+se va a cargar.
+
+39
+00:01:54,006 --> 00:01:55,097
+Va a ser un poco
+
+40
+00:01:55,097 --> 00:01:56,360
+ms lento que solo ejecutar la
+
+41
+00:01:56,360 --> 00:01:57,193
+aplicacin porque hay algunas
+
+42
+00:01:57,193 --> 00:01:58,581
+cosas ms sucediendo en el fondo.
+
+43
+00:01:58,581 --> 00:01:59,643
+Y luego vamos a
+
+44
+00:01:59,643 --> 00:02:01,926
+ver valores incorrectos proporcionados a nuestra funcin de clculo.
+
+45
+00:02:01,926 --> 00:02:04,738
+Porque, por supuesto, tenemos ese error clave
+
+46
+00:02:04,738 --> 00:02:08,507
+causado por la clave incorrecta que se est utilizando all.
+
+47
+00:02:08,507 --> 00:02:13,016
+Ahora, si no pudiramos darnos cuenta de que esto es incorrecto,
+
+48
+00:02:13,016 --> 00:02:16,099
+podramos decidir establecer un punto de ruptura.
+
+49
+00:02:17,842 --> 00:02:22,758
+Un punto de quiebre permite que nuestro programa se detenga en cualquier punto, y
+
+50
+00:02:22,758 --> 00:02:24,802
+podemos verificar los valores de las
+
+51
+00:02:24,802 --> 00:02:28,552
+cosas y podemos ejecutar las funciones y ver qu se rompe.
+
+52
+00:02:29,473 --> 00:02:32,663
+Este error aqu, se plantea por la
+
+53
+00:02:32,663 --> 00:02:34,267
+funcin de clculo realizado.
+
+54
+00:02:34,267 --> 00:02:35,708
+Lo sabemos porque es lo
+
+55
+00:02:35,708 --> 00:02:37,783
+nico que se ejecuta en esta lnea.
+
+56
+00:02:37,783 --> 00:02:39,016
+Sabemos que esto es
+
+57
+00:02:39,016 --> 00:02:41,414
+lo que debe estar causando el error.
+
+58
+00:02:41,414 --> 00:02:46,234
+De lo contrario, aqu no se detectara este error clave.
+
+59
+00:02:46,234 --> 00:02:47,515
+Por lo tanto, podemos establecer
+
+60
+00:02:47,515 --> 00:02:48,731
+un punto de corte, y
+
+61
+00:02:48,731 --> 00:02:52,195
+para hacerlo, simplemente vaya a la izquierda aqu junto a la lnea trece
+
+62
+00:02:52,195 --> 00:02:54,002
+y simplemente haga clic en l.
+
+63
+00:02:54,002 --> 00:02:58,512
+Luego aparecer un crculo rojo, la lnea se pondr roja, y esto le
+
+64
+00:02:58,512 --> 00:02:59,491
+indica que ha
+
+65
+00:02:59,491 --> 00:03:02,713
+establecido un punto de interrupcin en la lnea trece.
+
+66
+00:03:02,713 --> 00:03:04,428
+Vamos a ejecutar el depurador de
+
+67
+00:03:04,428 --> 00:03:07,737
+nuevo, puedes hacer clic derecho y presionar Puntuacin de usuario de
+
+68
+00:03:07,737 --> 00:03:09,974
+depuracin o ahora que esto se acaba
+
+69
+00:03:09,974 --> 00:03:12,781
+de ejecutar, puedes presionar el cono de error aqu.
+
+70
+00:03:12,781 --> 00:03:14,788
+O, por supuesto, puede ir a la esquina
+
+71
+00:03:14,788 --> 00:03:16,705
+superior derecha y presionar el cono de error.
+
+72
+00:03:17,706 --> 00:03:20,268
+Asegrese de seleccionar lo correcto,
+
+73
+00:03:20,268 --> 00:03:22,935
+puntuacin del usuario, para poder hacerlo.
+
+74
+00:03:24,920 --> 00:03:28,977
+Ahora, podemos ver que nuestro programa se ha detenido.
+
+75
+00:03:28,977 --> 00:03:30,736
+Se detuvo aqu en el punto de
+
+76
+00:03:30,736 --> 00:03:31,706
+quiebre, la lnea ahora
+
+77
+00:03:31,706 --> 00:03:34,968
+es azul, que nos dice que esta es la lnea actual que estamos ejecutando.
+
+78
+00:03:34,968 --> 00:03:37,252
+La lnea no se ha ejecutado todava.
+
+79
+00:03:37,252 --> 00:03:40,441
+As que nos hemos detenido justo antes de la lnea.
+
+80
+00:03:40,441 --> 00:03:44,216
+El punto de quiebre siempre se detendr justo antes de la lnea.
+
+81
+00:03:44,216 --> 00:03:47,455
+Podemos ver que nuestro parmetro de usuario aqu,
+
+82
+00:03:47,455 --> 00:03:49,927
+tiene un valor de usuario rolf.
+
+83
+00:03:49,927 --> 00:03:52,933
+No podemos seleccionar este texto aqu, pensar
+
+84
+00:03:52,933 --> 00:03:55,041
+en l como informacin flotante.
+
+85
+00:03:55,041 --> 00:03:56,941
+Simplemente te dice cul es
+
+86
+00:03:56,941 --> 00:03:59,973
+el valor de las variables en el alcance actualmente.
+
+87
+00:03:59,973 --> 00:04:01,065
+Es realmente til.
+
+88
+00:04:01,065 --> 00:04:04,243
+Y observe cmo esto usa esa funcin de repr.
+
+89
+00:04:04,243 --> 00:04:06,700
+Anteriormente, cuando hablamos sobre las mejoras y
+
+90
+00:04:06,700 --> 00:04:08,257
+las reglas, le dije que
+
+91
+00:04:08,257 --> 00:04:11,590
+la funcin de reprimido era ms til para el desarrollo
+
+92
+00:04:12,451 --> 00:04:14,273
+y esta es la razn.
+
+93
+00:04:14,273 --> 00:04:17,052
+Porque cada vez que veas una
+
+94
+00:04:17,052 --> 00:04:18,974
+variable, pycharm te mostrar
+
+95
+00:04:18,974 --> 00:04:23,668
+la representacin de esa variable cuando te est diciendo los valores.
+
+96
+00:04:23,668 --> 00:04:26,470
+Si abre la pestaa del depurador aqu a la izquierda,
+
+97
+00:04:26,470 --> 00:04:28,371
+que puede estar abierta de forma predeterminada,
+
+98
+00:04:28,371 --> 00:04:29,903
+ver un montn de cosas.
+
+99
+00:04:29,903 --> 00:04:33,317
+Y puede ser bastante aterrador la primera vez que lo ves.
+
+100
+00:04:33,317 --> 00:04:35,456
+La parte ms importante
+
+101
+00:04:35,456 --> 00:04:39,206
+aqu, son estas variables y estos botones aqu.
+
+102
+00:04:40,527 --> 00:04:41,566
+Las variables, una
+
+103
+00:04:41,566 --> 00:04:44,910
+vez ms, le dicen qu variables tiene actualmente en alcance.
+
+104
+00:04:44,910 --> 00:04:47,292
+Dentro de esta funcin solo tenemos un
+
+105
+00:04:47,292 --> 00:04:49,459
+variabal, ese es el parmetro de usuario.
+
+106
+00:04:50,458 --> 00:04:55,002
+Aqu tambin puede abrirlo usando este tringulo y luego le
+
+107
+00:04:55,002 --> 00:04:57,932
+dice todas las propiedades del usuario en
+
+108
+00:04:57,932 --> 00:05:00,205
+este momento, actualmente, antes de
+
+109
+00:05:00,205 --> 00:05:02,790
+que hayamos ejecutado esta funcin aqu.
+
+110
+00:05:02,790 --> 00:05:06,277
+Recuerde que esta funcin est destinada a actualizar la puntuacin del
+
+111
+00:05:06,277 --> 00:05:10,218
+usuario, pero an no se ejecut, por lo que sigue siendo cero,
+
+112
+00:05:10,218 --> 00:05:13,757
+como debera ser desde el mtodo init que se llam anteriormente.
+
+113
+00:05:13,757 --> 00:05:15,275
+Tambin tiene la mtrica de
+
+114
+00:05:15,275 --> 00:05:17,307
+compromiso, que es una diccin, podemos abrirla
+
+115
+00:05:17,307 --> 00:05:18,821
+y le dice la clave
+
+116
+00:05:18,821 --> 00:05:21,909
+de clics y la clave de visitas y sus valores.
+
+117
+00:05:21,909 --> 00:05:25,689
+Tambin puedes subir el nombre y puedes ver que es rolf.
+
+118
+00:05:25,689 --> 00:05:27,774
+Obtienes mucha informacin de estas
+
+119
+00:05:27,774 --> 00:05:30,884
+cosas, incluidos sus tipos, dict, int, str.
+
+120
+00:05:30,884 --> 00:05:32,629
+La longitud de la diccin,
+
+121
+00:05:32,629 --> 00:05:34,011
+y obtienes estos nmeros
+
+122
+00:05:34,011 --> 00:05:37,594
+aqu por los que no tienes que preocuparte por ahora.
+
+123
+00:05:39,178 --> 00:05:41,946
+Ahora sabemos que, al ejecutar esta funcin,
+
+124
+00:05:41,946 --> 00:05:43,784
+se producir un error.
+
+125
+00:05:43,784 --> 00:05:45,747
+Lo sabemos porque este error fue atrapado
+
+126
+00:05:45,747 --> 00:05:46,946
+en esta lnea y
+
+127
+00:05:46,946 --> 00:05:49,251
+esa es la nica funcin que se est ejecutando.
+
+128
+00:05:49,251 --> 00:05:51,421
+Entonces, hay algunas cosas que podemos hacer.
+
+129
+00:05:51,421 --> 00:05:52,831
+Lo primero que hara,
+
+130
+00:05:52,831 --> 00:05:56,449
+al encontrarme con esto aqu, es usar la calculadora.
+
+131
+00:05:56,449 --> 00:05:59,193
+Este es el evaluador de expresiones.
+
+132
+00:05:59,193 --> 00:06:03,533
+Para lo que eso se usa es ejecutar cualquier cdigo python arbitrario.
+
+133
+00:06:03,533 --> 00:06:07,190
+bamos a seleccionar todo despus del signo igual, es decir,
+
+134
+00:06:07,190 --> 00:06:11,189
+realizar el clculo, incluido el usuario. mtricas de participacin Simplemente
+
+135
+00:06:11,189 --> 00:06:14,019
+seleccinela, no necesita copiarla ni nada.
+
+136
+00:06:14,019 --> 00:06:16,193
+Luego presione el cono de la calculadora.
+
+137
+00:06:16,193 --> 00:06:19,025
+Ahora tiene la expresin evaluada y est
+
+138
+00:06:19,025 --> 00:06:22,027
+pegada en lo que acaba de seleccionar.
+
+139
+00:06:22,027 --> 00:06:25,404
+Entonces eso es realizar el clculo con el usuario. las mtricas de participacin
+
+140
+00:06:25,404 --> 00:06:26,737
+como el argumento.
+
+141
+00:06:27,972 --> 00:06:31,487
+Puede ejecutar este cdigo, haga clic en evaluar.
+
+142
+00:06:31,487 --> 00:06:35,070
+Observe cmo ahora recibimos este clic de error de clave.
+
+143
+00:06:35,939 --> 00:06:37,228
+Eso es genial.
+
+144
+00:06:37,228 --> 00:06:38,942
+La consola, que, por
+
+145
+00:06:38,942 --> 00:06:43,457
+cierto, est detrs de esta pestaa de la consola, no muestra nada.
+
+146
+00:06:43,457 --> 00:06:46,040
+No detecta el error ni nada de
+
+147
+00:06:46,040 --> 00:06:51,040
+eso porque este es un tiempo de ejecucin completamente separado, si lo desea.
+
+148
+00:06:51,173 --> 00:06:53,220
+Entonces, esto no est ejecutando nuestro
+
+149
+00:06:53,220 --> 00:06:54,783
+programa, esto es solo ejecutar
+
+150
+00:06:54,783 --> 00:06:57,785
+esta funcin aqu, completamente por separado, utilizando los datos
+
+151
+00:06:57,785 --> 00:06:59,409
+que tiene en su alcance.
+
+152
+00:06:59,409 --> 00:07:02,683
+Eso es lo que puede usar, la variable de usuario aqu.
+
+153
+00:07:02,683 --> 00:07:05,137
+Recibimos un error clave, que es hacer clic.
+
+154
+00:07:05,137 --> 00:07:06,816
+Entonces, ahora que tenemos un
+
+155
+00:07:06,816 --> 00:07:10,566
+poco ms de informacin, sabemos que la propiedad click es incorrecta.
+
+156
+00:07:12,733 --> 00:07:15,959
+De acuerdo, digamos que eso no nos dice suficiente
+
+157
+00:07:15,959 --> 00:07:19,459
+informacin y queremos detenernos aqu dentro de esta lnea.
+
+158
+00:07:20,485 --> 00:07:24,721
+Solo para ver cul es el objeto de mtricas.
+
+159
+00:07:24,721 --> 00:07:26,821
+Bueno, hay dos maneras en que puede hacerlo,
+
+160
+00:07:26,821 --> 00:07:29,267
+puede establecer un punto de quiebre en esa lnea y
+
+161
+00:07:29,267 --> 00:07:30,696
+recordar que el punto de ruptura
+
+162
+00:07:30,696 --> 00:07:33,447
+lo har detenerse justo antes de que se ejecute la lnea.
+
+163
+00:07:33,447 --> 00:07:35,699
+Entonces, el error no ocurrir an
+
+164
+00:07:35,699 --> 00:07:38,491
+cuando te detengas en este punto de quiebre.
+
+165
+00:07:38,491 --> 00:07:39,953
+Si establece un punto de
+
+166
+00:07:39,953 --> 00:07:42,974
+quiebre all, puede presionar continuar, reanudar la ejecucin del programa,
+
+167
+00:07:42,974 --> 00:07:45,770
+ese es el cono aqu, el icono de reproduccin.
+
+168
+00:07:45,770 --> 00:07:47,923
+Puede presionar eso y eso solo continuar
+
+169
+00:07:47,923 --> 00:07:50,465
+su programa hasta el prximo punto de interrupcin
+
+170
+00:07:50,465 --> 00:07:54,097
+o hasta que finalice, si no tiene un punto de interrupcin.
+
+171
+00:07:54,097 --> 00:07:56,235
+Entonces puedes establecer un punto de quiebre y presionar continuar.
+
+172
+00:07:56,235 --> 00:07:59,018
+Otra opcin es que usemos estos botones
+
+173
+00:07:59,018 --> 00:08:00,983
+aqu, estos son realmente tiles.
+
+174
+00:08:00,983 --> 00:08:05,983
+Este primero aqu, pasa a la siguiente lnea en el archivo Entonces, cul es
+
+175
+00:08:08,420 --> 00:08:10,665
+la siguiente lnea despus de esta,
+
+176
+00:08:10,665 --> 00:08:12,196
+no la siguiente lnea
+
+177
+00:08:12,196 --> 00:08:14,909
+que ejecutamos, sino la siguiente lnea en este mbito.
+
+178
+00:08:14,909 --> 00:08:17,438
+La siguiente lnea ser esta, imprima porque
+
+179
+00:08:17,438 --> 00:08:19,747
+la excepcin va a ser levantada
+
+180
+00:08:19,747 --> 00:08:22,208
+por esta funcin aqu, esta lnea.
+
+181
+00:08:22,208 --> 00:08:23,547
+Entonces, cuando planteamos la
+
+182
+00:08:23,547 --> 00:08:26,076
+excepcin, vamos a entrar en el excepto.
+
+183
+00:08:26,076 --> 00:08:28,492
+Te mostrar exactamente lo que sucedi.
+
+184
+00:08:28,492 --> 00:08:30,646
+Mira, vamos a la excepcin, aqu no
+
+185
+00:08:30,646 --> 00:08:32,026
+pasa nada, por supuesto,
+
+186
+00:08:32,026 --> 00:08:33,414
+y luego podemos volver
+
+187
+00:08:33,414 --> 00:08:36,422
+a pasar, y ahora estamos dentro del bloque de excepcin.
+
+188
+00:08:36,422 --> 00:08:39,270
+Paso a paso se mueve a la siguiente
+
+189
+00:08:39,270 --> 00:08:42,447
+lnea en el alcance actual, el bloque actual.
+
+190
+00:08:42,447 --> 00:08:44,521
+Por lo tanto, pasar al siguiente.
+
+191
+00:08:44,521 --> 00:08:45,675
+Si ests dentro de
+
+192
+00:08:45,675 --> 00:08:47,909
+una funcin, permanecer dentro de esa funcin.
+
+193
+00:08:47,909 --> 00:08:50,356
+Si ests en una clase, permanecer dentro de esa
+
+194
+00:08:50,356 --> 00:08:51,439
+clase y as sucesivamente.
+
+195
+00:08:52,738 --> 00:08:55,054
+Ahora, ya es demasiado tarde,
+
+196
+00:08:55,054 --> 00:08:57,398
+el error ya ocurri, por
+
+197
+00:08:57,398 --> 00:08:59,987
+lo que ya no podremos volver aqu.
+
+198
+00:08:59,987 --> 00:09:02,850
+Si ahora establecemos un punto de quiebre dentro
+
+199
+00:09:02,850 --> 00:09:06,254
+de esta lnea y presionamos continuar, ya pasamos eso.
+
+200
+00:09:06,254 --> 00:09:07,533
+Entonces, qu iban a
+
+201
+00:09:07,533 --> 00:09:09,722
+hacer? Este punto de quiebre ser
+
+202
+00:09:09,722 --> 00:09:12,502
+ignorado y vamos a reanudar la ejecucin del
+
+203
+00:09:12,502 --> 00:09:13,668
+programa hasta el final.
+
+204
+00:09:13,668 --> 00:09:16,324
+Vamos a presionar continuar ahora.
+
+205
+00:09:16,324 --> 00:09:18,456
+Como puede ver, el programa contina,
+
+206
+00:09:18,456 --> 00:09:20,017
+la lnea azul ha desaparecido
+
+207
+00:09:20,017 --> 00:09:23,019
+y la consola ahora tiene una pequea flecha amarilla
+
+208
+00:09:23,019 --> 00:09:24,488
+que le dice que
+
+209
+00:09:24,488 --> 00:09:26,949
+hey, la nueva salida de control ha
+
+210
+00:09:26,949 --> 00:09:29,466
+ocurrido desde la ltima vez que vio esta pestaa.
+
+211
+00:09:29,466 --> 00:09:30,932
+Cuando haces clic en l, desaparece.
+
+212
+00:09:30,932 --> 00:09:33,246
+Ahora puedes ver el resultado de tu programa.
+
+213
+00:09:33,246 --> 00:09:36,015
+Valores incorrectos proporcionados a nuestra funcin de clculo.
+
+214
+00:09:36,015 --> 00:09:37,515
+Nada nuevo all.
+
+215
+00:09:38,553 --> 00:09:40,783
+Voy a eliminar el punto de interrupcin en
+
+216
+00:09:40,783 --> 00:09:44,017
+la lnea 22 y ejecutar el programa nuevamente, depurando el programa nuevamente.
+
+217
+00:09:44,017 --> 00:09:45,276
+Una vez ms, nos
+
+218
+00:09:45,276 --> 00:09:48,361
+detendremos en nuestro punto de ruptura original en la lnea trece.
+
+219
+00:09:48,361 --> 00:09:52,194
+Excepto ahora, vamos a entrar en el siguiente paso.
+
+220
+00:09:53,722 --> 00:09:56,726
+El paso adentro nos lleva a la funcin
+
+221
+00:09:56,726 --> 00:09:59,223
+que estamos ejecutando en esa lnea.
+
+222
+00:09:59,223 --> 00:10:01,904
+Si estamos ejecutando mltiples funciones, nos llevar
+
+223
+00:10:01,904 --> 00:10:05,679
+a la primera funcin que se ejecuta en esa lnea.
+
+224
+00:10:05,679 --> 00:10:07,960
+Pero aqu, solo estamos ejecutando una funcin, as
+
+225
+00:10:07,960 --> 00:10:10,411
+que entrar nos lleva a la funcin y
+
+226
+00:10:10,411 --> 00:10:11,975
+ahora esta lnea es azul.
+
+227
+00:10:11,975 --> 00:10:14,711
+Esta es la lnea que estamos ejecutando actualmente.
+
+228
+00:10:14,711 --> 00:10:18,024
+Observe cmo ahora el parmetro de mtricas, aqu.
+
+229
+00:10:18,024 --> 00:10:20,469
+Tambin obtenemos su contenido.
+
+230
+00:10:20,469 --> 00:10:22,886
+Los clics son 61 y los aciertos son 100.
+
+231
+00:10:24,951 --> 00:10:28,266
+Para m, esto es todo lo que tendra que hacer,
+
+232
+00:10:28,266 --> 00:10:30,775
+por supuesto, antes de notar que los clics
+
+233
+00:10:30,775 --> 00:10:34,412
+y el clic son cadenas completamente diferentes, falta algo all. As
+
+234
+00:10:34,412 --> 00:10:36,425
+que simplemente cambiaras esto a una
+
+235
+00:10:36,425 --> 00:10:38,483
+s y volveras a ejecutar el programa.
+
+236
+00:10:38,483 --> 00:10:40,767
+Cambie a una s, observe cmo ahora eso
+
+237
+00:10:40,767 --> 00:10:42,706
+desaparece porque hemos hecho un cambio.
+
+238
+00:10:42,706 --> 00:10:45,199
+Puede volver a ejecutar el programa
+
+239
+00:10:45,199 --> 00:10:48,366
+presionando este botn aqu a la izquierda.
+
+240
+00:10:51,097 --> 00:10:55,491
+Ahora estamos de vuelta en nuestro punto de ruptura de clculo de rendimiento.
+
+241
+00:10:55,491 --> 00:10:59,402
+Podemos pasar, para pasar a la siguiente lnea y
+
+242
+00:10:59,402 --> 00:11:03,474
+ahora sabemos que debemos movernos a la lnea else.
+
+243
+00:11:03,474 --> 00:11:04,875
+Eso es lo que sucede,
+
+244
+00:11:04,875 --> 00:11:06,522
+de hecho, porque no hay nada
+
+245
+00:11:06,522 --> 00:11:07,710
+all en el otro,
+
+246
+00:11:07,710 --> 00:11:11,743
+simplemente pasa a la siguiente lnea que realmente hace algo, que es esto si.
+
+247
+00:11:11,743 --> 00:11:14,168
+Ahora aqu, tenemos al usuario. puntaje, que fue
+
+248
+00:11:14,168 --> 00:11:16,334
+establecido por esta lnea arriba.
+
+249
+00:11:16,334 --> 00:11:21,334
+Si abrimos al usuario, podemos ver que el puntaje es 505.
+
+250
+00:11:21,454 --> 00:11:24,477
+Entonces mi 502 anteriormente estaba completamente equivocado.
+
+251
+00:11:24,477 --> 00:11:27,301
+Es 505 pero es mayor que 500, as que una
+
+252
+00:11:27,301 --> 00:11:29,053
+vez ms, podemos dar un paso
+
+253
+00:11:29,053 --> 00:11:32,113
+al frente y eso nos llevar a la siguiente lnea en
+
+254
+00:11:32,113 --> 00:11:34,395
+esta funcin, que es enviar notificacin de compromiso.
+
+255
+00:11:34,395 --> 00:11:35,926
+Ahora que estamos aqu,
+
+256
+00:11:35,926 --> 00:11:38,759
+sabemos que vamos a enviar la notificacin de
+
+257
+00:11:38,759 --> 00:11:42,189
+compromiso porque esta es la funcin que est por ejecutarse.
+
+258
+00:11:42,189 --> 00:11:47,189
+Si lo desea, puede intervenir y eso lo lleva a la funcin
+
+259
+00:11:47,398 --> 00:11:49,717
+de notificacin de envo de compromiso.
+
+260
+00:11:49,717 --> 00:11:52,262
+Potencialmente, si esto estuviera haciendo algo ms
+
+261
+00:11:52,262 --> 00:11:54,954
+interesante, podra, por supuesto, echarle un vistazo.
+
+262
+00:11:54,954 --> 00:11:58,245
+Si lo desea, puede seleccionar esta cadena f por completo.
+
+263
+00:11:58,245 --> 00:12:01,333
+Puede ejecutar la calculadora, evaluarla y
+
+264
+00:12:01,333 --> 00:12:03,576
+ver lo que le dar.
+
+265
+00:12:03,576 --> 00:12:08,576
+Esto est totalmente bien y mucho del desarrollo est sucediendo
+
+266
+00:12:08,729 --> 00:12:12,436
+en el depurador cuando estoy en el trabajo.
+
+267
+00:12:12,436 --> 00:12:14,664
+Ests constantemente depurando y realizando pequeos
+
+268
+00:12:14,664 --> 00:12:17,023
+cambios ejecutando la calculadora para ver exactamente
+
+269
+00:12:17,023 --> 00:12:20,405
+qu es lo que quiero incluir en esta funcin.
+
+270
+00:12:20,405 --> 00:12:22,466
+Una vez que lo resuelves
+
+271
+00:12:22,466 --> 00:12:27,148
+con la calculadora, simplemente ponlo y eso simplifica bastante el desarrollo.
+
+272
+00:12:27,148 --> 00:12:30,211
+Por cierto, este botn aqu es un paso hacia fuera.
+
+273
+00:12:30,211 --> 00:12:33,770
+Te lleva a cualquier funcin que te llame
+
+274
+00:12:33,770 --> 00:12:35,034
+donde ests ahora.
+
+275
+00:12:35,034 --> 00:12:37,587
+Entonces, si sales, ahora ests aqu.
+
+276
+00:12:37,587 --> 00:12:39,318
+Pero esta funcin ya se ejecut,
+
+277
+00:12:39,318 --> 00:12:40,552
+as que eso es importante.
+
+278
+00:12:40,552 --> 00:12:43,220
+Ahora, en esta lnea ests despus de la funcin.
+
+279
+00:12:43,220 --> 00:12:45,151
+No antes.
+
+280
+00:12:45,151 --> 00:12:46,784
+Entonces, si tuviera que
+
+281
+00:12:46,784 --> 00:12:49,517
+pasar, ahora saldra de la funcin por completo.
+
+282
+00:12:49,517 --> 00:12:52,826
+Luego regresas a la derecha despus de la
+
+283
+00:12:52,826 --> 00:12:55,945
+funcin que llamaste que te trajo all.
+
+284
+00:12:55,945 --> 00:12:58,336
+Voy a eliminar este punto de quiebre, por cierto.
+
+285
+00:12:58,336 --> 00:13:00,734
+Entonces ahora estamos despus de esta funcin.
+
+286
+00:13:00,734 --> 00:13:04,449
+Si presionamos un paso, vamos a finalizar el programa.
+
+287
+00:13:04,449 --> 00:13:06,945
+Como puede ver todas las lneas azules
+
+288
+00:13:06,945 --> 00:13:08,671
+que aparecen y ahora vemos,
+
+289
+00:13:08,671 --> 00:13:12,254
+en la consola, la notificacin que se envi a nuestro usuario.
+
+290
+00:13:13,909 --> 00:13:15,802
+Una vez ms, voy a depurar el programa
+
+291
+00:13:15,802 --> 00:13:17,013
+con el punto de ruptura
+
+292
+00:13:17,013 --> 00:13:19,436
+para darle una visin general de lo que hemos visto.
+
+293
+00:13:19,436 --> 00:13:22,053
+Lo que hemos visto es que podemos establecer puntos
+
+294
+00:13:22,053 --> 00:13:26,662
+de interrupcin y que hace que un programa se detenga cuando estamos en modo de depuracin,
+
+295
+00:13:26,662 --> 00:13:29,477
+no cuando estamos en el modo de reproduccin normal.
+
+296
+00:13:29,477 --> 00:13:31,264
+Si ests en el modo de juego
+
+297
+00:13:31,264 --> 00:13:33,218
+normal, los puntos de quiebre sern ignorados.
+
+298
+00:13:33,218 --> 00:13:35,284
+Puede establecer un punto de interrupcin haciendo clic
+
+299
+00:13:35,284 --> 00:13:37,754
+en la lnea y eso detendr su programa all.
+
+300
+00:13:37,754 --> 00:13:40,046
+Usted tiene acceso a todas las variables
+
+301
+00:13:40,046 --> 00:13:41,533
+en el alcance actual.
+
+302
+00:13:41,533 --> 00:13:43,726
+Pycharm es lo suficientemente bueno como para darte sus valores all.
+
+303
+00:13:43,726 --> 00:13:48,457
+Pero tambin puedes verlos aqu en la pestaa de variables.
+
+304
+00:13:48,457 --> 00:13:51,949
+Puedes abrirlos y echarles un vistazo, y as sucesivamente.
+
+305
+00:13:51,949 --> 00:13:54,201
+Tienes el icono de la calculadora,
+
+306
+00:13:54,201 --> 00:13:59,201
+en el que puedes ejecutar cualquier funcin de pitn arbitraria que desees.
+
+307
+00:13:59,248 --> 00:14:02,041
+O, de hecho, solo puede mirar los valores de las
+
+308
+00:14:02,041 --> 00:14:03,217
+cosas, como puede escribir
+
+309
+00:14:03,217 --> 00:14:05,487
+usuario y eso le dar los valores de usuario.
+
+310
+00:14:05,487 --> 00:14:08,728
+Tambin puede modificar los valores, si lo desea.
+
+311
+00:14:08,728 --> 00:14:11,561
+Puedes decir usuario. la puntuacin es igual a 200.
+
+312
+00:14:12,733 --> 00:14:14,519
+Esto no devuelve ninguno, pero ahora puede
+
+313
+00:14:14,519 --> 00:14:15,958
+ver, aqu en su variable, que
+
+314
+00:14:15,958 --> 00:14:18,679
+su variable de usuario ahora tiene una puntuacin de 200.
+
+315
+00:14:18,679 --> 00:14:20,981
+Es azul decirte que ha
+
+316
+00:14:20,981 --> 00:14:23,654
+cambiado desde ahora hasta la ltima
+
+317
+00:14:23,654 --> 00:14:27,149
+vez que presionaste uno de estos botones.
+
+318
+00:14:27,149 --> 00:14:29,520
+Aqu abajo, tienes tus hilos.
+
+319
+00:14:29,520 --> 00:14:31,534
+No me preocupara demasiado por
+
+320
+00:14:31,534 --> 00:14:34,951
+esto, es solo el rastro de dnde has estado.
+
+321
+00:14:36,154 --> 00:14:38,987
+Usted ingres esta funcin aqu.
+
+322
+00:14:40,413 --> 00:14:42,027
+Esta es la funcin que llam
+
+323
+00:14:42,027 --> 00:14:44,729
+a la funcin en la que se encuentra actualmente.
+
+324
+00:14:44,729 --> 00:14:48,522
+Esta es la funcin que llam su archivo.
+
+325
+00:14:48,522 --> 00:14:50,267
+Esta es la funcin que
+
+326
+00:14:50,267 --> 00:14:53,901
+llam a la funcin que llam su archivo y dems.
+
+327
+00:14:53,901 --> 00:14:55,548
+Como puedes ver, Python, aqu,
+
+328
+00:14:55,548 --> 00:14:57,482
+estos con el fondo amarillo, por
+
+329
+00:14:57,482 --> 00:14:59,365
+cierto, son los que no escribiste.
+
+330
+00:14:59,365 --> 00:15:00,788
+Estos son pitn.
+
+331
+00:15:00,788 --> 00:15:02,876
+Aqu hay algo sobre cmo configurar
+
+332
+00:15:02,876 --> 00:15:04,342
+un depurador y ejecutarlo, etc.
+
+333
+00:15:04,342 --> 00:15:05,488
+Nada de lo que tengas que preocuparte.
+
+334
+00:15:05,488 --> 00:15:06,638
+Pero, sin embargo,
+
+335
+00:15:06,638 --> 00:15:09,813
+estas cosas son lo que llamaron su archivo originalmente.
+
+336
+00:15:09,813 --> 00:15:10,990
+Normalmente solo te interesarn
+
+337
+00:15:10,990 --> 00:15:12,730
+aquellos con un fondo blanco
+
+338
+00:15:12,730 --> 00:15:14,006
+que sean estos dos.
+
+339
+00:15:14,006 --> 00:15:17,923
+Esta es la primera lnea que se ejecut en su programa relacionado
+
+340
+00:15:17,923 --> 00:15:20,468
+con el lugar donde se encuentra ahora.
+
+341
+00:15:20,468 --> 00:15:24,510
+Y esta es la segunda lnea, en la que ests ahora.
+
+342
+00:15:24,510 --> 00:15:26,983
+Por supuesto, hemos visto reiniciar, continuar, que
+
+343
+00:15:26,983 --> 00:15:29,510
+pasa al siguiente punto de interrupcin, si
+
+344
+00:15:29,510 --> 00:15:32,485
+hay uno, o ejecutar hasta que el programa finalice.
+
+345
+00:15:32,485 --> 00:15:33,866
+Puede, por supuesto, detenerse
+
+346
+00:15:33,866 --> 00:15:36,197
+y eso solo termina su programa.
+
+347
+00:15:36,197 --> 00:15:37,143
+Puede pasar, que
+
+348
+00:15:37,143 --> 00:15:39,620
+pasa a la siguiente lnea en esta funcin.
+
+349
+00:15:39,620 --> 00:15:40,841
+Puede entrar, que entra
+
+350
+00:15:40,841 --> 00:15:43,191
+en la siguiente funcin que se ejecuta,
+
+351
+00:15:43,191 --> 00:15:45,231
+en este caso, realizar el clculo.
+
+352
+00:15:45,231 --> 00:15:48,514
+Y puede salir y eso lo lleva de
+
+353
+00:15:48,514 --> 00:15:52,489
+una funcin a la funcin que lo llam inmediatamente despus.
+
+354
+00:15:52,489 --> 00:15:53,873
+Hay algunos botones ms all,
+
+355
+00:15:53,873 --> 00:15:55,505
+no dude en experimentar con ellos.
+
+356
+00:15:55,505 --> 00:15:57,752
+No hay nada de lo que te tengas que
+
+357
+00:15:57,752 --> 00:15:59,406
+preocupar demasiado, esos son realmente los principales.
+
+358
+00:15:59,406 --> 00:16:03,235
+Cuando est depurando, asegrese de ir despacio.
+
+359
+00:16:03,235 --> 00:16:06,159
+Establezca puntos de interrupcin, mire valores, ejecute
+
+360
+00:16:06,159 --> 00:16:07,957
+funciones para asegurarse de
+
+361
+00:16:07,957 --> 00:16:10,510
+que estn haciendo lo que espera.
+
+362
+00:16:10,510 --> 00:16:13,001
+De esta forma, podrs enfrentar los
+
+363
+00:16:13,001 --> 00:16:17,468
+errores y cualquier problema en tus programas, de manera muy fcil.
+
+364
+00:16:17,468 --> 00:16:20,485
+La mayor parte del tiempo se dedica a la depuracin.
+
+365
+00:16:20,485 --> 00:16:21,975
+Solo recuerda eso.
+
+366
+00:16:21,975 --> 00:16:24,504
+No trates esto como algo secundario que solo
+
+367
+00:16:24,504 --> 00:16:26,356
+haces cuando ests en problemas.
+
+368
+00:16:26,356 --> 00:16:29,996
+salo y amas y prometo que valdr la pena.
+
+369
+00:16:29,996 --> 00:16:31,143
+As que eso
+
+370
+00:16:31,143 --> 00:16:35,161
+es todo por este video, solo quera mostrarte cmo depurar usando pycharm.
+
+371
+00:16:35,161 --> 00:16:37,590
+Asi que. Te ver en el prximo.
+

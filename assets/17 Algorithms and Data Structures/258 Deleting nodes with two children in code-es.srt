@@ -1,0 +1,1416 @@
+1
+00:00:00,080 --> 00:00:01,270
+Instructor: Hola, y bienvenido de nuevo.
+
+2
+00:00:01,270 --> 00:00:04,120
+Veamos cmo eliminar nodos de un rbol
+
+3
+00:00:04,120 --> 00:00:05,963
+binario cuando tienen dos hijos.
+
+4
+00:00:07,120 --> 00:00:10,750
+Entonces, cuando el nodo to_delete tiene dos
+
+5
+00:00:10,750 --> 00:00:14,350
+hijos, debemos hacer algo un poco especial.
+
+6
+00:00:14,350 --> 00:00:16,543
+Djame ver mi diagrama una vez ms.
+
+7
+00:00:17,440 --> 00:00:20,190
+Hemos visto esto antes, solo un resumen rpido.
+
+8
+00:00:20,190 --> 00:00:22,663
+Digamos que queremos eliminar el nodo nueve.
+
+9
+00:00:23,690 --> 00:00:24,780
+Lo que debemos
+
+10
+00:00:24,780 --> 00:00:29,720
+hacer es encontrar el nodo ms a la derecha en la rama izquierda, por
+
+11
+00:00:29,720 --> 00:00:32,500
+lo que ocho, o, si lo prefiere, el
+
+12
+00:00:32,500 --> 00:00:36,190
+nodo ms a la izquierda en la rama derecha, 11.
+
+13
+00:00:36,190 --> 00:00:38,929
+Debido a que hemos codificado un find_rightmost, vamos
+
+14
+00:00:38,929 --> 00:00:40,130
+a seguir con eso.
+
+15
+00:00:40,130 --> 00:00:42,530
+Usaremos ocho, en este caso, pero puede usar
+
+16
+00:00:42,530 --> 00:00:44,300
+11 si lo prefiere, as que
+
+17
+00:00:44,300 --> 00:00:48,063
+vamos a encontrar el nodo ms a la derecha en la rama izquierda.
+
+18
+00:00:48,940 --> 00:00:52,440
+Tambin necesitaremos a su padre, porque el
+
+19
+00:00:52,440 --> 00:00:56,123
+padre tendr que sealar a los nios.
+
+20
+00:00:58,090 --> 00:00:59,773
+Algo que sabemos, es
+
+21
+00:01:00,810 --> 00:01:04,580
+que el nodo de la derecha en esta rama no
+
+22
+00:01:04,580 --> 00:01:06,323
+tiene nada a su derecha.
+
+23
+00:01:07,730 --> 00:01:08,960
+Espero que tenga sentido.
+
+24
+00:01:08,960 --> 00:01:11,140
+El nodo ms a la derecha en
+
+25
+00:01:11,140 --> 00:01:13,060
+esta rama no tiene nada a
+
+26
+00:01:13,060 --> 00:01:16,630
+la derecha, porque si lo hiciera, sera el ms a la derecha.
+
+27
+00:01:16,630 --> 00:01:19,610
+Entonces, cuando vas tan lejos como
+
+28
+00:01:19,610 --> 00:01:23,693
+puedes, este nodo tiene cero o un hijo,
+
+29
+00:01:24,650 --> 00:01:25,613
+no dos.
+
+30
+00:01:27,629 --> 00:01:32,600
+Entonces eso es importante porque como parte de eliminar nueve, vamos
+
+31
+00:01:32,600 --> 00:01:35,210
+a tener que eliminar ocho, esencialmente.
+
+32
+00:01:35,210 --> 00:01:37,033
+Vamos a mover ocho aqu,
+
+33
+00:01:38,170 --> 00:01:41,540
+lo que significa que siete tienen que sealar aqu
+
+34
+00:01:44,540 --> 00:01:45,890
+de esa manera.
+
+35
+00:01:45,890 --> 00:01:47,600
+As que esencialmente hemos eliminado
+
+36
+00:01:47,600 --> 00:01:49,070
+ocho, y si ocho tenan
+
+37
+00:01:49,070 --> 00:01:51,660
+dos hijos, esto se volvera extremadamente complicado porque
+
+38
+00:01:51,660 --> 00:01:53,680
+estaramos eliminando un nodo de dos
+
+39
+00:01:53,680 --> 00:01:55,600
+hijos al eliminar otro nodo de
+
+40
+00:01:55,600 --> 00:01:57,360
+dos hijos, esto es bastante simple.
+
+41
+00:01:57,360 --> 00:02:01,100
+Si 7. 5 tena otros hijos, esto estara bien, porque
+
+42
+00:02:01,100 --> 00:02:02,853
+siete puntos a 7. 5,
+
+43
+00:02:02,853 --> 00:02:05,303
+7. Los hijos de 5 se quedan all, as que est bien.
+
+44
+00:02:08,314 --> 00:02:12,860
+Y, por supuesto, si ocho no tiene hijos, est bien.
+
+45
+00:02:12,860 --> 00:02:16,280
+No tenemos que preocuparnos por eso, entonces no hay problema.
+
+46
+00:02:16,280 --> 00:02:18,270
+Comencemos con este escenario, el
+
+47
+00:02:18,270 --> 00:02:21,270
+escenario donde queremos eliminar, digamos nueve, y
+
+48
+00:02:21,270 --> 00:02:24,660
+que tiene un nodo en esta estructura aqu.
+
+49
+00:02:24,660 --> 00:02:26,260
+Entonces, lo primero que debemos
+
+50
+00:02:27,500 --> 00:02:30,860
+hacer es ver si el nodo que queremos eliminar est a
+
+51
+00:02:30,860 --> 00:02:33,663
+la izquierda o a la derecha de su elemento primario.
+
+52
+00:02:35,410 --> 00:02:37,560
+Entonces si
+
+53
+00:02:37,560 --> 00:02:42,060
+to_delete igual a_delete_parent. A la izquierda, digamos, voy a eliminar
+
+54
+00:02:42,060 --> 00:02:44,010
+este pase, por cierto, elif to_delete
+
+55
+00:02:45,803 --> 00:02:48,743
+es igual a to_delete_parent. y, por supuesto, lo
+
+56
+00:02:51,211 --> 00:02:52,190
+que sucede cuando
+
+57
+00:02:52,190 --> 00:02:53,230
+son iguales, cuando
+
+58
+00:02:53,230 --> 00:02:55,980
+quieres eliminar la raz y tiene dos hijos.
+
+59
+00:02:58,290 --> 00:03:00,130
+Ahora, para todo esto, vamos a
+
+60
+00:03:00,130 --> 00:03:03,940
+necesitar el nodo ms a la derecha en la rama izquierda, por
+
+61
+00:03:03,940 --> 00:03:06,430
+lo que vamos a decir el mismo auto
+
+62
+00:03:06,430 --> 00:03:09,580
+ms a la derecha. find_rightmost de
+
+63
+00:03:11,215 --> 00:03:12,715
+to_delete. el padre de
+
+64
+00:03:16,540 --> 00:03:18,650
+la izquierda y el de la derecha van a
+
+65
+00:03:18,650 --> 00:03:20,200
+ser uno mismo. find_parent
+
+66
+00:03:21,730 --> 00:03:26,023
+de la derecha. valor.
+
+67
+00:03:27,800 --> 00:03:29,707
+Una vez ms, find_parent, que
+
+68
+00:03:30,750 --> 00:03:34,200
+est aqu arriba, toma un valor, y pasa a
+
+69
+00:03:34,200 --> 00:03:35,530
+travs del rbol, y
+
+70
+00:03:35,530 --> 00:03:37,760
+nos dice cul es el padre
+
+71
+00:03:37,760 --> 00:03:39,503
+del valor que estamos buscando.
+
+72
+00:03:40,370 --> 00:03:43,660
+As que aqu tenemos el nodo ms a la derecha
+
+73
+00:03:43,660 --> 00:03:47,610
+en la rama izquierda, y tambin tenemos el rightmost_parent de ese nodo.
+
+74
+00:03:47,610 --> 00:03:50,400
+Sabemos que es un nodo
+
+75
+00:03:51,340 --> 00:03:55,720
+ms a la derecha porque es una rama izquierda.
+
+76
+00:03:55,720 --> 00:03:57,400
+Para eliminar a la izquierda, devolver
+
+77
+00:03:57,400 --> 00:03:58,880
+verdadero, o no fue ninguno,
+
+78
+00:03:58,880 --> 00:04:01,940
+entonces sabemos que esto no va a ser ninguno, por lo
+
+79
+00:04:01,940 --> 00:04:03,040
+tanto, esto est bien.
+
+80
+00:04:03,040 --> 00:04:04,410
+Accediendo a la derecha un valor como
+
+81
+00:04:04,410 --> 00:04:07,360
+ese, sin verificar o sin capturar ninguna excepcin est bien, porque
+
+82
+00:04:07,360 --> 00:04:10,440
+est ms a la derecha. el valor devolver algo.
+
+83
+00:04:10,440 --> 00:04:12,540
+Lo sabemos porque tenemos dos hijos.
+
+84
+00:04:15,180 --> 00:04:19,050
+Ahora, si queremos eliminar algo a la izquierda,
+
+85
+00:04:19,050 --> 00:04:20,770
+qu tenemos que hacer?
+
+86
+00:04:20,770 --> 00:04:22,820
+Volvamos al diagrama.
+
+87
+00:04:22,820 --> 00:04:25,190
+Digamos que queremos eliminar Bueno, comencemos
+
+88
+00:04:25,190 --> 00:04:26,240
+con el correcto.
+
+89
+00:04:26,240 --> 00:04:27,790
+Digamos que queremos eliminar nueve.
+
+90
+00:04:27,790 --> 00:04:32,790
+Entonces, lo primero que tenemos que hacer es averiguar ocho, lo que hemos
+
+91
+00:04:33,180 --> 00:04:36,490
+hecho, hemos hecho el nodo ms a la derecha.
+
+92
+00:04:36,490 --> 00:04:37,520
+Entonces tenemos
+
+93
+00:04:37,520 --> 00:04:40,800
+que decir que el nodo de la
+
+94
+00:04:40,800 --> 00:04:44,650
+derecha ahora tiene que ser igual a 12, verdad?
+
+95
+00:04:44,650 --> 00:04:47,350
+Si ocho reemplaza a nueve, el derecho
+
+96
+00:04:47,350 --> 00:04:51,443
+de ocho debe ser lo que sola ser el nueve correcto.
+
+97
+00:04:52,710 --> 00:04:53,810
+Comencemos con eso.
+
+98
+00:04:54,862 --> 00:04:59,097
+La derecha. right tiene que ser igual a to_delete. correcto, entonces eso significa
+
+99
+00:05:02,060 --> 00:05:05,030
+que el nodo de la derecha aqu, ocho,
+
+100
+00:05:05,030 --> 00:05:07,803
+va a reemplazar nueve apuntando a 12.
+
+101
+00:05:10,570 --> 00:05:15,520
+El padre de to_delete ya no tiene que apuntar a las nueve.
+
+102
+00:05:15,520 --> 00:05:17,320
+Tiene que apuntar a las ocho.
+
+103
+00:05:17,320 --> 00:05:21,810
+Entonces el padre de to_delete tiene que apuntar al nodo de la derecha.
+
+104
+00:05:21,810 --> 00:05:22,920
+Vamos a hacer eso.
+
+105
+00:05:22,920 --> 00:05:27,147
+To_delete_parent. derecho igual a la derecha
+
+106
+00:05:28,310 --> 00:05:31,030
+Y, por cierto, me disculpo profusamente.
+
+107
+00:05:31,030 --> 00:05:34,480
+Dijimos que bamos a hacer lo correcto primero, as que ah est.
+
+108
+00:05:34,480 --> 00:05:38,880
+Si quisieras hacer la izquierda, sera exactamente lo mismo, pero
+
+109
+00:05:38,880 --> 00:05:40,380
+estara en la izquierda.
+
+110
+00:05:42,710 --> 00:05:46,440
+As que encontramos que el derecho del nodo situado ms a la derecha debe
+
+111
+00:05:46,440 --> 00:05:49,360
+apuntar a lo que sola ser el derecho del to_delete, por
+
+112
+00:05:49,360 --> 00:05:50,860
+lo que ocho apuntarn a 12.
+
+113
+00:05:51,846 --> 00:05:55,350
+To_delete_parent. right tiene que apuntar a ocho
+
+114
+00:05:55,350 --> 00:05:59,160
+porque to_delete es igual a to_delete's right, por lo que estamos eliminando nueve,
+
+115
+00:05:59,160 --> 00:06:00,600
+por lo tanto, el derecho
+
+116
+00:06:00,600 --> 00:06:03,370
+de los padres tiene que apuntar a otro lugar.
+
+117
+00:06:03,370 --> 00:06:07,670
+Si tuviramos otro nodo de dos hijos aqu a la izquierda, sera este
+
+118
+00:06:07,670 --> 00:06:09,160
+izquierdo, que tiene que apuntar
+
+119
+00:06:09,160 --> 00:06:10,920
+a otro lugar, entonces eso
+
+120
+00:06:10,920 --> 00:06:12,513
+es lo que est haciendo.
+
+121
+00:06:14,960 --> 00:06:16,310
+Espero que tenga sentido.
+
+122
+00:06:18,070 --> 00:06:22,760
+Finalmente, si estamos eliminando este, si estamos eliminando el encabezado, vamos a encontrar
+
+123
+00:06:22,760 --> 00:06:24,490
+el nodo ms a la
+
+124
+00:06:24,490 --> 00:06:26,350
+derecha, de nuevo, en el
+
+125
+00:06:26,350 --> 00:06:28,990
+subrbol izquierdo, que va a ser cinco,
+
+126
+00:06:28,990 --> 00:06:30,740
+y lo que tenemos que
+
+127
+00:06:30,740 --> 00:06:34,620
+hacer es decir el nodo derecho ms a la derecha debe
+
+128
+00:06:34,620 --> 00:06:38,163
+ser nueve, que es, de nuevo, esta lnea aqu, pero
+
+129
+00:06:39,670 --> 00:06:43,290
+ahora, to_delete_parent es igual a rightmost, es correcto, pero to_delete_parent
+
+130
+00:06:43,290 --> 00:06:45,700
+es to_delete, por lo que es el
+
+131
+00:06:45,700 --> 00:06:47,400
+mismo nodo porque ambos son
+
+132
+00:06:49,300 --> 00:06:51,520
+la cabeza, entonces, qu haremos? es
+
+133
+00:06:51,520 --> 00:06:54,657
+uno mismo. la cabeza est ms a la derecha.
+
+134
+00:06:59,460 --> 00:07:01,620
+Entonces, si queremos eliminar este, la
+
+135
+00:07:01,620 --> 00:07:04,973
+cabeza debe convertirse en el nodo ms a la derecha.
+
+136
+00:07:06,210 --> 00:07:08,940
+Ese es el cinco, as que los cinco se moveran hasta aqu.
+
+137
+00:07:08,940 --> 00:07:11,363
+Espero que esto tenga un poco de sentido.
+
+138
+00:07:12,410 --> 00:07:14,470
+Sin embargo, hay una cosa ms
+
+139
+00:07:14,470 --> 00:07:16,833
+en la que tenemos que pensar.
+
+140
+00:07:18,010 --> 00:07:20,460
+Vayamos, nuevamente, a travs de nuestro
+
+141
+00:07:20,460 --> 00:07:22,240
+algoritmo para eliminar los nodos.
+
+142
+00:07:22,240 --> 00:07:24,460
+Observe cmo no hemos usado el padre ms a la derecha, por cierto.
+
+143
+00:07:24,460 --> 00:07:25,883
+Ese es realmente el problema.
+
+144
+00:07:27,440 --> 00:07:29,573
+Imaginemos que estamos tratando de eliminar nueve.
+
+145
+00:07:30,690 --> 00:07:35,123
+Entonces to_delete es el derecho de los padres, entonces esto es correcto.
+
+146
+00:07:36,130 --> 00:07:37,100
+Lo primero que estamos haciendo es
+
+147
+00:07:37,100 --> 00:07:38,190
+encontrar el nodo ms a la
+
+148
+00:07:38,190 --> 00:07:41,450
+derecha y establecer su derecho a ser el to_delete. Correcto, entonces esencialmente
+
+149
+00:07:41,450 --> 00:07:46,233
+moviendo este 12 a los ocho, as.
+
+150
+00:07:47,306 --> 00:07:49,760
+Esto es correcto: si queremos mover los ocho aqu arriba, eso
+
+151
+00:07:49,760 --> 00:07:51,010
+es lo que tiene que hacer.
+
+152
+00:07:52,030 --> 00:07:56,510
+Entonces estamos configurando el padre to_delete_parent. derecho a ser el nodo ms
+
+153
+00:07:56,510 --> 00:07:58,423
+a la derecha, y como
+
+154
+00:07:59,950 --> 00:08:00,783
+puede ver,
+
+155
+00:08:00,783 --> 00:08:03,010
+hay algo que est un poco
+
+156
+00:08:03,010 --> 00:08:05,120
+apagado, que es que hemos eliminado
+
+157
+00:08:05,120 --> 00:08:07,540
+los nueve, pero tambin hemos eliminado los
+
+158
+00:08:07,540 --> 00:08:10,103
+siete, porque nada apunta a los siete.
+
+159
+00:08:11,160 --> 00:08:12,770
+Entonces tenemos que arreglar esto.
+
+160
+00:08:12,770 --> 00:08:15,800
+Lo que tenemos que hacer es decir,
+
+161
+00:08:15,800 --> 00:08:19,463
+ocho a la izquierda deben apuntar a siete.
+
+162
+00:08:20,749 --> 00:08:24,540
+El derecho de Seven debe apuntar a la izquierda de las ocho.
+
+163
+00:08:27,870 --> 00:08:30,250
+Entonces, lo que tenemos que hacer es
+
+164
+00:08:30,250 --> 00:08:31,423
+rightmost_parent. la derecha es igual a la derecha. a la
+
+165
+00:08:35,661 --> 00:08:39,411
+izquierda, y luego a la derecha. queda igual a_delete. izquierda.
+
+166
+00:08:43,640 --> 00:08:44,880
+Ahora, una vez ms, vamos a analizar este algoritmo.
+
+167
+00:08:44,880 --> 00:08:47,960
+Vamos a cambiar a los otros en solo un momento.
+
+168
+00:08:47,960 --> 00:08:48,793
+Lo primero que
+
+169
+00:08:48,793 --> 00:08:51,773
+estamos haciendo es configurar rightmost_parent a la derecha, entonces ese
+
+170
+00:08:52,900 --> 00:08:54,870
+es el tipo, igual a la derecha
+
+171
+00:08:54,870 --> 00:08:58,060
+izquierda Oh, lo siento, rightmost_parent es este tipo, de siete aos.
+
+172
+00:08:58,060 --> 00:09:00,800
+Siete tiene razn, ahora, 7. 5.
+
+173
+00:09:04,745 --> 00:09:08,940
+El ms a la derecha. La izquierda ahora quedar a la derecha
+
+174
+00:09:08,940 --> 00:09:11,120
+de_delete, entonces siete, por lo que ahora
+
+175
+00:09:12,900 --> 00:09:15,023
+los ocho van a apuntar a siete.
+
+176
+00:09:17,190 --> 00:09:19,960
+El derecho de la derecha va a
+
+177
+00:09:19,960 --> 00:09:22,993
+apuntar a la derecha de to_delete, y el
+
+178
+00:09:26,240 --> 00:09:28,020
+derecho de to_delete_parent va
+
+179
+00:09:28,020 --> 00:09:30,913
+a apuntar al nodo de la derecha.
+
+180
+00:09:32,140 --> 00:09:33,640
+Ahora, como pueden ver, esto es un poco intrincado.
+
+181
+00:09:33,640 --> 00:09:34,670
+Solo lo mover en un momento.
+
+182
+00:09:34,670 --> 00:09:35,710
+Tendr sentido.
+
+183
+00:09:35,710 --> 00:09:38,930
+Nada apunta a nueve, por lo que podemos eliminarlo.
+
+184
+00:09:38,930 --> 00:09:40,350
+Estas flechas podemos eliminar.
+
+185
+00:09:40,350 --> 00:09:41,850
+Podemos mover los ocho aqu arriba.
+
+186
+00:09:43,960 --> 00:09:45,680
+Tiene sentido?
+
+187
+00:09:45,680 --> 00:09:46,513
+Eso espero.
+
+188
+00:09:47,620 --> 00:09:51,810
+Entonces estos cuatro pasos nos llevan a esta posicin.
+
+189
+00:09:51,810 --> 00:09:53,810
+Por supuesto, este est aqu a la derecha.
+
+190
+00:09:56,320 --> 00:09:57,680
+Voy a deshacer estos
+
+191
+00:09:57,680 --> 00:09:59,680
+cambios, solo porque tenemos, an,
+
+192
+00:09:59,680 --> 00:10:02,053
+un escenario ms para pasar, desafortunadamente.
+
+193
+00:10:02,930 --> 00:10:05,620
+Lo siento: no viste eso. (Risas) Esto es
+
+194
+00:10:05,620 --> 00:10:07,740
+para el prximo bit.
+
+195
+00:10:07,740 --> 00:10:10,590
+Y tambin necesitamos estos fragmentos de cdigo
+
+196
+00:10:10,590 --> 00:10:13,253
+aqu en las otras partes tambin.
+
+197
+00:10:15,188 --> 00:10:17,293
+Entonces esto es necesario en todas las ocasiones.
+
+198
+00:10:20,910 --> 00:10:21,743
+Entonces
+
+199
+00:10:22,960 --> 00:10:25,880
+tenemos un escenario ms.
+
+200
+00:10:25,880 --> 00:10:27,123
+Dejame ensertelo.
+
+201
+00:10:28,610 --> 00:10:30,690
+Tenemos este escenario aqu.
+
+202
+00:10:30,690 --> 00:10:32,750
+As que voy a copiar esto, luego voy a hacer
+
+203
+00:10:32,750 --> 00:10:34,880
+esto, luego lo eliminar, y lo voy a pegar aqu.
+
+204
+00:10:34,880 --> 00:10:37,543
+Este es otro escenario en el que tenemos que pensar.
+
+205
+00:10:39,110 --> 00:10:40,070
+Lo que
+
+206
+00:10:40,070 --> 00:10:42,460
+voy a hacer es modificarlo ligeramente.
+
+207
+00:10:42,460 --> 00:10:45,850
+Voy a agregar otro nodo aqu, digamos
+
+208
+00:10:45,850 --> 00:10:46,897
+6. 5, eso
+
+209
+00:10:49,754 --> 00:10:53,637
+va a estar a la izquierda de las siete, por supuesto.
+
+210
+00:10:56,180 --> 00:10:57,993
+Entonces tenemos este escenario aqu.
+
+211
+00:10:59,340 --> 00:11:01,253
+Nueve es el nodo que queremos eliminar.
+
+212
+00:11:03,030 --> 00:11:05,980
+Siete es el nodo ms a la derecha; no tiene nada a su derecha.
+
+213
+00:11:07,050 --> 00:11:08,970
+Nine tambin es el padre ms a la derecha
+
+214
+00:11:08,970 --> 00:11:10,840
+porque siete es el ms a la derecha, por
+
+215
+00:11:10,840 --> 00:11:12,320
+lo tanto, el padre es nueve.
+
+216
+00:11:12,320 --> 00:11:14,820
+Seis sigue siendo to_delete_parent.
+
+217
+00:11:15,670 --> 00:11:19,123
+Intentemos eliminar nueve utilizando nuestro pequeo algoritmo.
+
+218
+00:11:20,180 --> 00:11:23,770
+Primero, el derecho del rightmost_parent va a estar
+
+219
+00:11:23,770 --> 00:11:26,843
+a la derecha del lado izquierdo.
+
+220
+00:11:28,900 --> 00:11:31,490
+Entonces este tipo va a
+
+221
+00:11:31,490 --> 00:11:35,250
+apuntar a 6. 5.
+
+222
+00:11:35,250 --> 00:11:36,140
+Esto es lo que estamos haciendo aqu.
+
+223
+00:11:36,140 --> 00:11:40,790
+Rightmost_parent, nueve, est a la derecha, a la izquierda, 6. 5.
+
+224
+00:11:43,793 --> 00:11:48,503
+Entonces estamos diciendo rightmost. left es to_delete. a la izquierda,
+
+225
+00:11:49,750 --> 00:11:53,330
+lo cual tiene muy poco sentido porque
+
+226
+00:11:53,330 --> 00:11:56,613
+va a sealarse a s mismo.
+
+227
+00:11:59,005 --> 00:12:00,847
+La derecha. la derecha es to_delete. derecho.
+
+228
+00:12:03,740 --> 00:12:06,080
+Bueno, finalmente algo que tiene un poco de sentido.
+
+229
+00:12:06,080 --> 00:12:06,913
+Esto est bien.
+
+230
+00:12:06,913 --> 00:12:07,746
+Queremos hacer eso.
+
+231
+00:12:08,780 --> 00:12:11,927
+Finalmente, el derecho de to_delete_parent es el ms a la derecha.
+
+232
+00:12:14,140 --> 00:12:15,230
+Nada apunta a nueve.
+
+233
+00:12:15,230 --> 00:12:16,993
+Nos deshacemos de todos ellos, pero
+
+234
+00:12:18,580 --> 00:12:21,360
+tambin hemos eliminado accidentalmente 6. 5, y siete
+
+235
+00:12:22,670 --> 00:12:26,270
+puntos a s mismo, que tampoco es ideal.
+
+236
+00:12:26,270 --> 00:12:29,483
+Vamos a entrar en muchos bucles infinitos si hacemos eso.
+
+237
+00:12:31,550 --> 00:12:35,790
+No queremos hacer eso, entonces, cmo hacemos esto?
+
+238
+00:12:35,790 --> 00:12:37,360
+Bueno, en realidad es bastante simple.
+
+239
+00:12:37,360 --> 00:12:41,260
+Todo el problema en este escenario es que
+
+240
+00:12:41,260 --> 00:12:45,360
+to_delete es igual a rightmost_parent, y luego estamos
+
+241
+00:12:45,360 --> 00:12:47,870
+configurando algunas propiedades que tenemos
+
+242
+00:12:47,870 --> 00:12:50,020
+que mover de to_delete
+
+243
+00:12:50,020 --> 00:12:53,593
+y rightmost_parent, como decir esto, que simplemente
+
+244
+00:12:55,060 --> 00:12:59,413
+no podemos hacer porque son las mismas cosa.
+
+245
+00:13:00,830 --> 00:13:05,320
+Cuando son lo mismo, lo nico que tenemos que hacer
+
+246
+00:13:06,410 --> 00:13:09,890
+es obtener el nodo derecho de la derecha
+
+247
+00:13:09,890 --> 00:13:12,093
+y convertirlo en 12, obtener
+
+248
+00:13:13,586 --> 00:13:16,260
+seis y apuntar a siete.
+
+249
+00:13:16,260 --> 00:13:19,393
+Esto es todo lo que tenemos que hacer cuando son iguales.
+
+250
+00:13:20,820 --> 00:13:22,563
+Ahora, nada apunta a nueve,
+
+251
+00:13:23,620 --> 00:13:26,483
+y siete se convierte en lo que queramos.
+
+252
+00:13:28,650 --> 00:13:30,370
+Entonces, como pueden ver, tal vez eso fue
+
+253
+00:13:30,370 --> 00:13:31,760
+demasiado rpido, todo lo que tenemos que
+
+254
+00:13:31,760 --> 00:13:33,610
+hacer es la derecha. a la derecha, que
+
+255
+00:13:34,580 --> 00:13:37,903
+es el siete a la derecha igual a_delete. derecha, y
+
+256
+00:13:38,870 --> 00:13:43,220
+derecha de to_delete_parent es la derecha.
+
+257
+00:13:43,220 --> 00:13:46,550
+Entonces solo queremos hacer estas dos lneas.
+
+258
+00:13:46,550 --> 00:13:50,693
+Eso significa que necesitamos estos dos para cuando no son lo mismo.
+
+259
+00:13:51,810 --> 00:13:53,420
+Entonces, si rightmost_parent
+
+260
+00:13:55,154 --> 00:13:56,487
+no es igual
+
+261
+00:13:59,510 --> 00:14:01,517
+a to_delete, ejecuta estas
+
+262
+00:14:02,580 --> 00:14:03,993
+dos lneas.
+
+263
+00:14:07,374 --> 00:14:11,580
+Si rightmost_parent no es igual a to_delete, ejecuta esas dos
+
+264
+00:14:11,580 --> 00:14:13,500
+lneas, y aqu abajo,
+
+265
+00:14:13,500 --> 00:14:14,440
+si rightmost_parent
+
+266
+00:14:14,440 --> 00:14:16,780
+no es igual a to_delete,
+
+267
+00:14:16,780 --> 00:14:18,173
+ejecuta esas dos lneas.
+
+268
+00:14:19,930 --> 00:14:24,103
+Observe cmo hemos obtenido nuestras sentencias if aqu, y estos bloques de cdigo
+
+269
+00:14:25,170 --> 00:14:27,700
+son siempre los mismos en todas las sentencias
+
+270
+00:14:27,700 --> 00:14:30,200
+if, por lo que podemos simplemente extraerlos.
+
+271
+00:14:31,520 --> 00:14:35,020
+Podemos eliminarlos de las declaraciones if all y
+
+272
+00:14:35,020 --> 00:14:36,163
+moverlos aqu.
+
+273
+00:14:38,660 --> 00:14:41,200
+Del mismo modo, ms a la derecha. la derecha es to_delete. bien, esto
+
+274
+00:14:41,200 --> 00:14:44,913
+tambin se puede extraer y poner aqu, y esto ahora
+
+275
+00:14:50,600 --> 00:14:52,420
+se vuelve un poco ms simple.
+
+276
+00:14:52,420 --> 00:14:54,530
+As que una vez ms, volviendo a nuestro
+
+277
+00:14:54,530 --> 00:14:56,320
+diagrama, voy a eliminar o, de hecho,
+
+278
+00:14:56,320 --> 00:14:58,450
+no borremos esas nubes por el momento.
+
+279
+00:14:58,450 --> 00:15:01,080
+Digamos, una vez ms, que queremos eliminar
+
+280
+00:15:01,080 --> 00:15:03,850
+nueve, as que tenemos nuestro pequeo algoritmo.
+
+281
+00:15:03,850 --> 00:15:05,870
+Encontramos el nodo ms a la derecha, que es siete.
+
+282
+00:15:05,870 --> 00:15:08,070
+Encontramos el rightmost_parent, que es nueve.
+
+283
+00:15:09,590 --> 00:15:12,480
+El nodo que queremos eliminar es igual al rightmost_parent?
+
+284
+00:15:12,480 --> 00:15:15,910
+S, entonces saltamos directamente a travs de esta declaracin
+
+285
+00:15:15,910 --> 00:15:16,950
+if y aqu.
+
+286
+00:15:16,950 --> 00:15:19,330
+El ms a la derecha. nodo derecho, este
+
+287
+00:15:19,330 --> 00:15:21,910
+aqu abajo que an no existe, va
+
+288
+00:15:21,910 --> 00:15:24,333
+a estar a la derecha de la correccin.
+
+289
+00:15:27,060 --> 00:15:31,150
+Ahora, es para borrar el derecho del padre
+
+290
+00:15:31,150 --> 00:15:32,390
+uh, nodo izquierdo?
+
+291
+00:15:32,390 --> 00:15:34,830
+Es el padre correcto?
+
+292
+00:15:34,830 --> 00:15:35,940
+S.
+
+293
+00:15:35,940 --> 00:15:37,893
+Entonces sealamos eso all.
+
+294
+00:15:39,750 --> 00:15:40,700
+Eso es todo lo que necesitamos.
+
+295
+00:15:42,760 --> 00:15:47,353
+Ahora, volvamos a tener algo as como un ocho aqu.
+
+296
+00:15:49,240 --> 00:15:51,870
+Ahora, el nodo de la derecha se convierte en el ocho.
+
+297
+00:15:51,870 --> 00:15:54,223
+El rightmost_parent se convierte en el siete.
+
+298
+00:15:55,239 --> 00:15:57,639
+Para_delete se convierte en nueve, to_delete_parent es seis.
+
+299
+00:15:58,650 --> 00:16:00,150
+As que este es nuestro
+
+300
+00:16:01,010 --> 00:16:04,010
+otro escenario, y lo que queremos hacer es, una vez ms,
+
+301
+00:16:04,010 --> 00:16:08,057
+que queremos eliminar nueve, encontrar ocho, encontrar siete como el rightmost_parent ms a la derecha.
+
+302
+00:16:08,057 --> 00:16:11,080
+Rightmost_parent es igual a to_delete?
+
+303
+00:16:11,080 --> 00:16:13,930
+No, entonces vamos a esta declaracin if.
+
+304
+00:16:13,930 --> 00:16:15,030
+Rightmost_parent. right
+
+305
+00:16:17,800 --> 00:16:21,510
+debe ser igual a la derecha del lado izquierdo, y
+
+306
+00:16:21,510 --> 00:16:22,343
+por cierto,
+
+307
+00:16:23,506 --> 00:16:26,160
+solo agregaremos esto 7. 5 de vuelta aqu.
+
+308
+00:16:27,562 --> 00:16:28,993
+7. 6, est bien.
+
+309
+00:16:31,010 --> 00:16:32,980
+Entonces, el derecho del rightmost_parent debe ser
+
+310
+00:16:32,980 --> 00:16:34,993
+igual al del extremo izquierdo, por lo
+
+311
+00:16:36,126 --> 00:16:38,600
+que debe apuntar a 7. 6.
+
+312
+00:16:38,600 --> 00:16:43,600
+La izquierda del extremo derecho debe ser igual a la izquierda de la
+
+313
+00:16:43,890 --> 00:16:48,053
+flecha, por lo que ahora estas ocho deben apuntar a siete.
+
+314
+00:16:49,920 --> 00:16:53,200
+El derecho est ms a la derecha, este tipo era el
+
+315
+00:16:53,200 --> 00:16:57,623
+ms a la derecha, el derecho debe apuntar a la derecha a_delete, as que aqu abajo.
+
+316
+00:16:58,760 --> 00:17:02,430
+Y finalmente, dado que nueve est a la derecha de la matriz, seis
+
+317
+00:17:02,430 --> 00:17:05,340
+deben apuntar a la derecha al nodo ms a la derecha,
+
+318
+00:17:05,340 --> 00:17:06,173
+que es ocho.
+
+319
+00:17:07,250 --> 00:17:12,250
+Entonces podemos eliminar nueve, moverlo hacia arriba aqu, y lo conseguimos.
+
+320
+00:17:12,340 --> 00:17:13,840
+Obtuvimos exactamente lo que queramos.
+
+321
+00:17:15,780 --> 00:17:20,470
+Ahora bien, este es un algoritmo alucinante extremo, al menos
+
+322
+00:17:20,470 --> 00:17:21,630
+cuando ests
+
+323
+00:17:21,630 --> 00:17:26,290
+comenzando, y no esperara que entiendas algo de inmediato, y
+
+324
+00:17:26,290 --> 00:17:29,433
+una vez ms, dibuja esto en papel.
+
+325
+00:17:30,280 --> 00:17:32,670
+No te sientas mal por sacarlo.
+
+326
+00:17:32,670 --> 00:17:33,730
+Todo el mundo lo saca.
+
+327
+00:17:33,730 --> 00:17:35,510
+Tengo muchos dibujos de
+
+328
+00:17:35,510 --> 00:17:37,570
+esto, e incluso con estos
+
+329
+00:17:37,570 --> 00:17:42,570
+diagramas puedo ver que no es tan obvio de entender, y
+
+330
+00:17:42,980 --> 00:17:45,760
+especialmente cuando tienes 100 lneas de
+
+331
+00:17:45,760 --> 00:17:49,070
+cdigo, no 100, sino 50 lneas de
+
+332
+00:17:49,070 --> 00:17:52,500
+cdigo para eliminar un nodo en un dato
+
+333
+00:17:52,500 --> 00:17:55,070
+estructura, sabes que es bastante complicado.
+
+334
+00:17:55,070 --> 00:17:57,610
+Espero que esto ayude, sin embargo.
+
+335
+00:17:57,610 --> 00:17:59,370
+Puede aparecer en entrevistas.
+
+336
+00:17:59,370 --> 00:18:01,500
+Puede aparecer en desafos de codificacin.
+
+337
+00:18:01,500 --> 00:18:03,690
+En general, es bueno saber en
+
+338
+00:18:03,690 --> 00:18:05,420
+general cuando se trata de
+
+339
+00:18:05,420 --> 00:18:08,000
+bases de datos y datos que se
+
+340
+00:18:08,000 --> 00:18:09,050
+deben buscar muy
+
+341
+00:18:09,050 --> 00:18:12,210
+rpidamente, y en general, solo saber sobre rboles binarios,
+
+342
+00:18:12,210 --> 00:18:13,240
+y que existen,
+
+343
+00:18:13,240 --> 00:18:16,330
+y un poco un poco de nocin sobre
+
+344
+00:18:16,330 --> 00:18:19,310
+cmo usarlos, te convertir en un desarrollador ms
+
+345
+00:18:19,310 --> 00:18:23,480
+completo, pero nunca los tuve que usar en mi trabajo diario.
+
+346
+00:18:23,480 --> 00:18:26,880
+Entonces entindelo.
+
+347
+00:18:26,880 --> 00:18:28,010
+Sabes que est ah.
+
+348
+00:18:28,010 --> 00:18:29,020
+No sienta que tiene
+
+349
+00:18:29,020 --> 00:18:31,570
+que recordar este algoritmo lnea por lnea, porque no
+
+350
+00:18:31,570 --> 00:18:32,547
+tiene que hacerlo, y
+
+351
+00:18:32,547 --> 00:18:34,290
+siempre puede volver al curso y
+
+352
+00:18:34,290 --> 00:18:36,340
+mirar el video nuevamente si lo necesita.
+
+353
+00:18:37,740 --> 00:18:39,080
+Entonces eso es todo por este video.
+
+354
+00:18:39,080 --> 00:18:42,403
+Con suerte esta ayuda, y la ver en la prxima.
+

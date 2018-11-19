@@ -1,0 +1,840 @@
+1
+00:00:00,000 --> 00:00:00,877
+Jos: Hola y bienvenido de nuevo.
+
+2
+00:00:00,877 --> 00:00:05,040
+En este video, hablemos sobre el registro en Python.
+
+3
+00:00:05,040 --> 00:00:08,080
+En los trminos ms simples, el mdulo de registro
+
+4
+00:00:08,080 --> 00:00:10,040
+se usa para imprimir cosas.
+
+5
+00:00:10,040 --> 00:00:12,616
+Muy parecido a la funcin de impresin que has usado anteriormente,
+
+6
+00:00:12,616 --> 00:00:14,980
+pero el mdulo de registro es un poco ms poderoso.
+
+7
+00:00:14,980 --> 00:00:17,300
+Se puede usar para imprimir cosas
+
+8
+00:00:17,300 --> 00:00:22,300
+en una consola o un archivo, y esencialmente se usa para imprimir registros.
+
+9
+00:00:22,850 --> 00:00:25,447
+No s si hemos mencionado los registros
+
+10
+00:00:25,447 --> 00:00:30,447
+anteriormente, pero un registro es esencialmente todo lo que sucedi en su aplicacin.
+
+11
+00:00:32,020 --> 00:00:35,107
+Por ejemplo, podra tener un registro de su
+
+12
+00:00:35,107 --> 00:00:37,530
+da que escriba en un cuaderno, todo
+
+13
+00:00:37,530 --> 00:00:39,680
+lo que sucedi en su da.
+
+14
+00:00:39,680 --> 00:00:42,019
+Puede tener un registro de vacaciones en el que
+
+15
+00:00:42,019 --> 00:00:44,176
+anote todo lo que sucedi durante sus vacaciones.
+
+16
+00:00:44,176 --> 00:00:48,260
+Y puede tener un registro de su aplicacin en el que anote todo
+
+17
+00:00:48,260 --> 00:00:51,620
+lo que sucedi durante el tiempo de ejecucin de su aplicacin.
+
+18
+00:00:51,620 --> 00:00:56,049
+Por ejemplo, si ocurri un error, un problema crtico,
+
+19
+00:00:56,049 --> 00:01:00,130
+alguna informacin sobre algn mtodo que se est ejecutando.
+
+20
+00:01:00,130 --> 00:01:03,613
+Bsicamente, cualquier cosa y estos registros se usan para
+
+21
+00:01:03,613 --> 00:01:08,200
+que los desarrolladores los analicen y comprendan cmo se estn ejecutando las aplicaciones.
+
+22
+00:01:08,200 --> 00:01:10,530
+Por supuesto, si tienes una aplicacin muy pequea, esto
+
+23
+00:01:10,530 --> 00:01:11,970
+quizs no sea tan til.
+
+24
+00:01:11,970 --> 00:01:15,750
+A medida que tu aplicacin comience a crecer de forma aceptable,
+
+25
+00:01:15,750 --> 00:01:17,050
+te ser muy til.
+
+26
+00:01:17,970 --> 00:01:20,830
+Lo bueno del mdulo de registro es que
+
+27
+00:01:20,830 --> 00:01:23,400
+una de las cosas buenas del mdulo
+
+28
+00:01:23,400 --> 00:01:26,310
+de registro es que tiene varios niveles de registro.
+
+29
+00:01:26,310 --> 00:01:29,920
+Y puedes ordenar los niveles y deshabilitar otros.
+
+30
+00:01:29,920 --> 00:01:33,050
+Entonces, por ejemplo, a medida que se desarrolla, es
+
+31
+00:01:33,050 --> 00:01:36,850
+posible que desee utilizar el registrador para generar mensajes informativos sobre
+
+32
+00:01:36,850 --> 00:01:38,930
+lo que est sucediendo en su aplicacin.
+
+33
+00:01:38,930 --> 00:01:41,620
+Una vez que implementa su aplicacin, la
+
+34
+00:01:41,620 --> 00:01:44,670
+comparte con sus usuarios y se est ejecutando,
+
+35
+00:01:44,670 --> 00:01:46,640
+y hay mucha gente que
+
+36
+00:01:46,640 --> 00:01:49,814
+la usa, tal vez no desea mensajes informativos, solo
+
+37
+00:01:49,814 --> 00:01:51,600
+desea mensajes relacionados con errores.
+
+38
+00:01:52,470 --> 00:01:54,040
+Entonces con un mdulo de registro puedes hacer eso.
+
+39
+00:01:54,040 --> 00:01:56,291
+Si tienes estados de cuenta impresos en
+
+40
+00:01:56,291 --> 00:01:58,330
+todas partes, no puedes habilitarlos ni deshabilitarlos.
+
+41
+00:01:58,330 --> 00:02:00,130
+Entonces el mdulo de registro, muy bueno.
+
+42
+00:02:00,130 --> 00:02:03,370
+Podemos importar el registro y lo primero que tenemos
+
+43
+00:02:03,370 --> 00:02:05,660
+que hacer es obtener un nuevo registrador.
+
+44
+00:02:05,660 --> 00:02:07,560
+As que vamos a crear un
+
+45
+00:02:07,560 --> 00:02:11,240
+registrador variable y habr un registro. getLogger y luego tenemos que darle el
+
+46
+00:02:11,240 --> 00:02:12,370
+nombre del registrador que queremos.
+
+47
+00:02:12,370 --> 00:02:14,120
+Entonces lo llamaremos registrador de prueba.
+
+48
+00:02:15,300 --> 00:02:18,430
+Lo bueno de esto es que est destinado
+
+49
+00:02:18,430 --> 00:02:20,870
+a ser utilizado en mltiples archivos.
+
+50
+00:02:20,870 --> 00:02:24,150
+Entonces, si tiene un registrador llamado registrador de prueba,
+
+51
+00:02:24,150 --> 00:02:27,090
+y lo llama desde un archivo diferente por
+
+52
+00:02:27,090 --> 00:02:30,410
+completo, en realidad le dar el mismo objeto.
+
+53
+00:02:30,410 --> 00:02:32,540
+Y eso es bueno porque puede configurar
+
+54
+00:02:32,540 --> 00:02:34,570
+registradores para imprimir cosas de manera diferente.
+
+55
+00:02:34,570 --> 00:02:37,160
+Puede configurar registradores para exportar a un archivo o
+
+56
+00:02:37,160 --> 00:02:40,870
+a la consola, por lo que es bastante agradable que pueda hacer esto.
+
+57
+00:02:40,870 --> 00:02:44,240
+De modo que cuando obtenga el mismo registrador de un archivo
+
+58
+00:02:44,240 --> 00:02:46,360
+diferente, se configurar de la misma manera.
+
+59
+00:02:46,360 --> 00:02:48,850
+Vamos a ver cmo configurarlos en un momento.
+
+60
+00:02:48,850 --> 00:02:51,390
+Entonces es muy simple cuando quieres imprimir cosas, todo
+
+61
+00:02:51,390 --> 00:02:55,260
+lo que haces es decir logger. informacin, por ejemplo,
+
+62
+00:02:56,500 --> 00:02:59,490
+y esto no aparecer.
+
+63
+00:02:59,490 --> 00:03:02,580
+O puedes hacer algo logger. advertencia y esto lo har.
+
+64
+00:03:03,590 --> 00:03:04,590
+Entonces puedes ejecutarlo.
+
+65
+00:03:06,220 --> 00:03:11,220
+Y como puede ver, recibe una advertencia: test_logger: Este mensaje
+
+66
+00:03:13,410 --> 00:03:16,660
+no se mostr porque mis registradores
+
+67
+00:03:16,660 --> 00:03:20,170
+predeterminados estn configurados para que solo muestren
+
+68
+00:03:20,170 --> 00:03:23,130
+mensajes de advertencia y ms.
+
+69
+00:03:23,130 --> 00:03:25,090
+As que aqu estn los niveles que tienes.
+
+70
+00:03:26,290 --> 00:03:28,750
+Tienes depuracin, ese es el nivel ms bajo.
+
+71
+00:03:28,750 --> 00:03:31,740
+Tienes informacin, ese es el nivel de arriba.
+
+72
+00:03:31,740 --> 00:03:34,740
+Y estos dos no aparecen por defecto en los nuevos registradores.
+
+73
+00:03:34,740 --> 00:03:38,039
+Tienes que decir que los quiero para que se muestren.
+
+74
+00:03:38,039 --> 00:03:41,200
+El siguiente es advertencia, estos se muestran.
+
+75
+00:03:41,200 --> 00:03:44,650
+Como puede ver, aparecen los mensajes de advertencia.
+
+76
+00:03:44,650 --> 00:03:47,814
+Entonces tienes un error y luego tienes crtico.
+
+77
+00:03:47,814 --> 00:03:50,420
+Crtico es el ms crtico, por supuesto,
+
+78
+00:03:50,420 --> 00:03:52,830
+como el tipo de ms importante.
+
+79
+00:03:52,830 --> 00:03:55,030
+Debug solo debe usarse
+
+80
+00:03:55,030 --> 00:03:57,110
+mientras desarrolla la aplicacin.
+
+81
+00:03:58,720 --> 00:04:01,830
+As que de nuevo use el nivel de
+
+82
+00:04:01,830 --> 00:04:04,587
+depuracin si est desarrollando o depurando y
+
+83
+00:04:04,587 --> 00:04:08,800
+bsicamente no quiere usuarios, bueno, ninguno de estos son para usuarios,
+
+84
+00:04:08,800 --> 00:04:11,600
+sino bsicamente cosas que solo quiere ver
+
+85
+00:04:11,600 --> 00:04:14,940
+mientras desarrolla, mientras su aplicacin est ejecutndose para su usuarios.
+
+86
+00:04:15,803 --> 00:04:18,760
+Y, por supuesto, si su programa est a punto de
+
+87
+00:04:18,760 --> 00:04:21,670
+colapsar porque encontr alguna excepcin crtica o algo as, puede
+
+88
+00:04:21,670 --> 00:04:23,640
+usar el registrador. crtico.
+
+89
+00:04:24,590 --> 00:04:28,085
+La forma de configurar el registrador es que justo antes
+
+90
+00:04:28,085 --> 00:04:32,390
+de crearlo, debe decir el registro. basicConfig y aqu puede
+
+91
+00:04:33,440 --> 00:04:38,440
+decir level = logging. depurar en
+
+92
+00:04:40,570 --> 00:04:42,070
+maysculas aqu.
+
+93
+00:04:42,070 --> 00:04:45,240
+Or. informacin si ese es el mnimo que quieres mostrar depurar si la depuracin es el nivel mnimo que desea mostrar.
+
+94
+00:04:45,240 --> 00:04:49,300
+Sin embargo, esto no funciona en repl. eso.
+
+95
+00:04:49,300 --> 00:04:53,090
+As que repasemos el Python para intentarlo.
+
+96
+00:04:53,090 --> 00:04:55,510
+Me mud a Python ahora que acabo de copiar el cdigo.
+
+97
+00:04:56,500 --> 00:04:58,830
+As que de nuevo tenemos registro de importacin, registro. basicConfig donde el nivel que vamos a
+
+98
+00:04:58,830 --> 00:05:02,620
+mostrar es al menos de depuracin.
+
+99
+00:05:02,620 --> 00:05:06,300
+Luego creamos un registrador llamando al registro. getLogger.
+
+100
+00:05:06,300 --> 00:05:10,190
+Y luego imprimimos dos mensajes, uno que dice
+
+101
+00:05:10,190 --> 00:05:12,630
+que esto no aparecer y otro que dice que s.
+
+102
+00:05:12,630 --> 00:05:15,610
+Entonces, ejecutemos la aplicacin.
+
+103
+00:05:15,610 --> 00:05:16,700
+Y puede ver que
+
+104
+00:05:18,240 --> 00:05:20,170
+ahora tambin recibimos el mensaje de informacin all.
+
+105
+00:05:20,170 --> 00:05:21,970
+Creo que esto se debe a
+
+106
+00:05:21,970 --> 00:05:25,210
+que el registrador de prueba aqu realmente hereda de lo que se
+
+107
+00:05:26,370 --> 00:05:29,850
+llama el registrador de raz y creo que repl ha configurado su
+
+108
+00:05:29,850 --> 00:05:33,630
+registrador de raz para que los mensajes de depuracin e informacin no se muestren.
+
+109
+00:05:33,630 --> 00:05:36,900
+As que esa es la razn por la que puede que eso no
+
+110
+00:05:36,900 --> 00:05:39,400
+funcione en rplica para ti, pero definitivamente funcionara en Python
+
+111
+00:05:39,400 --> 00:05:41,110
+ya que tienes el control de todo.
+
+112
+00:05:41,110 --> 00:05:42,920
+Despus de todo, Repl est
+
+113
+00:05:42,920 --> 00:05:45,036
+ejecutando el Python en su propio
+
+114
+00:05:45,036 --> 00:05:49,040
+entorno, por lo que tambin tienen algunas de sus propias configuraciones all.
+
+115
+00:05:49,040 --> 00:05:50,490
+Ahora puede configurar la
+
+116
+00:05:53,405 --> 00:05:57,840
+salida para mostrar un poco ms de informacin en lugar de solo el
+
+117
+00:05:57,840 --> 00:06:00,630
+nivel y el registrador que imprimi las cosas.
+
+118
+00:06:00,630 --> 00:06:02,690
+En basicConfig puedes tener algo
+
+119
+00:06:02,690 --> 00:06:06,350
+como formato y luego en una cadena puedes poner
+
+120
+00:06:06,350 --> 00:06:09,810
+lo que quieras para formatear tus mensajes de registro.
+
+121
+00:06:09,810 --> 00:06:13,260
+Por ejemplo (asctime) s.
+
+122
+00:06:13,260 --> 00:06:16,760
+Esta es la sintaxis de Python de la vieja escuela
+
+123
+00:06:16,760 --> 00:06:19,040
+para el formato de cadenas y
+
+124
+00:06:19,040 --> 00:06:23,220
+va a usar la variable asctime que estar disponible cuando se use.
+
+125
+00:06:23,220 --> 00:06:27,180
+El s significa girarlo con una cuerda.
+
+126
+00:06:27,180 --> 00:06:29,620
+Entonces (asctime) s por ejemplo%
+
+127
+00:06:29,620 --> 00:06:32,900
+(levelname) s y luego% (message) s.
+
+128
+00:06:36,854 --> 00:06:41,580
+De modo que esta cosa aqu se ver bastante similar
+
+129
+00:06:42,650 --> 00:06:46,029
+a nuestro mensaje actual, pero en realidad
+
+130
+00:06:46,029 --> 00:06:51,029
+se imprimir la hora en que se imprimi el registro.
+
+131
+00:06:51,140 --> 00:06:55,990
+En lugar del nivel, lo siento, el nombre de nivel se imprimir
+
+132
+00:06:55,990 --> 00:06:59,260
+aqu, as que lo que vamos a imprimir
+
+133
+00:06:59,260 --> 00:07:01,310
+ahora es el nombre del registrador.
+
+134
+00:07:01,310 --> 00:07:03,710
+Si ejecutamos la aplicacin, vers que ahora
+
+135
+00:07:03,710 --> 00:07:07,250
+obtenemos el tiempo en el que imprimimos, la informacin del
+
+136
+00:07:07,250 --> 00:07:09,090
+nivel y luego el mensaje.
+
+137
+00:07:09,090 --> 00:07:11,980
+Creo que esto es un poco mejor porque ahora si
+
+138
+00:07:11,980 --> 00:07:14,390
+tienes una aplicacin ms grande y tienes una
+
+139
+00:07:14,390 --> 00:07:17,560
+especie de registros, podrs saber cundo se produjo cada registro.
+
+140
+00:07:17,560 --> 00:07:20,980
+Entonces, si miras hacia atrs, vers algo as, s, registr este
+
+141
+00:07:20,980 --> 00:07:23,660
+mensaje en este momento y luego registr este
+
+142
+00:07:23,660 --> 00:07:25,593
+mensaje y luego ocurri un error.
+
+143
+00:07:25,593 --> 00:07:28,370
+Entonces puede reconstruir a partir de
+
+144
+00:07:28,370 --> 00:07:31,658
+estos registros lo que sucedi en su aplicacin.
+
+145
+00:07:31,658 --> 00:07:33,550
+Si quieres configurar tu registrador
+
+146
+00:07:36,510 --> 00:07:40,900
+para una legibilidad mxima, tengo un ejemplo que creo que es bastante bueno.
+
+147
+00:07:40,900 --> 00:07:43,140
+Se ha tomado del desbordamiento de pila, pero creo que es bueno.
+
+148
+00:07:43,140 --> 00:07:46,710
+Lo pegu aqu solo para ti.
+
+149
+00:07:46,710 --> 00:07:49,200
+Y luego, lo que hace esto
+
+150
+00:07:50,160 --> 00:07:53,094
+aqu imprime el tiempo como sabes.
+
+151
+00:07:53,094 --> 00:07:54,710
+Esto imprime el nivel, pero
+
+152
+00:07:54,710 --> 00:07:58,835
+el nombre del nivel en realidad est formateado como ocho espacios.
+
+153
+00:07:58,835 --> 00:08:02,630
+Entonces, por ejemplo, tiene aqu informacin que ocupa cuatro espacios, mientras
+
+154
+00:08:02,630 --> 00:08:05,630
+que la -8s agregar cuatro espacios despus de ella.
+
+155
+00:08:05,630 --> 00:08:10,630
+De esa forma, todos sus niveles ocuparn la misma cantidad de
+
+156
+00:08:11,010 --> 00:08:14,010
+espacio y sus mensajes de registro aparecern
+
+157
+00:08:14,010 --> 00:08:16,110
+uno al lado del otro.
+
+158
+00:08:16,110 --> 00:08:19,890
+Luego dentro de los corchetes, estos son
+
+159
+00:08:19,890 --> 00:08:22,780
+simplemente buenos viejos corchetes normales.
+
+160
+00:08:22,780 --> 00:08:24,090
+Vamos a imprimir el nombre del archivo en
+
+161
+00:08:24,090 --> 00:08:26,360
+el que se imprimi el registro y el nmero de lnea como un nmero.
+
+162
+00:08:26,360 --> 00:08:30,220
+Eso es lo que quiere decir d.
+
+163
+00:08:30,220 --> 00:08:31,880
+Y luego vamos a imprimir el mensaje finalmente.
+
+164
+00:08:31,880 --> 00:08:33,690
+Entonces, ejecutemos esto de nuevo y ahora ver que
+
+165
+00:08:33,690 --> 00:08:35,450
+esto es bastante legible y tambin bastante til.
+
+166
+00:08:35,450 --> 00:08:38,320
+Ests obteniendo el tiempo y el tipo de mensaje que es.
+
+167
+00:08:38,320 --> 00:08:41,000
+Tambin est llegando a donde se registr
+
+168
+00:08:41,000 --> 00:08:43,450
+el mensaje y esto es fantstico.
+
+169
+00:08:43,450 --> 00:08:44,830
+Esta es la razn por la cual el
+
+170
+00:08:44,830 --> 00:08:46,640
+registro es brillante porque puedes ver exactamente dnde sucedieron las cosas.
+
+171
+00:08:46,640 --> 00:08:49,550
+Y finalmente puede ver su mensaje all y observar
+
+172
+00:08:49,550 --> 00:08:50,870
+cmo es bastante legible.
+
+173
+00:08:50,870 --> 00:08:53,150
+As que me gusta este ejemplo aqu, sintete libre de usar esto
+
+174
+00:08:53,150 --> 00:08:54,695
+en tu registro, por supuesto, como lo desees.
+
+175
+00:08:54,695 --> 00:08:58,780
+Ahora le doy algunos otros ejemplos de mensajes
+
+176
+00:08:58,780 --> 00:09:02,880
+de depuracin, este es un mensaje de depuracin.
+
+177
+00:09:02,880 --> 00:09:04,760
+Y usted puede hacer, por supuesto, registrador. se produjo un error
+
+178
+00:09:05,960 --> 00:09:08,999
+crtico y crtico.
+
+179
+00:09:08,999 --> 00:09:12,350
+Puede cerrarlas y, como puede ver,
+
+180
+00:09:13,420 --> 00:09:15,710
+aparecern todas y ocuparn
+
+181
+00:09:15,710 --> 00:09:20,370
+ocho espacios porque critical es la ms larga
+
+182
+00:09:20,370 --> 00:09:22,330
+que ocupa ocho caracteres.
+
+183
+00:09:22,330 --> 00:09:23,660
+Y esto es bastante til.
+
+184
+00:09:23,660 --> 00:09:25,060
+Ahora tambin puede iniciar sesin en un archivo en lugar de en la consola.
+
+185
+00:09:27,620 --> 00:09:31,600
+Vamos a ver cmo hacerlo en el prximo video,
+
+186
+00:09:31,600 --> 00:09:33,250
+y rpidamente lo mostrar.
+
+187
+00:09:33,250 --> 00:09:36,181
+Y s, as es como haces registros en Python.
+
+188
+00:09:36,181 --> 00:09:39,450
+Ver muchas, muchas aplicaciones grandes de Python usando esto exactamente.
+
+189
+00:09:39,450 --> 00:09:44,450
+Este registrador y es realmente as de simple.
+
+190
+00:09:44,750 --> 00:09:47,620
+Acabas de obtener un registrador, lo llamas como
+
+191
+00:09:47,620 --> 00:09:50,180
+quieras, y normalmente est relacionado con tu
+
+192
+00:09:50,180 --> 00:09:53,440
+aplicacin o con la parte de tu aplicacin con
+
+193
+00:09:53,440 --> 00:09:56,250
+la que ests trabajando y luego puedes cerrar sesin.
+
+194
+00:09:56,250 --> 00:09:57,930
+Normalmente ve muchos de
+
+195
+00:09:57,930 --> 00:10:00,770
+estos mensajes siendo registrados porque luego puede
+
+196
+00:10:00,770 --> 00:10:04,421
+elegir mostrar solo errores y crticos en algunos casos.
+
+197
+00:10:04,421 --> 00:10:06,581
+Todo el camino de depuracin cuando ests trabajando.
+
+198
+00:10:06,581 --> 00:10:09,840
+Por lo tanto, es bastante agradable, es muy flexible.
+
+199
+00:10:09,840 --> 00:10:11,920
+Definitivamente recomiendo hacer esto.
+
+200
+00:10:11,920 --> 00:10:14,010
+Sigue usando la impresin
+
+201
+00:10:14,010 --> 00:10:17,250
+cuando quieras comunicarte con tus usuarios.
+
+202
+00:10:17,250 --> 00:10:18,300
+No use registros para comunicarse con sus usuarios.
+
+203
+00:10:18,300 --> 00:10:20,750
+Estarn muy confundidos, as que sigan usando
+
+204
+00:10:20,750 --> 00:10:23,520
+la impresin si quieren hablar con sus usuarios.
+
+205
+00:10:23,520 --> 00:10:25,150
+El registro debe ser algo completamente separado y
+
+206
+00:10:25,150 --> 00:10:26,940
+normalmente deberan ir a un archivo o algo as.
+
+207
+00:10:26,940 --> 00:10:29,520
+Vamos a ver cmo hacerlo en solo un momento.
+
+208
+00:10:29,520 --> 00:10:31,835
+Entonces eso es todo por este video.
+
+209
+00:10:31,835 --> 00:10:33,710
+Te ver en el siguiente.
+
+210
+00:10:33,710 --> 00:10:35,410
+&nbsp;
+

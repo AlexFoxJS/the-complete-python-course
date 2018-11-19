@@ -1,0 +1,1148 @@
+1
+00:00:00,380 --> 00:00:01,640
+<v Lecturer>Hi, and welcome back.</v>
+
+2
+00:00:01,640 --> 00:00:04,130
+In this video, which will be quicker than the other videos,
+
+3
+00:00:04,130 --> 00:00:07,260
+I wanted to tell you about two important loop keywords
+
+4
+00:00:07,260 --> 00:00:11,310
+that we can use to sort of navigate our way around loops.
+
+5
+00:00:12,670 --> 00:00:14,730
+When we're inside a loop, there's a keyword
+
+6
+00:00:14,730 --> 00:00:17,560
+that allows us to exit the loop completely
+
+7
+00:00:17,560 --> 00:00:19,860
+before it finishes running,
+
+8
+00:00:19,860 --> 00:00:22,600
+and that's called the break keyword.
+
+9
+00:00:22,600 --> 00:00:25,550
+It's useful, for example, when you encounter a condition
+
+10
+00:00:25,550 --> 00:00:28,440
+that means that continuing the loop makes no sense.
+
+11
+00:00:28,440 --> 00:00:29,890
+Here's an example.
+
+12
+00:00:29,890 --> 00:00:32,970
+Let's say we've got this list of cars,
+
+13
+00:00:32,970 --> 00:00:35,830
+and it's their status in the production line.
+
+14
+00:00:35,830 --> 00:00:37,900
+Let's say you've got a car that's OK, another car
+
+15
+00:00:37,900 --> 00:00:39,230
+that's OK, another car that's OK
+
+16
+00:00:39,230 --> 00:00:40,760
+as it goes through the production line,
+
+17
+00:00:40,760 --> 00:00:42,410
+and then you have a faulty car.
+
+18
+00:00:42,410 --> 00:00:43,600
+So what do you have to do?
+
+19
+00:00:43,600 --> 00:00:45,700
+Well, you have to stop the production line
+
+20
+00:00:46,570 --> 00:00:49,420
+and maybe fix it, and then continue it, okay?
+
+21
+00:00:49,420 --> 00:00:52,700
+Here, we could use a loop to process the production line
+
+22
+00:00:52,700 --> 00:00:55,850
+for car in cars, we'll say print,
+
+23
+00:00:57,480 --> 00:00:59,640
+this car is,
+
+24
+00:00:59,640 --> 00:01:00,830
+car.
+
+25
+00:01:00,830 --> 00:01:03,900
+Instead of car, let's say car status, okay?
+
+26
+00:01:03,900 --> 00:01:06,300
+That's just a slightly nicer name.
+
+27
+00:01:06,300 --> 00:01:08,590
+I recommend that you use nice variable names.
+
+28
+00:01:10,010 --> 00:01:15,010
+This loop will just print, this car is OK, then it's OK,
+
+29
+00:01:15,150 --> 00:01:18,000
+it's OK, this car is faulty, this car's OK, this car's OK.
+
+30
+00:01:18,000 --> 00:01:19,710
+Lets run it so you can believe me.
+
+31
+00:01:20,860 --> 00:01:22,430
+You print, this car is OK, the first time,
+
+32
+00:01:22,430 --> 00:01:24,870
+then again and again, and then you find the faulty one,
+
+33
+00:01:24,870 --> 00:01:25,830
+but you don't do anything with it
+
+34
+00:01:25,830 --> 00:01:27,470
+except print that it's faulty,
+
+35
+00:01:27,470 --> 00:01:30,270
+then you say it's OK, then you say it's OK.
+
+36
+00:01:30,270 --> 00:01:34,960
+Now, if the car is faulty, I want you to print
+
+37
+00:01:34,960 --> 00:01:37,110
+that you're stopping the production line.
+
+38
+00:01:42,530 --> 00:01:45,020
+OK, hopefully you tackled that good.
+
+39
+00:01:45,020 --> 00:01:47,250
+And the way I would do it is, of course,
+
+40
+00:01:47,250 --> 00:01:49,350
+if car is faulty...
+
+41
+00:01:49,350 --> 00:01:54,350
+Or, sorry, car status is faulty, then we're gonna print,
+
+42
+00:01:54,910 --> 00:01:58,080
+stopping the production line.
+
+43
+00:01:59,440 --> 00:02:01,390
+OK, lets run this and see what happens.
+
+44
+00:02:03,600 --> 00:02:05,610
+OK, we didn't stop the production line,
+
+45
+00:02:05,610 --> 00:02:07,060
+that's the first thing we notice.
+
+46
+00:02:07,060 --> 00:02:09,200
+We printed that we're stopping the production line,
+
+47
+00:02:09,200 --> 00:02:11,080
+but of course, nothing stopped.
+
+48
+00:02:11,080 --> 00:02:13,570
+We ran this code out of the if statement
+
+49
+00:02:13,570 --> 00:02:16,030
+and then we continued, and we run this code
+
+50
+00:02:16,880 --> 00:02:18,080
+and then we proceeded.
+
+51
+00:02:19,100 --> 00:02:21,590
+If we actually want to stop the production line,
+
+52
+00:02:21,590 --> 00:02:24,490
+that means we want to stop this loop from running.
+
+53
+00:02:24,490 --> 00:02:27,680
+We don't want to print, this car is faulty,
+
+54
+00:02:27,680 --> 00:02:29,960
+and we also don't want to print anything for the next
+
+55
+00:02:29,960 --> 00:02:33,300
+two cars because we want the loop to stop completely.
+
+56
+00:02:33,300 --> 00:02:36,920
+What we do in that case, is we just type, break,
+
+57
+00:02:36,920 --> 00:02:39,440
+and that breaks the loop entirely.
+
+58
+00:02:41,520 --> 00:02:42,880
+Simple enough.
+
+59
+00:02:42,880 --> 00:02:44,860
+Now, this may not be the best example
+
+60
+00:02:44,860 --> 00:02:47,910
+but I just wanted to show you what this keyword does.
+
+61
+00:02:47,910 --> 00:02:51,580
+It's not going to be useful in a lot of scenarios
+
+62
+00:02:51,580 --> 00:02:54,640
+but in some scenarios, it will be essential, and
+
+63
+00:02:54,640 --> 00:02:58,140
+it may well be the very best way of doing something.
+
+64
+00:02:58,140 --> 00:03:00,890
+So it's important that you still know this can be done.
+
+65
+00:03:03,130 --> 00:03:08,070
+OK, the next keyword I wanted to tell you about is continue.
+
+66
+00:03:08,070 --> 00:03:10,880
+The continue keyword does somewhat the opposite.
+
+67
+00:03:12,210 --> 00:03:15,850
+If we type continue here, what we'll do
+
+68
+00:03:17,070 --> 00:03:20,850
+is we will skip all the rest of the loop code,
+
+69
+00:03:20,850 --> 00:03:23,460
+and we just go right into the next iteration.
+
+70
+00:03:23,460 --> 00:03:24,293
+So lets run it.
+
+71
+00:03:25,270 --> 00:03:28,330
+Now you can see that we printed, this car's OK three times
+
+72
+00:03:28,330 --> 00:03:30,820
+then we stopped the production line,
+
+73
+00:03:30,820 --> 00:03:34,740
+then we skipped printing, this car is faulty
+
+74
+00:03:34,740 --> 00:03:38,030
+and we just continued over to the next iteration,
+
+75
+00:03:39,050 --> 00:03:41,010
+the next item in the list, which is OK
+
+76
+00:03:41,010 --> 00:03:43,160
+and then we printed, this car is OK, twice.
+
+77
+00:03:44,960 --> 00:03:46,740
+I wanted to show you
+
+78
+00:03:46,740 --> 00:03:48,480
+a slightly nicer example
+
+79
+00:03:48,480 --> 00:03:50,970
+of using this continue button.
+
+80
+00:03:51,930 --> 00:03:53,080
+Lets say that we've got
+
+81
+00:03:56,780 --> 00:04:00,980
+this for number and range between two and 10.
+
+82
+00:04:00,980 --> 00:04:05,570
+Range between two and 10 is going to give us this range,
+
+83
+00:04:05,570 --> 00:04:06,980
+like we did before, this would give us
+
+84
+00:04:06,980 --> 00:04:09,150
+a range between zero and nine.
+
+85
+00:04:09,150 --> 00:04:12,090
+But with inclusive, two to 10 is gonna give us a range
+
+86
+00:04:12,090 --> 00:04:14,540
+starting at two and going all the way up to nine.
+
+87
+00:04:15,410 --> 00:04:16,900
+This just allows us to modify
+
+88
+00:04:16,900 --> 00:04:18,740
+the starting position of the range.
+
+89
+00:04:20,030 --> 00:04:25,030
+Now, I wanna say that if the number is divisible by two
+
+90
+00:04:26,220 --> 00:04:29,030
+we're gonna say, we found an even number,
+
+91
+00:04:29,030 --> 00:04:31,460
+otherwise we're just gonna say, we found a number.
+
+92
+00:04:34,100 --> 00:04:35,970
+Lets tackle this code.
+
+93
+00:04:35,970 --> 00:04:37,130
+I'm gonna show you a couple of instructions
+
+94
+00:04:37,130 --> 00:04:38,980
+on the screen right now.
+
+95
+00:04:38,980 --> 00:04:41,810
+Go for it and see whether you can tackle this
+
+96
+00:04:41,810 --> 00:04:44,150
+by pausing the video and giving it a go.
+
+97
+00:04:48,040 --> 00:04:49,970
+Hopefully you managed that.
+
+98
+00:04:49,970 --> 00:04:54,610
+What we'll need is of course the percent operator
+
+99
+00:04:54,610 --> 00:04:58,300
+that allows us to calculate the remainder of a division.
+
+100
+00:04:58,300 --> 00:05:02,970
+And we'll say, if modulus two is equal to zero,
+
+101
+00:05:02,970 --> 00:05:04,870
+that means we've got an even number.
+
+102
+00:05:05,950 --> 00:05:06,783
+We're gonna say
+
+103
+00:05:08,990 --> 00:05:10,980
+found an even number,
+
+104
+00:05:11,820 --> 00:05:12,653
+num.
+
+105
+00:05:18,130 --> 00:05:20,700
+Then, if we don't find an even number,
+
+106
+00:05:20,700 --> 00:05:22,930
+we're gonna say we just found a number.
+
+107
+00:05:22,930 --> 00:05:25,100
+Found a number,
+
+108
+00:05:26,740 --> 00:05:27,573
+num.
+
+109
+00:05:29,680 --> 00:05:32,840
+Of course, we know that if we do this
+
+110
+00:05:32,840 --> 00:05:34,690
+when we find a number that is divisible by two
+
+111
+00:05:34,690 --> 00:05:36,630
+we're gonna say we found an even number,
+
+112
+00:05:36,630 --> 00:05:38,640
+then we're gonna continue into the next line
+
+113
+00:05:38,640 --> 00:05:41,170
+after the, if, because it's not indented,
+
+114
+00:05:41,170 --> 00:05:43,220
+and we're gonna just say, found a number.
+
+115
+00:05:44,090 --> 00:05:45,010
+Lets run this.
+
+116
+00:05:46,270 --> 00:05:48,480
+And you can see that we found an even number first
+
+117
+00:05:48,480 --> 00:05:51,650
+then we found a number two, this is the same number twice,
+
+118
+00:05:51,650 --> 00:05:53,020
+then we found the number three, then we found
+
+119
+00:05:53,020 --> 00:05:56,600
+an even number four, found the number four, and so forth.
+
+120
+00:05:56,600 --> 00:06:00,260
+We want to skip, found the number two, found the number four
+
+121
+00:06:00,260 --> 00:06:02,640
+found the number six, and found the number eight
+
+122
+00:06:02,640 --> 00:06:04,010
+because we're already saying we found
+
+123
+00:06:04,010 --> 00:06:06,570
+an even number for that number.
+
+124
+00:06:06,570 --> 00:06:07,770
+So how will you do that?
+
+125
+00:06:10,550 --> 00:06:14,660
+I'm sure you got that right, what to do is to press continue
+
+126
+00:06:14,660 --> 00:06:16,110
+if we can spell it correctly.
+
+127
+00:06:17,200 --> 00:06:20,450
+And then we have found and even number two
+
+128
+00:06:20,450 --> 00:06:22,710
+and then we go straight to found the number three,
+
+129
+00:06:22,710 --> 00:06:26,210
+because we don't run any other part of the for loop
+
+130
+00:06:26,210 --> 00:06:28,470
+after this continue, we jump straight on
+
+131
+00:06:28,470 --> 00:06:30,240
+to the next iteration.
+
+132
+00:06:34,930 --> 00:06:37,360
+Now, the code I wanted to show you last
+
+133
+00:06:37,360 --> 00:06:40,470
+is a bit more advanced code, it's taken
+
+134
+00:06:40,470 --> 00:06:42,890
+right from the official Python documentation
+
+135
+00:06:43,770 --> 00:06:46,360
+and it searches for prime numbers.
+
+136
+00:06:46,360 --> 00:06:49,210
+If you're not really keen on looking at some more advanced
+
+137
+00:06:49,210 --> 00:06:52,890
+code, by all means, feel free to move on to the next video.
+
+138
+00:06:52,890 --> 00:06:57,360
+If you want to look at some more advanced code using break,
+
+139
+00:06:57,360 --> 00:07:00,200
+on a couple of nested for loops then stay with me
+
+140
+00:07:00,200 --> 00:07:01,500
+and we can look into this.
+
+141
+00:07:04,270 --> 00:07:07,210
+Lets say the for n in range two to 10.
+
+142
+00:07:09,280 --> 00:07:12,730
+We know that this is going to give us a list essentially
+
+143
+00:07:12,730 --> 00:07:15,610
+starting at two and going
+
+144
+00:07:16,600 --> 00:07:17,780
+all the way up to nine.
+
+145
+00:07:18,960 --> 00:07:20,090
+OK.
+
+146
+00:07:20,090 --> 00:07:23,940
+Then we're gonna say, for x in range two to n
+
+147
+00:07:25,140 --> 00:07:28,720
+this is going to give us a list starting at two
+
+148
+00:07:28,720 --> 00:07:32,200
+and goin up to n, but not including n.
+
+149
+00:07:32,200 --> 00:07:35,640
+So the first time that we go into this loop,
+
+150
+00:07:35,640 --> 00:07:38,650
+n is going to be two, so this loop
+
+151
+00:07:38,650 --> 00:07:40,090
+is going to actually not run,
+
+152
+00:07:40,090 --> 00:07:43,840
+because two up to two, not including two is an empty list.
+
+153
+00:07:45,040 --> 00:07:50,040
+However, when n is three, then this is going to be
+
+154
+00:07:50,330 --> 00:07:52,200
+two till three not including three
+
+155
+00:07:52,200 --> 00:07:54,510
+is going to be a single list of two.
+
+156
+00:07:55,530 --> 00:08:00,530
+When n is four, this range here is going to be to till four
+
+157
+00:08:00,750 --> 00:08:04,710
+not including four, so that's two and three.
+
+158
+00:08:04,710 --> 00:08:06,900
+Then it's gonna be two and three and four, and then
+
+159
+00:08:06,900 --> 00:08:09,130
+it's gonna be two, three, four, and five, and so on.
+
+160
+00:08:09,130 --> 00:08:10,380
+You get the idea.
+
+161
+00:08:13,250 --> 00:08:14,580
+OK.
+
+162
+00:08:14,580 --> 00:08:15,530
+Now we're gonna say
+
+163
+00:08:16,520 --> 00:08:18,120
+that if
+
+164
+00:08:18,120 --> 00:08:21,180
+n divisible by x is equal to zero,
+
+165
+00:08:23,900 --> 00:08:26,400
+we're going to print something like
+
+166
+00:08:28,340 --> 00:08:29,400
+n
+
+167
+00:08:29,400 --> 00:08:30,233
+equals
+
+168
+00:08:31,650 --> 00:08:32,570
+x
+
+169
+00:08:32,570 --> 00:08:33,620
+multiplied by
+
+170
+00:08:33,620 --> 00:08:34,453
+n
+
+171
+00:08:35,540 --> 00:08:36,420
+divided by x.
+
+172
+00:08:37,290 --> 00:08:39,230
+Doesn't make any sense to anybody.
+
+173
+00:08:39,230 --> 00:08:41,070
+I'll tell you exactly what this means,
+
+174
+00:08:41,070 --> 00:08:42,740
+and this should be a times sign.
+
+175
+00:08:44,220 --> 00:08:48,520
+N is the outer number, lets say for example four,
+
+176
+00:08:52,366 --> 00:08:54,810
+lets say we are at n equals four,
+
+177
+00:08:54,810 --> 00:08:56,610
+which means we're into this for loop,
+
+178
+00:08:56,610 --> 00:08:58,980
+we've ran it once with...
+
+179
+00:08:59,890 --> 00:09:03,820
+We are running it the first time with two, x equals two.
+
+180
+00:09:03,820 --> 00:09:06,470
+So this is four divisible by two.
+
+181
+00:09:06,470 --> 00:09:09,210
+That is correct, it equals to zero,
+
+182
+00:09:09,210 --> 00:09:12,320
+because four divided by two doesn't have any remainder.
+
+183
+00:09:12,320 --> 00:09:13,770
+So then we'll say four
+
+184
+00:09:14,970 --> 00:09:16,190
+equals
+
+185
+00:09:16,190 --> 00:09:18,170
+two multiplied by
+
+186
+00:09:18,170 --> 00:09:21,550
+the division of n by x, the integer division.
+
+187
+00:09:21,550 --> 00:09:23,460
+Four divided by two is two.
+
+188
+00:09:25,572 --> 00:09:27,030
+I don't know if we've looked at this actually,
+
+189
+00:09:27,030 --> 00:09:29,950
+but this is an integer division, it just lets you
+
+190
+00:09:29,950 --> 00:09:32,430
+divide one number by another and the result will always be
+
+191
+00:09:32,430 --> 00:09:35,440
+a whole number as opposed to a floating point number.
+
+192
+00:09:38,080 --> 00:09:40,560
+So what does it mean when one of these numbers
+
+193
+00:09:40,560 --> 00:09:42,010
+is divisible by the other?
+
+194
+00:09:44,070 --> 00:09:47,630
+Well, it means that it cannot be a prime number.
+
+195
+00:09:47,630 --> 00:09:49,170
+As we can see from four,
+
+196
+00:09:49,170 --> 00:09:52,290
+it's not a prime number because it's divisible by two.
+
+197
+00:09:54,010 --> 00:09:55,480
+Six cannot be a prime number
+
+198
+00:09:55,480 --> 00:09:58,480
+because it is divisible by two and by three.
+
+199
+00:09:58,480 --> 00:10:00,280
+Eight also cannot be a prime number.
+
+200
+00:10:00,280 --> 00:10:01,530
+Nine cannot be a prime number
+
+201
+00:10:01,530 --> 00:10:03,130
+because it's divisible by three.
+
+202
+00:10:04,680 --> 00:10:07,360
+So when we encounter a number that can be
+
+203
+00:10:07,360 --> 00:10:11,710
+divided by the other, we know that we found something
+
+204
+00:10:11,710 --> 00:10:15,750
+that is multipliable and ergo, cannot be a prime number.
+
+205
+00:10:15,750 --> 00:10:17,990
+So we're gonna break this loop in here.
+
+206
+00:10:20,270 --> 00:10:21,720
+And now I'm gonna introduce something else
+
+207
+00:10:21,720 --> 00:10:24,950
+which is the else keyword for the loops
+
+208
+00:10:24,950 --> 00:10:27,450
+'cause loops can also have else.
+
+209
+00:10:28,570 --> 00:10:29,960
+This else
+
+210
+00:10:29,960 --> 00:10:31,860
+block here
+
+211
+00:10:31,860 --> 00:10:34,170
+runs when this loop
+
+212
+00:10:34,170 --> 00:10:36,640
+finishes running completely.
+
+213
+00:10:36,640 --> 00:10:39,340
+If you ever use break inside the loop,
+
+214
+00:10:39,340 --> 00:10:41,570
+this else will not run.
+
+215
+00:10:41,570 --> 00:10:43,800
+This else will only run if we don't
+
+216
+00:10:43,800 --> 00:10:46,330
+ever call break inside a loop.
+
+217
+00:10:48,220 --> 00:10:49,120
+And then we'll say
+
+218
+00:10:51,159 --> 00:10:53,210
+n is a prime number.
+
+219
+00:10:53,210 --> 00:10:55,910
+Now, this may not make any sense whatsoever
+
+220
+00:10:55,910 --> 00:10:58,230
+because we need to actually run it in order
+
+221
+00:10:58,230 --> 00:10:59,600
+to understand really what's going on.
+
+222
+00:10:59,600 --> 00:11:00,433
+Lets run it.
+
+223
+00:11:03,640 --> 00:11:05,360
+So we got, two is a prime number,
+
+224
+00:11:05,360 --> 00:11:08,110
+then we got three is a prime number, this is all correct,
+
+225
+00:11:08,110 --> 00:11:11,560
+four equals two times two, which is correct,
+
+226
+00:11:12,710 --> 00:11:15,610
+and we didn't get, four is a prime number.
+
+227
+00:11:15,610 --> 00:11:18,090
+Then we've got, five is a prime number which is correct,
+
+228
+00:11:18,090 --> 00:11:21,310
+six equals two times three, seven is a prime number,
+
+229
+00:11:21,310 --> 00:11:23,950
+eight equals two times four, nine equals three times three.
+
+230
+00:11:25,080 --> 00:11:27,430
+So again lets look at exactly what's happening.
+
+231
+00:11:28,400 --> 00:11:30,270
+Starting at n is two,
+
+232
+00:11:32,890 --> 00:11:35,610
+the range is from two to two, not including,
+
+233
+00:11:35,610 --> 00:11:37,410
+so it's an empty list, and that means
+
+234
+00:11:37,410 --> 00:11:39,310
+this for loop never runs.
+
+235
+00:11:41,657 --> 00:11:45,170
+Or you could think of (stutters) it always finishes running.
+
+236
+00:11:45,170 --> 00:11:47,580
+So we go straight to the else, and we print,
+
+237
+00:11:47,580 --> 00:11:49,230
+two is a prime number.
+
+238
+00:11:49,230 --> 00:11:50,670
+All good.
+
+239
+00:11:50,670 --> 00:11:54,060
+Then, we move onward to the next iteration of this loop.
+
+240
+00:11:54,060 --> 00:11:57,740
+Now n is three, and then we go into here,
+
+241
+00:11:57,740 --> 00:12:01,300
+the range goes from two to three, not including three,
+
+242
+00:12:01,300 --> 00:12:05,540
+so it's only this two, so x is two, n is three.
+
+243
+00:12:06,450 --> 00:12:10,204
+three divided by two is not zero because
+
+244
+00:12:10,204 --> 00:12:12,870
+it's two, remainder one.
+
+245
+00:12:12,870 --> 00:12:17,360
+So the modulus is equal to one, therefore this is false.
+
+246
+00:12:17,360 --> 00:12:19,300
+This does not run.
+
+247
+00:12:19,300 --> 00:12:20,950
+Because we didn't run break but we've reached
+
+248
+00:12:20,950 --> 00:12:24,200
+the end of this loop here, we go straight to the else
+
+249
+00:12:24,200 --> 00:12:26,340
+and we print, three is a prime number.
+
+250
+00:12:27,230 --> 00:12:29,390
+Lets move on to n is number four.
+
+251
+00:12:30,680 --> 00:12:32,410
+Again, x is now two.
+
+252
+00:12:33,580 --> 00:12:36,460
+Four divisible by two is zero because
+
+253
+00:12:36,460 --> 00:12:39,520
+four divided by two is two, remainder zero.
+
+254
+00:12:39,520 --> 00:12:43,960
+So we print four equals two multiplied by
+
+255
+00:12:43,960 --> 00:12:46,680
+the result of four divided by two which is two.
+
+256
+00:12:46,680 --> 00:12:50,340
+And we break, so we never print that four is a prime number.
+
+257
+00:12:51,620 --> 00:12:52,910
+Hopefully this makes sense.
+
+258
+00:12:52,910 --> 00:12:56,260
+Feel free to, again, ask questions in the course Q&amp;A
+
+259
+00:12:56,260 --> 00:12:58,860
+just go through this code, try to play around with it
+
+260
+00:12:58,860 --> 00:13:01,000
+and see exactly what it means.
+
+261
+00:13:01,000 --> 00:13:02,010
+I know that the first few times
+
+262
+00:13:02,010 --> 00:13:03,603
+I looked at this code I was like,
+
+263
+00:13:03,603 --> 00:13:06,530
+I don't really know what's going on in here,
+
+264
+00:13:06,530 --> 00:13:09,960
+but when you start to understand it, this is a really good
+
+265
+00:13:09,960 --> 00:13:14,450
+way of solving a very common interview question actually,
+
+266
+00:13:14,450 --> 00:13:17,790
+you'd be surprised even after the number of
+
+267
+00:13:17,790 --> 00:13:19,750
+years of experience that I've got,
+
+268
+00:13:19,750 --> 00:13:21,890
+how many times I get asked in interviews
+
+269
+00:13:21,890 --> 00:13:25,910
+to write a short programme to find prime numbers.
+
+270
+00:13:25,910 --> 00:13:28,280
+Honestly, you can write something like this,
+
+271
+00:13:28,280 --> 00:13:30,500
+and I'm not gonna guarantee you would get the job,
+
+272
+00:13:30,500 --> 00:13:32,450
+but you will leave people impressed,
+
+273
+00:13:32,450 --> 00:13:35,710
+because this is a really clean way of writing this code.
+
+274
+00:13:37,240 --> 00:13:38,500
+Anyway, that's it for this video.
+
+275
+00:13:38,500 --> 00:13:41,220
+Just wanted to, you know, give you a taster of
+
+276
+00:13:41,220 --> 00:13:43,140
+some more advanced things you can do with Python
+
+277
+00:13:43,140 --> 00:13:44,920
+once you start understanding
+
+278
+00:13:44,920 --> 00:13:47,750
+exactly what's going on inside the computer's brain,
+
+279
+00:13:47,750 --> 00:13:50,720
+not that they have a brain, but you know...
+
+280
+00:13:50,720 --> 00:13:52,450
+Anyway, that's it for this video,
+
+281
+00:13:52,450 --> 00:13:54,810
+thanks for staying with me until the end,
+
+282
+00:13:54,810 --> 00:13:56,890
+and congratulations as well on doing that
+
+283
+00:13:56,890 --> 00:13:59,350
+because this is now starting to get a bit more advanced.
+
+284
+00:13:59,350 --> 00:14:02,990
+We're looking at some more tools in our toolbox
+
+285
+00:14:02,990 --> 00:14:04,860
+and that's really exciting.
+
+286
+00:14:04,860 --> 00:14:07,310
+Anyway, for the third time, that's it for this video,
+
+287
+00:14:07,310 --> 00:14:08,760
+I'll see you on the next one.
+

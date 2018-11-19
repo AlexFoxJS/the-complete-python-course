@@ -1,0 +1,1044 @@
+1
+00:00:00,100 --> 00:00:01,300
+Jos: Hola y bienvenidos
+
+2
+00:00:01,300 --> 00:00:03,000
+de nuevo en este video, vamos
+
+3
+00:00:03,000 --> 00:00:04,970
+a grabar nuestra eliminacin de nodos.
+
+4
+00:00:06,430 --> 00:00:09,100
+Sin embargo, antes de hacerlo, necesitamos un
+
+5
+00:00:09,100 --> 00:00:11,400
+par de mtodos ms de ayuda.
+
+6
+00:00:12,440 --> 00:00:15,850
+Necesitamos poder encontrar el nodo primario de un
+
+7
+00:00:15,850 --> 00:00:18,870
+nodo dado y tambin necesitamos poder encontrar
+
+8
+00:00:18,870 --> 00:00:22,610
+el nodo ms a la derecha de una rama.
+
+9
+00:00:22,610 --> 00:00:24,160
+Para que podamos reemplazarlo.
+
+10
+00:00:25,370 --> 00:00:27,650
+As que vamos a codificar def find
+
+11
+00:00:32,150 --> 00:00:34,560
+parent, que va a tomar un int
+
+12
+00:00:36,450 --> 00:00:38,480
+y va a devolver un nodo.
+
+13
+00:00:40,750 --> 00:00:42,510
+Vamos a codificar def encontrar padre
+
+14
+00:00:42,510 --> 00:00:45,780
+y tambin vamos a codificar def encontrar ms a la derecha.
+
+15
+00:00:47,766 --> 00:00:49,140
+Ahora vamos a tomar
+
+16
+00:00:49,140 --> 00:00:50,370
+un nodo y devolver
+
+17
+00:00:50,370 --> 00:00:52,430
+otro nodo, por lo que tomar un
+
+18
+00:00:52,430 --> 00:00:54,980
+nodo que es el inicio de la rama.
+
+19
+00:00:54,980 --> 00:00:57,210
+As que si miramos esto aqu,
+
+20
+00:00:58,850 --> 00:01:02,530
+si le damos siete, encontrar el ms a la derecha
+
+21
+00:01:02,530 --> 00:01:05,450
+nos dar ocho, porque ese es el nodo
+
+22
+00:01:05,450 --> 00:01:07,520
+ms correcto en toda esta rama.
+
+23
+00:01:09,250 --> 00:01:11,850
+Buscar padre, si le damos siete,
+
+24
+00:01:11,850 --> 00:01:13,490
+nos dar este nodo.
+
+25
+00:01:14,532 --> 00:01:15,365
+Bueno?
+
+26
+00:01:17,480 --> 00:01:20,826
+As que codifiquemos estos dos mtodos.
+
+27
+00:01:20,826 --> 00:01:23,180
+Lo que vamos a hacer para encontrar padre
+
+28
+00:01:23,180 --> 00:01:26,010
+es exactamente lo mismo que hicimos para encontrarlo, voy
+
+29
+00:01:26,010 --> 00:01:27,700
+a abrir aqu, examinar todos los
+
+30
+00:01:29,290 --> 00:01:30,800
+nodos, pero en lugar de
+
+31
+00:01:30,800 --> 00:01:33,680
+verificar si el valor que proporcionamos es igual al
+
+32
+00:01:33,680 --> 00:01:35,550
+valor actual del nodo, vamos a
+
+33
+00:01:35,550 --> 00:01:37,310
+controlar la izquierda y la derecha.
+
+34
+00:01:37,310 --> 00:01:40,630
+As que voy a ver si alguno de los nios tiene este
+
+35
+00:01:40,630 --> 00:01:43,180
+valor y, si lo hacen, devolveremos el nodo actual.
+
+36
+00:01:44,090 --> 00:01:46,400
+Entonces, si encuentro padre, voy a decir
+
+37
+00:01:46,400 --> 00:01:50,620
+que el nodo actual es uno mismo. cabeza y luego, mientras el nodo
+
+38
+00:01:50,620 --> 00:01:54,820
+actual no est vaco, diremos si el nodo actual dejado existe
+
+39
+00:01:54,820 --> 00:01:58,830
+y el nodo actual dejado. valor es igual al valor
+
+40
+00:02:00,490 --> 00:02:05,490
+o, y voy a poner esta divisin all porque en Python eso
+
+41
+00:02:06,214 --> 00:02:09,340
+es til para obtener nuevas lneas, dividir las
+
+42
+00:02:09,340 --> 00:02:11,140
+cosas en nuevas lneas.
+
+43
+00:02:11,140 --> 00:02:15,410
+Nodo actual ndoe correcto y actual. derecho. valor igual a valor
+
+44
+00:02:17,460 --> 00:02:18,970
+Si no incluye esto por la
+
+45
+00:02:18,970 --> 00:02:21,720
+forma en que simplemente le da un error porque dice, qu
+
+46
+00:02:21,720 --> 00:02:24,360
+significa esto, esto no es parte de la declaracin if, si
+
+47
+00:02:24,360 --> 00:02:25,960
+incluye esto, se da cuenta de eso.
+
+48
+00:02:25,960 --> 00:02:28,560
+Qu quiere que dividamos esta declaracin aqu
+
+49
+00:02:28,560 --> 00:02:30,590
+en dos lneas para la legibilidad?
+
+50
+00:02:30,590 --> 00:02:32,940
+Entonces es por eso que incluye esa barra invertida all.
+
+51
+00:02:34,150 --> 00:02:39,150
+Entonces, si hay un nodo izquierdo y el valor coincide, o hay un
+
+52
+00:02:39,240 --> 00:02:42,400
+nodo derecho y el valor coincide, eso significa
+
+53
+00:02:42,400 --> 00:02:44,140
+que somos el padre.
+
+54
+00:02:44,140 --> 00:02:46,100
+Porque uno de los dos hijos tiene
+
+55
+00:02:46,100 --> 00:02:47,700
+el valor que estamos buscando.
+
+56
+00:02:47,700 --> 00:02:52,327
+As que devolvemos el nodo actual, y luego haremos lo mismo que
+
+57
+00:02:53,470 --> 00:02:54,900
+hicimos en el descubrimiento.
+
+58
+00:02:54,900 --> 00:02:56,160
+Si el valor que
+
+59
+00:02:56,160 --> 00:02:58,050
+estamos buscando es mayor que el
+
+60
+00:02:58,050 --> 00:03:03,050
+valor del nodo actual, diremos que el nodo actual es el nodo actual correcto.
+
+61
+00:03:03,360 --> 00:03:07,130
+Y, por supuesto, esto tiene que ser el nodo actual elif, el
+
+62
+00:03:09,010 --> 00:03:13,240
+valor es menor que el nodo actual. valor.
+
+63
+00:03:13,240 --> 00:03:16,190
+Vamos a decir que el nodo actual es igual al nodo actual. izquierda.
+
+64
+00:03:18,090 --> 00:03:21,610
+Ahora puedes notar que en ningn punto aqu
+
+65
+00:03:21,610 --> 00:03:23,390
+estamos devolviendo la cabeza.
+
+66
+00:03:24,730 --> 00:03:28,180
+Comenzamos en la cabeza, pero revisamos a los dos
+
+67
+00:03:28,180 --> 00:03:33,180
+nios y le devolvemos la cabeza si los nios tienen el valor.
+
+68
+00:03:34,510 --> 00:03:37,670
+Nunca devolvemos la cabeza si la cabeza tiene el valor,
+
+69
+00:03:37,670 --> 00:03:40,460
+o de hecho, no hay forma de que alguna
+
+70
+00:03:42,220 --> 00:03:44,720
+vez podamos eliminar la cabeza con esto.
+
+71
+00:03:45,660 --> 00:03:49,450
+Entonces, lo que vamos a hacer es decir si lo hacemos. cabeza y
+
+72
+00:03:49,450 --> 00:03:54,420
+yo. cabeza. valor igual a valor devuelve self. cabeza.
+
+73
+00:03:55,420 --> 00:03:58,540
+La razn por la que hago esto se
+
+74
+00:03:58,540 --> 00:04:01,620
+volver ms clara a medida que continuemos y
+
+75
+00:04:01,620 --> 00:04:03,720
+de hecho vamos a eliminar
+
+76
+00:04:03,720 --> 00:04:08,720
+un nodo con dos hijos, porque si estamos buscando eliminar la cabeza,
+
+77
+00:04:10,480 --> 00:04:15,000
+controlar a los nios no nos va a dar la cabeza.
+
+78
+00:04:15,000 --> 00:04:17,060
+Solo nos dar la cabeza si los nios
+
+79
+00:04:17,060 --> 00:04:18,580
+tienen el valor que estamos buscando.
+
+80
+00:04:18,580 --> 00:04:21,510
+No si la cabeza tiene el valor que estamos buscando.
+
+81
+00:04:21,510 --> 00:04:23,570
+Se aclarar pronto, lo prometo.
+
+82
+00:04:25,170 --> 00:04:27,750
+Avancemos para encontrar la derecha.
+
+83
+00:04:27,750 --> 00:04:30,740
+Find rightmost es un mtodo bastante directo aqu.
+
+84
+00:04:30,740 --> 00:04:34,780
+Todo lo que tenemos que hacer es comenzar en este nodo
+
+85
+00:04:34,780 --> 00:04:38,660
+aqu, ir a la derecha hasta que lleguemos al final.
+
+86
+00:04:39,990 --> 00:04:44,830
+Entonces, todo lo que hacemos es decir que el nodo actual es igual a un nodo, mientras
+
+87
+00:04:44,830 --> 00:04:47,440
+que el nodo actual. right current_node es
+
+88
+00:04:47,440 --> 00:04:50,050
+igual a current_node. derecho.
+
+89
+00:04:50,050 --> 00:04:52,450
+Y luego al final devolveremos current_node.
+
+90
+00:04:53,490 --> 00:04:56,420
+Entonces, nuevamente, todo lo que estamos haciendo es lo
+
+91
+00:04:56,420 --> 00:04:59,740
+que estamos diciendo, current_node ser su nodo correcto hasta que no
+
+92
+00:04:59,740 --> 00:05:01,380
+haya nada a la derecha.
+
+93
+00:05:01,380 --> 00:05:03,230
+Y cuando no hay nada a la derecha,
+
+94
+00:05:03,230 --> 00:05:04,480
+simplemente devolveremos el nodo actual,
+
+95
+00:05:04,480 --> 00:05:06,800
+porque ese ser el nodo ms a la derecha.
+
+96
+00:05:07,910 --> 00:05:11,360
+Una vez ms, te mostrar el diagrama aqu.
+
+97
+00:05:11,360 --> 00:05:13,030
+Lo que tenemos es, digamos que
+
+98
+00:05:13,030 --> 00:05:15,110
+decimos encontrar la mayor parte de esta
+
+99
+00:05:16,150 --> 00:05:19,820
+rama, lo que haremos es que comencemos a las siete, verificamos el
+
+100
+00:05:20,890 --> 00:05:22,820
+nodo ms a la derecha, el
+
+101
+00:05:22,820 --> 00:05:25,360
+nodo derecho y decimos que current_node ahora es
+
+102
+00:05:25,360 --> 00:05:27,590
+ocho y luego decimos Hay otro nodo derecho?
+
+103
+00:05:27,590 --> 00:05:30,160
+No, as que devolveremos el ocho.
+
+104
+00:05:30,160 --> 00:05:33,120
+Y ese es de hecho el nodo ms grande en la rama.
+
+105
+00:05:33,120 --> 00:05:35,410
+Nunca va a ir a la izquierda, porque tan
+
+106
+00:05:35,410 --> 00:05:38,670
+pronto como te vas a la izquierda ya no eres el nodo ms grande.
+
+107
+00:05:38,670 --> 00:05:40,230
+As que iremos derecho para siempre
+
+108
+00:05:40,230 --> 00:05:41,790
+hasta que lleguemos al final.
+
+109
+00:05:43,490 --> 00:05:45,117
+Bueno?
+
+110
+00:05:45,117 --> 00:05:48,340
+Vamos a entrar en la eliminacin.
+
+111
+00:05:49,960 --> 00:05:51,480
+Vamos a tomar un valor.
+
+112
+00:05:51,480 --> 00:05:54,920
+Eso va a ser un nmero entero, y va a eliminar.
+
+113
+00:05:55,990 --> 00:05:58,130
+Lo que debemos tener en cuenta
+
+114
+00:05:58,130 --> 00:06:02,550
+es que es posible que no tengamos hijos, un nio o dos nios.
+
+115
+00:06:03,580 --> 00:06:07,100
+As que primero consigamos el to_delete que va
+
+116
+00:06:07,100 --> 00:06:11,292
+a ser uno mismo. find (value) y to_delete_parent
+
+117
+00:06:11,292 --> 00:06:14,130
+que ser self. find_parent (valor) as que
+
+118
+00:06:14,130 --> 00:06:16,740
+ahora tenemos el que queremos eliminar y
+
+119
+00:06:16,740 --> 00:06:18,210
+el padre de ese.
+
+120
+00:06:19,640 --> 00:06:21,740
+Y luego tenemos un par de declaraciones.
+
+121
+00:06:21,740 --> 00:06:25,870
+If_to_detele. izquierda y to_delete. correcto eso significa que
+
+122
+00:06:25,870 --> 00:06:30,870
+tenemos dos hijos elif to_delete. izquierda o to_delete. derecho tenemos uno de
+
+123
+00:06:34,800 --> 00:06:38,130
+los dos que significa que tenemos un hijo,
+
+124
+00:06:39,760 --> 00:06:41,580
+y finalmente no hay hijos.
+
+125
+00:06:44,010 --> 00:06:45,610
+Bueno?
+
+126
+00:06:45,610 --> 00:06:47,710
+Entonces estas son nuestras opciones.
+
+127
+00:06:47,710 --> 00:06:49,730
+Si tenemos dos hijos vamos a tratar
+
+128
+00:06:49,730 --> 00:06:53,050
+de eliminar el nodo aqu, si tenemos un hijo vamos a
+
+129
+00:06:53,050 --> 00:06:54,770
+tratar de eliminar el nodo aqu,
+
+130
+00:06:54,770 --> 00:06:57,200
+y si no tenemos hijos vamos a tratar
+
+131
+00:06:57,200 --> 00:06:59,400
+de eliminar el nodo all .
+
+132
+00:06:59,400 --> 00:07:02,500
+Comencemos sin hijos, ya sabes cmo hacerlo en
+
+133
+00:07:02,500 --> 00:07:05,890
+cierta medida y una vez ms te mostrar
+
+134
+00:07:05,890 --> 00:07:08,860
+el diagrama solo para dejarlo en claro.
+
+135
+00:07:10,500 --> 00:07:14,340
+Digamos que queremos eliminar el nodo tres, est bien.
+
+136
+00:07:14,340 --> 00:07:15,930
+Este nodo no tiene hijos.
+
+137
+00:07:16,790 --> 00:07:19,440
+Para eliminar el nodo tres, lo primero
+
+138
+00:07:19,440 --> 00:07:22,990
+que debemos saber es si el nodo tres es el
+
+139
+00:07:22,990 --> 00:07:24,950
+hijo izquierdo o el hijo derecho.
+
+140
+00:07:25,810 --> 00:07:27,010
+Por qu?
+
+141
+00:07:27,010 --> 00:07:29,580
+Porque lo que vamos a hacer es decir que cinco
+
+142
+00:07:30,790 --> 00:07:33,360
+tiene un hijo, que es tres a la izquierda.
+
+143
+00:07:34,790 --> 00:07:38,890
+Hagamos cinco puntos a la izquierda en lugar de tres.
+
+144
+00:07:40,240 --> 00:07:42,940
+Eso significa que esencialmente eliminamos este enlace all y
+
+145
+00:07:42,940 --> 00:07:44,940
+Python eliminar los tres para nosotros.
+
+146
+00:07:46,200 --> 00:07:51,200
+Entonces si to_delete equivale a_delete_parent. Dejamos vamos a
+
+147
+00:07:54,300 --> 00:07:57,120
+decir to_delete_parent. a la izquierda no hay ninguno.
+
+148
+00:07:58,784 --> 00:08:02,910
+De lo contrario, si to_delete es igual a to_delete_parent. derecha vamos a
+
+149
+00:08:05,827 --> 00:08:08,470
+decir to_delete_parent. el derecho es ninguno.
+
+150
+00:08:09,820 --> 00:08:13,330
+Y hay una opcin final, que es ahora donde las otras
+
+151
+00:08:13,330 --> 00:08:15,580
+cosas que codificamos antes se vuelven un
+
+152
+00:08:15,580 --> 00:08:16,530
+poco ms obvias.
+
+153
+00:08:17,840 --> 00:08:20,610
+Podra ser el nodo que queramos eliminar,
+
+154
+00:08:20,610 --> 00:08:23,720
+y sus padres no son lo mismo.
+
+155
+00:08:25,030 --> 00:08:26,680
+Tambin podra ser el nodo que queremos
+
+156
+00:08:26,680 --> 00:08:28,630
+eliminar y sus padres no son lo mismo.
+
+157
+00:08:29,580 --> 00:08:30,720
+Cuando?
+
+158
+00:08:30,720 --> 00:08:32,110
+Bien, echemos un vistazo.
+
+159
+00:08:33,020 --> 00:08:35,070
+Imagine que desea eliminar el nodo raz.
+
+160
+00:08:37,890 --> 00:08:41,660
+El nodo raz no est a la derecha o a la izquierda de los
+
+161
+00:08:41,660 --> 00:08:43,060
+padres porque no tiene uno.
+
+162
+00:08:44,310 --> 00:08:48,450
+De hecho, en este caso to_delete y to_delete_parent sern
+
+163
+00:08:48,450 --> 00:08:49,390
+los mismos.
+
+164
+00:08:50,450 --> 00:08:51,560
+Por qu?
+
+165
+00:08:51,560 --> 00:08:55,040
+Como to_delete va a encontrar el nodo
+
+166
+00:08:55,040 --> 00:08:58,900
+raz, to_delete_parent tambin nos dar el nodo raz
+
+167
+00:08:58,900 --> 00:09:02,500
+porque estamos buscando el valor del encabezado.
+
+168
+00:09:03,970 --> 00:09:05,750
+Entonces estos dos van a ser
+
+169
+00:09:05,750 --> 00:09:08,420
+lo mismo, estos si las declaraciones van a ser
+
+170
+00:09:08,420 --> 00:09:10,120
+falsas, y aqu es donde terminaremos.
+
+171
+00:09:11,030 --> 00:09:13,290
+El resto en el que queremos eliminar la cabeza, todo
+
+172
+00:09:13,290 --> 00:09:16,360
+lo que tenemos que hacer es autocontrol. la cabeza no es ninguna.
+
+173
+00:09:17,270 --> 00:09:20,850
+Suponiendo, por supuesto, que la cabeza no tenga hijos.
+
+174
+00:09:20,850 --> 00:09:23,730
+Esto es lo que est haciendo esto.
+
+175
+00:09:23,730 --> 00:09:25,510
+Si la cabeza no tiene hijos,
+
+176
+00:09:25,510 --> 00:09:28,570
+eso significa que la cabeza es el ltimo elemento del rbol.
+
+177
+00:09:28,570 --> 00:09:31,060
+Significa que la cabeza no tiene hijos, significa esto.
+
+178
+00:09:32,210 --> 00:09:35,630
+As que todo lo que tenemos que hacer es configurarlo para ninguno
+
+179
+00:09:35,630 --> 00:09:37,880
+y luego los seis sern eliminados por Python.
+
+180
+00:09:39,560 --> 00:09:40,393
+bueno?
+
+181
+00:09:41,430 --> 00:09:44,370
+Si tenemos un hijo, se vuelve un poco diferente.
+
+182
+00:09:45,340 --> 00:09:48,070
+Una vez ms tenemos que hacer lo mismo.
+
+183
+00:09:48,070 --> 00:09:52,680
+Si to_delete es igual a to_delete's parent left ahora,
+
+184
+00:09:52,680 --> 00:09:57,680
+queremos decir tdp left to_delete_parent. left es igual a,
+
+185
+00:09:58,490 --> 00:10:01,360
+volvamos a nuestro diagrama.
+
+186
+00:10:01,360 --> 00:10:02,910
+Digamos que queremos eliminar
+
+187
+00:10:04,420 --> 00:10:07,490
+cinco, debemos decir que el padre que es
+
+188
+00:10:07,490 --> 00:10:12,490
+seis, el izquierdo del padre debe ser igual al hijo de cinco.
+
+189
+00:10:15,420 --> 00:10:18,670
+El nio de cinco aos podra estar a la izquierda o podra
+
+190
+00:10:18,670 --> 00:10:20,540
+estar a la derecha, no lo sabemos.
+
+191
+00:10:21,580 --> 00:10:22,820
+Entonces lo que hay que hacer?
+
+192
+00:10:22,820 --> 00:10:27,230
+To_delete_parent. left es to_delete. derecha o
+
+193
+00:10:27,230 --> 00:10:28,480
+to_delete. izquierda.
+
+194
+00:10:32,770 --> 00:10:35,830
+Entonces, nuevamente, lo que hemos hecho aqu es usar la sintaxis
+
+195
+00:10:35,830 --> 00:10:40,150
+o en Python para decir eso a_delete_parent. left tiene que
+
+196
+00:10:40,150 --> 00:10:43,580
+ser to_delete_parent. correcto, pero si no sirve
+
+197
+00:10:43,580 --> 00:10:45,180
+para borrar. izquierda en cambio.
+
+198
+00:10:46,970 --> 00:10:51,060
+Esa es una forma bastante prctica de hacerlo.
+
+199
+00:10:57,730 --> 00:11:00,280
+Entonces nuevamente hacemos lo mismo pero con la derecha.
+
+200
+00:11:02,020 --> 00:11:05,010
+Finalmente hay una ltima opcin, que
+
+201
+00:11:05,010 --> 00:11:08,010
+es cuando to_delete_parent y to_delete son iguales.
+
+202
+00:11:08,010 --> 00:11:10,940
+Si son lo mismo, eso significa que uno mismo. la cabeza debe
+
+203
+00:11:10,940 --> 00:11:15,200
+convertirse en los nodos derecho o izquierdo.
+
+204
+00:11:17,170 --> 00:11:20,318
+De esa forma, bsicamente reemplazaremos a uno de ellos.
+
+205
+00:11:20,318 --> 00:11:25,010
+Lo que est sucediendo aqu es, por supuesto, djame
+
+206
+00:11:25,010 --> 00:11:28,970
+ver si puedo ocultar eso, mover eso all
+
+207
+00:11:28,970 --> 00:11:30,510
+y mostrrtelo as.
+
+208
+00:11:30,510 --> 00:11:31,970
+S, eso es un poco mejor.
+
+209
+00:11:31,970 --> 00:11:33,470
+Suponiendo que tenemos
+
+210
+00:11:33,470 --> 00:11:36,513
+un hijo, que es por ejemplo esta
+
+211
+00:11:39,380 --> 00:11:42,793
+rama aqu, en este caso si to_delete es
+
+212
+00:11:42,793 --> 00:11:45,779
+el padre que queda en este caso,
+
+213
+00:11:45,779 --> 00:11:50,779
+lo que queremos hacer es set to_delete_parent, que es el nodo
+
+214
+00:11:51,960 --> 00:11:56,420
+izquierdo para ser igual a este nodo izquierdo .
+
+215
+00:11:56,420 --> 00:11:57,253
+Bueno?
+
+216
+00:11:58,260 --> 00:12:00,390
+Lo siento, con eso quiero decir, si este
+
+217
+00:12:00,390 --> 00:12:02,130
+nodo est a la izquierda de este.
+
+218
+00:12:02,130 --> 00:12:04,250
+Si este est a la
+
+219
+00:12:04,250 --> 00:12:09,030
+izquierda de este, queremos configurarlo a la izquierda o a la derecha,
+
+220
+00:12:09,030 --> 00:12:10,830
+dependiendo de cul est disponible.
+
+221
+00:12:12,100 --> 00:12:13,330
+Bueno?
+
+222
+00:12:13,330 --> 00:12:16,232
+Si quisiramos eliminar decir doce, lo
+
+223
+00:12:16,232 --> 00:12:20,180
+comprobaremos, doce es el hijo correcto de nueve?
+
+224
+00:12:20,180 --> 00:12:21,630
+Esto se hara aqu abajo.
+
+225
+00:12:22,880 --> 00:12:26,780
+Son doce iguales a to_delete_parent. derecho?
+
+226
+00:12:26,780 --> 00:12:28,040
+Es el mismo?
+
+227
+00:12:28,040 --> 00:12:30,390
+Son doce iguales a to_delete. padre. derecho?
+
+228
+00:12:30,390 --> 00:12:34,700
+S, as que configuramos el nodo derecho de to_delete_parent para que
+
+229
+00:12:34,700 --> 00:12:38,830
+sea igual a la izquierda o la derecha de doce.
+
+230
+00:12:38,830 --> 00:12:40,670
+En este caso sern las once.
+
+231
+00:12:40,670 --> 00:12:43,190
+Observe cmo podemos hacerlo a la izquierda o a
+
+232
+00:12:43,190 --> 00:12:46,230
+la derecha, porque sabemos que doce solo tienen un hijo.
+
+233
+00:12:46,230 --> 00:12:48,370
+Eso es lo que comprueba esta declaracin if aqu.
+
+234
+00:12:51,350 --> 00:12:54,400
+Y finalmente, si solo tiene una de estas
+
+235
+00:12:54,400 --> 00:12:59,400
+ramas y desea eliminar la raz o el nodo principal, eso significa que to_delete
+
+236
+00:12:59,980 --> 00:13:02,260
+y to_delete_parent son iguales porque ambos
+
+237
+00:13:02,260 --> 00:13:03,370
+son la cabeza.
+
+238
+00:13:03,370 --> 00:13:05,830
+Y si ese es el caso, todo lo que
+
+239
+00:13:05,830 --> 00:13:10,830
+queremos hacer es decir que la cabeza ahora es cinco o lo que sea que est a la derecha.
+
+240
+00:13:11,020 --> 00:13:12,910
+As que bsicamente estaremos eliminando seis.
+
+241
+00:13:15,070 --> 00:13:17,390
+De acuerdo, espero que esto tenga un poco de sentido.
+
+242
+00:13:17,390 --> 00:13:22,390
+Es realmente complicado cuando comienzas realmente a
+
+243
+00:13:22,430 --> 00:13:23,785
+entender esto.
+
+244
+00:13:23,785 --> 00:13:26,450
+Entonces, lo que te animo es sacarlos. no son mapas de minas sino de estos rboles binarios a
+
+245
+00:13:26,450 --> 00:13:27,930
+De hecho, tengo muchos dibujos mi lado ya que estaba planeando
+
+246
+00:13:27,930 --> 00:13:30,480
+de estos mapas de minas. esta seccin porque no quera equivocarme.
+
+247
+00:13:30,480 --> 00:13:34,740
+Y es confuso, es confuso incluso despus de haber estado en l durante muchos
+
+248
+00:13:34,740 --> 00:13:36,540
+aos, as que no se sienta
+
+249
+00:13:36,540 --> 00:13:39,120
+mal por tener que dibujar esto en papel.
+
+250
+00:13:39,120 --> 00:13:42,880
+Es algo que todos hacemos, as que
+
+251
+00:13:42,880 --> 00:13:46,620
+definitivamente te animo a que hagas eso.
+
+252
+00:13:46,620 --> 00:13:47,990
+Lo ltimo que nos
+
+253
+00:13:47,990 --> 00:13:50,480
+queda son los dos hijos principales.
+
+254
+00:13:51,770 --> 00:13:53,120
+Vamos a hacer esto en el
+
+255
+00:13:53,120 --> 00:13:55,460
+siguiente video, solo porque este se est haciendo un poco largo,
+
+256
+00:13:55,460 --> 00:13:57,060
+y va a ser un poco ms complicado.
+
+257
+00:13:57,060 --> 00:13:58,750
+Hay algunas declaraciones if que tienen que entrar aqu.
+
+258
+00:13:58,750 --> 00:14:02,420
+As que veamos esto en el prximo video.
+
+259
+00:14:02,420 --> 00:14:05,000
+Te ver all.
+
+260
+00:14:05,000 --> 00:14:07,370
+&nbsp;
+
+261
+00:14:07,370 --> 00:14:08,320
+&nbsp;
+

@@ -1,0 +1,1163 @@
+1
+00:00.090 --> 00:01.260
+<v Jose>Hi and welcome back.</v>
+
+2
+00:01.260 --> 00:05.050
+Let's make our first request with aiohttp.
+
+3
+00:05.960 --> 00:09.400
+Here in this project I'm just going to create a new file
+
+4
+00:09.400 --> 00:13.050
+just for testing aiohttp and it's gonna be called
+
+5
+00:13.050 --> 00:15.290
+async_request.py.
+
+6
+00:15.290 --> 00:18.240
+By the way the code for this is linked in lecture
+
+7
+00:18.240 --> 00:21.553
+and is available, maybe in a slightly different setup,
+
+8
+00:21.553 --> 00:24.350
+but nonetheless there's gonna be samples folder
+
+9
+00:24.350 --> 00:26.340
+for you to look at these codes that we're gonna
+
+10
+00:26.340 --> 00:28.300
+write over these lectures and then of course
+
+11
+00:28.300 --> 00:30.260
+at the end as well when we turn the full thing
+
+12
+00:30.260 --> 00:31.660
+into an asynchronous scrapper,
+
+13
+00:31.660 --> 00:33.410
+the full code is available as well.
+
+14
+00:34.880 --> 00:37.795
+So in order to make our first web request,
+
+15
+00:37.795 --> 00:40.300
+the first thing we need to do is of course,
+
+16
+00:40.300 --> 00:43.560
+is to install aiohttp.
+
+17
+00:43.560 --> 00:45.860
+Now soon we're going to look at
+
+18
+00:46.900 --> 00:49.960
+how to handle dependencies in Python projects a bit better,
+
+19
+00:49.960 --> 00:52.950
+but for now we're going to stick with installing things
+
+20
+00:52.950 --> 00:56.680
+directly in PyCharm by doing, you know,
+
+21
+00:56.680 --> 01:00.470
+going over to our project, Project Interpreter,
+
+22
+01:00.470 --> 01:03.930
+and there with plus installing aiohttp.
+
+23
+01:06.000 --> 01:08.250
+The current version that I am using is 3.0.5.
+
+24
+01:09.260 --> 01:11.180
+this maybe a different when you're using it,
+
+25
+01:11.180 --> 01:14.311
+but don't worry, if there are any breaking changes
+
+26
+01:14.311 --> 01:17.294
+we will re-record with a new version and soon.
+
+27
+01:17.294 --> 01:20.940
+So if you install this and you notice that
+
+28
+01:20.940 --> 01:22.440
+things don't work quite the way we expect
+
+29
+01:22.440 --> 01:24.230
+just say in the course Q and A
+
+30
+01:24.230 --> 01:26.230
+and we will re-record as soon as possible.
+
+31
+01:26.230 --> 01:28.250
+Okay, just install this package
+
+32
+01:28.250 --> 01:29.957
+and this is all we need to install.
+
+33
+01:29.957 --> 01:33.090
+And so when that's installed you can close this window
+
+34
+01:35.200 --> 01:36.980
+and we can begin using it.
+
+35
+01:38.360 --> 01:39.960
+So that's it, done.
+
+36
+01:39.960 --> 01:44.860
+We can press OK and now we can import aiohttp.
+
+37
+01:46.230 --> 01:50.760
+So let's first start with fetching a single page.
+
+38
+01:50.760 --> 01:53.250
+The first thing we need to do is create the coroutine
+
+39
+01:53.250 --> 01:54.890
+and this is like a generator
+
+40
+01:54.890 --> 01:58.030
+that can suspend and resume their execution at any time
+
+41
+01:58.030 --> 01:59.880
+by using await.
+
+42
+01:59.880 --> 02:02.880
+So we're gonna do async def fetch_page.
+
+43
+02:04.179 --> 02:05.190
+And what we're gonna pass through this function
+
+44
+02:05.190 --> 02:06.990
+is the URL that we want to fetch.
+
+45
+02:08.270 --> 02:10.190
+Now the next thing we do,
+
+46
+02:10.190 --> 02:15.000
+is we must tell aiohttp to create a client session.
+
+47
+02:15.000 --> 02:17.670
+A client session just essentially creates
+
+48
+02:17.670 --> 02:20.560
+a bunch of connections and puts them in a pool,
+
+49
+02:20.560 --> 02:22.270
+pretty much like a thread pool,
+
+50
+02:22.270 --> 02:25.040
+except it's a connection pool, so that we can reuse them
+
+51
+02:25.040 --> 02:27.710
+without having to create new connections each time.
+
+52
+02:27.710 --> 02:30.290
+So what we're gonna do is a bit of a new bit of syntax.
+
+53
+02:30.290 --> 02:34.940
+async_with aiohttp.ClientSession as session.
+
+54
+02:38.796 --> 02:41.050
+All that's happening here is
+
+55
+02:41.050 --> 02:43.565
+we are doing a normal context manager,
+
+56
+02:43.565 --> 02:45.800
+we're creating this new ClientSession
+
+57
+02:45.800 --> 02:49.320
+which is a connection pool and also a cookie storage.
+
+58
+02:49.320 --> 02:51.880
+We're gonna talk more about that soon.
+
+59
+02:52.870 --> 02:57.325
+We're calling it session, but because it's async,
+
+60
+02:57.325 --> 03:00.332
+what happens in an async context manager
+
+61
+03:00.332 --> 03:04.380
+is that it can have yield in there enter
+
+62
+03:04.380 --> 03:06.530
+or in the exit methods or in both.
+
+63
+03:06.530 --> 03:08.830
+So essentially it's just a way of potentially
+
+64
+03:08.830 --> 03:12.220
+suspending the execution of the context manager
+
+65
+03:12.220 --> 03:14.590
+when it starts or suspending it when it ends
+
+66
+03:14.590 --> 03:15.510
+and resuming it.
+
+67
+03:15.510 --> 03:20.510
+Just adds like a new point where it can suspend and resume
+
+68
+03:21.240 --> 03:22.530
+just in case you want to do something
+
+69
+03:22.530 --> 03:25.420
+that was heavy duty inside the context manager,
+
+70
+03:25.420 --> 03:27.200
+allows you to suspend and resume
+
+71
+03:27.200 --> 03:28.980
+at the start or at the end of the context manager.
+
+72
+03:28.980 --> 03:32.210
+That's the only difference with the normal context manager
+
+73
+03:32.210 --> 03:33.710
+and the async context manager.
+
+74
+03:35.270 --> 03:39.740
+For more information about this, instead of enter and exit,
+
+75
+03:43.220 --> 03:47.300
+the new methods are aenter and aexit.
+
+76
+03:49.480 --> 03:51.530
+Okay, we're not gonna get into too much depth
+
+77
+03:51.530 --> 03:53.680
+about creating your own asynchronous context managers,
+
+78
+03:53.680 --> 03:56.370
+just now that if you wanna create an asynchronous manager
+
+79
+03:56.370 --> 04:01.095
+well you can do a wait or yield inside it,
+
+80
+04:01.095 --> 04:03.300
+and you have to use aenter and aexit
+
+81
+04:03.300 --> 04:04.600
+instead of enter and exit.
+
+82
+04:05.570 --> 04:07.730
+Now that just a bit of an aside there.
+
+83
+04:07.730 --> 04:11.100
+This we're going to do async with session.get
+
+84
+04:11.100 --> 04:14.040
+and we're gonna get the URL as response.
+
+85
+04:14.040 --> 04:16.900
+And then we're gonna return the response.status code.
+
+86
+04:18.450 --> 04:20.920
+This can be our first task.
+
+87
+04:20.920 --> 04:24.876
+This is a core routine, that first of all creates a session,
+
+88
+04:24.876 --> 04:28.790
+then it sort of gets the URL we passed in.
+
+89
+04:28.790 --> 04:31.377
+This asks the server for the contents,
+
+90
+04:31.377 --> 04:35.540
+calls a response, and then returns the response.status.
+
+91
+04:35.540 --> 04:37.450
+But of course before responding,
+
+92
+04:37.450 --> 04:38.990
+before returning the response.status,
+
+93
+04:38.990 --> 04:43.990
+it can potentially be suspended here or here,
+
+94
+04:44.390 --> 04:47.350
+when it starts or when it ends.
+
+95
+04:47.350 --> 04:49.598
+So when we can, for example,
+
+96
+04:49.598 --> 04:53.620
+get the URL or send the request to the server
+
+97
+04:53.620 --> 04:56.950
+and then suspend while we wait for data to come back.
+
+98
+04:56.950 --> 05:00.010
+When the data comes back, we'll be at the exit,
+
+99
+05:00.010 --> 05:03.189
+sorry, at the end of the enter section of the generator
+
+100
+05:03.189 --> 05:05.130
+and we can continue execution
+
+101
+05:05.130 --> 05:06.590
+and then we can get this status.
+
+102
+05:06.590 --> 05:10.340
+And this is not asynchronous, this is just a normal return.
+
+103
+05:10.340 --> 05:12.350
+So then the function would end there.
+
+104
+05:13.743 --> 05:15.850
+Now the only purpose of asyncio
+
+105
+05:15.850 --> 05:19.410
+and these asynchronous functions is to potentially suspend
+
+106
+05:19.410 --> 05:22.800
+execution at any point and resume it after.
+
+107
+05:22.800 --> 05:24.680
+Placing these things in the correct places
+
+108
+05:24.680 --> 05:27.620
+means that we can suspend execution when we're waiting
+
+109
+05:27.620 --> 05:31.010
+and we can resume execution once we want to stop waiting.
+
+110
+05:34.230 --> 05:36.679
+Now we must have a task scheduler
+
+111
+05:36.679 --> 05:41.679
+that will do the .send or the next.
+
+112
+05:41.740 --> 05:45.850
+Remember this just yield from, yield from
+
+113
+05:45.850 --> 05:48.830
+inside of here that are waits which are yield froms,
+
+114
+05:48.830 --> 05:52.090
+so we need something that is gonna do this send
+
+115
+05:52.090 --> 05:53.950
+or this next.
+
+116
+05:53.950 --> 05:57.850
+And now, as of Python 3.4, I believe, we have that,
+
+117
+05:57.850 --> 05:59.780
+which is the asyncio library.
+
+118
+06:01.020 --> 06:02.630
+If you've watched that talk, which I hope you did,
+
+119
+06:02.630 --> 06:05.560
+you will have seen asyncio mentioned a couple of times.
+
+120
+06:05.560 --> 06:07.990
+The asyncio library comes built in Python
+
+121
+06:07.990 --> 06:11.320
+and is very small, well it's not that small,
+
+122
+06:11.320 --> 06:13.910
+but it's fairly small the things we have to know
+
+123
+06:13.910 --> 06:16.520
+and it allows us to schedule
+
+124
+06:16.520 --> 06:20.570
+and manage these co-routines, these tasks.
+
+125
+06:20.570 --> 06:22.560
+It's really straighforward to use,
+
+126
+06:22.560 --> 06:25.080
+at least the way we're gonna do it right now.
+
+127
+06:25.080 --> 06:27.798
+There's a bit more to use than what we cover,
+
+128
+06:27.798 --> 06:31.107
+but in order to use it,
+
+129
+06:31.107 --> 06:35.150
+in some ways it's fairly straighforward.
+
+130
+06:35.150 --> 06:37.675
+All we do is we get an event_loop
+
+131
+06:37.675 --> 06:41.060
+and then we do loop.run_until_complete(fetch_page)
+
+132
+06:42.830 --> 06:45.730
+for example, google.com.
+
+133
+06:48.750 --> 06:53.730
+When you call fetch_page you don't get the response.status.
+
+134
+06:53.730 --> 06:55.870
+We know this already from what we've looked at earlier.
+
+135
+06:55.870 --> 06:57.690
+When you call fetch_page what you get
+
+136
+06:57.690 --> 06:59.140
+is a co-routine object.
+
+137
+07:00.086 --> 07:03.240
+So this isn't actually giving the response,
+
+138
+07:03.240 --> 07:04.770
+even though we're calling function.
+
+139
+07:04.770 --> 07:06.680
+All this is doing is creating the co-routine
+
+140
+07:06.680 --> 07:11.680
+in the background that you can then send or next to.
+
+141
+07:11.900 --> 07:14.210
+When you do that, it sort of goes through
+
+142
+07:14.210 --> 07:16.420
+each resume and response.
+
+143
+07:16.420 --> 07:18.460
+So what this run_until_complete is doing
+
+144
+07:18.460 --> 07:20.610
+is it's using this event_loop
+
+145
+07:20.610 --> 07:23.700
+in order to continually resume this function
+
+146
+07:23.700 --> 07:24.700
+until it's complete.
+
+147
+07:27.907 --> 07:29.670
+So we can run this, we can right click
+
+148
+07:29.670 --> 07:31.920
+the async request and run it.
+
+149
+07:31.920 --> 07:34.340
+And of course we didn't really print anything,
+
+150
+07:34.340 --> 07:39.340
+but we can print response.status here
+
+151
+07:40.070 --> 07:42.320
+and you'll see that something does come back.
+
+152
+07:43.490 --> 07:45.560
+Yep, 200, which means it's all okay.
+
+153
+07:45.560 --> 07:47.937
+As you can see, this did run.
+
+154
+07:47.937 --> 07:51.940
+So this is the simplest way that we can get an event_loop
+
+155
+07:51.940 --> 07:56.300
+and run a task and a task is just an async function
+
+156
+07:56.300 --> 07:57.810
+that has been defined.
+
+157
+07:57.810 --> 07:59.620
+Okay, all we need is to get the event_loop
+
+158
+07:59.620 --> 08:01.180
+and run it until it's complete.
+
+159
+08:03.670 --> 08:06.080
+If you wanted to make more asynchronous requests,
+
+160
+08:06.080 --> 08:07.780
+we're gonna do that just now as well.
+
+161
+08:07.780 --> 08:10.620
+What we're gonna do first of all is import time
+
+162
+08:10.620 --> 08:13.530
+so we can stop measuring how long this takes.
+
+163
+08:13.530 --> 08:16.770
+Then before we do any of the session or anything like that,
+
+164
+08:16.770 --> 08:19.090
+we're gonna do page_start is time.time.
+
+165
+08:20.370 --> 08:25.370
+And right before we return, we're gonna print that
+
+166
+08:27.870 --> 08:32.170
+the page took time.time minus page_start.
+
+167
+08:33.800 --> 08:38.020
+I call it state, that should be start there.
+
+168
+08:39.140 --> 08:43.220
+Okay if we run this again, you see that it says
+
+169
+08:43.220 --> 08:45.420
+page took 0.17 seconds.
+
+170
+08:45.420 --> 08:46.840
+So it was pretty quick.
+
+171
+08:46.840 --> 08:48.920
+The programme as a whole took a bit longer,
+
+172
+08:48.920 --> 08:51.653
+but that's because it involves creating the event_loop
+
+173
+08:51.653 --> 08:55.640
+and starting new tasks, scheduling them and so forth.
+
+174
+08:55.640 --> 08:59.604
+But the page request itself only took 0.17 seconds.
+
+175
+08:59.604 --> 09:03.560
+If you round this using the requests library
+
+176
+09:03.560 --> 09:06.460
+like we did earlier on, it would take more or less
+
+177
+09:06.460 --> 09:07.960
+the same amount of time.
+
+178
+09:07.960 --> 09:10.080
+Okay, there would be no difference,
+
+179
+09:10.080 --> 09:12.138
+just because all we're doing here
+
+180
+09:12.138 --> 09:14.816
+is running a single request.
+
+181
+09:14.816 --> 09:18.800
+If you want to run multiple requests though,
+
+182
+09:18.800 --> 09:20.830
+we can do that very easily.
+
+183
+09:20.830 --> 09:22.388
+We'll say something like tasks is,
+
+184
+09:22.388 --> 09:24.650
+and now we're gonna do a list comprehension
+
+185
+09:24.650 --> 09:28.340
+where we're gonna fetch_page off google.com
+
+186
+09:28.340 --> 09:31.250
+for i in range 50, let's say.
+
+187
+09:32.720 --> 09:35.826
+Okay so now we've got 50 co-routine objects
+
+188
+09:35.826 --> 09:37.680
+that need to be ran.
+
+189
+09:38.820 --> 09:40.410
+So how we're gonna do that?
+
+190
+09:40.410 --> 09:44.170
+Well we're going to say loop.run all these tasks
+
+191
+09:44.170 --> 09:46.151
+until they have been completed.
+
+192
+09:46.151 --> 09:49.470
+But we can only pass single task
+
+193
+09:49.470 --> 09:51.816
+to the run_until_complete function.
+
+194
+09:51.816 --> 09:56.610
+So asyncio comes with a pretty handy function
+
+195
+09:56.610 --> 10:00.220
+that allows us to collect a bunch of tasks together
+
+196
+10:00.220 --> 10:02.440
+and run them as a single task,
+
+197
+10:02.440 --> 10:04.570
+so that it's a bit easier to do this
+
+198
+10:04.570 --> 10:07.650
+and all that is is asyncio.gather.
+
+199
+10:07.650 --> 10:11.680
+And we're gonna pass it all the tasks as arguments.
+
+200
+10:11.680 --> 10:16.680
+So it will be tasks(0), tasks(1), tasks(2), tasks(3)
+
+201
+10:17.520 --> 10:19.590
+and so on until 50.
+
+202
+10:19.590 --> 10:22.661
+Or as you already know, we can use argument unpacking
+
+203
+10:22.661 --> 10:26.180
+to do star tasks.
+
+204
+10:27.290 --> 10:31.240
+Okay, now as part of this I'm also going to time this.
+
+205
+10:31.240 --> 10:34.940
+So I'm gonna say start is time.time
+
+206
+10:34.940 --> 10:39.850
+and end is gonna be all took time.time minus start.
+
+207
+10:41.050 --> 10:46.000
+Notice how I'm only measuring the loop_run_until_complete.
+
+208
+10:46.000 --> 10:48.280
+I'm not measuring the creation the tasks,
+
+209
+10:48.280 --> 10:50.108
+because this is pretty much instant.
+
+210
+10:50.108 --> 10:53.889
+No requests are actually happening in this line.
+
+211
+10:53.889 --> 10:56.560
+Only the core routines have been created.
+
+212
+10:56.560 --> 10:58.410
+Then when we stop running them,
+
+213
+10:58.410 --> 11:01.310
+this does the .send to the first task
+
+214
+11:01.310 --> 11:03.530
+and runs it up until the asyncio.
+
+215
+11:03.530 --> 11:06.254
+Then that suspends and this moves onto the second one
+
+216
+11:06.254 --> 11:08.500
+and moves it up 'til there, then this suspends
+
+217
+11:08.500 --> 11:09.900
+and moves onto the third one.
+
+218
+11:09.900 --> 11:13.536
+So first of all, all 50 tasks will end up here.
+
+219
+11:13.536 --> 11:15.997
+Then one by one they will be moved here.
+
+220
+11:15.997 --> 11:19.370
+And then one by one they will return.
+
+221
+11:19.370 --> 11:22.940
+But of course, they may take different amounts of time.
+
+222
+11:22.940 --> 11:27.500
+So one request to google.com may take 0.5 seconds
+
+223
+11:27.500 --> 11:28.750
+if it's a very slow one.
+
+224
+11:28.750 --> 11:30.712
+Another one may take 0.1 seconds.
+
+225
+11:30.712 --> 11:32.550
+So as soon as you start doing this
+
+226
+11:32.550 --> 11:37.550
+and you only resume execution when you are ready to do so
+
+227
+11:37.590 --> 11:40.040
+you'll see that these tasks are not nescessarily
+
+228
+11:40.040 --> 11:41.970
+all gonna finish in the same order.
+
+229
+11:41.970 --> 11:44.150
+And okay, so let's press play.
+
+230
+11:45.670 --> 11:47.943
+And as you can see, that was extremely quickly.
+
+231
+11:47.943 --> 11:52.943
+We've got some tasks that took 0.32 seconds,
+
+232
+11:53.250 --> 11:56.291
+and as they finish more or less in order
+
+233
+11:56.291 --> 12:00.168
+we can see that at the bottom some of that took 0.46 seconds
+
+234
+12:00.168 --> 12:04.473
+and in total it took 0.48 seconds.
+
+235
+12:04.473 --> 12:07.150
+Not the addition of all of these things,
+
+236
+12:07.150 --> 12:10.580
+but rather the longest one plus a couple of milliseconds
+
+237
+12:10.580 --> 12:12.750
+just to set up the event loop
+
+238
+12:12.750 --> 12:15.923
+and do the scheduling of the tasks and so forth.
+
+239
+12:15.923 --> 12:18.920
+So this is amazing,
+
+240
+12:18.920 --> 12:21.810
+because now instead of having to wait for each page
+
+241
+12:21.810 --> 12:24.010
+to finish before we get the next one,
+
+242
+12:24.010 --> 12:26.670
+we're gonna essentially just send the 50 requests out
+
+243
+12:26.670 --> 12:30.050
+to Google and just wait until they come back.
+
+244
+12:31.870 --> 12:33.570
+And of course that's gonna depend on
+
+245
+12:33.570 --> 12:38.550
+whether Google can deal with 50 requests at the same time.
+
+246
+12:38.550 --> 12:42.800
+Google is a massive company, it has a lot of servers,
+
+247
+12:42.800 --> 12:45.910
+and it can handle 50 requests at the same time.
+
+248
+12:45.910 --> 12:48.430
+Other websites won't be able to handle 50 requests
+
+249
+12:48.430 --> 12:49.550
+at the same time and if you do that,
+
+250
+12:49.550 --> 12:51.160
+you may actually break them.
+
+251
+12:51.160 --> 12:52.500
+You may actually break the site
+
+252
+12:52.500 --> 12:57.500
+or they may say, no you cannot do 50 requests at a time.
+
+253
+12:57.670 --> 13:00.530
+I'm going to be very slow in responding to you
+
+254
+13:00.530 --> 13:04.780
+in order to prevent you from breaking their server.
+
+255
+13:04.780 --> 13:07.150
+So that's a couple of things you need to be careful about.
+
+256
+13:07.150 --> 13:10.003
+But as you can see with Google, this is all you need
+
+257
+13:10.003 --> 13:13.961
+in order to get 50 pages asynchronously.
+
+258
+13:13.961 --> 13:16.202
+So again what we've done is created our task
+
+259
+13:16.202 --> 13:21.202
+and using aiohttp which supports this async_with statements
+
+260
+13:22.156 --> 13:26.110
+we have created our session and then used that
+
+261
+13:26.110 --> 13:29.900
+which gives us a connection pool to get each URL
+
+262
+13:29.900 --> 13:31.690
+that we passed in.
+
+263
+13:31.690 --> 13:34.610
+And at the end we've returned a response.status code,
+
+264
+13:34.610 --> 13:37.518
+that's just to get something back from there.
+
+265
+13:37.518 --> 13:39.470
+And then in order to run them,
+
+266
+13:39.470 --> 13:42.997
+we've got an event_loop from the asyncio framework.
+
+267
+13:42.997 --> 13:47.584
+We've created all our tasks, which are just these functions
+
+268
+13:47.584 --> 13:50.460
+and then we've run them all until complete
+
+269
+13:50.460 --> 13:52.740
+by using asyncio.gather.
+
+270
+13:52.740 --> 13:54.910
+And gather collects all our tasks
+
+271
+13:54.910 --> 13:58.900
+and allows them to run as one in this run_until_complete.
+
+272
+13:58.900 --> 14:01.440
+Otherwise you would have to do run_until_complete
+
+273
+14:01.440 --> 14:04.520
+once for each task, which would be a bit more tedious.
+
+274
+14:04.520 --> 14:06.882
+So asyncio.gather, pretty good for that.
+
+275
+14:06.882 --> 14:10.050
+Now that's it for this video.
+
+276
+14:10.050 --> 14:13.090
+I just wanted to show you how to go about
+
+277
+14:13.090 --> 14:14.976
+making these asynchronous requests.
+
+278
+14:14.976 --> 14:18.870
+Feel free to compare this with your synchronous code.
+
+279
+14:18.870 --> 14:20.820
+If you open up .py by the way,
+
+280
+14:20.820 --> 14:22.660
+you can see this is a synchronous code.
+
+281
+14:22.660 --> 14:25.100
+So if you replace this for a google.com
+
+282
+14:25.100 --> 14:27.480
+and put a couple of timing functions in here,
+
+283
+14:27.480 --> 14:28.900
+you'll see how long that takes.
+
+284
+14:28.900 --> 14:33.329
+It's about 10 seconds, whereas this was about 0.5 seconds.
+
+285
+14:33.329 --> 14:35.530
+So now what we're gonna do is we're gonna
+
+286
+14:35.530 --> 14:36.850
+just make this a bit more efficient.
+
+287
+14:36.850 --> 14:39.650
+Get a couple of functions in here to deal with
+
+288
+14:39.650 --> 14:42.340
+getting multiple pages more efficiently
+
+289
+14:42.340 --> 14:44.980
+and then we'll move onto turning our scraper
+
+290
+14:44.980 --> 14:46.850
+into an asynchronous scrape.
+
+291
+14:46.850 --> 14:48.430
+I'll see you on the next video.

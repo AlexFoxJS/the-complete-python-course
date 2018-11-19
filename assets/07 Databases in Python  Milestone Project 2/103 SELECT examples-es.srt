@@ -1,0 +1,288 @@
+1
+00:00:00,000 --> 00:00:01,290
+Jos: Hola, y bienvenido de nuevo.
+
+2
+00:00:01,290 --> 00:00:03,840
+En este video, estamos hablando de
+
+3
+00:00:03,840 --> 00:00:07,270
+extraer datos de nuestras tablas usando la declaracin Seleccionar.
+
+4
+00:00:08,970 --> 00:00:11,910
+En esta tabla, tenemos cuatro columnas, identificacin, nombre y
+
+5
+00:00:11,910 --> 00:00:15,270
+direccin, y cuatro filas que van del uno al cuatro.
+
+6
+00:00:16,320 --> 00:00:18,840
+Cuando queremos usar una declaracin Select,
+
+7
+00:00:18,840 --> 00:00:21,690
+tenemos que especificar tres cosas importantes.
+
+8
+00:00:21,690 --> 00:00:24,720
+El primero en el que queremos seleccionar
+
+9
+00:00:24,720 --> 00:00:27,510
+datos y no insertarlos, por ejemplo.
+
+10
+00:00:27,510 --> 00:00:30,710
+El segundo, debemos decir qu columnas queremos obtener en nuestros
+
+11
+00:00:30,710 --> 00:00:32,210
+resultados, ya sea la columna
+
+12
+00:00:32,210 --> 00:00:34,610
+de id, la columna de nombre o la
+
+13
+00:00:34,610 --> 00:00:36,620
+columna de direccin, o todas ellas, o
+
+14
+00:00:36,620 --> 00:00:37,970
+cualquier combinacin de ellas.
+
+15
+00:00:38,970 --> 00:00:41,170
+Y finalmente, tambin tenemos que decir
+
+16
+00:00:41,170 --> 00:00:43,410
+de qu tabla queremos obtener nuestros datos.
+
+17
+00:00:43,410 --> 00:00:45,360
+En este caso, vamos a obtenerlo de esta
+
+18
+00:00:45,360 --> 00:00:47,190
+tabla aqu, a la que llamar personas.
+
+19
+00:00:49,090 --> 00:00:52,380
+Entonces esta sera una declaracin Select.
+
+20
+00:00:52,380 --> 00:00:55,280
+Primero, seleccione la palabra clave, luego una estrella,
+
+21
+00:00:55,280 --> 00:01:00,130
+lo que significa todas las columnas, luego la palabra clave de, y luego
+
+22
+00:01:00,130 --> 00:01:02,780
+la tabla de la que queremos seleccionar.
+
+23
+00:01:02,780 --> 00:01:06,620
+Entonces esto significa seleccionar todas las columnas de personas.
+
+24
+00:01:06,620 --> 00:01:09,250
+Y nos dara un conjunto de resultados que se
+
+25
+00:01:09,250 --> 00:01:11,140
+ve exactamente como la tabla original.
+
+26
+00:01:11,140 --> 00:01:13,550
+Como puede ver, se ve igual,
+
+27
+00:01:13,550 --> 00:01:16,750
+tres columnas, cuatro filas, todos los datos estn all.
+
+28
+00:01:16,750 --> 00:01:21,030
+Observe cmo no hemos tenido que especificar qu filas queremos.
+
+29
+00:01:21,030 --> 00:01:24,050
+Solo especificamos que queremos todas las columnas.
+
+30
+00:01:24,050 --> 00:01:25,620
+Eso es lo que significa la estrella.
+
+31
+00:01:25,620 --> 00:01:28,490
+Por defecto, la instruccin Select seleccionar
+
+32
+00:01:28,490 --> 00:01:29,620
+todas las filas.
+
+33
+00:01:29,620 --> 00:01:32,070
+Entonces, todos los datos en su tabla.
+
+34
+00:01:32,070 --> 00:01:33,930
+Y vamos a aprender cmo limitar
+
+35
+00:01:33,930 --> 00:01:36,700
+eso, cmo obtener solo algunas filas muy pronto, en un
+
+36
+00:01:36,700 --> 00:01:38,100
+par de veces de video.
+
+37
+00:01:38,990 --> 00:01:41,160
+Echemos un vistazo a otro ejemplo donde no
+
+38
+00:01:41,160 --> 00:01:43,600
+seleccionaremos todas las columnas, solo seleccionaremos un par de ellas.
+
+39
+00:01:43,600 --> 00:01:45,300
+Y, esto sera esto.
+
+40
+00:01:45,300 --> 00:01:48,690
+Seleccione el nombre, la direccin de las personas.
+
+41
+00:01:48,690 --> 00:01:52,190
+Y eso, por supuesto, nos dar dos columnas, el
+
+42
+00:01:52,190 --> 00:01:53,870
+nombre y la direccin.
+
+43
+00:01:53,870 --> 00:01:57,280
+Observe que la columna de Id. No est presente en nuestro conjunto de
+
+44
+00:01:57,280 --> 00:02:00,120
+resultados porque no la hemos solicitado con la instruccin Seleccionar.
+
+45
+00:02:01,720 --> 00:02:04,270
+Por supuesto, podramos seleccionar identificacin y nombre si
+
+46
+00:02:04,270 --> 00:02:06,910
+quisiramos, por ejemplo, y eso nos dara dos
+
+47
+00:02:06,910 --> 00:02:09,810
+columnas, identificacin y nombre, y no nos devolvera la direccin.
+
+48
+00:02:09,810 --> 00:02:12,410
+Totalmente bien, puedes hacer esto si quieres.
+
+49
+00:02:12,410 --> 00:02:14,550
+Observe cmo la frmula general
+
+50
+00:02:14,550 --> 00:02:17,400
+aqu, la estructura o la sintaxis de
+
+51
+00:02:17,400 --> 00:02:19,680
+la declaracin es, ante todo, Seleccionar.
+
+52
+00:02:19,680 --> 00:02:22,540
+Luego, las columnas que desea, ya sea una estrella o si
+
+53
+00:02:22,540 --> 00:02:25,170
+se trata de una coma separados por nombres de columna.
+
+54
+00:02:25,170 --> 00:02:27,810
+Luego, la palabra clave de, y finalmente, la tabla.
+
+55
+00:02:29,370 --> 00:02:31,210
+Tambin puede unirlos para
+
+56
+00:02:31,210 --> 00:02:34,480
+que pueda seleccionar id, star si lo desea.
+
+57
+00:02:34,480 --> 00:02:37,280
+Pero esto es algo bastante tonto de hacer en mi opinin.
+
+58
+00:02:37,280 --> 00:02:39,890
+Solo te estoy diciendo esto porque puedes hacer esto.
+
+59
+00:02:39,890 --> 00:02:42,590
+Pero, una vez ms, obtiene el doble de las columnas de id,
+
+60
+00:02:42,590 --> 00:02:45,090
+lo que no es muy til en la mayora de los
+
+61
+00:02:45,090 --> 00:02:46,310
+escenarios, probablemente en cualquier escenario.
+
+62
+00:02:47,200 --> 00:02:48,920
+Pero no obstante, es algo que puedes hacer.
+
+63
+00:02:48,920 --> 00:02:51,520
+Nuevamente, la estrella simplemente es reemplazada por todos
+
+64
+00:02:51,520 --> 00:02:54,090
+los nombres de columna en su tabla.
+
+65
+00:02:54,090 --> 00:02:56,900
+Por supuesto, puede usar una estrella as como otros nombres de
+
+66
+00:02:56,900 --> 00:02:58,060
+columna si lo desea.
+
+67
+00:02:58,060 --> 00:02:59,460
+Y esto va a ser til.
+
+68
+00:02:59,460 --> 00:03:00,560
+El hecho de que podamos
+
+69
+00:03:00,560 --> 00:03:02,370
+hacer esto va a ser til ms adelante.
+
+70
+00:03:02,370 --> 00:03:05,100
+Hacer esto con una sola mesa no es tan til.
+
+71
+00:03:06,590 --> 00:03:08,030
+De acuerdo, eso es todo por este video.
+
+72
+00:03:08,030 --> 00:03:09,480
+Te ver en el prximo.
+

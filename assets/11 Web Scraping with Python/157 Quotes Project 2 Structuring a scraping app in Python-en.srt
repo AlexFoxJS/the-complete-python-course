@@ -1,0 +1,232 @@
+1
+00:00:00,000 --> 00:00:01,490
+<v Instructor>Hi, and welcome back.</v>
+
+2
+00:00:01,490 --> 00:00:02,750
+In this video we're going to be setting
+
+3
+00:00:02,750 --> 00:00:05,900
+up our project to scrape quotes.
+
+4
+00:00:05,900 --> 00:00:07,440
+Well of those I've created a new project
+
+5
+00:00:07,440 --> 00:00:09,230
+called Scraping Quotes.
+
+6
+00:00:09,230 --> 00:00:12,220
+The code to which is linked in the lecture,
+
+7
+00:00:12,220 --> 00:00:15,330
+and so feel free to have a wee look at it if you want,
+
+8
+00:00:15,330 --> 00:00:19,090
+but I'd recommend you go through the few videos here
+
+9
+00:00:19,090 --> 00:00:21,580
+and just before going into the code.
+
+10
+00:00:21,580 --> 00:00:22,610
+'Cause the way we're going to structure
+
+11
+00:00:22,610 --> 00:00:24,840
+the app may be a bit different from,
+
+12
+00:00:24,840 --> 00:00:27,878
+or more complicated than other things we've done before.
+
+13
+00:00:27,878 --> 00:00:30,100
+We're going to create a new Python file,
+
+14
+00:00:30,100 --> 00:00:31,740
+which is going to be app.
+
+15
+00:00:32,640 --> 00:00:35,180
+This is going to be the entry point of our application.
+
+16
+00:00:35,180 --> 00:00:37,150
+We're going to be running this file.
+
+17
+00:00:38,090 --> 00:00:40,830
+We're also going to create a couple of packages.
+
+18
+00:00:40,830 --> 00:00:43,940
+We're going to create a pages package.
+
+19
+00:00:43,940 --> 00:00:45,510
+We're going to create a new package
+
+20
+00:00:45,510 --> 00:00:48,810
+also on the top called locators.
+
+21
+00:00:48,810 --> 00:00:51,570
+So, notice how our scraping quotes project
+
+22
+00:00:51,570 --> 00:00:55,400
+contains locators, pages, and app,
+
+23
+00:00:55,400 --> 00:00:56,880
+and finally, we're also going to create
+
+24
+00:00:56,880 --> 00:00:59,380
+a final package called parsers.
+
+25
+00:01:00,400 --> 00:01:03,330
+So now it contains three different packages;
+
+26
+00:01:03,330 --> 00:01:05,940
+locators, pages, parsers and app.
+
+27
+00:01:07,410 --> 00:01:10,210
+The purpose of these is to separate
+
+28
+00:01:10,210 --> 00:01:13,000
+the different parts of our programme.
+
+29
+00:01:13,000 --> 00:01:14,923
+The locators is going to contain,
+
+30
+00:01:14,923 --> 00:01:17,830
+you guessed it, the locators of where things
+
+31
+00:01:17,830 --> 00:01:21,410
+are in the html, how we can find things.
+
+32
+00:01:21,410 --> 00:01:24,800
+The pages is going to contain the code
+
+33
+00:01:24,800 --> 00:01:28,920
+to use those locators to find particular things in a page.
+
+34
+00:01:28,920 --> 00:01:32,240
+And finally, the parsers are very similar to pages,
+
+35
+00:01:32,240 --> 00:01:35,370
+but for specific things that we want to work with.
+
+36
+00:01:35,370 --> 00:01:36,830
+Now, okay.
+
+37
+00:01:36,830 --> 00:01:39,340
+Then we're gonna create a few files.
+
+38
+00:01:39,340 --> 00:01:42,350
+For the locators we're gonna create two files;
+
+39
+00:01:42,350 --> 00:01:43,650
+quote locators,
+
+40
+00:01:45,350 --> 00:01:48,680
+and also a quotes page locators.
+
+41
+00:01:51,020 --> 00:01:53,720
+The quote locators are those locators
+
+42
+00:01:53,720 --> 00:01:56,190
+used when we want to extract information
+
+43
+00:01:56,190 --> 00:01:58,810
+from within a single quote.
+
+44
+00:01:58,810 --> 00:02:01,040
+Quotes page locators are the locators
+
+45
+00:02:01,040 --> 00:02:03,670
+for when we want to extract quotes from a page.
+
+46
+00:02:04,910 --> 00:02:09,010
+In the pages we're going to create a quotes page.
+
+47
+00:02:09,010 --> 00:02:11,630
+This is going to contain some code related to getting
+
+48
+00:02:11,630 --> 00:02:13,470
+data out of the quotes page,
+
+49
+00:02:13,470 --> 00:02:15,870
+which is the main page that we saw earlier
+
+50
+00:02:15,870 --> 00:02:17,390
+in the previous video.
+
+51
+00:02:17,390 --> 00:02:20,460
+And finally the parsers is going to contain
+
+52
+00:02:20,460 --> 00:02:23,751
+one quote, quote, and this is going to get some,
+
+53
+00:02:23,751 --> 00:02:27,760
+a tag, and is going to be able to find quote data
+
+54
+00:02:27,760 --> 00:02:29,860
+within that tag.
+
+55
+00:02:29,860 --> 00:02:32,500
+Okay, let's move on to the next video
+
+56
+00:02:32,500 --> 00:02:34,700
+where we're going to start writing some of these
+
+57
+00:02:34,700 --> 00:02:39,500
+locators by comparing and finding things using the browser.
+
+58
+00:02:39,500 --> 00:02:41,050
+I'll see you in the next video.
+

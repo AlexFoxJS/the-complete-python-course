@@ -1,0 +1,1020 @@
+1
+00:00:00,000 --> 00:00:01,110
+Jos: Hola y bienvenido de nuevo.
+
+2
+00:00:01,110 --> 00:00:01,970
+En este video
+
+3
+00:00:01,970 --> 00:00:04,880
+vamos a ver cmo agregar pginas de error.
+
+4
+00:00:04,880 --> 00:00:08,290
+Si ejecutamos nuestra aplicacin y volvemos a
+
+5
+00:00:08,290 --> 00:00:12,230
+Chrome, podemos actualizar y ver que esto todava funciona.
+
+6
+00:00:12,230 --> 00:00:14,220
+Pero si cambiamos esto para
+
+7
+00:00:14,220 --> 00:00:17,590
+publicar el nmero uno por ejemplo, no lo hace.
+
+8
+00:00:17,590 --> 00:00:21,010
+Simplemente se rompe y nada sucede realmente.
+
+9
+00:00:23,360 --> 00:00:24,800
+Lo que estamos viendo
+
+10
+00:00:24,800 --> 00:00:27,660
+aqu es que no hay contenido para poner aqu
+
+11
+00:00:27,660 --> 00:00:30,590
+en la plantilla as que en vez de que
+
+12
+00:00:31,840 --> 00:00:34,170
+sepas que recibes una pgina que dice
+
+13
+00:00:34,170 --> 00:00:36,670
+que no podemos encontrar esta publicacin, lo
+
+14
+00:00:36,670 --> 00:00:38,720
+que estamos recibiendo no es nada.
+
+15
+00:00:40,170 --> 00:00:42,100
+Esto no es genial as que detengamos
+
+16
+00:00:42,100 --> 00:00:43,650
+nuestra aplicacin, recuerde detener su aplicacin
+
+17
+00:00:43,650 --> 00:00:44,880
+cada vez y ocultarla y
+
+18
+00:00:44,880 --> 00:00:46,150
+lo que vamos a hacer
+
+19
+00:00:46,150 --> 00:00:49,070
+es, si no podemos encontrar la publicacin en nuestra base de
+
+20
+00:00:49,070 --> 00:00:51,490
+datos que es nuestro diccionario aqu, nos ' Vamos
+
+21
+00:00:51,490 --> 00:00:54,590
+a devolver una plantilla diferente que va a ser una pgina de
+
+22
+00:00:54,590 --> 00:00:56,240
+error o una pgina no encontrada.
+
+23
+00:00:57,760 --> 00:00:59,200
+As que de nuevo vamos
+
+24
+00:00:59,200 --> 00:01:00,860
+a extraer esto de nuevo a
+
+25
+00:01:00,860 --> 00:01:03,640
+una variable solo porque ahora necesitamos usarlo en varios lugares.
+
+26
+00:01:03,640 --> 00:01:05,190
+Vamos a decir que la
+
+27
+00:01:06,790 --> 00:01:09,680
+publicacin es eso y, si no se publica, recuerde
+
+28
+00:01:09,680 --> 00:01:12,420
+que la publicacin no ser vlida si no se
+
+29
+00:01:12,420 --> 00:01:15,620
+encuentra porque el mtodo get no devuelve ninguno si no
+
+30
+00:01:15,620 --> 00:01:17,470
+se encuentra en el diccionario.
+
+31
+00:01:18,550 --> 00:01:21,370
+Entonces post evaluar a verdadero si
+
+32
+00:01:21,370 --> 00:01:25,890
+es algo y a falso si no lo es.
+
+33
+00:01:25,890 --> 00:01:28,690
+No falso ser verdad.
+
+34
+00:01:28,690 --> 00:01:31,086
+Entonces, ejecutaremos esta instruccin if, de modo
+
+35
+00:01:31,086 --> 00:01:33,000
+que si no se encuentra
+
+36
+00:01:33,000 --> 00:01:35,230
+la publicacin, ejecutaremos la instruccin if.
+
+37
+00:01:35,230 --> 00:01:36,430
+Voy a hacer
+
+38
+00:01:36,430 --> 00:01:38,980
+un pequeo comentario aqu para aclarar esto.
+
+39
+00:01:38,980 --> 00:01:42,290
+La publicacin ser none si no se encuentra,
+
+40
+00:01:42,290 --> 00:01:46,110
+ninguna se evala como verdadera porque ninguna se evala como
+
+41
+00:01:46,110 --> 00:01:48,220
+falsa y, como usted sabe,
+
+42
+00:01:48,220 --> 00:01:50,360
+la instruccin if solo se
+
+43
+00:01:50,360 --> 00:01:51,960
+ejecuta cuando la condicin
+
+44
+00:01:51,960 --> 00:01:53,760
+aqu es verdadera, de lo
+
+45
+00:01:53,760 --> 00:01:54,650
+contrario, si
+
+46
+00:01:55,550 --> 00:01:56,650
+queremos Vamos a
+
+47
+00:01:57,961 --> 00:02:00,550
+hacer una pgina HTML de 404 puntos.
+
+48
+00:02:02,130 --> 00:02:05,240
+Y luego vamos a pasarlo en un
+
+49
+00:02:05,240 --> 00:02:08,973
+mensaje para decir, algo as como, una publicacin con
+
+50
+00:02:08,973 --> 00:02:12,680
+ID, ID de publicacin, no se encontr, de acuerdo?
+
+51
+00:02:12,680 --> 00:02:16,450
+Y, por supuesto, aqu, la publicacin va a ser igual a publicar, que
+
+52
+00:02:16,450 --> 00:02:18,100
+es lo que creamos aqu.
+
+53
+00:02:19,340 --> 00:02:21,950
+Observe que hay una lnea ondulada gris, porque
+
+54
+00:02:21,950 --> 00:02:23,040
+la variable tiene
+
+55
+00:02:23,040 --> 00:02:24,960
+el mismo nombre que la funcin,
+
+56
+00:02:24,960 --> 00:02:28,290
+no es una gran convencin, esta es mi mala, no
+
+57
+00:02:28,290 --> 00:02:30,720
+recomiendo nombrar la funcin y las variables
+
+58
+00:02:30,720 --> 00:02:33,560
+de la misma manera, pero normalmente est bien .
+
+59
+00:02:33,560 --> 00:02:35,260
+No est bien si quieres llamar
+
+60
+00:02:35,260 --> 00:02:36,760
+a esta funcin desde dentro
+
+61
+00:02:36,760 --> 00:02:39,840
+de tu cdigo, lo que sera algo extrao de hacer.
+
+62
+00:02:39,840 --> 00:02:42,010
+As que est bien, quizs no es la mejor
+
+63
+00:02:42,010 --> 00:02:44,660
+idea, a PyCharm no le gusta mucho pero an funciona.
+
+64
+00:02:45,740 --> 00:02:47,030
+Entonces, lo que tenemos
+
+65
+00:02:47,030 --> 00:02:48,630
+aqu es que, si no
+
+66
+00:02:48,630 --> 00:02:51,280
+se encuentra la publicacin, vamos a devolver esta
+
+67
+00:02:51,280 --> 00:02:54,830
+otra plantilla y le daremos esta variable que la plantilla puede usar.
+
+68
+00:02:54,830 --> 00:02:57,630
+As que vamos a nuestras
+
+69
+00:02:57,630 --> 00:03:00,370
+plantillas y creamos un nuevo
+
+70
+00:03:00,370 --> 00:03:04,010
+archivo HTML, que llamaremos 404 puntos HTML.
+
+71
+00:03:06,450 --> 00:03:08,960
+Observe cmo cuando crea un nuevo archivo
+
+72
+00:03:08,960 --> 00:03:11,360
+HTML, ya est listo para usted, as
+
+73
+00:03:11,360 --> 00:03:13,340
+puede guardar algo de esto, como
+
+74
+00:03:13,340 --> 00:03:15,270
+el ttulo de la pgina,
+
+75
+00:03:15,270 --> 00:03:18,740
+etc., o puede simplemente eliminarlo y agregarlo en nuestro cuerpo.
+
+76
+00:03:18,740 --> 00:03:21,750
+aqu, lo que queremos que devuelva la pgina.
+
+77
+00:03:22,860 --> 00:03:26,680
+Entonces ser H1 y diremos 404, no se
+
+78
+00:03:26,680 --> 00:03:30,450
+encontr la publicacin y luego solo agregamos una
+
+79
+00:03:30,450 --> 00:03:33,420
+etiqueta P, vamos a poner nuestro mensaje.
+
+80
+00:03:33,420 --> 00:03:35,787
+Nuestro mensaje recordar es la variable que
+
+81
+00:03:35,787 --> 00:03:39,220
+aprobamos que va a ser reemplazada por una publicacin con ID,
+
+82
+00:03:39,220 --> 00:03:41,650
+no se encontr la ID de la publicacin.
+
+83
+00:03:42,880 --> 00:03:45,340
+As que asegrese de haber dejado de ejecutar su
+
+84
+00:03:45,340 --> 00:03:47,170
+aplicacin antes, podemos ejecutarla de nuevo.
+
+85
+00:03:47,170 --> 00:03:49,680
+Vuelve a Chrome, actualiza esta pgina que
+
+86
+00:03:49,680 --> 00:03:51,840
+no devolvi nada antes y ahora
+
+87
+00:03:51,840 --> 00:03:55,310
+puedes ver que obtenemos un bonito 404, publicacin no encontrada
+
+88
+00:03:55,310 --> 00:03:59,260
+y luego dice que no se encontr una publicacin con ID.
+
+89
+00:03:59,260 --> 00:04:03,319
+Si volvemos a publicar cero, obtenemos los contenidos de nuestra publicacin, as
+
+90
+00:04:03,319 --> 00:04:05,940
+que esto es genial, ahora estamos tratando con
+
+91
+00:04:05,940 --> 00:04:07,710
+la entrada del usuario de
+
+92
+00:04:07,710 --> 00:04:09,290
+una manera muy agradable.
+
+93
+00:04:09,290 --> 00:04:11,560
+Si no pudiramos hacer lo que
+
+94
+00:04:11,560 --> 00:04:14,270
+necesitaban, podemos devolver un mensaje que sea apropiado
+
+95
+00:04:14,270 --> 00:04:17,870
+en lugar de nada o potencialmente un mensaje de error.
+
+96
+00:04:18,930 --> 00:04:20,460
+Nuevamente recuerde detener su
+
+97
+00:04:20,460 --> 00:04:22,830
+aplicacin y minimizarla, y ahora vamos
+
+98
+00:04:22,830 --> 00:04:27,100
+a ver un par de mejoras en esta multi-plantilla.
+
+99
+00:04:27,100 --> 00:04:28,690
+Como puede ver, tanto nuestras
+
+100
+00:04:28,690 --> 00:04:32,400
+pginas, 404 como las publicaciones tienen esencialmente la misma estructura, tienen este
+
+101
+00:04:32,400 --> 00:04:35,380
+tipo de documento que tiene este HTML, y la
+
+102
+00:04:35,380 --> 00:04:38,430
+cabeza vaca, un cuerpo y la nica diferencia entre los
+
+103
+00:04:38,430 --> 00:04:40,900
+dos, aparte de la sangra es esta, la
+
+104
+00:04:40,900 --> 00:04:44,410
+publicacin tiene esta H1 y la etiqueta P con este ttulo
+
+105
+00:04:44,410 --> 00:04:46,550
+y contenido de la publicacin y la
+
+106
+00:04:46,550 --> 00:04:48,860
+404 tiene una etiqueta H1 y P
+
+107
+00:04:48,860 --> 00:04:51,050
+con un mensaje diferente por completo.
+
+108
+00:04:52,340 --> 00:04:56,099
+Jinja2, que es el motor que est
+
+109
+00:04:56,099 --> 00:05:00,920
+impulsando esta plantilla, tiene soporte para, ya sabes,
+
+110
+00:05:00,920 --> 00:05:03,290
+este tipo de herencia.
+
+111
+00:05:03,290 --> 00:05:05,210
+As que podemos crear una
+
+112
+00:05:05,210 --> 00:05:09,400
+plantilla base que contenga todo este cuerpo y HTML y
+
+113
+00:05:09,400 --> 00:05:12,050
+luego podemos crear estas dos plantillas secundarias
+
+114
+00:05:12,050 --> 00:05:14,540
+que solo incluyen este contenido aqu.
+
+115
+00:05:15,927 --> 00:05:18,290
+De esa forma tendremos un contenido un poco menos duplicado.
+
+116
+00:05:18,290 --> 00:05:20,370
+Avancemos, haga clic con el botn
+
+117
+00:05:20,370 --> 00:05:23,254
+derecho en nuestras plantillas y cree un nuevo archivo.
+
+118
+00:05:23,254 --> 00:05:26,330
+Quiero llamar a este archivo, punto base Jinja2.
+
+119
+00:05:27,650 --> 00:05:30,360
+Ahora, el motivo por el que busco Jinja2 y
+
+120
+00:05:30,360 --> 00:05:34,140
+no HTML aqu es porque en algunos editores, no en PyCharm Community
+
+121
+00:05:34,140 --> 00:05:35,770
+Edition, pero en algunos editores,
+
+122
+00:05:35,770 --> 00:05:37,680
+obtendr un mejor resaltado de sintaxis
+
+123
+00:05:37,680 --> 00:05:38,960
+si usa dot Jinja2.
+
+124
+00:05:40,050 --> 00:05:42,560
+Si est utilizando PyCharm Community Edition, le
+
+125
+00:05:42,560 --> 00:05:45,830
+aconsejo que se quede con el HTML de puntos solo
+
+126
+00:05:45,830 --> 00:05:48,630
+porque va a obtener un resaltado ligeramente mejor.
+
+127
+00:05:48,630 --> 00:05:50,540
+Si est utilizando otros editores, le
+
+128
+00:05:50,540 --> 00:05:53,350
+recomiendo que use dot Jinja2 e instale los
+
+129
+00:05:53,350 --> 00:05:54,620
+paquetes que necesita para
+
+130
+00:05:54,620 --> 00:05:57,280
+que el resaltado de sintaxis funcione, de acuerdo?
+
+131
+00:05:57,280 --> 00:05:59,070
+En este editor, no ver resaltado de
+
+132
+00:05:59,070 --> 00:06:01,110
+sintaxis, pero esto es lo mejor que puede
+
+133
+00:06:01,110 --> 00:06:02,440
+hacer si est usando un
+
+134
+00:06:02,440 --> 00:06:04,220
+editor diferente que s lo admite.
+
+135
+00:06:04,220 --> 00:06:07,130
+Opcionalmente, si est utilizando PyCharm Professional Edition,
+
+136
+00:06:07,130 --> 00:06:09,420
+que no es gratuito, tambin
+
+137
+00:06:09,420 --> 00:06:11,940
+obtendr un destacado resaltado de sintaxis.
+
+138
+00:06:11,940 --> 00:06:14,291
+Entonces, como parte de esto, al
+
+139
+00:06:14,291 --> 00:06:17,450
+crear esta superclase, per se, sper plantilla, cambiaremos
+
+140
+00:06:17,450 --> 00:06:18,283
+a Jinja2.
+
+141
+00:06:19,410 --> 00:06:21,960
+Lo primero que vamos a hacer es
+
+142
+00:06:21,960 --> 00:06:24,340
+decir qu hay en una plantilla base.
+
+143
+00:06:24,340 --> 00:06:26,170
+Bueno, en una plantilla base que
+
+144
+00:06:26,170 --> 00:06:27,320
+tienes, esencialmente todo esto,
+
+145
+00:06:28,230 --> 00:06:30,010
+pero no quieres el contenido, quieres
+
+146
+00:06:30,010 --> 00:06:33,090
+que este contenido, esta etiqueta H1 y las etiquetas P
+
+147
+00:06:33,090 --> 00:06:34,700
+provengan de los nios.
+
+148
+00:06:35,590 --> 00:06:38,590
+Entonces, en cambio, en Jinja2, ahora podemos
+
+149
+00:06:38,590 --> 00:06:42,540
+usar esta sintaxis para decir contenido de bloque y
+
+150
+00:06:43,490 --> 00:06:45,140
+aqu bloque final.
+
+151
+00:06:46,560 --> 00:06:49,560
+Como puede ver, hay una llave de apertura y
+
+152
+00:06:49,560 --> 00:06:51,330
+un smbolo de porcentaje, luego tenemos
+
+153
+00:06:51,330 --> 00:06:53,730
+el contenido de bloque y el smbolo de
+
+154
+00:06:53,730 --> 00:06:55,790
+porcentaje y un cors de cierre.
+
+155
+00:06:55,790 --> 00:06:58,180
+Entonces tenemos, ya sabes, algn contenido aqu
+
+156
+00:06:58,180 --> 00:07:00,090
+si queremos y al final tenemos
+
+157
+00:07:00,090 --> 00:07:01,980
+este bloque final de etiquetas.
+
+158
+00:07:02,880 --> 00:07:05,660
+Puedes poner cualquier contenido que quieras
+
+159
+00:07:05,660 --> 00:07:08,696
+aqu pero, lo que es ms interesante,
+
+160
+00:07:08,696 --> 00:07:12,320
+puedes copiarlo y ponerlo en HTML 404, ahora
+
+161
+00:07:13,380 --> 00:07:17,740
+la etiqueta HTML 404 puede tener su contenido aqu y
+
+162
+00:07:17,740 --> 00:07:21,590
+ser reemplazado por este material en el punto base Jinja2.
+
+163
+00:07:22,970 --> 00:07:24,870
+As que voy a deshacer
+
+164
+00:07:24,870 --> 00:07:28,850
+eso y ponerlo aqu solo para poder copiarlo, ponerlo all
+
+165
+00:07:28,850 --> 00:07:30,770
+y deshacerme de eso.
+
+166
+00:07:30,770 --> 00:07:34,480
+Como puede ver, 404 HTML ahora parece mucho ms simple y
+
+167
+00:07:34,480 --> 00:07:37,960
+si vamos a publicar HTML con puntos, podemos hacer lo mismo.
+
+168
+00:07:37,960 --> 00:07:42,220
+As que podemos ir y copiar esto pegarlo aqu,
+
+169
+00:07:42,220 --> 00:07:43,240
+copiar esto,
+
+170
+00:07:44,540 --> 00:07:45,420
+pegarlo aqu,
+
+171
+00:07:46,581 --> 00:07:49,220
+asegrese de corregir la anotacin.
+
+172
+00:07:49,220 --> 00:07:52,560
+Ahora publicar HTML punto tambin parece un poco ms simple.
+
+173
+00:07:52,560 --> 00:07:56,962
+Estas pginas son solo para nios en el punto base Jinja2,
+
+174
+00:07:56,962 --> 00:08:00,700
+no necesitan todo el cdigo duplicado para el HTML y
+
+175
+00:08:00,700 --> 00:08:03,100
+usted conoce las etiquetas de cabeza,
+
+176
+00:08:03,100 --> 00:08:08,100
+etiquetas corporales, porque el contenido aqu se inyectar en este bloque que hemos
+
+177
+00:08:08,450 --> 00:08:11,050
+definido en el punto base Jinja2 .
+
+178
+00:08:11,050 --> 00:08:13,630
+Por supuesto, la pregunta del milln es,
+
+179
+00:08:13,630 --> 00:08:16,330
+cmo saben que son hijos de eso?
+
+180
+00:08:16,330 --> 00:08:17,870
+No lo hemos dicho en ningn lado.
+
+181
+00:08:17,870 --> 00:08:19,500
+De hecho, tenemos que decir eso.
+
+182
+00:08:20,750 --> 00:08:23,670
+Entonces diremos extender punto base Jinja2.
+
+183
+00:08:25,765 --> 00:08:27,200
+Copiaremos eso y lo publicaremos
+
+184
+00:08:27,200 --> 00:08:29,240
+tambin, asegrese de que no lo olvidemos.
+
+185
+00:08:29,240 --> 00:08:32,970
+Ahora estos nios en realidad estn extendiendo el punto base Jinja2.
+
+186
+00:08:32,970 --> 00:08:35,560
+Cuando rendericemos esta plantilla con Flask,
+
+187
+00:08:35,560 --> 00:08:36,610
+lo primero que
+
+188
+00:08:36,610 --> 00:08:37,450
+har, disculpe,
+
+189
+00:08:37,450 --> 00:08:39,580
+lo primero que har es
+
+190
+00:08:39,580 --> 00:08:42,820
+ampliar y extender Jinja2 para que todos los
+
+191
+00:08:42,820 --> 00:08:46,060
+andamios del punto base Jinja2 se apliquen a
+
+192
+00:08:46,060 --> 00:08:48,460
+esta plantilla. y este bloque de
+
+193
+00:08:48,460 --> 00:08:51,410
+contenido va a reemplazar este bloque de
+
+194
+00:08:51,410 --> 00:08:54,576
+contenido aqu, as que obtendremos un buen archivo
+
+195
+00:08:54,576 --> 00:08:57,230
+HTML sin la distorsin y la duplicacin.
+
+196
+00:08:57,230 --> 00:08:59,270
+As que eso es bueno.
+
+197
+00:08:59,270 --> 00:09:01,190
+Como parte de esto, vamos a
+
+198
+00:09:01,190 --> 00:09:04,112
+migrar a dot Jinja2 para asegurarnos de que estas
+
+199
+00:09:04,112 --> 00:09:06,880
+plantillas sean Jinja2 y no solo HTML, as que
+
+200
+00:09:06,880 --> 00:09:10,040
+voy a renombrarlas haciendo clic con el botn derecho sobre
+
+201
+00:09:10,040 --> 00:09:12,700
+ellas, voy a refactorizar y renombrar y cambiar
+
+202
+00:09:14,360 --> 00:09:15,510
+eso a Jinja2.
+
+203
+00:09:15,510 --> 00:09:17,070
+Vamos a perder el resaltado
+
+204
+00:09:17,070 --> 00:09:19,390
+de sintaxis que no es genial en
+
+205
+00:09:19,390 --> 00:09:22,820
+este editor, as que de nuevo si est usando PyCharm Community
+
+206
+00:09:22,820 --> 00:09:25,420
+Edition como soy, no lo haga, adhirase a
+
+207
+00:09:25,420 --> 00:09:27,800
+HTML, puede ser un poco ms fcil.
+
+208
+00:09:27,800 --> 00:09:30,510
+No obtendr resaltado de sintaxis para Jinja,
+
+209
+00:09:30,510 --> 00:09:33,030
+pero obtendr resaltado de sintaxis para HTML.
+
+210
+00:09:33,030 --> 00:09:35,050
+Sin embargo, si est usando un
+
+211
+00:09:35,050 --> 00:09:39,100
+editor diferente, sintase libre de moverse a Jinja2 e instale lo que sea
+
+212
+00:09:39,100 --> 00:09:41,750
+que necesite instalar para obtener el resaltado de sintaxis.
+
+213
+00:09:42,770 --> 00:09:44,680
+Depende de usted, realmente no
+
+214
+00:09:44,680 --> 00:09:46,620
+le importa a Python en absoluto.
+
+215
+00:09:46,620 --> 00:09:49,010
+Ahora, en lugar de HTML
+
+216
+00:09:49,010 --> 00:09:53,410
+aqu en estas plantillas, asegrese de usar dot Jinja2.
+
+217
+00:09:53,410 --> 00:09:55,280
+El hecho de que los nombres tengan
+
+218
+00:09:55,280 --> 00:09:56,960
+que ser correctos no importa lo que
+
+219
+00:09:56,960 --> 00:09:59,040
+sea al final, pero tiene que ser correcto.
+
+220
+00:09:59,040 --> 00:10:01,600
+Ahora que tenemos esto, podemos presionar play y
+
+221
+00:10:01,600 --> 00:10:03,400
+asegurarnos de que todo esto
+
+222
+00:10:03,400 --> 00:10:05,670
+funcione al ir a Chrome y actualizarlo,
+
+223
+00:10:05,670 --> 00:10:07,120
+esto parece estar bien.
+
+224
+00:10:07,120 --> 00:10:09,870
+Ir a una publicacin diferente, esto parece estar bien todava.
+
+225
+00:10:11,220 --> 00:10:13,230
+As que todos nuestros cambios aqu
+
+226
+00:10:13,230 --> 00:10:15,020
+funcionan, recuerde detener su aplicacin,
+
+227
+00:10:15,020 --> 00:10:17,430
+minimizar eso y podemos hacer una breve
+
+228
+00:10:17,430 --> 00:10:19,650
+revisin de lo que acabamos de ver.
+
+229
+00:10:19,650 --> 00:10:23,270
+Todo lo que hemos hecho se ha agregado a esta pgina de error, por
+
+230
+00:10:23,270 --> 00:10:25,240
+lo que si no se ha encontrado la
+
+231
+00:10:25,240 --> 00:10:27,130
+publicacin y estamos devolviendo una plantilla diferente
+
+232
+00:10:27,130 --> 00:10:29,000
+por completo, estamos enviando este breve mensaje.
+
+233
+00:10:30,390 --> 00:10:33,500
+Ahora tambin creamos un archivo base
+
+234
+00:10:33,500 --> 00:10:36,021
+Jinja, que es todo el
+
+235
+00:10:36,021 --> 00:10:40,210
+andamiaje HTML ms esta sintaxis especial de bloque.
+
+236
+00:10:40,210 --> 00:10:43,208
+En cualquier nio que extienda ese archivo, tenemos
+
+237
+00:10:43,208 --> 00:10:46,087
+este bloque de nuevo y podemos incluir
+
+238
+00:10:46,087 --> 00:10:49,530
+cualquier HTML que deseemos dentro de ese bloque y
+
+239
+00:10:49,530 --> 00:10:52,530
+reemplazar el contenido en el punto base Jinja2.
+
+240
+00:10:53,610 --> 00:10:56,363
+Asegrate de que el hechizo bloquea estos bloques correctamente,
+
+241
+00:10:56,363 --> 00:10:59,990
+ya sabes, el bloque debe ser minscula b, deberas tener estas
+
+242
+00:10:59,990 --> 00:11:01,380
+etiquetas abiertas al final.
+
+243
+00:11:01,380 --> 00:11:05,010
+Algunos de mis alumnos insisten en tipear bloque con una B mayscula,
+
+244
+00:11:05,010 --> 00:11:08,200
+eso no funcionar, ya sabes, tiene que ser minscula b.
+
+245
+00:11:08,200 --> 00:11:10,656
+Aqu, sin embargo, el bloque de contenido
+
+246
+00:11:10,656 --> 00:11:14,320
+es esencialmente un nombre, as que puedes llamarlo como quieras.
+
+247
+00:11:14,320 --> 00:11:16,763
+Puedes poner lo que quieras dentro del
+
+248
+00:11:16,763 --> 00:11:21,170
+contenido, puedes llamarlo de otra manera si eso tiene ms sentido para ti,
+
+249
+00:11:21,170 --> 00:11:24,110
+puedes llamarlo bloque de cuerpo para ejemplo si
+
+250
+00:11:24,110 --> 00:11:26,110
+eso tiene ms sentido para usted.
+
+251
+00:11:29,230 --> 00:11:30,063
+Y eso es.
+
+252
+00:11:30,063 --> 00:11:31,660
+Eso simplifica enormemente nuestro cdigo
+
+253
+00:11:31,660 --> 00:11:36,030
+y nos permite dar a los usuarios este agradable mensaje de error.
+
+254
+00:11:36,030 --> 00:11:37,370
+Eso es todo por este
+
+255
+00:11:37,370 --> 00:11:39,020
+video, y nos vemos en el siguiente.
+

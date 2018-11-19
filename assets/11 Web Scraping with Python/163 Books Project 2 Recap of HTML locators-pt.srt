@@ -1,0 +1,380 @@
+1
+00:00:00,204 --> 00:00:01,292
+Jos: Ol, bem vindo de volta.
+
+2
+00:00:01,292 --> 00:00:03,650
+Neste vdeo, eu s queria guiar
+
+3
+00:00:03,650 --> 00:00:07,222
+voc exatamente o que vamos obter do nosso html
+
+4
+00:00:07,222 --> 00:00:11,739
+e do caminho ou dos localizadores que vamos obter, s porque eu
+
+5
+00:00:11,739 --> 00:00:13,197
+sei que no 
+
+6
+00:00:13,197 --> 00:00:16,092
+to fcil de se ver no navegador.
+
+7
+00:00:16,092 --> 00:00:18,797
+Ento este  o nosso site, como voc sabe.
+
+8
+00:00:18,797 --> 00:00:21,609
+E vamos comear a criar
+
+9
+00:00:21,609 --> 00:00:24,439
+nossos localizadores para os livros.
+
+10
+00:00:24,439 --> 00:00:26,843
+Ento, vamos recuperar cada livro como uma entidade
+
+11
+00:00:26,843 --> 00:00:30,030
+e vamos alimentar isso para o nosso analisador de livros.
+
+12
+00:00:30,030 --> 00:00:32,863
+Ento esta  a pgina do ponto div interna.
+
+13
+00:00:34,139 --> 00:00:35,903
+Ele contm essencialmente todo o contedo
+
+14
+00:00:35,903 --> 00:00:37,510
+da pgina, exceto o cabealho.
+
+15
+00:00:37,510 --> 00:00:39,598
+A nica razo pela qual voc pode querer raspar
+
+16
+00:00:39,598 --> 00:00:42,518
+o cabealho  se voc no sabe o ttulo do seu site.
+
+17
+00:00:42,518 --> 00:00:44,936
+Mas porque sabemos disso, podemos comear aqui
+
+18
+00:00:44,936 --> 00:00:47,941
+no sublinhado da pgina de ponto div interno.
+
+19
+00:00:47,941 --> 00:00:52,774
+Dentro de ns temos uma seo que contm este contedo, ento assim
+
+20
+00:00:53,775 --> 00:00:56,470
+que comeamos a restringir nosso localizador na
+
+21
+00:00:56,470 --> 00:01:00,470
+seo, ele perde o contexto dos tpicos no site e
+
+22
+00:01:01,404 --> 00:01:03,030
+os breadcrumbs e o
+
+23
+00:01:03,030 --> 00:01:05,628
+nmero de resultados e coisas assim.
+
+24
+00:01:05,628 --> 00:01:09,907
+E, finalmente, cada livro individual  um item da lista.
+
+25
+00:01:09,907 --> 00:01:13,958
+E os itens da lista neste site so cada
+
+26
+00:01:13,958 --> 00:01:18,958
+livro individual e eles tambm tm algumas classes neles, como cols 6.
+
+27
+00:01:19,213 --> 00:01:22,046
+Essas colunas so usadas para dimensionamento e,
+
+28
+00:01:23,198 --> 00:01:25,871
+nesse momento, o site decidiu usar
+
+29
+00:01:25,871 --> 00:01:28,525
+esses tamanhos para as colunas, mas
+
+30
+00:01:28,525 --> 00:01:31,323
+elas podem mudar no futuro. Por isso,
+
+31
+00:01:31,323 --> 00:01:34,015
+mantenha-se atento, caso no seja exatamente
+
+32
+00:01:34,015 --> 00:01:38,852
+essa classe de cor 6, em caso seja um pouco diferente.
+
+33
+00:01:38,852 --> 00:01:42,165
+Ok, ento quando usamos esse localizador e perguntamos ao
+
+34
+00:01:42,165 --> 00:01:45,680
+BeautifulSoup que voc sabe selecionar todos os elementos, ele
+
+35
+00:01:45,680 --> 00:01:48,770
+vai nos dar um monte de tags, quais
+
+36
+00:01:48,770 --> 00:01:52,009
+sero essas tags li que ele encontrou e cada
+
+37
+00:01:52,009 --> 00:01:55,700
+tag contm as informaes para um nico livro, mas ainda
+
+38
+00:01:55,700 --> 00:01:59,668
+devemos ir mais fundo e obter essa informao, por isso
+
+39
+00:01:59,668 --> 00:02:02,076
+precisamos de alguns localizadores mais profundos.
+
+40
+00:02:02,076 --> 00:02:03,908
+Os localizadores que estou prestes
+
+41
+00:02:03,908 --> 00:02:07,075
+a mostrar so aqueles que esto dentro desta tag li.
+
+42
+00:02:08,653 --> 00:02:12,712
+Assim, por exemplo, o ttulo ou o nome do livro,
+
+43
+00:02:12,712 --> 00:02:15,552
+podemos extrair desse elemento l no verde,
+
+44
+00:02:15,552 --> 00:02:19,702
+e que ser o artigo ponto produto pod h3 a.
+
+45
+00:02:19,702 --> 00:02:23,356
+Assim, dentro da tag de pod de produto de ponto de
+
+46
+00:02:23,356 --> 00:02:25,750
+artigo, que  essencialmente o livro inteiro
+
+47
+00:02:25,750 --> 00:02:28,395
+tambm, h uma tag h3, uma tag de
+
+48
+00:02:28,395 --> 00:02:32,635
+cabealho e, dentro dessa h3, h uma tag, que  um link.
+
+49
+00:02:32,635 --> 00:02:36,694
+E aceso no dot dot dot  o contedo do
+
+50
+00:02:36,694 --> 00:02:38,425
+texto dentro dessa tag.
+
+51
+00:02:38,425 --> 00:02:41,717
+Mas tambm a tag tem algumas outras
+
+52
+00:02:41,717 --> 00:02:44,228
+propriedades e podemos extrair o
+
+53
+00:02:44,228 --> 00:02:47,083
+ttulo do livro dessas propriedades tambm.
+
+54
+00:02:47,083 --> 00:02:50,761
+Se quisssemos o link e, por exemplo, se quisssemos clicar e
+
+55
+00:02:50,761 --> 00:02:53,946
+ir para a pgina do livro, no o conjunto
+
+56
+00:02:53,946 --> 00:02:58,329
+completo de livros, mas apenas o livro individual, caso desejssemos, por exemplo, ler
+
+57
+00:02:58,329 --> 00:02:59,400
+mais algumas informaes
+
+58
+00:02:59,400 --> 00:03:00,803
+sobre o livro ou
+
+59
+00:03:00,803 --> 00:03:02,842
+Recolher mais informaes sobre o livro,
+
+60
+00:03:02,842 --> 00:03:05,971
+h um link nesse ttulo que voc pode clicar
+
+61
+00:03:05,971 --> 00:03:09,609
+e ir para a outra pgina e, claro, o seletor ou
+
+62
+00:03:09,609 --> 00:03:11,038
+o localizador vai ser
+
+63
+00:03:11,038 --> 00:03:13,652
+o mesmo se quisermos extrair o link, s
+
+64
+00:03:13,652 --> 00:03:16,402
+vamos tem que acessar a propriedade href disso.
+
+65
+00:03:18,263 --> 00:03:20,469
+Se voc quisesse obter o preo, aquele elemento
+
+66
+00:03:20,469 --> 00:03:23,596
+l embaixo, voc estaria procurando por um pod de produto de
+
+67
+00:03:23,596 --> 00:03:26,017
+ponto de artigo e o nome do site
+
+68
+00:03:26,017 --> 00:03:29,997
+que tem uma tag p que tem uma cor de preo de classe.
+
+69
+00:03:29,997 --> 00:03:33,594
+Assim, podemos usar essa tag para extrair o preo e,
+
+70
+00:03:33,594 --> 00:03:35,974
+em seguida, voc estar usando expresses
+
+71
+00:03:35,974 --> 00:03:38,815
+regulares para obter o preo como um nmero.
+
+72
+00:03:38,815 --> 00:03:40,032
+J vimos isso no
+
+73
+00:03:40,032 --> 00:03:42,482
+passado na seo especial regular como fazer isso.
+
+74
+00:03:42,482 --> 00:03:45,567
+Ns vamos passar por cima novamente nesta seo.
+
+75
+00:03:45,567 --> 00:03:47,877
+Finalmente, vamos olhar para a classificao.
+
+76
+00:03:47,877 --> 00:03:50,223
+Este livro tem trs estrelas e, se quisssemos obter
+
+77
+00:03:50,223 --> 00:03:52,436
+a classificao por estrelas, estamos  procura de um
+
+78
+00:03:52,436 --> 00:03:57,123
+pod de produto de ponto de artigo e, em seguida, uma classificao de pontuao de estrela por ponto p.
+
+79
+00:03:57,123 --> 00:03:59,318
+Observe que o trao no 
+
+80
+00:03:59,318 --> 00:04:01,885
+um sublinhado, apenas uma das peculiaridades deste site.
+
+81
+00:04:01,885 --> 00:04:05,469
+Ns tambm achamos que o nmero de estrelas que podemos
+
+82
+00:04:05,469 --> 00:04:10,158
+ver no  o que vamos raspar, ento essa tag p aqui,
+
+83
+00:04:10,158 --> 00:04:13,607
+essa classificao de estrelas, na verdade tem uma propriedade
+
+84
+00:04:13,607 --> 00:04:17,186
+que contm a classificao, ento vamos usar que, em vez
+
+85
+00:04:17,186 --> 00:04:18,870
+de olhar para o
+
+86
+00:04:18,870 --> 00:04:21,064
+nmero de estrelas que esto preenchidas.
+
+87
+00:04:21,064 --> 00:04:23,278
+Isso  um pouco mais difcil.
+
+88
+00:04:23,278 --> 00:04:27,278
+Ok, ento s para recapitular, cada livro  essa tag li.
+
+89
+00:04:28,440 --> 00:04:31,709
+O nome do livro que est dentro da tag li
+
+90
+00:04:31,709 --> 00:04:34,577
+ o artigo dot dot product pod h3 a.
+
+91
+00:04:34,577 --> 00:04:36,648
+O link tambm est na mesma tag.
+
+92
+00:04:36,648 --> 00:04:39,322
+O preo  dentro da cor do preo do ponto p.
+
+93
+00:04:39,322 --> 00:04:42,335
+E a classificao est dentro do ponto p classificao star dash.
+
+94
+00:04:42,335 --> 00:04:46,824
+Ento, com isso, podemos construir nossos arquivos localizadores.
+
+95
+00:04:46,824 --> 00:04:49,491
+Vamos fazer isso no prximo vdeo.
+

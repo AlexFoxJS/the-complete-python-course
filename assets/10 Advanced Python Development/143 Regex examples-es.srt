@@ -1,0 +1,1088 @@
+1
+00:00:00,170 --> 00:00:01,360
+Narrador: Hola y bienvenido de nuevo.
+
+2
+00:00:01,360 --> 00:00:03,210
+En este video, vamos a
+
+3
+00:00:03,210 --> 00:00:06,430
+analizar algunas expresiones regex y echar un vistazo
+
+4
+00:00:06,430 --> 00:00:08,130
+a algunos ejemplos ms.
+
+5
+00:00:08,130 --> 00:00:11,750
+Si puede ir a este sitio web aqu, regexer.com com, al menos creo que as
+
+6
+00:00:12,727 --> 00:00:13,560
+es como lo
+
+7
+00:00:13,560 --> 00:00:14,960
+dice, podra estar totalmente equivocado all.
+
+8
+00:00:14,960 --> 00:00:19,880
+Esto nos permitir ejecutar algunas expresiones regulares, probarlas y
+
+9
+00:00:19,880 --> 00:00:23,130
+ver cmo funciona, un poco mejor.
+
+10
+00:00:24,370 --> 00:00:25,990
+Entonces, si esto se ve un poco diferente,
+
+11
+00:00:25,990 --> 00:00:28,080
+no se preocupe, de alguna manera cambia con el tiempo.
+
+12
+00:00:28,080 --> 00:00:30,760
+Se ve un poco diferente que la ltima vez que lo us.
+
+13
+00:00:30,760 --> 00:00:34,370
+Y qu vamos a hacer es cmo vemos lo que est aqu?
+
+14
+00:00:34,370 --> 00:00:36,420
+As que voy a cerrar eso all.
+
+15
+00:00:36,420 --> 00:00:39,300
+Y si quieres mantenerlo abierto, puedes hacer eso.
+
+16
+00:00:39,300 --> 00:00:41,830
+Por supuesto, solo haga clic en este botn aqu.
+
+17
+00:00:41,830 --> 00:00:44,110
+Aqu tienes algunos iconos de men.
+
+18
+00:00:44,110 --> 00:00:46,280
+Vamos a verlos un poco ms tarde.
+
+19
+00:00:47,210 --> 00:00:48,280
+Pero esencialmente lo que dice
+
+20
+00:00:48,280 --> 00:00:50,740
+es, "regexer es una herramienta en lnea para aprender a construir"
+
+21
+00:00:50,740 --> 00:00:52,920
+y prueba expresiones regulares. "Entonces es
+
+22
+00:00:52,920 --> 00:00:55,190
+una cosa bastante til.
+
+23
+00:00:55,190 --> 00:00:58,590
+Entonces tenemos dos cosas principales.
+
+24
+00:00:58,590 --> 00:01:01,940
+Tenemos algo de texto y tenemos una expresin.
+
+25
+00:01:02,940 --> 00:01:06,490
+No te preocupes por las cosas aqu, la
+
+26
+00:01:06,490 --> 00:01:09,990
+barra, barra, y cosas por el estilo.
+
+27
+00:01:09,990 --> 00:01:13,200
+Aprenderemos sobre ellos ms adelante.
+
+28
+00:01:13,200 --> 00:01:14,980
+Entonces no te preocupes por ellos.
+
+29
+00:01:16,010 --> 00:01:18,550
+Vamos a escribir nuestras
+
+30
+00:01:18,550 --> 00:01:20,652
+expresiones regulares entre corchetes.
+
+31
+00:01:20,652 --> 00:01:21,485
+No puedes escribir en otro lugar.
+
+32
+00:01:21,485 --> 00:01:23,150
+Entonces estar dentro de estas barras, lo siento.
+
+33
+00:01:23,150 --> 00:01:25,380
+Y aqu vamos a escribir nuestras expresiones regulares.
+
+34
+00:01:25,380 --> 00:01:27,110
+Y aqu vamos a escribir el
+
+35
+00:01:27,110 --> 00:01:28,960
+texto, contra el cual van a coincidir.
+
+36
+00:01:31,230 --> 00:01:33,962
+Entonces, por ejemplo, digamos
+
+37
+00:01:33,962 --> 00:01:38,910
+que estamos viendo este patrn que es Charlie.
+
+38
+00:01:38,910 --> 00:01:43,291
+Y queremos averiguar qu expresin regular coincide con
+
+39
+00:01:43,291 --> 00:01:46,380
+este texto, esta palabra aqu.
+
+40
+00:01:48,220 --> 00:01:49,260
+Entonces podramos hacer eso.
+
+41
+00:01:50,190 --> 00:01:51,790
+La primera expresin regular
+
+42
+00:01:51,790 --> 00:01:54,490
+que coincide con un texto es Charlie.
+
+43
+00:01:55,890 --> 00:01:58,780
+Entonces, si pones toda la palabra, Charlie, ah
+
+44
+00:01:58,780 --> 00:02:02,790
+dentro, esto te muestra como una caja azul, que estas dos coinciden.
+
+45
+00:02:04,410 --> 00:02:06,010
+Aqu, en la seccin
+
+46
+00:02:06,010 --> 00:02:10,269
+de herramientas, te dice exactamente por qu est haciendo juego.
+
+47
+00:02:10,269 --> 00:02:11,220
+Entonces tienes el personaje
+
+48
+00:02:11,220 --> 00:02:13,130
+c, que coincide con el personaje c.
+
+49
+00:02:13,130 --> 00:02:16,770
+Carcter h, que coincide con el carcter h, y as sucesivamente.
+
+50
+00:02:16,770 --> 00:02:19,500
+Debido a que tienes todos estos personajes en este
+
+51
+00:02:19,500 --> 00:02:21,730
+orden, eso coincide exactamente con esta palabra.
+
+52
+00:02:24,410 --> 00:02:26,350
+Pero por supuesto, esto es demasiado simple.
+
+53
+00:02:26,350 --> 00:02:28,740
+Entonces podemos hacer otra cosa.
+
+54
+00:02:28,740 --> 00:02:31,620
+Tenga en cuenta que si escribe el carcter c
+
+55
+00:02:31,620 --> 00:02:33,410
+aqu, solo coincide con la c.
+
+56
+00:02:35,150 --> 00:02:38,230
+Si solo escribe el carcter h, solo est haciendo coincidir la h.
+
+57
+00:02:38,230 --> 00:02:41,870
+Bsicamente has encontrado, usando esta expresin aqu
+
+58
+00:02:41,870 --> 00:02:46,000
+un texto, algn patrn, dentro de este texto.
+
+59
+00:02:46,000 --> 00:02:47,600
+En este caso, el patrn
+
+60
+00:02:47,600 --> 00:02:51,440
+que est buscando es la letra h y ha podido encontrarlo.
+
+61
+00:02:51,440 --> 00:02:54,240
+Si escribe p, observe cmo no se muestran
+
+62
+00:02:54,240 --> 00:02:57,100
+cuadros azules aqu porque la p no coincide
+
+63
+00:02:57,100 --> 00:02:59,980
+con ninguna palabra ni ninguna letra aqu.
+
+64
+00:03:03,290 --> 00:03:05,860
+Entonces, lo siguiente que podramos hacer
+
+65
+00:03:05,860 --> 00:03:08,590
+es escribir una de nuestras expresiones
+
+66
+00:03:08,590 --> 00:03:10,780
+regulares ya conocidas, el punto.
+
+67
+00:03:11,700 --> 00:03:13,650
+Tenga en cuenta que tan
+
+68
+00:03:14,490 --> 00:03:18,030
+pronto como escribe el punto obtiene muchas cajas pequeas
+
+69
+00:03:18,030 --> 00:03:19,690
+individuales, una para cada letra.
+
+70
+00:03:19,690 --> 00:03:22,140
+Eso se debe a que el punto coincide con
+
+71
+00:03:22,140 --> 00:03:25,050
+cualquier carcter, excepto la nueva lnea o el salto de lnea.
+
+72
+00:03:26,220 --> 00:03:30,140
+Entonces, lo que tienes es que el punto coincide con la c.
+
+73
+00:03:30,140 --> 00:03:31,630
+El punto coincide con la h.
+
+74
+00:03:31,630 --> 00:03:33,490
+El punto coincide con el a.
+
+75
+00:03:33,490 --> 00:03:36,070
+Pero no coincide con la palabra, porque
+
+76
+00:03:36,070 --> 00:03:38,580
+el punto solo coincide con un carcter.
+
+77
+00:03:39,590 --> 00:03:42,010
+Si quisieras unir muchos
+
+78
+00:03:42,010 --> 00:03:45,120
+personajes, usaras, por ejemplo, la estrella.
+
+79
+00:03:45,120 --> 00:03:47,348
+Entonces tienes la estrella de
+
+80
+00:03:47,348 --> 00:03:52,130
+puntos, lo que significa cualquiera de los puntos o cero o ms.
+
+81
+00:03:52,130 --> 00:03:55,330
+Y ahora observe cmo obtiene la caja alrededor de la palabra completa.
+
+82
+00:03:57,090 --> 00:03:58,450
+Entonces, lo que
+
+83
+00:03:58,450 --> 00:04:02,200
+hemos hecho aqu es que ahora hemos definido nuestro
+
+84
+00:04:02,200 --> 00:04:04,520
+patrn de expresin regular, que dice
+
+85
+00:04:04,520 --> 00:04:09,520
+que queremos hacer coincidir, en nuestro texto, cualquier cantidad de cualquier cantidad.
+
+86
+00:04:10,310 --> 00:04:12,260
+Por lo tanto, coincide con todo nuestro texto.
+
+87
+00:04:12,260 --> 00:04:15,110
+Y, de hecho, si agregamos ms texto,
+
+88
+00:04:16,520 --> 00:04:17,920
+observe cmo sigue apareciendo.
+
+89
+00:04:17,920 --> 00:04:21,350
+Coincide con todo porque el punto coincide con todo.
+
+90
+00:04:21,350 --> 00:04:23,470
+Tan pronto como agreguemos una nueva
+
+91
+00:04:26,570 --> 00:04:28,530
+lnea, el nuevo contenido no coincide.
+
+92
+00:04:28,530 --> 00:04:33,110
+Porque el nuevo carcter de lnea no coincide con el punto.
+
+93
+00:04:33,110 --> 00:04:36,800
+Entonces, el punto coincidir desde el principio, tanto como sea
+
+94
+00:04:36,800 --> 00:04:39,420
+posible, hasta que llegue a un personaje
+
+95
+00:04:39,420 --> 00:04:41,180
+que no puede coincidir.
+
+96
+00:04:41,180 --> 00:04:44,020
+Y luego sealar el final de este patrn.
+
+97
+00:04:46,890 --> 00:04:51,550
+Lo siguiente que podemos unir es algunos personajes.
+
+98
+00:04:51,550 --> 00:04:55,010
+Entonces, por ejemplo, una vez ms trae el ejemplo de Charlie.
+
+99
+00:04:56,709 --> 00:04:59,370
+Observe cmo, tan pronto como escribimos a charlie
+
+100
+00:04:59,370 --> 00:05:01,490
+aqu, obtenemos la coincidencia de charlie.
+
+101
+00:05:01,490 --> 00:05:02,860
+Nada ms coincide, por supuesto,
+
+102
+00:05:02,860 --> 00:05:05,820
+porque esta es la nica instancia de charlie que tenemos.
+
+103
+00:05:10,700 --> 00:05:14,780
+Podemos hacer, por ejemplo, a, b, o c.
+
+104
+00:05:16,800 --> 00:05:20,410
+Entonces esto est entre corchetes, tenemos a, b, c.
+
+105
+00:05:20,410 --> 00:05:22,360
+Y lo que est haciendo es
+
+106
+00:05:22,360 --> 00:05:25,380
+hacer coincidir cualquiera de los caracteres dentro de los corchetes.
+
+107
+00:05:25,380 --> 00:05:28,450
+Como puede ver, el juego de caracteres aqu dice
+
+108
+00:05:28,450 --> 00:05:31,320
+que debe coincidir con cualquier personaje del conjunto.
+
+109
+00:05:31,320 --> 00:05:36,320
+Entonces tienes coincidencia c, tienes una coincidencia all.
+
+110
+00:05:37,647 --> 00:05:39,747
+Si agregamos un b aqu, el b tambin coincide.
+
+111
+00:05:40,630 --> 00:05:42,260
+Entonces este es un rango
+
+112
+00:05:42,260 --> 00:05:45,980
+Por supuesto, ahora que estamos combinando a, b, o
+
+113
+00:05:46,940 --> 00:05:49,600
+c, podemos hacer, por ejemplo, un plus.
+
+114
+00:05:49,600 --> 00:05:54,130
+Y eso coincidir con uno o ms de este conjunto.
+
+115
+00:05:55,130 --> 00:05:58,880
+Entonces, si tienes b, b, b, b, ahora ests haciendo coincidir
+
+116
+00:05:58,880 --> 00:06:01,770
+todas las b en lugar de cada una individualmente.
+
+117
+00:06:01,770 --> 00:06:03,420
+Tenga en cuenta que cuando muevo el signo
+
+118
+00:06:04,492 --> 00:06:05,440
+ms, ahora coinciden, pero
+
+119
+00:06:05,440 --> 00:06:06,870
+coinciden individualmente en lugar de todos juntos.
+
+120
+00:06:06,870 --> 00:06:09,290
+Cuando agrega el signo ms, coinciden todos juntos,
+
+121
+00:06:09,290 --> 00:06:10,620
+como una sola cosa.
+
+122
+00:06:14,360 --> 00:06:16,253
+En lugar de a, b, c,
+
+123
+00:06:16,253 --> 00:06:18,760
+podemos seleccionar todas las letras de aa c.
+
+124
+00:06:21,810 --> 00:06:24,503
+Y fjate cmo ahora, combinas todas las
+
+125
+00:06:24,503 --> 00:06:26,670
+letras excepto las letras maysculas.
+
+126
+00:06:26,670 --> 00:06:29,010
+Voy a eliminar estas b's all.
+
+127
+00:06:29,010 --> 00:06:30,550
+Une todas las letras
+
+128
+00:06:30,550 --> 00:06:32,260
+No coincide con los espacios.
+
+129
+00:06:32,260 --> 00:06:34,190
+No coincide con las letras maysculas.
+
+130
+00:06:34,190 --> 00:06:36,810
+Observe cmo todas las letras coinciden individualmente.
+
+131
+00:06:37,710 --> 00:06:40,450
+Si agrega aa z plus, o a zed
+
+132
+00:06:40,450 --> 00:06:42,670
+plus, dependiendo de dnde sea, ahora
+
+133
+00:06:42,670 --> 00:06:46,400
+ver que las palabras comienzan a coincidir por s mismas.
+
+134
+00:06:46,400 --> 00:06:48,310
+O al menos las partes de las
+
+135
+00:06:48,310 --> 00:06:50,310
+palabras aqu comienzan a coincidir por s mismas.
+
+136
+00:06:50,310 --> 00:06:51,670
+As que eso es genial.
+
+137
+00:06:51,670 --> 00:06:55,692
+Porque ahora, si tuviramos que ejecutar esta expresin regular
+
+138
+00:06:55,692 --> 00:07:00,440
+usando Python, podramos extraer cada palabra en nuestro texto, lo cual
+
+139
+00:07:00,440 --> 00:07:01,470
+es bastante bueno.
+
+140
+00:07:03,590 --> 00:07:07,320
+Si tambin desea hacer coincidir las letras
+
+141
+00:07:07,320 --> 00:07:12,050
+maysculas, puede hacerlo, simplemente con una mayscula a.
+
+142
+00:07:12,050 --> 00:07:13,430
+Ahora tambin est haciendo coincidir las
+
+143
+00:07:13,430 --> 00:07:15,280
+letras maysculas y est haciendo coincidir todas las palabras.
+
+144
+00:07:15,280 --> 00:07:17,710
+Lo que est haciendo es que este es un rango.
+
+145
+00:07:17,710 --> 00:07:19,450
+De modo que empareja letras que
+
+146
+00:07:19,450 --> 00:07:21,560
+van desde la mayscula a minscula zed.
+
+147
+00:07:22,675 --> 00:07:23,560
+Observe cmo, aqu
+
+148
+00:07:23,560 --> 00:07:26,867
+abajo, le dice que estos cdigos de caracteres son del 65 al 122.
+
+149
+00:07:26,867 --> 00:07:30,040
+Entonces estos son cdigos de caracteres ascii.
+
+150
+00:07:30,040 --> 00:07:31,410
+Simplemente significa que ests haciendo
+
+151
+00:07:31,410 --> 00:07:33,410
+coincidir todas las letras en ese rango.
+
+152
+00:07:33,410 --> 00:07:37,360
+Entonces eso es de a z, a la derecha en minsculas.
+
+153
+00:07:37,360 --> 00:07:39,270
+Y tambin a zed en maysculas.
+
+154
+00:07:40,750 --> 00:07:45,750
+As que aqu hay otro ejemplo, si escribe Jose, a
+
+155
+00:07:46,580 --> 00:07:50,490
+zed plus, coincide con la palabra completa.
+
+156
+00:07:50,490 --> 00:07:54,220
+A a zed solo coincide con cada personaje individualmente.
+
+157
+00:07:55,060 --> 00:07:58,690
+Y si pones un punto en el medio,
+
+158
+00:07:58,690 --> 00:08:02,470
+ests combinando J-O y S-E, pero no ests
+
+159
+00:08:02,470 --> 00:08:03,930
+igualando el punto.
+
+160
+00:08:07,080 --> 00:08:11,280
+Por supuesto, si pones el punto aqu, el punto de
+
+161
+00:08:11,280 --> 00:08:14,177
+la barra invertida, ahora ests haciendo coincidir
+
+162
+00:08:14,177 --> 00:08:19,177
+cualquier cosa en ese rango, o este punto, cualquier cantidad de eso.
+
+163
+00:08:21,040 --> 00:08:22,610
+Por lo tanto, recuerde que los
+
+164
+00:08:22,610 --> 00:08:24,320
+corchetes son un juego de caracteres, por
+
+165
+00:08:24,320 --> 00:08:27,170
+lo que est haciendo coincidir cualquier carcter dentro de los corchetes.
+
+166
+00:08:27,170 --> 00:08:28,810
+Este es un rango de caracteres que
+
+167
+00:08:28,810 --> 00:08:32,240
+coincide con a, b, c, d, e, f, g, bla, bla, bla, bla, hasta zed.
+
+168
+00:08:32,240 --> 00:08:34,380
+Y este es el punto.
+
+169
+00:08:34,380 --> 00:08:36,820
+Y ests haciendo coincidir cualquier nmero de ellos.
+
+170
+00:08:36,820 --> 00:08:40,100
+Si pones el punto aqu, sin la barra
+
+171
+00:08:40,100 --> 00:08:42,030
+invertida, ests combinando cualquier cosa.
+
+172
+00:08:42,030 --> 00:08:45,840
+Entonces ya no necesitas estas cosas.
+
+173
+00:08:51,580 --> 00:08:52,910
+Vamos a hacer eso.
+
+174
+00:08:56,450 --> 00:08:58,300
+Veamos nuevamente los correos electrnicos.
+
+175
+00:08:58,300 --> 00:09:02,120
+Veamos, por ejemplo jose @ cdigocode. com.
+
+176
+00:09:02,120 --> 00:09:07,120
+Observe cmo un punto de la barra diagonal hacia atrs ms coincide
+
+177
+00:09:07,200 --> 00:09:10,010
+con el de Jos porque son cuatro
+
+178
+00:09:10,010 --> 00:09:11,930
+caracteres en este rango.
+
+179
+00:09:11,930 --> 00:09:13,640
+Y coincide con el cdigocode. com porque es
+
+180
+00:09:13,640 --> 00:09:16,100
+de nuevo, cualquier personaje en este rango.
+
+181
+00:09:16,100 --> 00:09:18,530
+Pero no coincide con el smbolo at.
+
+182
+00:09:20,616 --> 00:09:22,110
+Entonces, por supuesto que podemos arreglarlo.
+
+183
+00:09:22,110 --> 00:09:26,780
+Podramos decir a zed, ms y luego el smbolo at.
+
+184
+00:09:28,160 --> 00:09:31,980
+Porque ahora tenemos cualquier personaje aqu a zed
+
+185
+00:09:31,980 --> 00:09:33,130
+o the dot.
+
+186
+00:09:35,290 --> 00:09:37,350
+Cualquier nmero de esos y luego un smbolo.
+
+187
+00:09:37,350 --> 00:09:40,830
+Pero observe cmo ahora solo estamos igualando a Jos porque
+
+188
+00:09:40,830 --> 00:09:43,660
+eso es lo nico que coincide con esto.
+
+189
+00:09:43,660 --> 00:09:46,920
+Si ponemos un smbolo en aqu, ahora coincide con todo porque
+
+190
+00:09:48,715 --> 00:09:50,510
+a zed y el punto coincide
+
+191
+00:09:50,510 --> 00:09:53,140
+con esto, el nuevo smbolo tambin tiene que coincidir.
+
+192
+00:09:55,070 --> 00:09:56,770
+Entonces, qu podemos hacer en lugar de eso?
+
+193
+00:09:58,494 --> 00:10:03,494
+Bueno, podemos agregar algunos rangos ms aqu, a zed plus.
+
+194
+00:10:03,820 --> 00:10:07,970
+Y ahora estamos combinando Jose @ tecaldocode porque tenemos nuestro
+
+195
+00:10:09,270 --> 00:10:13,050
+primer rango de letras aqu, el ms, que dice
+
+196
+00:10:13,050 --> 00:10:15,310
+ms de uno, el smbolo at
+
+197
+00:10:17,084 --> 00:10:19,430
+que coincide exactamente con el smbolo.
+
+198
+00:10:19,430 --> 00:10:21,680
+Y luego tenemos otro rango con un ms, que
+
+199
+00:10:22,630 --> 00:10:23,830
+coincide con otro nmero de
+
+200
+00:10:23,830 --> 00:10:25,940
+caracteres aqu, pero luego no coincidimos con este punto.
+
+201
+00:10:27,144 --> 00:10:28,080
+Si quisiramos hacer
+
+202
+00:10:28,080 --> 00:10:30,510
+coincidir el punto, tendramos que agregar el punto
+
+203
+00:10:30,510 --> 00:10:32,010
+all y ahora coincide con todo.
+
+204
+00:10:35,566 --> 00:10:38,290
+Ahora, si quisiramos unir solo
+
+205
+00:10:38,290 --> 00:10:41,320
+algunos de estos TLD, como por
+
+206
+00:10:41,320 --> 00:10:45,310
+ejemplo, dot com o dot net, podramos hacerlo,
+
+207
+00:10:45,310 --> 00:10:46,990
+pero luego tendremos
+
+208
+00:10:46,990 --> 00:10:49,510
+que reestructurar ligeramente nuestras expresiones regulares.
+
+209
+00:10:49,510 --> 00:10:52,350
+En lugar de hacer eso, podramos hacer esto.
+
+210
+00:10:53,360 --> 00:10:55,610
+Ahora el punto est fuera de este rango, por
+
+211
+00:10:55,610 --> 00:10:57,380
+lo que solo se incluye una vez.
+
+212
+00:10:58,230 --> 00:11:00,450
+Y tan pronto como llegamos a
+
+213
+00:11:00,450 --> 00:11:04,030
+eso, nos detuvimos porque este punto est fuera del rango.
+
+214
+00:11:04,030 --> 00:11:08,020
+Entonces, de nuevo, lo que estamos igualando, es un zigzag o cualquier punto,
+
+215
+00:11:08,020 --> 00:11:09,290
+cualquier nmero de veces.
+
+216
+00:11:09,290 --> 00:11:10,123
+Y ese es Jos.
+
+217
+00:11:11,200 --> 00:11:14,060
+Tenemos el smbolo at, que coincide con el smbolo at.
+
+218
+00:11:14,060 --> 00:11:15,990
+A a zed plus que coincide con
+
+219
+00:11:17,143 --> 00:11:19,011
+cualquier cantidad de letras en cdigocode.
+
+220
+00:11:19,011 --> 00:11:21,280
+Y luego tenemos el punto que coincide con el punto.
+
+221
+00:11:21,280 --> 00:11:22,929
+Ahora tenemos que decidir cmo hacer coincidir el punto com.
+
+222
+00:11:22,929 --> 00:11:25,639
+Entonces podemos hacer, podemos poner un com.
+
+223
+00:11:25,639 --> 00:11:30,639
+Y eso coincidir, por supuesto, porque tenemos com all.
+
+224
+00:11:31,772 --> 00:11:36,380
+O podemos hacer, por ejemplo, com barra o canalizarme.
+
+225
+00:11:39,444 --> 00:11:42,450
+Entonces coincidir con punto com pero tambin coincidir con dot me.
+
+226
+00:11:42,450 --> 00:11:44,420
+Pero no coincidir con dot net, por ejemplo.
+
+227
+00:11:44,420 --> 00:11:47,700
+Observe cmo ahora nada coincide con este patrn.
+
+228
+00:11:47,700 --> 00:11:50,750
+Este patrn no coincide con esto en absoluto.
+
+229
+00:11:51,780 --> 00:11:54,540
+Tan pronto como nos lo cambiemos, sin embargo, encaja.
+
+230
+00:11:54,540 --> 00:11:57,990
+Porque ahora Jos est aqu, en el smbolo, el cdigocode
+
+231
+00:11:57,990 --> 00:12:01,790
+est ah, el punto est all, y el yo est aqu.
+
+232
+00:12:01,790 --> 00:12:04,730
+Entonces, qu significa la tubera? Es cualquiera de estos dos.
+
+233
+00:12:06,160 --> 00:12:07,330
+Y lo que
+
+234
+00:12:07,330 --> 00:12:10,560
+significa el parntesis, solo te permite capturar cosas y combinarlas.
+
+235
+00:12:15,419 --> 00:12:17,970
+Entonces, hay muchas ms expresiones regulares que esta.
+
+236
+00:12:17,970 --> 00:12:20,580
+Hay formas de unir nmeros.
+
+237
+00:12:20,580 --> 00:12:22,500
+Hay formas de unir direcciones.
+
+238
+00:12:22,500 --> 00:12:25,407
+Y estas son expresiones regulares muy largas y complicadas.
+
+239
+00:12:25,407 --> 00:12:28,050
+Y te animo a que juegues
+
+240
+00:12:28,050 --> 00:12:31,210
+con este sitio web, prueba algunas cosas.
+
+241
+00:12:31,210 --> 00:12:33,250
+Y tambin, si miras el men,
+
+242
+00:12:33,250 --> 00:12:34,630
+tienes aqu una referencia.
+
+243
+00:12:35,867 --> 00:12:37,060
+Esto puede informarle un
+
+244
+00:12:37,060 --> 00:12:38,490
+poco ms sobre las diferentes
+
+245
+00:12:38,490 --> 00:12:40,520
+cosas que puede usar en expresiones regulares.
+
+246
+00:12:40,520 --> 00:12:42,120
+Y tambin, hay una hoja de
+
+247
+00:12:42,120 --> 00:12:44,980
+trucos que te da un poco ms de informacin sobre expresiones regulares.
+
+248
+00:12:44,980 --> 00:12:47,260
+Las expresiones regulares tomarn unas pocas horas
+
+249
+00:12:47,260 --> 00:12:49,010
+para cubrir de manera exhaustiva.
+
+250
+00:12:49,010 --> 00:12:51,950
+Entonces no es algo en lo que creo que queremos meternos.
+
+251
+00:12:51,950 --> 00:12:53,870
+Pero, por supuesto, si tiene alguna pregunta o
+
+252
+00:12:53,870 --> 00:12:55,800
+si desea hacer coincidir cualquier patrn especfico y
+
+253
+00:12:55,800 --> 00:12:57,670
+no sabe cmo, de todos modos, adelante
+
+254
+00:12:57,670 --> 00:12:59,940
+y pregunte, en el curso qy a o en
+
+255
+00:12:59,940 --> 00:13:00,860
+el canal Slack.
+
+256
+00:13:00,860 --> 00:13:03,410
+Y estar ms que feliz de ayudarte.
+
+257
+00:13:03,410 --> 00:13:05,350
+A medida que avanzamos en el
+
+258
+00:13:05,350 --> 00:13:08,140
+curso, vamos a utilizar algunas expresiones ms regulares.
+
+259
+00:13:08,140 --> 00:13:11,030
+Y cuando lo hagamos, los examinaremos.
+
+260
+00:13:11,030 --> 00:13:13,260
+Simplemente no quiero convertir esto en un
+
+261
+00:13:13,260 --> 00:13:16,510
+curso para que aprendas todo sobre las expresiones regulares.
+
+262
+00:13:16,510 --> 00:13:18,130
+Porque creo que puede ser bastante
+
+263
+00:13:18,130 --> 00:13:20,290
+aburrido para algunas personas que solo quieren continuar
+
+264
+00:13:20,290 --> 00:13:21,960
+y hacer algo de programacin.
+
+265
+00:13:21,960 --> 00:13:24,166
+De nuevo, cualquier pregunta, por favor, ven y pregntame.
+
+266
+00:13:24,166 --> 00:13:26,010
+Estar ms que feliz de ayudar.
+
+267
+00:13:26,010 --> 00:13:27,400
+Pero aparte de eso, sigamos adelante.
+
+268
+00:13:27,400 --> 00:13:29,450
+Hemos entendido un poco de qu se
+
+269
+00:13:29,450 --> 00:13:30,550
+tratan las expresiones regulares.
+
+270
+00:13:30,550 --> 00:13:32,470
+Ahora podemos comenzar a usarlos y
+
+271
+00:13:32,470 --> 00:13:34,070
+realmente entenderlos cuando hacemos eso.
+
+272
+00:13:34,998 --> 00:13:36,180
+Te ver en el prximo video.
+

@@ -1,0 +1,1356 @@
+1
+00:00:00,540 --> 00:00:01,820
+Jose: Ol e bem vindo de volta.
+
+2
+00:00:01,820 --> 00:00:04,750
+ muito bom ter voc de volta no curso.
+
+3
+00:00:04,750 --> 00:00:05,750
+Neste vdeo,
+
+4
+00:00:05,750 --> 00:00:08,490
+vamos examinar trs partes essenciais do Python.
+
+5
+00:00:08,490 --> 00:00:12,570
+Estes so chamados de estruturas de dados ou colees.
+
+6
+00:00:12,570 --> 00:00:14,300
+Estruturas de dados ou colees,
+
+7
+00:00:14,300 --> 00:00:16,160
+tambm s vezes chamadas de seqncias.
+
+8
+00:00:16,160 --> 00:00:17,895
+Tambm chamado de iterveis.
+
+9
+00:00:17,895 --> 00:00:20,100
+Ns vamos encontrar um monte de nomes para eles.
+
+10
+00:00:20,100 --> 00:00:24,010
+Eu vou cham-los de listas, tuplas e conjuntos, porque
+
+11
+00:00:24,010 --> 00:00:27,020
+esses so os nomes dessas trs coisas.
+
+12
+00:00:27,020 --> 00:00:29,980
+At agora, ns olhamos para ter
+
+13
+00:00:29,980 --> 00:00:32,070
+variveis, como essa string aqui,
+
+14
+00:00:33,110 --> 00:00:36,400
+ol, mas e se quisermos armazenar, por
+
+15
+00:00:37,710 --> 00:00:42,140
+exemplo, mais de uma string dentro de uma nica coisa?
+
+16
+00:00:42,140 --> 00:00:45,280
+Por exemplo, digamos que queremos algumas saudaes.
+
+17
+00:00:48,340 --> 00:00:50,890
+Ns podemos armazenar uma saudao nica,
+
+18
+00:00:50,890 --> 00:00:53,240
+como prazer em conhec-lo, e ns
+
+19
+00:00:53,240 --> 00:00:58,240
+sabemos como fazer isso j ou se quisssemos armazenar amigos, poderamos armazenar
+
+20
+00:00:58,270 --> 00:01:01,500
+um, Rolf, mas se quisssemos adicionar mais amigos
+
+21
+00:01:01,500 --> 00:01:06,500
+ou mais saudaes, amigo dois Anna e ns temos amigos trs e
+
+22
+00:01:07,920 --> 00:01:09,410
+seria eu.
+
+23
+00:01:10,870 --> 00:01:12,830
+Obviamente, se voc tem muitos
+
+24
+00:01:12,830 --> 00:01:15,160
+amigos, isso, muito rapidamente, fica muito difcil.
+
+25
+00:01:15,160 --> 00:01:17,450
+Voc ter muitas variveis e lidar com elas
+
+26
+00:01:17,450 --> 00:01:18,810
+no seu programa ser difcil.
+
+27
+00:01:18,810 --> 00:01:19,643
+Confie em mim.
+
+28
+00:01:19,643 --> 00:01:20,890
+Eu sei que ainda
+
+29
+00:01:20,890 --> 00:01:22,240
+no vimos isso, mas se
+
+30
+00:01:22,240 --> 00:01:25,570
+voc tem muitas variveis, todas significando coisas parecidas, vai ficar complicado.
+
+31
+00:01:25,570 --> 00:01:28,920
+Ento, em vez disso, o que podemos fazer  armazen-los
+
+32
+00:01:28,920 --> 00:01:31,770
+dentro de uma dessas colees que nos permitem
+
+33
+00:01:31,770 --> 00:01:34,270
+armazenar vrias coisas dentro da mesma varivel.
+
+34
+00:01:36,400 --> 00:01:39,510
+Eu vou criar essa varivel chamada minha varivel de
+
+35
+00:01:39,510 --> 00:01:41,790
+lista e ento vou usar colchetes.
+
+36
+00:01:41,790 --> 00:01:44,610
+Esta  uma abertura e um colchete
+
+37
+00:01:44,610 --> 00:01:48,410
+de fechamento e dentro deles, podemos colocar o que
+
+38
+00:01:48,410 --> 00:01:52,010
+quisermos, como ol, mas ento podemos usar uma vrgula,
+
+39
+00:01:52,010 --> 00:01:54,070
+fora da corda, importante.
+
+40
+00:01:54,070 --> 00:01:57,530
+Certifique-se de ter a string e, em seguida, uma
+
+41
+00:01:57,530 --> 00:02:02,530
+vrgula fora dela e, em seguida, podemos ter mais saudaes nessas sequncias.
+
+42
+00:02:02,560 --> 00:02:05,240
+Ento, agora, isso  uma
+
+43
+00:02:05,240 --> 00:02:07,230
+coisa bastante bizarra, porque
+
+44
+00:02:07,230 --> 00:02:11,590
+temos nossa nica varivel, que agora contm trs coisas.
+
+45
+00:02:11,590 --> 00:02:13,930
+Ele contm essas trs cadeias.
+
+46
+00:02:13,930 --> 00:02:18,670
+Mas importante, a varivel  a coisa toda, ok?
+
+47
+00:02:18,670 --> 00:02:20,870
+A varivel no  uma dessas strings.
+
+48
+00:02:20,870 --> 00:02:23,750
+A varivel no  as cadeias unidas
+
+49
+00:02:23,750 --> 00:02:24,880
+ou algo parecido.
+
+50
+00:02:24,880 --> 00:02:28,270
+Esta lista  uma coisa em Python
+
+51
+00:02:28,270 --> 00:02:31,690
+e esta coisa contm trs strings dentro dela.
+
+52
+00:02:31,690 --> 00:02:32,680
+Ento  uma
+
+53
+00:02:32,680 --> 00:02:35,480
+coisa muito til, como vamos ver em breve.
+
+54
+00:02:37,080 --> 00:02:40,520
+Em vez de variveis, temos topples ou tuplas.
+
+55
+00:02:40,520 --> 00:02:42,390
+Eu nunca sei como dizer isso.
+
+56
+00:02:42,390 --> 00:02:44,400
+Eu vou dizer tuplas e isso pode
+
+57
+00:02:44,400 --> 00:02:45,899
+estar errado, ento peo desculpas.
+
+58
+00:02:45,899 --> 00:02:50,899
+E isso  a mesma coisa, mas  dentro de colchetes simples ou
+
+59
+00:02:50,987 --> 00:02:53,910
+normais, ao contrrio de colchetes e, em seguida,
+
+60
+00:02:54,950 --> 00:02:58,440
+temos conjuntos, minha varivel de conjunto e que tambm
+
+61
+00:02:58,440 --> 00:03:01,090
+ o mesmo, mas dentro de chaves.
+
+62
+00:03:02,600 --> 00:03:06,480
+Por que eles no so chamados de chaves, nunca vou saber.
+
+63
+00:03:06,480 --> 00:03:07,950
+Talvez eles estejam e eu
+
+64
+00:03:07,950 --> 00:03:09,600
+esteja errado, chamando-os de chaves.
+
+65
+00:03:09,600 --> 00:03:11,280
+Eles sempre foram chaves
+
+66
+00:03:11,280 --> 00:03:14,390
+para mim, ento eu vou ficar chamando-os chaves.
+
+67
+00:03:16,070 --> 00:03:19,120
+Ok, ns temos nossas trs variveis diferentes aqui e eu
+
+68
+00:03:19,120 --> 00:03:21,220
+disse que toda vez que criamos uma
+
+69
+00:03:21,220 --> 00:03:24,530
+delas, eu disse que  a mesma coisa, mas um suporte diferente.
+
+70
+00:03:24,530 --> 00:03:26,070
+Isso no  verdade, claro.
+
+71
+00:03:26,070 --> 00:03:27,140
+Se fosse esse o
+
+72
+00:03:27,140 --> 00:03:29,480
+caso, isso seria uma caracterstica bastante intil da
+
+73
+00:03:29,480 --> 00:03:31,570
+linguagem para poder ter esses diferentes suportes
+
+74
+00:03:31,570 --> 00:03:32,920
+todos significando a mesma coisa.
+
+75
+00:03:33,780 --> 00:03:34,860
+Ento, ao longo do
+
+76
+00:03:34,860 --> 00:03:37,170
+vdeo, vamos ver como eles so diferentes.
+
+77
+00:03:38,130 --> 00:03:41,220
+Primeiro de tudo, vamos imprimi-los.
+
+78
+00:03:42,800 --> 00:03:44,670
+Minha varivel de tupla.
+
+79
+00:03:44,670 --> 00:03:45,503
+Minha varivel set.
+
+80
+00:03:45,503 --> 00:03:48,010
+Vamos imprimi-los e ver o que sai
+
+81
+00:03:48,010 --> 00:03:48,910
+do outro lado.
+
+82
+00:03:50,360 --> 00:03:54,880
+Tudo bem, nada muito excitante, exceto que h algo
+
+83
+00:03:54,880 --> 00:03:57,380
+muito excitante que voc pode
+
+84
+00:03:57,380 --> 00:03:59,900
+ou no ter notado l.
+
+85
+00:03:59,900 --> 00:04:02,100
+O que  interessante sobre as trs
+
+86
+00:04:02,100 --> 00:04:03,450
+coisas que esto sendo impressas?
+
+87
+00:04:05,510 --> 00:04:07,260
+Pause o vdeo e pense sobre isso.
+
+88
+00:04:10,820 --> 00:04:14,180
+Espero que voc tenha notado que os dois primeiros
+
+89
+00:04:14,180 --> 00:04:18,430
+esto na ordem em que os colocamos, mas o ltimo no est.
+
+90
+00:04:18,430 --> 00:04:23,200
+O ltimo  mutilado, ento por que isso?
+
+91
+00:04:23,200 --> 00:04:27,330
+Bem, vamos explicar isso muito em breve.
+
+92
+00:04:27,330 --> 00:04:32,070
+O ltimo  mutilado porque os conjuntos no so ordenados.
+
+93
+00:04:32,070 --> 00:04:36,370
+Eles perdem a ordem, dependendo de qual verso do Python voc est
+
+94
+00:04:36,370 --> 00:04:37,970
+usando e assim por diante.
+
+95
+00:04:37,970 --> 00:04:40,780
+Existem algumas razes, mas essencialmente, voc no pode
+
+96
+00:04:40,780 --> 00:04:44,460
+confiar nelas para ter uma ordem especfica e, nesse caso,
+
+97
+00:04:44,460 --> 00:04:47,560
+voc pode ver que ela no est ordenada.
+
+98
+00:04:50,780 --> 00:04:55,780
+Agora, tambm podemos ter variveis duplas curtas.
+
+99
+00:04:56,090 --> 00:04:57,940
+Vamos ver exatamente o que so conjuntos e
+
+100
+00:04:57,940 --> 00:05:00,400
+por que eles so interessantes em um momento, a propsito.
+
+101
+00:05:00,400 --> 00:05:04,190
+E ento ns temos essa hello tuple.
+
+102
+00:05:04,190 --> 00:05:05,260
+Vamos imprimir.
+
+103
+00:05:09,180 --> 00:05:10,760
+Vamos imprimir essa tupla.
+
+104
+00:05:10,760 --> 00:05:12,880
+O que voc acha que vai sair dessa tupla?
+
+105
+00:05:12,880 --> 00:05:16,550
+Lembre-se, as tuplas so tuplas porque elas tm esses colchetes ao
+
+106
+00:05:16,550 --> 00:05:18,190
+redor delas e  assim
+
+107
+00:05:18,190 --> 00:05:19,910
+que sabemos que so tuplas.
+
+108
+00:05:21,120 --> 00:05:24,130
+E voc pode ver que, aqui em cima, minha varivel de
+
+109
+00:05:24,130 --> 00:05:25,926
+tupla, quando imprimimos, ainda era uma tupla.
+
+110
+00:05:25,926 --> 00:05:27,520
+Ainda tem os colchetes e
+
+111
+00:05:27,520 --> 00:05:31,240
+tem as vrgulas, ento o Python sabe que isso  uma tupla.
+
+112
+00:05:32,510 --> 00:05:34,860
+O que voc acha que vai ser impresso aqui?
+
+113
+00:05:38,340 --> 00:05:39,640
+Vamos correr e descobrir.
+
+114
+00:05:41,690 --> 00:05:43,040
+Oh, acho que pressionei parar.
+
+115
+00:05:43,040 --> 00:05:45,180
+Eu pressionei muitas vezes.
+
+116
+00:05:45,180 --> 00:05:46,110
+Ai est.
+
+117
+00:05:46,110 --> 00:05:48,400
+Ento isso  apenas oi.
+
+118
+00:05:48,400 --> 00:05:50,260
+Isso  apenas uma string.
+
+119
+00:05:50,260 --> 00:05:51,870
+Nenhuma tupla envolvida.
+
+120
+00:05:52,860 --> 00:05:55,130
+E a razo para isso
+
+121
+00:05:55,130 --> 00:05:58,630
+, claro, os parnteses so um operador matemtico.
+
+122
+00:05:58,630 --> 00:06:02,330
+Imagine que fizemos sete mais cinco vezes oito.
+
+123
+00:06:03,380 --> 00:06:05,010
+Ns no queremos que isso seja uma tupla.
+
+124
+00:06:05,010 --> 00:06:07,550
+Ns queremos que isso seja 12?
+
+125
+00:06:07,550 --> 00:06:09,100
+12, 12, est correto.
+
+126
+00:06:09,100 --> 00:06:11,090
+Ns queremos que isso seja 12 vezes oito.
+
+127
+00:06:11,090 --> 00:06:13,940
+Queremos que isso seja uma coisa matemtica.
+
+128
+00:06:13,940 --> 00:06:17,810
+Portanto, nossa tupla hello realmente no era uma tupla porque
+
+129
+00:06:17,810 --> 00:06:21,860
+o Python no sabe se queremos tratar isso como algo
+
+130
+00:06:21,860 --> 00:06:25,450
+de prioridade em uma operao matemtica ou se queremos
+
+131
+00:06:25,450 --> 00:06:27,130
+que isso seja uma tupla.
+
+132
+00:06:27,130 --> 00:06:28,090
+No sabe.
+
+133
+00:06:28,090 --> 00:06:29,760
+Ento, como podemos dizer isso?
+
+134
+00:06:29,760 --> 00:06:32,480
+Basta colocar a vrgula no final e ento voc pode execut-lo e
+
+135
+00:06:32,480 --> 00:06:34,010
+voc ver que agora  uma tupla.
+
+136
+00:06:34,010 --> 00:06:36,060
+Agora, o Python sabe que isso contm colchetes e
+
+137
+00:06:36,060 --> 00:06:37,490
+ uma tupla e assim por diante.
+
+138
+00:06:38,410 --> 00:06:43,410
+De fato, algo que eu particularmente no gosto no Python, essa  uma das poucas
+
+139
+00:06:44,860 --> 00:06:45,990
+coisas que eu
+
+140
+00:06:45,990 --> 00:06:47,990
+no gosto no Python,  que
+
+141
+00:06:47,990 --> 00:06:51,300
+voc pode fazer a tupla sem os colchetes, apenas colocando
+
+142
+00:06:51,300 --> 00:06:52,840
+a vrgula no final.
+
+143
+00:06:52,840 --> 00:06:57,380
+Ento eu acho que isso  muito bobo, mas ningum me perguntou quando eles
+
+144
+00:06:57,380 --> 00:06:58,810
+estavam fazendo a linguagem.
+
+145
+00:06:58,810 --> 00:07:00,900
+Ento voc pode fazer isso tambm e
+
+146
+00:07:00,900 --> 00:07:04,210
+isso confundiu muitos de meus alunos porque em alguns idiomas, voc coloca
+
+147
+00:07:04,210 --> 00:07:07,780
+vrgulas no final das coisas, como voc faz, e se voc fizer isso
+
+148
+00:07:07,780 --> 00:07:09,260
+em Python, voc vai acabar
+
+149
+00:07:09,260 --> 00:07:10,770
+com tuplas em todos os
+
+150
+00:07:10,770 --> 00:07:12,050
+lugares e voc provavelmente
+
+151
+00:07:12,050 --> 00:07:15,370
+no quer isso, ento tenha cuidado quando colocar vrgulas em alguns lugares.
+
+152
+00:07:16,270 --> 00:07:17,830
+Apenas fazendo isto, voc est fazendo uma
+
+153
+00:07:17,830 --> 00:07:20,750
+tupla, ento isto  o mesmo, estes dois so a mesma coisa.
+
+154
+00:07:20,750 --> 00:07:22,630
+Esses dois so tuplas.
+
+155
+00:07:22,630 --> 00:07:24,120
+Provavelmente no quer fazer isso.
+
+156
+00:07:24,120 --> 00:07:26,500
+Eu sempre recomendo que voc fique com os colchetes.
+
+157
+00:07:26,500 --> 00:07:28,940
+Se voc quiser uma tupla, coloque os colchetes.
+
+158
+00:07:28,940 --> 00:07:30,674
+Isso s torna as coisas um pouco mais fceis.
+
+159
+00:07:30,674 --> 00:07:32,460
+ mais fcil perder essa vrgula.
+
+160
+00:07:32,460 --> 00:07:34,530
+Se o tamanho da fonte  pequeno e
+
+161
+00:07:34,530 --> 00:07:38,210
+at agora voc tem um pouco de poeira na tela, talvez voc no a veja.
+
+162
+00:07:38,210 --> 00:07:40,470
+Ento, mantenha os colchetes, se puder.
+
+163
+00:07:41,600 --> 00:07:46,560
+Ok, to importante, se voc colocar um smbolo de hash, voc pode digitar
+
+164
+00:07:46,560 --> 00:07:49,410
+o que quiser e ele no ser executado.
+
+165
+00:07:49,410 --> 00:07:50,930
+Eu no sei se j disse isso
+
+166
+00:07:50,930 --> 00:07:53,280
+antes, mas isso  chamado de comentrio e no ser executado,
+
+167
+00:07:53,280 --> 00:07:54,870
+ento voc pode fazer isso se quiser,
+
+168
+00:07:54,870 --> 00:07:56,970
+por exemplo, separar vrias sees e assim por diante.
+
+169
+00:07:59,640 --> 00:08:02,840
+Vamos imprimir o primeiro item desta varivel.
+
+170
+00:08:02,840 --> 00:08:03,960
+Vamos imprimir oi.
+
+171
+00:08:06,700 --> 00:08:08,400
+Claro, isso seria trapaa
+
+172
+00:08:09,540 --> 00:08:11,493
+e isso  muito fcil.
+
+173
+00:08:11,493 --> 00:08:15,340
+Ns vamos realmente imprimir este item dentro desta lista.
+
+174
+00:08:15,340 --> 00:08:18,910
+A maneira como fazemos isso  obtermos minha varivel de lista e,
+
+175
+00:08:20,230 --> 00:08:22,335
+em seguida, usando a notao de colchetes,
+
+176
+00:08:22,335 --> 00:08:24,640
+que em Python  chamada de subscrito.
+
+177
+00:08:24,640 --> 00:08:26,740
+Isso  chamado de subscrito.
+
+178
+00:08:28,560 --> 00:08:30,930
+Isso pode ser importante mais tarde.
+
+179
+00:08:30,930 --> 00:08:34,610
+Ns vamos dar o ndice da coisa que
+
+180
+00:08:34,610 --> 00:08:39,610
+queremos acessar, ento estamos acessando o elemento zeroth dessa lista.
+
+181
+00:08:39,650 --> 00:08:41,940
+O elemento zeroth  o primeiro.
+
+182
+00:08:42,940 --> 00:08:45,000
+A programao pode ser bastante confusa.
+
+183
+00:08:45,000 --> 00:08:48,410
+Comeamos a contar a partir de zero, ento zero  o primeiro elemento,
+
+184
+00:08:48,410 --> 00:08:51,360
+um  o segundo elemento e dois  o terceiro elemento.
+
+185
+00:08:51,360 --> 00:08:53,240
+ muito confuso, porque geralmente,
+
+186
+00:08:53,240 --> 00:08:56,050
+zero deve ser o elemento zeroth, mas
+
+187
+00:08:56,050 --> 00:08:59,100
+pessoas normais no dizem esse tipo de coisa.
+
+188
+00:08:59,100 --> 00:09:02,490
+Alm disso, minha varivel tuple, zero  a mesma coisa.
+
+189
+00:09:02,490 --> 00:09:05,200
+Ele tambm pode acessar o primeiro elemento disso e
+
+190
+00:09:05,200 --> 00:09:06,820
+isso tambm  chamado de subscrito
+
+191
+00:09:06,820 --> 00:09:09,180
+e voc tambm usa a notao de colchetes.
+
+192
+00:09:09,180 --> 00:09:11,050
+No v usando parnteses normais.
+
+193
+00:09:11,050 --> 00:09:12,410
+Isso seria extremamente confuso.
+
+194
+00:09:12,410 --> 00:09:14,860
+Portanto, use sempre a notao de
+
+195
+00:09:14,860 --> 00:09:18,310
+colchetes quando quiser acessar um elemento especfico de algo.
+
+196
+00:09:18,310 --> 00:09:19,870
+Podemos rodar isso e voc pode
+
+197
+00:09:19,870 --> 00:09:22,270
+ver que o ol  impresso nos dois casos.
+
+198
+00:09:23,320 --> 00:09:25,470
+Algo que voc no pode fazer, no
+
+199
+00:09:25,470 --> 00:09:28,520
+entanto, e tenho certeza que voc saber o porqu.
+
+200
+00:09:28,520 --> 00:09:29,900
+Voc no pode fazer isso.
+
+201
+00:09:29,900 --> 00:09:33,050
+Voc no pode acessar o elemento zeroth da minha varivel set
+
+202
+00:09:33,050 --> 00:09:35,910
+e isso tem a ver com algo que eu disse
+
+203
+00:09:35,910 --> 00:09:38,700
+h pouco, que os sets no tm uma ordem garantida.
+
+204
+00:09:39,660 --> 00:09:40,670
+Assim, em computadores diferentes,
+
+205
+00:09:40,670 --> 00:09:42,570
+o conjunto poderia estar em uma ordem diferente.
+
+206
+00:09:43,870 --> 00:09:46,760
+Ento, por que isso est relacionado a no conseguir
+
+207
+00:09:46,760 --> 00:09:47,990
+acessar o elemento zeroth?
+
+208
+00:09:50,130 --> 00:09:51,780
+Bem, a resposta  que no
+
+209
+00:09:51,780 --> 00:09:53,390
+sabemos qual vai ser o elemento
+
+210
+00:09:53,390 --> 00:09:56,690
+zero, ento, no podemos realmente acess-lo porque vai ser uma coisa diferente
+
+211
+00:09:56,690 --> 00:09:57,910
+em cada computador, ento isso
+
+212
+00:09:57,910 --> 00:09:59,620
+realmente no faz sentido a menos
+
+213
+00:09:59,620 --> 00:10:01,790
+que voc s est executando este programa em
+
+214
+00:10:01,790 --> 00:10:06,020
+seu computador e em nenhum outro lugar e voc sempre usa a mesma verso do Python.
+
+215
+00:10:06,020 --> 00:10:08,560
+Isto  uma receita para o desastre.
+
+216
+00:10:08,560 --> 00:10:09,820
+Dependendo de onde voc
+
+217
+00:10:09,820 --> 00:10:11,660
+executar seu cdigo, ser algo diferente.
+
+218
+00:10:11,660 --> 00:10:12,800
+Ento, no podemos fazer isso.
+
+219
+00:10:12,800 --> 00:10:15,438
+Se voc fizer isso, isso causar um erro.
+
+220
+00:10:15,438 --> 00:10:19,870
+Diz que o objeto set no suporta indexao.
+
+221
+00:10:19,870 --> 00:10:22,520
+By the way, essa coisa que eu disse foi
+
+222
+00:10:22,520 --> 00:10:24,900
+chamado de um subscrito, , mas tambm 
+
+223
+00:10:24,900 --> 00:10:28,200
+chamado de indexao porque voc est acessando um elemento pelo seu ndice.
+
+224
+00:10:28,200 --> 00:10:30,590
+Ento voc no pode fazer isso em sets.
+
+225
+00:10:30,590 --> 00:10:32,720
+Mais uma vez, basta colocar um hash na
+
+226
+00:10:32,720 --> 00:10:35,170
+frente e isso significa que no vai correr depois.
+
+227
+00:10:37,220 --> 00:10:40,110
+Passando para mais algumas coisas que voc pode fazer com listas
+
+228
+00:10:40,110 --> 00:10:41,870
+ que voc pode modificar listas.
+
+229
+00:10:41,870 --> 00:10:43,280
+Assim, podemos obter essa lista aqui
+
+230
+00:10:43,280 --> 00:10:45,290
+e adicionar um novo elemento no final dela.
+
+231
+00:10:46,890 --> 00:10:49,930
+Ento, minha lista de pontos varivel acrescenta outra string.
+
+232
+00:10:55,650 --> 00:10:57,420
+Ento podemos acrescentar uma string.
+
+233
+00:10:57,420 --> 00:10:59,410
+Anexar apenas significa adicionar no final.
+
+234
+00:11:00,250 --> 00:11:01,880
+E ento podemos imprimir e,
+
+235
+00:11:01,880 --> 00:11:04,450
+claro, voc ver que agora temos a lista
+
+236
+00:11:04,450 --> 00:11:07,730
+impressa, mas contm um elemento extra no final, outra string.
+
+237
+00:11:07,730 --> 00:11:11,510
+Observe, no entanto, que a impresso no incio
+
+238
+00:11:11,510 --> 00:11:14,450
+ainda contm apenas trs elementos porque
+
+239
+00:11:14,450 --> 00:11:17,410
+imprimimos antes de adicionarmos a string extra.
+
+240
+00:11:17,410 --> 00:11:21,380
+Ento, somente a partir da linha 19,
+
+241
+00:11:21,380 --> 00:11:24,000
+a varivel contm quatro elementos.
+
+242
+00:11:24,000 --> 00:11:26,330
+Antes disso, contm trs elementos.
+
+243
+00:11:26,330 --> 00:11:27,690
+Isso  importante no Python.
+
+244
+00:11:27,690 --> 00:11:29,960
+Claro, ele  executado de cima para
+
+245
+00:11:29,960 --> 00:11:32,920
+baixo, por isso  importante lembrar onde voc est
+
+246
+00:11:32,920 --> 00:11:36,280
+fazendo as coisas para que voc saiba que suas variveis
+
+247
+00:11:36,280 --> 00:11:38,130
+iro conter os valores corretos.
+
+248
+00:11:40,413 --> 00:11:45,413
+Agora, algo que voc no pode fazer  anexar a uma tupla.
+
+249
+00:11:49,361 --> 00:11:52,940
+J sinto que estive dizendo isso de maneira
+
+250
+00:11:52,940 --> 00:11:54,980
+inconsistente durante todo o vdeo.
+
+251
+00:11:54,980 --> 00:11:56,490
+Peo desculpas.
+
+252
+00:11:56,490 --> 00:11:59,360
+Se executarmos isso, isso tambm nos dar um erro.
+
+253
+00:11:59,360 --> 00:12:04,360
+Agora diz que o objeto da tupla no possui nenhum acrscimo de atributo.
+
+254
+00:12:05,510 --> 00:12:07,990
+Agora, esta  uma mensagem de erro bastante confusa.
+
+255
+00:12:07,990 --> 00:12:12,920
+Tudo o que est dizendo  que voc no pode acrescentar a uma tupla.
+
+256
+00:12:12,920 --> 00:12:13,870
+Desculpas por isso.
+
+257
+00:12:15,170 --> 00:12:20,170
+Mas isso  uma interessante sequncia para o que esse ponto significa.
+
+258
+00:12:22,110 --> 00:12:24,520
+Este ponto  bastante til.
+
+259
+00:12:24,520 --> 00:12:27,460
+Isso nos permite acessar algo
+
+260
+00:12:27,460 --> 00:12:29,980
+que est dentro dessa varivel.
+
+261
+00:12:30,920 --> 00:12:33,795
+ diferente de subscrito porque no
+
+262
+00:12:33,795 --> 00:12:36,180
+nos fornece um dos elementos
+
+263
+00:12:36,180 --> 00:12:41,180
+da varivel, mas nos permite fazer coisas que afetaro a lista.
+
+264
+00:12:41,320 --> 00:12:45,110
+Nesse caso, o append adicionar algo a essa lista.
+
+265
+00:12:46,240 --> 00:12:48,230
+Ento voc pode pensar neste
+
+266
+00:12:48,230 --> 00:12:51,570
+ponto, por enquanto, pelo menos at explicarmos mais, o
+
+267
+00:12:51,570 --> 00:12:56,290
+que faremos em breve, j que essa lista vai fazer alguma coisa
+
+268
+00:12:56,290 --> 00:12:58,390
+e isso provavelmente vai afet-la.
+
+269
+00:12:59,390 --> 00:13:04,046
+Ento, a funcionalidade de acrescentar aqui, essa coisa que estamos
+
+270
+00:13:04,046 --> 00:13:07,140
+fazendo  parte da varivel de lista.
+
+271
+00:13:09,550 --> 00:13:12,850
+Agora, voc no pode anexar a uma
+
+272
+00:13:12,850 --> 00:13:17,670
+tupla ou derrubar, mas o que voc pode fazer  Desculpe, deixe-me ser coerente
+
+273
+00:13:17,670 --> 00:13:19,270
+reatribuir, voc pode certamente. aqui. Voc pode adicionar sua
+
+274
+00:13:22,290 --> 00:13:24,980
+varivel tuple a outra tupla e isso tambm
+
+275
+00:13:26,120 --> 00:13:29,670
+os unir e voc poder reatribu-la  minha varivel tupla.
+
+276
+00:13:29,670 --> 00:13:32,020
+Ento observe que isso no  um erro.
+
+277
+00:13:34,860 --> 00:13:38,890
+Voc diz que minha varivel tupla  igual  minha varivel
+
+278
+00:13:38,890 --> 00:13:40,450
+tuple de outra coisa.
+
+279
+00:13:40,450 --> 00:13:42,277
+Isso  totalmente bom porque isso 
+
+280
+00:13:42,277 --> 00:13:44,010
+executado primeiro, ento  atribudo a isso.
+
+281
+00:13:44,010 --> 00:13:46,840
+Ento est tudo bem.
+
+282
+00:13:46,840 --> 00:13:49,340
+Esta tupla tem trs elementos.
+
+283
+00:13:49,340 --> 00:13:50,300
+Ns vamos adicion-lo a outra tupla que tenha um elemento.
+
+284
+00:13:50,300 --> 00:13:52,260
+O resultado ser uma
+
+285
+00:13:52,260 --> 00:13:55,140
+tupla com quatro elementos, mas
+
+286
+00:13:55,140 --> 00:13:57,600
+importante, a tupla original,
+
+287
+00:13:57,600 --> 00:14:00,800
+esta com trs elementos, permanece inalterada.
+
+288
+00:14:00,800 --> 00:14:02,240
+Tudo o que fizemos foi criar
+
+289
+00:14:02,240 --> 00:14:03,640
+um novo que tem quatro elementos,
+
+290
+00:14:03,640 --> 00:14:06,180
+enquanto que, com minha varivel de lista, modificamos essa lista.
+
+291
+00:14:06,180 --> 00:14:10,110
+Ns adicionamos um elemento extra aqui.
+
+292
+00:14:10,110 --> 00:14:13,100
+Ns no criamos uma nova lista com quatro elementos.
+
+293
+00:14:13,100 --> 00:14:14,930
+Isso pode soar extremamente estranho e
+
+294
+00:14:14,930 --> 00:14:17,960
+provavelmente no se importa, mas voc pode se importar mais tarde.
+
+295
+00:14:17,960 --> 00:14:21,781
+Voltaremos a isso, ento no se preocupe
+
+296
+00:14:21,781 --> 00:14:24,420
+muito com isso por enquanto.
+
+297
+00:14:24,420 --> 00:14:25,310
+Ok,  claro que podemos imprimir
+
+298
+00:14:25,310 --> 00:14:27,260
+isso e voc ver que agora tem uma tupla com quatro elementos.
+
+299
+00:14:28,470 --> 00:14:30,530
+Boa.
+
+300
+00:14:30,530 --> 00:14:33,870
+Finalmente, voc no pode acrescentar a um conjunto.
+
+301
+00:14:33,870 --> 00:14:35,050
+Novamente, no sabemos qual
+
+302
+00:14:35,050 --> 00:14:37,780
+ o fim, ento voc no pode acrescentar algo
+
+303
+00:14:37,780 --> 00:14:41,220
+no final do conjunto, porque voc no sabe o que ,
+
+304
+00:14:41,220 --> 00:14:43,908
+mas pode adicionar um elemento a um conjunto.
+
+305
+00:14:43,908 --> 00:14:45,330
+Meu set varivel dot add,
+
+306
+00:14:45,330 --> 00:14:47,260
+hello e depois imprimir minha varivel set.
+
+307
+00:14:47,260 --> 00:14:49,640
+OK?
+
+308
+00:14:50,490 --> 00:14:52,540
+Ento voc pode fazer isso e vamos imprimir.
+
+309
+00:14:53,810 --> 00:14:55,197
+Espere um minuto, ainda temos trs elementos no nosso set.
+
+310
+00:14:55,197 --> 00:14:57,297
+O mesmo que antes, apesar de
+
+311
+00:14:59,270 --> 00:15:02,490
+termos adicionado oi, mas s temos um ol.
+
+312
+00:15:02,490 --> 00:15:04,980
+Aqui est a coisa chave sobre conjuntos.
+
+313
+00:15:05,910 --> 00:15:07,360
+Quero dizer, listas, voc sabe, elas esto bem, so legais.
+
+314
+00:15:09,800 --> 00:15:12,090
+Tuplas, voc no pode modific-las.
+
+315
+00:15:12,090 --> 00:15:15,050
+Conjuntos, eles no so ordenados e eles tambm esto removendo duplicatas para
+
+316
+00:15:16,720 --> 00:15:19,150
+que voc no possa ter duplicatas em um conjunto.
+
+317
+00:15:19,150 --> 00:15:24,150
+Nesse caso, se voc adicionar oi duas vezes, no o adicionar.
+
+318
+00:15:25,920 --> 00:15:28,570
+Apenas no est l.
+
+319
+00:15:28,570 --> 00:15:33,200
+Podemos fazer isso de novo se voc no acredita em mim.
+
+320
+00:15:33,200 --> 00:15:34,910
+Ns vamos copiar isso, col-lo.
+
+321
+00:15:34,910 --> 00:15:36,550
+E observe como o conjunto ainda tem apenas trs elementos.
+
+322
+00:15:36,550 --> 00:15:38,790
+Ento, conjuntos, voc no pode
+
+323
+00:15:40,850 --> 00:15:44,850
+ter duplicados e eles no tm nenhum pedido,
+
+324
+00:15:44,850 --> 00:15:48,010
+e tuplas, voc no pode modific-los.
+
+325
+00:15:48,010 --> 00:15:49,610
+Listas, voc pode fazer qualquer coisa em que possa pensar.
+
+326
+00:15:49,610 --> 00:15:52,450
+Voc pode modific-los, estend-los, anex-los,
+
+327
+00:15:52,450 --> 00:15:55,960
+obter um elemento especfico deles e
+
+328
+00:15:55,960 --> 00:15:57,590
+assim por diante.
+
+329
+00:15:57,590 --> 00:16:00,610
+De qualquer forma, este foi um vdeo de
+
+330
+00:16:00,610 --> 00:16:03,080
+viso geral razoavelmente breve dessas colees.
+
+331
+00:16:04,480 --> 00:16:09,320
+Eles sero muito teis  medida que avanamos para
+
+332
+00:16:09,320 --> 00:16:12,450
+tpicos mais avanados em Python.
+
+333
+00:16:12,450 --> 00:16:15,230
+Ento, tenha pacincia comigo enquanto no est
+
+334
+00:16:15,230 --> 00:16:18,400
+muito claro por que voc se importa com
+
+335
+00:16:18,400 --> 00:16:21,780
+essas coisas, vamos descobrir para que servem e vamos
+
+336
+00:16:21,780 --> 00:16:24,390
+construir alguns projetos com eles em breve.
+
+337
+00:16:24,390 --> 00:16:27,180
+Ento, com isso dito, vejo vocs no prximo vdeo.
+
+338
+00:16:27,180 --> 00:16:30,500
+&nbsp;
+
+339
+00:16:30,500 --> 00:16:33,000
+&nbsp;
+

@@ -1,0 +1,1148 @@
+1
+00:00:00,380 --> 00:00:01,640
+Disertante: Hola, y bienvenido de nuevo.
+
+2
+00:00:01,640 --> 00:00:04,130
+En este video, que ser ms rpido
+
+3
+00:00:04,130 --> 00:00:07,260
+que los otros videos, quera contarte acerca de dos
+
+4
+00:00:07,260 --> 00:00:11,310
+palabras clave de bucle importantes que podemos usar para navegar por los bucles.
+
+5
+00:00:12,670 --> 00:00:14,730
+Cuando estamos dentro de un bucle,
+
+6
+00:00:14,730 --> 00:00:17,560
+hay una palabra clave que nos permite salir del
+
+7
+00:00:17,560 --> 00:00:19,860
+ciclo completamente antes de que termine de
+
+8
+00:00:19,860 --> 00:00:22,600
+ejecutarse, y eso se denomina palabra clave break.
+
+9
+00:00:22,600 --> 00:00:25,550
+Es til, por ejemplo, cuando te encuentras con una condicin
+
+10
+00:00:25,550 --> 00:00:28,440
+que significa que continuar el ciclo no tiene sentido.
+
+11
+00:00:28,440 --> 00:00:29,890
+Aqu hay un ejemplo.
+
+12
+00:00:29,890 --> 00:00:32,970
+Digamos que tenemos esta lista de autos, y
+
+13
+00:00:32,970 --> 00:00:35,830
+es su estado en la lnea de produccin.
+
+14
+00:00:35,830 --> 00:00:37,900
+Digamos que tienes un auto que est bien, otro auto
+
+15
+00:00:37,900 --> 00:00:39,230
+que est bien, otro que est
+
+16
+00:00:39,230 --> 00:00:40,760
+bien, ya que pasa por la lnea
+
+17
+00:00:40,760 --> 00:00:42,410
+de produccin, y luego tienes un auto defectuoso.
+
+18
+00:00:42,410 --> 00:00:43,600
+Entonces, qu tienes que hacer?
+
+19
+00:00:43,600 --> 00:00:45,700
+Bueno, tienes que detener la lnea de
+
+20
+00:00:46,570 --> 00:00:49,420
+produccin y quizs arreglarlo, y luego continuar, de acuerdo?
+
+21
+00:00:49,420 --> 00:00:52,700
+Aqu, podramos usar un bucle para procesar
+
+22
+00:00:52,700 --> 00:00:55,850
+la lnea de produccin para automviles en
+
+23
+00:00:57,480 --> 00:00:59,640
+automviles, diremos imprimir, este automvil
+
+24
+00:00:59,640 --> 00:01:00,830
+es, automvil.
+
+25
+00:01:00,830 --> 00:01:03,900
+En lugar de coche, digamos el estado del auto, de acuerdo?
+
+26
+00:01:03,900 --> 00:01:06,300
+Es solo un nombre un poco ms agradable.
+
+27
+00:01:06,300 --> 00:01:08,590
+Recomiendo que uses buenos nombres de variables.
+
+28
+00:01:10,010 --> 00:01:15,010
+Este ciclo se imprimir, este auto est bien, entonces est bien, est bien, este auto est
+
+29
+00:01:15,150 --> 00:01:18,000
+defectuoso, este auto est bien, este auto est bien.
+
+30
+00:01:18,000 --> 00:01:19,710
+Vamos a ejecutarlo para que puedas creerme.
+
+31
+00:01:20,860 --> 00:01:22,430
+Imprime, este auto est bien, la primera
+
+32
+00:01:22,430 --> 00:01:24,870
+vez, luego una y otra vez, y luego encuentra el defectuoso,
+
+33
+00:01:24,870 --> 00:01:25,830
+pero no hace nada
+
+34
+00:01:25,830 --> 00:01:27,470
+con eso, excepto imprimir que est defectuoso,
+
+35
+00:01:27,470 --> 00:01:30,270
+entonces dice que est bien, y luego dice que es DE ACUERDO.
+
+36
+00:01:30,270 --> 00:01:34,960
+Ahora, si el automvil est defectuoso, quiero que imprima que est
+
+37
+00:01:34,960 --> 00:01:37,110
+deteniendo la lnea de produccin.
+
+38
+00:01:42,530 --> 00:01:45,020
+OK, espero que hayas abordado eso bien.
+
+39
+00:01:45,020 --> 00:01:47,250
+Y la forma en que lo hara es, O, lo siento, el estado del auto es defectuoso,
+
+40
+00:01:47,250 --> 00:01:49,350
+por supuesto, si el automvil est defectuoso. luego vamos a imprimir, deteniendo la lnea de produccin.
+
+41
+00:01:49,350 --> 00:01:54,350
+OK, vamos a ejecutar esto y ver qu pasa.
+
+42
+00:01:54,910 --> 00:01:58,080
+OK, no detuvimos la lnea de produccin, eso
+
+43
+00:01:59,440 --> 00:02:01,390
+es lo primero que notamos.
+
+44
+00:02:03,600 --> 00:02:05,610
+Imprimimos que estamos deteniendo la lnea de produccin,
+
+45
+00:02:05,610 --> 00:02:07,060
+pero por supuesto, nada se detuvo.
+
+46
+00:02:07,060 --> 00:02:09,200
+Corrimos este cdigo fuera de la
+
+47
+00:02:09,200 --> 00:02:11,080
+declaracin if y luego continuamos,
+
+48
+00:02:11,080 --> 00:02:13,570
+y ejecutamos este cdigo y luego procedimos.
+
+49
+00:02:13,570 --> 00:02:16,030
+Si realmente queremos detener la lnea de produccin, eso significa que queremos
+
+50
+00:02:16,880 --> 00:02:18,080
+evitar que este bucle se ejecute.
+
+51
+00:02:19,100 --> 00:02:21,590
+No queremos imprimir, este auto est defectuoso y
+
+52
+00:02:21,590 --> 00:02:24,490
+tampoco queremos imprimir nada para los prximos dos autos
+
+53
+00:02:24,490 --> 00:02:27,680
+porque queremos que el ciclo se detenga por completo.
+
+54
+00:02:27,680 --> 00:02:29,960
+Lo que hacemos en ese caso, es
+
+55
+00:02:29,960 --> 00:02:33,300
+que simplemente escribimos, rompemos y eso rompe el ciclo por completo.
+
+56
+00:02:33,300 --> 00:02:36,920
+Suficientemente simple.
+
+57
+00:02:36,920 --> 00:02:39,440
+Ahora bien, este puede no ser el mejor ejemplo, pero solo quera
+
+58
+00:02:41,520 --> 00:02:42,880
+mostrarle lo que hace esta palabra clave.
+
+59
+00:02:42,880 --> 00:02:44,860
+No va a ser til
+
+60
+00:02:44,860 --> 00:02:47,910
+en muchos escenarios, pero en algunos escenarios, ser
+
+61
+00:02:47,910 --> 00:02:51,580
+esencial y puede ser la mejor forma de hacer algo.
+
+62
+00:02:51,580 --> 00:02:54,640
+Por lo tanto, es importante que an sepas que esto se puede hacer.
+
+63
+00:02:54,640 --> 00:02:58,140
+De acuerdo, la prxima palabra clave de la que quera contarte es continuar.
+
+64
+00:02:58,140 --> 00:03:00,890
+La palabra clave continuar hace todo lo contrario.
+
+65
+00:03:03,130 --> 00:03:08,070
+Si escribimos continue aqu, lo que haremos es omitir todo
+
+66
+00:03:08,070 --> 00:03:10,880
+el resto del cdigo de bucle,
+
+67
+00:03:12,210 --> 00:03:15,850
+y vamos directamente a la siguiente iteracin.
+
+68
+00:03:17,070 --> 00:03:20,850
+As que vamos a ejecutarlo.
+
+69
+00:03:20,850 --> 00:03:23,460
+Ahora puede ver que imprimimos, el auto est
+
+70
+00:03:23,460 --> 00:03:24,293
+OK tres veces,
+
+71
+00:03:25,270 --> 00:03:28,330
+luego detuvimos la lnea de produccin, luego omitimos la
+
+72
+00:03:28,330 --> 00:03:30,820
+impresin, este automvil est defectuoso y continuamos con
+
+73
+00:03:30,820 --> 00:03:34,740
+la siguiente iteracin, el siguiente elemento de la lista, que est bien
+
+74
+00:03:34,740 --> 00:03:38,030
+y luego imprimimos, este auto est bien, dos veces.
+
+75
+00:03:39,050 --> 00:03:41,010
+Quera mostrarte un ejemplo
+
+76
+00:03:41,010 --> 00:03:43,160
+un poco mejor de
+
+77
+00:03:44,960 --> 00:03:46,740
+usar este botn Continuar.
+
+78
+00:03:46,740 --> 00:03:48,480
+Digamos que tenemos esto para el
+
+79
+00:03:48,480 --> 00:03:50,970
+nmero y el rango entre dos y 10.
+
+80
+00:03:51,930 --> 00:03:53,080
+El rango entre
+
+81
+00:03:56,780 --> 00:04:00,980
+dos y 10 nos va a dar este rango, como lo
+
+82
+00:04:00,980 --> 00:04:05,570
+hicimos antes, esto nos dara un rango entre cero y nueve.
+
+83
+00:04:05,570 --> 00:04:06,980
+Pero con inclusivo, de dos a 10
+
+84
+00:04:06,980 --> 00:04:09,150
+nos dar un rango que comenzar en dos y subir hasta nueve.
+
+85
+00:04:09,150 --> 00:04:12,090
+Esto solo nos permite modificar la
+
+86
+00:04:12,090 --> 00:04:14,540
+posicin de inicio del rango.
+
+87
+00:04:15,410 --> 00:04:16,900
+Ahora, quiero decir que si
+
+88
+00:04:16,900 --> 00:04:18,740
+el nmero es divisible por dos,
+
+89
+00:04:20,030 --> 00:04:25,030
+vamos a decir que encontramos un nmero par; de lo contrario, solo diremos que encontramos un nmero.
+
+90
+00:04:26,220 --> 00:04:29,030
+Vamos a abordar este cdigo.
+
+91
+00:04:29,030 --> 00:04:31,460
+Le mostrar un par de instrucciones en
+
+92
+00:04:34,100 --> 00:04:35,970
+la pantalla en este momento.
+
+93
+00:04:35,970 --> 00:04:37,130
+Vaya por l y vea si puede
+
+94
+00:04:37,130 --> 00:04:38,980
+abordar esto haciendo una pausa en el video y dndole una oportunidad.
+
+95
+00:04:38,980 --> 00:04:41,810
+Espero que lo hayas logrado.
+
+96
+00:04:41,810 --> 00:04:44,150
+Lo que necesitaremos es, por supuesto, el operador de porcentaje
+
+97
+00:04:48,040 --> 00:04:49,970
+que nos permita calcular el resto de una divisin.
+
+98
+00:04:49,970 --> 00:04:54,610
+Y diremos, si el mdulo dos es igual a
+
+99
+00:04:54,610 --> 00:04:58,300
+cero, eso significa que tenemos un nmero par.
+
+100
+00:04:58,300 --> 00:05:02,970
+Vamos a decir que encontramos un
+
+101
+00:05:02,970 --> 00:05:04,870
+nmero par,
+
+102
+00:05:05,950 --> 00:05:06,783
+num.
+
+103
+00:05:08,990 --> 00:05:10,980
+Entonces, si no encontramos un nmero par, diremos que acabamos
+
+104
+00:05:11,820 --> 00:05:12,653
+de encontrar un nmero.
+
+105
+00:05:18,130 --> 00:05:20,700
+Encontrado un
+
+106
+00:05:20,700 --> 00:05:22,930
+nmero, num.
+
+107
+00:05:22,930 --> 00:05:25,100
+Por supuesto, sabemos que si hacemos esto cuando encontramos
+
+108
+00:05:26,740 --> 00:05:27,573
+un nmero que
+
+109
+00:05:29,680 --> 00:05:32,840
+es divisible por dos vamos a decir que encontramos un nmero par, entonces
+
+110
+00:05:32,840 --> 00:05:34,690
+vamos a continuar en la siguiente lnea
+
+111
+00:05:34,690 --> 00:05:36,630
+despus del, si, porque no est sangrado ,
+
+112
+00:05:36,630 --> 00:05:38,640
+y solo vamos a decir, encontr un nmero.
+
+113
+00:05:38,640 --> 00:05:41,170
+Vamos a ejecutar esto.
+
+114
+00:05:41,170 --> 00:05:43,220
+Y puede ver que encontramos primero un nmero par, luego
+
+115
+00:05:44,090 --> 00:05:45,010
+encontramos un nmero dos,
+
+116
+00:05:46,270 --> 00:05:48,480
+este es el mismo nmero dos veces, luego encontramos el
+
+117
+00:05:48,480 --> 00:05:51,650
+nmero tres, luego encontramos un nmero par cuatro, encontramos el nmero cuatro, y as sucesivamente.
+
+118
+00:05:51,650 --> 00:05:53,020
+Queremos omitir, encontramos el
+
+119
+00:05:53,020 --> 00:05:56,600
+nmero dos, encontramos que el nmero cuatro encontr el nmero
+
+120
+00:05:56,600 --> 00:06:00,260
+seis, y encontramos el nmero ocho porque ya estamos diciendo que
+
+121
+00:06:00,260 --> 00:06:02,640
+encontramos un nmero par para ese nmero.
+
+122
+00:06:02,640 --> 00:06:04,010
+Entonces, cmo vas a hacer eso?
+
+123
+00:06:04,010 --> 00:06:06,570
+Estoy seguro de que tienes ese derecho, qu hacer es presionar
+
+124
+00:06:06,570 --> 00:06:07,770
+Continuar si podemos deletrearlo correctamente.
+
+125
+00:06:10,550 --> 00:06:14,660
+Y luego hemos encontrado e incluso el nmero dos y luego
+
+126
+00:06:14,660 --> 00:06:16,110
+vamos directos a encontrar
+
+127
+00:06:17,200 --> 00:06:20,450
+el nmero tres, porque no ejecutamos ninguna otra
+
+128
+00:06:20,450 --> 00:06:22,710
+parte del ciclo for luego de
+
+129
+00:06:22,710 --> 00:06:26,210
+que esto contine, saltamos directamente a la siguiente iteracin.
+
+130
+00:06:26,210 --> 00:06:28,470
+Ahora, el cdigo que quera mostrarte
+
+131
+00:06:28,470 --> 00:06:30,240
+es un cdigo un poco
+
+132
+00:06:34,930 --> 00:06:37,360
+ms avanzado, est tomado directamente de la
+
+133
+00:06:37,360 --> 00:06:40,470
+documentacin oficial de Python y busca nmeros primos.
+
+134
+00:06:40,470 --> 00:06:42,890
+Si no est realmente interesado en buscar un cdigo
+
+135
+00:06:43,770 --> 00:06:46,360
+ms avanzado, no dude en pasar al siguiente video.
+
+136
+00:06:46,360 --> 00:06:49,210
+Si quieres ver un cdigo
+
+137
+00:06:49,210 --> 00:06:52,890
+ms avanzado utilizando break, en un par
+
+138
+00:06:52,890 --> 00:06:57,360
+de bucles anidados, qudate conmigo y podemos ver esto.
+
+139
+00:06:57,360 --> 00:07:00,200
+Digamos que para n en el rango de dos a 10.
+
+140
+00:07:00,200 --> 00:07:01,500
+Sabemos que esto
+
+141
+00:07:04,270 --> 00:07:07,210
+nos dar una lista esencialmente comenzando
+
+142
+00:07:09,280 --> 00:07:12,730
+en dos y yendo hasta nueve.
+
+143
+00:07:12,730 --> 00:07:15,610
+DE ACUERDO.
+
+144
+00:07:16,600 --> 00:07:17,780
+Entonces vamos a decir, para
+
+145
+00:07:18,960 --> 00:07:20,090
+x en el rango dos
+
+146
+00:07:20,090 --> 00:07:23,940
+a n esto nos dar una lista comenzando en dos y yendo hasta n, pero sin incluir n.
+
+147
+00:07:25,140 --> 00:07:28,720
+Por lo tanto, la primera vez que entramos en
+
+148
+00:07:28,720 --> 00:07:32,200
+este ciclo, n ser dos, por lo que este
+
+149
+00:07:32,200 --> 00:07:35,640
+ciclo realmente no se ejecutar, porque dos hasta dos,
+
+150
+00:07:35,640 --> 00:07:38,650
+sin incluir dos, es una lista vaca.
+
+151
+00:07:38,650 --> 00:07:40,090
+Sin embargo, cuando n
+
+152
+00:07:40,090 --> 00:07:43,840
+es tres, entonces esto va a ser dos hasta
+
+153
+00:07:45,040 --> 00:07:50,040
+tres, sin incluir tres va a ser una sola lista de dos.
+
+154
+00:07:50,330 --> 00:07:52,200
+Cuando n es cuatro, este rango aqu va a ser
+
+155
+00:07:52,200 --> 00:07:54,510
+hasta cuatro sin incluir cuatro, as que eso es dos y tres.
+
+156
+00:07:55,530 --> 00:08:00,530
+Entonces sern dos, tres y cuatro, y luego sern
+
+157
+00:08:00,750 --> 00:08:04,710
+dos, tres, cuatro y cinco, y as sucesivamente.
+
+158
+00:08:04,710 --> 00:08:06,900
+Entiendes la idea.
+
+159
+00:08:06,900 --> 00:08:09,130
+DE ACUERDO.
+
+160
+00:08:09,130 --> 00:08:10,380
+Ahora diremos
+
+161
+00:08:13,250 --> 00:08:14,580
+que si n
+
+162
+00:08:14,580 --> 00:08:15,530
+divisible por
+
+163
+00:08:16,520 --> 00:08:18,120
+x es igual
+
+164
+00:08:18,120 --> 00:08:21,180
+a cero, vamos a imprimir algo
+
+165
+00:08:23,900 --> 00:08:26,400
+como n es igual a
+
+166
+00:08:28,340 --> 00:08:29,400
+x multiplicado
+
+167
+00:08:29,400 --> 00:08:30,233
+por n
+
+168
+00:08:31,650 --> 00:08:32,570
+dividido por
+
+169
+00:08:32,570 --> 00:08:33,620
+x.
+
+170
+00:08:33,620 --> 00:08:34,453
+No tiene ningn sentido para nadie.
+
+171
+00:08:35,540 --> 00:08:36,420
+Te dir exactamente lo que
+
+172
+00:08:37,290 --> 00:08:39,230
+esto significa, y este debera ser un signo de tiempo.
+
+173
+00:08:39,230 --> 00:08:41,070
+N es el nmero externo, digamos
+
+174
+00:08:41,070 --> 00:08:42,740
+por ejemplo cuatro, digamos que
+
+175
+00:08:44,220 --> 00:08:48,520
+estamos en n es igual a cuatro, lo que significa que estamos en Lo estamos ejecutando la primera vez con dos,
+
+176
+00:08:52,366 --> 00:08:54,810
+este ciclo for, lo hemos ejecutado una vez. x es igual a dos. Entonces esto es cuatro divisibles por dos.
+
+177
+00:08:54,810 --> 00:08:56,610
+Eso es correcto, es igual a cero,
+
+178
+00:08:56,610 --> 00:08:58,980
+porque cuatro divididos por dos no tienen ningn resto.
+
+179
+00:08:59,890 --> 00:09:03,820
+Entonces, diremos que cuatro es igual
+
+180
+00:09:03,820 --> 00:09:06,470
+a dos multiplicado por
+
+181
+00:09:06,470 --> 00:09:09,210
+la divisin de n
+
+182
+00:09:09,210 --> 00:09:12,320
+por x, la divisin entera.
+
+183
+00:09:12,320 --> 00:09:13,770
+Cuatro dividido por dos es dos.
+
+184
+00:09:14,970 --> 00:09:16,190
+No s si hemos visto
+
+185
+00:09:16,190 --> 00:09:18,170
+esto en realidad, pero esta es una divisin entera,
+
+186
+00:09:18,170 --> 00:09:21,550
+solo permite dividir un nmero por otro y el resultado siempre ser un nmero entero
+
+187
+00:09:21,550 --> 00:09:23,460
+en lugar de un nmero de punto flotante.
+
+188
+00:09:25,572 --> 00:09:27,030
+Entonces, qu significa cuando
+
+189
+00:09:27,030 --> 00:09:29,950
+uno de estos nmeros es divisible por el otro?
+
+190
+00:09:29,950 --> 00:09:32,430
+Bueno, significa que no puede ser un nmero primo.
+
+191
+00:09:32,430 --> 00:09:35,440
+Como podemos ver a partir de las cuatro, no es
+
+192
+00:09:38,080 --> 00:09:40,560
+un nmero primo porque es divisible por dos.
+
+193
+00:09:40,560 --> 00:09:42,010
+Seis no puede ser
+
+194
+00:09:44,070 --> 00:09:47,630
+un nmero primo porque es divisible por dos y por tres.
+
+195
+00:09:47,630 --> 00:09:49,170
+Ocho tampoco puede ser un nmero primo.
+
+196
+00:09:49,170 --> 00:09:52,290
+Nueve no puede ser un nmero primo porque
+
+197
+00:09:54,010 --> 00:09:55,480
+es divisible por tres.
+
+198
+00:09:55,480 --> 00:09:58,480
+Entonces, cuando encontramos un nmero que puede ser dividido por el otro, sabemos que
+
+199
+00:09:58,480 --> 00:10:00,280
+encontramos algo que es multipli- cable y ergo,
+
+200
+00:10:00,280 --> 00:10:01,530
+no puede ser un nmero primo.
+
+201
+00:10:01,530 --> 00:10:03,130
+As que vamos a romper este ciclo aqu.
+
+202
+00:10:04,680 --> 00:10:07,360
+Y ahora voy a presentar algo
+
+203
+00:10:07,360 --> 00:10:11,710
+ms, que es la palabra clave else para los bucles
+
+204
+00:10:11,710 --> 00:10:15,750
+de causa de los bucles, tambin pueden tener lo contrario.
+
+205
+00:10:15,750 --> 00:10:17,990
+Este bloque else
+
+206
+00:10:20,270 --> 00:10:21,720
+aqu se
+
+207
+00:10:21,720 --> 00:10:24,950
+ejecuta cuando este ciclo termina
+
+208
+00:10:24,950 --> 00:10:27,450
+de ejecutarse por completo.
+
+209
+00:10:28,570 --> 00:10:29,960
+Si alguna vez usa break
+
+210
+00:10:29,960 --> 00:10:31,860
+dentro del loop, este no se ejecutar.
+
+211
+00:10:31,860 --> 00:10:34,170
+Esta otra opcin solo se ejecutar si
+
+212
+00:10:34,170 --> 00:10:36,640
+no llamamos a break dentro de un bucle.
+
+213
+00:10:36,640 --> 00:10:39,340
+Y luego diremos que n
+
+214
+00:10:39,340 --> 00:10:41,570
+es un nmero primo.
+
+215
+00:10:41,570 --> 00:10:43,800
+Ahora bien, esto puede no tener ningn
+
+216
+00:10:43,800 --> 00:10:46,330
+sentido porque necesitamos realmente ejecutarlo para comprender realmente
+
+217
+00:10:48,220 --> 00:10:49,120
+lo que est pasando.
+
+218
+00:10:51,159 --> 00:10:53,210
+Vamos a ejecutarlo.
+
+219
+00:10:53,210 --> 00:10:55,910
+As que tenemos, dos es un nmero primo, luego tenemos tres es un nmero
+
+220
+00:10:55,910 --> 00:10:58,230
+primo, esto es todo correcto, cuatro es igual a dos veces dos,
+
+221
+00:10:58,230 --> 00:10:59,600
+lo cual es correcto, y no logramos,
+
+222
+00:10:59,600 --> 00:11:00,433
+cuatro es un nmero primo.
+
+223
+00:11:03,640 --> 00:11:05,360
+Entonces tenemos, cinco es un nmero primo
+
+224
+00:11:05,360 --> 00:11:08,110
+que es correcto, seis es igual a dos veces tres, siete
+
+225
+00:11:08,110 --> 00:11:11,560
+es un nmero primo, ocho es dos veces cuatro, nueve es tres veces tres.
+
+226
+00:11:12,710 --> 00:11:15,610
+As que, de nuevo, veamos qu est pasando exactamente.
+
+227
+00:11:15,610 --> 00:11:18,090
+Comenzando en n es dos, el rango
+
+228
+00:11:18,090 --> 00:11:21,310
+es de dos a dos, sin incluir, por lo
+
+229
+00:11:21,310 --> 00:11:23,950
+que es una lista vaca, y eso
+
+230
+00:11:25,080 --> 00:11:27,430
+significa que el ciclo nunca se ejecuta.
+
+231
+00:11:28,400 --> 00:11:30,270
+O podras pensar en (tartamudea) que siempre termina de ejecutarse.
+
+232
+00:11:32,890 --> 00:11:35,610
+As que vamos directamente al otro, e imprimimos,
+
+233
+00:11:35,610 --> 00:11:37,410
+dos es un nmero primo.
+
+234
+00:11:37,410 --> 00:11:39,310
+Todo bien.
+
+235
+00:11:41,657 --> 00:11:45,170
+Luego, avanzamos hacia la siguiente iteracin de este ciclo.
+
+236
+00:11:45,170 --> 00:11:47,580
+Ahora n es tres, y luego entramos aqu, el rango va de dos a
+
+237
+00:11:47,580 --> 00:11:49,230
+tres, sin incluir tres, as que solo son estos
+
+238
+00:11:49,230 --> 00:11:50,670
+dos, entonces x es dos, n es tres.
+
+239
+00:11:50,670 --> 00:11:54,060
+tres divididos por dos no es
+
+240
+00:11:54,060 --> 00:11:57,740
+cero porque son dos, el resto uno.
+
+241
+00:11:57,740 --> 00:12:01,300
+Entonces el mdulo es igual a uno, por lo tanto esto es falso.
+
+242
+00:12:01,300 --> 00:12:05,540
+Esto no se ejecuta
+
+243
+00:12:06,450 --> 00:12:10,204
+Debido a que no ejecutamos el descanso pero hemos
+
+244
+00:12:10,204 --> 00:12:12,870
+llegado al final de este ciclo aqu,
+
+245
+00:12:12,870 --> 00:12:17,360
+vamos directamente al otro e imprimimos, tres es un nmero primo.
+
+246
+00:12:17,360 --> 00:12:19,300
+Pasemos a n es el nmero cuatro.
+
+247
+00:12:19,300 --> 00:12:20,950
+De nuevo, x ahora es dos.
+
+248
+00:12:20,950 --> 00:12:24,200
+Cuatro divisibles por dos es cero porque cuatro divididos por
+
+249
+00:12:24,200 --> 00:12:26,340
+dos son dos, el resto cero.
+
+250
+00:12:27,230 --> 00:12:29,390
+Entonces imprimimos cuatro iguales dos multiplicados por el resultado
+
+251
+00:12:30,680 --> 00:12:32,410
+de cuatro dividido por dos, que es dos.
+
+252
+00:12:33,580 --> 00:12:36,460
+Y nos rompemos, as que nunca imprimimos que cuatro es un nmero primo.
+
+253
+00:12:36,460 --> 00:12:39,520
+Espero que esto tenga sentido.
+
+254
+00:12:39,520 --> 00:12:43,960
+Sintase libre, de nuevo, de hacer preguntas en el curso. Preguntas
+
+255
+00:12:43,960 --> 00:12:46,680
+y respuestas solo revise este cdigo, intente
+
+256
+00:12:46,680 --> 00:12:50,340
+jugar con l y vea exactamente lo que significa.
+
+257
+00:12:51,620 --> 00:12:52,910
+S que las primeras
+
+258
+00:12:52,910 --> 00:12:56,260
+veces que mir este cdigo, realmente no s lo que
+
+259
+00:12:56,260 --> 00:12:58,860
+est sucediendo aqu, pero cuando empiezas a
+
+260
+00:12:58,860 --> 00:13:01,000
+entenderlo, esta es una muy buena
+
+261
+00:13:01,000 --> 00:13:02,010
+manera de resolver
+
+262
+00:13:02,010 --> 00:13:03,603
+una pregunta de entrevista muy
+
+263
+00:13:03,603 --> 00:13:06,530
+comn , te sorprendera incluso despus de la
+
+264
+00:13:06,530 --> 00:13:09,960
+cantidad de aos de experiencia que tengo, cuntas veces me
+
+265
+00:13:09,960 --> 00:13:14,450
+preguntan en entrevistas para escribir un programa corto para encontrar nmeros primos.
+
+266
+00:13:14,450 --> 00:13:17,790
+Honestamente, puedes escribir algo como esto, y no te
+
+267
+00:13:17,790 --> 00:13:19,750
+garantizar que conseguirs el trabajo,
+
+268
+00:13:19,750 --> 00:13:21,890
+pero dejars impresionada a la gente,
+
+269
+00:13:21,890 --> 00:13:25,910
+porque esta es una forma realmente limpia de escribir este cdigo.
+
+270
+00:13:25,910 --> 00:13:28,280
+De todos modos, eso es todo por este video.
+
+271
+00:13:28,280 --> 00:13:30,500
+Solo quera, ya sabes, darte una muestra de
+
+272
+00:13:30,500 --> 00:13:32,450
+algunas cosas ms avanzadas que puedes hacer
+
+273
+00:13:32,450 --> 00:13:35,710
+con Python una vez que empiezas a entender exactamente lo que est
+
+274
+00:13:37,240 --> 00:13:38,500
+sucediendo dentro del cerebro de De todos modos, eso es
+
+275
+00:13:38,500 --> 00:13:41,220
+la computadora, no es que tengan cerebro, pero ya sabes. todo por este video, gracias por quedarte conmigo hasta el final,
+
+276
+00:13:41,220 --> 00:13:43,140
+y felicidades tambin por hacerlo porque ahora est
+
+277
+00:13:43,140 --> 00:13:44,920
+empezando a ser un poco ms avanzado.
+
+278
+00:13:44,920 --> 00:13:47,750
+Estamos viendo ms herramientas en nuestra caja
+
+279
+00:13:47,750 --> 00:13:50,720
+de herramientas y eso es realmente emocionante.
+
+280
+00:13:50,720 --> 00:13:52,450
+De todos modos, por tercera vez, eso
+
+281
+00:13:52,450 --> 00:13:54,810
+es todo por este video, nos vemos en el prximo.
+
+282
+00:13:54,810 --> 00:13:56,890
+&nbsp;
+
+283
+00:13:56,890 --> 00:13:59,350
+&nbsp;
+
+284
+00:13:59,350 --> 00:14:02,990
+&nbsp;
+
+285
+00:14:02,990 --> 00:14:04,860
+&nbsp;
+
+286
+00:14:04,860 --> 00:14:07,310
+&nbsp;
+
+287
+00:14:07,310 --> 00:14:08,760
+&nbsp;
+

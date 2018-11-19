@@ -1,0 +1,800 @@
+1
+00:00:00,170 --> 00:00:01,440
+Jose: Ol e bem vindo de volta.
+
+2
+00:00:01,440 --> 00:00:02,840
+Neste vdeo, eu queria
+
+3
+00:00:02,840 --> 00:00:05,170
+mostrar alguns comandos que voc pode
+
+4
+00:00:05,170 --> 00:00:08,500
+executar para navegar no seu computador usando o terminal.
+
+5
+00:00:08,500 --> 00:00:09,750
+Estes podem ser bastante teis.
+
+6
+00:00:10,790 --> 00:00:12,000
+Os comandos que
+
+7
+00:00:12,000 --> 00:00:15,420
+vou mostrar a voc s funcionaro no macOS10 e
+
+8
+00:00:15,420 --> 00:00:18,710
+no Linux, mas tambm darei os equivalentes do Windows.
+
+9
+00:00:20,230 --> 00:00:22,740
+Ento, quando voc est no
+
+10
+00:00:22,740 --> 00:00:24,600
+macOS10 ou no Linux,
+
+11
+00:00:24,600 --> 00:00:27,580
+voc pode digitar P-W-D e informar
+
+12
+00:00:27,580 --> 00:00:30,930
+a pasta em que voc est atualmente.
+
+13
+00:00:31,800 --> 00:00:34,720
+Ento, no meu caso eu estou em / users / jslvtr.
+
+14
+00:00:36,240 --> 00:00:40,100
+No windows, isso ser dir para o diretrio.
+
+15
+00:00:42,200 --> 00:00:44,630
+Se voc deseja mover para uma pasta
+
+16
+00:00:44,630 --> 00:00:48,410
+diferente, voc pode fazer cd para alterar o diretrio e,
+
+17
+00:00:48,410 --> 00:00:51,450
+em seguida, voc pode digitar qualquer pasta desejada.
+
+18
+00:00:51,450 --> 00:00:55,390
+Por exemplo, se voc quisesse ir para a sua
+
+19
+00:00:55,390 --> 00:00:57,740
+rea de trabalho, poderia digitar desktop.
+
+20
+00:00:57,740 --> 00:01:00,740
+Observe como agora estou na minha rea de trabalho aqui
+
+21
+00:01:00,740 --> 00:01:05,010
+e se eu digitar pwd, agora estou indo para a minha rea de trabalho.
+
+22
+00:01:05,900 --> 00:01:10,740
+No windows, isso ser chdir para o diretrio de mudanas.
+
+23
+00:01:13,730 --> 00:01:17,180
+Agora,  claro, a pasta desktop que
+
+24
+00:01:18,060 --> 00:01:22,370
+acabamos de mover est dentro de users / jsslvtr.
+
+25
+00:01:22,370 --> 00:01:25,500
+Caso contrrio, nos diria a pasta no encontrada.
+
+26
+00:01:25,500 --> 00:01:27,090
+Por exemplo, estou agora na minha rea de trabalho.
+
+27
+00:01:27,090 --> 00:01:30,080
+Se eu tentar fazer cd, em uma pasta asdf, ele
+
+28
+00:01:30,080 --> 00:01:32,430
+diz que no existe tal arquivo ou diretrio.
+
+29
+00:01:32,430 --> 00:01:33,740
+Ento voc tem que se certificar
+
+30
+00:01:33,740 --> 00:01:35,980
+de que a pasta que voc deseja mover  dentro
+
+31
+00:01:35,980 --> 00:01:37,530
+da pasta que voc est atualmente.
+
+32
+00:01:38,430 --> 00:01:42,900
+No entanto, voc tambm pode optar por ir para uma determinada pasta, mesmo
+
+33
+00:01:42,900 --> 00:01:45,730
+que no esteja dentro de onde voc est atualmente.
+
+34
+00:01:45,730 --> 00:01:48,920
+Para fazer isso, voc precisa informar ao seu
+
+35
+00:01:48,920 --> 00:01:51,470
+computador o caminho absoluto para essa
+
+36
+00:01:51,470 --> 00:01:53,550
+pasta, comeando na prpria raiz.
+
+37
+00:01:54,570 --> 00:01:58,370
+No windows, voc faria alterar diretrio de C, indo
+
+38
+00:01:58,370 --> 00:02:01,170
+para C: \ users \ something ou
+
+39
+00:02:02,599 --> 00:02:07,210
+C: \ data \ whatever e no OS10 e Linux voc
+
+40
+00:02:07,210 --> 00:02:10,830
+faz cd / que significa a raiz do
+
+41
+00:02:11,800 --> 00:02:14,970
+seu computador e ento voc poderia fazer
+
+42
+00:02:14,970 --> 00:02:16,220
+algo como, /
+
+43
+00:02:16,220 --> 00:02:19,600
+Library / Python / e assim por diante.
+
+44
+00:02:19,600 --> 00:02:23,590
+Ento voc pode mudar diretamente para esta pasta.
+
+45
+00:02:23,590 --> 00:02:24,750
+ aqui que estou agora.
+
+46
+00:02:26,550 --> 00:02:28,220
+Como um pequeno aparte, se
+
+47
+00:02:28,220 --> 00:02:32,158
+voc quiser voltar para a pasta anterior, voc pode simplesmente digitar cd -.
+
+48
+00:02:32,158 --> 00:02:34,330
+E isso, eu no acho que
+
+49
+00:02:34,330 --> 00:02:38,000
+funciona no windows, ele apenas funciona no macOS10 e no Linux.
+
+50
+00:02:38,000 --> 00:02:40,090
+Se voc quiser ver o que
+
+51
+00:02:40,090 --> 00:02:42,950
+est atualmente em uma de suas pastas, tudo o
+
+52
+00:02:42,950 --> 00:02:46,050
+que voc precisa fazer  digitar o comando ls.
+
+53
+00:02:46,050 --> 00:02:49,900
+No Windows, este tambm ser o comando dir.
+
+54
+00:02:51,291 --> 00:02:52,560
+EST BEM.
+
+55
+00:02:52,560 --> 00:02:56,070
+Ento vamos para um dos projetos de
+
+56
+00:02:56,070 --> 00:02:58,270
+livros de raspagem, por
+
+57
+00:02:59,650 --> 00:03:03,010
+exemplo, que criamos anteriormente no curso.
+
+58
+00:03:03,010 --> 00:03:05,020
+Ento podemos digitar o comando ls e
+
+59
+00:03:05,020 --> 00:03:07,020
+podemos ver que temos algumas coisas aqui.
+
+60
+00:03:08,110 --> 00:03:09,590
+Algumas dessas coisas so mais
+
+61
+00:03:09,590 --> 00:03:11,430
+recentes, voc pode no t-las visto
+
+62
+00:03:11,430 --> 00:03:14,150
+ainda porque elas fazem parte da seo de desenvolvimento assncrono.
+
+63
+00:03:14,150 --> 00:03:16,760
+O projeto aqui foi modificado ligeiramente, mas
+
+64
+00:03:16,760 --> 00:03:19,050
+no se preocupe, tudo est bem,
+
+65
+00:03:19,050 --> 00:03:21,920
+o que ns cobrimos no curso no mudou.
+
+66
+00:03:21,920 --> 00:03:23,820
+Este  apenas um novo material que eu adicionei.
+
+67
+00:03:23,820 --> 00:03:25,320
+E voc pode ver
+
+68
+00:03:25,320 --> 00:03:28,930
+que temos aqui app. py, ns temos esse async_request. py,
+
+69
+00:03:28,930 --> 00:03:31,910
+menu. py e assim por diante.
+
+70
+00:03:31,910 --> 00:03:33,910
+H at algumas pastas que voc pode no ter visto antes.
+
+71
+00:03:33,910 --> 00:03:35,640
+Como esta pasta __pycache__.
+
+72
+00:03:37,130 --> 00:03:39,420
+Tudo bem, voc no precisa se preocupar com o
+
+73
+00:03:39,420 --> 00:03:40,820
+pycache,  uma coisa do Python.
+
+74
+00:03:42,090 --> 00:03:46,270
+Agora, se quisssemos executar este projeto aqui, poderamos fazer isso, no
+
+75
+00:03:46,270 --> 00:03:47,760
+meu caso eu vou
+
+76
+00:03:47,760 --> 00:03:49,688
+digitar python3. 6 porque eu
+
+77
+00:03:49,688 --> 00:03:52,250
+lembro que quando comeamos este projeto eu estava usando
+
+78
+00:03:52,250 --> 00:03:56,130
+o Python 3. 6, python3. 6 menu. py e, em
+
+79
+00:03:57,570 --> 00:03:59,170
+seguida, nosso aplicativo comea a
+
+80
+00:03:59,170 --> 00:04:01,680
+ser executado e voc sabe, ns temos alguns
+
+81
+00:04:01,680 --> 00:04:03,270
+log extra que adicionamos mais tarde.
+
+82
+00:04:03,270 --> 00:04:05,940
+Eu sei que voc talvez no tenha visto isso,
+
+83
+00:04:05,940 --> 00:04:07,390
+mas mesmo assim nosso programa
+
+84
+00:04:07,390 --> 00:04:10,400
+comea a funcionar e ento voc ver o menu aqui e
+
+85
+00:04:10,400 --> 00:04:11,450
+poder interagir com ele.
+
+86
+00:04:11,450 --> 00:04:13,670
+Isto , apenas o seu programa rodando como
+
+87
+00:04:13,670 --> 00:04:15,580
+se estivesse rodando dentro do Python, agora
+
+88
+00:04:15,580 --> 00:04:17,530
+ele est rodando dentro deste console de
+
+89
+00:04:17,530 --> 00:04:18,580
+texto que voc tem aqui.
+
+90
+00:04:20,350 --> 00:04:22,570
+No entanto, tivemos que executar o Python 3. 6
+
+91
+00:04:23,510 --> 00:04:27,400
+para executar este projeto.
+
+92
+00:04:27,400 --> 00:04:29,410
+Se quisssemos criar um ambiente virtual para este
+
+93
+00:04:29,410 --> 00:04:30,910
+projeto, ele seria separado da instalao
+
+94
+00:04:30,910 --> 00:04:33,090
+do sistema do Python 3. 6, podemos
+
+95
+00:04:34,219 --> 00:04:35,413
+fazer isso.
+
+96
+00:04:35,413 --> 00:04:39,900
+Tudo o que temos a fazer  um virtualenv venv --python = python, eu
+
+97
+00:04:39,900 --> 00:04:42,750
+vou usar o python3. 7 para este ambiente virtual.
+
+98
+00:04:44,170 --> 00:04:46,960
+Isso criar um novo ambiente virtual e agora,
+
+99
+00:04:48,610 --> 00:04:50,940
+quando digitarmos ls, podemos ver que existe
+
+100
+00:04:50,940 --> 00:04:54,370
+uma pasta de ambiente virtual que no estava aqui antes.
+
+101
+00:04:54,370 --> 00:04:56,870
+Esta  a instalao do Python
+
+102
+00:04:56,870 --> 00:04:58,880
+que ns copiamos aqui.
+
+103
+00:04:59,917 --> 00:05:04,917
+No tem nenhuma das bibliotecas que tinha antes.
+
+104
+00:05:05,120 --> 00:05:06,320
+Ento, se ativamos,
+
+105
+00:05:07,770 --> 00:05:09,765
+fazendo isso, lembre-se de
+
+106
+00:05:09,765 --> 00:05:12,090
+fazer, (limpa a garganta) desculpas
+
+107
+00:05:12,090 --> 00:05:17,090
+\ venv \ scripts \ activate. bat no windows, no faa isso no
+
+108
+00:05:17,283 --> 00:05:19,360
+mac, mas faa isso no Windows.
+
+109
+00:05:19,360 --> 00:05:23,480
+Ento, se ns ativamos e tentamos executar o nosso menu, agora ele
+
+110
+00:05:23,480 --> 00:05:27,210
+diz que nenhum mdulo chamado  o que  que precisvamos.
+
+111
+00:05:28,560 --> 00:05:31,380
+E, novamente, isso mudou um pouco desde a
+
+112
+00:05:31,380 --> 00:05:34,880
+ltima vez que vimos esse projeto, mas mesmo assim a
+
+113
+00:05:34,880 --> 00:05:36,730
+Beautiful Soup tambm seria outra
+
+114
+00:05:36,730 --> 00:05:38,450
+que no seria encontrada.
+
+115
+00:05:38,450 --> 00:05:41,080
+Em caso afirmativo, tudo que voc tem a fazer  instalar
+
+116
+00:05:42,740 --> 00:05:45,380
+pip e voc sabe, instalar tudo o que ele pede que
+
+117
+00:05:45,380 --> 00:05:46,570
+voc pergunte se ele lhe pergunta.
+
+118
+00:05:47,550 --> 00:05:49,050
+Podemos ento repetir e, a
+
+119
+00:05:49,050 --> 00:05:50,810
+propsito, estou percorrendo todos os comandos
+
+120
+00:05:50,810 --> 00:05:53,020
+pressionando a seta para cima no meu console.
+
+121
+00:05:53,020 --> 00:05:55,820
+Agora diz que "pedidos no puderam ser encontrados" para
+
+122
+00:05:55,820 --> 00:05:57,720
+que possamos instalar solicitaes tambm podemos
+
+123
+00:05:58,750 --> 00:06:00,710
+instalar o Beautiful Soup 4 e
+
+124
+00:06:01,950 --> 00:06:03,180
+acho que  isso.
+
+125
+00:06:04,840 --> 00:06:06,670
+L voc tem, agora o programa est sendo executado.
+
+126
+00:06:06,670 --> 00:06:08,010
+Instalamos todas as bibliotecas
+
+127
+00:06:08,010 --> 00:06:09,810
+em nosso ambiente virtual que precisvamos
+
+128
+00:06:09,810 --> 00:06:11,900
+e nosso programa est funcionando agora.
+
+129
+00:06:12,800 --> 00:06:15,200
+Ento  disso que precisamos para fazer funcionar.
+
+130
+00:06:18,350 --> 00:06:20,970
+Agora, se voc digitar pip freeze,
+
+131
+00:06:20,970 --> 00:06:23,840
+isso fornecer as bibliotecas instaladas atualmente,
+
+132
+00:06:23,840 --> 00:06:27,810
+na sua verso do Python que voc est usando.
+
+133
+00:06:27,810 --> 00:06:29,020
+A verso do Python que
+
+134
+00:06:29,020 --> 00:06:31,000
+estamos usando  a do nosso ambiente virtual.
+
+135
+00:06:31,000 --> 00:06:33,210
+Isso nos d as bibliotecas instaladas
+
+136
+00:06:33,210 --> 00:06:34,750
+em nosso ambiente virtual.
+
+137
+00:06:34,750 --> 00:06:38,100
+Observe como eles esto no formato de aiohdp == 3. 0 5
+
+138
+00:06:40,220 --> 00:06:44,610
+Ento temos a verso 3. 0 5 desta biblioteca.
+
+139
+00:06:44,610 --> 00:06:48,910
+Ns temos a verso 2. 18 4 de pedidos e assim por diante.
+
+140
+00:06:50,130 --> 00:06:53,380
+E  bastante frequente, ao usar
+
+141
+00:06:53,380 --> 00:06:56,169
+ambientes virtuais, salv-los em um arquivo.
+
+142
+00:06:56,169 --> 00:06:58,970
+E s para voc no esquecer, que estas so as
+
+143
+00:06:58,970 --> 00:07:01,050
+verses que voc instalou neste ambiente virtual.
+
+144
+00:07:01,050 --> 00:07:03,640
+Quando voc d esse programa para outra pessoa,
+
+145
+00:07:03,640 --> 00:07:06,290
+ele pode ir e instalar as mesmas verses.
+
+146
+00:07:07,460 --> 00:07:12,010
+Ento podemos criar um novo arquivo e colocar esse contedo nele.
+
+147
+00:07:12,010 --> 00:07:13,470
+Voc pode fazer isso em
+
+148
+00:07:13,470 --> 00:07:15,870
+Python, ou pode fazer isso em qualquer outro editor.
+
+149
+00:07:17,160 --> 00:07:20,600
+Ou se voc quiser, se estiver usando macOS10 ou Linux,
+
+150
+00:07:20,600 --> 00:07:25,060
+voc pode congelar pip em requisitos. TXT.
+
+151
+00:07:26,500 --> 00:07:28,170
+Tudo isso faz  dizer,
+
+152
+00:07:28,170 --> 00:07:31,720
+toda a sada do pipfreeze, em vez de imprimi-lo, despej-lo
+
+153
+00:07:31,720 --> 00:07:35,430
+neste novo arquivo chamado requisitos. TXT.
+
+154
+00:07:36,490 --> 00:07:39,660
+OK, agora se voc fosse abrir requisitos. txt, voc veria
+
+155
+00:07:39,660 --> 00:07:42,170
+que ele contm todas essas coisas.
+
+156
+00:07:43,058 --> 00:07:46,470
+OK, no macOS10 e Linux, voc pode
+
+157
+00:07:46,470 --> 00:07:48,620
+fazer o comando cat
+
+158
+00:07:48,620 --> 00:07:51,670
+para ver o contedo de um arquivo.
+
+159
+00:07:51,670 --> 00:07:54,460
+Ento, como voc pode ver, quando eu fao os requisitos do gato. txt voc pode ver
+
+160
+00:07:54,460 --> 00:07:56,560
+o contedo do arquivo aqui.
+
+161
+00:07:58,760 --> 00:08:02,020
+Agora, por que isso  til, se
+
+162
+00:08:02,020 --> 00:08:04,930
+agora eu vou ir e pip instalar?
+
+163
+00:08:04,930 --> 00:08:06,200
+Se voc compartilhar isso com outra pessoa,
+
+164
+00:08:06,200 --> 00:08:09,050
+eles vo ter que ir e fazer o pip instala o aiohttp, quer dizer, eles
+
+165
+00:08:10,680 --> 00:08:13,810
+fazem isso, eles fazem == 3. 0 5 para
+
+166
+00:08:13,810 --> 00:08:16,230
+instalar esta verso especfica?
+
+167
+00:08:16,230 --> 00:08:17,410
+Sim.
+
+168
+00:08:17,410 --> 00:08:19,230
+Isto  o que voc faz para
+
+169
+00:08:19,230 --> 00:08:22,650
+instalar a verso 3. 0 5 desta biblioteca.
+
+170
+00:08:22,650 --> 00:08:27,650
+Mas se voc compartilhar com eles, isso exige. arquivo txt eles podem realmente
+
+171
+00:08:28,060 --> 00:08:31,650
+fazer -r requisitos. TXT.
+
+172
+00:08:31,650 --> 00:08:35,490
+Ento pip instale -r requisitos. txt e, em seguida, eles
+
+173
+00:08:35,490 --> 00:08:37,260
+vo passar e instalar
+
+174
+00:08:37,260 --> 00:08:40,060
+todas essas bibliotecas, essas verses especficas deles.
+
+175
+00:08:41,060 --> 00:08:42,400
+Ento, como voc pode ver,
+
+176
+00:08:42,400 --> 00:08:45,430
+isso pode ser muito bom para compartilhar tudo o que voc
+
+177
+00:08:45,430 --> 00:08:47,410
+precisa para um projeto com outra pessoa.
+
+178
+00:08:47,410 --> 00:08:49,470
+Por exemplo, se voc estiver trabalhando com
+
+179
+00:08:49,470 --> 00:08:52,690
+outra pessoa ou se quiser participar de algum tipo de
+
+180
+00:08:52,690 --> 00:08:55,960
+equipe, provavelmente precisar de requisitos. arquivo txt para que
+
+181
+00:08:55,960 --> 00:08:57,890
+voc possa compartilh-lo e certificar-se
+
+182
+00:08:57,890 --> 00:08:59,180
+de que todos
+
+183
+00:08:59,180 --> 00:09:01,500
+esto usando as mesmas verses de bibliotecas.
+
+184
+00:09:01,500 --> 00:09:03,830
+Se uma pessoa da equipe estiver usando uma verso
+
+185
+00:09:03,830 --> 00:09:05,780
+especfica e outra pessoa estiver usando uma
+
+186
+00:09:05,780 --> 00:09:07,720
+verso diferente, voc poder encontrar algumas inconsistncias
+
+187
+00:09:07,720 --> 00:09:10,010
+em algumas coisas que podem funcionar de maneira diferente.
+
+188
+00:09:10,010 --> 00:09:11,540
+Portanto, certifique-se de no
+
+189
+00:09:11,540 --> 00:09:15,300
+fazer isso e ter requisitos. O arquivo txt  um timo primeiro
+
+190
+00:09:15,300 --> 00:09:17,950
+passo para garantir que todos estejam na mesma pgina.
+
+191
+00:09:19,430 --> 00:09:23,020
+Ento  assim que voc instalaria tudo das
+
+192
+00:09:23,020 --> 00:09:24,900
+minhas necessidades. arquivo txt, e
+
+193
+00:09:24,900 --> 00:09:28,050
+como voc pode ver, tudo  bastante simples.
+
+194
+00:09:28,050 --> 00:09:30,540
+Nos prximos vdeos, vamos ver
+
+195
+00:09:30,540 --> 00:09:34,930
+algo ainda mais importante ao trabalhar com esses projetos.
+
+196
+00:09:34,930 --> 00:09:37,230
+E tambm, essa coisa nova que vamos ver
+
+197
+00:09:37,230 --> 00:09:40,150
+nesses prximos vdeos , na verdade, a maneira recomendada de
+
+198
+00:09:40,150 --> 00:09:42,840
+gerenciar projetos e dependncias em Python, a partir do
+
+199
+00:09:42,840 --> 00:09:44,270
+Python 3. 7
+
+200
+00:09:45,670 --> 00:09:48,220
+Ento fique comigo e eu te vejo no prximo vdeo.
+

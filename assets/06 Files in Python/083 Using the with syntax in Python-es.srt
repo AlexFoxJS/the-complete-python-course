@@ -1,0 +1,440 @@
+1
+00:00:00,320 --> 00:00:01,460
+Jos: Hola y bienvenido de nuevo.
+
+2
+00:00:01,460 --> 00:00:03,440
+En este video estamos hablando de abrir
+
+3
+00:00:03,440 --> 00:00:05,570
+y cerrar archivos automticamente para que no
+
+4
+00:00:05,570 --> 00:00:08,990
+tengamos que recordar llamar al archivo. cerrar al final de cada
+
+5
+00:00:08,990 --> 00:00:10,930
+vez que queremos usar un archivo.
+
+6
+00:00:11,840 --> 00:00:14,350
+Hasta ahora hemos estado abriendo y cerrando archivos explcitamente,
+
+7
+00:00:14,350 --> 00:00:17,395
+como este, diciendo que el archivo es igual a abrir algo
+
+8
+00:00:17,395 --> 00:00:20,770
+y luego al final, archivo. cerca.
+
+9
+00:00:20,770 --> 00:00:22,730
+Por cierto, solo dir que he copiado el
+
+10
+00:00:22,730 --> 00:00:24,750
+cdigo que escribimos en la ltima seccin, y
+
+11
+00:00:24,750 --> 00:00:26,790
+he creado otro archivo para l, solo porque voy
+
+12
+00:00:26,790 --> 00:00:28,390
+a cambiarlo un poco y no quiero
+
+13
+00:00:28,390 --> 00:00:30,540
+que lo hagamos. perder alguno de los archivos aqu.
+
+14
+00:00:30,540 --> 00:00:32,330
+De nuevo, estos archivos estn en el concentrador
+
+15
+00:00:32,330 --> 00:00:34,040
+gid, por lo que puede acceder a
+
+16
+00:00:34,040 --> 00:00:36,007
+ellos si lo desea, y el enlace para
+
+17
+00:00:36,007 --> 00:00:38,210
+hacerlo est al comienzo de esta seccin, la primera conferencia.
+
+18
+00:00:39,410 --> 00:00:41,570
+As que hemos estado abriendo y
+
+19
+00:00:41,570 --> 00:00:45,079
+cerrando archivos automticamente as, pero Python en realidad tiene
+
+20
+00:00:45,079 --> 00:00:48,793
+una sintaxis que es extremadamente til para estos escenarios.
+
+21
+00:00:48,793 --> 00:00:52,320
+Y el escenario que esto representa es un escenario
+
+22
+00:00:52,320 --> 00:00:54,410
+bastante general en el que
+
+23
+00:00:54,410 --> 00:00:57,610
+tenemos que hacer algunas configuraciones y algunas demoler.
+
+24
+00:00:57,610 --> 00:00:59,560
+La configuracin es que tenemos que abrir
+
+25
+00:00:59,560 --> 00:01:02,890
+el archivo, y el derribo es que tenemos que cerrar el archivo.
+
+26
+00:01:02,890 --> 00:01:05,020
+Una configuracin es solo una palabra clave
+
+27
+00:01:05,020 --> 00:01:07,620
+para algo que sucede al comienzo, y un derribo
+
+28
+00:01:07,620 --> 00:01:11,640
+es una palabra clave o un concepto de algo que ocurre al final.
+
+29
+00:01:12,795 --> 00:01:15,660
+Otro ejemplo sera abrir una conexin de base de datos al
+
+30
+00:01:15,660 --> 00:01:17,090
+inicio y, al final, cerrar
+
+31
+00:01:17,090 --> 00:01:18,910
+la conexin de la base de datos.
+
+32
+00:01:18,910 --> 00:01:20,920
+Entonces, como pueden ver, abrir y
+
+33
+00:01:20,920 --> 00:01:25,120
+cerrar cosas, algo bastante popular y este es un enfoque de configuracin y derribo.
+
+34
+00:01:26,230 --> 00:01:27,920
+La construccin de la que vamos
+
+35
+00:01:27,920 --> 00:01:29,820
+a aprender, esta pieza de sintaxis
+
+36
+00:01:29,820 --> 00:01:32,000
+que Python ofrece, se llama declaracin con.
+
+37
+00:01:32,000 --> 00:01:33,330
+Es posible que ya
+
+38
+00:01:33,330 --> 00:01:37,736
+haya visto esto si analiz algn cdigo Python anteriormente, y usa la palabra clave
+
+39
+00:01:37,736 --> 00:01:41,080
+with, y tambin se los conoce como administradores de contexto.
+
+40
+00:01:41,080 --> 00:01:44,230
+Los administradores de contexto son conceptos razonablemente avanzados y vamos a
+
+41
+00:01:44,230 --> 00:01:45,860
+verlos ms a fondo en
+
+42
+00:01:45,860 --> 00:01:47,620
+la prxima seccin, vamos a programar
+
+43
+00:01:47,620 --> 00:01:50,120
+algunos administradores de contexto, pero solo quera ensearte
+
+44
+00:01:50,120 --> 00:01:51,970
+cmo usarlos para que te familiarices
+
+45
+00:01:51,970 --> 00:01:53,610
+con ellos, y en la prxima
+
+46
+00:01:53,610 --> 00:01:55,930
+sesin, todo va a ser mucho ms simple.
+
+47
+00:01:55,930 --> 00:01:58,360
+Adems, simplifican enormemente nuestro cdigo y
+
+48
+00:01:58,360 --> 00:02:00,101
+reducen los errores que podemos
+
+49
+00:02:00,101 --> 00:02:02,040
+causar al olvidar cerrar archivos.
+
+50
+00:02:03,600 --> 00:02:07,920
+Entonces, en lugar de hacer esto aqu,
+
+51
+00:02:10,700 --> 00:02:14,320
+podemos decir con abrir como archivo.
+
+52
+00:02:16,270 --> 00:02:19,370
+Entonces podemos hacer esto, y podemos hacer eso.
+
+53
+00:02:21,060 --> 00:02:24,900
+Eso reemplaza nuestro cdigo anterior.
+
+54
+00:02:24,900 --> 00:02:29,900
+Ahora lo hacemos con, luego abrimos, llamamos a la funcin abrir, y luego
+
+55
+00:02:29,965 --> 00:02:33,380
+hacemos como archivo, de modo que cualquiera que sea
+
+56
+00:02:33,380 --> 00:02:37,620
+la funcin de apertura abierta, entra en esta variable, entonces podemos
+
+57
+00:02:37,620 --> 00:02:39,990
+usar esa variable cuando lleguemos al
+
+58
+00:02:39,990 --> 00:02:43,020
+final de esta sangra bloque, observe los dos
+
+59
+00:02:43,020 --> 00:02:44,570
+puntos al final all.
+
+60
+00:02:44,570 --> 00:02:46,310
+Al llegar al final del
+
+61
+00:02:46,310 --> 00:02:49,080
+bloque con sangra, automticamente cierra el archivo para nosotros.
+
+62
+00:02:50,380 --> 00:02:53,580
+Esto aqu se llama un administrador de contexto.
+
+63
+00:02:53,580 --> 00:02:57,410
+Y no sucede mgicamente, la funcin abierta ha definido que se puede
+
+64
+00:02:57,410 --> 00:03:00,800
+usar con un administrador de contexto, por lo que no
+
+65
+00:03:00,800 --> 00:03:03,061
+puede hacer esto con cualquier cosa que
+
+66
+00:03:03,061 --> 00:03:05,940
+desee, pero debe definir que desea poder usar un
+
+67
+00:03:05,940 --> 00:03:08,890
+administrador de contexto con sus cosas, y si lo
+
+68
+00:03:08,890 --> 00:03:10,460
+hace, puede comenzar a usar
+
+69
+00:03:10,460 --> 00:03:12,832
+gestores de contexto de ese modo.
+
+70
+00:03:12,832 --> 00:03:14,160
+En la siguiente seccin,
+
+71
+00:03:14,160 --> 00:03:16,609
+veremos cmo desarrollar y programar nuestros propios administradores
+
+72
+00:03:16,609 --> 00:03:19,080
+de contexto, pero quera mostrarle este escenario en
+
+73
+00:03:19,080 --> 00:03:20,980
+el que puede usar un administrador
+
+74
+00:03:20,980 --> 00:03:22,853
+de contexto sin siquiera saber cmo
+
+75
+00:03:22,853 --> 00:03:25,270
+est programado para simplificar su cdigo y hacerlo mejor. .
+
+76
+00:03:26,290 --> 00:03:29,910
+De nuevo, esto le permite abrir el archivo al
+
+77
+00:03:29,910 --> 00:03:32,100
+inicio y cerrarlo automticamente al final.
+
+78
+00:03:32,100 --> 00:03:34,048
+Y el cierre al final ocurre
+
+79
+00:03:34,048 --> 00:03:37,221
+porque el abierto ha dicho que cuando llegue al final
+
+80
+00:03:37,221 --> 00:03:39,230
+del bloque, el archivo se cerrar automticamente.
+
+81
+00:03:40,600 --> 00:03:42,017
+De acuerdo, aqu no hay
+
+82
+00:03:42,017 --> 00:03:45,540
+magia, la funcin abierta se define para cerrar el archivo al final.
+
+83
+00:03:46,640 --> 00:03:51,300
+Ahora, te animo a hacer lo mismo para este archivo aqu.
+
+84
+00:03:51,300 --> 00:03:53,329
+Sustityalo por un administrador de contexto,
+
+85
+00:03:53,329 --> 00:03:55,530
+ya que eso te dar un
+
+86
+00:03:55,530 --> 00:03:58,220
+poco ms de prctica para implementar esto.
+
+87
+00:04:03,370 --> 00:04:04,890
+Espero que hayas logrado.
+
+88
+00:04:04,890 --> 00:04:07,170
+De nuevo, todo lo que tienes que
+
+89
+00:04:07,170 --> 00:04:10,110
+hacer es ponerlo al comienzo y luego como la variable.
+
+90
+00:04:10,110 --> 00:04:13,140
+La variable aqu archivo ahora se crea
+
+91
+00:04:13,140 --> 00:04:15,360
+como resultado de esta apertura.
+
+92
+00:04:15,360 --> 00:04:17,820
+Lo que sea sangrado va a estar en el
+
+93
+00:04:17,820 --> 00:04:19,630
+"con", y al final del "con", el
+
+94
+00:04:19,630 --> 00:04:21,410
+archivo se cerrar automticamente, por lo
+
+95
+00:04:21,410 --> 00:04:23,050
+que tampoco necesitamos cerrar el archivo.
+
+96
+00:04:25,094 --> 00:04:28,870
+Fjate cmo por json. load, o dump s, no
+
+97
+00:04:28,870 --> 00:04:31,650
+es necesario hacer nada con ellos, porque no
+
+98
+00:04:31,650 --> 00:04:33,370
+hay archivos para abrir o
+
+99
+00:04:33,370 --> 00:04:36,480
+cerrar, estas cosas van directamente o directamente de cadenas.
+
+100
+00:04:36,480 --> 00:04:38,620
+Entonces no hay nada que abrir o cerrar.
+
+101
+00:04:40,360 --> 00:04:42,280
+As que eso es todo, una
+
+102
+00:04:42,280 --> 00:04:44,830
+introduccin rpida a los administradores de contexto, y se
+
+103
+00:04:44,830 --> 00:04:46,370
+les llama administradores de contexto
+
+104
+00:04:46,370 --> 00:04:48,890
+porque te ayudan a administrar el contexto de tu
+
+105
+00:04:48,890 --> 00:04:51,590
+aplicacin en la que ahora tienes este archivo abierto.
+
+106
+00:04:51,590 --> 00:04:53,760
+Y administran el contexto manteniendo el archivo abierto
+
+107
+00:04:53,760 --> 00:04:56,790
+durante el administrador de contexto, y no antes o despus de
+
+108
+00:04:56,790 --> 00:04:59,180
+l, por eso es que se les llama administradores
+
+109
+00:04:59,180 --> 00:05:02,210
+de contexto, vamos a aprender sobre ellos en la siguiente seccin.
+
+110
+00:05:02,210 --> 00:05:04,850
+Eso es todo por este video, nos vemos en el prximo.
+

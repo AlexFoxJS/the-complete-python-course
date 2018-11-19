@@ -1,0 +1,800 @@
+1
+00:00:00,380 --> 00:00:01,750
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,750 --> 00:00:05,030
+In this video we're talking about return values.
+
+3
+00:00:05,030 --> 00:00:07,730
+So let me tell you about this thing that functions can do,
+
+4
+00:00:07,730 --> 00:00:09,450
+which is extremely useful.
+
+5
+00:00:10,490 --> 00:00:13,820
+Returning values can be a little bit confusing at first.
+
+6
+00:00:13,820 --> 00:00:15,660
+So let's just code together
+
+7
+00:00:15,660 --> 00:00:16,840
+and then play around with your code
+
+8
+00:00:16,840 --> 00:00:18,560
+to see what your changes do.
+
+9
+00:00:18,560 --> 00:00:20,180
+That's gonna help you understand things better
+
+10
+00:00:20,180 --> 00:00:21,670
+as we go along.
+
+11
+00:00:21,670 --> 00:00:25,860
+Let's develop two functions, which calculate five plus five.
+
+12
+00:00:25,860 --> 00:00:27,450
+We're gonna start simple.
+
+13
+00:00:27,450 --> 00:00:29,410
+One of these functions is gonna return the value.
+
+14
+00:00:29,410 --> 00:00:31,410
+The other one's gonna print the value.
+
+15
+00:00:31,410 --> 00:00:34,010
+Okay, so I'm gonna define a function called i_return
+
+16
+00:00:34,890 --> 00:00:37,580
+and that's going to return five plus five.
+
+17
+00:00:39,070 --> 00:00:40,070
+Okay and then I'm gonna define
+
+18
+00:00:40,070 --> 00:00:41,620
+another function called i_print
+
+19
+00:00:43,270 --> 00:00:45,680
+and that's going to print five plus five.
+
+20
+00:00:46,640 --> 00:00:47,473
+Okay?
+
+21
+00:00:49,200 --> 00:00:52,120
+Now, a couple of things.
+
+22
+00:00:52,120 --> 00:00:56,480
+If you call i_return and you run this code,
+
+23
+00:00:58,350 --> 00:01:00,910
+you can see that nothing comes out.
+
+24
+00:01:00,910 --> 00:01:03,040
+And if you call i_print, and you call this code
+
+25
+00:01:03,040 --> 00:01:04,170
+you know what's gonna happen.
+
+26
+00:01:04,170 --> 00:01:07,010
+You know that times 10 is gonna come out.
+
+27
+00:01:07,010 --> 00:01:08,450
+You got your 10 there.
+
+28
+00:01:08,450 --> 00:01:12,130
+So, the print is behaving as you'd expect.
+
+29
+00:01:12,130 --> 00:01:14,820
+When you call it, it prints things out.
+
+30
+00:01:14,820 --> 00:01:16,720
+So what does return do?
+
+31
+00:01:16,720 --> 00:01:19,950
+Obviously it's not printing anything to our console here.
+
+32
+00:01:19,950 --> 00:01:22,320
+To our text interface.
+
+33
+00:01:23,270 --> 00:01:24,880
+But it is doing something.
+
+34
+00:01:24,880 --> 00:01:27,080
+So now let's go on and create two variables.
+
+35
+00:01:27,990 --> 00:01:29,610
+The first variable I'm gonna call result
+
+36
+00:01:29,610 --> 00:01:31,240
+and it's gonna be i_return.
+
+37
+00:01:32,950 --> 00:01:36,780
+Notice how here we are calling the i_return function
+
+38
+00:01:36,780 --> 00:01:39,630
+and whatever value that gives us
+
+39
+00:01:39,630 --> 00:01:42,310
+is going to be assigned to result.
+
+40
+00:01:42,310 --> 00:01:44,960
+And similarly, I'm gonna create another variable
+
+41
+00:01:44,960 --> 00:01:47,260
+and I'm gonna call it i_print.
+
+42
+00:01:47,260 --> 00:01:49,310
+Here we're calling the i_print function,
+
+43
+00:01:49,310 --> 00:01:50,970
+whatever value it gives us,
+
+44
+00:01:50,970 --> 00:01:52,510
+we're gonna assign to another.
+
+45
+00:02:03,230 --> 00:02:05,230
+So what do you think we're going to see?
+
+46
+00:02:06,100 --> 00:02:07,270
+And you can answer that question
+
+47
+00:02:07,270 --> 00:02:08,880
+just by writing this code and running it.
+
+48
+00:02:08,880 --> 00:02:10,930
+That's the best way to go about it.
+
+49
+00:02:14,650 --> 00:02:18,140
+What we'll see is, result is 10.
+
+50
+00:02:18,140 --> 00:02:19,680
+Another is none.
+
+51
+00:02:20,559 --> 00:02:21,970
+Here, look at it.
+
+52
+00:02:23,930 --> 00:02:26,770
+Result is 10, that's good.
+
+53
+00:02:26,770 --> 00:02:28,890
+And another is none.
+
+54
+00:02:28,890 --> 00:02:29,900
+What does that mean?
+
+55
+00:02:31,170 --> 00:02:35,630
+Well, returning a value does exactly that.
+
+56
+00:02:35,630 --> 00:02:38,390
+It gives a value back to the caller.
+
+57
+00:02:38,390 --> 00:02:40,480
+So here we called the function,
+
+58
+00:02:40,480 --> 00:02:41,640
+it runs through the function,
+
+59
+00:02:41,640 --> 00:02:43,950
+in this case there's only one line.
+
+60
+00:02:43,950 --> 00:02:46,820
+And then whatever value is returned,
+
+61
+00:02:46,820 --> 00:02:48,640
+now replaces the function.
+
+62
+00:02:48,640 --> 00:02:51,300
+So now this is 10.
+
+63
+00:02:51,300 --> 00:02:52,950
+This function is now 10.
+
+64
+00:02:53,800 --> 00:02:55,240
+So result equals 10,
+
+65
+00:02:56,570 --> 00:02:58,730
+i_print, however doesn't return anything.
+
+66
+00:02:59,920 --> 00:03:01,420
+It just prints five plus five,
+
+67
+00:03:01,420 --> 00:03:03,410
+which we did see here up on the right.
+
+68
+00:03:04,370 --> 00:03:09,150
+So we printed 10 but we didn't actually return anything.
+
+69
+00:03:09,150 --> 00:03:12,640
+So i_print returns none.
+
+70
+00:03:12,640 --> 00:03:15,410
+The default thing for any function to do in Python
+
+71
+00:03:15,410 --> 00:03:17,800
+is to return none.
+
+72
+00:03:17,800 --> 00:03:19,830
+And none is a special value in Python,
+
+73
+00:03:19,830 --> 00:03:21,390
+it's also a keyword.
+
+74
+00:03:21,390 --> 00:03:24,210
+That just means nothing or empty or void.
+
+75
+00:03:24,210 --> 00:03:26,550
+You know, nothing was returned.
+
+76
+00:03:26,550 --> 00:03:28,200
+Failure to return something.
+
+77
+00:03:28,200 --> 00:03:30,640
+Sorry, my bad, forget about failure.
+
+78
+00:03:30,640 --> 00:03:33,180
+None is not a failure.
+
+79
+00:03:33,180 --> 00:03:35,480
+It just means empty.
+
+80
+00:03:35,480 --> 00:03:37,960
+It's a perfectly good value.
+
+81
+00:03:42,640 --> 00:03:45,330
+Another is none, which just means
+
+82
+00:03:45,330 --> 00:03:47,030
+the function didn't return anything.
+
+83
+00:03:47,030 --> 00:03:49,320
+And that's totally fine.
+
+84
+00:03:49,320 --> 00:03:52,190
+To do that is totally fine to not return anything,
+
+85
+00:03:52,190 --> 00:03:55,110
+if you don't want your function to return something.
+
+86
+00:03:56,130 --> 00:03:58,750
+If you want your function to print something,
+
+87
+00:03:58,750 --> 00:04:02,140
+then you can just, you know, just call it.
+
+88
+00:04:02,140 --> 00:04:04,780
+You don't have to assign it to a variable.
+
+89
+00:04:04,780 --> 00:04:06,770
+Because that would be a wasted variable since
+
+90
+00:04:06,770 --> 00:04:08,940
+it's not actually returning anything.
+
+91
+00:04:08,940 --> 00:04:10,690
+But you can still call the function
+
+92
+00:04:11,640 --> 00:04:13,840
+and it will print out your value.
+
+93
+00:04:17,350 --> 00:04:20,002
+Let's go back into there.
+
+94
+00:04:20,002 --> 00:04:22,580
+Now, let's define another function
+
+95
+00:04:23,840 --> 00:04:27,640
+and that will use a variable and then return it.
+
+96
+00:04:33,475 --> 00:04:36,770
+So we've got addition is five plus five, that's 10.
+
+97
+00:04:36,770 --> 00:04:37,603
+I don't know why I'm saying that,
+
+98
+00:04:37,603 --> 00:04:39,560
+I'm pretty sure you can add by now.
+
+99
+00:04:39,560 --> 00:04:41,450
+Especially five plus five.
+
+100
+00:04:41,450 --> 00:04:43,447
+So now we're gonna print five plus five.
+
+101
+00:04:43,447 --> 00:04:46,670
+We're gonna print 10 and we're gonna return 10.
+
+102
+00:04:47,790 --> 00:04:50,160
+Now, this function does both things.
+
+103
+00:04:51,640 --> 00:04:53,920
+The result is fives and we can, one second,
+
+104
+00:04:53,920 --> 00:04:56,260
+print the result if we wanted.
+
+105
+00:04:56,260 --> 00:04:59,130
+So now we're gonna see 10 printed out a few times.
+
+106
+00:05:00,060 --> 00:05:01,910
+We see 10 and then we see another 10
+
+107
+00:05:01,910 --> 00:05:05,070
+because we've printed it here, then we've returned it,
+
+108
+00:05:05,070 --> 00:05:07,020
+then we jump back down here.
+
+109
+00:05:07,020 --> 00:05:10,150
+Result is now 10 and we print it out.
+
+110
+00:05:10,150 --> 00:05:10,983
+Pretty cool.
+
+111
+00:05:12,020 --> 00:05:14,838
+So, many students are initially quite confused
+
+112
+00:05:14,838 --> 00:05:18,520
+because printing a value tells it to the user.
+
+113
+00:05:18,520 --> 00:05:20,590
+It shows it in a text interface.
+
+114
+00:05:21,530 --> 00:05:24,210
+But the function actually returns none.
+
+115
+00:05:24,210 --> 00:05:26,420
+All Python functions return none
+
+116
+00:05:26,420 --> 00:05:28,880
+unless you tell them to do otherwise.
+
+117
+00:05:30,160 --> 00:05:31,170
+So when we return,
+
+118
+00:05:31,170 --> 00:05:33,780
+the function sends back the value to the caller.
+
+119
+00:05:34,640 --> 00:05:36,210
+Okay?
+
+120
+00:05:36,210 --> 00:05:37,810
+So, important thing:
+
+121
+00:05:38,830 --> 00:05:42,230
+when you reach a return inside a function,
+
+122
+00:05:42,230 --> 00:05:43,930
+that's the end of the function, okay?
+
+123
+00:05:43,930 --> 00:05:46,430
+The function stops running if you have a return
+
+124
+00:05:46,430 --> 00:05:50,490
+and then you print something here, hello.
+
+125
+00:05:50,490 --> 00:05:51,780
+This is not gonna work.
+
+126
+00:05:53,630 --> 00:05:56,740
+You can see that hello is never printed out in here.
+
+127
+00:05:56,740 --> 00:06:01,460
+Because the function has ended before reaching the hello.
+
+128
+00:06:01,460 --> 00:06:04,590
+As soon as you return, that's control given back
+
+129
+00:06:04,590 --> 00:06:06,850
+to the main part of the programme.
+
+130
+00:06:06,850 --> 00:06:10,590
+The 10 is now replacing fives, and result is now 10,
+
+131
+00:06:10,590 --> 00:06:12,340
+and then we continue printing here.
+
+132
+00:06:13,670 --> 00:06:14,503
+Okay?
+
+133
+00:06:16,560 --> 00:06:19,400
+Also, the addition variable that was created
+
+134
+00:06:19,400 --> 00:06:24,400
+inside this function is no longer valid
+
+135
+00:06:24,770 --> 00:06:27,010
+after the function has returned.
+
+136
+00:06:28,010 --> 00:06:30,100
+So if we print addition here,
+
+137
+00:06:31,810 --> 00:06:33,660
+we're gonna see that we get an error,
+
+138
+00:06:34,570 --> 00:06:36,070
+because the addition variable
+
+139
+00:06:36,070 --> 00:06:37,990
+was created inside the function.
+
+140
+00:06:37,990 --> 00:06:40,200
+It doesn't live outside the function.
+
+141
+00:06:40,200 --> 00:06:41,820
+As soon as the function ends,
+
+142
+00:06:41,820 --> 00:06:45,000
+that variable gets given back to Python
+
+143
+00:06:45,000 --> 00:06:47,920
+and it is recycled and given back to the computer
+
+144
+00:06:47,920 --> 00:06:49,000
+at some point.
+
+145
+00:06:49,000 --> 00:06:51,360
+And it's no longer valid here.
+
+146
+00:06:51,360 --> 00:06:53,370
+That's an important part of Python,
+
+147
+00:06:53,370 --> 00:06:54,690
+an important part of programming.
+
+148
+00:06:54,690 --> 00:06:56,350
+And it's called scope.
+
+149
+00:06:56,350 --> 00:06:58,400
+That's the concept of scope.
+
+150
+00:06:58,400 --> 00:07:01,390
+And this variable is said to have a function scope.
+
+151
+00:07:01,390 --> 00:07:03,410
+It's only alive within this function.
+
+152
+00:07:07,300 --> 00:07:08,770
+That's an important distinction
+
+153
+00:07:08,770 --> 00:07:12,760
+between returning the variable addition,
+
+154
+00:07:12,760 --> 00:07:14,010
+which is not what we do.
+
+155
+00:07:14,970 --> 00:07:17,220
+What we do is we return the variable's value.
+
+156
+00:07:18,740 --> 00:07:20,080
+That's an important distinction.
+
+157
+00:07:20,080 --> 00:07:25,080
+This variable is just a name for this five plus five.
+
+158
+00:07:26,160 --> 00:07:30,060
+When we return we're saying, "Okay, here you go, 10."
+
+159
+00:07:30,060 --> 00:07:32,220
+We don't say, "Here you go, addition."
+
+160
+00:07:32,220 --> 00:07:34,830
+Addition is just a name.
+
+161
+00:07:34,830 --> 00:07:38,020
+So, we return 10 and addition gets lost.
+
+162
+00:07:38,020 --> 00:07:39,290
+Now this is 10.
+
+163
+00:07:39,290 --> 00:07:41,400
+This is not addition, this is 10.
+
+164
+00:07:41,400 --> 00:07:44,360
+Result is now 10.
+
+165
+00:07:44,360 --> 00:07:46,640
+This is important, it will become more and more important
+
+166
+00:07:46,640 --> 00:07:49,410
+as you learn more about python and as you develop.
+
+167
+00:07:49,410 --> 00:07:52,650
+I'm really trying to lay down proper foundations for you.
+
+168
+00:07:52,650 --> 00:07:54,870
+As opposed to lying to you and saying,
+
+169
+00:07:54,870 --> 00:07:57,920
+"Hey, yeah just return the variable, whatever."
+
+170
+00:07:57,920 --> 00:07:59,010
+The fact that we return the
+
+171
+00:07:59,010 --> 00:08:00,920
+value of the variable is important.
+
+172
+00:08:02,150 --> 00:08:04,700
+So because a variable was created inside the function,
+
+173
+00:08:04,700 --> 00:08:06,480
+it does not exist outside of it.
+
+174
+00:08:07,860 --> 00:08:12,500
+And this is the case for many blocks.
+
+175
+00:08:12,500 --> 00:08:15,240
+And remember the block is what's underneath the colon.
+
+176
+00:08:15,240 --> 00:08:17,135
+We've got a block here.
+
+177
+00:08:17,135 --> 00:08:21,530
+In some blocks you will see the variable stays alive
+
+178
+00:08:21,530 --> 00:08:23,290
+after the end of the block
+
+179
+00:08:23,290 --> 00:08:27,060
+but it is aways a bad idea to use a variable
+
+180
+00:08:27,060 --> 00:08:29,540
+outside of the block it was declared in.
+
+181
+00:08:29,540 --> 00:08:32,980
+Okay, generally trying to keep your variables
+
+182
+00:08:32,980 --> 00:08:36,480
+only used and defined within the same block.
+
+183
+00:08:36,480 --> 00:08:39,580
+Unless, the block is an inner block.
+
+184
+00:08:39,580 --> 00:08:42,180
+So if you did have an if statement here,
+
+185
+00:08:43,580 --> 00:08:46,540
+you can use addition here, that's totally fine.
+
+186
+00:08:46,540 --> 00:08:49,470
+Because this block is inside the block
+
+187
+00:08:49,470 --> 00:08:51,620
+in which the variable was defined.
+
+188
+00:08:51,620 --> 00:08:54,790
+Okay, anyway there's a reason I'm saying that.
+
+189
+00:08:54,790 --> 00:08:57,160
+As you'll find out very soon.
+
+190
+00:08:58,350 --> 00:08:59,440
+But that's it for this video.
+
+191
+00:08:59,440 --> 00:09:02,088
+I don't want to really confuse you any longer.
+
+192
+00:09:02,088 --> 00:09:05,780
+What we've learned about has been return values of functions
+
+193
+00:09:05,780 --> 00:09:08,010
+and how print and return are different.
+
+194
+00:09:08,010 --> 00:09:10,240
+And how returning allows us to then
+
+195
+00:09:10,240 --> 00:09:12,110
+essentially replace the function
+
+196
+00:09:12,110 --> 00:09:14,480
+by the value that it was returned.
+
+197
+00:09:14,480 --> 00:09:16,650
+And then we can do things like assign them to variables,
+
+198
+00:09:16,650 --> 00:09:18,160
+and things like that.
+
+199
+00:09:18,160 --> 00:09:19,430
+So that's it for this video,
+
+200
+00:09:19,430 --> 00:09:21,060
+and I'll see you on the next one.
+

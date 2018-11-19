@@ -1,0 +1,780 @@
+1
+00:00:00,210 --> 00:00:01,460
+Instructor: Hola y bienvenido de nuevo.
+
+2
+00:00:01,460 --> 00:00:04,240
+En este video vamos a ver el ciclo while.
+
+3
+00:00:05,130 --> 00:00:08,290
+El ciclo while y el ciclo any
+
+4
+00:00:08,290 --> 00:00:10,880
+nos permiten ejecutar algo varias veces.
+
+5
+00:00:10,880 --> 00:00:13,580
+De acuerdo, por qu querras ejecutar algo muchas veces?
+
+6
+00:00:14,970 --> 00:00:19,970
+Por ejemplo, imagine que tiene un termmetro, un horno, y desea controlar continuamente
+
+7
+00:00:20,140 --> 00:00:23,510
+la temperatura del horno, encender el horno si la
+
+8
+00:00:23,510 --> 00:00:25,440
+temperatura est bajo algn tipo
+
+9
+00:00:25,440 --> 00:00:27,560
+de cantidad, o apagar el horno
+
+10
+00:00:27,560 --> 00:00:29,820
+si la temperatura ha alcanzado una
+
+11
+00:00:29,820 --> 00:00:30,700
+cierta cantidad .
+
+12
+00:00:31,960 --> 00:00:34,090
+Aqu hay un ejemplo del uso
+
+13
+00:00:34,090 --> 00:00:37,210
+de un bucle para repetir esta comprobacin continuamente.
+
+14
+00:00:38,390 --> 00:00:41,300
+El ciclo while es una forma particular de
+
+15
+00:00:41,300 --> 00:00:45,610
+un ciclo, Python tiene dos, y en este ciclo podemos repetir algo
+
+16
+00:00:45,610 --> 00:00:48,060
+siempre que una condicin sea verdadera.
+
+17
+00:00:49,200 --> 00:00:51,550
+As es como puedes hacerlo.
+
+18
+00:00:51,550 --> 00:00:53,270
+Vamos a tener una variable es programador y
+
+19
+00:00:53,270 --> 00:00:54,370
+eso va a ser cierto.
+
+20
+00:00:54,370 --> 00:00:57,410
+Y vamos a decir que mientras el programador
+
+21
+00:00:58,700 --> 00:01:00,880
+sea cierto, imprima 'hola mundo'.
+
+22
+00:01:03,230 --> 00:01:05,440
+Ahora sabemos por la declaracin if
+
+23
+00:01:05,440 --> 00:01:06,990
+que esto es algo
+
+24
+00:01:07,960 --> 00:01:11,050
+opcional, por lo que podemos tener mientras es
+
+25
+00:01:11,050 --> 00:01:13,110
+programador, vamos a imprimir 'hola mundo'.
+
+26
+00:01:13,110 --> 00:01:16,230
+Ahora, no puedo recomendar que ejecutes esto, aunque voy a
+
+27
+00:01:16,230 --> 00:01:17,240
+ejecutarlo de todos
+
+28
+00:01:17,240 --> 00:01:19,440
+modos y puedo arrepentirme, la computadora puede bloquearse.
+
+29
+00:01:21,290 --> 00:01:23,010
+Bien, ah tienes.
+
+30
+00:01:23,010 --> 00:01:25,000
+As que se imprimieron muchos "hola mundos".
+
+31
+00:01:25,000 --> 00:01:27,730
+No creo que puedas ver mi barra de navegacin
+
+32
+00:01:27,730 --> 00:01:29,050
+demasiado fcilmente, ah tienes.
+
+33
+00:01:29,050 --> 00:01:31,540
+Hay muchos mundos de hola.
+
+34
+00:01:31,540 --> 00:01:34,890
+Y eso es porque el programador es siempre cierto.
+
+35
+00:01:34,890 --> 00:01:38,130
+Entonces solo estamos corriendo, corriendo y corriendo continuamente.
+
+36
+00:01:38,130 --> 00:01:40,960
+Esto se denomina bucle infinito porque
+
+37
+00:01:40,960 --> 00:01:43,790
+tenemos un bucle que se repite
+
+38
+00:01:43,790 --> 00:01:46,110
+continuamente sin detenerse nunca.
+
+39
+00:01:46,110 --> 00:01:48,880
+No le dijimos cundo parar, por lo que simplemente no funciona.
+
+40
+00:01:50,010 --> 00:01:55,010
+Podramos ejecutar este ciclo una vez, as.
+
+41
+00:01:55,150 --> 00:01:56,030
+Y luego podramos
+
+42
+00:01:56,030 --> 00:01:58,280
+ejecutarlo y solo imprimiramos 'hola mundo' una vez.
+
+43
+00:01:58,280 --> 00:02:00,640
+Obviamente, este es un bucle bastante tonto.
+
+44
+00:02:00,640 --> 00:02:02,590
+Simplemente no podras tener el loop
+
+45
+00:02:02,590 --> 00:02:04,750
+y solo imprimir 'hello world' una vez.
+
+46
+00:02:04,750 --> 00:02:07,270
+Pero normalmente esta condicin de detencin
+
+47
+00:02:07,270 --> 00:02:10,270
+sera el resultado de alguna otra parte
+
+48
+00:02:10,270 --> 00:02:12,000
+del sistema haciendo algo.
+
+49
+00:02:12,000 --> 00:02:14,370
+Por ejemplo, podramos preguntarle al usuario si
+
+50
+00:02:14,370 --> 00:02:16,670
+ya se han convertido en programadores.
+
+51
+00:02:18,870 --> 00:02:20,810
+As que modifiquemos este ciclo ligeramente.
+
+52
+00:02:20,810 --> 00:02:23,640
+Comencemos diciendo que el programador es falso.
+
+53
+00:02:24,530 --> 00:02:28,210
+Cambiaremos los cuatro ciclos mientras que no es programador.
+
+54
+00:02:28,210 --> 00:02:31,380
+Vamos a decir aprender la programacin y luego le preguntaremos
+
+55
+00:02:31,380 --> 00:02:32,840
+al usuario si ya
+
+56
+00:02:32,840 --> 00:02:34,460
+se han convertido en programadores.
+
+57
+00:02:34,460 --> 00:02:37,860
+El usuario es programador se va a ingresar.
+
+58
+00:02:39,050 --> 00:02:41,510
+"Ya eres un programador? "Ahora, van
+
+59
+00:02:42,450 --> 00:02:44,940
+a decir s o no".
+
+60
+00:02:44,940 --> 00:02:48,790
+Entonces diremos que el programador es igual, el usuario
+
+61
+00:02:48,790 --> 00:02:51,040
+es el programador igual, s.
+
+62
+00:02:52,400 --> 00:02:55,610
+Ahora sabemos que todas las variables estn asignadas
+
+63
+00:02:55,610 --> 00:02:57,570
+con este signo igual y
+
+64
+00:02:57,570 --> 00:03:02,100
+lo que sucede es que primero ejecutamos la parte correcta, luego
+
+65
+00:03:02,100 --> 00:03:04,200
+asignamos la variable a eso.
+
+66
+00:03:04,200 --> 00:03:06,680
+As que aqu, vamos a ejecutar esta entrada, vamos
+
+67
+00:03:06,680 --> 00:03:08,180
+a preguntarle algo al usuario, como
+
+68
+00:03:08,180 --> 00:03:09,560
+hemos visto en el pasado.
+
+69
+00:03:09,560 --> 00:03:11,370
+El usuario podr escribir algo.
+
+70
+00:03:11,370 --> 00:03:13,990
+Lo que escriban va a ser en esta variable.
+
+71
+00:03:15,140 --> 00:03:17,350
+Por ejemplo, digamos que escribieron "no". "Una vez ms,
+
+72
+00:03:18,810 --> 00:03:20,300
+tenemos otra variable aqu
+
+73
+00:03:20,300 --> 00:03:23,940
+con un signo igual, vamos a evaluar este lado derecho
+
+74
+00:03:23,940 --> 00:03:25,080
+de la expresin
+
+75
+00:03:25,080 --> 00:03:28,300
+primero, y luego vamos a ponerlo dentro de esta variable.
+
+76
+00:03:28,300 --> 00:03:33,000
+"No", que es lo que el usuario tipe, igual, igual, s.
+
+77
+00:03:33,000 --> 00:03:34,720
+Esto va a ser
+
+78
+00:03:34,720 --> 00:03:37,890
+falso, por lo que el programador ser falso.
+
+79
+00:03:37,890 --> 00:03:40,480
+Sin embargo, si escribieron yes para comenzar,
+
+80
+00:03:40,480 --> 00:03:42,660
+entonces s ser igual a yes,
+
+81
+00:03:42,660 --> 00:03:44,610
+y esto ser cierto.
+
+82
+00:03:44,610 --> 00:03:46,780
+La variable is programmer ser verdadera
+
+83
+00:03:46,780 --> 00:03:48,500
+y el ciclo se detendr.
+
+84
+00:03:48,500 --> 00:03:49,333
+Vamos a ejecutar esto.
+
+85
+00:03:50,850 --> 00:03:53,990
+Tenemos programacin de aprendizaje, mal misspelt, me acabo de dar
+
+86
+00:03:53,990 --> 00:03:54,955
+cuenta de eso.
+
+87
+00:03:54,955 --> 00:03:56,600
+Lo siento por eso.
+
+88
+00:03:56,600 --> 00:03:58,670
+Todava eres un programador y vamos a decir "no", as
+
+89
+00:03:58,670 --> 00:04:01,880
+que nos preguntar nuevamente "no, no, no, no". "No te conviertes en
+
+90
+00:04:01,880 --> 00:04:03,690
+un programador tan rpido, pero
+
+91
+00:04:03,690 --> 00:04:06,760
+despus de un tiempo, digamos unas pocas semanas,
+
+92
+00:04:06,760 --> 00:04:10,740
+o un par de meses, ahora podemos decir" s ", y
+
+93
+00:04:10,740 --> 00:04:11,707
+luego se detiene.
+
+94
+00:04:11,707 --> 00:04:13,210
+Es un bucle bastante
+
+95
+00:04:13,210 --> 00:04:15,140
+malo, ni siquiera nos felicita.
+
+96
+00:04:15,140 --> 00:04:17,800
+No se preocupe, habr muchas felicitaciones cuando se
+
+97
+00:04:17,800 --> 00:04:19,250
+convierta en un programador.
+
+98
+00:04:21,480 --> 00:04:22,530
+De acuerdo, este es un
+
+99
+00:04:22,530 --> 00:04:24,550
+ejemplo de algo que podras hacer con ese ciclo while.
+
+100
+00:04:24,550 --> 00:04:26,393
+Tal vez no sea el ejemplo
+
+101
+00:04:26,393 --> 00:04:29,201
+ms til, pero no obstante, se puede hacer.
+
+102
+00:04:29,201 --> 00:04:31,810
+Un ciclo while tambin se puede
+
+103
+00:04:31,810 --> 00:04:35,330
+usar para repetir algo un nmero especfico de veces.
+
+104
+00:04:35,330 --> 00:04:36,540
+Cmo podemos hacer eso?
+
+105
+00:04:37,440 --> 00:04:40,070
+Bueno, definamos una variable a la que voy a llamar
+
+106
+00:04:40,070 --> 00:04:42,810
+i por ndice y va a ser igual a cero.
+
+107
+00:04:42,810 --> 00:04:44,860
+Mientras que yo soy
+
+108
+00:04:44,860 --> 00:04:49,430
+menos de diez, vamos a imprimir algo as, repetido veces.
+
+109
+00:04:50,590 --> 00:04:54,750
+Y luego, por supuesto, soy cero al comienzo.
+
+110
+00:04:54,750 --> 00:04:56,810
+Vamos a verificar si tengo menos de diez,
+
+111
+00:04:56,810 --> 00:04:59,280
+lo cual es cierto, as que vamos a ejecutar esto.
+
+112
+00:05:00,220 --> 00:05:03,650
+Luego volveremos, seguir siendo cero, son menos de diez, as que
+
+113
+00:05:03,650 --> 00:05:06,130
+vamos a repetirlo una y otra vez, una
+
+114
+00:05:06,130 --> 00:05:07,710
+y otra, y otra vez.
+
+115
+00:05:07,710 --> 00:05:11,100
+Yo siempre es cero, as que esto ser un ciclo infinito.
+
+116
+00:05:11,100 --> 00:05:14,320
+Qu hacemos para hacer que este no sea un ciclo infinito?
+
+117
+00:05:16,590 --> 00:05:19,630
+Lo tienes, todo lo que tenemos que hacer es decir
+
+118
+00:05:19,630 --> 00:05:21,590
+que es igual a i ms uno.
+
+119
+00:05:21,590 --> 00:05:24,120
+De nuevo, el lado derecho evala primero, cero
+
+120
+00:05:24,120 --> 00:05:27,940
+ms uno es uno, luego se vuelve a poner en i.
+
+121
+00:05:27,940 --> 00:05:30,180
+As que ahora voy a ser igual a uno.
+
+122
+00:05:30,180 --> 00:05:32,780
+La prxima vez que el bucle se ejecute, yo soy uno.
+
+123
+00:05:32,780 --> 00:05:35,020
+Uno ms uno son dos, yo ser dos.
+
+124
+00:05:35,020 --> 00:05:36,321
+Luego dos ms uno, tres ms
+
+125
+00:05:36,321 --> 00:05:37,700
+uno, cuatro ms uno y as sucesivamente.
+
+126
+00:05:37,700 --> 00:05:42,060
+Eventualmente, me convierto en diez, y diez no es menos de diez, esto
+
+127
+00:05:42,060 --> 00:05:44,490
+se convierte en falso y dejamos de correr.
+
+128
+00:05:44,490 --> 00:05:45,323
+Corramos eso.
+
+129
+00:05:47,240 --> 00:05:48,930
+Primero nos pregunta si somos programadores.
+
+130
+00:05:48,930 --> 00:05:50,870
+Bueno, hemos podido crear este ciclo aqu, as
+
+131
+00:05:50,870 --> 00:05:52,480
+que digamos "s". "Y luego,
+
+132
+00:05:53,400 --> 00:05:55,860
+como puedes ver, se repite diez
+
+133
+00:05:55,860 --> 00:05:57,560
+veces, desde cero hasta nueve.
+
+134
+00:05:58,790 --> 00:06:00,270
+As es como puedes usar
+
+135
+00:06:00,270 --> 00:06:02,940
+un ciclo while para repetir algo varias veces.
+
+136
+00:06:02,940 --> 00:06:04,460
+Sin embargo, en los prximos videos vamos
+
+137
+00:06:04,460 --> 00:06:06,350
+a aprender una forma an mejor de hacerlo.
+
+138
+00:06:07,540 --> 00:06:09,390
+De acuerdo, como dije antes, solo voy
+
+139
+00:06:09,390 --> 00:06:11,510
+a darles otro ejemplo con la temperatura.
+
+140
+00:06:11,510 --> 00:06:13,410
+La temperatura ser quince.
+
+141
+00:06:13,410 --> 00:06:16,270
+Si bien la temperatura es inferior a veinte.
+
+142
+00:06:16,270 --> 00:06:18,390
+Vamos a imprimir calefaccin, y vamos
+
+143
+00:06:19,610 --> 00:06:21,840
+a decir que la temperatura es
+
+144
+00:06:21,840 --> 00:06:23,840
+igual a la temperatura ms uno.
+
+145
+00:06:24,890 --> 00:06:27,850
+As que vamos a calentar, presumiblemente, cinco veces.
+
+146
+00:06:27,850 --> 00:06:29,170
+Corramos eso.
+
+147
+00:06:29,170 --> 00:06:30,920
+De nuevo, diremos que s a
+
+148
+00:06:30,920 --> 00:06:32,910
+la programacin, y luego tenemos calefaccin
+
+149
+00:06:32,910 --> 00:06:35,122
+cinco veces porque la temperatura lleg a
+
+150
+00:06:35,122 --> 00:06:38,070
+quince, luego diecisis, diecisiete, dieciocho, diecinueve y luego veinte.
+
+151
+00:06:38,070 --> 00:06:41,590
+Por supuesto, podemos reducir esto y acortarlo para que en lugar de
+
+152
+00:06:41,590 --> 00:06:43,730
+la temperatura sea igual a la temperatura
+
+153
+00:06:43,730 --> 00:06:45,530
+ms uno, podramos decir ms igual.
+
+154
+00:06:45,530 --> 00:06:47,200
+Y eso significa lo mismo.
+
+155
+00:06:47,200 --> 00:06:48,033
+Bueno?
+
+156
+00:06:48,033 --> 00:06:50,690
+Esto significa temperatura igual a temperatura ms uno.
+
+157
+00:06:50,690 --> 00:06:53,320
+Del mismo modo aqu, yo ms igual uno.
+
+158
+00:06:55,260 --> 00:06:58,250
+Por supuesto, en lugar de aumentar continuamente la temperatura,
+
+159
+00:06:58,250 --> 00:07:00,330
+obtendramos esta temperatura de un sensor,
+
+160
+00:07:00,330 --> 00:07:02,530
+o un pastel de frambuesa, o un
+
+161
+00:07:02,530 --> 00:07:03,830
+termmetro, o algo as.
+
+162
+00:07:03,830 --> 00:07:06,810
+As que este ciclo while solo se calentara mientras
+
+163
+00:07:06,810 --> 00:07:09,380
+la temperatura es menor que cierta cantidad.
+
+164
+00:07:10,540 --> 00:07:11,505
+Algo importante a
+
+165
+00:07:11,505 --> 00:07:16,505
+tener en cuenta es que, tan pronto como la temperatura alcance los veinte, este
+
+166
+00:07:17,590 --> 00:07:20,170
+ciclo finaliza, por lo que incluso si
+
+167
+00:07:20,170 --> 00:07:23,260
+la temperatura fuera inferior a veinte ms tarde,
+
+168
+00:07:23,260 --> 00:07:25,680
+este ciclo while no seguira funcionando.
+
+169
+00:07:25,680 --> 00:07:26,780
+Se hubiera detenido.
+
+170
+00:07:26,780 --> 00:07:30,600
+Por lo tanto, necesitaramos tener alguna forma de reiniciar este ciclo
+
+171
+00:07:30,600 --> 00:07:33,210
+cuando la temperatura llegue a menos de veinte.
+
+172
+00:07:34,060 --> 00:07:36,680
+Veremos eso ms adelante en el curso.
+
+173
+00:07:36,680 --> 00:07:39,090
+Veremos cmo podemos hacer ese tipo de cosas.
+
+174
+00:07:40,040 --> 00:07:42,190
+Solo quera mostrarte la sintaxis de los
+
+175
+00:07:42,190 --> 00:07:43,978
+cuatro bucles, cmo vas redactndolos, porque
+
+176
+00:07:43,978 --> 00:07:45,660
+a medida que avanzamos en el
+
+177
+00:07:45,660 --> 00:07:47,670
+curso, de nuevo, vamos a trabajar en
+
+178
+00:07:47,670 --> 00:07:50,250
+algunos proyectos y tienes que saber la sintaxis
+
+179
+00:07:50,250 --> 00:07:53,430
+de Python antes. puedes profundizar en algunos proyectos ms avanzados.
+
+180
+00:07:53,430 --> 00:07:55,670
+Piense en esto como obtener las herramientas que
+
+181
+00:07:55,670 --> 00:07:58,120
+necesita para comenzar a hacer su trabajo de
+
+182
+00:07:58,120 --> 00:08:00,700
+carpintero tal vez, o su jardn en su jardn.
+
+183
+00:08:00,700 --> 00:08:02,970
+Si no tiene ninguna herramienta,
+
+184
+00:08:02,970 --> 00:08:06,160
+ser muy difcil para usted hacer cualquier proyecto.
+
+185
+00:08:06,160 --> 00:08:07,570
+Pero tan pronto como tengas
+
+186
+00:08:07,570 --> 00:08:08,403
+unos cinceles y
+
+187
+00:08:08,403 --> 00:08:12,670
+algunas lijadoras y papel de lija, puedes comenzar a hacer un montn de cosas.
+
+188
+00:08:12,670 --> 00:08:14,740
+Por supuesto, este curso te
+
+189
+00:08:14,740 --> 00:08:16,830
+traer mucho ms que cincelar.
+
+190
+00:08:16,830 --> 00:08:19,040
+Te dar muchas ms herramientas y
+
+191
+00:08:19,040 --> 00:08:21,910
+aprenders mucho sobre ellas a medida que avancemos.
+
+192
+00:08:23,010 --> 00:08:24,530
+Como dije, este curso te
+
+193
+00:08:24,530 --> 00:08:25,900
+llevar a un nivel experto.
+
+194
+00:08:25,900 --> 00:08:27,850
+Pasemos al siguiente video y
+
+195
+00:08:27,850 --> 00:08:29,300
+sigamos aprendiendo Python.
+

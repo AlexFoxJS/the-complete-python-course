@@ -1,0 +1,272 @@
+1
+00:00:00,000 --> 00:00:01,150
+Narrador: Hola y bienvenido de nuevo.
+
+2
+00:00:01,150 --> 00:00:02,910
+En este video, vamos
+
+3
+00:00:02,910 --> 00:00:04,530
+a simplificar un poco
+
+4
+00:00:04,530 --> 00:00:07,880
+nuestro cdigo de Flask al permitir que nuestro
+
+5
+00:00:07,880 --> 00:00:12,420
+punto final aqu proporcione la U al formulario y reciba los datos.
+
+6
+00:00:12,420 --> 00:00:14,230
+Por lo tanto, ser un poco
+
+7
+00:00:14,230 --> 00:00:17,180
+ms agradable, habr menos rutas para el acceso de
+
+8
+00:00:17,180 --> 00:00:21,000
+los usuarios y, en general, ser un poco ms fcil de navegar.
+
+9
+00:00:21,000 --> 00:00:24,110
+Lo que vamos a hacer es hacer dos cosas.
+
+10
+00:00:24,110 --> 00:00:25,860
+Vamos a permitir que
+
+11
+00:00:27,050 --> 00:00:30,060
+este punto final tambin vea solicitudes de obtencin.
+
+12
+00:00:30,060 --> 00:00:33,400
+Ahora, el navegador recibe solicitudes.
+
+13
+00:00:34,820 --> 00:00:37,170
+El formulario no publica solicitudes.
+
+14
+00:00:37,170 --> 00:00:40,930
+Entonces sabemos que si obtenemos una solicitud, ese es
+
+15
+00:00:40,930 --> 00:00:44,100
+el navegador que quiere cargar la pgina.
+
+16
+00:00:44,100 --> 00:00:47,150
+Y probablemente el usuario quiera ver el formulario.
+
+17
+00:00:48,030 --> 00:00:49,700
+Si los usuarios ven la solicitud
+
+18
+00:00:49,700 --> 00:00:52,130
+posterior, sabemos que el formulario nos enva datos.
+
+19
+00:00:52,130 --> 00:00:54,900
+Y, por lo tanto, deberamos tratar con los datos de ese formulario.
+
+20
+00:00:56,070 --> 00:01:00,220
+Entonces, si el mtodo de solicitud es post, vamos
+
+21
+00:01:01,330 --> 00:01:03,210
+a hacer todo esto.
+
+22
+00:01:04,060 --> 00:01:06,040
+Obtenga el ttulo del formulario,
+
+23
+00:01:06,040 --> 00:01:07,760
+obtenga el contenido del formulario,
+
+24
+00:01:07,760 --> 00:01:09,280
+sepa crear una nueva
+
+25
+00:01:09,280 --> 00:01:12,710
+publicacin y luego redirija al usuario a la publicacin.
+
+26
+00:01:12,710 --> 00:01:13,730
+Tan pronto como
+
+27
+00:01:13,730 --> 00:01:15,870
+regresemos, lo sabr por conocimiento general de
+
+28
+00:01:15,870 --> 00:01:18,570
+Python, creo que en cuanto regresemos, la funcin termina.
+
+29
+00:01:19,450 --> 00:01:22,300
+Entonces, si tenemos otra devolucin
+
+30
+00:01:28,050 --> 00:01:31,100
+aqu, esta devolucin solo se ejecutar
+
+31
+00:01:31,100 --> 00:01:33,100
+si no ejecutamos esta.
+
+32
+00:01:34,480 --> 00:01:37,140
+Y siempre ejecutaremos este si el
+
+33
+00:01:37,140 --> 00:01:39,650
+mtodo de solicitud es post.
+
+34
+00:01:39,650 --> 00:01:42,000
+Entonces, si el mtodo de solicitud no
+
+35
+00:01:42,000 --> 00:01:44,450
+es publicacin, saltaremos directamente a este retorno.
+
+36
+00:01:46,446 --> 00:01:49,330
+Y eso significa que si el navegador realiza una
+
+37
+00:01:49,330 --> 00:01:51,640
+solicitud de obtencin, vamos a renderizar la plantilla.
+
+38
+00:01:51,640 --> 00:01:54,120
+Si recibimos una solicitud posterior del
+
+39
+00:01:54,120 --> 00:01:56,640
+formulario, vamos a tratar con esa informacin.
+
+40
+00:01:56,640 --> 00:02:00,030
+Ahora ya no necesitamos / post / form porque
+
+41
+00:02:00,030 --> 00:02:02,040
+este punto final puede ser ambos.
+
+42
+00:02:02,040 --> 00:02:03,700
+Y es un poco ms simple
+
+43
+00:02:03,700 --> 00:02:05,160
+tener el mismo punto final
+
+44
+00:02:05,160 --> 00:02:08,540
+que tiene que ver con la forma en que se crea la
+
+45
+00:02:08,540 --> 00:02:10,620
+informacin y con la entrada de datos.
+
+46
+00:02:11,840 --> 00:02:14,540
+Nuestra creacin. jinja2 tambin tiene que
+
+47
+00:02:14,540 --> 00:02:17,380
+cambiar para que esta accin aqu ahora pueda eliminarse.
+
+48
+00:02:18,420 --> 00:02:20,430
+Si elimina la accin, eso
+
+49
+00:02:20,430 --> 00:02:24,650
+significa que utiliza la pgina actual en la que se encuentra.
+
+50
+00:02:24,650 --> 00:02:25,870
+Y debido a que
+
+51
+00:02:25,870 --> 00:02:27,820
+la pgina actual es la pgina que
+
+52
+00:02:28,670 --> 00:02:31,280
+sirve la plantilla, tambin es la pgina que toma
+
+53
+00:02:31,280 --> 00:02:33,500
+los datos, no necesitamos una accin all.
+
+54
+00:02:33,500 --> 00:02:35,350
+Esto tambin simplifica las cosas porque
+
+55
+00:02:35,350 --> 00:02:37,130
+si mueve este formulario o
+
+56
+00:02:37,130 --> 00:02:40,160
+cambia las URL o algo por el estilo, las
+
+57
+00:02:40,160 --> 00:02:41,700
+cosas pueden romper el formulario.
+
+58
+00:02:41,700 --> 00:02:42,930
+Pero ahora, debido a que
+
+59
+00:02:42,930 --> 00:02:44,810
+es la misma pgina, tanto al darle
+
+60
+00:02:44,810 --> 00:02:46,790
+la forma al usuario como al aceptar
+
+61
+00:02:46,790 --> 00:02:49,210
+la entrada del formulario, es un poco ms estable.
+
+62
+00:02:50,280 --> 00:02:52,680
+Y as, de esta manera, simplifica un poco su cdigo, hace que
+
+63
+00:02:52,680 --> 00:02:54,330
+sea un poco ms fcil trabajar con l.
+
+64
+00:02:54,330 --> 00:02:56,810
+Y tambin reduce la cantidad de cdigo que tienes.
+
+65
+00:02:56,810 --> 00:02:58,520
+Todas las cosas buenas.
+
+66
+00:02:58,520 --> 00:02:59,750
+Entonces eso es todo por este video.
+
+67
+00:02:59,750 --> 00:03:00,820
+Quera mostrarte cmo hacer esto.
+
+68
+00:03:00,820 --> 00:03:02,470
+Y te ver en el prximo.
+

@@ -1,0 +1,292 @@
+1
+00:00:00,330 --> 00:00:01,440
+Narrador: Hola, y bienvenido de nuevo.
+
+2
+00:00:01,440 --> 00:00:03,040
+En este video, solo
+
+3
+00:00:03,040 --> 00:00:06,030
+quera darte unas pocas palabras de advertencia
+
+4
+00:00:06,030 --> 00:00:08,340
+para que algunas de las pginas
+
+5
+00:00:08,340 --> 00:00:09,200
+que intentas
+
+6
+00:00:10,660 --> 00:00:14,000
+eliminar no funcionen, y el motivo es JavaScript.
+
+7
+00:00:14,000 --> 00:00:16,430
+Entonces, como he dicho antes, JavaScript
+
+8
+00:00:16,430 --> 00:00:19,720
+es un lenguaje de programacin que ejecuta su navegador.
+
+9
+00:00:19,720 --> 00:00:22,790
+Y se puede usar para tratar las interacciones del
+
+10
+00:00:22,790 --> 00:00:23,623
+usuario, por ejemplo.
+
+11
+00:00:24,580 --> 00:00:27,980
+Entonces, cuando el usuario hace algo, tal vez obtenga una ventana que
+
+12
+00:00:27,980 --> 00:00:30,620
+aparece en su pantalla, o una modal, o tal
+
+13
+00:00:30,620 --> 00:00:33,790
+vez reciba algn tipo de alerta, o algo por el estilo.
+
+14
+00:00:33,790 --> 00:00:36,290
+En algunos casos, presionas el botn de inicio de sesin,
+
+15
+00:00:36,290 --> 00:00:39,120
+y luego obtienes una buena ventana all donde puedes iniciar sesin.
+
+16
+00:00:40,280 --> 00:00:44,270
+Y ese tipo de cosas pueden suceder porque hay algn
+
+17
+00:00:44,270 --> 00:00:48,470
+cdigo JavaScript en la pgina que su navegador puede ejecutar.
+
+18
+00:00:48,470 --> 00:00:50,440
+Tu navegador puede ejecutarlo.
+
+19
+00:00:50,440 --> 00:00:52,200
+Sin embargo, cuando descarga la
+
+20
+00:00:52,200 --> 00:00:55,790
+pgina usando el mdulo de Solicitudes, no tiene acceso para
+
+21
+00:00:55,790 --> 00:00:58,160
+ejecutar JavaScript porque no tiene un navegador.
+
+22
+00:00:58,160 --> 00:01:00,160
+Usted no tiene un intrprete de JavaScript.
+
+23
+00:01:01,120 --> 00:01:05,040
+Entonces, si la pgina depende de JavaScript para cambiar el contenido,
+
+24
+00:01:06,170 --> 00:01:09,130
+entonces no funcionar con el mdulo de Solicitudes.
+
+25
+00:01:09,130 --> 00:01:10,770
+Y una palabra de
+
+26
+00:01:10,770 --> 00:01:15,580
+advertencia es que algunas pginas sern en realidad una pgina en blanco,
+
+27
+00:01:15,580 --> 00:01:18,990
+y luego el contenido se rellena con JavaScript.
+
+28
+00:01:18,990 --> 00:01:21,110
+Por lo tanto, a veces la pgina est
+
+29
+00:01:21,110 --> 00:01:23,270
+completamente en blanco, y hay un montn de cdigo
+
+30
+00:01:23,270 --> 00:01:26,070
+JavaScript en el fondo que pone el contenido en la pgina.
+
+31
+00:01:26,070 --> 00:01:28,630
+Cuando descarga la pgina usando Solicitudes, todo lo
+
+32
+00:01:28,630 --> 00:01:30,110
+que ver es una pgina
+
+33
+00:01:30,110 --> 00:01:32,700
+en blanco porque no puede ejecutar el JavaScript.
+
+34
+00:01:32,700 --> 00:01:35,950
+Entonces, si eso te sucede a ti, sabes por qu es as.
+
+35
+00:01:35,950 --> 00:01:38,040
+Es porque hay cdigo JavaScript all.
+
+36
+00:01:38,920 --> 00:01:41,470
+Y la forma en que sabes que
+
+37
+00:01:41,470 --> 00:01:44,470
+algo sali mal es porque podrs inspeccionar la pgina.
+
+38
+00:01:44,470 --> 00:01:46,820
+Ver un montn de contenido, y eso es genial,
+
+39
+00:01:46,820 --> 00:01:49,090
+pero luego cuando descargue las pginas en Solicitudes,
+
+40
+00:01:49,090 --> 00:01:51,590
+el contenido de la pgina se ver muy diferente.
+
+41
+00:01:52,810 --> 00:01:56,510
+Puedes verlo simplemente imprimindolo en tu cdigo de Python.
+
+42
+00:01:56,510 --> 00:01:57,490
+Y si se
+
+43
+00:01:57,490 --> 00:02:00,440
+ve muy diferente, es porque hay cdigo JavaScript all haciendo cosas.
+
+44
+00:02:01,310 --> 00:02:05,910
+Hay formas, por supuesto, de iniciar un navegador usando Python, e
+
+45
+00:02:05,910 --> 00:02:08,630
+interactuar con sitios web utilizando el navegador,
+
+46
+00:02:08,630 --> 00:02:10,840
+que est controlado por Python.
+
+47
+00:02:10,840 --> 00:02:12,760
+Pero esos son un poco ms avanzados, e
+
+48
+00:02:12,760 --> 00:02:15,460
+intentar agregar contenido para cubrir eso en el curso, pero no
+
+49
+00:02:15,460 --> 00:02:18,270
+est aqu en el momento en que estoy grabando este video.
+
+50
+00:02:18,270 --> 00:02:20,590
+Puede estar aqu cuando lo ests viendo.
+
+51
+00:02:20,590 --> 00:02:23,420
+Sin embargo, necesitar usar algo
+
+52
+00:02:23,420 --> 00:02:27,199
+llamado Selenium si quiere interactuar con una
+
+53
+00:02:27,199 --> 00:02:29,570
+pgina que usa JavaScript.
+
+54
+00:02:29,570 --> 00:02:31,150
+As que sintase libre de tomar
+
+55
+00:02:31,150 --> 00:02:33,440
+el resto del curso, vea si el contenido de
+
+56
+00:02:33,440 --> 00:02:36,350
+Selenium est activo, y si no, puede buscar en lnea y
+
+57
+00:02:36,350 --> 00:02:38,240
+ver cmo puede usar Selenium para hacerlo.
+
+58
+00:02:38,240 --> 00:02:40,310
+Pero eso es solo si la pgina con la que
+
+59
+00:02:40,310 --> 00:02:41,240
+ests interactuando tiene JavaScript.
+
+60
+00:02:41,240 --> 00:02:43,850
+Si no es as, como muchas pginas no lo
+
+61
+00:02:44,790 --> 00:02:46,590
+hacen, no dude en seguir usando Solicitudes.
+
+62
+00:02:46,590 --> 00:02:48,360
+Har exactamente lo que quieras.
+
+63
+00:02:48,360 --> 00:02:51,190
+Y en muchos casos, las pginas tendrn JavaScript,
+
+64
+00:02:51,190 --> 00:02:54,070
+pero tambin se podrn interactuar con Solicitudes, porque
+
+65
+00:02:54,070 --> 00:02:56,020
+el JavaScript se usar para
+
+66
+00:02:56,020 --> 00:02:57,630
+agregar algn tipo de
+
+67
+00:02:57,630 --> 00:03:00,240
+funcionalidad, no necesariamente para cambiar toda la pgina.
+
+68
+00:03:01,180 --> 00:03:02,680
+As que dale a las solicitudes una oportunidad primero.
+
+69
+00:03:02,680 --> 00:03:04,580
+Es la forma ms simple de hacer las cosas.
+
+70
+00:03:04,580 --> 00:03:05,413
+Y si eso
+
+71
+00:03:05,413 --> 00:03:07,190
+no funciona, y realmente necesitas interactuar
+
+72
+00:03:07,190 --> 00:03:10,040
+con esa pgina, mira Selenium para aprender ms.
+
+73
+00:03:11,250 --> 00:03:13,880
+Eso es todo por este video, y nos vemos en el siguiente.
+

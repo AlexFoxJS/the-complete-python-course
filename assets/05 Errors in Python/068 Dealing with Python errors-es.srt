@@ -1,0 +1,720 @@
+1
+00:00:00,147 --> 00:00:01,442
+Jos: Hola, bienvenido de nuevo.
+
+2
+00:00:01,442 --> 00:00:04,870
+En este video estamos hablando de lidiar con errores.
+
+3
+00:00:04,870 --> 00:00:08,193
+Uno de los principios bsicos de Python es
+
+4
+00:00:08,193 --> 00:00:09,776
+pedir perdn, no permiso.
+
+5
+00:00:10,671 --> 00:00:14,670
+Ahora, s lo bien que esto funciona con amigos y
+
+6
+00:00:14,670 --> 00:00:15,600
+familiares, no
+
+7
+00:00:15,600 --> 00:00:18,203
+tan bien, pero funciona fantsticamente en Python.
+
+8
+00:00:18,203 --> 00:00:20,476
+Echemos un vistazo a este fragmento de cdigo aqu.
+
+9
+00:00:20,476 --> 00:00:24,426
+Tenemos nuestra clase de auto y nuestra clase de garaje.
+
+10
+00:00:24,426 --> 00:00:27,733
+Y antes vimos cmo podemos verificar eso, nos aseguramos de
+
+11
+00:00:27,733 --> 00:00:30,483
+que el auto sea una instancia de tipo auto.
+
+12
+00:00:30,483 --> 00:00:33,502
+Pero imaginemos que no hicimos eso.
+
+13
+00:00:33,502 --> 00:00:36,088
+Y en su lugar hicimos algo que es bastante
+
+14
+00:00:36,088 --> 00:00:38,427
+normal para la mayora de los lenguajes de programacin,
+
+15
+00:00:38,427 --> 00:00:40,960
+que es solo, ya sabes, cuando agregas un automvil
+
+16
+00:00:40,960 --> 00:00:42,030
+simplemente agregas el auto.
+
+17
+00:00:42,030 --> 00:00:44,176
+Eso es lo que hace el mtodo.
+
+18
+00:00:44,176 --> 00:00:46,447
+Y luego, por supuesto, los usaramos
+
+19
+00:00:46,447 --> 00:00:50,947
+as, Ford iguala un nuevo garaje y luego Fiesta es un automvil nuevo.
+
+20
+00:00:55,114 --> 00:00:58,697
+Y luego, por supuesto, Ford dot agregar coche Fiesta.
+
+21
+00:00:59,951 --> 00:01:03,868
+Este es el uso normal de estas dos clases.
+
+22
+00:01:05,363 --> 00:01:08,549
+Ahora, normalmente, si queramos asegurarnos de que solo
+
+23
+00:01:08,549 --> 00:01:11,091
+estamos agregando objetos de automvil al garaje,
+
+24
+00:01:11,091 --> 00:01:15,924
+podramos, por supuesto, hacer esto, si es el caso, entonces hagamos otra
+
+25
+00:01:23,246 --> 00:01:26,996
+impresin, como usted sabe, su automvil no era un automvil.
+
+26
+00:01:28,069 --> 00:01:30,614
+Tu auto no era un auto
+
+27
+00:01:30,614 --> 00:01:32,749
+O podra generar un error aqu.
+
+28
+00:01:32,749 --> 00:01:36,978
+Y siento que esto debera ser Fiesta, no auto.
+
+29
+00:01:36,978 --> 00:01:39,932
+Esta es una estructura bastante tpica de codificacin de
+
+30
+00:01:39,932 --> 00:01:43,404
+una funcin en este caso la funcin de agregar coche.
+
+31
+00:01:43,404 --> 00:01:46,007
+Y antes de llamar a la funcin, verifica
+
+32
+00:01:46,007 --> 00:01:48,249
+si eso es algo que puedes hacer.
+
+33
+00:01:48,249 --> 00:01:49,698
+Puedo llamar a esta funcin?
+
+34
+00:01:49,698 --> 00:01:50,554
+S.
+
+35
+00:01:50,554 --> 00:01:51,731
+Entonces llmalo.
+
+36
+00:01:51,731 --> 00:01:54,199
+Y si no, di que ocurri un error.
+
+37
+00:01:54,199 --> 00:01:56,159
+Esta es una estructura
+
+38
+00:01:56,159 --> 00:02:00,694
+muy popular en muchos lenguajes de programacin donde pides primero
+
+39
+00:02:00,694 --> 00:02:03,431
+permiso y luego en lugar de perdn.
+
+40
+00:02:03,431 --> 00:02:05,690
+Entonces, aqu est pidiendo permiso para ejecutar
+
+41
+00:02:05,690 --> 00:02:07,692
+la funcin con los datos que tiene.
+
+42
+00:02:07,692 --> 00:02:11,892
+Si lo obtiene porque coincide, entonces agrega el automvil.
+
+43
+00:02:11,892 --> 00:02:15,944
+De lo contrario, dices que tu auto no era un automvil.
+
+44
+00:02:15,944 --> 00:02:20,227
+Python sugiere que en muchos casos nuestro cdigo puede
+
+45
+00:02:20,227 --> 00:02:24,622
+ser ms legible al pedir perdn en su lugar.
+
+46
+00:02:24,622 --> 00:02:27,222
+Hacer algo como esto en lugar
+
+47
+00:02:27,222 --> 00:02:29,109
+de hacer algo como esto.
+
+48
+00:02:29,109 --> 00:02:30,782
+Intenta llamar a la funcin,
+
+49
+00:02:30,782 --> 00:02:33,664
+este cdigo de Python no es real, por
+
+50
+00:02:33,664 --> 00:02:35,664
+cierto, si falla, haz algo, di
+
+51
+00:02:37,802 --> 00:02:39,158
+que ocurri un error.
+
+52
+00:02:39,158 --> 00:02:41,567
+Entonces puede ver que esto es
+
+53
+00:02:41,567 --> 00:02:45,576
+un poco ms conciso porque no tiene que verificar si
+
+54
+00:02:45,576 --> 00:02:48,717
+la funcin est bien para ser llamada o no.
+
+55
+00:02:48,717 --> 00:02:49,814
+Bueno.
+
+56
+00:02:49,814 --> 00:02:53,459
+As que volviendo a generar excepciones, podemos volver
+
+57
+00:02:53,459 --> 00:02:56,042
+a agregar nuestra instancia aqu.
+
+58
+00:02:57,061 --> 00:03:01,561
+Si no es el coche de ejemplo del automvil, entonces se genera un error de tipo.
+
+59
+00:03:03,720 --> 00:03:06,643
+Y solo voy a copiar esta cadena de
+
+60
+00:03:06,643 --> 00:03:09,595
+mis notas para que no te aburra a tirarla.
+
+61
+00:03:09,595 --> 00:03:13,088
+Y est bien, es la misma cadena que tenamos antes.
+
+62
+00:03:13,088 --> 00:03:16,138
+As que Python sugiere que esto es
+
+63
+00:03:16,138 --> 00:03:21,138
+mejor porque ahora solo tenemos que verificar si el auto es
+
+64
+00:03:21,304 --> 00:03:24,137
+apropiado una vez dentro del mtodo
+
+65
+00:03:25,001 --> 00:03:28,374
+y en cualquier otro lugar que podamos llamarlo,
+
+66
+00:03:28,374 --> 00:03:31,624
+podemos simplemente hacer Ford agregar el coche Fiesta.
+
+67
+00:03:33,384 --> 00:03:35,607
+Por supuesto, podra ocurrir una excepcin, podra
+
+68
+00:03:35,607 --> 00:03:36,876
+ocurrir un error, por
+
+69
+00:03:36,876 --> 00:03:39,419
+cierto error y excepcin ms o menos lo mismo.
+
+70
+00:03:39,419 --> 00:03:40,279
+Bueno?
+
+71
+00:03:40,279 --> 00:03:43,136
+Acabo de empezar con Java hace
+
+72
+00:03:43,136 --> 00:03:46,639
+mucho tiempo y se llaman excepciones all.
+
+73
+00:03:46,639 --> 00:03:49,595
+Entonces, una excepcin o un error puede ocurrir
+
+74
+00:03:49,595 --> 00:03:51,490
+cuando llamas a este mtodo.
+
+75
+00:03:51,490 --> 00:03:53,784
+Por ejemplo, si su automvil no
+
+76
+00:03:53,784 --> 00:03:57,141
+es un automvil, es una cuerda, entonces, qu hacemos?
+
+77
+00:03:57,141 --> 00:03:59,478
+Bueno, vamos a intentar ejecutar el cdigo.
+
+78
+00:03:59,478 --> 00:04:01,886
+Vamos a intentarlo y eso es intentarlo con
+
+79
+00:04:01,886 --> 00:04:05,139
+dos puntos, esto debe estar sangrado porque es un bloqueo.
+
+80
+00:04:05,139 --> 00:04:08,389
+Y luego vamos a tener un excepto
+
+81
+00:04:10,634 --> 00:04:12,791
+As que vamos a tratar de ejecutar
+
+82
+00:04:12,791 --> 00:04:14,016
+este bloque de cdigo
+
+83
+00:04:14,016 --> 00:04:15,334
+y, si sucede algo,
+
+84
+00:04:15,334 --> 00:04:19,344
+ocurre un error, un error se genera por algo dentro de este
+
+85
+00:04:19,344 --> 00:04:22,454
+cdigo, como un error de tipo, vamos a decir que
+
+86
+00:04:22,454 --> 00:04:24,871
+imprimir su automvil no era un automvil.
+
+87
+00:04:28,116 --> 00:04:29,681
+Bueno.
+
+88
+00:04:29,681 --> 00:04:32,155
+Ahora lo que va a pasar es, de
+
+89
+00:04:32,155 --> 00:04:34,384
+nuevo, vamos a tratar de ejecutar este cdigo
+
+90
+00:04:34,384 --> 00:04:36,966
+y luego vamos a exceptuarlo y el nico error
+
+91
+00:04:36,966 --> 00:04:40,667
+que vamos a atrapar, as que si ocurre un error de tipo vamos
+
+92
+00:04:40,667 --> 00:04:42,107
+a imprimir esto. fuera.
+
+93
+00:04:42,107 --> 00:04:43,746
+Si ocurre un tipo diferente
+
+94
+00:04:43,746 --> 00:04:47,329
+de error, como un error de valor que no se detectar.
+
+95
+00:04:48,738 --> 00:04:51,621
+Veamos qu pasa cuando ejecutamos la aplicacin punto P Y.
+
+96
+00:04:51,621 --> 00:04:55,358
+Recuerda, asegrate de hacer clic con el botn derecho en el punto P Y y ejecutarlo.
+
+97
+00:04:55,358 --> 00:04:56,941
+Ahora no obtenemos nada
+
+98
+00:04:56,941 --> 00:05:00,413
+porque, por supuesto, el automvil era un objeto de automvil.
+
+99
+00:05:00,413 --> 00:05:04,580
+Intentemos agregar un Fiesta aqu y ejecutarlo nuevamente.
+
+100
+00:05:06,011 --> 00:05:10,511
+Ahora recibimos este mensaje diciendo que su automvil no era un automvil.
+
+101
+00:05:11,609 --> 00:05:12,622
+Guay?
+
+102
+00:05:12,622 --> 00:05:15,820
+Qu sucede si en lugar de un error de tipo
+
+103
+00:05:15,820 --> 00:05:18,135
+aqu se genera un error de valor?
+
+104
+00:05:18,135 --> 00:05:20,571
+No es el error correcto para generar, debe
+
+105
+00:05:20,571 --> 00:05:24,789
+ser un error de tipo, pero solo por ejemplo, ahora recuperamos este rastreo.
+
+106
+00:05:24,789 --> 00:05:27,182
+Y eso es porque lo nico que atrapamos
+
+107
+00:05:27,182 --> 00:05:29,437
+fue un error de tipo en nuestro excepto.
+
+108
+00:05:29,437 --> 00:05:33,379
+Lo que ocurre cuando eso sucede es que
+
+109
+00:05:33,379 --> 00:05:37,848
+el error deja de aumentar continuamente y, en cambio,
+
+110
+00:05:37,848 --> 00:05:39,854
+simplemente muere aqu.
+
+111
+00:05:39,854 --> 00:05:42,451
+Y tenemos acceso a hacer algo
+
+112
+00:05:42,451 --> 00:05:44,451
+cuando ocurre ese error.
+
+113
+00:05:45,557 --> 00:05:50,205
+Es realmente bueno detectar los errores en su interfaz de usuario.
+
+114
+00:05:50,205 --> 00:05:52,734
+En este caso, esta es nuestra interfaz de usuario, ms o menos.
+
+115
+00:05:52,734 --> 00:05:55,650
+No tiene mucha interfaz, pero
+
+116
+00:05:55,650 --> 00:05:59,052
+debes atraparlos para que los usuarios
+
+117
+00:05:59,052 --> 00:06:01,312
+no vean esto.
+
+118
+00:06:01,312 --> 00:06:04,076
+No quiere que sus usuarios vean errores.
+
+119
+00:06:04,076 --> 00:06:05,437
+Sin embargo, no
+
+120
+00:06:05,437 --> 00:06:08,156
+debera atraparlos necesariamente cuando est trabajando
+
+121
+00:06:08,156 --> 00:06:10,674
+en el cdigo con el que
+
+122
+00:06:10,674 --> 00:06:12,770
+los usuarios no interactuarn directamente.
+
+123
+00:06:12,770 --> 00:06:15,711
+De esta forma, si ocurre un error en algn lugar
+
+124
+00:06:15,711 --> 00:06:16,877
+de tu cdigo, tu
+
+125
+00:06:16,877 --> 00:06:19,820
+programa se bloquear y eso es bueno mientras escribes cdigo.
+
+126
+00:06:19,820 --> 00:06:22,245
+Una vez que comparte el programa con
+
+127
+00:06:22,245 --> 00:06:24,504
+sus usuarios, no desea que aparezcan errores.
+
+128
+00:06:24,504 --> 00:06:27,337
+Entonces quieres atraparlos as.
+
+129
+00:06:28,779 --> 00:06:29,975
+Bueno.
+
+130
+00:06:29,975 --> 00:06:31,103
+As que hay
+
+131
+00:06:31,103 --> 00:06:34,638
+dos beneficios, uno es que creo que nuestro cdigo dice ms
+
+132
+00:06:34,638 --> 00:06:36,305
+bien que vamos a hacer
+
+133
+00:06:36,305 --> 00:06:39,332
+esto, oh, est bien si ocurre un error, haremos acento.
+
+134
+00:06:39,332 --> 00:06:42,882
+No tenemos que verificar si podemos ejecutar algo
+
+135
+00:06:42,882 --> 00:06:47,025
+y lo segundo es que nuestro cheque ya est aqu.
+
+136
+00:06:47,025 --> 00:06:49,562
+Entonces, por ejemplo, si quisiramos agregar autos
+
+137
+00:06:49,562 --> 00:06:51,474
+antes, tendramos que tener esto dos
+
+138
+00:06:51,474 --> 00:06:53,540
+veces antes de agregar cada automvil.
+
+139
+00:06:53,540 --> 00:06:56,220
+Ahora el if est en la funcin
+
+140
+00:06:56,220 --> 00:06:59,637
+add car y nuestro cdigo solo necesita esta nica lnea.
+
+141
+00:07:00,553 --> 00:07:04,386
+Entonces, de nuevo, la sintaxis es esta prueba, excepto la sintaxis.
+
+142
+00:07:05,269 --> 00:07:07,641
+Tratamos de volver a trabajar lo que sea que est
+
+143
+00:07:07,641 --> 00:07:10,581
+en el bloque try y si ocurre un error saltamos al bloque except.
+
+144
+00:07:10,581 --> 00:07:13,140
+Y lo hacemos solo para los errores que
+
+145
+00:07:13,140 --> 00:07:15,307
+coinciden con el del error tipo.
+
+146
+00:07:16,226 --> 00:07:18,397
+Podemos detectar mltiples errores simplemente
+
+147
+00:07:18,397 --> 00:07:20,147
+agregando otro bloque excepto.
+
+148
+00:07:27,491 --> 00:07:28,659
+Al igual que.
+
+149
+00:07:28,659 --> 00:07:31,844
+Ahora, si hay un error de tipo, esto se ejecutar
+
+150
+00:07:31,844 --> 00:07:34,763
+y si hay un error de valor que se ejecutar.
+
+151
+00:07:34,763 --> 00:07:37,034
+Esto es particularmente til cuando tiene
+
+152
+00:07:37,034 --> 00:07:39,409
+mltiples tipos de errores que podran surgir.
+
+153
+00:07:39,409 --> 00:07:43,911
+Por supuesto, aqu es poco probable que eso suceda.
+
+154
+00:07:43,911 --> 00:07:46,439
+En las siguientes secciones vamos a
+
+155
+00:07:46,439 --> 00:07:48,978
+utilizar esta prueba, excepto la sintaxis.
+
+156
+00:07:48,978 --> 00:07:53,292
+Entonces, algo a tener en cuenta a medida que avanzamos.
+
+157
+00:07:53,292 --> 00:07:57,002
+Pruebe y excepto que tambin tenga una contraparte
+
+158
+00:07:57,002 --> 00:07:59,002
+final que se llama finalmente.
+
+159
+00:08:01,289 --> 00:08:04,806
+El bloque finally se ejecuta todo el tiempo.
+
+160
+00:08:04,806 --> 00:08:07,079
+Entonces, si intentas ejecutar este cdigo aqu
+
+161
+00:08:07,079 --> 00:08:08,989
+si ocurre un error, entonces vas
+
+162
+00:08:08,989 --> 00:08:11,497
+a ejecutar el cdigo que est en
+
+163
+00:08:11,497 --> 00:08:13,651
+el bloque apropiado para el error
+
+164
+00:08:13,651 --> 00:08:18,388
+y al final siempre ejecutars el bloque finally, independientemente de si un error sucedi
+
+165
+00:08:18,388 --> 00:08:19,719
+As que aqu podra,
+
+166
+00:08:19,719 --> 00:08:22,969
+por ejemplo, imprimir el garaje que ahora tiene automviles len Ford.
+
+167
+00:08:28,487 --> 00:08:30,248
+Por ejemplo.
+
+168
+00:08:30,248 --> 00:08:33,540
+De nuevo, excepto que los bloques pueden o no ejecutarse.
+
+169
+00:08:33,540 --> 00:08:35,207
+Finalmente siempre corre.
+
+170
+00:08:36,090 --> 00:08:38,172
+Entonces, de nuevo, si ejecutamos esto
+
+171
+00:08:38,172 --> 00:08:39,813
+ahora, obtenemos algo raro porque
+
+172
+00:08:39,813 --> 00:08:42,118
+hemos elevado el error de valor aqu
+
+173
+00:08:42,118 --> 00:08:45,111
+y luego imprimimos que el garaje ahora tiene cero autos.
+
+174
+00:08:45,111 --> 00:08:47,349
+Observe cmo no vemos un seguimiento de la
+
+175
+00:08:47,349 --> 00:08:51,290
+pila porque el error ha sido silenciado por el hecho de que lo atrap.
+
+176
+00:08:51,290 --> 00:08:53,178
+Entonces, en el prximo video vamos
+
+177
+00:08:53,178 --> 00:08:55,375
+a ver cmo no podemos silenciarlo.
+
+178
+00:08:55,375 --> 00:08:56,990
+Y eso tambin puede ser bastante
+
+179
+00:08:56,990 --> 00:08:58,686
+til, especialmente cuando se est desarrollando.
+
+180
+00:08:58,686 --> 00:09:00,490
+Nos vemos en el prximo video.
+

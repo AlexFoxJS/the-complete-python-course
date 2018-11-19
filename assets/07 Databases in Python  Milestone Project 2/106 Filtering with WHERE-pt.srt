@@ -1,0 +1,492 @@
+1
+00:00:00,110 --> 00:00:01,360
+Instrutor: Ol, e bem vindo de volta.
+
+2
+00:00:01,360 --> 00:00:03,670
+Neste vdeo, estamos falando sobre filtragem
+
+3
+00:00:03,670 --> 00:00:04,930
+e, no ltimo
+
+4
+00:00:04,930 --> 00:00:07,410
+vdeo, observamos alguns exemplos de como perder
+
+5
+00:00:07,410 --> 00:00:09,372
+a filtragem pode resultar em
+
+6
+00:00:09,372 --> 00:00:11,440
+algo desastroso, como excluir todas as
+
+7
+00:00:11,440 --> 00:00:15,282
+tabelas ou modificar todas as linhas para obter um novo valor.
+
+8
+00:00:15,282 --> 00:00:20,282
+Vamos fazer uma atualizao agora para a linha nmero um apenas.
+
+9
+00:00:20,530 --> 00:00:22,220
+E  assim que seria;
+
+10
+00:00:22,220 --> 00:00:24,210
+atualizaramos a tabela de pessoas,
+
+11
+00:00:24,210 --> 00:00:26,701
+definindo o nome agora como igual a
+
+12
+00:00:26,701 --> 00:00:30,250
+Joseph, mas estamos adicionando essa clusula where no final, a
+
+13
+00:00:30,250 --> 00:00:33,360
+clusula where que diz id igual a um.
+
+14
+00:00:34,520 --> 00:00:38,580
+Isso s vai mudar a linha que tem id de
+
+15
+00:00:38,580 --> 00:00:41,710
+um, definindo o nome agora para Joseph.
+
+16
+00:00:41,710 --> 00:00:44,160
+Eu acho que Jos  um pouco melhor, mas nunca se sabe.
+
+17
+00:00:45,700 --> 00:00:48,680
+Observe que no Sequel o operador de
+
+18
+00:00:48,680 --> 00:00:51,650
+igualdade  usado para comparao e atribuio.
+
+19
+00:00:51,650 --> 00:00:53,200
+Neste caso,  usado para atribuio.
+
+20
+00:00:53,200 --> 00:00:55,670
+Estamos definindo o novo nome como Joseph, mas tambm
+
+21
+00:00:55,670 --> 00:00:57,260
+ usado para comparao aqui.
+
+22
+00:00:57,260 --> 00:01:00,800
+Estamos apenas mudando aqueles onde o id  igual a um.
+
+23
+00:01:00,800 --> 00:01:02,970
+Ns no vamos modificar o id aqui.
+
+24
+00:01:02,970 --> 00:01:04,940
+Estamos apenas verificando se eles combinam.
+
+25
+00:01:04,940 --> 00:01:06,898
+A coluna id deve ser uma, e
+
+26
+00:01:06,898 --> 00:01:09,920
+em Python usamos um sinal de igual duplo para isso, mas
+
+27
+00:01:09,920 --> 00:01:11,949
+no Sequel voc usa um nico sinal
+
+28
+00:01:11,949 --> 00:01:14,220
+de igual, porque sabe que no  possvel
+
+29
+00:01:14,220 --> 00:01:16,100
+alterar as coisas em uma clusula where.
+
+30
+00:01:16,100 --> 00:01:18,300
+Ento voc no precisa de um sinal de igual duplo aqui.
+
+31
+00:01:19,950 --> 00:01:21,844
+Ok, vamos passar para outro exemplo.
+
+32
+00:01:21,844 --> 00:01:25,100
+Agora vamos selecionar usando uma clusula where.
+
+33
+00:01:25,100 --> 00:01:27,810
+Mais uma vez, escolha a estrela das pessoas,
+
+34
+00:01:27,810 --> 00:01:29,690
+onde o nome  Jen,
+
+35
+00:01:29,690 --> 00:01:32,980
+e isso nos dar apenas a linha nmero trs.
+
+36
+00:01:35,660 --> 00:01:36,770
+Vamos deletar.
+
+37
+00:01:36,770 --> 00:01:40,430
+Mais uma vez, a mesma coisa, apagar das pessoas onde id
+
+38
+00:01:40,430 --> 00:01:42,090
+ uma, vai nos dar
+
+39
+00:01:42,090 --> 00:01:44,770
+todas as outras linhas alm da primeira.
+
+40
+00:01:44,770 --> 00:01:47,190
+Observe que isso altera o banco de dados.
+
+41
+00:01:47,190 --> 00:01:50,210
+Portanto, no  como se voc obtivesse um resultado dessa tabela, mas
+
+42
+00:01:50,210 --> 00:01:51,390
+isso altera o banco de
+
+43
+00:01:51,390 --> 00:01:53,270
+dados e, em seguida, voc poderia extrair
+
+44
+00:01:53,270 --> 00:01:55,399
+todo esse conjunto de resultados usando um select.
+
+45
+00:01:55,399 --> 00:01:58,030
+Ento voc pode ver a declarao where que
+
+46
+00:01:58,030 --> 00:02:01,000
+vai em um lugar bastante razovel para o idioma Ingls.
+
+47
+00:02:01,000 --> 00:02:04,330
+Normalmente no final, mas s vezes no chega ao fim
+
+48
+00:02:04,330 --> 00:02:06,370
+se houver outras clusulas, como as
+
+49
+00:02:06,370 --> 00:02:08,710
+que vamos ver em um momento.
+
+50
+00:02:08,710 --> 00:02:09,947
+Aqui esto mais alguns exemplos.
+
+51
+00:02:09,947 --> 00:02:12,450
+Selecione estrela das compras em que o
+
+52
+00:02:12,450 --> 00:02:14,500
+valor  maior que 150.
+
+53
+00:02:14,500 --> 00:02:16,320
+Ingls bonito como, voc
+
+54
+00:02:16,320 --> 00:02:19,040
+sabe, selecionando onde algo  verdadeiro.
+
+55
+00:02:19,040 --> 00:02:21,230
+Selecione estrela de usurios onde a data
+
+56
+00:02:21,230 --> 00:02:24,030
+registrada  menor que este nmero mgico aqui,
+
+57
+00:02:24,030 --> 00:02:27,820
+e este nmero a propsito, se voc nunca se deparou com
+
+58
+00:02:27,820 --> 00:02:30,150
+os nmeros inteiros de datas,  um
+
+59
+00:02:30,150 --> 00:02:32,650
+nmero inteiro muito longo que representa uma data.
+
+60
+00:02:32,650 --> 00:02:34,090
+Isso  um timestamp Unix.
+
+61
+00:02:34,090 --> 00:02:35,904
+So alguns segundos que se passaram
+
+62
+00:02:35,904 --> 00:02:39,230
+desde o dia primeiro de janeiro de 1970  meia-noite.
+
+63
+00:02:39,230 --> 00:02:41,750
+E  uma maneira de armazenar datas
+
+64
+00:02:41,750 --> 00:02:45,210
+em bancos de dados, para que voc no tenha que
+
+65
+00:02:45,210 --> 00:02:46,100
+lidar com formatao.
+
+66
+00:02:46,100 --> 00:02:47,470
+O ms vai primeiro?
+
+67
+00:02:47,470 --> 00:02:49,640
+O dia vai primeiro?
+
+68
+00:02:49,640 --> 00:02:52,020
+Apenas use um inteiro e tudo est resolvido.
+
+69
+00:02:53,510 --> 00:02:55,050
+Ns temos estrelas selecionadas de
+
+70
+00:02:55,050 --> 00:02:58,050
+pessoas onde o nome no  igual a Rolf.
+
+71
+00:02:58,050 --> 00:02:58,950
+Voc pode fazer
+
+72
+00:03:00,320 --> 00:03:01,420
+isso e,  claro,
+
+73
+00:03:01,420 --> 00:03:03,300
+selecionar star das compras em que
+
+74
+00:03:03,300 --> 00:03:06,800
+o valor  maior que 150 ou o tipo est on-line.
+
+75
+00:03:06,800 --> 00:03:09,530
+Voc tambm pode usar e gostar aqui.
+
+76
+00:03:09,530 --> 00:03:11,380
+Selecione estrela dos usurios, em que nome de usurio
+
+77
+00:03:11,380 --> 00:03:12,930
+ Jos e o acesso  admin.
+
+78
+00:03:14,085 --> 00:03:16,340
+Observe, a propsito, que fao algo que
+
+79
+00:03:16,340 --> 00:03:18,580
+no me sinto muito orgulhoso, ou seja,
+
+80
+00:03:18,580 --> 00:03:21,742
+no coloco espaos ao redor do sinal de igual, mas
+
+81
+00:03:21,742 --> 00:03:24,340
+coloco espaos em torno dos outros smbolos.
+
+82
+00:03:25,460 --> 00:03:27,120
+Quando eu estava fazendo esta apresentao,
+
+83
+00:03:27,120 --> 00:03:30,010
+eu realmente tentei colocar espaos ao redor do sinal de
+
+84
+00:03:30,010 --> 00:03:32,210
+igual, ou remover os espaos ao redor dos
+
+85
+00:03:32,210 --> 00:03:35,110
+outros smbolos, mas eu simplesmente no conseguia me encaixar nisso.
+
+86
+00:03:36,520 --> 00:03:38,080
+Para mim isso parece natural.
+
+87
+00:03:38,080 --> 00:03:39,710
+Talvez seja apenas porque eu venho
+
+88
+00:03:39,710 --> 00:03:40,860
+fazendo isso h muito tempo.
+
+89
+00:03:40,860 --> 00:03:42,690
+Eu no consegui adicionar espaos ao redor do
+
+90
+00:03:42,690 --> 00:03:43,523
+sinal de igual.
+
+91
+00:03:43,523 --> 00:03:44,550
+Isso pareceu um pouco errado,
+
+92
+00:03:44,550 --> 00:03:45,780
+e eu no consegui remover os
+
+93
+00:03:45,780 --> 00:03:46,997
+espaos em torno dos outros smbolos.
+
+94
+00:03:46,997 --> 00:03:48,900
+Isso tambm pareceu um pouco estranho.
+
+95
+00:03:49,910 --> 00:03:51,280
+Voc pode colocar espaos ao redor dele.
+
+96
+00:03:51,280 --> 00:03:53,420
+Voc pode remover os espaos, at voc.
+
+97
+00:03:53,420 --> 00:03:54,886
+ assim que gosto de fazer isso.
+
+98
+00:03:54,886 --> 00:03:56,130
+Eu no sei porque.
+
+99
+00:03:56,980 --> 00:04:00,980
+De qualquer forma, selecione, atualize, ou exclua, onde
+
+100
+00:04:00,980 --> 00:04:04,260
+alguma clusula, algum booleano, e voc pode
+
+101
+00:04:04,260 --> 00:04:06,780
+usar ou e para adicionar
+
+102
+00:04:06,780 --> 00:04:08,470
+vrios tipos de Booleanos.
+
+103
+00:04:09,400 --> 00:04:12,140
+E, claro, voc s pode usar os
+
+104
+00:04:12,140 --> 00:04:13,940
+nomes das colunas disponveis em
+
+105
+00:04:13,940 --> 00:04:16,010
+sua tabela para fazer essas comparaes.
+
+106
+00:04:16,010 --> 00:04:18,620
+Assim, voc pode selecionar onde a quantidade
+
+107
+00:04:18,620 --> 00:04:20,360
+ou o tipo dado que
+
+108
+00:04:20,360 --> 00:04:22,320
+esses dois so colunas em
+
+109
+00:04:22,320 --> 00:04:26,020
+sua tabela, mas a estrela aqui receber todas as suas colunas.
+
+110
+00:04:26,020 --> 00:04:28,520
+Voc s pode obter algumas colunas, se preferir.
+
+111
+00:04:28,520 --> 00:04:29,353
+Assim, voc pode
+
+112
+00:04:29,353 --> 00:04:33,860
+dizer selecionar ID das compras em que o valor  maior que 150 ou o tipo est on-line.
+
+113
+00:04:33,860 --> 00:04:35,270
+Isso tambm seria bom.
+
+114
+00:04:36,350 --> 00:04:39,050
+O que estou tentando dizer  que essas comparaes
+
+115
+00:04:39,050 --> 00:04:41,350
+aqui no precisam ser selecionadas necessariamente, mas
+
+116
+00:04:41,350 --> 00:04:42,550
+voc pode, se quiser.
+
+117
+00:04:44,000 --> 00:04:45,370
+Ok,  isso para este vdeo.
+
+118
+00:04:45,370 --> 00:04:46,280
+Espero que voc tenha
+
+119
+00:04:46,280 --> 00:04:47,870
+aprendido algo sobre como usar a filtragem.
+
+120
+00:04:47,870 --> 00:04:50,240
+E eu sei que no estamos indo muito a fundo aqui,
+
+121
+00:04:50,240 --> 00:04:51,350
+mas eu s queria mostrar
+
+122
+00:04:51,350 --> 00:04:54,080
+o suficiente para que possamos prosseguir com o nosso projeto de marco.
+
+123
+00:04:54,080 --> 00:04:56,580
+Ento, com isso dito, vejo vocs no prximo vdeo.
+

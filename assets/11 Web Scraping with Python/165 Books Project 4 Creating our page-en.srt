@@ -1,0 +1,280 @@
+1
+00:00:00,324 --> 00:00:01,695
+<v Jose>Hi, and welcome back.</v>
+
+2
+00:00:01,695 --> 00:00:05,847
+In this video we are going to be creating our books page.
+
+3
+00:00:05,847 --> 00:00:08,678
+So let's go over to our Pages folder and create a new
+
+4
+00:00:08,678 --> 00:00:13,287
+Python file, which I'm going to call all_books_page.
+
+5
+00:00:13,287 --> 00:00:17,662
+This page is going to be just a class called AllBooksPage.
+
+6
+00:00:17,662 --> 00:00:19,782
+You can call it catalogue page if you prefer,
+
+7
+00:00:19,782 --> 00:00:21,819
+you know, any name is valid,
+
+8
+00:00:21,819 --> 00:00:25,343
+this is just the name I'm going for but you can change it.
+
+9
+00:00:25,343 --> 00:00:29,790
+Now, this class is going to take in the entire HTML content
+
+10
+00:00:29,790 --> 00:00:32,692
+and is going to parse it with BeautifulSoup.
+
+11
+00:00:32,692 --> 00:00:34,658
+So in the init method
+
+12
+00:00:34,658 --> 00:00:38,326
+we are going to say self.soup =
+
+13
+00:00:38,326 --> 00:00:40,743
+BeautifulSoup of page content
+
+14
+00:00:42,572 --> 00:00:44,849
+using the HTML Parser.
+
+15
+00:00:44,849 --> 00:00:47,746
+Of course we'll need page content
+
+16
+00:00:47,746 --> 00:00:48,913
+as an argument
+
+17
+00:00:50,145 --> 00:00:51,260
+and so it's a parameter
+
+18
+00:00:51,260 --> 00:00:54,820
+and of course we'll need to import BeautifulSoup.
+
+19
+00:00:54,820 --> 00:00:56,513
+Okay, make sure to have BeautifulSoup installed
+
+20
+00:00:56,513 --> 00:00:58,347
+if you haven't done so already.
+
+21
+00:00:58,347 --> 00:00:59,180
+Although, if you've been following the
+
+22
+00:00:59,180 --> 00:01:02,219
+last few videos you should be fine.
+
+23
+00:01:02,219 --> 00:01:05,901
+Now, once we do this, once we create a new object of
+
+24
+00:01:05,901 --> 00:01:09,172
+type AllBooksPage, and we give it the HTML content,
+
+25
+00:01:09,172 --> 00:01:12,645
+that's immediately going to use BeautifulSoup to create
+
+26
+00:01:12,645 --> 00:01:15,967
+this soup variable, or property.
+
+27
+00:01:15,967 --> 00:01:19,928
+Then we can use that soup property inside any of the methods
+
+28
+00:01:19,928 --> 00:01:22,345
+to do things like find stuff.
+
+29
+00:01:23,571 --> 00:01:27,223
+So, I'm going to create a property called books
+
+30
+00:01:27,223 --> 00:01:28,973
+that is going to find
+
+31
+00:01:30,906 --> 00:01:32,239
+all of the books
+
+32
+00:01:35,053 --> 00:01:37,166
+using our locator, so notice how we're doing
+
+33
+00:01:37,166 --> 00:01:40,916
+self.soup.select and not self.soup.select_one
+
+34
+00:01:42,133 --> 00:01:45,682
+The select is going to select every instance of this locator
+
+35
+00:01:45,682 --> 00:01:49,517
+that it can find, and again, this locator is going to be
+
+36
+00:01:49,517 --> 00:01:53,941
+this entire thing, and there are many li tags in the page.
+
+37
+00:01:53,941 --> 00:01:56,688
+One for each book, so this is going to give us
+
+38
+00:01:56,688 --> 00:02:00,937
+a BeautifulSoup tag for each li tag on the page.
+
+39
+00:02:00,937 --> 00:02:03,692
+Of course we have to import our locators,
+
+40
+00:02:03,692 --> 00:02:08,068
+so from locators.all_books_page import AllBooksPageLocators
+
+41
+00:02:08,068 --> 00:02:09,944
+and this is convention by the way in Python,
+
+42
+00:02:09,944 --> 00:02:12,209
+I'm not sure if I mentioned this before, but
+
+43
+00:02:12,209 --> 00:02:16,899
+your imports from your local files should come underneath
+
+44
+00:02:16,899 --> 00:02:18,794
+imports of other things.
+
+45
+00:02:18,794 --> 00:02:21,469
+And so if you're importing things from other projects
+
+46
+00:02:21,469 --> 00:02:23,935
+that you have not created, those go at the top,
+
+47
+00:02:23,935 --> 00:02:26,368
+your imports go directly below them
+
+48
+00:02:26,368 --> 00:02:27,563
+and then you can put your code.
+
+49
+00:02:27,563 --> 00:02:30,641
+And all imports always go at the top.
+
+50
+00:02:30,641 --> 00:02:33,544
+Now, this is going to give us BeautifulSoup tags,
+
+51
+00:02:33,544 --> 00:02:34,838
+but we don't want BeautifulSoup tags,
+
+52
+00:02:34,838 --> 00:02:38,583
+we want to use our parser, which we have not created yet
+
+53
+00:02:38,583 --> 00:02:43,168
+in order to find some specific information from here.
+
+54
+00:02:43,168 --> 00:02:44,850
+So what I'm going to do is I'm going to
+
+55
+00:02:44,850 --> 00:02:47,139
+pass in a BookParser
+
+56
+00:02:47,139 --> 00:02:48,306
+for e in this.
+
+57
+00:02:49,618 --> 00:02:51,084
+Okay?
+
+58
+00:02:51,084 --> 00:02:54,419
+All this is going to do is, again, iterate over
+
+59
+00:02:54,419 --> 00:02:56,415
+all the tags that we find
+
+60
+00:02:56,415 --> 00:02:59,232
+and is going to create a BookParser object
+
+61
+00:02:59,232 --> 00:03:01,738
+using that BeautifulSoup tag
+
+62
+00:03:01,738 --> 00:03:04,858
+passing in as an argument to this construct.
+
+63
+00:03:04,858 --> 00:03:07,526
+So we have to, of course, go and create the BookParser
+
+64
+00:03:07,526 --> 00:03:10,478
+but we've already done something very much like this
+
+65
+00:03:10,478 --> 00:03:12,403
+in a previous video, at the start of this section
+
+66
+00:03:12,403 --> 00:03:16,078
+where we've created a simple BookParser class
+
+67
+00:03:16,078 --> 00:03:18,565
+so we're gonna actually pretty much reuse that
+
+68
+00:03:18,565 --> 00:03:22,702
+so, let's go into the next video and see what we can
+
+69
+00:03:22,702 --> 00:03:26,832
+reuse from what we made in a few videos ago.
+
+70
+00:03:26,832 --> 00:03:27,790
+I'll see you there.
+

@@ -1,0 +1,448 @@
+1
+00:00:00,079 --> 00:00:01,286
+Jose: Ol e bem vindo de volta.
+
+2
+00:00:01,286 --> 00:00:05,335
+Neste vdeo, vamos obter dados de vrias pginas e isso ser realmente
+
+3
+00:00:05,335 --> 00:00:06,952
+simples, porque cada pgina tem,
+
+4
+00:00:06,952 --> 00:00:10,712
+essencialmente, o mesmo contedo, e tudo o que temos a fazer
+
+5
+00:00:10,712 --> 00:00:12,118
+, em vez de
+
+6
+00:00:12,118 --> 00:00:15,311
+obter uma lista de analisadores de livros , que 
+
+7
+00:00:15,311 --> 00:00:16,623
+de uma pgina, vamos
+
+8
+00:00:16,623 --> 00:00:19,119
+pegar os analisadores de livros de cada pgina
+
+9
+00:00:19,119 --> 00:00:21,989
+e ento vamos juntar todos em uma nica lista.
+
+10
+00:00:21,989 --> 00:00:23,882
+E isso nos dar uma lista de todos
+
+11
+00:00:23,882 --> 00:00:24,965
+os livros em cada pgina.
+
+12
+00:00:26,560 --> 00:00:28,164
+Ento, o que vamos fazer ,
+
+13
+00:00:28,164 --> 00:00:31,948
+em vez de dizer books = page. livros o que vamos
+
+14
+00:00:31,948 --> 00:00:35,142
+fazer , vamos comear passando por cima
+
+15
+00:00:35,142 --> 00:00:37,559
+de cada uma das pginas.
+
+16
+00:00:38,578 --> 00:00:42,108
+Ento, ao invs de passar por cima
+
+17
+00:00:42,108 --> 00:00:47,108
+desta pgina aqui, vamos fazer: para page_num no intervalo
+
+18
+00:00:48,760 --> 00:00:50,991
+(50) Existem 50 pginas.
+
+19
+00:00:50,991 --> 00:00:54,324
+Ns vamos dizer que a URL  esta
+
+20
+00:00:58,746 --> 00:00:59,579
+aqui, mas
+
+21
+00:01:01,019 --> 00:01:06,019
+tambm catalog / page- (page_num + 1). html e, claro, isso tem
+
+22
+00:01:11,108 --> 00:01:14,104
+que ser uma string f l.
+
+23
+00:01:14,104 --> 00:01:16,675
+O que isso vai fazer agora 
+
+24
+00:01:16,675 --> 00:01:18,931
+construir o URL da pgina que
+
+25
+00:01:18,931 --> 00:01:20,264
+queremos, comeando em um.
+
+26
+00:01:21,590 --> 00:01:25,463
+Lembre-se, a funo range comea em zero, vai de 0 a
+
+27
+00:01:25,463 --> 00:01:27,629
+49. Nossas pginas vo de 1
+
+28
+00:01:27,629 --> 00:01:31,899
+a 50, ento temos que adicionar uma ao page_num que temos.
+
+29
+00:01:31,899 --> 00:01:34,964
+E ento tudo o que fazemos  obter o URL.
+
+30
+00:01:34,964 --> 00:01:39,964
+page_content = pedidos. get (url). contedo E,
+
+31
+00:01:40,038 --> 00:01:44,886
+claro, construir a pgina com o page_content.
+
+32
+00:01:44,886 --> 00:01:49,886
+E ento ns vamos nos certificar de coloc-los em nossa lista Ento,
+
+33
+00:01:50,313 --> 00:01:53,146
+isso vai ser livros. estender
+
+34
+00:01:55,971 --> 00:01:58,208
+(pgina. livros)
+
+35
+00:01:58,208 --> 00:01:59,703
+assim.
+
+36
+00:01:59,703 --> 00:02:02,786
+Agora, porque temos a pgina um
+
+37
+00:02:04,576 --> 00:02:07,659
+aqui, podemos comear, claro, na pgina dois.
+
+38
+00:02:08,779 --> 00:02:10,854
+Portanto, nosso alcance pode ir
+
+39
+00:02:10,854 --> 00:02:13,864
+de 1 a 50, que sero 48 nmeros.
+
+40
+00:02:13,864 --> 00:02:16,755
+Ento, a pgina dois ser a primeira
+
+41
+00:02:16,755 --> 00:02:18,918
+pgina que vamos encontrar nesta seo.
+
+42
+00:02:18,918 --> 00:02:20,159
+E vamos comear com a primeira pgina,
+
+43
+00:02:20,159 --> 00:02:21,169
+que na verdade  essa.
+
+44
+00:02:21,169 --> 00:02:25,429
+Lembre-se de que a pgina um e a pgina que no tem nada, em termos
+
+45
+00:02:25,429 --> 00:02:28,752
+de catlogo e nmero de pgina, tambm so a primeira pgina.
+
+46
+00:02:28,752 --> 00:02:30,781
+Ento, esta  a pgina um aqui.
+
+47
+00:02:30,781 --> 00:02:33,451
+E ento o que fazemos  pegar as
+
+48
+00:02:33,451 --> 00:02:36,981
+pginas do livro, depois passamos o resto das pginas e
+
+49
+00:02:36,981 --> 00:02:40,898
+estendemos essa lista pela pgina. livros que acabamos de baixar.
+
+50
+00:02:42,656 --> 00:02:46,931
+ok? Assim, quando o arquivo terminar de
+
+51
+00:02:46,931 --> 00:02:50,843
+ser executado, os livros contero as informaes de todas as pginas.
+
+52
+00:02:50,843 --> 00:02:52,817
+Agora, observe que  algo importante,
+
+53
+00:02:52,817 --> 00:02:55,734
+porm, que  que o 50  codificado.
+
+54
+00:02:57,229 --> 00:02:58,414
+E s vezes voc no vai querer isso.
+
+55
+00:02:58,414 --> 00:02:59,784
+s vezes, voc vai
+
+56
+00:02:59,784 --> 00:03:03,232
+querer ter certeza de obter a contagem de pginas da
+
+57
+00:03:03,232 --> 00:03:04,788
+prpria pgina, para no errar.
+
+58
+00:03:04,788 --> 00:03:07,203
+Por exemplo, se eles adicionarem mais livros 
+
+59
+00:03:07,203 --> 00:03:10,616
+coleo, o nmero da pgina, a contagem de base, poder aumentar.
+
+60
+00:03:10,616 --> 00:03:12,497
+Vamos tentar fazer isso
+
+61
+00:03:12,497 --> 00:03:16,674
+primeiro, executando nosso menu e verificando se alguma coisa muda.
+
+62
+00:03:16,674 --> 00:03:19,623
+Vamos pressionar play no menu Observe como
+
+63
+00:03:19,623 --> 00:03:21,573
+isso demora um pouco agora.
+
+64
+00:03:21,573 --> 00:03:24,128
+Demora um pouco porque  preciso percorrer todas
+
+65
+00:03:24,128 --> 00:03:27,108
+as pginas e fazer o download de cada uma delas.
+
+66
+00:03:27,108 --> 00:03:29,503
+Ento, demora um pouco.
+
+67
+00:03:29,503 --> 00:03:31,430
+Ento ns podemos fazer B.
+
+68
+00:03:31,430 --> 00:03:33,323
+E agora ns pegamos todos os livros.
+
+69
+00:03:33,323 --> 00:03:36,701
+Note como, agora, todos os livros que recebemos so livros de
+
+70
+00:03:36,701 --> 00:03:39,789
+cinco estrelas, enquanto antes tnhamos alguns cinco estrelas, alguns quatro estrelas.
+
+71
+00:03:39,789 --> 00:03:41,682
+Isso porque agora temos mais
+
+72
+00:03:41,682 --> 00:03:46,153
+livros e, portanto, h um nmero maior de livros de cinco estrelas.
+
+73
+00:03:46,153 --> 00:03:48,838
+Da mesma forma, se conseguirmos apenas os
+
+74
+00:03:48,838 --> 00:03:51,914
+livros mais baratos, haver livros com preo mais
+
+75
+00:03:51,914 --> 00:03:54,225
+baixo, neste caso temos um de
+
+76
+00:03:54,225 --> 00:03:56,941
+10 libras aqui, que  cinco estrelas.
+
+77
+00:03:56,941 --> 00:03:59,651
+E ns temos alguns outros 10 pounders aqui.
+
+78
+00:03:59,651 --> 00:04:01,648
+Ento, como voc pode ver, no
+
+79
+00:04:01,648 --> 00:04:03,935
+passa dos 10 porque existem tantos livros
+
+80
+00:04:03,935 --> 00:04:06,675
+agora, que no passa por cima, quando voc
+
+81
+00:04:06,675 --> 00:04:08,753
+s consegue os 10 mais baratos.
+
+82
+00:04:08,753 --> 00:04:11,069
+E se voc fosse o prximo e o
+
+83
+00:04:11,069 --> 00:04:13,229
+prximo, voc estaria aqui por um longo tempo.
+
+84
+00:04:13,229 --> 00:04:15,923
+O livro "A Light in the Attic" ainda  o primeiro livro.
+
+85
+00:04:15,923 --> 00:04:19,789
+Mas agora existem muitos outros livros na coleo.
+
+86
+00:04:19,789 --> 00:04:21,612
+Claro, h mais coisas que voc pode
+
+87
+00:04:21,612 --> 00:04:23,911
+dizer aos seus usurios, como quantos livros existem na
+
+88
+00:04:23,911 --> 00:04:26,708
+coleo, voc pode dizer quais esto em estoque ou no,
+
+89
+00:04:26,708 --> 00:04:29,065
+embora voc tenha que olhar para outra propriedade no
+
+90
+00:04:29,065 --> 00:04:31,004
+analisador de livros em para fazer isso.
+
+91
+00:04:31,004 --> 00:04:34,258
+Ento h muitas coisas que voc pode fazer l.
+
+92
+00:04:34,258 --> 00:04:38,086
+Uma outra rea de melhoria seria, alm
+
+93
+00:04:38,086 --> 00:04:40,799
+dos 50 sendo codificados, seria
+
+94
+00:04:40,799 --> 00:04:41,716
+obter todas
+
+95
+00:04:42,724 --> 00:04:44,224
+essas URLs ao
+
+96
+00:04:45,368 --> 00:04:46,564
+mesmo tempo,
+
+97
+00:04:46,564 --> 00:04:48,782
+ou mais ou menos
+
+98
+00:04:48,782 --> 00:04:52,776
+ao mesmo tempo, e fazer, essencialmente, downloads paralelos.
+
+99
+00:04:52,776 --> 00:04:54,296
+Baixando as coisas simultaneamente.
+
+100
+00:04:54,296 --> 00:04:56,270
+Isso  algo que o Python pode
+
+101
+00:04:56,270 --> 00:04:58,569
+fazer e podemos ver isso mais adiante no curso.
+
+102
+00:04:58,569 --> 00:05:02,307
+Mas, por enquanto, vamos nos contentar em baixar um de cada vez
+
+103
+00:05:02,307 --> 00:05:03,608
+e quando terminar de
+
+104
+00:05:03,608 --> 00:05:04,966
+baixar, passar para o prximo.
+
+105
+00:05:04,966 --> 00:05:08,844
+Mais tarde, podemos procurar faz-las ao mesmo tempo.
+
+106
+00:05:08,844 --> 00:05:12,838
+Ok, ento  isso para solicitar um nmero maior de pginas, o que voc
+
+107
+00:05:12,838 --> 00:05:14,149
+pode ver  muito simples.
+
+108
+00:05:14,149 --> 00:05:17,354
+Vamos e no codificar a contagem de pginas.
+
+109
+00:05:17,354 --> 00:05:19,676
+Ento, vamos pegar os 50 da
+
+110
+00:05:19,676 --> 00:05:23,205
+pgina, ao invs de colocar o nmero aqui.
+
+111
+00:05:23,205 --> 00:05:24,924
+Vamos fazer isso no prximo vdeo.
+
+112
+00:05:24,924 --> 00:05:26,468
+Eu te vejo l.
+

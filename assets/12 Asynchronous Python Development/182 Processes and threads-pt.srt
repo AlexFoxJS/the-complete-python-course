@@ -1,0 +1,804 @@
+1
+00:00:00,300 --> 00:00:01,610
+Jose: Ol e bem vindo de volta.
+
+2
+00:00:01,610 --> 00:00:03,470
+Neste vdeo vamos
+
+3
+00:00:03,470 --> 00:00:06,240
+falar sobre processos e threads.
+
+4
+00:00:06,240 --> 00:00:08,530
+Processos e tpicos esto entrando em tpicos cada
+
+5
+00:00:08,530 --> 00:00:12,570
+vez mais complicados em cincia da computao, ento, por favor, use o Q
+
+6
+00:00:12,570 --> 00:00:16,010
+&amp; A do curso e tambm faa sua prpria pesquisa para
+
+7
+00:00:16,010 --> 00:00:17,770
+encontrar outras formas de explicar as
+
+8
+00:00:17,770 --> 00:00:19,920
+coisas, se alguma coisa no estiver clara.
+
+9
+00:00:21,410 --> 00:00:23,670
+Processos e threads so duas partes
+
+10
+00:00:23,670 --> 00:00:26,990
+essenciais de como o seu computador opera e todos
+
+11
+00:00:26,990 --> 00:00:29,100
+os computadores possuem processos e threads.
+
+12
+00:00:31,350 --> 00:00:35,280
+Seu computador tem vrios ncleos dentro dele.
+
+13
+00:00:37,420 --> 00:00:40,260
+Um ncleo  apenas uma unidade dentro
+
+14
+00:00:40,260 --> 00:00:43,800
+de um computador que pode realizar algumas operaes matemticas.
+
+15
+00:00:44,900 --> 00:00:48,740
+Seu computador tem um processador, uma CPU, como,
+
+16
+00:00:48,740 --> 00:00:52,600
+por exemplo, um Intel i7 ou um i5
+
+17
+00:00:52,600 --> 00:00:55,360
+ou um Intel Pentium ou um AMD.
+
+18
+00:00:56,240 --> 00:01:00,170
+Essas CPUs, esses processadores, possuem dentro de si vrios
+
+19
+00:01:00,170 --> 00:01:03,610
+ncleos e cada ncleo  razoavelmente independente, embora
+
+20
+00:01:03,610 --> 00:01:06,570
+eles possam se comunicar uns com os
+
+21
+00:01:06,570 --> 00:01:07,420
+outros.
+
+22
+00:01:08,820 --> 00:01:11,800
+Cada ncleo que mencionei anteriormente  uma unidade que
+
+23
+00:01:11,800 --> 00:01:13,780
+pode realizar operaes matemticas e, a
+
+24
+00:01:13,780 --> 00:01:15,760
+propsito, tudo o que os computadores
+
+25
+00:01:15,760 --> 00:01:18,170
+fazem  executar operaes matemticas e, quando
+
+26
+00:01:18,170 --> 00:01:20,150
+voc tem o suficiente, eles podem
+
+27
+00:01:20,150 --> 00:01:22,330
+fazer coisas como imprimir coisas na
+
+28
+00:01:22,330 --> 00:01:25,280
+tela e, sabe, exibir grficos e assim por diante.
+
+29
+00:01:26,180 --> 00:01:28,780
+Assim, cada ncleo pode ser responsvel
+
+30
+00:01:28,780 --> 00:01:30,610
+por essencialmente executar uma coisa.
+
+31
+00:01:31,790 --> 00:01:33,620
+Ento, voltando ao nosso
+
+32
+00:01:33,620 --> 00:01:38,300
+exemplo filosfico, voc poderia ter um filsofo em cada ncleo.
+
+33
+00:01:38,300 --> 00:01:40,460
+Assim, cada ncleo est essencialmente executando um
+
+34
+00:01:40,460 --> 00:01:42,390
+filsofo, o qual, indo  nossa analogia
+
+35
+00:01:42,390 --> 00:01:46,110
+anterior,  que um filsofo tem os recursos de que necessita para comer.
+
+36
+00:01:47,480 --> 00:01:49,460
+Ento aqui voc tem quatro
+
+37
+00:01:49,460 --> 00:01:52,800
+filsofos, cada um com dois garfos, comendo porque eles
+
+38
+00:01:52,800 --> 00:01:54,710
+tm os garfos necessrios para comer.
+
+39
+00:01:56,200 --> 00:01:57,540
+OK.
+
+40
+00:01:57,540 --> 00:02:00,300
+Agora,  claro, novamente em
+
+41
+00:02:00,300 --> 00:02:03,570
+nossa analogia anterior, tambm tivemos vrios
+
+42
+00:02:03,570 --> 00:02:05,680
+filsofos que esperavam para comer.
+
+43
+00:02:05,680 --> 00:02:08,510
+E na computao, esses seriam threads em espera.
+
+44
+00:02:08,510 --> 00:02:11,510
+Estes so tpicos, ou coisas que queremos
+
+45
+00:02:11,510 --> 00:02:15,410
+fazer, que no tm recursos para executar ainda.
+
+46
+00:02:15,410 --> 00:02:17,060
+Nesse caso, esses seriam filsofos
+
+47
+00:02:17,060 --> 00:02:20,080
+esperando que seus garfos, seus recursos, se tornassem disponveis.
+
+48
+00:02:22,300 --> 00:02:23,133
+OK.
+
+49
+00:02:24,870 --> 00:02:25,970
+Ento, um segmento
+
+50
+00:02:27,770 --> 00:02:30,550
+na computao, afastando-se dos filsofos, um
+
+51
+00:02:31,550 --> 00:02:35,900
+segmento na computao  uma linha de execuo de cdigo.
+
+52
+00:02:35,900 --> 00:02:39,390
+Por exemplo, seu programa Python pode ser executado em um nico thread.
+
+53
+00:02:40,350 --> 00:02:43,390
+Ou um jogo pode ser executado em um nico segmento.
+
+54
+00:02:43,390 --> 00:02:44,960
+Voc sabe, qualquer coisa pode ser executada
+
+55
+00:02:44,960 --> 00:02:47,330
+em um nico segmento,  apenas o cdigo em um
+
+56
+00:02:47,330 --> 00:02:49,140
+aplicativo que  executado de cima para baixo.
+
+57
+00:02:49,980 --> 00:02:51,550
+Isso pode ser executado em um
+
+58
+00:02:52,870 --> 00:02:54,950
+segmento e voc pode ter um segmento em
+
+59
+00:02:54,950 --> 00:02:57,060
+execuo em um ncleo de cada vez.
+
+60
+00:02:57,990 --> 00:02:59,900
+Portanto, se voc tiver quatro ncleos,
+
+61
+00:02:59,900 --> 00:03:03,510
+poder executar quatro threads ao mesmo tempo, um em cada ncleo.
+
+62
+00:03:03,510 --> 00:03:04,343
+OK.
+
+63
+00:03:06,350 --> 00:03:08,820
+Agora a outra palavra dentro desta apresentao que
+
+64
+00:03:08,820 --> 00:03:11,120
+ns queremos olhar  o processo da palavra.
+
+65
+00:03:12,340 --> 00:03:16,230
+Um processo no  algo que  executado.
+
+66
+00:03:16,230 --> 00:03:17,190
+OK?
+
+67
+00:03:17,190 --> 00:03:20,490
+O que  executado nos ncleos so os threads, mas um processo
+
+68
+00:03:20,490 --> 00:03:22,900
+ uma espcie de wrapper em torno dele.
+
+69
+00:03:22,900 --> 00:03:25,820
+Assim, um processo contm pelo menos um
+
+70
+00:03:25,820 --> 00:03:29,220
+segmento, pode ser mais, alm de alguns recursos
+
+71
+00:03:29,220 --> 00:03:32,440
+reservados pelo seu computador, seu sistema operacional.
+
+72
+00:03:33,610 --> 00:03:38,610
+Portanto, por exemplo, normalmente o processo conter um encadeamento mais o ncleo
+
+73
+00:03:39,220 --> 00:03:42,920
+no qual o encadeamento est sendo executado e, potencialmente,
+
+74
+00:03:42,920 --> 00:03:44,820
+alguns outros recursos que
+
+75
+00:03:44,820 --> 00:03:48,200
+ele reservou como uma conexo de rede ou
+
+76
+00:03:48,200 --> 00:03:51,140
+um disco rgido, alguns ponteiros de arquivo
+
+77
+00:03:51,140 --> 00:03:52,900
+ou qualquer outra coisa.
+
+78
+00:03:52,900 --> 00:03:56,290
+E,  claro, esses recursos mudam continuamente  medida
+
+79
+00:03:56,290 --> 00:03:58,450
+que as necessidades do processo mudam.
+
+80
+00:03:58,450 --> 00:04:00,550
+Por exemplo, o processo pode reservar a
+
+81
+00:04:00,550 --> 00:04:02,540
+rede por alguns segundos e, em
+
+82
+00:04:02,540 --> 00:04:05,490
+seguida, liber-la, solt-la, para que outro processo possa receb-la.
+
+83
+00:04:05,490 --> 00:04:07,670
+Da mesma forma, um processo pode reservar um
+
+84
+00:04:07,670 --> 00:04:10,050
+ncleo para executar um thread nele por um perodo
+
+85
+00:04:10,050 --> 00:04:13,210
+de tempo e depois liber-lo para que outro processo possa obt-lo.
+
+86
+00:04:13,210 --> 00:04:15,390
+Ok, ento o segmento  o que 
+
+87
+00:04:16,231 --> 00:04:18,670
+executado e o processo  o que gerencia todos
+
+88
+00:04:18,670 --> 00:04:20,180
+os recursos necessrios para ser executado.
+
+89
+00:04:21,340 --> 00:04:23,510
+Ento isso ser importante daqui a pouco.
+
+90
+00:04:25,150 --> 00:04:29,640
+Vamos voltar e ter nossos ncleos aqui, cada um executando uma tarefa, e temos nossos
+
+91
+00:04:30,500 --> 00:04:33,400
+threads de espera, que esto aguardando para serem executados.
+
+92
+00:04:35,080 --> 00:04:37,810
+Dois dos segmentos nos ncleos podem
+
+93
+00:04:37,810 --> 00:04:40,010
+fazer parte do mesmo processo.
+
+94
+00:04:41,010 --> 00:04:42,030
+OK?
+
+95
+00:04:42,030 --> 00:04:45,710
+Ento aqui ns teramos o processo sendo os
+
+96
+00:04:45,710 --> 00:04:49,810
+dois ncleos mais os dois threads, mais quaisquer outros
+
+97
+00:04:49,810 --> 00:04:52,740
+recursos que esses threads precisem como uma
+
+98
+00:04:52,740 --> 00:04:54,980
+rede ou qualquer outra coisa.
+
+99
+00:04:54,980 --> 00:04:59,510
+Da mesma forma, voc poderia ter outros processos com tambm
+
+100
+00:04:59,510 --> 00:05:03,750
+alguns threads em execuo e ter seus prprios recursos.
+
+101
+00:05:03,750 --> 00:05:07,100
+Nesse caso, o processo dois tem um recurso, que  um ncleo, e
+
+102
+00:05:07,100 --> 00:05:08,290
+est executando um encadeamento.
+
+103
+00:05:08,290 --> 00:05:09,780
+O processo trs tambm possui um
+
+104
+00:05:09,780 --> 00:05:12,360
+recurso que  um ncleo e est executando um encadeamento.
+
+105
+00:05:12,360 --> 00:05:14,800
+Os encadeamentos em espera podem fazer parte
+
+106
+00:05:14,800 --> 00:05:16,500
+de um desses processos e,
+
+107
+00:05:16,500 --> 00:05:17,810
+por acaso, esto esperando.
+
+108
+00:05:17,810 --> 00:05:19,630
+Ou poderiam fazer parte de outros
+
+109
+00:05:19,630 --> 00:05:21,880
+processos que no momento no possuem recursos.
+
+110
+00:05:23,020 --> 00:05:24,950
+Ok, ento o processo  apenas o
+
+111
+00:05:24,950 --> 00:05:27,770
+wrapper em torno dos threads e os recursos de que precisam.
+
+112
+00:05:29,150 --> 00:05:31,150
+Voltando ao nosso exemplo de
+
+113
+00:05:31,150 --> 00:05:34,020
+filsofo, onde temos aqui nossos cinco filsofos, poderamos
+
+114
+00:05:34,020 --> 00:05:37,280
+ter em um cenrio imaginrio um computador que tem
+
+115
+00:05:37,280 --> 00:05:39,840
+cinco ncleos e nosso filsofo precisa de
+
+116
+00:05:41,480 --> 00:05:44,500
+dois recursos para executar, ento poderamos dizer que
+
+117
+00:05:44,500 --> 00:05:47,070
+eles precisam de dois dos ncleos em
+
+118
+00:05:47,070 --> 00:05:47,960
+ordem para correr.
+
+119
+00:05:49,180 --> 00:05:51,010
+Voltando ao exemplo, aqui
+
+120
+00:05:51,010 --> 00:05:53,550
+teramos, novamente, dois filsofos correndo.
+
+121
+00:05:53,550 --> 00:05:55,460
+Cada um consumindo dois recursos e
+
+122
+00:05:55,460 --> 00:05:58,430
+um recurso remanescente no pode ser usado porque no
+
+123
+00:05:58,430 --> 00:06:00,360
+temos nada que possa ser executado
+
+124
+00:06:00,360 --> 00:06:01,600
+em um nico recurso.
+
+125
+00:06:03,050 --> 00:06:05,600
+Nos computadores isso normalmente no  o caso.
+
+126
+00:06:05,600 --> 00:06:08,710
+Quase tudo pode ser executado em um nico ncleo,
+
+127
+00:06:08,710 --> 00:06:11,850
+mas algumas coisas se beneficiam da execuo em vrios ncleos.
+
+128
+00:06:11,850 --> 00:06:12,683
+OK?
+
+129
+00:06:16,140 --> 00:06:18,640
+Ento, na computao, temos os ncleos
+
+130
+00:06:18,640 --> 00:06:21,240
+e cada um pode executar um thread.
+
+131
+00:06:21,240 --> 00:06:23,640
+Ento, vamos nos afastar da analogia
+
+132
+00:06:23,640 --> 00:06:27,780
+do filsofo, ele comea a desmoronar logo aps isso.
+
+133
+00:06:27,780 --> 00:06:31,660
+Ento, quando voc tem seus dois ncleos cada executando um thread, o thread
+
+134
+00:06:31,660 --> 00:06:34,110
+ representado aqui por um T, a propsito,
+
+135
+00:06:35,290 --> 00:06:36,420
+ento tudo  bom.
+
+136
+00:06:36,420 --> 00:06:38,360
+Esses dois segmentos podem ser executados para sempre.
+
+137
+00:06:38,360 --> 00:06:40,630
+Ento, se voc tiver apenas esses dois segmentos
+
+138
+00:06:40,630 --> 00:06:42,270
+e tiver apenas dois ncleos, poder
+
+139
+00:06:42,270 --> 00:06:44,210
+executar os dois segmentos para sempre.
+
+140
+00:06:44,210 --> 00:06:48,060
+Eles nunca precisam parar de correr e tudo bem.
+
+141
+00:06:48,060 --> 00:06:51,340
+Um exemplo pode ser um desses encadeamentos que controla
+
+142
+00:06:51,340 --> 00:06:54,780
+o que  exibido em seu monitor, sua tela e
+
+143
+00:06:56,395 --> 00:06:59,450
+outro controla o cursor, o mouse, exibido na tela
+
+144
+00:06:59,450 --> 00:07:00,880
+e o fato de
+
+145
+00:07:00,880 --> 00:07:04,070
+que ele pode se mover e assim por diante.
+
+146
+00:07:04,070 --> 00:07:06,120
+Ento, se voc tem esses dois segmentos, voc pode
+
+147
+00:07:06,120 --> 00:07:08,130
+ver o seu mouse se movendo quando voc o
+
+148
+00:07:08,130 --> 00:07:10,370
+move e voc pode ver as coisas no seu monitor
+
+149
+00:07:10,370 --> 00:07:11,210
+e isso  bom.
+
+150
+00:07:11,210 --> 00:07:14,060
+Eles vo correr para sempre.
+
+151
+00:07:14,060 --> 00:07:15,770
+E, claro, esses dois segmentos podem
+
+152
+00:07:15,770 --> 00:07:17,380
+pertencer a um processo ou
+
+153
+00:07:17,380 --> 00:07:19,100
+podem pertencer a dois processos separadamente.
+
+154
+00:07:19,990 --> 00:07:20,823
+OK?
+
+155
+00:07:20,823 --> 00:07:22,830
+Mas no para trs, porque cada processo
+
+156
+00:07:22,830 --> 00:07:24,580
+tem que conter pelo menos um segmento.
+
+157
+00:07:27,490 --> 00:07:30,180
+Agora, se adicionarmos tpicos em espera, que
+
+158
+00:07:30,180 --> 00:07:32,810
+sempre haver alguns em seu computador.
+
+159
+00:07:32,810 --> 00:07:35,430
+Por exemplo, algo para lidar com voc
+
+160
+00:07:35,430 --> 00:07:36,910
+digitando no seu teclado.
+
+161
+00:07:38,120 --> 00:07:42,550
+Agora voc tem que decidir se quer rodar os dois threads que esto atualmente
+
+162
+00:07:42,550 --> 00:07:45,140
+nos ncleos continuamente para que voc possa ver
+
+163
+00:07:45,140 --> 00:07:46,470
+as coisas em sua
+
+164
+00:07:46,470 --> 00:07:48,430
+tela e voc pode mover o
+
+165
+00:07:48,430 --> 00:07:50,690
+mouse, ento o seu teclado nunca ir
+
+166
+00:07:50,690 --> 00:07:52,910
+responder porque um thread que lida com
+
+167
+00:07:52,910 --> 00:07:56,100
+o seu o teclado est esperando e nunca ser executado.
+
+168
+00:07:56,100 --> 00:07:58,960
+Ento voc tem que comear a fazer o tempo
+
+169
+00:07:58,960 --> 00:08:02,250
+cortando, seno os threads de espera vo morrer de fome
+
+170
+00:08:03,230 --> 00:08:04,930
+e ns no queremos isso.
+
+171
+00:08:04,930 --> 00:08:05,763
+OK.
+
+172
+00:08:06,610 --> 00:08:09,820
+Ento, o tempo cortando, movendo um fio de
+
+173
+00:08:09,820 --> 00:08:11,990
+um ncleo e colocando outro dentro.
+
+174
+00:08:13,150 --> 00:08:15,500
+Isto no  livre, a propsito.
+
+175
+00:08:17,120 --> 00:08:20,930
+Isso requer alguns recursos do seu computador para
+
+176
+00:08:20,930 --> 00:08:24,710
+fazer isso, porque o sistema operacional precisa salvar
+
+177
+00:08:24,710 --> 00:08:27,470
+o status atual do encadeamento.
+
+178
+00:08:27,470 --> 00:08:30,640
+Lembre-se, um thread  apenas uma linha de cdigo que est
+
+179
+00:08:30,640 --> 00:08:34,090
+rodando, ento voc tem que salvar onde o cdigo est atualmente para
+
+180
+00:08:34,090 --> 00:08:36,560
+que quando voc o trouxer de volta ao ncleo
+
+181
+00:08:36,560 --> 00:08:39,660
+depois de ter passado pela fila, ele no tenha que comear
+
+182
+00:08:39,660 --> 00:08:41,100
+do comeo daquele cdigo. cdigo.
+
+183
+00:08:41,100 --> 00:08:42,770
+Comea de onde parou, e isso
+
+184
+00:08:43,800 --> 00:08:44,830
+no  de graa.
+
+185
+00:08:44,830 --> 00:08:46,790
+O sistema operacional precisa, mais ou
+
+186
+00:08:46,790 --> 00:08:48,930
+menos, salvar o status, retir-lo do ncleo,
+
+187
+00:08:48,930 --> 00:08:52,030
+trazer outro para dentro e, quando isso for concludo, remover
+
+188
+00:08:52,030 --> 00:08:53,360
+o antigo, colocar o
+
+189
+00:08:53,360 --> 00:08:55,420
+antigo, redefinir o status de volta
+
+190
+00:08:55,420 --> 00:08:58,010
+ao que era antes e continue em execuo.
+
+191
+00:08:58,010 --> 00:08:59,430
+Ento no  completamente livre.
+
+192
+00:08:59,430 --> 00:09:01,610
+H alguma comunicao, h alguma sobrecarga na
+
+193
+00:09:01,610 --> 00:09:03,670
+mudana de um thread para outro.
+
+194
+00:09:04,860 --> 00:09:08,320
+Mas isso  tempo fatiar e isso  essencialmente
+
+195
+00:09:08,320 --> 00:09:10,270
+os fundamentos de processos e
+
+196
+00:09:10,270 --> 00:09:13,760
+segmentos e tambm sobre como funciona o seu computador.
+
+197
+00:09:13,760 --> 00:09:16,090
+Na prxima seo, estou muito animado
+
+198
+00:09:16,090 --> 00:09:19,630
+em gui-lo sobre como isso funciona em Python.
+
+199
+00:09:19,630 --> 00:09:21,130
+Ento, vamos passar para o prximo vdeo, onde
+
+200
+00:09:21,130 --> 00:09:22,500
+vamos falar um pouco mais sobre isso.
+
+201
+00:09:22,500 --> 00:09:23,890
+Eu te vejo l.
+

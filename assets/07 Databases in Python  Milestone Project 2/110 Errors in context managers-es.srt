@@ -1,0 +1,600 @@
+1
+00:00:00,415 --> 00:00:01,616
+-: [Jose Salvatierra] Hola y bienvenido de nuevo.
+
+2
+00:00:01,616 --> 00:00:02,449
+En este video,
+
+3
+00:00:02,449 --> 00:00:06,116
+estamos viendo cmo lidiar con errores en los administradores de contexto.
+
+4
+00:00:06,999 --> 00:00:09,790
+El mtodo de salida y el mtodo de salida de
+
+5
+00:00:09,790 --> 00:00:11,307
+los administradores de contexto tienen tres
+
+6
+00:00:11,307 --> 00:00:13,307
+argumentos: tipo de exc, vocal y TB.
+
+7
+00:00:14,820 --> 00:00:16,627
+Estos representan el tipo de
+
+8
+00:00:16,627 --> 00:00:20,714
+excepcin, el valor de excepcin y el seguimiento de excepcin.
+
+9
+00:00:20,714 --> 00:00:24,280
+Vamos a ver exactamente lo que son en solo un momento.
+
+10
+00:00:24,280 --> 00:00:26,891
+Y estas cosas existen porque durante la
+
+11
+00:00:26,891 --> 00:00:28,249
+ejecucin de un administrador
+
+12
+00:00:28,249 --> 00:00:31,180
+de contexto, es posible que ocurra un error.
+
+13
+00:00:31,180 --> 00:00:35,230
+Por ejemplo, si vamos a la funcin add_book, podramos encontrar
+
+14
+00:00:35,230 --> 00:00:37,594
+un error cuando intentemos insertar un
+
+15
+00:00:37,594 --> 00:00:40,403
+libro con un nombre que ya existe.
+
+16
+00:00:40,403 --> 00:00:45,049
+En ese caso, se producir un error por secuela lite,
+
+17
+00:00:45,049 --> 00:00:47,714
+y antes de que bloquee nuestro
+
+18
+00:00:47,714 --> 00:00:50,214
+programa, ir al mtodo de salida.
+
+19
+00:00:51,069 --> 00:00:52,444
+Bueno.
+
+20
+00:00:52,444 --> 00:00:54,017
+Entonces, incluso si se
+
+21
+00:00:54,017 --> 00:00:57,189
+lanza un anuncio, seguiremos llamando al mtodo de salida
+
+22
+00:00:57,189 --> 00:01:00,039
+primero, y tendr algunos valores aqu, y luego
+
+23
+00:01:00,039 --> 00:01:03,336
+una vez que el mtodo de salida haya terminado
+
+24
+00:01:03,336 --> 00:01:05,271
+de ejecutarse, el error seguir
+
+25
+00:01:05,271 --> 00:01:06,808
+subiendo y bloquear nuestro
+
+26
+00:01:06,808 --> 00:01:10,584
+programa a menos que sea manejado en un intento, excepto.
+
+27
+00:01:10,584 --> 00:01:13,860
+Si no ocurre ningn error, ninguno de estos tiene valores, por lo
+
+28
+00:01:13,860 --> 00:01:17,082
+que ninguno de estos es I. RE.
+
+29
+00:01:17,082 --> 00:01:19,869
+As que aqu hay un tipo de cosas que podemos hacer en la salida.
+
+30
+00:01:19,869 --> 00:01:21,774
+Por supuesto, podemos cerrar una conexin,
+
+31
+00:01:21,774 --> 00:01:23,412
+aunque haya ocurrido un error.
+
+32
+00:01:23,412 --> 00:01:26,452
+De lo contrario, tendramos que usar una prueba, excepto aqu.
+
+33
+00:01:26,452 --> 00:01:27,892
+As que antes, cuando
+
+34
+00:01:27,892 --> 00:01:29,891
+recibimos un error al insertar un
+
+35
+00:01:29,891 --> 00:01:31,766
+libro, en realidad no cerramos
+
+36
+00:01:31,766 --> 00:01:35,188
+la conexin porque el programa se bloque antes de eso.
+
+37
+00:01:35,188 --> 00:01:36,722
+Ahora, incluso si obtenemos un error
+
+38
+00:01:36,722 --> 00:01:39,634
+en la ejecucin, seguimos yendo hasta aqu, y entramos y cerramos.
+
+39
+00:01:39,634 --> 00:01:41,839
+Podemos cerrar el archivo, aunque nunca haya
+
+40
+00:01:41,839 --> 00:01:43,212
+sucedido, lo mismo que aqu.
+
+41
+00:01:43,212 --> 00:01:44,587
+Podemos imprimir algo en la
+
+42
+00:01:44,587 --> 00:01:46,551
+consola cuando algo termina de ejecutarse, particularmente
+
+43
+00:01:46,551 --> 00:01:47,791
+si ocurre un error,
+
+44
+00:01:47,791 --> 00:01:50,440
+podemos decir "Oye, ejecutamos este gestor de contexto, pero
+
+45
+00:01:50,440 --> 00:01:52,753
+nunca sucedi durante su ejecucin. "Podemos destruir
+
+46
+00:01:52,753 --> 00:01:56,188
+todo aquello en lo que dependemos en
+
+47
+00:01:56,188 --> 00:01:57,955
+el administrador de contexto.
+
+48
+00:01:57,955 --> 00:02:00,245
+Entonces, por ejemplo, podramos destruir esta
+
+49
+00:02:00,245 --> 00:02:02,142
+conexin, podramos destruir un manejador
+
+50
+00:02:02,142 --> 00:02:05,306
+de archivos, podramos hacer lo que queramos.
+
+51
+00:02:05,306 --> 00:02:07,419
+Recuerde que los administradores de contexto son solo eso.
+
+52
+00:02:07,419 --> 00:02:10,164
+Son funciones utilizadas para gestionar el contexto, y
+
+53
+00:02:10,164 --> 00:02:13,445
+Python nos brinda algo de azcar sintctico, la declaracin
+
+54
+00:02:13,445 --> 00:02:14,911
+"con", que nos permite
+
+55
+00:02:14,911 --> 00:02:16,615
+hacer estas cosas, pero son
+
+56
+00:02:16,615 --> 00:02:17,731
+solo funciones que
+
+57
+00:02:17,731 --> 00:02:20,052
+se ejecutan al principio o al final.
+
+58
+00:02:20,052 --> 00:02:21,324
+Sucede que se llama a
+
+59
+00:02:21,324 --> 00:02:24,029
+la funcin de salida incluso cuando hay una excepcin, un
+
+60
+00:02:24,029 --> 00:02:25,921
+error, que es ms o menos lo
+
+61
+00:02:25,921 --> 00:02:27,754
+mismo que un bloqueo de prueba.
+
+62
+00:02:28,955 --> 00:02:30,846
+Puedes hacer esto manualmente sin
+
+63
+00:02:30,846 --> 00:02:32,402
+usar gestores de contexto,
+
+64
+00:02:32,402 --> 00:02:35,113
+pero es probable que termine siendo menos legible.
+
+65
+00:02:35,113 --> 00:02:37,548
+Y esta es probablemente la mejor opcin.
+
+66
+00:02:37,548 --> 00:02:40,686
+Y a Python realmente le gustan estos administradores de contexto.
+
+67
+00:02:40,686 --> 00:02:43,960
+Estos agregan legibilidad y reducen la repeticin en su cdigo,
+
+68
+00:02:43,960 --> 00:02:46,903
+lo cual es bueno para uno de los inquilinos
+
+69
+00:02:46,903 --> 00:02:49,486
+principales de la programacin, que no se repita.
+
+70
+00:02:50,614 --> 00:02:51,447
+Bueno.
+
+71
+00:02:52,549 --> 00:02:56,560
+Vamos a establecer un punto de interrupcin en la lnea
+
+72
+00:02:56,560 --> 00:03:01,152
+lateral 14, la salida, el mtodo de salida debajo de nuestro
+
+73
+00:03:01,152 --> 00:03:05,012
+administrador de contexto, y luego vamos a ejecutar nuestra aplicacin.
+
+74
+00:03:05,012 --> 00:03:08,993
+Vamos a agregar un libro que ser limpio,
+
+75
+00:03:08,993 --> 00:03:13,599
+y luego vamos a agregar el mismo libro nuevamente.
+
+76
+00:03:13,599 --> 00:03:16,663
+Observe cmo ahora obtenemos un error de integridad aqu.
+
+77
+00:03:16,663 --> 00:03:20,786
+Dice que la restriccin NICA fall: libros. nombre Y eso
+
+78
+00:03:20,786 --> 00:03:25,195
+est aqu en el interior de Sequel
+
+79
+00:03:25,195 --> 00:03:28,028
+A3 cuando intentamos ejecutar esto.
+
+80
+00:03:28,988 --> 00:03:32,718
+Ahora, sigamos adelante y depuremos nuestra aplicacin esta vez. Oh s, lo
+
+81
+00:03:32,718 --> 00:03:35,635
+Y, una vez ms, ve a la consola, Oh, Esto ha funcionado, no necesitamos hacer eso.
+
+82
+00:03:38,562 --> 00:03:41,114
+creo que podemos tener. siento. Vamos, ve a A,
+
+83
+00:03:41,114 --> 00:03:44,506
+escribe cdigo limpio, y ahora observa cmo nuestro cdigo se detiene aqu.
+
+84
+00:03:44,506 --> 00:03:47,589
+Podemos pasar al depurador y ver que tenemos
+
+85
+00:03:49,578 --> 00:03:52,800
+un par de valores para el valor de
+
+86
+00:03:52,800 --> 00:03:55,001
+ejecucin y el seguimiento de ejecucin.
+
+87
+00:03:55,001 --> 00:03:58,110
+El seguimiento es este objeto de rastreo hacia atrs,
+
+88
+00:03:58,110 --> 00:04:01,819
+y el valor es esta restriccin NICA fallida en los libros. nombre As que cuando tenemos
+
+89
+00:04:01,819 --> 00:04:05,297
+una excepcin, se llama a
+
+90
+00:04:05,297 --> 00:04:10,297
+la funcin de salida,
+
+91
+00:04:11,340 --> 00:04:14,020
+pero tiene algunos valores. S
+
+92
+00:04:14,020 --> 00:04:17,119
+Me pregunto si exc_type tiene algn valor. lo hace. Este es el error de integridad que obtuvimos antes, este
+
+93
+00:04:17,119 --> 00:04:19,536
+es un tipo del error que se llam.
+
+94
+00:04:21,063 --> 00:04:23,786
+Como puede ver, ya no son ninguno.
+
+95
+00:04:23,786 --> 00:04:24,642
+Ellos tienen algunos valores.
+
+96
+00:04:24,642 --> 00:04:27,765
+Entonces, lo que podemos
+
+97
+00:04:27,765 --> 00:04:30,590
+hacer es, podemos detener
+
+98
+00:04:30,590 --> 00:04:33,316
+nuestro programa, y
+
+99
+00:04:33,316 --> 00:04:35,799
+podemos decir si
+
+100
+00:04:35,799 --> 00:04:37,471
+exc_type o
+
+101
+00:04:37,471 --> 00:04:40,721
+exc_val o exc_tb: self. conexin. cerrar sin comprometer
+
+102
+00:04:41,645 --> 00:04:42,562
+nada.
+
+103
+00:04:43,472 --> 00:04:44,305
+De lo contrario, confirma y luego cierra.
+
+104
+00:04:45,322 --> 00:04:46,155
+La razn de esto
+
+105
+00:04:48,765 --> 00:04:50,515
+es que, si
+
+106
+00:04:54,708 --> 00:04:57,041
+se produce un error, es posible, aunque poco probable, que nuestra base de
+
+107
+00:04:58,214 --> 00:05:00,964
+datos se haya quedado en un estado incoherente, un estado que no es tan bueno.
+
+108
+00:05:07,733 --> 00:05:10,146
+Por ejemplo, si intenta introducir algunos datos
+
+109
+00:05:10,146 --> 00:05:12,431
+primero y luego desea ingresar algo
+
+110
+00:05:12,431 --> 00:05:15,869
+ms, eso depende de los datos anteriores, pero se produce
+
+111
+00:05:15,869 --> 00:05:17,608
+un error cuando eso sucede.
+
+112
+00:05:17,608 --> 00:05:20,232
+Entonces, qu hacer? Si ocurre una excepcin,
+
+113
+00:05:20,232 --> 00:05:21,625
+cierre la conexin.
+
+114
+00:05:21,625 --> 00:05:23,226
+De lo contrario, confirma y luego cierra.
+
+115
+00:05:23,226 --> 00:05:25,778
+Observe cmo exc_type o exc_val o
+
+116
+00:05:25,778 --> 00:05:28,783
+exc_tb solo significa que no es ninguno.
+
+117
+00:05:28,783 --> 00:05:30,111
+Estas son todas las mismas cosas.
+
+118
+00:05:30,111 --> 00:05:32,938
+Exc_type no es none o exc_value no
+
+119
+00:05:32,938 --> 00:05:37,282
+es none o exc_tb is not none se puede acortar a esto.
+
+120
+00:05:37,282 --> 00:05:39,199
+As que sintete libre de usar este tipo de sintaxis en su lugar.
+
+121
+00:05:43,657 --> 00:05:44,809
+Recuerde que la declaracin o
+
+122
+00:05:44,809 --> 00:05:47,268
+le da el segundo valor si el primero fue falso E.
+
+123
+00:05:47,268 --> 00:05:51,390
+Ninguno es un valor E falso, as que esto te da exc_val.
+
+124
+00:05:51,390 --> 00:05:55,360
+Exc_val no es ninguno, que tambin es falso E.
+
+125
+00:05:55,360 --> 00:05:57,978
+Eso te da exc_tb.
+
+126
+00:05:57,978 --> 00:06:00,652
+Exc_tb tampoco es ninguna,
+
+127
+00:06:00,652 --> 00:06:05,236
+que tambin es E falsa, entonces entres aqu.
+
+128
+00:06:05,236 --> 00:06:07,399
+Porque todo esto se evala
+
+129
+00:06:07,399 --> 00:06:09,384
+como exc_tb, que es falso.
+
+130
+00:06:09,384 --> 00:06:12,436
+Bueno.
+
+131
+00:06:12,436 --> 00:06:14,099
+Si no, ejecuta el else,
+
+132
+00:06:14,099 --> 00:06:16,382
+que confirma y cierra la conexin.
+
+133
+00:06:16,382 --> 00:06:17,632
+As que eso es todo por este video, solo
+
+134
+00:06:18,679 --> 00:06:19,615
+quera mostrarles los parmetros del mtodo de
+
+135
+00:06:19,615 --> 00:06:20,669
+salida y qu tipo de cosas tienen.
+
+136
+00:06:20,669 --> 00:06:24,002
+Y el tipo es el tipo de excepcin, esa
+
+137
+00:06:24,904 --> 00:06:26,916
+es la clase de la excepcin.
+
+138
+00:06:26,916 --> 00:06:30,489
+El valor es cualquier argumento que se pas
+
+139
+00:06:30,489 --> 00:06:32,833
+a la excepcin cuando se plante.
+
+140
+00:06:32,833 --> 00:06:34,454
+Normalmente, ese es un mensaje de descripcin,
+
+141
+00:06:34,454 --> 00:06:36,690
+y el tb es el seguimiento de la excepcin.
+
+142
+00:06:36,690 --> 00:06:39,243
+Eso donde ocurri la excepcin en todas las lneas y
+
+143
+00:06:39,243 --> 00:06:40,891
+todos los archivos donde se vio.
+
+144
+00:06:40,891 --> 00:06:42,846
+As que eso es todo
+
+145
+00:06:42,846 --> 00:06:45,399
+por este video, espero que hayas aprendido
+
+146
+00:06:45,399 --> 00:06:47,907
+algo, y te ver en el siguiente.
+
+147
+00:06:47,907 --> 00:06:51,264
+&nbsp;
+
+148
+00:06:51,264 --> 00:06:52,184
+&nbsp;
+
+149
+00:06:52,184 --> 00:06:53,642
+&nbsp;
+
+150
+00:06:53,642 --> 00:06:55,076
+&nbsp;
+

@@ -1,0 +1,480 @@
+1
+00:00:00,000 --> 00:00:01,251
+[Jose] -Hola y bienvenido de nuevo.
+
+2
+00:00:01,251 --> 00:00:04,465
+En este video estamos hablando de la funcin de mapa.
+
+3
+00:00:04,465 --> 00:00:07,596
+En el ltimo video mencionamos brevemente cundo
+
+4
+00:00:07,596 --> 00:00:12,179
+utilizara el filtro, o cundo usara las comprensiones del generador.
+
+5
+00:00:13,171 --> 00:00:16,197
+Y entonces quise decir rpidamente, "que usars filtro" cuando
+
+6
+00:00:16,197 --> 00:00:19,946
+ests programando con personas que no han estado "programando en Python
+
+7
+00:00:19,946 --> 00:00:22,349
+por mucho tiempo". "Por ejemplo, programadores
+
+8
+00:00:22,349 --> 00:00:24,718
+de otros lenguajes de programacin,
+
+9
+00:00:24,718 --> 00:00:27,099
+o solo cuando su proyecto
+
+10
+00:00:27,099 --> 00:00:29,713
+involucra mltiples lenguajes de programacin.
+
+11
+00:00:29,713 --> 00:00:31,129
+Python es uno de los pocos lenguajes
+
+12
+00:00:31,129 --> 00:00:32,818
+de programacin que tiene una sintaxis como esta.
+
+13
+00:00:32,818 --> 00:00:34,777
+Entonces, si est trabajando con muchos
+
+14
+00:00:34,777 --> 00:00:36,864
+lenguajes de programacin, tal vez tenga sentido
+
+15
+00:00:36,864 --> 00:00:40,709
+usar la funcin de filtro, y de esa manera, mantenga todo consistente.
+
+16
+00:00:40,709 --> 00:00:41,542
+Use la
+
+17
+00:00:41,542 --> 00:00:45,067
+funcin de filtro en todos los idiomas que usa.
+
+18
+00:00:45,067 --> 00:00:46,780
+Adems, usars la funcin de
+
+19
+00:00:46,780 --> 00:00:48,744
+filtro si ya tienes una funcin
+
+20
+00:00:48,744 --> 00:00:51,017
+definida, y no tienes que crear una.
+
+21
+00:00:51,017 --> 00:00:53,392
+De esa manera puede ser un poco ms rpido.
+
+22
+00:00:53,392 --> 00:00:56,822
+Finalmente, tambin hay algo que decir para esta variable
+
+23
+00:00:56,822 --> 00:00:59,829
+que estamos creando aqu en esta comprensin.
+
+24
+00:00:59,829 --> 00:01:02,371
+Esta variable es bastante intil, por lo
+
+25
+00:01:02,371 --> 00:01:05,938
+que hay algo que decir para no crear esta variable aqu.
+
+26
+00:01:05,938 --> 00:01:07,411
+Depende de usted a cul va,
+
+27
+00:01:07,411 --> 00:01:10,160
+pero la principal forma de decidir, dira yo, es si su
+
+28
+00:01:10,160 --> 00:01:11,561
+programacin con otras personas a
+
+29
+00:01:11,561 --> 00:01:13,418
+las que les gusta la funcin de
+
+30
+00:01:13,418 --> 00:01:15,275
+filtro, en lugar de las de comprensin.
+
+31
+00:01:15,275 --> 00:01:16,805
+Si solo ests programando con
+
+32
+00:01:16,805 --> 00:01:18,950
+Python, los desarrolladores usan las comprensiones, y
+
+33
+00:01:18,950 --> 00:01:23,117
+si no les gusta, haz que les guste, porque generalmente ser mejor.
+
+34
+00:01:23,117 --> 00:01:24,426
+De acuerdo, eso es suficiente.
+
+35
+00:01:24,426 --> 00:01:27,049
+Hablemos de la funcin de mapa.
+
+36
+00:01:27,049 --> 00:01:29,008
+La funcin de mapa se usa
+
+37
+00:01:29,008 --> 00:01:31,672
+para tomar un iterable y producir un nuevo
+
+38
+00:01:31,672 --> 00:01:35,238
+iterable, donde cada elemento se ha modificado de acuerdo con alguna funcin.
+
+39
+00:01:35,238 --> 00:01:38,673
+Tomemos, por ejemplo, este mapa aqu.
+
+40
+00:01:38,673 --> 00:01:43,155
+Friends_lower va a mapear (lambda x: x. ms bajo, de
+
+41
+00:01:43,155 --> 00:01:44,155
+amigos).
+
+42
+00:01:46,536 --> 00:01:49,619
+De nuevo, muy similar a la funcin de filtro.
+
+43
+00:01:49,619 --> 00:01:51,517
+Tambin toma una funcin del inicio
+
+44
+00:01:51,517 --> 00:01:53,813
+que devuelve algo y toma algo como
+
+45
+00:01:53,813 --> 00:01:56,229
+un barmetro, y lo que se necesita
+
+46
+00:01:56,229 --> 00:01:59,484
+es cada uno de los elementos de este iterable aqu.
+
+47
+00:01:59,484 --> 00:02:01,974
+As que el primero es Rolph
+
+48
+00:02:01,974 --> 00:02:04,756
+y devuelve Rolph todo en minsculas.
+
+49
+00:02:04,756 --> 00:02:06,789
+Luego lleva a Jos y regresa
+
+50
+00:02:06,789 --> 00:02:09,126
+en letras minsculas, y as sucesivamente.
+
+51
+00:02:09,126 --> 00:02:11,684
+Pero produce un generador.
+
+52
+00:02:11,684 --> 00:02:13,749
+Entonces, la primera vez que llamas "siguiente", obtienes
+
+53
+00:02:13,749 --> 00:02:15,483
+a Rolph, con todas las minsculas.
+
+54
+00:02:15,483 --> 00:02:16,650
+Vamos a hacer eso.
+
+55
+00:02:22,859 --> 00:02:24,710
+Y como puedes ver, obtienes
+
+56
+00:02:24,710 --> 00:02:26,952
+a Rolph, todo en minsculas all.
+
+57
+00:02:26,952 --> 00:02:31,728
+Esto es muy idntico a esta lista de comprensin aqu.
+
+58
+00:02:31,728 --> 00:02:35,351
+Amigo inferior para amigo en amigos,
+
+59
+00:02:35,351 --> 00:02:37,689
+y es por supuesto
+
+60
+00:02:37,689 --> 00:02:41,522
+idntico, a esta comprensin de generador de
+
+61
+00:02:44,696 --> 00:02:46,075
+friends_lower, como tal.
+
+62
+00:02:46,075 --> 00:02:48,255
+Cual deberas usar?
+
+63
+00:02:48,255 --> 00:02:51,196
+Esta, la comprensin del generador, a menos que
+
+64
+00:02:51,196 --> 00:02:53,069
+los necesite todos para estar
+
+65
+00:02:53,069 --> 00:02:56,253
+en una lista, entonces puede hacer esta lista de comprensin.
+
+66
+00:02:56,253 --> 00:02:57,964
+Cundo deberas usar el mapa?
+
+67
+00:02:57,964 --> 00:03:00,268
+Nuevamente, como dije antes, cuando las personas
+
+68
+00:03:00,268 --> 00:03:01,364
+de su equipo, las
+
+69
+00:03:01,364 --> 00:03:04,648
+personas con las que est trabajando, estn acostumbradas a usar el
+
+70
+00:03:04,648 --> 00:03:06,337
+mapa, eso es muy popular
+
+71
+00:03:06,337 --> 00:03:08,585
+en otros lenguajes de programacin, o cuando
+
+72
+00:03:08,585 --> 00:03:09,591
+se trabaja con
+
+73
+00:03:09,591 --> 00:03:12,215
+otros lenguajes de programacin al mismo tiempo, y
+
+74
+00:03:12,215 --> 00:03:14,812
+desea que todo sea coherente, o cuando crea
+
+75
+00:03:14,812 --> 00:03:17,856
+que ser ms legible porque algunas de las funciones que
+
+76
+00:03:17,856 --> 00:03:21,520
+ha definido anteriormente pueden usarse sin tener que crear la nueva funcin lambda.
+
+77
+00:03:21,520 --> 00:03:23,620
+As que aqu hay un ejemplo de otro
+
+78
+00:03:23,620 --> 00:03:26,905
+punto en el tiempo, donde puedes usar map en lugar de filter.
+
+79
+00:03:26,905 --> 00:03:30,406
+Digamos que tenemos un Usuario de clase: eso define e
+
+80
+00:03:30,406 --> 00:03:33,102
+inicia el mtodo, e incluye un nombre de
+
+81
+00:03:33,102 --> 00:03:34,185
+usuario y contrasea.
+
+82
+00:03:39,825 --> 00:03:42,783
+Y luego tiene un mtodo de clase
+
+83
+00:03:42,783 --> 00:03:44,366
+que es de _dicto.
+
+84
+00:03:46,724 --> 00:03:48,655
+Entonces, dado un diccionario de
+
+85
+00:03:48,655 --> 00:03:50,655
+datos, devolver un objeto de usuario.
+
+86
+00:03:52,043 --> 00:03:55,793
+Por lo tanto, devolver cls de nombre de usuario
+
+87
+00:03:56,947 --> 00:04:00,096
+de datos y contrasea de datos, por ejemplo.
+
+88
+00:04:00,096 --> 00:04:00,929
+Bueno.
+
+89
+00:04:02,479 --> 00:04:06,542
+Ahora lo tienes definido aqu en la clase de usuario,
+
+90
+00:04:06,542 --> 00:04:10,999
+y dado que tienes una lista de usuarios como esta, voy
+
+91
+00:04:10,999 --> 00:04:13,200
+a copiarlos de mis notas,
+
+92
+00:04:13,200 --> 00:04:16,025
+para que no te aburra a tirarlos.
+
+93
+00:04:16,025 --> 00:04:19,755
+Tienes a Rolf y a la guitarra son
+
+94
+00:04:19,755 --> 00:04:22,447
+maravillosos, y t tambin la tienes.
+
+95
+00:04:22,447 --> 00:04:25,168
+Dado que tiene aqu la funcin from_dict
+
+96
+00:04:25,168 --> 00:04:28,498
+y quera crear una lista de objetos de usuario
+
+97
+00:04:28,498 --> 00:04:30,920
+a partir de estos diccionarios, podra
+
+98
+00:04:30,920 --> 00:04:32,587
+hacer algo como esto.
+
+99
+00:04:34,878 --> 00:04:39,878
+Y ese es usuario. from_dict (usuario) para, lo siento, esta debera
+
+100
+00:04:40,153 --> 00:04:42,576
+ser la lista de usuarios, por
+
+101
+00:04:42,576 --> 00:04:45,243
+cierto, mis disculpas, para el usuario en
+
+102
+00:04:47,024 --> 00:04:49,022
+usuarios, y eso estar bien.
+
+103
+00:04:49,022 --> 00:04:53,522
+Pero en realidad siento que un mapa podra ser ms legible.
+
+104
+00:04:59,174 --> 00:05:02,429
+Tambin es un poco ms corto, pero eso no viene al caso.
+
+105
+00:05:02,429 --> 00:05:04,917
+Creo que esto es ms fcil de leer aqu, porque sabes
+
+106
+00:05:04,917 --> 00:05:07,066
+que ests llamando a esto. funcin dict
+
+107
+00:05:07,066 --> 00:05:10,134
+para cada elemento en este iterable.
+
+108
+00:05:10,134 --> 00:05:11,937
+Mientras que la lista de comprensin, tienes
+
+109
+00:05:11,937 --> 00:05:14,074
+que leerlo, y tienes que crear esta nueva
+
+110
+00:05:14,074 --> 00:05:16,606
+variable que solo se usa para iteracin y nada
+
+111
+00:05:16,606 --> 00:05:18,819
+ms, y en realidad ests llamando a esta
+
+112
+00:05:18,819 --> 00:05:20,655
+funcin aqu, no s, solo siento como
+
+113
+00:05:20,655 --> 00:05:23,719
+el mapa en este caso es un poco ms legible.
+
+114
+00:05:23,719 --> 00:05:26,004
+Por lo tanto, tenlo en cuenta, si tambin piensas
+
+115
+00:05:26,004 --> 00:05:28,042
+as, que a veces el mapa puede ser
+
+116
+00:05:28,042 --> 00:05:30,419
+una mejor opcin que la comprensin de la lista.
+
+117
+00:05:30,419 --> 00:05:33,005
+Y eso es solo un ejemplo all.
+
+118
+00:05:33,005 --> 00:05:35,065
+As que eso es todo por este video,
+
+119
+00:05:35,065 --> 00:05:37,569
+espero que hayas aprendido algo sobre la funcin de
+
+120
+00:05:37,569 --> 00:05:39,774
+mapa, y te ver en el siguiente video.
+

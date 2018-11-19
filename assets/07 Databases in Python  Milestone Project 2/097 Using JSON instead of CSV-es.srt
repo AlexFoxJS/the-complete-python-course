@@ -1,0 +1,788 @@
+1
+00:00:00,493 --> 00:00:01,724
+Jos: Hola y bienvenido de nuevo.
+
+2
+00:00:01,724 --> 00:00:05,227
+En este video, vamos a convertir nuestros CSV en JSON.
+
+3
+00:00:05,227 --> 00:00:07,763
+Solo para que comprendamos un poco mejor cmo
+
+4
+00:00:07,763 --> 00:00:08,723
+funciona eso, y
+
+5
+00:00:08,723 --> 00:00:11,851
+si hay beneficios al usar JSON en lugar de CSV.
+
+6
+00:00:11,851 --> 00:00:13,851
+A menudo me parece que JSON te
+
+7
+00:00:13,851 --> 00:00:16,227
+da un poco ms de flexibilidad y hace
+
+8
+00:00:16,227 --> 00:00:19,010
+las cosas un poco ms fciles, simplemente porque es
+
+9
+00:00:19,010 --> 00:00:21,339
+muy fcil de traducir a diccionarios de Python.
+
+10
+00:00:21,339 --> 00:00:22,419
+Y tambin esto te
+
+11
+00:00:22,419 --> 00:00:25,075
+da un poco ms de exposicin a cmo funciona Python.
+
+12
+00:00:25,075 --> 00:00:26,835
+Si no desea trasladar esta aplicacin
+
+13
+00:00:26,835 --> 00:00:28,803
+a JSON, sintase libre de entrar
+
+14
+00:00:28,803 --> 00:00:30,043
+al siguiente video y
+
+15
+00:00:30,043 --> 00:00:33,259
+en su lugar vamos a ver las bases de datos.
+
+16
+00:00:33,259 --> 00:00:34,971
+Lo primero que debemos hacer
+
+17
+00:00:34,971 --> 00:00:38,331
+es cambiar nuestro comentario aqu para decir que estamos usando JSON.
+
+18
+00:00:38,331 --> 00:00:43,331
+Luego voy a cambiar el archivo para que sean libros. json.
+
+19
+00:00:43,410 --> 00:00:45,993
+Y ahora comenzaremos a usar nuestra
+
+20
+00:00:47,603 --> 00:00:50,520
+interfaz aqu para crear nuestros archivos.
+
+21
+00:00:53,024 --> 00:00:55,641
+Ahora cuando creamos una tabla de libros,
+
+22
+00:00:55,641 --> 00:00:58,935
+queremos asegurarnos de que el archivo est all.
+
+23
+00:00:58,935 --> 00:01:00,519
+Y vamos a cambiar esto ms adelante.
+
+24
+00:01:00,519 --> 00:01:03,151
+Vamos a obtener un error cuando intentemos usar esto.
+
+25
+00:01:03,151 --> 00:01:06,651
+Pero dejmoslo as por ahora.
+
+26
+00:01:07,820 --> 00:01:10,798
+Luego implementemos la funcin de obtener todos
+
+27
+00:01:10,798 --> 00:01:13,692
+los libros, porque es la ms fcil.
+
+28
+00:01:13,692 --> 00:01:15,533
+Por lo tanto, voy a eliminar
+
+29
+00:01:15,533 --> 00:01:17,604
+todo esto, excepto el administrador de contexto.
+
+30
+00:01:17,604 --> 00:01:22,604
+Y todo lo que tenemos que devolver es json. carga del archivo.
+
+31
+00:01:22,778 --> 00:01:27,176
+Por supuesto, tendremos que importar JSON en la parte superior.
+
+32
+00:01:27,176 --> 00:01:30,994
+Recuerde que el archivo JSON va a ser una lista,
+
+33
+00:01:30,994 --> 00:01:35,077
+que hace las cosas y tal vez algunos libros aqu.
+
+34
+00:01:36,422 --> 00:01:40,255
+Como el nombre, es el nombre, algo as como
+
+35
+00:01:42,398 --> 00:01:47,398
+cdigo limpio, el autor ser Robert y la lectura ser cierta.
+
+36
+00:01:47,708 --> 00:01:50,166
+JSON puede almacenar valores verdaderos y falsos.
+
+37
+00:01:50,166 --> 00:01:52,701
+Por lo tanto, sintete libre de almacenarlos directamente
+
+38
+00:01:52,701 --> 00:01:55,308
+en JSON, lo que simplifica las cosas un poco.
+
+39
+00:01:55,308 --> 00:01:59,405
+Entonces, va a ser una lista de diccionarios y eso es genial.
+
+40
+00:01:59,405 --> 00:02:01,547
+Entonces, cuando obtengamos todos los
+
+41
+00:02:01,547 --> 00:02:05,047
+libros, lo hacemos json. cargar, y eso nos da una lista.
+
+42
+00:02:05,912 --> 00:02:07,952
+Cuando tenemos nuestra lista, podemos iterar sobre
+
+43
+00:02:07,952 --> 00:02:10,096
+ella y podemos hacer todo lo que podamos
+
+44
+00:02:10,096 --> 00:02:14,770
+con una lista normal, solo pretende que es esto lo que hemos puesto en una variable.
+
+45
+00:02:14,770 --> 00:02:17,787
+Entonces, cuando queremos agregar un nuevo
+
+46
+00:02:17,787 --> 00:02:20,939
+libro, cmo vamos a hacer eso?
+
+47
+00:02:20,939 --> 00:02:24,772
+Bien, necesitamos de alguna manera abrir el archivo
+
+48
+00:02:25,734 --> 00:02:28,484
+JSON y escribirle un nuevo diccionario.
+
+49
+00:02:29,805 --> 00:02:31,637
+Ahora ya no es tan
+
+50
+00:02:31,637 --> 00:02:34,028
+simple como agregar algo al final.
+
+51
+00:02:34,028 --> 00:02:35,540
+Porque tenemos que agregar
+
+52
+00:02:35,540 --> 00:02:38,285
+algo entre este corchete y este
+
+53
+00:02:38,285 --> 00:02:39,952
+corchete, algo como esto.
+
+54
+00:02:43,101 --> 00:02:45,053
+Por lo tanto, no es tan fcil, entonces lo
+
+55
+00:02:45,053 --> 00:02:46,501
+que voy a hacer es hacer lo
+
+56
+00:02:46,501 --> 00:02:48,821
+mismo que hicimos marcando los libros como ledos y eliminndolos.
+
+57
+00:02:48,821 --> 00:02:51,437
+Voy a abrir todos los libros,
+
+58
+00:02:51,437 --> 00:02:55,698
+leerlos todos, agregar uno usando Python y luego guardarlos todos nuevamente.
+
+59
+00:02:55,698 --> 00:02:58,948
+Entonces, los libros sern para obtener todos los
+
+60
+00:03:00,700 --> 00:03:03,010
+libros, luego vamos a hacer libros,
+
+61
+00:03:03,010 --> 00:03:06,266
+que, recuerden, es una lista, as que podemos
+
+62
+00:03:06,266 --> 00:03:10,516
+agregarlo, y luego vamos a anexar un diccionario usando los parmetros
+
+63
+00:03:13,177 --> 00:03:18,177
+que lleg aqu, y va a comenzar como falso para el estado de lectura.
+
+64
+00:03:18,251 --> 00:03:22,287
+Por supuesto, al final, queremos guardar todos los libros.
+
+65
+00:03:22,287 --> 00:03:24,047
+Y los libros que queremos
+
+66
+00:03:24,047 --> 00:03:27,127
+guardar son los libros que ya hemos modificado.
+
+67
+00:03:27,127 --> 00:03:30,288
+Ahora, esta funcin para guardar todos los libros est
+
+68
+00:03:30,288 --> 00:03:33,886
+definida aqu, as que vamos a cortarla y moverla hacia abajo
+
+69
+00:03:33,886 --> 00:03:36,293
+para guardar todos los libros, pero en
+
+70
+00:03:36,293 --> 00:03:41,293
+realidad, disculpas, todos los libros se usan primero, as que vamos a ponerlo aqu. .
+
+71
+00:03:48,652 --> 00:03:49,485
+Ah.
+
+72
+00:03:51,283 --> 00:03:54,511
+Entonces, lo pondremos all, y en su lugar, por supuesto, de
+
+73
+00:03:54,511 --> 00:03:56,790
+hacer toda esta iteracin, todo lo que tenemos
+
+74
+00:03:56,790 --> 00:03:59,006
+que hacer en el archivo de guardar todos
+
+75
+00:03:59,006 --> 00:04:02,756
+los libros, en la funcin es json. volcar libros en un archivo, y
+
+76
+00:04:04,539 --> 00:04:05,978
+eso solo va a guardar
+
+77
+00:04:05,978 --> 00:04:09,145
+todo como una cadena JSON, en lugar de como un CSV.
+
+78
+00:04:10,969 --> 00:04:12,913
+As que ahora implementamos nuestro libro adicional,
+
+79
+00:04:12,913 --> 00:04:15,978
+obtenemos todos los libros y guardamos todas las funciones de libros.
+
+80
+00:04:15,978 --> 00:04:19,330
+Podemos seguir adelante y marcar el libro como
+
+81
+00:04:19,330 --> 00:04:21,754
+ledo, pero puede darse cuenta de
+
+82
+00:04:21,754 --> 00:04:26,316
+que no tenemos que hacer nada, excepto convertirlo en un verdadero,
+
+83
+00:04:26,316 --> 00:04:29,419
+que es todo lo que tenemos que hacer.
+
+84
+00:04:29,419 --> 00:04:31,469
+Digamos que estamos listos para el libro
+
+85
+00:04:31,469 --> 00:04:32,810
+de eliminacin, estamos obteniendo todos
+
+86
+00:04:32,810 --> 00:04:35,107
+los libros, ahora vienen del archivo JSON, guardamos
+
+87
+00:04:35,107 --> 00:04:37,131
+todos los libros, van a un archivo
+
+88
+00:04:37,131 --> 00:04:39,683
+JSON, y en el medio, estamos simplemente modificando la
+
+89
+00:04:39,683 --> 00:04:41,909
+lista, para que no incluya el libro que
+
+90
+00:04:41,909 --> 00:04:45,476
+coincide con el nombre, una vez ms, no tenemos que hacer nada aqu.
+
+91
+00:04:45,476 --> 00:04:47,252
+Muy bien, eh?
+
+92
+00:04:47,252 --> 00:04:49,708
+No mucho ha cambiado, lo nico que
+
+93
+00:04:49,708 --> 00:04:52,244
+ha cambiado es falso y cero y uno.
+
+94
+00:04:52,244 --> 00:04:56,552
+Entonces, si vamos a nuestra aplicacin. py, podemos bajar aqu y simplemente
+
+95
+00:04:56,552 --> 00:04:59,127
+eliminar esto si el libro es igual a
+
+96
+00:04:59,127 --> 00:05:01,511
+uno, cambiarlo a si lee el libro.
+
+97
+00:05:01,511 --> 00:05:04,428
+Como eso ya supone que es verdad.
+
+98
+00:05:05,698 --> 00:05:08,778
+Y eso es todo, podemos presionar Reproducir,
+
+99
+00:05:08,778 --> 00:05:11,691
+y ya sabes, empezar a agregar libros.
+
+100
+00:05:11,691 --> 00:05:14,474
+Y dije antes, esto generar un error, as
+
+101
+00:05:14,474 --> 00:05:17,402
+que voy a ingresar un nuevo nombre de libro.
+
+102
+00:05:17,402 --> 00:05:21,711
+Esto va a ser Python 101 de Jos Salvatierra,
+
+103
+00:05:21,711 --> 00:05:24,079
+esto no existe, por cierto.
+
+104
+00:05:24,079 --> 00:05:25,829
+Oh, tenemos el error.
+
+105
+00:05:26,799 --> 00:05:28,503
+Entonces, este es el error del que estaba
+
+106
+00:05:28,503 --> 00:05:32,086
+hablando antes, y dice, json. descifrador. JSONDecoderError, esperando
+
+107
+00:05:33,937 --> 00:05:38,594
+un valor en la lnea uno, columna uno, carcter cero.
+
+108
+00:05:38,594 --> 00:05:41,042
+De acuerdo, esperaba un valor.
+
+109
+00:05:41,042 --> 00:05:44,792
+Veamos qu es el libro. json file dice.
+
+110
+00:05:44,792 --> 00:05:48,216
+Est completamente vaco, nada all.
+
+111
+00:05:48,216 --> 00:05:50,216
+De acuerdo, entonces el error dice que
+
+112
+00:05:50,216 --> 00:05:52,552
+esperaba un valor, y evidentemente, no encontr uno.
+
+113
+00:05:52,552 --> 00:05:55,287
+Entonces, por qu esperaba un valor?
+
+114
+00:05:55,287 --> 00:05:57,056
+Bueno, aqu puedes ver la
+
+115
+00:05:57,056 --> 00:06:01,043
+lnea que elev el JSONDecodeError, no es algo que escribimos, est
+
+116
+00:06:01,043 --> 00:06:03,843
+dentro de este decodificador. archivo py, y ahora
+
+117
+00:06:03,843 --> 00:06:06,868
+estamos obteniendo lneas que no escribimos porque, por
+
+118
+00:06:06,868 --> 00:06:08,643
+supuesto, estamos usando un mdulo
+
+119
+00:06:08,643 --> 00:06:10,195
+que no escribimos, y
+
+120
+00:06:10,195 --> 00:06:13,421
+este es el mdulo que gener el error.
+
+121
+00:06:13,421 --> 00:06:17,247
+Ahora apareci el error en esta funcin de decodificacin en bruto, as que
+
+122
+00:06:17,247 --> 00:06:18,991
+eso es lo siguiente que obtenemos.
+
+123
+00:06:18,991 --> 00:06:21,887
+Eso se llam desde esta funcin de decodificacin,
+
+124
+00:06:21,887 --> 00:06:24,127
+que estaba aqu, y luego aqu,
+
+125
+00:06:24,127 --> 00:06:29,127
+y finalmente llegamos a nuestro cdigo return json. cargar archivo.
+
+126
+00:06:29,402 --> 00:06:32,958
+Y eso estaba dentro del archivo de obtener todos los libros, esa funcin.
+
+127
+00:06:32,958 --> 00:06:37,586
+As que vayamos all, y hagamos esto un poco ms pequeo.
+
+128
+00:06:37,586 --> 00:06:38,754
+Y est diciendo que el
+
+129
+00:06:38,754 --> 00:06:41,754
+error fue devuelto aqu, return json. carga.
+
+130
+00:06:43,437 --> 00:06:47,770
+Por qu crees que puede haber un error en esta lnea?
+
+131
+00:06:51,331 --> 00:06:55,400
+No estoy seguro de lo que se te ocurri, pero el problema aqu
+
+132
+00:06:55,400 --> 00:06:58,320
+no es, nuestros libros. El archivo json est
+
+133
+00:06:58,320 --> 00:07:01,088
+vaco, y eso no es vlido JSON.
+
+134
+00:07:01,088 --> 00:07:03,016
+Recuerda que dije, algunos
+
+135
+00:07:03,016 --> 00:07:07,269
+programas esperaran que tu archivo JSON tuviera un objeto alrededor.
+
+136
+00:07:07,269 --> 00:07:09,709
+Algunos permitirn que una lista est en l y
+
+137
+00:07:09,709 --> 00:07:11,629
+el mdulo JSON de Python es uno
+
+138
+00:07:11,629 --> 00:07:13,909
+de estos que permiten la lista, y eso
+
+139
+00:07:13,909 --> 00:07:15,845
+es totalmente vlido, JSON totalmente vlido.
+
+140
+00:07:15,845 --> 00:07:17,749
+Hay algunas cosas ms que pueden
+
+141
+00:07:17,749 --> 00:07:19,141
+ser, pero ciertamente no puede
+
+142
+00:07:19,141 --> 00:07:21,669
+estar vaco, porque eso no es JSON vlido.
+
+143
+00:07:21,669 --> 00:07:23,797
+Entonces, lo que tenemos que hacer
+
+144
+00:07:23,797 --> 00:07:28,797
+es asegurarnos de que en la tabla crear libro, lo estamos inicializando con algn valor.
+
+145
+00:07:29,370 --> 00:07:31,746
+Entonces, lo que vamos a hacer es
+
+146
+00:07:31,746 --> 00:07:35,663
+decir que el valor inicial tiene que ser una lista vaca,
+
+147
+00:07:42,207 --> 00:07:45,191
+y luego necesitaremos la variable aqu tambin, por supuesto.
+
+148
+00:07:45,191 --> 00:07:47,263
+Ahora, tan pronto como creamos la
+
+149
+00:07:47,263 --> 00:07:50,343
+tabla de libros, inicializaremos el valor de la lista
+
+150
+00:07:50,343 --> 00:07:52,983
+para que est vaca, por lo que definiremos
+
+151
+00:07:52,983 --> 00:07:55,719
+el valor como una lista vaca, y luego
+
+152
+00:07:55,719 --> 00:07:58,303
+cuando vayamos a agregar un libro obtendremos todos
+
+153
+00:07:58,303 --> 00:08:00,824
+los libros, lo que va a hacer es
+
+154
+00:08:00,824 --> 00:08:03,431
+leer esa lista vaca, y luego se agregar,
+
+155
+00:08:03,431 --> 00:08:05,535
+y luego la guardar de nuevo.
+
+156
+00:08:05,535 --> 00:08:07,545
+Ahora que tendremos un JSON vlido all,
+
+157
+00:08:07,545 --> 00:08:09,295
+vamos a ejecutar esto de nuevo.
+
+158
+00:08:15,526 --> 00:08:17,846
+Y puedes ver que funciona.
+
+159
+00:08:17,846 --> 00:08:21,668
+Y este libro, por cierto, 30 Days of Python llegar pronto.
+
+160
+00:08:21,668 --> 00:08:23,188
+Entonces, si conoces a
+
+161
+00:08:23,188 --> 00:08:26,596
+alguien interesado en 30 das de Python, hzmelo saber.
+
+162
+00:08:26,596 --> 00:08:29,500
+As que ahora tenemos nuestros dos libros aqu.
+
+163
+00:08:29,500 --> 00:08:32,212
+Y como puede ver, no los hemos ledo, no los
+
+164
+00:08:32,212 --> 00:08:34,564
+hemos ledo, no existen todava, por supuesto, pero
+
+165
+00:08:34,564 --> 00:08:37,314
+podemos marcar uno como ledo y volver a enumerarlos ahora
+
+166
+00:08:39,538 --> 00:08:40,994
+muestra que uno de ellos
+
+167
+00:08:40,994 --> 00:08:43,378
+no se lee y que el otro es ledo.
+
+168
+00:08:43,378 --> 00:08:46,714
+Mirando libros. json, podemos ver que
+
+169
+00:08:46,714 --> 00:08:51,555
+el JSON almacenado aqu representa lo que estamos viendo all.
+
+170
+00:08:51,555 --> 00:08:55,305
+Dos objetos, Python 101 por m, ledos son falsos, y otro objeto
+
+171
+00:08:56,235 --> 00:08:58,043
+30 Days of Python por m,
+
+172
+00:08:58,043 --> 00:08:59,546
+y read es verdadero.
+
+173
+00:08:59,546 --> 00:09:03,244
+Observe cmo cuando llama a su archivo. json en PyCharm, comienza a
+
+174
+00:09:03,244 --> 00:09:05,636
+darle un buen resaltado de sintaxis.
+
+175
+00:09:05,636 --> 00:09:07,313
+As que eso tambin es muy bueno.
+
+176
+00:09:07,313 --> 00:09:08,881
+Y tambin observe cmo el
+
+177
+00:09:08,881 --> 00:09:11,993
+falso con un capital f baj a una f minscula, y
+
+178
+00:09:11,993 --> 00:09:14,793
+el verdadero, el capital t baj a una t minscula.
+
+179
+00:09:14,793 --> 00:09:16,978
+Eso es porque estos son los equivalentes
+
+180
+00:09:16,978 --> 00:09:20,052
+de JavaScript de verdadero y falso de Python con letras maysculas.
+
+181
+00:09:20,052 --> 00:09:21,748
+En JavaScript, tienen letras minsculas.
+
+182
+00:09:21,748 --> 00:09:24,100
+JSON, significa notaciones de objetos de
+
+183
+00:09:24,100 --> 00:09:27,277
+JavaScript, por supuesto tambin baja a minsculas.
+
+184
+00:09:27,277 --> 00:09:30,874
+Eso es todo, podemos eliminar libros, podemos eliminar Python 101, ya
+
+185
+00:09:30,874 --> 00:09:32,025
+que eso no est
+
+186
+00:09:32,025 --> 00:09:34,794
+sucediendo, enumerarlos de nuevo, eso es ahora as.
+
+187
+00:09:34,794 --> 00:09:38,127
+Y, por supuesto, podemos salir y luego salir.
+
+188
+00:09:39,639 --> 00:09:42,143
+As es como cambiaras nuestro programa de CSV
+
+189
+00:09:42,143 --> 00:09:44,962
+a JSON, y todo lo que hemos tenido que
+
+190
+00:09:44,962 --> 00:09:48,785
+hacer es modificar un par de funciones para decirle a nuestro cdigo
+
+191
+00:09:48,785 --> 00:09:51,721
+que ahora hable con un JSON en lugar de
+
+192
+00:09:51,721 --> 00:09:54,705
+guardar las cosas manualmente como cadenas en el archivo.
+
+193
+00:09:54,705 --> 00:09:56,867
+Bastante sencillo, y nuestra aplicacin. py no
+
+194
+00:09:56,867 --> 00:10:01,867
+ha tenido que cambiar bsicamente en absoluto, aparte de esto si existe.
+
+195
+00:10:01,940 --> 00:10:02,972
+Entonces eso es todo por este video.
+
+196
+00:10:02,972 --> 00:10:03,822
+Espero que hayas aprendido
+
+197
+00:10:03,822 --> 00:10:05,572
+algo, y te ver en el prximo.
+

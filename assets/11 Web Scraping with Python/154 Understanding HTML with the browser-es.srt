@@ -1,0 +1,564 @@
+1
+00:00:00,120 --> 00:00:01,500
+Jos: Hola, y bienvenido de nuevo.
+
+2
+00:00:01,500 --> 00:00:04,730
+En este video, hablamos sobre cmo ver
+
+3
+00:00:04,730 --> 00:00:08,530
+el HTML usando su navegador para que sepa
+
+4
+00:00:08,530 --> 00:00:11,380
+cmo rasparlo, cmo analizarlo y cmo entenderlo.
+
+5
+00:00:11,380 --> 00:00:15,600
+Lo que tengo aqu son los libros de este sitio web. raspar. com.
+
+6
+00:00:17,640 --> 00:00:20,010
+Que es un sitio web que
+
+7
+00:00:20,010 --> 00:00:22,240
+fue diseado especficamente para practicar raspado.
+
+8
+00:00:22,240 --> 00:00:26,820
+El raspado es el acto de cargar una pgina usando Python
+
+9
+00:00:26,820 --> 00:00:30,670
+u otro lenguaje de programacin y extraer datos de l.
+
+10
+00:00:31,660 --> 00:00:34,210
+As que esta pgina fue diseada para
+
+11
+00:00:34,210 --> 00:00:36,300
+raspar, lo que significa que puedes
+
+12
+00:00:36,300 --> 00:00:39,380
+usarla para rasparla, practicarla, probarla y ver qu pasa.
+
+13
+00:00:40,460 --> 00:00:43,040
+Ahora, incluso antes de pensar en
+
+14
+00:00:43,040 --> 00:00:46,850
+descargar la pgina con Python, debe comprender lo
+
+15
+00:00:46,850 --> 00:00:49,150
+que sucede en un navegador.
+
+16
+00:00:49,150 --> 00:00:51,040
+Porque lo que est sucediendo en Python es muy
+
+17
+00:00:51,040 --> 00:00:52,590
+similar a lo que sucede en el navegador.
+
+18
+00:00:53,440 --> 00:00:55,640
+Entonces, siempre que su navegador cargue una pgina, como
+
+19
+00:00:55,640 --> 00:00:59,120
+si fuera a libros. raspar. com, en
+
+20
+00:00:59,120 --> 00:01:01,420
+realidad est descargando la pgina.
+
+21
+00:01:01,420 --> 00:01:04,920
+Le est preguntando al lugar donde est alojada la
+
+22
+00:01:04,920 --> 00:01:07,020
+pgina, dnde vive la pgina.
+
+23
+00:01:07,020 --> 00:01:09,780
+Luego est pidiendo descargar los datos en l.
+
+24
+00:01:09,780 --> 00:01:11,610
+No almacena la pgina en tus descargas
+
+25
+00:01:11,610 --> 00:01:12,770
+ni nada de eso.
+
+26
+00:01:12,770 --> 00:01:15,420
+Pero la pgina se descarga para que el navegador pueda usarla.
+
+27
+00:01:16,446 --> 00:01:19,640
+Y tambin podemos hacer que Python descargue una pgina y eso le
+
+28
+00:01:19,640 --> 00:01:22,890
+da a Python la capacidad de mirar el cdigo, y mirar el
+
+29
+00:01:22,890 --> 00:01:25,400
+HTML, mirar el contenido de la pgina, para ver
+
+30
+00:01:25,400 --> 00:01:26,410
+qu hay all.
+
+31
+00:01:27,350 --> 00:01:29,440
+Podemos cargar una pgina HTML con Python
+
+32
+00:01:29,440 --> 00:01:32,140
+y eso nos dar el HTML como una cadena.
+
+33
+00:01:32,140 --> 00:01:35,420
+Y luego podemos analizarlo y podemos extraer datos de l.
+
+34
+00:01:35,420 --> 00:01:38,240
+El hecho de hacer todo eso, desde descargar la
+
+35
+00:01:38,240 --> 00:01:40,470
+pgina hasta extraer datos, se llama raspado.
+
+36
+00:01:41,670 --> 00:01:44,210
+Entonces, cuando cargue la pgina usando su navegador,
+
+37
+00:01:44,210 --> 00:01:46,750
+recomiendo usar Google Chrome para esto, por cierto.
+
+38
+00:01:46,750 --> 00:01:49,510
+Si no tiene Google Chrome, le aconsejo que use Chrome.
+
+39
+00:01:49,510 --> 00:01:52,900
+Es el mejor navegador para desarrollo web en general.
+
+40
+00:01:53,910 --> 00:01:57,830
+Puede seleccionar o encontrar lo que quiere extraer.
+
+41
+00:01:57,830 --> 00:02:00,810
+Entonces imagina que quieres usar Python para obtener
+
+42
+00:02:02,120 --> 00:02:04,960
+el precio, entonces lo que haras es hacer
+
+43
+00:02:04,960 --> 00:02:06,910
+clic derecho, y presionar inspeccionar.
+
+44
+00:02:08,950 --> 00:02:11,960
+Lo que entonces obtienes es esta ventana lateral.
+
+45
+00:02:11,960 --> 00:02:13,350
+Podra estar en la
+
+46
+00:02:13,350 --> 00:02:16,550
+parte inferior, o podra estar en una ventana completamente separada.
+
+47
+00:02:16,550 --> 00:02:19,380
+Pero obtienes algo que se parece mucho a esto
+
+48
+00:02:19,380 --> 00:02:22,780
+y lo que tienes aqu a la izquierda es, voy a
+
+49
+00:02:22,780 --> 00:02:26,210
+hacerlo un poco ms grande para que ustedes lo vean.
+
+50
+00:02:26,210 --> 00:02:29,800
+Lo que tienes aqu a la izquierda, este es el derecho,
+
+51
+00:02:29,800 --> 00:02:31,610
+este es el izquierdo, y aqu
+
+52
+00:02:31,610 --> 00:02:34,060
+tienes algunas cosas adicionales en la parte inferior.
+
+53
+00:02:34,060 --> 00:02:36,890
+Lo que tienes aqu es el HTML de la pgina.
+
+54
+00:02:36,890 --> 00:02:39,530
+Esta es la totalidad del contenido de la pgina.
+
+55
+00:02:40,640 --> 00:02:43,280
+Como puede ver, comienza aqu con HTML y
+
+56
+00:02:45,140 --> 00:02:47,540
+luego tiene la etiqueta principal, tiene la
+
+57
+00:02:47,540 --> 00:02:50,750
+etiqueta corporal, que tiene el conjunto principal de contenido.
+
+58
+00:02:51,620 --> 00:02:54,430
+Tienes un encabezado, que es una etiqueta
+
+59
+00:02:54,430 --> 00:02:57,130
+HTML para la parte superior de la
+
+60
+00:02:57,130 --> 00:03:00,350
+pgina, y luego tienes muchos componentes anidados diferentes.
+
+61
+00:03:00,350 --> 00:03:03,920
+Tienes un div, que es solo un bloque de contenido.
+
+62
+00:03:03,920 --> 00:03:06,820
+Ese div tiene otro bloque de contenido
+
+63
+00:03:06,820 --> 00:03:10,120
+y eso tiene algn tipo de lista.
+
+64
+00:03:10,120 --> 00:03:12,860
+UL significa lista desordenada.
+
+65
+00:03:12,860 --> 00:03:16,440
+Y eso es todo aqu, este pan rallado, esa es
+
+66
+00:03:16,440 --> 00:03:19,130
+la pgina en la que se encuentra actualmente.
+
+67
+00:03:19,130 --> 00:03:21,730
+Luego tienes otro div, por dentro.
+
+68
+00:03:21,730 --> 00:03:23,280
+Tienes una serie de otras cosas.
+
+69
+00:03:23,280 --> 00:03:24,560
+Puede usar Google Chrome
+
+70
+00:03:24,560 --> 00:03:27,220
+aqu para ver fcilmente qu elemento es cada elemento.
+
+71
+00:03:27,220 --> 00:03:30,150
+Por ejemplo, esto aparte es el tipo de bit
+
+72
+00:03:30,150 --> 00:03:32,210
+de la izquierda que tiene la
+
+73
+00:03:32,210 --> 00:03:34,800
+navegacin, diferentes tipos de libros que puedes mirar,
+
+74
+00:03:34,800 --> 00:03:35,950
+y luego tienes
+
+75
+00:03:35,950 --> 00:03:38,950
+este aqu que es el resto de la pgina.
+
+76
+00:03:38,950 --> 00:03:41,080
+Entonces, si solo pudieras ver
+
+77
+00:03:42,010 --> 00:03:44,100
+esto, y quisieras obtener el
+
+78
+00:03:44,100 --> 00:03:45,650
+precio, podras pasar por
+
+79
+00:03:45,650 --> 00:03:48,620
+aqu y descubrir esta seccin azul.
+
+80
+00:03:48,620 --> 00:03:50,840
+Aqu es donde, lo que le
+
+81
+00:03:50,840 --> 00:03:52,750
+interesa es dentro de esta seccin.
+
+82
+00:03:52,750 --> 00:03:56,070
+Entonces entraras y encontraras este div.
+
+83
+00:03:56,070 --> 00:03:57,390
+Entonces vers esta
+
+84
+00:03:57,390 --> 00:04:00,810
+UL, pero lo que te interesa no est aqu.
+
+85
+00:04:00,810 --> 00:04:04,230
+Entonces miran este div, el precio est dentro de este div
+
+86
+00:04:04,230 --> 00:04:06,190
+porque est dentro del rea azul.
+
+87
+00:04:07,300 --> 00:04:09,040
+Luego miraras a este
+
+88
+00:04:09,040 --> 00:04:12,230
+lado, lo azul no incluye el precio, por
+
+89
+00:04:12,230 --> 00:04:14,300
+lo que probablemente no est dentro.
+
+90
+00:04:14,300 --> 00:04:17,000
+Entonces encontraras este div, y este
+
+91
+00:04:17,000 --> 00:04:20,560
+div contiene el precio, entonces podras ir abrindolo
+
+92
+00:04:20,560 --> 00:04:23,530
+y navegar de esa manera hasta que
+
+93
+00:04:23,530 --> 00:04:26,600
+encuentres la seccin que te interesa.
+
+94
+00:04:26,600 --> 00:04:29,830
+Entonces encontraras la seccin, luego encontraras este div, luego
+
+95
+00:04:29,830 --> 00:04:33,460
+eso, luego este artculo de la lista, este artculo, y
+
+96
+00:04:33,460 --> 00:04:35,500
+luego obtendrs el precio eventualmente.
+
+97
+00:04:35,500 --> 00:04:37,410
+Y luego puedes encontrarlo.
+
+98
+00:04:37,410 --> 00:04:40,610
+Entonces, lo que encontramos aqu es
+
+99
+00:04:40,610 --> 00:04:44,093
+esencialmente la jerarqua de elementos que terminan
+
+100
+00:04:44,093 --> 00:04:46,800
+conteniendo lo que nos interesa.
+
+101
+00:04:46,800 --> 00:04:51,800
+Como puede ver, tenemos la P que contiene el precio y est dentro
+
+102
+00:04:52,150 --> 00:04:54,370
+de un div, que est dentro
+
+103
+00:04:54,370 --> 00:04:55,670
+de un artculo, etc.
+
+104
+00:04:55,670 --> 00:04:57,420
+As que esto va a ser
+
+105
+00:04:57,420 --> 00:04:58,730
+muy importante para que puedas
+
+106
+00:04:58,730 --> 00:05:00,380
+entender el HTML cuando lo descargas.
+
+107
+00:05:02,200 --> 00:05:04,930
+Lo interesante tambin es que puedes
+
+108
+00:05:04,930 --> 00:05:07,400
+ver que hay muchos elementos similares.
+
+109
+00:05:07,400 --> 00:05:10,460
+Y eso es uno para cada libro en la pgina.
+
+110
+00:05:10,460 --> 00:05:12,810
+Puedes ver que a medida que cierro
+
+111
+00:05:12,810 --> 00:05:14,590
+sobre estos, se seleccionan diferentes libros.
+
+112
+00:05:15,480 --> 00:05:17,510
+Y cada uno de estos elementos es un libro.
+
+113
+00:05:17,510 --> 00:05:19,100
+Entonces, si desea cargar el
+
+114
+00:05:19,100 --> 00:05:20,930
+precio de todos los elementos
+
+115
+00:05:20,930 --> 00:05:23,070
+en el sitio, una vez que
+
+116
+00:05:23,070 --> 00:05:25,240
+haya logrado descargar el HTML, que
+
+117
+00:05:25,240 --> 00:05:28,880
+veremos pronto, todo lo que tiene que hacer es buscar cada
+
+118
+00:05:28,880 --> 00:05:32,352
+elemento LI con estas clases aqu y eso va a
+
+119
+00:05:32,352 --> 00:05:33,950
+ser darte todos los libros.
+
+120
+00:05:33,950 --> 00:05:36,790
+Bueno, te dar los objetos de etiqueta en
+
+121
+00:05:36,790 --> 00:05:39,720
+Beautiful Soup para cada uno de los libros.
+
+122
+00:05:39,720 --> 00:05:41,460
+Luego, para cada uno de los
+
+123
+00:05:41,460 --> 00:05:43,010
+libros, podra pasarlo a la
+
+124
+00:05:43,010 --> 00:05:46,080
+clase que creamos y analizar el precio, y el nombre, etc.
+
+125
+00:05:46,080 --> 00:05:48,553
+Entonces, podra comenzar a trabajar con estos
+
+126
+00:05:48,553 --> 00:05:51,320
+libros en Python en lugar de en HTML.
+
+127
+00:05:53,990 --> 00:05:58,680
+De acuerdo, ahora cuando quieras sacar los datos y
+
+128
+00:05:58,680 --> 00:06:00,220
+usarlos desde Python,
+
+129
+00:06:00,220 --> 00:06:03,460
+no es suficiente cargarlos en tu navegador.
+
+130
+00:06:03,460 --> 00:06:06,500
+Por supuesto, tienes que conseguir que Python lo haga.
+
+131
+00:06:06,500 --> 00:06:08,550
+Y para hacer eso, vamos
+
+132
+00:06:08,550 --> 00:06:11,090
+a instalar otra biblioteca llamada solicitudes
+
+133
+00:06:11,090 --> 00:06:13,580
+que se utiliza para esencialmente solicitar
+
+134
+00:06:13,580 --> 00:06:16,650
+algunos datos de una pgina y descargarlos.
+
+135
+00:06:16,650 --> 00:06:19,520
+Para que luego pueda usarlo, o mirarlo, o
+
+136
+00:06:19,520 --> 00:06:21,810
+imprimirlo, o cualquier cosa que desee.
+
+137
+00:06:21,810 --> 00:06:24,440
+Entonces esa biblioteca se usar para obtener
+
+138
+00:06:24,440 --> 00:06:28,580
+los contenidos de la pgina, este HTML, y luego usaremos Beautiful
+
+139
+00:06:28,580 --> 00:06:31,410
+Soup para entender eso y extraer los datos.
+
+140
+00:06:31,410 --> 00:06:33,410
+Veamos eso en el prximo video.
+
+141
+00:06:33,410 --> 00:06:34,510
+As que te ver all.
+

@@ -1,0 +1,440 @@
+1
+00:00:00,320 --> 00:00:01,460
+Jose: Ol e bem vindo de volta.
+
+2
+00:00:01,460 --> 00:00:03,440
+Neste vdeo, estamos falando sobre abrir e
+
+3
+00:00:03,440 --> 00:00:05,570
+fechar arquivos automaticamente para que no precisemos
+
+4
+00:00:05,570 --> 00:00:08,990
+nos lembrar de chamar o arquivo. fechar no final de cada
+
+5
+00:00:08,990 --> 00:00:10,930
+vez que queremos usar um arquivo.
+
+6
+00:00:11,840 --> 00:00:14,350
+At agora ns abrimos e fechamos arquivos explicitamente,
+
+7
+00:00:14,350 --> 00:00:17,395
+assim, dizendo que arquivo  igual a abrir de alguma
+
+8
+00:00:17,395 --> 00:00:20,770
+coisa e ento no final, arquivo. fechar.
+
+9
+00:00:20,770 --> 00:00:22,730
+A propsito, vou apenas dizer que copiei
+
+10
+00:00:22,730 --> 00:00:24,750
+o cdigo que escrevemos na ltima seo,
+
+11
+00:00:24,750 --> 00:00:26,790
+e criei outro arquivo para ele, s
+
+12
+00:00:26,790 --> 00:00:28,390
+porque vou mudar um pouco e
+
+13
+00:00:28,390 --> 00:00:30,540
+no quero que perder algum dos arquivos aqui.
+
+14
+00:00:30,540 --> 00:00:32,330
+Esses arquivos novamente, esto todos no hub
+
+15
+00:00:32,330 --> 00:00:34,040
+gid, ento voc pode acess-los se
+
+16
+00:00:34,040 --> 00:00:36,007
+quiser, e o link para fazer isso
+
+17
+00:00:36,007 --> 00:00:38,210
+ no incio desta seo, a primeira palestra.
+
+18
+00:00:39,410 --> 00:00:41,570
+Ento, abrimos e fechamos
+
+19
+00:00:41,570 --> 00:00:45,079
+arquivos automaticamente, mas o Python tem uma
+
+20
+00:00:45,079 --> 00:00:48,793
+parte da sintaxe extremamente til para esses cenrios.
+
+21
+00:00:48,793 --> 00:00:52,320
+E o cenrio que isso representa  um
+
+22
+00:00:52,320 --> 00:00:54,410
+cenrio bastante geral em que
+
+23
+00:00:54,410 --> 00:00:57,610
+temos que fazer algumas configuraes e algumas derrubadas.
+
+24
+00:00:57,610 --> 00:00:59,560
+A configurao  que temos que abrir
+
+25
+00:00:59,560 --> 00:01:02,890
+o arquivo, e a desmontagem  que temos que fechar o arquivo.
+
+26
+00:01:02,890 --> 00:01:05,020
+Uma configurao  apenas uma palavra-chave para
+
+27
+00:01:05,020 --> 00:01:07,620
+algo que acontece no incio e uma desmontagem
+
+28
+00:01:07,620 --> 00:01:11,640
+ uma palavra-chave ou um conceito para algo que acontece no final.
+
+29
+00:01:12,795 --> 00:01:15,660
+Outro exemplo seria abrir uma conexo com o banco de dados
+
+30
+00:01:15,660 --> 00:01:17,090
+no incio e, no final, fechar
+
+31
+00:01:17,090 --> 00:01:18,910
+a conexo com o banco de dados.
+
+32
+00:01:18,910 --> 00:01:20,920
+Ento, como voc pode ver, abrir e
+
+33
+00:01:20,920 --> 00:01:25,120
+fechar coisas, coisa muito popular e esta  uma abordagem de configurao e desmontagem.
+
+34
+00:01:26,230 --> 00:01:27,920
+A construo que vamos aprender,
+
+35
+00:01:27,920 --> 00:01:29,820
+essa parte da sintaxe que o
+
+36
+00:01:29,820 --> 00:01:32,000
+Python oferece,  chamada de instruo com.
+
+37
+00:01:32,000 --> 00:01:33,330
+Voc pode ter visto
+
+38
+00:01:33,330 --> 00:01:37,736
+isso por a, se voc olhou para algum cdigo Python antes, e eles usam a
+
+39
+00:01:37,736 --> 00:01:41,080
+palavra-chave with, e eles tambm so conhecidos como gerenciadores de contexto.
+
+40
+00:01:41,080 --> 00:01:44,230
+Os gerenciadores de contexto so conceitos razoavelmente avanados e vamos
+
+41
+00:01:44,230 --> 00:01:45,860
+analis-los mais detalhadamente na prxima
+
+42
+00:01:45,860 --> 00:01:47,620
+seo, vamos programar alguns gerenciadores de
+
+43
+00:01:47,620 --> 00:01:50,120
+contexto, mas eu s queria ensinar como us-los
+
+44
+00:01:50,120 --> 00:01:51,970
+para que voc comece a se
+
+45
+00:01:51,970 --> 00:01:53,610
+familiarizar com eles. eles, e
+
+46
+00:01:53,610 --> 00:01:55,930
+na prxima sesso, tudo ser muito mais simples.
+
+47
+00:01:55,930 --> 00:01:58,360
+Alm disso, simplificam muito o nosso cdigo e
+
+48
+00:01:58,360 --> 00:02:00,101
+reduzem os erros que podemos
+
+49
+00:02:00,101 --> 00:02:02,040
+causar, esquecendo-se de fechar os arquivos.
+
+50
+00:02:03,600 --> 00:02:07,920
+Ento, ao invs de fazer isso aqui,
+
+51
+00:02:10,700 --> 00:02:14,320
+podemos dizer com open como arquivo.
+
+52
+00:02:16,270 --> 00:02:19,370
+Ento podemos fazer isso e podemos fazer isso.
+
+53
+00:02:21,060 --> 00:02:24,900
+Isso substitui nosso cdigo anterior.
+
+54
+00:02:24,900 --> 00:02:29,900
+Agora ns fazemos, ento ns abrimos, ns chamamos a funo open, e
+
+55
+00:02:29,965 --> 00:02:33,380
+ento ns fazemos como arquivo, de forma que qualquer
+
+56
+00:02:33,380 --> 00:02:37,620
+que seja a funo out open, vai para essa varivel, ento
+
+57
+00:02:37,620 --> 00:02:39,990
+podemos usar essa varivel quando chegarmos
+
+58
+00:02:39,990 --> 00:02:43,020
+ao final deste recuo bloco, observe o clon
+
+59
+00:02:43,020 --> 00:02:44,570
+no final l.
+
+60
+00:02:44,570 --> 00:02:46,310
+Quando chegar ao final do
+
+61
+00:02:46,310 --> 00:02:49,080
+bloco recuado, ele automaticamente fecha o arquivo para ns.
+
+62
+00:02:50,380 --> 00:02:53,580
+Isso aqui  chamado de gerenciador de contexto.
+
+63
+00:02:53,580 --> 00:02:57,410
+E isso no acontece magicamente, a funo aberta definiu que ele pode
+
+64
+00:02:57,410 --> 00:03:00,800
+ser usado com um gerenciador de contexto, ento voc no pode
+
+65
+00:03:00,800 --> 00:03:03,061
+fazer isso com o que voc quiser,
+
+66
+00:03:03,061 --> 00:03:05,940
+mas voc tem que definir que voc quer poder
+
+67
+00:03:05,940 --> 00:03:08,890
+usar um gerenciador de contexto. com suas coisas, e
+
+68
+00:03:08,890 --> 00:03:10,460
+se voc fizer isso, voc
+
+69
+00:03:10,460 --> 00:03:12,832
+pode comear a usar gerenciadores de contexto assim.
+
+70
+00:03:12,832 --> 00:03:14,160
+Na prxima seo, vamos analisar
+
+71
+00:03:14,160 --> 00:03:16,609
+o desenvolvimento e a programao de nossos prprios gerenciadores
+
+72
+00:03:16,609 --> 00:03:19,080
+de contexto, mas eu queria mostrar a voc este
+
+73
+00:03:19,080 --> 00:03:20,980
+cenrio no qual voc pode usar um
+
+74
+00:03:20,980 --> 00:03:22,853
+gerenciador de contexto sem saber como est
+
+75
+00:03:22,853 --> 00:03:25,270
+programado para simplificar seu cdigo e torn-lo melhor .
+
+76
+00:03:26,290 --> 00:03:29,910
+Ento, novamente, isso permite que voc abra o arquivo no
+
+77
+00:03:29,910 --> 00:03:32,100
+incio e feche-o automaticamente no final.
+
+78
+00:03:32,100 --> 00:03:34,048
+E o fechamento no final acontece
+
+79
+00:03:34,048 --> 00:03:37,221
+porque o open disse que quando chegar ao final do
+
+80
+00:03:37,221 --> 00:03:39,230
+bloco, o arquivo ser fechado automaticamente.
+
+81
+00:03:40,600 --> 00:03:42,017
+Ok, no h mgica acontecendo
+
+82
+00:03:42,017 --> 00:03:45,540
+aqui, a funo aberta  definida para fechar o arquivo no final.
+
+83
+00:03:46,640 --> 00:03:51,300
+Agora, eu encorajo voc a fazer o mesmo para este arquivo aqui.
+
+84
+00:03:51,300 --> 00:03:53,329
+Substitua-o por um gerenciador de contexto,
+
+85
+00:03:53,329 --> 00:03:55,530
+pois isso lhe dar um pouco
+
+86
+00:03:55,530 --> 00:03:58,220
+mais de prtica na implementao deste material.
+
+87
+00:04:03,370 --> 00:04:04,890
+Eu espero que voc tenha conseguido.
+
+88
+00:04:04,890 --> 00:04:07,170
+Novamente, tudo que voc precisa fazer 
+
+89
+00:04:07,170 --> 00:04:10,110
+colocar o com no incio e depois como a varivel.
+
+90
+00:04:10,110 --> 00:04:13,140
+A varivel aqui file agora 
+
+91
+00:04:13,140 --> 00:04:15,360
+criada como resultado desta abertura.
+
+92
+00:04:15,360 --> 00:04:17,820
+O que quer que seja recuado vai estar no,
+
+93
+00:04:17,820 --> 00:04:19,630
+e no final do com, o
+
+94
+00:04:19,630 --> 00:04:21,410
+arquivo vai fechar automaticamente, ento ns
+
+95
+00:04:21,410 --> 00:04:23,050
+no precisamos fechar o arquivo tambm.
+
+96
+00:04:25,094 --> 00:04:28,870
+Observe como para json. carrega, ou dump s, voc no
+
+97
+00:04:28,870 --> 00:04:31,650
+precisa fazer nada com, porque no h nenhum arquivo
+
+98
+00:04:31,650 --> 00:04:33,370
+para abrir ou fechar, essas coisas
+
+99
+00:04:33,370 --> 00:04:36,480
+esto indo direto para, ou direto de seqncias de caracteres.
+
+100
+00:04:36,480 --> 00:04:38,620
+Ento no h nada para abrir ou fechar.
+
+101
+00:04:40,360 --> 00:04:42,280
+Ento  isso, uma rpida introduo
+
+102
+00:04:42,280 --> 00:04:44,830
+aos gerenciadores de contexto, e eles so chamados
+
+103
+00:04:44,830 --> 00:04:46,370
+de gerenciadores de contexto porque
+
+104
+00:04:46,370 --> 00:04:48,890
+ajudam a gerenciar o contexto de seu aplicativo
+
+105
+00:04:48,890 --> 00:04:51,590
+no qual voc agora tem esse arquivo aberto.
+
+106
+00:04:51,590 --> 00:04:53,760
+E eles gerenciam o contexto mantendo o arquivo
+
+107
+00:04:53,760 --> 00:04:56,790
+aberto durante o gerenciador de contexto, e no antes ou depois
+
+108
+00:04:56,790 --> 00:04:59,180
+dele, ento  por isso que eles so chamados
+
+109
+00:04:59,180 --> 00:05:02,210
+de gerenciadores de contexto, vamos aprender sobre eles na prxima seo.
+
+110
+00:05:02,210 --> 00:05:04,850
+ isso para este vdeo, vejo voc no prximo.
+

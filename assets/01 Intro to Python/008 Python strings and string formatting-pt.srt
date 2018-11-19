@@ -1,0 +1,868 @@
+1
+00:00:00,550 --> 00:00:02,420
+Jos: Ol, bem vindo de volta.
+
+2
+00:00:02,420 --> 00:00:05,230
+Neste vdeo, vamos ver as strings.
+
+3
+00:00:05,230 --> 00:00:07,270
+No ltimo vdeo, analisamos nmeros,
+
+4
+00:00:07,270 --> 00:00:09,840
+inteiros e flutuantes e tambm analisamos
+
+5
+00:00:09,840 --> 00:00:11,520
+a impresso e agora
+
+6
+00:00:11,520 --> 00:00:14,560
+vamos ver quais so as sequncias.
+
+7
+00:00:14,560 --> 00:00:16,390
+E tambm vamos expandir isso
+
+8
+00:00:16,390 --> 00:00:18,470
+com a formatao de strings.
+
+9
+00:00:19,760 --> 00:00:22,910
+Uma string  um conjunto de caracteres e smbolos
+
+10
+00:00:22,910 --> 00:00:25,810
+e nmeros e qualquer outra coisa que voc queira
+
+11
+00:00:25,810 --> 00:00:28,180
+que no tenha significado para o computador.
+
+12
+00:00:29,810 --> 00:00:30,820
+Onde voc
+
+13
+00:00:30,820 --> 00:00:34,950
+tem um nmero, esse nmero representa quantidade ou um valor,
+
+14
+00:00:34,950 --> 00:00:36,880
+uma string no representa
+
+15
+00:00:36,880 --> 00:00:39,180
+nada, so apenas os prprios
+
+16
+00:00:39,180 --> 00:00:41,080
+dgitos ou os prprios caracteres.
+
+17
+00:00:41,080 --> 00:00:43,480
+E eles normalmente podem ser usados para
+
+18
+00:00:43,480 --> 00:00:45,500
+coisas que fazem sentido para uma
+
+19
+00:00:45,500 --> 00:00:47,970
+pessoa, mas no necessariamente para um computador.
+
+20
+00:00:47,970 --> 00:00:50,490
+Isso  tudo muito abstrato, ento vamos direto ao assunto.
+
+21
+00:00:50,490 --> 00:00:53,580
+Crie uma nova replicao. no Python3 e
+
+22
+00:00:53,580 --> 00:00:54,930
+ento podemos comear.
+
+23
+00:00:56,150 --> 00:00:59,520
+Por exemplo, deixe-me criar minha primeira varivel de string.
+
+24
+00:01:01,840 --> 00:01:04,550
+E ns chegamos aqui dentro de
+
+25
+00:01:04,550 --> 00:01:06,710
+aspas, ento uma no comeo,
+
+26
+00:01:07,860 --> 00:01:12,120
+uma no final, esta arbitrria ou aparentemente arbitrria para o
+
+27
+00:01:12,120 --> 00:01:15,110
+computador, conjunto de letras, smbolos e espaos.
+
+28
+00:01:16,040 --> 00:01:19,690
+O computador v isso e no sabe o que isso significa,
+
+29
+00:01:19,690 --> 00:01:22,560
+mas  claro que tem algum significado para ns.
+
+30
+00:01:25,150 --> 00:01:28,470
+Ento podemos usar isso para impresso, por exemplo.
+
+31
+00:01:28,470 --> 00:01:31,220
+Imprima minha string, mais uma vez, a
+
+32
+00:01:31,220 --> 00:01:33,970
+palavra-chave print, ela  seguida por um
+
+33
+00:01:33,970 --> 00:01:36,250
+colchete de abertura e fechamento e,
+
+34
+00:01:36,250 --> 00:01:39,030
+dentro dela, o que quisermos imprimir no console.
+
+35
+00:01:40,150 --> 00:01:42,700
+E agora voc pode ver que a string 
+
+36
+00:01:42,700 --> 00:01:44,840
+usada para dizer algo ao usurio, ou
+
+37
+00:01:44,840 --> 00:01:46,960
+quem est executando nosso programa e no
+
+38
+00:01:46,960 --> 00:01:48,900
+ usado para coisas que fazem sentido
+
+39
+00:01:48,900 --> 00:01:49,733
+para o computador.
+
+40
+00:01:52,100 --> 00:01:53,750
+Ento, voc tem isso, ns
+
+41
+00:01:53,750 --> 00:01:56,020
+construmos nosso aplicativo hello world em Python.
+
+42
+00:01:57,090 --> 00:01:59,170
+Se voc no sabe o que isso
+
+43
+00:01:59,170 --> 00:02:01,640
+significa, isso  apenas uma coisa muito popular
+
+44
+00:02:01,640 --> 00:02:03,340
+quando voc est aprendendo a programar.
+
+45
+00:02:03,340 --> 00:02:05,110
+Sempre que voc aprender uma nova
+
+46
+00:02:05,110 --> 00:02:07,650
+linguagem de programao normalmente, voc escrever um aplicativo
+
+47
+00:02:07,650 --> 00:02:09,930
+que imprime o mundo hello ao console,
+
+48
+00:02:09,930 --> 00:02:12,440
+porque normalmente  um aplicativo simples para comear.
+
+49
+00:02:12,440 --> 00:02:14,160
+Ento parabns, voc construiu
+
+50
+00:02:14,160 --> 00:02:15,770
+seu primeiro aplicativo Python.
+
+51
+00:02:18,110 --> 00:02:20,480
+Agora, ol mundo no  to excitante quanto
+
+52
+00:02:20,480 --> 00:02:22,020
+o que os outros aplicativos
+
+53
+00:02:22,020 --> 00:02:24,660
+estaro construindo, ento segure seus cavalos e vamos continuar.
+
+54
+00:02:26,571 --> 00:02:27,930
+Observe como essa string
+
+55
+00:02:27,930 --> 00:02:30,240
+tem uma aspa dupla no incio e
+
+56
+00:02:30,240 --> 00:02:31,430
+uma aspa dupla no
+
+57
+00:02:33,460 --> 00:02:35,490
+final, mas tambm podemos construir strings
+
+58
+00:02:35,490 --> 00:02:37,310
+que usam aspas simples e depende
+
+59
+00:02:37,310 --> 00:02:39,520
+de ns qual delas usamos, entre aspas
+
+60
+00:02:39,520 --> 00:02:41,637
+duplas ou aspas simples, ela no importa
+
+61
+00:02:41,637 --> 00:02:44,780
+desde que o no incio e no final so os
+
+62
+00:02:46,214 --> 00:02:47,047
+mesmos, ok?
+
+63
+00:02:48,900 --> 00:02:51,110
+Ento, eu recomendo que voc tente escolher
+
+64
+00:02:51,110 --> 00:02:53,560
+um desses dois, no importa qual voc
+
+65
+00:02:53,560 --> 00:02:56,760
+faa e voc cumpra todo o seu cdigo, que normalmente
+
+66
+00:02:56,760 --> 00:02:59,640
+ uma boa maneira de manter a consistncia.
+
+67
+00:02:59,640 --> 00:03:00,710
+Se voc quiser
+
+68
+00:03:00,710 --> 00:03:03,470
+usar aspas duplas, faa isso, mas sempre use
+
+69
+00:03:03,470 --> 00:03:07,090
+aspas duplas, no mude entre linhas de cdigo ou entre
+
+70
+00:03:07,090 --> 00:03:08,470
+variveis ou coisas assim,
+
+71
+00:03:08,470 --> 00:03:10,020
+sempre tente usar o mesmo.
+
+72
+00:03:10,870 --> 00:03:12,210
+Agora h um momento
+
+73
+00:03:12,210 --> 00:03:14,550
+no tempo em que voc vai querer usar
+
+74
+00:03:14,550 --> 00:03:17,180
+um especfico, mesmo que no corresponda ao estilo escolhido.
+
+75
+00:03:18,598 --> 00:03:20,420
+Por exemplo, se voc
+
+76
+00:03:23,900 --> 00:03:26,820
+tem algo parecido com essa string aqui,
+
+77
+00:03:28,090 --> 00:03:30,570
+porque temos uma nica citao l
+
+78
+00:03:30,570 --> 00:03:33,070
+para escrev-la, voc precisar usar aspas
+
+79
+00:03:33,070 --> 00:03:35,470
+duplas do lado de fora.
+
+80
+00:03:36,610 --> 00:03:38,980
+Mesmo se voc normalmente usa aspas
+
+81
+00:03:38,980 --> 00:03:41,180
+simples, voc vai querer usar aspas
+
+82
+00:03:41,180 --> 00:03:46,180
+duplas para essa e outras strings similares para no atrapalhar as coisas aqui.
+
+83
+00:03:46,470 --> 00:03:48,730
+Se voc fosse colocar uma citao aqui e
+
+84
+00:03:48,730 --> 00:03:50,920
+estas fossem tambm aspas simples, voc ver
+
+85
+00:03:53,460 --> 00:03:55,430
+que isso fica realmente confuso, no sabe
+
+86
+00:03:55,430 --> 00:03:57,520
+o que  uma string e o
+
+87
+00:03:57,520 --> 00:03:59,410
+que no  porque voc tem
+
+88
+00:03:59,410 --> 00:04:03,330
+uma string aqui e isso no acontece sabe o que  isso, ok?
+
+89
+00:04:03,330 --> 00:04:05,430
+Portanto, lembre-se de que, se
+
+90
+00:04:05,430 --> 00:04:08,600
+voc tiver uma citao dentro da sua string,
+
+91
+00:04:08,600 --> 00:04:11,140
+certifique-se de usar aspas opostas do
+
+92
+00:04:11,140 --> 00:04:11,973
+lado de fora.
+
+93
+00:04:14,750 --> 00:04:17,040
+A mesma coisa, se voc tem
+
+94
+00:04:20,350 --> 00:04:22,060
+algo assim, voc vai
+
+95
+00:04:22,060 --> 00:04:24,050
+querer usar aspas simples no
+
+96
+00:04:24,050 --> 00:04:28,080
+exterior e as aspas duplas em torno de sua citao, ok?
+
+97
+00:04:29,720 --> 00:04:32,090
+Voc tambm pode fazer isso.
+
+98
+00:04:39,310 --> 00:04:42,800
+Mas, esperanosamente, voc percebe como  feio.
+
+99
+00:04:42,800 --> 00:04:44,850
+Voc pode fazer o que  chamado
+
+100
+00:04:44,850 --> 00:04:47,670
+de escape, que  uma citao de escape e
+
+101
+00:04:47,670 --> 00:04:49,990
+que diz ao Python que isso no
+
+102
+00:04:49,990 --> 00:04:51,680
+ a mesma coisa que
+
+103
+00:04:51,680 --> 00:04:54,180
+isso,  algo que estar dentro de sua
+
+104
+00:04:54,180 --> 00:04:56,240
+cadeia, mas no ser finalizado ou iniciado.
+
+105
+00:04:57,610 --> 00:04:59,200
+Ento voc pode fazer isso,
+
+106
+00:04:59,200 --> 00:05:00,920
+mas eu no recomendo,  um
+
+107
+00:05:00,920 --> 00:05:02,430
+pouco feio e voc tem
+
+108
+00:05:02,430 --> 00:05:04,840
+que comear a controlar quais aspas que escaparam
+
+109
+00:05:04,840 --> 00:05:07,020
+e quais no so, e assim por diante.
+
+110
+00:05:07,020 --> 00:05:08,950
+Torna-se um pouco confuso, ok?
+
+111
+00:05:11,350 --> 00:05:12,977
+Agora vamos passar para
+
+112
+00:05:12,977 --> 00:05:15,980
+a parte de formatao de string deste vdeo.
+
+113
+00:05:15,980 --> 00:05:17,470
+Imagine que voc tenha um nome,
+
+114
+00:05:17,470 --> 00:05:19,340
+por exemplo meu nome, e a propsito, eu
+
+115
+00:05:19,340 --> 00:05:21,670
+normalmente uso aspas simples para as coisas,  exatamente o
+
+116
+00:05:21,670 --> 00:05:22,720
+que estou acostumado, sinta-se
+
+117
+00:05:22,720 --> 00:05:24,270
+ vontade para usar aspas duplas.
+
+118
+00:05:25,360 --> 00:05:28,040
+Imagine que voc tem o meu nome em
+
+119
+00:05:28,040 --> 00:05:30,070
+uma varivel e voc quer me
+
+120
+00:05:30,070 --> 00:05:33,790
+cumprimentar, voc quer dizer oi voc quer dizer saudao, ol Jos.
+
+121
+00:05:36,720 --> 00:05:39,170
+Assim que a varivel de nome mudar, por
+
+122
+00:05:39,170 --> 00:05:41,080
+exemplo, se isso mudar para Rolf,
+
+123
+00:05:42,180 --> 00:05:44,370
+voc vai querer mudar essa string tambm
+
+124
+00:05:44,370 --> 00:05:46,980
+para dar um ol a Rolf e assim por diante.
+
+125
+00:05:46,980 --> 00:05:49,480
+Ento isso no  timo porque voc tem
+
+126
+00:05:49,480 --> 00:05:52,370
+alguma duplicao e coisas que voc tem que mudar.
+
+127
+00:05:52,370 --> 00:05:53,870
+Ento a melhor coisa
+
+128
+00:05:53,870 --> 00:05:57,630
+a fazer  fazer com que essa saudao use a
+
+129
+00:05:58,980 --> 00:06:00,600
+varivel name e a
+
+130
+00:06:00,600 --> 00:06:03,530
+maneira que voc pode fazer isso  somar, ok?
+
+131
+00:06:03,530 --> 00:06:05,080
+O que temos aqui 
+
+132
+00:06:06,210 --> 00:06:09,610
+uma string mais outra string que  essa string do Jose aqui.
+
+133
+00:06:10,820 --> 00:06:15,820
+Observe como a primeira coisa tem ol vrgula e um espao, e ento adicionamos
+
+134
+00:06:15,925 --> 00:06:18,710
+a ela o nome que no tem espaos
+
+135
+00:06:18,710 --> 00:06:20,300
+no incio ou no final,
+
+136
+00:06:20,300 --> 00:06:22,450
+e  claro que se removermos
+
+137
+00:06:24,250 --> 00:06:25,380
+este espao aqui,
+
+138
+00:06:25,380 --> 00:06:27,670
+tudo estar junto, ser Ol Jose completamente.
+
+139
+00:06:27,670 --> 00:06:30,710
+Ns temos um espao, ele ter espaamento apropriado, como
+
+140
+00:06:30,710 --> 00:06:31,870
+faramos em ingls.
+
+141
+00:06:33,510 --> 00:06:36,760
+Claro, podemos imprimir esta saudao e execut-la.
+
+142
+00:06:38,210 --> 00:06:39,043
+Vejo?
+
+143
+00:06:40,150 --> 00:06:41,000
+E voc pode no ser capaz
+
+144
+00:06:41,000 --> 00:06:42,300
+de ver, eu sei que o texto  pequeno.
+
+145
+00:06:44,740 --> 00:06:47,900
+Agora, em vez de concatenar essa string,  isso que
+
+146
+00:06:47,900 --> 00:06:50,210
+ chamado, concatenando, em vez de concatenar,
+
+147
+00:06:50,210 --> 00:06:53,110
+o que pode ficar muito confuso se voc tiver
+
+148
+00:06:53,110 --> 00:06:55,720
+muitas coisas que deseja unir, podemos usar uma
+
+149
+00:06:55,720 --> 00:06:58,440
+coisa nova no Python3. 6, que 
+
+150
+00:06:58,440 --> 00:07:00,450
+chamado de string F.
+
+151
+00:07:04,240 --> 00:07:07,540
+As cordas F trabalham colocando um F
+
+152
+00:07:07,540 --> 00:07:10,730
+fora da corda e ento voc pode
+
+153
+00:07:10,730 --> 00:07:15,130
+usar a corda aqui e voc pode dizer ol, nome.
+
+154
+00:07:16,330 --> 00:07:18,130
+Ok, to importante, F,
+
+155
+00:07:18,130 --> 00:07:20,760
+ento voc abre sua string com
+
+156
+00:07:20,760 --> 00:07:23,740
+aspas simples, ou aspas duplas, ento voc
+
+157
+00:07:23,740 --> 00:07:25,620
+pode digitar sua string
+
+158
+00:07:25,620 --> 00:07:28,270
+e ento voc fecha a string aqui.
+
+159
+00:07:28,270 --> 00:07:30,350
+Aqui dentro, observe como
+
+160
+00:07:30,350 --> 00:07:32,670
+temos estas chaves e dentro
+
+161
+00:07:32,670 --> 00:07:35,200
+das chaves que temos nome.
+
+162
+00:07:35,200 --> 00:07:38,430
+Agora nome, repl. j est nos
+
+163
+00:07:38,430 --> 00:07:41,470
+dizendo,  essa varivel aqui, ok?
+
+164
+00:07:42,520 --> 00:07:43,850
+E a string F,
+
+165
+00:07:43,850 --> 00:07:46,130
+o que vai fazer  olhar a
+
+166
+00:07:46,130 --> 00:07:49,380
+varivel name e vai substitu-la nessa string F aqui.
+
+167
+00:07:49,380 --> 00:07:51,650
+F significa formatado e esta
+
+168
+00:07:51,650 --> 00:07:53,440
+ uma string formatada
+
+169
+00:07:53,440 --> 00:07:56,780
+porque vai format-lo com esse material que
+
+170
+00:07:56,780 --> 00:07:58,290
+est dentro desses colchetes.
+
+171
+00:07:59,250 --> 00:08:02,210
+Agora, se imprimirmos outra saudao, voc
+
+172
+00:08:02,210 --> 00:08:05,340
+ver oi Jos,  impresso novamente.
+
+173
+00:08:06,216 --> 00:08:07,560
+OK?
+
+174
+00:08:08,710 --> 00:08:11,500
+Se voc j fez outros cursos em
+
+175
+00:08:11,500 --> 00:08:14,630
+Python, voc conhecer este terceiro, este segundo modo
+
+176
+00:08:14,630 --> 00:08:16,400
+de formatao de strings.
+
+177
+00:08:16,400 --> 00:08:18,020
+A segunda maneira eu vou
+
+178
+00:08:18,020 --> 00:08:20,060
+te mostrar para que voc saiba
+
+179
+00:08:20,060 --> 00:08:21,840
+que isso existe porque muitos
+
+180
+00:08:21,840 --> 00:08:24,990
+cdigos usam, mas sempre use F strings se voc puder.
+
+181
+00:08:31,610 --> 00:08:33,520
+Esta saudao final ter
+
+182
+00:08:33,520 --> 00:08:36,890
+apenas chaves de abertura e fechamento e no
+
+183
+00:08:36,890 --> 00:08:39,340
+tem o F na frente, ento
+
+184
+00:08:39,340 --> 00:08:43,580
+esta  apenas uma boa e velha string normal, ok?
+
+185
+00:08:47,600 --> 00:08:52,010
+E se quisermos format-lo e colocar Jos aqui da nossa
+
+186
+00:08:52,010 --> 00:08:53,360
+varivel, temos que
+
+187
+00:08:53,360 --> 00:08:57,000
+fazer a saudao final com o formato do ponto,
+
+188
+00:08:57,930 --> 00:08:59,530
+nome e o que
+
+189
+00:08:59,530 --> 00:09:01,950
+isso vai fazer  obter essa
+
+190
+00:09:01,950 --> 00:09:04,630
+string aqui e format-la com nossa
+
+191
+00:09:04,630 --> 00:09:07,410
+varivel e vai substituir as chaves pelo
+
+192
+00:09:07,410 --> 00:09:09,460
+valor em nossa varivel.
+
+193
+00:09:13,126 --> 00:09:14,420
+E mais uma
+
+194
+00:09:14,420 --> 00:09:19,420
+vez, se rodarmos isso, imprime como voc est, aqui em cima, ok?
+
+195
+00:09:19,500 --> 00:09:22,750
+No use essa maneira de formatao de strings, a menos
+
+196
+00:09:22,750 --> 00:09:27,290
+que voc esteja trabalhando com o Python3. 5 ou abaixo.
+
+197
+00:09:27,290 --> 00:09:30,440
+Se voc estiver trabalhando com o Python3. 6 ou acima,
+
+198
+00:09:30,440 --> 00:09:32,840
+tente sempre usar strings F.
+
+199
+00:09:33,750 --> 00:09:35,700
+A nica razo pela qual
+
+200
+00:09:35,700 --> 00:09:39,310
+estou lhe mostrando isso  porque, se voc observar
+
+201
+00:09:39,310 --> 00:09:41,250
+um cdigo Python antigo, na
+
+202
+00:09:41,250 --> 00:09:44,003
+verdade, a maioria do cdigo Python usar
+
+203
+00:09:44,003 --> 00:09:46,250
+essa forma de formatao das coisas.
+
+204
+00:09:47,130 --> 00:09:49,280
+Isso  s porque o Python3. 6  bem novo.
+
+205
+00:09:50,250 --> 00:09:51,890
+OK?
+
+206
+00:09:51,890 --> 00:09:52,723
+ isso
+
+207
+00:09:52,723 --> 00:09:54,670
+para este vdeo, ns olhamos
+
+208
+00:09:54,670 --> 00:09:56,440
+para seqncias de caracteres que
+
+209
+00:09:56,440 --> 00:09:58,790
+podem usar aspas duplas ou simples,
+
+210
+00:09:58,790 --> 00:10:01,470
+olhamos para aspas de escape e tambm
+
+211
+00:10:01,470 --> 00:10:04,270
+olhamos para formatao de strings concatenando strings
+
+212
+00:10:04,270 --> 00:10:07,280
+usando plus, usando strings F, que  o
+
+213
+00:10:07,280 --> 00:10:10,220
+recomendado maneira, ou usando o formato de ponto,
+
+214
+00:10:10,220 --> 00:10:13,240
+que  como a maioria do cdigo Python
+
+215
+00:10:13,240 --> 00:10:15,990
+foi escrito nos ltimos muitos anos.
+
+216
+00:10:15,990 --> 00:10:17,100
+Ento  isso para este
+
+217
+00:10:17,100 --> 00:10:19,750
+vdeo, espero que tenham gostado e eu vejo vocs no prximo.
+

@@ -1,0 +1,1432 @@
+1
+00:00:00,183 --> 00:00:01,359
+Narrador: Ol e bem vindo de volta.
+
+2
+00:00:01,359 --> 00:00:04,816
+Neste vdeo, estamos falando sobre arquivos JSON.
+
+3
+00:00:04,816 --> 00:00:07,207
+O JSON  provavelmente um dos formatos mais
+
+4
+00:00:07,207 --> 00:00:10,290
+populares, se no o mais popular, para dados no mundo.
+
+5
+00:00:11,137 --> 00:00:14,150
+Especialmente extremamente popular para aplicaes web
+
+6
+00:00:14,150 --> 00:00:16,095
+e isso porque o
+
+7
+00:00:16,095 --> 00:00:19,975
+JSON vem da linguagem web mais popular, o JavaScript.
+
+8
+00:00:19,975 --> 00:00:24,225
+De fato, JSON significa notao de objeto JavaScript.
+
+9
+00:00:26,148 --> 00:00:28,658
+Veja como alguns JSON podem ser.
+
+10
+00:00:28,658 --> 00:00:31,462
+Voc tem um pouco de chaves no incio
+
+11
+00:00:31,462 --> 00:00:33,875
+e no final, ento voc tem uma
+
+12
+00:00:33,875 --> 00:00:38,208
+chave em torno dele que so aspas duplas que  importante, e
+
+13
+00:00:38,208 --> 00:00:40,214
+ento voc tem dois pontos e
+
+14
+00:00:40,214 --> 00:00:43,478
+voc pode ter um valor associado com essa chave.
+
+15
+00:00:43,478 --> 00:00:46,895
+Isso lembra voc de alguma coisa em Python?
+
+16
+00:00:48,595 --> 00:00:50,635
+Espero que isso o faa lembrar de um
+
+17
+00:00:50,635 --> 00:00:52,864
+dicionrio, porque, na verdade, ele  bem parecido
+
+18
+00:00:52,864 --> 00:00:55,234
+com um dicionrio, parece o mesmo que um dicionrio.
+
+19
+00:00:55,234 --> 00:00:57,317
+Existem apenas algumas diferenas
+
+20
+00:00:57,317 --> 00:01:00,113
+entre o JSON, que  essa
+
+21
+00:01:00,113 --> 00:01:02,818
+aqui, e um dicionrio em Python.
+
+22
+00:01:02,818 --> 00:01:05,921
+A primeira e mais importante diferena  algo
+
+23
+00:01:05,921 --> 00:01:07,408
+que voc precisa lembrar
+
+24
+00:01:07,408 --> 00:01:09,780
+sempre que lida com JSON e
+
+25
+00:01:09,780 --> 00:01:12,275
+que JSON  uma string.
+
+26
+00:01:12,275 --> 00:01:14,453
+Observe como esta parte do JSON aqui
+
+27
+00:01:14,453 --> 00:01:19,453
+est dentro de um arquivo de texto e quais so os contedos dos arquivos de texto?
+
+28
+00:01:19,665 --> 00:01:22,172
+Isso  correto, todo o contedo de
+
+29
+00:01:22,172 --> 00:01:25,924
+arquivos de texto so strings, como vimos quando lemos nosso
+
+30
+00:01:25,924 --> 00:01:30,444
+arquivo CSV e como vimos quando lemos nosso arquivo de dados antigo.
+
+31
+00:01:30,444 --> 00:01:33,948
+Arquivos, arquivos de texto sempre contm apenas strings.
+
+32
+00:01:33,948 --> 00:01:36,632
+Quando lemos isso, ser uma
+
+33
+00:01:36,632 --> 00:01:40,571
+string e vamos convert-lo em um dicionrio Python.
+
+34
+00:01:40,571 --> 00:01:44,116
+A segunda diferena  que o JSON deve
+
+35
+00:01:44,116 --> 00:01:47,921
+sempre usar aspas duplas e no aspas simples.
+
+36
+00:01:47,921 --> 00:01:52,007
+Ento, se voc fizer isso, o que  perfeitamente vlido em
+
+37
+00:01:52,007 --> 00:01:55,899
+Python, no ser vlido em JSON, ento no faa isso.
+
+38
+00:01:55,899 --> 00:01:59,009
+E alguns programas que lem e escrevem JSON
+
+39
+00:01:59,009 --> 00:02:02,598
+requerem que o elemento mais externo aqui seja a construo
+
+40
+00:02:02,598 --> 00:02:04,943
+mais externa, a estrutura mais externa
+
+41
+00:02:04,943 --> 00:02:06,026
+seja um objeto.
+
+42
+00:02:07,485 --> 00:02:10,389
+Essa coisa aqui que chamamos de dicionrio
+
+43
+00:02:10,389 --> 00:02:14,778
+em Python  um objeto em JavaScript, eles so muito parecidos.
+
+44
+00:02:14,778 --> 00:02:16,533
+Quando falamos de JSON, a estrutura
+
+45
+00:02:16,533 --> 00:02:18,854
+com essas chaves, chamamos de objeto porque 
+
+46
+00:02:18,854 --> 00:02:20,712
+assim que  chamado em JavaScript. Eu
+
+47
+00:02:20,712 --> 00:02:23,322
+sei que em Python eles so chamados de dicionrios.
+
+48
+00:02:23,322 --> 00:02:26,240
+Alguns programas, no entanto, e isso 
+
+49
+00:02:26,240 --> 00:02:28,201
+importante, no tm esse requisito.
+
+50
+00:02:28,201 --> 00:02:30,412
+Ento, em alguns programas, voc poderia
+
+51
+00:02:30,412 --> 00:02:33,745
+ter um arquivo chamado friendsjson. txt que  apenas
+
+52
+00:02:34,864 --> 00:02:38,082
+isso e isso seria bom para alguns programas.
+
+53
+00:02:38,082 --> 00:02:40,693
+E observe como o recuo aqui est um
+
+54
+00:02:40,693 --> 00:02:43,110
+pouco fora e deixe-me corrigi-lo bem rpido.
+
+55
+00:02:44,631 --> 00:02:47,522
+Isso seria bom para alguns programas, mas outros
+
+56
+00:02:47,522 --> 00:02:48,707
+no tm seus
+
+57
+00:02:48,707 --> 00:02:51,594
+prprios requisitos de que a estrutura externa seja
+
+58
+00:02:51,594 --> 00:02:53,470
+um objeto, que  um
+
+59
+00:02:53,470 --> 00:02:56,573
+dicionrio, alguns no tm esse requisito, e isso seria timo.
+
+60
+00:02:56,573 --> 00:02:59,398
+Para o nosso exemplo, vamos nos ater
+
+61
+00:02:59,398 --> 00:03:02,565
+ao nosso objeto como a estrutura mais externa.
+
+62
+00:03:04,125 --> 00:03:07,015
+Ento vamos ler alguns JSON usando Python.
+
+63
+00:03:07,015 --> 00:03:09,432
+O Python vem com um mdulo
+
+64
+00:03:09,432 --> 00:03:13,580
+interno que voc pode importar e usar, chamado mdulo JSON.
+
+65
+00:03:13,580 --> 00:03:15,590
+Vamos falar muito mais
+
+66
+00:03:15,590 --> 00:03:19,354
+sobre importao conforme avanamos nesta seo, importaremos nossos
+
+67
+00:03:19,354 --> 00:03:23,442
+prprios arquivos e mdulos, bem como os mdulos do
+
+68
+00:03:23,442 --> 00:03:26,983
+sistema, ento vamos comear importando esse mdulo JSON.
+
+69
+00:03:26,983 --> 00:03:29,486
+Mas, antes de importarmos o JSON,
+
+70
+00:03:29,486 --> 00:03:32,713
+vamos falar um pouco sobre a importao.
+
+71
+00:03:32,713 --> 00:03:34,833
+A primeira coisa que vou fazer
+
+72
+00:03:34,833 --> 00:03:37,264
+ criar um novo arquivo para o
+
+73
+00:03:37,264 --> 00:03:39,597
+qual vou chamar algo como json_imports.
+
+74
+00:03:41,582 --> 00:03:44,811
+Importante, no chame este arquivo JSON porque
+
+75
+00:03:44,811 --> 00:03:47,973
+o mdulo JSON j existe no Python.
+
+76
+00:03:47,973 --> 00:03:50,084
+Ns vamos importar isso assim.
+
+77
+00:03:50,084 --> 00:03:51,782
+Ento, se voc chamar seu
+
+78
+00:03:51,782 --> 00:03:54,512
+arquivo JSON, isso vai confundir o Python.
+
+79
+00:03:54,512 --> 00:03:57,372
+Tente no ter seus arquivos ou qualquer um
+
+80
+00:03:57,372 --> 00:04:00,390
+de seus pacotes com o nome de algo
+
+81
+00:04:00,390 --> 00:04:03,279
+que j exista no Python, ou tente no
+
+82
+00:04:03,279 --> 00:04:05,158
+ter nomes duplicados para arquivos
+
+83
+00:04:05,158 --> 00:04:07,770
+e coisas do tipo apenas um conselho geral.
+
+84
+00:04:07,770 --> 00:04:09,679
+Ento, em Python, como j
+
+85
+00:04:09,679 --> 00:04:12,062
+fizemos algumas vezes antes, no curso,
+
+86
+00:04:12,062 --> 00:04:15,193
+podemos dar uma olhada, podemos importar coisas e
+
+87
+00:04:15,193 --> 00:04:18,241
+essas coisas so cdigos que outros desenvolvedores escreveram
+
+88
+00:04:18,241 --> 00:04:21,402
+para que ns no tenhamos que escrever ns mesmos .
+
+89
+00:04:21,402 --> 00:04:23,589
+E agora estamos importando o mdulo
+
+90
+00:04:23,589 --> 00:04:25,780
+JSON, que contm algumas funes que
+
+91
+00:04:25,780 --> 00:04:28,821
+nos permitem importar o arquivo JSON e convert-lo
+
+92
+00:04:28,821 --> 00:04:31,048
+em um dicionrio, alm de fazer
+
+93
+00:04:31,048 --> 00:04:34,342
+o contrrio, transformando um dicionrio em dados JSON.
+
+94
+00:04:34,342 --> 00:04:36,222
+Lembre-se, os dados JSON so muito
+
+95
+00:04:36,222 --> 00:04:38,889
+parecidos com um dicionrio, mas so uma string.
+
+96
+00:04:40,481 --> 00:04:44,320
+E lembre-se que algum escreveu este mdulo JSON da mesma
+
+97
+00:04:44,320 --> 00:04:46,261
+forma que estamos escrevendo este
+
+98
+00:04:46,261 --> 00:04:48,093
+arquivo e algum escreveu todas
+
+99
+00:04:48,093 --> 00:04:51,061
+as outras funes embutidas no Python como
+
+100
+00:04:51,061 --> 00:04:53,978
+len ou sum ou at mesmo como,
+
+101
+00:04:56,743 --> 00:05:00,900
+hum, coisas como imprimir todas elas foram escritas por algum.
+
+102
+00:05:00,900 --> 00:05:02,562
+E eles so disponibilizados
+
+103
+00:05:02,562 --> 00:05:06,602
+para uso global em todos os nossos arquivos em Python.
+
+104
+00:05:06,602 --> 00:05:08,561
+A nica diferena  que esse
+
+105
+00:05:08,561 --> 00:05:11,723
+mdulo JSON no  includo por padro em todos
+
+106
+00:05:11,723 --> 00:05:14,331
+os seus arquivos, pois quem criou o Python
+
+107
+00:05:14,331 --> 00:05:17,880
+achou que talvez no fosse necessrio em todos os casos.
+
+108
+00:05:17,880 --> 00:05:21,370
+Portanto, o mdulo JSON  um mdulo que vem com
+
+109
+00:05:21,370 --> 00:05:24,171
+o Python, mas no  um mdulo global.
+
+110
+00:05:24,171 --> 00:05:25,971
+Devemos deixar explcito que
+
+111
+00:05:25,971 --> 00:05:30,549
+queremos us-lo importando-o no topo do arquivo como tal.
+
+112
+00:05:30,549 --> 00:05:32,320
+Ento, criamos um arquivo que
+
+113
+00:05:32,320 --> 00:05:34,540
+contm nossos amigos como JSON e
+
+114
+00:05:34,540 --> 00:05:37,298
+observamos como essa  uma chave de amigos
+
+115
+00:05:37,298 --> 00:05:39,212
+e que est associada a uma
+
+116
+00:05:39,212 --> 00:05:41,949
+lista e que contm trs objetos dentro dela.
+
+117
+00:05:41,949 --> 00:05:43,311
+Vou tentar realmente chamar
+
+118
+00:05:43,311 --> 00:05:45,481
+esses objetos quando estou falando sobre JSON
+
+119
+00:05:45,481 --> 00:05:47,660
+e dicionrios quando estou falando sobre Python,
+
+120
+00:05:47,660 --> 00:05:49,611
+mas por favor, tenha pacincia comigo
+
+121
+00:05:49,611 --> 00:05:51,919
+se eu cometer algum erro e estes
+
+122
+00:05:51,919 --> 00:05:53,929
+so objetos em JSON e dicionrios
+
+123
+00:05:53,929 --> 00:05:57,550
+em Python, mas somente quando os importamos usando esse mdulo JSON.
+
+124
+00:05:57,550 --> 00:06:01,161
+Ento, ns temos o arquivo JSON, desculpe o mdulo JSON
+
+125
+00:06:01,161 --> 00:06:03,391
+importado, e agora, ns temos a
+
+126
+00:06:03,391 --> 00:06:07,474
+habilidade de fazer coisas como json. acesso, contanto que voc esteja
+
+127
+00:06:08,362 --> 00:06:10,480
+usando o PyCharm ou qualquer
+
+128
+00:06:10,480 --> 00:06:12,641
+outra coisa que recomende funes,
+
+129
+00:06:12,641 --> 00:06:15,480
+podemos acessar as funes nesse mdulo.
+
+130
+00:06:15,480 --> 00:06:18,191
+Observe como esse mdulo JSON no  um objeto.
+
+131
+00:06:18,191 --> 00:06:20,109
+No  uma classe porque
+
+132
+00:06:20,109 --> 00:06:24,359
+no precisamos criar um novo objeto JSON para acessar as coisas.
+
+133
+00:06:25,660 --> 00:06:28,149
+Este mdulo aqui nos permite usar algumas
+
+134
+00:06:28,149 --> 00:06:31,509
+funes, mas elas no esto dentro de uma classe.
+
+135
+00:06:31,509 --> 00:06:34,011
+E, de fato, no PyCharm, voc
+
+136
+00:06:34,011 --> 00:06:37,428
+pode entrar no mdulo JSON clicando em command
+
+137
+00:06:39,074 --> 00:06:42,328
+click ou control click se estiver no Windows.
+
+138
+00:06:42,328 --> 00:06:47,008
+E voc pode ver o cdigo-fonte do mdulo aqui voc pode ver que
+
+139
+00:06:47,008 --> 00:06:50,841
+muitos deles so esses comentrios que dizem como usar as funes,
+
+140
+00:06:51,832 --> 00:06:53,551
+mas basicamente existem algumas definies
+
+141
+00:06:53,551 --> 00:06:56,301
+de funes como dump, e voc pode ver
+
+142
+00:06:56,301 --> 00:06:58,942
+o cdigo fonte e o que ele
+
+143
+00:06:58,942 --> 00:07:01,093
+tem dump-s e voc pode ver
+
+144
+00:07:01,093 --> 00:07:04,452
+os argumentos e o cdigo-fonte e todos os comentrios
+
+145
+00:07:04,452 --> 00:07:06,612
+e tudo o que existe.
+
+146
+00:07:06,612 --> 00:07:08,458
+Ento, como voc pode ver, este 
+
+147
+00:07:08,458 --> 00:07:10,649
+apenas um cdigo como o que escrevemos, exceto que
+
+148
+00:07:10,649 --> 00:07:12,659
+no o escrevemos, mas ainda podemos import-lo e
+
+149
+00:07:12,659 --> 00:07:14,248
+perceber como, ao passarmos pelo arquivo,
+
+150
+00:07:14,248 --> 00:07:16,692
+essas funes esto no nvel mais baixo de indentao que
+
+151
+00:07:16,692 --> 00:07:18,181
+esto no muito  esquerda, o
+
+152
+00:07:18,181 --> 00:07:20,771
+que significa que eles no esto dentro de uma classe.
+
+153
+00:07:20,771 --> 00:07:23,500
+Ento,  medida que importamos o mdulo,
+
+154
+00:07:23,500 --> 00:07:25,833
+teremos acesso a essas funes diretamente.
+
+155
+00:07:26,728 --> 00:07:28,757
+Ok, sinta-se  vontade para ler
+
+156
+00:07:28,757 --> 00:07:30,487
+esse mdulo se quiser, se
+
+157
+00:07:30,487 --> 00:07:32,686
+quiser ter uma pequena olhada no que
+
+158
+00:07:32,686 --> 00:07:36,137
+est l, mas vamos usar apenas algumas funes neste vdeo.
+
+159
+00:07:36,137 --> 00:07:40,138
+A primeira coisa que voc precisa  de um ponteiro de arquivo.
+
+160
+00:07:40,138 --> 00:07:42,277
+Para isso, vamos usar a funo open,
+
+161
+00:07:42,277 --> 00:07:45,310
+ claro, e temos que usar um sinal de igual
+
+162
+00:07:45,310 --> 00:07:48,774
+e vamos abrir o friends_json. txt para leitura,
+
+163
+00:07:48,774 --> 00:07:51,175
+ento voc sabe como
+
+164
+00:07:51,175 --> 00:07:53,925
+fazer isso, friends_json. txt no modo de leitura.
+
+165
+00:07:55,195 --> 00:07:57,945
+Ento vamos carregar o contedo.
+
+166
+00:07:57,945 --> 00:08:01,238
+A maneira de fazer isso  fazer file_contents,
+
+167
+00:08:01,238 --> 00:08:03,988
+por exemplo,  JSON. carga do ponteiro de arquivo.
+
+168
+00:08:05,367 --> 00:08:08,008
+Portanto, a funo load dentro do mdulo
+
+169
+00:08:08,008 --> 00:08:10,636
+JSON recebe um ponteiro de arquivo do
+
+170
+00:08:10,636 --> 00:08:13,168
+qual ele ir carregar o JSON.
+
+171
+00:08:13,168 --> 00:08:15,476
+Como parte da leitura do arquivo, pela
+
+172
+00:08:15,476 --> 00:08:17,617
+maneira como ele l o arquivo
+
+173
+00:08:17,617 --> 00:08:22,029
+inteiro, ele tambm o transforma em um dicionrio, portanto, file_contents  um dicionrio.
+
+174
+00:08:22,029 --> 00:08:25,196
+L o arquivo e o transforma em dicionrio.
+
+175
+00:08:26,615 --> 00:08:29,347
+Ento,  claro, podemos fechar o arquivo
+
+176
+00:08:29,347 --> 00:08:33,065
+e agora, podemos usar o contedo do arquivo para
+
+177
+00:08:33,065 --> 00:08:37,565
+o que quisermos, por exemplo, podemos imprimir o contedo do arquivo
+
+178
+00:08:39,048 --> 00:08:42,631
+'friends' zero e isso deve imprimir este dicionrio aqui.
+
+179
+00:08:46,462 --> 00:08:49,414
+Ok, lembre-se, se voc estiver usando o PyCharm, voc
+
+180
+00:08:49,414 --> 00:08:52,554
+pode ficar tentado a apertar o boto de reproduo no
+
+181
+00:08:52,554 --> 00:08:55,242
+canto superior direito, mas, se esse for o
+
+182
+00:08:55,242 --> 00:08:57,904
+caso, tocar o arquivo errado CSV_read nesse caso,
+
+183
+00:08:57,904 --> 00:09:02,571
+se for esse o caso, clique com o boto direito no arquivo json_imports. e execut-lo.
+
+184
+00:09:02,571 --> 00:09:04,551
+E l voc tem, ns
+
+185
+00:09:04,551 --> 00:09:08,445
+imprimimos o dicionrio com o nome Jose e computao
+
+186
+00:09:08,445 --> 00:09:11,857
+aplicada de grau que eu estudei na universidade.
+
+187
+00:09:11,857 --> 00:09:14,294
+ assim que voc carrega um
+
+188
+00:09:14,294 --> 00:09:18,063
+arquivo JSON em um dicionrio que voc pode usar normalmente.
+
+189
+00:09:18,063 --> 00:09:19,833
+Ento, aqui, estamos acessando a
+
+190
+00:09:19,833 --> 00:09:24,833
+chave de amigos e, em seguida, estamos acessando o 0 elemento da chave de amigos.
+
+191
+00:09:25,900 --> 00:09:27,390
+Se voc quer fazer o oposto,
+
+192
+00:09:27,390 --> 00:09:28,791
+e voc quer escrever o
+
+193
+00:09:28,791 --> 00:09:32,550
+dicionrio Python como um arquivo JSON, isso tambm  algo que voc pode fazer.
+
+194
+00:09:32,550 --> 00:09:34,531
+Por exemplo, vamos escrever
+
+195
+00:09:34,531 --> 00:09:38,192
+em um arquivo chamado cars_json, ento vamos fazer
+
+196
+00:09:38,192 --> 00:09:41,692
+carros iguais a esta lista de dicionrios.
+
+197
+00:09:49,015 --> 00:09:51,114
+E a propsito, algo que eu
+
+198
+00:09:51,114 --> 00:09:53,734
+costumo fazer s porque eu programo muito em
+
+199
+00:09:53,734 --> 00:09:55,896
+JavaScript  ter esse espao depois do
+
+200
+00:09:55,896 --> 00:09:58,974
+dicionrio e o Python no gosta muito disso, ento
+
+201
+00:09:58,974 --> 00:10:01,093
+se eu fizer isso, eu peo
+
+202
+00:10:01,093 --> 00:10:03,876
+desculpas, eu acho isso um pouco mais legvel ,
+
+203
+00:10:03,876 --> 00:10:05,461
+mas isso  s porque
+
+204
+00:10:05,461 --> 00:10:09,294
+eu fao muito JavaScript e isso  uma conveno em JavaScript tambm.
+
+205
+00:10:11,444 --> 00:10:15,054
+Ento, agora ns temos dois dicionrios dentro da nossa lista
+
+206
+00:10:15,054 --> 00:10:17,064
+e,  claro, como eu disse
+
+207
+00:10:17,064 --> 00:10:19,485
+anteriormente, ns podemos salvar isso como JSON,
+
+208
+00:10:19,485 --> 00:10:21,474
+ele no precisa ter um
+
+209
+00:10:21,474 --> 00:10:26,004
+dicionrio para fech-lo, embora alguns programas possam solicitar que voc o tenha.
+
+210
+00:10:26,004 --> 00:10:28,346
+Ento, novamente, se voc quiser salvar isso em um
+
+211
+00:10:28,346 --> 00:10:30,094
+dicionrio, voc sabe exatamente o que fazer.
+
+212
+00:10:30,094 --> 00:10:33,775
+Abra o arquivo, salve o contedo
+
+213
+00:10:33,775 --> 00:10:35,814
+no arquivo e feche-o.
+
+214
+00:10:35,814 --> 00:10:37,592
+Como voc vai salvar o contedo?
+
+215
+00:10:37,592 --> 00:10:42,374
+Em vez de JSON. carregar, voc vai usar o JSON. despejo.
+
+216
+00:10:42,374 --> 00:10:44,565
+Ento aqui est o que voc tem que fazer.
+
+217
+00:10:44,565 --> 00:10:47,898
+V e investigue como usar o JSON. despejo.
+
+218
+00:10:49,702 --> 00:10:52,386
+Ou, opcionalmente, espere at que eu pea para
+
+219
+00:10:52,386 --> 00:10:54,571
+pausar o vdeo e tente voc
+
+220
+00:10:54,571 --> 00:10:57,213
+mesmo, e eu implementarei isso para voc.
+
+221
+00:10:57,213 --> 00:10:59,252
+Se voc  to inclinado, pause o vdeo agora
+
+222
+00:10:59,252 --> 00:11:02,595
+e experimente isso, investigue como usar o JSON. despejar e, em seguida,
+
+223
+00:11:02,595 --> 00:11:06,355
+salve essa lista em um novo arquivo que
+
+224
+00:11:06,355 --> 00:11:09,773
+voc pode chamar carros_json. TXT.
+
+225
+00:11:09,773 --> 00:11:12,273
+Eu te vejo em alguns segundos.
+
+226
+00:11:15,075 --> 00:11:16,455
+Eu espero que voc tenha isso.
+
+227
+00:11:16,455 --> 00:11:18,401
+Se voc fez, v investigar o JSON. despejo parabns,
+
+228
+00:11:18,401 --> 00:11:21,314
+bem feito, investigando voc vai
+
+229
+00:11:21,314 --> 00:11:23,242
+aprender mais rpido.
+
+230
+00:11:23,242 --> 00:11:25,571
+Existem vrias maneiras pelas quais voc poderia ter investigado
+
+231
+00:11:25,571 --> 00:11:28,412
+que poderia ter JSON pesquisado. despejo Python e
+
+232
+00:11:28,412 --> 00:11:30,524
+um desses primeiros poucos links
+
+233
+00:11:30,524 --> 00:11:33,430
+seria a documentao oficial do Python.
+
+234
+00:11:33,430 --> 00:11:35,150
+Outra opo, voc poderia ter ido para
+
+235
+00:11:35,150 --> 00:11:37,812
+o mdulo JSON, com o comando de clique se voc estiver
+
+236
+00:11:37,812 --> 00:11:40,452
+no Mac ou clique em controle, se voc estiver no Windows.
+
+237
+00:11:40,452 --> 00:11:42,134
+E l voc poderia
+
+238
+00:11:42,134 --> 00:11:45,884
+ter encontrado esta documentao aqui para a funo dump
+
+239
+00:11:48,334 --> 00:11:50,443
+e ela lhe diz o
+
+240
+00:11:50,443 --> 00:11:53,791
+que faz serializar o parmetro obj como um
+
+241
+00:11:53,791 --> 00:11:56,860
+fluxo formatado em JSON para fp.
+
+242
+00:11:56,860 --> 00:12:00,342
+UMA . escrever suporte a um objeto semelhante a um arquivo.
+
+243
+00:12:00,342 --> 00:12:03,563
+Agora, eu aprecio isso  alguma linguagem que temos aqui.
+
+244
+00:12:03,563 --> 00:12:06,482
+Serializao significa se transformar em uma string.
+
+245
+00:12:06,482 --> 00:12:08,982
+Fp  normalmente um ponteiro de arquivo.
+
+246
+00:12:09,972 --> 00:12:11,522
+E diz aqui que tem que ser
+
+247
+00:12:11,522 --> 00:12:15,632
+um objeto semelhante a um arquivo que lhe permite fazer. Escreva.
+
+248
+00:12:15,632 --> 00:12:16,914
+ o que estamos fazendo
+
+249
+00:12:16,914 --> 00:12:19,222
+com nossos arquivos de texto quando escrevemos para eles.
+
+250
+00:12:19,222 --> 00:12:23,302
+Ento, esse dump recebe um objeto e isso ser
+
+251
+00:12:23,302 --> 00:12:27,300
+transformado em uma string e salvo em fp.
+
+252
+00:12:27,300 --> 00:12:29,483
+Portanto, se voltarmos para nossa importao JSON,
+
+253
+00:12:29,483 --> 00:12:32,400
+o que precisamos fazer  abrir o arquivo no
+
+254
+00:12:34,320 --> 00:12:36,514
+modo de gravao desta vez e, em
+
+255
+00:12:36,514 --> 00:12:39,014
+seguida, dizer JSON. despejo, carros e arquivo.
+
+256
+00:12:42,291 --> 00:12:44,562
+E depois, claro, arquivo. fechar.
+
+257
+00:12:44,562 --> 00:12:47,173
+Vamos executar isso, observe como
+
+258
+00:12:47,173 --> 00:12:51,840
+ele roda o care_json, e ele contm nosso JSON descartado.
+
+259
+00:12:53,254 --> 00:12:57,805
+Repare, porm, que no est bem formatado e est bem.
+
+260
+00:12:57,805 --> 00:12:59,968
+O JSON no precisa de nenhuma
+
+261
+00:12:59,968 --> 00:13:01,587
+nova linha ou espao,
+
+262
+00:13:01,587 --> 00:13:04,205
+ou algo assim, todos eles so completamente
+
+263
+00:13:04,205 --> 00:13:06,413
+opcionais, apenas observe como as aspas
+
+264
+00:13:06,413 --> 00:13:08,923
+duplas so usadas, mesmo que usssemos
+
+265
+00:13:08,923 --> 00:13:11,122
+aspas simples em nossos dicionrios.
+
+266
+00:13:11,122 --> 00:13:13,515
+O Python no se importa com nossas
+
+267
+00:13:13,515 --> 00:13:15,886
+strings, quer usemos aspas duplas ou simples,
+
+268
+00:13:15,886 --> 00:13:18,469
+mas o JSON, portanto, ele usa isso.
+
+269
+00:13:20,929 --> 00:13:24,688
+Se voc tivesse uma varivel de string que voc
+
+270
+00:13:24,688 --> 00:13:28,017
+queria transformar em um dicionrio, voc pode fazer
+
+271
+00:13:28,017 --> 00:13:32,017
+isso, por exemplo, digamos que minha string JSON seja algo assim.
+
+272
+00:13:44,239 --> 00:13:45,406
+Isso  completamente errado pelo
+
+273
+00:13:45,406 --> 00:13:47,241
+fato de eu saber muito pouco sobre carros.
+
+274
+00:13:47,241 --> 00:13:49,684
+Digamos que voc tenha esta seqncia de
+
+275
+00:13:49,684 --> 00:13:52,695
+JSON deste carro da Alfa Romeo que foi lanado
+
+276
+00:13:52,695 --> 00:13:54,395
+em 1950, provavelmente muito errado,
+
+277
+00:13:54,395 --> 00:13:56,887
+eu acho que  mais, muito mais tarde.
+
+278
+00:13:56,887 --> 00:13:58,131
+Mas, no entanto, digamos
+
+279
+00:13:58,131 --> 00:13:59,503
+que voc tenha esta
+
+280
+00:13:59,503 --> 00:14:03,475
+string JSON aqui e queira transform-la em um dicionrio, voc pode fazer isso.
+
+281
+00:14:03,475 --> 00:14:05,797
+Mas desta vez, em vez de
+
+282
+00:14:05,797 --> 00:14:09,112
+usar load, que transforma um arquivo JSON em
+
+283
+00:14:09,112 --> 00:14:12,529
+um dicionrio, vamos usar load para load string.
+
+284
+00:14:14,168 --> 00:14:18,085
+Ento, um, incorrect_car vai ser JSON. carrega e percebe como
+
+285
+00:14:19,081 --> 00:14:23,045
+o primeiro argumento  uma string ou, melhor, s,
+
+286
+00:14:23,045 --> 00:14:25,011
+que significa string e
+
+287
+00:14:25,011 --> 00:14:27,041
+que vai ser my_json_string e
+
+288
+00:14:27,041 --> 00:14:29,847
+ento voc pode imprimir o nome
+
+289
+00:14:29,847 --> 00:14:33,930
+do carro incorreto, bane? Indo batman aqui. Nome, l vamos ns.
+
+290
+00:14:35,148 --> 00:14:37,601
+Ento voc pode imprimir isso, oh, desculpe, est em
+
+291
+00:14:37,601 --> 00:14:40,302
+um, est em uma lista, ento  claro que voc
+
+292
+00:14:40,302 --> 00:14:42,319
+tem que acessar o elemento zero primeiro.
+
+293
+00:14:42,319 --> 00:14:44,599
+Meu mal, se voc percebeu isso, bem feito.
+
+294
+00:14:44,599 --> 00:14:48,099
+E a voc tem Alfa Romeo impresso.
+
+295
+00:14:49,027 --> 00:14:51,919
+Ento, load permite transformar uma string JSON em
+
+296
+00:14:51,919 --> 00:14:55,788
+um dicionrio e,  claro, lixes permitem transformar um dicionrio
+
+297
+00:14:55,788 --> 00:14:58,658
+em uma string bem direta para usar. Eu
+
+298
+00:14:58,658 --> 00:14:59,785
+no vou te
+
+299
+00:14:59,785 --> 00:15:01,134
+dar um exemplo disso
+
+300
+00:15:01,134 --> 00:15:03,405
+porque voc sabe se tem um
+
+301
+00:15:03,405 --> 00:15:07,072
+Dicionrio ou JSON, como este, como esta lista ou um
+
+302
+00:15:08,105 --> 00:15:10,190
+dicionrio, voc pode usar dumps para
+
+303
+00:15:10,190 --> 00:15:12,932
+transformar qualquer construo que voc tenha em
+
+304
+00:15:12,932 --> 00:15:15,015
+JSON, uma string JSON.
+
+305
+00:15:17,088 --> 00:15:21,410
+Ento, o JSON permite que voc use listas e dicionrios,
+
+306
+00:15:21,410 --> 00:15:24,410
+ele no permite o uso de tuplas.
+
+307
+00:15:25,277 --> 00:15:26,798
+Ento, isso  importante,
+
+308
+00:15:26,798 --> 00:15:28,937
+apenas certifique-se de usar listas e
+
+309
+00:15:28,937 --> 00:15:30,802
+dicionrios, no use tuplas que
+
+310
+00:15:30,802 --> 00:15:33,443
+voc pode usar praticamente qualquer outra coisa
+
+311
+00:15:33,443 --> 00:15:36,427
+como strings, nmeros, floats e o mdulo JSON
+
+312
+00:15:36,427 --> 00:15:39,932
+chamar automaticamente a funo repr uma funo de reprovao
+
+313
+00:15:39,932 --> 00:15:41,531
+do seu objeto se
+
+314
+00:15:41,531 --> 00:15:43,842
+voc escolha incluir qualquer objeto aqui,
+
+315
+00:15:43,842 --> 00:15:46,574
+geralmente, tente evitar objetos em um JSON
+
+316
+00:15:46,574 --> 00:15:49,828
+s porque quando voc carreg-los, ser apenas uma
+
+317
+00:15:49,828 --> 00:15:51,491
+string e ser muito
+
+318
+00:15:51,491 --> 00:15:53,678
+difcil entender o que est acontecendo.
+
+319
+00:15:53,678 --> 00:15:57,408
+Ento, se voc quiser transformar seus objetos em
+
+320
+00:15:57,408 --> 00:15:59,858
+JSON, o que faremos em
+
+321
+00:15:59,858 --> 00:16:03,692
+breve, certifique-se de descrever seus objetos usando um dicionrio.
+
+322
+00:16:03,692 --> 00:16:05,441
+Por exemplo, voc pode criar
+
+323
+00:16:05,441 --> 00:16:09,273
+um dicionrio a partir das propriedades variveis do objeto e seus valores.
+
+324
+00:16:09,273 --> 00:16:10,903
+Dessa forma, voc pode
+
+325
+00:16:10,903 --> 00:16:13,873
+exportar seus objetos como string JSON, se quiser.
+
+326
+00:16:13,873 --> 00:16:15,143
+Se voc no sabe
+
+327
+00:16:15,143 --> 00:16:17,031
+o que estou falando, tudo bem,
+
+328
+00:16:17,031 --> 00:16:19,296
+vamos fazer exatamente isso, exportando nossos objetos como
+
+329
+00:16:19,296 --> 00:16:21,608
+JSON mais tarde no curso e ainda em
+
+330
+00:16:21,608 --> 00:16:24,750
+alguns outros cursos que eu tenho, ns usamos coisas assim tambm.
+
+331
+00:16:24,750 --> 00:16:27,462
+Portanto,  uma abordagem bastante popular para
+
+332
+00:16:27,462 --> 00:16:30,205
+transformar objetos e transformar suas variveis em
+
+333
+00:16:30,205 --> 00:16:33,057
+JSON, para que voc possa salv-los em arquivos,
+
+334
+00:16:33,057 --> 00:16:35,368
+l-los bem e tambm lix-los pela
+
+335
+00:16:35,368 --> 00:16:38,598
+Internet, porque isso  algo muito popular no JSON.
+
+336
+00:16:38,598 --> 00:16:40,150
+Tudo bem, ento  o suficiente disso.
+
+337
+00:16:40,150 --> 00:16:42,540
+Ns olhamos para CSV e JSON eles so
+
+338
+00:16:42,540 --> 00:16:45,304
+duas formas muito populares de armazenar dados JSON muito
+
+339
+00:16:45,304 --> 00:16:48,361
+mais populares para o envio de dados pela internet e
+
+340
+00:16:48,361 --> 00:16:49,873
+agora que somos capazes de
+
+341
+00:16:49,873 --> 00:16:51,317
+ler e gravar dados nessa
+
+342
+00:16:51,317 --> 00:16:53,298
+variedade de formatos, estamos prontos para
+
+343
+00:16:53,298 --> 00:16:56,850
+comear a criar aplicativos que persistem dados em um disco ou
+
+344
+00:16:56,850 --> 00:17:00,850
+salvam dados em um disco e permitem armazen-lo entre seus tempos de execuo.
+
+345
+00:17:02,077 --> 00:17:03,988
+Na prxima seo, vamos criar
+
+346
+00:17:03,988 --> 00:17:07,738
+um bom projeto, mas agora eu queria passar para outras
+
+347
+00:17:09,519 --> 00:17:13,547
+coisas, como importar nossos prprios arquivos e nossos prprios mdulos, para
+
+348
+00:17:13,547 --> 00:17:15,564
+que voc possa comear a
+
+349
+00:17:15,564 --> 00:17:17,899
+dividir seu programa em partes, em
+
+350
+00:17:17,899 --> 00:17:20,923
+vez de ter tudo em um nico arquivo.
+
+351
+00:17:20,923 --> 00:17:22,553
+Isso  muito importante sempre
+
+352
+00:17:22,553 --> 00:17:24,607
+que voc estiver criando um aplicativo
+
+353
+00:17:24,607 --> 00:17:26,614
+maior, voc ir dividi-lo em vrios arquivos.
+
+354
+00:17:26,614 --> 00:17:28,706
+Ento, saber como interagir entre esses
+
+355
+00:17:28,706 --> 00:17:31,949
+dois e como as importaes funcionam em um nvel
+
+356
+00:17:31,949 --> 00:17:34,142
+mais baixo ser muito importante.
+
+357
+00:17:34,142 --> 00:17:36,367
+Com isso dito, vamos para o prximo vdeo.
+
+358
+00:17:36,367 --> 00:17:37,502
+Vejo voc mais tarde.
+

@@ -1,0 +1,232 @@
+1
+00:00:00,418 --> 00:00:01,318
+Jos: Hola, bienvenido de nuevo.
+
+2
+00:00:01,318 --> 00:00:03,797
+En este video, vamos a verificar nuestro rbol binario,
+
+3
+00:00:03,797 --> 00:00:05,548
+asegurarnos de que todo est funcionando.
+
+4
+00:00:05,548 --> 00:00:08,791
+Porque los ltimos videos fueron bastante intensos.
+
+5
+00:00:08,791 --> 00:00:11,049
+Lo que he escrito aqu es, ya
+
+6
+00:00:11,049 --> 00:00:12,305
+sabes, importar nuestras bibliotecas.
+
+7
+00:00:12,305 --> 00:00:16,274
+Crea un nuevo rbol binario con seis en la cabeza.
+
+8
+00:00:16,274 --> 00:00:18,775
+Y luego, he creado algunos nodos: cinco, tres,
+
+9
+00:00:18,775 --> 00:00:21,707
+nueve, siete, ocho, siete. 5, 12 y 11 y
+
+10
+00:00:21,707 --> 00:00:24,588
+los he agregado al rbol en orden y luego
+
+11
+00:00:24,588 --> 00:00:27,809
+con la eliminacin de nueve, que est aqu arriba, y
+
+12
+00:00:27,809 --> 00:00:29,659
+luego estamos imprimiendo el rbol.
+
+13
+00:00:29,659 --> 00:00:33,742
+Entonces, este rbol, voy a mover esto aqu,
+
+14
+00:00:34,861 --> 00:00:37,123
+esconder esto, ah vamos.
+
+15
+00:00:37,123 --> 00:00:40,373
+Este rbol comienza a las seis y luego agrega cinco, que
+
+16
+00:00:41,776 --> 00:00:44,024
+se agregar a la izquierda de seis.
+
+17
+00:00:44,024 --> 00:00:45,061
+Luego agrega tres, que se
+
+18
+00:00:45,061 --> 00:00:46,343
+agregarn a la izquierda de cinco.
+
+19
+00:00:46,343 --> 00:00:48,821
+Luego agrega nueve que se agregarn a la izquierda,
+
+20
+00:00:48,821 --> 00:00:50,382
+a la derecha, de seis.
+
+21
+00:00:50,382 --> 00:00:51,982
+Luego agrega siete que se
+
+22
+00:00:51,982 --> 00:00:53,844
+agregarn a la izquierda de nueve.
+
+23
+00:00:53,844 --> 00:00:55,358
+Luego agrega ocho que se agregarn
+
+24
+00:00:55,358 --> 00:00:56,817
+a la derecha de siete.
+
+25
+00:00:56,817 --> 00:01:00,038
+Luego agrega 7. 5 que se agregar a
+
+26
+00:01:00,038 --> 00:01:01,392
+la izquierda de ocho.
+
+27
+00:01:01,392 --> 00:01:04,413
+Entonces, estamos reconstruyendo este rbol aqu
+
+28
+00:01:04,413 --> 00:01:07,634
+simplemente porque vamos a eliminar nueve
+
+29
+00:01:07,634 --> 00:01:11,407
+y vamos a imprimir el rbol en orden.
+
+30
+00:01:11,407 --> 00:01:14,740
+Con suerte, lo que vemos es un ocho aqu.
+
+31
+00:01:15,745 --> 00:01:16,744
+Esto eliminado
+
+32
+00:01:16,744 --> 00:01:17,788
+Esto eliminado
+
+33
+00:01:17,788 --> 00:01:19,515
+Y esto apuntando all.
+
+34
+00:01:19,515 --> 00:01:21,766
+Esto es lo que queremos ver.
+
+35
+00:01:21,766 --> 00:01:25,274
+Descubrmoslo, con ejecutar la aplicacin.
+
+36
+00:01:25,274 --> 00:01:27,470
+Y lo conseguimos, sera bueno si tenemos, ya
+
+37
+00:01:27,470 --> 00:01:30,730
+sabes, un rbol bien impreso para que no tengamos que profundizar
+
+38
+00:01:30,730 --> 00:01:33,460
+en nuestro algoritmo para saber cul es la estructura.
+
+39
+00:01:33,460 --> 00:01:36,808
+No obstante, obtenemos, en orden de izquierda a
+
+40
+00:01:36,808 --> 00:01:40,517
+derecha, tres, que est aqu, cinco, que est aqu,
+
+41
+00:01:40,517 --> 00:01:42,431
+seis, que est aqu.
+
+42
+00:01:42,431 --> 00:01:45,231
+Luego, vamos a la derecha y luego vamos a la izquierda, porque
+
+43
+00:01:45,231 --> 00:01:48,066
+cada nuevo nodo, lo primero que hacemos es ir a la izquierda.
+
+44
+00:01:48,066 --> 00:01:50,985
+Entonces, tenemos siete, luego vamos a la izquierda, nada all.
+
+45
+00:01:50,985 --> 00:01:53,870
+Vamos a la derecha, 7. 5, luego volvemos a la
+
+46
+00:01:53,870 --> 00:01:54,946
+cima y obtenemos ocho.
+
+47
+00:01:54,946 --> 00:01:58,946
+Luego hacemos lo correcto y nos vamos a la izquierda 11 y luego a 12.
+
+48
+00:02:00,462 --> 00:02:04,129
+Entonces, como puede ver, nuestro mtodo de eliminacin funciona.
+
+49
+00:02:04,979 --> 00:02:07,803
+Cul es, bastante asombroso primero de todo.
+
+50
+00:02:07,803 --> 00:02:12,803
+Pero tambin puedes intentar eliminar a tu nico hijo y no a
+
+51
+00:02:13,239 --> 00:02:16,443
+las ramas de los nios si quieres intentarlo.
+
+52
+00:02:16,443 --> 00:02:20,322
+Y ahora sabes exactamente cmo implementar un rbol binario.
+
+53
+00:02:20,322 --> 00:02:22,110
+Si te preguntan en una entrevista, o
+
+54
+00:02:22,110 --> 00:02:24,536
+en un desafo de codificacin, o algo por el
+
+55
+00:02:24,536 --> 00:02:27,654
+estilo, puedes hacerlo y tambin, espero que te haya parecido interesante solo
+
+56
+00:02:27,654 --> 00:02:31,908
+para aprender un poco ms acerca de algunos conceptos de ciencia de la computacin en profundidad.
+
+57
+00:02:31,908 --> 00:02:34,401
+Gracias por acompaarme en este video, y nos vemos
+
+58
+00:02:34,401 --> 00:02:35,423
+en el prximo.
+

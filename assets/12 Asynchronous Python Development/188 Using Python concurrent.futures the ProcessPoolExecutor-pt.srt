@@ -1,0 +1,224 @@
+1
+00:00:00,240 --> 00:00:01,340
+Narrador Masculino: Ol, bem vindo de volta.
+
+2
+00:00:01,340 --> 00:00:03,970
+Novamente, apenas um pequeno vdeo sobre as melhorias
+
+3
+00:00:03,970 --> 00:00:06,280
+que voc pode fazer neste cdigo de
+
+4
+00:00:06,280 --> 00:00:07,400
+processamento, cdigo de multiprocessamento.
+
+5
+00:00:07,400 --> 00:00:09,700
+Em vez de usar o mdulo de multiprocessamento,
+
+6
+00:00:09,700 --> 00:00:12,040
+voc pode simplesmente usar o mdulo de futuros simultneos.
+
+7
+00:00:12,930 --> 00:00:15,350
+E voc pode importar o Process Pool Executor.
+
+8
+00:00:15,350 --> 00:00:17,060
+A mesma coisa que um
+
+9
+00:00:17,060 --> 00:00:19,072
+executor de pool de threads,
+
+10
+00:00:19,072 --> 00:00:21,300
+apenas ele cria processos e o
+
+11
+00:00:21,300 --> 00:00:22,900
+processo real ser exatamente
+
+12
+00:00:23,810 --> 00:00:26,720
+o mesmo, ento vamos excluir esses dois, e
+
+13
+00:00:26,720 --> 00:00:31,190
+esses dois aqui, e vamos dizer com Process Pool, Process Pool Executor.
+
+14
+00:00:31,190 --> 00:00:32,870
+Max workers, haver dois porque
+
+15
+00:00:32,870 --> 00:00:34,620
+temos duas coisas que queremos correr.
+
+16
+00:00:34,620 --> 00:00:39,620
+Como piscina, piscina. enviar e clculo complexo.
+
+17
+00:00:41,250 --> 00:00:44,040
+E ento vamos duplicar isso e  isso.
+
+18
+00:00:44,040 --> 00:00:46,090
+Ok, apenas um cdigo um pouco mais simples.
+
+19
+00:00:46,090 --> 00:00:49,420
+Se voc quiser que seu pool permanea vivo durante todo
+
+20
+00:00:49,420 --> 00:00:50,550
+o seu programa,
+
+21
+00:00:50,550 --> 00:00:52,990
+ento, talvez, saiba, envie uma tarefa, obtenha
+
+22
+00:00:52,990 --> 00:00:55,340
+um resultado e leve o processo de
+
+23
+00:00:55,340 --> 00:00:58,240
+volta ao seu pool de processos, para que possa reutiliz-lo.
+
+24
+00:00:59,220 --> 00:01:01,590
+Voc pode fazer isso com o Executor do Conjunto de Processos.
+
+25
+00:01:01,590 --> 00:01:04,300
+Tudo o que voc precisa fazer  no usar com,
+
+26
+00:01:04,300 --> 00:01:07,690
+em vez disso, voc sabe, defini-lo como uma varivel e ento voc
+
+27
+00:01:07,690 --> 00:01:10,440
+pode enviar tarefas para ele e esperar que eles terminem,
+
+28
+00:01:10,440 --> 00:01:12,870
+e o processo retornar ao pool para que voc
+
+29
+00:01:12,870 --> 00:01:13,950
+possa reutiliz-lo .
+
+30
+00:01:13,950 --> 00:01:15,800
+Portanto, se voc tiver um aplicativo
+
+31
+00:01:15,800 --> 00:01:17,550
+maior, pode ser interessante criar alguns
+
+32
+00:01:17,550 --> 00:01:19,350
+processos no incio, para que voc
+
+33
+00:01:19,350 --> 00:01:20,940
+no precise criar constantemente novos
+
+34
+00:01:20,940 --> 00:01:23,410
+processos, pois isso pode levar alguns milissegundos.
+
+35
+00:01:24,360 --> 00:01:27,180
+Ento, isso  apenas uma melhoria potencial de desempenho, nada que
+
+36
+00:01:27,180 --> 00:01:29,180
+voc tenha que se preocupar por enquanto.
+
+37
+00:01:30,050 --> 00:01:32,060
+De qualquer forma, s queria contar um pouco
+
+38
+00:01:32,060 --> 00:01:33,770
+sobre como usar este Process Pool
+
+39
+00:01:33,770 --> 00:01:35,500
+Executor porque, novamente,  uma coisa
+
+40
+00:01:35,500 --> 00:01:37,800
+muito popular quando voc est fazendo um cdigo multi-threaded.
+
+41
+00:01:37,800 --> 00:01:39,530
+De repente voc encontra isso, voc sabe,
+
+42
+00:01:39,530 --> 00:01:40,770
+voc tem que fazer duas
+
+43
+00:01:40,770 --> 00:01:42,820
+coisas ao mesmo tempo, porque ambos precisam da CPU.
+
+44
+00:01:42,820 --> 00:01:44,910
+O que voc normalmente far no
+
+45
+00:01:44,910 --> 00:01:49,640
+cdigo multi-thread nesse caso, voc enviar uma tarefa que requer uma CPU para um
+
+46
+00:01:49,640 --> 00:01:52,850
+Executor do Conjunto de Processos, para que possa ser executada
+
+47
+00:01:52,850 --> 00:01:54,330
+em um ncleo separado
+
+48
+00:01:54,330 --> 00:01:56,070
+e, em seguida, retornar o resultado.
+
+49
+00:01:57,010 --> 00:01:58,490
+Ok, ento usar o
+
+50
+00:01:58,490 --> 00:02:01,010
+Process Pool Executor  realmente muito comum
+
+51
+00:02:01,010 --> 00:02:04,760
+em cdigo multi-thread quando voc precisa fazer isso em dois ncleos.
+
+52
+00:02:04,760 --> 00:02:05,880
+No  to
+
+53
+00:02:05,880 --> 00:02:08,590
+comum executar aplicativos complexos de vrios ncleos em
+
+54
+00:02:08,590 --> 00:02:11,510
+Python, porque isso no  bom para isso.
+
+55
+00:02:11,510 --> 00:02:12,343
+OK?
+
+56
+00:02:12,343 --> 00:02:14,490
+ isso para este vdeo, vejo voc no prximo.
+

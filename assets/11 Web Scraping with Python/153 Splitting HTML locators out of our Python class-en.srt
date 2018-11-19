@@ -1,0 +1,360 @@
+1
+00:00:00,100 --> 00:00:01,250
+<v Male Narrator>Hi and welcome back.</v>
+
+2
+00:00:01,250 --> 00:00:02,450
+In this video, we're going to look at
+
+3
+00:00:02,450 --> 00:00:06,370
+separating locators into classes.
+
+4
+00:00:06,370 --> 00:00:10,280
+So, what we're gonna do is not hard code
+
+5
+00:00:10,280 --> 00:00:13,280
+these locators into the class ParsedItem.
+
+6
+00:00:14,870 --> 00:00:19,460
+The ParsedItem is the item that represents
+
+7
+00:00:19,460 --> 00:00:22,550
+the data that is in the html.
+
+8
+00:00:22,550 --> 00:00:27,000
+It shouldn't represent, also, how to get that data.
+
+9
+00:00:27,000 --> 00:00:30,540
+So, how to get that data should be in a different place.
+
+10
+00:00:30,540 --> 00:00:31,620
+So we're going to create a new class,
+
+11
+00:00:31,620 --> 00:00:34,440
+which I'm gonna call ParsedItemLocators.
+
+12
+00:00:38,466 --> 00:00:40,310
+And I've got it placed in a docstring here
+
+13
+00:00:40,310 --> 00:00:41,520
+I have for my notes.
+
+14
+00:00:41,520 --> 00:00:43,600
+Just, just so it's a bit easier for you.
+
+15
+00:00:43,600 --> 00:00:45,810
+Look at this item in the html page.
+
+16
+00:00:45,810 --> 00:00:47,910
+This allows us to easily see what our code
+
+17
+00:00:47,910 --> 00:00:50,500
+would be looking at, as well as change it quickly
+
+18
+00:00:50,500 --> 00:00:52,920
+if we notice it is now different.
+
+19
+00:00:52,920 --> 00:00:54,580
+So, this may not make much sense until
+
+20
+00:00:54,580 --> 00:00:55,620
+I start writing here.
+
+21
+00:00:55,620 --> 00:00:59,730
+Name Locator is going to be article of product
+
+22
+00:00:59,730 --> 00:01:00,730
+pod h3 a.
+
+23
+00:01:02,450 --> 00:01:05,250
+Okay, that's the locator we used down here for the name.
+
+24
+00:01:06,250 --> 00:01:08,380
+What if this changes?
+
+25
+00:01:08,380 --> 00:01:10,970
+The website changes and when we get the html back,
+
+26
+00:01:10,970 --> 00:01:12,170
+it's slightly different?
+
+27
+00:01:13,821 --> 00:01:17,080
+The ParsedItem shouldn't care
+
+28
+00:01:17,080 --> 00:01:20,260
+because the ParsedItem represents the item itself
+
+29
+00:01:20,260 --> 00:01:22,610
+and not how to get the data from it.
+
+30
+00:01:23,770 --> 00:01:27,240
+So, this is a small, but important distinction.
+
+31
+00:01:27,240 --> 00:01:30,600
+And it all about how you think of your programme,
+
+32
+00:01:30,600 --> 00:01:32,840
+how your program's different parts interact
+
+33
+00:01:32,840 --> 00:01:34,180
+with one another.
+
+34
+00:01:34,180 --> 00:01:37,100
+Separating the how and the what
+
+35
+00:01:37,100 --> 00:01:39,420
+is going to make your programmes much simpler.
+
+36
+00:01:39,420 --> 00:01:41,490
+And also simpler to work with.
+
+37
+00:01:41,490 --> 00:01:43,130
+So, instead of putting a string here,
+
+38
+00:01:43,130 --> 00:01:45,730
+we're gonna, and do ParsedItemLocators.NAME LOCATOR.
+
+39
+00:01:47,900 --> 00:01:50,990
+These would potentially and probably be in different files
+
+40
+00:01:50,990 --> 00:01:51,840
+altogether.
+
+41
+00:01:51,840 --> 00:01:53,380
+In this case, I'm leaving them in one file
+
+42
+00:01:53,380 --> 00:01:55,290
+just for simplicity, but they would likely
+
+43
+00:01:55,290 --> 00:01:58,280
+be in two different files, one for the locators
+
+44
+00:01:58,280 --> 00:01:59,400
+and one for the item.
+
+45
+00:02:01,000 --> 00:02:04,100
+The good thing is that as long as the website
+
+46
+00:02:04,100 --> 00:02:06,010
+doesn't change massively, for example,
+
+47
+00:02:06,010 --> 00:02:07,440
+if they just remove this class
+
+48
+00:02:07,440 --> 00:02:08,670
+and maybe add a different class
+
+49
+00:02:08,670 --> 00:02:10,940
+or something like that, you don't have to go
+
+50
+00:02:10,940 --> 00:02:13,720
+and look at the item and read through all this code.
+
+51
+00:02:13,720 --> 00:02:16,440
+No, all you have to do is go to the site,
+
+52
+00:02:16,440 --> 00:02:21,440
+find out the new html locator and change it.
+
+53
+00:02:21,700 --> 00:02:23,770
+So, it's very straight forward.
+
+54
+00:02:23,770 --> 00:02:25,520
+So, we're gonna do that for the others,
+
+55
+00:02:25,520 --> 00:02:27,600
+and, once again, I'm gonna copy them
+
+56
+00:02:27,600 --> 00:02:28,920
+just to save you some time.
+
+57
+00:02:28,920 --> 00:02:31,300
+I think you're getting much better at programming
+
+58
+00:02:31,300 --> 00:02:32,690
+by this stage of the course,
+
+59
+00:02:32,690 --> 00:02:35,130
+so I think I'm allowed to now copy some code
+
+60
+00:02:35,130 --> 00:02:36,820
+from my notes and save you some time.
+
+61
+00:02:36,820 --> 00:02:39,510
+So, there we have our link, price, and rating locator
+
+62
+00:02:39,510 --> 00:02:41,840
+and then we're just gonna replace them down here.
+
+63
+00:02:41,840 --> 00:02:46,550
+And so this is the ParsedItemLocators.LINK LOCATOR.
+
+64
+00:02:48,420 --> 00:02:51,160
+ParsedItemLocators.PRICE LOCATOR.
+
+65
+00:02:52,540 --> 00:02:57,540
+And also, the ParsedItemLocators.RATING LOCATOR.
+
+66
+00:02:59,100 --> 00:03:04,100
+Now, there are a couple of things in these methods here,
+
+67
+00:03:05,080 --> 00:03:09,180
+like this pattern or this class that we're filtering out,
+
+68
+00:03:09,180 --> 00:03:12,020
+that could possible be in another place,
+
+69
+00:03:12,020 --> 00:03:14,600
+so that the item doesn't really care at all
+
+70
+00:03:14,600 --> 00:03:15,790
+of where it's coming from.
+
+71
+00:03:15,790 --> 00:03:17,910
+But, sometimes that's just not feasible
+
+72
+00:03:17,910 --> 00:03:19,940
+and other times it's just too complicated
+
+73
+00:03:19,940 --> 00:03:23,130
+in order to be worth the effort.
+
+74
+00:03:23,130 --> 00:03:25,430
+So, by all means, try to do that if you want,
+
+75
+00:03:25,430 --> 00:03:26,680
+but I would leave it like this
+
+76
+00:03:26,680 --> 00:03:28,530
+and I think this is a great way
+
+77
+00:03:28,530 --> 00:03:32,290
+of separating out where the item is on the page
+
+78
+00:03:32,290 --> 00:03:34,710
+from how you're going to extract the data
+
+79
+00:03:34,710 --> 00:03:37,780
+and, sort of, what the item represents.
+
+80
+00:03:37,780 --> 00:03:39,450
+So, hopefully this makes a bit of sense.
+
+81
+00:03:39,450 --> 00:03:42,880
+This way of separating concerns
+
+82
+00:03:42,880 --> 00:03:45,070
+is something that we do all the time
+
+83
+00:03:45,070 --> 00:03:46,750
+and this is how we structure our tests
+
+84
+00:03:46,750 --> 00:03:48,730
+at work, professionally.
+
+85
+00:03:48,730 --> 00:03:51,350
+And so, it's definitely a great way to go about it
+
+86
+00:03:51,350 --> 00:03:54,070
+and it's gonna simplify your code greatly.
+
+87
+00:03:54,070 --> 00:03:56,490
+I hope this makes sense and I'll see you on the next video,
+
+88
+00:03:56,490 --> 00:03:59,820
+where we're going to start looking at retrieving the page
+
+89
+00:03:59,820 --> 00:04:01,700
+using another library.
+
+90
+00:04:01,700 --> 00:04:02,650
+I'll see you there.
+

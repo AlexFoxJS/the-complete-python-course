@@ -1,0 +1,1756 @@
+1
+00:00:00,080 --> 00:00:01,620
+<v Jose>Hi, and welcome back.</v>
+
+2
+00:00:01,620 --> 00:00:04,100
+In this lecture we're talking about understanding
+
+3
+00:00:04,100 --> 00:00:05,710
+HTML with BeautifulSoup.
+
+4
+00:00:06,820 --> 00:00:09,210
+Now that we understand the structure of HTML,
+
+5
+00:00:09,210 --> 00:00:11,820
+we can tell Python how to understand it as well,
+
+6
+00:00:11,820 --> 00:00:14,820
+and how to extract some data from it.
+
+7
+00:00:14,820 --> 00:00:16,770
+Because HTML is so structured,
+
+8
+00:00:16,770 --> 00:00:18,858
+always with its opening and closing tags,
+
+9
+00:00:18,858 --> 00:00:22,004
+it's fairly straightforward to get data out of it.
+
+10
+00:00:22,004 --> 00:00:25,360
+And as addition, as part of this lecture,
+
+11
+00:00:25,360 --> 00:00:28,285
+we're also going to instal our first library.
+
+12
+00:00:28,285 --> 00:00:31,210
+Because Python doesn't come with any functionality
+
+13
+00:00:31,210 --> 00:00:35,020
+to understand HTML, we need to instal a library
+
+14
+00:00:35,020 --> 00:00:37,610
+from the outside in order to do that.
+
+15
+00:00:37,610 --> 00:00:39,410
+There are a lot of Python libraries.
+
+16
+00:00:39,410 --> 00:00:41,770
+It's one of Python's strengths, actually.
+
+17
+00:00:41,770 --> 00:00:43,750
+In order to do all sorts of things.
+
+18
+00:00:43,750 --> 00:00:45,677
+And understanding HTML is one of these.
+
+19
+00:00:45,677 --> 00:00:47,620
+There are other libraries for things
+
+20
+00:00:47,620 --> 00:00:50,147
+like doing web development, data science,
+
+21
+00:00:50,147 --> 00:00:54,070
+showing up Windows on your monitor and things like that.
+
+22
+00:00:54,070 --> 00:00:57,460
+There's loads of libraries, and we're gonna instal one.
+
+23
+00:00:57,460 --> 00:00:59,880
+In order to instal your library,
+
+24
+00:00:59,880 --> 00:01:04,880
+we have to go over to PyCharm and find your preferences.
+
+25
+00:01:06,230 --> 00:01:09,779
+In Mac, it's under PyCharm community edition, preferences,
+
+26
+00:01:09,779 --> 00:01:11,320
+and I believe in windows it's under file
+
+27
+00:01:11,320 --> 00:01:13,640
+and it's somewhere down here at the bottom.
+
+28
+00:01:13,640 --> 00:01:15,671
+So if you go to your preferences,
+
+29
+00:01:15,671 --> 00:01:18,230
+then you'll be greeted with this window
+
+30
+00:01:18,230 --> 00:01:21,550
+that you may have seen before.
+
+31
+00:01:21,550 --> 00:01:23,370
+And in here, there's one section
+
+32
+00:01:23,370 --> 00:01:25,400
+that's particularly important for installing libraries,
+
+33
+00:01:25,400 --> 00:01:27,280
+and this is your project.
+
+34
+00:01:27,280 --> 00:01:29,811
+In your project, you can chose your project interpreter,
+
+35
+00:01:29,811 --> 00:01:34,811
+and here you'll see the current version of Python
+
+36
+00:01:35,170 --> 00:01:36,540
+that you are running.
+
+37
+00:01:36,540 --> 00:01:39,706
+So as you can see, I'm running 3.6.0,
+
+38
+00:01:39,706 --> 00:01:41,309
+because there's not that many differences
+
+39
+00:01:41,309 --> 00:01:43,936
+between 3.6.0 and 3.6.4, which is the current version.
+
+40
+00:01:43,936 --> 00:01:47,300
+But if you're using 3.7 or something like that,
+
+41
+00:01:47,300 --> 00:01:48,540
+you'll see that here.
+
+42
+00:01:49,470 --> 00:01:51,390
+Then down here, you'll see all the libraries
+
+43
+00:01:51,390 --> 00:01:52,410
+you've got installed.
+
+44
+00:01:52,410 --> 00:01:53,910
+It's possible that this will be empty
+
+45
+00:01:53,910 --> 00:01:56,020
+because you have just started your Python journey
+
+46
+00:01:56,020 --> 00:01:57,800
+and don't have many things installed,
+
+47
+00:01:57,800 --> 00:01:58,808
+and that's fine.
+
+48
+00:01:58,808 --> 00:02:01,688
+Now there are other ways of installing libraries
+
+49
+00:02:01,688 --> 00:02:03,700
+other than through PyCharm,
+
+50
+00:02:03,700 --> 00:02:07,670
+and we are going to learn how to use those other ways,
+
+51
+00:02:07,670 --> 00:02:08,540
+but not in this video.
+
+52
+00:02:08,540 --> 00:02:10,350
+We're gonna keep it simple for now,
+
+53
+00:02:10,350 --> 00:02:11,890
+and in this section, we'll just stick to installing
+
+54
+00:02:11,890 --> 00:02:12,940
+things through here.
+
+55
+00:02:12,940 --> 00:02:14,713
+Just press the plus icon,
+
+56
+00:02:14,713 --> 00:02:16,745
+and here you can see, all of these things are
+
+57
+00:02:16,745 --> 00:02:18,922
+Python libraries you can instal,
+
+58
+00:02:18,922 --> 00:02:23,310
+but Python doesn't do any sort of sanitization,
+
+59
+00:02:23,310 --> 00:02:25,643
+so these libraries, you don't really know what they do.
+
+60
+00:02:25,643 --> 00:02:27,080
+I recommend you don't go
+
+61
+00:02:27,080 --> 00:02:29,760
+installing random libraries from here.
+
+62
+00:02:29,760 --> 00:02:31,230
+Make sure you know what you want
+
+63
+00:02:31,230 --> 00:02:34,180
+before you go through this and instal anything.
+
+64
+00:02:34,180 --> 00:02:38,060
+And what we want is a library called beautifulsoup4.
+
+65
+00:02:39,570 --> 00:02:40,761
+It's this one here.
+
+66
+00:02:40,761 --> 00:02:43,090
+Notice how there are two at the moment,
+
+67
+00:02:43,090 --> 00:02:46,590
+beautifulsoup4-slurp and beautifulsoup4.
+
+68
+00:02:47,590 --> 00:02:50,060
+We want to instal beautifulsoup4.
+
+69
+00:02:50,060 --> 00:02:51,260
+Okay.
+
+70
+00:02:51,260 --> 00:02:53,000
+There are others, like BeautifulSoup
+
+71
+00:02:53,000 --> 00:02:55,570
+and a bunch of others.
+
+72
+00:02:55,570 --> 00:02:57,570
+Make sure you pick beautifulsoup4.
+
+73
+00:02:58,610 --> 00:03:00,270
+This one here is version three.
+
+74
+00:03:00,270 --> 00:03:01,630
+You don't want to go for that,
+
+75
+00:03:01,630 --> 00:03:05,050
+you want to go for number four, okay, and then instal it.
+
+76
+00:03:05,050 --> 00:03:06,440
+Because I've already got it installed,
+
+77
+00:03:06,440 --> 00:03:08,420
+my library is blue, as you can see,
+
+78
+00:03:08,420 --> 00:03:09,970
+so I don't need to instal that again,
+
+79
+00:03:09,970 --> 00:03:11,220
+but all you have to do is select it,
+
+80
+00:03:11,220 --> 00:03:13,870
+and press instal, and it should all be fine.
+
+81
+00:03:13,870 --> 00:03:15,870
+You don't need to do anything else.
+
+82
+00:03:15,870 --> 00:03:16,780
+Once that's done,
+
+83
+00:03:16,780 --> 00:03:17,920
+you should see BeautifulSoup
+
+84
+00:03:17,920 --> 00:03:20,360
+appear here like it has for me,
+
+85
+00:03:20,360 --> 00:03:22,420
+and then that means you are ready to use it.
+
+86
+00:03:22,420 --> 00:03:24,909
+Press apply, and then okay.
+
+87
+00:03:24,909 --> 00:03:27,400
+Once you've done that,
+
+88
+00:03:27,400 --> 00:03:29,610
+we can go ahead and look at our first example
+
+89
+00:03:29,610 --> 00:03:32,730
+of understanding HTML using BeautifulSoup.
+
+90
+00:03:32,730 --> 00:03:35,250
+And also we'll look at exactly what BeautifulSoup
+
+91
+00:03:35,250 --> 00:03:36,780
+does and why we want it.
+
+92
+00:03:36,780 --> 00:03:38,670
+So let's create a new Python file,
+
+93
+00:03:38,670 --> 00:03:41,420
+and you can name it, for example, simple_HTML.
+
+94
+00:03:43,100 --> 00:03:45,620
+The simple_HTML is because in this first example,
+
+95
+00:03:46,677 --> 00:03:48,940
+we're gonna be looking at some reasonably simple HTML
+
+96
+00:03:48,940 --> 00:03:51,810
+that we can understand with BeautifulSoup,
+
+97
+00:03:51,810 --> 00:03:53,229
+and then in the next example we're gonna look at something
+
+98
+00:03:53,229 --> 00:03:55,480
+a little bit more complicated.
+
+99
+00:03:55,480 --> 00:03:58,430
+So what does BeautifulSoup do?
+
+100
+00:03:58,430 --> 00:04:01,130
+Well, I'm gonna create a variable here,
+
+101
+00:04:01,130 --> 00:04:02,540
+which is my simple HTML,
+
+102
+00:04:02,540 --> 00:04:03,840
+and I'm basing it in here.
+
+103
+00:04:05,160 --> 00:04:07,884
+And look at how the HTML is structured into it's tags.
+
+104
+00:04:07,884 --> 00:04:11,850
+You can see the HTML tag, and the HTML closing tag,
+
+105
+00:04:11,850 --> 00:04:13,060
+and inside this tag,
+
+106
+00:04:13,060 --> 00:04:15,610
+you've got two children, essentially.
+
+107
+00:04:15,610 --> 00:04:18,950
+The head tag and the body tag.
+
+108
+00:04:18,950 --> 00:04:21,500
+The body tag contains a bunch of children,
+
+109
+00:04:21,500 --> 00:04:24,300
+like there's h1, this p, this p here,
+
+110
+00:04:24,300 --> 00:04:25,801
+this ul here.
+
+111
+00:04:25,801 --> 00:04:29,623
+The ul contains a bunch of children, which are these lis.
+
+112
+00:04:29,623 --> 00:04:33,524
+Ul, by the way, stands for unordered list.
+
+113
+00:04:33,524 --> 00:04:36,200
+Li stands for list item.
+
+114
+00:04:36,200 --> 00:04:38,640
+We've already looked at h1 for header one
+
+115
+00:04:38,640 --> 00:04:40,570
+and p for paragraph.
+
+116
+00:04:40,570 --> 00:04:41,890
+Also notice how one of these
+
+117
+00:04:41,890 --> 00:04:44,920
+paragraphs has a class, subtitle class.
+
+118
+00:04:44,920 --> 00:04:46,906
+What BeautifulSoup can do is
+
+119
+00:04:46,906 --> 00:04:50,680
+it can sort of understand this structure,
+
+120
+00:04:50,680 --> 00:04:52,330
+and it can determine that
+
+121
+00:04:52,330 --> 00:04:55,110
+head is a child of HTML,
+
+122
+00:04:55,110 --> 00:04:58,260
+and it can determine that there are two paragraphs.
+
+123
+00:04:58,260 --> 00:05:01,370
+It can look at the attributes of different elements,
+
+124
+00:05:01,370 --> 00:05:03,050
+like this subtitle,
+
+125
+00:05:03,050 --> 00:05:04,760
+and it can also do things like search,
+
+126
+00:05:04,760 --> 00:05:06,590
+so you can tell it I'm looking for an element
+
+127
+00:05:06,590 --> 00:05:08,440
+that has class subtitle,
+
+128
+00:05:08,440 --> 00:05:10,870
+and it will give you this p tag here.
+
+129
+00:05:11,720 --> 00:05:13,607
+So BeautifulSoup is used for understanding
+
+130
+00:05:13,607 --> 00:05:17,202
+and searching through HTML code.
+
+131
+00:05:17,202 --> 00:05:20,400
+By the way, just for completeness,
+
+132
+00:05:20,400 --> 00:05:23,709
+HTML is very similar to another language called XML.
+
+133
+00:05:23,709 --> 00:05:25,610
+They look, essentially, identical,
+
+134
+00:05:25,610 --> 00:05:27,490
+which a few minor differences.
+
+135
+00:05:27,490 --> 00:05:30,460
+So BeautifulSoup can also be used for understanding XML,
+
+136
+00:05:30,460 --> 00:05:32,970
+be we are not going to look into that in this video,
+
+137
+00:05:32,970 --> 00:05:35,000
+or, indeed, in this course.
+
+138
+00:05:35,000 --> 00:05:36,530
+So now that we've got our variable,
+
+139
+00:05:36,530 --> 00:05:38,150
+we have to make sure to include
+
+140
+00:05:38,150 --> 00:05:41,180
+BeautifulSoup into our file to import it.
+
+141
+00:05:41,180 --> 00:05:43,238
+And imports in Python should,
+
+142
+00:05:43,238 --> 00:05:44,520
+generally, go at the top of the file.
+
+143
+00:05:44,520 --> 00:05:49,080
+So we're gonna do from bs4 import BeautifulSoup.
+
+144
+00:05:50,250 --> 00:05:53,150
+Notice how we're not using beautifulsoup4 in any place?
+
+145
+00:05:53,150 --> 00:05:55,770
+We're only using bs4.
+
+146
+00:05:55,770 --> 00:05:58,460
+That's because the BeautifulSoup library has been coded,
+
+147
+00:05:58,460 --> 00:06:01,650
+has been programed so that the import happens like this.
+
+148
+00:06:01,650 --> 00:06:03,130
+Other libraries are slightly different.
+
+149
+00:06:03,130 --> 00:06:03,963
+In other libraries,
+
+150
+00:06:03,963 --> 00:06:05,050
+you may do something like
+
+151
+00:06:05,050 --> 00:06:08,165
+from beautifulsoup4 import something,
+
+152
+00:06:08,165 --> 00:06:10,721
+but in the case of beautifulsoup4, this is incorrect,
+
+153
+00:06:10,721 --> 00:06:15,250
+you must do from bs4 import BeautifulSoup.
+
+154
+00:06:15,250 --> 00:06:16,170
+That's just the way it's coded.
+
+155
+00:06:16,170 --> 00:06:18,692
+This doesn't mean anything specific.
+
+156
+00:06:18,692 --> 00:06:22,330
+And then we're going to give this HTML over
+
+157
+00:06:22,330 --> 00:06:24,750
+to BeautifulSoup for parsing.
+
+158
+00:06:24,750 --> 00:06:26,870
+Parsing is just a programing term
+
+159
+00:06:26,870 --> 00:06:30,144
+for understanding something that has a structure.
+
+160
+00:06:30,144 --> 00:06:32,500
+So I'm gonna create a variable called simple_soup
+
+161
+00:06:32,500 --> 00:06:34,510
+for our simple HTML,
+
+162
+00:06:34,510 --> 00:06:37,296
+and it's going to be BeautifulSoup, and this is a class,
+
+163
+00:06:37,296 --> 00:06:40,640
+so we're gonna instantiate a new object of this class,
+
+164
+00:06:40,640 --> 00:06:42,170
+we're gonna create a new object,
+
+165
+00:06:42,170 --> 00:06:45,802
+and the arguments have to be the HTML you want to parse,
+
+166
+00:06:45,802 --> 00:06:49,280
+and as a second argument,
+
+167
+00:06:49,280 --> 00:06:54,000
+you must give it a string of what type of document this is,
+
+168
+00:06:54,000 --> 00:06:58,110
+and this is an HTML document, so we must give it the string
+
+169
+00:06:58,110 --> 00:06:59,450
+html.parser.
+
+170
+00:07:01,000 --> 00:07:03,116
+That way, that tells BeautifulSoup to use the html parser
+
+171
+00:07:03,116 --> 00:07:06,970
+in order to understand this document.
+
+172
+00:07:06,970 --> 00:07:08,277
+And then it can understand.
+
+173
+00:07:08,277 --> 00:07:13,220
+Now, BeautifulSoup is able to go through this document
+
+174
+00:07:13,220 --> 00:07:15,469
+and fully understand it, so we can do things like
+
+175
+00:07:15,469 --> 00:07:18,630
+print simple_soup.find h1.
+
+176
+00:07:20,874 --> 00:07:24,532
+Notice how all we're doing is accessing this soup object,
+
+177
+00:07:24,532 --> 00:07:26,156
+this simple soup object,
+
+178
+00:07:26,156 --> 00:07:28,920
+and accessing the find method inside it,
+
+179
+00:07:28,920 --> 00:07:32,090
+and giving it what we want to find as an argument.
+
+180
+00:07:32,090 --> 00:07:33,730
+In this case, what we want to find
+
+181
+00:07:33,730 --> 00:07:35,136
+is this heading one.
+
+182
+00:07:35,136 --> 00:07:38,022
+Because there's only a single heading one in the page,
+
+183
+00:07:38,022 --> 00:07:39,972
+this is going to give us that element.
+
+184
+00:07:39,972 --> 00:07:42,780
+So what I'm gonna do is go ahead and run this.
+
+185
+00:07:42,780 --> 00:07:47,780
+And you can see how it gives us the tag that we found.
+
+186
+00:07:47,850 --> 00:07:50,630
+H1, this is the title, and closing h1.
+
+187
+00:07:52,290 --> 00:07:54,580
+If you want to find the contents of the tag,
+
+188
+00:07:54,580 --> 00:07:55,830
+as opposed to the entire tag,
+
+189
+00:07:55,830 --> 00:07:58,240
+so only this is a title,
+
+190
+00:07:58,240 --> 00:08:00,185
+you can do that by doing
+
+191
+00:08:00,185 --> 00:08:02,400
+simple_soup.find h1,
+
+192
+00:08:02,400 --> 00:08:04,900
+this is the tag that you want to find,
+
+193
+00:08:04,900 --> 00:08:07,780
+and after it you can do .string.
+
+194
+00:08:09,200 --> 00:08:11,470
+And then it gives you this is a title.
+
+195
+00:08:12,820 --> 00:08:17,820
+Notice how our h1 tag is this simple_soup.find h1,
+
+196
+00:08:19,022 --> 00:08:22,750
+and that is an object which has this property here,
+
+197
+00:08:22,750 --> 00:08:24,840
+string, that you can access.
+
+198
+00:08:24,840 --> 00:08:26,200
+No magic's happening here.
+
+199
+00:08:26,200 --> 00:08:28,328
+This all exactly else we've seen so far in Python,
+
+200
+00:08:28,328 --> 00:08:32,110
+we're just instantiating new objects of type tag,
+
+201
+00:08:32,110 --> 00:08:34,020
+in this case, and then we're accessing
+
+202
+00:08:34,020 --> 00:08:35,230
+a property of that tag.
+
+203
+00:08:37,210 --> 00:08:39,940
+If we wanted to extract this functionality
+
+204
+00:08:39,940 --> 00:08:43,080
+into a function, we could do that of course.
+
+205
+00:08:43,080 --> 00:08:45,540
+Ope, deleted one too many things there.
+
+206
+00:08:45,540 --> 00:08:47,150
+Or rather many too many things.
+
+207
+00:08:47,150 --> 00:08:49,700
+We could say something like find_title,
+
+208
+00:08:51,070 --> 00:08:53,720
+and this could give us this content here.
+
+209
+00:08:54,660 --> 00:08:57,340
+Pep eight asks me to put two blank lines
+
+210
+00:08:57,340 --> 00:08:59,365
+before a function definition,
+
+211
+00:08:59,365 --> 00:09:00,768
+and then we can, of course,
+
+212
+00:09:00,768 --> 00:09:01,601
+do find title here.
+
+213
+00:09:01,601 --> 00:09:02,908
+We don't need to print,
+
+214
+00:09:02,908 --> 00:09:03,741
+because that's already printing.
+
+215
+00:09:03,741 --> 00:09:04,880
+When we run that,
+
+216
+00:09:04,880 --> 00:09:05,990
+we get this is a tile.
+
+217
+00:09:08,640 --> 00:09:10,050
+Okay.
+
+218
+00:09:10,050 --> 00:09:11,320
+Now, another thing we can do,
+
+219
+00:09:11,320 --> 00:09:14,990
+is, for example, find the different things in a list.
+
+220
+00:09:14,990 --> 00:09:16,440
+Let's do that now.
+
+221
+00:09:16,440 --> 00:09:19,475
+We're gonna do def find_list_items,
+
+222
+00:09:19,475 --> 00:09:23,510
+and this function is going to print out Rolf, Charlie,
+
+223
+00:09:23,510 --> 00:09:25,450
+Jen, and Jose.
+
+224
+00:09:25,450 --> 00:09:28,861
+So it's going to go and find these list items.
+
+225
+00:09:28,861 --> 00:09:33,168
+BeautifulSoup is going to return them as a list of tags,
+
+226
+00:09:33,168 --> 00:09:36,320
+because there are many of them, and then we're going to
+
+227
+00:09:36,320 --> 00:09:39,000
+get the string contents of each.
+
+228
+00:09:39,000 --> 00:09:40,130
+Okay.
+
+229
+00:09:40,130 --> 00:09:41,458
+So what we're gonna do is say
+
+230
+00:09:41,458 --> 00:09:44,708
+list_items = simple_soup.find_all.
+
+231
+00:09:47,300 --> 00:09:49,480
+And this is going to give us all of the tags,
+
+232
+00:09:49,480 --> 00:09:50,450
+if there are many,
+
+233
+00:09:50,450 --> 00:09:52,870
+find is only gonna give you one.
+
+234
+00:09:52,870 --> 00:09:56,260
+So we're gonna do find all, and then li.
+
+235
+00:09:56,260 --> 00:09:57,346
+And what that's going to do,
+
+236
+00:09:57,346 --> 00:10:01,170
+is it's going to give us these list items that we found.
+
+237
+00:10:01,170 --> 00:10:02,182
+Let's print them out,
+
+238
+00:10:02,182 --> 00:10:05,320
+just for you to see exactly what's happening,
+
+239
+00:10:05,320 --> 00:10:07,935
+and I'm going to call the function down here as well.
+
+240
+00:10:07,935 --> 00:10:12,935
+And now notice how BeautifulSoup gives us a list of tags,
+
+241
+00:10:13,020 --> 00:10:15,022
+and each tag is the list itme,
+
+242
+00:10:15,022 --> 00:10:18,080
+and includes inside it, Rolf.
+
+243
+00:10:18,080 --> 00:10:22,040
+Now you already know how to extract the string
+
+244
+00:10:22,040 --> 00:10:23,520
+for each of these list items.
+
+245
+00:10:23,520 --> 00:10:25,600
+You can use a list comprehension, for example,
+
+246
+00:10:25,600 --> 00:10:26,870
+to create a new list
+
+247
+00:10:26,870 --> 00:10:29,204
+of the string contents of each tag.
+
+248
+00:10:29,204 --> 00:10:30,910
+You can go and do that right now.
+
+249
+00:10:35,090 --> 00:10:36,610
+I'm sure you managed.
+
+250
+00:10:36,610 --> 00:10:40,860
+All you've gotta do is say list_contents is e.string,
+
+251
+00:10:40,860 --> 00:10:44,150
+for example, for e in list_items.
+
+252
+00:10:44,150 --> 00:10:46,870
+E is the variable we're creating to go over each element
+
+253
+00:10:46,870 --> 00:10:49,580
+in list_items, and we're accessing the string property
+
+254
+00:10:49,580 --> 00:10:52,150
+of that, and putting that into a new list,
+
+255
+00:10:52,150 --> 00:10:53,825
+which is the list contents.
+
+256
+00:10:53,825 --> 00:10:56,371
+Now if we print out list contents,
+
+257
+00:10:56,371 --> 00:10:59,890
+you can see that we get a list of the contents,
+
+258
+00:10:59,890 --> 00:11:02,565
+Rolf, Charlie, Jen, and Jose.
+
+259
+00:11:02,565 --> 00:11:04,450
+Okay.
+
+260
+00:11:05,410 --> 00:11:07,790
+Let's now look at something a bit more complicated.
+
+261
+00:11:07,790 --> 00:11:09,310
+Let's look at this paragraph.
+
+262
+00:11:09,310 --> 00:11:11,283
+Let's find the paragraph.
+
+263
+00:11:11,283 --> 00:11:13,070
+Notice how there are two paragraphs,
+
+264
+00:11:13,070 --> 00:11:14,180
+so in order to find it,
+
+265
+00:11:14,180 --> 00:11:15,550
+we're going to have to give
+
+266
+00:11:15,550 --> 00:11:18,430
+BeautifulSoup some information other than
+
+267
+00:11:18,430 --> 00:11:20,079
+we're looking for a paragraph.
+
+268
+00:11:20,079 --> 00:11:23,660
+So what we're going to do, is we are going to tell
+
+269
+00:11:23,660 --> 00:11:25,402
+BeautifulSoup we're looking for a paragraph
+
+270
+00:11:25,402 --> 00:11:28,420
+that has a class of subtitle.
+
+271
+00:11:28,420 --> 00:11:31,820
+So we're looking for this one, not this one.
+
+272
+00:11:31,820 --> 00:11:33,400
+Let's do it.
+
+273
+00:11:33,400 --> 00:11:35,503
+We're going to define a new function, once again.
+
+274
+00:11:35,503 --> 00:11:36,670
+Find_subtitle.
+
+275
+00:11:39,530 --> 00:11:44,483
+And what we're gonna do is simply find the paragraph,
+
+276
+00:11:44,483 --> 00:11:47,508
+which is going to be simple_soup.find
+
+277
+00:11:47,508 --> 00:11:51,650
+and now we're going to give it the p tag
+
+278
+00:11:51,650 --> 00:11:52,830
+that we're looking for,
+
+279
+00:11:52,830 --> 00:11:56,360
+and then notice how the second argument is an attrs
+
+280
+00:11:56,360 --> 00:11:57,463
+dictionary.
+
+281
+00:11:57,463 --> 00:12:02,463
+This attrs dictionary is the attributes of the tag
+
+282
+00:12:03,250 --> 00:12:04,870
+we are looking for.
+
+283
+00:12:04,870 --> 00:12:06,310
+So that is, if we are looking for
+
+284
+00:12:06,310 --> 00:12:07,600
+something that has a class,
+
+285
+00:12:07,600 --> 00:12:09,220
+we're going to give it a dictionary
+
+286
+00:12:09,220 --> 00:12:10,790
+that represents what we're looking for.
+
+287
+00:12:10,790 --> 00:12:14,330
+So in this case it's going to be class is subtitle.
+
+288
+00:12:16,360 --> 00:12:20,200
+Okay, then we can print paragraph.string
+
+289
+00:12:20,200 --> 00:12:21,350
+and it should give us,
+
+290
+00:12:21,350 --> 00:12:23,022
+once we've run the function as well of course,
+
+291
+00:12:23,022 --> 00:12:26,980
+our subtitle there.
+
+292
+00:12:28,531 --> 00:12:29,364
+And there you have it.
+
+293
+00:12:29,364 --> 00:12:31,270
+And that's how you can find something that has
+
+294
+00:12:31,270 --> 00:12:33,760
+an attribute so that you can drill down
+
+295
+00:12:33,760 --> 00:12:35,680
+on a specific entity
+
+296
+00:12:35,680 --> 00:12:38,270
+as opposed to a more general tag.
+
+297
+00:12:38,270 --> 00:12:41,400
+If you've got a lot of p tags in your code,
+
+298
+00:12:41,400 --> 00:12:44,300
+in your HTML code, you're going to want to be able
+
+299
+00:12:44,300 --> 00:12:47,210
+to narrow it down using some other attribute,
+
+300
+00:12:47,210 --> 00:12:49,710
+in this case we're using the class.
+
+301
+00:12:49,710 --> 00:12:51,750
+Notice this HTML is fairly simple,
+
+302
+00:12:51,750 --> 00:12:54,340
+so we need to make sure to learn a bit more
+
+303
+00:12:54,340 --> 00:12:55,950
+about BeautifulSoup if we're going to do something
+
+304
+00:12:55,950 --> 00:12:57,679
+more complicated.
+
+305
+00:12:57,679 --> 00:12:59,970
+Talking about more complicated,
+
+306
+00:12:59,970 --> 00:13:01,969
+let's now find the other paragraph.
+
+307
+00:13:01,969 --> 00:13:04,691
+Notice how BeautifulSoup cannot do
+
+308
+00:13:04,691 --> 00:13:08,810
+find the paragraph where the class is not subtitle.
+
+309
+00:13:08,810 --> 00:13:12,530
+But what we can do is find all the paragraphs,
+
+310
+00:13:12,530 --> 00:13:16,450
+and then remove the one that has this class.
+
+311
+00:13:16,450 --> 00:13:17,668
+So let's do that.
+
+312
+00:13:17,668 --> 00:13:22,588
+What to do is say find_other_paragraph,
+
+313
+00:13:22,588 --> 00:13:23,587
+for example.
+
+314
+00:13:23,587 --> 00:13:27,600
+And then we're going to look at all the paragraphs,
+
+315
+00:13:27,600 --> 00:13:28,530
+you know how to do this
+
+316
+00:13:28,530 --> 00:13:31,630
+simple_soup.find_all p.
+
+317
+00:13:31,630 --> 00:13:33,670
+This is going to give us all the paragraphs in the same way
+
+318
+00:13:33,670 --> 00:13:37,037
+that doing this up here gave us all the list items.
+
+319
+00:13:37,037 --> 00:13:39,773
+And then we're gonna do other_paragraph is
+
+320
+00:13:39,773 --> 00:13:44,773
+p for p in paragraphs if the subtitle
+
+321
+00:13:49,080 --> 00:13:54,080
+not in p.attrs.get class.
+
+322
+00:13:57,798 --> 00:13:59,700
+And we're gonna look at what this gives us,
+
+323
+00:13:59,700 --> 00:14:02,150
+and fix it in just a moment.
+
+324
+00:14:02,150 --> 00:14:04,770
+And then we're going to print out the other paragraph
+
+325
+00:14:04,770 --> 00:14:06,810
+zero.string.
+
+326
+00:14:06,810 --> 00:14:08,400
+So what is happening here?
+
+327
+00:14:08,400 --> 00:14:10,240
+This is not quite gonna work, by the way.
+
+328
+00:14:10,240 --> 00:14:12,030
+But we'll fix in just a moment.
+
+329
+00:14:12,030 --> 00:14:13,568
+We're finding all the paragraphs,
+
+330
+00:14:13,568 --> 00:14:17,150
+then we're gonna put the paragraph in its entirety
+
+331
+00:14:17,150 --> 00:14:21,050
+inside this list, which we iterate
+
+332
+00:14:21,050 --> 00:14:23,150
+over the paragraphs we found,
+
+333
+00:14:23,150 --> 00:14:25,270
+but we're only gonna do that
+
+334
+00:14:25,270 --> 00:14:26,860
+if the subtitle string
+
+335
+00:14:28,196 --> 00:14:30,936
+is not in the paragraph's attributes.
+
+336
+00:14:30,936 --> 00:14:35,754
+And this dot get here is a different way of doing this.
+
+337
+00:14:35,754 --> 00:14:40,754
+So p.attrs, the attributes of p, is a dictionary,
+
+338
+00:14:41,321 --> 00:14:44,102
+as we saw when we tried to access it here.
+
+339
+00:14:44,102 --> 00:14:47,410
+BeautifulSoup likes these attributes as a dictionary.
+
+340
+00:14:47,410 --> 00:14:48,560
+So the attributes is a dictionary,
+
+341
+00:14:48,560 --> 00:14:51,840
+and we can access them use the square bracket notation,
+
+342
+00:14:51,840 --> 00:14:54,060
+or using the get method.
+
+343
+00:14:55,040 --> 00:14:56,750
+The get method has a benefit,
+
+344
+00:14:56,750 --> 00:14:58,480
+which is that it doesn't raise
+
+345
+00:14:58,480 --> 00:15:00,582
+a key error if it can't find it.
+
+346
+00:15:00,582 --> 00:15:02,830
+Instead it returns none.
+
+347
+00:15:02,830 --> 00:15:04,730
+So that's a benefit of the get method.
+
+348
+00:15:05,660 --> 00:15:06,930
+However, it's not quite gonna work.
+
+349
+00:15:06,930 --> 00:15:08,420
+Let's run it and find out.
+
+350
+00:15:12,040 --> 00:15:12,873
+And as you can see,
+
+351
+00:15:12,873 --> 00:15:13,990
+we get an error here.
+
+352
+00:15:15,188 --> 00:15:17,880
+And the error is reasonable,
+
+353
+00:15:17,880 --> 00:15:20,500
+but maybe not so obvious if you don't know
+
+354
+00:15:20,500 --> 00:15:23,436
+exactly what's going on in this list comprehension.
+
+355
+00:15:23,436 --> 00:15:27,980
+So it says type error, argument of type NoneType
+
+356
+00:15:27,980 --> 00:15:29,961
+is not iterable.
+
+357
+00:15:29,961 --> 00:15:31,178
+Okay.
+
+358
+00:15:31,178 --> 00:15:33,618
+So what is happening exactly?
+
+359
+00:15:33,618 --> 00:15:36,967
+We've got, evidently, something that is none.
+
+360
+00:15:36,967 --> 00:15:39,400
+And it's telling us none is not iterable,
+
+361
+00:15:39,400 --> 00:15:41,510
+which we can probably agree on,
+
+362
+00:15:41,510 --> 00:15:43,855
+because it's not a list or a sequence,
+
+363
+00:15:43,855 --> 00:15:44,700
+or anything like that.
+
+364
+00:15:44,700 --> 00:15:47,160
+And it's saying you're trying to iterate over it.
+
+365
+00:15:47,160 --> 00:15:48,853
+What are we trying to iterate?
+
+366
+00:15:48,853 --> 00:15:50,820
+We're not iterating over anything?
+
+367
+00:15:50,820 --> 00:15:52,420
+So there are two options.
+
+368
+00:15:52,420 --> 00:15:54,190
+Paragraphs could be none,
+
+369
+00:15:54,190 --> 00:15:55,040
+and then it's telling you
+
+370
+00:15:55,040 --> 00:15:58,324
+hey, you can't iterate over paragraphs because it's none.
+
+371
+00:15:58,324 --> 00:16:02,490
+So let's bring paragraphs out and see if that's the problem.
+
+372
+00:16:02,490 --> 00:16:03,440
+Let's run it again.
+
+373
+00:16:05,620 --> 00:16:07,230
+You can se that we've printed the paragraphs,
+
+374
+00:16:07,230 --> 00:16:09,435
+and we found both paragraphs here.
+
+375
+00:16:09,435 --> 00:16:11,182
+So this is not the problem.
+
+376
+00:16:11,182 --> 00:16:13,701
+When we do for p in paragraphs,
+
+377
+00:16:13,701 --> 00:16:15,940
+Python will be okay with that,
+
+378
+00:16:15,940 --> 00:16:17,800
+because we're iterating over paragraphs,
+
+379
+00:16:17,800 --> 00:16:19,370
+paragraphs is a list,
+
+380
+00:16:19,370 --> 00:16:20,669
+so that's fine.
+
+381
+00:16:20,669 --> 00:16:24,870
+The only other instance we're using in is here,
+
+382
+00:16:24,870 --> 00:16:26,660
+p.attrs.get.
+
+383
+00:16:26,660 --> 00:16:30,019
+And I just said that the get method returns none
+
+384
+00:16:30,019 --> 00:16:34,692
+if it can't find this thing in the dictionary, this class.
+
+385
+00:16:34,692 --> 00:16:38,830
+So we've got two paragraphs.
+
+386
+00:16:38,830 --> 00:16:41,090
+One of them has the class,
+
+387
+00:16:41,090 --> 00:16:43,020
+the other one does not.
+
+388
+00:16:43,020 --> 00:16:45,049
+So for this paragraph,
+
+389
+00:16:45,049 --> 00:16:50,049
+p.attrs.get class is going to be none.
+
+390
+00:16:50,296 --> 00:16:54,458
+And then we're checking subtitle not in none,
+
+391
+00:16:54,458 --> 00:16:56,430
+and what that's doing in the background,
+
+392
+00:16:56,430 --> 00:16:57,560
+this is going over every element,
+
+393
+00:16:57,560 --> 00:17:00,790
+and comparing subtitle against each element,
+
+394
+00:17:00,790 --> 00:17:02,870
+and saying whether it exists or not.
+
+395
+00:17:02,870 --> 00:17:05,084
+So here we are also doing iteration,
+
+396
+00:17:05,084 --> 00:17:10,084
+only it's a bit more obfuscated by the Python syntax.
+
+397
+00:17:10,740 --> 00:17:12,150
+But it's doing iterations,
+
+398
+00:17:12,150 --> 00:17:15,550
+and it's saying that, hey, p.attrs.get of class
+
+399
+00:17:15,550 --> 00:17:16,770
+is giving you none,
+
+400
+00:17:16,770 --> 00:17:18,660
+and then you're checking whether something is in it,
+
+401
+00:17:18,660 --> 00:17:20,540
+but you can't check whether something is in none,
+
+402
+00:17:20,540 --> 00:17:21,877
+because that doesn't make any sense.
+
+403
+00:17:21,877 --> 00:17:23,281
+Fortunately,
+
+404
+00:17:23,281 --> 00:17:26,030
+the get method allows us to do something
+
+405
+00:17:26,030 --> 00:17:27,647
+which is pretty useful.
+
+406
+00:17:27,647 --> 00:17:29,417
+Instead of returning none,
+
+407
+00:17:29,417 --> 00:17:31,240
+which is the default,
+
+408
+00:17:31,240 --> 00:17:33,069
+which is, essentially, this,
+
+409
+00:17:33,069 --> 00:17:36,170
+we can return something else
+
+410
+00:17:36,170 --> 00:17:38,930
+if we cannot find the thing.
+
+411
+00:17:38,930 --> 00:17:39,763
+So what we're going to do
+
+412
+00:17:39,763 --> 00:17:41,907
+is we're going to return an empty list
+
+413
+00:17:41,907 --> 00:17:44,410
+if we cannot find the class
+
+414
+00:17:44,410 --> 00:17:45,550
+in this dictionary.
+
+415
+00:17:46,480 --> 00:17:48,480
+That way, we're going to check with the subtitle
+
+416
+00:17:48,480 --> 00:17:51,093
+is not in an empty list, instead on none.
+
+417
+00:17:51,093 --> 00:17:53,369
+Let's run this again.
+
+418
+00:17:53,369 --> 00:17:57,249
+Now you can see how we found it.
+
+419
+00:17:57,249 --> 00:17:58,590
+Okay.
+
+420
+00:17:58,590 --> 00:18:00,820
+So it's important that you understand
+
+421
+00:18:00,820 --> 00:18:02,010
+exactly what's going on in your code
+
+422
+00:18:02,010 --> 00:18:03,680
+so that you can debug your errors.
+
+423
+00:18:03,680 --> 00:18:05,722
+But if you don't, go on debug.
+
+424
+00:18:05,722 --> 00:18:07,560
+We know how to debug now.
+
+425
+00:18:07,560 --> 00:18:09,820
+Put some print statements is also a good way.
+
+426
+00:18:09,820 --> 00:18:13,140
+Or, indeed, use the logging module that we've learned about
+
+427
+00:18:13,140 --> 00:18:14,216
+in order to check it.
+
+428
+00:18:14,216 --> 00:18:18,261
+Now we've looked at some simple HTML parsing in this video.
+
+429
+00:18:18,261 --> 00:18:22,720
+We have looked at individual items, like h1.
+
+430
+00:18:22,720 --> 00:18:24,392
+We've looked at multiple items, like the list.
+
+431
+00:18:24,392 --> 00:18:27,170
+We've looked at a specific item,
+
+432
+00:18:27,170 --> 00:18:30,080
+using the attributes, finding with this dictionary
+
+433
+00:18:30,080 --> 00:18:31,780
+of attributes, and we've also looked at
+
+434
+00:18:31,780 --> 00:18:34,790
+finding all the elements and then removing some
+
+435
+00:18:34,790 --> 00:18:36,830
+by using this p.attrs.
+
+436
+00:18:37,945 --> 00:18:39,900
+Okay.
+
+437
+00:18:39,900 --> 00:18:41,330
+In the next video, we're going to look at something
+
+438
+00:18:41,330 --> 00:18:43,390
+a bit more complex, so stay with me,
+
+439
+00:18:43,390 --> 00:18:44,540
+and I'll see you there.
+

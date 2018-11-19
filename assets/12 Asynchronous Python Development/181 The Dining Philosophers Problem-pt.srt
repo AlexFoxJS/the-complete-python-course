@@ -1,0 +1,660 @@
+1
+00:00:00,000 --> 00:00:01,050
+Jos: Bem vindo de volta.
+
+2
+00:00:01,050 --> 00:00:05,010
+Neste vdeo estamos falando sobre os filsofos de jantar.
+
+3
+00:00:05,010 --> 00:00:08,230
+The Dining Philosophers  um problema comum na
+
+4
+00:00:08,230 --> 00:00:09,370
+cincia da computao.
+
+5
+00:00:09,370 --> 00:00:11,810
+ um exemplo ou uma ilustrao de
+
+6
+00:00:11,810 --> 00:00:14,090
+uma coisa muito comum em computadores.
+
+7
+00:00:15,890 --> 00:00:18,250
+Ento aqui temos cinco filsofos sentados
+
+8
+00:00:18,250 --> 00:00:20,770
+em volta de uma mesa para comer.
+
+9
+00:00:21,750 --> 00:00:25,080
+H um garfo entre cada par de filsofos.
+
+10
+00:00:25,080 --> 00:00:27,380
+Ento ns temos cinco garfos, cinco filsofos
+
+11
+00:00:28,560 --> 00:00:32,250
+e cada filsofo tem fome sem fim e comida sem fim.
+
+12
+00:00:32,250 --> 00:00:34,240
+Ento, digamos que h muita comida na mesa
+
+13
+00:00:34,240 --> 00:00:35,830
+e eles esto com muita fome.
+
+14
+00:00:35,830 --> 00:00:39,370
+Mas, para comear a comer, um filsofo deve
+
+15
+00:00:39,370 --> 00:00:42,210
+ter dois garfos; um para cada mo.
+
+16
+00:00:43,230 --> 00:00:45,260
+Ento, como voc pode ver, no h
+
+17
+00:00:45,260 --> 00:00:46,610
+garfos suficientes para todos.
+
+18
+00:00:47,570 --> 00:00:50,340
+Ento, como os filsofos lidariam com seu
+
+19
+00:00:50,340 --> 00:00:53,150
+problema sem falar um com o outro?
+
+20
+00:00:53,150 --> 00:00:54,760
+Bem, obviamente h
+
+21
+00:00:54,760 --> 00:00:58,380
+um problema que  se cada um deles
+
+22
+00:00:59,270 --> 00:01:00,520
+pegar um garfo.
+
+23
+00:01:01,370 --> 00:01:03,560
+Se cada um pegar seu garfo esquerdo, digamos,
+
+24
+00:01:03,560 --> 00:01:05,210
+ou neste caso o garfo certo,
+
+25
+00:01:07,660 --> 00:01:09,780
+eles vo esperar, ento eles vo pegar o
+
+26
+00:01:09,780 --> 00:01:11,620
+garfo certo e esperar, e eles vo
+
+27
+00:01:11,620 --> 00:01:13,010
+comer, coloque o garfo direito
+
+28
+00:01:13,010 --> 00:01:14,910
+ento Coloque o garfo esquerdo para baixo
+
+29
+00:01:14,910 --> 00:01:16,060
+e comece de novo.
+
+30
+00:01:16,060 --> 00:01:19,260
+Mas se todo mundo pegar seu garfo direito e ento
+
+31
+00:01:20,230 --> 00:01:22,040
+eles vo esperar que o garfo
+
+32
+00:01:22,040 --> 00:01:24,090
+esquerdo fique disponvel, eles podem estar
+
+33
+00:01:24,090 --> 00:01:26,120
+esperando por um longo tempo, porque
+
+34
+00:01:26,120 --> 00:01:28,250
+todo filsofo tambm est esperando o outro
+
+35
+00:01:28,250 --> 00:01:29,440
+garfo se tornar disponvel.
+
+36
+00:01:29,440 --> 00:01:32,090
+Nenhum deles libera seu garfo para que
+
+37
+00:01:32,090 --> 00:01:34,100
+todos acabem morrendo de fome
+
+38
+00:01:34,100 --> 00:01:36,450
+esperando que o outro garfo fique disponvel.
+
+39
+00:01:37,750 --> 00:01:41,810
+Portanto, se a soluo envolve aguardar a disponibilidade do garfo,
+
+40
+00:01:41,810 --> 00:01:45,340
+eles poderiam morrer de fome e, por isso,
+
+41
+00:01:45,340 --> 00:01:46,640
+no queremos isso.
+
+42
+00:01:48,750 --> 00:01:51,780
+O problema  que, se todos os filsofos
+
+43
+00:01:51,780 --> 00:01:53,720
+pegarem o garfo ao mesmo
+
+44
+00:01:53,720 --> 00:01:55,600
+tempo, ningum pode pegar o
+
+45
+00:01:56,650 --> 00:01:58,450
+outro garfo para continuarem esperando
+
+46
+00:01:58,450 --> 00:02:00,380
+indefinidamente e acabarem morrendo de fome.
+
+47
+00:02:00,380 --> 00:02:02,920
+Da mesma forma, se algum dos filsofos
+
+48
+00:02:02,920 --> 00:02:05,130
+comea a comer, de alguma forma,
+
+49
+00:02:05,130 --> 00:02:09,050
+pegando em dois garfos, eles podem nunca parar de comer e
+
+50
+00:02:10,098 --> 00:02:12,250
+assim os outros filsofos ficam para
+
+51
+00:02:12,250 --> 00:02:14,440
+sempre sem dois garfos e agora
+
+52
+00:02:14,440 --> 00:02:17,190
+eles tm que dividir dois garfos entre quatro filsofos. pior.
+
+53
+00:02:18,180 --> 00:02:20,580
+Desculpe, trs garfos entre quatro filsofos.
+
+54
+00:02:20,580 --> 00:02:23,020
+Ento o que voc pode fazer para resolver este problema?
+
+55
+00:02:23,870 --> 00:02:25,300
+H muitas maneiras de resolver o
+
+56
+00:02:25,300 --> 00:02:27,740
+problema e elas so normalmente abordadas em cursos de simultaneidade,
+
+57
+00:02:27,740 --> 00:02:30,170
+cursos de cincia da computao, e assim por diante.
+
+58
+00:02:30,170 --> 00:02:32,490
+No vou entrar em muita profundidade.
+
+59
+00:02:32,490 --> 00:02:35,080
+Mas normalmente a maneira mais fcil e
+
+60
+00:02:35,080 --> 00:02:37,620
+simples, que  como o prprio Python
+
+61
+00:02:37,620 --> 00:02:40,720
+faz,  ter um garom na mesa, como este.
+
+62
+00:02:41,990 --> 00:02:45,270
+Ento, o que pode acontecer agora, ou a maneira
+
+63
+00:02:45,270 --> 00:02:48,650
+como poderamos reestruturar nosso algoritmo,  dizer que um filsofo
+
+64
+00:02:48,650 --> 00:02:51,260
+pode solicitar dois garfos ao garom e
+
+65
+00:02:52,560 --> 00:02:55,560
+o garom dar a eles se eles estiverem disponveis.
+
+66
+00:02:55,560 --> 00:02:57,180
+E ento, quando um filsofo tem
+
+67
+00:02:57,180 --> 00:03:00,810
+dois garfos, eles vo comer por um perodo fixo de tempo e
+
+68
+00:03:00,810 --> 00:03:02,210
+depois vo devolver os garfos
+
+69
+00:03:02,210 --> 00:03:04,490
+ao garom, e o garom pode, ento, entreg-lo
+
+70
+00:03:04,490 --> 00:03:06,750
+a outros filsofos e assim por diante.
+
+71
+00:03:06,750 --> 00:03:08,840
+Ento, algo assim poderia acontecer,
+
+72
+00:03:08,840 --> 00:03:11,560
+um filsofo poderia pedir dois garfos e
+
+73
+00:03:12,440 --> 00:03:15,150
+ento o garom ficaria com "certo",
+
+74
+00:03:15,150 --> 00:03:16,500
+pegaria dois garfos
+
+75
+00:03:17,560 --> 00:03:20,380
+na mesa e os daria ao filsofo.
+
+76
+00:03:20,380 --> 00:03:22,550
+Agora esse filsofo tem dois garfos e
+
+77
+00:03:22,550 --> 00:03:25,300
+todos os outros filsofos no esto fazendo nada.
+
+78
+00:03:25,300 --> 00:03:27,940
+Ento algum tempo passa, talvez, 10
+
+79
+00:03:27,940 --> 00:03:30,470
+minutos, e ento o garom
+
+80
+00:03:30,470 --> 00:03:32,920
+levar os garfos de volta.
+
+81
+00:03:32,920 --> 00:03:34,610
+"D-me de volta", e vou pegar
+
+82
+00:03:34,610 --> 00:03:37,150
+os garfos de volta e coloc-los de volta na mesa.
+
+83
+00:03:39,340 --> 00:03:42,600
+Agora um filsofo no morreu de fome, o que  bom.
+
+84
+00:03:42,600 --> 00:03:44,930
+Os outros quatro, no entanto, no tiveram tanta sorte.
+
+85
+00:03:45,890 --> 00:03:48,090
+Em vez disso, o que
+
+86
+00:03:48,090 --> 00:03:51,480
+poderia acontecer  algo assim: Poderamos conseguir que
+
+87
+00:03:51,480 --> 00:03:55,140
+todos os filsofos pedissem seus garfos, mais ou menos simultaneamente.
+
+88
+00:03:55,140 --> 00:03:59,350
+Lembre-se, nada pode realmente acontecer simultaneamente.
+
+89
+00:03:59,350 --> 00:04:01,040
+Pelo menos, no em Python.
+
+90
+00:04:01,040 --> 00:04:01,873
+OK?
+
+91
+00:04:01,873 --> 00:04:04,130
+Porque existe um nmero limitado de
+
+92
+00:04:04,130 --> 00:04:05,440
+garfos, em Python, digamos.
+
+93
+00:04:06,650 --> 00:04:10,120
+Ento, todas essas pessoas pedem seus
+
+94
+00:04:10,120 --> 00:04:11,710
+garfos mais ou
+
+95
+00:04:11,710 --> 00:04:16,030
+menos simultaneamente, mas h algum que pede primeiro.
+
+96
+00:04:16,030 --> 00:04:18,050
+Ento essa pessoa, digamos o nmero
+
+97
+00:04:19,210 --> 00:04:21,220
+um,  a primeira pessoa na
+
+98
+00:04:21,220 --> 00:04:23,520
+lista que voc v no canto inferior direito.
+
+99
+00:04:23,520 --> 00:04:25,640
+A prxima pessoa a pedir garfos era o nmero dois,
+
+100
+00:04:25,640 --> 00:04:27,210
+depois trs, depois quatro e depois cinco.
+
+101
+00:04:27,210 --> 00:04:29,910
+Ento, digamos que eles perguntem por eles em ordem.
+
+102
+00:04:29,910 --> 00:04:32,170
+Ento, o que acontece  que o
+
+103
+00:04:32,170 --> 00:04:33,670
+garom primeiro pega dois garfos
+
+104
+00:04:34,750 --> 00:04:35,890
+e o nmero
+
+105
+00:04:35,890 --> 00:04:39,550
+um, o nmero um agora est em uma lista diferente, digamos.
+
+106
+00:04:40,400 --> 00:04:42,210
+Agora ele est em uma rea de espera diferente.
+
+107
+00:04:42,210 --> 00:04:44,520
+Em uma rea de espera de comer, digamos.
+
+108
+00:04:45,450 --> 00:04:47,760
+Ento ainda temos garfos disponveis,
+
+109
+00:04:47,760 --> 00:04:50,540
+ento o garom pegaria dois garfos
+
+110
+00:04:50,540 --> 00:04:55,540
+e removeria dois da lista de espera por garfos.
+
+111
+00:04:55,810 --> 00:04:57,820
+D-lhes os garfos e
+
+112
+00:04:57,820 --> 00:05:00,370
+coloque-os na lista, digamos, comendo.
+
+113
+00:05:00,370 --> 00:05:03,190
+Ento agora temos um e dois esto comendo.
+
+114
+00:05:03,190 --> 00:05:05,800
+Trs, quatro e cinco esto esperando.
+
+115
+00:05:06,990 --> 00:05:10,120
+Ento o nmero um termina de comer depois de algum tempo.
+
+116
+00:05:10,120 --> 00:05:12,280
+Ento o garom pega os garfos de volta.
+
+117
+00:05:12,280 --> 00:05:15,080
+Nmero um desaparece da lista de comidas,
+
+118
+00:05:15,080 --> 00:05:16,580
+garfos voltam  mesa,
+
+119
+00:05:16,580 --> 00:05:20,590
+o nmero um vai agora no final da fila.
+
+120
+00:05:20,590 --> 00:05:22,780
+Trs, quatro, cinco e depois um.
+
+121
+00:05:22,780 --> 00:05:25,770
+Da mesma forma, aps algum tempo, o nmero dois termina de
+
+122
+00:05:25,770 --> 00:05:28,650
+comer, desaparece de l e volta para a outra lista.
+
+123
+00:05:28,650 --> 00:05:30,620
+Agora, se fssemos repetir esse processo, a
+
+124
+00:05:30,620 --> 00:05:33,570
+prxima pessoa a obter os garfos seria o nmero trs
+
+125
+00:05:33,570 --> 00:05:36,010
+e depois o nmero quatro, depois o nmero
+
+126
+00:05:36,010 --> 00:05:37,780
+cinco, e ento comearamos de novo.
+
+127
+00:05:37,780 --> 00:05:41,810
+Ento, como voc pode ver, isso permite que cada filsofo coma.
+
+128
+00:05:41,810 --> 00:05:45,700
+Nem todos de uma vez, mas todos eles conseguem comer eventualmente.
+
+129
+00:05:48,280 --> 00:05:49,590
+Ento, o que est acontecendo
+
+130
+00:05:49,590 --> 00:05:51,900
+aqui  que temos um nmero limitado de recursos.
+
+131
+00:05:51,900 --> 00:05:53,740
+Nestes casos garfos.
+
+132
+00:05:53,740 --> 00:05:56,090
+E com esses recursos podemos, no
+
+133
+00:05:56,090 --> 00:05:58,990
+mximo, executar duas coisas ao mesmo tempo, dois
+
+134
+00:06:00,070 --> 00:06:03,540
+filsofos, porque dois filsofos ocupam quatro garfos, de modo
+
+135
+00:06:03,540 --> 00:06:06,270
+que s sobra um garfo e o
+
+136
+00:06:06,270 --> 00:06:09,240
+filsofo no pode comer com apenas um garfo.
+
+137
+00:06:09,240 --> 00:06:12,160
+Portanto, no importa quanto tempo duramos e pensemos que a
+
+138
+00:06:13,800 --> 00:06:15,570
+simples verdade  que no h
+
+139
+00:06:15,570 --> 00:06:18,130
+como termos trs filsofos comendo ao mesmo tempo.
+
+140
+00:06:19,688 --> 00:06:21,810
+Mas o que podemos fazer  enganar
+
+141
+00:06:21,810 --> 00:06:25,110
+a mente a pensar que todos esto comendo ao mesmo tempo.
+
+142
+00:06:25,110 --> 00:06:28,300
+Se, em vez de dar a cada um deles
+
+143
+00:06:28,300 --> 00:06:30,070
+cinco minutos antes de soltar
+
+144
+00:06:30,070 --> 00:06:33,010
+os garfos, damos a eles, digamos, cinco segundos
+
+145
+00:06:33,010 --> 00:06:35,450
+ou 50 milissegundos, algum que estiver olhando
+
+146
+00:06:35,450 --> 00:06:37,590
+pode no ser capaz de dizer
+
+147
+00:06:37,590 --> 00:06:40,660
+que no est comendo ao mesmo tempo.
+
+148
+00:06:40,660 --> 00:06:41,660
+Muito parecido com um filme.
+
+149
+00:06:41,660 --> 00:06:44,330
+Apenas um conjunto de imagens estticas, uma aps a outra.
+
+150
+00:06:44,330 --> 00:06:47,400
+Se a passagem dos garfos acontecer de forma suficientemente rpida, no seremos
+
+151
+00:06:47,400 --> 00:06:49,540
+capazes de perceber que isso no est acontecendo
+
+152
+00:06:49,540 --> 00:06:50,540
+de uma s vez.
+
+153
+00:06:51,490 --> 00:06:54,670
+Assim, se cada filsofo comer por um milsimo de
+
+154
+00:06:54,670 --> 00:06:57,220
+segundo, pareceria a um observador que todos
+
+155
+00:06:57,220 --> 00:07:00,730
+esto comendo ao mesmo tempo, enquanto na verdade no o so.
+
+156
+00:07:01,620 --> 00:07:05,850
+Ento lembre-se, mesmo que no possamos ver isso, no significa
+
+157
+00:07:05,850 --> 00:07:09,090
+que est acontecendo tudo isso uma vez, ok?
+
+158
+00:07:09,090 --> 00:07:11,480
+E em Python isso  particularmente importante
+
+159
+00:07:11,480 --> 00:07:15,030
+porque o Python no pode executar vrias coisas ao mesmo tempo.
+
+160
+00:07:15,030 --> 00:07:18,110
+Ns vamos analisar isso muito em breve.
+
+161
+00:07:19,520 --> 00:07:22,970
+Ento, agora que sabemos sobre o problema dos filsofos
+
+162
+00:07:22,970 --> 00:07:25,940
+de jantar, estamos prontos para seguir em frente
+
+163
+00:07:25,940 --> 00:07:29,380
+e comear a ver como as coisas acontecem no Python.
+
+164
+00:07:29,380 --> 00:07:30,630
+Com isso dito,
+
+165
+00:07:30,630 --> 00:07:32,330
+vejo vocs no prximo vdeo.
+

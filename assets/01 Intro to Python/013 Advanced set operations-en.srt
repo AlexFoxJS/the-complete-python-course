@@ -1,0 +1,604 @@
+1
+00:00:00,240 --> 00:00:01,420
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,420 --> 00:00:04,300
+In this video, we're going to look at set operations.
+
+3
+00:00:04,300 --> 00:00:06,860
+These are more advanced operations
+
+4
+00:00:06,860 --> 00:00:08,930
+than we saw in the last video
+
+5
+00:00:08,930 --> 00:00:13,420
+and they can be really useful in some cases.
+
+6
+00:00:13,420 --> 00:00:15,110
+Let's define two sets,
+
+7
+00:00:15,110 --> 00:00:17,810
+set one, which is going to be
+
+8
+00:00:17,810 --> 00:00:21,370
+one, two, three, four, five
+
+9
+00:00:21,370 --> 00:00:23,100
+and set two which is going to be
+
+10
+00:00:23,100 --> 00:00:25,000
+one, three, five, seven, nine, eleven.
+
+11
+00:00:26,410 --> 00:00:27,410
+Okay so these two sets,
+
+12
+00:00:27,410 --> 00:00:29,630
+they both have some numbers in them,
+
+13
+00:00:31,050 --> 00:00:32,920
+you can notice some numbers are similar
+
+14
+00:00:32,920 --> 00:00:34,950
+between both sets, some numbers are different
+
+15
+00:00:34,950 --> 00:00:39,890
+between both sets so let's look at some operations.
+
+16
+00:00:39,890 --> 00:00:43,360
+Now, if you have done maths in the past
+
+17
+00:00:43,360 --> 00:00:45,850
+you probably know about the operations I'm
+
+18
+00:00:45,850 --> 00:00:46,790
+about to tell you.
+
+19
+00:00:47,840 --> 00:00:50,350
+You probably know about union of sets,
+
+20
+00:00:50,350 --> 00:00:52,920
+you probably know about intersection of sets,
+
+21
+00:00:52,920 --> 00:00:54,640
+you may even know about the difference
+
+22
+00:00:54,640 --> 00:00:56,070
+between sets.
+
+23
+00:00:56,070 --> 00:00:57,900
+So we're going to look at those three
+
+24
+00:00:57,900 --> 00:00:59,080
+in this video.
+
+25
+00:01:01,510 --> 00:01:06,510
+Now, the intersection of sets is
+
+26
+00:01:06,940 --> 00:01:11,020
+the elements between two sets that are matching
+
+27
+00:01:11,020 --> 00:01:13,250
+so if you have set one with values
+
+28
+00:01:13,250 --> 00:01:15,340
+one, two, three, four and five
+
+29
+00:01:15,340 --> 00:01:16,960
+and set two with values
+
+30
+00:01:16,960 --> 00:01:20,470
+one, three, five, seven, nine and eleven,
+
+31
+00:01:20,470 --> 00:01:22,820
+the elements that match between the two
+
+32
+00:01:22,820 --> 00:01:24,780
+are one three and five.
+
+33
+00:01:26,280 --> 00:01:29,930
+So the intersection of those two sets
+
+34
+00:01:29,930 --> 00:01:33,220
+is the set containing one, three and five.
+
+35
+00:01:34,200 --> 00:01:37,390
+Let's get back to coding and show you exactly what I mean.
+
+36
+00:01:38,640 --> 00:01:39,520
+Set one,
+
+37
+00:01:40,410 --> 00:01:43,060
+and now we want to do something with set one
+
+38
+00:01:43,060 --> 00:01:46,220
+so it's going to be dot intersection
+
+39
+00:01:48,760 --> 00:01:50,960
+and then inside the brackets of this intersection
+
+40
+00:01:50,960 --> 00:01:52,500
+we're gonna put set two, now I know
+
+41
+00:01:52,500 --> 00:01:55,750
+it's not terribly clear exactly what these things are
+
+42
+00:01:55,750 --> 00:01:57,500
+and why we've got these brackets in there
+
+43
+00:01:57,500 --> 00:01:59,700
+but please bear with me for now,
+
+44
+00:01:59,700 --> 00:02:01,960
+we will get to it very soon.
+
+45
+00:02:04,640 --> 00:02:07,110
+So we've got set one, then we're performing the intersection
+
+46
+00:02:07,110 --> 00:02:09,580
+on it with set two.
+
+47
+00:02:09,580 --> 00:02:11,250
+That's what this means inside the brackets,
+
+48
+00:02:11,250 --> 00:02:12,510
+we're gonna give it set two,
+
+49
+00:02:12,510 --> 00:02:15,120
+we're gonna intersect it with set one.
+
+50
+00:02:15,120 --> 00:02:16,730
+Let's run it
+
+51
+00:02:16,730 --> 00:02:19,380
+and as you can see we get the set one three and five.
+
+52
+00:02:21,270 --> 00:02:23,635
+The union of two sets
+
+53
+00:02:23,635 --> 00:02:27,280
+is for two sets that
+
+54
+00:02:28,290 --> 00:02:31,130
+are different and have matching numbers,
+
+55
+00:02:31,130 --> 00:02:36,130
+the union is the total set of numbers
+
+56
+00:02:36,360 --> 00:02:39,910
+in both sets, once you've removed any duplicates.
+
+57
+00:02:41,480 --> 00:02:44,650
+So for example, if you have one, two, three, four and five
+
+58
+00:02:44,650 --> 00:02:47,270
+in one set and one, three, five, seven, nine and eleven
+
+59
+00:02:47,270 --> 00:02:50,941
+in another set, the final set is one that contains
+
+60
+00:02:50,941 --> 00:02:54,470
+one, two, three, four, five and also contains
+
+61
+00:02:54,470 --> 00:02:56,130
+seven, nine and eleven.
+
+62
+00:02:58,110 --> 00:02:59,530
+Let's get back to coding and I'll show you
+
+63
+00:02:59,530 --> 00:03:00,690
+exactly what I mean.
+
+64
+00:03:03,290 --> 00:03:07,444
+Set one dot union with set two.
+
+65
+00:03:07,444 --> 00:03:09,950
+Let's run that.
+
+66
+00:03:13,220 --> 00:03:14,090
+And as you can see we've got
+
+67
+00:03:14,090 --> 00:03:16,340
+one, two, three, four and five and then we've got
+
+68
+00:03:16,340 --> 00:03:18,750
+seven, nine and eleven.
+
+69
+00:03:18,750 --> 00:03:21,160
+So the union unites both sets
+
+70
+00:03:21,160 --> 00:03:23,210
+and give us the resultant set.
+
+71
+00:03:25,570 --> 00:03:27,310
+Finally we've got the difference,
+
+72
+00:03:28,390 --> 00:03:29,830
+difference between two sets
+
+73
+00:03:29,830 --> 00:03:32,850
+is one set take away the other,
+
+74
+00:03:32,850 --> 00:03:35,140
+so any elements that aren't in one set,
+
+75
+00:03:35,140 --> 00:03:37,820
+minus any elements that are in the other set
+
+76
+00:03:37,820 --> 00:03:39,220
+will result in a difference.
+
+77
+00:03:40,130 --> 00:03:41,850
+So again, if we have one set
+
+78
+00:03:41,850 --> 00:03:44,000
+with one, two, three, four and five
+
+79
+00:03:44,000 --> 00:03:45,110
+and the other set with
+
+80
+00:03:45,110 --> 00:03:48,060
+one, three, five, seven, nine and eleven,
+
+81
+00:03:48,060 --> 00:03:51,160
+if you do set one difference set two,
+
+82
+00:03:51,160 --> 00:03:53,584
+set one minus set two, you end up
+
+83
+00:03:53,584 --> 00:03:56,930
+with one, sorry with two and four.
+
+84
+00:03:57,880 --> 00:04:00,250
+Because that is one, two, three, four, five
+
+85
+00:04:00,250 --> 00:04:02,970
+minus one, three, five, seven, nine, eleven.
+
+86
+00:04:02,970 --> 00:04:04,830
+Let's get back into programing
+
+87
+00:04:04,830 --> 00:04:06,480
+and show you exactly what I mean.
+
+88
+00:04:12,060 --> 00:04:14,090
+Here we've got set one, we're going to calculate
+
+89
+00:04:14,090 --> 00:04:16,300
+the difference of it with set two.
+
+90
+00:04:18,350 --> 00:04:20,780
+And as you can see, we get two and four.
+
+91
+00:04:22,310 --> 00:04:26,446
+These are three pretty useful set operations
+
+92
+00:04:26,446 --> 00:04:30,540
+for example, if you were creating a lottery programme,
+
+93
+00:04:30,540 --> 00:04:33,810
+you could have a set for the numbers you've chosen
+
+94
+00:04:33,810 --> 00:04:35,800
+and another set for the numbers that have appeared
+
+95
+00:04:35,800 --> 00:04:37,470
+in the lottery and then it would be really
+
+96
+00:04:37,470 --> 00:04:39,980
+easy to know how many you got right,
+
+97
+00:04:39,980 --> 00:04:41,530
+just by doing the intersection.
+
+98
+00:04:42,930 --> 00:04:45,198
+Similarly, if you were
+
+99
+00:04:45,198 --> 00:04:47,400
+checking the
+
+100
+00:04:47,400 --> 00:04:49,250
+number of visitors to a webpage
+
+101
+00:04:49,250 --> 00:04:50,920
+and you wanted to, you know,
+
+102
+00:04:50,920 --> 00:04:53,040
+and you have another set of the visitors
+
+103
+00:04:53,040 --> 00:04:54,680
+to have previously visited your site,
+
+104
+00:04:54,680 --> 00:04:57,780
+you can easily calculate which ones are repeat visitors,
+
+105
+00:04:57,780 --> 00:05:00,050
+again by using the intersection.
+
+106
+00:05:00,050 --> 00:05:02,870
+You could also use the difference to get new visitors.
+
+107
+00:05:03,810 --> 00:05:04,970
+So as you can see, these things
+
+108
+00:05:04,970 --> 00:05:07,410
+can be quite useful in some scenarios
+
+109
+00:05:07,410 --> 00:05:09,960
+and also, it's a good way to introduce
+
+110
+00:05:09,960 --> 00:05:14,110
+to some more advanced concepts here in Python.
+
+111
+00:05:14,110 --> 00:05:17,990
+Knowing about sets doesn't mean that you'll forever remember
+
+112
+00:05:17,990 --> 00:05:20,210
+everything we've talked about in this video
+
+113
+00:05:20,210 --> 00:05:24,710
+but as long as you know that these things exist,
+
+114
+00:05:24,710 --> 00:05:26,670
+in the future when you encounter a situation
+
+115
+00:05:26,670 --> 00:05:29,570
+where you may need to use one of these things,
+
+116
+00:05:29,570 --> 00:05:30,890
+it'll probably come back to mind
+
+117
+00:05:30,890 --> 00:05:33,670
+and you'll maybe think, I remember something to do
+
+118
+00:05:33,670 --> 00:05:36,700
+with sets that was useful to get unique numbers
+
+119
+00:05:36,700 --> 00:05:37,800
+or things like that
+
+120
+00:05:37,800 --> 00:05:39,500
+and maybe then you'll go and Google it
+
+121
+00:05:39,500 --> 00:05:43,670
+and that will be this video fulfilling this purpose.
+
+122
+00:05:43,670 --> 00:05:45,540
+Again you don't have to remember everything,
+
+123
+00:05:45,540 --> 00:05:47,310
+just keep it in your head
+
+124
+00:05:47,310 --> 00:05:48,820
+and programming will be all about
+
+125
+00:05:48,820 --> 00:05:51,750
+being able to then recombine all that knowledge
+
+126
+00:05:51,750 --> 00:05:52,850
+into something useful.
+
+127
+00:05:53,840 --> 00:05:56,310
+Also, I'll just quickly mention
+
+128
+00:05:56,310 --> 00:05:59,800
+that you can do set one, ampersand set two
+
+129
+00:05:59,800 --> 00:06:01,250
+and that is the same thing,
+
+130
+00:06:01,250 --> 00:06:03,330
+so these two do the same thing.
+
+131
+00:06:03,330 --> 00:06:05,680
+You can do set one,
+
+132
+00:06:06,830 --> 00:06:09,490
+pipe set two and again,
+
+133
+00:06:09,490 --> 00:06:10,660
+these two are the same thing,
+
+134
+00:06:10,660 --> 00:06:13,230
+union and pipe do the same thing
+
+135
+00:06:13,230 --> 00:06:16,900
+and finally you can do set one minus set two
+
+136
+00:06:16,900 --> 00:06:18,340
+and these two are also the same thing.
+
+137
+00:06:18,340 --> 00:06:20,410
+So these are just shortcuts for that,
+
+138
+00:06:20,410 --> 00:06:21,710
+probably not going to be very useful
+
+139
+00:06:21,710 --> 00:06:23,770
+for you just yet, but nonetheless,
+
+140
+00:06:23,770 --> 00:06:25,960
+this can be done and again
+
+141
+00:06:25,960 --> 00:06:28,260
+when you go back into Googling later on
+
+142
+00:06:28,260 --> 00:06:32,320
+in your career, you'll remember this as well.
+
+143
+00:06:32,320 --> 00:06:33,700
+So that's it for this video.
+
+144
+00:06:33,700 --> 00:06:35,360
+Sets are gonna come in handy
+
+145
+00:06:35,360 --> 00:06:38,630
+more and more as we move on throughout the course
+
+146
+00:06:38,630 --> 00:06:40,410
+and so don't worry,
+
+147
+00:06:40,410 --> 00:06:42,490
+it's not wasted time.
+
+148
+00:06:42,490 --> 00:06:43,740
+Let's move onto the next video
+
+149
+00:06:43,740 --> 00:06:45,908
+where we're gonna look at an extension
+
+150
+00:06:45,908 --> 00:06:47,650
+of sets that can be really useful.
+
+151
+00:06:47,650 --> 00:06:48,990
+I'll see you soon.
+

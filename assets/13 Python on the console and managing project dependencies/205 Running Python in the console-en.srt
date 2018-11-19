@@ -1,0 +1,776 @@
+1
+00:00:00,140 --> 00:00:01,480
+<v Instructor>Hi and welcome back.</v>
+
+2
+00:00:01,480 --> 00:00:02,650
+In this video, we're going to look at
+
+3
+00:00:02,650 --> 00:00:05,440
+how to run Python from our console.
+
+4
+00:00:06,390 --> 00:00:09,020
+Sometimes, we won't have access to PyCharm
+
+5
+00:00:09,020 --> 00:00:12,900
+or, you know, an IDE when we're running our Python programmes
+
+6
+00:00:12,900 --> 00:00:15,620
+because we'll be in, for example, a server,
+
+7
+00:00:15,620 --> 00:00:17,930
+we want to share a programme with someone who doesn't have
+
+8
+00:00:17,930 --> 00:00:20,270
+that IDE and so forth,
+
+9
+00:00:20,270 --> 00:00:22,740
+so it can be handy to be able to run our Python
+
+10
+00:00:22,740 --> 00:00:26,550
+programmes outside of any specific environment.
+
+11
+00:00:27,460 --> 00:00:29,469
+So the console,
+
+12
+00:00:29,469 --> 00:00:32,340
+is a text interface to your computer,
+
+13
+00:00:32,340 --> 00:00:34,670
+you probably have come across it before.
+
+14
+00:00:34,670 --> 00:00:38,090
+You can basically run anything by using text,
+
+15
+00:00:38,090 --> 00:00:42,040
+you can like open files, copy them, you can run programmes,
+
+16
+00:00:42,040 --> 00:00:44,740
+you know basically anything that doesn't
+
+17
+00:00:44,740 --> 00:00:47,070
+have a graphical interface
+
+18
+00:00:47,070 --> 00:00:49,930
+and many things in software are done through the console
+
+19
+00:00:49,930 --> 00:00:52,920
+just because you know sometimes it's just not worth
+
+20
+00:00:52,920 --> 00:00:55,290
+developing a nice graphical interface.
+
+21
+00:00:55,290 --> 00:00:56,900
+If you're making a tool for example
+
+22
+00:00:56,900 --> 00:01:00,750
+to help you with formatting your code nicely,
+
+23
+00:01:00,750 --> 00:01:04,070
+sometimes you don't need a graphical interface for that.
+
+24
+00:01:04,070 --> 00:01:06,220
+If you are accessing a database,
+
+25
+00:01:06,220 --> 00:01:09,750
+you may want to only run the SQL commands
+
+26
+00:01:09,750 --> 00:01:12,250
+and now necessarily have a graphical interface
+
+27
+00:01:12,250 --> 00:01:13,840
+that goes with it.
+
+28
+00:01:13,840 --> 00:01:15,830
+If you're writing code, sometimes you may not
+
+29
+00:01:15,830 --> 00:01:18,150
+want a graphical interface to write your code with,
+
+30
+00:01:18,150 --> 00:01:21,110
+maybe a text editor is enough.
+
+31
+00:01:21,110 --> 00:01:23,870
+There's many situations where there's just not
+
+32
+00:01:23,870 --> 00:01:26,330
+a reason to have a nice graphical interface
+
+33
+00:01:26,330 --> 00:01:29,130
+for something so whoever developed that
+
+34
+00:01:29,130 --> 00:01:32,040
+just made it into a text programme.
+
+35
+00:01:32,040 --> 00:01:35,040
+And those text programmes normally run in a console.
+
+36
+00:01:36,140 --> 00:01:39,040
+So in order to open a console in your computer,
+
+37
+00:01:39,040 --> 00:01:42,490
+you can open cmd dot exe on Windows,
+
+38
+00:01:42,490 --> 00:01:47,360
+if you search for it just type cmd dot exe on the search bar
+
+39
+00:01:47,360 --> 00:01:49,510
+or you know whatever else, depends on the
+
+40
+00:01:49,510 --> 00:01:51,060
+Windows version you're using,
+
+41
+00:01:51,060 --> 00:01:53,280
+I'm sure it will come up, it's a very popular
+
+42
+00:01:53,280 --> 00:01:54,690
+thing in Windows.
+
+43
+00:01:54,690 --> 00:01:58,210
+If you're using Mac, you wanna open up terminal dot app,
+
+44
+00:01:58,210 --> 00:02:00,800
+this is the app that Mac comes with
+
+45
+00:02:00,800 --> 00:02:03,320
+in order to launch a console.
+
+46
+00:02:03,320 --> 00:02:05,854
+And on Linux, you can open the Terminal app.
+
+47
+00:02:05,854 --> 00:02:09,460
+Any of these will give you essentially something
+
+48
+00:02:09,460 --> 00:02:12,670
+that looks more or less like this.
+
+49
+00:02:12,670 --> 00:02:16,110
+It'll be a black box
+
+50
+00:02:16,110 --> 00:02:20,100
+with some text in it and you can type some more text.
+
+51
+00:02:20,100 --> 00:02:24,140
+Here's an example of typing Python in that console.
+
+52
+00:02:24,140 --> 00:02:26,680
+When I type Python, what appears
+
+53
+00:02:26,680 --> 00:02:30,378
+is some more text and then,
+
+54
+00:02:30,378 --> 00:02:33,540
+three crocodile clips at the bottom
+
+55
+00:02:33,540 --> 00:02:37,010
+and there I can type some Python code
+
+56
+00:02:37,010 --> 00:02:41,030
+and this programme here will immediately run the Python code
+
+57
+00:02:41,030 --> 00:02:45,210
+I type and essentially let me type Python code real time
+
+58
+00:02:45,210 --> 00:02:47,490
+and see the output of the code immediately.
+
+59
+00:02:48,470 --> 00:02:51,960
+By the way, Python 2.7 is the version you can see here
+
+60
+00:02:51,960 --> 00:02:56,170
+and that's the default on Mac OS 10 which is what I'm using,
+
+61
+00:02:56,170 --> 00:02:58,040
+if you're using a different operating system,
+
+62
+00:02:58,040 --> 00:03:00,030
+you may see a different number here.
+
+63
+00:03:00,030 --> 00:03:02,970
+For example, in this example here I'm running the programme
+
+64
+00:03:02,970 --> 00:03:05,800
+Python3.7 which is all one word
+
+65
+00:03:05,800 --> 00:03:08,480
+and that's a single programme and then you can see
+
+66
+00:03:08,480 --> 00:03:13,410
+that that runs Python3.7.0b1
+
+67
+00:03:13,410 --> 00:03:16,100
+which is the beta when I was recording this course,
+
+68
+00:03:16,100 --> 00:03:18,250
+Python3.7 hadn't come out just yet
+
+69
+00:03:18,250 --> 00:03:21,170
+but it was already available just for, you know,
+
+70
+00:03:21,170 --> 00:03:22,270
+early adopters.
+
+71
+00:03:23,230 --> 00:03:27,634
+So Python and Python3.7, completely different programmes
+
+72
+00:03:27,634 --> 00:03:31,320
+even though they are essentially the same Python
+
+73
+00:03:31,320 --> 00:03:33,860
+but a different version, they're completely different things
+
+74
+00:03:33,860 --> 00:03:35,820
+to our computer.
+
+75
+00:03:35,820 --> 00:03:37,750
+You can type anything in here
+
+76
+00:03:37,750 --> 00:03:40,210
+and what the computer's gonna do is it's gonna try to run
+
+77
+00:03:40,210 --> 00:03:41,210
+whatever you type
+
+78
+00:03:42,073 --> 00:03:45,610
+and it just so happens that Python and Python3.7
+
+79
+00:03:45,610 --> 00:03:48,350
+are two things that our computer can type.
+
+80
+00:03:50,000 --> 00:03:52,310
+By the way, on Windows this will only work
+
+81
+00:03:52,310 --> 00:03:55,740
+if you checked add Python to PATH during the initial
+
+82
+00:03:55,740 --> 00:03:58,751
+installation but if you didn't,
+
+83
+00:03:58,751 --> 00:04:01,230
+you can reinstall it and make sure to check it
+
+84
+00:04:01,230 --> 00:04:02,950
+and that's this little box over there,
+
+85
+00:04:02,950 --> 00:04:06,480
+it may look slightly different in newer Python versions
+
+86
+00:04:06,480 --> 00:04:09,030
+just make sure to check it, this box,
+
+87
+00:04:09,030 --> 00:04:10,570
+if you see it when you're on Windows
+
+88
+00:04:10,570 --> 00:04:12,720
+otherwise it won't be added to the PATH
+
+89
+00:04:12,720 --> 00:04:15,760
+and it won't work on your terminal or on your console.
+
+90
+00:04:16,760 --> 00:04:18,460
+So what is the PATH?
+
+91
+00:04:18,460 --> 00:04:20,940
+We're talking about the PATH as something
+
+92
+00:04:20,940 --> 00:04:23,190
+and this is a global variable that your
+
+93
+00:04:23,190 --> 00:04:26,580
+operating system uses to specify where to find programmes
+
+94
+00:04:26,580 --> 00:04:28,500
+that you may wanna run.
+
+95
+00:04:28,500 --> 00:04:30,410
+So when we type Python,
+
+96
+00:04:30,410 --> 00:04:33,220
+that's a programme and if the programme
+
+97
+00:04:33,220 --> 00:04:37,630
+is inside a folder and that folder is inside the PATH,
+
+98
+00:04:37,630 --> 00:04:39,840
+then this will work, your computer will be able
+
+99
+00:04:39,840 --> 00:04:42,400
+to find the Python programme and it will be able
+
+100
+00:04:42,400 --> 00:04:43,250
+to launch it.
+
+101
+00:04:44,190 --> 00:04:45,670
+If it is not in a folder
+
+102
+00:04:45,670 --> 00:04:48,150
+which is in the PATH, it won't work,
+
+103
+00:04:48,150 --> 00:04:50,570
+it will just tell you we couldn't find this programme.
+
+104
+00:04:50,570 --> 00:04:52,310
+Here's an example of me running a programme
+
+105
+00:04:52,310 --> 00:04:53,570
+that was not found.
+
+106
+00:04:53,570 --> 00:04:55,777
+I typed ngrok which is another programme
+
+107
+00:04:55,777 --> 00:04:58,455
+but I don't have it in my PATH
+
+108
+00:04:58,455 --> 00:05:02,470
+so it just said command not found.
+
+109
+00:05:02,470 --> 00:05:03,982
+My computer doesn't know what that is.
+
+110
+00:05:03,982 --> 00:05:07,030
+You could've installed this programme,
+
+111
+00:05:07,030 --> 00:05:09,350
+you could have you know downloaded this programme
+
+112
+00:05:09,350 --> 00:05:13,890
+but if it's not inside a folder which is in your PATH,
+
+113
+00:05:13,890 --> 00:05:16,220
+your computer won't be able to run it through the terminal.
+
+114
+00:05:16,220 --> 00:05:17,590
+So that's important okay?
+
+115
+00:05:19,020 --> 00:05:20,910
+So you can see what's in your PATH
+
+116
+00:05:20,910 --> 00:05:24,390
+by typing this on Mac OS 10 or on Linux,
+
+117
+00:05:24,390 --> 00:05:27,390
+just type echo dollar PATH
+
+118
+00:05:27,390 --> 00:05:28,990
+and it will tell you all the folders
+
+119
+00:05:28,990 --> 00:05:31,782
+that are part of your PATH, any programme
+
+120
+00:05:31,782 --> 00:05:34,670
+that you have inside any of these folders
+
+121
+00:05:34,670 --> 00:05:38,870
+will be executable by you typing the program's name.
+
+122
+00:05:38,870 --> 00:05:40,290
+As you can see, you've got something
+
+123
+00:05:40,290 --> 00:05:43,010
+like slash library, slash frameworks
+
+124
+00:05:43,010 --> 00:05:45,340
+slash Python dot framework slash versions
+
+125
+00:05:46,223 --> 00:05:47,800
+slash 3.7 slash bin.
+
+126
+00:05:47,800 --> 00:05:51,830
+And then you've got a colon and then the next folder begins.
+
+127
+00:05:51,830 --> 00:05:53,190
+So you've got a few folders,
+
+128
+00:05:53,190 --> 00:05:54,960
+or I've got a few folders in here
+
+129
+00:05:54,960 --> 00:05:58,840
+and as you can see, one of them is the binaries folder
+
+130
+00:05:58,840 --> 00:06:03,840
+of Python3.7 followed by, you know, some node version
+
+131
+00:06:04,251 --> 00:06:07,630
+8.5 followed by some ruby thing,
+
+132
+00:06:07,630 --> 00:06:09,100
+there's a few things here, few folders
+
+133
+00:06:09,100 --> 00:06:12,310
+and whenever I type Python, what my computer's doing
+
+134
+00:06:12,310 --> 00:06:14,420
+is it's going into this bin folder
+
+135
+00:06:14,420 --> 00:06:16,420
+and it's checking if Python is there.
+
+136
+00:06:16,420 --> 00:06:19,720
+If it isn't then it moves over to the next folder
+
+137
+00:06:19,720 --> 00:06:20,940
+and then to the next one and so forth
+
+138
+00:06:20,940 --> 00:06:22,510
+and if it can't find it in any of them,
+
+139
+00:06:22,510 --> 00:06:25,210
+it'll say command not found, okay?
+
+140
+00:06:25,210 --> 00:06:28,410
+So echo, dollar, PATH on Mac OS 10 or on Linux
+
+141
+00:06:28,410 --> 00:06:30,441
+will tell you what's on your PATH.
+
+142
+00:06:30,441 --> 00:06:34,350
+And on Windows there's a few steps,
+
+143
+00:06:34,350 --> 00:06:37,350
+as usual on Windows, you've got a few things to do
+
+144
+00:06:37,350 --> 00:06:38,890
+but I've attached a blog post
+
+145
+00:06:38,890 --> 00:06:40,760
+to the resources section of this lecture,
+
+146
+00:06:40,760 --> 00:06:43,116
+you can see it if you click on the curriculum
+
+147
+00:06:43,116 --> 00:06:45,743
+and down here on the top left,
+
+148
+00:06:45,743 --> 00:06:48,170
+and there's a blog post attached there
+
+149
+00:06:48,170 --> 00:06:51,440
+with some instructions for the various versions
+
+150
+00:06:51,440 --> 00:06:54,882
+of Windows, Windows 10, 8, 7 and so forth.
+
+151
+00:06:54,882 --> 00:06:56,350
+So you can have a wee look at that.
+
+152
+00:06:57,300 --> 00:06:59,780
+So environment variables.
+
+153
+00:06:59,780 --> 00:07:02,630
+Well the PATH is an example of an environment variable
+
+154
+00:07:02,630 --> 00:07:04,530
+and these are just global variables
+
+155
+00:07:04,530 --> 00:07:08,220
+available to all programmes that run in the environment
+
+156
+00:07:08,220 --> 00:07:11,340
+and normally the environment is your computer.
+
+157
+00:07:11,340 --> 00:07:14,100
+So, if you have
+
+158
+00:07:14,100 --> 00:07:17,160
+more than the PATH as an environment variable,
+
+159
+00:07:17,160 --> 00:07:19,260
+your programmes will have access to the path
+
+160
+00:07:19,260 --> 00:07:22,610
+and whatever other variables you decide to have,
+
+161
+00:07:22,610 --> 00:07:25,030
+you can have multiple ones if you want.
+
+162
+00:07:27,950 --> 00:07:30,780
+And here's how you can look at the environment variables
+
+163
+00:07:30,780 --> 00:07:31,940
+you've already got.
+
+164
+00:07:31,940 --> 00:07:36,430
+So if you type export on Mac OS 10 or on Linux,
+
+165
+00:07:36,430 --> 00:07:38,210
+you'll see all the environment variables
+
+166
+00:07:38,210 --> 00:07:40,600
+you've got currently available.
+
+167
+00:07:40,600 --> 00:07:42,810
+You can create more and we're not really
+
+168
+00:07:42,810 --> 00:07:44,780
+going to get into how you can create more
+
+169
+00:07:44,780 --> 00:07:46,800
+in this course, but you can create more
+
+170
+00:07:46,800 --> 00:07:49,730
+and then any programme you launch within that environment
+
+171
+00:07:49,730 --> 00:07:52,350
+will have access to those variables.
+
+172
+00:07:52,350 --> 00:07:54,180
+The resource linked in this lecture
+
+173
+00:07:54,180 --> 00:07:56,440
+explains how you can add more environment variables
+
+174
+00:07:56,440 --> 00:07:58,180
+on Windows.
+
+175
+00:07:58,180 --> 00:08:00,517
+Modifying your PATH is something you can do
+
+176
+00:08:00,517 --> 00:08:02,950
+and again the resource linked in the lecture explains
+
+177
+00:08:02,950 --> 00:08:05,220
+how to do that, but it can be dangerous
+
+178
+00:08:05,220 --> 00:08:08,520
+because your computer is actually relying on the PATH
+
+179
+00:08:08,520 --> 00:08:11,338
+to find many of the programmes it uses all the time,
+
+180
+00:08:11,338 --> 00:08:13,540
+if you change it and you make your computer
+
+181
+00:08:13,540 --> 00:08:15,990
+unable to find a lot of the programmes it needs,
+
+182
+00:08:15,990 --> 00:08:17,710
+you may have some trouble.
+
+183
+00:08:17,710 --> 00:08:20,550
+So just don't change the PATH unless you know
+
+184
+00:08:20,550 --> 00:08:22,070
+exactly what you're doing,
+
+185
+00:08:22,070 --> 00:08:24,940
+just reinstall Python if you have to on Windows
+
+186
+00:08:24,940 --> 00:08:26,905
+and make sure to check add to PATH
+
+187
+00:08:26,905 --> 00:08:29,070
+in order to make it work.
+
+188
+00:08:30,310 --> 00:08:31,260
+That's it for this lecture though,
+
+189
+00:08:31,260 --> 00:08:32,950
+I just wanted to give you a quick overview
+
+190
+00:08:32,950 --> 00:08:35,638
+of what the PATH is and how you can open up Python
+
+191
+00:08:35,638 --> 00:08:37,180
+from your terminal.
+
+192
+00:08:37,180 --> 00:08:39,210
+In the next video, we're gonna go a bit more hands on
+
+193
+00:08:39,210 --> 00:08:41,893
+and actually write some code in the terminal.
+
+194
+00:08:41,893 --> 00:08:43,970
+I'll see you on the next video.
+

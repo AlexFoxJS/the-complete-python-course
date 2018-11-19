@@ -1,0 +1,952 @@
+1
+00:00:00,270 --> 00:00:01,220
+Jose: Ol e bem vindo de volta.
+
+2
+00:00:01,220 --> 00:00:02,460
+Neste vdeo,
+
+3
+00:00:02,460 --> 00:00:05,730
+vamos olhar para algo substancialmente mais complicado.
+
+4
+00:00:05,730 --> 00:00:07,810
+Ento, por favor, fique comigo,
+
+5
+00:00:07,810 --> 00:00:12,160
+e vamos olhar para filas em tpicos com estado compartilhado.
+
+6
+00:00:12,160 --> 00:00:14,960
+A primeira coisa que vou fazer  importar algumas coisas.
+
+7
+00:00:19,619 --> 00:00:21,180
+Ento, eu vou importar o
+
+8
+00:00:21,180 --> 00:00:25,200
+tempo e aleatoriamente, como sabemos fazer o nosso phasing, e vou importar na fila.
+
+9
+00:00:25,200 --> 00:00:30,090
+O mdulo de fila tem uma fila que vai ser essencial para o nosso programa
+
+10
+00:00:30,090 --> 00:00:31,890
+funcionar, e eu vou explicar exatamente
+
+11
+00:00:31,890 --> 00:00:34,080
+o que esta fila faz e porque
+
+12
+00:00:34,080 --> 00:00:35,830
+ diferente de um deck.
+
+13
+00:00:37,530 --> 00:00:39,040
+E, claro, a partir de
+
+14
+00:00:39,040 --> 00:00:41,020
+segmentao, vamos importar thread para comear.
+
+15
+00:00:41,020 --> 00:00:43,720
+Em seguida, usaremos um executor do conjunto de encadeamentos posteriormente.
+
+16
+00:00:43,720 --> 00:00:46,076
+Ns vamos ter o nosso contador
+
+17
+00:00:46,076 --> 00:00:48,520
+global, e tambm vamos ter duas filas.
+
+18
+00:00:48,520 --> 00:00:49,970
+Ns vamos ter uma fila de
+
+19
+00:00:51,410 --> 00:00:53,260
+empregos e teremos uma fila de contadores.
+
+20
+00:00:58,880 --> 00:01:00,490
+OK.
+
+21
+00:01:00,490 --> 00:01:01,460
+A fila
+
+22
+00:01:04,010 --> 00:01:08,450
+de trabalhos ser a vrgula, as coisas a serem impressas,
+
+23
+00:01:09,740 --> 00:01:14,740
+a fila do contador  o valor pelo qual aumentar o contador.
+
+24
+00:01:16,210 --> 00:01:17,043
+OK.
+
+25
+00:01:18,750 --> 00:01:23,164
+Tudo bem, agora vamos fazer algo que
+
+26
+00:01:23,164 --> 00:01:28,164
+ toda vez que queremos aumentar o
+
+27
+00:01:28,410 --> 00:01:32,490
+contador, vamos colocar um na fila.
+
+28
+00:01:32,490 --> 00:01:35,760
+Ento, vamos colocar o nmero um nessa fila.
+
+29
+00:01:35,760 --> 00:01:38,840
+Ento, teremos algum cdigo procurando por essa fila
+
+30
+00:01:38,840 --> 00:01:41,020
+e sempre que um nmero aparecer,
+
+31
+00:01:41,020 --> 00:01:42,820
+ele aumentar esse valor.
+
+32
+00:01:44,270 --> 00:01:46,460
+Ao mesmo tempo, teremos outro
+
+33
+00:01:46,460 --> 00:01:50,220
+segmento passando por esta fila de trabalhos e
+
+34
+00:01:50,220 --> 00:01:53,530
+sempre que vir algo aqui, vai imprimir.
+
+35
+00:01:53,530 --> 00:01:56,200
+Isso  essencialmente como esse programa vai funcionar.
+
+36
+00:01:56,200 --> 00:01:59,220
+Ento, vamos faz-lo.
+
+37
+00:01:59,220 --> 00:02:01,610
+Ns vamos primeiro definir nosso gerenciador de incremento.
+
+38
+00:02:02,701 --> 00:02:04,970
+Ns s vamos pegar nosso contador global.
+
+39
+00:02:04,970 --> 00:02:07,220
+Lembre-se que vrios threads poderiam estar
+
+40
+00:02:08,900 --> 00:02:11,300
+fazendo isso ao mesmo tempo, e
+
+41
+00:02:11,300 --> 00:02:12,630
+ento ns faremos
+
+42
+00:02:15,780 --> 00:02:19,340
+while true, ele ir obter o contador desta fila
+
+43
+00:02:19,340 --> 00:02:23,060
+de contadores e esta fila de contadores aqui tem
+
+44
+00:02:23,060 --> 00:02:25,060
+uma fila de mltiplos nmeros
+
+45
+00:02:25,060 --> 00:02:27,860
+potencialmente pela qual queremos aumentar o contador.
+
+46
+00:02:27,860 --> 00:02:32,860
+Ento incremento vai ser contra-fila. obter.
+
+47
+00:02:33,370 --> 00:02:34,600
+OK.
+
+48
+00:02:34,600 --> 00:02:37,910
+E isso  importante porque isso aguarda
+
+49
+00:02:39,150 --> 00:02:42,200
+at que um item esteja disponvel
+
+50
+00:02:44,600 --> 00:02:46,470
+e bloqueia a fila.
+
+51
+00:02:47,970 --> 00:02:51,340
+Ok, ento, isso vai esperar at que um
+
+52
+00:02:51,340 --> 00:02:54,530
+item esteja disponvel e, quando estiver, no
+
+53
+00:02:54,530 --> 00:02:59,210
+permitir que nenhum outro segmento obtenha nada at que tenhamos terminado.
+
+54
+00:03:00,860 --> 00:03:02,470
+Ento vamos dizer que o
+
+55
+00:03:04,660 --> 00:03:05,500
+contador antigo
+
+56
+00:03:07,160 --> 00:03:09,630
+ contador, contador agora  contador antigo
+
+57
+00:03:11,330 --> 00:03:12,240
+mais o incremento.
+
+58
+00:03:14,320 --> 00:03:18,500
+Ento, vamos colocar algo na fila de trabalho, um
+
+59
+00:03:18,500 --> 00:03:21,000
+novo valor de contador  contador
+
+60
+00:03:23,070 --> 00:03:26,220
+e tambm vamos colocar em nossas linhas,
+
+61
+00:03:26,220 --> 00:03:28,670
+ok, vamos colocar essas duas
+
+62
+00:03:28,670 --> 00:03:33,670
+coisas e, finalmente, contra a fila. tarefa realizada.
+
+63
+00:03:34,370 --> 00:03:38,080
+Isso desbloqueia a fila, ento agora outro
+
+64
+00:03:38,080 --> 00:03:39,900
+segmento poderia voltar
+
+65
+00:03:39,900 --> 00:03:42,850
+e conseguir algo se quisesse.
+
+66
+00:03:44,000 --> 00:03:46,080
+Ento, assim que algo entra aqui,
+
+67
+00:03:46,080 --> 00:03:48,210
+essa fila de contadores est bloqueada,
+
+68
+00:03:48,210 --> 00:03:50,550
+o encadeamento tem esse recurso, nenhum outro
+
+69
+00:03:50,550 --> 00:03:53,010
+encadeamento pode acessar esse recurso at que
+
+70
+00:03:53,010 --> 00:03:56,290
+seja feita uma tarefa e isso marca a fila
+
+71
+00:03:56,290 --> 00:03:58,610
+como no bloqueada, outro encadeamento pode
+
+72
+00:03:58,610 --> 00:04:00,070
+passar por isso .
+
+73
+00:04:02,100 --> 00:04:02,933
+OK.
+
+74
+00:04:05,510 --> 00:04:06,750
+Ir.
+
+75
+00:04:06,750 --> 00:04:07,940
+Ns vamos rodar este
+
+76
+00:04:10,650 --> 00:04:13,220
+alvo que vai ser o gerenciador de incremento,
+
+77
+00:04:14,390 --> 00:04:16,940
+e o daemon vai ser verdade, e o
+
+78
+00:04:16,940 --> 00:04:19,070
+que isso significa  que esse
+
+79
+00:04:19,070 --> 00:04:23,700
+thread vai rodar continuamente para sempre at ns, at encontrar um erro essencialmente.
+
+80
+00:04:25,140 --> 00:04:27,040
+E ento ns vamos comear isso, tudo bem.
+
+81
+00:04:29,040 --> 00:04:32,930
+Ento esse tpico vai rodar para sempre sempre,  verdade, sempre checando essa fila
+
+82
+00:04:32,930 --> 00:04:36,710
+de contadores, tentando pegar alguma coisa, vai esperar at que um item esteja disponvel
+
+83
+00:04:36,710 --> 00:04:38,690
+e ele ir trav-lo e ento ele
+
+84
+00:04:38,690 --> 00:04:40,400
+passar por ele e vai terminar
+
+85
+00:04:40,400 --> 00:04:42,600
+a tarefa, ento vai repetir de novo, vai
+
+86
+00:04:42,600 --> 00:04:43,570
+esperar que algo se
+
+87
+00:04:43,570 --> 00:04:45,270
+torne disponvel e assim por diante.
+
+88
+00:04:47,530 --> 00:04:49,560
+Agora, se quisermos imprimir, vamos
+
+89
+00:04:50,700 --> 00:04:53,010
+criar um gerenciador de impressoras.
+
+90
+00:04:56,530 --> 00:04:59,280
+Ento eu rodo aqui embaixo, mais uma vez, isso
+
+91
+00:04:59,280 --> 00:05:02,920
+vai ser verdade, vai colocar as linhas na fila de trabalhos
+
+92
+00:05:02,920 --> 00:05:06,680
+para fila na fila de trabalhos. obter e novamente isso
+
+93
+00:05:06,680 --> 00:05:09,010
+bloqueia a fila, e espera
+
+94
+00:05:09,010 --> 00:05:11,760
+por um item estar disponvel, ele
+
+95
+00:05:11,760 --> 00:05:13,210
+vai imprimir a
+
+96
+00:05:14,670 --> 00:05:16,870
+linha e no final vai
+
+97
+00:05:16,870 --> 00:05:19,400
+ser a fila de trabalho. tarefa realizada.
+
+98
+00:05:20,350 --> 00:05:21,183
+OK.
+
+99
+00:05:23,340 --> 00:05:26,830
+Mais uma vez, vamos executar isso como um encadeamento do daemon.
+
+100
+00:05:33,440 --> 00:05:34,890
+Ento, vamos comear isso.
+
+101
+00:05:36,870 --> 00:05:39,150
+Ok, ento o gerenciador de impressoras e o
+
+102
+00:05:39,150 --> 00:05:42,440
+gerenciador de incrementos sero executados continuamente por causa do sinalizador do daemon.
+
+103
+00:05:42,440 --> 00:05:46,518
+A parte final do nosso programa  lidar com o
+
+104
+00:05:46,518 --> 00:05:49,270
+aumento do contador em si, de modo
+
+105
+00:05:49,270 --> 00:05:52,310
+que isso ser executado constantemente, obtendo valores
+
+106
+00:05:52,310 --> 00:05:54,390
+fora da fila do contador
+
+107
+00:05:54,390 --> 00:05:56,940
+e aumentando o contador por eles.
+
+108
+00:05:56,940 --> 00:05:59,042
+Isso vai ser executado continuamente imprimir
+
+109
+00:05:59,042 --> 00:05:59,875
+as coisas,
+
+110
+00:05:59,875 --> 00:06:02,060
+tudo o que temos a fazer
+
+111
+00:06:02,060 --> 00:06:05,160
+ colocar algo em nossa fila, ento vamos criar
+
+112
+00:06:05,160 --> 00:06:07,140
+outro thread, ou outra funo que
+
+113
+00:06:07,140 --> 00:06:09,530
+vai ser o nosso contador de incremento
+
+114
+00:06:09,530 --> 00:06:11,790
+e isso  tudo que vai
+
+115
+00:06:11,790 --> 00:06:15,940
+fazer  fazer fila de contadores. colocar um, vai colocar o nmero
+
+116
+00:06:15,940 --> 00:06:19,330
+um na fila, ento ele vai ser recebido por
+
+117
+00:06:19,330 --> 00:06:21,810
+este gerenciador de incremento que vai incrementar
+
+118
+00:06:21,810 --> 00:06:24,860
+o contador por essa quantia, e ele vai
+
+119
+00:06:24,860 --> 00:06:28,860
+colocar duas coisas na fila de trabalho que vai ento imprimir
+
+120
+00:06:28,860 --> 00:06:31,030
+-los como ele  executado.
+
+121
+00:06:32,620 --> 00:06:33,453
+OK.
+
+122
+00:06:34,770 --> 00:06:37,590
+Ento, vamos fazer alguns tpicos de trabalho.
+
+123
+00:06:37,590 --> 00:06:40,270
+Threads de trabalho, esses sero os threads em
+
+124
+00:06:40,270 --> 00:06:42,990
+que o alvo  esse contador de incremento
+
+125
+00:06:44,410 --> 00:06:47,910
+para thread no intervalo 10, faremos 10 deles e tudo
+
+126
+00:06:49,120 --> 00:06:50,620
+o que faremos  inici-los.
+
+127
+00:06:50,620 --> 00:06:54,980
+Portanto, para encadeamentos em encadeamentos de trabalho, inicie o encadeamento e esperamos que
+
+128
+00:06:56,120 --> 00:06:58,420
+eles sejam concludos para encadeamento em encadeamentos
+
+129
+00:06:58,420 --> 00:07:01,010
+de trabalho, encadeamentos. junte-se e, no
+
+130
+00:07:01,860 --> 00:07:03,050
+final, vamos esperar
+
+131
+00:07:03,050 --> 00:07:04,260
+que a fila
+
+132
+00:07:06,580 --> 00:07:11,090
+do contador termine, no tenha mais nada na fila e
+
+133
+00:07:11,090 --> 00:07:15,810
+a fila de trabalhos tambm no tenha mais nada nela.
+
+134
+00:07:15,810 --> 00:07:18,850
+Observe como estamos nos unindo s filas, no aos threads
+
+135
+00:07:18,850 --> 00:07:20,319
+do daemon, porque esses threads
+
+136
+00:07:20,319 --> 00:07:23,000
+daemon nunca vo parar, eles sempre estaro funcionando, ok.
+
+137
+00:07:23,000 --> 00:07:24,370
+Ento, estamos nos juntando na fila.
+
+138
+00:07:24,370 --> 00:07:25,790
+Quando eles ficarem
+
+139
+00:07:27,421 --> 00:07:29,470
+vazios, ns estaremos essencialmente prontos.
+
+140
+00:07:31,940 --> 00:07:35,820
+Como voc pode ver isso  substancialmente mais complicado, agora que voc compartilhou
+
+141
+00:07:35,820 --> 00:07:37,700
+o estado, voc tem que comear
+
+142
+00:07:37,700 --> 00:07:39,820
+a ter filas l, para que seus
+
+143
+00:07:39,820 --> 00:07:42,040
+threads no possam interromper um ao outro.
+
+144
+00:07:42,040 --> 00:07:43,040
+Vamos rodar esse cdigo
+
+145
+00:07:44,250 --> 00:07:45,300
+e ver o que acontece.
+
+146
+00:07:46,860 --> 00:07:51,630
+Oh, eu acho, oh sim, desculpe, eu esqueci um par de parnteses.
+
+147
+00:07:51,630 --> 00:07:54,260
+O que voc coloca na fila tem
+
+148
+00:07:55,490 --> 00:07:57,780
+que ser um duplo, meu mal.
+
+149
+00:07:57,780 --> 00:07:58,780
+Vamos executar isso de
+
+150
+00:08:00,490 --> 00:08:01,330
+novo e a est.
+
+151
+00:08:01,330 --> 00:08:04,910
+Agora voc pega seu cdigo que parece sequencial.
+
+152
+00:08:06,260 --> 00:08:07,840
+OK.
+
+153
+00:08:07,840 --> 00:08:09,830
+Novamente, voc poderia simplesmente no
+
+154
+00:08:09,830 --> 00:08:11,950
+usar encadeamentos e atingiria o mesmo
+
+155
+00:08:11,950 --> 00:08:14,940
+propsito, mas se voc quisesse usar encadeamentos, teria
+
+156
+00:08:14,940 --> 00:08:19,150
+que usar essas filas e, de fato, se voc adicionasse os
+
+157
+00:08:19,150 --> 00:08:20,270
+pesos aleatrios, o
+
+158
+00:08:21,610 --> 00:08:25,100
+que faramos, voc veria que isso ainda funciona, ento
+
+159
+00:08:25,100 --> 00:08:27,070
+vamos adicionar esses pesos em
+
+160
+00:08:29,300 --> 00:08:32,330
+todos os lugares como aqui, vamos adicionar alguns
+
+161
+00:08:33,450 --> 00:08:35,210
+aqui, vamos adicionar alguns aqui,
+
+162
+00:08:36,340 --> 00:08:37,640
+vamos adicionar alguns
+
+163
+00:08:38,680 --> 00:08:40,380
+aqui, e ento vamos execut-lo novamente.
+
+164
+00:08:44,771 --> 00:08:49,550
+E voc pode ver que agora estamos aguardando o nosso cdigo passar por
+
+165
+00:08:49,550 --> 00:08:51,580
+essa fila, mas apenas um
+
+166
+00:08:53,350 --> 00:08:54,880
+thread pode passar por
+
+167
+00:08:54,880 --> 00:08:56,740
+esse incremento de uma vez.
+
+168
+00:08:57,820 --> 00:09:00,970
+Ento, isso ainda acontece um por um.
+
+169
+00:09:05,580 --> 00:09:08,770
+Ento no muito simples, deixe-me dizer isso.
+
+170
+00:09:09,710 --> 00:09:12,410
+No muito simples, novamente voc poderia usar um executor
+
+171
+00:09:12,410 --> 00:09:15,410
+de pool de threads para melhorar este cdigo aqui, se
+
+172
+00:09:15,410 --> 00:09:17,350
+voc quiser, ns no vamos entrar
+
+173
+00:09:17,350 --> 00:09:20,200
+nisso, mas o indicador de cdigo tem isso a.
+
+174
+00:09:20,200 --> 00:09:23,210
+Ento, novamente, apenas para recapitular o que acontece ,
+
+175
+00:09:24,518 --> 00:09:27,980
+ns dizemos que vamos acessar essa varivel de contador global, essencialmente
+
+176
+00:09:28,876 --> 00:09:31,270
+apenas para dizer ao Python que no
+
+177
+00:09:31,270 --> 00:09:33,160
+queremos criar uma nova varivel chamada
+
+178
+00:09:33,160 --> 00:09:34,910
+counter, queremos usar o contador global.
+
+179
+00:09:36,430 --> 00:09:41,420
+Aqui, no momento em que acessamos o valor do contador, isso j impediu
+
+180
+00:09:41,420 --> 00:09:44,850
+que dois threads fizessem isso ao mesmo tempo, portanto,
+
+181
+00:09:44,850 --> 00:09:47,750
+espere at que o item esteja disponvel e
+
+182
+00:09:47,750 --> 00:09:51,510
+bloqueie, para que apenas um thread possa execut-lo de cada
+
+183
+00:09:51,510 --> 00:09:53,730
+vez. e obtenha um valor.
+
+184
+00:09:53,730 --> 00:09:56,550
+Se voc tiver 10 threads
+
+185
+00:09:56,550 --> 00:09:58,880
+chamando isso, apenas um
+
+186
+00:09:58,880 --> 00:10:01,200
+poder usar esse recurso.
+
+187
+00:10:01,200 --> 00:10:05,140
+Os outros nove vo esperar at que a tarefa seja chamada
+
+188
+00:10:05,140 --> 00:10:07,000
+e isso fica disponvel novamente.
+
+189
+00:10:07,000 --> 00:10:08,500
+Ento voc tem um
+
+190
+00:10:08,500 --> 00:10:11,930
+nico thread obtendo o incremento que  um, ento voc
+
+191
+00:10:11,930 --> 00:10:14,650
+acessa o valor do contador atual que ser
+
+192
+00:10:14,650 --> 00:10:17,130
+zero, ento voc o aumentar pelo incremento
+
+193
+00:10:17,130 --> 00:10:20,050
+que  um, faa um e coloque essas duas
+
+194
+00:10:20,050 --> 00:10:21,620
+coisas aqui em a fila
+
+195
+00:10:22,670 --> 00:10:26,760
+de tarefas, ento a tarefa  feita para que voc volte ao
+
+196
+00:10:26,760 --> 00:10:30,020
+topo e outro thread seja capaz de fazer o get.
+
+197
+00:10:30,020 --> 00:10:32,660
+Quando eles acessam o valor do contador, esse  um
+
+198
+00:10:32,660 --> 00:10:34,990
+agora, porque o estado anterior j o incrementou.
+
+199
+00:10:34,990 --> 00:10:37,400
+E ento voc pode aument-lo novamente e assim por diante.
+
+200
+00:10:37,400 --> 00:10:39,820
+Ento, essencialmente, o que voc est fazendo aqui,
+
+201
+00:10:39,820 --> 00:10:43,130
+ que voc est criando esse gargalo para que os fios s
+
+202
+00:10:43,130 --> 00:10:45,680
+consigam acessar um recurso de uma vez, tudo bem.
+
+203
+00:10:47,000 --> 00:10:50,610
+Mais uma vez, trata-se essencialmente de um nico cdigo
+
+204
+00:10:50,610 --> 00:10:54,020
+encadeado, mas mostra que quando voc precisa de
+
+205
+00:10:54,020 --> 00:10:57,500
+encadeamentos para compartilhar um estado, voc precisa dessas filas.
+
+206
+00:10:57,500 --> 00:11:00,610
+Pense na impressora em seu escritrio, se voc tiver
+
+207
+00:11:00,610 --> 00:11:02,710
+uma, a impressora em seu escritrio
+
+208
+00:11:02,710 --> 00:11:05,910
+pode receber trabalhos de vrias pessoas diferentes ao mesmo tempo,
+
+209
+00:11:05,910 --> 00:11:08,520
+mas s pode imprimir uma de cada vez.
+
+210
+00:11:08,520 --> 00:11:10,710
+Ento  isso que temos aqui, temos
+
+211
+00:11:10,710 --> 00:11:13,880
+uma fila de trabalhos de impresso e a impressora est
+
+212
+00:11:13,880 --> 00:11:16,550
+imprimindo-os continuamente assim que os v, mas no os
+
+213
+00:11:16,550 --> 00:11:19,470
+faz todos ao mesmo tempo, eles fazem um por um.
+
+214
+00:11:20,380 --> 00:11:22,970
+Da mesma forma, porque estamos acessando um recurso nico,
+
+215
+00:11:22,970 --> 00:11:26,400
+o contador tambm deve fazer isso um por um, se tivermos duas
+
+216
+00:11:26,400 --> 00:11:28,080
+coisas incrementadas pelo contador de uma
+
+217
+00:11:28,080 --> 00:11:31,180
+s vez, vimos o que acontece no ltimo vdeo, eles simplesmente
+
+218
+00:11:31,180 --> 00:11:34,320
+se tornam mentais e com isso comece a mudar ao mesmo tempo.
+
+219
+00:11:34,320 --> 00:11:36,720
+Se voc conseguiu que sua impressora imprima duas coisas
+
+220
+00:11:36,720 --> 00:11:38,980
+ao mesmo tempo, pode imaginar como isso no funcionaria
+
+221
+00:11:38,980 --> 00:11:40,680
+to bem, se v o tipo
+
+222
+00:11:40,680 --> 00:11:43,030
+de palavras de um documento e as palavras de
+
+223
+00:11:43,030 --> 00:11:44,950
+outro todas impressas juntas, no seria bonito.
+
+224
+00:11:44,950 --> 00:11:49,480
+Quando voc deseja um recurso compartilhado, voc deve usar uma
+
+225
+00:11:49,480 --> 00:11:52,970
+fila e a fila. Pacote de fila aqui o pacote
+
+226
+00:11:52,970 --> 00:11:55,600
+de fila  bom porque tem essa coisa de
+
+227
+00:11:55,600 --> 00:11:57,510
+travamento e essa tarefa feita, ento
+
+228
+00:11:57,510 --> 00:12:00,300
+isso  feito para acesso multithread a uma fila.
+
+229
+00:12:01,650 --> 00:12:04,470
+O deck que  algo atmico, no  interrompido quando
+
+230
+00:12:05,350 --> 00:12:07,730
+voc adiciona ou remove elementos dele, mas tambm
+
+231
+00:12:07,730 --> 00:12:10,417
+no bloqueia, ento voc pode ter vrias coisas, anexando
+
+232
+00:12:10,417 --> 00:12:13,630
+coisas a um deck ao mesmo tempo, e isso pode ser
+
+233
+00:12:13,630 --> 00:12:15,440
+til em outras situaes, como voc
+
+234
+00:12:15,440 --> 00:12:17,330
+ver nas palestras que esto ligadas
+
+235
+00:12:17,330 --> 00:12:18,490
+a voc mais tarde.
+
+236
+00:12:19,650 --> 00:12:20,680
+ isso para
+
+237
+00:12:20,680 --> 00:12:23,470
+este vdeo, espero que isso no derreta seus crebros
+
+238
+00:12:23,470 --> 00:12:25,120
+e eu o vejo no prximo.
+

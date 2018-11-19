@@ -1,0 +1,780 @@
+1
+00:00:00,210 --> 00:00:01,460
+Instrutor: Ol e bem vindo de volta.
+
+2
+00:00:01,460 --> 00:00:04,240
+Neste vdeo, vamos olhar para o loop while.
+
+3
+00:00:05,130 --> 00:00:08,290
+O loop while e o loop any
+
+4
+00:00:08,290 --> 00:00:10,880
+nos permitem executar algo vrias vezes.
+
+5
+00:00:10,880 --> 00:00:13,580
+Ok, por que voc pode querer executar algo muitas vezes?
+
+6
+00:00:14,970 --> 00:00:19,970
+Por exemplo, imagine que voc tenha um termmetro, um forno e deseja verificar
+
+7
+00:00:20,140 --> 00:00:23,510
+continuamente a temperatura do forno, ligar o forno se
+
+8
+00:00:23,510 --> 00:00:25,440
+a temperatura estiver abaixo de
+
+9
+00:00:25,440 --> 00:00:27,560
+uma certa quantidade ou desligar o
+
+10
+00:00:27,560 --> 00:00:29,820
+forno se a temperatura atingir uma
+
+11
+00:00:29,820 --> 00:00:30,700
+certa quantidade. .
+
+12
+00:00:31,960 --> 00:00:34,090
+Aqui est um exemplo de
+
+13
+00:00:34,090 --> 00:00:37,210
+usar um loop para repetir essa verificao continuamente.
+
+14
+00:00:38,390 --> 00:00:41,300
+O loop while  uma forma particular de
+
+15
+00:00:41,300 --> 00:00:45,610
+um loop, o Python tem dois, e neste loop podemos repetir
+
+16
+00:00:45,610 --> 00:00:48,060
+algo enquanto a condio for verdadeira.
+
+17
+00:00:49,200 --> 00:00:51,550
+Veja como voc pode fazer isso.
+
+18
+00:00:51,550 --> 00:00:53,270
+Vamos ter uma varivel  programadora
+
+19
+00:00:53,270 --> 00:00:54,370
+e isso ser verdade.
+
+20
+00:00:54,370 --> 00:00:57,410
+E ns vamos dizer que enquanto o programador
+
+21
+00:00:58,700 --> 00:01:00,880
+ verdade, imprima 'ol mundo'.
+
+22
+00:01:03,230 --> 00:01:05,440
+Agora sabemos da declarao if
+
+23
+00:01:05,440 --> 00:01:06,990
+que isso  uma
+
+24
+00:01:07,960 --> 00:01:11,050
+coisa opcional, ento podemos apenas ter um
+
+25
+00:01:11,050 --> 00:01:13,110
+programador, vamos imprimir 'ol mundo'.
+
+26
+00:01:13,110 --> 00:01:16,230
+Agora, eu no posso recomendar que voc execute isso, embora eu vou
+
+27
+00:01:16,230 --> 00:01:17,240
+execut-lo de qualquer maneira
+
+28
+00:01:17,240 --> 00:01:19,440
+e eu possa me arrepender, o computador pode falhar.
+
+29
+00:01:21,290 --> 00:01:23,010
+Ok, ai voc vai.
+
+30
+00:01:23,010 --> 00:01:25,000
+Ento, muitos 'ol mundos' foram impressos.
+
+31
+00:01:25,000 --> 00:01:27,730
+Eu no acho que voc pode ver minha barra de navegao
+
+32
+00:01:27,730 --> 00:01:29,050
+com muita facilidade, l vai voc.
+
+33
+00:01:29,050 --> 00:01:31,540
+H muitos mundos de ol.
+
+34
+00:01:31,540 --> 00:01:34,890
+E isso  porque o programador  sempre verdadeiro.
+
+35
+00:01:34,890 --> 00:01:38,130
+Ento, estamos apenas correndo e correndo continuamente.
+
+36
+00:01:38,130 --> 00:01:40,960
+Isso  chamado de loop infinito
+
+37
+00:01:40,960 --> 00:01:43,790
+porque temos um loop que est
+
+38
+00:01:43,790 --> 00:01:46,110
+repetindo continuamente sem parar.
+
+39
+00:01:46,110 --> 00:01:48,880
+Ns no dissemos quando parar, ento isso no acontece.
+
+40
+00:01:50,010 --> 00:01:55,010
+Ns poderamos executar este loop uma vez, assim.
+
+41
+00:01:55,150 --> 00:01:56,030
+E ento poderamos
+
+42
+00:01:56,030 --> 00:01:58,280
+execut-lo e s imprimiramos "ol mundo" uma vez.
+
+43
+00:01:58,280 --> 00:02:00,640
+Obviamente, este  um loop muito bobo.
+
+44
+00:02:00,640 --> 00:02:02,590
+Voc pode simplesmente no ter o loop
+
+45
+00:02:02,590 --> 00:02:04,750
+e apenas imprimir 'ol mundo' uma vez.
+
+46
+00:02:04,750 --> 00:02:07,270
+Mas normalmente essa condio de parada
+
+47
+00:02:07,270 --> 00:02:10,270
+seria o resultado de alguma outra parte
+
+48
+00:02:10,270 --> 00:02:12,000
+do sistema fazendo alguma coisa.
+
+49
+00:02:12,000 --> 00:02:14,370
+Por exemplo, podemos perguntar ao usurio
+
+50
+00:02:14,370 --> 00:02:16,670
+se j se tornaram programadores.
+
+51
+00:02:18,870 --> 00:02:20,810
+Ento vamos modificar esse loop um pouco.
+
+52
+00:02:20,810 --> 00:02:23,640
+Vamos comear dizendo que o programador  falso.
+
+53
+00:02:24,530 --> 00:02:28,210
+Vamos mudar o loop de quatro para enquanto no  programador.
+
+54
+00:02:28,210 --> 00:02:31,380
+Ns vamos dizer aprender programao e ento vamos perguntar
+
+55
+00:02:31,380 --> 00:02:32,840
+ao usurio se eles
+
+56
+00:02:32,840 --> 00:02:34,460
+j se tornaram programadores.
+
+57
+00:02:34,460 --> 00:02:37,860
+Usurio  programador vai ser entrada.
+
+58
+00:02:39,050 --> 00:02:41,510
+"Voc  um programador ainda? "Agora, eles
+
+59
+00:02:42,450 --> 00:02:44,940
+vo dizer sim ou no.
+
+60
+00:02:44,940 --> 00:02:48,790
+Ento, vamos dizer que  programador igual, o usurio
+
+61
+00:02:48,790 --> 00:02:51,040
+ programador igual igual, sim.
+
+62
+00:02:52,400 --> 00:02:55,610
+Agora sabemos que todas as variveis so atribudas
+
+63
+00:02:55,610 --> 00:02:57,570
+com esse sinal de igual
+
+64
+00:02:57,570 --> 00:03:02,100
+e o que acontece  que executamos a parte direita primeiro, ento
+
+65
+00:03:02,100 --> 00:03:04,200
+atribumos a varivel a ela.
+
+66
+00:03:04,200 --> 00:03:06,680
+Ento, aqui, vamos executar essa entrada, vamos
+
+67
+00:03:06,680 --> 00:03:08,180
+perguntar ao usurio algo,
+
+68
+00:03:08,180 --> 00:03:09,560
+como vimos no passado.
+
+69
+00:03:09,560 --> 00:03:11,370
+O usurio poder digitar algo.
+
+70
+00:03:11,370 --> 00:03:13,990
+Tudo o que eles digitam vai estar nessa varivel.
+
+71
+00:03:15,140 --> 00:03:17,350
+Por exemplo, digamos que eles digitaram "no. "Novamente, ns temos
+
+72
+00:03:18,810 --> 00:03:20,300
+outra varivel aqui com
+
+73
+00:03:20,300 --> 00:03:23,940
+um sinal de igual, vamos avaliar este lado direito
+
+74
+00:03:23,940 --> 00:03:25,080
+da expresso primeiro,
+
+75
+00:03:25,080 --> 00:03:28,300
+e ento vamos coloc-lo dentro desta varivel.
+
+76
+00:03:28,300 --> 00:03:33,000
+"No", que  o que o usurio digitou, igual, igual, sim.
+
+77
+00:03:33,000 --> 00:03:34,720
+Isso vai ser
+
+78
+00:03:34,720 --> 00:03:37,890
+falso, ento o programador ser falso.
+
+79
+00:03:37,890 --> 00:03:40,480
+No entanto, se eles digitarem sim para
+
+80
+00:03:40,480 --> 00:03:42,660
+comear, ento sim ser igual a
+
+81
+00:03:42,660 --> 00:03:44,610
+sim, e isso ser verdadeiro.
+
+82
+00:03:44,610 --> 00:03:46,780
+A varivel do programador ser verdadeira
+
+83
+00:03:46,780 --> 00:03:48,500
+e o loop ser interrompido.
+
+84
+00:03:48,500 --> 00:03:49,333
+Vamos correr isso.
+
+85
+00:03:50,850 --> 00:03:53,990
+Ns temos aprendido programao, mal escrito errado, eu acabei
+
+86
+00:03:53,990 --> 00:03:54,955
+de perceber isso.
+
+87
+00:03:54,955 --> 00:03:56,600
+Me desculpe por isso.
+
+88
+00:03:56,600 --> 00:03:58,670
+Voc  um programador ainda e ns vamos dizer "no", ento
+
+89
+00:03:58,670 --> 00:04:01,880
+vai nos perguntar de novo, "no, no, no, no. "Voc no se torna
+
+90
+00:04:01,880 --> 00:04:03,690
+um programador to rapidamente,
+
+91
+00:04:03,690 --> 00:04:06,760
+mas depois de algum tempo, digamos algumas
+
+92
+00:04:06,760 --> 00:04:10,740
+semanas, ou alguns meses, podemos dizer" sim "e ento
+
+93
+00:04:10,740 --> 00:04:11,707
+ele pra.
+
+94
+00:04:11,707 --> 00:04:13,210
+Esse  um loop
+
+95
+00:04:13,210 --> 00:04:15,140
+bem ruim, nem nos parabeniza.
+
+96
+00:04:15,140 --> 00:04:17,800
+No se preocupe, haver muitos parabns quando voc
+
+97
+00:04:17,800 --> 00:04:19,250
+se tornar um programador.
+
+98
+00:04:21,480 --> 00:04:22,530
+Ok, ento este  um
+
+99
+00:04:22,530 --> 00:04:24,550
+exemplo de algo que voc poderia fazer com esse loop while.
+
+100
+00:04:24,550 --> 00:04:26,393
+Talvez no seja o exemplo mais
+
+101
+00:04:26,393 --> 00:04:29,201
+til, mas, no entanto, isso pode ser feito.
+
+102
+00:04:29,201 --> 00:04:31,810
+Um loop while tambm pode ser usado
+
+103
+00:04:31,810 --> 00:04:35,330
+para repetir algo em um determinado nmero de vezes.
+
+104
+00:04:35,330 --> 00:04:36,540
+Como podemos fazer isso?
+
+105
+00:04:37,440 --> 00:04:40,070
+Bem, vamos definir uma varivel que eu vou
+
+106
+00:04:40,070 --> 00:04:42,810
+chamar de ndice e vai ser igual a zero.
+
+107
+00:04:42,810 --> 00:04:44,860
+Enquanto eu for menos
+
+108
+00:04:44,860 --> 00:04:49,430
+que dez, ns vamos imprimir algo como, repetido i vezes.
+
+109
+00:04:50,590 --> 00:04:54,750
+E ento, claro, eu sou zero no comeo.
+
+110
+00:04:54,750 --> 00:04:56,810
+Ns vamos checar se eu  menos que
+
+111
+00:04:56,810 --> 00:04:59,280
+dez, o que  verdade, ento vamos rodar isso.
+
+112
+00:05:00,220 --> 00:05:03,650
+Ento ns vamos voltar, eu ainda vou ser zero,  menos de dez, ento
+
+113
+00:05:03,650 --> 00:05:06,130
+vamos repetir de novo, e depois novamente, e de novo,
+
+114
+00:05:06,130 --> 00:05:07,710
+e de novo e de novo.
+
+115
+00:05:07,710 --> 00:05:11,100
+Eu  sempre zero, ento isso vai ser um loop infinito.
+
+116
+00:05:11,100 --> 00:05:14,320
+O que fazemos para que isso no seja um loop infinito?
+
+117
+00:05:16,590 --> 00:05:19,630
+Voc vai, tudo o que temos a fazer  dizer que
+
+118
+00:05:19,630 --> 00:05:21,590
+i  igual a i mais um.
+
+119
+00:05:21,590 --> 00:05:24,120
+Novamente, o lado direito avalia primeiro, zero
+
+120
+00:05:24,120 --> 00:05:27,940
+mais um  um, ento  colocado de volta em i.
+
+121
+00:05:27,940 --> 00:05:30,180
+Ento agora eu vou ser igual a um.
+
+122
+00:05:30,180 --> 00:05:32,780
+Da prxima vez que o loop for executado, eu sou um.
+
+123
+00:05:32,780 --> 00:05:35,020
+Um mais um  dois, eu serei dois.
+
+124
+00:05:35,020 --> 00:05:36,321
+Ento dois mais um, trs mais um,
+
+125
+00:05:36,321 --> 00:05:37,700
+quatro mais um e assim por diante.
+
+126
+00:05:37,700 --> 00:05:42,060
+Eventualmente eu me torno dez, e dez no  menos que dez, isso
+
+127
+00:05:42,060 --> 00:05:44,490
+se torna falso, e ns paramos de correr.
+
+128
+00:05:44,490 --> 00:05:45,323
+Vamos correr isso.
+
+129
+00:05:47,240 --> 00:05:48,930
+Primeiro, ele nos pergunta se somos um programador.
+
+130
+00:05:48,930 --> 00:05:50,870
+Bem, ns conseguimos criar esse loop aqui, ento
+
+131
+00:05:50,870 --> 00:05:52,480
+vamos dizer "sim". "E ento,
+
+132
+00:05:53,400 --> 00:05:55,860
+como voc pode ver, ele se repete
+
+133
+00:05:55,860 --> 00:05:57,560
+dez vezes, de zero at nove.
+
+134
+00:05:58,790 --> 00:06:00,270
+ assim que voc pode
+
+135
+00:06:00,270 --> 00:06:02,940
+usar um loop while para repetir algo vrias vezes.
+
+136
+00:06:02,940 --> 00:06:04,460
+No entanto, nos prximos vdeos, vamos
+
+137
+00:06:04,460 --> 00:06:06,350
+aprender uma maneira ainda melhor de fazer isso.
+
+138
+00:06:07,540 --> 00:06:09,390
+Ok, como eu disse antes, vou
+
+139
+00:06:09,390 --> 00:06:11,510
+dar outro exemplo com a temperatura.
+
+140
+00:06:11,510 --> 00:06:13,410
+A temperatura vai ser quinze.
+
+141
+00:06:13,410 --> 00:06:16,270
+Enquanto a temperatura  inferior a vinte.
+
+142
+00:06:16,270 --> 00:06:18,390
+Ns vamos imprimir aquecimento, e ns
+
+143
+00:06:19,610 --> 00:06:21,840
+vamos dizer que a temperatura 
+
+144
+00:06:21,840 --> 00:06:23,840
+igual a temperatura mais um.
+
+145
+00:06:24,890 --> 00:06:27,850
+Ento vamos nos aquecer, presumivelmente, cinco vezes.
+
+146
+00:06:27,850 --> 00:06:29,170
+Vamos correr isso.
+
+147
+00:06:29,170 --> 00:06:30,920
+Mais uma vez, vamos dizer
+
+148
+00:06:30,920 --> 00:06:32,910
+sim  programao e, em seguida,
+
+149
+00:06:32,910 --> 00:06:35,122
+aquecemos cinco vezes porque a temperatura se
+
+150
+00:06:35,122 --> 00:06:38,070
+tornou quinze, depois dezesseis, dezessete, dezoito, dezenove e vinte.
+
+151
+00:06:38,070 --> 00:06:41,590
+Claro, podemos reduzir isso e encurt-lo de modo que, em vez de
+
+152
+00:06:41,590 --> 00:06:43,730
+a temperatura ser igual a mais uma
+
+153
+00:06:43,730 --> 00:06:45,530
+temperatura, poderamos apenas dizer mais um igual.
+
+154
+00:06:45,530 --> 00:06:47,200
+E isso significa a mesma coisa.
+
+155
+00:06:47,200 --> 00:06:48,033
+OK?
+
+156
+00:06:48,033 --> 00:06:50,690
+Isso significa temperatura igual a temperatura mais uma.
+
+157
+00:06:50,690 --> 00:06:53,320
+Da mesma forma aqui, eu mais igual a um.
+
+158
+00:06:55,260 --> 00:06:58,250
+ claro que, em vez de aumentar continuamente a
+
+159
+00:06:58,250 --> 00:07:00,330
+temperatura, obteramos essa temperatura de um
+
+160
+00:07:00,330 --> 00:07:02,530
+sensor, uma torta de framboesa, um
+
+161
+00:07:02,530 --> 00:07:03,830
+termmetro ou algo assim.
+
+162
+00:07:03,830 --> 00:07:06,810
+Portanto, esse loop while s aquecer enquanto a
+
+163
+00:07:06,810 --> 00:07:09,380
+temperatura for menor que certa quantidade.
+
+164
+00:07:10,540 --> 00:07:11,505
+Algo importante
+
+165
+00:07:11,505 --> 00:07:16,505
+a ser observado  que, assim que a temperatura atinge vinte, esse
+
+166
+00:07:17,590 --> 00:07:20,170
+loop while termina, portanto, mesmo que
+
+167
+00:07:20,170 --> 00:07:23,260
+a temperatura ficasse abaixo de vinte anos mais
+
+168
+00:07:23,260 --> 00:07:25,680
+tarde, esse loop while no continuaria funcionando.
+
+169
+00:07:25,680 --> 00:07:26,780
+Isso teria parado.
+
+170
+00:07:26,780 --> 00:07:30,600
+Ento, precisaramos ter alguma maneira de reiniciar esse loop quando
+
+171
+00:07:30,600 --> 00:07:33,210
+a temperatura atingir menos de vinte.
+
+172
+00:07:34,060 --> 00:07:36,680
+Vamos investigar isso mais tarde no curso.
+
+173
+00:07:36,680 --> 00:07:39,090
+Vamos ver como podemos fazer esse tipo de coisa.
+
+174
+00:07:40,040 --> 00:07:42,190
+Eu s queria te mostrar a sintaxe do
+
+175
+00:07:42,190 --> 00:07:43,978
+quatro loop, como voc vai escrev-los,
+
+176
+00:07:43,978 --> 00:07:45,660
+porque  medida que progredimos no
+
+177
+00:07:45,660 --> 00:07:47,670
+curso, novamente, vamos trabalhar em alguns projetos
+
+178
+00:07:47,670 --> 00:07:50,250
+e voc meio que precisa saber a sintaxe do
+
+179
+00:07:50,250 --> 00:07:53,430
+Python antes voc pode se aprofundar em alguns projetos mais avanados.
+
+180
+00:07:53,430 --> 00:07:55,670
+Pense neles como obter as ferramentas que
+
+181
+00:07:55,670 --> 00:07:58,120
+voc precisa para comear a fazer sua madeira,
+
+182
+00:07:58,120 --> 00:08:00,700
+talvez, ou a sua jardinagem em seu jardim.
+
+183
+00:08:00,700 --> 00:08:02,970
+Se voc no tem ferramentas,
+
+184
+00:08:02,970 --> 00:08:06,160
+ser muito difcil para voc fazer qualquer projeto.
+
+185
+00:08:06,160 --> 00:08:07,570
+Mas assim que voc tiver
+
+186
+00:08:07,570 --> 00:08:08,403
+alguns cinzis e
+
+187
+00:08:08,403 --> 00:08:12,670
+algumas lixadeiras e lixas, voc pode comear a fazer um monte de coisas.
+
+188
+00:08:12,670 --> 00:08:14,740
+Claro, este curso vai te
+
+189
+00:08:14,740 --> 00:08:16,830
+trazer muito mais do que cinzelar.
+
+190
+00:08:16,830 --> 00:08:19,040
+Isso vai te dar muito mais ferramentas
+
+191
+00:08:19,040 --> 00:08:21,910
+e voc aprender muito sobre isso enquanto progredimos.
+
+192
+00:08:23,010 --> 00:08:24,530
+Como eu disse, este curso vai levar
+
+193
+00:08:24,530 --> 00:08:25,900
+voc a um nvel de especialista.
+
+194
+00:08:25,900 --> 00:08:27,850
+Ento vamos para o prximo vdeo
+
+195
+00:08:27,850 --> 00:08:29,300
+e continuar aprendendo Python.
+

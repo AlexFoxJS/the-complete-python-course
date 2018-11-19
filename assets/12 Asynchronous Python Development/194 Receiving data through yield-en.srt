@@ -1,0 +1,764 @@
+1
+00:00:00,140 --> 00:00:01,740
+<v Jose>Hi, welcome back.</v>
+
+2
+00:00:01,740 --> 00:00:03,770
+Something that we are going to look at in this video
+
+3
+00:00:03,770 --> 00:00:07,140
+is pretty mental, and a lot of people
+
+4
+00:00:07,140 --> 00:00:09,117
+in the Python community don't really understand
+
+5
+00:00:09,117 --> 00:00:12,310
+how this works, and that is, that you can use
+
+6
+00:00:12,310 --> 00:00:14,835
+the yield statement to receive data,
+
+7
+00:00:14,835 --> 00:00:17,880
+as opposed to only give it back.
+
+8
+00:00:17,880 --> 00:00:21,140
+Here's an example: we're gonna define a greet function,
+
+9
+00:00:23,140 --> 00:00:27,680
+and this is going to say, friend equals yield.
+
+10
+00:00:27,680 --> 00:00:30,320
+Wait, wait, wait, wait, what's going on here?
+
+11
+00:00:30,320 --> 00:00:31,520
+Well, let's have a look.
+
+12
+00:00:31,520 --> 00:00:34,910
+Then we're gonna print, hello friend.
+
+13
+00:00:38,181 --> 00:00:40,330
+So this looks weird; it looks bizarre.
+
+14
+00:00:40,330 --> 00:00:42,390
+And it looks weird to me too,
+
+15
+00:00:42,390 --> 00:00:44,257
+but what's happening is we're gonna say,
+
+16
+00:00:44,257 --> 00:00:46,780
+friend is equal to
+
+17
+00:00:48,375 --> 00:00:50,010
+suspend the function.
+
+18
+00:00:52,288 --> 00:00:55,230
+And then we're gonna print out the value of friend.
+
+19
+00:00:55,230 --> 00:00:57,230
+And this has been designed this way in Python
+
+20
+00:00:57,230 --> 00:01:00,880
+so that we can suspend the function,
+
+21
+00:01:02,110 --> 00:01:06,500
+but then also receive a value after we resume it.
+
+22
+00:01:06,500 --> 00:01:09,330
+And the value we receive is going into friend,
+
+23
+00:01:09,330 --> 00:01:11,700
+and then we can print that out here.
+
+24
+00:01:11,700 --> 00:01:13,300
+We're gonna say, g equals greet,
+
+25
+00:01:14,345 --> 00:01:15,610
+and the first thing we have to do
+
+26
+00:01:15,610 --> 00:01:19,130
+is run the function up to right before the yield.
+
+27
+00:01:20,170 --> 00:01:25,160
+So we can say g.send, none.
+
+28
+00:01:25,160 --> 00:01:28,360
+This is called priming the generator.
+
+29
+00:01:28,360 --> 00:01:31,410
+Priming, priming the generator.
+
+30
+00:01:32,990 --> 00:01:35,260
+And what this does, is it sort of runs it up to
+
+31
+00:01:35,260 --> 00:01:36,440
+right before the yield,
+
+32
+00:01:37,320 --> 00:01:41,630
+and then we can do g.send, Adam, for example.
+
+33
+00:01:43,370 --> 00:01:46,980
+This is what's going into the yield,
+
+34
+00:01:46,980 --> 00:01:49,860
+and the function is then going to assign Adam to friend,
+
+35
+00:01:49,860 --> 00:01:51,270
+and we're gonna continue here.
+
+36
+00:01:51,270 --> 00:01:52,270
+Let's run this file.
+
+37
+00:01:53,750 --> 00:01:55,190
+Okay?
+
+38
+00:01:55,190 --> 00:01:56,950
+So, we get a couple of things.
+
+39
+00:01:56,950 --> 00:02:00,000
+We get, hello, Adam, so that's awesome, this works.
+
+40
+00:02:00,000 --> 00:02:03,230
+But of course, we also get, StopIteration,
+
+41
+00:02:03,230 --> 00:02:04,390
+because there is a yield here,
+
+42
+00:02:04,390 --> 00:02:05,990
+which means this is a generator,
+
+43
+00:02:06,960 --> 00:02:09,230
+and the generator ends after we print.
+
+44
+00:02:09,230 --> 00:02:10,480
+There's no sort of repetition,
+
+45
+00:02:10,480 --> 00:02:11,870
+there's nothing else to yield,
+
+46
+00:02:11,870 --> 00:02:13,340
+so we get a StopIteration, because that's
+
+47
+00:02:13,340 --> 00:02:14,980
+the end of the generator.
+
+48
+00:02:14,980 --> 00:02:18,380
+So this receiving through yield is weird,
+
+49
+00:02:18,380 --> 00:02:22,280
+but it's actually what makes asynchronous Python
+
+50
+00:02:22,280 --> 00:02:23,770
+development possible.
+
+51
+00:02:23,770 --> 00:02:26,320
+Let's look at another example right now.
+
+52
+00:02:28,670 --> 00:02:30,730
+We're gonna have our deque,
+
+53
+00:02:33,783 --> 00:02:36,056
+then we're gonna have our friends, which is gonna be
+
+54
+00:02:36,056 --> 00:02:39,056
+a deque of Rolf, Jose, and so forth,
+
+55
+00:02:44,585 --> 00:02:49,585
+and then, we are going to have a friend_upper function.
+
+56
+00:02:49,870 --> 00:02:54,210
+This is going to say, while we have friends in our deque,
+
+57
+00:02:54,210 --> 00:02:59,210
+we're gonna say friend equal friends.popleft().upper()
+
+58
+00:03:00,150 --> 00:03:03,370
+so it's gonna get the leftmost element of friends,
+
+59
+00:03:03,370 --> 00:03:05,250
+it's gonna remove it from the deque,
+
+60
+00:03:05,250 --> 00:03:07,190
+and it's turn it all to uppercase.
+
+61
+00:03:07,190 --> 00:03:09,390
+This is the way of doing that in Python.
+
+62
+00:03:09,390 --> 00:03:13,870
+Then it's going to say, greeting equal yield,
+
+63
+00:03:14,950 --> 00:03:19,090
+and it's gonna print, greeting, friend.
+
+64
+00:03:23,410 --> 00:03:28,410
+Okay, so this is very strange the way this looks.
+
+65
+00:03:28,420 --> 00:03:30,820
+It's gonna loop over friends,
+
+66
+00:03:31,880 --> 00:03:34,750
+gonna get the first friend and turn it to uppercase,
+
+67
+00:03:34,750 --> 00:03:36,900
+and then it's gonna suspend the function
+
+68
+00:03:36,900 --> 00:03:40,820
+until we receive a value here through the yield
+
+69
+00:03:40,820 --> 00:03:44,440
+and the value we're gonna receive is some sort of greeting,
+
+70
+00:03:44,440 --> 00:03:47,030
+and then when we receive that value, it's gonna print out
+
+71
+00:03:47,030 --> 00:03:50,230
+greeting and the friend, and then it's gonna repeat again,
+
+72
+00:03:50,230 --> 00:03:53,360
+popping the next friend off the list, off the deque, sorry,
+
+73
+00:03:53,360 --> 00:03:55,420
+and then waiting again for some data
+
+74
+00:03:55,420 --> 00:03:57,770
+to come through this yield.
+
+75
+00:03:57,770 --> 00:03:58,930
+So the function is gonna suspend
+
+76
+00:03:58,930 --> 00:03:59,763
+at this point,
+
+77
+00:03:59,763 --> 00:04:02,530
+until we get some more data and then when we do,
+
+78
+00:04:02,530 --> 00:04:04,600
+that data is gonna be assigned to greeting,
+
+79
+00:04:04,600 --> 00:04:06,940
+which is then gonna be printed out and so forth.
+
+80
+00:04:09,270 --> 00:04:13,640
+And then, we're also gonna have a greet function again.
+
+81
+00:04:15,270 --> 00:04:19,360
+This function is going to prime the generator
+
+82
+00:04:20,443 --> 00:04:22,280
+by sending none to it.
+
+83
+00:04:22,280 --> 00:04:24,310
+So again, it's receiving a generator here,
+
+84
+00:04:24,310 --> 00:04:26,600
+which is gonna be this friends upper here,
+
+85
+00:04:26,600 --> 00:04:28,400
+and it's gonna send none to it to prime it
+
+86
+00:04:28,400 --> 00:04:31,320
+and bring it up to the first part of the yield
+
+87
+00:04:31,320 --> 00:04:32,680
+here just before the yield,
+
+88
+00:04:34,240 --> 00:04:38,395
+and then while true, is going to again take a greeting
+
+89
+00:04:38,395 --> 00:04:43,395
+and yield it, and send it over to the generator
+
+90
+00:04:45,148 --> 00:04:47,360
+that was passed in as a parameter.
+
+91
+00:04:49,901 --> 00:04:51,620
+So, very weird stuff going on here.
+
+92
+00:04:51,620 --> 00:04:53,528
+Let's finish off the code to see
+
+93
+00:04:53,528 --> 00:04:55,270
+if this makes any more sense.
+
+94
+00:04:56,357 --> 00:04:57,880
+We're gonna create a greeter variable,
+
+95
+00:04:57,880 --> 00:04:59,700
+which is gonna be, greet,
+
+96
+00:04:59,700 --> 00:05:01,820
+and we're gonna pass it in a generator,
+
+97
+00:05:01,820 --> 00:05:03,970
+which is gonna be a friend upper generator.
+
+98
+00:05:05,210 --> 00:05:07,180
+The first thing we're gonna do is we're gonna prime
+
+99
+00:05:07,180 --> 00:05:08,570
+the greeter generator.
+
+100
+00:05:08,570 --> 00:05:11,000
+So we're gonna do greeter.send(None).
+
+101
+00:05:12,310 --> 00:05:14,040
+Again, you know what this does.
+
+102
+00:05:14,040 --> 00:05:18,348
+It just moves the generator up to before the yield,
+
+103
+00:05:18,348 --> 00:05:22,340
+so greeter.send(None) is gonna move the generator up to here
+
+104
+00:05:22,340 --> 00:05:24,760
+running this primer.
+
+105
+00:05:24,760 --> 00:05:28,250
+So it's gonna prime friend upper, and then it's gonna stop
+
+106
+00:05:28,250 --> 00:05:29,450
+right before the yield.
+
+107
+00:05:30,880 --> 00:05:33,220
+Then, we're gonna do greeter.send('Hello').
+
+108
+00:05:35,860 --> 00:05:38,000
+This string here is gonna go into the yield
+
+109
+00:05:38,000 --> 00:05:40,590
+and be assigned to greeting,
+
+110
+00:05:40,590 --> 00:05:43,520
+and then it's gonna be sent to friend upper,
+
+111
+00:05:43,520 --> 00:05:45,152
+which is our g.
+
+112
+00:05:45,152 --> 00:05:49,010
+When we do that, that's gonna be assigned to greeting.
+
+113
+00:05:49,010 --> 00:05:51,060
+Remember, it was primed earlier on,
+
+114
+00:05:51,060 --> 00:05:52,560
+and then it's gonna be printed out
+
+115
+00:05:52,560 --> 00:05:55,590
+using this friend upper thing.
+
+116
+00:05:57,800 --> 00:05:58,760
+Let's run this.
+
+117
+00:06:01,807 --> 00:06:02,907
+And there you have it.
+
+118
+00:06:04,250 --> 00:06:09,150
+We print out, hello, Rolf, and that's it.
+
+119
+00:06:09,150 --> 00:06:11,788
+What we've got ourselves here,
+
+120
+00:06:11,788 --> 00:06:14,140
+is some pretty amazing thing.
+
+121
+00:06:15,280 --> 00:06:16,770
+None of these functions is running,
+
+122
+00:06:16,770 --> 00:06:19,933
+but they're all suspended, allowing something else
+
+123
+00:06:19,933 --> 00:06:22,030
+to run.
+
+124
+00:06:22,030 --> 00:06:23,590
+For example, we could print,
+
+125
+00:06:24,780 --> 00:06:26,290
+'Hello, world!
+
+126
+00:06:26,290 --> 00:06:27,560
+'Multitasking.'
+
+127
+00:06:28,820 --> 00:06:33,820
+and then greeter.send, 'how are you', for example.
+
+128
+00:06:35,750 --> 00:06:36,950
+We could run this again.
+
+129
+00:06:38,740 --> 00:06:43,740
+And now you can see that we are multitasking, essentially.
+
+130
+00:06:44,200 --> 00:06:45,740
+First we've got hello Rolf,
+
+131
+00:06:46,583 --> 00:06:48,485
+then we've got something completely separate
+
+132
+00:06:48,485 --> 00:06:49,850
+from our chain of functions,
+
+133
+00:06:49,850 --> 00:06:52,170
+even though they're running in a loop,
+
+134
+00:06:52,170 --> 00:06:54,480
+and then we've got, how are you, Jose.
+
+135
+00:06:54,480 --> 00:06:57,370
+And notice how this is taking data from this deque up here.
+
+136
+00:06:59,730 --> 00:07:03,427
+If we have a bunch of this type of things
+
+137
+00:07:03,427 --> 00:07:05,500
+running in a task scheduler,
+
+138
+00:07:05,500 --> 00:07:07,480
+for example, instead of popping from friends,
+
+139
+00:07:07,480 --> 00:07:10,130
+it could be requesting something from the internet,
+
+140
+00:07:10,130 --> 00:07:12,750
+like some pages to scrape,
+
+141
+00:07:12,750 --> 00:07:15,770
+you can see how these could potentially be used
+
+142
+00:07:15,770 --> 00:07:18,690
+to divide up the work by using these yields.
+
+143
+00:07:19,830 --> 00:07:21,400
+And it's pretty messed up, okay?
+
+144
+00:07:21,400 --> 00:07:23,150
+Well, this is sort of how it works.
+
+145
+00:07:24,050 --> 00:07:27,780
+And this is how Python asynchronous development works
+
+146
+00:07:27,780 --> 00:07:29,380
+on the inside.
+
+147
+00:07:30,610 --> 00:07:32,510
+Now, instead of doing all of this,
+
+148
+00:07:33,510 --> 00:07:36,120
+we can actually do something, which...
+
+149
+00:07:37,030 --> 00:07:40,250
+I don't like it; nobody in the Python community likes it,
+
+150
+00:07:40,250 --> 00:07:41,980
+which is, we can do yield from g.
+
+151
+00:07:44,420 --> 00:07:46,760
+This, which we looked at before,
+
+152
+00:07:46,760 --> 00:07:49,110
+was used to extract values from an iterator,
+
+153
+00:07:49,110 --> 00:07:51,590
+actually can be used for two-way communication as well.
+
+154
+00:07:51,590 --> 00:07:54,030
+It can be used to receive data,
+
+155
+00:07:54,030 --> 00:07:57,720
+and forward it to another generator.
+
+156
+00:07:57,720 --> 00:07:59,870
+So here when we send, hello,
+
+157
+00:07:59,870 --> 00:08:04,190
+it comes in here, and it gets passed over to g as well,
+
+158
+00:08:04,190 --> 00:08:06,210
+and then it can be used, and then whatever value
+
+159
+00:08:06,210 --> 00:08:08,240
+then gets returned back.
+
+160
+00:08:08,240 --> 00:08:10,740
+So this is another way of writing exactly the same
+
+161
+00:08:10,740 --> 00:08:11,870
+that we had before.
+
+162
+00:08:12,710 --> 00:08:17,010
+So this, send(None), and sort of repeat constantly,
+
+163
+00:08:17,010 --> 00:08:21,510
+yielding things, and sending the value can be replaced by,
+
+164
+00:08:21,510 --> 00:08:23,350
+yield from g, okay?
+
+165
+00:08:25,390 --> 00:08:28,490
+So we can easily chain these generators,
+
+166
+00:08:28,490 --> 00:08:31,720
+and when you have generators that receive data,
+
+167
+00:08:31,720 --> 00:08:34,460
+they're really no longer called generators
+
+168
+00:08:34,460 --> 00:08:36,450
+because they're not generating anything.
+
+169
+00:08:36,450 --> 00:08:38,750
+Now they're receiving data and doing something with it.
+
+170
+00:08:38,750 --> 00:08:43,206
+So from now onwards, this type of generator shall be known
+
+171
+00:08:43,206 --> 00:08:45,810
+as a co-routine.
+
+172
+00:08:45,810 --> 00:08:47,960
+And in Python, they're known as co-routines
+
+173
+00:08:47,960 --> 00:08:50,622
+because they take in data, and they can be suspended,
+
+174
+00:08:50,622 --> 00:08:52,210
+so that's a co-routine.
+
+175
+00:08:53,070 --> 00:08:54,710
+In the resources section of this lecture,
+
+176
+00:08:54,710 --> 00:08:57,130
+we've got some further reading.
+
+177
+00:08:57,130 --> 00:09:00,410
+It is advanced, so take your time.
+
+178
+00:09:00,410 --> 00:09:02,550
+I don't expect you to be flying through this section
+
+179
+00:09:02,550 --> 00:09:03,480
+by any means.
+
+180
+00:09:03,480 --> 00:09:06,330
+I expect you to be reading through the extra resources.
+
+181
+00:09:06,330 --> 00:09:09,470
+There's a very long course there on co-routines
+
+182
+00:09:09,470 --> 00:09:12,110
+and concurrency from David Beazley that's really good.
+
+183
+00:09:12,110 --> 00:09:14,860
+If you're not that keen on knowing everything
+
+184
+00:09:14,860 --> 00:09:17,390
+there is to know about concurrency and Python,
+
+185
+00:09:17,390 --> 00:09:20,480
+feel free to sort of skip through it.
+
+186
+00:09:20,480 --> 00:09:22,760
+But if you want to really understand what's going on
+
+187
+00:09:22,760 --> 00:09:26,610
+behind the scenes, then do read all the further reading
+
+188
+00:09:26,610 --> 00:09:28,260
+and resources that I link you to.
+
+189
+00:09:29,610 --> 00:09:30,670
+That's it for this video.
+
+190
+00:09:30,670 --> 00:09:32,100
+Hopefully this was interesting,
+
+191
+00:09:32,100 --> 00:09:33,750
+and I'll see you on the next one.
+

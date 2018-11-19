@@ -1,0 +1,776 @@
+1
+00:00:00,200 --> 00:00:01,140
+Instructor: Hola, y bienvenido de nuevo.
+
+2
+00:00:01,140 --> 00:00:04,290
+En este video estamos hablando de herencia.
+
+3
+00:00:04,290 --> 00:00:05,710
+Y si esto te asusta
+
+4
+00:00:05,710 --> 00:00:07,980
+porque parece un poco avanzado, no te preocupes.
+
+5
+00:00:07,980 --> 00:00:10,170
+La herencia es bastante fcil de entender, al
+
+6
+00:00:10,170 --> 00:00:12,340
+menos en cierto nivel, y vamos a hablar
+
+7
+00:00:12,340 --> 00:00:13,960
+de cosas ms avanzadas a medida
+
+8
+00:00:13,960 --> 00:00:15,770
+que avanzamos en el curso.
+
+9
+00:00:15,770 --> 00:00:18,420
+Imagina que tienes esta clase de estudiantes.
+
+10
+00:00:18,420 --> 00:00:20,640
+Algo muy similar a lo que hemos definido antes.
+
+11
+00:00:20,640 --> 00:00:23,290
+Tiene un mtodo init que toma un nombre y
+
+12
+00:00:23,290 --> 00:00:25,600
+una escuela y los asigna a dos propiedades,
+
+13
+00:00:25,600 --> 00:00:27,870
+y tambin crea una propiedad de marcas, que
+
+14
+00:00:27,870 --> 00:00:29,160
+es una lista vaca.
+
+15
+00:00:30,410 --> 00:00:33,240
+Y tambin tiene un mtodo promedio; Siempre
+
+16
+00:00:33,240 --> 00:00:35,410
+quiero llamarles funciones, un mtodo promedio
+
+17
+00:00:35,410 --> 00:00:38,800
+que devuelve el promedio de las marcas de puntos.
+
+18
+00:00:40,460 --> 00:00:43,870
+Ahora imagina que quieres agregar alguna funcionalidad ms a
+
+19
+00:00:43,870 --> 00:00:46,030
+otra clase que puede ser
+
+20
+00:00:46,030 --> 00:00:48,440
+una clase de estudiante que trabaja.
+
+21
+00:00:48,440 --> 00:00:50,250
+Un estudiante que trabaja es exactamente
+
+22
+00:00:50,250 --> 00:00:53,430
+lo mismo que un estudiante, pero tambin tiene un salario.
+
+23
+00:00:53,430 --> 00:00:54,263
+Vamos a hacer eso.
+
+24
+00:00:57,204 --> 00:00:58,620
+Aqu est nuestra clase de estudiantes
+
+25
+00:00:58,620 --> 00:01:00,410
+que trabajan, y tambin tiene un mtodo init.
+
+26
+00:01:01,810 --> 00:01:04,560
+Mientras que toma un nombre, una escuela y un salario.
+
+27
+00:01:08,080 --> 00:01:11,060
+Ahora, igual que arriba, vamos a tener el mismo nombre de
+
+28
+00:01:11,060 --> 00:01:14,085
+punto nombre, la escuela auto punto es igual a la escuela,
+
+29
+00:01:14,085 --> 00:01:16,840
+las marcas auto punto equivalen a la lista vaca, y
+
+30
+00:01:16,840 --> 00:01:19,470
+ahora un nuevo salario lnea auto punto es igual a salario.
+
+31
+00:01:20,580 --> 00:01:23,903
+Cada vez que intentas cosas como esta
+
+32
+00:01:23,903 --> 00:01:27,583
+que son copias exactas de algo que tienes
+
+33
+00:01:27,583 --> 00:01:31,230
+arriba, debes saber que algo est mal.
+
+34
+00:01:31,230 --> 00:01:33,530
+Algo se puede mejorar,
+
+35
+00:01:33,530 --> 00:01:35,963
+especialmente en Python, donde
+
+36
+00:01:35,963 --> 00:01:39,620
+la duplicacin no es tan comn.
+
+37
+00:01:39,620 --> 00:01:42,650
+Siempre hay formas de duplicar el cdigo.
+
+38
+00:01:44,381 --> 00:01:47,540
+Tambin tenemos que definir, por supuesto,
+
+39
+00:01:48,798 --> 00:01:52,320
+este mtodo promedio, donde va a devolver
+
+40
+00:01:52,320 --> 00:01:55,720
+todo tal como lo conocemos, como tal.
+
+41
+00:01:57,130 --> 00:02:02,130
+Ahora, si creamos un estudiante que trabaja, Rolf, que va al MIT y tiene
+
+42
+00:02:02,770 --> 00:02:06,860
+un salario de 15 puntos 50, podemos, por supuesto, imprimir el salario
+
+43
+00:02:06,860 --> 00:02:09,780
+de Rolf dot, y eso le dar a
+
+44
+00:02:10,990 --> 00:02:14,470
+la propiedad del salario 15. 5.
+
+45
+00:02:14,470 --> 00:02:16,550
+Observe cmo Python descarta el ltimo cero
+
+46
+00:02:16,550 --> 00:02:18,650
+porque es un cero, y eso est bien.
+
+47
+00:02:19,570 --> 00:02:21,560
+As que, de nuevo, nada nuevo est sucediendo aqu,
+
+48
+00:02:21,560 --> 00:02:22,790
+el estudiante que trabaja ha creado
+
+49
+00:02:22,790 --> 00:02:25,120
+el nuevo objeto en blanco, lo ha puesto en s mismo.
+
+50
+00:02:25,120 --> 00:02:26,930
+Rolf, MIT y 15. 50 se han
+
+51
+00:02:26,930 --> 00:02:29,540
+ido en el nombre, la escuela y el salario, respectivamente.
+
+52
+00:02:29,540 --> 00:02:32,430
+Y hemos creado cuatro propiedades: nombre de uno mismo, escuela de punto
+
+53
+00:02:32,430 --> 00:02:34,660
+propio, marcas de punto propio y salario de punto propio.
+
+54
+00:02:34,660 --> 00:02:37,840
+Y le hemos dado algunos valores: nombre, escuela y salario.
+
+55
+00:02:37,840 --> 00:02:39,430
+Estos son los parmetros.
+
+56
+00:02:39,430 --> 00:02:42,790
+Y luego la lista de marcas con las que se inicializar.
+
+57
+00:02:42,790 --> 00:02:44,930
+Si quisiramos agregar algunas marcas,
+
+58
+00:02:44,930 --> 00:02:48,075
+tendramos que hacer Rolf dot marks dot
+
+59
+00:02:48,075 --> 00:02:49,720
+append 56, por ejemplo.
+
+60
+00:02:51,530 --> 00:02:54,280
+Y luego podramos calcular el promedio de esas marcas.
+
+61
+00:02:55,570 --> 00:02:57,200
+Entonces, pueden ver que hay
+
+62
+00:02:57,200 --> 00:02:59,810
+mucha duplicacin entre nuestros estudiantes, que tiene nombre, escuela
+
+63
+00:02:59,810 --> 00:03:02,370
+y calificaciones, y una funcin promedio, y nuestro estudiante
+
+64
+00:03:02,370 --> 00:03:04,530
+que trabaja, que es exactamente el mismo.
+
+65
+00:03:04,530 --> 00:03:06,650
+Lo nico que hemos agregado es el salario.
+
+66
+00:03:09,560 --> 00:03:13,700
+Por lo tanto, podramos usar la herencia para
+
+67
+00:03:13,700 --> 00:03:15,440
+eliminar la duplicacin.
+
+68
+00:03:16,570 --> 00:03:17,850
+As es como va a funcionar.
+
+69
+00:03:17,850 --> 00:03:20,350
+Voy a volver a implementar la clase de estudiantes que
+
+70
+00:03:20,350 --> 00:03:23,100
+trabajan utilizando la herencia para reducir la duplicacin, luego vamos a
+
+71
+00:03:24,137 --> 00:03:25,950
+hablar sobre lo que est pasando.
+
+72
+00:03:25,950 --> 00:03:28,050
+Por lo tanto, tenemos nuestros estudiantes que
+
+73
+00:03:28,050 --> 00:03:32,160
+trabajan en clase, y queremos que se extienda a la clase de estudiantes.
+
+74
+00:03:32,160 --> 00:03:34,700
+Lo que eso significar es que
+
+75
+00:03:34,700 --> 00:03:38,120
+la clase del estudiante que trabaja se convertir
+
+76
+00:03:38,120 --> 00:03:40,290
+en una copia exacta del
+
+77
+00:03:40,290 --> 00:03:43,290
+alumno, pero podremos modificar determinados mtodos si queremos.
+
+78
+00:03:43,290 --> 00:03:44,930
+La forma en que lo
+
+79
+00:03:44,930 --> 00:03:48,910
+haces es agregar algunos corchetes al final y escribir en student.
+
+80
+00:03:48,910 --> 00:03:51,140
+Ahora el estudiante que trabaja es una
+
+81
+00:03:51,140 --> 00:03:53,290
+clase que es hija de un alumno.
+
+82
+00:03:53,290 --> 00:03:55,180
+Se extiende al estudiante.
+
+83
+00:03:57,130 --> 00:04:01,061
+Por lo tanto, podemos eliminar el mtodo promedio.
+
+84
+00:04:01,061 --> 00:04:01,894
+(silbido) Completamente
+
+85
+00:04:01,894 --> 00:04:02,727
+ido.
+
+86
+00:04:02,727 --> 00:04:05,610
+Pero, el estudiante que trabaja todava tiene
+
+87
+00:04:05,610 --> 00:04:08,660
+un mtodo promedio, solo que no est all.
+
+88
+00:04:08,660 --> 00:04:12,200
+Ahora es heredado directamente del estudiante.
+
+89
+00:04:12,200 --> 00:04:13,240
+Exactamente lo mismo.
+
+90
+00:04:13,240 --> 00:04:14,480
+Imagina que es una copia de esto.
+
+91
+00:04:14,480 --> 00:04:15,410
+Nada ha cambiado.
+
+92
+00:04:16,770 --> 00:04:18,832
+Entonces, qu pasa con el mtodo init?
+
+93
+00:04:18,832 --> 00:04:20,840
+Tenemos nombre y escuela, que son
+
+94
+00:04:20,840 --> 00:04:23,610
+solo copias de ellos, no podemos simplemente eliminarlos?
+
+95
+00:04:23,610 --> 00:04:25,230
+Y solo mantn el salario?
+
+96
+00:04:26,530 --> 00:04:28,200
+Esto sera genial.
+
+97
+00:04:28,200 --> 00:04:29,510
+Ser honesto.
+
+98
+00:04:29,510 --> 00:04:31,040
+Sera genial si pudiramos
+
+99
+00:04:31,040 --> 00:04:32,910
+hacer esto, pero lamentablemente no.
+
+100
+00:04:32,910 --> 00:04:35,800
+Porque cuando se llama al estudiante de trabajo,
+
+101
+00:04:35,800 --> 00:04:37,840
+sucede lo mismo que antes.
+
+102
+00:04:37,840 --> 00:04:40,440
+Y se crea un objeto vaco
+
+103
+00:04:40,440 --> 00:04:45,440
+y en blanco, dado a s mismo, y ahora el salario es Rolf.
+
+104
+00:04:46,290 --> 00:04:49,074
+MIT y 15. 50 no tienen ningn argumento
+
+105
+00:04:49,074 --> 00:04:51,810
+coincidente, por lo que obtenemos un error: tambin pueden
+
+106
+00:04:51,810 --> 00:04:52,920
+existir argumentos posicionales para
+
+107
+00:04:52,920 --> 00:04:54,190
+la llamada al constructor.
+
+108
+00:04:55,090 --> 00:04:57,640
+Entonces no, no puedes hacer eso desafortunadamente.
+
+109
+00:04:58,710 --> 00:05:01,040
+Pero lo que puedes hacer ahora es
+
+110
+00:05:01,040 --> 00:05:04,050
+que tienes este objeto vaco aqu, puedes llamar al
+
+111
+00:05:04,050 --> 00:05:06,580
+mtodo init del alumno y hacerlo pasar por
+
+112
+00:05:06,580 --> 00:05:09,470
+esta inicializacin del nombre del uno mismo, la escuela
+
+113
+00:05:09,470 --> 00:05:12,140
+del punto propio y las marcas de puntos propios.
+
+114
+00:05:12,140 --> 00:05:15,380
+La forma en que haces eso es una manera levemente confusa.
+
+115
+00:05:15,380 --> 00:05:16,390
+Tu dices super.
+
+116
+00:05:17,420 --> 00:05:20,140
+Sper es la clase de padres.
+
+117
+00:05:20,140 --> 00:05:21,780
+En este caso, estudiante.
+
+118
+00:05:22,640 --> 00:05:25,130
+Y puede entonces, este es el nico momento
+
+119
+00:05:25,130 --> 00:05:26,970
+en que va a llamar al
+
+120
+00:05:26,970 --> 00:05:29,990
+mtodo init manualmente, dndonos un sper, que es el alumno
+
+121
+00:05:29,990 --> 00:05:32,569
+de la clase principal, dot dunder init, abrir
+
+122
+00:05:32,569 --> 00:05:34,460
+y cerrar corchetes, y aqu va
+
+123
+00:05:34,460 --> 00:05:36,520
+a poner el nombre y la escuela.
+
+124
+00:05:39,630 --> 00:05:42,400
+Entonces, lo que est sucediendo es que
+
+125
+00:05:42,400 --> 00:05:45,310
+ests saltando a este mtodo de inicio.
+
+126
+00:05:45,310 --> 00:05:48,030
+Y el yo sigue siendo el objeto actual con el
+
+127
+00:05:48,030 --> 00:05:48,870
+que ests lidiando.
+
+128
+00:05:48,870 --> 00:05:51,310
+Ese es Rolf, este estudiante trabajador.
+
+129
+00:05:52,860 --> 00:05:56,940
+As que ahora aqu llama al mtodo de inicio de clase de los padres.
+
+130
+00:05:56,940 --> 00:05:59,870
+Eso inicializa el nombre, la escuela y las marcas.
+
+131
+00:05:59,870 --> 00:06:01,040
+Luego vuelves aqu
+
+132
+00:06:01,040 --> 00:06:02,340
+e inicializas el salario.
+
+133
+00:06:03,480 --> 00:06:05,740
+Y esta es una forma mucho ms concisa
+
+134
+00:06:05,740 --> 00:06:07,700
+de escribir su clase de estudiante trabajadora,
+
+135
+00:06:07,700 --> 00:06:10,580
+que es solo una extensin de la clase de estudiantes.
+
+136
+00:06:10,580 --> 00:06:12,900
+Simplemente agrega una nueva propiedad.
+
+137
+00:06:15,400 --> 00:06:17,950
+Observe cmo puede imprimir el salario
+
+138
+00:06:17,950 --> 00:06:20,250
+de Rolf, pero tambin puede
+
+139
+00:06:20,250 --> 00:06:25,250
+hacer Rolf dot marks dot append 57, Rolf dot marks dot
+
+140
+00:06:27,280 --> 00:06:31,320
+append 99, y puede imprimir el promedio all.
+
+141
+00:06:31,320 --> 00:06:32,390
+Ah, presion guardar.
+
+142
+00:06:32,390 --> 00:06:33,223
+Yo siempre hago esto
+
+143
+00:06:33,223 --> 00:06:34,320
+Lo siento por eso.
+
+144
+00:06:34,320 --> 00:06:35,330
+Entonces puedes ejecutarlo.
+
+145
+00:06:35,330 --> 00:06:37,370
+Y sale 78 puntos cero.
+
+146
+00:06:37,370 --> 00:06:39,460
+Eso es totalmente bueno
+
+147
+00:06:39,460 --> 00:06:41,554
+porque eso significa que
+
+148
+00:06:41,554 --> 00:06:46,554
+nuestro estudiante que trabaja tiene este mtodo promedio definido aqu,
+
+149
+00:06:46,930 --> 00:06:48,500
+y eso est bien.
+
+150
+00:06:48,500 --> 00:06:50,670
+Simplemente es heredado de la clase de estudiantes,
+
+151
+00:06:50,670 --> 00:06:52,370
+en lugar de tener que definirlo.
+
+152
+00:06:54,470 --> 00:06:57,480
+Esa es la base de la herencia.
+
+153
+00:06:58,910 --> 00:07:03,910
+Y la forma de extender la clase es
+
+154
+00:07:04,280 --> 00:07:08,459
+que ahora puede definir algo ms, como
+
+155
+00:07:08,459 --> 00:07:10,400
+el salario semanal.
+
+156
+00:07:13,480 --> 00:07:16,090
+Y esto va a devolver el
+
+157
+00:07:16,090 --> 00:07:20,110
+salario de self dot multiplicado por 37 punto cinco.
+
+158
+00:07:20,110 --> 00:07:22,170
+Por lo tanto, las horas normales de trabajo en
+
+159
+00:07:22,170 --> 00:07:23,970
+el Reino Unido, 37 punto cinco horas.
+
+160
+00:07:23,970 --> 00:07:27,600
+As que ahora puedes imprimir el salario semanal de Rolf dot,
+
+161
+00:07:27,600 --> 00:07:30,220
+y eso te dar el salario de Rolf
+
+162
+00:07:30,220 --> 00:07:31,540
+por 37. 5.
+
+163
+00:07:34,010 --> 00:07:36,360
+Importante, si creas, voy a agregar unas
+
+164
+00:07:37,200 --> 00:07:39,510
+lneas all para que sea un poco
+
+165
+00:07:39,510 --> 00:07:40,360
+ms fcil de
+
+166
+00:07:40,360 --> 00:07:43,680
+leer, si creas a Anna, siendo una estudiante normal, en
+
+167
+00:07:45,010 --> 00:07:47,890
+Oxford, observa cmo ella no toma un salario porque
+
+168
+00:07:47,890 --> 00:07:49,960
+el constructor del estudiante es todava
+
+169
+00:07:49,960 --> 00:07:50,793
+aqu arriba.
+
+170
+00:07:50,793 --> 00:07:52,180
+Esta clase todava es totalmente vlida.
+
+171
+00:07:52,180 --> 00:07:54,390
+No deja de ser til.
+
+172
+00:07:54,390 --> 00:07:55,760
+No toma un
+
+173
+00:07:55,760 --> 00:07:58,030
+salario, no tiene una propiedad salarial.
+
+174
+00:07:58,030 --> 00:08:03,030
+Entonces, si haces un salario semanal con puntos de Anna, esto
+
+175
+00:08:03,590 --> 00:08:05,490
+te dar un error.
+
+176
+00:08:05,490 --> 00:08:07,670
+Y va a decir que el objeto estudiantil
+
+177
+00:08:07,670 --> 00:08:09,400
+no tiene ningn atributo de salario semanal.
+
+178
+00:08:09,400 --> 00:08:13,560
+Esta funcin, aqu, no est definida para el estudiante.
+
+179
+00:08:13,560 --> 00:08:15,650
+Solo se define en estudiantes que trabajan.
+
+180
+00:08:16,510 --> 00:08:18,430
+Esto va de arriba a abajo.
+
+181
+00:08:18,430 --> 00:08:21,690
+El estudiante trabajador obtiene cosas del alumno, pero
+
+182
+00:08:21,690 --> 00:08:22,840
+no al revs.
+
+183
+00:08:22,840 --> 00:08:25,840
+El estudiante no obtiene nada de un estudiante que trabaja.
+
+184
+00:08:25,840 --> 00:08:27,540
+Bueno, algo importante para recordar.
+
+185
+00:08:29,150 --> 00:08:30,440
+Eso es todo por este video.
+
+186
+00:08:30,440 --> 00:08:32,100
+Ahora en el prximo
+
+187
+00:08:32,100 --> 00:08:35,770
+video vamos a ver el decorador de la propiedad.
+
+188
+00:08:35,770 --> 00:08:38,140
+No vamos a hablar sobre lo que son los
+
+189
+00:08:38,140 --> 00:08:39,800
+decoradores, pero de lo que vamos
+
+190
+00:08:39,800 --> 00:08:42,800
+a hablar es del hecho de que tenemos aqu este salario
+
+191
+00:08:42,800 --> 00:08:44,890
+semanal, y es una funcin que no toma
+
+192
+00:08:44,890 --> 00:08:45,960
+ms argumentos que el yo.
+
+193
+00:08:46,890 --> 00:08:50,510
+Entonces hay una simplificacin que podemos hacer aqu.
+
+194
+00:08:50,510 --> 00:08:52,660
+Hablemos de eso en el prximo video.
+

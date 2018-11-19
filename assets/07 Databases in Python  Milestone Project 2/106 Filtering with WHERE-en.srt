@@ -1,0 +1,492 @@
+1
+00:00:00,110 --> 00:00:01,360
+<v Instructor>Hi, and welcome back.</v>
+
+2
+00:00:01,360 --> 00:00:03,670
+In this video we're talking about filtering,
+
+3
+00:00:03,670 --> 00:00:04,930
+and in the last video we looked at a few
+
+4
+00:00:04,930 --> 00:00:07,410
+examples of where missing out on filtering
+
+5
+00:00:07,410 --> 00:00:09,372
+could result in something disastrous,
+
+6
+00:00:09,372 --> 00:00:11,440
+like deleting your entire tables,
+
+7
+00:00:11,440 --> 00:00:15,282
+or modifying all your rows to have some new value.
+
+8
+00:00:15,282 --> 00:00:20,282
+Let's make an update now to row number one only.
+
+9
+00:00:20,530 --> 00:00:22,220
+And this is how it would go;
+
+10
+00:00:22,220 --> 00:00:24,210
+we'd day update the people table,
+
+11
+00:00:24,210 --> 00:00:26,701
+setting the name now to be equal to Joseph,
+
+12
+00:00:26,701 --> 00:00:30,250
+but we're adding this where clause on the end,
+
+13
+00:00:30,250 --> 00:00:33,360
+the where clause which says id equal to one.
+
+14
+00:00:34,520 --> 00:00:38,580
+That is only going to change the row that has id of one,
+
+15
+00:00:38,580 --> 00:00:41,710
+setting the name now to Joseph.
+
+16
+00:00:41,710 --> 00:00:44,160
+I think Jose is a bit nicer, but ya never know.
+
+17
+00:00:45,700 --> 00:00:48,680
+Notice that in Sequel the equal operator
+
+18
+00:00:48,680 --> 00:00:51,650
+is used for comparison as well as assignment.
+
+19
+00:00:51,650 --> 00:00:53,200
+In this case it's used for assignment.
+
+20
+00:00:53,200 --> 00:00:55,670
+We're setting the new name to be Joseph,
+
+21
+00:00:55,670 --> 00:00:57,260
+but it's also used for comparison here.
+
+22
+00:00:57,260 --> 00:01:00,800
+We're only changing those where the id is equal to one.
+
+23
+00:01:00,800 --> 00:01:02,970
+We're not gonna modify the id here.
+
+24
+00:01:02,970 --> 00:01:04,940
+We're just checking that they match.
+
+25
+00:01:04,940 --> 00:01:06,898
+The id column must be one,
+
+26
+00:01:06,898 --> 00:01:09,920
+and in Python we'd use a double equal sign for this,
+
+27
+00:01:09,920 --> 00:01:11,949
+but in Sequel you use a single equal sign,
+
+28
+00:01:11,949 --> 00:01:14,220
+because it knows that you cannot change
+
+29
+00:01:14,220 --> 00:01:16,100
+things in a where clause.
+
+30
+00:01:16,100 --> 00:01:18,300
+So you don't need a double equal sign here.
+
+31
+00:01:19,950 --> 00:01:21,844
+Okay, let's go over to another example.
+
+32
+00:01:21,844 --> 00:01:25,100
+Now we're going to select using a where clause.
+
+33
+00:01:25,100 --> 00:01:27,810
+Once again, select star from people,
+
+34
+00:01:27,810 --> 00:01:29,690
+where the name is Jen,
+
+35
+00:01:29,690 --> 00:01:32,980
+and that's gonna give us only row number three.
+
+36
+00:01:35,660 --> 00:01:36,770
+Let's delete.
+
+37
+00:01:36,770 --> 00:01:40,430
+Once again, same thing, delete from people where id is one,
+
+38
+00:01:40,430 --> 00:01:42,090
+it's gonna give us
+
+39
+00:01:42,090 --> 00:01:44,770
+all the other rows other than the first one.
+
+40
+00:01:44,770 --> 00:01:47,190
+Notice that this does change the database.
+
+41
+00:01:47,190 --> 00:01:50,210
+So it's not like you'll get a result back of this table,
+
+42
+00:01:50,210 --> 00:01:51,390
+but this changes the database,
+
+43
+00:01:51,390 --> 00:01:53,270
+and then you could extract this entire
+
+44
+00:01:53,270 --> 00:01:55,399
+result set using a select.
+
+45
+00:01:55,399 --> 00:01:58,030
+So you can see the where statement goes in a pretty
+
+46
+00:01:58,030 --> 00:02:01,000
+reasonable place for the English language.
+
+47
+00:02:01,000 --> 00:02:04,330
+Normally at the end, but sometimes it doesn't
+
+48
+00:02:04,330 --> 00:02:06,370
+go quite at the end if there are other clauses,
+
+49
+00:02:06,370 --> 00:02:08,710
+like we're gonna look at in a moment.
+
+50
+00:02:08,710 --> 00:02:09,947
+Here's a few more examples.
+
+51
+00:02:09,947 --> 00:02:12,450
+Select star from purchases where amount
+
+52
+00:02:12,450 --> 00:02:14,500
+is greater than 150.
+
+53
+00:02:14,500 --> 00:02:16,320
+Pretty English like, you know,
+
+54
+00:02:16,320 --> 00:02:19,040
+selecting where something is true.
+
+55
+00:02:19,040 --> 00:02:21,230
+Select star from users where the registered
+
+56
+00:02:21,230 --> 00:02:24,030
+date is less than this magic number here,
+
+57
+00:02:24,030 --> 00:02:27,820
+and this number by the way, if you've never come across
+
+58
+00:02:27,820 --> 00:02:30,150
+the integers for dates,
+
+59
+00:02:30,150 --> 00:02:32,650
+that's a very long integer that represents a date.
+
+60
+00:02:32,650 --> 00:02:34,090
+That's a Unix timestamp.
+
+61
+00:02:34,090 --> 00:02:35,904
+It's a number of seconds that have passed
+
+62
+00:02:35,904 --> 00:02:39,230
+since the first of January, 1970 at midnight.
+
+63
+00:02:39,230 --> 00:02:41,750
+And it's sort of the way of storing
+
+64
+00:02:41,750 --> 00:02:45,210
+dates in databases, so that you don't have to deal with,
+
+65
+00:02:45,210 --> 00:02:46,100
+you know, formatting.
+
+66
+00:02:46,100 --> 00:02:47,470
+Does the month go first?
+
+67
+00:02:47,470 --> 00:02:49,640
+Does the day go first?
+
+68
+00:02:49,640 --> 00:02:52,020
+Just use an integer and everything's solved.
+
+69
+00:02:53,510 --> 00:02:55,050
+We've got select star from people
+
+70
+00:02:55,050 --> 00:02:58,050
+where name is not equal to Rolf.
+
+71
+00:02:58,050 --> 00:02:58,950
+You can do this,
+
+72
+00:03:00,320 --> 00:03:01,420
+and of course you can do,
+
+73
+00:03:01,420 --> 00:03:03,300
+select star from purchases where amount
+
+74
+00:03:03,300 --> 00:03:06,800
+is greater than 150 or the type is online.
+
+75
+00:03:06,800 --> 00:03:09,530
+You can also use and like here.
+
+76
+00:03:09,530 --> 00:03:11,380
+Select star from users where username is Jose
+
+77
+00:03:11,380 --> 00:03:12,930
+and access is admin.
+
+78
+00:03:14,085 --> 00:03:16,340
+Notice, by the way, that I do something that I'm
+
+79
+00:03:16,340 --> 00:03:18,580
+not terribly proud of, which is,
+
+80
+00:03:18,580 --> 00:03:21,742
+I don't put any spaces around the equal sign,
+
+81
+00:03:21,742 --> 00:03:24,340
+but I put spaces around the other symbols.
+
+82
+00:03:25,460 --> 00:03:27,120
+When I was making this presentation
+
+83
+00:03:27,120 --> 00:03:30,010
+I really tried to either put spaces around
+
+84
+00:03:30,010 --> 00:03:32,210
+the equal sign, or remove the spaces around
+
+85
+00:03:32,210 --> 00:03:35,110
+the other symbols, but I just couldn't bring myself to it.
+
+86
+00:03:36,520 --> 00:03:38,080
+For me this looks natural.
+
+87
+00:03:38,080 --> 00:03:39,710
+Maybe it's just because the way I've been
+
+88
+00:03:39,710 --> 00:03:40,860
+doing it for a long time.
+
+89
+00:03:40,860 --> 00:03:42,690
+I couldn't bring myself to add spaces
+
+90
+00:03:42,690 --> 00:03:43,523
+around the equal sign.
+
+91
+00:03:43,523 --> 00:03:44,550
+That just felt a bit wrong,
+
+92
+00:03:44,550 --> 00:03:45,780
+and I couldn't bring myself to remove
+
+93
+00:03:45,780 --> 00:03:46,997
+the spaces around the other symbols.
+
+94
+00:03:46,997 --> 00:03:48,900
+That just felt a bit weird as well.
+
+95
+00:03:49,910 --> 00:03:51,280
+You can put spaces around it.
+
+96
+00:03:51,280 --> 00:03:53,420
+You can remove the spaces, up to you.
+
+97
+00:03:53,420 --> 00:03:54,886
+This is the way I like doing it.
+
+98
+00:03:54,886 --> 00:03:56,130
+I don't know why.
+
+99
+00:03:56,980 --> 00:04:00,980
+Anyway, so, select, or update, or delete,
+
+100
+00:04:00,980 --> 00:04:04,260
+where some clause, some Boolean,
+
+101
+00:04:04,260 --> 00:04:06,780
+and you can use or and and to add
+
+102
+00:04:06,780 --> 00:04:08,470
+multiple types of Boolean.
+
+103
+00:04:09,400 --> 00:04:12,140
+And of course, you can only use the column
+
+104
+00:04:12,140 --> 00:04:13,940
+names that are available on your table
+
+105
+00:04:13,940 --> 00:04:16,010
+to make these comparisons.
+
+106
+00:04:16,010 --> 00:04:18,620
+So you can select where the amount
+
+107
+00:04:18,620 --> 00:04:20,360
+or the type given that these two
+
+108
+00:04:20,360 --> 00:04:22,320
+are columns on your table,
+
+109
+00:04:22,320 --> 00:04:26,020
+but the star here will get all your columns.
+
+110
+00:04:26,020 --> 00:04:28,520
+You can only get some columns if you prefer.
+
+111
+00:04:28,520 --> 00:04:29,353
+So you can say select id from purchases
+
+112
+00:04:29,353 --> 00:04:33,860
+where amount is greater than 150 or type is online.
+
+113
+00:04:33,860 --> 00:04:35,270
+That would be fine as well.
+
+114
+00:04:36,350 --> 00:04:39,050
+What I'm trying to say is that these comparisons here
+
+115
+00:04:39,050 --> 00:04:41,350
+don't have to be selected necessarily,
+
+116
+00:04:41,350 --> 00:04:42,550
+but you can if you want.
+
+117
+00:04:44,000 --> 00:04:45,370
+Okay, that's it for this video.
+
+118
+00:04:45,370 --> 00:04:46,280
+Hope you've learned something
+
+119
+00:04:46,280 --> 00:04:47,870
+about how to use filtering.
+
+120
+00:04:47,870 --> 00:04:50,240
+And I know we're not going too in depth in here,
+
+121
+00:04:50,240 --> 00:04:51,350
+but I just wanted to show you enough
+
+122
+00:04:51,350 --> 00:04:54,080
+so that we can proceed with our milestone project.
+
+123
+00:04:54,080 --> 00:04:56,580
+So with that said, I'll see you on the next video.
+

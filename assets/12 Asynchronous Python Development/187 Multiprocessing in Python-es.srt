@@ -1,0 +1,632 @@
+1
+00:00:00,120 --> 00:00:01,150
+Instructor: Hola, bienvenido de nuevo.
+
+2
+00:00:01,150 --> 00:00:02,710
+En este video vamos
+
+3
+00:00:02,710 --> 00:00:05,500
+a hablar sobre el lanzamiento de mltiples procesos.
+
+4
+00:00:07,580 --> 00:00:10,050
+Entonces puede iniciar mltiples procesos con Python.
+
+5
+00:00:10,050 --> 00:00:11,900
+Puede tener su proceso principal de
+
+6
+00:00:11,900 --> 00:00:14,800
+Python que se crea cuando inicia su aplicacin Python.
+
+7
+00:00:14,800 --> 00:00:18,750
+Y puede pedirle a su cdigo Python que inicie otro proceso.
+
+8
+00:00:18,750 --> 00:00:21,750
+Cuando haces eso, cada proceso puede tener su propio
+
+9
+00:00:21,750 --> 00:00:23,760
+hilo ejecutndose en dos ncleos separados.
+
+10
+00:00:25,142 --> 00:00:26,580
+De acuerdo, entonces los dos
+
+11
+00:00:26,580 --> 00:00:28,780
+procesos estaran completamente separados el uno del otro.
+
+12
+00:00:28,780 --> 00:00:31,770
+Como parte de eso, tambin puede establecer una comunicacin
+
+13
+00:00:31,770 --> 00:00:34,900
+entre los procesos, y esa comunicacin es lenta, pero
+
+14
+00:00:34,900 --> 00:00:36,640
+puede permitirnos ejecutar las cosas
+
+15
+00:00:36,640 --> 00:00:39,620
+de una sola vez en dos ncleos separados.
+
+16
+00:00:39,620 --> 00:00:42,110
+No es del todo as de simple.
+
+17
+00:00:42,110 --> 00:00:44,940
+Veamos un cdigo.
+
+18
+00:00:46,780 --> 00:00:49,490
+De acuerdo, voy a copiar
+
+19
+00:00:50,380 --> 00:00:54,060
+algunas cosas de la seccin anterior aqu.
+
+20
+00:00:54,060 --> 00:00:58,280
+Oh, lo siento, copiemos desde aqu.
+
+21
+00:00:58,280 --> 00:01:00,110
+As que voy a copiar todo esto,
+
+22
+00:01:00,110 --> 00:01:02,510
+y voy a eliminar el cdigo de la secuencia aqu.
+
+23
+00:01:03,580 --> 00:01:05,501
+Voy a eliminar eso.
+
+24
+00:01:05,501 --> 00:01:07,510
+Entonces, lo que tenemos son nuestras
+
+25
+00:01:07,510 --> 00:01:10,440
+dos funciones, preguntar al usuario y el clculo complejo.
+
+26
+00:01:10,440 --> 00:01:12,370
+Una vez ms, tenemos nuestras funciones de
+
+27
+00:01:12,370 --> 00:01:13,940
+temporizacin que primero le preguntaremos
+
+28
+00:01:13,940 --> 00:01:15,780
+al usuario, luego ejecutaremos el clculo
+
+29
+00:01:15,780 --> 00:01:17,430
+complejo e imprimiremos cunto tiempo tom.
+
+30
+00:01:18,640 --> 00:01:22,130
+Si quieres tener mltiples procesos, puedes
+
+31
+00:01:22,130 --> 00:01:23,340
+hacer eso.
+
+32
+00:01:23,340 --> 00:01:26,820
+Todo lo que tiene que hacer es decir desde
+
+33
+00:01:26,820 --> 00:01:28,690
+proceso mltiple, proceso de importacin.
+
+34
+00:01:29,940 --> 00:01:32,170
+Ahora tiene la clase de proceso
+
+35
+00:01:32,170 --> 00:01:34,270
+del mdulo de multiprocesamiento y
+
+36
+00:01:34,270 --> 00:01:36,890
+puede usarla para iniciar un nuevo proceso.
+
+37
+00:01:36,890 --> 00:01:37,723
+Vamos a hacerlo.
+
+38
+00:01:38,710 --> 00:01:39,660
+Vamos a decir,
+
+39
+00:01:41,160 --> 00:01:42,740
+el nuevo proceso es proceso.
+
+40
+00:01:42,740 --> 00:01:46,180
+El objetivo es el clculo complejo, por lo que ese
+
+41
+00:01:46,180 --> 00:01:48,130
+ser el objetivo de este proceso.
+
+42
+00:01:48,130 --> 00:01:50,730
+Y luego vamos a decir inicio de proceso.
+
+43
+00:01:50,730 --> 00:01:52,930
+Vamos a decir que el inicio es igual al tiempo. hora.
+
+44
+00:01:53,800 --> 00:01:56,100
+Vamos a pedirle algo al usuario.
+
+45
+00:01:56,100 --> 00:01:59,740
+Vamos a esperar a que el proceso termine de ejecutarse.
+
+46
+00:01:59,740 --> 00:02:01,750
+Y luego vamos a imprimir, ya sabes,
+
+47
+00:02:01,750 --> 00:02:06,750
+el tiempo total de dos procesos es el tiempo. tiempo menos inicio.
+
+48
+00:02:09,072 --> 00:02:12,210
+De acuerdo, muy similar a lo que esperaras
+
+49
+00:02:12,210 --> 00:02:15,020
+de los procesos de cdigo de subproceso.
+
+50
+00:02:17,820 --> 00:02:19,100
+Tienes tu nuevo proceso.
+
+51
+00:02:19,100 --> 00:02:21,370
+Le das un objetivo, lo comienzas.
+
+52
+00:02:21,370 --> 00:02:24,480
+Y luego, cuando quieres que espere hasta que
+
+53
+00:02:24,480 --> 00:02:26,600
+termine, lo haces. nete y eso es todo.
+
+54
+00:02:28,170 --> 00:02:30,460
+De acuerdo, muy sencillo.
+
+55
+00:02:30,460 --> 00:02:32,910
+Vamos a ejecutarlo y ver qu pasa.
+
+56
+00:02:32,910 --> 00:02:35,310
+Hagamos clic derecho en el archivo de procesos y ejectelo.
+
+57
+00:02:36,170 --> 00:02:37,310
+Me pregunta por mi nombre primero.
+
+58
+00:02:37,310 --> 00:02:38,660
+Luego comienza a calcular,
+
+59
+00:02:40,380 --> 00:02:43,490
+y luego me va a preguntar mi nombre de nuevo.
+
+60
+00:02:43,490 --> 00:02:45,860
+Y fjate que es una especie de jodido.
+
+61
+00:02:45,860 --> 00:02:49,530
+Eso no se vea tan bien all, s.
+
+62
+00:02:50,580 --> 00:02:54,770
+Y de nuevo, toma, me tom un poco
+
+63
+00:02:54,770 --> 00:02:59,770
+ms escribir mi nombre ahora porque estaba un poco desordenado.
+
+64
+00:03:00,500 --> 00:03:02,060
+Pero tom la misma cantidad
+
+65
+00:03:02,060 --> 00:03:04,110
+de tiempo que el cdigo multihilo.
+
+66
+00:03:04,110 --> 00:03:05,830
+Algunos dirn que demora un poco
+
+67
+00:03:05,830 --> 00:03:08,200
+ms, probablemente demore un poco ms porque crear
+
+68
+00:03:08,200 --> 00:03:10,420
+un nuevo proceso es un poco ms costoso
+
+69
+00:03:10,420 --> 00:03:12,040
+que crear un nuevo hilo.
+
+70
+00:03:12,040 --> 00:03:14,300
+Pero en general, ya sabes, funciona, s.
+
+71
+00:03:15,320 --> 00:03:17,632
+Sin embargo, esto aqu, ingrese su nombre,
+
+72
+00:03:17,632 --> 00:03:20,340
+comenz a calcular, punto, punto, punto, es un
+
+73
+00:03:21,341 --> 00:03:22,900
+sntoma del problema, y el
+
+74
+00:03:24,470 --> 00:03:25,890
+problema lo vamos a
+
+75
+00:03:25,890 --> 00:03:28,570
+ver cuando tratemos de hacer otra cosa.
+
+76
+00:03:28,570 --> 00:03:30,240
+Que ahora voy a crear otro
+
+77
+00:03:30,240 --> 00:03:32,010
+proceso para mi funcin de usuario preguntar.
+
+78
+00:03:35,481 --> 00:03:37,420
+Entonces el proceso dos va a ser
+
+79
+00:03:37,420 --> 00:03:39,960
+procesado, y el objetivo va a ser, preguntar al
+
+80
+00:03:39,960 --> 00:03:42,240
+objetivo es preguntarle a la funcin del usuario.
+
+81
+00:03:42,240 --> 00:03:43,870
+Entonces vamos a comenzar el proceso uno.
+
+82
+00:03:43,870 --> 00:03:46,540
+Vamos a comenzar el proceso dos.
+
+83
+00:03:48,610 --> 00:03:49,970
+Ya no le preguntaremos al usuario
+
+84
+00:03:49,970 --> 00:03:50,803
+en el proceso principal.
+
+85
+00:03:50,803 --> 00:03:52,300
+Ahora tenemos dos procesos para eso,
+
+86
+00:03:52,300 --> 00:03:54,380
+y podemos hacer process2. unirse.
+
+87
+00:03:58,700 --> 00:04:01,170
+De acuerdo, lo mismo que antes.
+
+88
+00:04:01,170 --> 00:04:03,500
+Creamos procesos, los iniciamos, iniciamos
+
+89
+00:04:03,500 --> 00:04:06,820
+el temporizador, ahora esperamos que finalicen.
+
+90
+00:04:06,820 --> 00:04:09,680
+Pero vers que esto no funcionar tan fcilmente.
+
+91
+00:04:09,680 --> 00:04:10,730
+Vamos a ejecutar esto de nuevo.
+
+92
+00:04:12,020 --> 00:04:14,250
+Vaya primero al cdigo de un solo hilo.
+
+93
+00:04:15,960 --> 00:04:17,570
+Comienza a calcular, y luego
+
+94
+00:04:17,570 --> 00:04:20,910
+va a hacerlo, cuando termine va a lanzar mis dos procesos.
+
+95
+00:04:20,910 --> 00:04:25,280
+Pero, por desgracia, obtenemos un error.
+
+96
+00:04:25,280 --> 00:04:29,220
+Y algn tiempo despus, terminamos el complejo clculo.
+
+97
+00:04:30,490 --> 00:04:35,490
+Entonces aqu el problema es que obtenemos un EOF cuando leemos una lnea,
+
+98
+00:04:35,580 --> 00:04:38,790
+al final del archivo cuando leemos una lnea.
+
+99
+00:04:38,790 --> 00:04:41,870
+Nuestro proceso no pudo ejecutar esta funcin de entrada.
+
+100
+00:04:43,260 --> 00:04:45,240
+Y la razn por la cual
+
+101
+00:04:45,240 --> 00:04:48,247
+la funcin no pudo ejecutar esta funcin de entrada
+
+102
+00:04:48,247 --> 00:04:51,300
+es porque aqu no tiene acceso a este terminal.
+
+103
+00:04:52,270 --> 00:04:55,960
+Recuerde que los procesos no pueden compartir recursos muy fcilmente.
+
+104
+00:04:55,960 --> 00:04:59,430
+Por lo tanto, no sabe dnde estamos destinados a
+
+105
+00:04:59,430 --> 00:05:02,040
+leer cuando le decimos que termine para
+
+106
+00:05:02,040 --> 00:05:05,040
+terminar haciendo process2. nete, dice que est bien, que no escribiste nada.
+
+107
+00:05:05,040 --> 00:05:07,270
+No haba nada, no haba forma de
+
+108
+00:05:07,270 --> 00:05:08,470
+que obtuviera la opinin.
+
+109
+00:05:08,470 --> 00:05:10,180
+Y tampoco hay forma de que lo escriba.
+
+110
+00:05:10,180 --> 00:05:13,060
+Entonces, ya sabes, termine el proceso.
+
+111
+00:05:13,060 --> 00:05:14,800
+Y obtienes un error all.
+
+112
+00:05:14,800 --> 00:05:17,180
+No hay lugar para que escriba
+
+113
+00:05:17,180 --> 00:05:21,550
+la entrada porque no tiene acceso a esta cosa que estaba
+
+114
+00:05:21,550 --> 00:05:22,800
+a punto de escribir.
+
+115
+00:05:23,840 --> 00:05:25,960
+Es un problema un tanto
+
+116
+00:05:25,960 --> 00:05:28,440
+extrao, pero esta es la razn
+
+117
+00:05:28,440 --> 00:05:33,090
+por la cual antes conseguas tus dos lneas en la misma lnea.
+
+118
+00:05:33,090 --> 00:05:36,040
+Estaban accediendo a la consola simultneamente,
+
+119
+00:05:36,040 --> 00:05:40,580
+pero esencialmente, lo siento, era una entidad separada.
+
+120
+00:05:41,500 --> 00:05:43,110
+Es algo complicado.
+
+121
+00:05:43,110 --> 00:05:46,140
+Usar procesos no es fcil, est bien.
+
+122
+00:05:46,140 --> 00:05:48,230
+Debido a que estn separados, comienzas a
+
+123
+00:05:48,230 --> 00:05:50,920
+obtener recursos separados, a veces duplicados, uno de
+
+124
+00:05:50,920 --> 00:05:52,870
+ellos no tiene acceso a algo.
+
+125
+00:05:52,870 --> 00:05:57,870
+El otro lo hace, por lo que no es terriblemente fcil de usar procesos.
+
+126
+00:05:59,080 --> 00:06:02,770
+Normalmente usar procesos si tiene una mquina
+
+127
+00:06:02,770 --> 00:06:06,230
+multi core como mi computadora porttil y
+
+128
+00:06:06,230 --> 00:06:09,400
+desea hacer clculos complejos en ambas.
+
+129
+00:06:09,400 --> 00:06:11,600
+Entonces, si quieres hacer eso, puedes hacer eso.
+
+130
+00:06:12,890 --> 00:06:15,290
+Puede ejecutar el clculo complejo en ambas mquinas.
+
+131
+00:06:15,290 --> 00:06:16,960
+Ahora no obtendrs este error.
+
+132
+00:06:16,960 --> 00:06:18,120
+Vamos a ejecutar esto de nuevo.
+
+133
+00:06:20,950 --> 00:06:22,300
+Y veamos qu pasa.
+
+134
+00:06:24,270 --> 00:06:26,010
+Este es el cdigo de subproceso nico, por
+
+135
+00:06:26,010 --> 00:06:27,770
+cierto, tom seis punto cuatro y siete segundos.
+
+136
+00:06:27,770 --> 00:06:30,040
+Entonces comenzamos a calcular el precio.
+
+137
+00:06:30,040 --> 00:06:31,530
+Y ahora esperamos que el sistema
+
+138
+00:06:31,530 --> 00:06:33,279
+operativo nos haya dado dos ncleos para
+
+139
+00:06:33,279 --> 00:06:35,010
+ejecutar, y parece que as fue.
+
+140
+00:06:35,010 --> 00:06:37,090
+Y ahora los dos clculos complejos se ejecutaron en
+
+141
+00:06:37,090 --> 00:06:39,690
+una cantidad de tiempo ms larga, ms cerca de siete segundos
+
+142
+00:06:39,690 --> 00:06:41,640
+ahora, en lugar de seis punto cuatro siete.
+
+143
+00:06:41,640 --> 00:06:44,340
+Pero corrieron ambos al mismo tiempo.
+
+144
+00:06:44,340 --> 00:06:48,240
+Es por eso que utiliza el procesamiento mltiple cuando necesita dos
+
+145
+00:06:48,240 --> 00:06:51,130
+cosas para ejecutar al mismo tiempo en la CPU.
+
+146
+00:06:51,130 --> 00:06:53,970
+Si su problema es que tiene cosas
+
+147
+00:06:53,970 --> 00:06:58,720
+que estn esperando, como esta entrada de usuario aqu, no necesita procesamiento mltiple.
+
+148
+00:06:58,720 --> 00:07:00,220
+Lo que necesitas es multi threading.
+
+149
+00:07:00,220 --> 00:07:03,100
+Y quiere, ya sabe, tener mltiples tareas
+
+150
+00:07:03,100 --> 00:07:05,120
+cooperativas entre los dos hilos.
+
+151
+00:07:06,830 --> 00:07:08,350
+Entonces esto es un procesamiento mltiple.
+
+152
+00:07:08,350 --> 00:07:11,470
+Solo quiero mostrarte rpidamente cundo usarlo y
+
+153
+00:07:11,470 --> 00:07:12,970
+cundo no usarlo.
+
+154
+00:07:12,970 --> 00:07:14,530
+Y vamos a encontrar un
+
+155
+00:07:14,530 --> 00:07:17,250
+par de escenarios ms de dnde queremos utilizar esto
+
+156
+00:07:17,250 --> 00:07:18,590
+ms adelante en el curso.
+
+157
+00:07:18,590 --> 00:07:19,860
+As que eso es todo por
+
+158
+00:07:19,860 --> 00:07:21,510
+este video, y nos vemos en el prximo.
+

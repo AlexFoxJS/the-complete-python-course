@@ -1,0 +1,500 @@
+1
+00:00:00,110 --> 00:00:01,330
+Jos: Hola y bienvenido de nuevo.
+
+2
+00:00:01,330 --> 00:00:02,940
+En este video vamos
+
+3
+00:00:02,940 --> 00:00:04,950
+a ver cmo hacer varias
+
+4
+00:00:04,950 --> 00:00:06,336
+cosas a la
+
+5
+00:00:06,336 --> 00:00:11,150
+vez, o algo as a la vez, sin usar hilos o procesos.
+
+6
+00:00:11,150 --> 00:00:12,720
+Como puede ver, he creado un archivo
+
+7
+00:00:12,720 --> 00:00:14,050
+aqu llamado generadores. py, eso
+
+8
+00:00:14,920 --> 00:00:15,900
+debera darte una
+
+9
+00:00:15,900 --> 00:00:16,810
+pista sobre
+
+10
+00:00:16,810 --> 00:00:20,170
+lo que vamos a intentar hacer con este archivo.
+
+11
+00:00:20,170 --> 00:00:22,090
+Hemos visto generadores antes;
+
+12
+00:00:22,090 --> 00:00:25,240
+djame crear un ejemplo de un generador.
+
+13
+00:00:25,240 --> 00:00:27,490
+Este se llamar cuenta regresiva.
+
+14
+00:00:27,490 --> 00:00:28,360
+As que vamos
+
+15
+00:00:28,360 --> 00:00:30,910
+a tomar un nmero del que comenzaremos a contar.
+
+16
+00:00:30,910 --> 00:00:34,270
+Voy a decir que mientras n es mayor que
+
+17
+00:00:35,900 --> 00:00:37,690
+cero, y vamos a ceder
+
+18
+00:00:37,690 --> 00:00:40,590
+n, recuerde que devuelve el valor al ncleo
+
+19
+00:00:40,590 --> 00:00:43,130
+y vamos a restar uno de l.
+
+20
+00:00:43,130 --> 00:00:45,100
+Entonces, si tenemos una cuenta regresiva
+
+21
+00:00:45,100 --> 00:00:48,000
+como c es igual a la cuenta regresiva que
+
+22
+00:00:49,310 --> 00:00:53,270
+comienza en 10, entonces podemos hacer algo como, imprimir, siguiente, de c.
+
+23
+00:00:53,270 --> 00:00:55,890
+Esto no es nada nuevo aqu.
+
+24
+00:00:55,890 --> 00:00:57,110
+Lo que est
+
+25
+00:00:57,110 --> 00:00:59,340
+haciendo es que estamos creando un
+
+26
+00:00:59,340 --> 00:01:01,080
+generador nuevo y tan pronto
+
+27
+00:01:01,080 --> 00:01:02,530
+como llamemos a continuacin,
+
+28
+00:01:02,530 --> 00:01:05,230
+comienza a ejecutar el generador y aumenta
+
+29
+00:01:05,230 --> 00:01:08,440
+el rendimiento y devuelve el valor que obtuvimos.
+
+30
+00:01:08,440 --> 00:01:11,680
+Entonces, en este caso, devolver
+
+31
+00:01:11,680 --> 00:01:15,393
+10, y luego, cuando imprimamos
+
+32
+00:01:15,393 --> 00:01:17,352
+nuevamente, continuar funcionando
+
+33
+00:01:17,352 --> 00:01:20,530
+hasta el prximo rendimiento.
+
+34
+00:01:20,530 --> 00:01:22,400
+Entonces, en lugar de ir
+
+35
+00:01:22,400 --> 00:01:24,830
+por 10, comenzara con n como 10,
+
+36
+00:01:24,830 --> 00:01:26,320
+restars uno de l
+
+37
+00:01:26,320 --> 00:01:27,570
+y luego repetir el
+
+38
+00:01:27,570 --> 00:01:30,170
+ciclo y ceder nuevamente n, que sera nueve.
+
+39
+00:01:31,170 --> 00:01:33,210
+Entonces, tan pronto como llegue al
+
+40
+00:01:34,110 --> 00:01:37,560
+rendimiento, la palabra correcta aqu es que la funcin est suspendida.
+
+41
+00:01:37,560 --> 00:01:39,240
+Por lo tanto, cuando llega
+
+42
+00:01:39,240 --> 00:01:41,470
+a un rendimiento, obtiene el valor que
+
+43
+00:01:41,470 --> 00:01:42,990
+se obtuvo y la funcin
+
+44
+00:01:44,660 --> 00:01:47,030
+se suspende, en ese momento, cuando vuelve
+
+45
+00:01:47,030 --> 00:01:48,760
+a llamar, la funcin se reanuda.
+
+46
+00:01:48,760 --> 00:01:50,520
+As que es muy similar a
+
+47
+00:01:50,520 --> 00:01:51,353
+un hilo, realmente,
+
+48
+00:01:51,353 --> 00:01:53,170
+si lo piensas, porque el hilo
+
+49
+00:01:53,170 --> 00:01:56,770
+puede ser suspendido o removido de un ncleo en cualquier momento y
+
+50
+00:01:56,770 --> 00:01:58,010
+luego puede volverse a
+
+51
+00:01:58,010 --> 00:01:59,930
+poner en marcha donde sigue.
+
+52
+00:01:59,930 --> 00:02:01,210
+Entonces, el generador realmente se
+
+53
+00:02:01,210 --> 00:02:02,450
+comporta de manera bastante similar
+
+54
+00:02:02,450 --> 00:02:04,620
+a un hilo porque cuando se llega a
+
+55
+00:02:04,620 --> 00:02:07,010
+un rendimiento lo est eliminando del ncleo, si lo
+
+56
+00:02:07,010 --> 00:02:07,900
+desea, luego, cuando
+
+57
+00:02:07,900 --> 00:02:08,970
+presiona el botn siguiente,
+
+58
+00:02:08,970 --> 00:02:10,220
+se lo recupera y contina funcionando.
+
+59
+00:02:11,350 --> 00:02:12,760
+Entonces, ejecutemos este archivo.
+
+60
+00:02:12,760 --> 00:02:15,090
+Voy a hacer clic derecho en generadores. Pinsalo y ejectalo, y
+
+61
+00:02:15,090 --> 00:02:17,730
+como puedes ver, obtenemos 10 y 9, que
+
+62
+00:02:17,730 --> 00:02:19,320
+es lo que esperas, el
+
+63
+00:02:19,320 --> 00:02:21,750
+siguiente te da el 10, luego, cuando
+
+64
+00:02:21,750 --> 00:02:23,310
+vuelves a seguir, sigue corriendo
+
+65
+00:02:23,310 --> 00:02:24,910
+hasta el prximo rendimiento y
+
+66
+00:02:24,910 --> 00:02:26,010
+da tu nueve
+
+67
+00:02:26,910 --> 00:02:28,510
+Entonces todo esto est bien.
+
+68
+00:02:28,510 --> 00:02:29,780
+Qu pasara si tuviramos,
+
+69
+00:02:30,647 --> 00:02:32,715
+c1 que es una cuenta regresiva de
+
+70
+00:02:32,715 --> 00:02:35,800
+10 y c2 que es una cuenta atrs de 20?
+
+71
+00:02:37,530 --> 00:02:38,980
+S?
+
+72
+00:02:38,980 --> 00:02:41,580
+Ahora tiene dos tareas, una cuenta regresiva que comienza
+
+73
+00:02:41,580 --> 00:02:43,720
+la cuenta regresiva desde 10 y otra
+
+74
+00:02:43,720 --> 00:02:45,940
+que comienza la cuenta atrs desde 20.
+
+75
+00:02:45,940 --> 00:02:48,140
+Lo que podras hacer es esto.
+
+76
+00:02:54,320 --> 00:02:56,920
+Entonces, aqu est imprimiendo el siguiente valor de
+
+77
+00:02:56,920 --> 00:02:59,240
+c1, aumenta el rendimiento y le da 10.
+
+78
+00:02:59,240 --> 00:03:00,780
+Luego est imprimiendo el siguiente valor
+
+79
+00:03:00,780 --> 00:03:03,440
+de c2, que baja al rendimiento y le da 20.
+
+80
+00:03:03,440 --> 00:03:04,950
+Entonces podra hacer esto
+
+81
+00:03:04,950 --> 00:03:07,200
+de nuevo, lo que reanuda c1,
+
+82
+00:03:07,200 --> 00:03:09,610
+resta menos uno de n, va
+
+83
+00:03:09,610 --> 00:03:12,930
+y repite el ciclo, y ahora le da nueve.
+
+84
+00:03:12,930 --> 00:03:14,350
+Eso se suspende y luego
+
+85
+00:03:14,350 --> 00:03:15,370
+pasas a la siguiente
+
+86
+00:03:15,370 --> 00:03:17,680
+lnea, que te da el siguiente de c2.
+
+87
+00:03:17,680 --> 00:03:19,013
+Entonces, en lugar
+
+88
+00:03:19,013 --> 00:03:21,410
+de 20, ahora resta uno y
+
+89
+00:03:21,410 --> 00:03:23,500
+puedes repetir y ahora rindes 19.
+
+90
+00:03:23,500 --> 00:03:24,333
+Vamos a ejecutar esto.
+
+91
+00:03:26,100 --> 00:03:27,980
+Puedes ver que esto es lo que est sucediendo.
+
+92
+00:03:27,980 --> 00:03:30,010
+Ests ejecutando una tarea, luego
+
+93
+00:03:30,010 --> 00:03:31,300
+la suspendes y
+
+94
+00:03:31,300 --> 00:03:32,660
+ests ejecutando otra, y
+
+95
+00:03:32,660 --> 00:03:33,590
+luego suspendes
+
+96
+00:03:33,590 --> 00:03:35,110
+eso y vuelves al primero.
+
+97
+00:03:35,110 --> 00:03:35,943
+Ests suspendiendo
+
+98
+00:03:35,943 --> 00:03:37,930
+eso y volviendo al otro.
+
+99
+00:03:37,930 --> 00:03:39,250
+Esto es
+
+100
+00:03:39,250 --> 00:03:43,490
+esencialmente algo de multi-threading muy lento, pero
+
+101
+00:03:43,490 --> 00:03:45,160
+sin usar threads.
+
+102
+00:03:45,160 --> 00:03:46,440
+Tenga en cuenta que no
+
+103
+00:03:46,440 --> 00:03:48,090
+hay importacin de hilos ni nada aqu.
+
+104
+00:03:48,090 --> 00:03:50,530
+Lo que tienes son dos tareas
+
+105
+00:03:50,530 --> 00:03:54,000
+que ceden el control del hilo principal entre s.
+
+106
+00:03:54,000 --> 00:03:57,530
+Pinsalo como pasar el relevo en estas carreras.
+
+107
+00:03:59,100 --> 00:04:00,850
+Entonces, si podemos hacer esto
+
+108
+00:04:00,850 --> 00:04:04,730
+muy rpido, si podemos hacer c1 y luego c2 realmente,
+
+109
+00:04:04,730 --> 00:04:06,550
+muy rpido, puede parecer que
+
+110
+00:04:06,550 --> 00:04:09,080
+se estn ejecutando al mismo tiempo.
+
+111
+00:04:09,080 --> 00:04:11,030
+Este es esencialmente el propsito de los hilos, recuerdas?
+
+112
+00:04:11,030 --> 00:04:13,550
+No puede ejecutar dos hilos a la vez
+
+113
+00:04:13,550 --> 00:04:17,740
+en Python, pero puede dividir su tiempo en la CPU lo suficientemente rpido
+
+114
+00:04:17,740 --> 00:04:19,740
+como para parecer que se estn
+
+115
+00:04:19,740 --> 00:04:20,700
+ejecutando al mismo tiempo.
+
+116
+00:04:22,200 --> 00:04:24,510
+As que esto se parece un
+
+117
+00:04:24,510 --> 00:04:27,170
+poco a un truco, como algo
+
+118
+00:04:27,170 --> 00:04:30,890
+que realmente no debera funcionar, pero en realidad, el
+
+119
+00:04:30,890 --> 00:04:34,560
+desarrollo asincrnico en Python se basa en este generador.
+
+120
+00:04:34,560 --> 00:04:36,220
+No este generador especficamente,
+
+121
+00:04:36,220 --> 00:04:38,290
+sino generadores en general.
+
+122
+00:04:38,290 --> 00:04:39,900
+As que veamos en
+
+123
+00:04:39,900 --> 00:04:43,680
+el prximo video cmo podemos construir nuestro primer planificador de
+
+124
+00:04:43,680 --> 00:04:46,620
+tareas usando generadores en lugar de hilos.
+
+125
+00:04:46,620 --> 00:04:47,800
+Te ver all.
+

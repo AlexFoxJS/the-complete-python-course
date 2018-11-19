@@ -1,0 +1,1220 @@
+1
+00:00:00,250 --> 00:00:01,440
+Jose: Ol e bem vindo de volta.
+
+2
+00:00:01,440 --> 00:00:04,230
+Neste vdeo, estamos falando sobre criar nossos prprios
+
+3
+00:00:04,230 --> 00:00:05,150
+erros no Python.
+
+4
+00:00:06,250 --> 00:00:07,730
+Vamos ao nosso projeto de
+
+5
+00:00:07,730 --> 00:00:09,900
+erros e vou criar um novo arquivo.
+
+6
+00:00:09,900 --> 00:00:11,550
+Eu vou chamar isso de erros. py.
+
+7
+00:00:13,360 --> 00:00:16,040
+E agora temos um arquivo em branco.
+
+8
+00:00:16,040 --> 00:00:18,140
+Examinamos como podemos gerar erros,
+
+9
+00:00:18,140 --> 00:00:20,830
+mas usamos apenas os erros incorporados.
+
+10
+00:00:20,830 --> 00:00:23,420
+Isso  por exemplo, raise TypeError.
+
+11
+00:00:25,909 --> 00:00:30,550
+Ns temos esse tipo e criamos um novo objeto.
+
+12
+00:00:30,550 --> 00:00:32,619
+E  isso que ns levantamos.
+
+13
+00:00:32,619 --> 00:00:36,660
+Agora sabemos como criar uma classe que
+
+14
+00:00:36,660 --> 00:00:39,280
+estende tudo de outra classe,
+
+15
+00:00:39,280 --> 00:00:40,710
+essencialmente uma cpia.
+
+16
+00:00:40,710 --> 00:00:42,520
+Como criamos uma classe que  essencialmente uma
+
+17
+00:00:42,520 --> 00:00:43,353
+cpia de outra classe?
+
+18
+00:00:43,353 --> 00:00:44,710
+Usando herana.
+
+19
+00:00:45,620 --> 00:00:48,180
+Se tivermos que criar um
+
+20
+00:00:49,250 --> 00:00:51,700
+erro personalizado para podermos fazer
+
+21
+00:00:54,700 --> 00:00:59,700
+o MyCustomError, lembre-se de que essa  uma classe e precisa
+
+22
+00:01:01,170 --> 00:01:04,010
+herdar de um dos erros incorporados.
+
+23
+00:01:04,010 --> 00:01:06,480
+Voc pode escolher o que quiser, por exemplo, TypeError.
+
+24
+00:01:07,592 --> 00:01:10,050
+V em frente e feche o vdeo e tente
+
+25
+00:01:10,050 --> 00:01:12,210
+criar uma classe que herda de um TypeError.
+
+26
+00:01:12,210 --> 00:01:14,470
+Como voc pode fazer isso?
+
+27
+00:01:14,470 --> 00:01:15,310
+ bastante simples,
+
+28
+00:01:15,310 --> 00:01:16,910
+vai ser apenas um par de linhas.
+
+29
+00:01:21,040 --> 00:01:23,000
+Ok, espero que voc tenha conseguido isso.
+
+30
+00:01:23,000 --> 00:01:24,140
+Muito simples.
+
+31
+00:01:24,140 --> 00:01:26,300
+Mas pode ser um pouco confuso
+
+32
+00:01:26,300 --> 00:01:29,110
+quando voc encontra algo em um novo cenrio
+
+33
+00:01:29,110 --> 00:01:31,050
+que voc nunca pensou antes.
+
+34
+00:01:31,050 --> 00:01:32,910
+Criar uma classe que estenda um
+
+35
+00:01:32,910 --> 00:01:34,520
+TypeError  como criar uma classe
+
+36
+00:01:34,520 --> 00:01:35,950
+que estenda qualquer outra classe.
+
+37
+00:01:35,950 --> 00:01:39,560
+Class, MyCustomeError, TypeError.
+
+38
+00:01:41,860 --> 00:01:44,510
+E ento,  claro, precisamos do bloco
+
+39
+00:01:44,510 --> 00:01:47,120
+recuado, mas podemos digitar pass para simplesmente
+
+40
+00:01:47,120 --> 00:01:49,170
+passar e no fazer nada.
+
+41
+00:01:50,080 --> 00:01:52,740
+Agora podemos aumentar MyCustomError porque essencialmente
+
+42
+00:01:52,740 --> 00:01:55,740
+ um TypeError, ele s tem um
+
+43
+00:01:55,740 --> 00:01:57,240
+novo nome agora.
+
+44
+00:01:58,740 --> 00:02:00,060
+Ento podemos aument-lo, vamos clicar
+
+45
+00:02:00,060 --> 00:02:03,100
+com o boto direito nos erros. py e execut-lo.
+
+46
+00:02:03,100 --> 00:02:04,580
+By the way, se voc
+
+47
+00:02:04,580 --> 00:02:06,780
+comear a se acostumar a pressionar o
+
+48
+00:02:06,780 --> 00:02:08,340
+boto play at aqui 
+
+49
+00:02:08,340 --> 00:02:12,080
+direita, tudo bem, mas certifique-se de verificar o que voc est executando o
+
+50
+00:02:12,080 --> 00:02:13,530
+que  essa coisa aqui.
+
+51
+00:02:13,530 --> 00:02:15,070
+E agora voc est executando o aplicativo.
+
+52
+00:02:15,070 --> 00:02:17,040
+Se voc apertar o play, voc vai executar o app. py no
+
+53
+00:02:17,040 --> 00:02:17,873
+erros. py,
+
+54
+00:02:17,873 --> 00:02:21,160
+ento voc pode querer executar erros.
+
+55
+00:02:21,160 --> 00:02:25,140
+Agora observe como voc obtm o MyCustomError aqui.
+
+56
+00:02:26,260 --> 00:02:29,100
+Mas no tem uma mensagem ou algo parecido.
+
+57
+00:02:29,100 --> 00:02:32,750
+E o que voc recebe  sublinhado, sublinhado
+
+58
+00:02:32,750 --> 00:02:35,070
+main, sublinhado, sublinhado, ponto, MyCustomError.
+
+59
+00:02:37,070 --> 00:02:39,910
+No se preocupe muito com a parte principal.
+
+60
+00:02:39,910 --> 00:02:42,320
+Vamos analisar exatamente o que isso
+
+61
+00:02:42,320 --> 00:02:43,644
+significa na prxima seo.
+
+62
+00:02:43,644 --> 00:02:47,589
+Mas s sei que voc consegue agora levantar e errar o que
+
+63
+00:02:47,589 --> 00:02:49,520
+ chamado MyCustomError e, claro, voc
+
+64
+00:02:49,520 --> 00:02:50,680
+pode colocar aqui
+
+65
+00:02:55,929 --> 00:02:56,762
+alguma mensagem.
+
+66
+00:02:56,762 --> 00:02:57,595
+Esta  uma mensagem
+
+67
+00:02:57,595 --> 00:02:59,100
+muito terrvel, mas voc sabe que pode.
+
+68
+00:02:59,100 --> 00:03:02,030
+Agora fizemos esta edio e tambm gostaria
+
+69
+00:03:02,030 --> 00:03:04,720
+de inserir aqui alguma bondade de Py.
+
+70
+00:03:04,720 --> 00:03:09,130
+Agora nosso arquivo de execuo mudou erros. py.
+
+71
+00:03:09,130 --> 00:03:10,610
+Ento, podemos pressionar o boto
+
+72
+00:03:10,610 --> 00:03:11,690
+play aqui 
+
+73
+00:03:11,690 --> 00:03:14,390
+direita, ou podemos pressionar o boto play aqui
+
+74
+00:03:15,470 --> 00:03:17,010
+ esquerda, e tudo bem.
+
+75
+00:03:17,010 --> 00:03:18,760
+Isso vai reexecutar esse arquivo.
+
+76
+00:03:18,760 --> 00:03:21,690
+E agora voc pode ver que voc tem uma boa
+
+77
+00:03:21,690 --> 00:03:23,950
+descrio ao lado do seu nome do erro.
+
+78
+00:03:24,930 --> 00:03:27,750
+ assim que voc pode criar seus erros personalizados.
+
+79
+00:03:28,880 --> 00:03:33,880
+Agora,  claro, voc pode ter um erro personalizado que recebe mais
+
+80
+00:03:34,060 --> 00:03:38,710
+alguns dados alm de apenas uma mensagem e isso faz parte do
+
+81
+00:03:38,710 --> 00:03:41,930
+poder desses erros personalizados que, por exemplo, dizem
+
+82
+00:03:41,930 --> 00:03:43,500
+que voc deseja que
+
+83
+00:03:43,500 --> 00:03:46,770
+seu erro personalizado inclua um cdigo de erro.
+
+84
+00:03:46,770 --> 00:03:47,950
+Essas coisas so bastante populares.
+
+85
+00:03:47,950 --> 00:03:49,710
+Por exemplo, se voc j tem uma
+
+86
+00:03:49,710 --> 00:03:51,177
+impressora, voc sabe que eles lhe
+
+87
+00:03:51,177 --> 00:03:52,399
+do cdigos de erro em
+
+88
+00:03:52,399 --> 00:03:55,002
+todo o lugar e s vezes pode ser til ter
+
+89
+00:03:55,002 --> 00:03:56,440
+cdigos de erro em suas mensagens.
+
+90
+00:03:56,440 --> 00:03:59,820
+Agora, uma opo  obviamente ter algo como
+
+91
+00:03:59,820 --> 00:04:04,100
+o cdigo de erro 500, ou um erro aconteceu.
+
+92
+00:04:04,100 --> 00:04:07,640
+Mas, voc no sabe que esse cdigo de erro  500
+
+93
+00:04:07,640 --> 00:04:09,420
+do ponto de vista de um
+
+94
+00:04:09,420 --> 00:04:10,710
+programa porque,  claro,
+
+95
+00:04:10,710 --> 00:04:13,342
+isso  uma string, so apenas algumas letras,
+
+96
+00:04:13,342 --> 00:04:15,980
+nmeros e smbolos, e o Python no consegue interpret-lo.
+
+97
+00:04:15,980 --> 00:04:18,620
+Se voc quisesse verificar se seu erro
+
+98
+00:04:18,620 --> 00:04:19,924
+tinha um cdigo 500
+
+99
+00:04:19,924 --> 00:04:22,120
+ou no, no seria to fcil.
+
+100
+00:04:22,120 --> 00:04:25,084
+Portanto, a melhor coisa a fazer  ter dois
+
+101
+00:04:25,084 --> 00:04:29,040
+argumentos, a mensagem e, em seguida, o cdigo, por exemplo, 500.
+
+102
+00:04:30,660 --> 00:04:32,170
+Mas, para fazer
+
+103
+00:04:32,170 --> 00:04:37,060
+isso, temos que definir um novo construtor em MyCustomError.
+
+104
+00:04:37,060 --> 00:04:39,220
+Ento, vamos fazer isso e
+
+105
+00:04:39,220 --> 00:04:43,950
+o que queremos fazer  chamar o construtor da superclasse
+
+106
+00:04:43,950 --> 00:04:48,010
+com o cdigo da mensagem Sinto muito, chamar o
+
+107
+00:04:48,010 --> 00:04:50,890
+construtor da superclasse com uma mensagem
+
+108
+00:04:50,890 --> 00:04:52,710
+como um argumento.
+
+109
+00:04:52,710 --> 00:04:55,070
+ chamado de mtodo init da
+
+110
+00:04:55,070 --> 00:04:56,880
+superclasse com a mensagem como
+
+111
+00:04:56,880 --> 00:04:59,070
+argumento e, em seguida, define o
+
+112
+00:04:59,070 --> 00:05:01,570
+cdigo como uma propriedade do objeto MyCustomError.
+
+113
+00:05:01,570 --> 00:05:03,650
+Ento, pause o vdeo e faa isso.
+
+114
+00:05:08,507 --> 00:05:09,760
+Eu espero que voc tenha conseguido.
+
+115
+00:05:09,760 --> 00:05:12,960
+Para chamar o mtodo init da superclasse,
+
+116
+00:05:12,960 --> 00:05:16,380
+tudo que fazemos  a mensagem init.
+
+117
+00:05:16,380 --> 00:05:19,470
+Ento, agora estamos passando o parmetro message
+
+118
+00:05:19,470 --> 00:05:21,780
+para o mtodo init da
+
+119
+00:05:21,780 --> 00:05:23,300
+superclasse, que  TypeError.
+
+120
+00:05:23,300 --> 00:05:27,580
+E ns tambm podemos, ento, codificar auto-ponto  igual a
+
+121
+00:05:28,510 --> 00:05:29,343
+cdigo, assim.
+
+122
+00:05:31,520 --> 00:05:32,660
+OK?
+
+123
+00:05:32,660 --> 00:05:37,660
+Agora temos isso aqui e podemos reproduzir o arquivo de erros novamente.
+
+124
+00:05:38,600 --> 00:05:42,490
+Mas observe como no recebemos nenhuma informao
+
+125
+00:05:42,490 --> 00:05:44,260
+extra na mensagem.
+
+126
+00:05:44,260 --> 00:05:46,200
+Temos "Ouch, ocorreu um erro" e
+
+127
+00:05:46,200 --> 00:05:48,830
+no sabemos se  um cdigo de erro 500.
+
+128
+00:05:48,830 --> 00:05:52,260
+Todos ns temos este cdigo 500 na linha onde ns realmente
+
+129
+00:05:52,260 --> 00:05:54,460
+levantamos o erro porque esta  a
+
+130
+00:05:54,460 --> 00:05:57,910
+linha onde ns levantamos o erro e ns digitamos 500 l.
+
+131
+00:05:57,910 --> 00:05:58,838
+Ento o que ns podemos fazer?
+
+132
+00:05:58,838 --> 00:06:02,190
+Bem, ns poderamos colocar o cdigo de erro aqui novamente, mas 
+
+133
+00:06:04,450 --> 00:06:06,650
+claro que no  timo, porque se voc
+
+134
+00:06:06,650 --> 00:06:07,900
+for e mudar isso quando
+
+135
+00:06:07,900 --> 00:06:09,850
+voc diz 400, ento tambm tem que
+
+136
+00:06:09,850 --> 00:06:11,370
+ir aqui e mudar a string.
+
+137
+00:06:11,370 --> 00:06:12,748
+Ento, no  fantstico.
+
+138
+00:06:12,748 --> 00:06:14,760
+Ns no queremos fazer isso.
+
+139
+00:06:14,760 --> 00:06:19,375
+O que podemos fazer para incluir este cdigo de erro
+
+140
+00:06:19,375 --> 00:06:21,040
+dentro da mensagem?
+
+141
+00:06:26,730 --> 00:06:28,270
+Eu espero que voc tenha conseguido isso.
+
+142
+00:06:28,270 --> 00:06:31,000
+Tudo que voc precisa fazer , quando
+
+143
+00:06:31,000 --> 00:06:32,430
+eu mostro, se voc
+
+144
+00:06:32,430 --> 00:06:34,340
+no conseguiu,  bastante bvio,
+
+145
+00:06:34,340 --> 00:06:36,340
+mas  claro, voc pensa assim.
+
+146
+00:06:36,340 --> 00:06:37,840
+Voc s quer
+
+147
+00:06:37,840 --> 00:06:42,480
+criar uma nova string que diz cdigo de erro, cdigo, mensagem.
+
+148
+00:06:44,110 --> 00:06:44,943
+ isso a.
+
+149
+00:06:45,980 --> 00:06:48,590
+E estamos apenas criando uma nova string
+
+150
+00:06:48,590 --> 00:06:51,520
+que agora substitumos a mensagem que recebemos por
+
+151
+00:06:51,520 --> 00:06:55,090
+essa outra string que contm o cdigo de erro tambm.
+
+152
+00:06:56,750 --> 00:07:00,300
+E, para pensar assim, isso
+
+153
+00:07:00,300 --> 00:07:01,780
+leva tempo.
+
+154
+00:07:03,798 --> 00:07:06,100
+Voc pode essencialmente fazer o que quiser.
+
+155
+00:07:06,100 --> 00:07:10,470
+Tudo o que est acontecendo nessas chamadas de mtodo, chamando o mtodo init
+
+156
+00:07:10,470 --> 00:07:13,580
+e levantando coisas desse tipo, os dados esto se
+
+157
+00:07:13,580 --> 00:07:15,630
+movendo de um lugar para outro.
+
+158
+00:07:16,510 --> 00:07:17,830
+Voc tem essa string
+
+159
+00:07:18,810 --> 00:07:22,000
+e essa string agora est sendo atribuda  mensagem.
+
+160
+00:07:22,000 --> 00:07:24,460
+Ento essa mensagem iria passar para este mtodo
+
+161
+00:07:24,460 --> 00:07:26,600
+init onde seria designada para outra coisa.
+
+162
+00:07:26,600 --> 00:07:29,240
+Em algum lugar no cdigo do
+
+163
+00:07:29,240 --> 00:07:30,620
+Python, essa mensagem
+
+164
+00:07:30,620 --> 00:07:33,110
+seria usada para imprimi-lo no console.
+
+165
+00:07:33,110 --> 00:07:35,860
+Mas isso  apenas uma string.
+
+166
+00:07:37,209 --> 00:07:41,270
+Voc pode colocar l, voc pode colocar qualquer valor de string que voc quer,
+
+167
+00:07:41,270 --> 00:07:43,410
+o que significa que voc pode modificar
+
+168
+00:07:43,410 --> 00:07:45,610
+aqui e apenas passar dados ligeiramente diferentes.
+
+169
+00:07:45,610 --> 00:07:47,220
+Tudo bem.
+
+170
+00:07:47,220 --> 00:07:48,780
+No h problema algum.
+
+171
+00:07:48,780 --> 00:07:50,780
+Tudo o que estamos fazendo  modificar
+
+172
+00:07:50,780 --> 00:07:53,920
+alguns dados, passando-os para o prximo nvel que  o TypeError.
+
+173
+00:07:53,920 --> 00:07:55,494
+E em qualquer nvel do
+
+174
+00:07:55,494 --> 00:07:56,830
+nosso programa, qualquer linha
+
+175
+00:07:56,830 --> 00:07:59,690
+que quisermos, podemos alterar os dados que estamos passando.
+
+176
+00:07:59,690 --> 00:08:01,473
+E isso  tudo
+
+177
+00:08:01,473 --> 00:08:06,270
+sobre programao, passar dados, passar mensagens de um lugar para outro.
+
+178
+00:08:07,730 --> 00:08:09,490
+De qualquer forma, agora que
+
+179
+00:08:09,490 --> 00:08:11,710
+vimos como criar seus prprios erros personalizados,
+
+180
+00:08:11,710 --> 00:08:15,050
+eu tambm queria que voc viesse mais bondade em Python,
+
+181
+00:08:15,050 --> 00:08:16,600
+que  o docstring.
+
+182
+00:08:16,600 --> 00:08:19,440
+Ns no olhamos para docstrings ainda, mas,
+
+183
+00:08:19,440 --> 00:08:22,430
+bem, estou prestes a falar sobre eles.
+
+184
+00:08:22,430 --> 00:08:27,430
+Sob a classe e no dentro do mtodo init, voc pode digitar uma
+
+185
+00:08:27,670 --> 00:08:30,170
+cadeia de vrias linhas e, se voc
+
+186
+00:08:30,170 --> 00:08:31,160
+se lembrar corretamente,
+
+187
+00:08:31,160 --> 00:08:33,590
+as cadeias de vrias linhas so aquelas
+
+188
+00:08:33,590 --> 00:08:37,560
+que tm trs aspas no incio e trs no final.
+
+189
+00:08:37,560 --> 00:08:40,090
+Essa  uma string de vrias linhas, o que
+
+190
+00:08:40,090 --> 00:08:42,480
+significa que voc pode, por exemplo, aqui embaixo, imprimir
+
+191
+00:08:42,480 --> 00:08:47,480
+a string multilinha que diz: "Ol, como voc est? " Igual
+
+192
+00:08:51,790 --> 00:08:52,623
+a.
+
+193
+00:08:54,933 --> 00:08:56,070
+E, claro, voc no pode fazer
+
+194
+00:08:56,070 --> 00:08:57,330
+isso porque voc levantou um erro l.
+
+195
+00:08:57,330 --> 00:08:58,870
+Mas tudo bem, voc sabe.
+
+196
+00:08:58,870 --> 00:09:01,590
+Voc pode executar isso aqui e o
+
+197
+00:09:01,590 --> 00:09:04,113
+que voc obtm  um monte
+
+198
+00:09:04,113 --> 00:09:07,950
+de linhas l com o recuo e tudo mais.
+
+199
+00:09:09,520 --> 00:09:11,820
+Se voc fizer isso, agora voc tem duas linhas.
+
+200
+00:09:11,820 --> 00:09:13,300
+Claro que esta  uma nova linha
+
+201
+00:09:13,300 --> 00:09:15,600
+aqui, ento voc pode querer fazer isso em seu lugar.
+
+202
+00:09:15,600 --> 00:09:17,390
+Agora voc pega todos em uma nica linha.
+
+203
+00:09:17,390 --> 00:09:19,340
+Esta  uma string de vrias linhas.
+
+204
+00:09:20,700 --> 00:09:23,250
+E, as seqncias de vrias linhas so muito teis quando
+
+205
+00:09:23,250 --> 00:09:24,500
+voc tem uma seqncia muito
+
+206
+00:09:24,500 --> 00:09:26,920
+longa que voc deseja imprimir ou usar de outra forma.
+
+207
+00:09:26,920 --> 00:09:30,725
+Mas tambm, quando voc tem uma string
+
+208
+00:09:30,725 --> 00:09:33,710
+de vrias linhas, diretamente abaixo de
+
+209
+00:09:33,710 --> 00:09:37,380
+uma classe, ou diretamente sob um mtodo
+
+210
+00:09:38,366 --> 00:09:40,420
+ou uma funo, voc
+
+211
+00:09:40,420 --> 00:09:44,160
+pode realmente digitar algumas coisas que sero docstring.
+
+212
+00:09:44,160 --> 00:09:46,550
+Isso  alguma informao sobre o que a
+
+213
+00:09:46,550 --> 00:09:49,090
+classe faz ou quando  usada ou porque 
+
+214
+00:09:49,090 --> 00:09:52,620
+usada, para que outros desenvolvedores de Python possam ver e entender o
+
+215
+00:09:52,620 --> 00:09:55,300
+que ela faz e tambm se torne uma parte
+
+216
+00:09:55,300 --> 00:09:57,820
+do seu cdigo e eu mostrarei exatamente o que
+
+217
+00:09:57,820 --> 00:09:59,330
+isso significa em apenas um momento.
+
+218
+00:09:59,330 --> 00:10:01,550
+Ento, digamos que queremos dizer a
+
+219
+00:10:01,550 --> 00:10:05,910
+outros desenvolvedores que a exceo MyCustomError  levantada quando um cdigo de
+
+220
+00:10:05,910 --> 00:10:07,600
+erro especfico  necessrio.
+
+221
+00:10:07,600 --> 00:10:09,190
+Porque isso tem um cdigo aqui.
+
+222
+00:10:10,540 --> 00:10:12,707
+E ento vamos
+
+223
+00:10:12,707 --> 00:10:17,580
+renomear MyCustomError para RunTimeErrorWithCode por exemplo.
+
+224
+00:10:17,580 --> 00:10:19,470
+No  um nome muito bom, mas voc sabe.
+
+225
+00:10:20,880 --> 00:10:22,500
+Ento, agora, o que podemos fazer,
+
+226
+00:10:23,600 --> 00:10:27,090
+ que podemos, bem, sempre que estamos olhando para este cdigo, vemos rapidamente,
+
+227
+00:10:27,090 --> 00:10:29,620
+ok, esta  uma exceo que  levantada quando
+
+228
+00:10:29,620 --> 00:10:32,120
+um cdigo de erro especfico  necessrio, isso  legal.
+
+229
+00:10:34,000 --> 00:10:38,897
+E isso nos ajuda a entender exatamente o que  isso.
+
+230
+00:10:38,897 --> 00:10:43,000
+Se voc fosse criar um objeto deste
+
+231
+00:10:43,000 --> 00:10:47,350
+tipo sem cri-lo, apenas por exemplo, voc
+
+232
+00:10:50,050 --> 00:10:55,050
+pode imprimir, errar, ponto, sublinhado, sublinhado, doc, sublinhado,
+
+233
+00:10:55,559 --> 00:10:56,480
+sublinhado.
+
+234
+00:10:56,480 --> 00:11:01,480
+Claro que vamos dar os argumentos de que precisa.
+
+235
+00:11:03,190 --> 00:11:05,440
+Assim, voc pode completar o nome da
+
+236
+00:11:05,440 --> 00:11:08,560
+varivel que  o seu ponto de objeto, sublinhado, sublinhado,
+
+237
+00:11:09,716 --> 00:11:10,570
+doc, sublinhado, sublinhado.
+
+238
+00:11:10,570 --> 00:11:12,790
+E isso vai te dar o
+
+239
+00:11:12,790 --> 00:11:14,650
+docstring que voc escreveu l.
+
+240
+00:11:14,650 --> 00:11:17,690
+Isto  particularmente til quando voc est se
+
+241
+00:11:17,690 --> 00:11:21,067
+desenvolvendo e voc quer, voc sabe, olhar para o
+
+242
+00:11:21,067 --> 00:11:23,300
+que algo  definido para ser.
+
+243
+00:11:24,370 --> 00:11:26,920
+Talvez no seja to til quando voc
+
+244
+00:11:26,920 --> 00:11:28,560
+est escrevendo um programa, mas
+
+245
+00:11:28,560 --> 00:11:31,970
+mesmo assim,  interessante que o Python veja isso aqui,
+
+246
+00:11:31,970 --> 00:11:33,520
+que  apenas uma
+
+247
+00:11:33,520 --> 00:11:36,200
+string, como algo que tem um significado particular.
+
+248
+00:11:36,200 --> 00:11:39,000
+E usando docstrings, por exemplo em
+
+249
+00:11:39,000 --> 00:11:41,800
+funes, particularmente funes complexas, e em
+
+250
+00:11:41,800 --> 00:11:43,432
+classes para explicar o
+
+251
+00:11:43,432 --> 00:11:48,265
+que elas fazem, e voc tambm pode us-las no topo do
+
+252
+00:11:48,265 --> 00:11:50,850
+seu arquivo como uma definio de
+
+253
+00:11:50,850 --> 00:11:53,980
+mdulo ou sobre o que  este arquivo.
+
+254
+00:11:53,980 --> 00:11:54,870
+Voc pode fazer isso
+
+255
+00:11:54,870 --> 00:11:56,470
+tambm, voc pode colocar um documento aqui.
+
+256
+00:11:58,040 --> 00:12:02,770
+Existem muitas ferramentas que lero esses docstrings e criaro uma boa pgina
+
+257
+00:12:02,770 --> 00:12:03,940
+explicando o que
+
+258
+00:12:03,940 --> 00:12:05,730
+suas classes fazem e o
+
+259
+00:12:05,730 --> 00:12:06,594
+que seus
+
+260
+00:12:06,594 --> 00:12:10,110
+mtodos fazem, e isso  para criar documentao e
+
+261
+00:12:10,110 --> 00:12:11,380
+pode ser bastante til.
+
+262
+00:12:11,380 --> 00:12:13,780
+E foi assim que o docstring surgiu.
+
+263
+00:12:13,780 --> 00:12:16,561
+Foram pessoas querendo adicionar algumas descries sobre o
+
+264
+00:12:16,561 --> 00:12:18,957
+que suas classes e mtodos fazem.
+
+265
+00:12:18,957 --> 00:12:20,340
+Portanto, sinta-se  vontade para
+
+266
+00:12:20,340 --> 00:12:21,370
+fazer isso, especialmente
+
+267
+00:12:21,370 --> 00:12:23,800
+se voc criar mais funes um pouco mais
+
+268
+00:12:23,800 --> 00:12:25,530
+complexas, como veremos nas sees a
+
+269
+00:12:25,530 --> 00:12:27,220
+seguir, vamos mesclar todo o nosso
+
+270
+00:12:27,220 --> 00:12:28,400
+conhecimento em Python e
+
+271
+00:12:28,400 --> 00:12:30,030
+criar alguns projetos mais agradveis.
+
+272
+00:12:30,030 --> 00:12:31,799
+Voc pode usar docstrings nesses casos
+
+273
+00:12:31,799 --> 00:12:35,640
+apenas para explicar para que exatamente essas coisas esto quando voc voltar
+
+274
+00:12:35,640 --> 00:12:37,960
+a elas, semanas aps o trmino, ou
+
+275
+00:12:37,960 --> 00:12:39,840
+quando estiver trabalhando com outra pessoa
+
+276
+00:12:39,840 --> 00:12:41,402
+e quiser que ela seja
+
+277
+00:12:41,402 --> 00:12:44,292
+capaz de entender exatamente o que aconteceu com mais facilidade.
+
+278
+00:12:44,292 --> 00:12:45,560
+OK?
+
+279
+00:12:46,810 --> 00:12:48,680
+E, claro, voc pode ter seu docstring apenas
+
+280
+00:12:48,680 --> 00:12:49,513
+como um aparte.
+
+281
+00:12:49,513 --> 00:12:51,610
+Voc pode ter docstring em uma nica linha.
+
+282
+00:12:51,610 --> 00:12:56,350
+Esta  uma docstring multilinha de linha nica.
+
+283
+00:12:56,350 --> 00:12:59,540
+Isso tambm  bom, caso voc queira economizar espao.
+
+284
+00:12:59,540 --> 00:13:01,060
+Voc pode documentar
+
+285
+00:13:01,060 --> 00:13:02,770
+aqui, mas o
+
+286
+00:13:02,770 --> 00:13:05,950
+docstring deve ter essas aspas duplas
+
+287
+00:13:05,950 --> 00:13:08,070
+triplas, ento essas trs.
+
+288
+00:13:08,070 --> 00:13:10,590
+Essa  apenas a conveno para docstrings.
+
+289
+00:13:10,590 --> 00:13:11,900
+OK?
+
+290
+00:13:11,900 --> 00:13:13,040
+Tudo bem,  isso para este vdeo.
+
+291
+00:13:13,040 --> 00:13:15,000
+Ns conversamos sobre como criar nossos
+
+292
+00:13:15,000 --> 00:13:16,980
+prprios erros estendendo de um erro
+
+293
+00:13:16,980 --> 00:13:19,280
+em particular e se voc no
+
+294
+00:13:19,280 --> 00:13:22,220
+quer estender de TypeError porque seu erro simplesmente
+
+295
+00:13:22,220 --> 00:13:26,060
+no  um TypeError, por exemplo, voc pode apenas estender de
+
+296
+00:13:26,060 --> 00:13:27,590
+Exception, desculpe, no Error.
+
+297
+00:13:27,590 --> 00:13:29,040
+Voc pode estender de
+
+298
+00:13:29,040 --> 00:13:32,390
+Exceo, que  a classe de exceo mais bsica
+
+299
+00:13:32,390 --> 00:13:34,360
+da qual voc deve herdar.
+
+300
+00:13:34,360 --> 00:13:36,550
+No se estenda da exceo de base.
+
+301
+00:13:36,550 --> 00:13:37,770
+Isso no  para ns usarmos.
+
+302
+00:13:37,770 --> 00:13:39,510
+Apenas estenda da exceo.
+
+303
+00:13:39,510 --> 00:13:41,180
+E tudo bem.
+
+304
+00:13:41,180 --> 00:13:43,515
+Ok,  isso para este vdeo novamente.
+
+305
+00:13:43,515 --> 00:13:45,800
+E eu vejo voc no prximo.
+

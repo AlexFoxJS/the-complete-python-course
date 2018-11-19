@@ -1,0 +1,1360 @@
+1
+00:00:00,140 --> 00:00:02,290
+<v ->Hi, and welcome back. In this video,</v>
+
+2
+00:00:02,290 --> 00:00:04,460
+I wanted to guide you through some
+
+3
+00:00:04,460 --> 00:00:07,600
+of the most popular Python libraries that can be used
+
+4
+00:00:07,600 --> 00:00:09,213
+for a variety of things.
+
+5
+00:00:10,176 --> 00:00:12,150
+Here we're going to talk about some libraries you can use
+
+6
+00:00:12,150 --> 00:00:15,660
+to interact with databases, some that you've already seen
+
+7
+00:00:15,660 --> 00:00:17,450
+and some that you already haven't to look
+
+8
+00:00:17,450 --> 00:00:21,550
+at web development, a couple to do communications,
+
+9
+00:00:21,550 --> 00:00:26,550
+like sending emails or SMS texts, a couple for GUI design,
+
+10
+00:00:27,540 --> 00:00:32,200
+for Graphical User Interfaces, like desktop apps, a bunch
+
+11
+00:00:32,200 --> 00:00:34,540
+of them that can be used for data science
+
+12
+00:00:34,540 --> 00:00:37,290
+and that are very popular, and then some
+
+13
+00:00:37,290 --> 00:00:39,810
+for computer vision, and we're gonna look at a couple
+
+14
+00:00:39,810 --> 00:00:41,691
+of development tools as well you can use to make your life
+
+15
+00:00:41,691 --> 00:00:44,403
+a bit easier when you're working with Python.
+
+16
+00:00:45,540 --> 00:00:49,360
+For databases, you're already looked at sqlite3,
+
+17
+00:00:49,360 --> 00:00:53,110
+which comes with Python, and you can use sqlite3 to interact
+
+18
+00:00:53,110 --> 00:00:54,943
+with sqlite databases.
+
+19
+00:00:56,140 --> 00:00:58,920
+There's another library that is actually fairly similar to
+
+20
+00:00:58,920 --> 00:01:02,590
+sqlite3 in some cases, although it is more advanced,
+
+21
+00:01:02,590 --> 00:01:05,180
+and that's called psycopg2.
+
+22
+00:01:05,180 --> 00:01:09,760
+Psycopg2 can be used to interact with Postgres databases
+
+23
+00:01:09,760 --> 00:01:12,740
+as opposed to sqlite databases.
+
+24
+00:01:12,740 --> 00:01:16,503
+Postgres databases are also relational databases,
+
+25
+00:01:16,503 --> 00:01:18,910
+like sqlite databases are,
+
+26
+00:01:18,910 --> 00:01:21,890
+but they are much more advanced and they let you do
+
+27
+00:01:21,890 --> 00:01:25,406
+more things, and generally they perform better,
+
+28
+00:01:25,406 --> 00:01:28,120
+but they're also much more complicated.
+
+29
+00:01:28,120 --> 00:01:32,750
+Similarly to psycopg2, you've also got aiopg which
+
+30
+00:01:32,750 --> 00:01:36,120
+is the asynchronous version of psycopg2.
+
+31
+00:01:36,120 --> 00:01:40,450
+It lets you do things like asynch connections
+
+32
+00:01:40,450 --> 00:01:44,030
+to a database and sort of run other code while you wait
+
+33
+00:01:44,030 --> 00:01:45,720
+for code to come back from the database,
+
+34
+00:01:45,720 --> 00:01:46,553
+and things like that.
+
+35
+00:01:46,553 --> 00:01:50,390
+So if you're looking into high-performance PostgresSQL
+
+36
+00:01:50,390 --> 00:01:52,860
+database connections from within Python
+
+37
+00:01:52,860 --> 00:01:54,690
+and your application is asynchronous,
+
+38
+00:01:54,690 --> 00:01:56,763
+I recommend you use aiopg.
+
+39
+00:01:57,700 --> 00:02:00,914
+And then you've also got SQLAlchemy.
+
+40
+00:02:00,914 --> 00:02:04,880
+SQLAlchemy is sort of a different beast altogether.
+
+41
+00:02:04,880 --> 00:02:09,510
+It can be used to connect to sqlite, or Postgres, or MySQL,
+
+42
+00:02:09,510 --> 00:02:12,760
+or Oracle, or indeed any other type of database,
+
+43
+00:02:12,760 --> 00:02:17,030
+and it sort of wraps the entire database connection
+
+44
+00:02:17,030 --> 00:02:19,230
+in a different format.
+
+45
+00:02:19,230 --> 00:02:21,480
+So what SQLAlchemy allows you to do,
+
+46
+00:02:21,480 --> 00:02:24,230
+and we're gonna look at this later on in the course,
+
+47
+00:02:24,230 --> 00:02:26,900
+in this section, what SQLAlchemy allows you to do
+
+48
+00:02:26,900 --> 00:02:31,550
+is define classes and each class has a table
+
+49
+00:02:31,550 --> 00:02:33,530
+and a bunch of columns, and then whenever you create
+
+50
+00:02:33,530 --> 00:02:38,530
+an object, that sort of creates its corresponding role
+
+51
+00:02:38,710 --> 00:02:39,670
+in the database.
+
+52
+00:02:39,670 --> 00:02:42,090
+So it lets you work with Python only
+
+53
+00:02:42,090 --> 00:02:44,500
+and not really worry about the database.
+
+54
+00:02:44,500 --> 00:02:46,680
+It just gets taken care of for you.
+
+55
+00:02:46,680 --> 00:02:50,010
+This is known as an object-relational mapping
+
+56
+00:02:50,010 --> 00:02:52,623
+and SQLAlchemy is the most popular one in Python.
+
+57
+00:02:54,330 --> 00:02:57,260
+For web development libraries, you've already seen Flask.
+
+58
+00:02:57,260 --> 00:03:00,600
+I really like Flask, it's a very simple framework
+
+59
+00:03:00,600 --> 00:03:03,750
+that nonetheless is very extensible and quite powerful,
+
+60
+00:03:03,750 --> 00:03:06,750
+but a lot of people have heard of Django, which is sort
+
+61
+00:03:06,750 --> 00:03:10,820
+of the big brother of web development in Python,
+
+62
+00:03:10,820 --> 00:03:14,110
+and Django is a really powerful web framework,
+
+63
+00:03:14,110 --> 00:03:16,690
+but it's also quite complicated.
+
+64
+00:03:16,690 --> 00:03:18,510
+If you want to start learning Python,
+
+65
+00:03:18,510 --> 00:03:21,270
+er, sorry, learning Django, there's a lot of stuff you have
+
+66
+00:03:21,270 --> 00:03:23,760
+to learn about how Django does things
+
+67
+00:03:23,760 --> 00:03:26,750
+and what structure it wants you to follow in your code,
+
+68
+00:03:26,750 --> 00:03:30,390
+and how it wants you to handle X and Y and so forth.
+
+69
+00:03:30,390 --> 00:03:32,050
+So the learning curve is much steeper.
+
+70
+00:03:32,050 --> 00:03:34,350
+This is why I prefer Flask, especially
+
+71
+00:03:34,350 --> 00:03:36,240
+when you're starting out.
+
+72
+00:03:36,240 --> 00:03:40,430
+So, Django can be really useful for making specific types
+
+73
+00:03:40,430 --> 00:03:42,610
+of web applications because Django gives you a lot
+
+74
+00:03:42,610 --> 00:03:44,939
+of things out of the box when you're,
+
+75
+00:03:44,939 --> 00:03:47,680
+you can just tell Django to create an app for you,
+
+76
+00:03:47,680 --> 00:03:49,680
+and it will give you an app with a bunch of things
+
+77
+00:03:49,680 --> 00:03:52,990
+in it like user authentication, an administration panel,
+
+78
+00:03:52,990 --> 00:03:56,710
+and so forth, but then of course that code
+
+79
+00:03:56,710 --> 00:03:59,750
+is not code you've written, so it can limit you
+
+80
+00:03:59,750 --> 00:04:01,990
+in what you can do to change it.
+
+81
+00:04:01,990 --> 00:04:04,040
+You sort of have to follow its structure.
+
+82
+00:04:05,050 --> 00:04:07,600
+As well as Flask and Django, you've got a bunch
+
+83
+00:04:07,600 --> 00:04:12,140
+of asynchronous frameworks for web development.
+
+84
+00:04:12,140 --> 00:04:17,140
+These are very powerful, but they are also more complicated
+
+85
+00:04:18,500 --> 00:04:22,890
+than Flask, particularly aiohttp, that we've already seen,
+
+86
+00:04:22,890 --> 00:04:27,890
+and on Tornado, they are pretty challenging to really grasp,
+
+87
+00:04:28,490 --> 00:04:29,650
+but they are quite powerful.
+
+88
+00:04:29,650 --> 00:04:31,800
+They give you a lot of stuff you can do.
+
+89
+00:04:31,800 --> 00:04:35,350
+For example, aiohttp, as we know, gives you a client
+
+90
+00:04:35,350 --> 00:04:38,140
+as well that you can use to make asynchronous requests
+
+91
+00:04:38,140 --> 00:04:41,170
+as well as do development with it.
+
+92
+00:04:41,170 --> 00:04:44,610
+Sanic and Quart are two new frameworks that
+
+93
+00:04:44,610 --> 00:04:48,290
+actually don't have a lot of popularity yet,
+
+94
+00:04:48,290 --> 00:04:51,530
+but they have been developed to be simple frameworks
+
+95
+00:04:51,530 --> 00:04:54,170
+for web development that are asynchronous.
+
+96
+00:04:54,170 --> 00:04:59,170
+They very much are similar to Flask in that regard,
+
+97
+00:04:59,310 --> 00:05:01,460
+but they are asynchronous.
+
+98
+00:05:01,460 --> 00:05:04,760
+Quart particularly actually was recently suggested to me
+
+99
+00:05:04,760 --> 00:05:09,760
+by one of the students and it is an exact mimic,
+
+100
+00:05:11,200 --> 00:05:14,460
+or copy, of Flask, but made asynchronous,
+
+101
+00:05:14,460 --> 00:05:17,950
+and as such it works with a lot of the Flask extensions.
+
+102
+00:05:17,950 --> 00:05:20,850
+Flask is a very popular framework because
+
+103
+00:05:20,850 --> 00:05:25,850
+of the extensions that sort of enhance Flask's power.
+
+104
+00:05:26,370 --> 00:05:29,270
+Sanic doesn't have those extensions,
+
+105
+00:05:29,270 --> 00:05:32,740
+and as such is a bit more limited in that regard.
+
+106
+00:05:32,740 --> 00:05:35,550
+So, if you want to do asynchronous web development,
+
+107
+00:05:35,550 --> 00:05:39,190
+maybe look into Quart if you're already familiar with Flask.
+
+108
+00:05:39,190 --> 00:05:41,720
+There's also a very popular web development framework
+
+109
+00:05:41,720 --> 00:05:45,950
+in Python called Bottle that is the precursor to Flask,
+
+110
+00:05:45,950 --> 00:05:48,700
+and is another simple framework.
+
+111
+00:05:48,700 --> 00:05:49,890
+I can't say much about it, though,
+
+112
+00:05:49,890 --> 00:05:52,050
+because I've never actually used it,
+
+113
+00:05:52,050 --> 00:05:54,110
+but I know that it exists and a lot
+
+114
+00:05:54,110 --> 00:05:55,823
+of people do know about it.
+
+115
+00:05:56,960 --> 00:05:58,690
+For communications, and this is something we're going
+
+116
+00:05:58,690 --> 00:06:00,900
+to look at throughout the rest of this section,
+
+117
+00:06:00,900 --> 00:06:04,630
+you've got smtplib that comes built-in with Python.
+
+118
+00:06:04,630 --> 00:06:07,640
+This allows you to connect to an smpt server.
+
+119
+00:06:07,640 --> 00:06:10,240
+These are normally email servers, like Gmail
+
+120
+00:06:10,240 --> 00:06:12,730
+and so forth, and they let you authenticate
+
+121
+00:06:12,730 --> 00:06:15,200
+on those servers with a user name and password
+
+122
+00:06:15,200 --> 00:06:19,200
+and then send emails from that server using your account.
+
+123
+00:06:19,200 --> 00:06:22,850
+So you could use smptlib to log into your Gmail account
+
+124
+00:06:22,850 --> 00:06:25,103
+and send an email through your account.
+
+125
+00:06:26,140 --> 00:06:29,780
+So it can be really powerful, but also slightly limiting
+
+126
+00:06:29,780 --> 00:06:32,775
+in some cases because you have to send the email using your
+
+127
+00:06:32,775 --> 00:06:35,003
+own Gmail account.
+
+128
+00:06:36,340 --> 00:06:38,710
+As such, we have Mailgun.
+
+129
+00:06:38,710 --> 00:06:43,010
+Mailgun is another breed of email sending libraries.
+
+130
+00:06:43,010 --> 00:06:46,130
+You've got a bunch of others like SendGrid that
+
+131
+00:06:46,130 --> 00:06:50,350
+do the same job, and these essentially give you
+
+132
+00:06:50,350 --> 00:06:53,330
+an email service that you can send emails
+
+133
+00:06:53,330 --> 00:06:55,580
+from without requiring that you use
+
+134
+00:06:55,580 --> 00:06:56,520
+your own personal account.
+
+135
+00:06:56,520 --> 00:06:58,600
+So they give you an email address,
+
+136
+00:06:58,600 --> 00:07:01,110
+and you can send emails from there.
+
+137
+00:07:01,110 --> 00:07:04,890
+It also has a nice API that you can interact with
+
+138
+00:07:04,890 --> 00:07:06,890
+in order to send those emails,
+
+139
+00:07:06,890 --> 00:07:08,993
+and we're going to look at this shortly.
+
+140
+00:07:09,830 --> 00:07:13,739
+You've got also got a very popular and very powerful library
+
+141
+00:07:13,739 --> 00:07:16,620
+and, indeed, a company called Twilio,
+
+142
+00:07:16,620 --> 00:07:20,090
+and Twilio does tools for communication,
+
+143
+00:07:20,090 --> 00:07:23,390
+and they have a lot of ways to talking to their products
+
+144
+00:07:23,390 --> 00:07:25,440
+using Python, and they can do things like
+
+145
+00:07:25,440 --> 00:07:28,030
+send text messages, SMS.
+
+146
+00:07:28,030 --> 00:07:32,030
+They also do things like call centre products and a bunch
+
+147
+00:07:32,030 --> 00:07:35,660
+of other stuff like real-time chats and things like that,
+
+148
+00:07:35,660 --> 00:07:38,860
+and you can interact with all of those using Python.
+
+149
+00:07:38,860 --> 00:07:40,210
+So if you are thinking of by,
+
+150
+00:07:40,210 --> 00:07:42,770
+of making simple chat application
+
+151
+00:07:42,770 --> 00:07:45,910
+or you want to send text messages, look into Twilio.
+
+152
+00:07:45,910 --> 00:07:48,970
+They are really quite good and their pricing
+
+153
+00:07:48,970 --> 00:07:51,680
+is fairly reasonable.
+
+154
+00:07:51,680 --> 00:07:53,690
+It's not terribly expensive.
+
+155
+00:07:53,690 --> 00:07:55,320
+If you have a small company and you're sending a
+
+156
+00:07:55,320 --> 00:07:59,510
+small amount of text messages, or chat sessions,
+
+157
+00:07:59,510 --> 00:08:01,430
+things like that, it's actually pretty cheap.
+
+158
+00:08:01,430 --> 00:08:03,059
+If you are a large company that's sending a lot
+
+159
+00:08:03,059 --> 00:08:07,320
+of text messages or chat sessions, the price actually
+
+160
+00:08:07,320 --> 00:08:10,640
+goes down as you increase your volume,
+
+161
+00:08:10,640 --> 00:08:13,380
+so it ends up still being fairly reasonable.
+
+162
+00:08:13,380 --> 00:08:15,740
+Also I've spoken with them in a corporate setting,
+
+163
+00:08:15,740 --> 00:08:18,130
+and they're willing to play around with the price as well.
+
+164
+00:08:18,130 --> 00:08:19,620
+So it's definitely something worth considering
+
+165
+00:08:19,620 --> 00:08:21,420
+if that's something you wanna build.
+
+166
+00:08:22,460 --> 00:08:26,110
+For GUI design, which stands for Graphical User Interface,
+
+167
+00:08:26,110 --> 00:08:26,943
+this is something that a lot
+
+168
+00:08:26,943 --> 00:08:29,940
+of people actually don't know Python can do.
+
+169
+00:08:29,940 --> 00:08:32,350
+For a lot of people, Python is sort of a data science
+
+170
+00:08:32,350 --> 00:08:36,130
+and web development language, and that's it.
+
+171
+00:08:36,130 --> 00:08:38,800
+But actually you're got some Graphical User Interface
+
+172
+00:08:38,800 --> 00:08:42,610
+libraries that you can use to make desktop applications,
+
+173
+00:08:42,610 --> 00:08:46,070
+and the most popular one, or I'd say maybe the best one,
+
+174
+00:08:46,070 --> 00:08:49,680
+is called Kivy, and Kivy can be used for,
+
+175
+00:08:49,680 --> 00:08:51,430
+in designing Graphical User Interfaces,
+
+176
+00:08:51,430 --> 00:08:54,170
+but also for making games.
+
+177
+00:08:54,170 --> 00:08:58,053
+Now, I haven't looked too in-depth into Kivy.
+
+178
+00:08:58,053 --> 00:09:01,070
+I've not really use it in a professional setting,
+
+179
+00:09:01,070 --> 00:09:04,690
+but I have read through their documentation and some
+
+180
+00:09:04,690 --> 00:09:06,260
+of their guides and it actually looks
+
+181
+00:09:06,260 --> 00:09:09,006
+fairly straightforward.
+
+182
+00:09:09,006 --> 00:09:12,244
+Not too easy, but it looks doable to make games
+
+183
+00:09:12,244 --> 00:09:15,520
+and graphical user interfaces in Kivy...
+
+184
+00:09:15,520 --> 00:09:18,520
+Whereas if you look into Tkinter, I don't even know how
+
+185
+00:09:18,520 --> 00:09:21,050
+to say this word, it's not so simple.
+
+186
+00:09:21,050 --> 00:09:24,660
+This is the previous, eh, it's a much older library used
+
+187
+00:09:24,660 --> 00:09:26,430
+for making Graphical User Interfaces,
+
+188
+00:09:26,430 --> 00:09:28,930
+but it's not as straightforward.
+
+189
+00:09:28,930 --> 00:09:31,075
+So if you want to build Graphical User Interfaces,
+
+190
+00:09:31,075 --> 00:09:33,253
+I definitely recommend you look into Kivy.
+
+191
+00:09:34,550 --> 00:09:37,440
+For data science, you've got a bunch of libraries that
+
+192
+00:09:37,440 --> 00:09:39,850
+can be used for scientific computing as well
+
+193
+00:09:39,850 --> 00:09:42,200
+as advanced mathematics and things like that.
+
+194
+00:09:42,200 --> 00:09:46,410
+You've got NumPy and SciPy which are used for just that.
+
+195
+00:09:46,410 --> 00:09:49,140
+These are things that allow you to work with matrices
+
+196
+00:09:49,140 --> 00:09:52,140
+and vectors, and things like that, and again,
+
+197
+00:09:52,140 --> 00:09:53,670
+I'm not much of a scientist so I don't know much
+
+198
+00:09:53,670 --> 00:09:57,510
+about these things, but they are the staple
+
+199
+00:09:57,510 --> 00:09:58,950
+in the data science community.
+
+200
+00:09:58,950 --> 00:10:00,040
+So if you've done any data science,
+
+201
+00:10:00,040 --> 00:10:02,400
+you probably have seen these already,
+
+202
+00:10:02,400 --> 00:10:05,050
+and if not you definitely want to look into them.
+
+203
+00:10:05,050 --> 00:10:08,490
+You've also got Pandas and Matplotlib.
+
+204
+00:10:08,490 --> 00:10:11,890
+These are, again, used in data science very extensively,
+
+205
+00:10:11,890 --> 00:10:14,440
+and Matplotlib particularly also outside
+
+206
+00:10:14,440 --> 00:10:17,490
+of data science used for creating graphs.
+
+207
+00:10:17,490 --> 00:10:20,560
+So if you want to make like bar charts, or line charts
+
+208
+00:10:20,560 --> 00:10:22,350
+and things like that with Python, Matplotlib
+
+209
+00:10:22,350 --> 00:10:24,763
+is a good way of doing that.
+
+210
+00:10:25,920 --> 00:10:29,170
+Also a popular thing in data science are Jupyter notebooks.
+
+211
+00:10:29,170 --> 00:10:32,500
+This is not really a library in Python as much
+
+212
+00:10:32,500 --> 00:10:36,250
+as a tool that you can use to create a notebook,
+
+213
+00:10:36,250 --> 00:10:37,850
+essentially just written notes,
+
+214
+00:10:37,850 --> 00:10:41,410
+and you can embed within that notebook Python code,
+
+215
+00:10:41,410 --> 00:10:44,050
+and not only that, but you can run bits
+
+216
+00:10:44,050 --> 00:10:46,320
+of that Python code within the notebook.
+
+217
+00:10:46,320 --> 00:10:48,940
+So if you're taking notes for a course like this one,
+
+218
+00:10:48,940 --> 00:10:51,440
+it can be useful to create your own Jupyter notebook,
+
+219
+00:10:51,440 --> 00:10:53,690
+take notes, and write the code that we teach you
+
+220
+00:10:53,690 --> 00:10:55,620
+in these lectures into the notebook,
+
+221
+00:10:55,620 --> 00:10:57,330
+and then whenever you go back to it,
+
+222
+00:10:57,330 --> 00:11:00,160
+you can run the different code excerpts
+
+223
+00:11:00,160 --> 00:11:02,740
+for the lecture without having to search
+
+224
+00:11:02,740 --> 00:11:05,900
+through your files and many folders, things like that.
+
+225
+00:11:05,900 --> 00:11:07,563
+So, a pretty useful tool,
+
+226
+00:11:08,610 --> 00:11:11,050
+but not something I've used very extensively.
+
+227
+00:11:11,050 --> 00:11:14,220
+And of course there are many other tools that use Python
+
+228
+00:11:14,220 --> 00:11:17,647
+in data science such as TensorFlow, which is,
+
+229
+00:11:17,647 --> 00:11:21,853
+you know, not really a library per se but still uses Python.
+
+230
+00:11:23,250 --> 00:11:27,040
+For computer vision, it's not really something I'd recommend
+
+231
+00:11:27,040 --> 00:11:28,700
+using Python for necessarily.
+
+232
+00:11:28,700 --> 00:11:31,430
+I'm sure there are better ways of doing computer vision
+
+233
+00:11:31,430 --> 00:11:34,900
+than with a language that only runs on one thread,
+
+234
+00:11:34,900 --> 00:11:38,040
+but nonetheless you've got OpenCV and SimpleCV.
+
+235
+00:11:38,040 --> 00:11:42,250
+OpenCV is a large behemoth of computer vision.
+
+236
+00:11:42,250 --> 00:11:45,670
+SimpleCV is a wrapper around it that it a bit simpler.
+
+237
+00:11:45,670 --> 00:11:47,760
+So if you want to do computer vision in a sort
+
+238
+00:11:47,760 --> 00:11:50,562
+of small scale, for example, make your application
+
+239
+00:11:50,562 --> 00:11:54,773
+able to recognise faces and things like that, use SimpleCV.
+
+240
+00:11:56,110 --> 00:11:58,480
+For development tools that we are going to look at
+
+241
+00:11:58,480 --> 00:12:01,370
+in this section as well, you've got pylint,
+
+242
+00:12:01,370 --> 00:12:03,080
+which is a linter.
+
+243
+00:12:03,080 --> 00:12:06,150
+Linters, essentially you can run them and give them one
+
+244
+00:12:06,150 --> 00:12:09,930
+of your Python files, and it will tell you if you messed up.
+
+245
+00:12:09,930 --> 00:12:11,010
+That's essentially it.
+
+246
+00:12:11,010 --> 00:12:13,740
+If you've got some unused variables, or maybe you forgot
+
+247
+00:12:13,740 --> 00:12:18,060
+to import something, or you forgot to add a comment
+
+248
+00:12:18,060 --> 00:12:23,013
+somewhere, pylint is one of the family of linters in Python.
+
+249
+00:12:23,013 --> 00:12:26,560
+This is the most popular one, the one I'd recommend using,
+
+250
+00:12:26,560 --> 00:12:28,470
+and it's really helpful.
+
+251
+00:12:28,470 --> 00:12:31,000
+It tells you when you've messed up or when you've done
+
+252
+00:12:31,000 --> 00:12:32,730
+something that you shouldn't do,
+
+253
+00:12:32,730 --> 00:12:34,940
+and it tells you how to fix it most of the time,
+
+254
+00:12:34,940 --> 00:12:39,570
+so a great thing to include in your workflow.
+
+255
+00:12:39,570 --> 00:12:42,810
+We're going to look at how to use pylint soon.
+
+256
+00:12:42,810 --> 00:12:46,240
+You've also got flake8, yapf, and Black.
+
+257
+00:12:46,240 --> 00:12:48,700
+These are formatters.
+
+258
+00:12:48,700 --> 00:12:50,280
+So, what they do is,
+
+259
+00:12:50,280 --> 00:12:53,900
+you can run them on a Python form and it will reformat it,
+
+260
+00:12:53,900 --> 00:12:56,310
+add spaces and new lines where required,
+
+261
+00:12:56,310 --> 00:12:58,313
+to make your file more readable.
+
+262
+00:12:59,340 --> 00:13:02,950
+Now, I always recommend you make your own files readable,
+
+263
+00:13:02,950 --> 00:13:06,520
+but it can be useful to run through a formatter
+
+264
+00:13:06,520 --> 00:13:09,700
+after you've made your file so that
+
+265
+00:13:09,700 --> 00:13:11,800
+it always has the same style.
+
+266
+00:13:11,800 --> 00:13:13,310
+You know, if you're working with someone else
+
+267
+00:13:13,310 --> 00:13:16,760
+and you like putting spaces around an equals sign,
+
+268
+00:13:16,760 --> 00:13:19,730
+and they like putting the equals sign stuck to the variable,
+
+269
+00:13:19,730 --> 00:13:21,940
+I don't like that but, hey, some people do,
+
+270
+00:13:21,940 --> 00:13:24,430
+then you can run both pieces of code through the formatter
+
+271
+00:13:24,430 --> 00:13:25,780
+and they'll end up looking similar.
+
+272
+00:13:25,780 --> 00:13:28,970
+So, the style will be consistent and you won't hate each
+
+273
+00:13:28,970 --> 00:13:31,083
+other for using different styles.
+
+274
+00:13:31,940 --> 00:13:34,330
+We're gonna look at this in the section,
+
+275
+00:13:34,330 --> 00:13:37,890
+but if you wanna read a bit more you can go over to our blog
+
+276
+00:13:37,890 --> 00:13:38,840
+and we've got a link there
+
+277
+00:13:38,840 --> 00:13:40,800
+on handy Python development tools.
+
+278
+00:13:40,800 --> 00:13:43,560
+This is going to be linked in the resources section
+
+279
+00:13:43,560 --> 00:13:46,080
+of this lecture as well, so feel free to give it a click
+
+280
+00:13:46,080 --> 00:13:48,523
+and have a wee read at the blog post.
+
+281
+00:13:49,500 --> 00:13:51,160
+Finally, something we didn't mention at the start,
+
+282
+00:13:51,160 --> 00:13:53,640
+but there are a lot of IDEs,
+
+283
+00:13:53,640 --> 00:13:55,710
+or Integrated Development Environments you can use
+
+284
+00:13:55,710 --> 00:13:56,760
+with Python.
+
+285
+00:13:56,760 --> 00:14:00,570
+The most popular one, the one we've been using, is PyCharm.
+
+286
+00:14:00,570 --> 00:14:02,070
+PyCharm is made by Jet Brains,
+
+287
+00:14:02,070 --> 00:14:04,630
+and it's probably the most powerful IDE you can use
+
+288
+00:14:04,630 --> 00:14:05,480
+in Python.
+
+289
+00:14:05,480 --> 00:14:10,130
+It has a lot of nice features like run configurations
+
+290
+00:14:10,130 --> 00:14:12,360
+which allow you to run many different things
+
+291
+00:14:12,360 --> 00:14:13,460
+from within PyCharm.
+
+292
+00:14:13,460 --> 00:14:16,380
+It's got things like database connection handlers,
+
+293
+00:14:16,380 --> 00:14:19,580
+it's got a built-in debugger that you can use to step
+
+294
+00:14:19,580 --> 00:14:21,430
+through your code and that's extremely powerful
+
+295
+00:14:21,430 --> 00:14:25,760
+and really handy, and of course it sort of does
+
+296
+00:14:25,760 --> 00:14:28,110
+everything you need for Python.
+
+297
+00:14:28,110 --> 00:14:32,070
+However, it can be a bit large.
+
+298
+00:14:32,070 --> 00:14:33,670
+It can be cumbersome.
+
+299
+00:14:33,670 --> 00:14:36,080
+It can be quite slow to start up and to
+
+300
+00:14:36,080 --> 00:14:38,980
+do things like searching, and things like that.
+
+301
+00:14:38,980 --> 00:14:40,810
+Also, if you open very large files with PyCharm
+
+302
+00:14:40,810 --> 00:14:42,920
+it can sometimes struggle.
+
+303
+00:14:42,920 --> 00:14:47,130
+So, a very popular thing to do is to have PyCharm
+
+304
+00:14:47,130 --> 00:14:51,560
+for your sort of normal development flow,
+
+305
+00:14:51,560 --> 00:14:54,410
+and when you require those more advanced pieces
+
+306
+00:14:54,410 --> 00:14:55,920
+of functionality...
+
+307
+00:14:55,920 --> 00:14:58,120
+But they also have what I like to a call
+
+308
+00:14:58,120 --> 00:15:01,830
+a glorified text editor when you wanna make quick changes,
+
+309
+00:15:01,830 --> 00:15:04,200
+when you have a small project that you don't really
+
+310
+00:15:04,200 --> 00:15:06,120
+need the power of PyCharm for.
+
+311
+00:15:06,120 --> 00:15:09,190
+And in those cases, I like using Visual Studio Code,
+
+312
+00:15:09,190 --> 00:15:11,520
+which is also an integrated development environment,
+
+313
+00:15:11,520 --> 00:15:16,520
+an IDE, but it's much more toned down.
+
+314
+00:15:16,710 --> 00:15:20,100
+It doesn't do as much for you, and it can be a little bit
+
+315
+00:15:20,100 --> 00:15:24,560
+trickier to set up nice, but then it's fast, it's snappy.
+
+316
+00:15:24,560 --> 00:15:27,220
+You can do basically anything you want with it
+
+317
+00:15:27,220 --> 00:15:29,780
+and it looks really nice as well,
+
+318
+00:15:29,780 --> 00:15:31,670
+so I like Visual Studio Code.
+
+319
+00:15:31,670 --> 00:15:34,640
+Some people like to use Atom or Sublime Text,
+
+320
+00:15:34,640 --> 00:15:36,200
+and these are three what I sort
+
+321
+00:15:36,200 --> 00:15:39,007
+of called glorified text editors.
+
+322
+00:15:39,007 --> 00:15:41,730
+You can try them and give them a ago as well.
+
+323
+00:15:41,730 --> 00:15:44,200
+One of the great things about these three text editors
+
+324
+00:15:44,200 --> 00:15:46,180
+is that you can change them very easily
+
+325
+00:15:46,180 --> 00:15:48,030
+to suit what you like.
+
+326
+00:15:48,030 --> 00:15:49,997
+So you can sort of change the themes, the colours,
+
+327
+00:15:49,997 --> 00:15:54,650
+the way tabs show up, the icons, and everything about them,
+
+328
+00:15:54,650 --> 00:15:59,650
+normally using cascading style sheets to do that, CSS.
+
+329
+00:15:59,780 --> 00:16:02,706
+But of course, if you want to learn more about IDEs
+
+330
+00:16:02,706 --> 00:16:05,730
+in Python and what sort of things you can do, we've got
+
+331
+00:16:05,730 --> 00:16:09,420
+also a blog post, part of our 100 Days of Python series,
+
+332
+00:16:09,420 --> 00:16:11,890
+that you can look at, and it goes in-depth
+
+333
+00:16:11,890 --> 00:16:15,680
+into why I think using PyCharm is the best thing to do
+
+334
+00:16:15,680 --> 00:16:17,570
+and sort of a few other options as well
+
+335
+00:16:17,570 --> 00:16:19,070
+in case you wanna have a look.
+
+336
+00:16:20,480 --> 00:16:21,560
+So that's it for this video.
+
+337
+00:16:21,560 --> 00:16:25,200
+I hope you've enjoyed this brief walkthrough of some
+
+338
+00:16:25,200 --> 00:16:28,900
+of the most important Python libraries out there.
+
+339
+00:16:28,900 --> 00:16:30,240
+Let's go into the next one.
+
+340
+00:16:30,240 --> 00:16:31,390
+So, I'll see you there.
+

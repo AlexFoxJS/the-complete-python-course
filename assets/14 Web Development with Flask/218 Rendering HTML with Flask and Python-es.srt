@@ -1,0 +1,532 @@
+1
+00:00:00,070 --> 00:00:01,140
+Jos: Hola, bienvenido de nuevo.
+
+2
+00:00:01,140 --> 00:00:03,220
+En este video, vamos a crear
+
+3
+00:00:03,220 --> 00:00:05,990
+nuestro primer archivo HTML y volver a configurarlo
+
+4
+00:00:05,990 --> 00:00:09,140
+para nuestros usuarios en lugar de una cadena simple.
+
+5
+00:00:10,280 --> 00:00:11,870
+Cuando creas una aplicacin
+
+6
+00:00:11,870 --> 00:00:15,530
+Flask, Flask comienza a buscar una carpeta de plantillas.
+
+7
+00:00:15,530 --> 00:00:18,200
+Entonces, vamos a crear un nuevo directorio y llamarlo, plantillas, y
+
+8
+00:00:18,200 --> 00:00:22,300
+eso tiene que estar al lado de la aplicacin. py.
+
+9
+00:00:22,300 --> 00:00:25,130
+Entonces en la misma carpeta que la aplicacin. py es, bien
+
+10
+00:00:25,130 --> 00:00:28,200
+nota cmo estos estn en la misma carpeta.
+
+11
+00:00:28,200 --> 00:00:32,730
+Ahora, puedes decir la aplicacin. py, su aplicacin Flask, para
+
+12
+00:00:32,730 --> 00:00:35,983
+devolver algn archivo HTML que est dentro
+
+13
+00:00:35,983 --> 00:00:38,180
+de esta carpeta de plantillas.
+
+14
+00:00:38,180 --> 00:00:39,890
+Antes que nada, vamos
+
+15
+00:00:39,890 --> 00:00:43,760
+a crear nuestro archivo HTML y luego vamos a devolverlo.
+
+16
+00:00:43,760 --> 00:00:45,580
+Entonces, vamos a crear un nuevo archivo.
+
+17
+00:00:46,540 --> 00:00:49,490
+Vamos a llamarlo, POST. HTML, por ejemplo.
+
+18
+00:00:51,340 --> 00:00:54,020
+Esto puede contener cualquier HTML que desee.
+
+19
+00:00:54,020 --> 00:00:56,210
+Comencemos con un poco de HTML bsico.
+
+20
+00:00:57,970 --> 00:01:02,970
+Todo HTML debe tener un DOCTYPE de HTML que diga que es
+
+21
+00:01:03,100 --> 00:01:06,770
+HTML cinco, y luego puede tener una cabeza y
+
+22
+00:01:08,190 --> 00:01:09,420
+un cuerpo.
+
+23
+00:01:09,420 --> 00:01:11,600
+Y en el cuerpo puedes tener tu contenido HTML.
+
+24
+00:01:11,600 --> 00:01:14,400
+As que esto es esencialmente, la estructura bsica de
+
+25
+00:01:14,400 --> 00:01:16,790
+HTML, le dice al navegador que recibe el
+
+26
+00:01:16,790 --> 00:01:21,790
+archivo que este es un archivo HTML y luego tiene el contenido HTML dentro de l.
+
+27
+00:01:21,820 --> 00:01:25,210
+Hay un encabezado, que puede incluir cosas como estilos y guiones java
+
+28
+00:01:25,210 --> 00:01:26,580
+y cosas por el estilo,
+
+29
+00:01:26,580 --> 00:01:28,350
+cosas que el usuario no ver,
+
+30
+00:01:28,350 --> 00:01:30,120
+pero que pueden cambiar la pgina.
+
+31
+00:01:30,120 --> 00:01:33,630
+Y en el cuerpo, son las cosas que el usuario ver.
+
+32
+00:01:33,630 --> 00:01:35,700
+Entonces aqu en el cuerpo,
+
+33
+00:01:35,700 --> 00:01:38,220
+podemos poner, por ejemplo, h1, Hello, world.
+
+34
+00:01:39,300 --> 00:01:42,020
+Y luego podemos tener una etiqueta p que es
+
+35
+00:01:42,020 --> 00:01:45,820
+una etiqueta de prrafo, diciendo como, esta es mi primera publicacin, por ejemplo.
+
+36
+00:01:47,590 --> 00:01:49,470
+Ahora tenemos este archivo HTML con punto de publicacin.
+
+37
+00:01:49,470 --> 00:01:54,300
+Podemos volver a la aplicacin. py, y dile a nuestro punto
+
+38
+00:01:54,300 --> 00:01:57,210
+final, aqu, esta raz, que represente esa
+
+39
+00:01:57,210 --> 00:01:59,410
+plantilla y la devuelva al usuario.
+
+40
+00:01:59,410 --> 00:02:01,300
+Tendremos que importar algo ms de Flask.
+
+41
+00:02:01,300 --> 00:02:02,260
+Vamos a
+
+42
+00:02:02,260 --> 00:02:06,160
+hacer desde Flask, importar Flask, coma render_template.
+
+43
+00:02:07,330 --> 00:02:10,010
+Entonces, en lugar de devolver esta cadena aqu,
+
+44
+00:02:10,010 --> 00:02:14,470
+vamos a regresar, render_template of post. HTML.
+
+45
+00:02:16,630 --> 00:02:18,650
+Est bien, fjate que an no
+
+46
+00:02:18,650 --> 00:02:20,090
+hemos usado nuestra variable POST.
+
+47
+00:02:20,090 --> 00:02:22,110
+Vamos a hacer eso en solo un momento.
+
+48
+00:02:22,110 --> 00:02:24,450
+Por ahora, ejecutemos la aplicacin y asegrese de
+
+49
+00:02:24,450 --> 00:02:25,610
+que todo est funcionando.
+
+50
+00:02:25,610 --> 00:02:28,100
+Entonces la aplicacin funciona bien.
+
+51
+00:02:28,100 --> 00:02:30,430
+Y si vamos a la URL que tenamos
+
+52
+00:02:30,430 --> 00:02:32,550
+antes y actualizamos la pgina, ahora puede ver
+
+53
+00:02:32,550 --> 00:02:34,150
+que se ve un poco diferente.
+
+54
+00:02:34,150 --> 00:02:36,570
+Ahora tenemos un encabezado, que es este fragmento
+
+55
+00:02:36,570 --> 00:02:38,950
+de texto ms grande, que dice: Hola, mundo.
+
+56
+00:02:38,950 --> 00:02:42,380
+Y tenemos, esta es mi primera publicacin, en un prrafo.
+
+57
+00:02:42,380 --> 00:02:44,230
+Esto se ve un poco mejor,
+
+58
+00:02:44,230 --> 00:02:46,850
+porque ahora se trata de un archivo HTML, en
+
+59
+00:02:46,850 --> 00:02:49,560
+lugar de solo una cadena que llega desde nuestro servidor.
+
+60
+00:02:49,560 --> 00:02:53,070
+Volviendo a PyCharm, ahora podemos detener la
+
+61
+00:02:53,070 --> 00:02:55,920
+aplicacin, esconderla y regresar a aqu.
+
+62
+00:02:55,920 --> 00:02:58,070
+Y ahora usaremos nuestra publicacin para
+
+63
+00:02:58,070 --> 00:03:01,730
+asegurarnos de que estamos mostrando esta informacin en nuestra pgina,
+
+64
+00:03:01,730 --> 00:03:05,240
+en lugar de los contenidos estticos de nuestra pgina HTML.
+
+65
+00:03:06,970 --> 00:03:10,010
+Dentro de una pgina HTML que se
+
+66
+00:03:10,010 --> 00:03:12,740
+representa con Flask, podemos incluir variables.
+
+67
+00:03:15,390 --> 00:03:19,210
+Por ejemplo, podemos incluir el ttulo de la publicacin.
+
+68
+00:03:20,942 --> 00:03:24,160
+Y observe cmo he usado llaves dobles, luego las
+
+69
+00:03:24,160 --> 00:03:26,910
+he usado como si fuera un diccionario,
+
+70
+00:03:26,910 --> 00:03:30,250
+y luego he hecho las dos llaves de cierre.
+
+71
+00:03:30,250 --> 00:03:32,630
+Jinja2 est construido sobre Python y
+
+72
+00:03:32,630 --> 00:03:34,070
+tiene mucha sintaxis.
+
+73
+00:03:34,070 --> 00:03:36,720
+Entonces, lo que estamos haciendo aqu es
+
+74
+00:03:36,720 --> 00:03:38,950
+que vamos a pasar esta plantilla
+
+75
+00:03:38,950 --> 00:03:41,300
+a un diccionario llamado POST, y la
+
+76
+00:03:41,300 --> 00:03:45,170
+plantilla podr reemplazar esto por lo que sea que esto evale.
+
+77
+00:03:45,170 --> 00:03:47,090
+El ttulo POST, muy probablemente.
+
+78
+00:03:47,090 --> 00:03:48,170
+Del mismo modo
+
+79
+00:03:49,860 --> 00:03:51,120
+aqu, contenido POST.
+
+80
+00:03:53,370 --> 00:03:55,300
+Ahora, esta plantilla examinar la
+
+81
+00:03:55,300 --> 00:03:58,040
+variable POST e intentar obtener el ttulo y
+
+82
+00:03:58,040 --> 00:04:01,640
+el contenido a partir de ella para representar la plantilla.
+
+83
+00:04:01,640 --> 00:04:04,550
+Pero, por supuesto, debemos darle la variable
+
+84
+00:04:04,550 --> 00:04:06,760
+POST que va a buscar.
+
+85
+00:04:06,760 --> 00:04:11,570
+Entonces dentro de render_template, despus del nombre de la
+
+86
+00:04:11,570 --> 00:04:15,840
+plantilla, podemos pasar argumentos con nombre, como ese.
+
+87
+00:04:15,840 --> 00:04:20,840
+Este argumento denominado POST se convertir en este POST aqu.
+
+88
+00:04:22,330 --> 00:04:25,040
+Y este POST aqu, por supuesto, es el
+
+89
+00:04:25,040 --> 00:04:30,040
+valor del argumento, que es lo que hemos recuperado de nuestra base de datos en memoria.
+
+90
+00:04:30,210 --> 00:04:32,990
+Para simplificar las cosas, podramos
+
+91
+00:04:32,990 --> 00:04:36,190
+simplemente eliminar eso y ponerlo all.
+
+92
+00:04:36,190 --> 00:04:39,460
+Y de esa manera, estamos diciendo que el POST en la
+
+93
+00:04:39,460 --> 00:04:43,800
+plantilla va a tener este valor, publicaciones. obtener de post_id.
+
+94
+00:04:43,800 --> 00:04:45,320
+Y lo que suceder es que vamos
+
+95
+00:04:45,320 --> 00:04:46,820
+a recuperar eso de nuestra base de
+
+96
+00:04:46,820 --> 00:04:49,190
+datos, vamos a pasarlo a la plantilla con el nombre, POST.
+
+97
+00:04:49,190 --> 00:04:51,670
+La plantilla puede usar este nombre
+
+98
+00:04:51,670 --> 00:04:55,900
+dentro para acceder a las propiedades y reemplazar el contenido.
+
+99
+00:04:57,480 --> 00:04:58,950
+Vamos a ejecutar la aplicacin de nuevo.
+
+100
+00:04:58,950 --> 00:05:01,770
+Por cierto, como un aparte, recuerda detener
+
+101
+00:05:01,770 --> 00:05:05,050
+tu aplicacin cada vez que quieras hacer otra cosa.
+
+102
+00:05:05,050 --> 00:05:08,070
+Flask no funciona bien si olvida detener la aplicacin.
+
+103
+00:05:08,070 --> 00:05:09,915
+Bueno? Solo recuerda detenerlo.
+
+104
+00:05:09,915 --> 00:05:11,160
+No he mencionado esto antes.
+
+105
+00:05:11,160 --> 00:05:12,100
+Mis disculpas.
+
+106
+00:05:12,100 --> 00:05:14,330
+Recuerde detener su aplicacin despus de cada vez
+
+107
+00:05:14,330 --> 00:05:16,230
+que quiera reiniciarla, ya que de lo
+
+108
+00:05:16,230 --> 00:05:17,670
+contrario, no se lo permitir,
+
+109
+00:05:17,670 --> 00:05:21,390
+ya que la aplicacin est utilizando este nmero, 5,000, para la comunicacin.
+
+110
+00:05:21,390 --> 00:05:22,880
+Y si intentas iniciar la aplicacin
+
+111
+00:05:22,880 --> 00:05:24,530
+dos veces, ambos intentarn usar el mismo
+
+112
+00:05:24,530 --> 00:05:26,600
+nmero para comunicarse y no les gustar eso.
+
+113
+00:05:26,600 --> 00:05:27,720
+As que asegrese de detener
+
+114
+00:05:27,720 --> 00:05:29,320
+su aplicacin, cada vez, y luego reinciela.
+
+115
+00:05:30,200 --> 00:05:32,710
+Ahora, volviendo a Chrome, podemos actualizar la pgina
+
+116
+00:05:32,710 --> 00:05:35,370
+y observar cmo va a cambiar muy poco.
+
+117
+00:05:35,370 --> 00:05:37,750
+Ahora dice: esta es mi primera publicacin en el blog.
+
+118
+00:05:37,750 --> 00:05:40,560
+Al contrario, esta es mi primera publicacin, lo que dije antes.
+
+119
+00:05:40,560 --> 00:05:42,270
+Eso es porque
+
+120
+00:05:42,270 --> 00:05:46,230
+este contenido ahora viene de aqu, nuestro diccionario.
+
+121
+00:05:46,230 --> 00:05:49,650
+Detener la aplicacin nuevamente y ocultar eso.
+
+122
+00:05:49,650 --> 00:05:52,570
+Esto se debe a que ahora estamos
+
+123
+00:05:52,570 --> 00:05:54,840
+pasando esta informacin a la plantilla
+
+124
+00:05:54,840 --> 00:05:58,300
+para que pueda representarla antes de enviarla al navegador.
+
+125
+00:05:59,640 --> 00:06:02,730
+Esto es realmente importante, porque ahora podemos incorporar elementos en
+
+126
+00:06:02,730 --> 00:06:06,130
+una plantilla, hacer que se vea no solo agradable, sino
+
+127
+00:06:06,130 --> 00:06:08,130
+tambin hacer que incluya la informacin
+
+128
+00:06:08,130 --> 00:06:10,350
+que queremos de nuestros programas de Python.
+
+129
+00:06:11,610 --> 00:06:13,860
+En los prximos videos, analizaremos la
+
+130
+00:06:13,860 --> 00:06:16,500
+funcionalidad del enlace extendido y tambin, por
+
+131
+00:06:16,500 --> 00:06:18,870
+supuesto, agregar nuevas publicaciones para que
+
+132
+00:06:18,870 --> 00:06:21,410
+el programa sea cada vez ms dinmico.
+
+133
+00:06:21,410 --> 00:06:23,160
+Y te ver en el prximo video.
+

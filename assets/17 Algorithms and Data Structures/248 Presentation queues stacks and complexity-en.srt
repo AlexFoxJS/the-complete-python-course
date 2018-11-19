@@ -1,0 +1,856 @@
+1
+00:00:00,120 --> 00:00:01,320
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,320 --> 00:00:02,580
+In this video we're going to talk
+
+3
+00:00:02,580 --> 00:00:05,840
+about queues and stacks again and we're also going
+
+4
+00:00:05,840 --> 00:00:08,630
+to introduce a new concept that is very popular
+
+5
+00:00:08,630 --> 00:00:11,913
+in programming but can sometimes cause a bit of confusion.
+
+6
+00:00:13,160 --> 00:00:14,950
+Let's recap queues and stack first.
+
+7
+00:00:14,950 --> 00:00:18,260
+You remember this diagram from before,
+
+8
+00:00:18,260 --> 00:00:21,513
+and how in a queue you add new elements at the end,
+
+9
+00:00:22,380 --> 00:00:23,810
+and when you remove an element it
+
+10
+00:00:23,810 --> 00:00:25,930
+always gets removed from the start.
+
+11
+00:00:25,930 --> 00:00:27,530
+This is just a queue like a queue
+
+12
+00:00:27,530 --> 00:00:29,130
+for the supermarket for example.
+
+13
+00:00:30,150 --> 00:00:33,070
+And a queue in python, we can implement using lists,
+
+14
+00:00:33,070 --> 00:00:36,840
+or using the deck module, or the queue module,
+
+15
+00:00:36,840 --> 00:00:37,963
+as we've seen before.
+
+16
+00:00:38,950 --> 00:00:43,910
+Here's a simple sample implementing a queue using lists.
+
+17
+00:00:43,910 --> 00:00:45,570
+Here we've got our class queue.
+
+18
+00:00:45,570 --> 00:00:46,810
+When you create a new object,
+
+19
+00:00:46,810 --> 00:00:49,870
+it sets self.items to be an empty list,
+
+20
+00:00:49,870 --> 00:00:51,733
+and then you can push and pop.
+
+21
+00:00:52,700 --> 00:00:56,300
+Push and pop are two names that are frequently used
+
+22
+00:00:56,300 --> 00:00:59,770
+in the context of queues and stacks, just,
+
+23
+00:00:59,770 --> 00:01:03,257
+I'm not really sure why these names are exactly used,
+
+24
+00:01:03,257 --> 00:01:06,940
+but you can think of it as adding a new element,
+
+25
+00:01:06,940 --> 00:01:08,790
+and removing an element.
+
+26
+00:01:08,790 --> 00:01:10,270
+And depending on whether you are working
+
+27
+00:01:10,270 --> 00:01:13,510
+with a queue or a stack, the adding or the removal
+
+28
+00:01:13,510 --> 00:01:15,360
+is gonna happen in a different place.
+
+29
+00:01:16,470 --> 00:01:20,300
+Here when we push in a queue, we we append an item,
+
+30
+00:01:20,300 --> 00:01:23,200
+so we add the new item at the end of the queue.
+
+31
+00:01:23,200 --> 00:01:26,170
+And when we pop, what we do is we create
+
+32
+00:01:26,170 --> 00:01:28,230
+a temporary variable called head,
+
+33
+00:01:28,230 --> 00:01:31,130
+and set it to be self items zero.
+
+34
+00:01:31,130 --> 00:01:34,340
+And then we set self.items to be self.items starting
+
+35
+00:01:34,340 --> 00:01:35,993
+from the value one.
+
+36
+00:01:37,300 --> 00:01:38,850
+And then we'd return the head.
+
+37
+00:01:38,850 --> 00:01:43,040
+This is not a very reliable solution by the way.
+
+38
+00:01:43,040 --> 00:01:45,820
+What happens if you only have one item say?
+
+39
+00:01:45,820 --> 00:01:49,320
+But I just wanted to illustrate how a queue might work
+
+40
+00:01:49,320 --> 00:01:51,320
+if you were to implement it yourself.
+
+41
+00:01:51,320 --> 00:01:53,220
+Just append at the end and remove from the start,
+
+42
+00:01:53,220 --> 00:01:54,750
+and this is sort of how you'd use it.
+
+43
+00:01:54,750 --> 00:01:55,910
+You create a new queue object,
+
+44
+00:01:55,910 --> 00:01:57,900
+and then you can push values to it.
+
+45
+00:01:57,900 --> 00:02:00,560
+Let's push five, seven and 11,
+
+46
+00:02:00,560 --> 00:02:03,770
+and then you can print the result of popping,
+
+47
+00:02:03,770 --> 00:02:07,190
+and that is gonna sort of print out five at first.
+
+48
+00:02:07,190 --> 00:02:08,680
+And then it's gonna leave seven
+
+49
+00:02:08,680 --> 00:02:10,650
+and 11 remaining in the queue.
+
+50
+00:02:10,650 --> 00:02:12,530
+You can pop again and that's gonna pop,
+
+51
+00:02:12,530 --> 00:02:15,830
+sort of remove the next item from the list and print it out.
+
+52
+00:02:15,830 --> 00:02:17,513
+And leave your list with only 11.
+
+53
+00:02:18,950 --> 00:02:21,710
+With a stack it's slightly different.
+
+54
+00:02:21,710 --> 00:02:24,320
+This is a stack and you can remove elements from the top.
+
+55
+00:02:24,320 --> 00:02:27,020
+And when you have another one it goes back on the top.
+
+56
+00:02:27,980 --> 00:02:31,400
+So the oldest elements are always at the bottom,
+
+57
+00:02:31,400 --> 00:02:33,243
+and newer elements are at the top.
+
+58
+00:02:34,690 --> 00:02:37,240
+And again, implementing this in Python,
+
+59
+00:02:37,240 --> 00:02:38,920
+you'd have here your class stack which
+
+60
+00:02:38,920 --> 00:02:41,290
+again defines self.items to be an empty list.
+
+61
+00:02:41,290 --> 00:02:44,750
+When you push, you push at the start of the list.
+
+62
+00:02:44,750 --> 00:02:46,590
+So we are saying that self.items now
+
+63
+00:02:46,590 --> 00:02:50,140
+is a list of only the new element,
+
+64
+00:02:50,140 --> 00:02:52,990
+which is the parameter, plus self.items.
+
+65
+00:02:52,990 --> 00:02:55,290
+So that's gonna join the two lists together.
+
+66
+00:02:55,290 --> 00:02:56,280
+You're gonna end up essentially
+
+67
+00:02:56,280 --> 00:02:58,200
+adding an element at the start.
+
+68
+00:02:58,200 --> 00:03:01,060
+And pop is just gonna do self.items.pop
+
+69
+00:03:01,060 --> 00:03:03,487
+and as you can see lists allow us to pop,
+
+70
+00:03:03,487 --> 00:03:06,210
+and that just sort of removes the last element
+
+71
+00:03:06,210 --> 00:03:08,170
+from the list and gives it back to you,
+
+72
+00:03:08,170 --> 00:03:12,680
+so the stack pop and the list pop really do the same thing.
+
+73
+00:03:12,680 --> 00:03:14,600
+And again, now you can push.
+
+74
+00:03:14,600 --> 00:03:16,690
+But notice how when you push five you get
+
+75
+00:03:16,690 --> 00:03:18,969
+a list of only five and when you push seven,
+
+76
+00:03:18,969 --> 00:03:20,293
+the seven goes in front.
+
+77
+00:03:21,340 --> 00:03:23,430
+And then you push 11, the 11 goes in front,
+
+78
+00:03:23,430 --> 00:03:26,760
+and as you pop you start removing from the front as well.
+
+79
+00:03:26,760 --> 00:03:29,580
+So you're adding and removing from the same place.
+
+80
+00:03:29,580 --> 00:03:31,415
+We've already seen queues and stacks.
+
+81
+00:03:31,415 --> 00:03:32,248
+I just wanted to give you a little
+
+82
+00:03:32,248 --> 00:03:34,740
+bit of code about how they work,
+
+83
+00:03:34,740 --> 00:03:37,000
+because what we're gonna talk about next
+
+84
+00:03:37,000 --> 00:03:39,900
+is something that I find really interesting.
+
+85
+00:03:39,900 --> 00:03:42,050
+And that is,
+
+86
+00:03:42,050 --> 00:03:44,700
+the concept of,
+
+87
+00:03:44,700 --> 00:03:46,270
+how many
+
+88
+00:03:46,270 --> 00:03:47,420
+steps does it take
+
+89
+00:03:47,420 --> 00:03:50,353
+to find an element in a queue or a stack or a list?
+
+90
+00:03:52,190 --> 00:03:53,990
+Let me go through it and I'm sure
+
+91
+00:03:53,990 --> 00:03:56,470
+you'll understand where I'm coming from.
+
+92
+00:03:56,470 --> 00:03:59,810
+We can say that these queues and stacks and lists
+
+93
+00:03:59,810 --> 00:04:02,030
+and many other data structures as well,
+
+94
+00:04:02,030 --> 00:04:04,430
+are what we call sequential.
+
+95
+00:04:04,430 --> 00:04:07,483
+You start looking for elements at one end,
+
+96
+00:04:08,510 --> 00:04:11,480
+and you go through until the other end.
+
+97
+00:04:11,480 --> 00:04:14,121
+So if you are with a queue you start at the first element
+
+98
+00:04:14,121 --> 00:04:16,480
+and you move into the second one, third one and so forth,
+
+99
+00:04:16,480 --> 00:04:18,423
+until you reach the very last element.
+
+100
+00:04:20,170 --> 00:04:22,400
+This means that if you're looking
+
+101
+00:04:22,400 --> 00:04:23,980
+for an element in the middle,
+
+102
+00:04:23,980 --> 00:04:26,660
+you have to go through all of the elements along the way.
+
+103
+00:04:26,660 --> 00:04:30,283
+So, it can be really useful to start looking at one end,
+
+104
+00:04:31,310 --> 00:04:32,590
+and then go through each element
+
+105
+00:04:32,590 --> 00:04:34,460
+until you reach the last one.
+
+106
+00:04:34,460 --> 00:04:36,010
+But it can also be quite slow.
+
+107
+00:04:36,010 --> 00:04:39,140
+Let's say you wanted to only get the last element,
+
+108
+00:04:39,140 --> 00:04:42,020
+you can't really do that with a queue unless you first pop
+
+109
+00:04:42,020 --> 00:04:43,870
+all the elements that came before it.
+
+110
+00:04:45,320 --> 00:04:46,180
+Here's another example.
+
+111
+00:04:46,180 --> 00:04:48,580
+Let's say you have a long list, a very long one,
+
+112
+00:04:48,580 --> 00:04:51,400
+and you're looking for a specific element.
+
+113
+00:04:51,400 --> 00:04:53,520
+For example this list here.
+
+114
+00:04:53,520 --> 00:04:55,823
+Let's say we're looking for the element 90.
+
+115
+00:04:58,840 --> 00:05:03,590
+Well, as you can see, we had to do a bunch of jumps.
+
+116
+00:05:03,590 --> 00:05:07,160
+We've gone from 13 to 56, 38 and so forth
+
+117
+00:05:07,160 --> 00:05:09,563
+until we reached the element number 90.
+
+118
+00:05:11,470 --> 00:05:14,470
+This is because a list is sequential.
+
+119
+00:05:14,470 --> 00:05:15,840
+If you're looking for an element,
+
+120
+00:05:15,840 --> 00:05:19,070
+the only thing you can do really is start at the beginning.
+
+121
+00:05:19,070 --> 00:05:22,940
+Or maybe you can start at the end if that's more suitable.
+
+122
+00:05:22,940 --> 00:05:24,905
+But either way you have to start at one end,
+
+123
+00:05:24,905 --> 00:05:28,463
+and go through each element until you find the one you want.
+
+124
+00:05:29,990 --> 00:05:31,480
+So this can be quite slow.
+
+125
+00:05:31,480 --> 00:05:34,030
+It would be nicer if
+
+126
+00:05:34,030 --> 00:05:36,650
+we could just know where the element is.
+
+127
+00:05:36,650 --> 00:05:39,413
+But of course with a list we can't really do that.
+
+128
+00:05:56,870 --> 00:06:00,373
+So, the number of steps we've had to do,
+
+129
+00:06:01,530 --> 00:06:03,750
+is quite a few.
+
+130
+00:06:03,750 --> 00:06:05,720
+Our list here has 21 elements.
+
+131
+00:06:05,720 --> 00:06:07,612
+You don't have to count them.
+
+132
+00:06:07,612 --> 00:06:09,100
+Just believe me here.
+
+133
+00:06:09,100 --> 00:06:13,873
+So let's say that an arbitrary variable n is 21.
+
+134
+00:06:14,950 --> 00:06:18,143
+If we wanted to find the very last element in this list,
+
+135
+00:06:19,460 --> 00:06:22,770
+we could go from the start through each element
+
+136
+00:06:22,770 --> 00:06:24,850
+until we reached the last one.
+
+137
+00:06:24,850 --> 00:06:27,860
+So we have to perform 21 sort of jumps.
+
+138
+00:06:27,860 --> 00:06:30,110
+We'd have to sort of jump into the first element
+
+139
+00:06:30,110 --> 00:06:30,943
+and jump into the second element,
+
+140
+00:06:30,943 --> 00:06:33,763
+and jump into the third element and so forth.
+
+141
+00:06:36,050 --> 00:06:40,590
+That means that for a list, which is a sequential structure,
+
+142
+00:06:40,590 --> 00:06:44,090
+finding an element can take us up to,
+
+143
+00:06:44,090 --> 00:06:45,730
+n jumps.
+
+144
+00:06:45,730 --> 00:06:48,133
+Where n is a number of element in the list.
+
+145
+00:06:49,770 --> 00:06:52,310
+Notice that it says, up to n jumps,
+
+146
+00:06:52,310 --> 00:06:54,920
+because of course if you're finding the first element,
+
+147
+00:06:54,920 --> 00:06:56,680
+that's only gonna take you one jump.
+
+148
+00:06:56,680 --> 00:06:58,220
+But if you're finding the last element,
+
+149
+00:06:58,220 --> 00:06:59,903
+that's gonna take you n jumps.
+
+150
+00:07:01,780 --> 00:07:05,650
+And there is a specific term for this.
+
+151
+00:07:05,650 --> 00:07:08,840
+When it takes you up to n jumps,
+
+152
+00:07:08,840 --> 00:07:10,860
+to find the element in a structure,
+
+153
+00:07:10,860 --> 00:07:15,060
+this is called, this is what we say is that this,
+
+154
+00:07:15,060 --> 00:07:18,337
+structure has a complexity of O (n).
+
+155
+00:07:19,740 --> 00:07:20,573
+Okay?
+
+156
+00:07:20,573 --> 00:07:21,653
+That's just the terminology.
+
+157
+00:07:22,500 --> 00:07:24,990
+O means complexity of.
+
+158
+00:07:24,990 --> 00:07:27,910
+And inside the brackets we put what the complexity is.
+
+159
+00:07:27,910 --> 00:07:30,170
+And in this case the complexity is n.
+
+160
+00:07:30,170 --> 00:07:33,123
+Because we need up to n jumps to find that element.
+
+161
+00:07:34,050 --> 00:07:35,160
+Okay?
+
+162
+00:07:35,160 --> 00:07:37,720
+This is called complexity.
+
+163
+00:07:37,720 --> 00:07:41,260
+So again a complexity of O (n) just means that we need
+
+164
+00:07:41,260 --> 00:07:44,163
+a number of jumps equal to the number of elements.
+
+165
+00:07:45,530 --> 00:07:47,302
+Nothing terribly complicated there.
+
+166
+00:07:47,302 --> 00:07:49,640
+When you're finding an element in a list,
+
+167
+00:07:49,640 --> 00:07:52,060
+that you need to jump n number
+
+168
+00:07:52,060 --> 00:07:55,290
+of times that's an O (n) complexity.
+
+169
+00:07:55,290 --> 00:07:57,410
+And we're gonna look at more into complexity
+
+170
+00:07:57,410 --> 00:07:59,980
+in the next few videos, as well as how we can,
+
+171
+00:07:59,980 --> 00:08:02,510
+sort of reduce that hopefully.
+
+172
+00:08:02,510 --> 00:08:04,980
+But of course, instead of n you
+
+173
+00:08:04,980 --> 00:08:07,010
+can have other things in there.
+
+174
+00:08:07,010 --> 00:08:09,970
+For example, O of n squared,
+
+175
+00:08:09,970 --> 00:08:12,070
+means that you need up to nine jumps
+
+176
+00:08:12,070 --> 00:08:14,220
+to navigate a collection of three elements.
+
+177
+00:08:15,110 --> 00:08:17,700
+Three squared is nine.
+
+178
+00:08:17,700 --> 00:08:20,760
+So this is what O (n) squared means.
+
+179
+00:08:20,760 --> 00:08:22,680
+Of course, you can see immediately
+
+180
+00:08:22,680 --> 00:08:24,827
+that this is gonna be slower that O (n).
+
+181
+00:08:26,490 --> 00:08:29,030
+With O (n), and you have a list of three elements,
+
+182
+00:08:29,030 --> 00:08:31,260
+you need to make three jumps.
+
+183
+00:08:31,260 --> 00:08:33,880
+With O (n) squared, if you have a list of three elements,
+
+184
+00:08:33,880 --> 00:08:35,303
+you have to make nine jumps.
+
+185
+00:08:36,600 --> 00:08:38,107
+And you can have the opposite.
+
+186
+00:08:38,107 --> 00:08:40,830
+O of (log2n), which means that we need
+
+187
+00:08:40,830 --> 00:08:42,530
+to do up to three jumps to navigate
+
+188
+00:08:42,530 --> 00:08:44,940
+a collection of seven elements for example.
+
+189
+00:08:44,940 --> 00:08:46,140
+For a need nine element.
+
+190
+00:08:48,180 --> 00:08:52,200
+So, the thing inside the brackets is,
+
+191
+00:08:52,200 --> 00:08:55,930
+you can think of it for now as the number of jumps,
+
+192
+00:08:55,930 --> 00:08:59,007
+in order to reach the last or the most
+
+193
+00:08:59,007 --> 00:09:02,940
+far away element in a collection.
+
+194
+00:09:02,940 --> 00:09:06,500
+In a list, the most far away element is the last element.
+
+195
+00:09:06,500 --> 00:09:09,700
+And you can need up to n jumps to get there
+
+196
+00:09:09,700 --> 00:09:11,860
+if you start at the beginning.
+
+197
+00:09:11,860 --> 00:09:14,970
+And there are other structures that are not lists,
+
+198
+00:09:14,970 --> 00:09:19,000
+where these other types of complexity applies.
+
+199
+00:09:19,000 --> 00:09:21,730
+We're going to look at them throughout the section.
+
+200
+00:09:21,730 --> 00:09:23,400
+And don't worry if you're not sure
+
+201
+00:09:23,400 --> 00:09:25,450
+what for example (log2n) means.
+
+202
+00:09:25,450 --> 00:09:27,050
+I'll encourage you look it up,
+
+203
+00:09:27,050 --> 00:09:28,353
+but that is as complicated as
+
+204
+00:09:28,353 --> 00:09:30,950
+it's gonna get in this section.
+
+205
+00:09:30,950 --> 00:09:33,292
+We're not gonna go into complicated maths.
+
+206
+00:09:33,292 --> 00:09:35,010
+I'm not a big fan of maths.
+
+207
+00:09:35,010 --> 00:09:36,580
+I'm not very good at it.
+
+208
+00:09:36,580 --> 00:09:39,080
+So we're not gonna get into complicated maths,
+
+209
+00:09:39,080 --> 00:09:44,080
+just (log2n) is the most complicated we're gonna see.
+
+210
+00:09:44,140 --> 00:09:46,960
+So don't worry too much if you're not too sure,
+
+211
+00:09:46,960 --> 00:09:48,123
+it's all gonna be fine.
+
+212
+00:09:49,710 --> 00:09:50,543
+Okay?
+
+213
+00:09:50,543 --> 00:09:52,860
+Hope you enjoyed this video.
+
+214
+00:09:52,860 --> 00:09:54,917 line:15% 
+I'll see you on the next one.
+

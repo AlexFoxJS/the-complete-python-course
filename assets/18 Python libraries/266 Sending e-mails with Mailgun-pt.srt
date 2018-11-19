@@ -1,0 +1,832 @@
+1
+00:00:00,170 --> 00:00:01,380
+Jos: Ol, bem vindo de volta.
+
+2
+00:00:01,380 --> 00:00:04,270
+Neste vdeo, vamos ver o MailGun.
+
+3
+00:00:04,270 --> 00:00:09,260
+O MailGun faz parte de uma famlia de servios de envio de email.
+
+4
+00:00:09,260 --> 00:00:11,780
+E MailGun, em particular, eu gosto porque
+
+5
+00:00:11,780 --> 00:00:15,330
+ muito simples de usar, e no , voc sabe,
+
+6
+00:00:15,330 --> 00:00:16,360
+o servio de
+
+7
+00:00:16,360 --> 00:00:18,090
+envio de e-mail mais poderoso
+
+8
+00:00:18,090 --> 00:00:19,970
+do mundo, mas meio que
+
+9
+00:00:19,970 --> 00:00:23,390
+faz tudo que voc precisa para enviar e-mails simples usando
+
+10
+00:00:23,390 --> 00:00:25,610
+Python, ou qualquer outra linguagem de programao.
+
+11
+00:00:25,610 --> 00:00:29,250
+Agora, se voc quiser enviar um email usando o MailGun
+
+12
+00:00:29,250 --> 00:00:33,513
+para qualquer pessoa no mundo, voc precisa ter um nome de domnio.
+
+13
+00:00:34,380 --> 00:00:38,180
+Por exemplo, mailgun. com  um nome
+
+14
+00:00:38,180 --> 00:00:41,180
+de domnio e collabacode. com  um nome de domnio.
+
+15
+00:00:41,180 --> 00:00:42,770
+Se voc no tem um nome
+
+16
+00:00:42,770 --> 00:00:44,950
+de domnio, voc ainda pode passar por esta
+
+17
+00:00:44,950 --> 00:00:46,680
+palestra e aprender sobre o uso
+
+18
+00:00:46,680 --> 00:00:49,633
+do MailGun, mas voc s poder enviar e-mails para voc mesmo.
+
+19
+00:00:50,660 --> 00:00:52,730
+Ento, isso  apenas algo para levar em considerao.
+
+20
+00:00:52,730 --> 00:00:55,220
+Se voc no tiver um domnio, presume-se que
+
+21
+00:00:55,220 --> 00:00:57,790
+voc no tem pessoas que desejam receber seus e-mails
+
+22
+00:00:57,790 --> 00:01:00,530
+ou que se inscreveram para receber seus e-mails ainda.
+
+23
+00:01:00,530 --> 00:01:03,060
+Ento,  por isso que eles no permitem que voc envie e-mails
+
+24
+00:01:03,060 --> 00:01:06,173
+para as pessoas se voc no tiver um nome de domnio registrado no MailGun.
+
+25
+00:01:07,120 --> 00:01:09,210
+E ento, o que vamos fazer, para
+
+26
+00:01:09,210 --> 00:01:10,610
+aprender sobre o envio de
+
+27
+00:01:10,610 --> 00:01:12,840
+e-mails com o MailGun, vamos nos inscrever primeiro.
+
+28
+00:01:12,840 --> 00:01:15,650
+Agora, inscrever-se  gratuito e leva
+
+29
+00:01:15,650 --> 00:01:17,410
+57 segundos, supostamente.
+
+30
+00:01:17,410 --> 00:01:18,780
+Tenho certeza que demora mais que isso.
+
+31
+00:01:18,780 --> 00:01:20,760
+Mas aqui, tudo o que voc quer fazer
+
+32
+00:01:20,760 --> 00:01:22,320
+, voc sabe, preencher os detalhes.
+
+33
+00:01:22,320 --> 00:01:26,460
+Voc no precisar adicionar informaes de pagamento agora, se quiser, pelo
+
+34
+00:01:26,460 --> 00:01:28,260
+menos no no momento da
+
+35
+00:01:28,260 --> 00:01:31,840
+gravao, e voc quer se ater ao plano gratuito, ok?
+
+36
+00:01:31,840 --> 00:01:34,720
+Se voc adicionar informaes de pagamento, ele colocar voc no
+
+37
+00:01:34,720 --> 00:01:37,100
+plano de pagamento conforme o uso, o que
+
+38
+00:01:37,100 --> 00:01:40,010
+significa que, no caso improvvel de fazer um loop infinito
+
+39
+00:01:40,010 --> 00:01:42,400
+de envio de e-mails, voc ter que pagar.
+
+40
+00:01:42,400 --> 00:01:44,640
+Ento, a melhor coisa a fazer, no adicione informaes
+
+41
+00:01:44,640 --> 00:01:47,990
+de pagamento, se voc no quer pagar, e isso lhe dar o plano gratuito,
+
+42
+00:01:47,990 --> 00:01:50,340
+e voc no ser capaz de passar por isso.
+
+43
+00:01:50,340 --> 00:01:52,900
+Ento, caso voc faa algo errado, nada
+
+44
+00:01:52,900 --> 00:01:54,935
+de ruim vai acontecer, ok?
+
+45
+00:01:54,935 --> 00:01:57,480
+Ento, basta preencher seus dados, clicar em "Eu no
+
+46
+00:01:57,480 --> 00:01:59,660
+sou um rob" e voc ter sua conta.
+
+47
+00:01:59,660 --> 00:02:01,240
+Agora vamos ao que acontece
+
+48
+00:02:01,240 --> 00:02:02,890
+quando voc j tem uma conta.
+
+49
+00:02:04,030 --> 00:02:06,570
+Quando voc entrar no MailGun, voc ser recebido com
+
+50
+00:02:06,570 --> 00:02:08,770
+algo que parece mais ou menos assim.
+
+51
+00:02:08,770 --> 00:02:09,850
+Algumas coisas so muito
+
+52
+00:02:09,850 --> 00:02:13,080
+diferentes porque eu tenho um domnio que j adicionei ao MailGun e
+
+53
+00:02:13,080 --> 00:02:14,330
+voc no ter isso.
+
+54
+00:02:14,330 --> 00:02:18,160
+Mas, no entanto, voc ter uma espcie de painel.
+
+55
+00:02:18,160 --> 00:02:20,470
+Se voc acessar sua lista
+
+56
+00:02:20,470 --> 00:02:24,370
+de domnios, ter um domnio de sandbox, como este.
+
+57
+00:02:24,370 --> 00:02:27,570
+Com um domnio de sandbox, voc s pode enviar e-mails para
+
+58
+00:02:27,570 --> 00:02:29,820
+o e-mail com o qual voc se inscreveu.
+
+59
+00:02:29,820 --> 00:02:31,900
+Ento, no meu caso, est aqui  direita,
+
+60
+00:02:31,900 --> 00:02:33,500
+jose @ schoolofcode. mim.
+
+61
+00:02:33,500 --> 00:02:34,520
+Esta  uma conta antiga.
+
+62
+00:02:34,520 --> 00:02:36,240
+Eu no uso mais a School of Code.
+
+63
+00:02:36,240 --> 00:02:37,630
+Se voc est interessado
+
+64
+00:02:37,630 --> 00:02:41,560
+em nossas coisas,  CollabaCode agora. com, na verdade.
+
+65
+00:02:41,560 --> 00:02:44,313
+Ento, neste domnio sandbox, voc pode clicar
+
+66
+00:02:45,310 --> 00:02:49,130
+nele, e voc ser recebido com algumas coisas aqui.
+
+67
+00:02:49,130 --> 00:02:51,283
+E login SNTP padro.
+
+68
+00:02:52,190 --> 00:02:56,280
+Esta  a conta de e-mail que voc pode usar usando o SNTP.
+
+69
+00:02:56,280 --> 00:02:58,480
+Voc tem um URL baseado em API,
+
+70
+00:02:58,480 --> 00:03:01,030
+voc tem uma senha e uma chave de API.
+
+71
+00:03:01,030 --> 00:03:04,460
+Assim, o login SNTP e a senha
+
+72
+00:03:04,460 --> 00:03:07,260
+so usados para efetuar login via
+
+73
+00:03:07,260 --> 00:03:09,840
+SNTP, como vimos nos ltimos vdeos.
+
+74
+00:03:09,840 --> 00:03:10,673
+Dois vdeos atrs?
+
+75
+00:03:10,673 --> 00:03:13,460
+Sim, acho que sim.
+
+76
+00:03:13,460 --> 00:03:14,423
+Ou o ltimo video.
+
+77
+00:03:15,350 --> 00:03:18,170
+No entanto, quando voc est enviando e-mails
+
+78
+00:03:18,170 --> 00:03:21,148
+usando o Gmail, voc pode trocar por
+
+79
+00:03:21,148 --> 00:03:23,460
+esse login SNTP padro e senha
+
+80
+00:03:23,460 --> 00:03:28,100
+padro, e voc pode enviar e-mails usando SNTP, usando essas duas coisas.
+
+81
+00:03:28,100 --> 00:03:32,170
+A outra opo  ir em uma escala mais Python
+
+82
+00:03:32,170 --> 00:03:33,840
+e usar a API.
+
+83
+00:03:33,840 --> 00:03:35,800
+Usando a API  bastante simples.
+
+84
+00:03:35,800 --> 00:03:38,480
+Tudo o que voc precisa fazer 
+
+85
+00:03:38,480 --> 00:03:41,250
+instalar solicitaes e executar uma solicitao da API.
+
+86
+00:03:41,250 --> 00:03:44,283
+Ento, vamos usar isso nesse vdeo.
+
+87
+00:03:45,490 --> 00:03:48,690
+Ok, agora nos destinatrios autorizados, voc vai
+
+88
+00:03:48,690 --> 00:03:51,113
+querer adicionar seu prprio email.
+
+89
+00:03:52,220 --> 00:03:53,983
+Ento, isso  realmente muito novo.
+
+90
+00:03:56,017 --> 00:03:57,760
+Costumava ser voc s poderia enviar para o
+
+91
+00:03:57,760 --> 00:04:00,080
+seu prprio e-mail, mas parece que agora h uma coisa nova.
+
+92
+00:04:00,080 --> 00:04:05,080
+Ento, voc pode se convidar, e l, no meu destinatrio, e eu acho que vou receber
+
+93
+00:04:05,690 --> 00:04:07,707
+um e-mail dizendo: "Ei, confirme que
+
+94
+00:04:07,707 --> 00:04:10,310
+voc quer ser enviado por esse cara", e
+
+95
+00:04:10,310 --> 00:04:11,570
+ns vamos dizer que sim.
+
+96
+00:04:11,570 --> 00:04:13,318
+Ento, se esse  o caso, sinto
+
+97
+00:04:13,318 --> 00:04:14,151
+muito pela desinformao anterior.
+
+98
+00:04:14,151 --> 00:04:19,140
+Esta  a nova maneira de fazer isso, aparentemente, o que  bom.
+
+99
+00:04:19,140 --> 00:04:19,973
+E  isso.
+
+100
+00:04:19,973 --> 00:04:22,770
+Ento, tudo o que voc precisa, agora
+
+101
+00:04:22,770 --> 00:04:27,600
+que convidou seus destinatrios autorizados, obtenha o URL com base na API e
+
+102
+00:04:27,600 --> 00:04:30,110
+a chave da API, execute esses detalhes
+
+103
+00:04:30,110 --> 00:04:33,520
+e v at o PyCharm, onde continuaremos configurando isso
+
+104
+00:04:33,520 --> 00:04:36,183
+e enviando e-mails usando o MailGun .
+
+105
+00:04:37,490 --> 00:04:41,640
+Ento, vamos ao PyCharm depois de copiarmos isso.
+
+106
+00:04:41,640 --> 00:04:45,900
+Ns vamos colocar o URL da API do MailGun.
+
+107
+00:04:45,900 --> 00:04:49,837
+Vai ser isso, e a chave da API do
+
+108
+00:04:51,720 --> 00:04:53,773
+MailGun vai ser essa chave.
+
+109
+00:04:56,640 --> 00:04:59,260
+L voc tem, agora ns temos
+
+110
+00:04:59,260 --> 00:05:01,370
+nossos dois valores diferentes aqui.
+
+111
+00:05:01,370 --> 00:05:06,030
+O que precisamos tambm  uma maneira de armazenar de quem os
+
+112
+00:05:06,030 --> 00:05:07,480
+e-mails esto vindo, para
+
+113
+00:05:07,480 --> 00:05:10,660
+quem eles esto indo e o tipo de
+
+114
+00:05:10,660 --> 00:05:13,130
+assunto e o contedo do e-mail.
+
+115
+00:05:13,130 --> 00:05:18,130
+Ok, ento FROM_NAME vai ser Jos, neste caso.
+
+116
+00:05:19,160 --> 00:05:24,160
+FROM_EMAIL ser jose @ schoolofcode. mim.
+
+117
+00:05:27,342 --> 00:05:30,920
+TO_EMAILS, e isso vai ser uma lista de e-mails, vai
+
+118
+00:05:30,920 --> 00:05:35,217
+ser outro e-mail, outro @ gmail. com.
+
+119
+00:05:35,217 --> 00:05:37,090
+E voc pode colocar vrios e-mails
+
+120
+00:05:37,090 --> 00:05:40,430
+l, se quiser, para poder enviar e-mails para mais de uma pessoa.
+
+121
+00:05:40,430 --> 00:05:43,460
+O SUBJECT ser "Testar e-mail" para mim, e o CONTENT
+
+122
+00:05:43,460 --> 00:05:45,877
+ser apenas um contedo simples, "Ol, este 
+
+123
+00:05:45,877 --> 00:05:48,517
+um e-mail de teste. "Ok, agora temos
+
+124
+00:05:49,810 --> 00:05:51,970
+todos os nossos dados.
+
+125
+00:05:51,970 --> 00:05:55,220
+E observe como essas so todas constantes no Python.
+
+126
+00:05:55,220 --> 00:05:57,690
+Constantes em Python so sempre maisculas,
+
+127
+00:05:57,690 --> 00:06:00,580
+e isso significa que no vamos alter-las.
+
+128
+00:06:00,580 --> 00:06:05,040
+Ento, tudo o que precisamos fazer  importar solicitaes, ento
+
+129
+00:06:05,040 --> 00:06:06,710
+faremos solicitaes de importao.
+
+130
+00:06:06,710 --> 00:06:09,070
+Se voc no tiver instalado, basta
+
+131
+00:06:09,070 --> 00:06:12,450
+instal-lo no ambiente que voc est usando para este
+
+132
+00:06:12,450 --> 00:06:17,450
+projeto e, em seguida, fazemos solicitaes. postar, e aqui vai.
+
+133
+00:06:17,570 --> 00:06:20,327
+Ns vamos colocar MailGun, MAILGUN_API_URL.
+
+134
+00:06:23,440 --> 00:06:28,440
+ para onde o pedido vai.
+
+135
+00:06:30,970 --> 00:06:34,430
+Ento temos uma varivel auth aqui e
+
+136
+00:06:34,430 --> 00:06:37,680
+a varivel auth  uma tupla.
+
+137
+00:06:37,680 --> 00:06:41,020
+Portanto, o primeiro elemento de uma tupla  a
+
+138
+00:06:41,020 --> 00:06:43,140
+API e a segunda  API_KEY.
+
+139
+00:06:44,560 --> 00:06:46,110
+Ok, ento h uma tupla l.
+
+140
+00:06:46,960 --> 00:06:49,360
+E tudo isso diz que a
+
+141
+00:06:49,360 --> 00:06:52,660
+solicitao ser enviada com alguns dados para a URL
+
+142
+00:06:52,660 --> 00:06:54,970
+da API e, nesses dados, ela
+
+143
+00:06:54,970 --> 00:06:56,970
+conter esses dados de autenticao.
+
+144
+00:06:56,970 --> 00:06:58,550
+Isso  chamado Baisc Auth.
+
+145
+00:06:59,966 --> 00:07:00,799
+Este  o
+
+146
+00:07:04,350 --> 00:07:06,730
+Basic Auth e, essencialmente, contm apenas uma chave
+
+147
+00:07:06,730 --> 00:07:09,823
+e um valor, e eles podem identific-lo com esse valor aqui.
+
+148
+00:07:10,690 --> 00:07:11,870
+No  terrivelmente seguro.
+
+149
+00:07:11,870 --> 00:07:13,280
+No  a maneira mais
+
+150
+00:07:13,280 --> 00:07:16,180
+segura de fazer as coisas, mas  bsica e simples.
+
+151
+00:07:16,180 --> 00:07:18,690
+E ento ns vamos ter um dicionrio
+
+152
+00:07:18,690 --> 00:07:21,630
+de dados, e neste dicionrio, vamos ter um,
+
+153
+00:07:21,630 --> 00:07:23,340
+que ser o FROM_EMAIL.
+
+154
+00:07:25,500 --> 00:07:29,100
+Ento ns vamos ter um para.
+
+155
+00:07:29,100 --> 00:07:30,757
+Isso vai ser TO_EMAILS.
+
+156
+00:07:32,100 --> 00:07:33,150
+Ns vamos ter um assunto.
+
+157
+00:07:33,150 --> 00:07:34,920
+Esse vai ser o ASSUNTO.
+
+158
+00:07:34,920 --> 00:07:38,000
+E texto, esse ser o CONTEDO.
+
+159
+00:07:38,000 --> 00:07:40,150
+Agora, onde FROM_NAME  usado?
+
+160
+00:07:40,150 --> 00:07:43,500
+Bem, isso na verdade no  para ser apenas um email.
+
+161
+00:07:43,500 --> 00:07:47,450
+Ele deve ser uma cepa que contm
+
+162
+00:07:47,450 --> 00:07:52,450
+o FROM_NAME e, em seguida, FROM_EMAIL aqui tambm.
+
+163
+00:07:53,940 --> 00:07:55,980
+Ok, agora temos o nome e
+
+164
+00:07:55,980 --> 00:07:57,010
+o e-mail, e
+
+165
+00:07:57,010 --> 00:07:59,680
+esse formato, tenho certeza que voc j
+
+166
+00:07:59,680 --> 00:08:03,020
+viu, como quando voc recebe um e-mail, eu no
+
+167
+00:08:03,020 --> 00:08:04,840
+vou dizer um sistema legado,
+
+168
+00:08:04,840 --> 00:08:06,710
+mas atravs de algo como
+
+169
+00:08:06,710 --> 00:08:10,240
+o Outlook ou algo assim, normalmente  como Rolf Smith,
+
+170
+00:08:10,240 --> 00:08:14,590
+e  como rolf. smith @ example. lquido.
+
+171
+00:08:14,590 --> 00:08:16,240
+Ento, normalmente,  nesse formato,
+
+172
+00:08:16,240 --> 00:08:18,397
+e esse  o formato que
+
+173
+00:08:18,397 --> 00:08:20,350
+estamos reproduzindo aqui tambm, e o
+
+174
+00:08:20,350 --> 00:08:24,870
+MailGun entende isso, e nos permite dar um nome ao remetente, para que
+
+175
+00:08:24,870 --> 00:08:26,300
+quando algum o receber,
+
+176
+00:08:26,300 --> 00:08:27,950
+ele veja de quem vem,
+
+177
+00:08:27,950 --> 00:08:30,160
+em vez de apenas um email.
+
+178
+00:08:30,160 --> 00:08:32,520
+Ok, eu vou colocar isso na mesma linha, s
+
+179
+00:08:32,520 --> 00:08:34,740
+porque isso parece um pouco melhor para mim.
+
+180
+00:08:34,740 --> 00:08:36,230
+E  isso.
+
+181
+00:08:36,230 --> 00:08:41,033
+Depois que o destinatrio autorizado for autorizado com xito, voc poder execut-lo
+
+182
+00:08:41,890 --> 00:08:44,050
+e enviar a solicitao por
+
+183
+00:08:44,050 --> 00:08:46,600
+meio do URL da API MailGun.
+
+184
+00:08:46,600 --> 00:08:49,070
+Isso autenticar voc com sua chave de
+
+185
+00:08:49,070 --> 00:08:50,950
+API, e ento enviar esses
+
+186
+00:08:50,950 --> 00:08:52,810
+dados, e eles faro todo
+
+187
+00:08:52,810 --> 00:08:55,820
+o trabalho duro de construir o email, certificando-se de
+
+188
+00:08:55,820 --> 00:08:59,440
+que ele seja enviado, e  claro,  realmente simples
+
+189
+00:08:59,440 --> 00:09:02,380
+colocar isso em um funo e torn-lo levar
+
+190
+00:09:02,380 --> 00:09:06,180
+alguns parmetros, e muito facilmente voc pode enviar e-mail para vrias pessoas.
+
+191
+00:09:06,180 --> 00:09:09,750
+Ento, normalmente, quando estou fazendo um novo aplicativo Flask, no
+
+192
+00:09:09,750 --> 00:09:11,040
+quero enviar e-mails.
+
+193
+00:09:11,040 --> 00:09:15,780
+Tudo o que fao , honestamente, isso, eu coloco uma funo, e ento
+
+194
+00:09:15,780 --> 00:09:17,040
+eu chamo essa
+
+195
+00:09:17,040 --> 00:09:18,570
+funo de vrias partes
+
+196
+00:09:18,570 --> 00:09:22,490
+do meu aplicativo, e  muito simples enviar e-mails com isso.
+
+197
+00:09:22,490 --> 00:09:24,060
+Vamos analisar, nos prximos
+
+198
+00:09:24,060 --> 00:09:29,060
+dois vdeos, como organizar esse mtodo de envio de e-mail de uma forma
+
+199
+00:09:29,140 --> 00:09:32,430
+muito agradvel, e dessa forma, voc poder reutiliz-lo em
+
+200
+00:09:32,430 --> 00:09:34,080
+seus aplicativos, se desejar.
+
+201
+00:09:35,120 --> 00:09:35,953
+Ento  isso.
+
+202
+00:09:35,953 --> 00:09:37,676
+Experimente, deixe-me saber se funciona,
+
+203
+00:09:37,676 --> 00:09:40,910
+e espero que voc tenha gostado de aprender sobre o
+
+204
+00:09:40,910 --> 00:09:43,000
+envio de e-mails usando o MailGun.
+
+205
+00:09:43,000 --> 00:09:44,900
+O mesmo mtodo, a propsito, ou um muito
+
+206
+00:09:44,900 --> 00:09:47,883
+semelhante, ser aplicado a outros provedores de envio de email como o SendGrid.
+
+207
+00:09:48,820 --> 00:09:49,930
+ isso para este vdeo.
+
+208
+00:09:49,930 --> 00:09:51,380
+Eu vou te ver no prximo.
+

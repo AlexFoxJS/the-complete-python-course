@@ -1,0 +1,380 @@
+1
+00:00:00,204 --> 00:00:01,292
+Jos: Hola, bienvenido de nuevo.
+
+2
+00:00:01,292 --> 00:00:03,650
+En este video solo quera guiarte a
+
+3
+00:00:03,650 --> 00:00:07,222
+travs de exactamente lo que vamos a obtener de nuestro
+
+4
+00:00:07,222 --> 00:00:11,739
+html y la ruta o los localizadores que vamos a obtener, solo porque
+
+5
+00:00:11,739 --> 00:00:13,197
+s que no es
+
+6
+00:00:13,197 --> 00:00:16,092
+tan fcil de ver en el navegador.
+
+7
+00:00:16,092 --> 00:00:18,797
+Este es nuestro sitio, como saben.
+
+8
+00:00:18,797 --> 00:00:21,609
+Y vamos a empezar a
+
+9
+00:00:21,609 --> 00:00:24,439
+disear nuestros localizadores para los libros.
+
+10
+00:00:24,439 --> 00:00:26,843
+As que vamos a recuperar cada libro como una
+
+11
+00:00:26,843 --> 00:00:30,030
+entidad y vamos a pasar eso a nuestro analizador de libros.
+
+12
+00:00:30,030 --> 00:00:32,863
+Entonces esta es la pgina del punto div interna.
+
+13
+00:00:34,139 --> 00:00:35,903
+Contiene esencialmente todo el contenido de
+
+14
+00:00:35,903 --> 00:00:37,510
+la pgina, excepto el encabezado.
+
+15
+00:00:37,510 --> 00:00:39,598
+La nica razn por la que puede querer
+
+16
+00:00:39,598 --> 00:00:42,518
+raspar el encabezado es si no conoce el ttulo de su sitio.
+
+17
+00:00:42,518 --> 00:00:44,936
+Pero como sabemos eso, podemos comenzar aqu
+
+18
+00:00:44,936 --> 00:00:47,941
+en la pgina del punto div subrayado interno.
+
+19
+00:00:47,941 --> 00:00:52,774
+Dentro de eso tenemos una seccin que contiene este contenido, as que tan pronto
+
+20
+00:00:53,775 --> 00:00:56,470
+como empezamos a reducir nuestro localizador en la
+
+21
+00:00:56,470 --> 00:01:00,470
+seccin, pierde el contexto de los temas en el sitio y las
+
+22
+00:01:01,404 --> 00:01:03,030
+migas de pan y el
+
+23
+00:01:03,030 --> 00:01:05,628
+nmero de resultados y cosas por el estilo.
+
+24
+00:01:05,628 --> 00:01:09,907
+Y, finalmente, cada libro individual es un elemento de la lista.
+
+25
+00:01:09,907 --> 00:01:13,958
+Y los elementos de la lista en este sitio web son
+
+26
+00:01:13,958 --> 00:01:18,958
+cada libro individual y tambin tienen algunas clases en ellos, como col x 6.
+
+27
+00:01:19,213 --> 00:01:22,046
+Estas columnas se utilizan para dimensionar, por lo
+
+28
+00:01:23,198 --> 00:01:25,871
+que en este momento el sitio web ha
+
+29
+00:01:25,871 --> 00:01:28,525
+decidido utilizar estos tamaos para las columnas,
+
+30
+00:01:28,525 --> 00:01:31,323
+pero pueden cambiar en el futuro, as que
+
+31
+00:01:31,323 --> 00:01:34,015
+mantn la vista en caso de que no
+
+32
+00:01:34,015 --> 00:01:38,852
+sea exactamente esta clase col x 6, en caso es un poco diferente.
+
+33
+00:01:38,852 --> 00:01:42,165
+De acuerdo, entonces cuando usemos este localizador y
+
+34
+00:01:42,165 --> 00:01:45,680
+le solicitemos a BeautifulSoup que sepa seleccionar todos
+
+35
+00:01:45,680 --> 00:01:48,770
+los elementos, nos dar un montn de
+
+36
+00:01:48,770 --> 00:01:52,009
+etiquetas, que sern estas etiquetas que ha encontrado
+
+37
+00:01:52,009 --> 00:01:55,700
+y cada etiqueta contiene la informacin para una sola.
+
+38
+00:01:55,700 --> 00:01:59,668
+libro, pero an debemos profundizar y obtener esa informacin, as
+
+39
+00:01:59,668 --> 00:02:02,076
+que necesitamos algunos localizadores ms profundos.
+
+40
+00:02:02,076 --> 00:02:03,908
+Los localizadores que les mostrar
+
+41
+00:02:03,908 --> 00:02:07,075
+son los que estn dentro de esta etiqueta.
+
+42
+00:02:08,653 --> 00:02:12,712
+Entonces, por ejemplo, el ttulo o el nombre del libro,
+
+43
+00:02:12,712 --> 00:02:15,552
+podemos extraer de ese elemento en el
+
+44
+00:02:15,552 --> 00:02:19,702
+verde, y eso ser article dot product pod h3 a.
+
+45
+00:02:19,702 --> 00:02:23,356
+Por lo tanto, dentro de la etiqueta del artculo dot pod
+
+46
+00:02:23,356 --> 00:02:25,750
+del producto, que es esencialmente todo el
+
+47
+00:02:25,750 --> 00:02:28,395
+libro, hay una etiqueta h3, una etiqueta de
+
+48
+00:02:28,395 --> 00:02:32,635
+encabezado, y dentro de esa h3 hay una etiqueta, que es un enlace.
+
+49
+00:02:32,635 --> 00:02:36,694
+Y aljate en dot dot dot es el contenido de texto
+
+50
+00:02:36,694 --> 00:02:38,425
+dentro de esa etiqueta.
+
+51
+00:02:38,425 --> 00:02:41,717
+Pero tambin la etiqueta tiene otras dos
+
+52
+00:02:41,717 --> 00:02:44,228
+propiedades, y tambin podemos extraer el
+
+53
+00:02:44,228 --> 00:02:47,083
+ttulo del libro de esas propiedades.
+
+54
+00:02:47,083 --> 00:02:50,761
+Si quisiramos el enlace y, por ejemplo, si quisiramos hacer clic e
+
+55
+00:02:50,761 --> 00:02:53,946
+ir a la pgina del libro, no todo el conjunto
+
+56
+00:02:53,946 --> 00:02:58,329
+de libros, sino solo el libro individual en caso de que quisiramos, ms o
+
+57
+00:02:58,329 --> 00:02:59,400
+menos, leer ms
+
+58
+00:02:59,400 --> 00:03:00,803
+informacin sobre el libro o
+
+59
+00:03:00,803 --> 00:03:02,842
+robar ms informacin sobre el libro, hay
+
+60
+00:03:02,842 --> 00:03:05,971
+un enlace en ese ttulo que puede hacer clic e
+
+61
+00:03:05,971 --> 00:03:09,609
+ir a la otra pgina y, por supuesto, el selector o el
+
+62
+00:03:09,609 --> 00:03:11,038
+localizador ser el mismo si
+
+63
+00:03:11,038 --> 00:03:13,652
+queremos extraer el enlace, solo que vamos a
+
+64
+00:03:13,652 --> 00:03:16,402
+tiene que acceder a la propiedad href de eso.
+
+65
+00:03:18,263 --> 00:03:20,469
+Si quisieras obtener el precio, ese elemento
+
+66
+00:03:20,469 --> 00:03:23,596
+de all abajo, estars buscando el pod de artculo dot
+
+67
+00:03:23,596 --> 00:03:26,017
+product y el sitio de nombre que
+
+68
+00:03:26,017 --> 00:03:29,997
+hay una etiqueta p que tiene un color de precio de clase.
+
+69
+00:03:29,997 --> 00:03:33,594
+Entonces podemos usar esa etiqueta para extraer el precio
+
+70
+00:03:33,594 --> 00:03:35,974
+y luego usars expresiones regulares para
+
+71
+00:03:35,974 --> 00:03:38,815
+obtener el precio como un nmero.
+
+72
+00:03:38,815 --> 00:03:40,032
+Hemos visto eso en el
+
+73
+00:03:40,032 --> 00:03:42,482
+pasado en la seccin especial regular de cmo hacer eso.
+
+74
+00:03:42,482 --> 00:03:45,567
+Vamos a repasarlo de nuevo en esta seccin.
+
+75
+00:03:45,567 --> 00:03:47,877
+Finalmente vamos a ver la calificacin.
+
+76
+00:03:47,877 --> 00:03:50,223
+Este libro tiene tres estrellas y si
+
+77
+00:03:50,223 --> 00:03:52,436
+queramos obtener la clasificacin de estrellas,
+
+78
+00:03:52,436 --> 00:03:57,123
+estamos buscando dot dot pod de artculo y luego p dot star dash rating.
+
+79
+00:03:57,123 --> 00:03:59,318
+Tenga en cuenta que el guin no es un
+
+80
+00:03:59,318 --> 00:04:01,885
+guin bajo, solo una de las peculiaridades de este sitio web.
+
+81
+00:04:01,885 --> 00:04:05,469
+Tambin encontraremos que la cantidad de estrellas que podemos ver
+
+82
+00:04:05,469 --> 00:04:10,158
+no es lo que vamos a estar raspando as que esta etiqueta p aqu,
+
+83
+00:04:10,158 --> 00:04:13,607
+esta calificacin de estrella p dot, en realidad tiene una
+
+84
+00:04:13,607 --> 00:04:17,186
+propiedad que contiene la calificacin, as que vamos a usar
+
+85
+00:04:17,186 --> 00:04:18,870
+que en lugar de mirar
+
+86
+00:04:18,870 --> 00:04:21,064
+la cantidad de estrellas que se llenan
+
+87
+00:04:21,064 --> 00:04:23,278
+Eso es un poco ms difcil.
+
+88
+00:04:23,278 --> 00:04:27,278
+De acuerdo, solo para recapitular, cada libro es esa etiqueta li.
+
+89
+00:04:28,440 --> 00:04:31,709
+El nombre del libro que est dentro de la etiqueta
+
+90
+00:04:31,709 --> 00:04:34,577
+li es el artculo dot product pod h3 a.
+
+91
+00:04:34,577 --> 00:04:36,648
+El enlace tambin est en esa misma etiqueta.
+
+92
+00:04:36,648 --> 00:04:39,322
+El precio est dentro del color del precio punto p.
+
+93
+00:04:39,322 --> 00:04:42,335
+Y la calificacin est dentro de la calificacin de punto estrella p dot.
+
+94
+00:04:42,335 --> 00:04:46,824
+Entonces con esto podemos construir nuestros archivos de localizacin.
+
+95
+00:04:46,824 --> 00:04:49,491
+Hagmoslo en el prximo video.
+

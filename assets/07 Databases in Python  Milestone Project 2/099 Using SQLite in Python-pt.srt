@@ -1,0 +1,236 @@
+1
+00:00:00,260 --> 00:00:01,300
+Jos: Ol, bem vindo de volta.
+
+2
+00:00:01,300 --> 00:00:03,710
+Neste vdeo, estamos procurando usar o
+
+3
+00:00:03,710 --> 00:00:05,500
+SQLite de dentro do Python.
+
+4
+00:00:05,500 --> 00:00:07,170
+E  realmente simples.
+
+5
+00:00:07,170 --> 00:00:10,250
+Para o Python vem com o SQLite j instalado como
+
+6
+00:00:10,250 --> 00:00:14,340
+um pacote e tudo o que voc precisa fazer  importar o SQLite3.
+
+7
+00:00:16,250 --> 00:00:20,040
+Abra um arquivo Python, escreva a importao SQLite3
+
+8
+00:00:20,040 --> 00:00:21,940
+e execute esse arquivo.
+
+9
+00:00:21,940 --> 00:00:24,850
+Se tudo funcionar e voc no receber nenhum erro, voc
+
+10
+00:00:24,850 --> 00:00:25,930
+est pronto para ir.
+
+11
+00:00:25,930 --> 00:00:28,460
+Se falhar e voc obtiver algum tipo de erro
+
+12
+00:00:28,460 --> 00:00:30,270
+de margem no encontrado ou um erro
+
+13
+00:00:30,270 --> 00:00:33,710
+de importao,  possvel que a instalao do Python tenha ficado mais clara,
+
+14
+00:00:34,550 --> 00:00:36,120
+de modo que ocupe menos espao
+
+15
+00:00:36,120 --> 00:00:38,010
+no computador e assim por diante.
+
+16
+00:00:38,010 --> 00:00:40,670
+Nesse caso, tenho que recomendar que voc encontre uma maneira
+
+17
+00:00:40,670 --> 00:00:45,410
+de instalar o SQLite3 ou reinstalar o Python 3. 6 ou mais tarde em seu
+
+18
+00:00:46,280 --> 00:00:49,100
+computador para que ele venha com SQLite3.
+
+19
+00:00:49,100 --> 00:00:50,380
+Isso normalmente s acontecer
+
+20
+00:00:50,380 --> 00:00:52,610
+em alguns sistemas operacionais muito especficos.
+
+21
+00:00:54,600 --> 00:00:57,590
+Agora, uma vez que voc  importado do
+
+22
+00:00:57,590 --> 00:01:01,820
+SQLite3, pode se conectar facilmente a um banco de dados local.
+
+23
+00:01:01,820 --> 00:01:05,140
+ assim que voc faz - voc faz SQLite3. conectar e, em seguida,
+
+24
+00:01:05,140 --> 00:01:08,440
+como uma string, voc d o arquivo de dados.
+
+25
+00:01:08,440 --> 00:01:10,240
+Lembre-se que isso vai ser letras
+
+26
+00:01:10,240 --> 00:01:14,530
+de arquivo nico vai conter todos, todo o seu banco de dados SQLite.
+
+27
+00:01:14,530 --> 00:01:17,100
+O arquivo  normalmente chamado de dados. db, essa 
+
+28
+00:01:17,100 --> 00:01:18,040
+apenas a conveno.
+
+29
+00:01:18,040 --> 00:01:20,600
+Voc pode nomear o que quiser,  claro.
+
+30
+00:01:20,600 --> 00:01:23,430
+E sempre depois que terminamos com uma conexo,
+
+31
+00:01:23,430 --> 00:01:25,400
+lembre-se de fechar a conexo.
+
+32
+00:01:25,400 --> 00:01:27,750
+Isso te lembra alguma coisa?
+
+33
+00:01:27,750 --> 00:01:31,030
+Espero que voc lembre de arquivos ou parece bastante semelhante.
+
+34
+00:01:32,090 --> 00:01:33,040
+OK.
+
+35
+00:01:33,040 --> 00:01:35,230
+Ento, depois que voc tiver a conexo,
+
+36
+00:01:35,230 --> 00:01:38,630
+voc vai querer obter um cursor para a conexo que
+
+37
+00:01:38,630 --> 00:01:40,190
+est l na linha trs.
+
+38
+00:01:41,060 --> 00:01:43,410
+Voc pode ver que o cursor  igual a conexo. cursor e que lhe
+
+39
+00:01:43,410 --> 00:01:45,780
+d um novo cursor que voc pode usar
+
+40
+00:01:45,780 --> 00:01:47,480
+para executar o SQL Querys.
+
+41
+00:01:48,340 --> 00:01:49,950
+Vou explicar exatamente o que 
+
+42
+00:01:49,950 --> 00:01:52,190
+um cursor no prximo vdeo, ento no se preocupe.
+
+43
+00:01:52,190 --> 00:01:54,590
+Depois de executar sua consulta
+
+44
+00:01:55,660 --> 00:01:58,530
+SQL, voc pode confirmar a conexo.
+
+45
+00:01:58,530 --> 00:02:00,600
+E o que isso vai fazer
+
+46
+00:02:00,600 --> 00:02:03,230
+ salvar o contedo das alteraes que voc
+
+47
+00:02:03,230 --> 00:02:04,063
+fez no disco.
+
+48
+00:02:04,063 --> 00:02:06,720
+Eu vou explicar isso no prximo vdeo tambm.
+
+49
+00:02:06,720 --> 00:02:08,960
+Mas este  um fluxo
+
+50
+00:02:08,960 --> 00:02:12,981
+bastante normal para o SQLite Querys sendo executado.
+
+51
+00:02:12,981 --> 00:02:16,410
+Voc pega seu cursor, voc executa sua Consulta com um cursor, e
+
+52
+00:02:16,410 --> 00:02:19,170
+ento voc confirma a conexo e depois a fecha.
+
+53
+00:02:20,630 --> 00:02:22,790
+Ento algumas perguntas, claro.
+
+54
+00:02:22,790 --> 00:02:23,810
+O que  um cursor?
+
+55
+00:02:25,210 --> 00:02:26,043
+O que  commit?
+
+56
+00:02:27,180 --> 00:02:29,850
+E como escrevemos SQL?
+
+57
+00:02:29,850 --> 00:02:31,520
+Ns vamos olhar para estas trs
+
+58
+00:02:31,520 --> 00:02:32,640
+perguntas no prximo vdeo.
+
+59
+00:02:32,640 --> 00:02:33,740
+Ento te vejo l.
+

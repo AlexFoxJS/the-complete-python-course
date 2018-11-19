@@ -1,0 +1,352 @@
+1
+00:00:00,120 --> 00:00:01,430 line:15% 
+<v Instructor>Hi and welcome back.</v>
+
+2
+00:00:01,430 --> 00:00:03,800 line:15% 
+In this video we're going to be creating our quotes page
+
+3
+00:00:03,800 --> 00:00:05,810
+and I think everything's gonna make sense,
+
+4
+00:00:05,810 --> 00:00:08,810
+and it's gonna click, once we finish creating this
+
+5
+00:00:08,810 --> 00:00:11,990
+and we write a couple of lines of code in our app .py.
+
+6
+00:00:11,990 --> 00:00:13,810
+What I'm going to do in the quote pages
+
+7
+00:00:13,810 --> 00:00:16,360
+is import BeautifulSoup.
+
+8
+00:00:16,360 --> 00:00:19,010
+Notice how I didn't do that in the quotes page,
+
+9
+00:00:19,010 --> 00:00:20,640
+because we didn't need to.
+
+10
+00:00:20,640 --> 00:00:25,320
+Then I am going to import our quote page locator,
+
+11
+00:00:27,018 --> 00:00:31,690
+and also I'm going to import our quote parser.
+
+12
+00:00:32,720 --> 00:00:34,910
+Then, creating a quotes page,
+
+13
+00:00:34,910 --> 00:00:36,950
+we're going to define an innate method,
+
+14
+00:00:36,950 --> 00:00:40,490
+and this one is going to take in the page content,
+
+15
+00:00:40,490 --> 00:00:44,080
+so that's the entire html of the entire page.
+
+16
+00:00:44,080 --> 00:00:47,300
+And we're going to load that using requests, in a moment.
+
+17
+00:00:48,170 --> 00:00:50,650
+Now this, already we know and love.
+
+18
+00:00:50,650 --> 00:00:52,130
+We've done this in the past.
+
+19
+00:00:52,130 --> 00:00:56,630
+We're gonna say self.soup is BeautifulSoup of page,
+
+20
+00:00:56,630 --> 00:00:58,320
+I'm giving it an html parser.
+
+21
+00:01:00,800 --> 00:01:02,870
+Then, we're going to define a property in here,
+
+22
+00:01:02,870 --> 00:01:04,000
+which is the quotes,
+
+23
+00:01:04,900 --> 00:01:06,400
+and what this is going to do is,
+
+24
+00:01:06,400 --> 00:01:08,190
+it's going to grab the locator,
+
+25
+00:01:08,190 --> 00:01:10,960
+which is the QuotesPageLocators.QUOTE,
+
+26
+00:01:12,840 --> 00:01:15,697
+then it's going to...
+
+27
+00:01:15,697 --> 00:01:16,780
+Quote_tags...
+
+28
+00:01:17,860 --> 00:01:19,780
+It's going to find all of them,
+
+29
+00:01:19,780 --> 00:01:24,780
+so it's gonna do self.soup.select with that locator,
+
+30
+00:01:25,660 --> 00:01:27,370
+and finally what it's going to do is,
+
+31
+00:01:27,370 --> 00:01:31,310
+it's going to return a quote parser
+
+32
+00:01:33,030 --> 00:01:35,640
+for each element in quote tags.
+
+33
+00:01:36,845 --> 00:01:39,110
+OK, so hopefully this starts to make
+
+34
+00:01:39,110 --> 00:01:40,940
+a little bit more sense.
+
+35
+00:01:40,940 --> 00:01:45,810
+What we do is we find each of the divs
+
+36
+00:01:45,810 --> 00:01:47,080
+that we're looking for,
+
+37
+00:01:48,010 --> 00:01:49,850
+and each of the divs,
+
+38
+00:01:49,850 --> 00:01:53,380
+we pass each one to a quote parser object.
+
+39
+00:01:54,430 --> 00:01:58,870
+That quote parser can then use that pairing
+
+40
+00:01:58,870 --> 00:02:01,080
+to find children inside it,
+
+41
+00:02:01,080 --> 00:02:04,350
+so it here is doing self.parent, which is the div,
+
+42
+00:02:04,350 --> 00:02:07,050
+dot select one of the content locators.
+
+43
+00:02:07,050 --> 00:02:09,420
+So it's going to find the content locator
+
+44
+00:02:09,420 --> 00:02:13,060
+within this parent and not within any other parent.
+
+45
+00:02:13,060 --> 00:02:15,960
+Similarly for the author, and similarly for the tags.
+
+46
+00:02:17,210 --> 00:02:21,650
+So now this page has this quotes property,
+
+47
+00:02:21,650 --> 00:02:24,950
+and what it returns are a group of objects
+
+48
+00:02:24,950 --> 00:02:28,390
+of type quote parser, from which we can access
+
+49
+00:02:28,390 --> 00:02:31,880
+the name of the author, the content of the quote,
+
+50
+00:02:31,880 --> 00:02:32,950
+and the tags.
+
+51
+00:02:34,200 --> 00:02:36,870
+So if we go to our app .py now,
+
+52
+00:02:36,870 --> 00:02:40,660
+you'll see that this starts to make a bit more sense.
+
+53
+00:02:40,660 --> 00:02:43,000
+I'm gonna import requests,
+
+54
+00:02:43,000 --> 00:02:47,860
+and from the quotes page I'm gonna import the quotes page...
+
+55
+00:02:50,108 --> 00:02:51,980
+QuotesPage, that one!
+
+56
+00:02:53,120 --> 00:02:54,270
+Now the first thing to do of course,
+
+57
+00:02:54,270 --> 00:02:56,310
+is to get the page content,
+
+58
+00:02:56,310 --> 00:02:58,660
+which we must do using requests.
+
+59
+00:02:58,660 --> 00:03:03,660
+So request.get, http://quotes.toscrape.com.content.
+
+60
+00:03:04,860 --> 00:03:07,030
+This is going to get the page
+
+61
+00:03:07,030 --> 00:03:09,940
+and this is going to give me the content of the page.
+
+62
+00:03:11,020 --> 00:03:14,040
+Now, this entire content, everything we've loaded,
+
+63
+00:03:15,140 --> 00:03:17,680
+we give it to our quotes page object.
+
+64
+00:03:19,110 --> 00:03:21,950
+This now gets parsed using BeautifulSoup,
+
+65
+00:03:21,950 --> 00:03:25,060
+because the constructor here, the init method,
+
+66
+00:03:25,060 --> 00:03:25,893
+does that.
+
+67
+00:03:25,893 --> 00:03:30,350
+It gets the BeautifulSoup, and parses the entire page.
+
+68
+00:03:30,350 --> 00:03:32,130
+Going back to app .py,
+
+69
+00:03:32,130 --> 00:03:36,950
+we can then do for_quote in page.quotes, print, quote.
+
+70
+00:03:39,640 --> 00:03:41,230
+When we print quote, that's gonna,
+
+71
+00:03:41,230 --> 00:03:44,270
+well first of all page.quotes is going to give us
+
+72
+00:03:44,270 --> 00:03:46,070
+quote parser objects,
+
+73
+00:03:46,990 --> 00:03:50,010
+and each quote parser object has a repr method
+
+74
+00:03:50,010 --> 00:03:53,040
+that is going to get called when we print it out.
+
+75
+00:03:53,040 --> 00:03:56,800
+So when we print, it's going to go through each quote
+
+76
+00:03:56,800 --> 00:03:59,700
+in the quotes and list we got back,
+
+77
+00:03:59,700 --> 00:04:01,000
+and it's going to print it out.
+
+78
+00:04:01,000 --> 00:04:03,440 line:15% 
+Let's right click .py, and run it,
+
+79
+00:04:04,340 --> 00:04:06,040 line:15% 
+and there you have it.
+
+80
+00:04:06,040 --> 00:04:08,670 line:15% 
+We get our quote objects like that.
+
+81
+00:04:09,860 --> 00:04:12,220 line:15% 
+If you wanted to just print the name,
+
+82
+00:04:14,200 --> 00:04:16,390 line:15% 
+sorry, dot content,
+
+83
+00:04:16,390 --> 00:04:18,120 line:15% 
+not the name, the content of the quote,
+
+84
+00:04:18,120 --> 00:04:19,400 line:15% 
+you could do that,
+
+85
+00:04:19,400 --> 00:04:22,160 line:15% 
+and then you just get the content of the quote here.
+
+86
+00:04:24,180 --> 00:04:26,540
+Hopefully this makes a little bit more sense.
+
+87
+00:04:26,540 --> 00:04:29,010
+Let's go over it again in the very next video.
+
+88
+00:04:29,010 --> 00:04:29,960
+I'll see you there.
+

@@ -1,0 +1,1192 @@
+1
+00:00:00,032 --> 00:00:01,300
+<v Jose>And welcome back.</v>
+
+2
+00:00:01,300 --> 00:00:03,010
+In this section, we're talking about
+
+3
+00:00:03,010 --> 00:00:06,730
+some more advanced object oriented principles.
+
+4
+00:00:06,730 --> 00:00:08,860
+So I've created this sample project here,
+
+5
+00:00:08,860 --> 00:00:10,170
+called Advanced OOP,
+
+6
+00:00:10,170 --> 00:00:11,290
+just a small project
+
+7
+00:00:11,290 --> 00:00:12,570
+where we're gonna create a few files
+
+8
+00:00:12,570 --> 00:00:14,800
+to explain a couple of these concepts.
+
+9
+00:00:15,820 --> 00:00:17,990
+There are two files in here right now.
+
+10
+00:00:17,990 --> 00:00:19,360
+We've got user.py,
+
+11
+00:00:20,320 --> 00:00:22,343
+and in this file, all we have
+
+12
+00:00:22,343 --> 00:00:24,941
+is a short class
+
+13
+00:00:24,941 --> 00:00:27,000
+that represents a user.
+
+14
+00:00:27,000 --> 00:00:28,870
+So you've got an init method,
+
+15
+00:00:28,870 --> 00:00:30,200
+fixing a username and a password
+
+16
+00:00:30,200 --> 00:00:31,930
+and sort of sets them as the properties
+
+17
+00:00:31,930 --> 00:00:33,850
+of the object you've created,
+
+18
+00:00:33,850 --> 00:00:35,770
+and then it has two other methods.
+
+19
+00:00:35,770 --> 00:00:39,260
+A login methods, just returns that you've logged in.
+
+20
+00:00:39,260 --> 00:00:41,090
+Potentially this should do something like
+
+21
+00:00:41,090 --> 00:00:42,980
+check a database, compare
+
+22
+00:00:42,980 --> 00:00:44,140
+the password that you've given
+
+23
+00:00:44,140 --> 00:00:45,260
+with the password in the database,
+
+24
+00:00:45,260 --> 00:00:47,029
+or something like that,
+
+25
+00:00:47,029 --> 00:00:48,990
+and it's got a repr method.
+
+26
+00:00:48,990 --> 00:00:51,860
+Fairly normal class, you know,
+
+27
+00:00:51,860 --> 00:00:53,340
+you'll create things like these
+
+28
+00:00:53,340 --> 00:00:55,530
+all the time in your project,
+
+29
+00:00:55,530 --> 00:00:59,000
+and then we've got an admin.py class,
+
+30
+00:00:59,000 --> 00:01:01,850
+and this inherits from user.
+
+31
+00:01:01,850 --> 00:01:04,230
+So it takes in all of the methods of the user,
+
+32
+00:01:05,436 --> 00:01:07,290
+and then what we've got is on another init method
+
+33
+00:01:07,290 --> 00:01:08,995
+in this admin class,
+
+34
+00:01:08,995 --> 00:01:10,440
+it takes in a username, a password,
+
+35
+00:01:10,440 --> 00:01:11,780
+and an access level,
+
+36
+00:01:12,670 --> 00:01:15,230
+and then that calls the user's init
+
+37
+00:01:15,230 --> 00:01:17,530
+and sets the access level property.
+
+38
+00:01:18,408 --> 00:01:21,140
+Potentially this access level could be something like
+
+39
+00:01:21,140 --> 00:01:24,680
+superuser or manager or something like that,
+
+40
+00:01:24,680 --> 00:01:27,020
+different levels of admin privilege.
+
+41
+00:01:27,900 --> 00:01:31,430
+Then the repr method here has the admin,
+
+42
+00:01:31,430 --> 00:01:33,350
+username, and the access,
+
+43
+00:01:33,350 --> 00:01:36,535
+and finally it also includes a to_dict method,
+
+44
+00:01:36,535 --> 00:01:39,870
+which returns a dictionary representation
+
+45
+00:01:39,870 --> 00:01:41,940
+of this admin object.
+
+46
+00:01:41,940 --> 00:01:44,480
+So it returns the username as self.username,
+
+47
+00:01:44,480 --> 00:01:45,620
+password as self.password,
+
+48
+00:01:45,620 --> 00:01:47,890
+and access, self.access.
+
+49
+00:01:47,890 --> 00:01:51,080
+Just returns a dictionary and using this dictionary,
+
+50
+00:01:51,080 --> 00:01:53,820
+we could recreate the object.
+
+51
+00:01:53,820 --> 00:01:57,000
+So this is similar to, for example,
+
+52
+00:01:57,000 --> 00:01:58,970
+if you wanted to save this to a database,
+
+53
+00:01:58,970 --> 00:02:00,840
+you would just take each of the properties
+
+54
+00:02:00,840 --> 00:02:01,673
+in this dictionary,
+
+55
+00:02:01,673 --> 00:02:03,540
+you could put them in a database, for example.
+
+56
+00:02:04,640 --> 00:02:07,296
+Now, let's say that we do want to create
+
+57
+00:02:07,296 --> 00:02:08,610
+some sort of database.
+
+58
+00:02:08,610 --> 00:02:11,428
+I'm gonna create an in memory database file,
+
+59
+00:02:11,428 --> 00:02:13,280
+call it database.py,
+
+60
+00:02:13,280 --> 00:02:14,790
+and just code it live in front of you,
+
+61
+00:02:14,790 --> 00:02:17,610
+because I think this is an interesting thing to go through.
+
+62
+00:02:17,610 --> 00:02:18,700
+In creating this database,
+
+63
+00:02:18,700 --> 00:02:20,330
+we're then going to use it
+
+64
+00:02:20,330 --> 00:02:23,460
+to explain how multiple inheritance works.
+
+65
+00:02:24,500 --> 00:02:26,920
+So I'm gonna create this class database,
+
+66
+00:02:26,920 --> 00:02:29,360
+and the database class is going to
+
+67
+00:02:29,360 --> 00:02:32,240
+have a class variable called content,
+
+68
+00:02:33,320 --> 00:02:35,860
+and a class variable is just a variable that exists
+
+69
+00:02:35,860 --> 00:02:38,870
+within the class as opposed to within the object,
+
+70
+00:02:39,880 --> 00:02:43,660
+so you can access this as database.content,
+
+71
+00:02:43,660 --> 00:02:45,860
+and it will always give you this dictionary.
+
+72
+00:02:47,190 --> 00:02:49,440
+Then we're gonna have a couple of methods,
+
+73
+00:02:49,440 --> 00:02:50,600
+a couple of class methods,
+
+74
+00:02:50,600 --> 00:02:54,160
+insert, that is gonna take in some data,
+
+75
+00:02:54,160 --> 00:02:56,390
+and is going to insert it into
+
+76
+00:02:56,390 --> 00:03:00,960
+database.content('users').append(data).
+
+77
+00:03:03,400 --> 00:03:07,263
+So again, database.content is this dictionary here,
+
+78
+00:03:07,263 --> 00:03:10,990
+and all we're doing is we're appending to the user's list
+
+79
+00:03:10,990 --> 00:03:13,320
+whatever data we received
+
+80
+00:03:13,320 --> 00:03:15,240
+in the insert method.
+
+81
+00:03:15,240 --> 00:03:16,360
+Because this is a class method
+
+82
+00:03:16,360 --> 00:03:18,107
+we can of course replace database
+
+83
+00:03:18,107 --> 00:03:23,107
+by cls, since cls and database are the same thing.
+
+84
+00:03:24,720 --> 00:03:26,980
+Then we're gonna have another class method
+
+85
+00:03:26,980 --> 00:03:28,340
+that is gonna be remove,
+
+86
+00:03:29,790 --> 00:03:33,280
+and this is going to take in a finder function
+
+87
+00:03:33,280 --> 00:03:34,970
+and all it's going to do is it's going to do
+
+88
+00:03:34,970 --> 00:03:39,970
+cls.content('users') equal user for user
+
+89
+00:03:40,750 --> 00:03:43,430
+in cls.content('users')
+
+90
+00:03:43,430 --> 00:03:45,030
+if not finder(user).
+
+91
+00:03:47,140 --> 00:03:49,340
+Pretty, you know, standard way
+
+92
+00:03:49,340 --> 00:03:51,130
+of removing something from a list.
+
+93
+00:03:51,130 --> 00:03:52,770
+Do a list comprehension,
+
+94
+00:03:52,770 --> 00:03:56,091
+and put all the elements of that list into a new list
+
+95
+00:03:56,091 --> 00:04:00,330
+for as long as they don't match this finder function.
+
+96
+00:04:00,330 --> 00:04:01,640
+So the finder function potentially
+
+97
+00:04:01,640 --> 00:04:05,600
+could be something like lambda x, x username
+
+98
+00:04:07,430 --> 00:04:09,120
+is not Rolf.
+
+99
+00:04:10,970 --> 00:04:12,310
+So this could be the finder function,
+
+100
+00:04:12,310 --> 00:04:15,230
+and then if it doesn't match that,
+
+101
+00:04:15,230 --> 00:04:16,850
+we will remove it.
+
+102
+00:04:19,640 --> 00:04:21,730
+Finally, just for completeness,
+
+103
+00:04:21,730 --> 00:04:24,310
+and because of course we will need this,
+
+104
+00:04:24,310 --> 00:04:27,110
+let's add a final class method,
+
+105
+00:04:27,110 --> 00:04:28,730
+which is gonna be a find.
+
+106
+00:04:30,130 --> 00:04:32,070
+Okay, and this is gonna return
+
+107
+00:04:32,070 --> 00:04:35,850
+user for user in cls.content('users')
+
+108
+00:04:35,850 --> 00:04:37,010
+if finder(user).
+
+109
+00:04:38,166 --> 00:04:40,816
+So this time it's gonna find all the users that match
+
+110
+00:04:41,749 --> 00:04:43,370
+the lambda function.
+
+111
+00:04:43,370 --> 00:04:47,050
+So again lambda x,
+
+112
+00:04:47,050 --> 00:04:48,340
+x username
+
+113
+00:04:50,030 --> 00:04:51,040
+is Rolf,
+
+114
+00:04:51,040 --> 00:04:54,290
+this is gonna find all the users in the database
+
+115
+00:04:54,290 --> 00:04:56,240
+that do match this lambda function,
+
+116
+00:04:56,240 --> 00:04:57,840
+so it's gonna find all the users
+
+117
+00:04:57,840 --> 00:04:59,790
+that have username of Rolf.
+
+118
+00:05:01,220 --> 00:05:02,053
+Okay.
+
+119
+00:05:03,520 --> 00:05:06,360
+This is our sample database.
+
+120
+00:05:06,360 --> 00:05:10,410
+So, when we import this class,
+
+121
+00:05:10,410 --> 00:05:13,490
+it's going to initialise this content variable,
+
+122
+00:05:13,490 --> 00:05:16,330
+and then we can insert, remove, or find data
+
+123
+00:05:16,330 --> 00:05:19,300
+within this class variable there.
+
+124
+00:05:19,300 --> 00:05:21,620
+Notice that if we create multiple objects
+
+125
+00:05:21,620 --> 00:05:23,890
+of type database,
+
+126
+00:05:23,890 --> 00:05:27,070
+they're all going to have the same content variable.
+
+127
+00:05:27,070 --> 00:05:28,840
+This variable is a class variable,
+
+128
+00:05:28,840 --> 00:05:31,200
+it's not an instance variable,
+
+129
+00:05:31,200 --> 00:05:33,080
+so it doesn't change per object,
+
+130
+00:05:33,080 --> 00:05:35,780
+all objects have the same instance variable.
+
+131
+00:05:35,780 --> 00:05:40,640
+So, going back to our admin.py,
+
+132
+00:05:40,640 --> 00:05:44,310
+let's say we want to insert this into our database.
+
+133
+00:05:44,310 --> 00:05:45,180
+What could we do?
+
+134
+00:05:46,130 --> 00:05:48,480
+Well, we could say something like save,
+
+135
+00:05:49,541 --> 00:05:52,890
+and then do something like database.insert(self.to_dict()).
+
+136
+00:05:55,360 --> 00:05:57,460
+And we'll have to import database as well.
+
+137
+00:06:01,597 --> 00:06:04,230
+Okay, this is the save method
+
+138
+00:06:04,230 --> 00:06:06,740
+implemented into our admin.
+
+139
+00:06:06,740 --> 00:06:10,250
+Now if we created another file, let's call it app.py,
+
+140
+00:06:12,300 --> 00:06:13,990
+and we want it to test this out
+
+141
+00:06:13,990 --> 00:06:15,631
+as the admin out
+
+142
+00:06:15,631 --> 00:06:17,231
+by creating an object and then saving it
+
+143
+00:06:17,231 --> 00:06:18,600
+to the database, and then maybe finding it back,
+
+144
+00:06:18,600 --> 00:06:19,510
+we could do that.
+
+145
+00:06:21,380 --> 00:06:22,690
+We can import the admin class,
+
+146
+00:06:22,690 --> 00:06:25,080
+say that a is an admin,
+
+147
+00:06:25,080 --> 00:06:28,470
+rolf and, one two three four,
+
+148
+00:06:28,470 --> 00:06:31,130
+and the access level's gonna be, let's say three.
+
+149
+00:06:31,130 --> 00:06:33,460
+Then we can do a.save,
+
+150
+00:06:33,460 --> 00:06:38,370
+and then we can do print(Database.find(lambda x:
+
+151
+00:06:38,370 --> 00:06:42,300
+x('username') is 'rolf')).
+
+152
+00:06:42,300 --> 00:06:44,950
+We'll of course have to import database as well.
+
+153
+00:06:47,610 --> 00:06:49,780
+Okay, let's run app.py.
+
+154
+00:06:51,108 --> 00:06:52,870
+And as you can see we get back
+
+155
+00:06:52,870 --> 00:06:54,870
+what you'd expect.
+
+156
+00:06:54,870 --> 00:06:58,720
+The result of this database.find.
+
+157
+00:07:00,530 --> 00:07:02,920
+So that's well and good.
+
+158
+00:07:02,920 --> 00:07:04,450
+What if
+
+159
+00:07:04,450 --> 00:07:07,000
+we wanted to create another thing
+
+160
+00:07:07,000 --> 00:07:09,180
+that we could save to the database?
+
+161
+00:07:09,180 --> 00:07:11,230
+Let's say for example we wanted to create
+
+162
+00:07:14,450 --> 00:07:16,460
+something like a store.py.
+
+163
+00:07:16,460 --> 00:07:18,350
+This is gonna be some class store,
+
+164
+00:07:18,350 --> 00:07:20,310
+and it's gonna have all its stuff,
+
+165
+00:07:20,310 --> 00:07:22,560
+and then it's gonna have a to_dict,
+
+166
+00:07:23,800 --> 00:07:25,360
+and that is gonna do something,
+
+167
+00:07:25,360 --> 00:07:27,120
+and it's gonna have a save,
+
+168
+00:07:27,120 --> 00:07:28,450
+and that is gonna do
+
+169
+00:07:29,673 --> 00:07:31,680
+database.insert(self.to_dict()).
+
+170
+00:07:38,850 --> 00:07:40,120
+As you can see,
+
+171
+00:07:41,580 --> 00:07:45,540
+we've got some duplication between admin and store.
+
+172
+00:07:46,860 --> 00:07:49,640
+There is one thing that is fully duplicated,
+
+173
+00:07:49,640 --> 00:07:52,500
+and one thing that is partially duplicated.
+
+174
+00:07:52,500 --> 00:07:54,160
+The one thing that's fully duplicated,
+
+175
+00:07:54,160 --> 00:07:57,840
+and the thing we are going to solve in this video,
+
+176
+00:07:57,840 --> 00:07:59,130
+is this save method.
+
+177
+00:07:59,130 --> 00:08:02,950
+The save method is fully duplicated between admin and store.
+
+178
+00:08:02,950 --> 00:08:04,240
+So as you can see,
+
+179
+00:08:04,240 --> 00:08:06,172
+you've got this save,
+
+180
+00:08:06,172 --> 00:08:07,190
+and it's database.insert(self.to_dict()),
+
+181
+00:08:08,680 --> 00:08:11,000
+and in the store you've got exactly the same thing.
+
+182
+00:08:11,000 --> 00:08:13,100
+Def save, Database.insert(self.to_dict()).
+
+183
+00:08:14,690 --> 00:08:16,330
+So in both cases the save method,
+
+184
+00:08:16,330 --> 00:08:18,720
+all it's doing, is it's taking the current object,
+
+185
+00:08:18,720 --> 00:08:20,060
+whatever object you're talking about,
+
+186
+00:08:20,060 --> 00:08:22,600
+be it a store, or an admin,
+
+187
+00:08:22,600 --> 00:08:23,870
+it's converting it to a dictionary
+
+188
+00:08:23,870 --> 00:08:27,238
+using its to_dict method,
+
+189
+00:08:27,238 --> 00:08:29,220
+and then it's putting it into the database.
+
+190
+00:08:30,210 --> 00:08:31,840
+Same thing, same code.
+
+191
+00:08:31,840 --> 00:08:33,480
+The thing that's partially duplicated
+
+192
+00:08:33,480 --> 00:08:35,930
+is this to_dict method.
+
+193
+00:08:35,930 --> 00:08:38,360
+As you can see, both admin and store
+
+194
+00:08:38,360 --> 00:08:41,240
+have a to_dict method,
+
+195
+00:08:41,240 --> 00:08:44,830
+but the implementation of the method, what it does,
+
+196
+00:08:44,830 --> 00:08:46,330
+is different between both.
+
+197
+00:08:46,330 --> 00:08:48,390
+The store here will probably return,
+
+198
+00:08:48,390 --> 00:08:50,010
+I don't know, what items are in it,
+
+199
+00:08:50,010 --> 00:08:51,020
+or the name of the store,
+
+200
+00:08:51,020 --> 00:08:52,700
+or the address, et cetera.
+
+201
+00:08:52,700 --> 00:08:54,300
+The admin is returning the username,
+
+202
+00:08:54,300 --> 00:08:56,320
+password, and the access level.
+
+203
+00:08:56,320 --> 00:08:59,050
+But as you can see, they both have a to_dict.
+
+204
+00:09:00,390 --> 00:09:01,770
+So throughout the next section
+
+205
+00:09:01,770 --> 00:09:03,190
+we're going to learn these techniques
+
+206
+00:09:03,190 --> 00:09:05,910
+that are going to allow us to reduce this duplication,
+
+207
+00:09:05,910 --> 00:09:08,410
+and also improve the stability
+
+208
+00:09:08,410 --> 00:09:10,210
+and the consistency of our programmes.
+
+209
+00:09:11,120 --> 00:09:15,610
+In order to solve this save problem,
+
+210
+00:09:15,610 --> 00:09:17,630
+we could do, of course, one thing.
+
+211
+00:09:17,630 --> 00:09:20,530
+The first thing we could do is we could cut it from there.
+
+212
+00:09:21,832 --> 00:09:25,840
+If we wanted to remove it from the admin class,
+
+213
+00:09:25,840 --> 00:09:27,590
+we could put it into user, right?
+
+214
+00:09:30,100 --> 00:09:33,660
+Now of course we'll have to import database from here,
+
+215
+00:09:33,660 --> 00:09:35,290
+in order to make that work,
+
+216
+00:09:35,290 --> 00:09:38,150
+but the truth is the store does not inherit from user,
+
+217
+00:09:38,150 --> 00:09:40,660
+so it's not going to have
+
+218
+00:09:40,660 --> 00:09:44,360
+that to_dict method available.
+
+219
+00:09:44,360 --> 00:09:46,230
+I'm sorry, that save method available.
+
+220
+00:09:46,230 --> 00:09:48,490
+So we don't want to do that.
+
+221
+00:09:50,710 --> 00:09:55,020
+What we want to do is have a third class,
+
+222
+00:09:55,020 --> 00:09:56,380
+or rather a fourth class,
+
+223
+00:09:56,380 --> 00:09:59,500
+that contains this save method only.
+
+224
+00:09:59,500 --> 00:10:00,850
+So I'm gonna go and do just that,
+
+225
+00:10:00,850 --> 00:10:02,600
+I'm gonna create a new Python file,
+
+226
+00:10:03,750 --> 00:10:05,890
+I'm gonna call it saveable.py,
+
+227
+00:10:05,890 --> 00:10:08,510
+and there's a reason why I'm calling it saveable.py,
+
+228
+00:10:09,490 --> 00:10:12,210
+as I'll explain later on in the course,
+
+229
+00:10:13,370 --> 00:10:15,750
+and this is gonna be some class saveable,
+
+230
+00:10:15,750 --> 00:10:17,290
+and all it's going to do
+
+231
+00:10:17,290 --> 00:10:19,980
+is it's going to implement this method.
+
+232
+00:10:23,730 --> 00:10:26,390
+So we have to import that.
+
+233
+00:10:26,390 --> 00:10:27,800
+Notice how it says,
+
+234
+00:10:27,800 --> 00:10:30,450
+I don't know what a to_dict method is,
+
+235
+00:10:30,450 --> 00:10:33,880
+because we don't have it defined inside this class,
+
+236
+00:10:33,880 --> 00:10:35,160
+and we are going to fix this
+
+237
+00:10:35,160 --> 00:10:36,390
+later on in this section,
+
+238
+00:10:36,390 --> 00:10:38,368
+but for now, all we need
+
+239
+00:10:38,368 --> 00:10:40,580
+is to go over to admin.
+
+240
+00:10:41,720 --> 00:10:44,460
+No longer need to import database here,
+
+241
+00:10:44,460 --> 00:10:47,670
+but from saveable, import saveable,
+
+242
+00:10:48,570 --> 00:10:50,080
+and now after user,
+
+243
+00:10:54,640 --> 00:10:55,870
+include saveable there,
+
+244
+00:10:55,870 --> 00:10:58,190
+now we no longer need to import database,
+
+245
+00:10:58,190 --> 00:11:00,040
+we don't need a save method there.
+
+246
+00:11:01,330 --> 00:11:04,180
+Remember, inheritance is very similar
+
+247
+00:11:04,180 --> 00:11:07,070
+to copying the code and putting it into this class,
+
+248
+00:11:07,070 --> 00:11:11,300
+so as soon as you inherit from both user and saveable,
+
+249
+00:11:11,300 --> 00:11:13,600
+all that Python does is
+
+250
+00:11:13,600 --> 00:11:16,580
+when you call a method, like self.save,
+
+251
+00:11:16,580 --> 00:11:19,670
+it goes to user, tries to find that method,
+
+252
+00:11:19,670 --> 00:11:21,450
+and if it doesn't exist in user,
+
+253
+00:11:21,450 --> 00:11:24,240
+then it goes to saveable, and it tries to find it there.
+
+254
+00:11:24,240 --> 00:11:26,300
+So it's gonna find self.save
+
+255
+00:11:26,300 --> 00:11:27,660
+inside this superclass,
+
+256
+00:11:27,660 --> 00:11:28,910
+and it's gonna call it,
+
+257
+00:11:28,910 --> 00:11:31,930
+but it's gonna be able to find self.to_dict
+
+258
+00:11:31,930 --> 00:11:33,050
+in the admin class.
+
+259
+00:11:34,820 --> 00:11:35,653
+So again,
+
+260
+00:11:37,790 --> 00:11:42,470
+self.save will be searched in admin,
+
+261
+00:11:43,530 --> 00:11:44,710
+then in user,
+
+262
+00:11:45,550 --> 00:11:46,670
+then in saveable.
+
+263
+00:11:48,260 --> 00:11:49,410
+Where it will be found.
+
+264
+00:11:51,950 --> 00:11:55,130
+Self.save uses self.to_dict,
+
+265
+00:11:56,670 --> 00:12:01,670
+and again self.to_dict will be searched for in admin,
+
+266
+00:12:03,050 --> 00:12:04,200
+where it will be found.
+
+267
+00:12:05,740 --> 00:12:07,300
+And that's it.
+
+268
+00:12:07,300 --> 00:12:09,300
+So there's a tree of,
+
+269
+00:12:10,295 --> 00:12:12,320
+of sort of method calls that happens
+
+270
+00:12:12,320 --> 00:12:14,230
+when you have inheritance,
+
+271
+00:12:14,230 --> 00:12:16,300
+and that's the first class that you inherit from,
+
+272
+00:12:16,300 --> 00:12:19,380
+the one on the left is, well, of course,
+
+273
+00:12:19,380 --> 00:12:22,100
+the class you're in is the first one that gets searched,
+
+274
+00:12:22,100 --> 00:12:23,430
+and then the one at the left,
+
+275
+00:12:23,430 --> 00:12:26,320
+and then the one next to it, and so forth.
+
+276
+00:12:26,320 --> 00:12:29,290
+So by using multiple inheritance like this,
+
+277
+00:12:29,290 --> 00:12:31,880
+you can actually extract functionality
+
+278
+00:12:31,880 --> 00:12:34,570
+that is shared amongst similar objects,
+
+279
+00:12:34,570 --> 00:12:36,900
+and similar classes, like user to admin,
+
+280
+00:12:36,900 --> 00:12:40,510
+but then also between more abstract classes,
+
+281
+00:12:40,510 --> 00:12:42,660
+like saveable class isn't a user,
+
+282
+00:12:42,660 --> 00:12:44,960
+it could be anything in your application.
+
+283
+00:12:44,960 --> 00:12:47,577
+So you can extract specific bits of functionality
+
+284
+00:12:47,577 --> 00:12:49,720
+into a class like this one.
+
+285
+00:12:51,290 --> 00:12:52,780
+Of course it's not great,
+
+286
+00:12:52,780 --> 00:12:56,060
+because you've got this unresolved attribute reference,
+
+287
+00:12:56,060 --> 00:12:59,110
+so we're going to look at how to fix this very soon.
+
+288
+00:13:00,190 --> 00:13:03,010
+Again, if you run app.py,
+
+289
+00:13:03,010 --> 00:13:04,320
+you'll see that it all works fine,
+
+290
+00:13:04,320 --> 00:13:06,380
+it doesn't complain, it doesn't give you an error,
+
+291
+00:13:06,380 --> 00:13:09,370
+because exactly what I said earlier is what's happening.
+
+292
+00:13:09,370 --> 00:13:11,730
+The save method is in saveable,
+
+293
+00:13:11,730 --> 00:13:13,320
+the to_dict method is in admin,
+
+294
+00:13:13,320 --> 00:13:15,070
+and they all sort of work together.
+
+295
+00:13:16,160 --> 00:13:17,050
+That's it for this video,
+
+296
+00:13:17,050 --> 00:13:18,590
+I wanted to give you a quick intro
+
+297
+00:13:18,590 --> 00:13:20,140
+to multiple inheritance,
+
+298
+00:13:20,140 --> 00:13:21,790
+and I'll see you on the next one.
+

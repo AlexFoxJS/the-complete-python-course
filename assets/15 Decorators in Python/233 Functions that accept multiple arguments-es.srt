@@ -1,0 +1,428 @@
+1
+00:00:00,170 --> 00:00:01,970
+Instructor: Hola y bienvenido de nuevo.
+
+2
+00:00:01,970 --> 00:00:05,850
+Anteriormente hemos visto cmo hacer un desempaquetado de argumentos.
+
+3
+00:00:05,850 --> 00:00:07,610
+Trabajamos en esto en la seccin 10.
+
+4
+00:00:08,680 --> 00:00:10,950
+Por ejemplo, podramos tener algo
+
+5
+00:00:10,950 --> 00:00:15,460
+como esto, agregar todas las funciones, que toma en cuatro argumentos.
+
+6
+00:00:15,460 --> 00:00:18,800
+a1 a a4, y luego devuelve
+
+7
+00:00:18,800 --> 00:00:21,190
+a1, a2, a3 ms a4.
+
+8
+00:00:22,110 --> 00:00:24,380
+Podemos llamar a esta funcin, por
+
+9
+00:00:24,380 --> 00:00:29,030
+supuesto, con mltiples valores y, por supuesto, he hablado y escrito el
+
+10
+00:00:29,030 --> 00:00:30,840
+cdigo, as que he
+
+11
+00:00:30,840 --> 00:00:32,180
+escrito retornos all.
+
+12
+00:00:32,180 --> 00:00:33,150
+No es lo que quiero
+
+13
+00:00:33,150 --> 00:00:35,960
+Podemos llamar esto con cuatro valores, y ejecutar
+
+14
+00:00:35,960 --> 00:00:38,020
+eso, y eso nos da 16.
+
+15
+00:00:38,020 --> 00:00:42,020
+O bien, si tenemos los valores en otro lugar,
+
+16
+00:00:44,340 --> 00:00:46,980
+como esta tupla aqu, podramos pasar
+
+17
+00:00:46,980 --> 00:00:50,240
+cada uno de los valores de la
+
+18
+00:00:50,240 --> 00:00:52,230
+tupla como un argumento separado.
+
+19
+00:00:52,230 --> 00:00:53,510
+Hemos visto esto antes.
+
+20
+00:00:53,510 --> 00:00:58,390
+La forma en que haramos eso sera haciendo * vols, como tal.
+
+21
+00:00:59,350 --> 00:01:00,870
+Y como pueden ver, obtenemos 16 nuevamente.
+
+22
+00:01:00,870 --> 00:01:04,020
+Todo esto ha hecho, est desempaquetado el
+
+23
+00:01:05,390 --> 00:01:09,280
+iterable, en mltiples argumentos y pas cada uno
+
+24
+00:01:09,280 --> 00:01:11,870
+como un argumento posicional separado all.
+
+25
+00:01:13,440 --> 00:01:17,960
+Del mismo modo, podramos tener un diccionario de
+
+26
+00:01:17,960 --> 00:01:21,583
+valores donde tenemos a1, aqu hay
+
+27
+00:01:21,583 --> 00:01:23,950
+uno, a2, hay tres,
+
+28
+00:01:23,950 --> 00:01:25,740
+a3, hay cinco
+
+29
+00:01:27,240 --> 00:01:29,940
+y a4 son siete.
+
+30
+00:01:29,940 --> 00:01:33,150
+Y si quisiramos pasar cada valor
+
+31
+00:01:33,150 --> 00:01:35,600
+al parmetro correspondiente, notando
+
+32
+00:01:35,600 --> 00:01:40,600
+que a1 tiene el mismo nombre que el parmetro
+
+33
+00:01:41,180 --> 00:01:44,260
+aqu, podramos hacer doble asterisk vols.
+
+34
+00:01:46,270 --> 00:01:48,710
+Y nuevamente tenemos 16 pero ahora,
+
+35
+00:01:48,710 --> 00:01:52,240
+cada argumento ha sido pasado como un argumento nombrado.
+
+36
+00:01:52,240 --> 00:01:54,240
+Esencialmente, hacer esto.
+
+37
+00:01:58,890 --> 00:02:02,290
+Y luego a2 se llama vols a2, y as sucesivamente.
+
+38
+00:02:03,370 --> 00:02:05,030
+OKAY?
+
+39
+00:02:05,030 --> 00:02:07,230
+As que hemos analizado cmo podemos
+
+40
+00:02:08,990 --> 00:02:11,840
+pasar nmeros arbitrarios de argumentos o argumentos con
+
+41
+00:02:11,840 --> 00:02:15,110
+nombre, pero no hemos visto cmo podemos hacer que
+
+42
+00:02:15,110 --> 00:02:17,380
+nuestra funcin acepte un nmero arbitrario
+
+43
+00:02:17,380 --> 00:02:18,640
+de argumentos, y en
+
+44
+00:02:18,640 --> 00:02:21,580
+realidad es realmente simple, porque es exactamente igual sintaxis.
+
+45
+00:02:22,650 --> 00:02:26,660
+Si haces star args, ahora lo que obtienes
+
+46
+00:02:26,660 --> 00:02:29,370
+es una iterable de argumentos.
+
+47
+00:02:29,370 --> 00:02:30,420
+Vamos a imprimirlos.
+
+48
+00:02:38,600 --> 00:02:41,520
+Como puede ver, ahora podemos pasar cualquier cantidad de argumentos.
+
+49
+00:02:41,520 --> 00:02:42,840
+Esto no es una tupla
+
+50
+00:02:42,840 --> 00:02:45,420
+ni nada, estos son solo argumentos que estamos pasando
+
+51
+00:02:45,420 --> 00:02:47,990
+a una funcin, y la funcin los aceptar gustosamente,
+
+52
+00:02:47,990 --> 00:02:49,880
+y luego los imprimir como una tupla.
+
+53
+00:02:50,800 --> 00:02:52,860
+Pero cuando lo pasamos, esto no era una tupla.
+
+54
+00:02:52,860 --> 00:02:54,560
+Estos son todos argumentos separados.
+
+55
+00:02:55,640 --> 00:02:59,250
+Entonces podemos usar star args, para aceptar cualquier nmero de argumentos
+
+56
+00:03:00,102 --> 00:03:02,530
+y luego podemos, por ejemplo, sumarlos todos,
+
+57
+00:03:02,530 --> 00:03:05,140
+como la suma de retorno de args, y
+
+58
+00:03:06,308 --> 00:03:07,600
+podemos imprimir esto y,
+
+59
+00:03:12,840 --> 00:03:15,380
+como pueden ver, todo est bien, est bien?
+
+60
+00:03:15,380 --> 00:03:19,150
+Estas args es una tupla de todos los argumentos que
+
+61
+00:03:19,150 --> 00:03:21,130
+aprobamos que no tienen nombres.
+
+62
+00:03:21,130 --> 00:03:22,400
+Si queremos asegurarnos de
+
+63
+00:03:22,400 --> 00:03:24,700
+que la funcin pueda aceptar argumentos con nombre,
+
+64
+00:03:24,700 --> 00:03:26,200
+de nuevo, probablemente lo hayas
+
+65
+00:03:27,290 --> 00:03:31,320
+adivinado, todo lo que tienes que hacer es hacer doble asterisco, y luego
+
+66
+00:03:31,320 --> 00:03:32,910
+el nombre de la variable.
+
+67
+00:03:32,910 --> 00:03:36,150
+Es una convencin comn tener asterisk args y double
+
+68
+00:03:36,150 --> 00:03:38,550
+asterisk kwargs en Python, pero esto
+
+69
+00:03:38,550 --> 00:03:40,350
+podra ser lo que quieras.
+
+70
+00:03:41,550 --> 00:03:45,830
+Y luego podemos hacer algo como k, v en kwargs. artculos.
+
+71
+00:03:45,830 --> 00:03:50,480
+Esto te dice que kwargs es un diccionario cuando aparece.
+
+72
+00:03:50,480 --> 00:03:52,030
+Podemos hacer algo como
+
+73
+00:03:55,395 --> 00:03:57,610
+imprimir, por k tenemos v.
+
+74
+00:03:59,270 --> 00:04:01,810
+Y luego podramos hacer pretty_print,
+
+75
+00:04:01,810 --> 00:04:06,200
+algo as como el nombre de usuario es jose123,
+
+76
+00:04:06,200 --> 00:04:09,710
+el nivel de acceso es admin, digamos.
+
+77
+00:04:12,510 --> 00:04:13,760
+Y luego podemos ejecutar eso,
+
+78
+00:04:15,440 --> 00:04:17,320
+y lo que obtenemos es, para el
+
+79
+00:04:17,320 --> 00:04:18,990
+nombre de usuario tenemos jose123, para
+
+80
+00:04:18,990 --> 00:04:20,640
+el nivel de acceso tenemos administrador.
+
+81
+00:04:20,640 --> 00:04:24,270
+Estos se condensaron en un diccionario y se pasaron como
+
+82
+00:04:24,270 --> 00:04:25,780
+argumentos de palabras clave.
+
+83
+00:04:26,700 --> 00:04:28,160
+Por supuesto, otra
+
+84
+00:04:28,160 --> 00:04:30,520
+opcin sera lo que hemos
+
+85
+00:04:30,520 --> 00:04:34,080
+visto anteriormente, que es pasar en el diccionario mismo.
+
+86
+00:04:34,080 --> 00:04:39,080
+En este caso, algo as como el nombre de usuario es
+
+87
+00:04:39,330 --> 00:04:42,430
+jose123, el nivel de acceso es admin.
+
+88
+00:04:44,240 --> 00:04:47,080
+Sin embargo, si ejecutamos esto, no sabemos que
+
+89
+00:04:47,080 --> 00:04:49,480
+estos son argumentos de palabras clave, pero
+
+90
+00:04:49,480 --> 00:04:51,070
+sabemos cmo convertir un diccionario
+
+91
+00:04:51,070 --> 00:04:52,340
+en argumentos de palabras
+
+92
+00:04:54,190 --> 00:04:56,920
+clave, que es haciendo el doble asterisco.
+
+93
+00:04:56,920 --> 00:05:00,210
+Ejecutamos eso, y obtenemos exactamente lo mismo.
+
+94
+00:05:01,340 --> 00:05:02,173
+OKAY?
+
+95
+00:05:02,173 --> 00:05:04,740
+Entonces, con args de asterisco nicos, podemos aceptar
+
+96
+00:05:04,740 --> 00:05:06,620
+cualquier cantidad de argumentos posicionales.
+
+97
+00:05:06,620 --> 00:05:08,770
+Con el doble asterisco kwargs, podemos
+
+98
+00:05:08,770 --> 00:05:10,660
+aceptar cualquier cantidad de argumentos nombrados.
+
+99
+00:05:10,660 --> 00:05:12,170
+Esos son los dos nicos
+
+100
+00:05:12,170 --> 00:05:14,000
+tipos de argumentos que hay en Python.
+
+101
+00:05:14,000 --> 00:05:17,940
+Entonces, as es como nuestro decorador va a funcionar en
+
+102
+00:05:17,940 --> 00:05:19,120
+el siguiente video.
+
+103
+00:05:19,120 --> 00:05:20,940
+Vamos a hacer que nuestro decorador
+
+104
+00:05:20,940 --> 00:05:23,470
+acepte cualquier cantidad de argumentos de cualquier tipo
+
+105
+00:05:23,470 --> 00:05:24,750
+y eso har que
+
+106
+00:05:24,750 --> 00:05:26,800
+nuestro decorador sea genrico para cualquier funcin.
+
+107
+00:05:26,800 --> 00:05:28,600
+Te ver en el prximo video.
+

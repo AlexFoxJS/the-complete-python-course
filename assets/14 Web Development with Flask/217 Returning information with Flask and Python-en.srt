@@ -1,0 +1,448 @@
+1
+00:00:00,080 --> 00:00:01,200
+<v Instructor>Hi and welcome back.</v>
+
+2
+00:00:01,200 --> 00:00:02,310
+In this video we're going to look at
+
+3
+00:00:02,310 --> 00:00:03,957
+how to return some more information
+
+4
+00:00:03,957 --> 00:00:06,280
+by adding another endpoint
+
+5
+00:00:06,280 --> 00:00:08,610
+and making it give us something back.
+
+6
+00:00:09,710 --> 00:00:11,700
+In this section we're going to be building
+
+7
+00:00:11,700 --> 00:00:16,700
+a post application, like a blogging app, but simpler.
+
+8
+00:00:16,950 --> 00:00:19,862
+It's just going to store posts that we write
+
+9
+00:00:19,862 --> 00:00:22,451
+and we're going to be able to access different posts
+
+10
+00:00:22,451 --> 00:00:24,850
+by using endpoints.
+
+11
+00:00:26,000 --> 00:00:27,331
+The first thing I'm going to do
+
+12
+00:00:27,331 --> 00:00:29,110
+is I'm going to create some test data,
+
+13
+00:00:29,110 --> 00:00:31,030
+just because we've gotta start
+
+14
+00:00:31,030 --> 00:00:32,920
+by being able to read posts
+
+15
+00:00:32,920 --> 00:00:35,960
+and then we're going to look at writing posts afterwards.
+
+16
+00:00:37,150 --> 00:00:38,420
+In order to be able to read a post,
+
+17
+00:00:38,420 --> 00:00:40,269
+of course we need some posts
+
+18
+00:00:40,269 --> 00:00:42,550
+in order to be able to read them
+
+19
+00:00:42,550 --> 00:00:44,080
+and the way I'm gonna do this
+
+20
+00:00:44,080 --> 00:00:46,390
+is I'm going to do something like this.
+
+21
+00:00:48,300 --> 00:00:49,730
+Just typing it out.
+
+22
+00:00:53,730 --> 00:00:56,427
+What you've got here is posts variable is a global variable
+
+23
+00:00:56,427 --> 00:00:59,070
+and it is a dictionary,
+
+24
+00:00:59,070 --> 00:01:03,700
+a dictionary which maps 0 to content.
+
+25
+00:01:06,970 --> 00:01:08,940
+This 0 here
+
+26
+00:01:08,940 --> 00:01:11,280
+is the post ID.
+
+27
+00:01:11,280 --> 00:01:13,760
+That's a unique identifier for each post.
+
+28
+00:01:13,760 --> 00:01:15,530
+Because we only have one post,
+
+29
+00:01:15,530 --> 00:01:17,060
+that's gonna start at 0,
+
+30
+00:01:17,060 --> 00:01:20,060
+but then it's gonna go up to one and then two and so forth
+
+31
+00:01:20,060 --> 00:01:22,280
+as we add more posts.
+
+32
+00:01:22,280 --> 00:01:25,090
+In this video though we're only going to be able to read
+
+33
+00:01:25,090 --> 00:01:26,700
+this post.
+
+34
+00:01:26,700 --> 00:01:28,000
+In order to do that
+
+35
+00:01:28,000 --> 00:01:30,200
+we are going to create another endpoint
+
+36
+00:01:31,529 --> 00:01:33,429
+and at this endpoint we're going to do
+
+37
+00:01:35,660 --> 00:01:40,180
+app.route, int:post_id there.
+
+38
+00:01:43,410 --> 00:01:45,050
+What this is doing now is this is going to
+
+39
+00:01:45,050 --> 00:01:48,280
+define another route and it's going to associate it
+
+40
+00:01:48,280 --> 00:01:50,390
+with this function here.
+
+41
+00:01:50,390 --> 00:01:51,223
+But as you can see,
+
+42
+00:01:51,223 --> 00:01:53,820
+there's a bit of strange bit of syntax here.
+
+43
+00:01:53,820 --> 00:01:58,520
+These crocodile clips, this ends the colon and post_id,
+
+44
+00:01:58,520 --> 00:02:01,510
+what this is going to do is this will be replaced
+
+45
+00:02:01,510 --> 00:02:05,620
+by an integer, a number, which is the post ID.
+
+46
+00:02:05,620 --> 00:02:09,340
+For example, when a user sends a request
+
+47
+00:02:09,340 --> 00:02:10,680
+and they try to access
+
+48
+00:02:11,650 --> 00:02:13,870
+/post/0,
+
+49
+00:02:13,870 --> 00:02:16,610
+this 0 will replace this entire thing.
+
+50
+00:02:16,610 --> 00:02:18,475
+This is some Flask unique syntax
+
+51
+00:02:18,475 --> 00:02:21,733
+which will allow the 0 to replace this entire thing
+
+52
+00:02:21,733 --> 00:02:25,870
+and then post ID will be passed to our function,
+
+53
+00:02:28,250 --> 00:02:30,160
+as post_id
+
+54
+00:02:30,160 --> 00:02:32,320
+under that parameter there.
+
+55
+00:02:32,320 --> 00:02:36,420
+Now we'll have access to post_id inside the function
+
+56
+00:02:36,420 --> 00:02:39,220
+in order to retrieve it from our dictionary.
+
+57
+00:02:40,450 --> 00:02:43,080
+If we wanted to retrieve this post from the dictionary,
+
+58
+00:02:43,080 --> 00:02:45,340
+all we have to do is posts.get(post_id).
+
+59
+00:02:46,610 --> 00:02:48,340
+We've seen this sort of syntax before.
+
+60
+00:02:48,340 --> 00:02:51,120
+All it does is it tries to get,
+
+61
+00:02:51,120 --> 00:02:53,090
+from the dictionary, something with this key
+
+62
+00:02:53,090 --> 00:02:54,940
+and if it fails it would return none.
+
+63
+00:02:56,670 --> 00:02:58,580
+So all we're doing is getting, for example,
+
+64
+00:02:58,580 --> 00:03:00,350
+post ID 0 from this dictionary,
+
+65
+00:03:00,350 --> 00:03:03,110
+which is going to give us these other dictionary
+
+66
+00:03:03,110 --> 00:03:05,250
+and that is going to go into post.
+
+67
+00:03:06,960 --> 00:03:09,080
+Then we can return a more complex string,
+
+68
+00:03:09,080 --> 00:03:13,670
+like for example, post title,
+
+69
+00:03:15,070 --> 00:03:18,510
+content is gonna be post content.
+
+70
+00:03:21,030 --> 00:03:22,380
+Something like this.
+
+71
+00:03:22,380 --> 00:03:23,950
+Nothing terribly complicated.
+
+72
+00:03:23,950 --> 00:03:25,740
+All that's happening here is we're
+
+73
+00:03:25,740 --> 00:03:28,250
+retrieving the post from our dictionary
+
+74
+00:03:28,250 --> 00:03:29,680
+and then we're returning a string
+
+75
+00:03:29,680 --> 00:03:31,370
+that contains the title and the content,
+
+76
+00:03:31,370 --> 00:03:33,540
+just so somebody that requests it
+
+77
+00:03:33,540 --> 00:03:34,890
+can read the post.
+
+78
+00:03:35,920 --> 00:03:38,310
+Once again, you should get accustomed to doing this
+
+79
+00:03:38,310 --> 00:03:39,990
+when you're developing larger applications,
+
+80
+00:03:39,990 --> 00:03:42,320
+as we're gonna be doing in this section.
+
+81
+00:03:42,320 --> 00:03:44,860
+Make sure to press play and test it out.
+
+82
+00:03:44,860 --> 00:03:48,620
+All we have to do is go over back to Chrome,
+
+83
+00:03:48,620 --> 00:03:49,720
+run the application.
+
+84
+00:03:49,720 --> 00:03:52,160
+As you can see nothing changes with hello world,
+
+85
+00:03:52,160 --> 00:03:53,750
+but now we can access
+
+86
+00:03:53,750 --> 00:03:55,150
+post 0.
+
+87
+00:03:56,480 --> 00:03:58,650
+And there you have some extra content.
+
+88
+00:03:58,650 --> 00:03:59,920
+Post Hello, world
+
+89
+00:03:59,920 --> 00:04:03,882
+and the content is This is my first blog post.
+
+90
+00:04:03,882 --> 00:04:05,840
+What we've learned now
+
+91
+00:04:05,840 --> 00:04:09,300
+is how to use this in memory database,
+
+92
+00:04:09,300 --> 00:04:10,150
+this dictionary here
+
+93
+00:04:10,150 --> 00:04:12,470
+that's acting as an in memory database,
+
+94
+00:04:12,470 --> 00:04:15,250
+and return some content through a browser
+
+95
+00:04:15,250 --> 00:04:16,940
+to a user.
+
+96
+00:04:16,940 --> 00:04:19,350
+You can see how if we put this out there in a server
+
+97
+00:04:19,350 --> 00:04:22,930
+that a lot of people could access, they could all now access
+
+98
+00:04:22,930 --> 00:04:24,830
+this address
+
+99
+00:04:24,830 --> 00:04:27,490
+by using their computers, all over the internet.
+
+100
+00:04:27,490 --> 00:04:29,780
+Of course returning this simple string
+
+101
+00:04:29,780 --> 00:04:33,010
+and also just having a single post inside our code
+
+102
+00:04:33,010 --> 00:04:34,820
+is not terribly useful.
+
+103
+00:04:34,820 --> 00:04:37,146
+If we added a database though
+
+104
+00:04:37,146 --> 00:04:38,920
+and we had the ability to create new posts,
+
+105
+00:04:38,920 --> 00:04:41,790
+suddenly this becomes a lot more useful.
+
+106
+00:04:43,350 --> 00:04:44,230
+That's it for this video.
+
+107
+00:04:44,230 --> 00:04:45,434
+I just wanted to show you how
+
+108
+00:04:45,434 --> 00:04:47,860
+to return existing information.
+
+109
+00:04:47,860 --> 00:04:49,960
+We're going to look at how we can style this
+
+110
+00:04:49,960 --> 00:04:51,000
+a little bit better
+
+111
+00:04:51,000 --> 00:04:53,980
+by using HTML, in the next video.
+
+112
+00:04:53,980 --> 00:04:54,813
+See you there.
+

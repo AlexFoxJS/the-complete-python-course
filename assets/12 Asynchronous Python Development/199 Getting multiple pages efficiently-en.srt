@@ -1,0 +1,888 @@
+1
+00:00:00,150 --> 00:00:01,600
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,600 --> 00:00:03,710
+In this video we're going to be making it
+
+3
+00:00:03,710 --> 00:00:06,610
+a bit more efficient to get multiple pages.
+
+4
+00:00:07,880 --> 00:00:10,080
+Here in this function you can see
+
+5
+00:00:10,080 --> 00:00:12,420
+that we've had to create a client session.
+
+6
+00:00:13,610 --> 00:00:15,120
+And each session as I said earlier
+
+7
+00:00:15,120 --> 00:00:17,300
+contains a pool of connections
+
+8
+00:00:17,300 --> 00:00:21,535
+so that not all connections have to be created each time.
+
+9
+00:00:21,535 --> 00:00:23,130
+It also contains a cookie storage,
+
+10
+00:00:23,130 --> 00:00:25,610
+so that any cookies that websites send us
+
+11
+00:00:25,610 --> 00:00:29,380
+can be shared across requests made with the same session.
+
+12
+00:00:29,380 --> 00:00:30,840
+If you're not sure what cookies are,
+
+13
+00:00:30,840 --> 00:00:33,030
+I've attached a resource link to this lecture
+
+14
+00:00:33,030 --> 00:00:35,680
+just with a brief explanation on what they are.
+
+15
+00:00:35,680 --> 00:00:40,170
+So we then use the session which uses a connection
+
+16
+00:00:40,170 --> 00:00:42,690
+from that pool that was just created
+
+17
+00:00:42,690 --> 00:00:44,260
+in order to get the URL
+
+18
+00:00:44,260 --> 00:00:46,770
+and to get the content, and so forth.
+
+19
+00:00:46,770 --> 00:00:48,490
+It sends a request to the server
+
+20
+00:00:48,490 --> 00:00:51,090
+and then awaits the data to come back.
+
+21
+00:00:51,090 --> 00:00:52,670
+The function can suspend at that point
+
+22
+00:00:52,670 --> 00:00:54,090
+until the data comes back.
+
+23
+00:00:55,270 --> 00:00:58,330
+But of course, we said that we've created
+
+24
+00:00:58,330 --> 00:01:00,410
+a connection pool here in the client session
+
+25
+00:01:00,410 --> 00:01:03,970
+so that we don't have to recreate the connection every time.
+
+26
+00:01:03,970 --> 00:01:06,000
+But we've not really done that,
+
+27
+00:01:06,000 --> 00:01:07,460
+because each time we do this
+
+28
+00:01:07,460 --> 00:01:09,040
+we create a new connection pool,
+
+29
+00:01:09,040 --> 00:01:10,480
+so instead of a single connection
+
+30
+00:01:10,480 --> 00:01:12,980
+we're creating a whole bunch of connections
+
+31
+00:01:12,980 --> 00:01:14,990
+each time we want to fetch a page.
+
+32
+00:01:14,990 --> 00:01:17,340
+And then we're only using one of them.
+
+33
+00:01:17,340 --> 00:01:18,630
+So this is not great.
+
+34
+00:01:18,630 --> 00:01:21,300
+Instead what we should do is we should create the session
+
+35
+00:01:21,300 --> 00:01:25,360
+and use it for all the URLs we want to request
+
+36
+00:01:25,360 --> 00:01:28,360
+instead of creating a session for each time
+
+37
+00:01:28,360 --> 00:01:29,700
+we want to request a URL.
+
+38
+00:01:30,750 --> 00:01:31,890
+So the way we're going to do this
+
+39
+00:01:31,890 --> 00:01:33,570
+is we're going to split this out
+
+40
+00:01:33,570 --> 00:01:36,680
+into another thing that is going to allow us
+
+41
+00:01:36,680 --> 00:01:38,100
+to create multiple tasks.
+
+42
+00:01:39,140 --> 00:01:40,870
+So async def,
+
+43
+00:01:40,870 --> 00:01:42,920
+get multiple pages,
+
+44
+00:01:42,920 --> 00:01:44,869
+and to this thing we're going to pass the loop
+
+45
+00:01:44,869 --> 00:01:49,869
+and also the URLs we want to get.
+
+46
+00:01:50,350 --> 00:01:53,710
+Notice that this is an unpacked argument there,
+
+47
+00:01:53,710 --> 00:01:57,920
+so we can pass in many different arguments,
+
+48
+00:01:57,920 --> 00:02:00,920
+one for each URL that we want to get.
+
+49
+00:02:00,920 --> 00:02:04,060
+Then we're going to say tasks is an empty list.
+
+50
+00:02:04,060 --> 00:02:06,636
+Async with aiohttp.clientSession.
+
+51
+00:02:06,636 --> 00:02:09,572
+And to the client session we can actually pass in
+
+52
+00:02:09,572 --> 00:02:12,600
+the loop that we want to use,
+
+53
+00:02:12,600 --> 00:02:14,750
+which is the one we create down here.
+
+54
+00:02:14,750 --> 00:02:17,330
+And their parameter is going to be this loop.
+
+55
+00:02:17,330 --> 00:02:22,070
+The reason to do that is just so
+
+56
+00:02:22,070 --> 00:02:24,141
+it doesn't create a new loop.
+
+57
+00:02:24,141 --> 00:02:27,900
+Now when you do asyncio.get_event_loop,
+
+58
+00:02:27,900 --> 00:02:30,000
+no matter where you do that in your programme,
+
+59
+00:02:30,000 --> 00:02:32,700
+it's always going to give you the same loop.
+
+60
+00:02:32,700 --> 00:02:35,690
+But in case you forget to do that,
+
+61
+00:02:35,690 --> 00:02:38,030
+passing the loop in here can be quite handy.
+
+62
+00:02:38,030 --> 00:02:39,870
+Just so not a new one is created
+
+63
+00:02:39,870 --> 00:02:43,330
+that maybe runs independently or doesn't run until complete.
+
+64
+00:02:44,400 --> 00:02:46,480
+And so this is just a safe guard to make sure
+
+65
+00:02:46,480 --> 00:02:48,980
+that you use the loop that you've defined earlier.
+
+66
+00:02:50,147 --> 00:02:53,990
+So with aiohttp client session as session,
+
+67
+00:02:53,990 --> 00:02:56,448
+we are then going to populate our tasks list
+
+68
+00:02:56,448 --> 00:02:57,820
+and wait for them.
+
+69
+00:03:00,248 --> 00:03:03,430
+So for each URL that we've got here,
+
+70
+00:03:03,430 --> 00:03:06,220
+we're going to say tasks.append,
+
+71
+00:03:07,680 --> 00:03:11,280
+fetch page of this session,
+
+72
+00:03:11,280 --> 00:03:14,200
+sorry, the URL, like so.
+
+73
+00:03:15,250 --> 00:03:18,190
+Now when we do this, what we do is
+
+74
+00:03:18,190 --> 00:03:21,720
+we call this fetch page function.
+
+75
+00:03:21,720 --> 00:03:23,630
+That creates a coroutine
+
+76
+00:03:23,630 --> 00:03:26,220
+and that gets then put into our tasks list.
+
+77
+00:03:27,080 --> 00:03:31,300
+At the end of the loop but inside this statement,
+
+78
+00:03:31,300 --> 00:03:32,240
+this context manager,
+
+79
+00:03:32,240 --> 00:03:36,820
+we're then going to wait for them, okay?
+
+80
+00:03:36,820 --> 00:03:41,630
+So grouped tasks is going to be asyncio.gather.
+
+81
+00:03:43,360 --> 00:03:46,140
+And this is going to be our tasks.
+
+82
+00:03:46,140 --> 00:03:48,840
+Again, all this is doing is gathering
+
+83
+00:03:48,840 --> 00:03:51,640
+all the tasks that we've put in our list
+
+84
+00:03:51,640 --> 00:03:53,930
+and it's treating them as a single task
+
+85
+00:03:53,930 --> 00:03:57,100
+so that we can then execute it in a loop
+
+86
+00:03:57,100 --> 00:03:59,650
+like loop run until complete.
+
+87
+00:03:59,650 --> 00:04:03,100
+Except instead of running them using this loop,
+
+88
+00:04:03,100 --> 00:04:05,270
+we're going to await them.
+
+89
+00:04:06,660 --> 00:04:10,568
+So return await grouped tasks.
+
+90
+00:04:10,568 --> 00:04:14,090
+This, all it's going to do as you know,
+
+91
+00:04:14,090 --> 00:04:18,390
+is yield from, so it's going to allow us
+
+92
+00:04:18,390 --> 00:04:20,802
+to suspend execution here,
+
+93
+00:04:20,802 --> 00:04:24,410
+and wait until something happens here
+
+94
+00:04:24,410 --> 00:04:26,820
+and then resume the function and possibly repeat
+
+95
+00:04:26,820 --> 00:04:29,512
+all of that until this returns.
+
+96
+00:04:29,512 --> 00:04:33,730
+And this will return when all of the tasks are finished.
+
+97
+00:04:35,840 --> 00:04:39,250
+So when we do this, now we can run until complete
+
+98
+00:04:39,250 --> 00:04:40,930
+these get multiple pages.
+
+99
+00:04:41,980 --> 00:04:44,710
+Let's finish of this code before we review it
+
+100
+00:04:44,710 --> 00:04:46,560
+and make sure that it all makes sense.
+
+101
+00:04:46,560 --> 00:04:49,690
+This fetch page is still creating its own session here,
+
+102
+00:04:49,690 --> 00:04:51,757
+we don't want to do that.
+
+103
+00:04:51,757 --> 00:04:53,540
+So what we're going to do is delete that entirely
+
+104
+00:04:53,540 --> 00:04:56,560
+and then make sure that we pass in the session,
+
+105
+00:04:56,560 --> 00:04:57,710
+smession.
+
+106
+00:04:57,710 --> 00:04:59,100
+Make sure that we pass in the session,
+
+107
+00:04:59,100 --> 00:05:00,440
+correctly spelled there.
+
+108
+00:05:00,440 --> 00:05:02,260
+Then pass it in here as well.
+
+109
+00:05:04,780 --> 00:05:09,350
+Just so that that has access to a session we've created.
+
+110
+00:05:10,660 --> 00:05:13,820
+Now okay, now our tasks are no longer
+
+111
+00:05:13,820 --> 00:05:16,490
+going to be fetch page,
+
+112
+00:05:16,490 --> 00:05:18,930
+they're just going to be these strings.
+
+113
+00:05:18,930 --> 00:05:22,410
+And we shall not call them tasks,
+
+114
+00:05:22,410 --> 00:05:24,646
+we're going to call them URLs.
+
+115
+00:05:24,646 --> 00:05:28,150
+So now we have 50 times Google.com
+
+116
+00:05:28,150 --> 00:05:30,280
+inside our lists, and what we can do
+
+117
+00:05:30,280 --> 00:05:31,610
+is run until complete
+
+118
+00:05:32,920 --> 00:05:36,107
+our get multiple pages with the loop
+
+119
+00:05:36,107 --> 00:05:38,650
+and the URLs.
+
+120
+00:05:39,778 --> 00:05:43,390
+Notice how URLs is star URLs.
+
+121
+00:05:43,390 --> 00:05:46,580
+And so we must also pass in the arguments individually
+
+122
+00:05:46,580 --> 00:05:47,760
+by unpacking them.
+
+123
+00:05:47,760 --> 00:05:50,880
+If you prefer, you could just pass in a list,
+
+124
+00:05:50,880 --> 00:05:51,750
+that would be fine as well
+
+125
+00:05:51,750 --> 00:05:53,890
+and then all you'd have to do is delete them too.
+
+126
+00:05:53,890 --> 00:05:56,390
+It's up to you how you want to do that.
+
+127
+00:05:57,520 --> 00:06:00,600
+Alright, so what we've got now, let's review that,
+
+128
+00:06:00,600 --> 00:06:03,450
+is 50 strings of Google.com.
+
+129
+00:06:04,630 --> 00:06:09,080
+Then we pass them all to this get multiple pages function
+
+130
+00:06:09,080 --> 00:06:12,270
+and we also pass in the loop that is running through
+
+131
+00:06:12,270 --> 00:06:13,580
+as a task scheduler.
+
+132
+00:06:14,850 --> 00:06:16,050
+So they go in there.
+
+133
+00:06:17,110 --> 00:06:19,220
+The loop is using the client session
+
+134
+00:06:19,220 --> 00:06:21,340
+just so it doesn't create a new loop
+
+135
+00:06:21,340 --> 00:06:22,950
+in case we forget to pass it in
+
+136
+00:06:22,950 --> 00:06:24,730
+or we forget to create one.
+
+137
+00:06:24,730 --> 00:06:27,710
+It will say hey, you didn't pass me anything,
+
+138
+00:06:27,710 --> 00:06:29,080
+something's wrong.
+
+139
+00:06:29,080 --> 00:06:30,700
+So this is a safeguard,
+
+140
+00:06:30,700 --> 00:06:34,210
+and the URLs, we are then going to iterate over them
+
+141
+00:06:34,210 --> 00:06:37,710
+and append the coroutine that they create
+
+142
+00:06:37,710 --> 00:06:39,900
+into our tasks list.
+
+143
+00:06:39,900 --> 00:06:44,029
+Remember, we could suspend the function execution
+
+144
+00:06:44,029 --> 00:06:47,487
+before or during this creation of the session.
+
+145
+00:06:47,487 --> 00:06:50,778
+But inside it, once we go in it,
+
+146
+00:06:50,778 --> 00:06:52,380
+it doesn't suspend at any point.
+
+147
+00:06:52,380 --> 00:06:54,530
+All it does, it writes over all the URLs
+
+148
+00:06:54,530 --> 00:06:56,840
+and creates all the coroutines synchronously
+
+149
+00:06:56,840 --> 00:06:58,710
+one after another, there's no suspension
+
+150
+00:06:58,710 --> 00:07:00,722
+anywhere inside here.
+
+151
+00:07:00,722 --> 00:07:02,840
+So we create all the coroutines
+
+152
+00:07:02,840 --> 00:07:05,460
+and then we're going to gather them as one.
+
+153
+00:07:05,460 --> 00:07:09,210
+What this does is it essentially awaits
+
+154
+00:07:09,210 --> 00:07:12,964
+each task and only returns when they're all complete.
+
+155
+00:07:12,964 --> 00:07:17,964
+We then await that, so if we want to suspend
+
+156
+00:07:19,720 --> 00:07:22,090
+we can suspend in between each task
+
+157
+00:07:22,090 --> 00:07:23,630
+or we can suspend at the start
+
+158
+00:07:23,630 --> 00:07:24,750
+before we start any task,
+
+159
+00:07:24,750 --> 00:07:26,200
+or we can suspend at the end
+
+160
+00:07:26,200 --> 00:07:27,931
+once all the tasks are finished.
+
+161
+00:07:27,931 --> 00:07:31,070
+That means that these tasks that we group here
+
+162
+00:07:31,070 --> 00:07:34,859
+are all running individually in this event loop.
+
+163
+00:07:34,859 --> 00:07:39,190
+And so that is what this gather does.
+
+164
+00:07:39,190 --> 00:07:41,770
+Then we return the awaiting of that,
+
+165
+00:07:41,770 --> 00:07:43,650
+so this function only returns
+
+166
+00:07:43,650 --> 00:07:46,980
+when this has finished running,
+
+167
+00:07:46,980 --> 00:07:49,710
+but it can suspend on the way.
+
+168
+00:07:49,710 --> 00:07:51,340
+So when it has finished running,
+
+169
+00:07:51,340 --> 00:07:53,710
+that returns and that is the end
+
+170
+00:07:53,710 --> 00:07:56,920
+and that function has run until it has been completed,
+
+171
+00:07:58,275 --> 00:08:00,210
+so that's why we do run until complete.
+
+172
+00:08:00,210 --> 00:08:01,610
+Run until complete is going to run
+
+173
+00:08:01,610 --> 00:08:04,450
+until this return actually executes.
+
+174
+00:08:04,450 --> 00:08:05,740
+And that's only going to execute
+
+175
+00:08:05,740 --> 00:08:08,260
+when this has been fully awaited
+
+176
+00:08:08,260 --> 00:08:10,320
+and this has completed itself.
+
+177
+00:08:11,360 --> 00:08:13,290
+And once that happens we can print out
+
+178
+00:08:13,290 --> 00:08:15,900
+that all of them took the amount of time they took.
+
+179
+00:08:18,010 --> 00:08:19,920
+It seems slightly more complex,
+
+180
+00:08:19,920 --> 00:08:21,810
+but there is a key performance improvement,
+
+181
+00:08:21,810 --> 00:08:23,930
+which is that you're not creating a session
+
+182
+00:08:23,930 --> 00:08:28,930
+for each of the pages you want to fetch.
+
+183
+00:08:29,890 --> 00:08:32,180
+And of course as long as you do create
+
+184
+00:08:32,180 --> 00:08:33,658
+your event loop first,
+
+185
+00:08:33,658 --> 00:08:36,790
+this thing here is not necessary.
+
+186
+00:08:36,790 --> 00:08:41,020
+You could not pass it in if you want.
+
+187
+00:08:41,020 --> 00:08:43,320
+It's totally up to you, either of them will work,
+
+188
+00:08:43,320 --> 00:08:45,521
+so you can run this and as you'll see,
+
+189
+00:08:45,521 --> 00:08:50,220
+you still get the same thing, yeah?
+
+190
+00:08:51,530 --> 00:08:54,000
+Notice how they seem to take slightly longer now
+
+191
+00:08:54,000 --> 00:08:55,790
+and this could be due to any number of reasons,
+
+192
+00:08:55,790 --> 00:08:57,660
+somebody else using the internet in the house
+
+193
+00:08:57,660 --> 00:09:00,710
+or Google being more hammered down
+
+194
+00:09:00,710 --> 00:09:03,760
+by somebody making requests or anything else.
+
+195
+00:09:06,350 --> 00:09:08,110
+If you do want to pass the loop in there
+
+196
+00:09:08,110 --> 00:09:09,290
+this is fine as well
+
+197
+00:09:09,290 --> 00:09:11,610
+and this is what we did earlier.
+
+198
+00:09:11,610 --> 00:09:13,110
+And it'll work in the same way.
+
+199
+00:09:13,110 --> 00:09:15,130
+It seems like this is now faster,
+
+200
+00:09:15,130 --> 00:09:17,380
+possibly because it didn't have to go
+
+201
+00:09:17,380 --> 00:09:19,040
+and get the loop each time,
+
+202
+00:09:20,020 --> 00:09:23,100
+and so this is possibly a performance improvement as well.
+
+203
+00:09:24,660 --> 00:09:25,780
+Anyway, that's it for this video.
+
+204
+00:09:25,780 --> 00:09:28,350
+I just wanted to show you how to make this
+
+205
+00:09:28,350 --> 00:09:31,870
+a little more generic in order for you to then
+
+206
+00:09:31,870 --> 00:09:36,070
+be able to use this in our book scraping programme.
+
+207
+00:09:37,150 --> 00:09:39,870
+So if you want to go ahead and try that out,
+
+208
+00:09:39,870 --> 00:09:42,270
+try and turn our book scraper into something
+
+209
+00:09:42,270 --> 00:09:44,640
+that uses these two functions and an event loop
+
+210
+00:09:44,640 --> 00:09:47,960
+to get all the pages instead of getting them synchronously,
+
+211
+00:09:47,960 --> 00:09:50,176
+I'm pretty sure you can do that now.
+
+212
+00:09:50,176 --> 00:09:53,510
+All you have to do is import a couple of libraries
+
+213
+00:09:53,510 --> 00:09:55,360
+that we've already installed,
+
+214
+00:09:55,360 --> 00:09:57,550
+copy these functions, and then instead
+
+215
+00:09:57,550 --> 00:10:00,430
+of going through each URL one at a time,
+
+216
+00:10:00,430 --> 00:10:02,418
+get them all at the same time first
+
+217
+00:10:02,418 --> 00:10:07,321
+and then you'll be able to use their contents.
+
+218
+00:10:07,321 --> 00:10:10,300
+Again, it may be slightly complicated,
+
+219
+00:10:10,300 --> 00:10:13,010
+it may take some time and some investigation.
+
+220
+00:10:13,010 --> 00:10:17,610
+Once you're done or if you want to see how we do it,
+
+221
+00:10:17,610 --> 00:10:20,917
+come back and we will implement that together.
+
+222
+00:10:20,917 --> 00:10:23,270
+Okay, see you in the next video.
+

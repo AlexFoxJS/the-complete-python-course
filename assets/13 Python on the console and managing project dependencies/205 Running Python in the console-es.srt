@@ -1,0 +1,776 @@
+1
+00:00:00,140 --> 00:00:01,480
+Instructor: Hola y bienvenido de nuevo.
+
+2
+00:00:01,480 --> 00:00:02,650
+En este video, vamos
+
+3
+00:00:02,650 --> 00:00:05,440
+a ver cmo ejecutar Python desde nuestra consola.
+
+4
+00:00:06,390 --> 00:00:09,020
+A veces, no tendremos acceso a PyCharm o,
+
+5
+00:00:09,020 --> 00:00:12,900
+ya sabes, a un IDE cuando estamos ejecutando nuestros programas de
+
+6
+00:00:12,900 --> 00:00:15,620
+Python porque estaremos en, por ejemplo, un servidor,
+
+7
+00:00:15,620 --> 00:00:17,930
+queremos compartir un programa con alguien que
+
+8
+00:00:17,930 --> 00:00:20,270
+no lo haga tener ese IDE y
+
+9
+00:00:20,270 --> 00:00:22,740
+dems, por lo que puede ser til
+
+10
+00:00:22,740 --> 00:00:26,550
+poder ejecutar nuestros programas de Python fuera de cualquier entorno especfico.
+
+11
+00:00:27,460 --> 00:00:29,469
+Entonces la consola, es una
+
+12
+00:00:29,469 --> 00:00:32,340
+interfaz de texto para su computadora, probablemente
+
+13
+00:00:32,340 --> 00:00:34,670
+ya la haya encontrado antes.
+
+14
+00:00:34,670 --> 00:00:38,090
+Bsicamente puedes ejecutar cualquier cosa usando texto, puedes abrir
+
+15
+00:00:38,090 --> 00:00:42,040
+archivos, copiarlos, puedes ejecutar programas, bsicamente sabes todo lo que
+
+16
+00:00:42,040 --> 00:00:44,740
+no tiene una interfaz grfica y muchas
+
+17
+00:00:44,740 --> 00:00:47,070
+cosas en el software se hacen
+
+18
+00:00:47,070 --> 00:00:49,930
+a travs de la consola solo porque
+
+19
+00:00:49,930 --> 00:00:52,920
+sabes a veces simplemente no vale la pena
+
+20
+00:00:52,920 --> 00:00:55,290
+desarrollar una buena interfaz grfica.
+
+21
+00:00:55,290 --> 00:00:56,900
+Si est creando una
+
+22
+00:00:56,900 --> 00:01:00,750
+herramienta, por ejemplo, para ayudarlo a formatear su cdigo, a
+
+23
+00:01:00,750 --> 00:01:04,070
+veces no necesita una interfaz grfica para eso.
+
+24
+00:01:04,070 --> 00:01:06,220
+Si est accediendo a una base
+
+25
+00:01:06,220 --> 00:01:09,750
+de datos, puede que solo quiera ejecutar los comandos
+
+26
+00:01:09,750 --> 00:01:12,250
+SQL y ahora necesariamente tenga una interfaz
+
+27
+00:01:12,250 --> 00:01:13,840
+grfica que la acompae.
+
+28
+00:01:13,840 --> 00:01:15,830
+Si est escribiendo cdigo, a veces puede
+
+29
+00:01:15,830 --> 00:01:18,150
+que no quiera una interfaz grfica para escribir
+
+30
+00:01:18,150 --> 00:01:21,110
+su cdigo, tal vez un editor de texto sea suficiente.
+
+31
+00:01:21,110 --> 00:01:23,870
+Hay muchas situaciones en las que simplemente no
+
+32
+00:01:23,870 --> 00:01:26,330
+hay una razn para tener una buena
+
+33
+00:01:26,330 --> 00:01:29,130
+interfaz grfica para algo, as que cualquiera que
+
+34
+00:01:29,130 --> 00:01:32,040
+la haya desarrollado se convertir en un programa de texto.
+
+35
+00:01:32,040 --> 00:01:35,040
+Y esos programas de texto normalmente se ejecutan en una consola.
+
+36
+00:01:36,140 --> 00:01:39,040
+Por lo tanto, para abrir una consola en su
+
+37
+00:01:39,040 --> 00:01:42,490
+computadora, puede abrir cmd dot exe en Windows, si la busca
+
+38
+00:01:42,490 --> 00:01:47,360
+solo escriba cmd dot exe en la barra de bsqueda o sabe lo que sea,
+
+39
+00:01:47,360 --> 00:01:49,510
+depende de la versin de Windows que
+
+40
+00:01:49,510 --> 00:01:51,060
+est utilizando, Estoy seguro de
+
+41
+00:01:51,060 --> 00:01:53,280
+que saldr a la luz, es algo
+
+42
+00:01:53,280 --> 00:01:54,690
+muy popular en Windows.
+
+43
+00:01:54,690 --> 00:01:58,210
+Si est usando Mac, quiere abrir la aplicacin de
+
+44
+00:01:58,210 --> 00:02:00,800
+punto terminal, esta es la aplicacin que
+
+45
+00:02:00,800 --> 00:02:03,320
+viene con Mac para iniciar una consola.
+
+46
+00:02:03,320 --> 00:02:05,854
+Y en Linux, puede abrir la aplicacin Terminal.
+
+47
+00:02:05,854 --> 00:02:09,460
+Cualquiera de estos le dar esencialmente algo que
+
+48
+00:02:09,460 --> 00:02:12,670
+se parece ms o menos a esto.
+
+49
+00:02:12,670 --> 00:02:16,110
+Ser una caja negra con
+
+50
+00:02:16,110 --> 00:02:20,100
+texto y puede escribir ms texto.
+
+51
+00:02:20,100 --> 00:02:24,140
+Aqu hay un ejemplo de tipear Python en esa consola.
+
+52
+00:02:24,140 --> 00:02:26,680
+Cuando escribo Python, aparece algo ms
+
+53
+00:02:26,680 --> 00:02:30,378
+de texto y luego, tres clips de cocodrilo en
+
+54
+00:02:30,378 --> 00:02:33,540
+la parte inferior y all puedo escribir un
+
+55
+00:02:33,540 --> 00:02:37,010
+cdigo de Python y este programa ejecutar inmediatamente
+
+56
+00:02:37,010 --> 00:02:41,030
+el cdigo de Python que escribo y esencialmente me permitir
+
+57
+00:02:41,030 --> 00:02:45,210
+escribir el cdigo de Python en tiempo real y ver
+
+58
+00:02:45,210 --> 00:02:47,490
+el resultado del cdigo de inmediato.
+
+59
+00:02:48,470 --> 00:02:51,960
+Por cierto, Python 2. 7 es la versin que puede
+
+60
+00:02:51,960 --> 00:02:56,170
+ver aqu y es la predeterminada en Mac OS 10, que es lo que estoy
+
+61
+00:02:56,170 --> 00:02:58,040
+usando, si est usando un sistema operativo
+
+62
+00:02:58,040 --> 00:03:00,030
+diferente, puede ver un nmero diferente aqu.
+
+63
+00:03:00,030 --> 00:03:02,970
+Por ejemplo, en este ejemplo, aqu estoy
+
+64
+00:03:02,970 --> 00:03:05,800
+ejecutando el programa Python3. 7 que es una
+
+65
+00:03:05,800 --> 00:03:08,480
+sola palabra y es un programa nico y
+
+66
+00:03:08,480 --> 00:03:13,410
+luego puedes ver que ejecuta Python3. 7. 0b1 que es la
+
+67
+00:03:13,410 --> 00:03:16,100
+versin beta cuando estaba grabando este
+
+68
+00:03:16,100 --> 00:03:18,250
+curso, Python3. 7 no haba
+
+69
+00:03:18,250 --> 00:03:21,170
+salido an, pero ya estaba disponible solo para, ya
+
+70
+00:03:21,170 --> 00:03:22,270
+sabes, los primeros usuarios.
+
+71
+00:03:23,230 --> 00:03:27,634
+Entonces Python y Python3. 7, programas completamente diferentes a
+
+72
+00:03:27,634 --> 00:03:31,320
+pesar de que son esencialmente el mismo Python pero
+
+73
+00:03:31,320 --> 00:03:33,860
+una versin diferente, son cosas completamente
+
+74
+00:03:33,860 --> 00:03:35,820
+diferentes para nuestra computadora.
+
+75
+00:03:35,820 --> 00:03:37,750
+Puedes escribir cualquier cosa aqu y lo
+
+76
+00:03:37,750 --> 00:03:40,210
+que la computadora va a hacer es intentar ejecutar
+
+77
+00:03:40,210 --> 00:03:41,210
+lo que sea que
+
+78
+00:03:42,073 --> 00:03:45,610
+escribas y sucede que Python y Python3. 7 son dos cosas
+
+79
+00:03:45,610 --> 00:03:48,350
+que nuestra computadora puede escribir.
+
+80
+00:03:50,000 --> 00:03:52,310
+Por cierto, en Windows esto solo funcionar
+
+81
+00:03:52,310 --> 00:03:55,740
+si marcaste agregar Python a PATH durante la instalacin inicial, pero
+
+82
+00:03:55,740 --> 00:03:58,751
+si no lo hiciste, puedes volver a instalarlo y asegurarte
+
+83
+00:03:58,751 --> 00:04:01,230
+de revisarlo, y esa es la pequea caja
+
+84
+00:04:01,230 --> 00:04:02,950
+que hay all, puede parecer un
+
+85
+00:04:02,950 --> 00:04:06,480
+poco diferente en las versiones ms nuevas de Python, solo asegrate
+
+86
+00:04:06,480 --> 00:04:09,030
+de marcarla, esta casilla, si la ves cuando
+
+87
+00:04:09,030 --> 00:04:10,570
+ests en Windows, de lo
+
+88
+00:04:10,570 --> 00:04:12,720
+contrario no se agregar a la RUTA
+
+89
+00:04:12,720 --> 00:04:15,760
+y no funcionar en tu terminal o en tu consola.
+
+90
+00:04:16,760 --> 00:04:18,460
+Entonces, cul es la RUTA?
+
+91
+00:04:18,460 --> 00:04:20,940
+Estamos hablando de PATH como algo
+
+92
+00:04:20,940 --> 00:04:23,190
+y esta es una variable global
+
+93
+00:04:23,190 --> 00:04:26,580
+que su sistema operativo usa para especificar dnde encontrar
+
+94
+00:04:26,580 --> 00:04:28,500
+los programas que desea ejecutar.
+
+95
+00:04:28,500 --> 00:04:30,410
+Entonces cuando escribimos Python, eso
+
+96
+00:04:30,410 --> 00:04:33,220
+es un programa y si el programa
+
+97
+00:04:33,220 --> 00:04:37,630
+est dentro de una carpeta y esa carpeta est dentro de
+
+98
+00:04:37,630 --> 00:04:39,840
+PATH, entonces esto funcionar, su computadora
+
+99
+00:04:39,840 --> 00:04:42,400
+podr encontrar el programa Python y
+
+100
+00:04:42,400 --> 00:04:43,250
+podr lanzarlo.
+
+101
+00:04:44,190 --> 00:04:45,670
+Si no est en una
+
+102
+00:04:45,670 --> 00:04:48,150
+carpeta que est en la RUTA, no funcionar, simplemente
+
+103
+00:04:48,150 --> 00:04:50,570
+le dir que no pudimos encontrar este programa.
+
+104
+00:04:50,570 --> 00:04:52,310
+Aqu hay un ejemplo de m ejecutando un
+
+105
+00:04:52,310 --> 00:04:53,570
+programa que no se encontr.
+
+106
+00:04:53,570 --> 00:04:55,777
+Escrib ngrok, que es otro
+
+107
+00:04:55,777 --> 00:04:58,455
+programa, pero no lo tengo en
+
+108
+00:04:58,455 --> 00:05:02,470
+mi RUTA, as que solo dice comando no encontrado.
+
+109
+00:05:02,470 --> 00:05:03,982
+Mi computadora no sabe qu es eso.
+
+110
+00:05:03,982 --> 00:05:07,030
+Podra haber instalado este programa, puede hacer que sepa
+
+111
+00:05:07,030 --> 00:05:09,350
+que lo descarg, pero si no est
+
+112
+00:05:09,350 --> 00:05:13,890
+dentro de una carpeta que est en su RUTA, su computadora no podr
+
+113
+00:05:13,890 --> 00:05:16,220
+ejecutarlo a travs de la terminal.
+
+114
+00:05:16,220 --> 00:05:17,590
+Entonces eso es importante, est bien?
+
+115
+00:05:19,020 --> 00:05:20,910
+Para que pueda ver lo
+
+116
+00:05:20,910 --> 00:05:24,390
+que hay en su RUTA escribiendo esto en Mac
+
+117
+00:05:24,390 --> 00:05:27,390
+OS 10 o en Linux, simplemente escriba echo
+
+118
+00:05:27,390 --> 00:05:28,990
+dollar PATH y le
+
+119
+00:05:28,990 --> 00:05:31,782
+dir todas las carpetas que forman parte de
+
+120
+00:05:31,782 --> 00:05:34,670
+su PATH, cualquier programa que tenga dentro de
+
+121
+00:05:34,670 --> 00:05:38,870
+cualquiera de estas carpetas se ser ejecutable escribiendo el nombre del programa.
+
+122
+00:05:38,870 --> 00:05:40,290
+Como puede ver, tiene
+
+123
+00:05:40,290 --> 00:05:43,010
+algo as como la biblioteca slash, slash
+
+124
+00:05:43,010 --> 00:05:45,340
+frameworks slash, slash, slash, framework, slash,
+
+125
+00:05:46,223 --> 00:05:47,800
+slash 3. 7 slash bin.
+
+126
+00:05:47,800 --> 00:05:51,830
+Y luego tienes dos puntos y luego comienza la siguiente carpeta.
+
+127
+00:05:51,830 --> 00:05:53,190
+As que tienes
+
+128
+00:05:53,190 --> 00:05:54,960
+algunas carpetas, o tengo
+
+129
+00:05:54,960 --> 00:05:58,840
+algunas carpetas aqu y, como puedes ver, una de ellas
+
+130
+00:05:58,840 --> 00:06:03,840
+es la carpeta de binarios de Python3. 7 seguido por, ya sabes,
+
+131
+00:06:04,251 --> 00:06:07,630
+algn nodo versin 8. 5 seguido de algo de rub,
+
+132
+00:06:07,630 --> 00:06:09,100
+hay algunas cosas aqu, pocas
+
+133
+00:06:09,100 --> 00:06:12,310
+carpetas y cada vez que escribo Python, lo que mi computadora
+
+134
+00:06:12,310 --> 00:06:14,420
+est haciendo es ir a esta carpeta
+
+135
+00:06:14,420 --> 00:06:16,420
+bin y est comprobando si Python est all.
+
+136
+00:06:16,420 --> 00:06:19,720
+Si no es as, pasa a la siguiente carpeta y luego a
+
+137
+00:06:19,720 --> 00:06:20,940
+la siguiente, y si
+
+138
+00:06:20,940 --> 00:06:22,510
+no puede encontrarla en ninguna de
+
+139
+00:06:22,510 --> 00:06:25,210
+ellas, indicar que no se encontr el comando, de acuerdo?
+
+140
+00:06:25,210 --> 00:06:28,410
+As que echo, dollar, PATH en Mac OS 10 o en Linux
+
+141
+00:06:28,410 --> 00:06:30,441
+le dirn qu hay en su RUTA.
+
+142
+00:06:30,441 --> 00:06:34,350
+Y en Windows hay unos pocos pasos, como es habitual en Windows,
+
+143
+00:06:34,350 --> 00:06:37,350
+tienes algunas cosas que hacer, pero he adjuntado una
+
+144
+00:06:37,350 --> 00:06:38,890
+publicacin de blog a la
+
+145
+00:06:38,890 --> 00:06:40,760
+seccin de recursos de esta conferencia,
+
+146
+00:06:40,760 --> 00:06:43,116
+puedes verla si haces clic en el
+
+147
+00:06:43,116 --> 00:06:45,743
+plan de estudios y hacia abajo aqu en
+
+148
+00:06:45,743 --> 00:06:48,170
+la parte superior izquierda, y hay una
+
+149
+00:06:48,170 --> 00:06:51,440
+publicacin de blog adjunta all con algunas instrucciones para las
+
+150
+00:06:51,440 --> 00:06:54,882
+diversas versiones de Windows, Windows 10, 8, 7 y as sucesivamente.
+
+151
+00:06:54,882 --> 00:06:56,350
+Entonces puedes echarle un vistazo a eso.
+
+152
+00:06:57,300 --> 00:06:59,780
+Entonces, variables de entorno
+
+153
+00:06:59,780 --> 00:07:02,630
+Bueno, el PATH es un ejemplo de una variable
+
+154
+00:07:02,630 --> 00:07:04,530
+de entorno y estas son solo
+
+155
+00:07:04,530 --> 00:07:08,220
+variables globales disponibles para todos los programas que se ejecutan en
+
+156
+00:07:08,220 --> 00:07:11,340
+el entorno y normalmente el entorno es su computadora.
+
+157
+00:07:11,340 --> 00:07:14,100
+Por lo tanto, si tiene ms de
+
+158
+00:07:14,100 --> 00:07:17,160
+la RUTA como variable de entorno, sus
+
+159
+00:07:17,160 --> 00:07:19,260
+programas tendrn acceso a la
+
+160
+00:07:19,260 --> 00:07:22,610
+ruta y cualquier otra variable que decida tener,
+
+161
+00:07:22,610 --> 00:07:25,030
+puede tener varias si lo desea.
+
+162
+00:07:27,950 --> 00:07:30,780
+Y as es como puedes ver las variables de
+
+163
+00:07:30,780 --> 00:07:31,940
+entorno que ya tienes.
+
+164
+00:07:31,940 --> 00:07:36,430
+Entonces, si escribe exportar en Mac OS 10 o en Linux,
+
+165
+00:07:36,430 --> 00:07:38,210
+ver todas las variables
+
+166
+00:07:38,210 --> 00:07:40,600
+de entorno que tiene actualmente disponibles.
+
+167
+00:07:40,600 --> 00:07:42,810
+Puede crear ms y no vamos a
+
+168
+00:07:42,810 --> 00:07:44,780
+entrar realmente en cmo puede crear
+
+169
+00:07:44,780 --> 00:07:46,800
+ms en este curso, pero puede
+
+170
+00:07:46,800 --> 00:07:49,730
+crear ms y luego cualquier programa que lance dentro
+
+171
+00:07:49,730 --> 00:07:52,350
+de ese entorno tendr acceso a esas variables.
+
+172
+00:07:52,350 --> 00:07:54,180
+El recurso vinculado en esta
+
+173
+00:07:54,180 --> 00:07:56,440
+conferencia explica cmo puede agregar ms
+
+174
+00:07:56,440 --> 00:07:58,180
+variables de entorno en Windows.
+
+175
+00:07:58,180 --> 00:08:00,517
+Modificar tu PATH es algo que puedes hacer
+
+176
+00:08:00,517 --> 00:08:02,950
+y una vez ms el recurso vinculado en
+
+177
+00:08:02,950 --> 00:08:05,220
+la conferencia explica cmo hacerlo, pero puede
+
+178
+00:08:05,220 --> 00:08:08,520
+ser peligroso porque tu computadora est confiando en PATH para encontrar
+
+179
+00:08:08,520 --> 00:08:11,338
+muchos de los programas que usa todo el tiempo,
+
+180
+00:08:11,338 --> 00:08:13,540
+si cmbialo y tu computadora no puede
+
+181
+00:08:13,540 --> 00:08:15,990
+encontrar muchos de los programas que necesita, es
+
+182
+00:08:15,990 --> 00:08:17,710
+posible que tengas algunos problemas.
+
+183
+00:08:17,710 --> 00:08:20,550
+As que simplemente no cambie la RUTA a menos
+
+184
+00:08:20,550 --> 00:08:22,070
+que sepa exactamente lo que
+
+185
+00:08:22,070 --> 00:08:24,940
+est haciendo, simplemente vuelva a instalar Python si tiene
+
+186
+00:08:24,940 --> 00:08:26,905
+que hacerlo en Windows y asegrese
+
+187
+00:08:26,905 --> 00:08:29,070
+de marcar agregar a PATH para que funcione.
+
+188
+00:08:30,310 --> 00:08:31,260
+Sin embargo, eso es
+
+189
+00:08:31,260 --> 00:08:32,950
+todo por esta conferencia, solo quera darle
+
+190
+00:08:32,950 --> 00:08:35,638
+una visin general rpida de lo que es la RUTA y
+
+191
+00:08:35,638 --> 00:08:37,180
+cmo puede abrir Python desde su terminal.
+
+192
+00:08:37,180 --> 00:08:39,210
+En el siguiente video, vamos a ir un poco
+
+193
+00:08:39,210 --> 00:08:41,893
+ms a las manos y realmente escribir algn cdigo en la terminal.
+
+194
+00:08:41,893 --> 00:08:43,970
+Te ver en el prximo video.
+

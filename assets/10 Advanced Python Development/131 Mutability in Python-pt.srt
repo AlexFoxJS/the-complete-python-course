@@ -1,0 +1,748 @@
+1
+00:00:00,210 --> 00:00:01,490
+Jose: Ol e bem vindo de volta.
+
+2
+00:00:01,490 --> 00:00:04,210
+Neste vdeo, eu queria falar sobre um
+
+3
+00:00:04,210 --> 00:00:07,580
+conceito realmente importante em programao que  a mutabilidade.
+
+4
+00:00:08,730 --> 00:00:10,720
+Algumas coisas em Python so
+
+5
+00:00:10,720 --> 00:00:14,850
+mutveis e algumas coisas so imutveis, ento o que  mutvel?
+
+6
+00:00:15,980 --> 00:00:18,300
+Um arquivo mutvel de dados 
+
+7
+00:00:18,300 --> 00:00:21,310
+aquele que voc pode alterar depois de cri-lo.
+
+8
+00:00:21,310 --> 00:00:24,870
+Um dado imutvel  aquele que voc no pode mudar.
+
+9
+00:00:26,280 --> 00:00:27,610
+Aqui voc pode estar se perguntando,
+
+10
+00:00:27,610 --> 00:00:29,530
+todos os pedaos de dados no so mutveis?
+
+11
+00:00:29,530 --> 00:00:33,070
+Por exemplo, quando voc cria uma varivel, voc pode alter-la?
+
+12
+00:00:33,070 --> 00:00:35,520
+Sim, isso  verdade, mas a varivel
+
+13
+00:00:35,520 --> 00:00:37,820
+em si no  o dado.
+
+14
+00:00:39,670 --> 00:00:43,610
+Vamos voltar ao nosso dicionrio que h muito tempo
+
+15
+00:00:43,610 --> 00:00:45,480
+vimos alguns de nossos amigos.
+
+16
+00:00:48,670 --> 00:00:51,620
+Aqui os dados so o dicionrio.
+
+17
+00:00:53,200 --> 00:00:56,770
+Portanto, o Python cria esse dicionrio e, em seguida,
+
+18
+00:00:56,770 --> 00:00:59,998
+a varivel  essencialmente como uma nota de
+
+19
+00:00:59,998 --> 00:01:04,998
+Post-it anexada aos dados que informam que esse dado agora tem esse nome.
+
+20
+00:01:08,070 --> 00:01:13,070
+No entanto, quando voc faz algo como outra varivel igual a
+
+21
+00:01:13,610 --> 00:01:18,610
+amigos vistos pela ltima vez, esses dois so o mesmo dicionrio.
+
+22
+00:01:20,200 --> 00:01:23,870
+Mais uma vez, o que fizemos foi anexarmos outro
+
+23
+00:01:23,870 --> 00:01:26,590
+nome ao valor aqui, este dicionrio aqui.
+
+24
+00:01:28,170 --> 00:01:31,420
+Este  um conceito realmente importante na programao.
+
+25
+00:01:31,420 --> 00:01:35,040
+Vamos esquecer esse nome por apenas um momento.
+
+26
+00:01:35,040 --> 00:01:37,980
+E eu pergunto: "Como voc sabe que  mutvel? "Bem, sempre que criamos um
+
+27
+00:01:39,040 --> 00:01:42,010
+novo dicionrio, ele  armazenado fisicamente na RAM do
+
+28
+00:01:42,010 --> 00:01:45,440
+seu computador, a memria de acesso aleatrio, que  um tipo
+
+29
+00:01:45,440 --> 00:01:47,880
+de memria que s fica enquanto o computador
+
+30
+00:01:47,880 --> 00:01:50,460
+est ligado e o aplicativo est em execuo.
+
+31
+00:01:50,460 --> 00:01:53,450
+Assim que seu aplicativo terminar, seu programa ser concludo.
+
+32
+00:01:53,450 --> 00:01:58,310
+E se executarmos isso e chegar ao fim, a memria RAM se
+
+33
+00:01:58,310 --> 00:02:01,880
+perder, ou melhor, a memria que foi atribuda a
+
+34
+00:02:01,880 --> 00:02:04,840
+esse programa em Python se perder e
+
+35
+00:02:04,840 --> 00:02:06,870
+poder ser substituda por outros programas.
+
+36
+00:02:08,810 --> 00:02:13,290
+O Python pode nos fornecer o ID do objeto.
+
+37
+00:02:13,290 --> 00:02:17,450
+A funo ID aqui  usada para nos dar o ID de qualquer objeto
+
+38
+00:02:17,450 --> 00:02:20,270
+e neste caso estamos analisando uma varivel do ltimo visto
+
+39
+00:02:20,270 --> 00:02:22,120
+aqui que aponta para este dicionrio.
+
+40
+00:02:23,260 --> 00:02:25,330
+Assim, ele pode nos dar a ID
+
+41
+00:02:25,330 --> 00:02:28,890
+disso e na maioria das implementaes em Python, que  um conceito
+
+42
+00:02:28,890 --> 00:02:31,330
+interessante por si s, mas na sua implementao
+
+43
+00:02:31,330 --> 00:02:33,700
+em Python, a que voc estar executando com
+
+44
+00:02:33,700 --> 00:02:37,080
+maior probabilidade e certamente aqui em repl. isto, o ID
+
+45
+00:02:37,080 --> 00:02:40,590
+ o endereo do objeto na memria.
+
+46
+00:02:40,590 --> 00:02:43,600
+E essa  precisamente a primeira clula de um grupo
+
+47
+00:02:43,600 --> 00:02:46,300
+de clulas na sua RAM que armazena seu objeto.
+
+48
+00:02:46,300 --> 00:02:50,560
+Esta funo de ID fornece a primeira clula do grupo.
+
+49
+00:02:50,560 --> 00:02:51,970
+Isso porque o objeto pode
+
+50
+00:02:51,970 --> 00:02:53,770
+ocupar vrias clulas e normalmente elas ocupam.
+
+51
+00:02:55,490 --> 00:02:59,580
+Ok, ento vamos rodar este programa.
+
+52
+00:03:00,810 --> 00:03:05,800
+E agora voc recebe um nmero aparentemente arbitrrio.
+
+53
+00:03:05,800 --> 00:03:08,210
+Mas quando executarmos o programa novamente, percebemos que
+
+54
+00:03:08,210 --> 00:03:09,890
+temos um nmero ligeiramente diferente.
+
+55
+00:03:09,890 --> 00:03:11,130
+No foi to fcil de ver,
+
+56
+00:03:11,130 --> 00:03:12,780
+mas acredite em mim,  um nmero diferente.
+
+57
+00:03:14,120 --> 00:03:19,120
+Agora, quando dizemos que os amigos foram vistos pela ltima vez, agora  este dicionrio,
+
+58
+00:03:21,950 --> 00:03:25,480
+que parece o mesmo, mas  um dicionrio totalmente novo.
+
+59
+00:03:26,570 --> 00:03:29,080
+E voc pode dizer que, mais uma vez
+
+60
+00:03:29,080 --> 00:03:31,830
+chamando os amigos ltima funo visto, o ID.
+
+61
+00:03:31,830 --> 00:03:34,940
+Observe como esses dois nmeros so ligeiramente diferentes.
+
+62
+00:03:36,010 --> 00:03:39,320
+Isso porque esses objetos no so o mesmo objeto.
+
+63
+00:03:39,320 --> 00:03:42,440
+So dois objetos que possuem o mesmo contedo.
+
+64
+00:03:43,410 --> 00:03:45,610
+Pense, por exemplo, em dois carros saindo
+
+65
+00:03:45,610 --> 00:03:48,640
+de uma linha de produo, ambos tm quatro rodas, um
+
+66
+00:03:48,640 --> 00:03:51,120
+volante, ambos podem ser vermelhos, ambos so da
+
+67
+00:03:51,120 --> 00:03:54,540
+mesma marca e modelo, mas no so o mesmo carro.
+
+68
+00:03:54,540 --> 00:03:56,990
+Mesma coisa aqui, temos uma varivel
+
+69
+00:03:56,990 --> 00:04:00,010
+que tem um nome e que 
+
+70
+00:04:00,010 --> 00:04:03,940
+atribudo a este dicionrio aqui, esse objeto em particular.
+
+71
+00:04:05,010 --> 00:04:08,470
+E ento ns temos a idia disso, ento ns a designamos
+
+72
+00:04:08,470 --> 00:04:12,000
+para outro dicionrio que parece o mesmo, e obtemos o ID dele.
+
+73
+00:04:12,000 --> 00:04:15,940
+E esses dois dicionrios so criados um aps o outro.
+
+74
+00:04:17,260 --> 00:04:20,990
+A razo pela qual este dicionrio no pode ter o mesmo ID
+
+75
+00:04:20,990 --> 00:04:23,930
+que este  que, quando a hora  criada
+
+76
+00:04:23,930 --> 00:04:26,880
+e a hora em que  criada, esta ainda existe.
+
+77
+00:04:26,880 --> 00:04:29,700
+Ento eles no podem aparecer no mesmo lugar.
+
+78
+00:04:29,700 --> 00:04:31,550
+O outro est ocupando o espao.
+
+79
+00:04:32,840 --> 00:04:35,310
+Ok, ento mesmo que os dicionrios tenham os
+
+80
+00:04:35,310 --> 00:04:37,950
+mesmos valores, os valores de ID so diferentes.
+
+81
+00:04:37,950 --> 00:04:41,030
+Novos dicionrios foram criados a cada vez e, portanto,
+
+82
+00:04:41,030 --> 00:04:42,740
+seus endereos de memria, o
+
+83
+00:04:42,740 --> 00:04:45,390
+que a funo ID retorna, so diferentes.
+
+84
+00:04:47,190 --> 00:04:49,590
+No entanto, e se fizermos isso?
+
+85
+00:04:49,590 --> 00:04:52,350
+Ns criamos um novo dicionrio aqui que tem uma ID
+
+86
+00:04:52,350 --> 00:04:57,350
+inteiramente nova e ento dizemos que os amigos foram vistos pela ltima vez, Rolf agora  zero.
+
+87
+00:05:00,250 --> 00:05:04,030
+O que achamos que isso vai imprimir?
+
+88
+00:05:04,030 --> 00:05:06,670
+Vai imprimir um ID totalmente novo ou
+
+89
+00:05:06,670 --> 00:05:09,300
+imprimir o mesmo ID de antes?
+
+90
+00:05:14,160 --> 00:05:17,500
+Bem, realmente no importa o que voc adivinhou, mas
+
+91
+00:05:17,500 --> 00:05:21,360
+o que importa  que o ID ser o mesmo.
+
+92
+00:05:21,360 --> 00:05:24,500
+Como voc pode ver, esses dois ltimos nmeros so idnticos.
+
+93
+00:05:25,610 --> 00:05:27,480
+Isso porque, quando
+
+94
+00:05:27,480 --> 00:05:32,260
+executamos essa linha de cdigo, modificamos esse objeto.
+
+95
+00:05:32,260 --> 00:05:36,670
+Ns no criamos um novo objeto, ns o transformamos.
+
+96
+00:05:36,670 --> 00:05:39,890
+Esta  uma estrutura de dados mutvel, o dicionrio.
+
+97
+00:05:41,820 --> 00:05:46,120
+Ok, este  o caso de muitas coisas no Python.
+
+98
+00:05:46,120 --> 00:05:48,750
+Quando voc cria suas prprias classes e altera
+
+99
+00:05:48,750 --> 00:05:51,720
+uma propriedade de seus objetos, no est criando novos objetos.
+
+100
+00:05:51,720 --> 00:05:54,600
+Voc est apenas mudando algo que j est l.
+
+101
+00:05:54,600 --> 00:05:57,810
+No entanto, existem algumas coisas imutveis em Python.
+
+102
+00:05:59,280 --> 00:06:01,200
+Inteiros, por exemplo, so imutveis.
+
+103
+00:06:03,050 --> 00:06:07,090
+Digamos que voc tenha meu int e isso  cinco.
+
+104
+00:06:07,090 --> 00:06:12,090
+E ento voc diz print ID do meu int.
+
+105
+00:06:16,520 --> 00:06:20,740
+Quando executamos isso, obteremos um ID para o nosso objeto inteiro.
+
+106
+00:06:22,240 --> 00:06:25,410
+Mas como podemos modificar os cinco?
+
+107
+00:06:25,410 --> 00:06:29,230
+Voc no pode mudar cinco, cinco so sempre cinco.
+
+108
+00:06:29,230 --> 00:06:30,720
+Se voc fizer seis, isso
+
+109
+00:06:30,720 --> 00:06:33,210
+ uma coisa totalmente nova, uma coisa totalmente diferente.
+
+110
+00:06:33,210 --> 00:06:38,210
+Ento, de fato, se voc fizer o meu int  igual ao meu int mais um
+
+111
+00:06:41,240 --> 00:06:44,060
+e, em seguida, voc imprimir o ID do meu
+
+112
+00:06:44,060 --> 00:06:46,420
+int, isso vai ser um valor totalmente diferente.
+
+113
+00:06:46,420 --> 00:06:48,460
+E como voc pode ver aqui,  bem
+
+114
+00:06:48,460 --> 00:06:50,060
+parecido, mas no  exatamente o mesmo.
+
+115
+00:06:52,380 --> 00:06:56,100
+Ento, os inteiros so um exemplo de algo que  imutvel.
+
+116
+00:06:56,100 --> 00:06:59,870
+Voc no pode mud-lo porque cinco  sempre cinco.
+
+117
+00:07:00,960 --> 00:07:02,260
+Outras coisas que
+
+118
+00:07:02,260 --> 00:07:05,080
+so imutveis so floats, strings e tuplas.
+
+119
+00:07:06,150 --> 00:07:09,900
+Voc no pode mudar tuplas, por exemplo, ok?
+
+120
+00:07:11,660 --> 00:07:14,060
+Listas, no entanto, so mutveis e eu
+
+121
+00:07:14,060 --> 00:07:15,710
+vou mostrar um exemplo.
+
+122
+00:07:16,980 --> 00:07:21,750
+Vamos ter uma lista de amigos, Rolf e Jose.
+
+123
+00:07:24,510 --> 00:07:28,640
+Ento podemos imprimir o ID dos amigos.
+
+124
+00:07:29,630 --> 00:07:31,640
+Podemos ento fazer algo como acrescentar.
+
+125
+00:07:33,740 --> 00:07:36,040
+E ento podemos imprimir o ID dos amigos novamente.
+
+126
+00:07:37,000 --> 00:07:40,470
+E agora observe como esses dois tero o mesmo ID.
+
+127
+00:07:42,030 --> 00:07:45,950
+Ns temos cinco valores aqui, ento agora teremos sete e esses
+
+128
+00:07:45,950 --> 00:07:48,630
+dois aqui tm exatamente a mesma ID.
+
+129
+00:07:49,600 --> 00:07:52,240
+Alteramos ou alteramos a lista,
+
+130
+00:07:52,240 --> 00:07:54,940
+no criamos uma nova lista.
+
+131
+00:07:54,940 --> 00:07:56,280
+Quando voc usa compreenso de
+
+132
+00:07:56,280 --> 00:07:58,380
+lista, por exemplo, uma nova lista  criada.
+
+133
+00:07:59,640 --> 00:08:04,630
+Ento, esses so os tipos imutveis em Python.
+
+134
+00:08:08,700 --> 00:08:12,950
+Inteiros, flutuadores, cordas, tuplas.
+
+135
+00:08:14,270 --> 00:08:15,940
+E no h muitos mais,
+
+136
+00:08:15,940 --> 00:08:18,720
+na verdade eu no conheo nenhum outro tipo imutvel.
+
+137
+00:08:19,660 --> 00:08:24,340
+Ento, o que est realmente acontecendo quando ns transformamos um objeto?
+
+138
+00:08:25,470 --> 00:08:28,260
+Talvez voc possa ver um padro aqui, que
+
+139
+00:08:28,260 --> 00:08:30,420
+ que temos um tipo mutvel
+
+140
+00:08:32,510 --> 00:08:36,180
+e, em seguida, aqui, bem, mas este  o nosso tipo
+
+141
+00:08:36,180 --> 00:08:37,850
+mutvel, neste caso, o dicionrio.
+
+142
+00:08:37,850 --> 00:08:39,710
+E ento aqui estamos mudando isso.
+
+143
+00:08:41,740 --> 00:08:44,820
+Ento, o que est acontecendo aqui nas entranhas do Python?
+
+144
+00:08:45,710 --> 00:08:49,250
+Bem, isso est acontecendo, os amigos viram o item definido pela ltima vez.
+
+145
+00:08:54,497 --> 00:08:57,330
+Uma funo est acontecendo, uma chamada de funo est ocorrendo.
+
+146
+00:08:59,050 --> 00:09:02,290
+Essa chamada de funo aqui que
+
+147
+00:09:02,290 --> 00:09:07,290
+assume self como um argumento est modificando o self object.
+
+148
+00:09:07,540 --> 00:09:10,240
+No est criando um novo
+
+149
+00:09:10,240 --> 00:09:13,810
+dicionrio que voc faria com, como voc
+
+150
+00:09:13,810 --> 00:09:18,590
+sabe, criando um novo dicionrio, o Rolf agora  zero.
+
+151
+00:09:18,590 --> 00:09:20,880
+Isso criaria um novo dicionrio.
+
+152
+00:09:20,880 --> 00:09:23,540
+Mas esta funo de item definido no est
+
+153
+00:09:23,540 --> 00:09:25,840
+criando um novo dicionrio, est se modificando.
+
+154
+00:09:25,840 --> 00:09:30,840
+ por isso que ele muta os dados, no os recria.
+
+155
+00:09:33,600 --> 00:09:35,520
+Ento, o que acontece quando fazemos isso?
+
+156
+00:09:39,430 --> 00:09:44,380
+Bem, algo acontece quando adicionamos meu int mais um juntos.
+
+157
+00:09:44,380 --> 00:09:47,980
+Isso acontece, meu int adiciona um.
+
+158
+00:09:52,440 --> 00:09:55,270
+Mas a diferena  que a
+
+159
+00:09:56,150 --> 00:09:57,720
+funo add recebe
+
+160
+00:10:02,240 --> 00:10:07,240
+o valor de self e retorna um novo objeto inteiro,
+
+161
+00:10:08,530 --> 00:10:09,950
+potencialmente algo assim.
+
+162
+00:10:09,950 --> 00:10:12,690
+No sei exatamente como as entranhas funcionam, mas tudo que
+
+163
+00:10:12,690 --> 00:10:15,300
+sei  que ele retorna um novo objeto inteiro.
+
+164
+00:10:15,300 --> 00:10:18,440
+Ele no modifica o self, que poderia
+
+165
+00:10:18,440 --> 00:10:23,040
+ser, por exemplo, o valor do auto-ponto mais igual a um.
+
+166
+00:10:24,750 --> 00:10:27,440
+Isso poderia modificar o eu, potencialmente.
+
+167
+00:10:30,220 --> 00:10:35,220
+Ok, note que o meu int mais igual 
+
+168
+00:10:35,700 --> 00:10:40,180
+outra chamada de funo, meu nome  um.
+
+169
+00:10:43,750 --> 00:10:46,920
+Se o objeto int fosse programado para criar
+
+170
+00:10:46,920 --> 00:10:50,740
+um novo objeto int quando esta chamada de funo
+
+171
+00:10:50,740 --> 00:10:54,980
+acontecesse, ento o objeto int no seria mutvel, seria imutvel.
+
+172
+00:10:54,980 --> 00:10:58,390
+Como essa funo iadd  programada para criar
+
+173
+00:10:58,390 --> 00:11:01,940
+um novo objeto int toda vez, o objeto
+
+174
+00:11:01,940 --> 00:11:05,140
+int  imutvel, no  possvel alter-lo.
+
+175
+00:11:05,140 --> 00:11:07,220
+Ento imutabilidade.
+
+176
+00:11:09,510 --> 00:11:13,700
+Todas as funes retornam novos objetos int.
+
+177
+00:11:14,750 --> 00:11:17,370
+Voc no pode alterar objetos int existentes.
+
+178
+00:11:18,900 --> 00:11:21,710
+ por isso que algumas dessas coisas so
+
+179
+00:11:21,710 --> 00:11:23,860
+imutveis e algumas delas so mutveis.
+
+180
+00:11:24,990 --> 00:11:28,440
+Porque voc cria novos objetos de seu tipo
+
+181
+00:11:28,440 --> 00:11:32,910
+quando voc chama algumas funes e em outros casos voc
+
+182
+00:11:32,910 --> 00:11:36,650
+nunca modifica objetos existentes, voc s cria novos objetos.
+
+183
+00:11:38,650 --> 00:11:40,430
+Este  o conceito
+
+184
+00:11:40,430 --> 00:11:43,580
+de imutabilidade e  meio difcil de entender.
+
+185
+00:11:43,580 --> 00:11:45,260
+Mas no prximo vdeo vamos
+
+186
+00:11:45,260 --> 00:11:48,100
+ver alguns exemplos de onde a mutabilidade  importante.
+
+187
+00:11:48,100 --> 00:11:50,050
+Ento eu vou te ver no prximo vdeo.
+

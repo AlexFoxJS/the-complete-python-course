@@ -1,0 +1,1228 @@
+1
+00:00:00,130 --> 00:00:01,530
+Jos: Hola y bienvenido de nuevo.
+
+2
+00:00:01,530 --> 00:00:04,730
+En esta seccin, estamos buscando errores en Python.
+
+3
+00:00:04,730 --> 00:00:07,670
+Python tiene una larga historia de errores y
+
+4
+00:00:07,670 --> 00:00:09,420
+los errores son realmente tiles.
+
+5
+00:00:09,420 --> 00:00:11,290
+Y especialmente la forma en que se
+
+6
+00:00:11,290 --> 00:00:13,270
+utilizan en Python, como veremos a lo largo
+
+7
+00:00:13,270 --> 00:00:14,950
+de esta seccin, hace que los errores
+
+8
+00:00:14,950 --> 00:00:17,520
+sean poderosos y hacen que tu cdigo sea muy legible.
+
+9
+00:00:17,520 --> 00:00:19,660
+Entonces, en esta seccin vamos a ver
+
+10
+00:00:19,660 --> 00:00:21,294
+los errores, cmo puede usarlos,
+
+11
+00:00:21,294 --> 00:00:23,320
+cmo puede crearlos, cmo puede manejarlos.
+
+12
+00:00:25,114 --> 00:00:27,610
+Al principio, a nadie le gustan los errores.
+
+13
+00:00:27,610 --> 00:00:31,090
+Vamos a decir que tenemos algo as como esta lnea aqu.
+
+14
+00:00:31,090 --> 00:00:33,330
+Imprimir mi_variable
+
+15
+00:00:33,330 --> 00:00:36,750
+Ahora observe cmo no he creado mi_variable antes,
+
+16
+00:00:36,750 --> 00:00:40,850
+y este editor ya me muestra un pequeo signo cruzado
+
+17
+00:00:40,850 --> 00:00:43,890
+que dice que hay una variable indefinida, mi_variable.
+
+18
+00:00:43,890 --> 00:00:47,130
+Bueno, digamos que no tenamos esa pista all.
+
+19
+00:00:47,130 --> 00:00:48,820
+Python an no se ejecut,
+
+20
+00:00:48,820 --> 00:00:53,500
+por lo que este cdigo es perfectamente razonable en trminos de su sintaxis.
+
+21
+00:00:53,500 --> 00:00:55,450
+Estamos imprimiendo una variable que Python
+
+22
+00:00:55,450 --> 00:00:58,070
+no sabe si existe o no, hasta el
+
+23
+00:00:58,070 --> 00:00:59,580
+punto en que se ejecuta.
+
+24
+00:01:00,560 --> 00:01:02,890
+Entonces, qu pasar cuando ejecutemos esto?
+
+25
+00:01:04,350 --> 00:01:06,830
+Qu tipo de error obtendremos?
+
+26
+00:01:06,830 --> 00:01:08,610
+Bueno, obtendremos un NameError.
+
+27
+00:01:09,805 --> 00:01:12,540
+Como pueden ver aqu, obtenemos un traceback, vamos
+
+28
+00:01:12,540 --> 00:01:14,620
+a ver exactamente cules son, y
+
+29
+00:01:14,620 --> 00:01:19,262
+luego nos dice en el archivo Python en la lnea uno, y al
+
+30
+00:01:19,262 --> 00:01:20,750
+final dice NameError y
+
+31
+00:01:20,750 --> 00:01:23,450
+luego nos da un pequeo descripcin del error.
+
+32
+00:01:23,450 --> 00:01:25,700
+El nombre, mi_variable, no est definido.
+
+33
+00:01:26,800 --> 00:01:28,500
+Es fantstico recibir este error
+
+34
+00:01:28,500 --> 00:01:30,340
+en lugar de otro error, porque
+
+35
+00:01:30,340 --> 00:01:33,090
+una vez que sepa lo que significa, puede encontrar
+
+36
+00:01:33,090 --> 00:01:35,000
+fcilmente el origen de ese problema.
+
+37
+00:01:35,000 --> 00:01:37,010
+Puedes decir: "Est bien, mi_variable no est definida",
+
+38
+00:01:37,010 --> 00:01:39,870
+as que debo haber usado mi_variable en alguna parte "y no estaba
+
+39
+00:01:40,950 --> 00:01:42,880
+definida cuando la us. "Y te dice
+
+40
+00:01:42,880 --> 00:01:45,550
+dnde estaba ese problema, que es la lnea uno".
+
+41
+00:01:45,550 --> 00:01:49,010
+Entonces, todo lo que tienes que hacer es ir a la lnea uno y encontrar my_variable y decir:
+
+42
+00:01:49,010 --> 00:01:52,290
+"Est bien, por qu no existe en este momento? "Y, por supuesto, la razn
+
+43
+00:01:52,290 --> 00:01:53,123
+es porque
+
+44
+00:01:53,123 --> 00:01:55,680
+no lo hemos definido anteriormente, y podemos hacer
+
+45
+00:01:55,680 --> 00:01:58,980
+eso, es igual a 123, y luego podemos volver a
+
+46
+00:01:58,980 --> 00:02:01,530
+ejecutar esto y ahora todo esto funciona.
+
+47
+00:02:03,540 --> 00:02:05,210
+Sera mucho peor si
+
+48
+00:02:05,210 --> 00:02:08,050
+en lugar de un NameError con una
+
+49
+00:02:08,050 --> 00:02:10,940
+buena descripcin, acaba de obtener un error arbitrario.
+
+50
+00:02:13,830 --> 00:02:15,830
+Estoy ejecutando esto para obtener el error
+
+51
+00:02:15,830 --> 00:02:17,920
+nuevamente, y observe cmo te dice dnde est,
+
+52
+00:02:17,920 --> 00:02:19,940
+el nombre del error y una descripcin.
+
+53
+00:02:19,940 --> 00:02:22,160
+Si no obtuvo nada de esto,
+
+54
+00:02:22,160 --> 00:02:25,610
+seran horas, le tomara horas o posiblemente das encontrar
+
+55
+00:02:25,610 --> 00:02:28,690
+un error simple como este en una aplicacin grande.
+
+56
+00:02:28,690 --> 00:02:30,670
+Las aplicaciones ms bien grandes, comerciales, tienen
+
+57
+00:02:30,670 --> 00:02:32,730
+decenas de miles o cientos de miles
+
+58
+00:02:32,730 --> 00:02:34,140
+de lneas de cdigo, de
+
+59
+00:02:34,140 --> 00:02:35,810
+modo que si recibes algo que
+
+60
+00:02:35,810 --> 00:02:37,610
+dice error, ha ocurrido un error,
+
+61
+00:02:38,720 --> 00:02:42,660
+y esa es toda la informacin que te dio, podras tener problemas.
+
+62
+00:02:42,660 --> 00:02:46,380
+Entonces, el nombre del error, NameError, es realmente til,
+
+63
+00:02:46,380 --> 00:02:49,420
+pero an ms til es el traceback.
+
+64
+00:02:49,420 --> 00:02:51,840
+Esto tambin se llama traza de pila en muchos idiomas.
+
+65
+00:02:51,840 --> 00:02:54,050
+Traceback es el seguimiento de la pila,
+
+66
+00:02:54,050 --> 00:02:57,440
+ms o menos lo mismo, y lo que le dice
+
+67
+00:02:57,440 --> 00:03:00,690
+es dnde ocurri el error, y porque estamos ejecutando este
+
+68
+00:03:00,690 --> 00:03:03,150
+archivo directamente, dice que sucedi en este archivo.
+
+69
+00:03:03,990 --> 00:03:06,040
+Ahora este editor es un editor
+
+70
+00:03:06,040 --> 00:03:08,960
+en lnea, por lo que en realidad no tenemos
+
+71
+00:03:08,960 --> 00:03:11,330
+un archivo, pero parece que el archivo
+
+72
+00:03:11,330 --> 00:03:13,290
+se llama Python o algo as.
+
+73
+00:03:13,290 --> 00:03:14,710
+Te dice dnde sucedi y dems.
+
+74
+00:03:14,710 --> 00:03:17,350
+Entonces este rastreo es un rastreo bastante
+
+75
+00:03:17,350 --> 00:03:18,600
+simple que tiene una
+
+76
+00:03:18,600 --> 00:03:21,780
+lnea, y luego te dice dnde ocurri tu error.
+
+77
+00:03:21,780 --> 00:03:25,040
+Veamos un traceback un poco ms complejo, que tiene ms
+
+78
+00:03:25,040 --> 00:03:26,900
+de una lnea, y explicar
+
+79
+00:03:26,900 --> 00:03:29,930
+lo que est sucediendo en un traceback ms grande.
+
+80
+00:03:29,930 --> 00:03:30,763
+Es realmente importante
+
+81
+00:03:30,763 --> 00:03:32,900
+que pueda leer estos registros para entender
+
+82
+00:03:32,900 --> 00:03:34,180
+lo que significan, para
+
+83
+00:03:34,180 --> 00:03:36,340
+que pueda resolver sus propios errores.
+
+84
+00:03:38,150 --> 00:03:40,940
+Aqu tenemos un rastreo ligeramente ms complejo.
+
+85
+00:03:41,930 --> 00:03:45,300
+Esta vez, el traceback tiene cuatro lneas diferentes.
+
+86
+00:03:46,640 --> 00:03:48,240
+Ahora es realmente importante que
+
+87
+00:03:48,240 --> 00:03:51,090
+en la parte inferior del rastreo siga obteniendo
+
+88
+00:03:51,090 --> 00:03:52,580
+lo mismo que obtuvo
+
+89
+00:03:52,580 --> 00:03:53,920
+en el rastreo anterior.
+
+90
+00:03:53,920 --> 00:03:55,410
+Tienes el nombre, que
+
+91
+00:03:55,410 --> 00:03:58,355
+es, en este caso, es un TypeError.
+
+92
+00:03:58,355 --> 00:04:00,030
+Y luego tienes una pequea descripcin,
+
+93
+00:04:00,030 --> 00:04:00,863
+y dice, los
+
+94
+00:04:00,863 --> 00:04:04,290
+ndices de lista deben ser enteros o en rebanadas, no en cadena.
+
+95
+00:04:05,690 --> 00:04:07,080
+Y luego, a medida
+
+96
+00:04:07,080 --> 00:04:10,470
+que avanzas, te da informacin sobre dnde ocurri el error.
+
+97
+00:04:10,470 --> 00:04:14,900
+Ahora, vamos a hablar sobre este rastro de pila en este momento.
+
+98
+00:04:14,900 --> 00:04:18,880
+As que djenos darle una descripcin rpida de lo que est pasando.
+
+99
+00:04:18,880 --> 00:04:22,290
+As que en la parte inferior te da el error que se plante y una
+
+100
+00:04:22,290 --> 00:04:23,390
+descripcin, como acabamos de ver.
+
+101
+00:04:23,390 --> 00:04:25,280
+En este caso, es un TypeError.
+
+102
+00:04:26,580 --> 00:04:29,930
+Luego, le indica qu lnea de su cdigo gener los errores.
+
+103
+00:04:29,930 --> 00:04:33,150
+Esa es la siguiente lnea sobre el TypeError.
+
+104
+00:04:33,150 --> 00:04:35,460
+En este caso, la lnea que
+
+105
+00:04:35,460 --> 00:04:37,980
+nos dio un error fue print, y
+
+106
+00:04:37,980 --> 00:04:42,770
+luego una cadena formateada que dice, nombre y entre llaves, pelculas, nombre.
+
+107
+00:04:42,770 --> 00:04:45,520
+Entonces esta es la lnea de nuestro cdigo que nos dio el error.
+
+108
+00:04:46,800 --> 00:04:51,410
+Luego, tambin nos dice en qu funcin est esa lnea.
+
+109
+00:04:51,410 --> 00:04:52,700
+Esa es solo la lnea de arriba.
+
+110
+00:04:52,700 --> 00:04:56,660
+Dice, File / Users / jslvtr / Dropbox / teclado /
+
+111
+00:04:56,660 --> 00:05:00,770
+courses / complete-python-course / section3 / milestone_1 / app dot py.
+
+112
+00:05:00,770 --> 00:05:02,200
+Dice, lnea 40.
+
+113
+00:05:02,200 --> 00:05:05,560
+Otra variante dice, en show_movie_details.
+
+114
+00:05:06,590 --> 00:05:09,390
+Esta es la funcin en la que ocurri
+
+115
+00:05:09,390 --> 00:05:11,310
+el error, la funcin show_movie_details.
+
+116
+00:05:13,330 --> 00:05:18,330
+Ahora la lnea de arriba es donde se llam esa funcin.
+
+117
+00:05:18,490 --> 00:05:20,350
+As que esta funcin, show_movie_details
+
+118
+00:05:20,350 --> 00:05:25,080
+se llam como show_movie_details con pelcula como argumento, y la lnea directamente
+
+119
+00:05:25,080 --> 00:05:27,500
+arriba le dice en qu funcin
+
+120
+00:05:27,500 --> 00:05:30,080
+ocurri esa llamada de funcin, eso est
+
+121
+00:05:30,080 --> 00:05:31,830
+en la funcin show_movies.
+
+122
+00:05:32,930 --> 00:05:34,050
+La funcin show_movies fue
+
+123
+00:05:34,050 --> 00:05:35,880
+llamada dentro de la funcin de men,
+
+124
+00:05:35,880 --> 00:05:38,610
+y la funcin de men fue llamada directamente en el
+
+125
+00:05:38,610 --> 00:05:40,350
+mdulo, que es el archivo que ejecutamos.
+
+126
+00:05:41,490 --> 00:05:45,900
+Entonces te dice dnde ocurri tu error, en qu
+
+127
+00:05:45,900 --> 00:05:48,763
+funcin estaba, en qu funcin estaba,
+
+128
+00:05:48,763 --> 00:05:51,560
+en qu funcin estaba, etc., hasta
+
+129
+00:05:51,560 --> 00:05:54,040
+que llegaste al archivo que ejecutaste.
+
+130
+00:05:54,040 --> 00:05:57,700
+Entonces este es el cdigo que provoc ese error.
+
+131
+00:05:58,650 --> 00:06:01,740
+Ahora, tenemos add_movie, show_movies, y luego en
+
+132
+00:06:01,740 --> 00:06:03,720
+la parte inferior, show_movie_details.
+
+133
+00:06:03,720 --> 00:06:04,800
+Estoy seguro de que recuerdas este cdigo.
+
+134
+00:06:04,800 --> 00:06:08,590
+Escribimos esto para el primer proyecto de hito.
+
+135
+00:06:08,590 --> 00:06:11,970
+Y lo que tenemos es un add_movie que
+
+136
+00:06:11,970 --> 00:06:15,960
+estamos agregando a nuestra lista de pelculas, presumiblemente, un diccionario
+
+137
+00:06:15,960 --> 00:06:18,590
+que tiene nombre, director y ao.
+
+138
+00:06:19,760 --> 00:06:23,900
+En la funcin show_movies, estamos tomando una lista de pelculas, donde est
+
+139
+00:06:23,900 --> 00:06:25,280
+escribiendo sobre ella, y
+
+140
+00:06:25,280 --> 00:06:28,450
+para cada pelcula mostramos los detalles de la pelcula.
+
+141
+00:06:29,770 --> 00:06:31,400
+Dentro de show_movie_details, que
+
+142
+00:06:31,400 --> 00:06:34,850
+toma un parmetro, que se llama pelcula, y
+
+143
+00:06:34,850 --> 00:06:37,650
+luego imprime tres conjuntos de detalles.
+
+144
+00:06:37,650 --> 00:06:40,635
+Notaste algo extrao
+
+145
+00:06:40,635 --> 00:06:42,802
+dentro de show_movie_details?
+
+146
+00:06:46,520 --> 00:06:48,670
+Bueno, not algo, que est ah.
+
+147
+00:06:48,670 --> 00:06:52,010
+Y eso es que el nombre ahora est
+
+148
+00:06:52,010 --> 00:06:53,930
+dentro de llaves, pelculas, nombre.
+
+149
+00:06:53,930 --> 00:06:55,510
+Mientras que las otras
+
+150
+00:06:55,510 --> 00:06:58,910
+dos declaraciones impresas son pelcula, director y pelcula, ao.
+
+151
+00:06:58,910 --> 00:07:01,210
+Observe cmo el primero tiene pelculas all.
+
+152
+00:07:02,840 --> 00:07:05,710
+Entonces, lo que sucede aqu es que estamos tratando
+
+153
+00:07:05,710 --> 00:07:09,320
+de acceder a esta clave de nombre de un diccionario, pero
+
+154
+00:07:09,320 --> 00:07:13,260
+a lo que estamos accediendo es a la lista de pelculas.
+
+155
+00:07:13,260 --> 00:07:16,250
+Entonces, te dice que no puedes usar esta cosa clave para
+
+156
+00:07:16,250 --> 00:07:18,660
+acceder a un elemento dentro de una lista.
+
+157
+00:07:18,660 --> 00:07:20,240
+Solo debes hacer eso
+
+158
+00:07:20,240 --> 00:07:23,570
+cuando lo que ests accediendo es un diccionario.
+
+159
+00:07:23,570 --> 00:07:24,990
+Entonces, si eso fuera
+
+160
+00:07:24,990 --> 00:07:27,400
+pelcula, podramos acceder a la clave del nombre.
+
+161
+00:07:27,400 --> 00:07:29,710
+Debido a que son pelculas, es una lista,
+
+162
+00:07:29,710 --> 00:07:31,990
+no podemos acceder a la clave del nombre.
+
+163
+00:07:31,990 --> 00:07:32,930
+Las pelculas, por cierto,
+
+164
+00:07:32,930 --> 00:07:35,830
+se definieron en la parte superior del archivo como una lista,
+
+165
+00:07:35,830 --> 00:07:38,460
+y es por eso que las pelculas son una lista.
+
+166
+00:07:38,460 --> 00:07:41,910
+Y el parmetro de argumento de la pelcula es
+
+167
+00:07:41,910 --> 00:07:45,060
+un diccionario que se pas de la funcin show_movies.
+
+168
+00:07:45,060 --> 00:07:47,320
+Entonces nos dijo que el seguimiento de
+
+169
+00:07:47,320 --> 00:07:49,970
+la pila nos deca que el error ocurri
+
+170
+00:07:49,970 --> 00:07:52,670
+en esta instruccin de impresin dentro de la funcin
+
+171
+00:07:52,670 --> 00:07:54,670
+show_movie_details, y que se llamaba a
+
+172
+00:07:54,670 --> 00:07:57,140
+la funcin show_movie_details dentro de la funcin show_movies,
+
+173
+00:07:57,140 --> 00:07:59,800
+que es exactamente lo que se puede ver all.
+
+174
+00:07:59,800 --> 00:08:00,720
+La funcin show_movies
+
+175
+00:08:00,720 --> 00:08:03,110
+se llam desde la funcin de men, que
+
+176
+00:08:03,110 --> 00:08:06,220
+no se ve en este cdigo, pero estaba ligeramente por encima.
+
+177
+00:08:06,220 --> 00:08:08,800
+Y la funcin de men se llam en el nivel de archivo.
+
+178
+00:08:12,160 --> 00:08:14,930
+Entonces, cmo lidias con estos errores?
+
+179
+00:08:14,930 --> 00:08:18,010
+Qu haces cuando encuentras uno de estos errores?
+
+180
+00:08:18,010 --> 00:08:18,932
+Y muchos estudiantes, muchos
+
+181
+00:08:18,932 --> 00:08:20,670
+de mis alumnos se encuentran con errores, y
+
+182
+00:08:20,670 --> 00:08:21,610
+lo primero que hacen,
+
+183
+00:08:21,610 --> 00:08:23,980
+lo cual es una cosa perfectamente razonable de hacer por cierto,
+
+184
+00:08:23,980 --> 00:08:25,700
+es que van y preguntan en el curso
+
+185
+00:08:25,700 --> 00:08:27,430
+de preguntas y respuestas, y dicen: "Miren, Tengo este error.
+
+186
+00:08:27,430 --> 00:08:29,040
+"Ayuadame. "Ahora estoy
+
+187
+00:08:29,040 --> 00:08:31,670
+feliz de ayudarte, pero, si lo primero que
+
+188
+00:08:31,670 --> 00:08:33,000
+haces es ir y
+
+189
+00:08:33,000 --> 00:08:35,940
+pedirme que resuelva tu problema, lo cual estoy feliz
+
+190
+00:08:35,940 --> 00:08:38,660
+de hacer porque eso es para lo que
+
+191
+00:08:38,660 --> 00:08:41,010
+estoy aqu, ests aprendiendo estar un poco impedido
+
+192
+00:08:41,010 --> 00:08:43,120
+As que aqu est mi recomendacin para cuando recibas un error.
+
+193
+00:08:43,120 --> 00:08:43,953
+Qu hacer.
+
+194
+00:08:44,880 --> 00:08:46,580
+Lo primero que debe hacer, que
+
+195
+00:08:46,580 --> 00:08:48,370
+mucha gente extraa, es mirar el cdigo.
+
+196
+00:08:48,370 --> 00:08:51,860
+Tienes que mirar la lnea en la que ocurri el error
+
+197
+00:08:51,860 --> 00:08:53,810
+y ver si notas algo extrao
+
+198
+00:08:53,810 --> 00:08:55,050
+con las lneas de alrededor.
+
+199
+00:08:55,050 --> 00:08:57,040
+Por ejemplo, en esa funcin
+
+200
+00:08:57,040 --> 00:08:59,200
+all, estbamos usando la variable incorrecta.
+
+201
+00:08:59,200 --> 00:09:01,070
+S que es una sola letra de una
+
+202
+00:09:01,070 --> 00:09:03,310
+diferencia, pero para Python eso es un mundo de diferencia.
+
+203
+00:09:03,310 --> 00:09:05,320
+As que mira el cdigo
+
+204
+00:09:05,320 --> 00:09:06,670
+cuidadosamente, y te
+
+205
+00:09:06,670 --> 00:09:10,680
+tomar un tiempo comenzar a detectar esos corchetes, o una
+
+206
+00:09:10,680 --> 00:09:12,630
+s que falta o no,
+
+207
+00:09:12,630 --> 00:09:14,890
+o pequeas diferencias de carcter.
+
+208
+00:09:14,890 --> 00:09:16,760
+Y en un abrir y cerrar de
+
+209
+00:09:16,760 --> 00:09:19,660
+ojos, te tomar un tiempo acostumbrarte a eso, pero llegars all.
+
+210
+00:09:20,900 --> 00:09:21,860
+Lo prximo que
+
+211
+00:09:21,860 --> 00:09:24,950
+debe hacer es, si no puede detectar nada con solo mirar
+
+212
+00:09:24,950 --> 00:09:26,650
+el cdigo, simplemente copie el error
+
+213
+00:09:26,650 --> 00:09:30,060
+y el mensaje, solo la ltima lnea y colquelo en Google, y
+
+214
+00:09:30,060 --> 00:09:31,960
+vea si aparece algo en StackOverflow.
+
+215
+00:09:31,960 --> 00:09:34,800
+Normalmente, siempre hay alguien a quien se le pregunta: "Qu
+
+216
+00:09:34,800 --> 00:09:36,710
+significa este error? "Y si agregas
+
+217
+00:09:36,710 --> 00:09:40,080
+un NameError, la variable bla, bla, bla, no existe en Google,
+
+218
+00:09:40,080 --> 00:09:42,580
+obtendrs a alguien a quien se le pregunt,"
+
+219
+00:09:42,580 --> 00:09:44,240
+No s lo que esto
+
+220
+00:09:44,240 --> 00:09:45,370
+significa ", y alguien
+
+221
+00:09:45,370 --> 00:09:46,870
+respondi:" Esto significa que tu
+
+222
+00:09:46,870 --> 00:09:49,440
+variable no definido. "As que siempre es
+
+223
+00:09:49,440 --> 00:09:51,180
+til poner cosas en Google
+
+224
+00:09:51,180 --> 00:09:52,300
+y ver qu surge".
+
+225
+00:09:52,300 --> 00:09:54,400
+Tal vez habr algo til all.
+
+226
+00:09:55,575 --> 00:09:57,590
+Ahora bien, si ninguno de estos ayuda,
+
+227
+00:09:57,590 --> 00:10:00,050
+debe comenzar a adoptar un enfoque ms metdico
+
+228
+00:10:00,050 --> 00:10:01,300
+para identificar el error.
+
+229
+00:10:02,240 --> 00:10:04,300
+Es decir, mira el cdigo nuevamente, pero esta
+
+230
+00:10:04,300 --> 00:10:05,820
+vez, mucho ms lentamente, y corre
+
+231
+00:10:05,820 --> 00:10:08,510
+a travs de l como si fueras una computadora.
+
+232
+00:10:08,510 --> 00:10:12,200
+Eso significa comenzar en la parte superior de tu cdigo.
+
+233
+00:10:12,200 --> 00:10:16,150
+Piensa: "Qu datos le estoy dando a la computadora en esta lnea? "Luego pasa a la siguiente lnea
+
+234
+00:10:16,150 --> 00:10:17,920
+y piensa:" Qu datos le
+
+235
+00:10:17,920 --> 00:10:20,260
+doy en esta lnea? "Y luego en
+
+236
+00:10:20,260 --> 00:10:22,490
+la siguiente lnea y dems.
+
+237
+00:10:22,490 --> 00:10:27,410
+Imita lo que la computadora est haciendo exactamente en cada funcin.
+
+238
+00:10:27,410 --> 00:10:31,330
+Nos vamos a volver mucho ms expertos en hacer esto
+
+239
+00:10:31,330 --> 00:10:32,680
+en las prximas secciones.
+
+240
+00:10:33,670 --> 00:10:36,280
+Pero a medida que haces esto, notas
+
+241
+00:10:36,280 --> 00:10:39,060
+algo que podra ser una fuente de error?
+
+242
+00:10:39,060 --> 00:10:41,190
+Pero ms bien el error puede no estar en
+
+243
+00:10:41,190 --> 00:10:42,430
+la lnea, o ms bien,
+
+244
+00:10:42,430 --> 00:10:45,150
+el origen del error puede no estar en la lnea que
+
+245
+00:10:45,150 --> 00:10:46,440
+provoc el error, sino en
+
+246
+00:10:46,440 --> 00:10:48,950
+una lnea diferente que tal vez establezca la variable en
+
+247
+00:10:48,950 --> 00:10:50,100
+el valor incorrecto o algo as.
+
+248
+00:10:51,920 --> 00:10:55,630
+Si esto no ayuda, ejecute solo algunas partes del cdigo.
+
+249
+00:10:55,630 --> 00:10:56,463
+Por ejemplo,
+
+250
+00:10:56,463 --> 00:10:59,560
+intente ejecutar solo la funcin show_movie_details con
+
+251
+00:10:59,560 --> 00:11:03,540
+un diccionario como argumento, vea si eso funciona.
+
+252
+00:11:03,540 --> 00:11:04,500
+Si eso
+
+253
+00:11:04,500 --> 00:11:07,430
+funciona, intente ejecutar la funcin que llama a
+
+254
+00:11:07,430 --> 00:11:09,370
+esa funcin con algunos argumentos.
+
+255
+00:11:09,370 --> 00:11:10,490
+Y luego intenta ejecutar la
+
+256
+00:11:10,490 --> 00:11:12,340
+funcin que llama a esa funcin con algunos argumentos.
+
+257
+00:11:12,340 --> 00:11:14,170
+A medida que vaya ejecutando gradualmente su
+
+258
+00:11:14,170 --> 00:11:17,240
+cdigo, eventualmente llegar a un paso donde ocurrir el error, y dir:
+
+259
+00:11:17,240 --> 00:11:20,070
+"De acuerdo, el error debe ocurrir" en algn punto entre estas
+
+260
+00:11:20,070 --> 00:11:22,370
+dos llamadas a funciones. "Y finalmente,
+
+261
+00:11:24,100 --> 00:11:28,570
+si esto tampoco funciona, usa un depurador.
+
+262
+00:11:28,570 --> 00:11:30,460
+Vamos a aprender cmo hacerlo, en los prximos videos.
+
+263
+00:11:30,460 --> 00:11:32,150
+Python tiene un depurador excelente,
+
+264
+00:11:32,150 --> 00:11:34,080
+y realmente vamos a usar eso.
+
+265
+00:11:34,080 --> 00:11:37,530
+Y ese depurador lo ayuda a recorrer su
+
+266
+00:11:37,530 --> 00:11:40,430
+cdigo e identificar qu variables son.
+
+267
+00:11:40,430 --> 00:11:43,210
+Le permite detenerse en cierto punto de su cdigo
+
+268
+00:11:43,210 --> 00:11:45,350
+e inspeccionar el estado actual de su
+
+269
+00:11:45,350 --> 00:11:46,183
+programa, etc.
+
+270
+00:11:46,183 --> 00:11:47,016
+Es realmente til.
+
+271
+00:11:47,980 --> 00:11:49,920
+Y, por supuesto, en cualquier punto,
+
+272
+00:11:49,920 --> 00:11:52,010
+s que esto es bastante complicado
+
+273
+00:11:52,010 --> 00:11:55,200
+para seguir todos estos pasos sin desesperacin, por lo que
+
+274
+00:11:55,200 --> 00:11:58,980
+en cualquier momento, haga preguntas en el curso de preguntas y respuestas.
+
+275
+00:11:58,980 --> 00:12:01,520
+Estamos aqu para ayudar, y hacer uso de eso.
+
+276
+00:12:02,700 --> 00:12:06,210
+Ahora, si hace una pregunta en el curso Preguntas y
+
+277
+00:12:06,210 --> 00:12:09,060
+respuestas, que de nuevo debera hacer si est
+
+278
+00:12:09,060 --> 00:12:11,370
+atascado, asegrese de proporcionarnos toda la
+
+279
+00:12:11,370 --> 00:12:12,650
+informacin que ya ha
+
+280
+00:12:12,650 --> 00:12:15,710
+reunido durante la bsqueda para corregir este error.
+
+281
+00:12:15,710 --> 00:12:18,010
+De esa forma no tenemos que comenzar desde
+
+282
+00:12:18,010 --> 00:12:20,040
+arriba y hacer lo mismo otra vez.
+
+283
+00:12:20,040 --> 00:12:21,190
+Entonces, si nos dices, "He
+
+284
+00:12:21,190 --> 00:12:23,300
+buscado mi cdigo y no puedo encontrar nada", entonces, "He
+
+285
+00:12:23,300 --> 00:12:24,440
+entrado en Google" y encontr
+
+286
+00:12:24,440 --> 00:12:26,400
+que este error significa eso. "Y," Aqu est mi
+
+287
+00:12:26,400 --> 00:12:28,210
+cdigo, por cierto ", y" Aqu est la
+
+288
+00:12:28,210 --> 00:12:30,530
+informacin que le estoy dando ". "Ahora podemos ver
+
+289
+00:12:30,530 --> 00:12:32,120
+rpidamente, est bien, le has
+
+290
+00:12:32,120 --> 00:12:34,410
+dado esta informacin, todo parece correcto, este
+
+291
+00:12:34,410 --> 00:12:35,700
+error significa eso".
+
+292
+00:12:35,700 --> 00:12:38,890
+Luego podemos juntar las piezas del rompecabezas y encontrar esa
+
+293
+00:12:38,890 --> 00:12:40,360
+respuesta mucho ms rpido.
+
+294
+00:12:40,360 --> 00:12:42,060
+Entonces, cuando tenga una pregunta en el curso,
+
+295
+00:12:42,060 --> 00:12:44,350
+P y R nos brinda toda la informacin que puede.
+
+296
+00:12:44,350 --> 00:12:47,560
+Y luego la respuesta llegar muy rpido.
+
+297
+00:12:47,560 --> 00:12:50,130
+Nuestro objetivo es tener todas sus respuestas dentro de las
+
+298
+00:12:50,130 --> 00:12:51,260
+24 horas, pero, por supuesto,
+
+299
+00:12:51,260 --> 00:12:54,170
+eso solo es posible si no tenemos un ir y venir entre
+
+300
+00:12:54,170 --> 00:12:57,590
+usted y usted, tratando de descubrir cul podra ser el origen del problema.
+
+301
+00:12:57,590 --> 00:12:58,760
+Entonces eso es todo por este video.
+
+302
+00:12:58,760 --> 00:13:01,040
+Esta es una introduccin a los errores.
+
+303
+00:13:01,040 --> 00:13:03,760
+Realmente errores en Python, pero tambin en la programacin como un todo.
+
+304
+00:13:03,760 --> 00:13:07,170
+Esto es algo que debera hacer mientras programa, en
+
+305
+00:13:07,170 --> 00:13:08,850
+cualquier lenguaje de programacin.
+
+306
+00:13:08,850 --> 00:13:10,060
+Entonces eso es todo por este video.
+
+307
+00:13:10,060 --> 00:13:11,510
+Te ver en el prximo.
+

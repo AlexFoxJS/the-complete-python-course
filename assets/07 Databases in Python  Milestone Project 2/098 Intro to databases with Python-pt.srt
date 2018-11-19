@@ -1,0 +1,580 @@
+1
+00:00:00,420 --> 00:00:01,660
+Jose: Ol e bem vindo de volta.
+
+2
+00:00:01,660 --> 00:00:04,727
+Neste vdeo, vamos ver os bancos de dados.
+
+3
+00:00:04,727 --> 00:00:08,722
+Vamos primeiro falar sobre bancos de dados como um conceito
+
+4
+00:00:08,722 --> 00:00:11,150
+geral, e ento, nos prximos vdeos,
+
+5
+00:00:11,150 --> 00:00:13,510
+falaremos mais concisamente sobre o que
+
+6
+00:00:13,510 --> 00:00:16,630
+ o SQLite e o que ele faz,
+
+7
+00:00:16,630 --> 00:00:19,060
+e ento reimplementaremos nosso projeto de
+
+8
+00:00:19,060 --> 00:00:20,330
+marco usando bancos de dados.
+
+9
+00:00:21,255 --> 00:00:24,920
+Um banco de dados  um lugar onde podemos armazenar dados.
+
+10
+00:00:24,920 --> 00:00:27,040
+Agora, todos ns j sabemos disso, mas deixe-me
+
+11
+00:00:27,040 --> 00:00:28,616
+dar um pouco mais de informaes
+
+12
+00:00:28,616 --> 00:00:30,750
+sobre como os bancos de dados funcionam.
+
+13
+00:00:31,970 --> 00:00:35,448
+Normalmente, os bancos de dados so organizados em
+
+14
+00:00:35,448 --> 00:00:38,140
+tabelas e cada tabela armazena informaes
+
+15
+00:00:38,140 --> 00:00:41,310
+sobre uma coisa em seu sistema, como
+
+16
+00:00:41,310 --> 00:00:42,960
+carros, clientes, lojas, etc.
+
+17
+00:00:42,960 --> 00:00:44,360
+Algo mais ou menos assim
+
+18
+00:00:44,360 --> 00:00:45,880
+poderia ser para seus clientes.
+
+19
+00:00:47,260 --> 00:00:49,470
+ esquerda, voc tem uma coluna de identificao,
+
+20
+00:00:49,470 --> 00:00:51,474
+que  um identificador para cada cliente.
+
+21
+00:00:51,474 --> 00:00:54,880
+Ento voc tem um nome e ento voc tem um endereo.
+
+22
+00:00:54,880 --> 00:00:56,400
+A razo pela qual temos
+
+23
+00:00:56,400 --> 00:00:58,700
+um identificador  porque dois clientes podem ter
+
+24
+00:00:58,700 --> 00:01:01,360
+o mesmo nome ou o mesmo endereo, portanto nenhum
+
+25
+00:01:01,360 --> 00:01:03,495
+nome ou endereo nos permite identificar um cliente.
+
+26
+00:01:03,495 --> 00:01:06,110
+Eles podem identificar vrios clientes.
+
+27
+00:01:06,110 --> 00:01:08,320
+Ento  por isso que temos um ID.
+
+28
+00:01:08,320 --> 00:01:11,790
+Se cada cliente tivesse um endereo de e-mail exclusivo, por exemplo,
+
+29
+00:01:11,790 --> 00:01:14,920
+poderamos us-lo como o cdigo em vez de um nmero.
+
+30
+00:01:14,920 --> 00:01:19,920
+Mas freqentemente, usamos IDs numricos para coisas em nossas tabelas.
+
+31
+00:01:19,930 --> 00:01:24,380
+Normalmente comea em um e sobe um por linha
+
+32
+00:01:24,380 --> 00:01:25,660
+que voc tem.
+
+33
+00:01:25,660 --> 00:01:27,350
+Como voc pode ver, esta
+
+34
+00:01:27,350 --> 00:01:29,590
+tabela tem trs colunas, ID, nome e
+
+35
+00:01:29,590 --> 00:01:32,300
+endereo, e quatro linhas de uma a quatro.
+
+36
+00:01:34,950 --> 00:01:38,152
+O SQLite, que  o banco de dados
+
+37
+00:01:38,152 --> 00:01:42,850
+que vamos usar,  um mecanismo de banco de dados pequeno, rpido
+
+38
+00:01:42,850 --> 00:01:45,530
+e confivel que pode ser executado na
+
+39
+00:01:45,530 --> 00:01:49,400
+memria, mais ou menos como a nossa Lista Python, sem
+
+40
+00:01:49,400 --> 00:01:52,210
+salvar nenhum dado no disco fsico real.
+
+41
+00:01:52,210 --> 00:01:54,500
+Ou tambm pode ser executado salvando todos
+
+42
+00:01:54,500 --> 00:01:56,960
+os dados em um nico arquivo de dados.
+
+43
+00:01:56,960 --> 00:01:59,564
+ isso a, um arquivo no seu computador que contm
+
+44
+00:01:59,564 --> 00:02:01,890
+todos os seus dados em seu banco de dados.
+
+45
+00:02:03,070 --> 00:02:06,770
+Agora, h uma vantagem em ter um nico arquivo de
+
+46
+00:02:06,770 --> 00:02:09,520
+dados, que torna tudo muito leve, bem pequeno,
+
+47
+00:02:09,520 --> 00:02:12,210
+muito fcil de se mover de um computador
+
+48
+00:02:12,210 --> 00:02:15,160
+para outro ou de um dispositivo para outro.
+
+49
+00:02:15,160 --> 00:02:20,160
+E o SQLite  freqentemente usado com pequenos dispositivos
+
+50
+00:02:20,750 --> 00:02:25,130
+como seus telefones, smartphones, iPhones e telefones Android.
+
+51
+00:02:25,130 --> 00:02:27,520
+Ele tambm  usado com
+
+52
+00:02:27,520 --> 00:02:30,720
+aplicativos incorporados e tambm  usado em
+
+53
+00:02:30,720 --> 00:02:34,150
+aplicativos desktop e ware razoavelmente leves e simples.
+
+54
+00:02:35,730 --> 00:02:38,270
+Voc interage com o SQLite usando SQL e
+
+55
+00:02:38,270 --> 00:02:41,000
+isso significa que a Linguagem de Consulta Estruturada
+
+56
+00:02:41,000 --> 00:02:42,640
+e a Linguagem de Consulta
+
+57
+00:02:42,640 --> 00:02:44,420
+Estruturada  uma linguagem semelhante
+
+58
+00:02:44,420 --> 00:02:46,340
+ do ingls, desenvolvida especificamente para
+
+59
+00:02:46,340 --> 00:02:48,230
+interagir com bancos de dados relacionais.
+
+60
+00:02:48,230 --> 00:02:50,300
+Vamos ver o que um banco de dados relacional
+
+61
+00:02:50,300 --> 00:02:51,320
+significa em um momento.
+
+62
+00:02:51,320 --> 00:02:54,630
+O SQL permite coisas como selecionar dados de um
+
+63
+00:02:54,630 --> 00:02:58,480
+banco de dados, ou inseri-lo, criar tabelas, filtrar dados, ordenar
+
+64
+00:02:58,480 --> 00:03:00,470
+dados e muito mais coisas.
+
+65
+00:03:01,460 --> 00:03:04,500
+By the way, algumas pessoas dizem S-Q-L em vez de SQL, cabe
+
+66
+00:03:04,500 --> 00:03:05,874
+a voc o que voc diz.
+
+67
+00:03:05,874 --> 00:03:09,400
+No odeie por mim dizendo SQL.
+
+68
+00:03:09,400 --> 00:03:12,530
+E h outros sistemas de banco de dados
+
+69
+00:03:12,530 --> 00:03:16,640
+alm do SQLite, como o to popular MySQL, e outros como
+
+70
+00:03:16,640 --> 00:03:18,240
+PostgreSQL, Oracle e muitos outros.
+
+71
+00:03:19,895 --> 00:03:24,895
+Ok, ento vamos dar uma olhada em um exemplo de banco de dados relacional.
+
+72
+00:03:27,170 --> 00:03:31,710
+SQLite, Postgre, MySQL so todos sistemas de bancos de dados relacionais.
+
+73
+00:03:31,710 --> 00:03:34,330
+E em um banco de dados relacional,
+
+74
+00:03:34,330 --> 00:03:38,190
+h funcionalidades para extrair e analisar dados de maneiras adaptadas para
+
+75
+00:03:38,190 --> 00:03:41,110
+quando alguns dados esto relacionados a outros dados.
+
+76
+00:03:42,000 --> 00:03:43,420
+Aqui est um exemplo.
+
+77
+00:03:43,420 --> 00:03:47,790
+Aqui temos duas tabelas, Usurios e Compras.
+
+78
+00:03:49,410 --> 00:03:51,220
+Agora, pode no ser diretamente
+
+79
+00:03:51,220 --> 00:03:54,340
+bvio que essas duas partes de dados estejam
+
+80
+00:03:54,340 --> 00:03:57,800
+relacionadas, mas se voc ver, a coluna Usurios tem
+
+81
+00:03:57,800 --> 00:04:00,300
+uma coluna de ID, as Compras tm
+
+82
+00:04:00,300 --> 00:04:02,890
+uma ID de cliente, portanto, os dados
+
+83
+00:04:02,890 --> 00:04:06,090
+so relacionados porque, analisando esses dados juntos, Voc pode
+
+84
+00:04:06,090 --> 00:04:10,480
+ver que duas dessas compras foram feitas pelo usurio nmero um e
+
+85
+00:04:10,480 --> 00:04:12,910
+que tem um nome e um endereo.
+
+86
+00:04:12,910 --> 00:04:15,200
+Assim, voc pode relacionar essas partes de
+
+87
+00:04:15,200 --> 00:04:19,140
+dados usando a coluna ID do cliente na tabela Compras e
+
+88
+00:04:19,140 --> 00:04:21,280
+a coluna ID na tabela Usurios.
+
+89
+00:04:22,580 --> 00:04:23,880
+Ento isso  bem til.
+
+90
+00:04:26,650 --> 00:04:30,210
+A maioria dos mecanismos de banco de dados cria estruturas de pastas complexas
+
+91
+00:04:30,210 --> 00:04:33,100
+e salva dados de vrias maneiras diferentes, mas o SQLite
+
+92
+00:04:33,100 --> 00:04:35,020
+ bastante simples, pois cria um nico
+
+93
+00:04:35,020 --> 00:04:37,170
+arquivo que contm todos os seus dados.
+
+94
+00:04:38,760 --> 00:04:42,590
+O SQLite tem uma limitao, que  que s podemos
+
+95
+00:04:42,590 --> 00:04:45,470
+executar uma operao de gravao de cada vez.
+
+96
+00:04:46,610 --> 00:04:48,300
+Isso significa que, se voc tiver
+
+97
+00:04:48,300 --> 00:04:51,980
+dois usurios tentando gravar alguns dados no banco de dados ao mesmo
+
+98
+00:04:51,980 --> 00:04:53,700
+tempo, eles no conseguiro fazer isso.
+
+99
+00:04:53,700 --> 00:04:56,140
+Apenas uma pessoa ser capaz de escrever, e
+
+100
+00:04:56,140 --> 00:04:58,330
+depois a outra ter que escrever depois.
+
+101
+00:04:58,330 --> 00:04:59,960
+Eles tero que esperar.
+
+102
+00:04:59,960 --> 00:05:03,130
+No entanto, o SQLite permite vrias operaes de leitura ao mesmo tempo,
+
+103
+00:05:03,130 --> 00:05:05,030
+portanto, se voc tiver muitos usurios usando
+
+104
+00:05:05,030 --> 00:05:07,010
+o programa ao mesmo tempo, interagindo com
+
+105
+00:05:07,010 --> 00:05:08,820
+o mesmo banco de dados SQLite, todos
+
+106
+00:05:08,820 --> 00:05:10,950
+eles podero ler os dados ao mesmo tempo.
+
+107
+00:05:11,790 --> 00:05:15,090
+A maioria dos sistemas de banco de dados, como PostgreSQL ou
+
+108
+00:05:15,090 --> 00:05:18,840
+MySQL, permite que muitos deles sejam gravados ou lidos de uma s vez.
+
+109
+00:05:20,180 --> 00:05:22,140
+Por exemplo, imagine que voc estivesse
+
+110
+00:05:22,140 --> 00:05:25,460
+escrevendo um aplicativo Python gerenciando centenas de usurios ao mesmo tempo
+
+111
+00:05:25,460 --> 00:05:28,402
+realizando operaes como a compra de itens, o SQLite no
+
+112
+00:05:28,402 --> 00:05:31,440
+seria adequado porque somente um usurio poderia salvar sua compra
+
+113
+00:05:31,440 --> 00:05:33,400
+e confirmar sua compra por vez.
+
+114
+00:05:33,400 --> 00:05:36,958
+Ento, outro tipo de banco de dados poderia ser melhor nesse cenrio.
+
+115
+00:05:36,958 --> 00:05:39,660
+No entanto, se voc tiver o SQLite no seu telefone,
+
+116
+00:05:39,660 --> 00:05:41,440
+bem, voc  o nico usurio, o
+
+117
+00:05:41,440 --> 00:05:43,470
+SQLite pode ser muito bom para isso.
+
+118
+00:05:44,350 --> 00:05:47,330
+Portanto, o SQLite  muito rpido na leitura de dados, no
+
+119
+00:05:47,330 --> 00:05:50,110
+to rpido e nem to eficiente na gravao de dados.
+
+120
+00:05:52,650 --> 00:05:55,910
+Agora, quando interagimos com um banco de dados SQLite,
+
+121
+00:05:55,910 --> 00:06:00,540
+voc pode abrir o arquivo de dados com um editor de texto,
+
+122
+00:06:00,540 --> 00:06:04,610
+que  apenas um arquivo em branco ou no em branco,
+
+123
+00:06:04,610 --> 00:06:07,109
+mas um arquivo de texto com vrios
+
+124
+00:06:07,109 --> 00:06:11,710
+dados SQLite, mas normalmente eu recomendo usando um navegador de dados adequado
+
+125
+00:06:11,710 --> 00:06:14,592
+como este, sqlitebrowser. org.
+
+126
+00:06:14,592 --> 00:06:16,660
+ medida que avanamos nesta seo,
+
+127
+00:06:16,660 --> 00:06:19,180
+vou usar o sqlitebrowser. org para ver
+
+128
+00:06:19,180 --> 00:06:22,260
+os dados em nosso banco de dados.
+
+129
+00:06:22,260 --> 00:06:25,090
+Sinta-se  vontade para baix-lo tambm para que voc
+
+130
+00:06:25,090 --> 00:06:26,260
+possa interagir com seus
+
+131
+00:06:26,260 --> 00:06:28,770
+bancos de dados SQLite com mais facilidade.
+
+132
+00:06:29,782 --> 00:06:32,860
+Esse  o final deste vdeo.
+
+133
+00:06:32,860 --> 00:06:35,290
+S queria ver rapidamente o que  um banco de
+
+134
+00:06:35,290 --> 00:06:37,220
+dados, quais so as tabelas, quais so as
+
+135
+00:06:37,220 --> 00:06:38,740
+tabelas relacionais e os bancos de
+
+136
+00:06:38,740 --> 00:06:41,650
+dados relacionais e como o SQLite se compara a alguns de seus concorrentes.
+
+137
+00:06:41,650 --> 00:06:44,690
+Apenas lembre-se, no  to bom para muitos usurios.
+
+138
+00:06:44,690 --> 00:06:46,880
+ muito bom para um nico usurio.
+
+139
+00:06:46,880 --> 00:06:48,190
+E d a voc um
+
+140
+00:06:48,190 --> 00:06:51,090
+pouco mais de informao sobre como olhar os dados em seu banco
+
+141
+00:06:51,090 --> 00:06:52,570
+de dados, sqlitebrowser. org.
+
+142
+00:06:52,570 --> 00:06:55,500
+ um software muito bom e gratuito que voc
+
+143
+00:06:55,500 --> 00:06:57,100
+pode usar para ver isso.
+
+144
+00:06:57,100 --> 00:06:58,320
+Ento  isso para este vdeo.
+
+145
+00:06:58,320 --> 00:06:59,770
+Eu vou te ver no prximo.
+

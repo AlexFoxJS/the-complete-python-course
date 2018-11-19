@@ -1,0 +1,120 @@
+1
+00:00:00,610 --> 00:00:01,800
+<v Instructor>Hi, welcome back.</v>
+
+2
+00:00:01,800 --> 00:00:03,620
+Just a small aside actually,
+
+3
+00:00:03,620 --> 00:00:06,200
+before we move on to anything else.
+
+4
+00:00:06,200 --> 00:00:08,390
+I wanted to show you a slightly more efficient way
+
+5
+00:00:08,390 --> 00:00:10,550
+of creating your menus.
+
+6
+00:00:10,550 --> 00:00:12,437
+Instead of having all these if statements,
+
+7
+00:00:12,437 --> 00:00:15,030
+you could just put the user choices
+
+8
+00:00:16,810 --> 00:00:18,260
+into a dictionary,
+
+9
+00:00:19,440 --> 00:00:22,720
+where B is assigned to print best books,
+
+10
+00:00:22,720 --> 00:00:25,190
+the function, not the result.
+
+11
+00:00:28,010 --> 00:00:30,080
+C to print cheapest books.
+
+12
+00:00:33,220 --> 00:00:36,760
+And N to get next book.
+
+13
+00:00:38,580 --> 00:00:42,440
+Once you've got this, you can essentially get rid of
+
+14
+00:00:42,440 --> 00:00:44,860
+all of these statements here.
+
+15
+00:00:44,860 --> 00:00:46,880
+Instead of user input equal B,
+
+16
+00:00:46,880 --> 00:00:51,880
+we can say user input in B, C, N.
+
+17
+00:00:52,311 --> 00:00:54,040
+So this is going to give us true
+
+18
+00:00:54,040 --> 00:00:56,510
+if the user input is one of these things.
+
+19
+00:00:58,050 --> 00:01:03,050
+And if it is, we can just do user choices, user input.
+
+20
+00:01:03,940 --> 00:01:05,850
+This is going to give us the function
+
+21
+00:01:05,850 --> 00:01:09,000
+that is associated with the input inside this dictionary,
+
+22
+00:01:10,570 --> 00:01:11,570
+and we can run that.
+
+23
+00:01:12,620 --> 00:01:15,320
+It is a much more efficient way of doing the same thing.
+
+24
+00:01:15,320 --> 00:01:16,830
+Essentially, you get to type less code,
+
+25
+00:01:16,830 --> 00:01:18,610
+it does the same thing.
+
+26
+00:01:18,610 --> 00:01:19,830
+Okay, that's it for this video.
+
+27
+00:01:19,830 --> 00:01:21,470
+Just wanted to show you this because you're going
+
+28
+00:01:21,470 --> 00:01:23,080
+to be writing menus quite often,
+
+29
+00:01:23,080 --> 00:01:26,420
+might as well know the best way of doing them.
+
+30
+00:01:26,420 --> 00:01:27,920
+Now see you on the next video.
+

@@ -1,0 +1,248 @@
+1
+00:00:00,140 --> 00:00:01,430
+Jose: Ol e bem vindo de volta.
+
+2
+00:00:01,430 --> 00:00:03,320
+Neste vdeo, s queria contar um
+
+3
+00:00:03,320 --> 00:00:06,360
+pouco sobre o concorrente. mdulo de futuros e
+
+4
+00:00:06,360 --> 00:00:10,110
+como isso pode tornar nosso cdigo encadeado um pouco melhor.
+
+5
+00:00:10,110 --> 00:00:12,393
+Aqui temos um cdigo que
+
+6
+00:00:12,393 --> 00:00:14,520
+cria threads, inicia-os e espera
+
+7
+00:00:14,520 --> 00:00:16,240
+que eles sejam concludos.
+
+8
+00:00:17,250 --> 00:00:22,150
+O que voc pode fazer  criar um monte de
+
+9
+00:00:22,150 --> 00:00:26,750
+tpicos sem alvo, ento dar a eles um alvo,
+
+10
+00:00:26,750 --> 00:00:28,590
+inici-los e junt-los.
+
+11
+00:00:30,040 --> 00:00:32,100
+E ento a razo para isso
+
+12
+00:00:32,100 --> 00:00:36,140
+ que, se voc criar um monte de tpicos sem alvo,
+
+13
+00:00:38,780 --> 00:00:41,700
+ento voc pode escolher qual thread vai pegar
+
+14
+00:00:41,700 --> 00:00:43,090
+qual trabalho depois.
+
+15
+00:00:43,090 --> 00:00:44,470
+E realmente no importa qual
+
+16
+00:00:44,470 --> 00:00:47,260
+deles faz, mas essencialmente voc acaba sendo uma espcie
+
+17
+00:00:47,260 --> 00:00:52,040
+de coleo de tpicos para os quais voc pode enviar uma tarefa e obter um resultado.
+
+18
+00:00:53,630 --> 00:00:55,970
+A razo para isso e a razo para fazer isso,
+
+19
+00:00:55,970 --> 00:00:57,700
+e eu vou apenas deletar esse cdigo,
+
+20
+00:00:57,700 --> 00:00:59,650
+ apenas tornar seu cdigo um pouco mais legal.
+
+21
+00:00:59,650 --> 00:01:02,582
+Ento, ao invs de importar thread de
+
+22
+00:01:02,582 --> 00:01:06,430
+threading, ns vamos fazer from_concurrent. futuros
+
+23
+00:01:06,430 --> 00:01:08,850
+importam ThreadPoolExecutor.
+
+24
+00:01:09,720 --> 00:01:12,540
+ThreadPoolExecutor vai criar um pool de threads
+
+25
+00:01:12,540 --> 00:01:15,280
+que  apenas um monte de threads
+
+26
+00:01:16,240 --> 00:01:20,930
+sem destino e nos permitir usar esse pool para executar jobs ou,
+
+27
+00:01:20,930 --> 00:01:22,430
+neste caso, nossas funes.
+
+28
+00:01:25,070 --> 00:01:30,070
+Portanto, com ThreadPoolExecutor e max_workers  dois como pool, tudo o que estamos
+
+29
+00:01:32,046 --> 00:01:34,760
+dizendo aqui  criar dois encadeamentos neste
+
+30
+00:01:34,760 --> 00:01:37,340
+conjunto de encadeamentos, nesta coleo de encadeamentos.
+
+31
+00:01:37,340 --> 00:01:40,650
+Ento podemos ver a piscina. submit (complex_calculation),
+
+32
+00:01:44,470 --> 00:01:45,580
+pool. submit (ask_user).
+
+33
+00:01:48,590 --> 00:01:49,937
+E  isso.
+
+34
+00:01:49,937 --> 00:01:52,020
+Nosso cdigo foi simplificado um pouco agora.
+
+35
+00:01:52,020 --> 00:01:53,900
+Novamente, isso cria um conjunto de
+
+36
+00:01:53,900 --> 00:01:57,366
+encadeamentos, uma coleo de encadeamentos e, em seguida, podemos enviar
+
+37
+00:01:57,366 --> 00:02:00,540
+uma tarefa para ela e, como usamos isso com a
+
+38
+00:02:00,540 --> 00:02:04,680
+instruo, tudo o que ela faz  aguardar a concluso do conjunto.
+
+39
+00:02:04,680 --> 00:02:09,540
+Isso significa essencialmente que no precisamos chamar a piscina. desligar.
+
+40
+00:02:11,360 --> 00:02:14,922
+Piscina. o desligamento normalmente esperar que essas
+
+41
+00:02:14,922 --> 00:02:17,929
+coisas terminem e isso  novamente uma operao de bloqueio.
+
+42
+00:02:17,929 --> 00:02:21,720
+Mas se voc tiver, no precisa usar o pool. desligamento, por isso apenas torna o
+
+43
+00:02:21,720 --> 00:02:23,220
+seu cdigo um pouco mais
+
+44
+00:02:23,220 --> 00:02:25,550
+agradvel usando este gerenciador de contexto aqui.
+
+45
+00:02:25,550 --> 00:02:27,290
+ThreadPoolExecutor e geralmente
+
+46
+00:02:27,290 --> 00:02:29,900
+o concorrente. O mdulo de futuros 
+
+47
+00:02:29,900 --> 00:02:33,737
+muito popular e  medida que voc comea a avanar na sua jornada em
+
+48
+00:02:33,737 --> 00:02:36,050
+Python, e voc, por exemplo, vai a conferncias ou
+
+49
+00:02:36,050 --> 00:02:38,210
+ouve palestras no YouTube ou coisas desse tipo,
+
+50
+00:02:38,210 --> 00:02:40,200
+voc ver o concorrente. mdulo de futuros
+
+51
+00:02:40,200 --> 00:02:42,039
+mencionado de vez em quando.
+
+52
+00:02:42,039 --> 00:02:44,460
+ThreadPoolExecutor  uma coisa muito popular apenas para
+
+53
+00:02:44,460 --> 00:02:47,031
+ter um monte de threads esperando e ento
+
+54
+00:02:47,031 --> 00:02:48,890
+voc pode pedir para eles fazerem
+
+55
+00:02:48,890 --> 00:02:51,460
+algo e obter um resultado de volta, pedir
+
+56
+00:02:51,460 --> 00:02:53,250
+que faam algo, obter um resultado
+
+57
+00:02:53,250 --> 00:02:56,770
+de volta, sem ter que estar sempre criando novos threads .
+
+58
+00:02:56,770 --> 00:02:58,640
+E  por isso que voc tem
+
+59
+00:02:58,640 --> 00:03:01,716
+um pool de threads, para evitar criar novos threads o tempo todo.
+
+60
+00:03:01,716 --> 00:03:04,090
+Ok,  isso para este vdeo.
+
+61
+00:03:04,090 --> 00:03:06,350
+S queria mostrar-lhe este ThreadPoolExecutor e
+
+62
+00:03:06,350 --> 00:03:07,800
+vou ver no prximo.
+

@@ -1,0 +1,784 @@
+1
+00:00:00,220 --> 00:00:01,400
+Jos: Oi bem vindo de volta.
+
+2
+00:00:01,400 --> 00:00:04,310
+Nesta palestra, estamos falando de filtro.
+
+3
+00:00:04,310 --> 00:00:05,600
+Agora que temos
+
+4
+00:00:05,600 --> 00:00:07,700
+nossos geradores, iteradores e iterveis,
+
+5
+00:00:07,700 --> 00:00:10,180
+podemos comear com algumas funes divertidas.
+
+6
+00:00:11,140 --> 00:00:13,120
+A funo de filtro  uma
+
+7
+00:00:13,120 --> 00:00:16,220
+funo embutida no Python que voc pode chamar de qualquer
+
+8
+00:00:16,220 --> 00:00:18,120
+arquivo ou programa,  o que
+
+9
+00:00:18,120 --> 00:00:19,820
+significa embutir e leva dois argumentos.
+
+10
+00:00:21,020 --> 00:00:22,640
+O primeiro argumento para a
+
+11
+00:00:22,640 --> 00:00:23,620
+funo de filtro
+
+12
+00:00:24,710 --> 00:00:26,900
+ outra funo e tambm  itervel.
+
+13
+00:00:26,900 --> 00:00:28,500
+Ento  mais ou
+
+14
+00:00:30,360 --> 00:00:31,860
+menos assim, vamos encontrar
+
+15
+00:00:31,860 --> 00:00:36,590
+uma lista de amigos como Rolf, Jose, Randy, Anna e Mary e
+
+16
+00:00:36,590 --> 00:00:37,940
+sei que perdi uma.
+
+17
+00:00:39,870 --> 00:00:41,000
+E agora vamos usar
+
+18
+00:00:41,000 --> 00:00:43,730
+a funo de filtro para que s recebamos os amigos
+
+19
+00:00:43,730 --> 00:00:45,480
+que comeam com a letra R.
+
+20
+00:00:47,710 --> 00:00:50,590
+Ento, comece com R, vai
+
+21
+00:00:50,590 --> 00:00:54,304
+ser filter, essa  a funo, agora
+
+22
+00:00:54,304 --> 00:00:56,610
+ela pega uma funo
+
+23
+00:00:59,300 --> 00:01:04,300
+first argument, arg 1, function que retorna true ou false.
+
+24
+00:01:07,310 --> 00:01:09,510
+Portanto, o primeiro argumento para essa funo
+
+25
+00:01:09,510 --> 00:01:12,160
+de filtro deve ser outra funo que retorna verdadeiro
+
+26
+00:01:13,090 --> 00:01:15,290
+ou falso, dependendo do que queremos filtrar.
+
+27
+00:01:15,290 --> 00:01:18,270
+Ento deixe-me definir uma funo aqui.
+
+28
+00:01:19,120 --> 00:01:20,760
+Comea com R.
+
+29
+00:01:23,170 --> 00:01:26,500
+Devolva o comeo do ponto do amigo com R.
+
+30
+00:01:28,180 --> 00:01:31,190
+Friend dot comea com R se for verdade
+
+31
+00:01:31,190 --> 00:01:34,590
+se este argumento comear com um R, ele ser
+
+32
+00:01:34,590 --> 00:01:36,440
+falso se no for.
+
+33
+00:01:37,910 --> 00:01:40,870
+Ento, o primeiro argumento para a funo de filtro
+
+34
+00:01:40,870 --> 00:01:42,230
+tem que ser isso
+
+35
+00:01:43,474 --> 00:01:45,240
+comea com a funo R
+
+36
+00:01:46,520 --> 00:01:49,310
+e o segundo argumento tem que ser itervel, ns
+
+37
+00:01:49,310 --> 00:01:52,170
+sabemos o que so to amigos  uma itervel
+
+38
+00:01:52,170 --> 00:01:54,270
+porque ns podemos iterar sobre isso, 
+
+39
+00:01:55,130 --> 00:01:58,380
+uma lista e isso   assim que a funo
+
+40
+00:01:58,380 --> 00:02:01,280
+de filtro se parece e o que ela faz
+
+41
+00:02:01,280 --> 00:02:04,760
+ manter apenas os elementos para os quais isso retorna verdadeiro.
+
+42
+00:02:05,890 --> 00:02:08,160
+Ento, na primeira vez que a
+
+43
+00:02:08,160 --> 00:02:11,990
+funo de filtragem funcionar, ela vai te dar Rolf,
+
+44
+00:02:11,990 --> 00:02:14,420
+Rolf vai at os amigos, amigo
+
+45
+00:02:14,420 --> 00:02:16,990
+comea com R, vai ser verdade,
+
+46
+00:02:16,990 --> 00:02:20,200
+ento Rolf ser mantido pela funo de filtro.
+
+47
+00:02:20,200 --> 00:02:22,770
+Ento ele vai de novo, e desta vez com Jos,
+
+48
+00:02:22,770 --> 00:02:24,910
+Jos comea com R  falso, ento o
+
+49
+00:02:24,910 --> 00:02:26,810
+filtro ir remov-lo e ignor-lo e assim
+
+50
+00:02:27,950 --> 00:02:29,550
+por diante para cada amigo aqui.
+
+51
+00:02:30,720 --> 00:02:32,800
+O interessante  que o filtro
+
+52
+00:02:32,800 --> 00:02:34,680
+realmente retorna um gerador para
+
+53
+00:02:34,680 --> 00:02:36,080
+que seja um pouco
+
+54
+00:02:36,080 --> 00:02:37,500
+mais eficiente, em vez
+
+55
+00:02:37,500 --> 00:02:40,010
+de copiar sua lista apenas com os
+
+56
+00:02:40,010 --> 00:02:44,816
+elementos que voc deseja manter, voc precisa chamar o prximo, comear com o
+
+57
+00:02:44,816 --> 00:02:48,940
+elemento R para obter o prximo disponvel elemento que  este
+
+58
+00:02:48,940 --> 00:02:50,890
+caso vai ser Rolf.
+
+59
+00:02:51,880 --> 00:02:55,220
+E se voc fizer isso de novo, e novamente,
+
+60
+00:02:56,170 --> 00:02:57,210
+voc receber Randy
+
+61
+00:02:58,837 --> 00:03:03,230
+e, finalmente, obter essa exceo de iterao de parada sobre a qual
+
+62
+00:03:03,230 --> 00:03:04,480
+falamos anteriormente, 
+
+63
+00:03:04,480 --> 00:03:07,080
+o que sinaliza o fim de uma
+
+64
+00:03:07,080 --> 00:03:08,490
+sequncia ou um gerador
+
+65
+00:03:08,490 --> 00:03:11,730
+ou um iterador quando voc alcana o final, ok?
+
+66
+00:03:11,730 --> 00:03:13,390
+Quando voc faz um loop for,
+
+67
+00:03:13,390 --> 00:03:15,000
+o que o loop for
+
+68
+00:03:15,000 --> 00:03:17,760
+est fazendo em segundo plano  apenas chamar next
+
+69
+00:03:17,760 --> 00:03:19,640
+e assim que voc atingir esta
+
+70
+00:03:19,640 --> 00:03:21,120
+iterao de parada, o loop
+
+71
+00:03:21,120 --> 00:03:23,120
+for para e ele no causa esse
+
+72
+00:03:23,120 --> 00:03:25,380
+erro porque a iterao de parada foi projetada
+
+73
+00:03:25,380 --> 00:03:28,050
+isso significa que e o loop for  uma
+
+74
+00:03:28,050 --> 00:03:31,780
+construo que usa a iterao para saber quando  atingido o final, ok?
+
+75
+00:03:31,780 --> 00:03:35,930
+Agora,  claro, se voc listar o incio com R, ele dar
+
+76
+00:03:35,930 --> 00:03:37,600
+uma lista de todos os
+
+77
+00:03:37,600 --> 00:03:38,960
+elementos no gerador, ele
+
+78
+00:03:38,960 --> 00:03:41,540
+passar por cada elemento e o colocar
+
+79
+00:03:41,540 --> 00:03:43,110
+em uma nova lista.
+
+80
+00:03:43,110 --> 00:03:44,810
+Agora, se voc fizer isso de novo, o
+
+81
+00:03:44,810 --> 00:03:46,260
+que voc acha que vai acontecer?
+
+82
+00:03:48,390 --> 00:03:50,600
+Bem, voc obter uma lista vazia, o
+
+83
+00:03:50,600 --> 00:03:54,940
+objeto de lista aqui no levanta uma iterao, mas v que a iterao
+
+84
+00:03:54,940 --> 00:03:57,070
+de parada  aumentada e simplesmente
+
+85
+00:03:57,070 --> 00:03:58,410
+no lhe d nada,
+
+86
+00:03:58,410 --> 00:04:00,239
+apenas lhe d uma lista
+
+87
+00:04:00,239 --> 00:04:02,530
+vazia agora, porque o gerador j foi
+
+88
+00:04:02,530 --> 00:04:04,810
+usado e  lembrado que chegou ao
+
+89
+00:04:04,810 --> 00:04:07,000
+fim, ento no d mais nada.
+
+90
+00:04:08,150 --> 00:04:11,050
+ por isso que explico geradores, iteradores
+
+91
+00:04:11,050 --> 00:04:15,500
+e iterveis antes de entrar nessa funo de filtro, ok?
+
+92
+00:04:15,500 --> 00:04:17,850
+Agora, claro, ao invs de definir uma funo aqui
+
+93
+00:04:17,850 --> 00:04:18,840
+que leva um parmetro
+
+94
+00:04:18,840 --> 00:04:20,590
+e retornos do parmetro comea com R
+
+95
+00:04:20,590 --> 00:04:22,400
+ns poderamos usar apenas um lamda.
+
+96
+00:04:27,310 --> 00:04:29,620
+Esta funo lamda  exatamente a mesma
+
+97
+00:04:29,620 --> 00:04:32,040
+coisa, ento  preciso um parmetro e
+
+98
+00:04:32,040 --> 00:04:35,300
+depois dos dois pontos definimos o que ele retorna e
+
+99
+00:04:35,300 --> 00:04:38,820
+o que ele retorna  x ponto comea com R,
+
+100
+00:04:38,820 --> 00:04:40,650
+ento isso  verdadeiro ou
+
+101
+00:04:40,650 --> 00:04:43,200
+falso dependendo de se x comea com R.
+
+102
+00:04:44,230 --> 00:04:46,170
+Se isso faz voc se sentir melhor,
+
+103
+00:04:46,170 --> 00:04:48,640
+voc pode chamar o parmetro de amigo e dessa
+
+104
+00:04:48,640 --> 00:04:49,980
+forma talvez seja um pouco
+
+105
+00:04:49,980 --> 00:04:51,710
+mais claro que talvez essa funo
+
+106
+00:04:51,710 --> 00:04:53,120
+v operar com esses amigos
+
+107
+00:04:53,120 --> 00:04:55,380
+aqui, ento voc no precisa mais dessa funo l.
+
+108
+00:04:56,750 --> 00:04:58,140
+E ns tambm no precisamos mais desse comentrio,
+
+109
+00:04:58,140 --> 00:04:59,660
+j que sabemos o que isso significa agora.
+
+110
+00:05:01,260 --> 00:05:03,780
+Esta funo de filtro aqui
+
+111
+00:05:03,780 --> 00:05:05,060
+ idntica a
+
+112
+00:05:06,930 --> 00:05:09,820
+esta expresso de gerador aqui, esta
+
+113
+00:05:09,820 --> 00:05:12,490
+compreenso de gerador que diz, F
+
+114
+00:05:12,490 --> 00:05:17,490
+para F em amigos, se F ponto comea com R.
+
+115
+00:05:17,690 --> 00:05:19,970
+Ento esses dois so idnticos, ok?
+
+116
+00:05:20,970 --> 00:05:23,680
+Aqui ns temos uma expresso geradora, uma
+
+117
+00:05:23,680 --> 00:05:26,280
+compreenso geradora que coloca cada amigo em
+
+118
+00:05:26,280 --> 00:05:30,560
+um novo gerador, mas somente se F comear com R, ento
+
+119
+00:05:30,560 --> 00:05:33,260
+esses dois so os mesmos, ok?
+
+120
+00:05:34,870 --> 00:05:36,760
+Qual deles  mais rpido?
+
+121
+00:05:36,760 --> 00:05:38,220
+Qual deles tem melhor desempenho?
+
+122
+00:05:39,330 --> 00:05:41,890
+Este, a compreenso do gerador, funciona
+
+123
+00:05:41,890 --> 00:05:43,690
+melhor neste caso, pelo menos.
+
+124
+00:05:43,690 --> 00:05:45,030
+E a razo para
+
+125
+00:05:45,030 --> 00:05:48,310
+isso  porque voc tem que criar esta funo lamda
+
+126
+00:05:48,310 --> 00:05:50,110
+neste filtro e voc no precisa
+
+127
+00:05:50,110 --> 00:05:52,600
+criar uma funo lamda na expresso do gerador.
+
+128
+00:05:54,365 --> 00:05:55,900
+Se voc j tem sua funo
+
+129
+00:05:55,900 --> 00:05:57,250
+definida em outro lugar em
+
+130
+00:05:57,250 --> 00:05:59,390
+seu programa, a funo de filtro pode ter
+
+131
+00:05:59,390 --> 00:06:00,480
+melhor desempenho e tambm,
+
+132
+00:06:00,480 --> 00:06:03,350
+em alguns casos, a funo de filtro pode ser mais legvel,
+
+133
+00:06:03,350 --> 00:06:04,420
+embora em muitos outros
+
+134
+00:06:04,420 --> 00:06:06,570
+casos, a compreenso da lista seja mais legvel.
+
+135
+00:06:07,670 --> 00:06:09,050
+Ento cabe a voc
+
+136
+00:06:09,050 --> 00:06:11,740
+qual voc usa, eu normalmente prefiro as compreenses,
+
+137
+00:06:11,740 --> 00:06:13,810
+tambm  um pouco mais Pythonic.
+
+138
+00:06:13,810 --> 00:06:15,780
+E, a propsito, apenas por
+
+139
+00:06:15,780 --> 00:06:18,290
+completude, para que fique claro exatamente o
+
+140
+00:06:18,290 --> 00:06:21,090
+que est acontecendo, esses dois filtros e essa
+
+141
+00:06:21,090 --> 00:06:23,332
+compreenso geradora so idnticos a essa
+
+142
+00:06:23,332 --> 00:06:25,510
+outra funo que eu vou definir.
+
+143
+00:06:27,520 --> 00:06:29,220
+ outra funo de
+
+144
+00:06:29,220 --> 00:06:30,260
+filtro, muito
+
+145
+00:06:30,260 --> 00:06:32,757
+parecida com essa que pega uma
+
+146
+00:06:32,757 --> 00:06:36,487
+funo e uma itervel e vai iterar sobre o
+
+147
+00:06:36,487 --> 00:06:39,140
+itervel, vai verificar se a funo
+
+148
+00:06:39,140 --> 00:06:41,800
+retorna true ou no e vai
+
+149
+00:06:42,690 --> 00:06:45,050
+render I no final se a
+
+150
+00:06:45,050 --> 00:06:46,410
+funo  verdade.
+
+151
+00:06:46,410 --> 00:06:50,620
+Ento, vamos imaginar que chamamos meu filtro personalizado aqui.
+
+152
+00:06:52,680 --> 00:06:55,117
+Lamda amigo comea com R  essa
+
+153
+00:06:55,117 --> 00:06:57,938
+funo, o itervel  a nossa lista de amigos.
+
+154
+00:06:57,938 --> 00:07:00,670
+Ns iteramos sobre o itervel, obtemos o primeiro elemento
+
+155
+00:07:00,670 --> 00:07:01,503
+que  Rolf.
+
+156
+00:07:02,700 --> 00:07:06,510
+Se func I , amigo comea com R  verdade,
+
+157
+00:07:06,510 --> 00:07:08,820
+o que , ento ns vamos
+
+158
+00:07:08,820 --> 00:07:10,980
+render I, isso  Rolf.
+
+159
+00:07:12,370 --> 00:07:14,880
+Quando ligarmos para esta funo, vamos pegar o
+
+160
+00:07:14,880 --> 00:07:16,520
+Rolf e depois vamos parar
+
+161
+00:07:16,520 --> 00:07:18,250
+logo depois da linha nove.
+
+162
+00:07:19,290 --> 00:07:20,710
+Quando ns ligarmos novamente,
+
+163
+00:07:20,710 --> 00:07:23,162
+ns vamos voltar ao topo, 
+
+164
+00:07:23,162 --> 00:07:25,690
+isso, ns vamos,  Jos, a
+
+165
+00:07:25,690 --> 00:07:26,850
+corda Jos, ns
+
+166
+00:07:26,850 --> 00:07:29,540
+vamos checar se a funo combina, ser
+
+167
+00:07:29,540 --> 00:07:32,950
+falso ento ns no vamos ceder nada, ns no
+
+168
+00:07:32,950 --> 00:07:35,850
+paramos, vamos para o prximo elemento do
+
+169
+00:07:36,720 --> 00:07:39,200
+loop, ns checamos se Randy comea
+
+170
+00:07:39,200 --> 00:07:42,780
+com R e , ento, ns cedemos Randy e paramos.
+
+171
+00:07:43,950 --> 00:07:46,290
+Na prxima vez que ligarmos em seguida, ns
+
+172
+00:07:46,290 --> 00:07:49,510
+vamos at aqui e  Anna,  falso, ento ns no
+
+173
+00:07:49,510 --> 00:07:52,001
+cedemos, continuamos, eu sou Mary,  falso, ento
+
+174
+00:07:52,001 --> 00:07:54,820
+ns no cedemos, continuamos, chegamos ao fim,  um
+
+175
+00:07:54,820 --> 00:07:57,550
+pare a iterao, ento chegamos ao fim do objeto
+
+176
+00:07:57,550 --> 00:08:00,110
+gerador e essa  outra interseo de parada
+
+177
+00:08:00,110 --> 00:08:02,080
+que nos diz que chegamos ao fim.
+
+178
+00:08:03,080 --> 00:08:05,090
+Ento, espero que isso faa sentido,
+
+179
+00:08:05,090 --> 00:08:07,690
+est comeando a ficar um pouco mais, mais
+
+180
+00:08:07,690 --> 00:08:10,680
+sobre o que  o Python, qual  o
+
+181
+00:08:10,680 --> 00:08:12,980
+gerenciamento de dados e o envio de
+
+182
+00:08:12,980 --> 00:08:14,150
+dados de um lugar
+
+183
+00:08:14,150 --> 00:08:15,620
+para outro e o rendimento
+
+184
+00:08:15,620 --> 00:08:18,600
+ extremamente poderoso, pois permite parar e gerar os
+
+185
+00:08:18,600 --> 00:08:20,910
+valores. um por um sem ter que
+
+186
+00:08:20,910 --> 00:08:22,710
+armazen-los todos na memria ao mesmo tempo.
+
+187
+00:08:24,560 --> 00:08:25,690
+De qualquer forma  isso
+
+188
+00:08:25,690 --> 00:08:28,170
+para este vdeo, eu s queria mostrar a voc essa funo
+
+189
+00:08:28,170 --> 00:08:29,630
+de filtro e como ela  usada.
+
+190
+00:08:29,630 --> 00:08:30,960
+A funo de filtro tambm
+
+191
+00:08:30,960 --> 00:08:32,380
+est presente em muitas outras
+
+192
+00:08:32,380 --> 00:08:34,320
+linguagens de programao, ento voc ver isso
+
+193
+00:08:34,320 --> 00:08:36,600
+em todos os lugares  medida que desenvolve suas
+
+194
+00:08:36,600 --> 00:08:38,740
+habilidades de programao e continua sua jornada de programao.
+
+195
+00:08:38,740 --> 00:08:40,603
+E assim, sim,  isso e
+
+196
+00:08:40,603 --> 00:08:42,400
+eu vejo vocs no prximo vdeo.
+

@@ -1,0 +1,1224 @@
+1
+00:00:00,130 --> 00:00:01,750
+<v Jose>Hi, and welcome back.</v>
+
+2
+00:00:01,750 --> 00:00:04,160
+In this video, I just wanted to go over the quiz
+
+3
+00:00:04,160 --> 00:00:07,650
+you've just done, at least, I hope you've tackled it,
+
+4
+00:00:07,650 --> 00:00:10,500
+and guide you through some of the answers,
+
+5
+00:00:10,500 --> 00:00:14,660
+and then also give you the code that I would use
+
+6
+00:00:14,660 --> 00:00:18,860
+to avoid the problems that Ben and Dan had in this quiz.
+
+7
+00:00:18,860 --> 00:00:21,767
+I'm just doing this for this quiz because it's a tricky one,
+
+8
+00:00:21,767 --> 00:00:23,810
+but it's interesting, and it's a problem
+
+9
+00:00:23,810 --> 00:00:26,730
+that you'll see happen over and over again.
+
+10
+00:00:26,730 --> 00:00:28,473
+So, let's start the quiz.
+
+11
+00:00:31,260 --> 00:00:34,090
+We've got a quick question to warm us up, first of all,
+
+12
+00:00:34,090 --> 00:00:35,600
+and we get some background.
+
+13
+00:00:35,600 --> 00:00:37,960
+Now, for this quiz, if you haven't done it yet,
+
+14
+00:00:37,960 --> 00:00:41,550
+I'd encourage you to sort of take it seriously.
+
+15
+00:00:41,550 --> 00:00:45,430
+Think as though you were one of these two developers
+
+16
+00:00:45,430 --> 00:00:49,520
+and how you would implement this bit of code.
+
+17
+00:00:49,520 --> 00:00:52,430
+So Ben and Dan are two novice software developers,
+
+18
+00:00:52,430 --> 00:00:55,510
+and they are trying to build a function that asks the user
+
+19
+00:00:55,510 --> 00:00:58,980
+for a number and calculate its power of two.
+
+20
+00:00:58,980 --> 00:01:01,170
+And here's the first version of their code.
+
+21
+00:01:01,170 --> 00:01:03,850
+So we've got a function called power_of_two,
+
+22
+00:01:03,850 --> 00:01:05,590
+and the first thing it does is it asks the user
+
+23
+00:01:05,590 --> 00:01:09,480
+for a number, multiplies it, well, powers it by two,
+
+24
+00:01:09,480 --> 00:01:12,833
+squares it, rather, that then returns n_square.
+
+25
+00:01:12,833 --> 00:01:14,490
+So, what do we think?
+
+26
+00:01:14,490 --> 00:01:15,683
+Will this work?
+
+27
+00:01:17,230 --> 00:01:20,950
+My immediate thinking for this is, you know,
+
+28
+00:01:20,950 --> 00:01:23,020
+input gives you a string,
+
+29
+00:01:23,020 --> 00:01:25,610
+so this is not gonna work, because a string
+
+30
+00:01:25,610 --> 00:01:27,800
+to the power of two is gonna break,
+
+31
+00:01:27,800 --> 00:01:30,910
+so I'm gonna say the programme will break in all cases,
+
+32
+00:01:30,910 --> 00:01:32,530
+and that's the correct thinking.
+
+33
+00:01:32,530 --> 00:01:33,670
+Of course, for me, it's a bit easier,
+
+34
+00:01:33,670 --> 00:01:34,980
+'cause I've actually made the quiz,
+
+35
+00:01:34,980 --> 00:01:36,780
+so I sort of know the answers.
+
+36
+00:01:36,780 --> 00:01:40,830
+But I would expect you to be aware of the input function
+
+37
+00:01:40,830 --> 00:01:43,173
+returning a string in all cases at this point.
+
+38
+00:01:45,500 --> 00:01:48,350
+The second question starts getting a little bit trickier.
+
+39
+00:01:49,490 --> 00:01:51,950
+So they realise their error, and they have a second version
+
+40
+00:01:51,950 --> 00:01:55,330
+where now they are putting the user input
+
+41
+00:01:55,330 --> 00:01:56,770
+into a variable called user_input,
+
+42
+00:01:56,770 --> 00:01:58,810
+and then they're turning that into a float.
+
+43
+00:01:58,810 --> 00:02:00,960
+So that's a decimal point number.
+
+44
+00:02:00,960 --> 00:02:03,510
+Then they're gonna square that float and return it.
+
+45
+00:02:04,358 --> 00:02:07,310
+And it's pretty common for people to do something like this,
+
+46
+00:02:07,310 --> 00:02:09,540
+even professional software engineers.
+
+47
+00:02:09,540 --> 00:02:11,230
+You've got your input.
+
+48
+00:02:11,230 --> 00:02:12,940
+You're asking the user to enter a number,
+
+49
+00:02:12,940 --> 00:02:15,090
+so of course, they're gonna enter a number,
+
+50
+00:02:15,090 --> 00:02:18,250
+and you're gonna turn that into a Python float,
+
+51
+00:02:18,250 --> 00:02:19,083
+and then you're gonna square that,
+
+52
+00:02:19,083 --> 00:02:20,810
+and it's all gonna be fine.
+
+53
+00:02:20,810 --> 00:02:23,580
+But the users don't always play nice.
+
+54
+00:02:23,580 --> 00:02:25,980
+Sometimes, you know, you'll ask them to enter a number,
+
+55
+00:02:25,980 --> 00:02:29,420
+and they'll by accident, like, type out the number "ten,"
+
+56
+00:02:29,420 --> 00:02:33,360
+or maybe they'll type something else by mistake entirely,
+
+57
+00:02:33,360 --> 00:02:36,060
+or they won't understand what you want them to do.
+
+58
+00:02:36,060 --> 00:02:38,790
+So now there are three options:
+
+59
+00:02:38,790 --> 00:02:42,290
+it will work in all cases, and a lot of people will say,
+
+60
+00:02:42,290 --> 00:02:44,290
+you know, yes, it'll work in all cases,
+
+61
+00:02:44,290 --> 00:02:47,230
+because the assumption is the user is gonna enter a number.
+
+62
+00:02:47,230 --> 00:02:51,170
+But that assumption is flawed, because the user may not.
+
+63
+00:02:51,170 --> 00:02:53,010
+So it's yes and no, the programme will work
+
+64
+00:02:53,010 --> 00:02:55,553
+on some inputs but break on other inputs.
+
+65
+00:02:57,870 --> 00:02:58,903
+And that's correct.
+
+66
+00:03:00,550 --> 00:03:03,420
+Then we've got version three,
+
+67
+00:03:03,420 --> 00:03:06,710
+and this code starts getting a little bit trickier.
+
+68
+00:03:06,710 --> 00:03:08,310
+So after shipping their version two code,
+
+69
+00:03:08,310 --> 00:03:10,350
+Ben and Dan had some serious complaints.
+
+70
+00:03:10,350 --> 00:03:11,690
+This is a frequent thing.
+
+71
+00:03:11,690 --> 00:03:14,410
+You will get complaints if your code is broken,
+
+72
+00:03:14,410 --> 00:03:17,180
+if you have users using your code, of course.
+
+73
+00:03:17,180 --> 00:03:20,870
+So now, it becomes a little bit more contrived.
+
+74
+00:03:20,870 --> 00:03:23,350
+Now we're getting the user input put into a variable,
+
+75
+00:03:23,350 --> 00:03:26,980
+and then we're initialising a try except finally block.
+
+76
+00:03:26,980 --> 00:03:31,250
+Inside the try, we're trying to put the user input
+
+77
+00:03:31,250 --> 00:03:33,633
+into a float and inside the variable n.
+
+78
+00:03:34,510 --> 00:03:38,710
+Remember, n is defined inside the try block,
+
+79
+00:03:38,710 --> 00:03:41,280
+so it doesn't exist anywhere else.
+
+80
+00:03:41,280 --> 00:03:43,200
+If that fails with a value error,
+
+81
+00:03:43,200 --> 00:03:45,600
+which means the user entered a string,
+
+82
+00:03:45,600 --> 00:03:47,610
+we print your input was invalid,
+
+83
+00:03:47,610 --> 00:03:52,610
+and finally, at the end, we square n and return that.
+
+84
+00:03:52,830 --> 00:03:55,540
+But of course n was defined in the try block.
+
+85
+00:03:55,540 --> 00:03:59,850
+It's possible that if that failed with a value error,
+
+86
+00:03:59,850 --> 00:04:04,160
+we don't have n, so n_square will be error,
+
+87
+00:04:04,160 --> 00:04:05,563
+because n is not defined.
+
+88
+00:04:06,510 --> 00:04:09,020
+So in this case, they are trying out the code
+
+89
+00:04:09,020 --> 00:04:10,310
+with two different inputs.
+
+90
+00:04:10,310 --> 00:04:11,550
+This is good.
+
+91
+00:04:11,550 --> 00:04:14,431
+You should try out your code with multiple inputs.
+
+92
+00:04:14,431 --> 00:04:16,420
+In the first case, he's gonna enter four,
+
+93
+00:04:16,420 --> 00:04:19,140
+and in the second case, he's gonna enter the string dan.
+
+94
+00:04:19,140 --> 00:04:22,140
+So, for four it's gonna work, because the float of four
+
+95
+00:04:22,140 --> 00:04:23,520
+is gonna give you something.
+
+96
+00:04:23,520 --> 00:04:26,860
+Then you're gonna go and jump down here, but for dan,
+
+97
+00:04:26,860 --> 00:04:30,020
+you're gonna get a value error, which means you're gonna try
+
+98
+00:04:30,020 --> 00:04:32,980
+to multiply something that doesn't exist.
+
+99
+00:04:32,980 --> 00:04:37,033
+So you're gonna get 16.0 and error as the solution.
+
+100
+00:04:40,640 --> 00:04:42,680
+Now, for this version,
+
+101
+00:04:42,680 --> 00:04:45,340
+we've got something a little bit different.
+
+102
+00:04:45,340 --> 00:04:46,960
+Fairly similar in many regards.
+
+103
+00:04:46,960 --> 00:04:49,340
+We've got the user input as a string.
+
+104
+00:04:49,340 --> 00:04:51,310
+Then we try to convert it into a float
+
+105
+00:04:51,310 --> 00:04:53,450
+and put it into the variable n,
+
+106
+00:04:53,450 --> 00:04:56,350
+and then if an error happens, we print out
+
+107
+00:04:56,350 --> 00:05:00,520
+the input was invalid, and we say n is zero.
+
+108
+00:05:00,520 --> 00:05:03,293
+So what is going to happen in this case?
+
+109
+00:05:04,460 --> 00:05:09,460
+Well, the else block, now this has been replaced,
+
+110
+00:05:09,820 --> 00:05:11,680
+replacing the finally block,
+
+111
+00:05:11,680 --> 00:05:16,360
+the else block only runs if there was no error.
+
+112
+00:05:16,360 --> 00:05:20,860
+We've seen that just recently in the last video.
+
+113
+00:05:20,860 --> 00:05:24,763
+So, if we run through the try block successfully,
+
+114
+00:05:25,830 --> 00:05:29,970
+we will then multiply our square and return that.
+
+115
+00:05:29,970 --> 00:05:33,320
+If we get an error, we're gonna jump into the except block.
+
+116
+00:05:33,320 --> 00:05:36,360
+N is gonna be zero, but we're not going to run
+
+117
+00:05:36,360 --> 00:05:39,560
+the else block, and we're not going to return the square.
+
+118
+00:05:39,560 --> 00:05:41,823
+So we're gonna return none by default.
+
+119
+00:05:42,920 --> 00:05:45,790
+In this case, the answer is 16.0 and none,
+
+120
+00:05:45,790 --> 00:05:50,010
+because the first test case will return 16.0.
+
+121
+00:05:50,010 --> 00:05:52,990
+The second one will return none, because the function
+
+122
+00:05:52,990 --> 00:05:56,823
+doesn't return anything if it doesn't succeed in the try.
+
+123
+00:05:58,220 --> 00:06:00,470
+So that's the correct answer there.
+
+124
+00:06:00,470 --> 00:06:03,670
+Then we've got a slightly more complicated version,
+
+125
+00:06:03,670 --> 00:06:07,340
+and, you know, you may now be able to see
+
+126
+00:06:07,340 --> 00:06:10,400
+how to fix this code, and you may be thinking,
+
+127
+00:06:10,400 --> 00:06:12,250
+this code is now way too complicated.
+
+128
+00:06:12,250 --> 00:06:14,253
+Why would anybody write this code?
+
+129
+00:06:15,470 --> 00:06:17,340
+And you're right.
+
+130
+00:06:17,340 --> 00:06:19,950
+If you know how to solve the problem
+
+131
+00:06:19,950 --> 00:06:22,550
+and you're coming at it with a pair of fresh eyes,
+
+132
+00:06:22,550 --> 00:06:25,253
+you may never write something that looks like this.
+
+133
+00:06:26,180 --> 00:06:29,390
+But if you have made a mistake and then another one
+
+134
+00:06:29,390 --> 00:06:32,380
+and then another one and suddenly there's a pressure
+
+135
+00:06:32,380 --> 00:06:34,600
+for you to do it right, there's a pressure for users
+
+136
+00:06:34,600 --> 00:06:37,370
+to be happy, there's a pressure for you to give this code
+
+137
+00:06:37,370 --> 00:06:40,830
+to your users quickly, mistakes start to happen,
+
+138
+00:06:40,830 --> 00:06:44,510
+and you start getting a narrow focus on the problem,
+
+139
+00:06:44,510 --> 00:06:47,280
+and what you start thinking is, you know,
+
+140
+00:06:47,280 --> 00:06:49,930
+what do we add quickly to fix the problem,
+
+141
+00:06:49,930 --> 00:06:52,890
+and you stop thinking about, how do we restructure this code
+
+142
+00:06:52,890 --> 00:06:54,110
+so that it solves the problem
+
+143
+00:06:54,110 --> 00:06:57,360
+without any cruft or any useless code?
+
+144
+00:06:57,360 --> 00:06:59,704
+So in this case, we're getting user_input
+
+145
+00:06:59,704 --> 00:07:01,980
+is the input of the user.
+
+146
+00:07:01,980 --> 00:07:04,590
+Then we try to turn it into a float.
+
+147
+00:07:04,590 --> 00:07:07,010
+If we fail to do that, we print out
+
+148
+00:07:07,010 --> 00:07:10,570
+that your input was invalid, and we assign n to zero.
+
+149
+00:07:10,570 --> 00:07:15,570
+If we succeed in getting n, we type out n_square is n
+
+150
+00:07:16,680 --> 00:07:21,130
+to the power of two, and then we finally return n_square.
+
+151
+00:07:21,130 --> 00:07:23,430
+Of course, same problem as before.
+
+152
+00:07:23,430 --> 00:07:26,780
+When we type four, the try succeeds, so we get n,
+
+153
+00:07:26,780 --> 00:07:28,770
+and then we jump straight to the else,
+
+154
+00:07:28,770 --> 00:07:33,580
+and we get n_square is 16.0, and then we return it.
+
+155
+00:07:33,580 --> 00:07:37,620
+But, when we get dan, we don't get a value for n.
+
+156
+00:07:37,620 --> 00:07:39,260
+We instead jump to the except.
+
+157
+00:07:39,260 --> 00:07:41,360
+We get n equal to zero.
+
+158
+00:07:41,360 --> 00:07:43,830
+We don't run the else, because the else only runs
+
+159
+00:07:43,830 --> 00:07:45,950
+if we succeed in the try.
+
+160
+00:07:45,950 --> 00:07:47,960
+We jump to finally, where we return n_square,
+
+161
+00:07:47,960 --> 00:07:51,110
+but n_square was defined here, so we get an error.
+
+162
+00:07:51,110 --> 00:07:54,303
+The answer here will be 16.0 and error.
+
+163
+00:07:57,790 --> 00:08:00,160
+Now, it gets a bit more complicated.
+
+164
+00:08:00,160 --> 00:08:05,160
+We've got the user_input as the user's, what the user types.
+
+165
+00:08:05,430 --> 00:08:08,130
+Then n is a float of user_input.
+
+166
+00:08:08,130 --> 00:08:13,130
+If we fail to get the user_input, we return zero,
+
+167
+00:08:15,130 --> 00:08:17,820
+and finally, at the very end, we get n_square
+
+168
+00:08:17,820 --> 00:08:22,820
+is n to the power of two, and then we return n_square.
+
+169
+00:08:23,000 --> 00:08:26,010
+So, this is a tricky question.
+
+170
+00:08:26,010 --> 00:08:27,750
+It's a trick question, in fact, because you see
+
+171
+00:08:27,750 --> 00:08:30,880
+the returned zero here, and you think, hey, you know,
+
+172
+00:08:30,880 --> 00:08:35,583
+we are gonna return zero in the except, right?
+
+173
+00:08:36,920 --> 00:08:40,050
+But that's not really what happens.
+
+174
+00:08:40,050 --> 00:08:44,260
+So, what we're gonna see is we're gonna run through the try
+
+175
+00:08:44,260 --> 00:08:47,710
+with the input four, and that's gonna give us 16.0.
+
+176
+00:08:47,710 --> 00:08:50,430
+Then we're gonna jump right to the finally,
+
+177
+00:08:50,430 --> 00:08:53,440
+sorry, four, and then we're gonna do
+
+178
+00:08:53,440 --> 00:08:55,770
+four to the power of two is gonna give us 16.0.
+
+179
+00:08:55,770 --> 00:08:57,140
+We're gonna return 16.0.
+
+180
+00:08:57,140 --> 00:08:57,973
+All is good.
+
+181
+00:08:57,973 --> 00:09:00,900
+So for now, we've got one of these things.
+
+182
+00:09:00,900 --> 00:09:03,500
+The first return is gonna be 16.0.
+
+183
+00:09:03,500 --> 00:09:07,160
+But the second one with dan, what you may think
+
+184
+00:09:07,160 --> 00:09:09,820
+is, you know, float of dan is gonna give you an error.
+
+185
+00:09:09,820 --> 00:09:12,550
+So you're gonna jump right into the accept,
+
+186
+00:09:12,550 --> 00:09:14,620
+and you're gonna return zero.
+
+187
+00:09:14,620 --> 00:09:17,160
+So a pretty reasonable thing to think
+
+188
+00:09:18,060 --> 00:09:22,990
+would be the C would be the answer, 16.0 and zero.
+
+189
+00:09:22,990 --> 00:09:25,830
+Notice how it can never be 16.0 and 0.0,
+
+190
+00:09:25,830 --> 00:09:29,190
+because here, we're returning zero, not 0.0.
+
+191
+00:09:29,190 --> 00:09:30,220
+But actually what happens
+
+192
+00:09:30,220 --> 00:09:32,570
+is a pretty interesting thing in Python.
+
+193
+00:09:32,570 --> 00:09:35,817
+If you return inside an except, and then you return
+
+194
+00:09:35,817 --> 00:09:39,440
+inside the finally, the finally takes precedence.
+
+195
+00:09:39,440 --> 00:09:42,200
+So this will return.
+
+196
+00:09:42,200 --> 00:09:45,683
+So what you're gonna get instead is 16.0 and error,
+
+197
+00:09:46,550 --> 00:09:48,283
+because n_square does not exist.
+
+198
+00:09:49,281 --> 00:09:52,190
+So the finally is always going to run
+
+199
+00:09:52,190 --> 00:09:54,190
+if you have a return in it.
+
+200
+00:09:54,190 --> 00:09:57,170
+If you don't have a return in the finally,
+
+201
+00:09:57,170 --> 00:09:59,940
+the code would work, but it wouldn't return 16.0 at first.
+
+202
+00:09:59,940 --> 00:10:01,363
+It would return none.
+
+203
+00:10:02,230 --> 00:10:04,000
+But, this return 0 would work.
+
+204
+00:10:04,000 --> 00:10:06,860
+You would not try to run this line,
+
+205
+00:10:06,860 --> 00:10:08,730
+which is a bit of a bizarre thing.
+
+206
+00:10:08,730 --> 00:10:09,650
+Just something to remember:
+
+207
+00:10:09,650 --> 00:10:12,380
+if you have a return in the finally, the finally
+
+208
+00:10:12,380 --> 00:10:15,490
+will always run, no matter what you do in the except.
+
+209
+00:10:15,490 --> 00:10:16,323
+Okay?
+
+210
+00:10:16,323 --> 00:10:18,543
+So the answer would be 16.0 and error.
+
+211
+00:10:19,700 --> 00:10:20,533
+And that's that.
+
+212
+00:10:20,533 --> 00:10:23,110
+And it says here, the finally block will get executed
+
+213
+00:10:23,110 --> 00:10:26,510
+regardless of the return statement
+
+214
+00:10:26,510 --> 00:10:29,250
+in both the try block and an except block.
+
+215
+00:10:29,250 --> 00:10:30,720
+Okay.
+
+216
+00:10:30,720 --> 00:10:32,093
+So, there you have it.
+
+217
+00:10:33,560 --> 00:10:35,860
+And you have the results, and you will be able to see
+
+218
+00:10:35,860 --> 00:10:37,550
+a couple of lectures that you can check out
+
+219
+00:10:37,550 --> 00:10:40,350
+if you did get any wrong in there.
+
+220
+00:10:40,350 --> 00:10:43,010
+Now, if we go over back to PyCharm,
+
+221
+00:10:43,010 --> 00:10:46,660
+we'll see that we've got here their latest answer.
+
+222
+00:10:46,660 --> 00:10:49,370
+Power_of_two asks the user for an input,
+
+223
+00:10:49,370 --> 00:10:53,080
+and then we try to turn it into a float.
+
+224
+00:10:53,080 --> 00:10:56,350
+And we can try this out indeed with the inputs
+
+225
+00:10:56,350 --> 00:10:58,130
+that they typed.
+
+226
+00:10:58,130 --> 00:11:01,960
+So we can do power_of_two and then power_of_two again.
+
+227
+00:11:01,960 --> 00:11:05,520
+We can run this app and see what happens.
+
+228
+00:11:05,520 --> 00:11:07,760
+We're gonna enter four at first,
+
+229
+00:11:07,760 --> 00:11:09,550
+and of course we're not printing anything,
+
+230
+00:11:09,550 --> 00:11:12,873
+so we're gonna stop this and make it print.
+
+231
+00:11:16,180 --> 00:11:17,013
+There.
+
+232
+00:11:18,370 --> 00:11:19,930
+Let's run this again.
+
+233
+00:11:19,930 --> 00:11:21,090
+First thing, we're gonna enter four.
+
+234
+00:11:21,090 --> 00:11:22,120
+We get 16.0.
+
+235
+00:11:22,120 --> 00:11:27,040
+Then we're gonna enter dan, and notice how it doesn't
+
+236
+00:11:27,040 --> 00:11:29,990
+quite work, because the finally there is being executed.
+
+237
+00:11:29,990 --> 00:11:33,270
+This thing here is saying n_square is n to the power of two,
+
+238
+00:11:33,270 --> 00:11:35,370
+which means we did not exit
+
+239
+00:11:35,370 --> 00:11:38,253
+the function in this return, okay.
+
+240
+00:11:39,120 --> 00:11:42,200
+Now, the way to implement something like this
+
+241
+00:11:42,200 --> 00:11:46,960
+is if possible, and really, the way you wanna do
+
+242
+00:11:46,960 --> 00:11:51,730
+try, except, and finally is everything you want to try,
+
+243
+00:11:51,730 --> 00:11:53,570
+put it in the try.
+
+244
+00:11:53,570 --> 00:11:55,460
+So in this case, what we wanna try
+
+245
+00:11:55,460 --> 00:11:57,273
+is to deal with user input.
+
+246
+00:11:58,150 --> 00:12:01,310
+So, what you would want to do is you would want to put
+
+247
+00:12:01,310 --> 00:12:04,810
+this in here and get rid of the finally entirely,
+
+248
+00:12:04,810 --> 00:12:06,200
+because the finally is used
+
+249
+00:12:06,200 --> 00:12:10,150
+to do something at the closing of a block.
+
+250
+00:12:10,150 --> 00:12:12,060
+And here, we don't really have a closing of a block.
+
+251
+00:12:12,060 --> 00:12:14,820
+We've got things we want to try,
+
+252
+00:12:14,820 --> 00:12:18,610
+and if we don't succeed to get user_input
+
+253
+00:12:18,610 --> 00:12:23,610
+or we don't succeed to multiply it, to square it,
+
+254
+00:12:24,340 --> 00:12:26,610
+then we don't want to do anything.
+
+255
+00:12:26,610 --> 00:12:28,220
+Potentially, we want to return zero.
+
+256
+00:12:28,220 --> 00:12:31,620
+So that may be what you want to do in your function.
+
+257
+00:12:31,620 --> 00:12:33,760
+And so this would now work.
+
+258
+00:12:33,760 --> 00:12:35,780
+If you enter four, you get 16.0.
+
+259
+00:12:35,780 --> 00:12:38,640
+If you enter dan, you get your input was invalid.
+
+260
+00:12:38,640 --> 00:12:41,443
+Using default value 0, and you get zero, okay?
+
+261
+00:12:43,058 --> 00:12:46,420
+So, again, the thing to take away from this is,
+
+262
+00:12:46,420 --> 00:12:47,860
+there's two things, in fact.
+
+263
+00:12:47,860 --> 00:12:52,860
+The first one, it's really easy to have, become close-minded
+
+264
+00:12:53,530 --> 00:12:56,030
+when you're dealing with a problem for a long time
+
+265
+00:12:56,030 --> 00:12:58,680
+and sort of lose sight of the big picture.
+
+266
+00:12:58,680 --> 00:13:01,070
+It's a common thing to do.
+
+267
+00:13:01,070 --> 00:13:03,570
+What you can do is you can go grab a cup of coffee
+
+268
+00:13:04,530 --> 00:13:06,320
+or go for a nap and then come back to it
+
+269
+00:13:06,320 --> 00:13:07,760
+and it'll be simpler, or of course you can
+
+270
+00:13:07,760 --> 00:13:09,350
+ask a question in the course Q&amp;A.
+
+271
+00:13:09,350 --> 00:13:14,330
+We very frequently find student questions that are,
+
+272
+00:13:14,330 --> 00:13:17,810
+you know, things that you can spot after you've
+
+273
+00:13:17,810 --> 00:13:20,460
+not looked at something for a few hours, for example,
+
+274
+00:13:20,460 --> 00:13:23,530
+like a comma there or something like that.
+
+275
+00:13:23,530 --> 00:13:25,770
+If you put a comma at the end of here
+
+276
+00:13:25,770 --> 00:13:28,900
+and you've been working on this for many hours,
+
+277
+00:13:28,900 --> 00:13:31,820
+you know, it may not even cross your mind
+
+278
+00:13:31,820 --> 00:13:33,810
+that this can cause a problem.
+
+279
+00:13:33,810 --> 00:13:36,470
+So if you've been working on something for a long time,
+
+280
+00:13:36,470 --> 00:13:38,090
+sometimes that can cause narrow focus,
+
+281
+00:13:38,090 --> 00:13:40,710
+and it can cause that you don't see the big picture,
+
+282
+00:13:40,710 --> 00:13:42,890
+and you start just thinking about,
+
+283
+00:13:42,890 --> 00:13:46,570
+what is the one line of code I can add to make this work,
+
+284
+00:13:46,570 --> 00:13:50,270
+and you stop thinking of, how do I think of the problem
+
+285
+00:13:50,270 --> 00:13:53,790
+in a different way entirely so that the solution is simpler.
+
+286
+00:13:53,790 --> 00:13:56,540
+And the second thing to take away from it is,
+
+287
+00:13:56,540 --> 00:13:59,160
+put everything you wanna try in the try block.
+
+288
+00:13:59,160 --> 00:14:01,210
+Everything that depends on one another,
+
+289
+00:14:01,210 --> 00:14:02,460
+just put them in the same block,
+
+290
+00:14:02,460 --> 00:14:04,870
+because that's gonna make your life much simpler.
+
+291
+00:14:04,870 --> 00:14:08,660
+And then, any problem that can result from this code
+
+292
+00:14:08,660 --> 00:14:12,380
+will be, will be caught by this value error here.
+
+293
+00:14:12,380 --> 00:14:14,670
+And if necessary, if there are multiple problems
+
+294
+00:14:14,670 --> 00:14:17,200
+that can result out of tying this, as you know,
+
+295
+00:14:17,200 --> 00:14:20,110
+you can just chain errors here,
+
+296
+00:14:20,110 --> 00:14:21,743
+like RuntimeError or something.
+
+297
+00:14:22,610 --> 00:14:24,870
+You can chain these here
+
+298
+00:14:24,870 --> 00:14:27,160
+so that the error gets caught no matter what.
+
+299
+00:14:28,360 --> 00:14:31,130
+In the unlikely event that you want to use
+
+300
+00:14:31,130 --> 00:14:34,040
+a finally or an else block, just remember,
+
+301
+00:14:34,040 --> 00:14:38,130
+the else block only runs when you succeed,
+
+302
+00:14:38,130 --> 00:14:42,760
+and the finally should be used to close down something.
+
+303
+00:14:42,760 --> 00:14:44,870
+So, don't use them indiscriminately, because that's
+
+304
+00:14:44,870 --> 00:14:49,193
+gonna bring you problems like it did for Dan and Ben.
+
+305
+00:14:50,500 --> 00:14:51,530
+That's it for this video.
+
+306
+00:14:51,530 --> 00:14:54,173
+Hope you've enjoyed it, and I'll see you in the next one.
+

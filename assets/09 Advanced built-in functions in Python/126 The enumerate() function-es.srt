@@ -1,0 +1,420 @@
+1
+00:00:00,290 --> 00:00:01,680
+Jos: Hola y bienvenido de nuevo.
+
+2
+00:00:01,680 --> 00:00:02,530
+Finalmente en esta
+
+3
+00:00:02,530 --> 00:00:05,640
+seccin, tambin quera contarte acerca de la funcin de enumerar.
+
+4
+00:00:05,640 --> 00:00:07,810
+Es una funcin que muchos desarrolladores
+
+5
+00:00:07,810 --> 00:00:10,020
+principiantes no conocen hasta que finalmente
+
+6
+00:00:10,020 --> 00:00:12,890
+encuentran esta instancia donde, ya sabes, podra
+
+7
+00:00:12,890 --> 00:00:14,250
+ser bastante til.
+
+8
+00:00:14,250 --> 00:00:16,710
+Luego van y hacen una pregunta en algn lugar de internet,
+
+9
+00:00:16,710 --> 00:00:18,450
+y alguien vuelve diciendo quin, por supuesto.
+
+10
+00:00:18,450 --> 00:00:20,250
+Usa la funcin de enumerar, sabes?
+
+11
+00:00:20,250 --> 00:00:22,390
+Hace exactamente lo que necesita.
+
+12
+00:00:22,390 --> 00:00:24,410
+As que aqu hay un ejemplo de
+
+13
+00:00:24,410 --> 00:00:27,040
+dnde podra querer usar la funcin de enumerar.
+
+14
+00:00:27,040 --> 00:00:29,700
+Digamos que tienes una lista de tus mejores amigos
+
+15
+00:00:29,700 --> 00:00:31,040
+y yo soy el primero.
+
+16
+00:00:32,640 --> 00:00:34,140
+Y tienes estos dos aqu.
+
+17
+00:00:35,290 --> 00:00:38,050
+Podra imprimir sus tres mejores amigos, por
+
+18
+00:00:38,050 --> 00:00:43,050
+supuesto, como de costumbre, diciendo que mi mejor amigo es top_friends, cero.
+
+19
+00:00:47,850 --> 00:00:52,000
+Y podras copiar esto, y comet un error aqu.
+
+20
+00:00:54,680 --> 00:00:55,750
+Ah.
+
+21
+00:00:55,750 --> 00:00:58,800
+Por supuesto, tendrs que cambiar esto por uno y dos.
+
+22
+00:00:58,800 --> 00:01:01,360
+Y esto para dos y tres.
+
+23
+00:01:01,360 --> 00:01:02,310
+Podras ejecutar esto.
+
+24
+00:01:04,703 --> 00:01:08,500
+Olvid estas cosas de cierre.
+
+25
+00:01:08,500 --> 00:01:09,333
+Podras ejecutar estos,
+
+26
+00:01:09,333 --> 00:01:11,660
+y obtendrs que tu mejor amigo es Jos, que
+
+27
+00:01:11,660 --> 00:01:13,380
+es un buen amigo para tener.
+
+28
+00:01:14,380 --> 00:01:15,590
+Un poco aburrido, por supuesto.
+
+29
+00:01:15,590 --> 00:01:16,460
+Sabemos sobre bucles.
+
+30
+00:01:16,460 --> 00:01:18,010
+Podemos usar bucles, verdad?
+
+31
+00:01:18,010 --> 00:01:20,140
+Entonces, usemos loops.
+
+32
+00:01:20,140 --> 00:01:23,340
+Digamos para m en el rango tres.
+
+33
+00:01:24,400 --> 00:01:26,210
+Y luego diremos imprimir.
+
+34
+00:01:26,210 --> 00:01:31,210
+Mi top, adems de un amigo, top_friends, I.
+
+35
+00:01:33,580 --> 00:01:35,610
+No olvid nada esta vez.
+
+36
+00:01:35,610 --> 00:01:37,130
+Esta es otra forma,
+
+37
+00:01:37,130 --> 00:01:39,590
+potencialmente, de conseguir tus mejores amigos
+
+38
+00:01:39,590 --> 00:01:41,300
+y obtener el nmero all.
+
+39
+00:01:42,210 --> 00:01:44,260
+Podemos ejecutar esto, sacamos lo mismo.
+
+40
+00:01:45,180 --> 00:01:47,390
+Sin embargo, cuando tiene que
+
+41
+00:01:47,390 --> 00:01:49,500
+hacer esto, cuando desea iterar
+
+42
+00:01:49,500 --> 00:01:52,210
+sobre algo y necesita acceder al ndice,
+
+43
+00:01:52,210 --> 00:01:54,290
+como aqu necesita acceder al
+
+44
+00:01:54,290 --> 00:01:57,470
+ndice para saber dnde se encuentra, entonces la
+
+45
+00:01:58,640 --> 00:02:00,520
+funcin de enumerar aparece prctico.
+
+46
+00:02:00,520 --> 00:02:02,050
+Por supuesto, si no necesitabas el ndice,
+
+47
+00:02:02,050 --> 00:02:03,910
+y solo queras hacer una lista de tus tres
+
+48
+00:02:03,910 --> 00:02:06,140
+mejores amigos, digamos que Jos es uno de mis mejores amigos.
+
+49
+00:02:06,140 --> 00:02:09,180
+Podras decir por amigo en top_friends.
+
+50
+00:02:09,180 --> 00:02:14,180
+Y decir, amigo es uno de mis mejores amigos.
+
+51
+00:02:15,710 --> 00:02:16,543
+Esto est totalmente bien.
+
+52
+00:02:16,543 --> 00:02:17,720
+No necesitas el ndice para nada.
+
+53
+00:02:17,720 --> 00:02:19,740
+No necesita la funcin de enumerar para nada.
+
+54
+00:02:19,740 --> 00:02:21,580
+Pero, no queremos hacer esto ahora.
+
+55
+00:02:21,580 --> 00:02:23,800
+Queremos decir mi mejor amigo X.
+
+56
+00:02:23,800 --> 00:02:25,270
+Y para eso, necesitas el ndice.
+
+57
+00:02:25,270 --> 00:02:27,740
+Necesitas cuntas veces has pasado por el ciclo.
+
+58
+00:02:27,740 --> 00:02:29,510
+Para que sepa si es uno superior, los dos
+
+59
+00:02:29,510 --> 00:02:30,610
+primeros o los tres primeros.
+
+60
+00:02:31,450 --> 00:02:36,450
+En ese caso, puedes hacer por I comma friend en
+
+61
+00:02:37,000 --> 00:02:38,130
+enumerate, top_friends.
+
+62
+00:02:39,280 --> 00:02:42,997
+De nuevo, esto es bastante similar a la clave y
+
+63
+00:02:42,997 --> 00:02:46,660
+la desestructuracin triple de valor de los tems del diccionario
+
+64
+00:02:46,660 --> 00:02:48,890
+que vimos anteriormente en el curso
+
+65
+00:02:48,890 --> 00:02:50,090
+hace lo mismo.
+
+66
+00:02:50,090 --> 00:02:52,150
+Solo que ahora en lugar de
+
+67
+00:02:52,150 --> 00:02:53,880
+top_friends yo, puedes hacer amigo.
+
+68
+00:02:53,880 --> 00:02:55,440
+Y eso se lee un
+
+69
+00:02:55,440 --> 00:02:57,310
+poco mejor, y generalmente es ms Pythonic.
+
+70
+00:02:57,310 --> 00:02:59,160
+Es una mejor pieza de cdigo aqu.
+
+71
+00:02:59,160 --> 00:03:01,010
+Siempre que necesite iterar sobre un
+
+72
+00:03:01,010 --> 00:03:02,930
+bucle, y necesita acceder al ndice, use
+
+73
+00:03:02,930 --> 00:03:04,000
+la funcin de enumerar.
+
+74
+00:03:04,000 --> 00:03:05,350
+Para eso est ah.
+
+75
+00:03:06,300 --> 00:03:07,290
+Bueno.
+
+76
+00:03:07,290 --> 00:03:09,830
+La funcin de enumerar te da un generador.
+
+77
+00:03:10,680 --> 00:03:12,430
+Entonces estas cosas, como puedes
+
+78
+00:03:12,430 --> 00:03:13,810
+ver, estn todas entrelazadas.
+
+79
+00:03:13,810 --> 00:03:17,380
+Entonces, si tuvieras un generador de amigos,
+
+80
+00:03:17,380 --> 00:03:20,520
+friend_g es un enumerate de top_friends.
+
+81
+00:03:20,520 --> 00:03:23,000
+Tambin puede imprimir al lado de friend_g.
+
+82
+00:03:23,000 --> 00:03:25,500
+Y eso te dar un tupple, tupla.
+
+83
+00:03:26,949 --> 00:03:28,910
+Necesito hacer una camiseta que
+
+84
+00:03:28,910 --> 00:03:30,570
+diga, es tupple o tupla?
+
+85
+00:03:30,570 --> 00:03:32,311
+Eso sera divertido.
+
+86
+00:03:32,311 --> 00:03:35,290
+Como puede ver, la primera tupla que
+
+87
+00:03:35,290 --> 00:03:38,370
+se devuelve aqu es la coma cero Jos.
+
+88
+00:03:38,370 --> 00:03:39,750
+Y eso es lo que est sucediendo aqu en el ciclo cuatro.
+
+89
+00:03:39,750 --> 00:03:42,710
+Simplemente est sacando el siguiente elemento de cada cosa, y
+
+90
+00:03:42,710 --> 00:03:45,334
+los est desestructurando, como saben que pueden hacer.
+
+91
+00:03:45,334 --> 00:03:49,090
+K V es igual al siguiente amigo.
+
+92
+00:03:49,090 --> 00:03:51,400
+Entonces puedes imprimir K, y puedes imprimir
+
+93
+00:03:51,400 --> 00:03:53,550
+V, y eso simplemente pondr cero en
+
+94
+00:03:53,550 --> 00:03:57,190
+K, Jos en V, y estos significan clave y valor, por cierto.
+
+95
+00:03:57,190 --> 00:03:58,790
+No son solo letras aleatorias.
+
+96
+00:03:59,780 --> 00:04:01,930
+La desestructuracin de Tuple es algo que puedes hacer.
+
+97
+00:04:01,930 --> 00:04:02,900
+Hemos mencionado esto antes.
+
+98
+00:04:02,900 --> 00:04:05,000
+Es por eso que lo estoy revisando rpidamente.
+
+99
+00:04:06,000 --> 00:04:07,960
+Y as es como funciona la funcin de enumerar.
+
+100
+00:04:07,960 --> 00:04:10,210
+Por lo tanto, le permite obtener el ndice,
+
+101
+00:04:10,210 --> 00:04:12,670
+as como el valor, cuando revisa una lista.
+
+102
+00:04:12,670 --> 00:04:14,740
+Puede ser til en algunas situaciones.
+
+103
+00:04:15,760 --> 00:04:16,740
+Aright, eso es todo por este video.
+
+104
+00:04:16,740 --> 00:04:17,573
+Gracias por mirar,
+
+105
+00:04:17,573 --> 00:04:19,080
+y nos vemos en el prximo.
+

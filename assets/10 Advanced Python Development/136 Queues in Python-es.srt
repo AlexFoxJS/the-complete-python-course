@@ -1,0 +1,300 @@
+1
+00:00:00,211 --> 00:00:01,718
+Instructor: Hola, bienvenido de nuevo.
+
+2
+00:00:01,718 --> 00:00:05,005
+En este video, quera contarte un poco acerca de las
+
+3
+00:00:05,005 --> 00:00:06,995
+colas, y solo quera hacer eso
+
+4
+00:00:06,995 --> 00:00:08,981
+antes del prximo video donde vamos
+
+5
+00:00:08,981 --> 00:00:10,814
+a usar uno, para que tengas
+
+6
+00:00:10,814 --> 00:00:13,698
+una ligera idea de cmo son. y cmo los usas
+
+7
+00:00:13,698 --> 00:00:16,335
+Entonces, aqu hay un ejemplo de lo que podra ser una cola.
+
+8
+00:00:16,335 --> 00:00:18,529
+Pequea animacin agradable all.
+
+9
+00:00:18,529 --> 00:00:21,429
+Aqu hay un ejemplo ms realista de una cola.
+
+10
+00:00:21,429 --> 00:00:22,894
+Digamos que tienes una
+
+11
+00:00:22,894 --> 00:00:24,679
+cola de personas para acceder
+
+12
+00:00:24,679 --> 00:00:26,675
+a algn tipo de edificio y,
+
+13
+00:00:26,675 --> 00:00:28,833
+por supuesto, la gente se unir
+
+14
+00:00:28,833 --> 00:00:33,047
+a la cola al final y dejarn la cola desde el principio.
+
+15
+00:00:33,047 --> 00:00:34,677
+Entonces, esta es una cola.
+
+16
+00:00:34,677 --> 00:00:36,349
+Ya sabes cmo funcionan las
+
+17
+00:00:36,349 --> 00:00:38,977
+colas, especialmente si ests en el Reino Unido,
+
+18
+00:00:38,977 --> 00:00:40,927
+donde nos gusta hacer cola para
+
+19
+00:00:40,927 --> 00:00:43,302
+todo, y es realmente lo mismo en programacin.
+
+20
+00:00:43,302 --> 00:00:46,285
+Digamos que tienes esto, esta lista aqu,
+
+21
+00:00:46,285 --> 00:00:50,898
+y puedes agregar un elemento al final de la lista, as
+
+22
+00:00:50,898 --> 00:00:53,937
+que, hemos agregado Jen al final de
+
+23
+00:00:53,937 --> 00:00:58,937
+la lista, y normalmente lo hacemos en una lista con el anexar mtodo.
+
+24
+00:00:59,498 --> 00:01:03,395
+Ahora, lo que no saba es que hay una estructura de datos,
+
+25
+00:01:03,395 --> 00:01:07,119
+como una lista, en la que tambin puede eliminar un elemento.
+
+26
+00:01:07,119 --> 00:01:11,036
+Eso sera, para esta estructura, el popleft.
+
+27
+00:01:12,081 --> 00:01:13,604
+La estructura aqu de
+
+28
+00:01:13,604 --> 00:01:16,214
+la que estoy hablando se llama cola doble.
+
+29
+00:01:16,214 --> 00:01:17,738
+Voy a hablar de eso
+
+30
+00:01:17,738 --> 00:01:19,384
+en un minuto, pero para esa
+
+31
+00:01:19,384 --> 00:01:22,568
+cola de doble final, el popleft eliminar el elemento ms a
+
+32
+00:01:22,568 --> 00:01:25,776
+la izquierda, append har lo mismo al principio de la lista.
+
+33
+00:01:25,776 --> 00:01:27,350
+Si, en cambio, piensa
+
+34
+00:01:27,350 --> 00:01:29,902
+"de derecha a izquierda", si le da
+
+35
+00:01:29,902 --> 00:01:32,138
+la vuelta, los extremos son opuestos,
+
+36
+00:01:32,138 --> 00:01:35,695
+y tiene esta lista para comenzar, puede agregar algo a
+
+37
+00:01:35,695 --> 00:01:38,221
+la izquierda y, por supuesto, eso se
+
+38
+00:01:38,221 --> 00:01:40,294
+llamar appendleft, y puede eliminar algo
+
+39
+00:01:40,294 --> 00:01:42,752
+del final, y eso simplemente se llama pop.
+
+40
+00:01:42,752 --> 00:01:44,960
+Entonces, lo que est viendo aqu es
+
+41
+00:01:44,960 --> 00:01:46,918
+que puede agregar elementos de cualquier extremo
+
+42
+00:01:46,918 --> 00:01:49,536
+y puede eliminar elementos de cualquiera de los extremos.
+
+43
+00:01:49,536 --> 00:01:52,169
+Por lo tanto, una cola en la que
+
+44
+00:01:52,169 --> 00:01:55,086
+puede agregar o quitar elementos de cualquier lado se
+
+45
+00:01:56,127 --> 00:01:58,968
+llama deque, o en realidad, alguien dijo "cubierta", lo
+
+46
+00:01:58,968 --> 00:02:00,744
+que creo que es muy extrao,
+
+47
+00:02:00,744 --> 00:02:02,688
+o una cola de doble final.
+
+48
+00:02:02,688 --> 00:02:06,072
+Entonces, es una cola deque o doble.
+
+49
+00:02:06,072 --> 00:02:07,989
+Si solo puede agregar elementos
+
+50
+00:02:07,989 --> 00:02:09,821
+de un lado y eliminarlos
+
+51
+00:02:09,821 --> 00:02:13,408
+del otro lado, como una cola normal, se llama cola.
+
+52
+00:02:13,408 --> 00:02:16,048
+Tendrs ambos en la programacin.
+
+53
+00:02:16,048 --> 00:02:19,440
+Python tiene algo llamado deque, una cola de
+
+54
+00:02:19,440 --> 00:02:21,408
+doble final, y tambin tiene
+
+55
+00:02:21,408 --> 00:02:23,741
+algo llamado cola, y puede usarlos.
+
+56
+00:02:23,741 --> 00:02:26,024
+Algo ms que es muy similar
+
+57
+00:02:26,024 --> 00:02:28,295
+a las colas es lo que
+
+58
+00:02:28,295 --> 00:02:31,134
+tenemos aqu, y esto se llama pila.
+
+59
+00:02:31,134 --> 00:02:34,180
+En una pila, puede eliminar elementos de la parte superior y
+
+60
+00:02:34,180 --> 00:02:36,458
+puede volver a agregarlos en la parte superior.
+
+61
+00:02:36,458 --> 00:02:40,409
+Observe cmo, en una cola, puede agregar elementos de un
+
+62
+00:02:40,409 --> 00:02:44,421
+extremo y eliminarlos del otro, imitando una cola real, como
+
+63
+00:02:44,421 --> 00:02:48,895
+cuando hace cola para ir a la farmacia o algo as, y
+
+64
+00:02:48,895 --> 00:02:53,536
+en una pila, agrega y quita de la lista mismo fin, para
+
+65
+00:02:53,536 --> 00:02:57,612
+que sea como una pila de cartas o una pila de
+
+66
+00:02:57,612 --> 00:03:00,013
+monedas, y estas tienen diferentes usos.
+
+67
+00:03:00,013 --> 00:03:01,520
+En los prximos videos, vamos
+
+68
+00:03:01,520 --> 00:03:03,665
+a ver algunos usos de la cola.
+
+69
+00:03:03,665 --> 00:03:05,382
+No vamos a ver los usos de una pila.
+
+70
+00:03:05,382 --> 00:03:07,689
+Descubr que no son tan tiles
+
+71
+00:03:07,689 --> 00:03:09,014
+en la programacin diaria.
+
+72
+00:03:09,014 --> 00:03:11,682
+Pueden ser tiles en escenarios muy limitados, por lo
+
+73
+00:03:11,682 --> 00:03:13,521
+que no vamos a utilizar pilas,
+
+74
+00:03:13,521 --> 00:03:16,457
+pero vamos a usar colas en el siguiente video.
+
+75
+00:03:16,457 --> 00:03:18,374
+Entonces, te ver all.
+

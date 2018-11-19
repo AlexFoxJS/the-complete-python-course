@@ -1,0 +1,440 @@
+1
+00:00:00,000 --> 00:00:01,704
+<v Narrator>Hi, and welcome back.</v>
+
+2
+00:00:01,704 --> 00:00:04,087
+In this video we are going to be looking at starting to move
+
+3
+00:00:04,087 --> 00:00:08,104
+our milestone project from JSON to our database.
+
+4
+00:00:08,104 --> 00:00:10,311
+If you skipped the last couple of videos
+
+5
+00:00:10,311 --> 00:00:13,755
+and you went straight from CSV to database, that's fine.
+
+6
+00:00:13,755 --> 00:00:17,643
+We are just going to make a couple of changes here.
+
+7
+00:00:17,643 --> 00:00:19,661
+Now the first thing to do is to...
+
+8
+00:00:19,661 --> 00:00:24,578
+in the create book table, we are going to create our table.
+
+9
+00:00:25,685 --> 00:00:30,037
+Now, we'll start by opening up a connection to the database.
+
+10
+00:00:30,037 --> 00:00:32,828
+For that, we're going to need SQLite3.
+
+11
+00:00:32,828 --> 00:00:36,200
+We're going to import SQLite3 instead of JSON.
+
+12
+00:00:36,200 --> 00:00:38,334
+That's going to give us a few errors in our file,
+
+13
+00:00:38,334 --> 00:00:40,705
+but that's okay for now.
+
+14
+00:00:40,705 --> 00:00:43,128
+To open a connection, you know how to do that,
+
+15
+00:00:43,128 --> 00:00:47,231
+we looked at that in the slides last couple of videos.
+
+16
+00:00:47,231 --> 00:00:50,400
+So, go ahead and pause the video and give it a go,
+
+17
+00:00:50,400 --> 00:00:53,201 line:15% 
+open up the connection, create your cursor,
+
+18
+00:00:53,201 --> 00:00:57,868 line:15% 
+and then come back for we will implement the query here.
+
+19
+00:01:00,976 --> 00:01:02,236
+I hope you got that.
+
+20
+00:01:02,236 --> 00:01:05,986
+What to do is of course connect first of all.
+
+21
+00:01:11,204 --> 00:01:13,702
+"Sqlite3.connect," and in here we're going to give it
+
+22
+00:01:13,702 --> 00:01:16,288
+that file that we want to store all our data in.
+
+23
+00:01:16,288 --> 00:01:19,043
+That's going to be data.db.
+
+24
+00:01:19,043 --> 00:01:21,768
+Notice that data.db is going to appear in our
+
+25
+00:01:21,768 --> 00:01:26,372
+projects directory, and not beside database.py.
+
+26
+00:01:26,372 --> 00:01:29,723
+So it'll appear at the top level, which is pretty nice.
+
+27
+00:01:29,723 --> 00:01:31,973
+Then we'll create a cursor.
+
+28
+00:01:35,065 --> 00:01:36,928
+Then we can perform the query
+
+29
+00:01:36,928 --> 00:01:40,095
+which is going to create our database.
+
+30
+00:01:42,210 --> 00:01:44,432
+We'll do that in a moment.
+
+31
+00:01:44,432 --> 00:01:47,135
+Then we'll have to of course, commit our connection
+
+32
+00:01:47,135 --> 00:01:49,445
+to make sure that the database does get created,
+
+33
+00:01:49,445 --> 00:01:52,195
+and the table is all in the file;
+
+34
+00:01:54,315 --> 00:01:57,815
+and at the end we will close the connection.
+
+35
+00:01:57,815 --> 00:01:59,125
+So by the way, I said "create database"
+
+36
+00:01:59,125 --> 00:02:01,620
+a couple of times there, I mean "create table."
+
+37
+00:02:01,620 --> 00:02:04,591
+We are going to be creating a table.
+
+38
+00:02:04,591 --> 00:02:07,652
+Now the SQL query is going to be a string
+
+39
+00:02:07,652 --> 00:02:12,652
+that we're going to put inside this execute method here.
+
+40
+00:02:13,022 --> 00:02:15,448
+It's really straightforward, all that we have to do
+
+41
+00:02:15,448 --> 00:02:19,861
+is say "create table." So pretty english-like so far.
+
+42
+00:02:19,861 --> 00:02:21,599
+Then, we'll give it the table name,
+
+43
+00:02:21,599 --> 00:02:22,949
+whatever we want to create, in this case
+
+44
+00:02:22,949 --> 00:02:25,442
+it's going to be called "books."
+
+45
+00:02:25,442 --> 00:02:27,221
+The table name here is for us
+
+46
+00:02:27,221 --> 00:02:29,563
+to understand what it's storing,
+
+47
+00:02:29,563 --> 00:02:32,580
+and also will be used when we want to retrieve data.
+
+48
+00:02:32,580 --> 00:02:35,565
+So "books" seems like a good name, so that we can then
+
+49
+00:02:35,565 --> 00:02:39,262
+know that we're storing books in it.
+
+50
+00:02:39,262 --> 00:02:43,694
+Then we'll also need what columns are in our table,
+
+51
+00:02:43,694 --> 00:02:46,135
+what types of data we want to store;
+
+52
+00:02:46,135 --> 00:02:49,294
+and these are going to be fairly simple.
+
+53
+00:02:49,294 --> 00:02:51,826
+We want to store the name of the book,
+
+54
+00:02:51,826 --> 00:02:55,659
+the author of the book, and the "read" status.
+
+55
+00:02:57,096 --> 00:03:02,067
+Okay, so that goes in brackets after the table name.
+
+56
+00:03:02,067 --> 00:03:04,658
+We also have to specify what type of data
+
+57
+00:03:04,658 --> 00:03:07,668
+is going into each of these columns.
+
+58
+00:03:07,668 --> 00:03:10,308
+"Name" is going to be a text,
+
+59
+00:03:10,308 --> 00:03:14,018
+"author" is going to be a text, and "read" is going to be
+
+60
+00:03:14,018 --> 00:03:17,268
+1 or 0, so it's going to be an integer.
+
+61
+00:03:19,046 --> 00:03:23,533
+SQLite only supports 5 types of data, so it's really simple.
+
+62
+00:03:23,533 --> 00:03:27,770
+"Null," which just means empty, or void, or no data in here,
+
+63
+00:03:27,770 --> 00:03:29,689
+very similar to Python's "none,"
+
+64
+00:03:29,689 --> 00:03:32,728
+"integer," which means a whole number,
+
+65
+00:03:32,728 --> 00:03:36,165
+"real," which means a floating point number,
+
+66
+00:03:36,165 --> 00:03:38,727
+"text," which just means any string,
+
+67
+00:03:38,727 --> 00:03:42,197
+and "blob," which is a binary data field
+
+68
+00:03:42,197 --> 00:03:43,246
+where you can store things like
+
+69
+00:03:43,246 --> 00:03:46,936
+images, or documents, PDFs and so forth.
+
+70
+00:03:46,936 --> 00:03:50,444
+So those are the 5 data types that SQLite supports.
+
+71
+00:03:50,444 --> 00:03:54,170
+And now, we've created here our table, "books"
+
+72
+00:03:54,170 --> 00:03:57,707
+with 3 columns: "name," "author," and "read."
+
+73
+00:03:57,707 --> 00:03:59,997
+Notice how we don't have an ID column here
+
+74
+00:03:59,997 --> 00:04:01,640
+because this is the only table we've got;
+
+75
+00:04:01,640 --> 00:04:03,287
+we don't need to relate this table
+
+76
+00:04:03,287 --> 00:04:07,536
+to any other table in our system, ergo we don't need an ID.
+
+77
+00:04:07,536 --> 00:04:12,378
+The name is going to be what's going to identify our table.
+
+78
+00:04:12,378 --> 00:04:14,637
+As we progress we are going to add some more
+
+79
+00:04:14,637 --> 00:04:16,997
+complexity to this, but whichever column
+
+80
+00:04:16,997 --> 00:04:20,799
+is going to be the main identifying column of your table,
+
+81
+00:04:20,799 --> 00:04:24,673
+you can signal it as a "primary key."
+
+82
+00:04:24,673 --> 00:04:27,531
+So that's "name text primary key."
+
+83
+00:04:27,531 --> 00:04:30,104
+And that just tells SQLite that "name"
+
+84
+00:04:30,104 --> 00:04:32,705
+cannot contain any duplicates, so that no 2 books
+
+85
+00:04:32,705 --> 00:04:34,302
+can have the same name;
+
+86
+00:04:34,302 --> 00:04:36,657
+and also it improves performance
+
+87
+00:04:36,657 --> 00:04:41,188
+when we are going to be searching for specific names.
+
+88
+00:04:41,188 --> 00:04:45,139
+The complexities of primary keys and what that entails
+
+89
+00:04:45,139 --> 00:04:48,264
+won't be explained in this course, but in other courses.
+
+90
+00:04:48,264 --> 00:04:52,064
+Here, I just want to talk about Python.
+
+91
+00:04:52,064 --> 00:04:55,210
+Now, when we run this, we will be creating
+
+92
+00:04:55,210 --> 00:05:00,210
+our data.db file and inside it will create our table.
+
+93
+00:05:00,430 --> 00:05:03,606
+And indeed, we can go ahead and run app.
+
+94
+00:05:03,606 --> 00:05:08,606
+And this, before we print this out we know inside our app
+
+95
+00:05:08,649 --> 00:05:11,297
+that we are calling "create book table."
+
+96
+00:05:11,297 --> 00:05:13,154
+So we can stop the app,
+
+97
+00:05:13,154 --> 00:05:16,286
+and now notice how data.db has been created.
+
+98
+00:05:16,286 --> 00:05:20,286
+We can open it, and this is some weird-ass data;
+
+99
+00:05:21,325 --> 00:05:24,963
+which represents whatever it is that SQLite is storing here.
+
+100
+00:05:24,963 --> 00:05:26,359
+Notice how it's not terribly readable,
+
+101
+00:05:26,359 --> 00:05:30,173
+but if you open data.db with your SQLite browser,
+
+102
+00:05:30,173 --> 00:05:32,552
+some more stuff will pop up.
+
+103
+00:05:32,552 --> 00:05:36,377
+Okay, this is how to create a table using SQLite.
+
+104
+00:05:36,377 --> 00:05:39,828
+You say "create table," then the table name,
+
+105
+00:05:39,828 --> 00:05:43,124
+and then the columns, one by one, separated by commas,
+
+106
+00:05:43,124 --> 00:05:46,835
+including the type of data, and for one column,
+
+107
+00:05:46,835 --> 00:05:50,923
+whether they are the primary key or not.
+
+108
+00:05:50,923 --> 00:05:53,041
+Okay, that's it for this video,
+
+109
+00:05:53,041 --> 00:05:54,152
+I'll see you on the next one
+
+110
+00:05:54,152 --> 00:05:56,469
+where we're going to be inserting data.
+

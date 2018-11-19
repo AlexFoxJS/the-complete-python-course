@@ -1,0 +1,668 @@
+1
+00:00:00,140 --> 00:00:01,370
+-: Hola, bienvenido de nuevo.
+
+2
+00:00:01,370 --> 00:00:03,010
+En este video, voy a
+
+3
+00:00:03,010 --> 00:00:06,331
+mostrarte cmo puedes volver a utilizar tu cdigo de envo
+
+4
+00:00:06,331 --> 00:00:10,180
+de Mailgun simplemente ponindolo dentro de un archivo de biblioteca y
+
+5
+00:00:10,180 --> 00:00:12,083
+llamndolo desde tu otro cdigo.
+
+6
+00:00:12,930 --> 00:00:16,810
+Entonces esto es solo un re-factoring de este cdigo aqu.
+
+7
+00:00:16,810 --> 00:00:17,643
+Tuve que inventarme
+
+8
+00:00:17,643 --> 00:00:19,360
+por la noche, pero no obstante, pens
+
+9
+00:00:19,360 --> 00:00:22,070
+que debera mostrarte cmo hago esto normalmente en mis otros proyectos.
+
+10
+00:00:22,070 --> 00:00:23,680
+Es realmente sencillo.
+
+11
+00:00:23,680 --> 00:00:27,070
+Lo que hacemos es en su proyecto, querr tener
+
+12
+00:00:27,070 --> 00:00:30,500
+un nuevo paquete de Python al que llame libs.
+
+13
+00:00:30,500 --> 00:00:32,927
+Y normalmente, tendr un paquete como este
+
+14
+00:00:32,927 --> 00:00:35,402
+en la mayora de los proyectos siempre
+
+15
+00:00:35,402 --> 00:00:37,420
+que use otros servicios externos.
+
+16
+00:00:37,420 --> 00:00:40,420
+En este caso, estamos usando el servicio externo Mailgun.
+
+17
+00:00:40,420 --> 00:00:42,929
+Mailgun nos da una API
+
+18
+00:00:42,929 --> 00:00:47,929
+con la que podemos interactuar, pero hay un pequeo problema
+
+19
+00:00:49,094 --> 00:00:53,910
+de que aqu no estamos realmente, en trminos de nuestro
+
+20
+00:00:53,910 --> 00:00:57,970
+cdigo, realmente no estamos interactuando directamente con Mailgun.
+
+21
+00:00:57,970 --> 00:01:01,673
+Cuando lees este cdigo, es un poco demasiado crudo.
+
+22
+00:01:01,673 --> 00:01:03,560
+Puedes ver que lo que ests haciendo
+
+23
+00:01:03,560 --> 00:01:05,360
+es hacer una solicitud a alguna API
+
+24
+00:01:05,360 --> 00:01:07,610
+y luego algo est sucediendo, y as sucesivamente.
+
+25
+00:01:07,610 --> 00:01:11,290
+Y a menos que sepa exactamente qu est haciendo esta API,
+
+26
+00:01:11,290 --> 00:01:13,150
+puede no ser inmediatamente obvio que
+
+27
+00:01:13,150 --> 00:01:15,040
+esto est enviando un correo electrnico.
+
+28
+00:01:15,040 --> 00:01:16,940
+Por supuesto, ahora sabe lo que hace
+
+29
+00:01:16,940 --> 00:01:19,500
+este cdigo y si ve una solicitud posterior a
+
+30
+00:01:19,500 --> 00:01:21,099
+algo llamado Mailgun, usted sabe lo
+
+31
+00:01:21,099 --> 00:01:23,770
+que es Mailgun, y ve un texto, desde y hacia,
+
+32
+00:01:23,770 --> 00:01:26,560
+probablemente adivine que est enviando un correo electrnico. .
+
+33
+00:01:26,560 --> 00:01:30,150
+Pero lo que necesito decir es que este cdigo
+
+34
+00:01:30,150 --> 00:01:34,870
+aqu no es lo que leera como enviar un correo electrnico.
+
+35
+00:01:34,870 --> 00:01:38,173
+Usted leera esto como hacer una solicitud de publicacin a algn lugar.
+
+36
+00:01:39,260 --> 00:01:41,400
+Por lo tanto, siempre es una buena idea
+
+37
+00:01:41,400 --> 00:01:43,239
+colocar este cdigo dentro de una funcin
+
+38
+00:01:43,239 --> 00:01:46,908
+y llamar a esa funcin para enviar un correo electrnico y de esa manera
+
+39
+00:01:46,908 --> 00:01:51,120
+cuando lea en alguna otra parte de su programa, enve un correo electrnico, sabr que esa
+
+40
+00:01:51,120 --> 00:01:53,198
+funcin le est enviando un correo electrnico y
+
+41
+00:01:53,198 --> 00:01:54,950
+usted no tendr que preocuparse de si
+
+42
+00:01:54,950 --> 00:01:57,110
+est enviando una solicitud posterior o una solicitud
+
+43
+00:01:57,110 --> 00:01:58,790
+de obtencin a algn lugar.
+
+44
+00:01:58,790 --> 00:02:00,600
+Entonces con eso dicho, iremos a nuestra carpeta de
+
+45
+00:02:00,600 --> 00:02:02,020
+libs, crearemos un nuevo archivo de Python.
+
+46
+00:02:02,020 --> 00:02:04,320
+Voy a llamar a este punto de
+
+47
+00:02:04,320 --> 00:02:07,362
+Mailgun, porque esto va a contener nuestra biblioteca de Mailgun.
+
+48
+00:02:07,362 --> 00:02:10,850
+Este va a ser un archivo de
+
+49
+00:02:10,850 --> 00:02:15,410
+Python que encapsular ese envo de una solicitud.
+
+50
+00:02:15,410 --> 00:02:16,700
+Y lo encapsular y
+
+51
+00:02:16,700 --> 00:02:19,470
+lo llamar de una manera un poco ms agradable.
+
+52
+00:02:19,470 --> 00:02:22,010
+As que vamos a importar solicitudes aqu.
+
+53
+00:02:22,010 --> 00:02:24,480
+Luego, tendremos nuestra clase Mailgun y
+
+54
+00:02:24,480 --> 00:02:28,240
+esta clase Mailgun tendr algunas propiedades, una URL API,
+
+55
+00:02:28,240 --> 00:02:32,620
+una clave API y tambin un nombre y un correo electrnico.
+
+56
+00:02:32,620 --> 00:02:34,320
+As que vamos a pegar esos aqu.
+
+57
+00:02:34,320 --> 00:02:36,380
+Ahora, la suposicin para esta clase
+
+58
+00:02:36,380 --> 00:02:38,270
+es que todas estas son
+
+59
+00:02:38,270 --> 00:02:40,260
+propiedades estticas, nunca van a
+
+60
+00:02:40,260 --> 00:02:44,620
+cambiar y, por lo tanto, podemos establecer y codificar los valores aqu.
+
+61
+00:02:44,620 --> 00:02:46,140
+Esto puede no ser cierto para su proyecto.
+
+62
+00:02:46,140 --> 00:02:48,030
+Tal vez querrs enviar correos
+
+63
+00:02:48,030 --> 00:02:50,147
+electrnicos de diferentes personas y,
+
+64
+00:02:50,147 --> 00:02:52,610
+en ese caso, querrs reestructurarlo ligeramente.
+
+65
+00:02:52,610 --> 00:02:55,100
+Te mostrar cmo en solo un momento.
+
+66
+00:02:55,100 --> 00:02:59,430
+Entonces, vamos a tener un mtodo de clase aqu que voy
+
+67
+00:02:59,430 --> 00:03:01,720
+a llamar para enviar correos electrnicos.
+
+68
+00:03:01,720 --> 00:03:04,160
+Y esto va a tener tres argumentos: los
+
+69
+00:03:04,160 --> 00:03:07,030
+correos electrnicos a los que desea enviar un correo
+
+70
+00:03:07,030 --> 00:03:08,990
+electrnico, el tema y el contenido.
+
+71
+00:03:08,990 --> 00:03:09,960
+Ahora bien?
+
+72
+00:03:09,960 --> 00:03:10,900
+Y luego, lo que vamos a
+
+73
+00:03:10,900 --> 00:03:13,458
+hacer es, vamos a copiar estas solicitudes. publicar y en
+
+74
+00:03:13,458 --> 00:03:16,660
+lugar de la URL API de Mailgun, vamos
+
+75
+00:03:16,660 --> 00:03:19,530
+a hacer cls. Mailgun API URL.
+
+76
+00:03:19,530 --> 00:03:20,850
+En lugar de Mailgun API
+
+77
+00:03:20,850 --> 00:03:23,460
+Key, vamos a hacer cls. Clave de API Mailgun.
+
+78
+00:03:23,460 --> 00:03:26,110
+Y en lugar de correos electrnicos como
+
+79
+00:03:26,110 --> 00:03:30,460
+una constante, vamos a hacer a los correos electrnicos, el parmetro.
+
+80
+00:03:30,460 --> 00:03:32,710
+El sujeto tambin ser el parmetro.
+
+81
+00:03:32,710 --> 00:03:34,910
+El contenido tambin ser el parmetro.
+
+82
+00:03:34,910 --> 00:03:36,500
+Y, por supuesto, desde el nombre y
+
+83
+00:03:36,500 --> 00:03:38,623
+desde el correo electrnico tambin debe estar dentro de CLS.
+
+84
+00:03:41,200 --> 00:03:42,530
+Eso es.
+
+85
+00:03:42,530 --> 00:03:43,730
+Vamos a eliminar este comentario aqu.
+
+86
+00:03:43,730 --> 00:03:45,930
+Supongamos que ya sabemos lo que hace.
+
+87
+00:03:47,210 --> 00:03:49,250
+Y realmente, eso es todo lo que necesitas.
+
+88
+00:03:49,250 --> 00:03:53,390
+Coloca aqu su URL API y su clave API y puede
+
+89
+00:03:53,390 --> 00:03:56,130
+codificar su nombre y su correo electrnico desde
+
+90
+00:03:56,130 --> 00:03:57,630
+el que est enviando.
+
+91
+00:03:57,630 --> 00:03:59,270
+Si no desea codificarlos
+
+92
+00:03:59,270 --> 00:04:00,930
+porque su aplicacin requiere
+
+93
+00:04:00,930 --> 00:04:02,830
+enviar desde diferentes lugares,
+
+94
+00:04:02,830 --> 00:04:04,930
+solo agrguelos como argumentos aqu.
+
+95
+00:04:04,930 --> 00:04:08,170
+De nombre, de correo electrnico.
+
+96
+00:04:08,170 --> 00:04:10,270
+Y si lo desea, incluso podra
+
+97
+00:04:11,600 --> 00:04:14,040
+hacer estas variables constantes por defecto.
+
+98
+00:04:14,040 --> 00:04:15,963
+Asegrate de usar lo correcto aqu.
+
+99
+00:04:19,560 --> 00:04:23,440
+Pero debido a que mis aplicaciones normalmente tienen un solo correo
+
+100
+00:04:23,440 --> 00:04:26,460
+electrnico que enva los correos electrnicos, normalmente no hago
+
+101
+00:04:26,460 --> 00:04:29,490
+esto, pero puede hacerlo y luego simplemente reemplazarlos aqu.
+
+102
+00:04:29,490 --> 00:04:33,163
+Y esa sera una forma de hacer esto un poco ms flexible.
+
+103
+00:04:34,570 --> 00:04:35,530
+Eso es.
+
+104
+00:04:35,530 --> 00:04:40,390
+Tienes tu clase de Mailgun que puede enviar correos electrnicos.
+
+105
+00:04:40,390 --> 00:04:42,410
+Ahora, cuando quiera enviar un correo electrnico
+
+106
+00:04:42,410 --> 00:04:44,750
+a cualquier parte de su aplicacin, todo lo
+
+107
+00:04:44,750 --> 00:04:49,170
+que tiene que hacer es decir Mailgun dot enviar correo electrnico y darle el asunto y
+
+108
+00:04:49,170 --> 00:04:50,600
+el contenido del correo electrnico.
+
+109
+00:04:50,600 --> 00:04:53,360
+As que vamos a crear un nuevo
+
+110
+00:04:53,360 --> 00:04:58,360
+archivo dentro del proyecto y voy a llamarlo usando Mailgun lib dot py.
+
+111
+00:04:58,720 --> 00:05:01,620
+Y esto lo har solo desde libs Mailgun,
+
+112
+00:05:01,620 --> 00:05:02,993
+importar la clase Mailgun.
+
+113
+00:05:03,840 --> 00:05:06,450
+Y luego haremos que Mailgun enve un correo
+
+114
+00:05:06,450 --> 00:05:11,160
+electrnico y esto ir a probar @ gmail. com.
+
+115
+00:05:11,160 --> 00:05:15,360
+El tema va a ser algo as como el correo electrnico de prueba.
+
+116
+00:05:15,360 --> 00:05:18,710
+Y el contenido ser "Este es un correo electrnico de prueba. "Podra ser lo
+
+117
+00:05:18,710 --> 00:05:20,210
+que quieras".
+
+118
+00:05:21,800 --> 00:05:22,910
+Eso es.
+
+119
+00:05:22,910 --> 00:05:24,280
+Ahora puede enviar correos electrnicos.
+
+120
+00:05:24,280 --> 00:05:25,716
+Qu es esto decir?
+
+121
+00:05:25,716 --> 00:05:28,820
+Oh, por supuesto, he puesto la lista all.
+
+122
+00:05:28,820 --> 00:05:30,890
+No queremos poner la lista all.
+
+123
+00:05:30,890 --> 00:05:33,810
+Estos son los correos electrnicos a los que va este correo electrnico.
+
+124
+00:05:33,810 --> 00:05:36,870
+En este caso, es solo un hombre o una mujer.
+
+125
+00:05:36,870 --> 00:05:39,100
+Y si este es el ttulo o el
+
+126
+00:05:39,100 --> 00:05:40,730
+tema, y este es el contenido.
+
+127
+00:05:40,730 --> 00:05:42,690
+Si quieres llamar a esto un
+
+128
+00:05:42,690 --> 00:05:46,110
+poco mejor, puedes decirles a los correos electrnicos que es eso.
+
+129
+00:05:46,110 --> 00:05:48,283
+Entonces puede decir que el sujeto es eso.
+
+130
+00:05:48,283 --> 00:05:51,970
+Y luego puedes decir que el contenido es eso.
+
+131
+00:05:51,970 --> 00:05:54,260
+As que eso es simplemente llamarlo un poco mejor.
+
+132
+00:05:54,260 --> 00:05:56,760
+Depende de ti lo que haces, por supuesto.
+
+133
+00:05:56,760 --> 00:05:59,050
+Normalmente, creo que lo hara de esta manera
+
+134
+00:05:59,050 --> 00:06:00,350
+solo porque est bastante claro
+
+135
+00:06:00,350 --> 00:06:03,040
+que el correo electrnico ir a este correo electrnico.
+
+136
+00:06:03,040 --> 00:06:05,610
+Y luego puede poner tema y contenido aqu solo
+
+137
+00:06:05,610 --> 00:06:07,530
+para asegurarse de que nadie se confunda.
+
+138
+00:06:07,530 --> 00:06:09,000
+Tal vez ellos piensan que este
+
+139
+00:06:09,000 --> 00:06:10,590
+es el contenido, este es el tema.
+
+140
+00:06:10,590 --> 00:06:12,580
+Si los llamas con argumentos nombrados, eso es
+
+141
+00:06:12,580 --> 00:06:13,740
+un poco ms claro, tal
+
+142
+00:06:13,740 --> 00:06:15,440
+vez una forma ms agradable de hacerlo.
+
+143
+00:06:17,200 --> 00:06:19,260
+Siempre que quiera enviar un correo electrnico desde su
+
+144
+00:06:19,260 --> 00:06:22,770
+aplicacin, todo lo que tiene que hacer es llamar a la biblioteca de Mailgun, enviar la
+
+145
+00:06:22,770 --> 00:06:25,430
+funcin de correo electrnico o el mtodo, lo siento, y eso le
+
+146
+00:06:25,430 --> 00:06:26,460
+enviar un correo electrnico.
+
+147
+00:06:26,460 --> 00:06:28,130
+As que esta es una forma
+
+148
+00:06:28,130 --> 00:06:29,880
+ms agradable de estructurar el envo de
+
+149
+00:06:29,880 --> 00:06:32,370
+correo electrnico y esto es realmente lo que uso muy
+
+150
+00:06:32,370 --> 00:06:35,053
+a menudo, una biblioteca como esta en muchos otros proyectos.
+
+151
+00:06:35,960 --> 00:06:37,870
+Existe un problema con la seguridad
+
+152
+00:06:37,870 --> 00:06:40,540
+si coloca su clave API dentro de su cdigo.
+
+153
+00:06:40,540 --> 00:06:42,820
+No quiere poner su clave API dentro de su
+
+154
+00:06:42,820 --> 00:06:45,370
+cdigo si va a compartir ese cdigo con otras personas,
+
+155
+00:06:45,370 --> 00:06:48,500
+pero ese es un concepto un tanto ms avanzado, cmo va a
+
+156
+00:06:48,500 --> 00:06:49,650
+proteger su cdigo si
+
+157
+00:06:49,650 --> 00:06:51,680
+va a compartir con personas y dems.
+
+158
+00:06:51,680 --> 00:06:53,990
+No es algo que vamos a cubrir en este curso.
+
+159
+00:06:53,990 --> 00:06:56,300
+Pero hay formas de hacerlo.
+
+160
+00:06:56,300 --> 00:06:57,520
+Es un poco ms
+
+161
+00:06:57,520 --> 00:06:59,620
+avanzado y debes preocuparte por compartir tu
+
+162
+00:06:59,620 --> 00:07:00,760
+cdigo con otras personas
+
+163
+00:07:00,760 --> 00:07:03,230
+antes de que comiences a preocuparte por la seguridad.
+
+164
+00:07:03,230 --> 00:07:04,250
+Eso es todo por este video.
+
+165
+00:07:04,250 --> 00:07:06,470
+Espero que hayan disfrutado estructurando esta aplicacin de
+
+166
+00:07:06,470 --> 00:07:07,870
+una manera ms agradable, y
+
+167
+00:07:07,870 --> 00:07:09,620
+nos vemos en el prximo video.
+

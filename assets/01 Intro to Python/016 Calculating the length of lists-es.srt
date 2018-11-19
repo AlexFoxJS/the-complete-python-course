@@ -1,0 +1,244 @@
+1
+00:00:00,000 --> 00:00:03,000
+Hola y bienvenido de nuevo! En este video vamos a
+
+2
+00:00:03,000 --> 00:00:06,000
+hablar sobre cmo obtener la longitud de una lista.
+
+3
+00:00:06,000 --> 00:00:09,000
+En el ltimo video, vimos brevemente cmo obtener
+
+4
+00:00:09,000 --> 00:00:12,000
+la suma total de diferentes elementos en una lista.
+
+5
+00:00:12,000 --> 00:00:15,000
+Por ejemplo, si tenemos una lista
+
+6
+00:00:15,000 --> 00:00:18,000
+llamada "calificaciones", y esta tiene los
+
+7
+00:00:18,000 --> 00:00:21,000
+elementos [95, 50, 75 y 100].
+
+8
+00:00:21,000 --> 00:00:24,000
+Vimos que podamos hacer sum (), y
+
+9
+00:00:24,000 --> 00:00:27,000
+luego dentro de los corchetes de la
+
+10
+00:00:27,000 --> 00:00:30,000
+suma, pudimos poner la lista de calificaciones
+
+11
+00:00:30,000 --> 00:00:33,000
+y decimos que algo as como total
+
+12
+00:00:33,000 --> 00:00:36,000
+es eso, y luego podemos imprimir el
+
+13
+00:00:36,000 --> 00:00:39,000
+total y esto calculara la suma total
+
+14
+00:00:39,000 --> 00:00:42,000
+de cada uno elemento aqu.
+
+15
+00:00:42,000 --> 00:00:45,000
+Entonces nos dara 95 + 50 +
+
+16
+00:00:45,000 --> 00:00:48,000
+75 + 100. Estaba a punto de agregarlos en mi cabeza,
+
+17
+00:00:48,000 --> 00:00:50,000
+pero luego me di cuenta de que no poda hacer eso.
+
+18
+00:00:50,000 --> 00:00:53,000
+Entonces, si ejecutamos esto, podemos ver
+
+19
+00:00:53,000 --> 00:00:56,000
+que tenemos 320 all a un lado.
+
+20
+00:00:56,000 --> 00:00:59,000
+Ahora, como puedes ver, esta
+
+21
+00:00:59,000 --> 00:01:02,000
+lista tiene 4 elementos, verdad?
+
+22
+00:01:02,000 --> 00:01:05,000
+Tiene 95, 50, 75 y 100.
+
+23
+00:01:05,000 --> 00:01:08,000
+Hay 4 elementos distintos en
+
+24
+00:01:08,000 --> 00:01:11,000
+esta lista. Entonces, si
+
+25
+00:01:11,000 --> 00:01:14,000
+quisiramos saber cuntos elementos
+
+26
+00:01:14,000 --> 00:01:17,000
+hay, podemos hacerlo calculando
+
+27
+00:01:17,000 --> 00:01:20,000
+la longitud de la lista.
+
+28
+00:01:20,000 --> 00:01:23,000
+Por lo tanto, podramos hacer algo como,
+
+29
+00:01:23,000 --> 00:01:26,000
+por ejemplo, la longitud es igual a
+
+30
+00:01:26,000 --> 00:01:29,000
+la len de grados. Entonces, al igual que
+
+31
+00:01:29,000 --> 00:01:32,000
+sum nos da la suma total de
+
+32
+00:01:32,000 --> 00:01:35,000
+todos los elementos, len nos da la
+
+33
+00:01:35,000 --> 00:01:38,000
+cuenta total de los elementos: cuntos elementos hay.
+
+34
+00:01:38,000 --> 00:01:41,000
+Entonces podemos imprimir la longitud, y vern que
+
+35
+00:01:41,000 --> 00:01:44,000
+obtenemos 320 y luego 4 aqu en el lateral.
+
+36
+00:01:44,000 --> 00:01:47,000
+Estas dos cosas aqu, vamos a verlos
+
+37
+00:01:47,000 --> 00:01:50,000
+en ms detalles sobre el resto del
+
+38
+00:01:50,000 --> 00:01:53,000
+curso, pero son muy tiles, y de
+
+39
+00:01:53,000 --> 00:01:56,000
+hecho puede necesitar este para el prximo ejercicio.
+
+40
+00:01:56,000 --> 00:01:59,000
+Hay ms cosas que podemos hacer que no sean
+
+41
+00:01:59,000 --> 00:02:02,000
+sum () y len (), y de nuevo, aprenderemos
+
+42
+00:02:02,000 --> 00:02:05,000
+sobre otras cosas que puede hacer con listas y
+
+43
+00:02:05,000 --> 00:02:06,800
+otras colecciones ms adelante en el curso.
+
+44
+00:02:06,800 --> 00:02:09,800
+Y, por cierto, este len () y este
+
+45
+00:02:09,800 --> 00:02:12,800
+sum () funcionan en listas, pero tambin funcionan
+
+46
+00:02:12,800 --> 00:02:15,800
+en tuplas, por lo que si hacemos nuestra
+
+47
+00:02:15,800 --> 00:02:18,800
+lista de calificaciones la convertimos en una tupla,
+
+48
+00:02:18,800 --> 00:02:20,800
+esto funcionar bien.
+
+49
+00:02:20,800 --> 00:02:23,800
+Y el len () tambin funciona en
+
+50
+00:02:23,800 --> 00:02:26,800
+diccionarios y conjuntos. De modo que tambin puede
+
+51
+00:02:26,800 --> 00:02:29,800
+obtener cuntos elementos hay en un diccionario o conjunto.
+
+52
+00:02:29,800 --> 00:02:32,800
+En general, te aconsejo que juegues con estas
+
+53
+00:02:32,800 --> 00:02:35,800
+cosas y le des a ver dnde trabajan,
+
+54
+00:02:35,800 --> 00:02:38,800
+dnde no funcionan, porque esa es una muy
+
+55
+00:02:38,800 --> 00:02:41,800
+buena forma de acostumbrarte y de familiarizarte con
+
+56
+00:02:41,800 --> 00:02:44,800
+todo lo que hay hacer en programacin; jugando
+
+57
+00:02:44,800 --> 00:02:47,800
+con l y dndole una oportunidad. No obstante, tenemos un
+
+58
+00:02:47,800 --> 00:02:50,800
+ejercicio de codificacin que viene a continuacin, as que
+
+59
+00:02:50,800 --> 00:02:53,800
+por favor haga clic en eso: va a necesitar
+
+60
+00:02:53,800 --> 00:02:56,800
+usar la palabra clave len (), as que prubelo
+
+61
+00:02:56,800 --> 00:02:59,800
+y luego regrese y continuaremos. Te ver pronto!
+

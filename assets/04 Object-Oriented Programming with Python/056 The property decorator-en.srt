@@ -1,0 +1,384 @@
+1
+00:00:00,520 --> 00:00:01,450
+<v Instructor>Hi welcome back.</v>
+
+2
+00:00:01,450 --> 00:00:04,020
+In this video we're taking about properties.
+
+3
+00:00:05,130 --> 00:00:07,020
+Remember how we mentioned that
+
+4
+00:00:07,020 --> 00:00:09,940
+the values defined here in the constructor
+
+5
+00:00:09,940 --> 00:00:12,970
+in the init method, these are called properties
+
+6
+00:00:12,970 --> 00:00:16,440
+because the object has this value now defined inside of it.
+
+7
+00:00:16,440 --> 00:00:19,840
+Name, school, marks and salary.
+
+8
+00:00:20,730 --> 00:00:22,300
+Indeed when we create an object,
+
+9
+00:00:22,300 --> 00:00:25,315
+then we can print rolf.salary.
+
+10
+00:00:25,315 --> 00:00:27,774
+And what this tells us is that we're accessing
+
+11
+00:00:27,774 --> 00:00:30,490
+a value inside the object.
+
+12
+00:00:31,630 --> 00:00:33,310
+As soon as we want to access a function
+
+13
+00:00:33,310 --> 00:00:35,280
+we have to call the function
+
+14
+00:00:35,280 --> 00:00:37,140
+by including the brackets at the end.
+
+15
+00:00:38,037 --> 00:00:40,810
+And this is all good,
+
+16
+00:00:40,810 --> 00:00:43,294
+but for example, let's think of the
+
+17
+00:00:43,294 --> 00:00:46,600
+weekly salary, let's delete that.
+
+18
+00:00:46,600 --> 00:00:48,610
+I think of the weekly salary of rolf.
+
+19
+00:00:50,080 --> 00:00:52,180
+We've learned in the past that functions
+
+20
+00:00:52,180 --> 00:00:53,900
+and therefore methods, since they are
+
+21
+00:00:53,900 --> 00:00:55,920
+just function inside a class
+
+22
+00:00:55,920 --> 00:00:59,950
+are pieces of code that do something, perform an action.
+
+23
+00:01:01,590 --> 00:01:03,550
+However the weekly salary method
+
+24
+00:01:03,550 --> 00:01:07,320
+doesn't perform and actions, it just calculates a value.
+
+25
+00:01:08,290 --> 00:01:12,105
+So it would be quite nice if we could have
+
+26
+00:01:12,105 --> 00:01:14,430
+weekly salary like so.
+
+27
+00:01:14,430 --> 00:01:17,170
+Rolf the weekly salary, it's not a function anymore.
+
+28
+00:01:17,170 --> 00:01:19,474
+Now it's just a property of the object
+
+29
+00:01:19,474 --> 00:01:21,870
+because there's no action to do.
+
+30
+00:01:21,870 --> 00:01:23,630
+It's not like we're telling rolf to, you know,
+
+31
+00:01:23,630 --> 00:01:25,670
+go to work or do something.
+
+32
+00:01:25,670 --> 00:01:28,550
+We're just getting a value from the object.
+
+33
+00:01:30,100 --> 00:01:32,495
+And you can only do this when the function
+
+34
+00:01:32,495 --> 00:01:37,495
+doesn't take any arguments other than self, okay.
+
+35
+00:01:37,560 --> 00:01:40,398
+If the function only takes a self argument
+
+36
+00:01:40,398 --> 00:01:43,650
+and the function isn't one that does things
+
+37
+00:01:43,650 --> 00:01:45,390
+but rather just calculates a value
+
+38
+00:01:45,390 --> 00:01:47,560
+based on self's properties,
+
+39
+00:01:49,040 --> 00:01:53,330
+I think this starts to make sense to do it this way,
+
+40
+00:01:53,330 --> 00:01:55,420
+because now you're accessing the weekly salary
+
+41
+00:01:55,420 --> 00:01:57,730
+and you know, you don't care if that's calculated.
+
+42
+00:01:57,730 --> 00:02:00,230
+And you don't care if that's just static.
+
+43
+00:02:00,230 --> 00:02:03,550
+You know, that this weekly salary is rolf's weekly salary.
+
+44
+00:02:03,550 --> 00:02:05,560
+And if that changes because you increase the salary
+
+45
+00:02:05,560 --> 00:02:07,260
+that's fine, you know.
+
+46
+00:02:07,260 --> 00:02:08,670
+You don't necessarily care about that,
+
+47
+00:02:08,670 --> 00:02:11,750
+you just care that you getting the right value out.
+
+48
+00:02:11,750 --> 00:02:14,470
+So obviously if we do this it's not going to work
+
+49
+00:02:14,470 --> 00:02:16,140
+because Python is going to expect
+
+50
+00:02:16,140 --> 00:02:17,300
+the opening and closing bracket.
+
+51
+00:02:17,300 --> 00:02:19,180
+Let's run it and I will show you.
+
+52
+00:02:20,870 --> 00:02:23,810
+See now what we get is a bound method
+
+53
+00:02:23,810 --> 00:02:26,930
+WorkingStudent.weekly_salary of WorkingStudent object.
+
+54
+00:02:26,930 --> 00:02:28,110
+What this is telling us
+
+55
+00:02:28,110 --> 00:02:31,520
+is what we've printed out is this method.
+
+56
+00:02:31,520 --> 00:02:34,643
+We've printed out the definition of this method.
+
+57
+00:02:34,643 --> 00:02:36,960
+Inside it we've got, you know, the memory address
+
+58
+00:02:36,960 --> 00:02:39,150
+of the object and so on.
+
+59
+00:02:39,150 --> 00:02:41,261
+If we want to do this
+
+60
+00:02:41,261 --> 00:02:44,470
+we have to use what's called the delarator.
+
+61
+00:02:44,470 --> 00:02:48,170
+And this is a very popular declarator called @property.
+
+62
+00:02:48,170 --> 00:02:50,842
+The @property declarator turns this method
+
+63
+00:02:50,842 --> 00:02:53,880
+into something that can be used like so.
+
+64
+00:02:56,710 --> 00:02:59,750
+Now we get 581.25, and remember
+
+65
+00:02:59,750 --> 00:03:02,061
+we've not added the brackets.
+
+66
+00:03:02,061 --> 00:03:03,810
+So this a decalarator,
+
+67
+00:03:03,810 --> 00:03:04,900
+we're going to look at declarators
+
+68
+00:03:04,900 --> 00:03:06,530
+later on in the course, not just now.
+
+69
+00:03:06,530 --> 00:03:08,915
+I just wanted to introduce this one declarator here,
+
+70
+00:03:08,915 --> 00:03:10,740
+because it's a nice way of, you know,
+
+71
+00:03:10,740 --> 00:03:12,830
+adding some advanced Python things
+
+72
+00:03:12,830 --> 00:03:14,780
+as we go along the course.
+
+73
+00:03:14,780 --> 00:03:16,446
+This is not something terribly complex
+
+74
+00:03:16,446 --> 00:03:19,250
+although understanding the way declarators work
+
+75
+00:03:19,250 --> 00:03:22,130
+is more complex, we don't need to do that just now.
+
+76
+00:03:22,130 --> 00:03:23,680
+We're gonna look at that later on.
+
+77
+00:03:23,680 --> 00:03:26,850
+And I want you to start getting more advanced.
+
+78
+00:03:26,850 --> 00:03:29,840
+This is how you can change a simple
+
+79
+00:03:29,840 --> 00:03:34,840
+no argument method into a property,
+
+80
+00:03:35,120 --> 00:03:36,410
+or something that can be accessed
+
+81
+00:03:36,410 --> 00:03:38,100
+as if it were are property.
+
+82
+00:03:39,450 --> 00:03:41,320
+And that's great because now we know
+
+83
+00:03:41,320 --> 00:03:43,760
+that no action is going to arise
+
+84
+00:03:43,760 --> 00:03:47,000
+as a result of using this property.
+
+85
+00:03:47,000 --> 00:03:49,960
+We just know that this is a value that we're getting out.
+
+86
+00:03:49,960 --> 00:03:52,370
+Again I stress this important.
+
+87
+00:03:52,370 --> 00:03:55,960
+If you are doing an action, like connecting to a database,
+
+88
+00:03:55,960 --> 00:03:59,000
+or opening file, or, you know,
+
+89
+00:03:59,000 --> 00:04:00,774
+communicating with some sort of web service,
+
+90
+00:04:00,774 --> 00:04:03,380
+or you are interacting with another object,
+
+91
+00:04:03,380 --> 00:04:05,080
+or anything, any action,
+
+92
+00:04:05,080 --> 00:04:08,730
+please do not use the @property declarator.
+
+93
+00:04:08,730 --> 00:04:11,082
+Use it only when you're calculating values
+
+94
+00:04:11,082 --> 00:04:14,560
+from the object's properties themselves.
+
+95
+00:04:15,500 --> 00:04:17,050
+Alright that's it for this video,
+
+96
+00:04:17,050 --> 00:04:18,680
+and I'll see you on the next one.
+

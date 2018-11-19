@@ -1,0 +1,752 @@
+1
+00:00:00,160 --> 00:00:01,060
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,060 --> 00:00:03,494
+In this video, we're going to look
+
+3
+00:00:03,494 --> 00:00:04,327
+at sorting through our books
+
+4
+00:00:04,327 --> 00:00:06,890
+to find only the best books by rating
+
+5
+00:00:06,890 --> 00:00:08,100
+and by price.
+
+6
+00:00:08,100 --> 00:00:09,480
+Then, in the next video we're going
+
+7
+00:00:09,480 --> 00:00:10,850
+to add that to a menu.
+
+8
+00:00:11,740 --> 00:00:13,738
+For now, we're going to make our app
+
+9
+00:00:13,738 --> 00:00:16,947
+return or, rather, export these books
+
+10
+00:00:16,947 --> 00:00:19,670
+so that we can import them from our menu.
+
+11
+00:00:19,670 --> 00:00:24,670
+So we're gonna delete this for books, for booking books
+
+12
+00:00:24,740 --> 00:00:27,560
+and we're gonna end with this books being equal
+
+13
+00:00:27,560 --> 00:00:29,660
+to page dot books.
+
+14
+00:00:29,660 --> 00:00:33,240
+In Python, every variable that you see here,
+
+15
+00:00:33,240 --> 00:00:36,380
+requests, all books page, page content,
+
+16
+00:00:36,380 --> 00:00:39,660
+page and books are automatically exported
+
+17
+00:00:39,660 --> 00:00:41,510
+so that anybody else can import them.
+
+18
+00:00:42,590 --> 00:00:43,970
+For example, as another example
+
+19
+00:00:43,970 --> 00:00:46,070
+of what's happening here,
+
+20
+00:00:46,070 --> 00:00:49,370
+if we go to our all books page,
+
+21
+00:00:49,370 --> 00:00:52,220
+you can see that it creates a few things,
+
+22
+00:00:52,220 --> 00:00:54,820
+it creates this class all books page,
+
+23
+00:00:54,820 --> 00:00:57,050
+this books parser, all books page locators
+
+24
+00:00:57,050 --> 00:00:58,210
+and beautiful soup.
+
+25
+00:00:58,210 --> 00:01:01,170
+These four things are all available
+
+26
+00:01:01,170 --> 00:01:03,690
+sort of at the top level of the file.
+
+27
+00:01:03,690 --> 00:01:06,100
+When you go into app.py,
+
+28
+00:01:06,100 --> 00:01:08,950
+you could import beautiful soup,
+
+29
+00:01:08,950 --> 00:01:10,770
+it would be a weird thing to do
+
+30
+00:01:10,770 --> 00:01:12,420
+but this is something you can do.
+
+31
+00:01:13,786 --> 00:01:15,560
+And so the purpose of me telling you this
+
+32
+00:01:15,560 --> 00:01:17,430
+is as soon as you create a variable
+
+33
+00:01:17,430 --> 00:01:19,760
+like books equal page dot books
+
+34
+00:01:19,760 --> 00:01:22,810
+which the result of launching this scraper
+
+35
+00:01:22,810 --> 00:01:25,180
+you know and getting all that data out,
+
+36
+00:01:25,180 --> 00:01:27,985
+this variable can now be imported
+
+37
+00:01:27,985 --> 00:01:29,680
+by another file.
+
+38
+00:01:30,550 --> 00:01:32,970
+When that file tries to import books,
+
+39
+00:01:32,970 --> 00:01:35,330
+we will run through this entire file,
+
+40
+00:01:35,330 --> 00:01:36,560
+end up calculating books
+
+41
+00:01:36,560 --> 00:01:37,530
+and be able to import.
+
+42
+00:01:37,530 --> 00:01:39,886
+So let's go over and create a new file
+
+43
+00:01:39,886 --> 00:01:44,110
+that I'm going to call menu in the top level
+
+44
+00:01:44,110 --> 00:01:48,100
+and from app we're going to import books, okay?
+
+45
+00:01:49,100 --> 00:01:50,400
+Then we're gonna
+
+46
+00:01:50,400 --> 00:01:53,720
+define a function print best books for example.
+
+47
+00:01:54,970 --> 00:01:57,930
+What this is going to do is it's going to sort
+
+48
+00:01:57,930 --> 00:01:59,800
+the books that we've got here,
+
+49
+00:01:59,800 --> 00:02:02,940
+this list of book parser objects
+
+50
+00:02:02,940 --> 00:02:05,895
+and it's only gonna give me the top five books,
+
+51
+00:02:05,895 --> 00:02:08,580
+which means they're gonna be the five star books,
+
+52
+00:02:08,580 --> 00:02:11,150
+some of them at least are going to be five stars.
+
+53
+00:02:12,510 --> 00:02:17,058
+Okay, so the best books are going to be
+
+54
+00:02:17,058 --> 00:02:19,960
+and what we need to do here is sort the books
+
+55
+00:02:19,960 --> 00:02:23,250
+by their rating, so what we're going to do
+
+56
+00:02:23,250 --> 00:02:26,470
+is say sorted books
+
+57
+00:02:26,470 --> 00:02:28,020
+and the key
+
+58
+00:02:28,020 --> 00:02:32,940
+is going to be lamda x, x dot rating.
+
+59
+00:02:34,550 --> 00:02:35,760
+Okay.
+
+60
+00:02:35,760 --> 00:02:36,960
+All this does,
+
+61
+00:02:38,210 --> 00:02:39,043
+oops sorry about that,
+
+62
+00:02:39,043 --> 00:02:41,640
+all this does is it takes the books list
+
+63
+00:02:41,640 --> 00:02:45,450
+or the collection and it sorts it
+
+64
+00:02:45,450 --> 00:02:49,870
+for every element it's going to look at this key function
+
+65
+00:02:49,870 --> 00:02:52,090
+to see what it's sorting by
+
+66
+00:02:53,140 --> 00:02:57,060
+and in here we're telling it to sort by the rating property.
+
+67
+00:02:57,060 --> 00:02:59,397
+So what it's doing is it's getting the first book,
+
+68
+00:02:59,397 --> 00:03:01,650
+calling this function on it,
+
+69
+00:03:01,650 --> 00:03:04,500
+that's gonna give it the books rating
+
+70
+00:03:04,500 --> 00:03:06,990
+and then it's gonna sort by that,
+
+71
+00:03:06,990 --> 00:03:09,300
+so we're gonna end up sorting, you know,
+
+72
+00:03:09,300 --> 00:03:11,360
+with this rating key.
+
+73
+00:03:12,560 --> 00:03:14,260
+Then we can say for book
+
+74
+00:03:15,310 --> 00:03:17,560
+in best books, print.
+
+75
+00:03:20,213 --> 00:03:23,620
+Now this is going to give you a list of books
+
+76
+00:03:23,620 --> 00:03:26,100
+because that's what we gave it in.
+
+77
+00:03:26,100 --> 00:03:28,810
+So if you wanted, you could slice this list
+
+78
+00:03:28,810 --> 00:03:31,610
+to only get the top say 10 books.
+
+79
+00:03:34,050 --> 00:03:37,330
+Just like so, as we know from our list slicing.
+
+80
+00:03:38,980 --> 00:03:40,690
+Now of course we must run
+
+81
+00:03:41,950 --> 00:03:44,240
+this function in order for it to do something
+
+82
+00:03:44,240 --> 00:03:46,100
+and again just to recap, the first thing
+
+83
+00:03:46,100 --> 00:03:48,330
+we're gonna do is we're gonna import books
+
+84
+00:03:48,330 --> 00:03:50,450
+from the app file so that's gonna go over
+
+85
+00:03:50,450 --> 00:03:52,710
+to app and it's gonna run app
+
+86
+00:03:52,710 --> 00:03:54,070
+and it's going to go through all of this,
+
+87
+00:03:54,070 --> 00:03:54,950
+this is going to take a while
+
+88
+00:03:54,950 --> 00:03:56,440
+'cause it has to get the books page
+
+89
+00:03:56,440 --> 00:03:58,470
+and sort of parse through it
+
+90
+00:03:58,470 --> 00:04:00,020
+and eventually it's gonna end this
+
+91
+00:04:00,020 --> 00:04:02,010
+and then we're gonna import books
+
+92
+00:04:02,010 --> 00:04:04,250
+which is now gonna be available
+
+93
+00:04:04,250 --> 00:04:06,900
+and then we're gonna sort them and print them out.
+
+94
+00:04:06,900 --> 00:04:09,190
+So let's right click our menu and run it.
+
+95
+00:04:10,999 --> 00:04:13,320
+And there you have it, now we get 10 books
+
+96
+00:04:13,320 --> 00:04:15,790
+that are all one star.
+
+97
+00:04:17,438 --> 00:04:20,040
+By the way, a small side improvement you could try
+
+98
+00:04:20,040 --> 00:04:23,890
+is this one stars, it should probably be one star
+
+99
+00:04:23,890 --> 00:04:27,350
+without the S but you do want the S if you have many stars,
+
+100
+00:04:27,350 --> 00:04:30,150
+so this is a small improvement you can try out if you want.
+
+101
+00:04:30,150 --> 00:04:31,670
+Notice how all these books have one star,
+
+102
+00:04:31,670 --> 00:04:34,470
+one star, one star, two stars, two stars, three stars.
+
+103
+00:04:36,046 --> 00:04:40,500
+So we are sorting by default here on ascending okay?
+
+104
+00:04:42,900 --> 00:04:47,900
+And the easiest way to sort in a descending way,
+
+105
+00:04:47,930 --> 00:04:50,650
+is to multiply this by minus one.
+
+106
+00:04:55,780 --> 00:05:00,020
+Now, instead of starting at one and going up,
+
+107
+00:05:00,020 --> 00:05:02,480
+we're gonna start at the lowest number and go up
+
+108
+00:05:02,480 --> 00:05:06,190
+so instead of one to five, we're gonna sort
+
+109
+00:05:06,190 --> 00:05:09,650
+from minus five to minus one, which is gonna
+
+110
+00:05:09,650 --> 00:05:11,710
+give us the order that we want.
+
+111
+00:05:11,710 --> 00:05:12,760
+If we run this again,
+
+112
+00:05:14,530 --> 00:05:16,710
+you can see now we get our five star books
+
+113
+00:05:16,710 --> 00:05:18,120
+and then our four star books
+
+114
+00:05:18,120 --> 00:05:19,380
+and our three star books.
+
+115
+00:05:21,240 --> 00:05:23,170
+Okay, I hope this makes sense.
+
+116
+00:05:23,170 --> 00:05:24,307
+All we're doing is we're essentially reversing
+
+117
+00:05:24,307 --> 00:05:26,270
+the order of things.
+
+118
+00:05:28,370 --> 00:05:31,270
+This is how you could get your best books.
+
+119
+00:05:31,270 --> 00:05:32,940
+If you wanted your cheapest books,
+
+120
+00:05:32,940 --> 00:05:35,650
+it would be exactly the same thing really.
+
+121
+00:05:35,650 --> 00:05:38,310
+So much so that I'm going to copy
+
+122
+00:05:38,310 --> 00:05:40,660
+and paste which is not something you should do.
+
+123
+00:05:42,100 --> 00:05:44,930
+And now instead of sorting by rating,
+
+124
+00:05:44,930 --> 00:05:47,000
+multiplied by minus one,
+
+125
+00:05:47,000 --> 00:05:48,890
+we're gonna sort by price and that's gonna give you
+
+126
+00:05:48,890 --> 00:05:50,660
+your cheapest books.
+
+127
+00:05:50,660 --> 00:05:52,890
+I'm gonna use a PyCharm shortcut here
+
+128
+00:05:52,890 --> 00:05:56,620
+which is shift and the F6 key
+
+129
+00:05:56,620 --> 00:05:58,710
+and that's gonna allow me to
+
+130
+00:06:00,110 --> 00:06:02,520
+rename all the usage
+
+131
+00:06:02,520 --> 00:06:04,530
+of this variable everywhere in this function
+
+132
+00:06:04,530 --> 00:06:06,380
+so as you can see this one got renamed as well.
+
+133
+00:06:06,380 --> 00:06:09,960
+So that's shift F6, if you're interested.
+
+134
+00:06:11,400 --> 00:06:15,110
+We can also print the cheapest books now.
+
+135
+00:06:18,080 --> 00:06:20,000
+And you can see there,
+
+136
+00:06:21,560 --> 00:06:24,970
+that we get, this starts here,
+
+137
+00:06:24,970 --> 00:06:28,090
+this is the cheapest book, or is it?
+
+138
+00:06:33,840 --> 00:06:35,870
+Yeah, it's possible that this one is the,
+
+139
+00:06:35,870 --> 00:06:37,760
+this one must be the cheapest book.
+
+140
+00:06:37,760 --> 00:06:39,290
+This one here is where it starts,
+
+141
+00:06:39,290 --> 00:06:41,130
+this is the cheapest book and then it goes up
+
+142
+00:06:41,130 --> 00:06:45,640
+to 17, 17.20 and so far up until 37.
+
+143
+00:06:45,640 --> 00:06:47,250
+If you wanted to make it a bit more obvious,
+
+144
+00:06:47,250 --> 00:06:48,110
+you could print
+
+145
+00:06:50,010 --> 00:06:51,100
+something like that.
+
+146
+00:06:54,810 --> 00:06:56,840
+Just so it's a bit easier
+
+147
+00:06:56,840 --> 00:06:59,440
+to see where it starts and where it ends
+
+148
+00:06:59,440 --> 00:07:01,390
+and these are indeed the cheapest ones.
+
+149
+00:07:02,240 --> 00:07:03,580
+Notice how there's little correlation
+
+150
+00:07:03,580 --> 00:07:05,820
+between the quality the book and price,
+
+151
+00:07:05,820 --> 00:07:08,955
+in terms of the star rating because this page is random,
+
+152
+00:07:08,955 --> 00:07:11,750
+okay the prices and the stars are assigned randomly
+
+153
+00:07:11,750 --> 00:07:15,434
+so there's no logic that goes on in here.
+
+154
+00:07:15,434 --> 00:07:16,630
+Okay?
+
+155
+00:07:18,040 --> 00:07:20,170
+Now if you wanted
+
+156
+00:07:20,170 --> 00:07:23,090
+to sort by multiple things,
+
+157
+00:07:23,090 --> 00:07:24,490
+you can also do that
+
+158
+00:07:24,490 --> 00:07:26,440
+so that's something you can do as well.
+
+159
+00:07:26,440 --> 00:07:28,400
+Let's have a look at how to do that.
+
+160
+00:07:30,100 --> 00:07:33,760
+All you've gotta do if you want to sort by two things
+
+161
+00:07:33,760 --> 00:07:37,340
+is instead of returning here the value
+
+162
+00:07:37,340 --> 00:07:40,390
+that you wanna sort by, as you can see here,
+
+163
+00:07:40,390 --> 00:07:43,570
+we're sorting by best so only by stars,
+
+164
+00:07:43,570 --> 00:07:47,100
+so 44 point, 54.23 at the start.
+
+165
+00:07:47,100 --> 00:07:49,400
+You can actually, don't do that,
+
+166
+00:07:49,400 --> 00:07:51,400
+you can return a tuple
+
+167
+00:07:55,940 --> 00:07:58,130
+of things and it's gonna sort by this one first
+
+168
+00:07:58,130 --> 00:08:01,450
+and if it finds a few books that have the same rating,
+
+169
+00:08:01,450 --> 00:08:03,550
+it's gonna sort them by price
+
+170
+00:08:03,550 --> 00:08:05,840
+and you can continue adding keys here
+
+171
+00:08:05,840 --> 00:08:07,870
+if you want so if we run this again,
+
+172
+00:08:09,120 --> 00:08:11,550
+now you can see that we get the cheaper
+
+173
+00:08:11,550 --> 00:08:14,570
+book in front and its cheaper book as well
+
+174
+00:08:14,570 --> 00:08:18,500
+until we get to the more expensive ones, okay?
+
+175
+00:08:18,500 --> 00:08:20,210
+But these are all five stars,
+
+176
+00:08:20,210 --> 00:08:22,030
+then you have a cheaper book here,
+
+177
+00:08:22,030 --> 00:08:23,370
+but it's four stars.
+
+178
+00:08:23,370 --> 00:08:25,930
+So the most important sorting criteria was the stars
+
+179
+00:08:25,930 --> 00:08:28,380
+because that was the first thing in our tuple,
+
+180
+00:08:28,380 --> 00:08:31,780
+the second most important was the price, okay?
+
+181
+00:08:31,780 --> 00:08:34,299
+So this is how you can do multiple sorting
+
+182
+00:08:34,299 --> 00:08:35,440
+if you need to.
+
+183
+00:08:38,090 --> 00:08:39,530
+So that's pretty useful.
+
+184
+00:08:39,530 --> 00:08:40,710
+Okay that's it for this video,
+
+185
+00:08:40,710 --> 00:08:41,620
+I just wanted to show you
+
+186
+00:08:41,620 --> 00:08:44,510
+how to do the sorting of these books.
+
+187
+00:08:44,510 --> 00:08:48,170
+Now we're gonna look at constructing the menu itself.
+
+188
+00:08:48,170 --> 00:08:49,720
+I'll see you in the next video.
+

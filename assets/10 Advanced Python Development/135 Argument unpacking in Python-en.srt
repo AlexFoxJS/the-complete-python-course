@@ -1,0 +1,944 @@
+1
+00:00:00,140 --> 00:00:01,610
+<v Jose>Hi, and welcome back.</v>
+
+2
+00:00:01,610 --> 00:00:05,140
+In this video we're looking at argument unpacking.
+
+3
+00:00:05,140 --> 00:00:07,610
+We've looked at double destructuring,
+
+4
+00:00:07,610 --> 00:00:10,880
+and this is sort of fairly related.
+
+5
+00:00:10,880 --> 00:00:12,420
+It's not the same thing by any means,
+
+6
+00:00:12,420 --> 00:00:15,410
+but it's sort of a short-hand to do things.
+
+7
+00:00:16,650 --> 00:00:18,330
+Given the code we've got here on the left,
+
+8
+00:00:18,330 --> 00:00:19,320
+which should look familiar,
+
+9
+00:00:19,320 --> 00:00:21,480
+it's the one we wrote a couple of videos ago.
+
+10
+00:00:21,480 --> 00:00:22,550
+We've got our accounts,
+
+11
+00:00:22,550 --> 00:00:25,480
+and we've got a function to add balance to an account.
+
+12
+00:00:25,480 --> 00:00:28,420
+Let's call the add_balance function many times.
+
+13
+00:00:28,420 --> 00:00:30,570
+Imagine we've got a list of transactions
+
+14
+00:00:30,570 --> 00:00:33,020
+like this list I've just pasted here.
+
+15
+00:00:33,020 --> 00:00:34,640
+So it's a list of doubles.
+
+16
+00:00:34,640 --> 00:00:38,990
+This one says the amount of change that happened,
+
+17
+00:00:38,990 --> 00:00:41,840
+and this one to which account it happened.
+
+18
+00:00:41,840 --> 00:00:44,220
+So let's go over these transactions.
+
+19
+00:00:44,220 --> 00:00:45,530
+I'm just gonna press enter a few times here
+
+20
+00:00:45,530 --> 00:00:47,060
+to give you more space.
+
+21
+00:00:47,060 --> 00:00:48,330
+And let's say we wanted to add
+
+22
+00:00:48,330 --> 00:00:51,030
+all of these transactions to our accounts.
+
+23
+00:00:51,030 --> 00:00:52,410
+What could we do?
+
+24
+00:00:52,410 --> 00:00:54,200
+For t in transactions,
+
+25
+00:00:55,318 --> 00:00:59,740
+add_balancet[0],sorryforgot the bracket,
+
+26
+00:00:59,740 --> 00:01:02,240
+t[0], t[1] and that's it.
+
+27
+00:01:03,540 --> 00:01:05,917
+So as you can see what this'll do is,
+
+28
+00:01:05,917 --> 00:01:08,511
+of course for every transaction which is a tuple,
+
+29
+00:01:08,511 --> 00:01:13,511
+it'll call t[0] and t[1] the amount and the name and pass it
+
+30
+00:01:14,110 --> 00:01:18,090
+to add_balance which it takes in the amount and the name
+
+31
+00:01:18,090 --> 00:01:19,940
+of the account it is going to update.
+
+32
+00:01:21,620 --> 00:01:25,645
+Now we're doing something very, very specific here
+
+33
+00:01:25,645 --> 00:01:29,170
+which is a really popular thing to do, in fact.
+
+34
+00:01:29,170 --> 00:01:31,260
+And that is that we're getting an iterable,
+
+35
+00:01:31,260 --> 00:01:36,210
+like this tuple here, and each element of the tuple,
+
+36
+00:01:36,210 --> 00:01:37,550
+in this case, two elements,
+
+37
+00:01:37,550 --> 00:01:40,330
+we're passing them as arguments to a function.
+
+38
+00:01:40,330 --> 00:01:42,140
+Notice how we're passing the first argument,
+
+39
+00:01:42,140 --> 00:01:44,660
+the argument with index zero,
+
+40
+00:01:44,660 --> 00:01:47,870
+to our function t[0] as the first argument.
+
+41
+00:01:47,870 --> 00:01:49,550
+So the first argument of the function
+
+42
+00:01:49,550 --> 00:01:51,958
+is also the first element of the tuple.
+
+43
+00:01:51,958 --> 00:01:54,620
+The second argument of the function
+
+44
+00:01:54,620 --> 00:01:57,400
+is also the second element of the tuple and so forth.
+
+45
+00:01:57,400 --> 00:01:59,120
+So this is a very popular thing to do,
+
+46
+00:01:59,120 --> 00:02:00,420
+each element of the tuple going
+
+47
+00:02:00,420 --> 00:02:02,820
+to the argument of a function.
+
+48
+00:02:02,820 --> 00:02:04,400
+So Python gives us a shorthand.
+
+49
+00:02:04,400 --> 00:02:08,865
+Instead of this, we can do *t
+
+50
+00:02:08,865 --> 00:02:10,970
+and what that does is that unpacks
+
+51
+00:02:10,970 --> 00:02:14,250
+the iterable into arguments.
+
+52
+00:02:14,250 --> 00:02:18,750
+So *t we pass each element of t
+
+53
+00:02:18,750 --> 00:02:21,830
+as a separate argument to the function.
+
+54
+00:02:21,830 --> 00:02:25,170
+So t[0], the amount, we'll go to the amount,
+
+55
+00:02:25,170 --> 00:02:28,010
+t[1], checking, we'll go to the name.
+
+56
+00:02:28,010 --> 00:02:29,850
+If we have more elements here,
+
+57
+00:02:29,850 --> 00:02:33,420
+they would go to the subsequent parameters as well.
+
+58
+00:02:33,420 --> 00:02:36,750
+Of course we only have two elements, two parameters.
+
+59
+00:02:36,750 --> 00:02:40,610
+So this is called argument unpacking,
+
+60
+00:02:40,610 --> 00:02:43,980
+and this asterisk here is the unpacking operator
+
+61
+00:02:43,980 --> 00:02:47,700
+that we can use to unpack any iterable into arguments.
+
+62
+00:02:49,746 --> 00:02:51,210
+Okay, pretty straightforward.
+
+63
+00:02:52,090 --> 00:02:56,870
+Now I also wanted to tell you about named arguments.
+
+64
+00:02:56,870 --> 00:03:00,033
+Did you know that in any function call in Python,
+
+65
+00:03:00,033 --> 00:03:03,780
+you can specify the name of the parameter
+
+66
+00:03:03,780 --> 00:03:05,470
+that you're fulfilling with a given value.
+
+67
+00:03:05,470 --> 00:03:10,470
+So you can say something like amount= t[0], name=t[1].
+
+68
+00:03:11,860 --> 00:03:13,560
+This is totally valid Python,
+
+69
+00:03:13,560 --> 00:03:16,240
+so you define the name of the argument.
+
+70
+00:03:16,240 --> 00:03:17,980
+I'm sorry the name of the parameter
+
+71
+00:03:17,980 --> 00:03:19,560
+and the argument value.
+
+72
+00:03:19,560 --> 00:03:21,400
+And you put an equal sign in the middle.
+
+73
+00:03:21,400 --> 00:03:24,720
+That just makes the function call a bit more readable,
+
+74
+00:03:24,720 --> 00:03:25,810
+so that when you're looking at the function
+
+75
+00:03:25,810 --> 00:03:29,550
+you know okay, t[0] is the amount, t[1] is the name.
+
+76
+00:03:30,780 --> 00:03:33,010
+It becomes a bit less useful if you have
+
+77
+00:03:33,010 --> 00:03:34,910
+a statement above it that says something like
+
+78
+00:03:34,910 --> 00:03:39,910
+amount = t[0] and let's use proper amount name = t.
+
+79
+00:03:41,470 --> 00:03:42,827
+This becomes a bit less useful,
+
+80
+00:03:42,827 --> 00:03:47,380
+then you have amount=amount, name=name.
+
+81
+00:03:47,380 --> 00:03:48,540
+So this is not so useful,
+
+82
+00:03:48,540 --> 00:03:50,630
+so you wouldn't do this in that case.
+
+83
+00:03:51,780 --> 00:03:55,024
+But when you have a variable that maybe
+
+84
+00:03:55,024 --> 00:03:58,070
+doesn't describe what things are so well,
+
+85
+00:03:58,070 --> 00:03:59,610
+like this t thing here.
+
+86
+00:03:59,610 --> 00:04:01,960
+This can be pretty useful 'cause now you know that
+
+87
+00:04:01,960 --> 00:04:05,910
+t[0] whatever that is, is going to the amount property.
+
+88
+00:04:05,910 --> 00:04:07,850
+t[1] whatever that is, is going to the name property.
+
+89
+00:04:07,850 --> 00:04:12,850
+So t[1] must be a string, t[0] must be a float you assume.
+
+90
+00:04:14,130 --> 00:04:16,454
+A benefit of these named arguments is that
+
+91
+00:04:16,454 --> 00:04:18,520
+you can put them in any order you want.
+
+92
+00:04:19,370 --> 00:04:21,610
+So, you can put this one here and this one in front,
+
+93
+00:04:21,610 --> 00:04:24,820
+and this one behind, doesn't matter, it's up to you.
+
+94
+00:04:24,820 --> 00:04:27,450
+So that's named arguments in a nutshell.
+
+95
+00:04:27,450 --> 00:04:28,570
+That's really all they are.
+
+96
+00:04:28,570 --> 00:04:30,730
+You can put the name of the parameter
+
+97
+00:04:30,730 --> 00:04:33,000
+you're fulfilling in front of the value,
+
+98
+00:04:33,000 --> 00:04:35,050
+and then you can jumble them if you want.
+
+99
+00:04:37,710 --> 00:04:40,680
+So, in section nine a while ago,
+
+100
+00:04:40,680 --> 00:04:42,880
+so you're gonna add more enters here.
+
+101
+00:04:42,880 --> 00:04:45,260
+In section nine we looked at this piece of code here
+
+102
+00:04:45,260 --> 00:04:46,900
+that I'm about to paste in.
+
+103
+00:04:46,900 --> 00:04:48,500
+We looked at this piece of code.
+
+104
+00:04:49,468 --> 00:04:50,350
+And if you remember it,
+
+105
+00:04:50,350 --> 00:04:52,344
+we defined a class user with init method,
+
+106
+00:04:52,344 --> 00:04:54,681
+username and password were two arguments of the init,
+
+107
+00:04:54,681 --> 00:04:57,780
+and then we set the properties username and password
+
+108
+00:04:57,780 --> 00:04:59,250
+of the object.
+
+109
+00:04:59,250 --> 00:05:01,260
+And then we have a class method from dict
+
+110
+00:05:01,260 --> 00:05:03,140
+that took in a dictionary and created
+
+111
+00:05:03,140 --> 00:05:05,690
+a new object of type user from,
+
+112
+00:05:05,690 --> 00:05:09,560
+two keys, username and password in that dictionary.
+
+113
+00:05:11,210 --> 00:05:14,650
+An interesting thing here that I noticed
+
+114
+00:05:14,650 --> 00:05:16,320
+pretty quickly when looking at this data,
+
+115
+00:05:16,320 --> 00:05:19,436
+is that we've got username and password
+
+116
+00:05:19,436 --> 00:05:21,590
+keys in our dictionary,
+
+117
+00:05:21,590 --> 00:05:25,730
+and we have username and password argument names,
+
+118
+00:05:25,730 --> 00:05:26,630
+so they match.
+
+119
+00:05:26,630 --> 00:05:30,460
+The data that we have which has a username and password key,
+
+120
+00:05:30,460 --> 00:05:32,980
+matches the argument names username and password.
+
+121
+00:05:32,980 --> 00:05:35,030
+So, this is gonna be interesting in a moment.
+
+122
+00:05:35,870 --> 00:05:37,610
+Then we have a list of users.
+
+123
+00:05:37,610 --> 00:05:40,400
+We can imagine they're coming from a database or something.
+
+124
+00:05:40,400 --> 00:05:42,630
+We've got username is rolf, password is 123,
+
+125
+00:05:42,630 --> 00:05:45,330
+username tecladoisawesome, password is youaretoo
+
+126
+00:05:45,330 --> 00:05:46,640
+and these are two dictionaries here.
+
+127
+00:05:46,640 --> 00:05:49,040
+And then at the end we've mapped over the
+
+128
+00:05:49,040 --> 00:05:52,570
+User.from_dict method for the users list,
+
+129
+00:05:52,570 --> 00:05:54,790
+so that calls it from dict method for each user,
+
+130
+00:05:54,790 --> 00:05:56,210
+for each dictionary here,
+
+131
+00:05:56,210 --> 00:05:58,110
+passing the dictionary to the method,
+
+132
+00:05:58,110 --> 00:05:59,580
+and then we were able to create
+
+133
+00:05:59,580 --> 00:06:01,470
+a new user from each dictionary.
+
+134
+00:06:03,360 --> 00:06:06,109
+And we also of course had the option of saying
+
+135
+00:06:06,109 --> 00:06:11,109
+user_objects is [User.from_dict(u) for u in Users].
+
+136
+00:06:11,410 --> 00:06:13,600
+We have the option of doing this list comprehension
+
+137
+00:06:13,600 --> 00:06:16,740
+as well although at the time I suggested that
+
+138
+00:06:17,829 --> 00:06:21,480
+the list comprehension was a bit worse because we've got
+
+139
+00:06:21,480 --> 00:06:23,430
+to create this empty variable,
+
+140
+00:06:23,430 --> 00:06:25,870
+the function's already defined so it's pretty handy
+
+141
+00:06:25,870 --> 00:06:26,703
+to use that here.
+
+142
+00:06:26,703 --> 00:06:29,048
+We don't have to create alum defunction.
+
+143
+00:06:29,048 --> 00:06:30,140
+It's all good.
+
+144
+00:06:31,900 --> 00:06:35,100
+However now that we have argument unpacking,
+
+145
+00:06:35,100 --> 00:06:38,450
+and I'm about to introduce a new type of unpacking.
+
+146
+00:06:38,450 --> 00:06:40,570
+Now that we have argument unpacking, in fact
+
+147
+00:06:40,570 --> 00:06:43,324
+we don't need this method at all anymore.
+
+148
+00:06:43,324 --> 00:06:46,440
+And in fact we don't need this either.
+
+149
+00:06:46,440 --> 00:06:48,630
+Because what we're going to do now
+
+150
+00:06:48,630 --> 00:06:50,440
+is we're going to do this.
+
+151
+00:06:51,671 --> 00:06:52,740
+We're gonna do
+
+152
+00:06:53,690 --> 00:06:58,690
+and data, data['username'], data['password'].
+
+153
+00:07:01,230 --> 00:07:02,671
+Okay som I'm gonna build this up.
+
+154
+00:07:02,671 --> 00:07:05,230
+This is nothing new for you guys.
+
+155
+00:07:05,230 --> 00:07:07,160
+We are iterable over users.
+
+156
+00:07:07,160 --> 00:07:10,470
+We're calling each dictionary data so this dictionary
+
+157
+00:07:10,470 --> 00:07:13,550
+is data and then this dictionary becomes data.
+
+158
+00:07:13,550 --> 00:07:16,020
+And every time we do that, we're creating a new user
+
+159
+00:07:16,020 --> 00:07:19,840
+object passing to it data username and data password.
+
+160
+00:07:21,110 --> 00:07:24,460
+So rolf goes to username, 123 goes to password.
+
+161
+00:07:24,460 --> 00:07:26,230
+We have a new user where the properties
+
+162
+00:07:26,230 --> 00:07:29,550
+are username and password so we know that.
+
+163
+00:07:29,550 --> 00:07:31,350
+We can make this a bit worse and make it
+
+164
+00:07:31,350 --> 00:07:36,190
+username=data['username'], password=data['password'].
+
+165
+00:07:36,190 --> 00:07:40,610
+Again same thing only now we're using named arguments.
+
+166
+00:07:40,610 --> 00:07:43,140
+We're giving a name to the argument that we're passing in
+
+167
+00:07:43,140 --> 00:07:45,760
+and that has to match the perameter here.
+
+168
+00:07:45,760 --> 00:07:50,420
+So we're saying username is the data's username property,
+
+169
+00:07:51,810 --> 00:07:54,280
+password is the data's password key.
+
+170
+00:07:55,600 --> 00:07:59,060
+Whenever you see this username is something,
+
+171
+00:07:59,060 --> 00:08:02,930
+username password is something password at dictionary,
+
+172
+00:08:02,930 --> 00:08:04,980
+you know that you've got triplication here.
+
+173
+00:08:04,980 --> 00:08:07,430
+There's too many usernames in here.
+
+174
+00:08:07,430 --> 00:08:11,010
+There must be a better way and there is.
+
+175
+00:08:11,010 --> 00:08:12,980
+Instead of doing this,
+
+176
+00:08:14,270 --> 00:08:17,080
+you can do that.
+
+177
+00:08:20,000 --> 00:08:23,820
+Instead of doing this, you can do this.
+
+178
+00:08:27,630 --> 00:08:31,160
+Notice the double asterisk now, and what this does
+
+179
+00:08:31,160 --> 00:08:33,660
+is that this is a dictionary unpacking.
+
+180
+00:08:33,660 --> 00:08:37,460
+It unpacks a dictionary as named arguments
+
+181
+00:08:37,460 --> 00:08:38,940
+to a function.
+
+182
+00:08:38,940 --> 00:08:40,870
+So it does exactly this.
+
+183
+00:08:40,870 --> 00:08:43,370
+It says get the key of h dictionary.
+
+184
+00:08:43,370 --> 00:08:45,390
+In this case it's username and password.
+
+185
+00:08:46,700 --> 00:08:49,530
+And treat them as named arguments to the functions.
+
+186
+00:08:49,530 --> 00:08:52,389
+So say username is data['username'] and then
+
+187
+00:08:52,389 --> 00:08:54,630
+this is another key in dictionary, password.
+
+188
+00:08:54,630 --> 00:08:56,650
+So let's treat that as another named argument
+
+189
+00:08:56,650 --> 00:08:57,850
+equals data password.
+
+190
+00:08:58,840 --> 00:09:02,090
+So this double asterisk data does exactly
+
+191
+00:09:02,090 --> 00:09:03,720
+the same thing as this.
+
+192
+00:09:03,720 --> 00:09:05,660
+Why is that important?
+
+193
+00:09:05,660 --> 00:09:09,540
+It's important because dictionary may not be in order.
+
+194
+00:09:09,540 --> 00:09:14,540
+And remember these two can be jumbled up and that's fine.
+
+195
+00:09:15,710 --> 00:09:17,320
+So you can put the password in front if you want
+
+196
+00:09:17,320 --> 00:09:19,010
+and it will still go to the right place
+
+197
+00:09:19,010 --> 00:09:21,670
+because Python now match them to the name.
+
+198
+00:09:21,670 --> 00:09:24,300
+So that's important because when you the double asterisk
+
+199
+00:09:24,300 --> 00:09:27,230
+data the dictionary may not be in order,
+
+200
+00:09:27,230 --> 00:09:28,930
+and that's important here as well.
+
+201
+00:09:31,450 --> 00:09:33,860
+However let me say that as of Python 3.7,
+
+202
+00:09:34,965 --> 00:09:37,000
+dictionaries do keep their order
+
+203
+00:09:37,000 --> 00:09:39,680
+and when you pass this mapping into a function
+
+204
+00:09:39,680 --> 00:09:42,130
+it will keep the order of the dictionary as well.
+
+205
+00:09:43,060 --> 00:09:45,470
+And it's not really a problem anymore but nonetheless
+
+206
+00:09:45,470 --> 00:09:48,640
+you can still do this, and this is a good thing to do.
+
+207
+00:09:48,640 --> 00:09:50,910
+If you were getting these things from a database,
+
+208
+00:09:50,910 --> 00:09:53,490
+for example, you can see how being able to pass
+
+209
+00:09:53,490 --> 00:09:56,440
+the entire piece of data to a function may be useful.
+
+210
+00:09:59,338 --> 00:10:03,020
+That's how you do named argument unpacking
+
+211
+00:10:03,020 --> 00:10:04,230
+or dictionary unpacking.
+
+212
+00:10:05,410 --> 00:10:08,860
+Of course if your users were in a slightly different format,
+
+213
+00:10:10,490 --> 00:10:12,959
+if your users were in the format, I'm just gonna copy
+
+214
+00:10:12,959 --> 00:10:15,530
+from my notes just to save you the pain.
+
+215
+00:10:15,530 --> 00:10:19,570
+If your users were in this format, tuple format
+
+216
+00:10:20,540 --> 00:10:23,420
+where username is the first element and password
+
+217
+00:10:23,420 --> 00:10:27,520
+is second element, you know what you can do instead.
+
+218
+00:10:27,520 --> 00:10:28,470
+I can just do this.
+
+219
+00:10:29,670 --> 00:10:34,670
+So for each tuple here, you're going to pass them as
+
+220
+00:10:34,824 --> 00:10:39,320
+normal arguments, called positional arguments
+
+221
+00:10:39,320 --> 00:10:41,210
+and so same thing here.
+
+222
+00:10:41,210 --> 00:10:42,890
+You can pass them as positional arguments to the
+
+223
+00:10:42,890 --> 00:10:45,204
+user function so in this case rolf would be the first
+
+224
+00:10:45,204 --> 00:10:49,660
+parameter, 123 would be the second parameter.
+
+225
+00:10:49,660 --> 00:10:52,770
+And now you don't know whether it's username and password,
+
+226
+00:10:52,770 --> 00:10:55,100
+you just know it's number one and number two.
+
+227
+00:10:55,100 --> 00:10:56,900
+And this is something you can do as well.
+
+228
+00:10:56,900 --> 00:10:59,810
+Of course only if the properties are in this type
+
+229
+00:10:59,810 --> 00:11:02,590
+of iterable and not this type of mapping.
+
+230
+00:11:03,870 --> 00:11:05,280
+Okay that's it for this video.
+
+231
+00:11:05,280 --> 00:11:07,970
+I wanted to show you about this unpacking
+
+232
+00:11:07,970 --> 00:11:10,300
+and also about named arguments because it's a useful
+
+233
+00:11:10,300 --> 00:11:12,060
+thing to know, sometimes it make your functions
+
+234
+00:11:12,060 --> 00:11:13,930
+a bit easier to understand.
+
+235
+00:11:13,930 --> 00:11:15,070
+So that's it for this video.
+
+236
+00:11:15,070 --> 00:11:16,520
+I'll see you on the next one.
+

@@ -1,0 +1,832 @@
+1
+00:00:00,340 --> 00:00:01,610
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,610 --> 00:00:04,250
+In this video we're going to look at an extremely useful
+
+3
+00:00:04,250 --> 00:00:05,930
+data structure in Python,
+
+4
+00:00:05,930 --> 00:00:08,320
+which is really similar to a set.
+
+5
+00:00:08,320 --> 00:00:10,570
+It is called a dictionary.
+
+6
+00:00:10,570 --> 00:00:12,520
+Now we all know what dictionaries are,
+
+7
+00:00:12,520 --> 00:00:16,704
+they're giant books that contain some entries
+
+8
+00:00:16,704 --> 00:00:20,470
+and each entry is associated with it's definition.
+
+9
+00:00:21,421 --> 00:00:24,768
+A dictionary in Python is actually the same thing.
+
+10
+00:00:24,768 --> 00:00:27,220
+Dictionary is similar to a set,
+
+11
+00:00:27,220 --> 00:00:31,070
+but instead of storing single values like numbers or strings
+
+12
+00:00:31,070 --> 00:00:33,900
+it associates each of those values to something else,
+
+13
+00:00:33,900 --> 00:00:37,072
+very much like the dictionary does in real life.
+
+14
+00:00:37,072 --> 00:00:40,950
+Every entry has a value associated with it,
+
+15
+00:00:40,950 --> 00:00:42,480
+in the same way that in a dictionary
+
+16
+00:00:42,480 --> 00:00:45,435
+every entry has a dictionary associated with it.
+
+17
+00:00:45,435 --> 00:00:49,260
+Normally this is not known as an entry value pair,
+
+18
+00:00:49,260 --> 00:00:52,860
+but it's known as a key value pair.
+
+19
+00:00:52,860 --> 00:00:56,170
+Really important, you'll see it everywhere in software
+
+20
+00:00:56,170 --> 00:00:58,240
+as you progress in your career.
+
+21
+00:00:58,240 --> 00:01:00,880
+Key value pairs are extremely popular
+
+22
+00:01:00,880 --> 00:01:03,830
+and dictionary is just a data structure
+
+23
+00:01:03,830 --> 00:01:07,100
+that allows us to store key value pairs in Python.
+
+24
+00:01:08,141 --> 00:01:10,570
+For example let's create a dictionary
+
+25
+00:01:10,570 --> 00:01:13,140
+that associates each of our friends' names
+
+26
+00:01:13,140 --> 00:01:16,330
+with a number describing how long ago we last saw them.
+
+27
+00:01:20,540 --> 00:01:22,190
+For me I'm going to say six days,
+
+28
+00:01:23,221 --> 00:01:25,760
+for Rolf I'm going to say 12 days,
+
+29
+00:01:25,760 --> 00:01:28,250
+and for Anne I'm going to say six days too.
+
+30
+00:01:29,420 --> 00:01:33,350
+Okay so now we have this dictionary of my friends
+
+31
+00:01:33,350 --> 00:01:36,040
+and notice how the keys in this case are strings
+
+32
+00:01:36,040 --> 00:01:37,690
+describing the person.
+
+33
+00:01:38,720 --> 00:01:42,300
+We've got a colon which says that the thing on the right
+
+34
+00:01:42,300 --> 00:01:46,420
+is associated with this key and that thing is a six.
+
+35
+00:01:47,530 --> 00:01:50,550
+So we've got the key Jose has the value six.
+
+36
+00:01:50,550 --> 00:01:52,370
+Then we've got a comma that separates
+
+37
+00:01:52,370 --> 00:01:56,490
+this key value pair from this key value pair.
+
+38
+00:01:56,490 --> 00:01:58,390
+So this is an entirely new thing
+
+39
+00:01:58,390 --> 00:02:01,310
+and this is one of the few instances
+
+40
+00:02:01,310 --> 00:02:03,500
+where having a value followed by a comma
+
+41
+00:02:03,500 --> 00:02:05,820
+does not give you tuple, okay,
+
+42
+00:02:05,820 --> 00:02:09,470
+this is just separation between this key value pair
+
+43
+00:02:09,470 --> 00:02:10,303
+and this one here.
+
+44
+00:02:10,303 --> 00:02:11,220
+And Python is smart enough
+
+45
+00:02:11,220 --> 00:02:13,120
+to not give you tuple in this case.
+
+46
+00:02:14,060 --> 00:02:14,900
+So don't worry.
+
+47
+00:02:15,860 --> 00:02:18,810
+Again, the same constraints are set upline,
+
+48
+00:02:18,810 --> 00:02:20,900
+in that you cannot have duplicates
+
+49
+00:02:20,900 --> 00:02:23,640
+and you cannot have order.
+
+50
+00:02:23,640 --> 00:02:26,900
+But the constraints only apply on the keys,
+
+51
+00:02:26,900 --> 00:02:28,580
+so Jose, Rolf, and Anne.
+
+52
+00:02:29,610 --> 00:02:31,440
+As you can see we've got six and then six here.
+
+53
+00:02:31,440 --> 00:02:33,940
+Because the values are not constrained,
+
+54
+00:02:33,940 --> 00:02:36,938
+you can have the same values, you can have ordered values,
+
+55
+00:02:36,938 --> 00:02:39,810
+you can have anything you like on the right hand side
+
+56
+00:02:39,810 --> 00:02:40,770
+of this colon.
+
+57
+00:02:40,770 --> 00:02:43,960
+You just cannot a duplicate and a keys
+
+58
+00:02:43,960 --> 00:02:45,410
+and they will not be ordered.
+
+59
+00:02:46,350 --> 00:02:49,880
+However, any set operations that we saw in the last video,
+
+60
+00:02:49,880 --> 00:02:52,710
+like union, intersection, and difference,
+
+61
+00:02:52,710 --> 00:02:54,940
+cannot be done on dictionary.
+
+62
+00:02:54,940 --> 00:02:56,960
+You cannot add and subtract dictionaries
+
+63
+00:02:56,960 --> 00:02:58,090
+like you can with set.
+
+64
+00:03:01,110 --> 00:03:03,600
+Now, once you have your dictionary,
+
+65
+00:03:03,600 --> 00:03:06,670
+you can put anything you want on the right hand side.
+
+66
+00:03:06,670 --> 00:03:10,552
+That means, that you can redefine my friends
+
+67
+00:03:10,552 --> 00:03:15,460
+as being Jose and the value can be anything you want.
+
+68
+00:03:15,460 --> 00:03:17,140
+You can put a list in here,
+
+69
+00:03:17,140 --> 00:03:20,590
+you can put tuples in here, you can put sets in here
+
+70
+00:03:20,590 --> 00:03:22,950
+or you can even put dictionaries.
+
+71
+00:03:27,138 --> 00:03:30,324
+Okay this can quickly get confusing,
+
+72
+00:03:30,324 --> 00:03:33,810
+but what we've got here is that the key Jose
+
+73
+00:03:33,810 --> 00:03:35,880
+is associated with his value and this value
+
+74
+00:03:35,880 --> 00:03:38,200
+happens to be also in dictionary
+
+75
+00:03:38,200 --> 00:03:41,960
+with a single key last seen and the value six.
+
+76
+00:03:41,960 --> 00:03:44,740
+So this really means exactly the same as we had before.
+
+77
+00:03:46,710 --> 00:03:49,300
+Then we've got Rolf and its value's
+
+78
+00:03:49,300 --> 00:03:53,150
+gonna be something completely different, surname, Smith.
+
+79
+00:03:54,750 --> 00:03:56,490
+Okay, we're gonna have another dictionary
+
+80
+00:03:56,490 --> 00:03:58,070
+associated with Rolf.
+
+81
+00:03:58,070 --> 00:04:00,360
+So the type is the same as for Jose,
+
+82
+00:04:00,360 --> 00:04:02,600
+we've got a dictionary here, a dictionary there
+
+83
+00:04:02,600 --> 00:04:04,220
+but now the contents are different.
+
+84
+00:04:04,220 --> 00:04:07,000
+This one's got a surname instead of a last seen.
+
+85
+00:04:07,000 --> 00:04:09,720
+That's totally fine, Python does not care.
+
+86
+00:04:10,730 --> 00:04:13,870
+And finally for Anne, we're gonna keep the six.
+
+87
+00:04:13,870 --> 00:04:17,240
+So Anne is gonna have just a number there.
+
+88
+00:04:17,240 --> 00:04:19,620
+That's again, totally okay.
+
+89
+00:04:19,620 --> 00:04:22,750
+Python doesn't care as long as you've got your keys there
+
+90
+00:04:22,750 --> 00:04:25,750
+you can put whatever values you want on the right hand side.
+
+91
+00:04:26,930 --> 00:04:30,930
+Notice how the values are each independent objects.
+
+92
+00:04:30,930 --> 00:04:32,250
+You don't have to have the same keys
+
+93
+00:04:32,250 --> 00:04:33,490
+if they are dictionaries,
+
+94
+00:04:33,490 --> 00:04:35,040
+although they can have the same keys.
+
+95
+00:04:35,040 --> 00:04:36,890
+Okay, everybody could have last_seen there,
+
+96
+00:04:36,890 --> 00:04:38,210
+that's totally fine.
+
+97
+00:04:38,210 --> 00:04:40,060
+They don't have to be all dictionaries.
+
+98
+00:04:40,060 --> 00:04:42,150
+They can be anything you want them to be,
+
+99
+00:04:42,150 --> 00:04:44,840
+because the dictionary again maps values
+
+100
+00:04:44,840 --> 00:04:48,350
+and that could be anything into keys.
+
+101
+00:04:48,350 --> 00:04:49,520
+And those are normally strings,
+
+102
+00:04:49,520 --> 00:04:50,970
+but they can also be numbers.
+
+103
+00:04:53,220 --> 00:04:54,420
+Let's create another variable
+
+104
+00:04:54,420 --> 00:04:57,360
+and that's gonna be players, for example of a lottery.
+
+105
+00:04:58,650 --> 00:05:00,700
+And this is going to be a list.
+
+106
+00:05:00,700 --> 00:05:05,109
+But normally we've seen lists of numbers like so,
+
+107
+00:05:05,109 --> 00:05:07,100
+or even of strings.
+
+108
+00:05:08,218 --> 00:05:09,440
+Like so.
+
+109
+00:05:10,870 --> 00:05:14,730
+However, we can also put dictionaries inside a list,
+
+110
+00:05:15,720 --> 00:05:18,440
+for example to describe each of the players
+
+111
+00:05:18,440 --> 00:05:21,200
+and their numbers, which are gonna be tuples.
+
+112
+00:05:25,320 --> 00:05:27,660
+So now we've got one element inside our list,
+
+113
+00:05:27,660 --> 00:05:29,440
+which is a dictionary.
+
+114
+00:05:29,440 --> 00:05:31,550
+If it helps, you can put this dictionary
+
+115
+00:05:31,550 --> 00:05:34,341
+in a single line, but I find that that
+
+116
+00:05:34,341 --> 00:05:37,440
+frequently makes things a bit less readable,
+
+117
+00:05:37,440 --> 00:05:39,840
+which is why I like having them in multiple lines,
+
+118
+00:05:39,840 --> 00:05:42,350
+but it's totally up to you what you want to do.
+
+119
+00:05:42,350 --> 00:05:43,560
+Either of them works.
+
+120
+00:05:43,560 --> 00:05:45,900
+You can see that Python indents things nicely there,
+
+121
+00:05:45,900 --> 00:05:48,440
+just for your readability, which is nice.
+
+122
+00:05:49,462 --> 00:05:53,130
+Now, what if we wanted to add another element
+
+123
+00:05:53,130 --> 00:05:55,250
+to this list, another dictionary.
+
+124
+00:05:55,250 --> 00:05:56,460
+How would we do that?
+
+125
+00:05:59,750 --> 00:06:00,920
+I'm sure you got it.
+
+126
+00:06:00,920 --> 00:06:03,350
+All you have to do is think of this dictionary
+
+127
+00:06:03,350 --> 00:06:04,980
+as the first element of a list.
+
+128
+00:06:04,980 --> 00:06:08,160
+Now what goes between elements of a list?
+
+129
+00:06:09,290 --> 00:06:10,460
+Always the comma.
+
+130
+00:06:11,440 --> 00:06:13,120
+And then you can put another element.
+
+131
+00:06:20,280 --> 00:06:21,280
+Something like that.
+
+132
+00:06:22,700 --> 00:06:25,740
+Notice how between key value pairs you've got the comma.
+
+133
+00:06:26,640 --> 00:06:29,130
+At the end of the dictionary you don't have the comma,
+
+134
+00:06:29,130 --> 00:06:31,430
+but you do have the comma after the dictionary
+
+135
+00:06:31,430 --> 00:06:35,000
+so that these two are different elements of the list.
+
+136
+00:06:40,934 --> 00:06:43,220
+So how would we select one of these players?
+
+137
+00:06:43,220 --> 00:06:45,770
+Imagine we wanted to have player one
+
+138
+00:06:45,770 --> 00:06:48,240
+be the first player in this list.
+
+139
+00:06:48,240 --> 00:06:50,510
+I've taught you how to do this earlier on.
+
+140
+00:06:50,510 --> 00:06:53,880
+How would you go about selecting the first player?
+
+141
+00:06:57,520 --> 00:06:58,860
+I'm sure you got it right.
+
+142
+00:06:58,860 --> 00:07:01,880
+It would be players and then you'd use a subscript
+
+143
+00:07:01,880 --> 00:07:05,450
+and get zero for the first player.
+
+144
+00:07:05,450 --> 00:07:07,500
+That would give you this dictionary here.
+
+145
+00:07:10,090 --> 00:07:14,560
+So player one is now a dictionary that has two keys,
+
+146
+00:07:14,560 --> 00:07:15,980
+name and numbers.
+
+147
+00:07:18,750 --> 00:07:22,740
+If we wanted to access any particular key
+
+148
+00:07:22,740 --> 00:07:26,980
+or run a value of this dictionary
+
+149
+00:07:26,980 --> 00:07:30,690
+we could do so by doing player_one
+
+150
+00:07:31,610 --> 00:07:33,473
+and then using square brackets again
+
+151
+00:07:33,473 --> 00:07:37,560
+and putting whatever key we want to access inside there.
+
+152
+00:07:37,560 --> 00:07:39,200
+So it's pretty similar to the list,
+
+153
+00:07:39,200 --> 00:07:41,530
+but instead of accessing the index,
+
+154
+00:07:41,530 --> 00:07:45,510
+i.e. zero for the first element, one for the second element,
+
+155
+00:07:45,510 --> 00:07:47,210
+now we can access the key
+
+156
+00:07:47,210 --> 00:07:49,879
+that we want to get the value from,
+
+157
+00:07:49,879 --> 00:07:52,740
+again inside square bracket.
+
+158
+00:07:52,740 --> 00:07:54,300
+So what would this give us?
+
+159
+00:07:58,030 --> 00:08:00,370
+You'd be correct if you said Rolf,
+
+160
+00:08:00,370 --> 00:08:04,530
+because the value associated with name is this string here.
+
+161
+00:08:06,300 --> 00:08:09,920
+Of course if you wanted to access the numbers,
+
+162
+00:08:09,920 --> 00:08:11,810
+you could so just by clicking numbers
+
+163
+00:08:13,640 --> 00:08:15,490
+and then you would get them out here.
+
+164
+00:08:18,460 --> 00:08:20,970
+What if you wanted to add all of the numbers together?
+
+165
+00:08:20,970 --> 00:08:22,850
+This is not something you would do for a lottery,
+
+166
+00:08:22,850 --> 00:08:26,910
+but you know maybe you wanted to add all of them.
+
+167
+00:08:30,310 --> 00:08:32,640
+Python comes in with a really nice function
+
+168
+00:08:33,500 --> 00:08:35,710
+and I said the word function there.
+
+169
+00:08:35,710 --> 00:08:37,610
+We're gonna look at functions very shortly
+
+170
+00:08:37,610 --> 00:08:38,510
+in the next video.
+
+171
+00:08:39,520 --> 00:08:44,520
+You can define a function that takes in some numbers
+
+172
+00:08:46,960 --> 00:08:49,680
+and it gives you the total.
+
+173
+00:08:49,680 --> 00:08:52,210
+So player_one numbers.
+
+174
+00:08:54,740 --> 00:08:57,440
+Player_one numbers is this tuple here
+
+175
+00:08:58,300 --> 00:09:02,042
+and if you put them inside the brackets of this sum,
+
+176
+00:09:02,042 --> 00:09:03,600
+it's gonna add them all up
+
+177
+00:09:03,600 --> 00:09:05,820
+and it's gonna give you the output.
+
+178
+00:09:08,340 --> 00:09:09,220
+So let's do that.
+
+179
+00:09:13,750 --> 00:09:16,570
+And you get 53 back which should be, hopefully,
+
+180
+00:09:16,570 --> 00:09:18,660
+the sum of all those things.
+
+181
+00:09:18,660 --> 00:09:20,950
+So again you can have sum
+
+182
+00:09:20,950 --> 00:09:22,700
+and inside the brackets you can put
+
+183
+00:09:23,880 --> 00:09:26,550
+anything you want and they will be added together.
+
+184
+00:09:28,320 --> 00:09:29,890
+So that's it about dictionaries.
+
+185
+00:09:29,890 --> 00:09:31,950
+We've looked at how we can define them
+
+186
+00:09:31,950 --> 00:09:33,700
+and we have put them in lists.
+
+187
+00:09:33,700 --> 00:09:36,483
+We can give them any value we want for the keys.
+
+188
+00:09:36,483 --> 00:09:39,920
+And also we've looked at this sum function here
+
+189
+00:09:39,920 --> 00:09:41,330
+and I know I keep saying function,
+
+190
+00:09:41,330 --> 00:09:42,880
+don't worry we're gonna look at functions
+
+191
+00:09:42,880 --> 00:09:44,883
+very shortly in the next section.
+
+192
+00:09:44,883 --> 00:09:48,080
+And so that's it for this video.
+
+193
+00:09:48,080 --> 00:09:51,470
+Dictionaries are key in Python
+
+194
+00:09:51,470 --> 00:09:53,140
+and extremely popular.
+
+195
+00:09:53,140 --> 00:09:56,738
+We're gonna use them all the time in order to store data.
+
+196
+00:09:56,738 --> 00:09:59,650
+We can put this data into files.
+
+197
+00:09:59,650 --> 00:10:01,510
+We can put this data and send it over the internet.
+
+198
+00:10:01,510 --> 00:10:02,930
+That's a really popular ways of doing things
+
+199
+00:10:02,930 --> 00:10:04,080
+with this dictionary.
+
+200
+00:10:04,080 --> 00:10:06,801
+And there's a lot more uses for dictionaries.
+
+201
+00:10:06,801 --> 00:10:11,801
+So again, we've just learned the foundational blocks
+
+202
+00:10:12,810 --> 00:10:14,810
+of Python in this section,
+
+203
+00:10:14,810 --> 00:10:16,627
+variables, numbers, strings, lists,
+
+204
+00:10:16,627 --> 00:10:19,992
+dictionaries, sets, and tuples.
+
+205
+00:10:19,992 --> 00:10:24,130
+And now we are ready to start building on that.
+
+206
+00:10:24,130 --> 00:10:27,086
+So you've got this foundation layer that is essential,
+
+207
+00:10:27,086 --> 00:10:32,040
+now we are ready to move on to more advanced stuff.
+
+208
+00:10:32,040 --> 00:10:34,980
+So with that said, I'll see you in the very next video.
+

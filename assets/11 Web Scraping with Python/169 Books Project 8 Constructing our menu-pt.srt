@@ -1,0 +1,472 @@
+1
+00:00:00,230 --> 00:00:01,470
+Jos: Ol, bem vindo de volta.
+
+2
+00:00:01,470 --> 00:00:04,190
+Neste vdeo, vamos construir nosso menu.
+
+3
+00:00:04,190 --> 00:00:07,040
+Vai ser realmente direto.
+
+4
+00:00:07,040 --> 00:00:08,950
+O que vamos fazer  dar
+
+5
+00:00:08,950 --> 00:00:10,940
+ao usurio algumas escolhas a fazer.
+
+6
+00:00:10,940 --> 00:00:12,520
+E vou colar aqui o
+
+7
+00:00:12,520 --> 00:00:14,400
+que exatamente a escolha vai ser.
+
+8
+00:00:16,120 --> 00:00:18,900
+Ento, digamos que o usurio tenha essas opes.
+
+9
+00:00:18,900 --> 00:00:22,020
+Eles podem digitar um dos seguintes, o caractere b, para
+
+10
+00:00:22,020 --> 00:00:25,040
+ver os livros de cinco estrelas, os melhores livros.
+
+11
+00:00:25,040 --> 00:00:27,090
+C para ver os cinco livros
+
+12
+00:00:27,090 --> 00:00:29,020
+mais baratos ou os dez
+
+13
+00:00:29,020 --> 00:00:33,440
+livros mais baratos, N para obter o prximo livro sobre a coleo.
+
+14
+00:00:33,440 --> 00:00:35,860
+Vamos dizer catlogo aqui.
+
+15
+00:00:36,760 --> 00:00:38,920
+E eles podem digitar q para sair.
+
+16
+00:00:38,920 --> 00:00:40,510
+E ento eles vo entrar na sua escolha.
+
+17
+00:00:40,510 --> 00:00:43,130
+Ento voc sabe exatamente como fazer isso agora.
+
+18
+00:00:44,210 --> 00:00:45,870
+Voc tem todas as ferramentas de que precisa.
+
+19
+00:00:47,210 --> 00:00:49,480
+Este aqui no foi implementado para voc, como
+
+20
+00:00:49,480 --> 00:00:51,560
+obter o prximo livro disponvel no catlogo,
+
+21
+00:00:51,560 --> 00:00:54,870
+mas tenho certeza que voc pode usar geradores para fazer isso.
+
+22
+00:00:56,120 --> 00:00:59,596
+Ento tente, tente implementar este menu voc mesmo.
+
+23
+00:00:59,596 --> 00:01:04,080
+Permita que o usurio obtenha os livros mais baratos, os livros de cinco estrelas e
+
+24
+00:01:04,080 --> 00:01:06,980
+o prximo livro, alm de execut-lo em um loop para
+
+25
+00:01:06,980 --> 00:01:09,340
+que eles possam sempre sair do aplicativo.
+
+26
+00:01:14,747 --> 00:01:18,520
+Espero que voc tenha conseguido, vamos comear a criar nossos menus.
+
+27
+00:01:18,520 --> 00:01:22,270
+Ento aqui embaixo eu vou criar nossa propriedade de menu aqui.
+
+28
+00:01:23,650 --> 00:01:27,700
+E eu vou dizer que a entrada do usurio  entrada de escolha do usurio.
+
+29
+00:01:28,920 --> 00:01:33,920
+Enquanto a entrada do usurio no  q vamos rodar o nosso menu.
+
+30
+00:01:34,120 --> 00:01:38,810
+Ento, vamos dizer se a entrada do usurio for igual a b,
+
+31
+00:01:38,810 --> 00:01:40,550
+vamos imprimir os melhores livros.
+
+32
+00:01:41,960 --> 00:01:46,510
+Elif a entrada do usurio  igual a c vamos imprimir os
+
+33
+00:01:46,510 --> 00:01:47,820
+livros mais baratos.
+
+34
+00:01:49,380 --> 00:01:54,380
+Se a entrada do usurio  igual a n, vamos de alguma forma pegar
+
+35
+00:01:54,640 --> 00:01:55,880
+o prximo livro.
+
+36
+00:01:57,030 --> 00:01:59,100
+Ns vamos implementar isso em um momento.
+
+37
+00:01:59,100 --> 00:02:04,100
+Seno vamos imprimir Por favor, escolha um comando vlido.
+
+38
+00:02:04,170 --> 00:02:05,680
+Eu acho que  uma coisa razovel de se fazer.
+
+39
+00:02:05,680 --> 00:02:10,680
+E finalmente ns vamos mais uma vez dar a eles a escolha
+
+40
+00:02:10,910 --> 00:02:14,470
+de nos dar outra coisa que eles querem fazer.
+
+41
+00:02:14,470 --> 00:02:19,470
+Ento, no final, vamos executar o menu.
+
+42
+00:02:20,080 --> 00:02:22,910
+Vamos implementar a funo get next book.
+
+43
+00:02:25,480 --> 00:02:28,784
+Tudo o que temos que fazer para
+
+44
+00:02:28,784 --> 00:02:33,030
+obter o prximo livro  criar o gerador nos livros.
+
+45
+00:02:39,580 --> 00:02:44,580
+E ento, o prximo livro pode apenas imprimir o seguinte.
+
+46
+00:02:48,420 --> 00:02:52,580
+ assim que pode ser simples usando geradores.
+
+47
+00:02:52,580 --> 00:02:55,360
+Voc no precisa se preocupar com o ltimo
+
+48
+00:02:55,360 --> 00:02:58,640
+livro que voc viu ou manter um ndice ou
+
+49
+00:02:58,640 --> 00:03:00,900
+algo sobre quantos livros voc passou.
+
+50
+00:03:00,900 --> 00:03:03,760
+No, basta criar um gerador para a lista.
+
+51
+00:03:03,760 --> 00:03:07,800
+Muito eficiente, porque na verdade no faz nada at
+
+52
+00:03:07,800 --> 00:03:10,600
+voc comear a comprar o prximo livro.
+
+53
+00:03:10,600 --> 00:03:13,570
+Por isso, no ocupa memria ou memria.
+
+54
+00:03:13,570 --> 00:03:16,680
+No  completamente livre, mas  essencialmente gratuito.
+
+55
+00:03:16,680 --> 00:03:18,640
+No ocupa nenhum poder de processamento.
+
+56
+00:03:18,640 --> 00:03:21,420
+Toda vez que voc pressiona o prximo, voc recebe
+
+57
+00:03:21,420 --> 00:03:22,850
+o prximo livro desse gerador.
+
+58
+00:03:22,850 --> 00:03:25,200
+No passa exatamente pela lista inteira
+
+59
+00:03:25,200 --> 00:03:26,300
+ou algo assim.
+
+60
+00:03:27,500 --> 00:03:31,015
+Ento, essa  uma tima maneira de configurar isso,
+
+61
+00:03:31,015 --> 00:03:33,100
+obtendo o prximo de algo.
+
+62
+00:03:35,320 --> 00:03:37,020
+Vamos rodar e ver o que acontece.
+
+63
+00:03:39,100 --> 00:03:41,050
+Eu entro em um dos seguintes.
+
+64
+00:03:41,050 --> 00:03:45,680
+Vamos digitar b e ento eu vejo os melhores livros aqui, cinco
+
+65
+00:03:45,680 --> 00:03:48,520
+livros de estrelas, quatro livros de estrelas.
+
+66
+00:03:48,520 --> 00:03:51,620
+ muito legal, talvez eu queira comprar um desses.
+
+67
+00:03:51,620 --> 00:03:53,850
+C, voc pode olhar para os livros
+
+68
+00:03:53,850 --> 00:03:58,850
+mais baratos, apenas no caso de voc querer gastar um pouco menos de dinheiro em um livro.
+
+69
+00:03:59,280 --> 00:04:02,370
+Alguns deles no so to bons, mas outros so muito bons.
+
+70
+00:04:02,370 --> 00:04:04,300
+Talvez voc possa encontrar algo de bom l.
+
+71
+00:04:04,300 --> 00:04:06,450
+E se voc quiser apenas ler os livros,
+
+72
+00:04:07,560 --> 00:04:10,600
+aperte n, e ento voc ter um, A Light in the
+
+73
+00:04:10,600 --> 00:04:12,515
+Attic e novamente Tipping the Velvet.
+
+74
+00:04:12,515 --> 00:04:14,400
+No  muito bom.
+
+75
+00:04:15,428 --> 00:04:18,890
+Soumission Acho que  francs, ou talvez
+
+76
+00:04:18,890 --> 00:04:21,430
+seja uma coisa esquisita de submisso.
+
+77
+00:04:21,430 --> 00:04:23,420
+E tambm no  muito bom.
+
+78
+00:04:23,420 --> 00:04:24,380
+E  isso.
+
+79
+00:04:24,380 --> 00:04:27,480
+Agora voc no pode voltar no catlogo.
+
+80
+00:04:27,480 --> 00:04:29,820
+Vou deixar isso para voc implementar, mas  assim
+
+81
+00:04:29,820 --> 00:04:31,640
+que voc pode ver as diferentes coisas
+
+82
+00:04:31,640 --> 00:04:32,680
+que esto no catlogo.
+
+83
+00:04:32,680 --> 00:04:35,130
+Eu acho que voc poderia voltar apenas rolando para cima.
+
+84
+00:04:35,130 --> 00:04:36,960
+Isso funciona tambm.
+
+85
+00:04:36,960 --> 00:04:39,040
+Ento voc pode pressionar q para terminar.
+
+86
+00:04:40,930 --> 00:04:42,440
+Ok, ento h mais algumas
+
+87
+00:04:42,440 --> 00:04:44,030
+melhorias que vamos fazer neste projeto.
+
+88
+00:04:44,030 --> 00:04:46,080
+A primeira melhoria que vamos
+
+89
+00:04:46,080 --> 00:04:48,900
+fazer  raspar todas as pginas do
+
+90
+00:04:48,900 --> 00:04:50,230
+catlogo, no apenas uma.
+
+91
+00:04:50,230 --> 00:04:52,190
+Dessa forma, vamos obter uma coleo muito maior.
+
+92
+00:04:52,190 --> 00:04:54,940
+Ento, vamos ver como criar vrias
+
+93
+00:04:54,940 --> 00:04:57,870
+pginas, como percorrer pginas diferentes deste site.
+
+94
+00:04:59,060 --> 00:05:01,815
+E tambm podemos adicionar registros apenas para que seja mais
+
+95
+00:05:01,815 --> 00:05:04,190
+fcil detectar quando as coisas do errado e
+
+96
+00:05:04,190 --> 00:05:06,120
+tambm o que est acontecendo no programa.
+
+97
+00:05:06,120 --> 00:05:08,720
+Eu encorajaria voc a tentar fazer isso tambm.
+
+98
+00:05:08,720 --> 00:05:10,870
+Particularmente o registro porque j analisamos
+
+99
+00:05:10,870 --> 00:05:11,703
+o registro.
+
+100
+00:05:11,703 --> 00:05:12,620
+Voc sabe que  bem simples.
+
+101
+00:05:12,620 --> 00:05:14,700
+Tudo o que voc precisa fazer  importar o
+
+102
+00:05:14,700 --> 00:05:17,430
+registro, configurar o registrador e iniciar o login em lugares diferentes.
+
+103
+00:05:17,430 --> 00:05:20,579
+Encorajo-o a fazer isso e tente configurar a
+
+104
+00:05:20,579 --> 00:05:22,820
+visualizao de pginas diferentes, se puder.
+
+105
+00:05:22,820 --> 00:05:26,560
+Mas se no, espere e vamos fazer isso aqui.
+
+106
+00:05:26,560 --> 00:05:29,280
+Para o registro, uma das coisas mais
+
+107
+00:05:29,280 --> 00:05:32,590
+importantes sobre o registro e porque estou recomendando que
+
+108
+00:05:33,930 --> 00:05:38,340
+voc faa isso  decidir onde registrar e o que registrar.
+
+109
+00:05:39,396 --> 00:05:42,220
+Porque voc pode logar em todas as linhas e
+
+110
+00:05:42,220 --> 00:05:44,580
+isso vai fazer seu cdigo parecer muito feio.
+
+111
+00:05:44,580 --> 00:05:48,470
+Ou voc pode registrar muito pouco e, em seguida, no
+
+112
+00:05:48,470 --> 00:05:49,900
+obter informaes suficientes.
+
+113
+00:05:51,170 --> 00:05:53,740
+Definitivamente fique de olho nisso.
+
+114
+00:05:53,740 --> 00:05:55,340
+Tente implementar o registro por conta prpria.
+
+115
+00:05:55,340 --> 00:05:58,200
+Ento voltaremos ao vdeo e faremos isso aqui.
+
+116
+00:05:58,200 --> 00:06:00,920
+S assim voc pode ver o quanto eu iria registrar e
+
+117
+00:06:00,920 --> 00:06:02,020
+onde eu iria logar.
+
+118
+00:06:03,310 --> 00:06:06,260
+ isso para este vdeo, ento vamos ver voc no prximo.
+

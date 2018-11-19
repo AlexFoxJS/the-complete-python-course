@@ -1,0 +1,532 @@
+1
+00:00:00,000 --> 00:00:01,360
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,360 --> 00:00:04,510
+In this video we're going to get the page count
+
+3
+00:00:04,510 --> 00:00:09,040
+from the page itself as opposed to hard-coding it to 50.
+
+4
+00:00:09,040 --> 00:00:14,040
+So instead of 50 we want page.page_count, for example.
+
+5
+00:00:15,500 --> 00:00:19,540
+Now this is going to be a property of our AllBooksPage
+
+6
+00:00:19,540 --> 00:00:22,720
+so let's go into there and add it in.
+
+7
+00:00:22,720 --> 00:00:26,362
+What we'll want to do is of course have some property here
+
+8
+00:00:26,362 --> 00:00:28,430
+that says page_count
+
+9
+00:00:29,479 --> 00:00:33,290
+and it'll return, we're gonna start with 50,
+
+10
+00:00:33,290 --> 00:00:35,400
+but of course it's going to return something
+
+11
+00:00:35,400 --> 00:00:37,270
+coming from the page.
+
+12
+00:00:37,270 --> 00:00:40,610
+Let's go over to Chrome and find out what that might be.
+
+13
+00:00:42,650 --> 00:00:45,110
+Here we have now moved over to Chrome
+
+14
+00:00:45,110 --> 00:00:47,120
+where we've got the page,
+
+15
+00:00:47,120 --> 00:00:50,160
+and we want to right click and inspect.
+
+16
+00:00:50,160 --> 00:00:51,910
+This is going to bring us over to the inspector
+
+17
+00:00:51,910 --> 00:00:54,130
+and it's gonna highlight the thing we've inspected.
+
+18
+00:00:54,130 --> 00:00:56,730
+In this case it's an li, not to interesting.
+
+19
+00:00:56,730 --> 00:00:58,270
+If we go down to the very bottom
+
+20
+00:00:58,270 --> 00:01:01,180
+and we right click and inspect the 50,
+
+21
+00:01:01,180 --> 00:01:04,130
+we will now get something a bit more interesting,
+
+22
+00:01:04,130 --> 00:01:05,770
+which is this pager here.
+
+23
+00:01:05,770 --> 00:01:07,210
+I'm just gonna expand this
+
+24
+00:01:08,440 --> 00:01:09,730
+and notice how the website changes,
+
+25
+00:01:09,730 --> 00:01:12,180
+but the HTML is not going change so this is fine.
+
+26
+00:01:13,300 --> 00:01:15,820
+Then we have a bunch of things in here.
+
+27
+00:01:16,670 --> 00:01:20,470
+We have a li, which has a class of current,
+
+28
+00:01:21,720 --> 00:01:24,330
+and that contains page one of 50.
+
+29
+00:01:25,640 --> 00:01:28,820
+In there we have a UL which is a pager.
+
+30
+00:01:28,820 --> 00:01:31,700
+By the way, I know that I'm scrolled to high up there.
+
+31
+00:01:31,700 --> 00:01:33,990
+So this is the pager there.
+
+32
+00:01:33,990 --> 00:01:37,350
+That's inside a div which is inside another div
+
+33
+00:01:39,690 --> 00:01:41,790
+which is inside the section.
+
+34
+00:01:41,790 --> 00:01:46,690
+So as you can see, fairly similar to where the different
+
+35
+00:01:48,120 --> 00:01:50,510
+here, different books are.
+
+36
+00:01:50,510 --> 00:01:53,390
+We've got instead of inside that row class,
+
+37
+00:01:53,390 --> 00:01:54,760
+we've got a pager.
+
+38
+00:01:54,760 --> 00:01:57,700
+And inside that pager class, that UL,
+
+39
+00:01:57,700 --> 00:02:00,590
+we have a list item, which is the current class
+
+40
+00:02:00,590 --> 00:02:02,300
+that has the page one of 50.
+
+41
+00:02:03,660 --> 00:02:07,700
+So what we're gonna do is extract this class here.
+
+42
+00:02:07,700 --> 00:02:10,160
+And what we're gonna do is go over to the top
+
+43
+00:02:10,160 --> 00:02:12,514
+div page enter,
+
+44
+00:02:12,514 --> 00:02:14,562
+then we're gonna get the section,
+
+45
+00:02:14,562 --> 00:02:17,000
+then we're gonna get the pager,
+
+46
+00:02:17,000 --> 00:02:19,790
+and then we're gonna fi current.
+
+47
+00:02:19,790 --> 00:02:22,380
+And that's gonna give us the page one of 50.
+
+48
+00:02:22,380 --> 00:02:25,930
+So let's go over back to PyCharm and set this up.
+
+49
+00:02:29,690 --> 00:02:32,970
+Let's open the AllBooksPageLocators
+
+50
+00:02:34,050 --> 00:02:37,430
+and here we're going to add a new locator.
+
+51
+00:02:37,430 --> 00:02:40,654
+This locator is gonna be the pager locator
+
+52
+00:02:40,654 --> 00:02:45,654
+and it's gonna be div.page_inner section ul.pager li.current
+
+53
+00:02:46,880 --> 00:02:50,100
+and that's going to give us that element we just found
+
+54
+00:02:50,100 --> 00:02:53,125
+that contains page one of 50.
+
+55
+00:02:53,125 --> 00:02:55,870
+Going back to the AllBooksPage,
+
+56
+00:02:55,870 --> 00:02:58,765
+instead of returning 50, we are going to get
+
+57
+00:02:58,765 --> 00:03:01,440
+the content from that tag.
+
+58
+00:03:01,440 --> 00:03:03,022
+So we're gonna do content equals
+
+59
+00:03:03,022 --> 00:03:06,260
+self.soup.select_one(AllBooksPageLocators.PAGER).string
+
+60
+00:03:14,520 --> 00:03:17,310
+and that's gonna give us page one of 50.
+
+61
+00:03:17,310 --> 00:03:19,050
+And then we're gonna use regular expressions
+
+62
+00:03:19,050 --> 00:03:20,950
+to extract the 50.
+
+63
+00:03:20,950 --> 00:03:24,060
+And I think you can do that looking at the
+
+64
+00:03:24,060 --> 00:03:27,130
+currency we looked at in the book_parser,
+
+65
+00:03:27,130 --> 00:03:30,210
+you can do the same thing for page one of 50.
+
+66
+00:03:30,210 --> 00:03:31,910
+And what we're interested in this case
+
+67
+00:03:31,910 --> 00:03:34,460
+is the 50 that comes at the end.
+
+68
+00:03:34,460 --> 00:03:37,000
+So using the regular expression module,
+
+69
+00:03:37,000 --> 00:03:40,760
+the search function inside it, I think you can find it.
+
+70
+00:03:40,760 --> 00:03:42,510
+Give this a go and then come back to the video
+
+71
+00:03:42,510 --> 00:03:44,070
+and we will continue.
+
+72
+00:03:48,830 --> 00:03:50,210
+I hope you managed.
+
+73
+00:03:50,210 --> 00:03:52,960
+All that we have to do is of course first of all
+
+74
+00:03:52,960 --> 00:03:55,070
+define our pattern, which is going to be
+
+75
+00:03:55,070 --> 00:04:00,070
+page zero to nine plus of and inside brackets
+
+76
+00:04:01,200 --> 00:04:02,580
+zero to nine plus,
+
+77
+00:04:04,050 --> 00:04:06,120
+because this is gonna be page one
+
+78
+00:04:06,120 --> 00:04:11,120
+or page 10 or 20 or whatever of 50 for example.
+
+79
+00:04:11,230 --> 00:04:12,940
+And inside the brackets, remember,
+
+80
+00:04:12,940 --> 00:04:16,481
+we're get our group when we do search.
+
+81
+00:04:16,481 --> 00:04:19,100
+So then we're going to create our matcher,
+
+82
+00:04:19,100 --> 00:04:24,010
+which is gonna be re.search of pattern in content.
+
+83
+00:04:25,010 --> 00:04:27,110
+We have to import re
+
+84
+00:04:27,110 --> 00:04:29,679
+and another tidbit of Python convention,
+
+85
+00:04:29,679 --> 00:04:32,890
+when you import a module, I think I have said this earlier,
+
+86
+00:04:32,890 --> 00:04:35,484
+when you import a module make sure that it's at the top.
+
+87
+00:04:35,484 --> 00:04:38,160
+Other module imports that you don't
+
+88
+00:04:38,160 --> 00:04:41,580
+import from your own code go underneath it
+
+89
+00:04:41,580 --> 00:04:44,600
+and finally your own code imports go below that.
+
+90
+00:04:44,600 --> 00:04:47,610
+So this style of imports go at the very top.
+
+91
+00:04:49,190 --> 00:04:51,230
+And then we've got the number of pages which is
+
+92
+00:04:51,230 --> 00:04:53,720
+an int of matcher.group(1).
+
+93
+00:04:54,958 --> 00:04:56,815
+Remember matcher.group(0) is going to be
+
+94
+00:04:56,815 --> 00:04:59,720
+the entire page one of 50.
+
+95
+00:04:59,720 --> 00:05:01,210
+The first group, group one,
+
+96
+00:05:01,210 --> 00:05:03,540
+is going to be whatever's inside the brackets.
+
+97
+00:05:03,540 --> 00:05:05,300
+Now if you have multiple sets of brackets,
+
+98
+00:05:05,300 --> 00:05:08,200
+that would be then group two and group three and so forth.
+
+99
+00:05:09,914 --> 00:05:10,890
+And that's it.
+
+100
+00:05:10,890 --> 00:05:12,650
+We then return pages and that will give us
+
+101
+00:05:12,650 --> 00:05:17,300
+the number of pages in the whole site.
+
+102
+00:05:17,300 --> 00:05:19,540
+Let's go back to app and instead now
+
+103
+00:05:19,540 --> 00:05:22,596
+we can see that this has not gone yellow anymore,
+
+104
+00:05:22,596 --> 00:05:24,510
+which was an error before.
+
+105
+00:05:24,510 --> 00:05:27,830
+Now it is page.page_count is seen as a valid.
+
+106
+00:05:27,830 --> 00:05:29,300
+We can run the menu again.
+
+107
+00:05:29,300 --> 00:05:30,150
+Let me close that
+
+108
+00:05:32,030 --> 00:05:33,630
+and we shouldn't get any errors.
+
+109
+00:05:34,996 --> 00:05:36,360
+But it should take awhile.
+
+110
+00:05:39,960 --> 00:05:40,793
+And there we have it.
+
+111
+00:05:40,793 --> 00:05:42,670
+It seems to be loaded.
+
+112
+00:05:42,670 --> 00:05:47,261
+We can get the best books and can see that they are there.
+
+113
+00:05:47,261 --> 00:05:49,280
+And so that's pretty awesome.
+
+114
+00:05:49,280 --> 00:05:51,930
+We have now successfully extracted some more information
+
+115
+00:05:51,930 --> 00:05:52,800
+from the page.
+
+116
+00:05:52,800 --> 00:05:55,014
+And as you can see, there's really nothing
+
+117
+00:05:55,014 --> 00:05:57,860
+too magical going on here.
+
+118
+00:05:57,860 --> 00:06:01,290
+All that we're doing is selecting or finding
+
+119
+00:06:01,290 --> 00:06:05,060
+the locator that we want to use in your browser
+
+120
+00:06:05,060 --> 00:06:07,110
+and then just getting it,
+
+121
+00:06:07,110 --> 00:06:09,090
+or maybe doing some regular expression
+
+122
+00:06:09,090 --> 00:06:11,030
+to extract something from it.
+
+123
+00:06:11,030 --> 00:06:13,200
+Regular expressions very powerful.
+
+124
+00:06:13,200 --> 00:06:14,880
+Can be a bit confusing,
+
+125
+00:06:14,880 --> 00:06:16,770
+so I'd recommend you study them
+
+126
+00:06:16,770 --> 00:06:20,490
+in more depth as you advance your knowledge of programming.
+
+127
+00:06:20,490 --> 00:06:21,690
+It can be really useful.
+
+128
+00:06:23,170 --> 00:06:24,190
+But that's it for this video.
+
+129
+00:06:24,190 --> 00:06:26,130
+I just wanted to show you another example
+
+130
+00:06:26,130 --> 00:06:28,520
+of extracting some data from the site
+
+131
+00:06:28,520 --> 00:06:30,330
+and how straighforward it is.
+
+132
+00:06:30,330 --> 00:06:32,310
+All you're looking for are patterns.
+
+133
+00:06:32,310 --> 00:06:35,270
+So with that said, I'll see you on the next video.
+

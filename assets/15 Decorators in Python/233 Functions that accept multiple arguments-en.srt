@@ -1,0 +1,428 @@
+1
+00:00:00,170 --> 00:00:01,970 line:15% 
+<v Instructor>Hi and welcome back.</v>
+
+2
+00:00:01,970 --> 00:00:05,850 line:15% 
+Previously we've seen how to do argument unpacking.
+
+3
+00:00:05,850 --> 00:00:07,610
+We worked on this in section 10.
+
+4
+00:00:08,680 --> 00:00:10,950
+For an example, we could have something like this,
+
+5
+00:00:10,950 --> 00:00:15,460
+add all function, that takes in four arguments.
+
+6
+00:00:15,460 --> 00:00:18,800
+a1 to a4, and then returns
+
+7
+00:00:18,800 --> 00:00:21,190
+a1, a2, a3 plus a4.
+
+8
+00:00:22,110 --> 00:00:24,380
+We can call this function, of course,
+
+9
+00:00:24,380 --> 00:00:29,030
+with multiple values and of course,
+
+10
+00:00:29,030 --> 00:00:30,840
+I have talked and written code
+
+11
+00:00:30,840 --> 00:00:32,180
+so I've written returns there.
+
+12
+00:00:32,180 --> 00:00:33,150
+Not what I want.
+
+13
+00:00:33,150 --> 00:00:35,960
+We can call this with four values, and run that,
+
+14
+00:00:35,960 --> 00:00:38,020
+and that gives us 16.
+
+15
+00:00:38,020 --> 00:00:42,020
+Or, if we have the values somewhere else,
+
+16
+00:00:44,340 --> 00:00:46,980
+like this tuple here,
+
+17
+00:00:46,980 --> 00:00:50,240
+we could pass each of the values of the tuple
+
+18
+00:00:50,240 --> 00:00:52,230
+as a separate argument.
+
+19
+00:00:52,230 --> 00:00:53,510
+We've looked at this earlier on.
+
+20
+00:00:53,510 --> 00:00:58,390
+The way we would do that would be by doing *vols, like so.
+
+21
+00:00:59,350 --> 00:01:00,870
+And as you can see, we get 16 again.
+
+22
+00:01:00,870 --> 00:01:04,020
+All this has done, is unpacked the iterable,
+
+23
+00:01:05,390 --> 00:01:09,280
+into multiple arguments and passed each one
+
+24
+00:01:09,280 --> 00:01:11,870
+as a separate positional argument there.
+
+25
+00:01:13,440 --> 00:01:17,960
+Similarly, we could have a dictionary of values
+
+26
+00:01:17,960 --> 00:01:21,583
+where we have a1, here's one,
+
+27
+00:01:21,583 --> 00:01:23,950
+a2, there's three,
+
+28
+00:01:23,950 --> 00:01:25,740
+a3, there's five,
+
+29
+00:01:27,240 --> 00:01:29,940
+and a4, is seven.
+
+30
+00:01:29,940 --> 00:01:33,150
+And if we wanted to pass in each value
+
+31
+00:01:33,150 --> 00:01:35,600
+to the corresponding parameter,
+
+32
+00:01:35,600 --> 00:01:40,600
+noticing that a1 has the same name as the parameter here,
+
+33
+00:01:41,180 --> 00:01:44,260
+we could do double asterisk vols.
+
+34
+00:01:46,270 --> 00:01:48,710
+And then again we get 16 but now,
+
+35
+00:01:48,710 --> 00:01:52,240
+each argument has been passed as a named argument.
+
+36
+00:01:52,240 --> 00:01:54,240
+Essentially, doing this.
+
+37
+00:01:58,890 --> 00:02:02,290
+And then a2 is called vols a2, and so forth.
+
+38
+00:02:03,370 --> 00:02:05,030
+OK?
+
+39
+00:02:05,030 --> 00:02:07,230
+So we've looked at how we can pass in
+
+40
+00:02:08,990 --> 00:02:11,840
+arbitrary numbers of arguments or named arguments,
+
+41
+00:02:11,840 --> 00:02:15,110
+but we've not looked at how we can make our function accept
+
+42
+00:02:15,110 --> 00:02:17,380
+an arbitrary number of arguments,
+
+43
+00:02:17,380 --> 00:02:18,640
+and actually it's really simple,
+
+44
+00:02:18,640 --> 00:02:21,580
+because it's exactly the same syntax.
+
+45
+00:02:22,650 --> 00:02:26,660
+If you do star args, now what you get
+
+46
+00:02:26,660 --> 00:02:29,370
+is an iterable of arguments.
+
+47
+00:02:29,370 --> 00:02:30,420
+Let's print them out.
+
+48
+00:02:38,600 --> 00:02:41,520
+As you can see, now we can pass in any number of arguments.
+
+49
+00:02:41,520 --> 00:02:42,840
+This is not a tuple or anything,
+
+50
+00:02:42,840 --> 00:02:45,420
+these are just arguments that we're passing into a function,
+
+51
+00:02:45,420 --> 00:02:47,990
+and the function will gladly accept them,
+
+52
+00:02:47,990 --> 00:02:49,880
+and then print them out as a tuple.
+
+53
+00:02:50,800 --> 00:02:52,860
+But when we passed it in, this was not a tuple.
+
+54
+00:02:52,860 --> 00:02:54,560
+These are all separate arguments.
+
+55
+00:02:55,640 --> 00:02:59,250
+So we can use star args, to accept any number of arguments
+
+56
+00:03:00,102 --> 00:03:02,530
+and then we can, for example, add them all together,
+
+57
+00:03:02,530 --> 00:03:05,140
+like return sum of args,
+
+58
+00:03:06,308 --> 00:03:07,600
+and we can print this out
+
+59
+00:03:12,840 --> 00:03:15,380
+and as you can see, that's all fine, OK?
+
+60
+00:03:15,380 --> 00:03:19,150
+These args is a tuple of all the arguments we passed in
+
+61
+00:03:19,150 --> 00:03:21,130
+that have no names.
+
+62
+00:03:21,130 --> 00:03:22,400
+If we wanna make sure the function
+
+63
+00:03:22,400 --> 00:03:24,700
+can accept named arguments,
+
+64
+00:03:24,700 --> 00:03:26,200
+again you probably guessed it,
+
+65
+00:03:27,290 --> 00:03:31,320
+all you have to do is do double asterisk,
+
+66
+00:03:31,320 --> 00:03:32,910
+and then the variable name.
+
+67
+00:03:32,910 --> 00:03:36,150
+It's common convention to have asterisk args,
+
+68
+00:03:36,150 --> 00:03:38,550
+and double asterisk kwargs in Python,
+
+69
+00:03:38,550 --> 00:03:40,350
+but this could be anything you want.
+
+70
+00:03:41,550 --> 00:03:45,830
+And then we can do something like for k, v in kwargs.items.
+
+71
+00:03:45,830 --> 00:03:50,480
+This tells you that kwargs is a dictionary when it comes in.
+
+72
+00:03:50,480 --> 00:03:52,030
+We can do something like print,
+
+73
+00:03:55,395 --> 00:03:57,610
+for k we have v.
+
+74
+00:03:59,270 --> 00:04:01,810
+And then we could do pretty_print,
+
+75
+00:04:01,810 --> 00:04:06,200
+something like username is jose123,
+
+76
+00:04:06,200 --> 00:04:09,710
+access level is admin, let's say.
+
+77
+00:04:12,510 --> 00:04:13,760
+And then we can run that,
+
+78
+00:04:15,440 --> 00:04:17,320
+and what we get back is,
+
+79
+00:04:17,320 --> 00:04:18,990
+for username we have jose123,
+
+80
+00:04:18,990 --> 00:04:20,640
+for access level we have admin.
+
+81
+00:04:20,640 --> 00:04:24,270
+These were condensed into a dictionary and passed in
+
+82
+00:04:24,270 --> 00:04:25,780
+as key word arguments.
+
+83
+00:04:26,700 --> 00:04:28,160
+Of course, another option would be
+
+84
+00:04:28,160 --> 00:04:30,520
+what we've looked at previously,
+
+85
+00:04:30,520 --> 00:04:34,080
+which is to pass in the dictionary itself.
+
+86
+00:04:34,080 --> 00:04:39,080
+In this case, something like username is jose123,
+
+87
+00:04:39,330 --> 00:04:42,430
+access level is admin.
+
+88
+00:04:44,240 --> 00:04:47,080
+If we run this, though, it doesn't know
+
+89
+00:04:47,080 --> 00:04:49,480
+that these are key word arguments,
+
+90
+00:04:49,480 --> 00:04:51,070
+but we know how to turn a dictionary
+
+91
+00:04:51,070 --> 00:04:52,340
+into key word arguments,
+
+92
+00:04:54,190 --> 00:04:56,920
+which is by doing the double asterisk.
+
+93
+00:04:56,920 --> 00:05:00,210
+We run that, and we get exactly the same thing.
+
+94
+00:05:01,340 --> 00:05:02,173
+OK?
+
+95
+00:05:02,173 --> 00:05:04,740
+So with single asterisk args, we can accept any number
+
+96
+00:05:04,740 --> 00:05:06,620
+of positional arguments.
+
+97
+00:05:06,620 --> 00:05:08,770
+With double asterisk kwargs, we can accept
+
+98
+00:05:08,770 --> 00:05:10,660
+any number of named arguments.
+
+99
+00:05:10,660 --> 00:05:12,170
+Those are the only two types of arguments
+
+100
+00:05:12,170 --> 00:05:14,000
+there are in Python.
+
+101
+00:05:14,000 --> 00:05:17,940
+So, this is how our decorator is going to work
+
+102
+00:05:17,940 --> 00:05:19,120
+in the very next video.
+
+103
+00:05:19,120 --> 00:05:20,940
+We're going to make our decorator accept
+
+104
+00:05:20,940 --> 00:05:23,470
+any number of arguments of either type
+
+105
+00:05:23,470 --> 00:05:24,750
+and that's gonna make our decorator
+
+106
+00:05:24,750 --> 00:05:26,800 line:15% 
+generic for any function.
+
+107
+00:05:26,800 --> 00:05:28,600 line:15% 
+I'll see you in the very next video.
+

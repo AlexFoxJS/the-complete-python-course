@@ -1,0 +1,448 @@
+1
+00:00:00,370 --> 00:00:01,490
+<v Male Narrator>Hi and welcome back.</v>
+
+2
+00:00:01,490 --> 00:00:04,290
+In this video, we're talking about how to structure
+
+3
+00:00:04,290 --> 00:00:06,190
+your programme and be better to deal
+
+4
+00:00:06,190 --> 00:00:07,850
+with HTML parsing.
+
+5
+00:00:08,960 --> 00:00:09,793
+So, the first thing I want to do
+
+6
+00:00:09,793 --> 00:00:11,490
+is I'm actually going to select everything
+
+7
+00:00:11,490 --> 00:00:13,570
+in my file, in my middle HTML file,
+
+8
+00:00:13,570 --> 00:00:16,970
+and go and create a new file that I'm going to call
+
+9
+00:00:16,970 --> 00:00:19,250
+class HTML parsing, for example.
+
+10
+00:00:21,040 --> 00:00:22,760
+And I'm gonna paste it all in.
+
+11
+00:00:22,760 --> 00:00:24,660
+And what I want to show you is a way
+
+12
+00:00:24,660 --> 00:00:27,000
+that you can structure this, so that instead of
+
+13
+00:00:27,000 --> 00:00:29,420
+just single functions, you have something
+
+14
+00:00:29,420 --> 00:00:32,450
+a bit more self-contained, a class.
+
+15
+00:00:32,450 --> 00:00:35,940
+And what I'm going to do is I'm going to put all of this,
+
+16
+00:00:35,940 --> 00:00:39,040
+except the HTML, all of this into a class
+
+17
+00:00:39,040 --> 00:00:41,730
+that I'm going to be calling ParsedItem, for example.
+
+18
+00:00:42,670 --> 00:00:46,730
+And this is going to be a class to take in an HTML page,
+
+19
+00:00:47,810 --> 00:00:52,810
+or part of it, and find properties of an item in it, okay?
+
+20
+00:00:55,070 --> 00:01:00,070
+So, it's gonna take in a page, or potentially
+
+21
+00:01:00,320 --> 00:01:04,410
+a section of a page, and it's going to do self.soup
+
+22
+00:01:04,410 --> 00:01:09,410
+equal BeautifulSoup of page on html.parser, okay?
+
+23
+00:01:10,170 --> 00:01:12,660
+The good thing about this is that now,
+
+24
+00:01:12,660 --> 00:01:16,050
+let's say you have a page that has many of these articles.
+
+25
+00:01:17,270 --> 00:01:21,560
+You could create a ParsedItem for each of those articles.
+
+26
+00:01:22,530 --> 00:01:25,130
+And the only thing you'd have to do is, sort of,
+
+27
+00:01:25,130 --> 00:01:29,010
+get the article tag and parse it into here
+
+28
+00:01:29,010 --> 00:01:31,820
+and then this item would be something
+
+29
+00:01:31,820 --> 00:01:34,150
+that represents that section of the page.
+
+30
+00:01:35,080 --> 00:01:39,650
+But, of course, these functions all have to be in there,
+
+31
+00:01:39,650 --> 00:01:40,750
+right?
+
+32
+00:01:40,750 --> 00:01:45,750
+They all have to take in self, self, self, and self.
+
+33
+00:01:48,140 --> 00:01:51,000
+And you don't need two spaces anymore,
+
+34
+00:01:51,000 --> 00:01:53,440
+PEP 8 doesn't like that inside the class.
+
+35
+00:01:54,630 --> 00:01:57,210
+Then, instead of soup, you're gonna do self.soup.
+
+36
+00:02:00,630 --> 00:02:05,630
+And what's happening now is that for this soup
+
+37
+00:02:05,670 --> 00:02:08,630
+that you've created when you parsed in this portion
+
+38
+00:02:08,630 --> 00:02:11,860
+of the page to this class, you're going to be able
+
+39
+00:02:11,860 --> 00:02:14,430
+to find the name and the link and so forth
+
+40
+00:02:14,430 --> 00:02:15,290
+for each item.
+
+41
+00:02:15,290 --> 00:02:19,310
+So, if you had many articles, you could just give each one
+
+42
+00:02:19,310 --> 00:02:22,820
+to this class and this class would find,
+
+43
+00:02:22,820 --> 00:02:26,460
+inside the article, the item name or the item link
+
+44
+00:02:26,460 --> 00:02:28,120
+and so forth.
+
+45
+00:02:28,120 --> 00:02:30,340
+Now, in order to make them actually find things,
+
+46
+00:02:30,340 --> 00:02:33,620
+instead of printing things out, we're gonna return.
+
+47
+00:02:33,620 --> 00:02:35,830
+So, instead of print, we're going to return.
+
+48
+00:02:35,830 --> 00:02:38,410
+And you're gonna see how easy it becomes
+
+49
+00:02:40,240 --> 00:02:42,750
+to deal with all this stuff.
+
+50
+00:02:42,750 --> 00:02:45,850
+I'm gonna delete this print matcher group there.
+
+51
+00:02:45,850 --> 00:02:48,380
+And then we're gonna return him, as well.
+
+52
+00:02:50,390 --> 00:02:51,490
+You're gonna see how easy it is
+
+53
+00:02:51,490 --> 00:02:54,110
+to deal with this stuff now.
+
+54
+00:02:54,110 --> 00:02:58,010
+'Cause all you have to do in order to get something
+
+55
+00:02:58,010 --> 00:03:02,270
+out of this item is to say ParsedItem ITEM HTML.
+
+56
+00:03:03,440 --> 00:03:05,660
+This can be your item and then say something like
+
+57
+00:03:05,660 --> 00:03:08,640
+print item.find item rating.
+
+58
+00:03:09,480 --> 00:03:14,220
+Then, run the file and you get Three out.
+
+59
+00:03:14,220 --> 00:03:16,320
+So, what's the benefit of this?
+
+60
+00:03:16,320 --> 00:03:19,930
+Well, you've done encapsulation, now, essentially.
+
+61
+00:03:19,930 --> 00:03:22,190
+You've encapsulated all the logic,
+
+62
+00:03:22,190 --> 00:03:26,080
+you've stored all the logic away inside this class
+
+63
+00:03:26,080 --> 00:03:28,260
+and now you can reuse the class
+
+64
+00:03:28,260 --> 00:03:31,010
+for each of the articles you've got on your site.
+
+65
+00:03:31,010 --> 00:03:33,600
+You don't have to, sort of, wonder about trying
+
+66
+00:03:33,600 --> 00:03:37,330
+to get any drilling down into specific articles
+
+67
+00:03:37,330 --> 00:03:39,540
+using more complex locators.
+
+68
+00:03:40,420 --> 00:03:43,780
+What you could do is if you have a larger site
+
+69
+00:03:43,780 --> 00:03:45,770
+with many articles, say something like
+
+70
+00:03:45,770 --> 00:03:50,770
+soup.find all article and then for each parsed item,
+
+71
+00:03:52,520 --> 00:03:54,270
+p for p in that.
+
+72
+00:03:55,520 --> 00:03:56,480
+Something along these lines.
+
+73
+00:03:56,480 --> 00:03:58,100
+We're gonna look at exactly how it would go,
+
+74
+00:03:58,100 --> 00:04:00,820
+but I just want you to see that then you would end up
+
+75
+00:04:00,820 --> 00:04:04,010
+with a list of these parsed items and each item
+
+76
+00:04:04,010 --> 00:04:07,360
+would be able to find its own rating or price
+
+77
+00:04:07,360 --> 00:04:08,940
+and so forth.
+
+78
+00:04:08,940 --> 00:04:10,810
+If you want to make it even better,
+
+79
+00:04:10,810 --> 00:04:13,170
+you can just remove this find item
+
+80
+00:04:13,170 --> 00:04:14,930
+because the class is already called item, you know,
+
+81
+00:04:14,930 --> 00:04:17,420
+you don't need find item things.
+
+82
+00:04:17,420 --> 00:04:19,820
+All you need to do is know the item's rating,
+
+83
+00:04:19,820 --> 00:04:22,930
+the item's price, the item's link,
+
+84
+00:04:22,930 --> 00:04:26,100
+and the item's name, and you have yourself,
+
+85
+00:04:26,100 --> 00:04:30,570
+essentially, something that could come from HTML,
+
+86
+00:04:30,570 --> 00:04:33,410
+or it could be a class that maybe comes from
+
+87
+00:04:33,410 --> 00:04:34,990
+adjacent or something like that.
+
+88
+00:04:34,990 --> 00:04:38,140
+It's a nice API for the data.
+
+89
+00:04:39,400 --> 00:04:40,640
+If you want to make it even better,
+
+90
+00:04:40,640 --> 00:04:44,150
+you can add a @property tag in front of each.
+
+91
+00:04:46,840 --> 00:04:51,840
+And this is now very simple,
+
+92
+00:04:52,870 --> 00:04:54,180
+item.name.
+
+93
+00:04:55,320 --> 00:04:57,040
+And that's what you have at the end,
+
+94
+00:04:57,040 --> 00:04:58,090
+A Light in the Attic.
+
+95
+00:04:59,630 --> 00:05:03,070
+Now, when you're interacting with an item,
+
+96
+00:05:03,070 --> 00:05:06,260
+you don't know if this is coming from a database
+
+97
+00:05:06,260 --> 00:05:09,150
+or if it's coming from a CSV file
+
+98
+00:05:09,150 --> 00:05:10,850
+or if it's coming, indeed, from some HTML
+
+99
+00:05:10,850 --> 00:05:12,210
+that you're parsing.
+
+100
+00:05:12,210 --> 00:05:14,900
+You don't know and you shouldn't have to care
+
+101
+00:05:14,900 --> 00:05:15,733
+when you're doing that.
+
+102
+00:05:15,733 --> 00:05:18,710
+So, this is a great way of making your items
+
+103
+00:05:18,710 --> 00:05:22,220
+much easier to work with when you're writing
+
+104
+00:05:22,220 --> 00:05:24,770
+something in a different part of the programme.
+
+105
+00:05:24,770 --> 00:05:27,310
+So, I just wanted to quickly tell you about
+
+106
+00:05:27,310 --> 00:05:30,910
+this method of structuring your parsing,
+
+107
+00:05:30,910 --> 00:05:33,520
+so it's a bit easier to work with.
+
+108
+00:05:33,520 --> 00:05:34,410
+So, that's it for this video.
+
+109
+00:05:34,410 --> 00:05:35,390
+In the next one we're gonna look at
+
+110
+00:05:35,390 --> 00:05:36,680
+another improvement you can make,
+
+111
+00:05:36,680 --> 00:05:39,740
+which is much shorter, and then we'll be moving on.
+
+112
+00:05:39,740 --> 00:05:40,690
+I'll see you there.
+

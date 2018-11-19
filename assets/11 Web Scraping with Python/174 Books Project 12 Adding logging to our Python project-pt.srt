@@ -1,0 +1,1468 @@
+1
+00:00:00,320 --> 00:00:01,360
+-: Ol, bem vindo de volta.
+
+2
+00:00:01,360 --> 00:00:04,070
+Neste vdeo, vamos adicionar log ao nosso
+
+3
+00:00:04,070 --> 00:00:05,290
+aplicativo de raspagem.
+
+4
+00:00:05,290 --> 00:00:08,810
+Apenas para ter uma idia melhor de como adicionar
+
+5
+00:00:08,810 --> 00:00:11,200
+log a um aplicativo como este.
+
+6
+00:00:11,200 --> 00:00:13,680
+A propsito, eu sempre recomendo adicionar
+
+7
+00:00:13,680 --> 00:00:17,360
+logging ao iniciar seu aplicativo e no adicionar o
+
+8
+00:00:17,360 --> 00:00:20,090
+log tudo no final, como fizemos aqui.
+
+9
+00:00:20,090 --> 00:00:23,430
+Quando voc comea, conforme voc desenvolve, voc pode adicionar
+
+10
+00:00:23,430 --> 00:00:25,460
+logging e isso far mais sentido.
+
+11
+00:00:25,460 --> 00:00:27,668
+Quando voc termina, perde um pouco
+
+12
+00:00:27,668 --> 00:00:30,650
+da imagem maior e, s vezes, adicionar logging pode
+
+13
+00:00:30,650 --> 00:00:32,340
+ser um pouco mais complicado.
+
+14
+00:00:32,340 --> 00:00:35,830
+Ento, por todos os meios, adicione o registro enquanto voc
+
+15
+00:00:35,830 --> 00:00:37,850
+desenvolve, nem todos no final.
+
+16
+00:00:37,850 --> 00:00:40,830
+Mas, mesmo assim, para economizar tempo e no adicionar log
+
+17
+00:00:40,830 --> 00:00:42,970
+em todos os vdeos e assim por
+
+18
+00:00:42,970 --> 00:00:44,781
+diante, adicionamos tudo no final aqui.
+
+19
+00:00:44,781 --> 00:00:47,510
+E, mais uma vez, no faa isso normalmente.
+
+20
+00:00:47,510 --> 00:00:49,980
+A primeira coisa que temos que fazer  importar
+
+21
+00:00:49,980 --> 00:00:52,560
+o mdulo de logging, e ento ns vamos configurar
+
+22
+00:00:52,560 --> 00:00:55,440
+o mdulo de logging, ento ns vamos fazer o log
+
+23
+00:00:55,440 --> 00:00:58,650
+de configurao bsica do ponto e ento aqui ns vamos colar
+
+24
+00:00:58,650 --> 00:01:01,420
+em formato, que vai para ser o formato do logger.
+
+25
+00:01:01,420 --> 00:01:04,840
+E isso est em todo o formato de string do Python.
+
+26
+00:01:04,840 --> 00:01:07,960
+E sintaxe, voc j viu isso antes, eu
+
+27
+00:01:07,960 --> 00:01:11,950
+mostrei isso mais cedo, e o que vamos fazer 
+
+28
+00:01:13,365 --> 00:01:18,365
+imprimir e a hora atual e o nvel atual, como debug ou info
+
+29
+00:01:19,820 --> 00:01:23,780
+e assim por diante, mas isso sempre vai ter oito
+
+30
+00:01:23,780 --> 00:01:28,310
+caracteres, para que o nvel mais longo, crtico, tenha a mesma
+
+31
+00:01:28,310 --> 00:01:31,200
+largura que o nvel mais curto, info.
+
+32
+00:01:31,200 --> 00:01:33,071
+Eles sero todos de oito espaos,
+
+33
+00:01:33,071 --> 00:01:35,270
+e sero preenchidos com espaos no final.
+
+34
+00:01:36,770 --> 00:01:39,290
+Ento vamos adicionar o nome do arquivo.
+
+35
+00:01:40,420 --> 00:01:41,610
+Nome do arquivo.
+
+36
+00:01:41,610 --> 00:01:44,640
+By the way, o S no final significa apenas string.
+
+37
+00:01:44,640 --> 00:01:47,750
+ apenas a maneira do Python assegurar que o que
+
+38
+00:01:47,750 --> 00:01:49,250
+estamos imprimindo aqui so strings.
+
+39
+00:01:50,250 --> 00:01:52,740
+D  para o nmero.
+
+40
+00:01:53,910 --> 00:01:56,250
+E finalmente vamos adicionar a mensagem, que
+
+41
+00:01:56,250 --> 00:01:57,530
+tambm ser um S.
+
+42
+00:01:59,320 --> 00:02:02,630
+Ento, como voc pode ver, nosso formato  a hora, ento o
+
+43
+00:02:02,630 --> 00:02:07,210
+nome do nvel, o nome do arquivo e o nmero da linha de onde isso foi registrado.
+
+44
+00:02:07,210 --> 00:02:09,350
+E finalmente a mensagem que registramos.
+
+45
+00:02:12,000 --> 00:02:14,890
+O formato de data,  para isso que 
+
+46
+00:02:14,890 --> 00:02:18,400
+esse argumento,  o formato no qual voc deseja imprimir suas datas.
+
+47
+00:02:18,400 --> 00:02:21,680
+Por cento D, por cento M, por cento Y vai ser
+
+48
+00:02:21,680 --> 00:02:24,130
+data, ms e ano, ano tem quatro dgitos.
+
+49
+00:02:24,130 --> 00:02:28,810
+E ento, por cento H por cento M por cento S vai lhe
+
+50
+00:02:28,810 --> 00:02:30,410
+dar horas, minutos e segundos.
+
+51
+00:02:30,410 --> 00:02:34,260
+Ento eu acho que isso  muito boa preciso l.
+
+52
+00:02:34,260 --> 00:02:38,550
+O nvel vai ser o log de ponto debug como um comeo.
+
+53
+00:02:38,550 --> 00:02:42,870
+E ento podemos recusar a informao ou mesmo a advertir
+
+54
+00:02:42,870 --> 00:02:43,703
+se quisermos.
+
+55
+00:02:44,640 --> 00:02:47,350
+E, finalmente, se voc colar o nome do arquivo
+
+56
+00:02:47,350 --> 00:02:50,340
+aqui como logs dot txt, ento ele vai gravar todos
+
+57
+00:02:50,340 --> 00:02:53,530
+os seus logs no arquivo em vez de mostr-los no console.
+
+58
+00:02:53,530 --> 00:02:55,130
+Ento isso normalmente  uma boa ideia.
+
+59
+00:02:56,730 --> 00:02:58,360
+Ento ns vamos pegar um
+
+60
+00:02:58,360 --> 00:02:59,850
+logger, ento vamos dizer logger.
+
+61
+00:03:01,350 --> 00:03:06,350
+No, no  possvel digitar logger igual logging dot get logger.
+
+62
+00:03:07,400 --> 00:03:09,710
+E ns vamos pegar nosso logger base, que
+
+63
+00:03:09,710 --> 00:03:10,960
+vai ser chamado de raspagem.
+
+64
+00:03:11,970 --> 00:03:15,480
+Ok, no app dot PY, o registrador ser chamado de
+
+65
+00:03:15,480 --> 00:03:18,320
+raspagem e, assim que voc obtiver o registrador
+
+66
+00:03:18,320 --> 00:03:21,100
+e colar o nome, o mdulo de registro
+
+67
+00:03:21,100 --> 00:03:23,440
+criar um registrador em segundo plano.
+
+68
+00:03:24,320 --> 00:03:27,320
+Em qualquer outro arquivo, quando voc colar o mesmo nome, ele
+
+69
+00:03:27,320 --> 00:03:28,560
+obter o mesmo registrador.
+
+70
+00:03:28,560 --> 00:03:32,764
+Portanto, h apenas uma instncia de um registrador a qualquer momento.
+
+71
+00:03:32,764 --> 00:03:34,790
+E isso  caso voc esteja interessado
+
+72
+00:03:34,790 --> 00:03:37,720
+em um exemplo de um padro singleton no desenvolvimento de software,
+
+73
+00:03:37,720 --> 00:03:39,740
+esta  uma implementao de um singleton.
+
+74
+00:03:39,740 --> 00:03:41,860
+Se voc no sabe o que  um
+
+75
+00:03:41,860 --> 00:03:44,878
+singleton, no se preocupe, vamos investigar isso muito mais tarde no curso.
+
+76
+00:03:44,878 --> 00:03:49,010
+Ok, ento podemos comear a registrar usando este logger.
+
+77
+00:03:50,070 --> 00:03:52,870
+Ento, o que podemos registrar na linha 13?
+
+78
+00:03:52,870 --> 00:03:56,530
+Bem, sempre que importamos algo do aplicativo, vamos percorrer
+
+79
+00:03:56,530 --> 00:03:59,900
+essas linhas de cdigo, comear a ler os
+
+80
+00:03:59,900 --> 00:04:03,270
+livros e, finalmente, ler todas as pginas e
+
+81
+00:04:03,270 --> 00:04:05,720
+obter todos os livros em cada pgina.
+
+82
+00:04:05,720 --> 00:04:07,680
+O que podemos comear a registrar aqui  que estamos
+
+83
+00:04:07,680 --> 00:04:09,020
+prestes a carregar a lista de livros.
+
+84
+00:04:15,077 --> 00:04:16,520
+Carregando lista de livros.
+
+85
+00:04:16,520 --> 00:04:20,950
+By the way, meus erros so geralmente causados por eu ter um microfone no meu
+
+86
+00:04:20,950 --> 00:04:22,780
+rosto e no ser capaz de
+
+87
+00:04:22,780 --> 00:04:25,560
+ver o meu teclado, ento peo desculpas por quaisquer
+
+88
+00:04:25,560 --> 00:04:26,393
+erros de digitao.
+
+89
+00:04:27,950 --> 00:04:30,900
+Ento, o que estamos vendo aqui  que estamos carregando a lista de
+
+90
+00:04:31,810 --> 00:04:34,810
+livros, e  isso que vai aparecer nos nossos logs quando rodarmos isso.
+
+91
+00:04:34,810 --> 00:04:36,600
+Vamos executar o menu novamente.
+
+92
+00:04:38,020 --> 00:04:40,040
+Vai passar por tudo isso.
+
+93
+00:04:41,300 --> 00:04:44,360
+Est passando, ou j passou pela linha 13.
+
+94
+00:04:46,350 --> 00:04:49,700
+E agora est tudo carregado, podemos ver, por exemplo, os
+
+95
+00:04:49,700 --> 00:04:51,550
+melhores livros e podemos sair.
+
+96
+00:04:52,630 --> 00:04:55,160
+Ento voc chega aqui, registra o texto do ponto.
+
+97
+00:04:55,160 --> 00:04:56,470
+Ento deixe-me abrir isso.
+
+98
+00:04:57,690 --> 00:05:00,290
+Voc pode ver que isso contm muitas coisas.
+
+99
+00:05:01,520 --> 00:05:05,280
+Uma mensagem de informao na parte superior diz "app dot PY
+
+100
+00:05:05,280 --> 00:05:07,920
+line 13" carregando a lista de livros.
+
+101
+00:05:07,920 --> 00:05:11,520
+E ento tem um monte de mensagens de depurao.
+
+102
+00:05:11,520 --> 00:05:15,140
+Essas mensagens de depurao no so adicionadas por ns,
+
+103
+00:05:15,140 --> 00:05:18,330
+elas foram impressas por outra biblioteca que imprime
+
+104
+00:05:18,330 --> 00:05:22,180
+mensagens de depurao e essa  a biblioteca de solicitaes.
+
+105
+00:05:23,100 --> 00:05:26,770
+Ento, aqui,  s dizer que iniciar uma nova conexo http
+
+106
+00:05:26,770 --> 00:05:30,030
+com os livros  para raspar o ponto com.
+
+107
+00:05:30,030 --> 00:05:32,260
+E ento est comeando outro para livros
+
+108
+00:05:32,260 --> 00:05:35,919
+dot para raspar pontocom, mas agora ele est tentando obter barra de
+
+109
+00:05:35,919 --> 00:05:39,610
+catlogo pgina dois barra HTML, e assim para a pgina trs, quatro,
+
+110
+00:05:39,610 --> 00:05:42,080
+cinco e assim por diante at 50.
+
+111
+00:05:43,133 --> 00:05:46,772
+E como voc pode ver, voc tambm recebe a resposta,
+
+112
+00:05:46,772 --> 00:05:49,500
+de modo que  o cdigo 200.
+
+113
+00:05:49,500 --> 00:05:51,370
+Isso significa que tudo  bom.
+
+114
+00:05:51,370 --> 00:05:55,250
+Portanto, esses registros informam que todos os seus pedidos para
+
+115
+00:05:55,250 --> 00:05:59,130
+a pgina foram bem-sucedidos porque so todos cdigos 200.
+
+116
+00:05:59,130 --> 00:06:00,860
+Ento isso  bom.
+
+117
+00:06:00,860 --> 00:06:03,975
+Se voc no quiser ver essas mensagens porque no
+
+118
+00:06:03,975 --> 00:06:07,060
+est interessado em uma operao de baixo nvel do
+
+119
+00:06:07,060 --> 00:06:09,880
+seu aplicativo, tudo o que voc precisa fazer
+
+120
+00:06:09,880 --> 00:06:12,680
+ transformar o nvel em info e elas desaparecero.
+
+121
+00:06:12,680 --> 00:06:17,030
+Ok, ento se voc est mostrando uma mensagem de depurao que  apenas para
+
+122
+00:06:17,030 --> 00:06:19,670
+quando voc est desenvolvendo e quer saber exatamente o
+
+123
+00:06:19,670 --> 00:06:21,640
+que est acontecendo, use o debug.
+
+124
+00:06:21,640 --> 00:06:25,410
+Se voc quiser fornecer algumas informaes que no sejam
+
+125
+00:06:25,410 --> 00:06:26,850
+necessrias, use as informaes.
+
+126
+00:06:26,850 --> 00:06:28,810
+E, claro, se voc quiser falar sobre
+
+127
+00:06:28,810 --> 00:06:31,840
+advertncias e erros e crticas e assim por diante, use esses nveis.
+
+128
+00:06:31,840 --> 00:06:35,510
+Mas normalmente voc estaria usando informaes de depurao neste nvel, ok.
+
+129
+00:06:39,780 --> 00:06:43,190
+Por exemplo, poderamos colocar uma mensagem de depurao aqui, debug
+
+130
+00:06:44,150 --> 00:06:45,540
+de ponto do registrador.
+
+131
+00:06:46,590 --> 00:06:51,530
+Criando toda a pgina de livros a partir do contedo da pgina.
+
+132
+00:06:53,280 --> 00:06:54,113
+Curtiu isso.
+
+133
+00:06:54,950 --> 00:06:58,590
+Talvez no seja a mensagem mais necessria, mas se houver um
+
+134
+00:06:58,590 --> 00:07:01,910
+problema entre a mensagem de depurao e esta mensagem, voc
+
+135
+00:07:01,910 --> 00:07:03,960
+sabe que algo deu errado ao
+
+136
+00:07:03,960 --> 00:07:05,290
+recuperar o contedo da pgina.
+
+137
+00:07:07,670 --> 00:07:11,460
+Agora vamos para a nossa pgina de livros e podemos fazer
+
+138
+00:07:11,460 --> 00:07:12,940
+alguns registros l tambm.
+
+139
+00:07:12,940 --> 00:07:14,060
+Vamos entrar aqui.
+
+140
+00:07:14,060 --> 00:07:19,060
+Mais uma vez, todos ns temos que fazer o log de importao e aqui
+
+141
+00:07:19,590 --> 00:07:20,850
+embaixo criar logger.
+
+142
+00:07:24,500 --> 00:07:27,960
+E dentro do logger aqui, no, a propsito, vou me
+
+143
+00:07:27,960 --> 00:07:30,520
+certificar de usar a letra certa l.
+
+144
+00:07:30,520 --> 00:07:35,520
+Ns vamos dizer raspando todos os livros da pgina.
+
+145
+00:07:36,130 --> 00:07:39,040
+Isso vai me dar um logger filho do
+
+146
+00:07:39,040 --> 00:07:42,700
+logger de raspagem, o logger base que definimos anteriormente.
+
+147
+00:07:42,700 --> 00:07:45,120
+E assim toda a configurao e tudo
+
+148
+00:07:45,120 --> 00:07:47,210
+ser herdado, ento se qualquer coisa,
+
+149
+00:07:47,210 --> 00:07:50,310
+se ns configurssemos qualquer coisa no logger de raspagem,
+
+150
+00:07:50,310 --> 00:07:52,820
+tambm estaria disponvel neste logger filho.
+
+151
+00:07:52,820 --> 00:07:56,940
+Mas geralmente a utilidade tambm  mant-los relacionados.
+
+152
+00:07:56,940 --> 00:08:00,000
+Ento voc saberia que esse logger tambm est relacionado ao seu
+
+153
+00:08:00,000 --> 00:08:02,150
+log principal, eles so parte do mesmo aplicativo.
+
+154
+00:08:02,150 --> 00:08:03,560
+Voc sabe, voc os escreveu,
+
+155
+00:08:03,560 --> 00:08:07,260
+no  como se alguma outra biblioteca estivesse fazendo o registro para voc.
+
+156
+00:08:13,060 --> 00:08:15,800
+Ento, aqui ns poderamos ter algo parecido com o contedo da
+
+157
+00:08:15,800 --> 00:08:17,070
+pgina com uma bela sopa.
+
+158
+00:08:20,860 --> 00:08:24,260
+Dentro da funo de livros, voc poderia adicionar algo.
+
+159
+00:08:34,470 --> 00:08:37,680
+Assim, encontrar todos os livros em uma pgina usando todos os
+
+160
+00:08:37,680 --> 00:08:40,650
+livros de ponto de localizador de pginas de livros lhe dar
+
+161
+00:08:40,650 --> 00:08:44,040
+o localizador em seus logs, ento quando voc estiver analisando os logs
+
+162
+00:08:44,040 --> 00:08:47,380
+se algo der errado, voc pode olhar para trs e ver o
+
+163
+00:08:47,380 --> 00:08:49,710
+localizador que tentou use e ento identifique se
+
+164
+00:08:49,710 --> 00:08:51,960
+talvez isso mudou agora, se algo der errado.
+
+165
+00:08:54,700 --> 00:08:58,180
+Da mesma forma, na contagem de pginas, aqui voc pode
+
+166
+00:08:58,180 --> 00:09:02,580
+adicionar um pouco de registro, depurao de ponto do registrador localizando todo o
+
+167
+00:09:02,580 --> 00:09:04,440
+nmero de pginas de catlogo disponveis.
+
+168
+00:09:06,578 --> 00:09:11,578
+E ento voc pode fazer coisas como informaes de ponto do registrador.
+
+169
+00:09:12,620 --> 00:09:15,750
+Nmero encontrado de pginas de catlogo disponveis.
+
+170
+00:09:21,000 --> 00:09:22,350
+Algo parecido.
+
+171
+00:09:22,350 --> 00:09:25,140
+Isto vai imprimir uma mensagem de informao, por
+
+172
+00:09:25,140 --> 00:09:28,680
+isso vai aparecer mesmo se voc tiver, se voc tiver debug
+
+173
+00:09:28,680 --> 00:09:30,910
+desativado, mas isso pode ser til, eu
+
+174
+00:09:30,910 --> 00:09:33,440
+acho que imprimir esta mensagem pode ser interessante
+
+175
+00:09:33,440 --> 00:09:36,690
+para que em seus logs se voc tira as mensagens
+
+176
+00:09:36,690 --> 00:09:38,660
+de depurao voc ainda ver quantas
+
+177
+00:09:38,660 --> 00:09:40,172
+pginas voc vai passar.
+
+178
+00:09:40,172 --> 00:09:41,572
+E isso pode ser interessante.
+
+179
+00:09:51,523 --> 00:09:54,010
+E aqui vamos depurar a mensagem que
+
+180
+00:09:54,010 --> 00:09:56,770
+conseguimos extrair um nmero de pginas como inteiro.
+
+181
+00:09:56,770 --> 00:09:58,610
+Se falharmos, sabemos que algo est errado
+
+182
+00:09:58,610 --> 00:10:00,190
+com nosso padro ou algo aqui.
+
+183
+00:10:01,100 --> 00:10:02,820
+Observe como, pela maneira como estou
+
+184
+00:10:02,820 --> 00:10:05,950
+colocando essas coisas em torno de backticks, isso  apenas para me
+
+185
+00:10:05,950 --> 00:10:08,660
+dizer que este  um valor que vem do cdigo.
+
+186
+00:10:08,660 --> 00:10:11,130
+No  apenas uma string.
+
+187
+00:10:11,130 --> 00:10:15,460
+Isto ir aparecer nos logs como backtick page um dos 50 backtick, e ento voc
+
+188
+00:10:15,460 --> 00:10:17,962
+pode olhar para ele e ver, ok, isso 
+
+189
+00:10:17,962 --> 00:10:20,670
+algo que foi realmente impresso a partir do cdigo
+
+190
+00:10:20,670 --> 00:10:22,830
+e no  apenas uma string que
+
+191
+00:10:22,830 --> 00:10:23,940
+ns imprimimos no logs.
+
+192
+00:10:23,940 --> 00:10:27,860
+E se isso , por exemplo, como nenhum, voc talvez pense
+
+193
+00:10:27,860 --> 00:10:29,850
+que h um erro ali.
+
+194
+00:10:29,850 --> 00:10:31,260
+Ento  por isso que est nos backticks, ento
+
+195
+00:10:31,260 --> 00:10:32,260
+ um pouco mais fcil de ver.
+
+196
+00:10:34,580 --> 00:10:38,520
+Agora podemos ir ao nosso analisador de livros, por exemplo, e ver
+
+197
+00:10:38,520 --> 00:10:39,970
+o que temos l.
+
+198
+00:10:41,890 --> 00:10:44,980
+E podemos, novamente, importar o mdulo de login.
+
+199
+00:10:47,670 --> 00:10:48,780
+E crie nosso logger.
+
+200
+00:10:56,660 --> 00:10:57,600
+E  isso.
+
+201
+00:10:57,600 --> 00:11:02,600
+Ento podemos usar este logger dentro do mdulo aqui.
+
+202
+00:11:11,870 --> 00:11:14,890
+Poderamos fazer algo assim, um novo analisador de
+
+203
+00:11:14,890 --> 00:11:17,180
+livros criado a partir do pai.
+
+204
+00:11:17,180 --> 00:11:21,090
+E isso realmente vai imprimir todo o HTML que voc
+
+205
+00:11:21,090 --> 00:11:23,920
+decidiu que queria criar o analisador de
+
+206
+00:11:23,920 --> 00:11:25,550
+livros no seu cdigo.
+
+207
+00:11:25,550 --> 00:11:26,934
+Ento isso vai ser um
+
+208
+00:11:26,934 --> 00:11:30,230
+log muito longo, porque ele vai imprimir todo o HTML do pai,
+
+209
+00:11:30,230 --> 00:11:33,390
+mas pode ser til para quando voc estiver depurando algo que
+
+210
+00:11:33,390 --> 00:11:35,520
+deu errado no seu analisador de livros.
+
+211
+00:11:35,520 --> 00:11:38,150
+Ento, eu vou deixar assim,
+
+212
+00:11:38,150 --> 00:11:43,150
+mas voc pode querer imprimir algo menos detalhado, menos cdigo
+
+213
+00:11:43,690 --> 00:11:47,070
+HTML aqui, se voc for usar isso extensivamente.
+
+214
+00:11:55,498 --> 00:11:57,050
+Aqui ns imprimimos que estamos
+
+215
+00:11:57,050 --> 00:12:00,900
+encontrando um nome de livro e, em seguida, aqui embaixo, vamos dizer que encontramos.
+
+216
+00:12:08,000 --> 00:12:10,280
+Dessa forma, se algo acontecer depois de encontrar
+
+217
+00:12:10,280 --> 00:12:13,180
+o nome do livro, saberemos que  um problema aqui
+
+218
+00:12:13,180 --> 00:12:15,670
+e no em outro lugar em nosso cdigo.
+
+219
+00:12:15,670 --> 00:12:18,290
+E podemos fazer o mesmo por esses outros.
+
+220
+00:12:20,310 --> 00:12:22,110
+Ento vamos fazer isso.
+
+221
+00:12:26,500 --> 00:12:29,360
+Claro, mudando essas coisas.
+
+222
+00:12:33,710 --> 00:12:36,200
+E finalmente, claro, vamos imprimir tambm
+
+223
+00:12:36,200 --> 00:12:37,780
+que encontramos a coisa.
+
+224
+00:12:49,960 --> 00:12:52,630
+Ns vamos extrair o preo aqui
+
+225
+00:12:52,630 --> 00:12:56,650
+para uma varivel apenas para que possamos imprimir.
+
+226
+00:12:59,080 --> 00:13:00,410
+Do preo do livro.
+
+227
+00:13:02,040 --> 00:13:03,810
+E isso vai ser o preo do float.
+
+228
+00:13:11,040 --> 00:13:11,920
+Curtiu isso.
+
+229
+00:13:13,160 --> 00:13:18,160
+Ento, novamente, estamos apenas adicionando aqui as diferentes coisas que podemos precisar
+
+230
+00:13:18,310 --> 00:13:20,690
+para entender o que est acontecendo
+
+231
+00:13:20,690 --> 00:13:22,605
+atravs do nosso programa.
+
+232
+00:13:22,605 --> 00:13:24,410
+E  isso.
+
+233
+00:13:25,460 --> 00:13:27,190
+Certifique-se de no excluir
+
+234
+00:13:27,190 --> 00:13:29,870
+os dois pontos, isso ser bastante til.
+
+235
+00:13:29,870 --> 00:13:33,810
+E ento ns vamos fazer isso aqui.
+
+236
+00:13:33,810 --> 00:13:36,790
+Eu s vou col-lo do cdigo.
+
+237
+00:13:41,190 --> 00:13:43,130
+Assim, tudo bem.
+
+238
+00:13:46,190 --> 00:13:49,740
+Bem, isso  muito bom para o nosso registro.
+
+239
+00:13:49,740 --> 00:13:51,800
+Poderamos adicionar um pouco de log ao
+
+240
+00:13:51,800 --> 00:13:53,130
+seu menu, se voc quiser.
+
+241
+00:13:53,130 --> 00:13:54,840
+Seria bastante direto, no h
+
+242
+00:13:54,840 --> 00:13:56,790
+muito registro para adicionar aqui.
+
+243
+00:13:59,400 --> 00:14:01,370
+Mas ns podemos fazer isso apenas por completude.
+
+244
+00:14:05,820 --> 00:14:07,180
+Curtiu isso.
+
+245
+00:14:07,180 --> 00:14:10,460
+E ento podemos adicionar alguns registros quando tentamos imprimir.
+
+246
+00:14:16,370 --> 00:14:17,830
+Curtiu isso.
+
+247
+00:14:17,830 --> 00:14:20,130
+Estas so mensagens de informao porque no
+
+248
+00:14:20,130 --> 00:14:23,240
+esto realmente preocupadas com o funcionamento da aplicao ou o
+
+249
+00:14:23,240 --> 00:14:24,670
+que ela est fazendo.
+
+250
+00:14:24,670 --> 00:14:28,200
+ mais como mensagens informativas do que voc fez.
+
+251
+00:14:28,200 --> 00:14:30,530
+E  por isso que estou fazendo
+
+252
+00:14:30,530 --> 00:14:33,709
+mensagens informativas, mas, novamente,  tudo uma questo de
+
+253
+00:14:33,709 --> 00:14:36,440
+pensar em como voc vai ver seus logs.
+
+254
+00:14:40,920 --> 00:14:42,450
+Se voc no vai olhar
+
+255
+00:14:42,450 --> 00:14:44,580
+seus logs,  claro que talvez no
+
+256
+00:14:44,580 --> 00:14:45,820
+faa muito sentido fazer logging.
+
+257
+00:14:46,900 --> 00:14:49,310
+E aqui embaixo ns vamos fazer uma mensagem de
+
+258
+00:14:49,310 --> 00:14:50,950
+depurao depois de terminar o programa.
+
+259
+00:14:52,760 --> 00:14:54,980
+Ok, agora podemos executar nosso menu.
+
+260
+00:14:56,640 --> 00:15:01,010
+Isso vai novamente com todo esse registro.
+
+261
+00:15:01,010 --> 00:15:03,780
+Portanto, os manipuladores de conexo e, voc
+
+262
+00:15:03,780 --> 00:15:07,270
+sabe, obtendo todas as pginas e, em seguida, terminamos
+
+263
+00:15:07,270 --> 00:15:12,270
+aqui, podemos fazer algo como B ou C e, em seguida, enfileirar.
+
+264
+00:15:12,620 --> 00:15:16,310
+Agora, nosso arquivo de logs ser enorme.
+
+265
+00:15:16,310 --> 00:15:18,660
+By the way, esses logs aqui so
+
+266
+00:15:18,660 --> 00:15:23,660
+de mais cedo, porque agora  21:42, ento estamos indo at aqui estes so agora,
+
+267
+00:15:25,402 --> 00:15:28,060
+estamos baixos no espao do livro, este 
+
+268
+00:15:28,060 --> 00:15:31,240
+o nosso programa a partir novamente no segundo que corremos.
+
+269
+00:15:31,240 --> 00:15:34,580
+Comeamos a obter a conexo HTTP e voc pode ver
+
+270
+00:15:34,580 --> 00:15:37,210
+aqui que na pgina de livros comeamos a
+
+271
+00:15:37,210 --> 00:15:39,880
+analisar o contedo com uma bela sopa.
+
+272
+00:15:39,880 --> 00:15:41,880
+Ento comeamos a encontrar todos os
+
+273
+00:15:41,880 --> 00:15:44,050
+livros da pgina usando esse localizador.
+
+274
+00:15:45,000 --> 00:15:46,830
+E parece que fomos bem sucedidos.
+
+275
+00:15:46,830 --> 00:15:50,140
+E ento dizemos que o novo analisador de livros foi criado
+
+276
+00:15:50,140 --> 00:15:52,250
+e depois comeamos a imprimir o pai.
+
+277
+00:15:52,250 --> 00:15:55,110
+Ento aqui temos todo o nosso artigo e tudo
+
+278
+00:15:55,110 --> 00:15:58,490
+o que est dentro daquele pai do qual extrairemos os dados.
+
+279
+00:15:58,490 --> 00:16:01,390
+E ento passamos para o prximo analisador de livros.
+
+280
+00:16:01,390 --> 00:16:03,530
+E assim, daqui voc pode ver que
+
+281
+00:16:03,530 --> 00:16:05,330
+h muitos desses livros aqui.
+
+282
+00:16:06,530 --> 00:16:10,420
+Deve ser um par mil, mil exatamente.
+
+283
+00:16:10,420 --> 00:16:13,790
+E eventualmente voc vai at aqui e dizemos
+
+284
+00:16:13,790 --> 00:16:16,580
+que encontramos os melhores livros por classificao.
+
+285
+00:16:16,580 --> 00:16:18,810
+E ento estamos encontrando uma classificao de livro e
+
+286
+00:16:18,810 --> 00:16:21,950
+descobrimos que para um livro que tinha trs, outra classificao de livro era
+
+287
+00:16:21,950 --> 00:16:24,740
+uma, e ento tenho certeza que voc pode adicionar mais algumas
+
+288
+00:16:24,740 --> 00:16:26,810
+informaes aqui, como o nome do livro, talvez.
+
+289
+00:16:26,810 --> 00:16:28,360
+E para o qual isso foi encontrado.
+
+290
+00:16:28,360 --> 00:16:30,850
+E ento estamos encontrando um preo, e ento
+
+291
+00:16:31,800 --> 00:16:34,540
+encontramos um nome, e assim por diante, para os
+
+292
+00:16:34,540 --> 00:16:35,890
+outros livros que estvamos procurando.
+
+293
+00:16:37,210 --> 00:16:40,530
+Observe que, quando imprimimos, quando chamamos o mtodo repr
+
+294
+00:16:40,530 --> 00:16:43,540
+de um livro, o nome, o preo e a
+
+295
+00:16:43,540 --> 00:16:44,928
+classificao so encontrados novamente.
+
+296
+00:16:44,928 --> 00:16:49,540
+Ento definitivamente h alguma duplicao aqui em nossos registros.
+
+297
+00:16:49,540 --> 00:16:52,650
+Mas voc sabe, eles nos do todas as informaes que precisamos
+
+298
+00:16:52,650 --> 00:16:54,560
+para entender exatamente o que aconteceu.
+
+299
+00:16:54,560 --> 00:16:58,210
+E se houve um erro, por exemplo, aqui depois que
+
+300
+00:16:58,210 --> 00:17:02,580
+dissemos que encontramos a classificao do livro, saberamos que o erro est
+
+301
+00:17:02,580 --> 00:17:06,080
+dentro da propriedade de classificao do analisador de livros.
+
+302
+00:17:06,080 --> 00:17:08,670
+E ns no teramos que procurar em qualquer
+
+303
+00:17:08,670 --> 00:17:10,850
+lugar, saberamos que algo est errado l.
+
+304
+00:17:10,850 --> 00:17:14,380
+Ento os logs podem ser realmente teis, particularmente quando
+
+305
+00:17:14,380 --> 00:17:17,010
+eles param no meio de algum lugar.
+
+306
+00:17:17,010 --> 00:17:18,560
+Voc no v o seu
+
+307
+00:17:18,560 --> 00:17:21,950
+programa terminado nem nada, eles param de repente e voc sabe
+
+308
+00:17:21,950 --> 00:17:23,440
+que encontrou algum problema l.
+
+309
+00:17:23,440 --> 00:17:26,940
+Voc normalmente no leu todos os logs, existem 31.000 linhas
+
+310
+00:17:26,940 --> 00:17:28,830
+aqui, voc no as leu.
+
+311
+00:17:28,830 --> 00:17:31,710
+Voc s olharia para eles quando houvesse
+
+312
+00:17:31,710 --> 00:17:34,710
+um problema e veria o que deu errado.
+
+313
+00:17:34,710 --> 00:17:38,615
+Portanto, ter bons registros  importante, mas s vezes,  claro, especialmente
+
+314
+00:17:38,615 --> 00:17:41,330
+depois que terminamos de desenvolver e estamos, de
+
+315
+00:17:41,330 --> 00:17:43,940
+certa forma, confiantes no que est acontecendo, podemos
+
+316
+00:17:43,940 --> 00:17:47,870
+diminuir o nvel de registro para informaes, para que possamos analisar os
+
+317
+00:17:47,870 --> 00:17:50,060
+logs e mais ou menos ver o
+
+318
+00:17:50,060 --> 00:17:52,240
+que aconteceu em cada ponto no tempo.
+
+319
+00:17:53,300 --> 00:17:54,690
+Ento podemos fazer isso.
+
+320
+00:17:54,690 --> 00:17:57,390
+Ento eu vou deletar os logs do dot txt, vamos deletar isso.
+
+321
+00:17:58,370 --> 00:17:59,870
+E estamos no menu novamente.
+
+322
+00:18:01,840 --> 00:18:04,549
+E, acredite ou no, todo esse nvel
+
+323
+00:18:04,549 --> 00:18:08,680
+de registro realmente leva tempo, o que atrasa sua aplicao.
+
+324
+00:18:10,780 --> 00:18:13,620
+Ento, isso definitivamente  algo a ser cauteloso quando voc
+
+325
+00:18:14,730 --> 00:18:17,270
+faz um monte de log, certifique-se de que quando
+
+326
+00:18:17,270 --> 00:18:19,960
+o aplicativo est sendo executado e voc precisa do desempenho
+
+327
+00:18:19,960 --> 00:18:21,440
+para no ir longe demais.
+
+328
+00:18:23,460 --> 00:18:27,260
+E aqui temos algo aqui, acho que a minha classificao
+
+329
+00:18:28,930 --> 00:18:31,789
+aqui foi uma mensagem de informao, mas deveria
+
+330
+00:18:31,789 --> 00:18:33,900
+ter sido um debug, meu mal.
+
+331
+00:18:33,900 --> 00:18:35,670
+Ento, isso deveria ter sido um debug, eu copiei
+
+332
+00:18:35,670 --> 00:18:37,760
+e colei das minhas anotaes e era uma informao l.
+
+333
+00:18:37,760 --> 00:18:40,210
+E vamos deletar isso e rodar novamente.
+
+334
+00:18:40,210 --> 00:18:43,220
+S para voc ver o que est acontecendo l.
+
+335
+00:18:50,690 --> 00:18:51,740
+E a temos que.
+
+336
+00:18:55,776 --> 00:18:58,330
+Ento ns temos nossos logs e como
+
+337
+00:18:58,330 --> 00:19:01,220
+voc pode ver quando ns apenas imprimimos
+
+338
+00:19:01,220 --> 00:19:03,560
+as informaes, elas so muito diretas.
+
+339
+00:19:03,560 --> 00:19:06,610
+Ao carregar a lista de livros, encontramos o nmero de pginas
+
+340
+00:19:06,610 --> 00:19:08,900
+que estamos passando, ento encontramos os melhores livros
+
+341
+00:19:08,900 --> 00:19:10,600
+por classificao e depois os encontramos
+
+342
+00:19:10,600 --> 00:19:13,140
+por preo e foi isso, nada mais aconteceu realmente.
+
+343
+00:19:14,210 --> 00:19:16,610
+E tenho certeza que h melhorias que podem
+
+344
+00:19:16,610 --> 00:19:19,760
+ser feitas para isso, voc vai querer registrar mensagens de aviso
+
+345
+00:19:19,760 --> 00:19:22,430
+em momentos em que voc acha que pode receber avisos.
+
+346
+00:19:22,430 --> 00:19:24,970
+Como se voc estivesse em uma tentativa, exceto bloco.
+
+347
+00:19:24,970 --> 00:19:26,960
+No bloco except, voc provavelmente desejar
+
+348
+00:19:26,960 --> 00:19:29,810
+registrar algum tipo de aviso ou erro para informar
+
+349
+00:19:29,810 --> 00:19:33,260
+que houve um erro que aconteceu aqui, mas voc o detectou.
+
+350
+00:19:33,260 --> 00:19:34,620
+E assim por diante.
+
+351
+00:19:34,620 --> 00:19:38,030
+E, claro, em alguns casos, voc no pode lidar com um
+
+352
+00:19:38,030 --> 00:19:42,200
+erro porque o erro aconteceu e seu programa no pode continuar e, nesses
+
+353
+00:19:42,200 --> 00:19:44,670
+casos, voc deve registrar um erro crtico.
+
+354
+00:19:44,670 --> 00:19:47,790
+Mensagem crtica para dizer que o programa caiu neste momento.
+
+355
+00:19:47,790 --> 00:19:49,340
+E voc deveria saber disso.
+
+356
+00:19:50,306 --> 00:19:54,300
+Mensagens de depurao e de informaes no so to teis em
+
+357
+00:19:54,300 --> 00:19:57,590
+seus registros, ento normalmente voc estaria avisando e acima
+
+358
+00:19:57,590 --> 00:20:02,070
+quando seu aplicativo estiver sendo executado para usurios em estado selvagem.
+
+359
+00:20:02,070 --> 00:20:05,700
+Quando voc est desenvolvendo debug e info pode ser muito til.
+
+360
+00:20:06,790 --> 00:20:08,170
+Tudo bem que 
+
+361
+00:20:08,170 --> 00:20:11,810
+tudo para este vdeo, eu s queria mostrar a voc como
+
+362
+00:20:11,810 --> 00:20:14,680
+fazer login no seu aplicativo, mais uma vez, dar
+
+363
+00:20:14,680 --> 00:20:17,760
+alguns exemplos de como o mdulo de log funciona
+
+364
+00:20:17,760 --> 00:20:20,520
+e como voc pode coloc-lo em qualquer lugar
+
+365
+00:20:20,520 --> 00:20:23,070
+e depois exemplos de olhar seus logs e
+
+366
+00:20:23,070 --> 00:20:25,133
+que tipo de coisas voc pode encontrar.
+
+367
+00:20:25,133 --> 00:20:28,540
+E  isso para este vdeo, vejo voc no prximo.
+

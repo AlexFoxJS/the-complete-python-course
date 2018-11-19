@@ -1,0 +1,360 @@
+1
+00:00:00,050 --> 00:00:02,174
+<v Jose>Hi and welcome back, in this video, let's talk</v>
+
+2
+00:00:02,174 --> 00:00:04,174
+about importing parents.
+
+3
+00:00:05,506 --> 00:00:10,506
+I'm going to run app.py again, and notice how the first file
+
+4
+00:00:10,778 --> 00:00:14,845
+that was imported is "find", and the "find" file first
+
+5
+00:00:14,845 --> 00:00:17,380
+imported "file_operations", so that's the first file that
+
+6
+00:00:17,380 --> 00:00:19,236
+runs the completion, and we print out
+
+7
+00:00:19,236 --> 00:00:24,077
+"utils.common.file_operations", "find" file then prints
+
+8
+00:00:24,077 --> 00:00:28,744
+"utils.find", down here, and the app then prints "main".
+
+9
+00:00:30,195 --> 00:00:34,028
+Going to the file operations, how could we...
+
+10
+00:00:34,028 --> 00:00:39,028
+Uh, I'm going to delete this import in there, by the way.
+
+11
+00:00:39,516 --> 00:00:42,183
+How could we import the parents?
+
+12
+00:00:43,256 --> 00:00:45,311
+So in the app.py, I'm going to say
+
+13
+00:00:45,311 --> 00:00:49,896
+"from utils.common.file_operations", or rather
+
+14
+00:00:49,896 --> 00:00:54,773
+"import utils.common.file_operations", now this is going to
+
+15
+00:00:54,773 --> 00:00:58,736
+go into file_operations, and how could we import the
+
+16
+00:00:58,736 --> 00:01:01,486
+"not found" error, inside "find"?
+
+17
+00:01:03,432 --> 00:01:07,913
+Well, once again, there are two ways, "from utils.find
+
+18
+00:01:07,913 --> 00:01:12,830
+"import NotFoundError", then when we run this, "utils.find"
+
+19
+00:01:14,208 --> 00:01:17,428
+will be the first line to be printed out, because "app" is
+
+20
+00:01:17,428 --> 00:01:19,427
+importing "file_operations".
+
+21
+00:01:19,427 --> 00:01:22,612
+"file_operations" is importing "find", "find" is the file
+
+22
+00:01:22,612 --> 00:01:24,375
+that's not importing anything, that one runs the completion,
+
+23
+00:01:24,375 --> 00:01:27,996
+then it goes back to "file_operation", prints out the name,
+
+24
+00:01:27,996 --> 00:01:31,772
+then it runs back to "app", and it prints out that name.
+
+25
+00:01:31,772 --> 00:01:33,517
+As you can see, this is exactly what happens
+
+26
+00:01:33,517 --> 00:01:37,548
+"find" prints out first, "utils.common.file_operations"
+
+27
+00:01:37,548 --> 00:01:41,723
+print out second, and "main" prints out third.
+
+28
+00:01:41,723 --> 00:01:45,952
+Now if we want to import the parent, we can do that, we can
+
+29
+00:01:45,952 --> 00:01:49,677
+tell "find" to go over to the parent package, and the way
+
+30
+00:01:49,677 --> 00:01:54,482
+we do that, is not with a single dot, but with two dots.
+
+31
+00:01:54,482 --> 00:01:59,125
+Two dots say "You're inside common, I want you to go
+
+32
+00:01:59,125 --> 00:02:00,792
+"up to utils.", see?
+
+33
+00:02:01,861 --> 00:02:05,422
+Notice how the current package is "common.file_operations"
+
+34
+00:02:05,422 --> 00:02:07,186
+or rather, right now we are at
+
+35
+00:02:07,186 --> 00:02:11,705
+"utils.common.file_operations", when you give it a single
+
+36
+00:02:11,705 --> 00:02:15,896
+dot, it puts you in "utils.common", when you give it two
+
+37
+00:02:15,896 --> 00:02:20,896
+dots, it puts you in "utils", then "utils.find" is fine.
+
+38
+00:02:21,385 --> 00:02:26,352
+So, this gets replaced by "utils.", and then you can access
+
+39
+00:02:26,352 --> 00:02:31,067
+"find" in it, and this works fine, as you can see I've just
+
+40
+00:02:31,067 --> 00:02:35,650
+reran the app and it works, it goes up by two packages,
+
+41
+00:02:37,239 --> 00:02:41,072
+remember we are here in "file_operations", it goes up
+
+42
+00:02:41,072 --> 00:02:43,807
+two packages, over to "utils", sorry one package over
+
+43
+00:02:43,807 --> 00:02:48,307
+to "utils", and then it finds the "find" module there.
+
+44
+00:02:49,278 --> 00:02:53,611
+Of course, what happens if we run "file_operations"?
+
+45
+00:02:57,286 --> 00:03:00,670
+Now, it says a slightly different error, "attempted relative
+
+46
+00:03:00,670 --> 00:03:05,503
+"import beyond top-level package", because this is "main",
+
+47
+00:03:06,339 --> 00:03:11,339
+it doesn't have any parent packages, remember, if this is
+
+48
+00:03:11,365 --> 00:03:16,009
+"main", it's not like we can go up a package, we could only
+
+49
+00:03:16,009 --> 00:03:20,842
+go up a package if this is "utils.common.file_operations",
+
+50
+00:03:22,091 --> 00:03:25,509
+then we can go up a package over to "utils", but if this is
+
+51
+00:03:25,509 --> 00:03:29,541
+"main", we can't go up anywhere, because there's nowhere
+
+52
+00:03:29,541 --> 00:03:34,541
+to go up to, there's no other packages in the name.
+
+53
+00:03:34,589 --> 00:03:35,422
+OK?
+
+54
+00:03:39,067 --> 00:03:42,504
+So this is a parent import, that you can do, as long as
+
+55
+00:03:42,504 --> 00:03:47,309
+you're running this file as a module and not as a script.
+
+56
+00:03:47,309 --> 00:03:51,502
+So it is dangerous, because, say you wanted to print out
+
+57
+00:03:51,502 --> 00:03:54,741
+the name of this file to find out exactly what it is,
+
+58
+00:03:54,741 --> 00:03:58,178
+you cannot do it, if it has a relative import.
+
+59
+00:03:58,178 --> 00:04:03,178
+You can only do it, if it has "utils.common.find", sorry,
+
+60
+00:04:03,503 --> 00:04:07,716
+"utils.find", now that this has an absolute import,
+
+61
+00:04:07,716 --> 00:04:11,242
+you can absolutely run this file, and it imports
+
+62
+00:04:11,242 --> 00:04:15,165
+"utils.find", and then this one is "main".
+
+63
+00:04:15,165 --> 00:04:16,332
+So that works.
+
+64
+00:04:18,189 --> 00:04:20,600
+So, why does it work?
+
+65
+00:04:20,600 --> 00:04:23,573
+How does it know that "utils" is at the top of the package,
+
+66
+00:04:23,573 --> 00:04:25,906
+when it itself is down here?
+
+67
+00:04:26,916 --> 00:04:29,916
+Well, that's a thing for PYTHONPATH.
+
+68
+00:04:31,576 --> 00:04:34,797
+So we're not going to talk about PYTHONPATH, but
+
+69
+00:04:34,797 --> 00:04:38,252
+just know that it defines the top-level of your project.
+
+70
+00:04:38,252 --> 00:04:41,148
+So if your PYTHONPATH which PyCharm sets for you, is set
+
+71
+00:04:41,148 --> 00:04:45,329
+to the "imports_project", then you can do absolute imports
+
+72
+00:04:45,329 --> 00:04:48,113
+starting from there, and that is the purpose of the
+
+73
+00:04:48,113 --> 00:04:50,710
+PYTHONPATH, but again we're not gonna get into it yet,
+
+74
+00:04:50,710 --> 00:04:54,880
+we will talk about it later on, when we talk about running
+
+75
+00:04:54,880 --> 00:04:58,677
+Python from the terminal, as opposed to through PyCharm.
+
+76
+00:04:58,677 --> 00:05:01,034
+But this is why this works.
+
+77
+00:05:01,034 --> 00:05:04,255
+So now that we've learned about relative and absolute
+
+78
+00:05:04,255 --> 00:05:07,819
+imports, we can be begin to understand exactly what's going
+
+79
+00:05:07,819 --> 00:05:11,310
+on, when we import things, and if you want to do relative
+
+80
+00:05:11,310 --> 00:05:15,143
+imports, by all means, do them if you want, just remember,
+
+81
+00:05:15,143 --> 00:05:18,616
+you may not be able to ever run those files as scripts
+
+82
+00:05:18,616 --> 00:05:21,621
+anymore, and running files as scripts can be handy,
+
+83
+00:05:21,621 --> 00:05:24,987
+when you want to run some particular thing in them.
+
+84
+00:05:24,987 --> 00:05:27,848
+Maybe to debug them or to understand what's going on
+
+85
+00:05:27,848 --> 00:05:31,519
+in a file, and so absolute imports, I think, are better,
+
+86
+00:05:31,519 --> 00:05:34,434
+and I would encourage you to use them, but you're gonna find
+
+87
+00:05:34,434 --> 00:05:39,149
+relative imports everywhere, as you learn more Python.
+
+88
+00:05:39,149 --> 00:05:40,913
+So that's it for this video, I hope you enjoyed it and
+
+89
+00:05:40,913 --> 00:05:42,406
+I hope you learned something,
+
+90
+00:05:42,406 --> 00:05:43,890
+and I'll see you on the next one.
+

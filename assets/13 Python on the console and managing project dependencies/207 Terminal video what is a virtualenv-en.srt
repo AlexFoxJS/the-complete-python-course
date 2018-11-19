@@ -1,0 +1,972 @@
+1
+00:00:00,360 --> 00:00:01,820
+[Instructor] - Hi, and welcome back.
+
+2
+00:00:01,820 --> 00:00:04,310
+In this video we're going to look at installing packages
+
+3
+00:00:04,310 --> 00:00:06,330
+in Python, using the console.
+
+4
+00:00:07,430 --> 00:00:09,820
+At this point, if you don't have Python 3.5
+
+5
+00:00:10,660 --> 00:00:12,360
+or higher installed,
+
+6
+00:00:12,360 --> 00:00:15,260
+I recommend that you go and download and instal that now.
+
+7
+00:00:16,110 --> 00:00:18,940
+I'd recommend you instal the latest version of Python,
+
+8
+00:00:18,940 --> 00:00:22,301
+that is stable, of the current time of recording that's 3.6,
+
+9
+00:00:22,301 --> 00:00:25,970
+but when you're watching this, maybe 3.7 or later.
+
+10
+00:00:25,970 --> 00:00:27,590
+I recommend you instal that,
+
+11
+00:00:27,590 --> 00:00:31,480
+just because, you know you wanna stay ahead of the curve,
+
+12
+00:00:31,480 --> 00:00:32,850
+you wanna use the latest technologies,
+
+13
+00:00:32,850 --> 00:00:35,358
+and taking a course is a great opportunity to adopt
+
+14
+00:00:35,358 --> 00:00:37,330
+a new technology.
+
+15
+00:00:37,330 --> 00:00:39,520
+So I recommend you instal the latest version.
+
+16
+00:00:39,520 --> 00:00:43,730
+And also that's because later version of Python come with,
+
+17
+00:00:43,730 --> 00:00:46,190
+when you instal them, a programme called Pip.
+
+18
+00:00:47,750 --> 00:00:50,750
+That's, Pip like that.
+
+19
+00:00:50,750 --> 00:00:54,460
+Pip is used to instal Python packages.
+
+20
+00:00:56,198 --> 00:00:57,170
+And okay.
+
+21
+00:00:57,170 --> 00:00:59,790
+So, if we do Pip instal,
+
+22
+00:01:01,010 --> 00:01:03,220
+requests for example,
+
+23
+00:01:03,220 --> 00:01:04,200
+what this is gonna do is
+
+24
+00:01:04,200 --> 00:01:07,630
+it's going to go over to various websites,
+
+25
+00:01:07,630 --> 00:01:08,670
+and it's gonna look,
+
+26
+00:01:08,670 --> 00:01:11,750
+and see if it can find a Python package,
+
+27
+00:01:11,750 --> 00:01:13,580
+or a library called requests,
+
+28
+00:01:13,580 --> 00:01:16,690
+and if it can find it, it's gonna instal it.
+
+29
+00:01:16,690 --> 00:01:19,620
+So press Enter, and as you can see I get requirement,
+
+30
+00:01:19,620 --> 00:01:21,180
+already satisfied.
+
+31
+00:01:21,180 --> 00:01:22,300
+That's because
+
+32
+00:01:22,300 --> 00:01:24,180
+I've already installed requests,
+
+33
+00:01:24,180 --> 00:01:26,060
+but the fact that it's telling me this,
+
+34
+00:01:26,060 --> 00:01:27,940
+it means that requests exist.
+
+35
+00:01:27,940 --> 00:01:28,773
+So that's good.
+
+36
+00:01:30,180 --> 00:01:33,230
+This is what Python is doing in the background.
+
+37
+00:01:33,230 --> 00:01:35,650
+When you tell it to instal a library.
+
+38
+00:01:35,650 --> 00:01:37,580
+What it's doing is it's doing Pip instal,
+
+39
+00:01:37,580 --> 00:01:40,190
+and then the library, that you ask it to instal.
+
+40
+00:01:41,420 --> 00:01:43,680
+Okay, as you can see the requests library
+
+41
+00:01:43,680 --> 00:01:47,430
+is already installed in this folder here.
+
+42
+00:01:47,430 --> 00:01:52,430
+Usr/local/lib/python2.7/site-packages
+
+43
+00:01:52,750 --> 00:01:55,500
+This tells us that the requests package
+
+44
+00:01:55,500 --> 00:01:56,750
+we tried to instal right now,
+
+45
+00:01:56,750 --> 00:01:59,830
+we tried to instal it for Python 2.7.
+
+46
+00:01:59,830 --> 00:02:02,260
+We did not try to instal it for Python 3.7.
+
+47
+00:02:03,460 --> 00:02:06,580
+If you want to instal for Python 3.7,
+
+48
+00:02:06,580 --> 00:02:11,290
+you'll have to do pip3.7 instal requests
+
+49
+00:02:12,140 --> 00:02:15,300
+if you only have one version of Python installed,
+
+50
+00:02:15,300 --> 00:02:16,950
+I, you're using Windows,
+
+51
+00:02:16,950 --> 00:02:18,030
+or maybe Linux,
+
+52
+00:02:18,030 --> 00:02:20,560
+and you don't have multiple versions of Python installed,
+
+53
+00:02:20,560 --> 00:02:24,510
+you only have to do pip instal requests, okay?
+
+54
+00:02:24,510 --> 00:02:26,239
+This is what to do
+
+55
+00:02:26,239 --> 00:02:28,620
+if you only have one version of Python installed.
+
+56
+00:02:28,620 --> 00:02:32,360
+But if you have many, you can do pip3,
+
+57
+00:02:32,360 --> 00:02:36,550
+in order to choose the latest version of Python 3,
+
+58
+00:02:36,550 --> 00:02:39,850
+or pip 3.7, in order to choose Python 3.7,
+
+59
+00:02:39,850 --> 00:02:41,030
+and that's what you're installing.
+
+60
+00:02:41,030 --> 00:02:44,051
+So again, pip3.7 instal requests,
+
+61
+00:02:44,051 --> 00:02:46,580
+and it'll tell me now the requirements are already satisfied
+
+62
+00:02:46,580 --> 00:02:48,720
+but notice how now the location
+
+63
+00:02:48,720 --> 00:02:52,020
+of where it is already satisfied is different.
+
+64
+00:02:52,020 --> 00:02:54,160
+That's because I've installed Python 3.7,
+
+65
+00:02:55,320 --> 00:02:57,830
+in a different way than Python 2.7.
+
+66
+00:02:57,830 --> 00:02:59,690
+Python 2.7 comes with my computer,
+
+67
+00:02:59,690 --> 00:03:02,730
+Python 3.7 I've installed using the official installer.
+
+68
+00:03:03,840 --> 00:03:08,840
+So, this is how you'd instal packages using Pip.
+
+69
+00:03:09,770 --> 00:03:12,560
+And the package we're gonna want to instal now,
+
+70
+00:03:12,560 --> 00:03:14,780
+is one that you may already have, but nonetheless
+
+71
+00:03:14,780 --> 00:03:17,040
+it's a good idea to make sure you've got it,
+
+72
+00:03:17,040 --> 00:03:19,550
+is called virtualenv.
+
+73
+00:03:19,550 --> 00:03:20,850
+Now okay, as you can see it tells me
+
+74
+00:03:20,850 --> 00:03:22,600
+that I've already satisfied this,
+
+75
+00:03:22,600 --> 00:03:24,740
+but if you don't have virtualenv installed already,
+
+76
+00:03:24,740 --> 00:03:26,490
+I recommend that you do instal it.
+
+77
+00:03:27,790 --> 00:03:30,920
+When you use this virtualenv package,
+
+78
+00:03:30,920 --> 00:03:32,170
+what you can do,
+
+79
+00:03:32,170 --> 00:03:35,770
+is you can duplicate an existing Python installation.
+
+80
+00:03:35,770 --> 00:03:38,780
+So let's say you've got Python 3.7 installed,
+
+81
+00:03:38,780 --> 00:03:41,990
+you can use virtualenv to make a copy of that.
+
+82
+00:03:41,990 --> 00:03:45,130
+But, without any of the libraries
+
+83
+00:03:45,130 --> 00:03:46,630
+that you've already installed.
+
+84
+00:03:47,640 --> 00:03:48,620
+As you can see,
+
+85
+00:03:48,620 --> 00:03:51,260
+I've got requests already installed in Python 3.7,
+
+86
+00:03:52,740 --> 00:03:56,870
+if I create a virtual environment, using Python 3.7,
+
+87
+00:03:56,870 --> 00:03:59,210
+it won't have requests installed.
+
+88
+00:03:59,210 --> 00:04:00,360
+So let's do just now.
+
+89
+00:04:01,492 --> 00:04:03,950
+The way to do that is, by typing virtualenv,
+
+90
+00:04:03,950 --> 00:04:06,030
+then the name of the virtual environment,
+
+91
+00:04:06,030 --> 00:04:11,030
+it's normally venv, --python=python3.7
+
+92
+00:04:12,810 --> 00:04:15,660
+Again, instead of Python 3.7, you can type Python,
+
+93
+00:04:15,660 --> 00:04:18,610
+if you only have one version of Python installed.
+
+94
+00:04:20,600 --> 00:04:24,340
+By doing this, I'm saying run the virtualenv programme,
+
+95
+00:04:24,340 --> 00:04:27,040
+which again must be in my path,
+
+96
+00:04:27,040 --> 00:04:28,980
+and these here are two arguments
+
+97
+00:04:28,980 --> 00:04:30,730
+that I'm passing to that programme.
+
+98
+00:04:30,730 --> 00:04:33,910
+And programmes in the terminal can accept arguments.
+
+99
+00:04:33,910 --> 00:04:36,190
+Venv is a first argument,
+
+100
+00:04:36,190 --> 00:04:40,650
+and --python=python3.7 is a second argument.
+
+101
+00:04:40,650 --> 00:04:43,160
+The first argument is the name of the venv,
+
+102
+00:04:43,160 --> 00:04:44,300
+of the virtual environment which is,
+
+103
+00:04:44,300 --> 00:04:46,240
+in this case is gonna be venv.
+
+104
+00:04:46,240 --> 00:04:50,580
+The second argument tells the venv what programme to run,
+
+105
+00:04:50,580 --> 00:04:51,480
+that's Python 3.7,
+
+106
+00:04:52,490 --> 00:04:55,060
+when we are creating the virtual environment,
+
+107
+00:04:55,060 --> 00:04:58,530
+so it's gonna use Python 3.7 for this virtual environment.
+
+108
+00:04:58,530 --> 00:04:59,630
+So let's do just that.
+
+109
+00:05:01,560 --> 00:05:04,410
+Notice how a few things happen, it says it's using the
+
+110
+00:05:04,410 --> 00:05:05,243
+interpreter, Python 3.7,
+
+111
+00:05:06,551 --> 00:05:08,880
+and then it instals a couple of things like setup tools,
+
+112
+00:05:08,880 --> 00:05:10,200
+Pip and wheel,
+
+113
+00:05:10,200 --> 00:05:12,830
+those are few libraries that are very useful for,
+
+114
+00:05:12,830 --> 00:05:14,960
+for installing packages.
+
+115
+00:05:14,960 --> 00:05:16,050
+And then it's done.
+
+116
+00:05:17,230 --> 00:05:18,390
+Now,
+
+117
+00:05:18,390 --> 00:05:20,530
+inside your venv,
+
+118
+00:05:20,530 --> 00:05:21,980
+so what we're gonna do is
+
+119
+00:05:21,980 --> 00:05:25,670
+we're gonna open the current folder in my Explorer,
+
+120
+00:05:28,673 --> 00:05:31,710
+so that you can see exactly what we've got here,
+
+121
+00:05:34,150 --> 00:05:35,350
+let me just bring it up.
+
+122
+00:05:36,520 --> 00:05:39,750
+This is the venv folder that we've just created,
+
+123
+00:05:39,750 --> 00:05:41,410
+we've got a bunch of things.
+
+124
+00:05:41,410 --> 00:05:44,610
+We've got bin, and in here we've got,
+
+125
+00:05:44,610 --> 00:05:49,400
+you know Python, Python 3.7, Python 3, these are all,
+
+126
+00:05:50,260 --> 00:05:52,680
+Python programmes that we can run,
+
+127
+00:05:52,680 --> 00:05:53,710
+you've got Pip,
+
+128
+00:05:53,710 --> 00:05:55,570
+that you can run as well,
+
+129
+00:05:55,570 --> 00:05:57,900
+you've got a programme called activate,
+
+130
+00:05:57,900 --> 00:05:59,470
+if you're using Windows,
+
+131
+00:05:59,470 --> 00:06:00,680
+this may look slightly different,
+
+132
+00:06:00,680 --> 00:06:02,550
+you may have a scripts folder in here,
+
+133
+00:06:02,550 --> 00:06:03,550
+that's totally fine.
+
+134
+00:06:05,470 --> 00:06:09,490
+Now when you type which python3.7,
+
+135
+00:06:10,740 --> 00:06:13,360
+you can see that the Python 3.7 that we're going to run,
+
+136
+00:06:13,360 --> 00:06:16,850
+is still this one inside library frameworks.
+
+137
+00:06:18,460 --> 00:06:23,460
+If we do source .venv/bin/activate
+
+138
+00:06:25,420 --> 00:06:28,330
+and then type which python3.7 again,
+
+139
+00:06:28,330 --> 00:06:32,600
+now you can see that we are using our venv folder,
+
+140
+00:06:32,600 --> 00:06:35,930
+inside we've got bin, and inside we've got Python 3.7.
+
+141
+00:06:35,930 --> 00:06:38,070
+So what we're doing now is we're using a completely
+
+142
+00:06:38,070 --> 00:06:39,760
+different version of Python.
+
+143
+00:06:39,760 --> 00:06:40,720
+Well it's actually the same version,
+
+144
+00:06:40,720 --> 00:06:44,130
+but it says completely different installation of Python.
+
+145
+00:06:44,130 --> 00:06:47,750
+Before we were using this one in our library,
+
+146
+00:06:47,750 --> 00:06:50,350
+now we're using the one in our venv.
+
+147
+00:06:50,350 --> 00:06:52,190
+By the way, if you're using Windows,
+
+148
+00:06:52,190 --> 00:06:54,950
+it won't be source ./venv/bin/activate
+
+149
+00:06:54,950 --> 00:06:56,680
+if you're using Windows,
+
+150
+00:06:56,680 --> 00:07:01,680
+it'll be .\venv\Scripts\activate.bat
+
+151
+00:07:01,870 --> 00:07:05,130
+so if you're using Windows, you wanna run this line here,
+
+152
+00:07:05,130 --> 00:07:06,280
+instead of this one.
+
+153
+00:07:06,280 --> 00:07:07,113
+Okay?
+
+154
+00:07:08,160 --> 00:07:11,360
+But I'm not using Windows, so I don't need to do that.
+
+155
+00:07:11,360 --> 00:07:14,120
+You can also see that you've got slash or venv,
+
+156
+00:07:14,120 --> 00:07:15,470
+inside brackets at the start.
+
+157
+00:07:15,470 --> 00:07:16,303
+That tells you
+
+158
+00:07:16,303 --> 00:07:18,940
+that you're currently using this virtual environment.
+
+159
+00:07:19,960 --> 00:07:20,793
+Okay.
+
+160
+00:07:21,920 --> 00:07:25,140
+If you echo the path,
+
+161
+00:07:25,140 --> 00:07:26,970
+you see that now you've got something
+
+162
+00:07:26,970 --> 00:07:28,500
+at the start of the path.
+
+163
+00:07:28,500 --> 00:07:32,400
+/Users/jslvtr/venv/bin
+
+164
+00:07:32,400 --> 00:07:35,110
+Before we had this at the first folder,
+
+165
+00:07:35,110 --> 00:07:36,664
+now we've got this one.
+
+166
+00:07:36,664 --> 00:07:37,730
+So any programmes we try to run
+
+167
+00:07:37,730 --> 00:07:39,300
+are first going to be looked at,
+
+168
+00:07:39,300 --> 00:07:42,030
+inside this venv folder.
+
+169
+00:07:42,030 --> 00:07:43,380
+For example, Python 3.7.
+
+170
+00:07:45,250 --> 00:07:47,590
+This is really powerful, because now,
+
+171
+00:07:47,590 --> 00:07:48,720
+if we type Python 3.7,
+
+172
+00:07:49,770 --> 00:07:54,080
+we're using the Python 3.7 in our virtual environment.
+
+173
+00:07:54,080 --> 00:07:56,610
+If we then type import requests,
+
+174
+00:07:56,610 --> 00:07:58,930
+you can see that it cannot be found.
+
+175
+00:07:58,930 --> 00:08:00,370
+It's not installed.
+
+176
+00:08:00,370 --> 00:08:02,140
+So, if you want to instal requests,
+
+177
+00:08:02,140 --> 00:08:05,360
+now you can do pip instal requests
+
+178
+00:08:05,360 --> 00:08:06,590
+and that's going to instal
+
+179
+00:08:06,590 --> 00:08:09,940
+the requests library inside your virtual environment.
+
+180
+00:08:11,350 --> 00:08:12,430
+If you were then to go
+
+181
+00:08:12,430 --> 00:08:14,130
+and create another virtual environment,
+
+182
+00:08:14,130 --> 00:08:15,610
+and call it something else,
+
+183
+00:08:15,610 --> 00:08:18,570
+it would not have the requests library.
+
+184
+00:08:18,570 --> 00:08:19,770
+So these libraries,
+
+185
+00:08:19,770 --> 00:08:21,500
+when you're using a virtual environment,
+
+186
+00:08:21,500 --> 00:08:24,960
+are only installed within the virtual environment.
+
+187
+00:08:24,960 --> 00:08:28,790
+This is really great because it lets you have
+
+188
+00:08:28,790 --> 00:08:30,850
+different virtual environments each
+
+189
+00:08:30,850 --> 00:08:34,330
+with different versions of the same library potentially.
+
+190
+00:08:35,250 --> 00:08:37,260
+Let's say you just done a project today,
+
+191
+00:08:37,260 --> 00:08:41,490
+and you instal requests version 2.18.4
+
+192
+00:08:42,828 --> 00:08:43,661
+And you know, you develop
+
+193
+00:08:43,661 --> 00:08:46,180
+this project over a period of a few months,
+
+194
+00:08:46,180 --> 00:08:48,140
+or a couple of years,
+
+195
+00:08:48,140 --> 00:08:51,050
+and you'd never update the requests library.
+
+196
+00:08:51,050 --> 00:08:53,340
+But then, you start a new project,
+
+197
+00:08:53,340 --> 00:08:54,609
+and you know,
+
+198
+00:08:54,609 --> 00:08:56,120
+you wanna use the latest version of requests,
+
+199
+00:08:56,120 --> 00:08:58,530
+because maybe they fixed the bug or something,
+
+200
+00:08:59,700 --> 00:09:00,533
+you can do that,
+
+201
+00:09:00,533 --> 00:09:01,610
+you can create a new virtual environment
+
+202
+00:09:01,610 --> 00:09:03,290
+and instal the latest version.
+
+203
+00:09:03,290 --> 00:09:05,930
+And the old project that's using this version,
+
+204
+00:09:05,930 --> 00:09:08,060
+will not be affected.
+
+205
+00:09:08,060 --> 00:09:11,800
+Imagine they've also changed some of the functionality.
+
+206
+00:09:11,800 --> 00:09:15,230
+So that your old project would no longer work.
+
+207
+00:09:15,230 --> 00:09:16,740
+Now you don't have that problem,
+
+208
+00:09:16,740 --> 00:09:19,700
+because each project can have its own independent versions.
+
+209
+00:09:20,660 --> 00:09:22,320
+And by the way, this takes up
+
+210
+00:09:22,320 --> 00:09:24,450
+a few megabytes of your hard drive,
+
+211
+00:09:24,450 --> 00:09:25,283
+and essentially,
+
+212
+00:09:25,283 --> 00:09:26,640
+it's essentially free.
+
+213
+00:09:26,640 --> 00:09:28,060
+It doesn't cost you anything
+
+214
+00:09:28,060 --> 00:09:30,060
+to have multiple virtual environments,
+
+215
+00:09:30,060 --> 00:09:32,590
+I have many Python projects in my computer,
+
+216
+00:09:32,590 --> 00:09:35,390
+each on has its own virtual environment,
+
+217
+00:09:35,390 --> 00:09:38,130
+to keep it separate from every other project.
+
+218
+00:09:39,100 --> 00:09:40,130
+So moving forwards,
+
+219
+00:09:40,130 --> 00:09:42,650
+whenever you start a new project in Python,
+
+220
+00:09:42,650 --> 00:09:44,980
+create a virtual environment for it,
+
+221
+00:09:44,980 --> 00:09:46,560
+and make sure to use that,
+
+222
+00:09:46,560 --> 00:09:48,660
+whenever you're running your applications.
+
+223
+00:09:50,110 --> 00:09:51,560
+Over the rest of the course
+
+224
+00:09:51,560 --> 00:09:52,990
+we're going to be creating virtual environments
+
+225
+00:09:52,990 --> 00:09:55,180
+for projects, just to give you some examples
+
+226
+00:09:55,180 --> 00:09:56,350
+of how this works.
+
+227
+00:09:57,420 --> 00:09:58,920
+Now that you're in your venv though,
+
+228
+00:09:58,920 --> 00:10:02,510
+if you did have some Python files that you want to run,
+
+229
+00:10:02,510 --> 00:10:03,410
+for example,
+
+230
+00:10:03,410 --> 00:10:05,270
+like an app.py or something,
+
+231
+00:10:05,270 --> 00:10:08,830
+all you have to do is type python. App.py,
+
+232
+00:10:08,830 --> 00:10:11,290
+and that's going to run the Python programme in your path,
+
+233
+00:10:11,290 --> 00:10:14,910
+which is Python 3.7, 'cause that's what's in your venv,
+
+234
+00:10:14,910 --> 00:10:17,870
+and then it's gonna run the file app.py,
+
+235
+00:10:17,870 --> 00:10:20,840
+which is presumably the file that starts up your programme.
+
+236
+00:10:21,950 --> 00:10:25,620
+So this is how you would run a specific file with Python,
+
+237
+00:10:25,620 --> 00:10:27,590
+from within your console,
+
+238
+00:10:27,590 --> 00:10:30,200
+and you can do that within a virtual environment.
+
+239
+00:10:31,040 --> 00:10:34,690
+So that's gonna again give separation between your projects,
+
+240
+00:10:34,690 --> 00:10:37,730
+and it's gonna make them a bit more independent.
+
+241
+00:10:37,730 --> 00:10:39,010
+That's it for this video though,
+
+242
+00:10:39,010 --> 00:10:40,120
+it's getting a bit longer now,
+
+243
+00:10:40,120 --> 00:10:42,000
+so let's continue in the next one.
+

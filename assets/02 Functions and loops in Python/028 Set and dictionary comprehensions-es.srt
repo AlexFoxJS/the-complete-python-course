@@ -1,0 +1,524 @@
+1
+00:00:00,240 --> 00:00:02,010
+Instructor: Hola, y bienvenidos de nuevo,
+
+2
+00:00:02,010 --> 00:00:04,290
+en este video, continuamos con las comprensiones y
+
+3
+00:00:04,290 --> 00:00:06,750
+mirando los conjuntos y la comprensin del diccionario.
+
+4
+00:00:08,880 --> 00:00:11,120
+En el ltimo video, vimos cmo hacer
+
+5
+00:00:11,120 --> 00:00:14,170
+algo que realmente es muy adecuado para los conjuntos.
+
+6
+00:00:14,170 --> 00:00:18,730
+Tenemos dos listas, de alguna manera las hicimos coincidir.
+
+7
+00:00:18,730 --> 00:00:19,920
+Entonces, construimos
+
+8
+00:00:19,920 --> 00:00:23,580
+esta comprensin que calculara la unin de ellos.
+
+9
+00:00:24,820 --> 00:00:28,490
+Ahora, si no te diste cuenta que este es un buen ejemplo para los sets, entonces
+
+10
+00:00:29,550 --> 00:00:32,170
+te lo digo ahora, este es un buen ejemplo para los sets.
+
+11
+00:00:32,170 --> 00:00:34,940
+Digamos que tenemos nuestros amigos, y
+
+12
+00:00:34,940 --> 00:00:39,940
+eso es un conjunto de Rolf, Anna y Charlie, y luego
+
+13
+00:00:41,480 --> 00:00:44,160
+tenemos nuestros invitados, que ser otro conjunto.
+
+14
+00:00:46,830 --> 00:00:48,320
+Ahora, copia eso de
+
+15
+00:00:48,320 --> 00:00:51,110
+mis notas porque no quiero aburrirte demasiado.
+
+16
+00:00:51,110 --> 00:00:56,110
+Por supuesto, si fueran maysculas, tendras que tener
+
+17
+00:00:56,930 --> 00:01:01,460
+una comprensin establecida aqu para convertirlas en minsculas.
+
+18
+00:01:01,460 --> 00:01:04,080
+La forma en que haras eso es que
+
+19
+00:01:04,080 --> 00:01:09,080
+diras que los invitados inferiores son los nombres inferiores para el nombre y los
+
+20
+00:01:09,140 --> 00:01:11,974
+invitados, exactamente lo mismo que la comprensin establecida
+
+21
+00:01:11,974 --> 00:01:14,090
+que la comprensin de la lista.
+
+22
+00:01:14,090 --> 00:01:16,780
+Todo lo que haces es reemplazar los corchetes, que te
+
+23
+00:01:16,780 --> 00:01:20,620
+dicen que es una lista con llaves, que te dice que es un conjunto.
+
+24
+00:01:20,620 --> 00:01:22,629
+Aparte de eso, exactamente lo mismo,
+
+25
+00:01:22,629 --> 00:01:27,330
+y todo lo que tienes ahora es este conjunto de invitados en minsculas.
+
+26
+00:01:27,330 --> 00:01:29,180
+Por supuesto, nuestro set ya
+
+27
+00:01:29,180 --> 00:01:32,404
+est en minscula porque creo que ya sabes cmo hacerlo.
+
+28
+00:01:32,404 --> 00:01:35,120
+Ahora, si quisieras calcular amigos actuales,
+
+29
+00:01:36,630 --> 00:01:41,090
+podras hacer un nombre, un punto, poner en mayscula el
+
+30
+00:01:41,090 --> 00:01:46,090
+nombre en los invitados si el nombre est en amigos, est bien.
+
+31
+00:01:51,390 --> 00:01:56,110
+Sin embargo, hay una forma an mejor de hacerlo,
+
+32
+00:01:56,110 --> 00:02:01,110
+que es que los amigos actuales son amigos del sindicato.
+
+33
+00:02:04,810 --> 00:02:08,856
+Ahora, esto es, simplemente hice clic con los dedos, por cierto.
+
+34
+00:02:08,856 --> 00:02:11,630
+Eso fue demasiado inconformista, incluso para m.
+
+35
+00:02:11,630 --> 00:02:15,270
+Es por eso que los invitados pueden ser realmente tiles.
+
+36
+00:02:15,270 --> 00:02:17,260
+Cuando necesita calcular cundo coinciden las cosas,
+
+37
+00:02:17,260 --> 00:02:20,360
+o cundo las cosas son diferentes, los conjuntos pueden ser realmente tiles.
+
+38
+00:02:20,360 --> 00:02:24,210
+Por supuesto, esto no va a terminar en nombres en mayscula.
+
+39
+00:02:24,210 --> 00:02:26,560
+Si tiene que escribir en mayscula, tendr
+
+40
+00:02:26,560 --> 00:02:29,890
+que poner el nombre en mayscula para el nombre.
+
+41
+00:02:31,250 --> 00:02:34,050
+Mira, esto te da el conjunto de ambos nombres, y
+
+42
+00:02:34,050 --> 00:02:36,040
+luego lo nico que ests haciendo es
+
+43
+00:02:36,040 --> 00:02:39,030
+repasarlos y capitalizarlos, ponerlos en un conjunto nuevo, pero ahora ya
+
+44
+00:02:39,030 --> 00:02:41,200
+no tienes que verificar si uno est en
+
+45
+00:02:41,200 --> 00:02:43,610
+el otro. y as sucesivamente y as sucesivamente.
+
+46
+00:02:43,610 --> 00:02:47,660
+Todo lo que haces ahora es que tienes los que coinciden, y luego
+
+47
+00:02:47,660 --> 00:02:49,650
+puedes hacer lo que quieras con ellos.
+
+48
+00:02:53,100 --> 00:02:54,740
+Finalmente, la comprensin
+
+49
+00:02:54,740 --> 00:02:59,060
+del diccionario es extremadamente poderosa y est extremadamente infrautilizada.
+
+50
+00:02:59,060 --> 00:03:02,870
+Digamos que tienes algunos nombres, como por ejemplo, Rolf,
+
+51
+00:03:03,920 --> 00:03:07,500
+Anna y Charlie, y siempre recurro a estos
+
+52
+00:03:07,500 --> 00:03:09,500
+nombres porque no s realmente
+
+53
+00:03:09,500 --> 00:03:12,210
+cuntos nombres britnicos o ingleses, y
+
+54
+00:03:12,210 --> 00:03:16,890
+la ltima vez que parece ir tener 10, 15 y ocho.
+
+55
+00:03:17,960 --> 00:03:19,530
+Esto es bastante similar
+
+56
+00:03:19,530 --> 00:03:23,820
+al diccionario que vimos anteriormente en el que tendras a
+
+57
+00:03:23,820 --> 00:03:28,820
+Rolf con 10, a Anna con 15 y a Charlie con 8.
+
+58
+00:03:31,130 --> 00:03:33,058
+Entonces, queremos construir este diccionario a
+
+59
+00:03:33,058 --> 00:03:34,900
+partir de estas dos listas.
+
+60
+00:03:37,862 --> 00:03:39,850
+Cmo hacerlo, bastante sencillo.
+
+61
+00:03:39,850 --> 00:03:43,880
+La ltima vez que vieron a los amigos es igual a, ahora
+
+62
+00:03:43,880 --> 00:03:47,010
+vamos a tener una comprensin de conjunto aqu, los
+
+63
+00:03:49,758 --> 00:03:54,758
+nombres que vi por ltima vez son para m en el rango de nombres len.
+
+64
+00:03:57,370 --> 00:04:00,560
+Guau, eso es algo de comprensin all.
+
+65
+00:04:02,750 --> 00:04:05,420
+Te lo dije antes en el curso que un
+
+66
+00:04:05,420 --> 00:04:08,010
+conjunto, en lugar de que el diccionario es como
+
+67
+00:04:08,010 --> 00:04:10,000
+un conjunto, excepto que en lugar de
+
+68
+00:04:10,000 --> 00:04:14,090
+buenos viejos valores normales, tienes valores y tipo de claves y sus valores.
+
+69
+00:04:15,230 --> 00:04:17,900
+Lo mismo con la comprensin del diccionario.
+
+70
+00:04:17,900 --> 00:04:20,960
+Acabas de poner el colon en el medio, y eso
+
+71
+00:04:20,960 --> 00:04:24,260
+te dice que este es un diccionario, y puedes poner un
+
+72
+00:04:24,260 --> 00:04:27,570
+par de valores clave dentro de este diccionario y lo que
+
+73
+00:04:27,570 --> 00:04:32,570
+ests haciendo es que ests obteniendo el i-simo ndice del lista de nombres y el i-simo
+
+74
+00:04:32,670 --> 00:04:37,670
+ndice de la lnea de tiempo como lista vista ei es cada uno de los nmeros
+
+75
+00:04:39,400 --> 00:04:44,220
+en este rango, y el rango va desde cero hasta la longitud de la lista de
+
+76
+00:04:44,220 --> 00:04:47,140
+nombres, que es tres, por lo que de cero a
+
+77
+00:04:47,140 --> 00:04:49,800
+tres no incluyendo, eso es cero a dos inclusive.
+
+78
+00:04:50,650 --> 00:04:52,170
+Entonces, la primera vez que se
+
+79
+00:04:52,170 --> 00:04:56,610
+pasa, los nombres de cero tiempo de colon visto por ltima vez cero, ese es Rolf 10.
+
+80
+00:04:56,610 --> 00:05:00,190
+Segunda vez, Anna 15, tercera vez, Charlie ocho.
+
+81
+00:05:02,120 --> 00:05:03,330
+Bastante bueno.
+
+82
+00:05:04,710 --> 00:05:08,890
+Ahora, en lugar de hacer eso, porque esta operacin es realmente tan popular,
+
+83
+00:05:08,890 --> 00:05:11,880
+tener dos listas y construir un diccionario a partir
+
+84
+00:05:11,880 --> 00:05:14,440
+de ellas, para que pueda relacionarse con ellas,
+
+85
+00:05:14,440 --> 00:05:17,410
+y sean un poco ms accesibles, en realidad hay
+
+86
+00:05:17,410 --> 00:05:20,340
+algo que puede hacer, que es mucho mejor.
+
+87
+00:05:20,340 --> 00:05:22,640
+Solo te digo esto como un extra, no como
+
+88
+00:05:22,640 --> 00:05:25,240
+algo que realmente tengas que saber, pero es bastante popular.
+
+89
+00:05:26,220 --> 00:05:29,550
+Puedes ver a los amigos por ltima vez que
+
+90
+00:05:29,550 --> 00:05:34,480
+son los nombres de los nombres y la ltima vez que se vieron.
+
+91
+00:05:36,720 --> 00:05:39,610
+Est bien, entonces si te ests rascando la cabeza en este momento,
+
+92
+00:05:39,610 --> 00:05:41,840
+est bien, lo que significa que ests prestando atencin.
+
+93
+00:05:41,840 --> 00:05:45,140
+No espero que sepas lo que est
+
+94
+00:05:45,140 --> 00:05:50,140
+sucediendo de inmediato, pero un desafo para ti, qu hace zip?
+
+95
+00:05:56,220 --> 00:06:00,350
+Con suerte, pausaste el video, y es posible que imprimaste zip,
+
+96
+00:06:00,350 --> 00:06:03,480
+o tal vez lo fuiste a buscar en Google.
+
+97
+00:06:03,480 --> 00:06:04,470
+Lo que voy a hacer
+
+98
+00:06:04,470 --> 00:06:07,790
+es imprimir un zip de los nombres y la ltima vez que los haya visto.
+
+99
+00:06:11,930 --> 00:06:16,040
+Tienes un objeto zip, que no es tan til, y eso
+
+100
+00:06:16,040 --> 00:06:19,210
+es porque Python 3. 6 hace algunas cosas
+
+101
+00:06:19,210 --> 00:06:23,810
+funky aqu, y te muestra exactamente lo que est en segundo plano.
+
+102
+00:06:24,800 --> 00:06:28,450
+Realmente, lo que est haciendo es
+
+103
+00:06:28,450 --> 00:06:33,450
+darle una lista de parejas, Rolf y 10, y
+
+104
+00:06:38,910 --> 00:06:43,760
+luego Anna y 15, y luego Charlie y ocho.
+
+105
+00:06:45,010 --> 00:06:48,400
+Esto es lo que ese zip est haciendo esencialmente.
+
+106
+00:06:48,400 --> 00:06:50,660
+Digo esencialmente porque vamos a ver ms adelante en
+
+107
+00:06:50,660 --> 00:06:52,650
+el curso en lo que en realidad est
+
+108
+00:06:52,650 --> 00:06:55,290
+haciendo, pero esto es ms o menos lo que est haciendo.
+
+109
+00:06:55,290 --> 00:06:59,680
+Cuando llamas a dict sobre esto, obtienes un
+
+110
+00:07:01,980 --> 00:07:06,510
+diccionario que combina estos dos como puedes ver aqu.
+
+111
+00:07:09,090 --> 00:07:14,090
+Por lo tanto, cuando dict un zip de nombres y la ltima vez
+
+112
+00:07:14,740 --> 00:07:19,690
+que viste, eso te da una lista de parejas para cada uno de
+
+113
+00:07:19,690 --> 00:07:24,340
+estos elementos y luego dict ejecuta esas parejas en pares de valores clave.
+
+114
+00:07:24,340 --> 00:07:27,610
+Si no me cree, simplemente imprima
+
+115
+00:07:27,610 --> 00:07:31,230
+esto y ejectelo, y ah lo tiene.
+
+116
+00:07:32,150 --> 00:07:34,580
+Esta fue solo una informacin extra
+
+117
+00:07:34,580 --> 00:07:39,010
+para que disfrutes y zip es bastante popular en Python.
+
+118
+00:07:39,010 --> 00:07:42,100
+Se llamaba zip en Python 2. 7, as que tal vez
+
+119
+00:07:42,100 --> 00:07:44,920
+lo sepas as si ya hiciste Python antes, pero en
+
+120
+00:07:44,920 --> 00:07:47,490
+Python 3, se llama zip, y es algo muy
+
+121
+00:07:47,490 --> 00:07:50,350
+popular que puedes ver cuando miras el cdigo de Python.
+
+122
+00:07:50,350 --> 00:07:52,760
+Adems, si tienes varias listas, y quieres
+
+123
+00:07:52,760 --> 00:07:54,330
+mezclarlas todas juntas, unirlas en
+
+124
+00:07:54,330 --> 00:07:56,610
+un diccionario, es una herramienta realmente til.
+
+125
+00:07:57,810 --> 00:07:59,920
+De todos modos, eso es todo por este video.
+
+126
+00:07:59,920 --> 00:08:02,680
+No te retendr ms, esto fue conjunto y
+
+127
+00:08:02,680 --> 00:08:04,590
+comprensin de la lista, solo
+
+128
+00:08:04,590 --> 00:08:06,540
+se configur y comprensin del diccionario,
+
+129
+00:08:06,540 --> 00:08:08,530
+al igual que la comprensin de
+
+130
+00:08:08,530 --> 00:08:11,420
+la lista, solo que tienes que usar llaves.
+
+131
+00:08:11,420 --> 00:08:14,250
+Eso es todo, y te ver en el prximo.
+

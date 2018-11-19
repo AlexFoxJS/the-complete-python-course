@@ -1,0 +1,532 @@
+1
+00:00:00,070 --> 00:00:01,140
+<v Jose>Hi, welcome back.</v>
+
+2
+00:00:01,140 --> 00:00:03,220
+In this video, we're going to be creating our
+
+3
+00:00:03,220 --> 00:00:05,990
+first HTML file and retuning that to
+
+4
+00:00:05,990 --> 00:00:09,140
+our users instead of a simple string.
+
+5
+00:00:10,280 --> 00:00:11,870
+When you create a Flask app,
+
+6
+00:00:11,870 --> 00:00:15,530
+Flask starts looking for a templates folder.
+
+7
+00:00:15,530 --> 00:00:18,200
+So, we're gonna create a new directory and call it,
+
+8
+00:00:18,200 --> 00:00:22,300
+templates, and that has to be beside app.py.
+
+9
+00:00:22,300 --> 00:00:25,130
+So in the same folder as app.py is,
+
+10
+00:00:25,130 --> 00:00:28,200
+okay notice how these are both in the same folder.
+
+11
+00:00:28,200 --> 00:00:32,730
+Now, you can tell app.py, your Flask app,
+
+12
+00:00:32,730 --> 00:00:35,983
+to return some HTML file that is
+
+13
+00:00:35,983 --> 00:00:38,180
+inside this templates folder.
+
+14
+00:00:38,180 --> 00:00:39,890
+First of all, we're gonna create our
+
+15
+00:00:39,890 --> 00:00:43,760
+HTML file and then we're going to return it.
+
+16
+00:00:43,760 --> 00:00:45,580
+So, we're gonna create a new file.
+
+17
+00:00:46,540 --> 00:00:49,490
+We're gonna call it, POST.HTML, for example.
+
+18
+00:00:51,340 --> 00:00:54,020
+This can contain any HTML you want.
+
+19
+00:00:54,020 --> 00:00:56,210
+So let's start with some basic HTML.
+
+20
+00:00:57,970 --> 00:01:02,970
+All HTML has to have a DOCTYPE of HTML that says that it
+
+21
+00:01:03,100 --> 00:01:06,770
+is HTML five, and then you can have a head
+
+22
+00:01:08,190 --> 00:01:09,420
+and a body.
+
+23
+00:01:09,420 --> 00:01:11,600
+And in the body you can have your HTML content.
+
+24
+00:01:11,600 --> 00:01:14,400
+So this is essentially, the basic HTML structure,
+
+25
+00:01:14,400 --> 00:01:16,790
+tells the browser receiving the file that this is an
+
+26
+00:01:16,790 --> 00:01:21,790
+HTML file and then it has the HTML content inside it.
+
+27
+00:01:21,820 --> 00:01:25,210
+There's a head, which can include things like styles
+
+28
+00:01:25,210 --> 00:01:26,580
+and java script and things like that,
+
+29
+00:01:26,580 --> 00:01:28,350
+things the user's not going to see,
+
+30
+00:01:28,350 --> 00:01:30,120
+but that can change the page.
+
+31
+00:01:30,120 --> 00:01:33,630
+And in the body, is the things the user will see.
+
+32
+00:01:33,630 --> 00:01:35,700
+So here in the body, we can put,
+
+33
+00:01:35,700 --> 00:01:38,220
+for example, h1, Hello, world.
+
+34
+00:01:39,300 --> 00:01:42,020
+And then we can have a p tag which is a paragraph tag,
+
+35
+00:01:42,020 --> 00:01:45,820
+saying like, This is my first post, for example.
+
+36
+00:01:47,590 --> 00:01:49,470
+Now we've got this post dot HTML file.
+
+37
+00:01:49,470 --> 00:01:54,300
+We can go back to app.py, and tell our end point, here,
+
+38
+00:01:54,300 --> 00:01:57,210
+this root, to render that template
+
+39
+00:01:57,210 --> 00:01:59,410
+and return it to the user.
+
+40
+00:01:59,410 --> 00:02:01,300
+We're going to have to import something else from Flask.
+
+41
+00:02:01,300 --> 00:02:02,260
+We're going to do from Flask,
+
+42
+00:02:02,260 --> 00:02:06,160
+import Flask, comma render_template.
+
+43
+00:02:07,330 --> 00:02:10,010
+Then, instead of returning this string here,
+
+44
+00:02:10,010 --> 00:02:14,470
+we're going to return, render_template of post.HTML.
+
+45
+00:02:16,630 --> 00:02:18,650
+Okay, notice how we've not used our
+
+46
+00:02:18,650 --> 00:02:20,090
+POST variable at all, yet.
+
+47
+00:02:20,090 --> 00:02:22,110
+We're gonna do that in just a moment.
+
+48
+00:02:22,110 --> 00:02:24,450
+For now, let's run the app and make
+
+49
+00:02:24,450 --> 00:02:25,610
+sure that this is all working.
+
+50
+00:02:25,610 --> 00:02:28,100
+So the app all runs fine.
+
+51
+00:02:28,100 --> 00:02:30,430
+And if we go over to the URL we had before
+
+52
+00:02:30,430 --> 00:02:32,550
+and we refresh the page, now you can see
+
+53
+00:02:32,550 --> 00:02:34,150
+that it looks a little bit different.
+
+54
+00:02:34,150 --> 00:02:36,570
+We've now got a heading, which is this
+
+55
+00:02:36,570 --> 00:02:38,950
+larger bit of text, that says, Hello, world.
+
+56
+00:02:38,950 --> 00:02:42,380
+And we've got, This is my first post, in a paragraph.
+
+57
+00:02:42,380 --> 00:02:44,230
+This is looking a bit better, because now this is
+
+58
+00:02:44,230 --> 00:02:46,850
+a HTML file, as opposed to just a string
+
+59
+00:02:46,850 --> 00:02:49,560
+that's coming through from our server.
+
+60
+00:02:49,560 --> 00:02:53,070
+Going back to PyCharm, now we can stop the app,
+
+61
+00:02:53,070 --> 00:02:55,920
+hide it away, and go back to here.
+
+62
+00:02:55,920 --> 00:02:58,070
+And now we'll use our post to make sure that we're
+
+63
+00:02:58,070 --> 00:03:01,730
+displaying this information in our page,
+
+64
+00:03:01,730 --> 00:03:05,240
+instead of the static contents of our HTML page.
+
+65
+00:03:06,970 --> 00:03:10,010
+Inside an HTML page that is rendered with Flask,
+
+66
+00:03:10,010 --> 00:03:12,740
+we can actually include variables.
+
+67
+00:03:15,390 --> 00:03:19,210
+For example, we can include post title.
+
+68
+00:03:20,942 --> 00:03:24,160
+And notice how I've used double curly braces,
+
+69
+00:03:24,160 --> 00:03:26,910
+then I've used this as if it were a dictionary,
+
+70
+00:03:26,910 --> 00:03:30,250
+and then I've done the two closing curly braces.
+
+71
+00:03:30,250 --> 00:03:32,630
+Jinja2 is built upon Python and it
+
+72
+00:03:32,630 --> 00:03:34,070
+has a lot of the same syntax.
+
+73
+00:03:34,070 --> 00:03:36,720
+So what we're doing here is we're going to pass this
+
+74
+00:03:36,720 --> 00:03:38,950
+template a dictionary called, POST,
+
+75
+00:03:38,950 --> 00:03:41,300
+and the template is going to be able to replace
+
+76
+00:03:41,300 --> 00:03:45,170
+this for whatever it is that this evaluates to.
+
+77
+00:03:45,170 --> 00:03:47,090
+The POST title, most likely.
+
+78
+00:03:47,090 --> 00:03:48,170
+Similarly here,
+
+79
+00:03:49,860 --> 00:03:51,120
+POST content.
+
+80
+00:03:53,370 --> 00:03:55,300
+Now, this template is going to look at the
+
+81
+00:03:55,300 --> 00:03:58,040
+POST variable and try to get the title and the content
+
+82
+00:03:58,040 --> 00:04:01,640
+from it in order to render the template with those.
+
+83
+00:04:01,640 --> 00:04:04,550
+But of course, we must give it the POST
+
+84
+00:04:04,550 --> 00:04:06,760
+variable that it's going to look for.
+
+85
+00:04:06,760 --> 00:04:11,570
+So inside render_template, after the template name,
+
+86
+00:04:11,570 --> 00:04:15,840
+we can pass a named arguments, like so.
+
+87
+00:04:15,840 --> 00:04:20,840
+This POST named argument will become this POST here.
+
+88
+00:04:22,330 --> 00:04:25,040
+And this POST here, is of course the value of the argument
+
+89
+00:04:25,040 --> 00:04:30,040
+which is what we've retrieved from our in memory data base.
+
+90
+00:04:30,210 --> 00:04:32,990
+To make things simpler, we could just
+
+91
+00:04:32,990 --> 00:04:36,190
+delete that, and put it there.
+
+92
+00:04:36,190 --> 00:04:39,460
+And that way, we're saying the POST in the template
+
+93
+00:04:39,460 --> 00:04:43,800
+is going to be this value, posts.get of post_id.
+
+94
+00:04:43,800 --> 00:04:45,320
+And what's gonna happen is we're gonna retrieve that
+
+95
+00:04:45,320 --> 00:04:46,820
+from our database, we're gonna pass it
+
+96
+00:04:46,820 --> 00:04:49,190
+to the template with the name, POST.
+
+97
+00:04:49,190 --> 00:04:51,670
+The template can then use this name inside
+
+98
+00:04:51,670 --> 00:04:55,900
+it to access properties and replace content.
+
+99
+00:04:57,480 --> 00:04:58,950
+Let's run the app again.
+
+100
+00:04:58,950 --> 00:05:01,770
+By the way, as an aside, remember to stop your
+
+101
+00:05:01,770 --> 00:05:05,050
+app every time you want to do something else.
+
+102
+00:05:05,050 --> 00:05:08,070
+Flask does not work well if you forget to stop the app.
+
+103
+00:05:08,070 --> 00:05:09,915
+Okay? Just remember to stop it.
+
+104
+00:05:09,915 --> 00:05:11,160
+I've not mentioned this before.
+
+105
+00:05:11,160 --> 00:05:12,100
+My apologies.
+
+106
+00:05:12,100 --> 00:05:14,330
+Remember to stop your app after every time
+
+107
+00:05:14,330 --> 00:05:16,230
+that you want to restart it, because if not,
+
+108
+00:05:16,230 --> 00:05:17,670
+it won't let you, because the app is
+
+109
+00:05:17,670 --> 00:05:21,390
+using this number, 5,000, for communication.
+
+110
+00:05:21,390 --> 00:05:22,880
+And if you try to start the app twice,
+
+111
+00:05:22,880 --> 00:05:24,530
+both will try to use the same number to
+
+112
+00:05:24,530 --> 00:05:26,600
+communicate and they won't like that.
+
+113
+00:05:26,600 --> 00:05:27,720
+So make sure to stop your app,
+
+114
+00:05:27,720 --> 00:05:29,320
+every time, and then restart it.
+
+115
+00:05:30,200 --> 00:05:32,710
+Now going back to Chrome, we can refresh the
+
+116
+00:05:32,710 --> 00:05:35,370
+page and notice how it's gonna change very slightly.
+
+117
+00:05:35,370 --> 00:05:37,750
+Now it says, This is my first blog post.
+
+118
+00:05:37,750 --> 00:05:40,560
+As opposed, This is my first post, what I said before.
+
+119
+00:05:40,560 --> 00:05:42,270
+That's because this content now,
+
+120
+00:05:42,270 --> 00:05:46,230
+is coming from here, our dictionary.
+
+121
+00:05:46,230 --> 00:05:49,650
+Stopping the app again, and hiding that.
+
+122
+00:05:49,650 --> 00:05:52,570
+This is because here we are now passing this
+
+123
+00:05:52,570 --> 00:05:54,840
+information to the template so that it can
+
+124
+00:05:54,840 --> 00:05:58,300
+render it before sending it back to the browser.
+
+125
+00:05:59,640 --> 00:06:02,730
+This is really important, because now we can embed things
+
+126
+00:06:02,730 --> 00:06:06,130
+into a template, make it look not only nice,
+
+127
+00:06:06,130 --> 00:06:08,130
+but also make it include the information
+
+128
+00:06:08,130 --> 00:06:10,350
+we want from our Python programmes.
+
+129
+00:06:11,610 --> 00:06:13,860
+Over the next few videos, we're going to look at
+
+130
+00:06:13,860 --> 00:06:16,500
+extend link's functionality and also, of course,
+
+131
+00:06:16,500 --> 00:06:18,870
+adding new posts so that the programme
+
+132
+00:06:18,870 --> 00:06:21,410
+can become more and more dynamic.
+
+133
+00:06:21,410 --> 00:06:23,160
+And I'll see you on the next video.
+

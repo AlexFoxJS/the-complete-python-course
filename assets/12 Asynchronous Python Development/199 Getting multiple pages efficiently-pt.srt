@@ -1,0 +1,888 @@
+1
+00:00:00,150 --> 00:00:01,600
+Jose: Ol e bem vindo de volta.
+
+2
+00:00:01,600 --> 00:00:03,710
+Neste vdeo, vamos torn-lo um
+
+3
+00:00:03,710 --> 00:00:06,610
+pouco mais eficiente para obter vrias pginas.
+
+4
+00:00:07,880 --> 00:00:10,080
+Aqui nesta funo voc pode ver que
+
+5
+00:00:10,080 --> 00:00:12,420
+tivemos que criar uma sesso de cliente.
+
+6
+00:00:13,610 --> 00:00:15,120
+E cada sesso, como eu
+
+7
+00:00:15,120 --> 00:00:17,300
+disse anteriormente, contm um conjunto de conexes
+
+8
+00:00:17,300 --> 00:00:21,535
+para que nem todas as conexes tenham que ser criadas a cada vez.
+
+9
+00:00:21,535 --> 00:00:23,130
+Ele tambm contm um armazenamento
+
+10
+00:00:23,130 --> 00:00:25,610
+de cookie, para que quaisquer cookies que os
+
+11
+00:00:25,610 --> 00:00:29,380
+sites nos enviem possam ser compartilhados entre solicitaes feitas com a mesma sesso.
+
+12
+00:00:29,380 --> 00:00:30,840
+Se voc no tem certeza do que
+
+13
+00:00:30,840 --> 00:00:33,030
+so os cookies, eu anexei um link de recurso para
+
+14
+00:00:33,030 --> 00:00:35,680
+esta palestra apenas com uma breve explicao sobre o que eles so.
+
+15
+00:00:35,680 --> 00:00:40,170
+Ento, usamos a sesso que usa uma conexo daquele pool que
+
+16
+00:00:40,170 --> 00:00:42,690
+acabou de ser criado para obter
+
+17
+00:00:42,690 --> 00:00:44,260
+o URL e obter
+
+18
+00:00:44,260 --> 00:00:46,770
+o contedo, e assim por diante.
+
+19
+00:00:46,770 --> 00:00:48,490
+Ele envia uma solicitao ao
+
+20
+00:00:48,490 --> 00:00:51,090
+servidor e aguarda os dados para voltar.
+
+21
+00:00:51,090 --> 00:00:52,670
+A funo pode suspender nesse ponto
+
+22
+00:00:52,670 --> 00:00:54,090
+at que os dados voltem.
+
+23
+00:00:55,270 --> 00:00:58,330
+Mas,  claro, dissemos que criamos um conjunto de
+
+24
+00:00:58,330 --> 00:01:00,410
+conexes aqui na sesso do cliente
+
+25
+00:01:00,410 --> 00:01:03,970
+para que no precisemos recriar a conexo todas as vezes.
+
+26
+00:01:03,970 --> 00:01:06,000
+Mas ns realmente no fizemos isso, porque
+
+27
+00:01:06,000 --> 00:01:07,460
+cada vez que fazemos isso
+
+28
+00:01:07,460 --> 00:01:09,040
+ns criamos um novo pool de
+
+29
+00:01:09,040 --> 00:01:10,480
+conexo, ento ao invs de
+
+30
+00:01:10,480 --> 00:01:12,980
+uma nica conexo ns estamos criando um monte de
+
+31
+00:01:12,980 --> 00:01:14,990
+conexes toda vez que queremos buscar uma pgina.
+
+32
+00:01:14,990 --> 00:01:17,340
+E ento estamos apenas usando um deles.
+
+33
+00:01:17,340 --> 00:01:18,630
+Ento isso no  timo.
+
+34
+00:01:18,630 --> 00:01:21,300
+Em vez disso, o que devemos fazer 
+
+35
+00:01:21,300 --> 00:01:25,360
+criar a sesso e us-la para todos os URLs que desejamos solicitar,
+
+36
+00:01:25,360 --> 00:01:28,360
+em vez de criar uma sesso para cada vez
+
+37
+00:01:28,360 --> 00:01:29,700
+que quisermos solicitar um URL.
+
+38
+00:01:30,750 --> 00:01:31,890
+Ento, a maneira
+
+39
+00:01:31,890 --> 00:01:33,570
+como vamos fazer isso
+
+40
+00:01:33,570 --> 00:01:36,680
+ dividir isso em outra coisa que nos
+
+41
+00:01:36,680 --> 00:01:38,100
+permitir criar vrias tarefas.
+
+42
+00:01:39,140 --> 00:01:40,870
+Ento assncrono def,
+
+43
+00:01:40,870 --> 00:01:42,920
+pegue vrias pginas, e
+
+44
+00:01:42,920 --> 00:01:44,869
+para essa coisa vamos
+
+45
+00:01:44,869 --> 00:01:49,869
+passar o loop e tambm as URLs que queremos obter.
+
+46
+00:01:50,350 --> 00:01:53,710
+Note que este  um argumento
+
+47
+00:01:53,710 --> 00:01:57,920
+descompactado, ento podemos passar muitos argumentos diferentes, um
+
+48
+00:01:57,920 --> 00:02:00,920
+para cada URL que queremos obter.
+
+49
+00:02:00,920 --> 00:02:04,060
+Ento, vamos dizer que tarefas  uma lista vazia.
+
+50
+00:02:04,060 --> 00:02:06,636
+Assncrono com aiohttp. clientSession.
+
+51
+00:02:06,636 --> 00:02:09,572
+E para a sesso do cliente podemos
+
+52
+00:02:09,572 --> 00:02:12,600
+realmente passar o loop que queremos usar,
+
+53
+00:02:12,600 --> 00:02:14,750
+que  o que criamos aqui.
+
+54
+00:02:14,750 --> 00:02:17,330
+E o parmetro deles ser esse loop.
+
+55
+00:02:17,330 --> 00:02:22,070
+A razo para fazer isso  apenas para no
+
+56
+00:02:22,070 --> 00:02:24,141
+criar um novo loop.
+
+57
+00:02:24,141 --> 00:02:27,900
+Agora quando voc faz assncrono. get_event_loop, no importa onde voc
+
+58
+00:02:27,900 --> 00:02:30,000
+faa isso em seu programa,
+
+59
+00:02:30,000 --> 00:02:32,700
+ele sempre dar o mesmo loop.
+
+60
+00:02:32,700 --> 00:02:35,690
+Mas caso voc esquea de fazer isso, passar
+
+61
+00:02:35,690 --> 00:02:38,030
+o loop aqui pode ser bastante til.
+
+62
+00:02:38,030 --> 00:02:39,870
+S assim no  criado um novo
+
+63
+00:02:39,870 --> 00:02:43,330
+que talvez seja executado de forma independente ou no seja executado at ser concludo.
+
+64
+00:02:44,400 --> 00:02:46,480
+E isso  apenas uma proteo segura para
+
+65
+00:02:46,480 --> 00:02:48,980
+garantir que voc use o loop que voc definiu anteriormente.
+
+66
+00:02:50,147 --> 00:02:53,990
+Ento, com a sesso do cliente aiohttp como sesso, vamos
+
+67
+00:02:53,990 --> 00:02:56,448
+preencher nossa lista de tarefas e
+
+68
+00:02:56,448 --> 00:02:57,820
+esperar por elas.
+
+69
+00:03:00,248 --> 00:03:03,430
+Ento, para cada URL que temos aqui, vamos
+
+70
+00:03:03,430 --> 00:03:06,220
+dizer as tarefas. acrescentar, buscar
+
+71
+00:03:07,680 --> 00:03:11,280
+a pgina desta sesso, desculpe,
+
+72
+00:03:11,280 --> 00:03:14,200
+o URL, assim.
+
+73
+00:03:15,250 --> 00:03:18,190
+Agora, quando fazemos isso, o que fazemos
+
+74
+00:03:18,190 --> 00:03:21,720
+ chamarmos essa funo de busca de pgina.
+
+75
+00:03:21,720 --> 00:03:23,630
+Isso cria uma co-rotina e isso
+
+76
+00:03:23,630 --> 00:03:26,220
+ colocado em nossa lista de tarefas.
+
+77
+00:03:27,080 --> 00:03:31,300
+No final do loop, mas dentro desta
+
+78
+00:03:31,300 --> 00:03:32,240
+declarao, este
+
+79
+00:03:32,240 --> 00:03:36,820
+gerenciador de contexto, vamos esperar por eles, ok?
+
+80
+00:03:36,820 --> 00:03:41,630
+Ento, tarefas agrupadas sero assncronas. reunir.
+
+81
+00:03:43,360 --> 00:03:46,140
+E isso vai ser nossas tarefas.
+
+82
+00:03:46,140 --> 00:03:48,840
+Novamente, tudo o que isso est fazendo 
+
+83
+00:03:48,840 --> 00:03:51,640
+reunir todas as tarefas que colocamos em nossa
+
+84
+00:03:51,640 --> 00:03:53,930
+lista e trat-las como uma tarefa nica,
+
+85
+00:03:53,930 --> 00:03:57,100
+para que possamos execut-las em um loop, como a
+
+86
+00:03:57,100 --> 00:03:59,650
+execuo de um loop, at a concluso.
+
+87
+00:03:59,650 --> 00:04:03,100
+Exceto que, em vez de execut-los usando
+
+88
+00:04:03,100 --> 00:04:05,270
+esse loop, vamos aguard-los.
+
+89
+00:04:06,660 --> 00:04:10,568
+Ento retorne aguardar tarefas agrupadas.
+
+90
+00:04:10,568 --> 00:04:14,090
+Isso, tudo o que voc vai fazer como
+
+91
+00:04:14,090 --> 00:04:18,390
+voc sabe,  o rendimento, ento isso nos permitir suspender
+
+92
+00:04:18,390 --> 00:04:20,802
+a execuo aqui, e esperar
+
+93
+00:04:20,802 --> 00:04:24,410
+at que algo acontea aqui e depois retomar
+
+94
+00:04:24,410 --> 00:04:26,820
+a funo e possivelmente repetir
+
+95
+00:04:26,820 --> 00:04:29,512
+tudo isso at que isso retorne.
+
+96
+00:04:29,512 --> 00:04:33,730
+E isso retornar quando todas as tarefas estiverem concludas.
+
+97
+00:04:35,840 --> 00:04:39,250
+Ento, quando fazemos isso, agora podemos executar at que
+
+98
+00:04:39,250 --> 00:04:40,930
+concluam essas pginas mltiplas.
+
+99
+00:04:41,980 --> 00:04:44,710
+Vamos terminar esse cdigo antes de revis-lo e nos
+
+100
+00:04:44,710 --> 00:04:46,560
+certificarmos de que tudo faz sentido.
+
+101
+00:04:46,560 --> 00:04:49,690
+Essa pgina de busca ainda est criando sua prpria
+
+102
+00:04:49,690 --> 00:04:51,757
+sesso aqui, no queremos fazer isso.
+
+103
+00:04:51,757 --> 00:04:53,540
+Ento, o que vamos fazer
+
+104
+00:04:53,540 --> 00:04:56,560
+ apagar isso completamente e, em seguida, garantir que
+
+105
+00:04:56,560 --> 00:04:57,710
+passemos na sesso, smession.
+
+106
+00:04:57,710 --> 00:04:59,100
+Certifique-se de que passamos na
+
+107
+00:04:59,100 --> 00:05:00,440
+sesso, escrito corretamente l.
+
+108
+00:05:00,440 --> 00:05:02,260
+Ento passe aqui tambm.
+
+109
+00:05:04,780 --> 00:05:09,350
+Apenas para que tenha acesso a uma sesso que criamos.
+
+110
+00:05:10,660 --> 00:05:13,820
+Agora tudo bem, agora nossas tarefas
+
+111
+00:05:13,820 --> 00:05:16,490
+no sero mais buscar a
+
+112
+00:05:16,490 --> 00:05:18,930
+pgina, elas sero apenas essas sequncias.
+
+113
+00:05:18,930 --> 00:05:22,410
+E ns no vamos cham-los de tarefas,
+
+114
+00:05:22,410 --> 00:05:24,646
+vamos cham-los de URLs.
+
+115
+00:05:24,646 --> 00:05:28,150
+Ento agora temos 50 vezes o Google. com dentro de nossas
+
+116
+00:05:28,150 --> 00:05:30,280
+listas, e o que
+
+117
+00:05:30,280 --> 00:05:31,610
+podemos fazer 
+
+118
+00:05:32,920 --> 00:05:36,107
+executar at completarmos nossas vrias pginas com
+
+119
+00:05:36,107 --> 00:05:38,650
+o loop e as URLs.
+
+120
+00:05:39,778 --> 00:05:43,390
+Observe como os URLs so URLs de estrela.
+
+121
+00:05:43,390 --> 00:05:46,580
+E assim tambm devemos passar os argumentos
+
+122
+00:05:46,580 --> 00:05:47,760
+individualmente, desembalando-os.
+
+123
+00:05:47,760 --> 00:05:50,880
+Se voc preferir, voc poderia simplesmente passar em uma lista, que seria bom
+
+124
+00:05:50,880 --> 00:05:51,750
+tambm e, em seguida,
+
+125
+00:05:51,750 --> 00:05:53,890
+tudo que voc tem a fazer  exclu-los tambm.
+
+126
+00:05:53,890 --> 00:05:56,390
+Cabe a voc como voc quer fazer isso.
+
+127
+00:05:57,520 --> 00:06:00,600
+Tudo bem, ento o que temos agora, vamos rever isso,
+
+128
+00:06:00,600 --> 00:06:03,450
+so 50 strings do Google. com.
+
+129
+00:06:04,630 --> 00:06:09,080
+Em seguida, passamos a todos para essa funo de obter vrias pginas e
+
+130
+00:06:09,080 --> 00:06:12,270
+tambm passamos no loop que est sendo executado como
+
+131
+00:06:12,270 --> 00:06:13,580
+um agendador de tarefas.
+
+132
+00:06:14,850 --> 00:06:16,050
+Ento eles vo l.
+
+133
+00:06:17,110 --> 00:06:19,220
+O loop est usando a sesso do cliente
+
+134
+00:06:19,220 --> 00:06:21,340
+apenas para no criar um novo loop no
+
+135
+00:06:21,340 --> 00:06:22,950
+caso de nos esquecermos de pass-lo
+
+136
+00:06:22,950 --> 00:06:24,730
+ou nos esquecermos de criar um.
+
+137
+00:06:24,730 --> 00:06:27,710
+Vai dizer, ei, voc no me passou nada,
+
+138
+00:06:27,710 --> 00:06:29,080
+algo est errado.
+
+139
+00:06:29,080 --> 00:06:30,700
+Ento, isso  uma
+
+140
+00:06:30,700 --> 00:06:34,210
+proteo, e as URLs, vamos ento iterar sobre
+
+141
+00:06:34,210 --> 00:06:37,710
+elas e acrescentar a co-rotina que elas criam
+
+142
+00:06:37,710 --> 00:06:39,900
+em nossa lista de tarefas.
+
+143
+00:06:39,900 --> 00:06:44,029
+Lembre-se, poderamos suspender a execuo da funo antes
+
+144
+00:06:44,029 --> 00:06:47,487
+ou durante essa criao da sesso.
+
+145
+00:06:47,487 --> 00:06:50,778
+Mas dentro dela, uma vez que entramos, ela no
+
+146
+00:06:50,778 --> 00:06:52,380
+se suspende em nenhum momento.
+
+147
+00:06:52,380 --> 00:06:54,530
+Tudo o que faz, grava todas as
+
+148
+00:06:54,530 --> 00:06:56,840
+URLs e cria todas as corrotinas de
+
+149
+00:06:56,840 --> 00:06:58,710
+forma sncrona, uma aps a outra,
+
+150
+00:06:58,710 --> 00:07:00,722
+no h suspenso em nenhum lugar aqui.
+
+151
+00:07:00,722 --> 00:07:02,840
+Ento criamos todas as corrotinas
+
+152
+00:07:02,840 --> 00:07:05,460
+e depois as reunimos como uma s.
+
+153
+00:07:05,460 --> 00:07:09,210
+O que isto faz  essencialmente aguarda cada
+
+154
+00:07:09,210 --> 00:07:12,964
+tarefa e s retorna quando esto todos completos.
+
+155
+00:07:12,964 --> 00:07:17,964
+Ns esperamos, ento, se quisermos suspender, podemos suspender entre cada tarefa ou podemos
+
+156
+00:07:19,720 --> 00:07:22,090
+suspender no incio antes de comear
+
+157
+00:07:22,090 --> 00:07:23,630
+qualquer tarefa, ou podemos
+
+158
+00:07:23,630 --> 00:07:24,750
+suspender no final,
+
+159
+00:07:24,750 --> 00:07:26,200
+uma vez que todas
+
+160
+00:07:26,200 --> 00:07:27,931
+as tarefas estejam concludas.
+
+161
+00:07:27,931 --> 00:07:31,070
+Isso significa que essas tarefas que agrupamos aqui
+
+162
+00:07:31,070 --> 00:07:34,859
+esto todas sendo executadas individualmente neste loop de eventos.
+
+163
+00:07:34,859 --> 00:07:39,190
+E  isso que essa coleta faz.
+
+164
+00:07:39,190 --> 00:07:41,770
+Em seguida, retornamos a espera
+
+165
+00:07:41,770 --> 00:07:43,650
+disso, portanto, essa funo
+
+166
+00:07:43,650 --> 00:07:46,980
+s retorna quando isso termina, mas
+
+167
+00:07:46,980 --> 00:07:49,710
+pode ser suspenso no caminho.
+
+168
+00:07:49,710 --> 00:07:51,340
+Assim, quando terminar a execuo, isso
+
+169
+00:07:51,340 --> 00:07:53,710
+retorna e esse  o fim, e essa
+
+170
+00:07:53,710 --> 00:07:56,920
+funo foi executada at que tenha sido concluda, e  por
+
+171
+00:07:58,275 --> 00:08:00,210
+isso que corremos at ser concluda.
+
+172
+00:08:00,210 --> 00:08:01,610
+Execute at que complete
+
+173
+00:08:01,610 --> 00:08:04,450
+seja executado at que esse retorno seja realmente executado.
+
+174
+00:08:04,450 --> 00:08:05,740
+E isso s
+
+175
+00:08:05,740 --> 00:08:08,260
+ser executado quando isso for totalmente
+
+176
+00:08:08,260 --> 00:08:10,320
+esperado e isso se completar.
+
+177
+00:08:11,360 --> 00:08:13,290
+E uma vez que isso acontece, podemos
+
+178
+00:08:13,290 --> 00:08:15,900
+imprimir que todos eles levaram o tempo que levaram.
+
+179
+00:08:18,010 --> 00:08:19,920
+Parece um pouco mais complexo,
+
+180
+00:08:19,920 --> 00:08:21,810
+mas h uma melhoria importante
+
+181
+00:08:21,810 --> 00:08:23,930
+no desempenho, ou seja, voc
+
+182
+00:08:23,930 --> 00:08:28,930
+no est criando uma sesso para cada uma das pginas que deseja buscar.
+
+183
+00:08:29,890 --> 00:08:32,180
+E, claro, contanto que voc crie
+
+184
+00:08:32,180 --> 00:08:33,658
+o seu evento em
+
+185
+00:08:33,658 --> 00:08:36,790
+primeiro lugar, essa coisa aqui no  necessria.
+
+186
+00:08:36,790 --> 00:08:41,020
+Voc no poderia pass-lo se quiser.
+
+187
+00:08:41,020 --> 00:08:43,320
+ totalmente com voc, qualquer um
+
+188
+00:08:43,320 --> 00:08:45,521
+deles vai funcionar, ento voc pode
+
+189
+00:08:45,521 --> 00:08:50,220
+executar isso e, como voc ver, voc ainda ter a mesma coisa, sim?
+
+190
+00:08:51,530 --> 00:08:54,000
+Observe como eles parecem levar um pouco mais
+
+191
+00:08:54,000 --> 00:08:55,790
+de tempo agora e isso pode
+
+192
+00:08:55,790 --> 00:08:57,660
+ser devido a um grande nmero
+
+193
+00:08:57,660 --> 00:09:00,710
+de razes, algum usando a internet na casa ou o
+
+194
+00:09:00,710 --> 00:09:03,760
+Google sendo mais pressionado por algum fazendo solicitaes ou qualquer outra coisa.
+
+195
+00:09:06,350 --> 00:09:08,110
+Se voc quiser passar o loop
+
+196
+00:09:08,110 --> 00:09:09,290
+l isso  bom
+
+197
+00:09:09,290 --> 00:09:11,610
+tambm e isso  o que fizemos anteriormente.
+
+198
+00:09:11,610 --> 00:09:13,110
+E vai funcionar da mesma maneira.
+
+199
+00:09:13,110 --> 00:09:15,130
+Parece que agora  mais rpido,
+
+200
+00:09:15,130 --> 00:09:17,380
+possivelmente porque no precisou ir e obter
+
+201
+00:09:17,380 --> 00:09:19,040
+o loop de cada vez,
+
+202
+00:09:20,020 --> 00:09:23,100
+e isso  possivelmente uma melhoria de desempenho tambm.
+
+203
+00:09:24,660 --> 00:09:25,780
+De qualquer forma,  isso para este vdeo.
+
+204
+00:09:25,780 --> 00:09:28,350
+Eu s queria mostrar como tornar
+
+205
+00:09:28,350 --> 00:09:31,870
+isso um pouco mais genrico para que voc
+
+206
+00:09:31,870 --> 00:09:36,070
+possa usar isso em nosso programa de raspagem de livros.
+
+207
+00:09:37,150 --> 00:09:39,870
+Ento, se voc quiser ir em frente e experimentar, tente
+
+208
+00:09:39,870 --> 00:09:42,270
+transformar o nosso scraper de livro em algo que
+
+209
+00:09:42,270 --> 00:09:44,640
+use essas duas funes e um loop de eventos
+
+210
+00:09:44,640 --> 00:09:47,960
+para obter todas as pginas em vez de obt-las em sincronia, tenho
+
+211
+00:09:47,960 --> 00:09:50,176
+certeza que voc pode fazer isso agora .
+
+212
+00:09:50,176 --> 00:09:53,510
+Tudo o que voc precisa fazer  importar
+
+213
+00:09:53,510 --> 00:09:55,360
+algumas bibliotecas que j instalamos,
+
+214
+00:09:55,360 --> 00:09:57,550
+copiar essas funes e, em
+
+215
+00:09:57,550 --> 00:10:00,430
+vez de passar por cada URL, uma
+
+216
+00:10:00,430 --> 00:10:02,418
+por vez, obt-las todas ao
+
+217
+00:10:02,418 --> 00:10:07,321
+mesmo tempo primeiro e, em seguida, voc poder para usar seu contedo.
+
+218
+00:10:07,321 --> 00:10:10,300
+Mais uma vez, pode ser um pouco complicado,
+
+219
+00:10:10,300 --> 00:10:13,010
+pode levar algum tempo e alguma investigao.
+
+220
+00:10:13,010 --> 00:10:17,610
+Quando terminar, ou se quiser ver como fazemos
+
+221
+00:10:17,610 --> 00:10:20,917
+isso, volte e implementaremos isso juntos.
+
+222
+00:10:20,917 --> 00:10:23,270
+Ok, at o prximo vdeo.
+

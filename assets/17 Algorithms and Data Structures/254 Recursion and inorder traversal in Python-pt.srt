@@ -1,0 +1,1192 @@
+1
+00:00:00,110 --> 00:00:01,560
+Instrutor: Ol e bem vindo de volta.
+
+2
+00:00:01,560 --> 00:00:02,840
+Neste vdeo, vamos
+
+3
+00:00:02,840 --> 00:00:05,730
+ver como podemos imprimir nossa rvore.
+
+4
+00:00:05,730 --> 00:00:07,550
+E como parte da impresso da
+
+5
+00:00:07,550 --> 00:00:10,793
+nossa rvore, vamos ter que olhar para algo chamado recurso.
+
+6
+00:00:11,650 --> 00:00:15,380
+Recurso  algo que pode ser bastante complicado
+
+7
+00:00:15,380 --> 00:00:18,160
+para realmente dar uma olhada, mas
+
+8
+00:00:18,160 --> 00:00:21,380
+ um conceito muito simples, na verdade.
+
+9
+00:00:21,380 --> 00:00:25,190
+Algo que eu vou dizer sobre recurso, e tambm rvores binrias, 
+
+10
+00:00:25,190 --> 00:00:28,330
+que voc no estar usando isso com muita frequncia em
+
+11
+00:00:28,330 --> 00:00:29,760
+seus trabalhos do dia.
+
+12
+00:00:29,760 --> 00:00:33,310
+Eu, por exemplo, trabalho em desenvolvimento web.
+
+13
+00:00:33,310 --> 00:00:35,530
+Eu fao muito tipo de desenvolvimento
+
+14
+00:00:35,530 --> 00:00:39,340
+de back-end e front-end com JavaScript e assim por diante
+
+15
+00:00:39,340 --> 00:00:40,960
+e back-end com Python.
+
+16
+00:00:40,960 --> 00:00:43,750
+E eu nunca usei rvores binrias
+
+17
+00:00:43,750 --> 00:00:46,670
+ou recursividade no meu trabalho dirio.
+
+18
+00:00:46,670 --> 00:00:48,630
+No entanto,  algo que pode surgir
+
+19
+00:00:48,630 --> 00:00:51,070
+em desafios de codificao, entrevistas e assim por
+
+20
+00:00:51,070 --> 00:00:53,460
+diante, por isso  bom saber sobre isso
+
+21
+00:00:53,460 --> 00:00:56,680
+e tambm, em software,  usado nos bastidores, como em bancos
+
+22
+00:00:56,680 --> 00:00:58,320
+de dados e coisas assim.
+
+23
+00:00:58,320 --> 00:01:00,430
+Ento,  til saber sobre isso e 
+
+24
+00:01:00,430 --> 00:01:02,400
+por isso que estamos passando por isso.
+
+25
+00:01:02,400 --> 00:01:03,920
+Mas no se preocupe
+
+26
+00:01:03,920 --> 00:01:06,610
+muito em entender completamente todos os casos
+
+27
+00:01:06,610 --> 00:01:09,100
+de uso e como us-los extensivamente.
+
+28
+00:01:09,100 --> 00:01:11,110
+No vale a pena.
+
+29
+00:01:11,110 --> 00:01:12,730
+Embora eu lhe d mais
+
+30
+00:01:12,730 --> 00:01:14,030
+recursos caso esteja interessado.
+
+31
+00:01:15,030 --> 00:01:17,593
+Para percorrer em
+
+32
+00:01:19,320 --> 00:01:22,690
+ordem, vamos usar recurso.
+
+33
+00:01:22,690 --> 00:01:27,213
+Ento, vamos primeiro, inorder_recursive.
+
+34
+00:01:30,490 --> 00:01:34,713
+Vou digitar um mtodo pequenino aqui.
+
+35
+00:01:40,250 --> 00:01:41,920
+Vou digitar um mtodo pequenino
+
+36
+00:01:41,920 --> 00:01:44,700
+e vou explicar exatamente o que est acontecendo.
+
+37
+00:01:44,700 --> 00:01:46,251
+E tambm, como parte disso, explicarei,  claro,
+
+38
+00:01:46,251 --> 00:01:47,147
+o que  a recurso.
+
+39
+00:01:47,147 --> 00:01:49,297
+porque sei que ainda no fizemos isso.
+
+40
+00:01:50,570 --> 00:01:55,060
+O que fizemos aqui neste mtodo inorder  que ele
+
+41
+00:01:55,060 --> 00:01:56,670
+no recebe nenhum
+
+42
+00:01:56,670 --> 00:02:00,460
+argumento, mas chama outro mtodo privado em Python.
+
+43
+00:02:00,460 --> 00:02:02,260
+A propsito, no tenho certeza se mencionei
+
+44
+00:02:02,260 --> 00:02:03,610
+isso, mas, quando seus mtodos
+
+45
+00:02:03,610 --> 00:02:06,150
+e variveis comeam com um sublinhado, isso significa que
+
+46
+00:02:06,150 --> 00:02:09,380
+so privados ou que voc no quer que outras pessoas os chamem.
+
+47
+00:02:09,380 --> 00:02:12,990
+Ento, chamamos esse mtodo privado
+
+48
+00:02:12,990 --> 00:02:16,613
+inorder_recursive, com self. cabea como o argumento.
+
+49
+00:02:17,460 --> 00:02:20,350
+Auto. head torna-se current_node
+
+50
+00:02:20,350 --> 00:02:22,333
+neste mtodo inorder_recursive.
+
+51
+00:02:24,530 --> 00:02:27,360
+Ento esse mtodo inorder_recursive, tudo o que ele
+
+52
+00:02:27,360 --> 00:02:30,623
+vai fazer,  dizer, se o current_node no for
+
+53
+00:02:31,900 --> 00:02:33,460
+nenhum, ento ns vamos retornar.
+
+54
+00:02:33,460 --> 00:02:35,380
+Ok, vamos terminar o
+
+55
+00:02:35,380 --> 00:02:38,833
+mtodo se current_node for none, vamos terminar.
+
+56
+00:02:40,260 --> 00:02:42,640
+Ento o que vai
+
+57
+00:02:42,640 --> 00:02:43,583
+fazer, 
+
+58
+00:02:45,740 --> 00:02:48,970
+dizer, chamar a si mesmo, mas
+
+59
+00:02:48,970 --> 00:02:50,763
+com current_node. esquerda.
+
+60
+00:02:51,870 --> 00:02:53,470
+Ok, ento, como voc pode
+
+61
+00:02:53,470 --> 00:02:56,423
+ver, esse mtodo inorder_recursive chama a si mesmo.
+
+62
+00:02:57,680 --> 00:02:59,500
+Isso  recurso.
+
+63
+00:02:59,500 --> 00:03:02,973
+Recurso  quando um mtodo ou uma funo chama a si mesmo.
+
+64
+00:03:04,040 --> 00:03:07,200
+O que acontece quando voc se chama
+
+65
+00:03:08,270 --> 00:03:10,313
+ algo bastante interessante.
+
+66
+00:03:11,958 --> 00:03:14,108
+Ns vamos falar sobre isso em apenas um momento.
+
+67
+00:03:15,240 --> 00:03:17,580
+E ento ns vamos imprimir o
+
+68
+00:03:17,580 --> 00:03:19,640
+current_node e, em seguida, vamos
+
+69
+00:03:21,660 --> 00:03:24,340
+nos chamar com o n certo.
+
+70
+00:03:26,570 --> 00:03:29,963
+Aqui est o que acontece quando voc faz recurso.
+
+71
+00:03:30,960 --> 00:03:35,350
+O mtodo inorder chama self. inorder_recursive.
+
+72
+00:03:35,350 --> 00:03:36,323
+Ento acabamos aqui.
+
+73
+00:03:38,520 --> 00:03:43,300
+Agora, o Python sabe que o mtodo inorder_recursive
+
+74
+00:03:43,300 --> 00:03:45,880
+foi chamado pelo mtodo inorder.
+
+75
+00:03:45,880 --> 00:03:46,713
+Sabe disso.
+
+76
+00:03:46,713 --> 00:03:50,070
+Ele rastreia quem chamou quem, por exemplo, para que ele
+
+77
+00:03:50,070 --> 00:03:53,283
+possa lhe informar nos rastreamentos de pilha em seus erros.
+
+78
+00:03:54,300 --> 00:03:58,093
+Por isso, sabe que o mtodo inorder nos chamou.
+
+79
+00:03:58,990 --> 00:03:59,850
+Ns corremos por isso.
+
+80
+00:03:59,850 --> 00:04:01,600
+Presumivelmente ns passamos.
+
+81
+00:04:01,600 --> 00:04:05,690
+E ento nos chamamos novamente inorder_recursive.
+
+82
+00:04:05,690 --> 00:04:06,990
+Ento, voltamos ao topo.
+
+83
+00:04:08,010 --> 00:04:10,380
+Agora current_node  um n diferente.
+
+84
+00:04:10,380 --> 00:04:15,380
+Mas sabemos que fomos chamados por inorder_recursive.
+
+85
+00:04:15,540 --> 00:04:19,440
+Ento o Python sabe inorder chamado
+
+86
+00:04:19,440 --> 00:04:21,683
+inorder_recursive, inorder_recursive chamado inorder_recursive.
+
+87
+00:04:22,600 --> 00:04:24,410
+Ento ns vamos novamente.
+
+88
+00:04:24,410 --> 00:04:25,920
+Se nos chamarmos de
+
+89
+00:04:25,920 --> 00:04:28,020
+novo, o Python agora comea a
+
+90
+00:04:28,860 --> 00:04:31,790
+construir uma coleo de como essas chamadas foram feitas.
+
+91
+00:04:31,790 --> 00:04:33,140
+Quem chamou quem?
+
+92
+00:04:33,140 --> 00:04:36,670
+Quais foram os argumentos ou os valores dos parmetros quando
+
+93
+00:04:36,670 --> 00:04:38,070
+cada mtodo foi chamado?
+
+94
+00:04:40,990 --> 00:04:44,550
+Eventualmente chegamos ao n mais  esquerda da rvore.
+
+95
+00:04:44,550 --> 00:04:45,633
+Ns imprimimos.
+
+96
+00:04:46,860 --> 00:04:49,260
+Ento, vamos para a direita
+
+97
+00:04:49,260 --> 00:04:53,800
+e, eventualmente, meio que estamos  direita, ou o n
+
+98
+00:04:53,800 --> 00:04:57,430
+mais  esquerda ou mais  direita no
+
+99
+00:04:57,430 --> 00:05:01,603
+ramo esquerdo da rvore e chegamos ao final do mtodo.
+
+100
+00:05:04,440 --> 00:05:09,220
+O que acontece, ento,  que o mtodo retorna o controle
+
+101
+00:05:09,220 --> 00:05:10,743
+para quem o chamou.
+
+102
+00:05:12,220 --> 00:05:15,667
+Ento, se inorder chama inorder_recursive e inorder_recursive
+
+103
+00:05:15,667 --> 00:05:17,900
+chama a si mesmo, que
+
+104
+00:05:17,900 --> 00:05:21,840
+constri uma coleo de chamadas de mtodo e,
+
+105
+00:05:21,840 --> 00:05:23,710
+quando o mtodo retorna,
+
+106
+00:05:23,710 --> 00:05:26,553
+voltamos para a chamada anterior.
+
+107
+00:05:27,950 --> 00:05:31,490
+ difcil explicar, sem realmente olhar para isso.
+
+108
+00:05:31,490 --> 00:05:32,930
+Ento, o que vamos
+
+109
+00:05:32,930 --> 00:05:35,510
+fazer  usar isso e depur-lo.
+
+110
+00:05:35,510 --> 00:05:38,210
+Ento, vou definir um ponto de interrupo aqui antes
+
+111
+00:05:38,210 --> 00:05:40,460
+que essa chamada de mtodo acontea e
+
+112
+00:05:40,460 --> 00:05:43,260
+vamos at o nosso aplicativo. py e
+
+113
+00:05:43,260 --> 00:05:48,010
+imprimir ou fazer rvore. em ordem.
+
+114
+00:05:48,010 --> 00:05:50,050
+Vamos chamar o mtodo inorder aqui
+
+115
+00:05:50,050 --> 00:05:53,430
+depois de adicionar alguns ns e ento, no arquivo de
+
+116
+00:05:53,430 --> 00:05:54,730
+rvore binria, vamos definir
+
+117
+00:05:54,730 --> 00:05:57,523
+um ponto de interrupo no mtodo inorder_recursive.
+
+118
+00:05:58,580 --> 00:05:59,880
+Ento vamos depurar.
+
+119
+00:06:03,500 --> 00:06:06,823
+Agora aqui comea a parte interessante.
+
+120
+00:06:08,500 --> 00:06:10,003
+E vou tentar ir
+
+121
+00:06:10,003 --> 00:06:13,570
+devagar com isso porque sei que  um conceito complicado.
+
+122
+00:06:13,570 --> 00:06:16,770
+Provavelmente, minhas explicaes realmente no ajudaram at agora.
+
+123
+00:06:16,770 --> 00:06:18,450
+Aqui  esquerda, vamos comear a
+
+124
+00:06:18,450 --> 00:06:19,473
+ver este tpico principal.
+
+125
+00:06:19,473 --> 00:06:22,320
+No  algo que vimos antes no Python.
+
+126
+00:06:22,320 --> 00:06:23,930
+Mas o tpico principal, agora que
+
+127
+00:06:23,930 --> 00:06:26,310
+voc sabe um pouco sobre programao assncrona e
+
+128
+00:06:26,310 --> 00:06:29,010
+threads e assim por diante no Python, o thread
+
+129
+00:06:29,010 --> 00:06:29,843
+principal  realmente
+
+130
+00:06:29,843 --> 00:06:32,720
+o thread que faz coisas em Python e aqui voc
+
+131
+00:06:32,720 --> 00:06:33,820
+pode ver que no
+
+132
+00:06:33,820 --> 00:06:35,740
+temos nenhum outro thread em esta aplicao.
+
+133
+00:06:35,740 --> 00:06:37,823
+Ns no lanamos nenhum outro tpico.
+
+134
+00:06:39,510 --> 00:06:42,450
+Se voc clicar em qualquer um
+
+135
+00:06:42,450 --> 00:06:47,340
+desses lugares, voc ser levado para onde a chamada comeou
+
+136
+00:06:47,340 --> 00:06:49,320
+para onde voc est atualmente.
+
+137
+00:06:49,320 --> 00:06:51,713
+Ento, estamos atualmente aqui, nesta linha,
+
+138
+00:06:52,620 --> 00:06:56,120
+que est em nosso arquivo de rvore binria, linha 32.
+
+139
+00:06:56,120 --> 00:06:57,910
+Ento, aqui, o thread
+
+140
+00:06:57,910 --> 00:07:01,470
+principal nos diz que estamos dentro da funo
+
+141
+00:07:01,470 --> 00:07:04,133
+inorder_recursive no binary_tree. arquivo py, linha 32.
+
+142
+00:07:05,160 --> 00:07:08,200
+E isso nos diz que essa
+
+143
+00:07:08,200 --> 00:07:11,120
+funo foi chamada pela funo inorder.
+
+144
+00:07:11,120 --> 00:07:14,890
+Veja isso  diretamente abaixo de onde estamos atualmente aqui.
+
+145
+00:07:14,890 --> 00:07:18,420
+Ento a funo inorder binary_tree, linha 27,
+
+146
+00:07:18,420 --> 00:07:20,653
+foi quem nos chamou.
+
+147
+00:07:21,800 --> 00:07:23,700
+E quem os chamou?
+
+148
+00:07:23,700 --> 00:07:25,720
+Bem, foi app. py, linha oito.
+
+149
+00:07:25,720 --> 00:07:27,260
+Ento, se formos ao aplicativo. py, linha oito
+
+150
+00:07:27,260 --> 00:07:30,043
+voc pode ver essa rvore. inorder foi chamado aqui.
+
+151
+00:07:31,790 --> 00:07:34,060
+Quem chamou app. py?
+
+152
+00:07:34,060 --> 00:07:36,300
+Algumas coisas do Python.
+
+153
+00:07:36,300 --> 00:07:38,220
+O arquivo de execuo do depurador Python.
+
+154
+00:07:38,220 --> 00:07:39,790
+No se preocupe com isso.
+
+155
+00:07:39,790 --> 00:07:43,310
+Para ns, a execuo comeou no app. py, ento
+
+156
+00:07:43,310 --> 00:07:47,525
+chamado in_order e depois chamado inorder_recursive.
+
+157
+00:07:47,525 --> 00:07:52,303
+O current_node nesta chamada  o n nove.
+
+158
+00:07:54,690 --> 00:07:56,890
+Porque essa  a cabea que chamamos.
+
+159
+00:07:58,160 --> 00:08:00,490
+Agora podemos entrar nessa funo.
+
+160
+00:08:00,490 --> 00:08:04,973
+Vamos entrar fazendo isso, Step Into.
+
+161
+00:08:05,930 --> 00:08:08,820
+Observe como agora as coisas mudaram.
+
+162
+00:08:08,820 --> 00:08:11,290
+O current_node para um,  o n
+
+163
+00:08:11,290 --> 00:08:13,923
+cinco porque  current_node. deixou como era antes.
+
+164
+00:08:15,150 --> 00:08:17,760
+E agora o segmento principal mudou.
+
+165
+00:08:17,760 --> 00:08:20,723
+Estamos na funo inorder_recursive, linha 30.
+
+166
+00:08:21,630 --> 00:08:24,930
+Ns fomos chamados pela funo inorder_recursive na linha 32, essa aqui,
+
+167
+00:08:24,930 --> 00:08:27,747
+e que foi chamada por inorder e que foi
+
+168
+00:08:27,747 --> 00:08:29,820
+chamada por app. py.
+
+169
+00:08:29,820 --> 00:08:32,230
+E uma das grandes vantagens do
+
+170
+00:08:32,230 --> 00:08:34,660
+PyCharm  que voc pode clicar nele.
+
+171
+00:08:34,660 --> 00:08:35,580
+E quando voc
+
+172
+00:08:35,580 --> 00:08:38,910
+clica nele, voc pode ver que o current_node aqui era
+
+173
+00:08:38,910 --> 00:08:40,930
+o n nove, a cabea.
+
+174
+00:08:40,930 --> 00:08:43,090
+Voc clica de volta para onde estamos atualmente,
+
+175
+00:08:43,090 --> 00:08:44,633
+o current_node  o n cinco.
+
+176
+00:08:47,720 --> 00:08:49,700
+Ento, mais uma vez, vamos ao
+
+177
+00:08:49,700 --> 00:08:51,825
+Step Over, vamos para essa linha novamente.
+
+178
+00:08:51,825 --> 00:08:54,310
+Current_node. esquerda no  nenhuma.
+
+179
+00:08:54,310 --> 00:08:55,570
+E ns sabemos disso.
+
+180
+00:08:55,570 --> 00:08:58,053
+Ento, vamos entrar mais uma vez.
+
+181
+00:08:59,070 --> 00:09:02,160
+Observe como agora estamos nesta pilha recursiva.
+
+182
+00:09:02,160 --> 00:09:05,600
+Alis, essa coisa aqui  uma pilha, porque
+
+183
+00:09:05,600 --> 00:09:08,370
+coisas novas so empurradas no topo.
+
+184
+00:09:08,370 --> 00:09:11,480
+Ns vamos ver como eles surgem do topo tambm.
+
+185
+00:09:11,480 --> 00:09:14,903
+Agora estamos na ltima chamada nesta cadeia.
+
+186
+00:09:15,850 --> 00:09:19,095
+Current_node agora no  nenhum porque
+
+187
+00:09:19,095 --> 00:09:23,520
+o current_node na execuo anterior no tinha nenhum.
+
+188
+00:09:23,520 --> 00:09:25,840
+Ento, agora, current_node  nenhum.
+
+189
+00:09:25,840 --> 00:09:30,203
+Ento, o que fazemos  apenas retornar.
+
+190
+00:09:31,590 --> 00:09:36,300
+Quando retornamos, essa chamada de mtodo termina e
+
+191
+00:09:36,300 --> 00:09:38,400
+voltamos para a anterior.
+
+192
+00:09:38,400 --> 00:09:41,130
+Ento observe como agora vamos pular
+
+193
+00:09:41,130 --> 00:09:43,693
+aqui, mas isso vai desaparecer.
+
+194
+00:09:45,090 --> 00:09:46,650
+Vejo?
+
+195
+00:09:46,650 --> 00:09:48,840
+A chamada do mtodo em que estvamos antes
+
+196
+00:09:48,840 --> 00:09:51,070
+desapareceu porque esse  o fim da ligao
+
+197
+00:09:51,070 --> 00:09:53,023
+e voltamos para onde estvamos antes.
+
+198
+00:09:54,270 --> 00:09:57,910
+Se entrarmos em cena, observe como isso no
+
+199
+00:09:57,910 --> 00:09:59,450
+acontece mais nesse mtodo,
+
+200
+00:09:59,450 --> 00:10:01,140
+porque j executamos isso.
+
+201
+00:10:01,140 --> 00:10:02,673
+Agora vai para a impresso.
+
+202
+00:10:05,890 --> 00:10:08,590
+Ento podemos ir para a prxima linha.
+
+203
+00:10:08,590 --> 00:10:10,760
+Podemos entrar nessa linha e,
+
+204
+00:10:10,760 --> 00:10:13,537
+mais uma vez, estamos no mtodo inorder_recursive.
+
+205
+00:10:13,537 --> 00:10:16,420
+Mas, mais uma vez, o current_node  nenhum.
+
+206
+00:10:16,420 --> 00:10:19,853
+Se voc voltar, ainda estamos no n cinco aqui.
+
+207
+00:10:21,270 --> 00:10:22,970
+Ainda estamos no n cinco aqui
+
+208
+00:10:22,970 --> 00:10:26,510
+e tudo o que aconteceu  que o certo no era nenhum.
+
+209
+00:10:26,510 --> 00:10:30,070
+Ento, quando ns chamamos inorder_recursive com o n certo, isso no
+
+210
+00:10:30,070 --> 00:10:31,670
+ nada, ento, mais uma
+
+211
+00:10:31,670 --> 00:10:34,173
+vez, vamos voltar, e acabamos de volta aqui.
+
+212
+00:10:35,730 --> 00:10:38,009
+Voc sabe que quando chegamos ao
+
+213
+00:10:38,009 --> 00:10:41,460
+final de um mtodo em Python, o final de
+
+214
+00:10:41,460 --> 00:10:43,160
+uma funo, que retorna.
+
+215
+00:10:43,160 --> 00:10:45,570
+Ento, assim que pressionarmos Step
+
+216
+00:10:45,570 --> 00:10:47,220
+Over, esta funo terminar.
+
+217
+00:10:47,220 --> 00:10:49,290
+Adivinhe onde ns vamos a seguir.
+
+218
+00:10:49,290 --> 00:10:51,113
+Ns vamos voltar aqui.
+
+219
+00:10:52,090 --> 00:10:54,362
+Ns vamos voltar para a
+
+220
+00:10:54,362 --> 00:10:57,160
+execuo anterior, onde o current_node era nove.
+
+221
+00:10:57,160 --> 00:10:59,150
+Ento eu vou voltar para onde
+
+222
+00:10:59,150 --> 00:11:03,223
+estamos atualmente, aperte Step Over, e perceba que  exatamente isso que acontece.
+
+223
+00:11:04,490 --> 00:11:06,470
+E mais uma vez, se
+
+224
+00:11:06,470 --> 00:11:09,200
+pressionarmos Step Into, isso j aconteceu.
+
+225
+00:11:09,200 --> 00:11:12,830
+J executamos a funo inorder_recursive para
+
+226
+00:11:12,830 --> 00:11:15,800
+o n esquerdo de current_node.
+
+227
+00:11:15,800 --> 00:11:18,040
+Repare como estamos de volta ao topo de nossa
+
+228
+00:11:18,040 --> 00:11:19,743
+pilha e o current_node  a cabea.
+
+229
+00:11:21,240 --> 00:11:22,930
+Ento, mais uma vez, ns imprimimos.
+
+230
+00:11:22,930 --> 00:11:25,540
+E ento voltamos para o
+
+231
+00:11:25,540 --> 00:11:27,648
+inorder_recursive no ramo direito.
+
+232
+00:11:27,648 --> 00:11:30,989
+Ento, current_node agora  o n onze.
+
+233
+00:11:30,989 --> 00:11:34,489
+Nodo onze  o n direito da cabea.
+
+234
+00:11:36,199 --> 00:11:38,170
+Ento, voltando para onde estamos
+
+235
+00:11:38,170 --> 00:11:39,940
+atualmente, isso no vai acontecer.
+
+236
+00:11:39,940 --> 00:11:40,930
+Isso vai acontecer.
+
+237
+00:11:40,930 --> 00:11:43,990
+Ns vamos entrar no inorder_recursive com a esquerda.
+
+238
+00:11:43,990 --> 00:11:46,639
+A esquerda no  nada porque no adicionamos mais ns.
+
+239
+00:11:46,639 --> 00:11:49,090
+Mais uma vez, isso vai ser nenhum.
+
+240
+00:11:49,090 --> 00:11:50,223
+Isso vai voltar.
+
+241
+00:11:51,170 --> 00:11:53,300
+E, mais uma vez, iramos para a
+
+242
+00:11:53,300 --> 00:11:55,030
+direita, que tambm no  nada.
+
+243
+00:11:55,030 --> 00:11:56,760
+E isso s vai voltar.
+
+244
+00:11:56,760 --> 00:11:58,700
+E agora j temos, a
+
+245
+00:11:58,700 --> 00:11:59,830
+propsito, impresso nossos
+
+246
+00:11:59,830 --> 00:12:01,373
+ns porque esta declarao
+
+247
+00:12:01,373 --> 00:12:04,513
+impressa aconteceu l entre tudo o que est acontecendo.
+
+248
+00:12:05,400 --> 00:12:07,140
+Ento agora vamos terminar
+
+249
+00:12:07,140 --> 00:12:10,790
+esse mtodo porque j percorremos a recurso.
+
+250
+00:12:10,790 --> 00:12:13,881
+Estamos agora no final do mtodo inorder_recursive
+
+251
+00:12:13,881 --> 00:12:16,010
+com a cabea como current_node.
+
+252
+00:12:16,010 --> 00:12:17,363
+Ento, quando pressionamos
+
+253
+00:12:18,200 --> 00:12:21,170
+Prximo, esse  o fim do mtodo recursivo
+
+254
+00:12:21,170 --> 00:12:23,050
+e podemos continuar e chegamos
+
+255
+00:12:23,050 --> 00:12:25,043
+ao fim do nosso programa.
+
+256
+00:12:27,260 --> 00:12:28,883
+Isso  recurso.
+
+257
+00:12:30,900 --> 00:12:32,090
+Realmente importante na recurso
+
+258
+00:12:32,090 --> 00:12:34,660
+ que voc acaba com essa pilha de
+
+259
+00:12:34,660 --> 00:12:38,750
+chamadas de mtodo e quando ela retorna, volta para a chamada anterior.
+
+260
+00:12:38,750 --> 00:12:43,110
+Ento  por isso que podemos ir mais fundo em nossa rvore, indo para a esquerda e depois
+
+261
+00:12:43,110 --> 00:12:45,390
+para a esquerda e depois para a esquerda e depois
+
+262
+00:12:45,390 --> 00:12:46,670
+para a esquerda at chegarmos
+
+263
+00:12:46,670 --> 00:12:48,713
+ao fim, e ento ela volta um a um.
+
+264
+00:12:50,090 --> 00:12:52,690
+Realmente, por favor, use o depurador para
+
+265
+00:12:52,690 --> 00:12:55,760
+inspecionar e aprender e brincar com isso, porque
+
+266
+00:12:55,760 --> 00:12:57,830
+ uma coisa complicada para acertar.
+
+267
+00:12:57,830 --> 00:13:00,760
+A recurso  difcil de entender.
+
+268
+00:13:00,760 --> 00:13:02,400
+Tambm no  usado
+
+269
+00:13:02,400 --> 00:13:07,400
+com tanta frequncia no que eu chamaria de empresas de software orientadas a produtos.
+
+270
+00:13:07,414 --> 00:13:09,600
+Mas, no entanto,  uma coisa interessante.
+
+271
+00:13:09,600 --> 00:13:12,503
+E  til para coisas como essas.
+
+272
+00:13:13,960 --> 00:13:15,860
+Eu tambm gostaria de te dar um desafio.
+
+273
+00:13:16,710 --> 00:13:20,880
+Este cdigo aqui imprime a rvore em ordem.
+
+274
+00:13:20,880 --> 00:13:21,890
+Eu gostaria de
+
+275
+00:13:21,890 --> 00:13:24,603
+te dar um desafio de imprimir a rvore, preorder.
+
+276
+00:13:26,200 --> 00:13:28,500
+Ento, voc pode ir em frente e fazer isso.
+
+277
+00:13:28,500 --> 00:13:30,990
+Tente imprimir a rvore, preorder, que ser um
+
+278
+00:13:30,990 --> 00:13:32,900
+pedao de cdigo muito semelhante, mas
+
+279
+00:13:32,900 --> 00:13:34,833
+apenas para lhe dar um pouco
+
+280
+00:13:34,833 --> 00:13:36,803
+mais de experincia ao escrever cdigo recursivo.
+
+281
+00:13:48,160 --> 00:13:49,700
+Espero que voc tenha isso.
+
+282
+00:13:49,700 --> 00:13:52,710
+Tudo o que voc tem que fazer, se voc quer escrever
+
+283
+00:13:52,710 --> 00:13:54,160
+isso em pr-encomenda,  claro,
+
+284
+00:13:56,400 --> 00:13:58,883
+mova a impresso para antes que as outras coisas aconteam.
+
+285
+00:14:00,010 --> 00:14:01,510
+E ento voc acaba com a
+
+286
+00:14:01,510 --> 00:14:02,343
+pr-encomenda e voc
+
+287
+00:14:02,343 --> 00:14:03,900
+deve,  claro, mudar esses nomes tambm.
+
+288
+00:14:07,460 --> 00:14:08,570
+ isso para este vdeo.
+
+289
+00:14:08,570 --> 00:14:11,580
+Espero que voc tenha gostado
+
+290
+00:14:11,580 --> 00:14:14,080
+da recurso no PyCharm aqui.
+
+291
+00:14:14,080 --> 00:14:17,830
+E olhando para a travessia inorder de uma rvore.
+
+292
+00:14:17,830 --> 00:14:19,300
+A propsito, pouco antes
+
+293
+00:14:19,300 --> 00:14:20,840
+de terminarmos,  claro
+
+294
+00:14:20,840 --> 00:14:24,500
+que, se voc simplesmente rodar o arquivo, acabar com cinco, nove,
+
+295
+00:14:25,360 --> 00:14:29,430
+11, imprimindo-o na ordem em ordem, eu acho, em formato de ordem.
+
+296
+00:14:29,430 --> 00:14:31,000
+E, novamente,  isso.
+
+297
+00:14:31,000 --> 00:14:32,100
+Obrigado por se juntar a mim.
+
+298
+00:14:32,100 --> 00:14:33,750
+E eu vejo voc no prximo.
+

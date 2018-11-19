@@ -1,0 +1,532 @@
+1
+00:00:00,000 --> 00:00:01,734
+Jose: Ol e bem vindo de volta.
+
+2
+00:00:01,734 --> 00:00:04,313
+Neste vdeo, estamos analisando mtodos de
+
+3
+00:00:04,313 --> 00:00:06,730
+classe e decoradores de mtodos estticos.
+
+4
+00:00:08,013 --> 00:00:10,242
+Ns vimos como podemos definir classes
+
+5
+00:00:10,242 --> 00:00:12,821
+e mtodos e incluindo alguns mtodos especiais
+
+6
+00:00:12,821 --> 00:00:15,831
+como dunder init e dunder len, e todos esses
+
+7
+00:00:15,831 --> 00:00:19,846
+mtodos tinham algo em comum, que  o parmetro prprio do incio.
+
+8
+00:00:19,846 --> 00:00:22,149
+Como lembrete, escrevi aqui um cdigo que
+
+9
+00:00:22,149 --> 00:00:24,249
+ a classe Student que j vimos.
+
+10
+00:00:24,249 --> 00:00:26,663
+Ns temos auto e auto.
+
+11
+00:00:26,663 --> 00:00:29,598
+Lembre-se que podemos chamar esse parmetro como quisermos.
+
+12
+00:00:29,598 --> 00:00:32,700
+Mas a conveno em Python  cham-lo de "eu".
+
+13
+00:00:32,700 --> 00:00:34,391
+O mais importante sobre esse parmetro
+
+14
+00:00:34,391 --> 00:00:36,843
+ o valor para o qual ele aponta.
+
+15
+00:00:36,843 --> 00:00:40,800
+O valor que representa, que  o objeto.
+
+16
+00:00:40,800 --> 00:00:44,403
+Quando criamos um novo objeto desta classe Student, e
+
+17
+00:00:44,403 --> 00:00:47,895
+chamamos qualquer um dos seus mtodos, estamos passando
+
+18
+00:00:47,895 --> 00:00:50,216
+automaticamente o parmetro self, e vimos
+
+19
+00:00:50,216 --> 00:00:53,597
+isso, deixe-me colocar algum cdigo aqui, o que
+
+20
+00:00:53,597 --> 00:00:56,979
+cria um novo aluno Rolf e acrescenta algumas
+
+21
+00:00:56,979 --> 00:01:01,157
+marcas a ele e, em seguida, imprime a funo mdia.
+
+22
+00:01:01,157 --> 00:01:03,683
+Lembre-se, o que isso est
+
+23
+00:01:03,683 --> 00:01:07,974
+fazendo  apenas "Aluno". mdia ", e passando em" rolf
+
+24
+00:01:07,974 --> 00:01:11,875
+", ento estamos acessando o mtodo de mdia da classe Student,
+
+25
+00:01:11,875 --> 00:01:14,867
+e estamos passando" rolf "como o primeiro argumento.
+
+26
+00:01:14,867 --> 00:01:17,095
+"rolf. mdia "faz a mesma coisa,
+
+27
+00:01:17,095 --> 00:01:19,678
+apenas o Python faz isso para ns, em segundo plano.
+
+28
+00:01:22,784 --> 00:01:27,409
+Ento, quando fazemos "objeto. mtodo ", isso realmente
+
+29
+00:01:27,409 --> 00:01:31,945
+est fazendo" classe. mtodo ", e, em seguida, passando
+
+30
+00:01:31,945 --> 00:01:36,607
+o objeto l, e este conhecimento, vamos fazer algumas coisas muito estranhas.
+
+31
+00:01:36,607 --> 00:01:38,706
+Eu no recomendo que voc faa isso, pois
+
+32
+00:01:38,706 --> 00:01:43,706
+vai quebrar as coisas, mas poderamos fazer algo como "Estudante". average ('ol'), passando
+
+33
+00:01:44,892 --> 00:01:46,824
+uma string.
+
+34
+00:01:46,824 --> 00:01:50,223
+Obviamente, isso no vai funcionar, porque o
+
+35
+00:01:50,223 --> 00:01:55,223
+mtodo mdio aqui espera, um objeto que tem uma propriedade "marcas".
+
+36
+00:01:55,331 --> 00:01:58,839
+Uma string no tem uma propriedade "marks", ento quando ns rodarmos
+
+37
+00:01:58,839 --> 00:02:00,660
+isso, vai nos dizer que uma
+
+38
+00:02:00,660 --> 00:02:02,410
+string no tem um atributo "marks".
+
+39
+00:02:03,319 --> 00:02:04,802
+Vejo?
+
+40
+00:02:04,802 --> 00:02:07,406
+Mas mesmo assim, voc pode fazer isso,
+
+41
+00:02:07,406 --> 00:02:11,084
+porque, "eu" pode ser o que voc quiser, como eu
+
+42
+00:02:11,084 --> 00:02:14,616
+disse antes, o importante  o valor que o "eu"
+
+43
+00:02:14,616 --> 00:02:18,842
+representa, que deveria ser um objeto do tipo Estudante, para que
+
+44
+00:02:18,842 --> 00:02:21,889
+marcas, escola, desculpe nome, escola e marcas propriedades.
+
+45
+00:02:21,889 --> 00:02:25,676
+Basta lembrar que "self"  um parmetro como qualquer
+
+46
+00:02:25,676 --> 00:02:28,269
+outro, voc pode dar qualquer valor
+
+47
+00:02:28,269 --> 00:02:31,947
+que quiser, porm fazendo "oi". marcas "no vai funcionar, porque a
+
+48
+00:02:31,947 --> 00:02:33,530
+string no tem essa propriedade.
+
+49
+00:02:34,585 --> 00:02:37,464
+Enfim, ento por que isso  importante?
+
+50
+00:02:37,464 --> 00:02:40,882
+Esse primeiro tipo de mtodo que analisamos 
+
+51
+00:02:40,882 --> 00:02:43,130
+comumente chamado de mtodo de instncia.
+
+52
+00:02:43,130 --> 00:02:46,417
+ aquele que pega o objeto chamador como o primeiro
+
+53
+00:02:46,417 --> 00:02:48,199
+argumento, e isso  "eu".
+
+54
+00:02:48,199 --> 00:02:50,690
+Ento o chamador aqui  "rolf",
+
+55
+00:02:50,690 --> 00:02:54,811
+quando chamamos a mdia, ele considera "rolf" como o primeiro argumento.
+
+56
+00:02:54,811 --> 00:02:57,860
+Isso  chamado de um mtodo de instncia.
+
+57
+00:02:57,860 --> 00:03:01,891
+Existem mais dois tipos de mtodo, um que toma a
+
+58
+00:03:01,891 --> 00:03:06,220
+classe do chamador como primeiro argumento e um que no
+
+59
+00:03:06,220 --> 00:03:08,672
+toma nada como o primeiro argumento.
+
+60
+00:03:08,672 --> 00:03:12,777
+Ento, o mtodo de instncia pega o objeto, que  "rolf"
+
+61
+00:03:12,777 --> 00:03:15,619
+como o primeiro argumento, depois temos outro tipo,
+
+62
+00:03:15,619 --> 00:03:19,427
+que pega a classe, que  Student como o primeiro
+
+63
+00:03:19,427 --> 00:03:23,733
+argumento, e existe um que no aceita nada como o primeiro argumento.
+
+64
+00:03:23,733 --> 00:03:26,537
+Vamos dar uma olhada em um que toma a
+
+65
+00:03:26,537 --> 00:03:30,308
+classe do chamador como o primeiro argumento, vamos definir uma nova classe
+
+66
+00:03:30,308 --> 00:03:33,522
+aqui, e vou mostrar a voc a sintaxe e no
+
+67
+00:03:33,522 --> 00:03:35,755
+prximo vdeo, vamos procurar em alguns exemplos, ok?
+
+68
+00:03:35,755 --> 00:03:37,961
+Ento, esses exemplos vo ser
+
+69
+00:03:37,961 --> 00:03:41,621
+bem terrveis, vamos definir uma classe que vamos chamar
+
+70
+00:03:41,621 --> 00:03:44,835
+de Foo, e nela teremos um mtodo @class,
+
+71
+00:03:44,835 --> 00:03:45,918
+que  "oi".
+
+72
+00:03:48,268 --> 00:03:52,122
+OK, ento observe, pelo jeito que eu no disse isso antes, mas voc no
+
+73
+00:03:52,122 --> 00:03:56,336
+precisa de um mtodo init em todas as classes, voc pode simplesmente ignor-lo e ento
+
+74
+00:03:56,336 --> 00:03:58,917
+voc no ir apenas, voc simplesmente no ir definir
+
+75
+00:03:58,917 --> 00:04:01,109
+nenhuma propriedade para comear com, est tudo bem,
+
+76
+00:04:01,109 --> 00:04:02,692
+voc no precisa de um.
+
+77
+00:04:04,304 --> 00:04:07,592
+Ento, ns temos esse decorador de mtodo de classe, e
+
+78
+00:04:07,592 --> 00:04:11,122
+ns sabemos que  um decorador porque tem o smbolo @
+
+79
+00:04:11,122 --> 00:04:14,745
+na frente, e agora eu renomei o primeiro argumento para ser
+
+80
+00:04:14,745 --> 00:04:18,779
+"cls" ao invs de "self", isso  s para dizer me que
+
+81
+00:04:18,779 --> 00:04:22,457
+este  um mtodo de classe, e que este parmetro vai
+
+82
+00:04:22,457 --> 00:04:26,207
+manter o valor da classe que foi chamado, ento  o Foo. ok?
+
+83
+00:04:27,468 --> 00:04:29,885
+Vamos imprimir "cls. __nome__". Ento eu vou criar um objeto
+
+84
+00:04:32,815 --> 00:04:34,056
+do tipo Foo, e vou dizer "meu_objeto". oi () ",
+
+85
+00:04:34,056 --> 00:04:38,723
+agora importante, o que est acontecendo em segundo plano,  que no 
+
+86
+00:04:39,852 --> 00:04:43,994
+meu objeto, meu objeto no est
+
+87
+00:04:43,994 --> 00:04:47,601
+sendo passado como o primeiro argumento, agora a classe do
+
+88
+00:04:47,601 --> 00:04:50,934
+objeto est sendo passada como o primeiro argumento, ento
+
+89
+00:04:50,934 --> 00:04:54,720
+o que voc acha que ns ' vai ver impresso aqui?
+
+90
+00:04:54,720 --> 00:04:56,949
+Espero que voc tenha acertado, o que veremos 
+
+91
+00:04:56,949 --> 00:04:58,366
+o Foo, ento vamos executar isso,
+
+92
+00:05:03,005 --> 00:05:06,891
+e como voc pode ver, o que vemos impresso aqui  o Foo, porque "cls. __name__ "nos d o nome da classe, e"
+
+93
+00:05:06,891 --> 00:05:11,256
+cls " a classe, ento  o Foo.
+
+94
+00:05:11,256 --> 00:05:15,839
+Agora, um exemplo terrvel, eu s queria
+
+95
+00:05:16,973 --> 00:05:21,306
+te mostrar a sintaxe, e novamente "cls"  apenas um nome para o parmetro,
+
+96
+00:05:22,903 --> 00:05:26,024
+voc pode cham-lo como quiser, se voc quiser ser realmente,
+
+97
+00:05:26,024 --> 00:05:29,479
+muito bobo, voc poderia cham-lo " auto ", idia terrvel, no
+
+98
+00:05:29,479 --> 00:05:32,132
+faa isso, porque ento isso vai te confundir.
+
+99
+00:05:32,132 --> 00:05:35,828
+OK, isso no  "eu", esse no  o objeto com o
+
+100
+00:05:35,828 --> 00:05:38,024
+qual voc est lidando atualmente, "cls" 
+
+101
+00:05:38,024 --> 00:05:40,436
+apenas a conveno, porque significa "classe", apenas chame
+
+102
+00:05:40,436 --> 00:05:43,034
+isso, acho que  uma idia melhor.
+
+103
+00:05:43,034 --> 00:05:45,969
+Agora, outro exemplo, podemos, em vez de
+
+104
+00:05:45,969 --> 00:05:48,088
+adicionar o mtodo de classe,
+
+105
+00:05:48,088 --> 00:05:52,454
+e definir uma barra de classes, que ter um mtodo esttico,
+
+106
+00:05:52,454 --> 00:05:57,287
+e este mtodo esttico no recebe parmetros, observe que no h nada
+
+107
+00:06:07,667 --> 00:06:11,517
+l dentro e apenas imprime algo: "Ol Eu no tomo parmetros. "Eu s tenho esse hbito ruim de chamar parmetros"
+
+108
+00:06:11,517 --> 00:06:14,428
+argumentos "e vice-versa, no caia nesse mau
+
+109
+00:06:14,428 --> 00:06:17,178
+hbito, apenas chame-os
+
+110
+00:06:19,521 --> 00:06:21,713
+de parmetros quando eles esto
+
+111
+00:06:21,713 --> 00:06:25,130
+aqui, argumentos quando eles esto aqui, e essa
+
+112
+00:06:25,130 --> 00:06:27,397
+ a nomeao correta.
+
+113
+00:06:27,397 --> 00:06:30,407
+Agora podemos dizer "another_object" 
+
+114
+00:06:30,407 --> 00:06:33,118
+Bar, e podemos dizer "another_object". oi ", e podemos executar isso, e
+
+115
+00:06:33,118 --> 00:06:36,451
+agora voc v que ele diz" Ol, eu
+
+116
+00:06:37,707 --> 00:06:42,374
+no aceito "parmetros", ento  bom.
+
+117
+00:06:43,447 --> 00:06:45,416
+Essas partes da sintaxe so apenas
+
+118
+00:06:45,416 --> 00:06:47,833
+para que voc possa modificar o mtodo adotado.
+
+119
+00:06:50,320 --> 00:06:54,239
+Como voc os usa depende totalmente de voc.
+
+120
+00:06:54,239 --> 00:06:56,322
+Ento, com freqncia, os mtodos de classe
+
+121
+00:06:57,658 --> 00:07:00,825
+sero usados quando voc quiser algo, que queira ter acesso
+
+122
+00:07:02,116 --> 00:07:06,015
+ classe, e os mtodos estticos sero usados quando voc quiser um mtodo
+
+123
+00:07:06,015 --> 00:07:10,067
+aqui, que no use o objeto atual ou o mtodo. classe, mas 
+
+124
+00:07:10,067 --> 00:07:11,978
+de alguma forma relacionada com a classe.
+
+125
+00:07:11,978 --> 00:07:14,896
+No prximo vdeo vamos dar uma olhada em alguns exemplos,
+
+126
+00:07:14,896 --> 00:07:18,574
+ento lembre-se dessa sintaxe, por enquanto, e agora, no prximo vdeo, vamos
+
+127
+00:07:18,574 --> 00:07:20,283
+ver alguns exemplos e ao longo
+
+128
+00:07:20,283 --> 00:07:23,495
+do curso, vamos usar isso algumas vezes, ento no se preocupe
+
+129
+00:07:23,495 --> 00:07:25,781
+se no clicar completamente, s queria mostrar a
+
+130
+00:07:25,781 --> 00:07:27,811
+voc o que parece, agora, vamos passar
+
+131
+00:07:27,811 --> 00:07:30,648
+para o prximo vdeo, eu vou te ver l.
+
+132
+00:07:30,648 --> 00:07:32,339
+&nbsp;
+
+133
+00:07:32,339 --> 00:07:35,123
+&nbsp;
+

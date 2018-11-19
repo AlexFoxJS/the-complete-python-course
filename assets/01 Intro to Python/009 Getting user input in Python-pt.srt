@@ -1,0 +1,1140 @@
+1
+00:00:00,320 --> 00:00:01,776
+Jose: Ol, ai.
+
+2
+00:00:01,776 --> 00:00:02,609
+Bem vindo de volta.
+
+3
+00:00:02,609 --> 00:00:04,370
+Neste vdeo, vamos ver
+
+4
+00:00:04,370 --> 00:00:07,690
+realmente as coisas do usurio, em vez de
+
+5
+00:00:07,690 --> 00:00:08,690
+apenas dizer-lhes coisas.
+
+6
+00:00:09,680 --> 00:00:13,113
+Ns vamos pegar o nome do usurio, e vamos cumpriment-los
+
+7
+00:00:13,113 --> 00:00:15,130
+usando o nome deles, e ns
+
+8
+00:00:15,130 --> 00:00:17,040
+tambm vamos ter a idade deles,
+
+9
+00:00:17,895 --> 00:00:20,222
+e ns vamos dizer a eles por
+
+10
+00:00:20,222 --> 00:00:21,810
+quantos meses eles viveram.
+
+11
+00:00:21,810 --> 00:00:24,090
+Agora, no passado, analisamos nmeros,
+
+12
+00:00:24,090 --> 00:00:25,820
+inteiros e flutuantes.
+
+13
+00:00:25,820 --> 00:00:27,780
+Tambm analisamos a impresso e
+
+14
+00:00:27,780 --> 00:00:29,000
+isso ser til.
+
+15
+00:00:29,000 --> 00:00:31,653
+Analisamos as strings e analisamos a
+
+16
+00:00:31,653 --> 00:00:32,940
+formatao de strings.
+
+17
+00:00:32,940 --> 00:00:35,400
+Vamos usar tudo o que aprendemos at
+
+18
+00:00:35,400 --> 00:00:36,233
+agora neste vdeo.
+
+19
+00:00:38,521 --> 00:00:41,440
+Agora,  fcil ter seu prprio nome em
+
+20
+00:00:41,440 --> 00:00:44,310
+uma varivel, porque voc j sabe disso.
+
+21
+00:00:44,310 --> 00:00:46,710
+Voc sabe disso antes do programa comear a ser executado.
+
+22
+00:00:47,610 --> 00:00:51,270
+No entanto, se voc quiser ter o nome do usurio, no  to
+
+23
+00:00:52,200 --> 00:00:54,580
+fcil porque voc no o conhece, e voc provavelmente
+
+24
+00:00:54,580 --> 00:00:57,500
+no quer que o usurio entre no seu cdigo e o
+
+25
+00:00:57,500 --> 00:01:00,410
+altere, digite: "meu nome aqui, ok "agora posso dizer ol
+
+26
+00:01:00,410 --> 00:01:02,250
+para mim mesmo. "Ok, isso
+
+27
+00:01:03,383 --> 00:01:04,685
+no  timo.
+
+28
+00:01:04,685 --> 00:01:07,410
+Ento, como vamos perguntar ao usurio o nome dele?
+
+29
+00:01:08,540 --> 00:01:10,590
+Bem, bastante fcil.
+
+30
+00:01:10,590 --> 00:01:13,380
+Ns vamos usar a entrada. a propsito, eu disse a palavra
+
+31
+00:01:13,380 --> 00:01:16,190
+E esta  uma funo, como a impresso . funcionar l, e eu meio que
+
+32
+00:01:16,190 --> 00:01:19,610
+E o modo de entrada funciona. espremi isso sorrateiramente.
+
+33
+00:01:19,610 --> 00:01:23,100
+Ns no falamos sobre funes ainda.
+
+34
+00:01:23,100 --> 00:01:24,490
+Ns vamos.
+
+35
+00:01:24,490 --> 00:01:26,000
+Mas sabemos que isso  uma funo por causa de duas coisas.
+
+36
+00:01:26,000 --> 00:01:27,390
+Tem colchetes no final e faz alguma coisa.
+
+37
+00:01:27,390 --> 00:01:30,400
+A funo de impresso imprime algo na tela.
+
+38
+00:01:30,400 --> 00:01:34,470
+A funo de entrada, na verdade, tambm imprime
+
+39
+00:01:34,470 --> 00:01:37,910
+algo na tela, mas depois permite que
+
+40
+00:01:37,910 --> 00:01:41,190
+o usurio digite algo de volta.
+
+41
+00:01:41,190 --> 00:01:45,080
+Ento funes fazem coisas.
+
+42
+00:01:45,080 --> 00:01:47,030
+ uma espcie de funes em
+
+43
+00:01:47,030 --> 00:01:49,540
+matemtica, se voc fez funes em suas aulas
+
+44
+00:01:49,540 --> 00:01:51,690
+de matemtica, onde voc lhes d algum
+
+45
+00:01:51,690 --> 00:01:54,400
+valor, elas fazem algo, e ento elas lhe devolvem algo.
+
+46
+00:01:54,400 --> 00:01:56,520
+Muito semelhante.
+
+47
+00:01:56,520 --> 00:01:58,420
+Vamos aprender muito mais sobre funes neste curso,
+
+48
+00:01:58,420 --> 00:01:59,470
+ento no se preocupe.
+
+49
+00:01:59,470 --> 00:02:02,347
+Se ainda no est claro o que eles so,
+
+50
+00:02:02,347 --> 00:02:03,420
+explicarei muito mais profundamente. Eu fui um
+
+51
+00:02:03,420 --> 00:02:04,810
+A funo de entrada, voltando. pouco fora do tpico l. A funo de entrada leva em
+
+52
+00:02:04,810 --> 00:02:06,950
+algo que voc quer dizer ao usurio, ou algo
+
+53
+00:02:07,820 --> 00:02:10,871
+que voc quer dar ao usurio, para que eles saibam que precisam digitar.
+
+54
+00:02:10,871 --> 00:02:11,704
+Ns vamos digitar
+
+55
+00:02:11,704 --> 00:02:14,200
+"digite seu nome" e depois um espao no final.
+
+56
+00:02:14,200 --> 00:02:16,160
+O espao no final no 
+
+57
+00:02:16,160 --> 00:02:19,610
+necessrio, mas eu s quero dizer isso porque voc ver
+
+58
+00:02:20,900 --> 00:02:23,080
+em um momento porque  til.
+
+59
+00:02:23,080 --> 00:02:24,480
+Agora, vamos imprimir isso para
+
+60
+00:02:25,735 --> 00:02:27,100
+o usurio, ento vamos esperar
+
+61
+00:02:27,100 --> 00:02:29,980
+at que o usurio digite algo de volta e pressione "enter. "E assim que pressionar" enter
+
+62
+00:02:29,980 --> 00:02:31,380
+", o
+
+63
+00:02:32,340 --> 00:02:35,080
+que quer que tenha digitado
+
+64
+00:02:36,050 --> 00:02:38,990
+ser fornecido  varivel your_name.
+
+65
+00:02:38,990 --> 00:02:42,320
+Ento, vamos imprimir uma saudao.
+
+66
+00:02:42,320 --> 00:02:43,860
+Ns vamos dizer "ol" para eles.
+
+67
+00:02:43,860 --> 00:02:47,300
+Como voc faria isso?
+
+68
+00:02:47,300 --> 00:02:49,590
+Suponha que seu nome tenha o nome do usurio.
+
+69
+00:02:50,917 --> 00:02:54,551
+O que voc imprimiria aqui e diria "ol" para eles?
+
+70
+00:02:54,551 --> 00:02:58,360
+Mais uma vez, no estou apenas esperando e pensando.
+
+71
+00:02:58,360 --> 00:02:59,870
+Estou esperando que voc pause o vdeo e escreva seu cdigo.
+
+72
+00:03:00,770 --> 00:03:04,130
+Existem algumas opes, como vimos no ltimo vdeo.
+
+73
+00:03:04,130 --> 00:03:07,250
+Ns poderamos digitar "ol" mais seu_nome.
+
+74
+00:03:11,470 --> 00:03:14,300
+Ns poderamos digitar isso, isso seria totalmente
+
+75
+00:03:14,300 --> 00:03:17,450
+bom, mas  claro, eu disse tentar usar
+
+76
+00:03:18,400 --> 00:03:20,730
+f cordas sempre que possvel.
+
+77
+00:03:20,730 --> 00:03:23,400
+Ento, isso seria o que eu recomendaria,
+
+78
+00:03:24,910 --> 00:03:27,260
+f'Ol, (your_name), e isso substituir o
+
+79
+00:03:28,297 --> 00:03:31,440
+valor de your_name nessa string, e vai dizer
+
+80
+00:03:31,440 --> 00:03:32,400
+"ol" para eles.
+
+81
+00:03:34,150 --> 00:03:36,320
+Ok, vamos rodar e ver o que acontece.
+
+82
+00:03:37,324 --> 00:03:40,550
+Como voc pode ver, ns "entramos no seu
+
+83
+00:03:40,550 --> 00:03:43,410
+nome" e ento temos um bom espao l.
+
+84
+00:03:43,410 --> 00:03:45,760
+Isso  bom porque isso significa que temos a
+
+85
+00:03:46,848 --> 00:03:48,680
+capacidade de ter algum espao entre seu
+
+86
+00:03:48,680 --> 00:03:50,740
+nome e o prompt, e ento podemos digitar
+
+87
+00:03:50,740 --> 00:03:53,240
+"Jose", e como voc pode ver, temos "Hello, Jose" l.
+
+88
+00:03:53,240 --> 00:03:57,660
+Impressionante.
+
+89
+00:03:57,660 --> 00:04:02,150
+Agora aprendemos como obter entrada do usurio.
+
+90
+00:04:04,480 --> 00:04:07,450
+Aprendemos como fazer uma pergunta ou, neste caso, apresent-la com um
+
+91
+00:04:07,450 --> 00:04:09,410
+prompt e fazer com que ela digite
+
+92
+00:04:11,670 --> 00:04:12,503
+um valor de volta.
+
+93
+00:04:12,503 --> 00:04:15,500
+A prxima coisa que vamos fazer  calcular o nmero de
+
+94
+00:04:15,500 --> 00:04:17,060
+meses que um usurio viveu.
+
+95
+00:04:17,060 --> 00:04:19,030
+Vamos pedir-lhes a idade, por exemplo,
+
+96
+00:04:19,030 --> 00:04:21,210
+30 anos, e depois vamos dizer
+
+97
+00:04:22,440 --> 00:04:24,800
+a eles: "Voc viveu por 340 meses. "Isso
+
+98
+00:04:24,800 --> 00:04:27,760
+est correto?
+
+99
+00:04:28,970 --> 00:04:31,610
+420 meses.
+
+100
+00:04:31,610 --> 00:04:34,440
+420 meses?
+
+101
+00:04:34,440 --> 00:04:38,490
+Eu no sei.
+
+102
+00:04:38,490 --> 00:04:39,870
+Ns vamos fazer com que o Python faa isso de qualquer maneira.
+
+103
+00:04:39,870 --> 00:04:41,130
+Ento a idade vai ser uma entrada onde
+
+104
+00:04:41,130 --> 00:04:41,970
+ns vamos pedir para eles
+
+105
+00:04:41,970 --> 00:04:42,803
+"Digam a sua idade", e
+
+106
+00:04:42,803 --> 00:04:45,050
+ento ns vamos imprimir "voc viveu para", e ento ns vamos imprimir algo l, "meses. "O que achamos
+
+107
+00:04:45,050 --> 00:04:48,210
+que vai dentro desses suportes?
+
+108
+00:04:48,210 --> 00:04:51,610
+Espero que voc tenha acertado, mas eu no esperaria que voc fizesse isso.
+
+109
+00:04:51,610 --> 00:04:56,610
+Tempos de idade 12. voc no pode ver meu rosto, mas estou
+
+110
+00:04:56,910 --> 00:04:59,180
+Podemos colocar essencialmente meio que
+
+111
+00:05:01,240 --> 00:05:05,080
+qualquer coisa que queremos nestes suportes, e digo isso. me contorcendo quando digo isso. Voc pode colocar coisas dentro desses
+
+112
+00:05:10,670 --> 00:05:13,530
+colchetes alm das variveis.
+
+113
+00:05:13,530 --> 00:05:15,390
+Por exemplo, voc pode colocar tempos de idade 12.
+
+114
+00:05:15,390 --> 00:05:18,290
+E h muito mais coisas que voc pode colocar l, mas
+
+115
+00:05:18,290 --> 00:05:21,579
+obviamente sua string vai ficar mais
+
+116
+00:05:21,579 --> 00:05:23,510
+longa e mais complexa conforme voc faz isso.
+
+117
+00:05:23,510 --> 00:05:25,710
+Ok, vamos correr isso e ver o que acontece?
+
+118
+00:05:25,710 --> 00:05:27,210
+"Digite seu nome. "Bem, esta  a primeira
+
+119
+00:05:28,082 --> 00:05:29,730
+declarao de entrada aqui em cima.
+
+120
+00:05:29,730 --> 00:05:32,510
+Eu vou digitar "Jos" e ele diz "Ol, Jos" e ento
+
+121
+00:05:32,510 --> 00:05:35,619
+vamos digitar a nossa idade, que eu disse "30", e o que voc
+
+122
+00:05:35,619 --> 00:05:36,940
+acha que ser impresso? ?
+
+123
+00:05:38,520 --> 00:05:41,270
+No  o que espervamos.
+
+124
+00:05:42,520 --> 00:05:43,855
+30303030303030, e acredite
+
+125
+00:05:43,855 --> 00:05:45,980
+em mim que h 12 30's que temos l.
+
+126
+00:05:45,980 --> 00:05:48,450
+Voc pode cont-los se quiser.
+
+127
+00:05:48,450 --> 00:05:51,670
+Mas o que est acontecendo  que tudo o que 
+
+128
+00:05:51,670 --> 00:05:54,170
+retornado pela funo de entrada  uma string.
+
+129
+00:06:00,810 --> 00:06:02,700
+O que  a idade vezes 12?
+
+130
+00:06:04,000 --> 00:06:08,410
+Aquela  a idade mais a idade mais a idade mais a idade, 12 vezes.
+
+131
+00:06:08,410 --> 00:06:09,243
+Lembre-se do que dissemos sobre a concatenao de cordas?
+
+132
+00:06:09,243 --> 00:06:11,700
+Adicionando strings juntas apenas se juntam a elas,
+
+133
+00:06:11,700 --> 00:06:14,930
+uma aps a outra, e  isso que fizemos aqui.
+
+134
+00:06:14,930 --> 00:06:18,570
+Temos 12 anos e isso  12 e 30 anos.
+
+135
+00:06:19,660 --> 00:06:21,520
+Na verdade, no multiplicamos o nmero em si.
+
+136
+00:06:22,370 --> 00:06:27,370
+Isso est de volta ao que eu disse anteriormente, que as seqncias
+
+137
+00:06:28,870 --> 00:06:32,010
+de caracteres no significam nada para o computador.
+
+138
+00:06:32,010 --> 00:06:34,800
+Eles s significam coisas para ns.
+
+139
+00:06:34,800 --> 00:06:37,410
+Ento, para ns, a string 30 significa apenas
+
+140
+00:06:37,410 --> 00:06:40,170
+o valor 30, mas para o computador, a
+
+141
+00:06:40,170 --> 00:06:43,920
+string 30 significa os dgitos trs e zero, e  isso.
+
+142
+00:06:44,760 --> 00:06:46,860
+Poderia ser, no que diz respeito ao computador,
+
+143
+00:06:46,860 --> 00:06:49,310
+poderia ser aeb, e no saberia o que eles significam.
+
+144
+00:06:49,310 --> 00:06:51,290
+Ento o que temos
+
+145
+00:06:51,290 --> 00:06:56,290
+a fazer  dizer ao computador que isso significa alguma coisa.
+
+146
+00:06:56,340 --> 00:06:59,020
+Temos que dizer ao computador que a idade  um nmero.
+
+147
+00:06:59,020 --> 00:07:01,750
+Ento, mais uma vez, vamos fazer a idade
+
+148
+00:07:01,750 --> 00:07:03,980
+igual a entrada, "digite sua idade" e,
+
+149
+00:07:03,980 --> 00:07:08,000
+em seguida, vamos fazer a idade, num vai ser int de idade.
+
+150
+00:07:08,000 --> 00:07:10,130
+Esta  uma nova funo que estou apresentando agora.
+
+151
+00:07:10,130 --> 00:07:11,350
+Int transforma o que est dentro dos parnteses em um inteiro.
+
+152
+00:07:11,350 --> 00:07:14,440
+Ento, se digitarmos 30 aqui, isso
+
+153
+00:07:16,424 --> 00:07:20,130
+ir transform-lo no nmero 30, em oposio 
+
+154
+00:07:20,130 --> 00:07:25,130
+string 30, e ento podemos copiar isso e fazer age_num.
+
+155
+00:07:25,410 --> 00:07:27,940
+A propsito, acabei de copiar, e
+
+156
+00:07:27,940 --> 00:07:30,680
+me sinto muito mal por fazer isso.
+
+157
+00:07:30,680 --> 00:07:35,680
+Tente no copiar, se voc puder evit-lo.
+
+158
+00:07:37,290 --> 00:07:40,470
+Digitar as coisas vai realmente ajudar
+
+159
+00:07:40,470 --> 00:07:43,300
+a sua memria e seu aprendizado.
+
+160
+00:07:44,480 --> 00:07:46,530
+Ento tente no copiar.
+
+161
+00:07:50,090 --> 00:07:51,980
+Tentarei no fazer isso de novo tambm,
+
+162
+00:07:51,980 --> 00:07:53,760
+mas tambm quero economizar seu tempo.
+
+163
+00:07:53,760 --> 00:07:56,592
+Ok, vamos rodar isso e ver o que acontece agora.
+
+164
+00:07:56,592 --> 00:07:58,810
+O primeiro, ns sabemos, imprime 30 12
+
+165
+00:07:58,810 --> 00:08:01,050
+vezes, mas o segundo imprime os 360 meses.
+
+166
+00:08:01,050 --> 00:08:02,240
+E isso faria sentido porque trs vezes 12  36.
+
+167
+00:08:02,240 --> 00:08:03,400
+Minha matemtica no  muito boa.
+
+168
+00:08:03,400 --> 00:08:05,050
+Eu tenho programado por muito tempo.
+
+169
+00:08:06,320 --> 00:08:08,620
+Agora, podemos tornar isso um pouco mais limpo.
+
+170
+00:08:10,850 --> 00:08:13,500
+Em vez de ter uma varivel
+
+171
+00:08:13,500 --> 00:08:18,370
+age_num e multiplicar por 12, podemos usar essa entrada e
+
+172
+00:08:19,690 --> 00:08:24,690
+transformar isso em um nmero antes de atribu-lo  idade.
+
+173
+00:08:25,200 --> 00:08:26,550
+Ento podemos fazer isso.
+
+174
+00:08:26,550 --> 00:08:28,310
+A idade  int de entrada ", digite sua idade. "Agora, por
+
+175
+00:08:29,930 --> 00:08:32,790
+que faramos isso?
+
+176
+00:08:32,790 --> 00:08:35,980
+ importante perguntar a si mesmo essa
+
+177
+00:08:35,980 --> 00:08:39,650
+pergunta, e no  s porque podemos.
+
+178
+00:08:39,650 --> 00:08:42,670
+Quando voc gostaria que a idade de uma pessoa
+
+179
+00:08:43,780 --> 00:08:44,680
+fosse uma corda?
+
+180
+00:08:44,680 --> 00:08:48,620
+E se voc no consegue pensar
+
+181
+00:08:49,640 --> 00:08:51,910
+em uma boa resposta para isso, como
+
+182
+00:08:51,910 --> 00:08:54,080
+"imprimi-lo", sim, tudo bem, voc pode
+
+183
+00:08:54,080 --> 00:08:55,910
+imprimir a seqncia, mas tambm
+
+184
+00:08:57,640 --> 00:09:01,490
+pode imprimir o nmero, por isso no faz muito de uma diferena.
+
+185
+00:09:01,490 --> 00:09:02,750
+Se voc no consegue pensar
+
+186
+00:09:05,180 --> 00:09:07,580
+em uma boa resposta para ter algo como um
+
+187
+00:09:08,430 --> 00:09:11,210
+tipo especfico, neste caso, uma string, ento pode fazer sentido nunca
+
+188
+00:09:11,210 --> 00:09:12,530
+armazen-lo como esse tipo e,
+
+189
+00:09:12,530 --> 00:09:13,890
+nesse caso, nunca teremos acesso
+
+190
+00:09:13,890 --> 00:09:14,940
+ string em si,
+
+191
+00:09:16,400 --> 00:09:20,510
+porque o que vai acontecer  que vamos calcular essa entrada, vamos pegar a string.
+
+192
+00:09:20,510 --> 00:09:24,280
+Imediatamente, estamos cercados por esse inteiro que
+
+193
+00:09:24,280 --> 00:09:28,420
+vai transform-lo em um inteiro, e isso
+
+194
+00:09:28,420 --> 00:09:30,730
+vai atribu-lo  idade,
+
+195
+00:09:30,730 --> 00:09:34,020
+e nunca iremos acessar a string.
+
+196
+00:09:34,020 --> 00:09:36,320
+Ns s vamos ter o nmero.
+
+197
+00:09:36,320 --> 00:09:37,870
+Porque no precisamos da
+
+198
+00:09:37,870 --> 00:09:40,890
+string para nada, no faz sentido poluir nosso
+
+199
+00:09:40,890 --> 00:09:43,560
+cdigo com construes extras que no fazem sentido.
+
+200
+00:09:43,560 --> 00:09:45,170
+E mais uma
+
+201
+00:09:45,170 --> 00:09:47,640
+vez, podemos fazer isso.
+
+202
+00:09:47,640 --> 00:09:49,440
+"Voc viveu por" idade 12 meses.
+
+203
+00:09:50,370 --> 00:09:52,550
+Eu iria executar isso, mas novamente, vai funcionar.
+
+204
+00:09:52,550 --> 00:09:54,510
+Confie em mim.
+
+205
+00:09:54,510 --> 00:09:57,980
+Agora, uma opo melhor do que a idade 12 seria criar uma varivel separada
+
+206
+00:10:00,090 --> 00:10:00,960
+para armazenar os meses.
+
+207
+00:10:06,240 --> 00:10:07,073
+Agora isso  apenas eu sendo um pouco pedante.
+
+208
+00:10:07,073 --> 00:10:09,340
+Eu no gosto de ter cdigo Python dentro de uma string.
+
+209
+00:10:10,470 --> 00:10:12,790
+Para mim, parece no natural.
+
+210
+00:10:12,790 --> 00:10:13,623
+Parece que isso  desnecessariamente complicado.
+
+211
+00:10:17,009 --> 00:10:21,150
+Ento, o que eu faria, se eu estivesse
+
+212
+00:10:21,150 --> 00:10:25,150
+escrevendo isso corretamente, seria "digitar sua idade" e,
+
+213
+00:10:25,150 --> 00:10:30,140
+em seguida, ter uma varivel meses que tenha 12 anos,
+
+214
+00:10:30,140 --> 00:10:34,800
+e depois eu imprimiria "voc viveu por" meses meses.
+
+215
+00:10:34,800 --> 00:10:35,890
+Eu acho que isso  mais claro.
+
+216
+00:10:35,890 --> 00:10:39,060
+ bvio que estamos substituindo uma varivel chamada
+
+217
+00:10:39,060 --> 00:10:42,190
+meses, que presumivelmente contm a contagem de meses
+
+218
+00:10:42,190 --> 00:10:46,640
+em nossa string que diz "voc viveu por" x meses.
+
+219
+00:10:46,640 --> 00:10:48,930
+E ns no temos tempos de idade 12, que
+
+220
+00:10:48,930 --> 00:10:53,370
+ento temos que olhar e dizer: "Ok, isso deve significar meses", porque a idade deve ser o
+
+221
+00:10:57,701 --> 00:10:58,560
+nmero de anos. "Se temos
+
+222
+00:10:58,560 --> 00:11:01,748
+meses como a coisa que estamos substituindo, 
+
+223
+00:11:01,748 --> 00:11:04,580
+um pouco mais claro que isso significa
+
+224
+00:11:04,580 --> 00:11:08,470
+que estamos contando a eles por quantos meses eles viveram.
+
+225
+00:11:08,470 --> 00:11:11,440
+Agora, estamos chegando ao final do vdeo.
+
+226
+00:11:11,440 --> 00:11:14,170
+Obrigado por ter comigo.
+
+227
+00:11:14,170 --> 00:11:16,610
+Eu sei que isso
+
+228
+00:11:16,610 --> 00:11:19,230
+pode ser repetitivo, olhando para a mesma coisa
+
+229
+00:11:19,230 --> 00:11:21,180
+repetidas vezes, mas espero que voc
+
+230
+00:11:21,180 --> 00:11:24,060
+tenha aprendido alguma coisa, e esperanosamente estou incutindo em
+
+231
+00:11:25,770 --> 00:11:28,500
+seu senso de como pensar nessas coisas.
+
+232
+00:11:28,500 --> 00:11:30,490
+Agora eu tenho um pequeno exerccio para voc.
+
+233
+00:11:30,490 --> 00:11:32,050
+Este pequeno exerccio  calcular
+
+234
+00:11:32,050 --> 00:11:34,535
+o nmero de segundos em vez de meses, ok?
+
+235
+00:11:34,535 --> 00:11:35,670
+V em frente e tente isso.
+
+236
+00:11:37,133 --> 00:11:38,870
+Suponha que voc tenha escrito esse
+
+237
+00:11:38,870 --> 00:11:41,860
+cdigo ao meu lado, ento agora voc pode modificar esse cdigo
+
+238
+00:11:43,600 --> 00:11:45,200
+aqui em um programa que calcula
+
+239
+00:11:46,540 --> 00:11:49,980
+o nmero de segundos vividos em vez do nmero de meses vividos.
+
+240
+00:11:51,150 --> 00:11:55,570
+V em frente e pause o vdeo, e tente isso, e depois
+
+241
+00:11:55,570 --> 00:11:57,650
+voltaremos e escreverei esse cdigo tambm
+
+242
+00:11:57,650 --> 00:12:00,850
+para que voc possa ver como eu faria isso.
+
+243
+00:12:00,850 --> 00:12:05,850
+Vejo voc em apenas um momento.
+
+244
+00:12:06,310 --> 00:12:08,660
+Ok, espero que voc entenda isso.
+
+245
+00:12:08,660 --> 00:12:11,080
+O que eu faria  mais uma vez int de
+
+246
+00:12:11,080 --> 00:12:13,250
+entrada, e ento eu diria que segundos so tempos
+
+247
+00:12:13,250 --> 00:12:15,600
+de 365 anos, nos dariam o nmero de dias.
+
+248
+00:12:15,600 --> 00:12:17,650
+24 nos daria o nmero de horas no nmero de dias.
+
+249
+00:12:19,615 --> 00:12:21,698
+60 nos daria os minutos.
+
+250
+00:12:24,260 --> 00:12:26,435
+60 nos daria os segundos.
+
+251
+00:12:26,435 --> 00:12:29,200
+E ento eu imprimiria isso.
+
+252
+00:12:33,151 --> 00:12:37,870
+Vamos rodar e ver o que acontece.
+
+253
+00:12:37,870 --> 00:12:40,510
+Temos que passar por todo o programa.
+
+254
+00:12:41,380 --> 00:12:45,850
+E ai, ai.
+
+255
+00:12:45,850 --> 00:12:47,390
+E no final temos 946.000.080 segundos.
+
+256
+00:12:47,390 --> 00:12:49,400
+Podemos verificar se isso est correto, mas o Python
+
+257
+00:12:49,400 --> 00:12:51,300
+pode fazer clculos matemticos; portanto, contanto que nossa frmula
+
+258
+00:12:57,380 --> 00:12:58,890
+esteja correta, a sada deve estar correta.
+
+259
+00:12:58,890 --> 00:13:00,940
+Ai est.
+
+260
+00:13:03,525 --> 00:13:05,440
+Voc escreveu seu primeiro
+
+261
+00:13:07,400 --> 00:13:11,930
+aplicativo mais complexo que faz uso de um monte de
+
+262
+00:13:13,650 --> 00:13:16,880
+coisas, muito mais do que voc imagina.
+
+263
+00:13:16,880 --> 00:13:21,250
+E isso est realmente comeando a ficar um pouco mais emocionante.
+
+264
+00:13:21,250 --> 00:13:22,880
+Estamos interagindo com os usurios,
+
+265
+00:13:24,520 --> 00:13:25,353
+podemos obter
+
+266
+00:13:25,353 --> 00:13:27,950
+valores deles ou podemos dar-lhes valores de volta.
+
+267
+00:13:27,950 --> 00:13:30,210
+Estamos convertendo coisas em nmeros, o que significa que podemos fazer contas sobre
+
+268
+00:13:30,210 --> 00:13:31,390
+as coisas que os usurios nos do.
+
+269
+00:13:31,390 --> 00:13:35,520
+E fomos capazes de realizar operaes matemticas e, em seguida, tambm conseguimos imprimir as coisas
+
+270
+00:13:35,520 --> 00:13:36,990
+de volta para o usurio,
+
+271
+00:13:36,990 --> 00:13:39,070
+e de fato fazemos isso bem com a
+
+272
+00:13:39,070 --> 00:13:40,720
+formatao de nossas strings usando strings.
+
+273
+00:13:40,720 --> 00:13:42,730
+J aprendemos muita coisa.
+
+274
+00:13:42,730 --> 00:13:45,630
+Espero que voc esteja se sentindo muito
+
+275
+00:13:46,750 --> 00:13:50,380
+orgulhoso e, com sorte, esteja se sentindo bem em
+
+276
+00:13:50,380 --> 00:13:52,350
+completar esse pequeno exerccio.
+
+277
+00:13:52,350 --> 00:13:55,400
+Agora estamos prontos para passar para o prximo vdeo,
+
+278
+00:13:55,400 --> 00:13:58,940
+ento estou muito feliz em lev-lo at l e vejo
+
+279
+00:13:58,940 --> 00:14:00,470
+vocs no prximo vdeo.
+
+280
+00:14:00,470 --> 00:14:02,400
+&nbsp;
+
+281
+00:14:02,400 --> 00:14:04,120
+&nbsp;
+
+282
+00:14:04,120 --> 00:14:06,180
+&nbsp;
+
+283
+00:14:07,470 --> 00:14:09,920
+&nbsp;
+
+284
+00:14:09,920 --> 00:14:11,770
+&nbsp;
+
+285
+00:14:11,770 --> 00:14:13,670
+&nbsp;
+

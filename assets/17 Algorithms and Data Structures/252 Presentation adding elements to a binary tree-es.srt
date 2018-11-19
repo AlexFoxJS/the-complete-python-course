@@ -1,0 +1,544 @@
+1
+00:00:00,120 --> 00:00:01,950
+Jos: Hola, y bienvenido de nuevo.
+
+2
+00:00:01,950 --> 00:00:04,720
+En este video, vamos a ver cmo agregar
+
+3
+00:00:04,720 --> 00:00:06,770
+nuevos nodos a un rbol binario.
+
+4
+00:00:06,770 --> 00:00:10,793
+Este es el primer paso para construir rboles binarios.
+
+5
+00:00:11,890 --> 00:00:15,500
+Agregar a un rbol binario es realmente sorprendentemente simple,
+
+6
+00:00:15,500 --> 00:00:17,683
+en su tipo de forma bsica.
+
+7
+00:00:18,980 --> 00:00:21,410
+Solo tenemos que asegurarnos de agregar
+
+8
+00:00:21,410 --> 00:00:23,713
+cosas al lado correcto del rbol.
+
+9
+00:00:24,750 --> 00:00:27,803
+Por ejemplo, agreguemos el nmero cinco a este rbol.
+
+10
+00:00:30,110 --> 00:00:32,710
+Tenga en cuenta que el rbol aqu tiene
+
+11
+00:00:32,710 --> 00:00:37,480
+un punto de partida, lo que llamamos una cabeza, o una raz, de 14.
+
+12
+00:00:37,480 --> 00:00:41,840
+Luego, a la izquierda, tiene nueve, nueve tiene 13 a la derecha,
+
+13
+00:00:41,840 --> 00:00:44,810
+14 a la derecha tiene 22 y luego 34.
+
+14
+00:00:44,810 --> 00:00:48,230
+Sabemos dnde deben ir cinco, correcto, que est
+
+15
+00:00:48,230 --> 00:00:50,113
+a la izquierda de nueve.
+
+16
+00:00:51,390 --> 00:00:54,763
+Pero cmo le decimos a Python que lo ponga all?
+
+17
+00:00:56,290 --> 00:00:58,640
+Vamos a comenzar con nuestro new_node.
+
+18
+00:00:58,640 --> 00:01:00,370
+Ese va a ser este objeto nodo.
+
+19
+00:01:00,370 --> 00:01:04,850
+Un objeto nodo tiene tres valores, tres propiedades.
+
+20
+00:01:04,850 --> 00:01:06,380
+Uno, que es valor
+
+21
+00:01:06,380 --> 00:01:09,310
+Ese es esencialmente el valor que intentamos agregar,
+
+22
+00:01:09,310 --> 00:01:12,430
+y luego tiene otras dos propiedades, izquierda y derecha.
+
+23
+00:01:12,430 --> 00:01:14,960
+Esos son los nodos que tiene a la izquierda
+
+24
+00:01:14,960 --> 00:01:16,050
+y a la derecha,
+
+25
+00:01:16,050 --> 00:01:18,510
+as que estamos comenzando con nuestro new_node que no
+
+26
+00:01:18,510 --> 00:01:20,710
+tiene nada a la izquierda, nada a la
+
+27
+00:01:20,710 --> 00:01:24,170
+derecha, ni siquiera est agregado an, y tiene un valor de 5.
+
+28
+00:01:24,170 --> 00:01:26,939
+Y tambin vamos a comenzar con nuestro
+
+29
+00:01:26,939 --> 00:01:30,420
+current_node, que ser la cabeza de nuestro rbol.
+
+30
+00:01:30,420 --> 00:01:32,820
+Digamos que el rbol es uno mismo, y
+
+31
+00:01:32,820 --> 00:01:35,313
+la cabeza va a ser el nodo 14.
+
+32
+00:01:36,640 --> 00:01:41,570
+Lo primero que debemos hacer es comenzar un ciclo while.
+
+33
+00:01:41,570 --> 00:01:42,700
+Vamos a comenzar
+
+34
+00:01:42,700 --> 00:01:44,630
+un ciclo while porque vamos
+
+35
+00:01:44,630 --> 00:01:46,610
+a navegar potencialmente por muchos
+
+36
+00:01:46,610 --> 00:01:49,403
+nodos, hasta que encontremos el que queremos agregar.
+
+37
+00:01:51,050 --> 00:01:52,400
+Entonces comenzaremos un ciclo while,
+
+38
+00:01:52,400 --> 00:01:54,430
+y dentro del ciclo while diremos, queremos ir
+
+39
+00:01:54,430 --> 00:01:56,363
+hacia la izquierda o hacia la derecha?
+
+40
+00:01:58,120 --> 00:02:01,890
+Entonces, si el valor de new_node, que es cinco,
+
+41
+00:02:01,890 --> 00:02:04,150
+es menor que el valor
+
+42
+00:02:04,150 --> 00:02:08,620
+de current_node, que es 14, entonces querremos mover hacia la izquierda.
+
+43
+00:02:08,620 --> 00:02:11,750
+Entonces, lo primero que hacemos es agregar esta declaracin if.
+
+44
+00:02:11,750 --> 00:02:16,080
+El new_node es ms pequeo que el current_node o RAT?
+
+45
+00:02:16,080 --> 00:02:20,320
+La respuesta es s, entonces, s.
+
+46
+00:02:20,320 --> 00:02:21,700
+qu hacemos?
+
+47
+00:02:21,700 --> 00:02:24,500
+Vamos a decir, si el current_node, que
+
+48
+00:02:24,500 --> 00:02:27,853
+es 14, tiene un nodo izquierdo, entonces nos
+
+49
+00:02:29,760 --> 00:02:33,310
+vamos a mover a ese nodo, de acuerdo?
+
+50
+00:02:33,310 --> 00:02:37,120
+Entonces, si current_node. left pregunta a Python,
+
+51
+00:02:37,120 --> 00:02:42,120
+es el nodo 14, el nodo izquierdo algo distinto de none?
+
+52
+00:02:42,880 --> 00:02:45,240
+Y en este punto en el tiempo, es
+
+53
+00:02:45,240 --> 00:02:48,120
+s, porque 14 tiene un nodo izquierdo, que es nueve,
+
+54
+00:02:48,120 --> 00:02:49,240
+entonces, qu hacemos?
+
+55
+00:02:49,240 --> 00:02:52,900
+Decimos que current_node, que actualmente es 14,
+
+56
+00:02:52,900 --> 00:02:57,050
+ahora va a ser igual al current_node que queda.
+
+57
+00:02:57,050 --> 00:03:00,723
+As que bsicamente estamos diciendo, muveme a nueve.
+
+58
+00:03:01,940 --> 00:03:03,290
+Y eso es lo que hacemos aqu.
+
+59
+00:03:04,630 --> 00:03:07,670
+Luego, volvemos a la parte superior del ciclo while.
+
+60
+00:03:07,670 --> 00:03:11,110
+Entonces, current_node ahora es nueve, porque lo hemos
+
+61
+00:03:11,110 --> 00:03:13,613
+configurado para ser los 14 restantes.
+
+62
+00:03:14,760 --> 00:03:16,160
+Una vez ms, nos
+
+63
+00:03:16,160 --> 00:03:20,430
+preguntamos, el valor de new_node es menor que el valor de current_node?
+
+64
+00:03:20,430 --> 00:03:23,620
+Entonces new_node es cinco, current_node es nueve, por lo
+
+65
+00:03:23,620 --> 00:03:25,313
+que la respuesta es s.
+
+66
+00:03:26,470 --> 00:03:31,100
+Entonces nos preguntaremos, hay un nodo izquierdo en
+
+67
+00:03:31,100 --> 00:03:31,953
+current_node?
+
+68
+00:03:33,310 --> 00:03:35,940
+La respuesta es no, entonces necesitamos un poco ms de cdigo aqu.
+
+69
+00:03:35,940 --> 00:03:39,860
+Podemos ver que hay algo que no est
+
+70
+00:03:39,860 --> 00:03:43,480
+all, as que agregaremos otro a nuestro si.
+
+71
+00:03:43,480 --> 00:03:47,930
+Entonces, si el actual_node existe, nos movemos all.
+
+72
+00:03:47,930 --> 00:03:52,890
+Si no existe, decimos que current_node's left es ahora
+
+73
+00:03:52,890 --> 00:03:56,033
+el new_node que queremos agregar.
+
+74
+00:03:58,640 --> 00:04:03,640
+Entonces, colocamos los cinco all, a la izquierda de current_node, y eso
+
+75
+00:04:04,580 --> 00:04:05,443
+es todo.
+
+76
+00:04:06,630 --> 00:04:10,350
+Ahora no falta nada all, pero
+
+77
+00:04:10,350 --> 00:04:13,230
+no queremos continuar nuestro ciclo.
+
+78
+00:04:13,230 --> 00:04:17,220
+Debido a que hemos agregado nuestro new_node, eso es todo,
+
+79
+00:04:17,220 --> 00:04:18,140
+hemos terminado.
+
+80
+00:04:18,140 --> 00:04:20,540
+Entonces, qu vamos a hacer aqu, vamos a agregar un descanso.
+
+81
+00:04:20,540 --> 00:04:23,510
+Miramos esto temprano en el curso.
+
+82
+00:04:23,510 --> 00:04:26,600
+Un descanso se usa para salir de un bucle.
+
+83
+00:04:26,600 --> 00:04:29,230
+Entonces, en este punto, establecemos que el
+
+84
+00:04:29,230 --> 00:04:32,460
+nodo izquierdo de nueve sea el new_node, eso significa
+
+85
+00:04:32,460 --> 00:04:34,550
+que hemos agregado un nodo.
+
+86
+00:04:34,550 --> 00:04:38,490
+Queremos ahora dejar de revisar nuestros mltiples nodos.
+
+87
+00:04:38,490 --> 00:04:41,053
+Todo lo que queremos hacer ahora es terminar, entonces rompemos.
+
+88
+00:04:42,960 --> 00:04:44,900
+Tambin algo a tener en
+
+89
+00:04:44,900 --> 00:04:47,780
+cuenta, qu ocurre si el valor de new_node
+
+90
+00:04:47,780 --> 00:04:50,820
+no es menor que el valor de current_node?
+
+91
+00:04:50,820 --> 00:04:52,100
+Esta declaracin if aqu,
+
+92
+00:04:52,100 --> 00:04:54,860
+tenemos si new_node value es menor que current_node value,
+
+93
+00:04:54,860 --> 00:04:56,360
+vamos a la izquierda, pero
+
+94
+00:04:56,360 --> 00:04:58,680
+y si es mayor que el valor de current_node?
+
+95
+00:04:58,680 --> 00:05:00,460
+Queremos ir bien
+
+96
+00:05:00,460 --> 00:05:05,460
+Entonces, vamos a tener un ELIF all para hacer exactamente eso.
+
+97
+00:05:05,550 --> 00:05:09,290
+Observe cmo ahora todas las izquierdas se han cambiado a derechos.
+
+98
+00:05:09,290 --> 00:05:10,260
+Todo lo que
+
+99
+00:05:10,260 --> 00:05:13,010
+sucede es que, si new_node es mayor que
+
+100
+00:05:13,010 --> 00:05:16,860
+current_node, por ejemplo, digamos que estamos tratando de agregar 21, esto sera
+
+101
+00:05:16,860 --> 00:05:19,010
+cierto, por lo que nos moveramos
+
+102
+00:05:19,010 --> 00:05:21,590
+a la derecha, porque tiene un nodo derecho.
+
+103
+00:05:21,590 --> 00:05:23,370
+Entonces estaramos en 22.
+
+104
+00:05:23,370 --> 00:05:25,100
+Una vez ms, pasaramos por
+
+105
+00:05:25,100 --> 00:05:27,670
+nuestro ciclo, y ahora 21 sera menos
+
+106
+00:05:27,670 --> 00:05:30,913
+de 22, as que entraramos aqu y pondramos 21 aqu.
+
+107
+00:05:32,440 --> 00:05:34,840
+Con suerte, esto tiene algo de sentido.
+
+108
+00:05:34,840 --> 00:05:35,950
+Vamos a ver algunos
+
+109
+00:05:35,950 --> 00:05:37,370
+cdigos, y con suerte eso
+
+110
+00:05:37,370 --> 00:05:40,453
+ayudar tambin, y de alguna forma consolidar este conocimiento.
+
+111
+00:05:41,620 --> 00:05:43,830
+Y, por supuesto, otra cosa que puede
+
+112
+00:05:43,830 --> 00:05:46,740
+suceder es que intentemos agregar un nodo que tenga
+
+113
+00:05:46,740 --> 00:05:50,623
+un valor que no sea menor o mayor que un nodo.
+
+114
+00:05:51,520 --> 00:05:54,460
+Eso puede suceder si tratamos de agregar
+
+115
+00:05:54,460 --> 00:05:59,460
+un new_node que tenga un valor exactamente igual a un nodo existente.
+
+116
+00:05:59,670 --> 00:06:02,260
+Entonces, lo que queremos hacer en ese
+
+117
+00:06:02,260 --> 00:06:05,200
+caso es, por supuesto, evitar elementos duplicados.
+
+118
+00:06:05,200 --> 00:06:07,770
+Tan pronto como tu rbol comience a tener elementos
+
+119
+00:06:07,770 --> 00:06:09,690
+duplicados, comienzas a tener algunos problemas.
+
+120
+00:06:09,690 --> 00:06:12,780
+Pones el nodo a la izquierda o a la derecha?
+
+121
+00:06:12,780 --> 00:06:15,530
+Entonces no queremos dos de los mismos elementos en un rbol binario.
+
+122
+00:06:15,530 --> 00:06:18,140
+Todo lo que tenemos que hacer es agregar otra instruccin
+
+123
+00:06:18,140 --> 00:06:21,450
+if all en la parte superior, que indique elevar un ValueError, si
+
+124
+00:06:21,450 --> 00:06:22,960
+el valor de new_node es igual
+
+125
+00:06:22,960 --> 00:06:24,240
+al valor de current_node.
+
+126
+00:06:24,240 --> 00:06:28,210
+As que, a medida que avanzas en el rbol, si encuentras una situacin en la
+
+127
+00:06:28,210 --> 00:06:30,470
+que el valor que intentas agregar es el
+
+128
+00:06:30,470 --> 00:06:32,870
+mismo que el de un elemento existente, puedes generar
+
+129
+00:06:32,870 --> 00:06:34,103
+un error o imprimir algo.
+
+130
+00:06:36,130 --> 00:06:37,100
+Eso es todo por este video.
+
+131
+00:06:37,100 --> 00:06:40,870
+Quera mostrarte cmo agregar new_nodes a un rbol.
+
+132
+00:06:40,870 --> 00:06:42,910
+Ahora vamos a entrar en
+
+133
+00:06:42,910 --> 00:06:46,890
+un cdigo y trabajar en la creacin de nuestra clase
+
+134
+00:06:46,890 --> 00:06:50,100
+de rbol binario, donde podemos encontrar elementos, agregar
+
+135
+00:06:50,100 --> 00:06:54,500
+elementos, as como imprimir el rbol utilizando nuestro recorrido Inorder.
+
+136
+00:06:54,500 --> 00:06:55,450
+Te ver all.
+

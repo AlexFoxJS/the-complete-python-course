@@ -1,0 +1,828 @@
+1
+00:00:00,090 --> 00:00:01,510
+-: Ol e bem vindo de volta.
+
+2
+00:00:01,510 --> 00:00:04,120
+Neste vdeo, vamos falar sobre um tpico
+
+3
+00:00:04,120 --> 00:00:07,130
+que ningum fala em cursos on-line, ento espero
+
+4
+00:00:07,130 --> 00:00:09,800
+que voc esteja empolgado para cobrir esse assunto.
+
+5
+00:00:09,800 --> 00:00:12,380
+E esse  o Python GIL.
+
+6
+00:00:12,380 --> 00:00:14,980
+O Global Interpreter Lock.
+
+7
+00:00:14,980 --> 00:00:16,610
+Este  um tpico
+
+8
+00:00:16,610 --> 00:00:20,090
+bastante avanado e no vamos entrar em todo o
+
+9
+00:00:20,955 --> 00:00:22,870
+texto tcnico, mas vamos cobrir
+
+10
+00:00:22,870 --> 00:00:24,550
+o que , porque
+
+11
+00:00:24,550 --> 00:00:28,310
+est l e o que isso significa para ns.
+
+12
+00:00:30,240 --> 00:00:31,920
+Ento, quando voc inicia um
+
+13
+00:00:33,800 --> 00:00:36,500
+aplicativo Python, voc realmente obtm um novo processo Python.
+
+14
+00:00:36,500 --> 00:00:38,190
+Sabemos agora o que
+
+15
+00:00:38,190 --> 00:00:43,190
+ um processo, um processo  pelo menos um segmento e alguns recursos.
+
+16
+00:00:43,680 --> 00:00:46,610
+Assim, o processo pode lidar com a entrada em um
+
+17
+00:00:46,610 --> 00:00:50,010
+ncleo, saindo do ncleo, reservando alguns recursos de que ele precisa,
+
+18
+00:00:50,010 --> 00:00:52,300
+como acesso a um arquivo ou algo parecido.
+
+19
+00:00:53,820 --> 00:00:57,930
+Ento voc pega um thread no Python, voc pega o thread principal,
+
+20
+00:00:57,930 --> 00:01:00,620
+mas voc pode fazer mais threads se quiser.
+
+21
+00:01:00,620 --> 00:01:03,330
+Quando voc inicia um aplicativo Python, obtm um
+
+22
+00:01:03,330 --> 00:01:06,010
+segmento que percorre seu cdigo Python de cima
+
+23
+00:01:06,010 --> 00:01:09,600
+para baixo, como vimos, mas voc pode criar mais segmentos, se desejar.
+
+24
+00:01:09,600 --> 00:01:12,170
+Ns vamos ver como voc pode fazer isso.
+
+25
+00:01:12,170 --> 00:01:14,010
+Mas, dado que sabemos que apenas
+
+26
+00:01:14,010 --> 00:01:17,590
+um nico thread pode rodar em um ncleo de uma s
+
+27
+00:01:17,590 --> 00:01:21,050
+vez, por que voc, qual a vantagem de criar mais threads?
+
+28
+00:01:24,370 --> 00:01:26,740
+Bem,  claro, o benefcio de criar mais threads
+
+29
+00:01:26,740 --> 00:01:29,310
+ para que voc possa executar um em cada ncleo.
+
+30
+00:01:29,310 --> 00:01:31,600
+Se o seu computador tiver mais de um ncleo, voc
+
+31
+00:01:31,600 --> 00:01:34,070
+poder fazer com que o Python crie dois threads e os
+
+32
+00:01:34,070 --> 00:01:35,470
+execute em dois ncleos ao mesmo tempo.
+
+33
+00:01:35,470 --> 00:01:37,270
+No to rpido.
+
+34
+00:01:38,530 --> 00:01:41,870
+Devido  forma como o Python foi implementado,
+
+35
+00:01:41,870 --> 00:01:46,110
+as pessoas que escreveram Python no podem executar dois threads
+
+36
+00:01:46,110 --> 00:01:48,290
+em um processo ao mesmo tempo.
+
+37
+00:01:48,290 --> 00:01:51,560
+Portanto, se voc tiver seu processo Python, crie outro thread para
+
+38
+00:01:52,420 --> 00:01:54,820
+o thread principal e esse outro thread no
+
+39
+00:01:54,820 --> 00:01:58,550
+poder ser executado ao mesmo tempo, mesmo se voc tiver dois ncleos.
+
+40
+00:01:58,550 --> 00:02:03,140
+E isso porque cada processo no Python cria um recurso
+
+41
+00:02:03,140 --> 00:02:07,395
+chave, um recurso crtico e, quando um thread est
+
+42
+00:02:07,395 --> 00:02:11,060
+em execuo, ele deve adquirir esse recurso.
+
+43
+00:02:11,060 --> 00:02:14,010
+E todo processo cria apenas um deles.
+
+44
+00:02:14,010 --> 00:02:16,250
+Ok, pense nisso como um ncleo, exceto que
+
+45
+00:02:16,250 --> 00:02:18,810
+no  um ncleo,  apenas outro tipo de recurso.
+
+46
+00:02:18,810 --> 00:02:21,060
+O processo cria esse recurso exclusivo e,
+
+47
+00:02:21,900 --> 00:02:24,550
+quando um encadeamento est em execuo, ele deve adquiri-lo.
+
+48
+00:02:24,550 --> 00:02:27,210
+E o Python vai verificar se o seu thread
+
+49
+00:02:27,210 --> 00:02:28,810
+tem esse recurso antes de execut-lo.
+
+50
+00:02:29,810 --> 00:02:32,390
+Como h apenas um desses recursos, voc s
+
+51
+00:02:32,390 --> 00:02:35,340
+pode executar um thread nesse processo de uma s vez.
+
+52
+00:02:37,150 --> 00:02:40,220
+Ento voc pode pensar, bem, por que esse recurso est sendo criado?
+
+53
+00:02:41,430 --> 00:02:42,300
+E essa 
+
+54
+00:02:42,300 --> 00:02:45,140
+uma boa pergunta, vamos abordar isso em apenas um momento.
+
+55
+00:02:45,140 --> 00:02:49,260
+O recurso em questo aqui  chamado de GIL.
+
+56
+00:02:51,620 --> 00:02:53,850
+Esse  o recurso que o processo cria
+
+57
+00:02:53,850 --> 00:02:55,250
+e os threads devem adquirir.
+
+58
+00:02:55,250 --> 00:02:58,600
+O GIL  o Global Interpreter Lock.
+
+59
+00:02:58,600 --> 00:03:03,150
+E um bloqueio  um tipo especfico de recurso no cdigo encadeado.
+
+60
+00:03:03,150 --> 00:03:04,770
+Ento  isso que o
+
+61
+00:03:04,770 --> 00:03:06,910
+processo cria, esse Global Interpreter Lock.
+
+62
+00:03:06,910 --> 00:03:09,977
+Um thread deve adquiri-lo, em seguida, eles podem ser executados e,
+
+63
+00:03:09,977 --> 00:03:12,820
+em seguida, eles devem liber-lo para outro thread para ser executado.
+
+64
+00:03:12,820 --> 00:03:15,930
+Portanto, voc no pode executar dois segmentos ao mesmo tempo.
+
+65
+00:03:15,930 --> 00:03:20,270
+Ok, e quanto a mltiplos Pythons?
+
+66
+00:03:20,270 --> 00:03:22,690
+Tenho certeza que voc executou vrios aplicativos Python antes
+
+67
+00:03:22,690 --> 00:03:24,540
+e eles correram lado a lado, certo?
+
+68
+00:03:25,820 --> 00:03:29,270
+Bem, sim, podemos lanar vrios processos em Python, como
+
+69
+00:03:29,270 --> 00:03:32,660
+vimos, e apenas abrindo outro aplicativo em Python e
+
+70
+00:03:32,660 --> 00:03:36,130
+tudo bem, porque cada processo cria seu prprio GIL.
+
+71
+00:03:36,130 --> 00:03:38,670
+Cada processo cria seu prprio segmento.
+
+72
+00:03:38,670 --> 00:03:42,030
+Mas eles no podem colaborar, voc no
+
+73
+00:03:42,030 --> 00:03:44,900
+pode ter colaborao entre processos facilmente.
+
+74
+00:03:44,900 --> 00:03:48,700
+Quero dizer, existem maneiras de fazer isso, mas no  grtis, 
+
+75
+00:03:48,700 --> 00:03:50,470
+muito caro,  preciso muito
+
+76
+00:03:50,470 --> 00:03:53,320
+poder de computao para se comunicar entre dois processos.
+
+77
+00:03:53,320 --> 00:03:56,050
+ assim que os computadores foram projetados
+
+78
+00:03:56,050 --> 00:03:58,883
+para que voc possa ter recursos separados
+
+79
+00:03:58,883 --> 00:04:02,560
+em cada processo e eles sejam entidades completamente separadas essencialmente.
+
+80
+00:04:04,910 --> 00:04:06,430
+Eles no podem compartilhar dados facilmente.
+
+81
+00:04:06,430 --> 00:04:10,060
+Por exemplo, se voc tem algumas variveis em um processo, voc no
+
+82
+00:04:10,060 --> 00:04:12,930
+pode enviar os valores delas para outro processo e
+
+83
+00:04:12,930 --> 00:04:16,060
+receber as respostas de volta, no  to fcil assim.
+
+84
+00:04:16,060 --> 00:04:18,610
+Considerando que  muito fcil quando voc est fazendo tpicos.
+
+85
+00:04:22,020 --> 00:04:26,165
+Ento, qual  o ponto de threads em Python ento?
+
+86
+00:04:26,165 --> 00:04:28,580
+Python permite que voc crie tpicos.
+
+87
+00:04:28,580 --> 00:04:30,020
+Qual  o ponto dos tpicos?
+
+88
+00:04:30,020 --> 00:04:34,120
+s vezes, quando voc vai a conferncias ou fala com pessoas, as
+
+89
+00:04:34,120 --> 00:04:35,869
+pessoas lhe dizem tpicos em
+
+90
+00:04:35,869 --> 00:04:39,241
+Python, elas so uma porcaria, voc no deveria us-las.
+
+91
+00:04:39,241 --> 00:04:42,410
+Porque o uso de threads no  livre.
+
+92
+00:04:42,410 --> 00:04:44,140
+ preciso algum poder de computao
+
+93
+00:04:44,140 --> 00:04:46,870
+para, como eu disse no ltimo vdeo, remov-los dos ncleos,
+
+94
+00:04:46,870 --> 00:04:49,500
+coloc-los de volta, ento quando voc tem threads, voc
+
+95
+00:04:49,500 --> 00:04:52,940
+pode realmente ver o seu cdigo Python se tornar um pouco mais lento.
+
+96
+00:04:52,940 --> 00:04:54,770
+Ento, qual  o ponto dos tpicos?
+
+97
+00:04:54,770 --> 00:04:57,630
+Se eles no podem executar ao mesmo tempo, e
+
+98
+00:04:57,630 --> 00:05:00,180
+tambm eles podem fazer seu cdigo mais lento.
+
+99
+00:05:01,670 --> 00:05:03,740
+Bem, digamos que voc tenha um
+
+100
+00:05:03,740 --> 00:05:07,450
+programa em Python que faa duas coisas, apenas essas duas.
+
+101
+00:05:07,450 --> 00:05:10,050
+Uma das coisas que faz  uma
+
+102
+00:05:10,050 --> 00:05:13,350
+operao matemtica complexa, algo que leva muito tempo.
+
+103
+00:05:13,350 --> 00:05:17,190
+Vamos dizer que thread, esta operao leva muito tempo, porque  um clculo
+
+104
+00:05:17,190 --> 00:05:19,320
+complexo, o computador tem que fazer um
+
+105
+00:05:19,320 --> 00:05:21,080
+monte de coisas na CPU, em
+
+106
+00:05:21,080 --> 00:05:23,810
+seu processador, a fim de chegar a uma soluo.
+
+107
+00:05:25,040 --> 00:05:27,720
+E tambm faz uma coisa totalmente separada, este programa.
+
+108
+00:05:27,720 --> 00:05:29,410
+Qual  a colaborao com um usurio?
+
+109
+00:05:29,410 --> 00:05:32,430
+Ele pede ao usurio alguma entrada, ento ele os cumprimenta
+
+110
+00:05:32,430 --> 00:05:34,340
+ou permite que eles escolham algo
+
+111
+00:05:34,340 --> 00:05:36,240
+de um menu ou algo parecido.
+
+112
+00:05:36,240 --> 00:05:38,290
+Essa operao pode demorar muito, porque
+
+113
+00:05:38,290 --> 00:05:40,660
+o usurio pode demorar muito para digitar.
+
+114
+00:05:42,120 --> 00:05:43,120
+Ento voc pode
+
+115
+00:05:43,120 --> 00:05:46,360
+ver que existem duas coisas diferentes acontecendo aqui.
+
+116
+00:05:46,360 --> 00:05:47,193
+Nmero um,
+
+117
+00:05:47,193 --> 00:05:50,330
+seu computador est sendo usado para realizar clculos e
+
+118
+00:05:50,330 --> 00:05:53,420
+nmero dois, o computador no est sendo usado
+
+119
+00:05:53,420 --> 00:05:56,600
+porque est apenas esperando que o usurio digite algo.
+
+120
+00:05:56,600 --> 00:05:59,280
+Mas toda a operao de pedir a entrada e saudar
+
+121
+00:05:59,280 --> 00:06:01,160
+o usurio pode levar muito tempo por
+
+122
+00:06:01,160 --> 00:06:02,230
+causa dessa espera.
+
+123
+00:06:03,860 --> 00:06:07,416
+Ento, em um nico segmento, voc pode fazer um desses dois.
+
+124
+00:06:07,416 --> 00:06:09,930
+Primeiro faa o seu clculo matemtico, o
+
+125
+00:06:09,930 --> 00:06:11,050
+que demorar muito
+
+126
+00:06:11,050 --> 00:06:13,220
+tempo, porque h muitas coisas para
+
+127
+00:06:13,220 --> 00:06:15,390
+fazer e ento voc pode interagir
+
+128
+00:06:15,390 --> 00:06:17,500
+com o usurio, pedir algo e cumpriment-lo.
+
+129
+00:06:17,500 --> 00:06:20,350
+Mas observe como este, tambm h um retngulo bastante amplo
+
+130
+00:06:20,350 --> 00:06:23,200
+que foi minha maneira de significar que isso pode demorar
+
+131
+00:06:23,200 --> 00:06:25,200
+um pouco porque o usurio tem que
+
+132
+00:06:25,200 --> 00:06:27,980
+digitar, e a digitao do usurio normalmente leva muito tempo.
+
+133
+00:06:27,980 --> 00:06:29,780
+Portanto, esta  uma opo, um nico cdigo
+
+134
+00:06:29,780 --> 00:06:31,690
+encadeado ou, claro, voc pode fazer o inverso.
+
+135
+00:06:31,690 --> 00:06:34,140
+Voc pode perguntar ao usurio algo
+
+136
+00:06:34,140 --> 00:06:36,630
+primeiro e, depois, executar o clculo matemtico.
+
+137
+00:06:38,560 --> 00:06:40,996
+Em ambos os casos, esses segmentos
+
+138
+00:06:40,996 --> 00:06:43,121
+acabam demorando um tempo razovel.
+
+139
+00:06:43,121 --> 00:06:46,150
+Esse thread nico acaba levando uma quantidade razovel
+
+140
+00:06:46,150 --> 00:06:47,870
+de tempo em geral.
+
+141
+00:06:50,680 --> 00:06:54,190
+Portanto, podemos fazer multitarefa cooperativa.
+
+142
+00:06:55,120 --> 00:06:57,910
+Mas voc deve lembrar, no importa o que
+
+143
+00:06:57,910 --> 00:07:00,820
+fazemos, s podemos executar uma coisa de cada vez.
+
+144
+00:07:01,660 --> 00:07:03,330
+Ento, aqui est o que
+
+145
+00:07:03,330 --> 00:07:05,430
+seria a multitarefa cooperativa no Python.
+
+146
+00:07:05,430 --> 00:07:08,560
+Esta  uma das partes mais empolgantes do Python, a propsito.
+
+147
+00:07:08,560 --> 00:07:13,560
+Primeiro, voc executaria um pouco do cdigo do usurio, em que
+
+148
+00:07:13,610 --> 00:07:16,030
+voc pedia ao usurio informaes.
+
+149
+00:07:16,030 --> 00:07:18,340
+E ento voc imediatamente libera
+
+150
+00:07:19,854 --> 00:07:22,734
+o GIL e executa seu clculo matemtico.
+
+151
+00:07:22,734 --> 00:07:26,520
+Lembre-se, quando o thread do usurio libera o GIL, outro
+
+152
+00:07:26,520 --> 00:07:27,900
+thread que est aguardando
+
+153
+00:07:27,900 --> 00:07:29,680
+pode, ento, adquiri-lo e us-lo.
+
+154
+00:07:31,150 --> 00:07:32,730
+E esse segmento continuar a
+
+155
+00:07:32,730 --> 00:07:34,780
+ser executado at liberarem o GIL.
+
+156
+00:07:35,840 --> 00:07:38,091
+Ento, quando o usurio responde,
+
+157
+00:07:38,091 --> 00:07:42,630
+esse cdigo vai ter algo nele para dizer "ei", se
+
+158
+00:07:42,630 --> 00:07:45,170
+o usurio responder liberar o GIL.
+
+159
+00:07:45,170 --> 00:07:48,050
+Ento ns lanamos o GIL e voltamos para o
+
+160
+00:07:48,050 --> 00:07:50,750
+usurio E aqui podemos saudar o usurio, o
+
+161
+00:07:50,750 --> 00:07:53,760
+que  muito rpido porque estamos apenas construindo uma
+
+162
+00:07:53,760 --> 00:07:56,180
+string e imprimindo e ento podemos liberar
+
+163
+00:07:56,180 --> 00:07:59,440
+o GIL imediatamente e voltar a rodar o nosso clculo matemtico.
+
+164
+00:08:00,990 --> 00:08:05,430
+Observe como o segmento amarelo  menor agora
+
+165
+00:08:06,546 --> 00:08:10,394
+em conjunto, porque o que removemos, tudo
+
+166
+00:08:10,394 --> 00:08:12,580
+o que estava l,
+
+167
+00:08:12,580 --> 00:08:16,600
+era nosso cdigo aguardando o usurio digitar.
+
+168
+00:08:16,600 --> 00:08:20,930
+E por causa dos tpicos, no precisamos mais fazer isso.
+
+169
+00:08:21,840 --> 00:08:23,230
+OK?
+
+170
+00:08:23,230 --> 00:08:28,230
+Porque agora nossos threads esto funcionando apenas quando h
+
+171
+00:08:28,680 --> 00:08:31,870
+coisas para fazer no computador.
+
+172
+00:08:32,730 --> 00:08:35,890
+Quando o usurio est esperando, ou estamos esperando
+
+173
+00:08:35,890 --> 00:08:40,210
+o usurio digitar, ou alguns dados entrarem em um programa de
+
+174
+00:08:40,210 --> 00:08:42,540
+algum lugar, no precisamos esperar.
+
+175
+00:08:42,540 --> 00:08:44,940
+Podemos estar fazendo outra coisa durante esse tempo.
+
+176
+00:08:45,840 --> 00:08:50,840
+Observe que esse conjunto de retngulos inferior levaria um pouco mais de
+
+177
+00:08:50,910 --> 00:08:55,140
+tempo do que apenas a adio do usurio e o
+
+178
+00:08:55,140 --> 00:08:56,570
+clculo matemtico porque
+
+179
+00:08:56,570 --> 00:08:59,580
+os threads se comunicavam uns com os
+
+180
+00:08:59,580 --> 00:09:02,070
+outros, GIL sendo liberada, GIL sendo adquirida. e ser colocado no ncleo e depois removido do ncleo.
+
+181
+00:09:02,070 --> 00:09:04,110
+Ento, haveria um pouco de sobrecarga, mas
+
+182
+00:09:04,110 --> 00:09:06,480
+no geral, levaria menos tempo do que o anterior.
+
+183
+00:09:06,480 --> 00:09:10,610
+Ento, voltar ao que o ponto de threads em
+
+184
+00:09:13,390 --> 00:09:16,460
+Python  reduzir o tempo de espera.
+
+185
+00:09:17,710 --> 00:09:20,120
+ sobre isso.
+
+186
+00:09:21,770 --> 00:09:23,820
+Se todos os seus threads estiverem fazendo
+
+187
+00:09:23,820 --> 00:09:26,200
+coisas em Python, se todos os seus threads
+
+188
+00:09:26,200 --> 00:09:30,470
+estiverem usando sua CPU, seu processador, vrios threads no o ajudaro em Python.
+
+189
+00:09:30,470 --> 00:09:33,320
+Porque o Python no
+
+190
+00:09:33,320 --> 00:09:38,096
+se sai muito bem em executar coisas paralelamente.
+
+191
+00:09:38,096 --> 00:09:40,530
+E a razo pela qual isso funciona  porque
+
+192
+00:09:41,700 --> 00:09:44,720
+o sistema operacional priorizar os threads que esto fazendo as coisas.
+
+193
+00:09:44,720 --> 00:09:46,910
+Ento, neste caso, o segmento de clculo matemtico.
+
+194
+00:09:46,910 --> 00:09:49,570
+Portanto, se um encadeamento estiver aguardando, ele ser executado com menos
+
+195
+00:09:49,570 --> 00:09:52,740
+frequncia, pois o sistema operacional perceber que h um encadeamento que deseja usar
+
+196
+00:09:52,740 --> 00:09:55,450
+a CPU, e h um encadeamento que no o faz.
+
+197
+00:09:55,450 --> 00:09:58,580
+Ento, provavelmente seria executado o que faz um pouco mais frequentemente.
+
+198
+00:09:58,580 --> 00:10:01,460
+De modo que fica muito mais tempo na CPU.
+
+199
+00:10:01,460 --> 00:10:04,230
+Ok,  isso para este vdeo.
+
+200
+00:10:05,980 --> 00:10:07,650
+Eu s queria falar sobre o
+
+201
+00:10:07,650 --> 00:10:10,260
+Python GIL e agora voc sabe que no pode executar
+
+202
+00:10:10,260 --> 00:10:12,770
+dois threads ao mesmo tempo em Python no mesmo processo.
+
+203
+00:10:12,770 --> 00:10:16,690
+Mas h coisas que voc pode fazer para tornar seu
+
+204
+00:10:16,690 --> 00:10:18,910
+cdigo mais eficiente com o uso
+
+205
+00:10:18,910 --> 00:10:21,930
+de threads, se o seu cdigo envolver espera.
+
+206
+00:10:21,930 --> 00:10:24,140
+ isso para este vdeo, vejo voc no prximo.
+
+207
+00:10:25,309 --> 00:10:28,250
+&nbsp;
+

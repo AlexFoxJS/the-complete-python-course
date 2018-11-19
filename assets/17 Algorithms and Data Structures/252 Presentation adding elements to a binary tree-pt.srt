@@ -1,0 +1,544 @@
+1
+00:00:00,120 --> 00:00:01,950
+Jos: Ol, e bem vindo de volta.
+
+2
+00:00:01,950 --> 00:00:04,720
+Neste vdeo, vamos analisar a adio de
+
+3
+00:00:04,720 --> 00:00:06,770
+novos ns a uma rvore binria.
+
+4
+00:00:06,770 --> 00:00:10,793
+Portanto, este  o primeiro passo na construo de rvores binrias.
+
+5
+00:00:11,890 --> 00:00:15,500
+Adicionar a uma rvore binria , na verdade, surpreendentemente
+
+6
+00:00:15,500 --> 00:00:17,683
+simples, em sua forma bsica.
+
+7
+00:00:18,980 --> 00:00:21,410
+Ns apenas temos que nos certificar de
+
+8
+00:00:21,410 --> 00:00:23,713
+adicionar coisas ao lado correto da rvore.
+
+9
+00:00:24,750 --> 00:00:27,803
+Por exemplo, vamos adicionar o nmero cinco a essa rvore.
+
+10
+00:00:30,110 --> 00:00:32,710
+Observe que a rvore aqui tem um
+
+11
+00:00:32,710 --> 00:00:37,480
+ponto de partida, o que chamamos de cabea, ou raiz, de 14.
+
+12
+00:00:37,480 --> 00:00:41,840
+Ento para a esquerda tem nove, nove tem 13 para a direita,
+
+13
+00:00:41,840 --> 00:00:44,810
+14 para a direita tem 22 e depois 34.
+
+14
+00:00:44,810 --> 00:00:48,230
+Ns sabemos onde cinco devem ir, certo, que
+
+15
+00:00:48,230 --> 00:00:50,113
+fica  esquerda de nove.
+
+16
+00:00:51,390 --> 00:00:54,763
+Mas como podemos dizer ao Python para coloc-lo l?
+
+17
+00:00:56,290 --> 00:00:58,640
+Ns vamos comear com o nosso new_node.
+
+18
+00:00:58,640 --> 00:01:00,370
+Esse vai ser esse objeto de n.
+
+19
+00:01:00,370 --> 00:01:04,850
+Um objeto de n tem trs valores, trs propriedades.
+
+20
+00:01:04,850 --> 00:01:06,380
+Um, que  valor.
+
+21
+00:01:06,380 --> 00:01:09,310
+Esse  essencialmente o valor que estamos tentando adicionar
+
+22
+00:01:09,310 --> 00:01:12,430
+e, depois, tem outras duas propriedades, esquerda e direita.
+
+23
+00:01:12,430 --> 00:01:14,960
+Esses so os ns que ele tem 
+
+24
+00:01:14,960 --> 00:01:16,050
+esquerda e  direita,
+
+25
+00:01:16,050 --> 00:01:18,510
+ento estamos comeando com o nosso new_node que
+
+26
+00:01:18,510 --> 00:01:20,710
+no tem nada para a esquerda, nada
+
+27
+00:01:20,710 --> 00:01:24,170
+para a direita, nem  adicionado ainda, e um valor de 5.
+
+28
+00:01:24,170 --> 00:01:26,939
+E tambm vamos comear com o nosso
+
+29
+00:01:26,939 --> 00:01:30,420
+current_node, que ser a cabea da nossa rvore.
+
+30
+00:01:30,420 --> 00:01:32,820
+Vamos dizer que a rvore  auto
+
+31
+00:01:32,820 --> 00:01:35,313
+e a cabea vai ser o n 14.
+
+32
+00:01:36,640 --> 00:01:41,570
+A primeira coisa que devemos fazer  iniciar um loop while.
+
+33
+00:01:41,570 --> 00:01:42,700
+Vamos iniciar um
+
+34
+00:01:42,700 --> 00:01:44,630
+loop while, porque vamos navegar
+
+35
+00:01:44,630 --> 00:01:46,610
+atravs de potencialmente muitos ns,
+
+36
+00:01:46,610 --> 00:01:49,403
+at encontrarmos o que queremos adicionar.
+
+37
+00:01:51,050 --> 00:01:52,400
+Ento, vamos comear um loop
+
+38
+00:01:52,400 --> 00:01:54,430
+while, e dentro do while vamos dizer, queremos
+
+39
+00:01:54,430 --> 00:01:56,363
+ir para a esquerda ou para a direita?
+
+40
+00:01:58,120 --> 00:02:01,890
+Ento, se o valor do new_node, que  cinco, 
+
+41
+00:02:01,890 --> 00:02:04,150
+menor que o valor do current_node,
+
+42
+00:02:04,150 --> 00:02:08,620
+que  14, ento ns vamos querer mover para a esquerda.
+
+43
+00:02:08,620 --> 00:02:11,750
+Ento, a primeira coisa que fazemos  adicionar essa declarao if.
+
+44
+00:02:11,750 --> 00:02:16,080
+O new_node  menor que o current_node ou o RAT?
+
+45
+00:02:16,080 --> 00:02:20,320
+A resposta  sim, ento sim.
+
+46
+00:02:20,320 --> 00:02:21,700
+O que ns fazemos?
+
+47
+00:02:21,700 --> 00:02:24,500
+Ns vamos dizer, se o current_node,
+
+48
+00:02:24,500 --> 00:02:27,853
+que  14, tem um n  esquerda,
+
+49
+00:02:29,760 --> 00:02:33,310
+ento vamos nos mover para esse n, ok?
+
+50
+00:02:33,310 --> 00:02:37,120
+Ento, se current_node. esquerda est pedindo Python,
+
+51
+00:02:37,120 --> 00:02:42,120
+ o n 14, n esquerdo algo diferente de nenhum?
+
+52
+00:02:42,880 --> 00:02:45,240
+E neste momento,  sim, porque 14
+
+53
+00:02:45,240 --> 00:02:48,120
+tem um n  esquerda, que  nove, ento
+
+54
+00:02:48,120 --> 00:02:49,240
+o que fazemos?
+
+55
+00:02:49,240 --> 00:02:52,900
+Dizemos que current_node, que atualmente  14,
+
+56
+00:02:52,900 --> 00:02:57,050
+agora ser igual ao current_node's  esquerda.
+
+57
+00:02:57,050 --> 00:03:00,723
+Ento, basicamente, estamos dizendo para me levar para nove.
+
+58
+00:03:01,940 --> 00:03:03,290
+E  isso que fazemos aqui.
+
+59
+00:03:04,630 --> 00:03:07,670
+Ento, voltamos ao topo do loop while.
+
+60
+00:03:07,670 --> 00:03:11,110
+Ento, current_node agora  nove, porque ns o
+
+61
+00:03:11,110 --> 00:03:13,613
+definimos como sendo os 14's restantes.
+
+62
+00:03:14,760 --> 00:03:16,160
+Mais uma vez, nos
+
+63
+00:03:16,160 --> 00:03:20,430
+perguntamos, o valor do new_node  menor que o valor do current_node?
+
+64
+00:03:20,430 --> 00:03:23,620
+Ento new_node  cinco, current_node  nove, ento a
+
+65
+00:03:23,620 --> 00:03:25,313
+resposta para isso  sim.
+
+66
+00:03:26,470 --> 00:03:31,100
+Ento ns vamos nos perguntar, existe um n esquerdo
+
+67
+00:03:31,100 --> 00:03:31,953
+no current_node?
+
+68
+00:03:33,310 --> 00:03:35,940
+A resposta  no, ento precisamos de um pouco mais de cdigo aqui.
+
+69
+00:03:35,940 --> 00:03:39,860
+Ns podemos ver que h algo que no est
+
+70
+00:03:39,860 --> 00:03:43,480
+l, ento vamos adicionar outra para o nosso if.
+
+71
+00:03:43,480 --> 00:03:47,930
+Ento, se o current_node's left existir, ns nos movemos para l.
+
+72
+00:03:47,930 --> 00:03:52,890
+Se no existir, dizemos que o current_node's esquerdo 
+
+73
+00:03:52,890 --> 00:03:56,033
+agora o new_node que queremos adicionar.
+
+74
+00:03:58,640 --> 00:04:03,640
+Ento, colocamos os cinco l,  esquerda de current_node, e
+
+75
+00:04:04,580 --> 00:04:05,443
+ isso.
+
+76
+00:04:06,630 --> 00:04:10,350
+Agora, nada est faltando, mas no queremos
+
+77
+00:04:10,350 --> 00:04:13,230
+continuar com o nosso loop.
+
+78
+00:04:13,230 --> 00:04:17,220
+Porque ns adicionamos o nosso new_node,  isso,
+
+79
+00:04:17,220 --> 00:04:18,140
+estamos prontos.
+
+80
+00:04:18,140 --> 00:04:20,540
+Ento, o que vamos fazer aqui  adicionar uma pausa.
+
+81
+00:04:20,540 --> 00:04:23,510
+Ns olhamos para isso no incio do curso.
+
+82
+00:04:23,510 --> 00:04:26,600
+Uma quebra  usada para sair de um loop.
+
+83
+00:04:26,600 --> 00:04:29,230
+Ento, neste ponto, definimos o n
+
+84
+00:04:29,230 --> 00:04:32,460
+esquerdo de nove como o new_node, o que
+
+85
+00:04:32,460 --> 00:04:34,550
+significa que adicionamos um n.
+
+86
+00:04:34,550 --> 00:04:38,490
+Queremos agora parar de passar pelos nossos mltiplos ns.
+
+87
+00:04:38,490 --> 00:04:41,053
+Tudo o que queremos fazer agora  terminar, ento ns quebramos.
+
+88
+00:04:42,960 --> 00:04:44,900
+Tambm algo a ser levado em
+
+89
+00:04:44,900 --> 00:04:47,780
+considerao,  o que acontece se o valor do
+
+90
+00:04:47,780 --> 00:04:50,820
+new_node no for menor do que o valor do current_node?
+
+91
+00:04:50,820 --> 00:04:52,100
+Esta declarao if aqui, ns
+
+92
+00:04:52,100 --> 00:04:54,860
+temos se o valor new_node for menor que o valor current_node,
+
+93
+00:04:54,860 --> 00:04:56,360
+ns vamos para a esquerda, mas
+
+94
+00:04:56,360 --> 00:04:58,680
+e se for maior que o valor do current_node?
+
+95
+00:04:58,680 --> 00:05:00,460
+Ns queremos ir para a direita
+
+96
+00:05:00,460 --> 00:05:05,460
+Ento, vamos ter um elif l para fazer exatamente isso.
+
+97
+00:05:05,550 --> 00:05:09,290
+Observe como agora todas as esquerdas foram alteradas para direitos.
+
+98
+00:05:09,290 --> 00:05:10,260
+Tudo o que
+
+99
+00:05:10,260 --> 00:05:13,010
+acontece  que, se o new_node for maior
+
+100
+00:05:13,010 --> 00:05:16,860
+que o current_node, por exemplo, digamos que estivssemos tentando adicionar 21, isso
+
+101
+00:05:16,860 --> 00:05:19,010
+seria verdade, ento nos moveramos para
+
+102
+00:05:19,010 --> 00:05:21,590
+a direita, porque ele tem um n direito.
+
+103
+00:05:21,590 --> 00:05:23,370
+Ento ns estaramos aos 22 anos.
+
+104
+00:05:23,370 --> 00:05:25,100
+Mais uma vez, passaramos pelo
+
+105
+00:05:25,100 --> 00:05:27,670
+nosso loop, e agora 21 seria menos
+
+106
+00:05:27,670 --> 00:05:30,913
+de 22, ento entraramos aqui e marcamos 21 aqui.
+
+107
+00:05:32,440 --> 00:05:34,840
+Espero que isso faa algum sentido.
+
+108
+00:05:34,840 --> 00:05:35,950
+Ns vamos olhar para
+
+109
+00:05:35,950 --> 00:05:37,370
+algum cdigo, e espero que
+
+110
+00:05:37,370 --> 00:05:40,453
+isso ajude tambm, e meio que solidifique esse conhecimento.
+
+111
+00:05:41,620 --> 00:05:43,830
+E, claro, outra coisa que pode
+
+112
+00:05:43,830 --> 00:05:46,740
+acontecer  que tentamos adicionar um n que
+
+113
+00:05:46,740 --> 00:05:50,623
+tenha um valor que no seja menor ou maior que um n.
+
+114
+00:05:51,520 --> 00:05:54,460
+Isso pode acontecer se tentarmos adicionar um
+
+115
+00:05:54,460 --> 00:05:59,460
+new_node que tenha um valor exatamente igual a um n existente.
+
+116
+00:05:59,670 --> 00:06:02,260
+Ento, o que queremos fazer nesse
+
+117
+00:06:02,260 --> 00:06:05,200
+caso , claro, evitar elementos duplicados.
+
+118
+00:06:05,200 --> 00:06:07,770
+Assim que sua rvore comea a ter elementos duplicados, voc
+
+119
+00:06:07,770 --> 00:06:09,690
+comea a se deparar com alguns problemas.
+
+120
+00:06:09,690 --> 00:06:12,780
+Voc coloca o n para a esquerda ou para a direita?
+
+121
+00:06:12,780 --> 00:06:15,530
+Portanto, no queremos dois dos mesmos elementos em uma rvore binria.
+
+122
+00:06:15,530 --> 00:06:18,140
+Tudo o que temos a fazer  adicionar outra
+
+123
+00:06:18,140 --> 00:06:21,450
+instruo if no topo, dizendo que aumente um ValueError, se o
+
+124
+00:06:21,450 --> 00:06:22,960
+valor do new_node for igual
+
+125
+00:06:22,960 --> 00:06:24,240
+ao valor do current_node.
+
+126
+00:06:24,240 --> 00:06:28,210
+Ento, quando voc passa pela rvore, se encontrar uma situao em que o valor
+
+127
+00:06:28,210 --> 00:06:30,470
+que voc est tentando adicionar  o mesmo
+
+128
+00:06:30,470 --> 00:06:32,870
+que um elemento existente, voc pode gerar um
+
+129
+00:06:32,870 --> 00:06:34,103
+erro ou imprimir algo.
+
+130
+00:06:36,130 --> 00:06:37,100
+ isso para este vdeo.
+
+131
+00:06:37,100 --> 00:06:40,870
+Eu queria mostrar como adicionar new_nodes a uma rvore.
+
+132
+00:06:40,870 --> 00:06:42,910
+Agora vamos entrar em algum
+
+133
+00:06:42,910 --> 00:06:46,890
+cdigo e trabalhar na criao da nossa classe de
+
+134
+00:06:46,890 --> 00:06:50,100
+rvore binria, onde podemos encontrar elementos, adicionar elementos,
+
+135
+00:06:50,100 --> 00:06:54,500
+bem como imprimir a rvore usando o nosso percurso Inorder.
+
+136
+00:06:54,500 --> 00:06:55,450
+Eu te vejo l.
+

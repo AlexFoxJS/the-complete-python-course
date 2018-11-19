@@ -1,0 +1,58 @@
+<html>
+                <head>
+                <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                <title>054 Solution magic methods in Python</title>
+                </head>
+                <body>
+                <div class="container">
+                <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <p class="lead"><p>Welcome back to another coding exercise solution!</p>
+
+<p>This is my solution to the coding exercise. Again, it may be slightly different from yours!</p>
+
+<pre class="prettyprint linenums"># We have a class called Club, and it is initialized like this (no need to change):
+class Club:
+    def __init__(self, name):
+        self.name = name
+        self.players = []
+
+    # optional
+    def __len__(self):
+        return len(self.players)
+
+    # define a method that allows us to access the i-th player in the club directly via indexing.
+    # for example, if some_club is an object of Club class,
+    # we can access the i-th player in some_club like this (you may assume i is always valid):
+    # some_club[i]
+    def __getitem__(self, i):
+        return self.players[i]
+
+    # define a method that returns a string representation of this object,
+    # which can be used to recreate this object.
+    # The return value should be in such format (beware of the spacing):
+    # Club {club_name}: {list_of_players}
+    # the club_name and list_of_players should be replaced by the according value of current object
+    def __repr__(self):
+        return 'Club {}: {}'.format(self.name, self.players)
+
+    # define a method that returns a readable string representation of this object for the user.
+    # The return value should be in such format (beware of the spacing):
+    # Club {club_name} with {count_of_players} players
+    # the club_name and count_of_players should be replaced by the according value of current object
+    def __str__(self):
+        return 'Club {} with {} players'.format(self.name, len(self))
+
+# You only need to finish the method, we will take care of the object creation and call those methods for you!</pre>
+
+<p>Let me know how you got on!</p>
+
+<p>Kind regards,</p>
+
+<p>— Jose and the Teclado team</p></p>
+                </div>
+                </div>
+                </div>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+                </body>
+                </html>

@@ -1,0 +1,148 @@
+1
+00:00:00,140 --> 00:00:01,140
+<v Jose>Hi, welcome back.</v>
+
+2
+00:00:01,140 --> 00:00:04,980
+Just a quick aside to warn you of something that can happen
+
+3
+00:00:04,980 --> 00:00:06,830
+in these asynchronous programmes.
+
+4
+00:00:07,880 --> 00:00:09,910
+Because we're running until_complete
+
+5
+00:00:11,110 --> 00:00:13,890
+and we're gathering all the tasks here,
+
+6
+00:00:13,890 --> 00:00:17,130
+potentially if one task takes a really long time
+
+7
+00:00:17,130 --> 00:00:21,850
+or maybe takes a few minutes or a few hours to,
+
+8
+00:00:21,850 --> 00:00:25,630
+for the server to respond, we want to say,
+
+9
+00:00:25,630 --> 00:00:28,260
+you know, if it takes more than 30 seconds,
+
+10
+00:00:28,260 --> 00:00:31,210
+I just wanna terminate this and treat it as an error.
+
+11
+00:00:31,210 --> 00:00:33,610
+Sometimes the servers won't send you an error,
+
+12
+00:00:33,610 --> 00:00:34,550
+they just won't send you anything
+
+13
+00:00:34,550 --> 00:00:37,850
+and you'll be waiting for content for a long time.
+
+14
+00:00:37,850 --> 00:00:39,790
+This run_until-complete means
+
+15
+00:00:39,790 --> 00:00:42,200
+that your programme won't actually finish
+
+16
+00:00:42,200 --> 00:00:44,700
+until all of the tasks have given you something.
+
+17
+00:00:45,980 --> 00:00:48,560
+So, it can be a bit dangerous if you don't have anything
+
+18
+00:00:48,560 --> 00:00:53,560
+to say timeout after X number of seconds.
+
+19
+00:00:53,730 --> 00:00:56,660
+Aiohttp in the latest version comes
+
+20
+00:00:56,660 --> 00:00:59,050
+with something called the async_timeout
+
+21
+00:00:59,050 --> 00:01:00,870
+which you can import, async_timeout,
+
+22
+00:01:02,190 --> 00:01:05,440
+that you can use as a timeout
+
+23
+00:01:05,440 --> 00:01:07,010
+in an asynchronous environment.
+
+24
+00:01:07,010 --> 00:01:10,420
+You can just say async with async_timeout.timeout.
+
+25
+00:01:16,130 --> 00:01:19,480
+Maybe 10 seconds, 10 seconds is a pretty reasonable number,
+
+26
+00:01:19,480 --> 00:01:20,510
+I think.
+
+27
+00:01:20,510 --> 00:01:24,550
+So, now if this session.get takes longer than 10 seconds,
+
+28
+00:01:24,550 --> 00:01:26,820
+it's gonna be cancelled and an exception is gonna be raised.
+
+29
+00:01:26,820 --> 00:01:28,550
+And as I said, that can be quite handy
+
+30
+00:01:28,550 --> 00:01:31,020
+for when something does take a long time.
+
+31
+00:01:31,020 --> 00:01:33,230
+For Google, this is not gonna be a problem,
+
+32
+00:01:33,230 --> 00:01:35,760
+but maybe for a book scraping and business,
+
+33
+00:01:35,760 --> 00:01:37,910
+it could be a bit of an issue.
+
+34
+00:01:38,970 --> 00:01:40,710
+So, that's it for this video, just wanted to share
+
+35
+00:01:40,710 --> 00:01:42,920
+with you this async_timeout as something that exists
+
+36
+00:01:42,920 --> 00:01:44,400
+and that you can use.
+
+37
+00:01:44,400 --> 00:01:45,850
+I'll see you in the next one.
+

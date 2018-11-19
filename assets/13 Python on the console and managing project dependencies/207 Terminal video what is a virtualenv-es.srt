@@ -1,0 +1,972 @@
+1
+00:00:00,360 --> 00:00:01,820
+[Instructor] - Hola, y bienvenido de nuevo.
+
+2
+00:00:01,820 --> 00:00:04,310
+En este video vamos a ver cmo instalar
+
+3
+00:00:04,310 --> 00:00:06,330
+paquetes en Python, usando la consola.
+
+4
+00:00:07,430 --> 00:00:09,820
+En este punto, si no tienes Python 3. 5 o superior
+
+5
+00:00:10,660 --> 00:00:12,360
+instalado, le recomiendo que
+
+6
+00:00:12,360 --> 00:00:15,260
+vaya y lo descargue e instale ahora.
+
+7
+00:00:16,110 --> 00:00:18,940
+Te recomiendo que instales la ltima versin de Python, que es estable, de
+
+8
+00:00:18,940 --> 00:00:22,301
+la hora actual de grabacin que es 3. 6, pero cuando ests
+
+9
+00:00:22,301 --> 00:00:25,970
+viendo esto, tal vez 3. 7 o ms tarde.
+
+10
+00:00:25,970 --> 00:00:27,590
+Te recomiendo que instales que,
+
+11
+00:00:27,590 --> 00:00:31,480
+solo porque, sabes que quieres mantenerte a la vanguardia, quieres utilizar
+
+12
+00:00:31,480 --> 00:00:32,850
+las ltimas tecnologas, y
+
+13
+00:00:32,850 --> 00:00:35,358
+tomar un curso es una gran oportunidad
+
+14
+00:00:35,358 --> 00:00:37,330
+para adoptar una nueva tecnologa.
+
+15
+00:00:37,330 --> 00:00:39,520
+As que te recomiendo que instales la ltima versin.
+
+16
+00:00:39,520 --> 00:00:43,730
+Y tambin es porque vienen versiones posteriores de Python, cuando
+
+17
+00:00:43,730 --> 00:00:46,190
+las instalas, un programa llamado Pip.
+
+18
+00:00:47,750 --> 00:00:50,750
+Eso es, Pip as.
+
+19
+00:00:50,750 --> 00:00:54,460
+Pip se usa para instalar paquetes de Python.
+
+20
+00:00:56,198 --> 00:00:57,170
+Y est bien
+
+21
+00:00:57,170 --> 00:00:59,790
+Entonces, si hacemos Pip instal, solicitudes,
+
+22
+00:01:01,010 --> 00:01:03,220
+por ejemplo, lo que va
+
+23
+00:01:03,220 --> 00:01:04,200
+a hacer
+
+24
+00:01:04,200 --> 00:01:07,630
+es ir a varios sitios web, y se
+
+25
+00:01:07,630 --> 00:01:08,670
+ver, y ver
+
+26
+00:01:08,670 --> 00:01:11,750
+si puede encontrar un paquete de Python,
+
+27
+00:01:11,750 --> 00:01:13,580
+o una biblioteca llamada
+
+28
+00:01:13,580 --> 00:01:16,690
+solicitudes, y si puede encontrarlo, lo va a instalar.
+
+29
+00:01:16,690 --> 00:01:19,620
+Entonces presiona Enter, y como puedes ver, obtengo
+
+30
+00:01:19,620 --> 00:01:21,180
+un requisito, ya estoy satisfecho.
+
+31
+00:01:21,180 --> 00:01:22,300
+Eso es porque
+
+32
+00:01:22,300 --> 00:01:24,180
+ya he instalado solicitudes, pero
+
+33
+00:01:24,180 --> 00:01:26,060
+el hecho de que me
+
+34
+00:01:26,060 --> 00:01:27,940
+lo diga, significa que existen solicitudes.
+
+35
+00:01:27,940 --> 00:01:28,773
+As que eso es bueno.
+
+36
+00:01:30,180 --> 00:01:33,230
+Esto es lo que Python est haciendo en segundo plano.
+
+37
+00:01:33,230 --> 00:01:35,650
+Cuando le dices que instale una biblioteca.
+
+38
+00:01:35,650 --> 00:01:37,580
+Lo que est haciendo es que est instalando
+
+39
+00:01:37,580 --> 00:01:40,190
+Pip, y luego la biblioteca, que le pidas que instale.
+
+40
+00:01:41,420 --> 00:01:43,680
+De acuerdo, como puede ver, la
+
+41
+00:01:43,680 --> 00:01:47,430
+biblioteca de solicitudes ya est instalada en esta carpeta aqu.
+
+42
+00:01:47,430 --> 00:01:52,430
+Usr / local / lib / python2. 7 / site-packages Esto nos dice que
+
+43
+00:01:52,750 --> 00:01:55,500
+el paquete de solicitudes que hemos intentado instalar
+
+44
+00:01:55,500 --> 00:01:56,750
+ahora, hemos intentado
+
+45
+00:01:56,750 --> 00:01:59,830
+instalarlo para Python 2. 7.
+
+46
+00:01:59,830 --> 00:02:02,260
+No intentamos instalarlo para Python 3. 7.
+
+47
+00:02:03,460 --> 00:02:06,580
+Si desea instalar Python 3. 7, tendrs
+
+48
+00:02:06,580 --> 00:02:11,290
+que hacer pip3. 7 solicitudes de instal si solo
+
+49
+00:02:12,140 --> 00:02:15,300
+tienes una versin de Python instalada, yo, ests
+
+50
+00:02:15,300 --> 00:02:16,950
+usando Windows, o tal
+
+51
+00:02:16,950 --> 00:02:18,030
+vez Linux, y
+
+52
+00:02:18,030 --> 00:02:20,560
+no tienes mltiples versiones de Python instaladas,
+
+53
+00:02:20,560 --> 00:02:24,510
+solo tienes que hacer solicitudes de instalacin de pip, de acuerdo?
+
+54
+00:02:24,510 --> 00:02:26,239
+Esto es lo que debe hacer
+
+55
+00:02:26,239 --> 00:02:28,620
+si solo tiene una versin de Python instalada.
+
+56
+00:02:28,620 --> 00:02:32,360
+Pero si tiene muchos, puede hacer pip3,
+
+57
+00:02:32,360 --> 00:02:36,550
+para elegir la ltima versin de Python 3
+
+58
+00:02:36,550 --> 00:02:39,850
+o pip 3. 7, para elegir Python 3. 7, y eso es
+
+59
+00:02:39,850 --> 00:02:41,030
+lo que ests instalando.
+
+60
+00:02:41,030 --> 00:02:44,051
+As que de nuevo, pip3. 7 solicitudes de instalacin,
+
+61
+00:02:44,051 --> 00:02:46,580
+y ahora me dir que los requisitos
+
+62
+00:02:46,580 --> 00:02:48,720
+ya estn satisfechos, pero observe cmo
+
+63
+00:02:48,720 --> 00:02:52,020
+ahora la ubicacin de la que ya est satisfecha es diferente.
+
+64
+00:02:52,020 --> 00:02:54,160
+Eso es porque he instalado Python 3. 7, de una manera
+
+65
+00:02:55,320 --> 00:02:57,830
+diferente a Python 2. 7.
+
+66
+00:02:57,830 --> 00:02:59,690
+Python 2. 7 viene con
+
+67
+00:02:59,690 --> 00:03:02,730
+mi computadora, Python 3. 7 Lo he instalado usando el instalador oficial.
+
+68
+00:03:03,840 --> 00:03:08,840
+Entonces, as es como instalaras paquetes usando Pip.
+
+69
+00:03:09,770 --> 00:03:12,560
+Y el paquete que vamos a querer instalar ahora,
+
+70
+00:03:12,560 --> 00:03:14,780
+es uno que quizs ya tenga, pero
+
+71
+00:03:14,780 --> 00:03:17,040
+de todos modos es una buena idea
+
+72
+00:03:17,040 --> 00:03:19,550
+asegurarse de que lo tenga, se llama virtualenv.
+
+73
+00:03:19,550 --> 00:03:20,850
+Ahora bien, como puedes
+
+74
+00:03:20,850 --> 00:03:22,600
+ver, me dice que ya he
+
+75
+00:03:22,600 --> 00:03:24,740
+satisfecho esto, pero si no tienes virtualenv
+
+76
+00:03:24,740 --> 00:03:26,490
+instalado ya, te recomiendo que lo instales.
+
+77
+00:03:27,790 --> 00:03:30,920
+Cuando utiliza este paquete virtualenv, lo
+
+78
+00:03:30,920 --> 00:03:32,170
+que puede hacer
+
+79
+00:03:32,170 --> 00:03:35,770
+es duplicar una instalacin de Python existente.
+
+80
+00:03:35,770 --> 00:03:38,780
+Entonces digamos que tienes Python 3. 7 instalado, puede usar
+
+81
+00:03:38,780 --> 00:03:41,990
+virtualenv para hacer una copia de eso.
+
+82
+00:03:41,990 --> 00:03:45,130
+Pero, sin ninguna de las bibliotecas que
+
+83
+00:03:45,130 --> 00:03:46,630
+ya ha instalado.
+
+84
+00:03:47,640 --> 00:03:48,620
+Como puede ver, ya tengo
+
+85
+00:03:48,620 --> 00:03:51,260
+instaladas las solicitudes en Python 3. 7, si creo un
+
+86
+00:03:52,740 --> 00:03:56,870
+entorno virtual, usando Python 3. 7, no
+
+87
+00:03:56,870 --> 00:03:59,210
+tendr solicitudes instaladas.
+
+88
+00:03:59,210 --> 00:04:00,360
+As que hagmoslo ahora.
+
+89
+00:04:01,492 --> 00:04:03,950
+La forma de hacerlo es escribiendo virtualenv,
+
+90
+00:04:03,950 --> 00:04:06,030
+luego el nombre del entorno virtual,
+
+91
+00:04:06,030 --> 00:04:11,030
+normalmente es venv, --python = python3. 7 Una vez ms, en lugar
+
+92
+00:04:12,810 --> 00:04:15,660
+de Python 3. 7, puede escribir Python,
+
+93
+00:04:15,660 --> 00:04:18,610
+si solo tiene una versin de Python instalada.
+
+94
+00:04:20,600 --> 00:04:24,340
+Al hacer esto, digo ejecutar el programa virtualenv, que nuevamente
+
+95
+00:04:24,340 --> 00:04:27,040
+debe estar en mi camino, y estos
+
+96
+00:04:27,040 --> 00:04:28,980
+son dos argumentos que le
+
+97
+00:04:28,980 --> 00:04:30,730
+estoy pasando a ese programa.
+
+98
+00:04:30,730 --> 00:04:33,910
+Y los programas en la terminal pueden aceptar argumentos.
+
+99
+00:04:33,910 --> 00:04:36,190
+Venv es un primer argumento,
+
+100
+00:04:36,190 --> 00:04:40,650
+y --python = python3. 7 es un segundo argumento.
+
+101
+00:04:40,650 --> 00:04:43,160
+El primer argumento es el nombre de la venv,
+
+102
+00:04:43,160 --> 00:04:44,300
+del entorno virtual que
+
+103
+00:04:44,300 --> 00:04:46,240
+es, en este caso va a ser venv.
+
+104
+00:04:46,240 --> 00:04:50,580
+El segundo argumento le dice al vendedor qu programa ejecutar, eso es Python
+
+105
+00:04:50,580 --> 00:04:51,480
+3. 7,
+
+106
+00:04:52,490 --> 00:04:55,060
+cuando estamos creando el entorno virtual,
+
+107
+00:04:55,060 --> 00:04:58,530
+entonces usar Python 3. 7 para este entorno virtual.
+
+108
+00:04:58,530 --> 00:04:59,630
+As que hagamos eso.
+
+109
+00:05:01,560 --> 00:05:04,410
+Observe cmo suceden algunas cosas, dice que est usando el intrprete,
+
+110
+00:05:04,410 --> 00:05:05,243
+Python 3. 7,
+
+111
+00:05:06,551 --> 00:05:08,880
+y luego instala un par de cosas
+
+112
+00:05:08,880 --> 00:05:10,200
+como herramientas de configuracin,
+
+113
+00:05:10,200 --> 00:05:12,830
+Pip y wheel, esas son algunas bibliotecas que
+
+114
+00:05:12,830 --> 00:05:14,960
+son muy tiles para instalar paquetes.
+
+115
+00:05:14,960 --> 00:05:16,050
+Y luego est hecho.
+
+116
+00:05:17,230 --> 00:05:18,390
+Ahora, dentro de
+
+117
+00:05:18,390 --> 00:05:20,530
+tu entorno, as que lo que
+
+118
+00:05:20,530 --> 00:05:21,980
+vamos a hacer es
+
+119
+00:05:21,980 --> 00:05:25,670
+abrir la carpeta actual en mi Explorer, para que puedas
+
+120
+00:05:28,673 --> 00:05:31,710
+ver exactamente lo que tenemos aqu, djame que
+
+121
+00:05:34,150 --> 00:05:35,350
+lo mencione.
+
+122
+00:05:36,520 --> 00:05:39,750
+Esta es la carpeta de Venv que acabamos de crear,
+
+123
+00:05:39,750 --> 00:05:41,410
+tenemos un montn de cosas.
+
+124
+00:05:41,410 --> 00:05:44,610
+Tenemos bin, y aqu tenemos,
+
+125
+00:05:44,610 --> 00:05:49,400
+conoces Python, Python 3. 7, Python 3, estos son todos, programas
+
+126
+00:05:50,260 --> 00:05:52,680
+de Python que podemos ejecutar, tienes Pip,
+
+127
+00:05:52,680 --> 00:05:53,710
+que puedes ejecutar
+
+128
+00:05:53,710 --> 00:05:55,570
+tambin, tienes un programa llamado
+
+129
+00:05:55,570 --> 00:05:57,900
+activate, si usas Windows, esto puede verse
+
+130
+00:05:57,900 --> 00:05:59,470
+ligeramente diferente , puede
+
+131
+00:05:59,470 --> 00:06:00,680
+que tengas una
+
+132
+00:06:00,680 --> 00:06:02,550
+carpeta de scripts aqu, eso
+
+133
+00:06:02,550 --> 00:06:03,550
+est totalmente bien.
+
+134
+00:06:05,470 --> 00:06:09,490
+Ahora cuando escribe qu python3. 7, puedes ver que
+
+135
+00:06:10,740 --> 00:06:13,360
+el Python 3. 7 que vamos a
+
+136
+00:06:13,360 --> 00:06:16,850
+ejecutar, sigue siendo este dentro de los marcos de la biblioteca.
+
+137
+00:06:18,460 --> 00:06:23,460
+Si hacemos fuente. venv / bin / activate y
+
+138
+00:06:25,420 --> 00:06:28,330
+luego escribe qu python3. 7 de nuevo, ahora
+
+139
+00:06:28,330 --> 00:06:32,600
+puedes ver que estamos usando nuestra carpeta de venv, dentro tenemos bin
+
+140
+00:06:32,600 --> 00:06:35,930
+y dentro tenemos Python 3. 7.
+
+141
+00:06:35,930 --> 00:06:38,070
+Entonces, lo que estamos haciendo ahora es que estamos
+
+142
+00:06:38,070 --> 00:06:39,760
+usando una versin completamente diferente de Python.
+
+143
+00:06:39,760 --> 00:06:40,720
+Bueno, en realidad es
+
+144
+00:06:40,720 --> 00:06:44,130
+la misma versin, pero dice que la instalacin de Python es completamente diferente.
+
+145
+00:06:44,130 --> 00:06:47,750
+Antes de que utilizramos este en nuestra biblioteca, ahora estamos
+
+146
+00:06:47,750 --> 00:06:50,350
+usando el que est en nuestro buscador.
+
+147
+00:06:50,350 --> 00:06:52,190
+Por cierto, si usas Windows,
+
+148
+00:06:52,190 --> 00:06:54,950
+no ser fuente. / venv /
+
+149
+00:06:54,950 --> 00:06:56,680
+bin / activate si
+
+150
+00:06:56,680 --> 00:07:01,680
+ests usando Windows, ser. \ venv \ Scripts \ activate. bate as que si
+
+151
+00:07:01,870 --> 00:07:05,130
+ests usando Windows, quieres ejecutar esta lnea aqu, en
+
+152
+00:07:05,130 --> 00:07:06,280
+lugar de esta.
+
+153
+00:07:06,280 --> 00:07:07,113
+Bueno?
+
+154
+00:07:08,160 --> 00:07:11,360
+Pero no estoy usando Windows, as que no necesito hacer eso.
+
+155
+00:07:11,360 --> 00:07:14,120
+Tambin puede ver que tiene barras oblicuas, dentro de
+
+156
+00:07:14,120 --> 00:07:15,470
+los corchetes al comienzo.
+
+157
+00:07:15,470 --> 00:07:16,303
+Eso te
+
+158
+00:07:16,303 --> 00:07:18,940
+dice que ests usando este entorno virtual.
+
+159
+00:07:19,960 --> 00:07:20,793
+Bueno.
+
+160
+00:07:21,920 --> 00:07:25,140
+Si haces eco en el camino, ves
+
+161
+00:07:25,140 --> 00:07:26,970
+que ahora tienes algo
+
+162
+00:07:26,970 --> 00:07:28,500
+al comienzo del camino.
+
+163
+00:07:28,500 --> 00:07:32,400
+/ Users / jslvtr / venv / bin Antes
+
+164
+00:07:32,400 --> 00:07:35,110
+de tener esto en la primera
+
+165
+00:07:35,110 --> 00:07:36,664
+carpeta, ahora tenemos este.
+
+166
+00:07:36,664 --> 00:07:37,730
+Por lo tanto, todos
+
+167
+00:07:37,730 --> 00:07:39,300
+los programas que intentemos ejecutar
+
+168
+00:07:39,300 --> 00:07:42,030
+primero se examinarn, dentro de esta carpeta de venv.
+
+169
+00:07:42,030 --> 00:07:43,380
+Por ejemplo, Python 3. 7.
+
+170
+00:07:45,250 --> 00:07:47,590
+Esto es realmente poderoso, porque ahora, si escribimos
+
+171
+00:07:47,590 --> 00:07:48,720
+Python 3. 7,
+
+172
+00:07:49,770 --> 00:07:54,080
+estamos usando el Python 3. 7 en nuestro entorno virtual.
+
+173
+00:07:54,080 --> 00:07:56,610
+Si luego escribimos solicitudes de importacin, puede
+
+174
+00:07:56,610 --> 00:07:58,930
+ver que no se puede encontrar.
+
+175
+00:07:58,930 --> 00:08:00,370
+No est instalado.
+
+176
+00:08:00,370 --> 00:08:02,140
+Por lo tanto, si desea
+
+177
+00:08:02,140 --> 00:08:05,360
+instalar solicitudes, ahora puede hacer solicitudes instal de pip
+
+178
+00:08:05,360 --> 00:08:06,590
+y eso va a
+
+179
+00:08:06,590 --> 00:08:09,940
+instalar la biblioteca de solicitudes dentro de su entorno virtual.
+
+180
+00:08:11,350 --> 00:08:12,430
+Si fuera entonces
+
+181
+00:08:12,430 --> 00:08:14,130
+a ir a crear otro
+
+182
+00:08:14,130 --> 00:08:15,610
+entorno virtual y llamarlo
+
+183
+00:08:15,610 --> 00:08:18,570
+de otra forma, no tendra la biblioteca de solicitudes.
+
+184
+00:08:18,570 --> 00:08:19,770
+Entonces, estas bibliotecas,
+
+185
+00:08:19,770 --> 00:08:21,500
+cuando usa un entorno
+
+186
+00:08:21,500 --> 00:08:24,960
+virtual, solo se instalan dentro del entorno virtual.
+
+187
+00:08:24,960 --> 00:08:28,790
+Esto es realmente genial porque le permite tener
+
+188
+00:08:28,790 --> 00:08:30,850
+diferentes entornos virtuales, cada
+
+189
+00:08:30,850 --> 00:08:34,330
+uno con diferentes versiones de la misma biblioteca.
+
+190
+00:08:35,250 --> 00:08:37,260
+Digamos que acabas de hacer un proyecto hoy,
+
+191
+00:08:37,260 --> 00:08:41,490
+y instal solicita la versin 2. 18. 4 Y usted sabe,
+
+192
+00:08:42,828 --> 00:08:43,661
+desarrolla este
+
+193
+00:08:43,661 --> 00:08:46,180
+proyecto durante un perodo de unos pocos
+
+194
+00:08:46,180 --> 00:08:48,140
+meses, o un par de
+
+195
+00:08:48,140 --> 00:08:51,050
+aos, y nunca actualizara la biblioteca de solicitudes.
+
+196
+00:08:51,050 --> 00:08:53,340
+Pero entonces, comienzas un nuevo proyecto, y sabes,
+
+197
+00:08:53,340 --> 00:08:54,609
+quieres usar la ltima
+
+198
+00:08:54,609 --> 00:08:56,120
+versin de las solicitudes, porque
+
+199
+00:08:56,120 --> 00:08:58,530
+tal vez arreglaron el error o algo as,
+
+200
+00:08:59,700 --> 00:09:00,533
+puedes hacer eso,
+
+201
+00:09:00,533 --> 00:09:01,610
+puedes crear un nuevo
+
+202
+00:09:01,610 --> 00:09:03,290
+entorno virtual e instalar la ltima versin.
+
+203
+00:09:03,290 --> 00:09:05,930
+Y el proyecto anterior que usa esta
+
+204
+00:09:05,930 --> 00:09:08,060
+versin no se ver afectado.
+
+205
+00:09:08,060 --> 00:09:11,800
+Imagina que tambin han cambiado parte de la funcionalidad.
+
+206
+00:09:11,800 --> 00:09:15,230
+Para que tu viejo proyecto ya no funcione.
+
+207
+00:09:15,230 --> 00:09:16,740
+Ahora no tiene ese problema,
+
+208
+00:09:16,740 --> 00:09:19,700
+porque cada proyecto puede tener sus propias versiones independientes.
+
+209
+00:09:20,660 --> 00:09:22,320
+Y, por cierto, esto ocupa
+
+210
+00:09:22,320 --> 00:09:24,450
+unos pocos megabytes de tu disco
+
+211
+00:09:24,450 --> 00:09:25,283
+duro, y
+
+212
+00:09:25,283 --> 00:09:26,640
+esencialmente, es esencialmente gratis.
+
+213
+00:09:26,640 --> 00:09:28,060
+No le cuesta nada
+
+214
+00:09:28,060 --> 00:09:30,060
+tener mltiples entornos virtuales, tengo
+
+215
+00:09:30,060 --> 00:09:32,590
+muchos proyectos Python en mi computadora,
+
+216
+00:09:32,590 --> 00:09:35,390
+cada uno tiene su propio entorno virtual,
+
+217
+00:09:35,390 --> 00:09:38,130
+para mantenerlo separado de cualquier otro proyecto.
+
+218
+00:09:39,100 --> 00:09:40,130
+As que avanzando,
+
+219
+00:09:40,130 --> 00:09:42,650
+cada vez que inicie un nuevo proyecto en
+
+220
+00:09:42,650 --> 00:09:44,980
+Python, cree un entorno virtual para l,
+
+221
+00:09:44,980 --> 00:09:46,560
+y asegrese de usarlo, cada
+
+222
+00:09:46,560 --> 00:09:48,660
+vez que est ejecutando sus aplicaciones.
+
+223
+00:09:50,110 --> 00:09:51,560
+Durante el resto del curso
+
+224
+00:09:51,560 --> 00:09:52,990
+vamos a crear entornos virtuales
+
+225
+00:09:52,990 --> 00:09:55,180
+para proyectos, solo para dar algunos ejemplos
+
+226
+00:09:55,180 --> 00:09:56,350
+de cmo funciona esto.
+
+227
+00:09:57,420 --> 00:09:58,920
+Ahora que ests en
+
+228
+00:09:58,920 --> 00:10:02,510
+tu camino, si tienes algunos archivos de Python que deseas
+
+229
+00:10:02,510 --> 00:10:03,410
+ejecutar, por ejemplo,
+
+230
+00:10:03,410 --> 00:10:05,270
+como una aplicacin. py o algo, todo lo
+
+231
+00:10:05,270 --> 00:10:08,830
+que tienes que hacer es escribir python. Aplicacin py, y eso
+
+232
+00:10:08,830 --> 00:10:11,290
+va a ejecutar el programa Python en
+
+233
+00:10:11,290 --> 00:10:14,910
+tu camino, que es Python 3. 7, porque eso es lo que est en tu
+
+234
+00:10:14,910 --> 00:10:17,870
+mano, y luego ejecutar la aplicacin de archivos. py, que presumiblemente
+
+235
+00:10:17,870 --> 00:10:20,840
+es el archivo que inicia su programa.
+
+236
+00:10:21,950 --> 00:10:25,620
+Entonces, as es como ejecutara un archivo especfico con
+
+237
+00:10:25,620 --> 00:10:27,590
+Python, desde su consola, y
+
+238
+00:10:27,590 --> 00:10:30,200
+puede hacerlo dentro de un entorno virtual.
+
+239
+00:10:31,040 --> 00:10:34,690
+As que eso volver a dar separacin entre sus
+
+240
+00:10:34,690 --> 00:10:37,730
+proyectos, y los har un poco ms independientes.
+
+241
+00:10:37,730 --> 00:10:39,010
+Eso es todo por este
+
+242
+00:10:39,010 --> 00:10:40,120
+video, ahora se est haciendo
+
+243
+00:10:40,120 --> 00:10:42,000
+ms largo, as que continuemos en el prximo.
+

@@ -1,0 +1,1044 @@
+1
+00:00:00,100 --> 00:00:01,300
+Jose: Ol e bem
+
+2
+00:00:01,300 --> 00:00:03,000
+vindo de volta neste vdeo,
+
+3
+00:00:03,000 --> 00:00:04,970
+vamos gravar nossa excluso de ns.
+
+4
+00:00:06,430 --> 00:00:09,100
+Antes de fazermos isso, precisamos
+
+5
+00:00:09,100 --> 00:00:11,400
+de mais alguns mtodos auxiliares.
+
+6
+00:00:12,440 --> 00:00:15,850
+Precisamos ser capazes de encontrar o n pai de
+
+7
+00:00:15,850 --> 00:00:18,870
+um determinado n e tambm precisamos ser capazes
+
+8
+00:00:18,870 --> 00:00:22,610
+de encontrar o n mais  direita de um ramo.
+
+9
+00:00:22,610 --> 00:00:24,160
+Ento, podemos substitu-lo.
+
+10
+00:00:25,370 --> 00:00:27,650
+Ento vamos codificar def encontrar
+
+11
+00:00:32,150 --> 00:00:34,560
+pai, que vai pegar um int
+
+12
+00:00:36,450 --> 00:00:38,480
+e vai retornar um n.
+
+13
+00:00:40,750 --> 00:00:42,510
+Vamos codificar def find
+
+14
+00:00:42,510 --> 00:00:45,780
+parent e tambm vamos codificar def find rightmost.
+
+15
+00:00:47,766 --> 00:00:49,140
+Agora vamos pegar um
+
+16
+00:00:49,140 --> 00:00:50,370
+n e ele vai
+
+17
+00:00:50,370 --> 00:00:52,430
+retornar outro n, ento vamos pegar
+
+18
+00:00:52,430 --> 00:00:54,980
+um n que  o comeo do branch.
+
+19
+00:00:54,980 --> 00:00:57,210
+Ento, olhando para isto aqui,
+
+20
+00:00:58,850 --> 00:01:02,530
+se dermos sete, ache que a direita nos dar
+
+21
+00:01:02,530 --> 00:01:05,450
+oito, porque esse  o n mais
+
+22
+00:01:05,450 --> 00:01:07,520
+certo em todo este ramo.
+
+23
+00:01:09,250 --> 00:01:11,850
+Encontre pai, se dermos sete, nos
+
+24
+00:01:11,850 --> 00:01:13,490
+dar este n.
+
+25
+00:01:14,532 --> 00:01:15,365
+OK?
+
+26
+00:01:17,480 --> 00:01:20,826
+Ento, vamos codificar esses dois mtodos.
+
+27
+00:01:20,826 --> 00:01:23,180
+O que vamos fazer para encontrar pai
+
+28
+00:01:23,180 --> 00:01:26,010
+ a mesma coisa que fizemos para encontrar, vou
+
+29
+00:01:26,010 --> 00:01:27,700
+abrir aqui, passar por todos
+
+30
+00:01:29,290 --> 00:01:30,800
+os ns, mas em vez
+
+31
+00:01:30,800 --> 00:01:33,680
+de verificar se o valor fornecido  igual ao
+
+32
+00:01:33,680 --> 00:01:35,550
+valor do n atual, vamos checar
+
+33
+00:01:35,550 --> 00:01:37,310
+a esquerda e a direita.
+
+34
+00:01:37,310 --> 00:01:40,630
+Ento, eu vou ver se alguma das crianas tem esse
+
+35
+00:01:40,630 --> 00:01:43,180
+valor e se elas retornam o n atual.
+
+36
+00:01:44,090 --> 00:01:46,400
+Ento, se eu encontrar o pai, vou
+
+37
+00:01:46,400 --> 00:01:50,620
+dizer que o n atual  auto. cabea e, em seguida, enquanto o
+
+38
+00:01:50,620 --> 00:01:54,820
+n atual no est vazio, vamos dizer se o n atual existe
+
+39
+00:01:54,820 --> 00:01:58,830
+e o n atual  esquerda. o valor  igual ao
+
+40
+00:02:00,490 --> 00:02:05,490
+valor ou, e eu vou colocar essa diviso l porque no Python isso
+
+41
+00:02:06,214 --> 00:02:09,340
+ til para obter novas linhas, dividindo as
+
+42
+00:02:09,340 --> 00:02:11,140
+coisas em novas linhas.
+
+43
+00:02:11,140 --> 00:02:15,410
+N atual. direito e atual ndoe. certo. valor igual valor.
+
+44
+00:02:17,460 --> 00:02:18,970
+Se voc no incluir isso pela
+
+45
+00:02:18,970 --> 00:02:21,720
+maneira que ele apenas lhe d um erro, porque diz, o
+
+46
+00:02:21,720 --> 00:02:24,360
+que isso significa, isso no faz parte da declarao if,
+
+47
+00:02:24,360 --> 00:02:25,960
+se voc incluir isso, percebe isso.
+
+48
+00:02:25,960 --> 00:02:28,560
+O que voc quer que dividamos esta declarao aqui
+
+49
+00:02:28,560 --> 00:02:30,590
+em duas linhas para facilitar a leitura.
+
+50
+00:02:30,590 --> 00:02:32,940
+Ento  por isso que voc inclui essa barra invertida l.
+
+51
+00:02:34,150 --> 00:02:39,150
+Portanto, se houver um n  esquerda e o valor corresponder, ou se houver
+
+52
+00:02:39,240 --> 00:02:42,400
+um n direito e o valor corresponder, isso significa
+
+53
+00:02:42,400 --> 00:02:44,140
+que somos o pai.
+
+54
+00:02:44,140 --> 00:02:46,100
+Porque uma das duas crianas tem
+
+55
+00:02:46,100 --> 00:02:47,700
+o valor que procuramos.
+
+56
+00:02:47,700 --> 00:02:52,327
+Ento, ns retornamos o n atual, e ento vamos fazer a mesma coisa
+
+57
+00:02:53,470 --> 00:02:54,900
+que fizemos no find.
+
+58
+00:02:54,900 --> 00:02:56,160
+Se o valor que
+
+59
+00:02:56,160 --> 00:02:58,050
+estamos procurando for maior que o
+
+60
+00:02:58,050 --> 00:03:03,050
+valor do n atual, digamos que o n atual  o n atual correto.
+
+61
+00:03:03,360 --> 00:03:07,130
+E, claro, isso tem que ser o atual n elif, o valor
+
+62
+00:03:09,010 --> 00:03:13,240
+ menor que o n atual. valor.
+
+63
+00:03:13,240 --> 00:03:16,190
+Ns vamos dizer que o n atual  igual ao n atual. esquerda.
+
+64
+00:03:18,090 --> 00:03:21,610
+Agora voc pode notar que em nenhum momento aqui
+
+65
+00:03:21,610 --> 00:03:23,390
+estamos retornando a cabea.
+
+66
+00:03:24,730 --> 00:03:28,180
+Comeamos na frente, mas checamos as duas
+
+67
+00:03:28,180 --> 00:03:33,180
+crianas e retornamos a cabea se as crianas tiverem o valor.
+
+68
+00:03:34,510 --> 00:03:37,670
+Ns nunca retornamos a cabea se a cabea tem
+
+69
+00:03:37,670 --> 00:03:40,460
+o valor, ou realmente no h nenhuma maneira
+
+70
+00:03:42,220 --> 00:03:44,720
+de podermos excluir a cabea com isso.
+
+71
+00:03:45,660 --> 00:03:49,450
+Ento, o que vamos fazer  dizer se eu. cabea e
+
+72
+00:03:49,450 --> 00:03:54,420
+eu. cabea. valor igual valor retorno auto. cabea.
+
+73
+00:03:55,420 --> 00:03:58,540
+A razo pela qual estou fazendo isso
+
+74
+00:03:58,540 --> 00:04:01,620
+ficar mais clara  medida que continuarmos
+
+75
+00:04:01,620 --> 00:04:03,720
+e, de fato, como vamos
+
+76
+00:04:03,720 --> 00:04:08,720
+excluir um n com dois filhos, porque, se quisermos excluir a
+
+77
+00:04:10,480 --> 00:04:15,000
+cabea, verificar as crianas no nos dar a cabea.
+
+78
+00:04:15,000 --> 00:04:17,060
+S nos dar a cabea se as
+
+79
+00:04:17,060 --> 00:04:18,580
+crianas tiverem o valor que procuramos.
+
+80
+00:04:18,580 --> 00:04:21,510
+No se a cabea tiver o valor que estamos procurando.
+
+81
+00:04:21,510 --> 00:04:23,570
+Isso ficar mais claro em breve, eu prometo.
+
+82
+00:04:25,170 --> 00:04:27,750
+Vamos ento seguir em frente para encontrar mais  direita.
+
+83
+00:04:27,750 --> 00:04:30,740
+Encontrar mais  direita  um mtodo bastante simples aqui.
+
+84
+00:04:30,740 --> 00:04:34,780
+Tudo o que temos que fazer  comear neste n
+
+85
+00:04:34,780 --> 00:04:38,660
+e ir para a direita at chegarmos ao fim.
+
+86
+00:04:39,990 --> 00:04:44,830
+Ento, tudo o que fazemos  dizer que o n atual  igual
+
+87
+00:04:44,830 --> 00:04:47,440
+a node, enquanto current_node. right current_node 
+
+88
+00:04:47,440 --> 00:04:50,050
+igual a current_node. certo.
+
+89
+00:04:50,050 --> 00:04:52,450
+E ento no final ns retornaremos current_node.
+
+90
+00:04:53,490 --> 00:04:56,420
+Ento, novamente, tudo o que estamos fazendo  o
+
+91
+00:04:56,420 --> 00:04:59,740
+que estamos dizendo, current_node ser o n certo at que
+
+92
+00:04:59,740 --> 00:05:01,380
+no haja nada  direita.
+
+93
+00:05:01,380 --> 00:05:03,230
+E quando no h nada 
+
+94
+00:05:03,230 --> 00:05:04,480
+direita, apenas retornamos o
+
+95
+00:05:04,480 --> 00:05:06,800
+n atual, porque esse ser o n mais certo.
+
+96
+00:05:07,910 --> 00:05:11,360
+Mais uma vez, mostrarei o diagrama aqui.
+
+97
+00:05:11,360 --> 00:05:13,030
+O que temos , digamos
+
+98
+00:05:13,030 --> 00:05:15,110
+que dizemos acertar a maior parte desse
+
+99
+00:05:16,150 --> 00:05:19,820
+ramo, o que faremos  que comearemos s sete, verificaremos o n
+
+100
+00:05:20,890 --> 00:05:22,820
+mais  direita, o n direito
+
+101
+00:05:22,820 --> 00:05:25,360
+e diremos que o current_node agora tem oito
+
+102
+00:05:25,360 --> 00:05:27,590
+e depois dizemos existe outro n certo?
+
+103
+00:05:27,590 --> 00:05:30,160
+No, ento vamos devolver os oito.
+
+104
+00:05:30,160 --> 00:05:33,120
+E esse  de fato o maior n do ramo.
+
+105
+00:05:33,120 --> 00:05:35,410
+Ele nunca vai para a esquerda, porque assim
+
+106
+00:05:35,410 --> 00:05:38,670
+que voc vai embora, voc no  mais o maior n.
+
+107
+00:05:38,670 --> 00:05:40,230
+Ento, vamos apenas para a
+
+108
+00:05:40,230 --> 00:05:41,790
+direita at chegarmos ao fim.
+
+109
+00:05:43,490 --> 00:05:45,117
+OK?
+
+110
+00:05:45,117 --> 00:05:48,340
+Vamos ento entrar na excluso.
+
+111
+00:05:49,960 --> 00:05:51,480
+Ns vamos pegar um valor.
+
+112
+00:05:51,480 --> 00:05:54,920
+Isso vai ser um inteiro, e vai apagar.
+
+113
+00:05:55,990 --> 00:05:58,130
+O que temos que levar em
+
+114
+00:05:58,130 --> 00:06:02,550
+considerao  que podemos no ter filhos, um filho ou dois filhos.
+
+115
+00:06:03,580 --> 00:06:07,100
+Ento, vamos primeiro pegar o to_delete
+
+116
+00:06:07,100 --> 00:06:11,292
+que ser auto. find (value) e to_delete_parent
+
+117
+00:06:11,292 --> 00:06:14,130
+que sero auto. find_parent (value) ento
+
+118
+00:06:14,130 --> 00:06:16,740
+agora temos o que queremos deletar
+
+119
+00:06:16,740 --> 00:06:18,210
+e o pai dele.
+
+120
+00:06:19,640 --> 00:06:21,740
+E ento ns temos algumas declaraes.
+
+121
+00:06:21,740 --> 00:06:25,870
+If_to_detele. left e to_delete. certo, isso significa que
+
+122
+00:06:25,870 --> 00:06:30,870
+temos dois filhos elif to_delete. left ou to_delete. certo ns temos um
+
+123
+00:06:34,800 --> 00:06:38,130
+dos dois que significa que temos um filho
+
+124
+00:06:39,760 --> 00:06:41,580
+e, finalmente, sem filhos.
+
+125
+00:06:44,010 --> 00:06:45,610
+OK?
+
+126
+00:06:45,610 --> 00:06:47,710
+Ento estas so nossas opes.
+
+127
+00:06:47,710 --> 00:06:49,730
+Se ns temos dois filhos, vamos lidar
+
+128
+00:06:49,730 --> 00:06:53,050
+com a excluso do n aqui, se tivermos um filho, vamos lidar
+
+129
+00:06:53,050 --> 00:06:54,770
+com a excluso do n aqui,
+
+130
+00:06:54,770 --> 00:06:57,200
+e se no tivermos filhos, vamos lidar com a
+
+131
+00:06:57,200 --> 00:06:59,400
+excluso do n l em baixo. .
+
+132
+00:06:59,400 --> 00:07:02,500
+Vamos comear sem filhos, voc j sabe
+
+133
+00:07:02,500 --> 00:07:05,890
+como fazer isso e, mais uma vez, vou
+
+134
+00:07:05,890 --> 00:07:08,860
+mostrar o diagrama apenas para deixar claro.
+
+135
+00:07:10,500 --> 00:07:14,340
+Digamos que queremos excluir o n trs, tudo bem.
+
+136
+00:07:14,340 --> 00:07:15,930
+Este n no tem filhos.
+
+137
+00:07:16,790 --> 00:07:19,440
+Para excluir o n trs, a primeira coisa
+
+138
+00:07:19,440 --> 00:07:22,990
+que precisamos saber  se o n trs  o
+
+139
+00:07:22,990 --> 00:07:24,950
+filho esquerdo ou o filho direito.
+
+140
+00:07:25,810 --> 00:07:27,010
+Por qu?
+
+141
+00:07:27,010 --> 00:07:29,580
+Porque o que vamos fazer  dizer que
+
+142
+00:07:30,790 --> 00:07:33,360
+cinco tem um filho que  trs  esquerda.
+
+143
+00:07:34,790 --> 00:07:38,890
+Vamos fazer cinco pontos  esquerda em vez de trs.
+
+144
+00:07:40,240 --> 00:07:42,940
+Isso significa que essencialmente exclumos esse link e o
+
+145
+00:07:42,940 --> 00:07:44,940
+Python excluir os trs para ns.
+
+146
+00:07:46,200 --> 00:07:51,200
+Ento, se to_delete  igual a to_delete_parent. esquerda vamos dizer
+
+147
+00:07:54,300 --> 00:07:57,120
+to_delete_parent. esquerda no  nenhuma.
+
+148
+00:07:58,784 --> 00:08:02,910
+Caso contrrio, se to_delete for igual a to_delete_parent. certo vamos
+
+149
+00:08:05,827 --> 00:08:08,470
+dizer to_delete_parent. certo no  nenhum.
+
+150
+00:08:09,820 --> 00:08:13,330
+E h uma opo final, que  agora onde as outras
+
+151
+00:08:13,330 --> 00:08:15,580
+coisas que codificamos anteriormente se tornam um
+
+152
+00:08:15,580 --> 00:08:16,530
+pouco mais bvias.
+
+153
+00:08:17,840 --> 00:08:20,610
+Poderia ser o n que queramos excluir,
+
+154
+00:08:20,610 --> 00:08:23,720
+e o pai dele no  o mesmo.
+
+155
+00:08:25,030 --> 00:08:26,680
+Tambm poderia ser o n que queremos
+
+156
+00:08:26,680 --> 00:08:28,630
+deletar e seu parente no  o mesmo.
+
+157
+00:08:29,580 --> 00:08:30,720
+Quando?
+
+158
+00:08:30,720 --> 00:08:32,110
+Bem, vamos dar uma olhada.
+
+159
+00:08:33,020 --> 00:08:35,070
+Imagine que voc deseja excluir o n raiz.
+
+160
+00:08:37,890 --> 00:08:41,660
+O n raiz no  dos pais,  esquerda ou  direita,
+
+161
+00:08:41,660 --> 00:08:43,060
+porque no tem um.
+
+162
+00:08:44,310 --> 00:08:48,450
+De fato, neste caso, to_delete e to_delete_parent sero
+
+163
+00:08:48,450 --> 00:08:49,390
+os mesmos.
+
+164
+00:08:50,450 --> 00:08:51,560
+Por qu?
+
+165
+00:08:51,560 --> 00:08:55,040
+Como to_delete vai encontrar o n raiz,
+
+166
+00:08:55,040 --> 00:08:58,900
+to_delete_parent tambm vai nos dar o n raiz
+
+167
+00:08:58,900 --> 00:09:02,500
+porque estamos procurando pelo valor do head.
+
+168
+00:09:03,970 --> 00:09:05,750
+Ento, esses dois vo ser
+
+169
+00:09:05,750 --> 00:09:08,420
+os mesmos, essas declaraes se ambas sero falsas,
+
+170
+00:09:08,420 --> 00:09:10,120
+e  a que vamos acabar.
+
+171
+00:09:11,030 --> 00:09:13,290
+O outro onde queremos apagar a cabea, tudo o
+
+172
+00:09:13,290 --> 00:09:16,360
+que temos a fazer  auto. cabea no  nenhuma.
+
+173
+00:09:17,270 --> 00:09:20,850
+Assumindo,  claro, que a cabea no tenha filhos.
+
+174
+00:09:20,850 --> 00:09:23,730
+Isto  o que esta outra coisa est fazendo.
+
+175
+00:09:23,730 --> 00:09:25,510
+Se a cabea no tiver filhos,
+
+176
+00:09:25,510 --> 00:09:28,570
+isso significa que a cabea  o ltimo elemento da rvore.
+
+177
+00:09:28,570 --> 00:09:31,060
+Isso significa que a cabea no tem filhos, isso significa isso.
+
+178
+00:09:32,210 --> 00:09:35,630
+Ento, tudo o que precisamos fazer  defini-lo como none e,
+
+179
+00:09:35,630 --> 00:09:37,880
+em seguida, o seis ser excludo pelo Python.
+
+180
+00:09:39,560 --> 00:09:40,393
+OK?
+
+181
+00:09:41,430 --> 00:09:44,370
+Se temos um filho, isso se torna um pouco diferente.
+
+182
+00:09:45,340 --> 00:09:48,070
+Mais uma vez temos que fazer a mesma coisa.
+
+183
+00:09:48,070 --> 00:09:52,680
+Se to_delete  igual ao pai de to_delete agora,
+
+184
+00:09:52,680 --> 00:09:57,680
+queremos dizer tdp left to_delete_parent. esquerda  igual a,
+
+185
+00:09:58,490 --> 00:10:01,360
+vamos voltar ao nosso diagrama.
+
+186
+00:10:01,360 --> 00:10:02,910
+Digamos que queremos excluir
+
+187
+00:10:04,420 --> 00:10:07,490
+cinco, temos que dizer que o pai que
+
+188
+00:10:07,490 --> 00:10:12,490
+ seis, o pai ou a me deve ser igual ao filho de cinco.
+
+189
+00:10:15,420 --> 00:10:18,670
+A criana de cinco anos pode estar  esquerda ou
+
+190
+00:10:18,670 --> 00:10:20,540
+pode estar  direita, no sabemos.
+
+191
+00:10:21,580 --> 00:10:22,820
+Ento o que fazer?
+
+192
+00:10:22,820 --> 00:10:27,230
+To_delete_parent. left  to_delete. direito ou
+
+193
+00:10:27,230 --> 00:10:28,480
+to_delete. esquerda.
+
+194
+00:10:32,770 --> 00:10:35,830
+Ento, novamente, o que fizemos aqui  usar a sintaxe
+
+195
+00:10:35,830 --> 00:10:40,150
+ou no Python para dizer que to_delete_parent. left tem que
+
+196
+00:10:40,150 --> 00:10:43,580
+ser to_delete_parent. certo, mas se no houver
+
+197
+00:10:43,580 --> 00:10:45,180
+nenhum use to_delete. esquerda em vez disso.
+
+198
+00:10:46,970 --> 00:10:51,060
+Ento essa  uma maneira muito til de fazer isso.
+
+199
+00:10:57,730 --> 00:11:00,280
+Ento, novamente, fazemos a mesma coisa, mas com a direita.
+
+200
+00:11:02,020 --> 00:11:05,010
+Finalmente, h uma ltima opo, que 
+
+201
+00:11:05,010 --> 00:11:08,010
+quando to_delete_parent e to_delete so os mesmos.
+
+202
+00:11:08,010 --> 00:11:10,940
+Se eles so o mesmo, isso significa que eu. cabea deve se
+
+203
+00:11:10,940 --> 00:11:15,200
+tornar os ns da direita ou da esquerda.
+
+204
+00:11:17,170 --> 00:11:20,318
+Dessa forma estaremos essencialmente substituindo um deles.
+
+205
+00:11:20,318 --> 00:11:25,010
+O que est acontecendo aqui  claro, deixe-me ver se
+
+206
+00:11:25,010 --> 00:11:28,970
+consigo esconder isso, mover isso para l e mostrar
+
+207
+00:11:28,970 --> 00:11:30,510
+para voc assim.
+
+208
+00:11:30,510 --> 00:11:31,970
+Sim, isso  um pouco melhor.
+
+209
+00:11:31,970 --> 00:11:33,470
+Assumindo que temos
+
+210
+00:11:33,470 --> 00:11:36,513
+um filho, que  por exemplo este
+
+211
+00:11:39,380 --> 00:11:42,793
+ramo aqui, neste caso, se to_delete  o
+
+212
+00:11:42,793 --> 00:11:45,779
+pai / me que est neste caso,
+
+213
+00:11:45,779 --> 00:11:50,779
+o que queremos fazer  setar to_delete_parent que  o n
+
+214
+00:11:51,960 --> 00:11:56,420
+esquerdo 6 para ser igual a este n esquerdo .
+
+215
+00:11:56,420 --> 00:11:57,253
+OK?
+
+216
+00:11:58,260 --> 00:12:00,390
+Desculpe, quero dizer, se esse n
+
+217
+00:12:00,390 --> 00:12:02,130
+est  esquerda deste.
+
+218
+00:12:02,130 --> 00:12:04,250
+Se este est  esquerda
+
+219
+00:12:04,250 --> 00:12:09,030
+deste, queremos definir a esquerda como a esquerda ou a direita, dependendo
+
+220
+00:12:09,030 --> 00:12:10,830
+de qual est disponvel.
+
+221
+00:12:12,100 --> 00:12:13,330
+OK?
+
+222
+00:12:13,330 --> 00:12:16,232
+Se quisssemos excluir digamos doze, verificamos
+
+223
+00:12:16,232 --> 00:12:20,180
+se doze  a criana certa de nove anos?
+
+224
+00:12:20,180 --> 00:12:21,630
+Isso seria feito aqui embaixo.
+
+225
+00:12:22,880 --> 00:12:26,780
+ doze igual a to_delete_parent. certo?
+
+226
+00:12:26,780 --> 00:12:28,040
+ o mesmo?
+
+227
+00:12:28,040 --> 00:12:30,390
+ doze igual a to_delete. pai. certo?
+
+228
+00:12:30,390 --> 00:12:34,700
+Sim, ento definimos o n direito de to_delete_parent como
+
+229
+00:12:34,700 --> 00:12:38,830
+igual  esquerda ou  direita de doze.
+
+230
+00:12:38,830 --> 00:12:40,670
+Neste caso, sero onze.
+
+231
+00:12:40,670 --> 00:12:43,190
+Observe como podemos fazer para a esquerda ou para
+
+232
+00:12:43,190 --> 00:12:46,230
+a direita, porque sabemos que doze s tem um filho.
+
+233
+00:12:46,230 --> 00:12:48,370
+Isso  o que esta declarao if aqui verifica.
+
+234
+00:12:51,350 --> 00:12:54,400
+E, finalmente, se voc tiver apenas uma dessas ramificaes
+
+235
+00:12:54,400 --> 00:12:59,400
+e quiser excluir a raiz ou o n principal, isso significa que to_delete e
+
+236
+00:12:59,980 --> 00:13:02,260
+to_delete_parent so os mesmos, porque eles so
+
+237
+00:13:02,260 --> 00:13:03,370
+ambos a cabea.
+
+238
+00:13:03,370 --> 00:13:05,830
+E se esse for o caso, tudo o que
+
+239
+00:13:05,830 --> 00:13:10,830
+queremos fazer  dizer que a cabea est agora com cinco ou o que estava  direita.
+
+240
+00:13:11,020 --> 00:13:12,910
+Ento estaremos essencialmente excluindo seis.
+
+241
+00:13:15,070 --> 00:13:17,390
+Ok, esperamos que isso faa um pouco de sentido.
+
+242
+00:13:17,390 --> 00:13:22,390
+ realmente complicado quando voc comea realmente a
+
+243
+00:13:22,430 --> 00:13:23,785
+pensar nisso.
+
+244
+00:13:23,785 --> 00:13:26,450
+Ento, o que eu te encorajo  desenh-las. eles no so mapas de minas, mas dessas rvores binrias ao
+
+245
+00:13:26,450 --> 00:13:27,930
+Na verdade eu tenho muitos meu lado enquanto eu planejava essa
+
+246
+00:13:27,930 --> 00:13:30,480
+desenhos desses mapas de minas. seo porque no queria errar.
+
+247
+00:13:30,480 --> 00:13:34,740
+E  confuso,  confuso mesmo depois de muitos anos, ento
+
+248
+00:13:34,740 --> 00:13:36,540
+no se sinta mal por
+
+249
+00:13:36,540 --> 00:13:39,120
+ter que desenhar isso no papel.
+
+250
+00:13:39,120 --> 00:13:42,880
+ algo que todos ns fazemos, ento
+
+251
+00:13:42,880 --> 00:13:46,620
+eu definitivamente encorajo voc a fazer isso.
+
+252
+00:13:46,620 --> 00:13:47,990
+A ltima coisa que
+
+253
+00:13:47,990 --> 00:13:50,480
+nos resta so os dois filhos principais.
+
+254
+00:13:51,770 --> 00:13:53,120
+Ns vamos fazer isso no prximo
+
+255
+00:13:53,120 --> 00:13:55,460
+vdeo, s porque este est ficando um pouco longo, e
+
+256
+00:13:55,460 --> 00:13:57,060
+vai ser um pouco mais complicado.
+
+257
+00:13:57,060 --> 00:13:58,750
+H algumas instrues if que precisam entrar aqui.
+
+258
+00:13:58,750 --> 00:14:02,420
+Ento, vamos ver isso no prximo vdeo.
+
+259
+00:14:02,420 --> 00:14:05,000
+Eu te vejo l.
+
+260
+00:14:05,000 --> 00:14:07,370
+&nbsp;
+
+261
+00:14:07,370 --> 00:14:08,320
+&nbsp;
+

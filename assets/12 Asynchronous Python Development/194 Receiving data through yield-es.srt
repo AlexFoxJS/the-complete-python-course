@@ -1,0 +1,764 @@
+1
+00:00:00,140 --> 00:00:01,740
+Jos: Hola, bienvenido de nuevo.
+
+2
+00:00:01,740 --> 00:00:03,770
+Algo que vamos a ver
+
+3
+00:00:03,770 --> 00:00:07,140
+en este video es bastante mental, y mucha gente
+
+4
+00:00:07,140 --> 00:00:09,117
+en la comunidad de Python
+
+5
+00:00:09,117 --> 00:00:12,310
+no entiende realmente cmo funciona esto, y es que
+
+6
+00:00:12,310 --> 00:00:14,835
+se puede usar la declaracin de rendimiento
+
+7
+00:00:14,835 --> 00:00:17,880
+para recibir datos, a diferencia de solo devolverlo.
+
+8
+00:00:17,880 --> 00:00:21,140
+Aqu hay un ejemplo: vamos a definir una funcin
+
+9
+00:00:23,140 --> 00:00:27,680
+de saludo, y esto va a decir, amigo es igual a rendimiento.
+
+10
+00:00:27,680 --> 00:00:30,320
+Espera, espera, espera, espera, qu est pasando aqu?
+
+11
+00:00:30,320 --> 00:00:31,520
+Bueno, echemos un vistazo.
+
+12
+00:00:31,520 --> 00:00:34,910
+Entonces vamos a imprimir, hola amigo.
+
+13
+00:00:38,181 --> 00:00:40,330
+As que esto se ve raro; se ve extrao.
+
+14
+00:00:40,330 --> 00:00:42,390
+Y a m tambin me parece
+
+15
+00:00:42,390 --> 00:00:44,257
+extrao, pero lo que est sucediendo
+
+16
+00:00:44,257 --> 00:00:46,780
+es que vamos a decir, amigo es
+
+17
+00:00:48,375 --> 00:00:50,010
+igual a suspender la funcin.
+
+18
+00:00:52,288 --> 00:00:55,230
+Y luego vamos a imprimir el valor de un amigo.
+
+19
+00:00:55,230 --> 00:00:57,230
+Y esto ha sido diseado
+
+20
+00:00:57,230 --> 00:01:00,880
+de esta manera en Python para que podamos suspender
+
+21
+00:01:02,110 --> 00:01:06,500
+la funcin, pero luego tambin recibir un valor despus de reanudarlo.
+
+22
+00:01:06,500 --> 00:01:09,330
+Y el valor que recibimos va a ser
+
+23
+00:01:09,330 --> 00:01:11,700
+amigo, y luego podemos imprimirlo aqu.
+
+24
+00:01:11,700 --> 00:01:13,300
+Vamos a decir, g es igual
+
+25
+00:01:14,345 --> 00:01:15,610
+a saludar, y lo primero
+
+26
+00:01:15,610 --> 00:01:19,130
+que tenemos que hacer es ejecutar la funcin hasta justo antes del rendimiento.
+
+27
+00:01:20,170 --> 00:01:25,160
+Entonces podemos decir g. enviar, ninguno
+
+28
+00:01:25,160 --> 00:01:28,360
+Esto se llama cebado del generador.
+
+29
+00:01:28,360 --> 00:01:31,410
+Cebado, cebado del generador.
+
+30
+00:01:32,990 --> 00:01:35,260
+Y lo que hace, es como que
+
+31
+00:01:35,260 --> 00:01:36,440
+se ejecuta justo antes
+
+32
+00:01:37,320 --> 00:01:41,630
+del rendimiento, y luego podemos hacer g. enva, Adam, por ejemplo.
+
+33
+00:01:43,370 --> 00:01:46,980
+Esto es lo que est entrando en rendimiento, y la funcin
+
+34
+00:01:46,980 --> 00:01:49,860
+va a asignar a Adam a un amigo, y
+
+35
+00:01:49,860 --> 00:01:51,270
+vamos a continuar aqu.
+
+36
+00:01:51,270 --> 00:01:52,270
+Vamos a ejecutar este archivo.
+
+37
+00:01:53,750 --> 00:01:55,190
+Bueno?
+
+38
+00:01:55,190 --> 00:01:56,950
+Entonces, tenemos un par de cosas.
+
+39
+00:01:56,950 --> 00:02:00,000
+Tenemos, hola, Adam, as que eso es increble, esto funciona.
+
+40
+00:02:00,000 --> 00:02:03,230
+Pero, por supuesto, tambin obtenemos StopIteration porque aqu hay un rendimiento,
+
+41
+00:02:03,230 --> 00:02:04,390
+lo que significa que
+
+42
+00:02:04,390 --> 00:02:05,990
+se trata de un generador,
+
+43
+00:02:06,960 --> 00:02:09,230
+y el generador termina despus de que imprimimos.
+
+44
+00:02:09,230 --> 00:02:10,480
+No hay ningn tipo de
+
+45
+00:02:10,480 --> 00:02:11,870
+repeticin, no hay nada ms que
+
+46
+00:02:11,870 --> 00:02:13,340
+ceder, as que obtenemos una StopIteration,
+
+47
+00:02:13,340 --> 00:02:14,980
+porque ese es el final del generador.
+
+48
+00:02:14,980 --> 00:02:18,380
+Entonces, esta recepcin a travs del rendimiento es extraa,
+
+49
+00:02:18,380 --> 00:02:22,280
+pero en realidad es lo que hace posible el desarrollo
+
+50
+00:02:22,280 --> 00:02:23,770
+asincrnico de Python.
+
+51
+00:02:23,770 --> 00:02:26,320
+Veamos otro ejemplo en este momento.
+
+52
+00:02:28,670 --> 00:02:30,730
+Tendremos nuestro reconocimiento, luego
+
+53
+00:02:33,783 --> 00:02:36,056
+tendremos a nuestros amigos,
+
+54
+00:02:36,056 --> 00:02:39,056
+lo cual ser una decada de
+
+55
+00:02:44,585 --> 00:02:49,585
+Rolf, Jos, y dems, y luego, tendremos una funcin friend_upper.
+
+56
+00:02:49,870 --> 00:02:54,210
+Esto va a decir, mientras tengamos amigos en nuestra deque, vamos a
+
+57
+00:02:54,210 --> 00:02:59,210
+decir amigos iguales amigos. popleft (). upper () por lo que va
+
+58
+00:03:00,150 --> 00:03:03,370
+a obtener el elemento ms a la izquierda de los amigos,
+
+59
+00:03:03,370 --> 00:03:05,250
+lo va a quitar de la
+
+60
+00:03:05,250 --> 00:03:07,190
+deque, y lo convierte todo en maysculas.
+
+61
+00:03:07,190 --> 00:03:09,390
+Esta es la forma de hacerlo en Python.
+
+62
+00:03:09,390 --> 00:03:13,870
+Luego va a decir, saludando con igual
+
+63
+00:03:14,950 --> 00:03:19,090
+rendimiento, y se imprimir, saludo, amigo.
+
+64
+00:03:23,410 --> 00:03:28,410
+De acuerdo, entonces esto es muy extrao de esta manera.
+
+65
+00:03:28,420 --> 00:03:30,820
+Le dar vueltas a los amigos, conseguir
+
+66
+00:03:31,880 --> 00:03:34,750
+el primer amigo y lo convertir en maysculas, y
+
+67
+00:03:34,750 --> 00:03:36,900
+luego suspender la funcin hasta que
+
+68
+00:03:36,900 --> 00:03:40,820
+recibamos un valor aqu a travs del rendimiento y el valor que
+
+69
+00:03:40,820 --> 00:03:44,440
+vamos a recibir sea algn tipo de saludo, y luego cuando
+
+70
+00:03:44,440 --> 00:03:47,030
+recibimos ese valor, imprimiremos el saludo y el
+
+71
+00:03:47,030 --> 00:03:50,230
+amigo, y luego volver a repetirse, sacando al siguiente amigo
+
+72
+00:03:50,230 --> 00:03:53,360
+de la lista, fuera del plazo, lo siento, y
+
+73
+00:03:53,360 --> 00:03:55,420
+luego esperando nuevamente que lleguen algunos
+
+74
+00:03:55,420 --> 00:03:57,770
+datos a travs de este rendimiento.
+
+75
+00:03:57,770 --> 00:03:58,930
+Entonces la funcin se
+
+76
+00:03:58,930 --> 00:03:59,763
+suspender en este
+
+77
+00:03:59,763 --> 00:04:02,530
+punto, hasta que obtengamos ms datos y luego cuando lo
+
+78
+00:04:02,530 --> 00:04:04,600
+hagamos, esa informacin se asignar a un
+
+79
+00:04:04,600 --> 00:04:06,940
+saludo, que luego se imprimir, y as sucesivamente.
+
+80
+00:04:09,270 --> 00:04:13,640
+Y luego, tambin vamos a tener una funcin de saludo otra vez.
+
+81
+00:04:15,270 --> 00:04:19,360
+Esta funcin va a cebar el generador al
+
+82
+00:04:20,443 --> 00:04:22,280
+no enviarle nada.
+
+83
+00:04:22,280 --> 00:04:24,310
+As que, de nuevo, est recibiendo
+
+84
+00:04:24,310 --> 00:04:26,600
+un generador aqu, que ser este
+
+85
+00:04:26,600 --> 00:04:28,400
+amigo aqu arriba, y no
+
+86
+00:04:28,400 --> 00:04:31,320
+le enviar ninguno para cebarlo y llevarlo a
+
+87
+00:04:31,320 --> 00:04:32,680
+la primera parte de
+
+88
+00:04:34,240 --> 00:04:38,395
+la produccin aqu justo antes de la produccin, y luego mientras
+
+89
+00:04:38,395 --> 00:04:43,395
+sea verdadero, va a tomar nuevamente un saludo y cederlo, y enviarlo al generador
+
+90
+00:04:45,148 --> 00:04:47,360
+que se pas como parmetro.
+
+91
+00:04:49,901 --> 00:04:51,620
+Entonces, algo muy extrao sucede aqu.
+
+92
+00:04:51,620 --> 00:04:53,528
+Terminemos el cdigo para ver
+
+93
+00:04:53,528 --> 00:04:55,270
+si esto tiene ms sentido.
+
+94
+00:04:56,357 --> 00:04:57,880
+Vamos a crear una
+
+95
+00:04:57,880 --> 00:04:59,700
+variable de bienvenida, que ser,
+
+96
+00:04:59,700 --> 00:05:01,820
+saludar, y la pasaremos en un
+
+97
+00:05:01,820 --> 00:05:03,970
+generador, que ser un generador superior amigo.
+
+98
+00:05:05,210 --> 00:05:07,180
+Lo primero que vamos a hacer es
+
+99
+00:05:07,180 --> 00:05:08,570
+preparar el generador de bienvenida.
+
+100
+00:05:08,570 --> 00:05:11,000
+Entonces vamos a hacer un saludo. enviar (Ninguno).
+
+101
+00:05:12,310 --> 00:05:14,040
+Nuevamente, sabes lo que hace esto.
+
+102
+00:05:14,040 --> 00:05:18,348
+Simplemente mueve el generador hasta antes de la
+
+103
+00:05:18,348 --> 00:05:22,340
+produccin, as que saluda. send (None) va a mover
+
+104
+00:05:22,340 --> 00:05:24,760
+el generador hasta aqu ejecutando este manual.
+
+105
+00:05:24,760 --> 00:05:28,250
+Por lo tanto, ser el amigo principal superior, y luego se detendr
+
+106
+00:05:28,250 --> 00:05:29,450
+justo antes del rendimiento.
+
+107
+00:05:30,880 --> 00:05:33,220
+Entonces, vamos a hacer un saludo. enviar ('Hola').
+
+108
+00:05:35,860 --> 00:05:38,000
+Esta cadena va a entrar en
+
+109
+00:05:38,000 --> 00:05:40,590
+el rendimiento y se le asignar un
+
+110
+00:05:40,590 --> 00:05:43,520
+saludo, y luego se enviar a friend upper,
+
+111
+00:05:43,520 --> 00:05:45,152
+que es nuestro g.
+
+112
+00:05:45,152 --> 00:05:49,010
+Cuando hacemos eso, eso ser asignado a un saludo.
+
+113
+00:05:49,010 --> 00:05:51,060
+Recuerde, fue preparado anteriormente,
+
+114
+00:05:51,060 --> 00:05:52,560
+y luego se
+
+115
+00:05:52,560 --> 00:05:55,590
+imprimir utilizando este amigo superior.
+
+116
+00:05:57,800 --> 00:05:58,760
+Vamos a ejecutar esto.
+
+117
+00:06:01,807 --> 00:06:02,907
+Y ah lo tienes.
+
+118
+00:06:04,250 --> 00:06:09,150
+Imprimimos, hola, Rolf, y eso es todo.
+
+119
+00:06:09,150 --> 00:06:11,788
+Lo que tenemos aqu,
+
+120
+00:06:11,788 --> 00:06:14,140
+es algo bastante sorprendente.
+
+121
+00:06:15,280 --> 00:06:16,770
+Ninguna de estas funciones
+
+122
+00:06:16,770 --> 00:06:19,933
+se est ejecutando, pero todas estn suspendidas, lo que
+
+123
+00:06:19,933 --> 00:06:22,030
+permite que se ejecute algo ms.
+
+124
+00:06:22,030 --> 00:06:23,590
+Por ejemplo, podramos
+
+125
+00:06:24,780 --> 00:06:26,290
+imprimir, 'Hola, mundo!
+
+126
+00:06:26,290 --> 00:06:27,560
+'Multitarea. 'y
+
+127
+00:06:28,820 --> 00:06:33,820
+luego saludar. enviar, 'cmo ests', por ejemplo.
+
+128
+00:06:35,750 --> 00:06:36,950
+Podramos ejecutar esto de nuevo.
+
+129
+00:06:38,740 --> 00:06:43,740
+Y ahora puedes ver que somos multitarea, esencialmente.
+
+130
+00:06:44,200 --> 00:06:45,740
+Primero tenemos hola Rolf, luego
+
+131
+00:06:46,583 --> 00:06:48,485
+tenemos algo completamente separado de nuestra
+
+132
+00:06:48,485 --> 00:06:49,850
+cadena de funciones, a
+
+133
+00:06:49,850 --> 00:06:52,170
+pesar de que estn funcionando en un
+
+134
+00:06:52,170 --> 00:06:54,480
+bucle, y luego tenemos, cmo ests, Jos.
+
+135
+00:06:54,480 --> 00:06:57,370
+Y observe cmo esto est tomando datos de este deque aqu.
+
+136
+00:06:59,730 --> 00:07:03,427
+Si tenemos un montn de este tipo de cosas
+
+137
+00:07:03,427 --> 00:07:05,500
+ejecutndose en un planificador de
+
+138
+00:07:05,500 --> 00:07:07,480
+tareas, por ejemplo, en lugar
+
+139
+00:07:07,480 --> 00:07:10,130
+de salir de amigos, podra estar solicitando
+
+140
+00:07:10,130 --> 00:07:12,750
+algo de Internet, como algunas pginas
+
+141
+00:07:12,750 --> 00:07:15,770
+para raspar, puede ver cmo podran usarse
+
+142
+00:07:15,770 --> 00:07:18,690
+potencialmente para divide el trabajo usando estos rendimientos.
+
+143
+00:07:19,830 --> 00:07:21,400
+Y est bastante desordenado, de acuerdo?
+
+144
+00:07:21,400 --> 00:07:23,150
+Bueno, as es como funciona.
+
+145
+00:07:24,050 --> 00:07:27,780
+Y as es como funciona el desarrollo asincrnico de
+
+146
+00:07:27,780 --> 00:07:29,380
+Python en el interior.
+
+147
+00:07:30,610 --> 00:07:32,510
+Ahora, en lugar de hacer No me gusta; a nadie en la comunidad
+
+148
+00:07:33,510 --> 00:07:36,120
+todo esto, podemos hacer algo, que. de Python le gusta, que es, podemos hacer rendimientos de g.
+
+149
+00:07:37,030 --> 00:07:40,250
+Esto, que vimos antes, se us para extraer valores de
+
+150
+00:07:40,250 --> 00:07:41,980
+un iterador, en realidad tambin
+
+151
+00:07:44,420 --> 00:07:46,760
+se puede usar para la comunicacin bidireccional.
+
+152
+00:07:46,760 --> 00:07:49,110
+Se puede usar para recibir
+
+153
+00:07:49,110 --> 00:07:51,590
+datos y reenviarlos a otro generador.
+
+154
+00:07:51,590 --> 00:07:54,030
+As que aqu cuando enviamos,
+
+155
+00:07:54,030 --> 00:07:57,720
+hola, entra aqu, y tambin se pasa
+
+156
+00:07:57,720 --> 00:07:59,870
+a g, y luego
+
+157
+00:07:59,870 --> 00:08:04,190
+se puede usar, y luego cualquier valor se devuelve.
+
+158
+00:08:04,190 --> 00:08:06,210
+Entonces esta es otra forma de
+
+159
+00:08:06,210 --> 00:08:08,240
+escribir exactamente lo mismo que tenamos antes.
+
+160
+00:08:08,240 --> 00:08:10,740
+Entonces, enve (Ninguno), y repita constantemente, rindiendo
+
+161
+00:08:10,740 --> 00:08:11,870
+cosas, y enviar
+
+162
+00:08:12,710 --> 00:08:17,010
+el valor puede ser reemplazado por, ceda de g, de acuerdo?
+
+163
+00:08:17,010 --> 00:08:21,510
+As que podemos encadenar fcilmente estos generadores, y cuando tienes
+
+164
+00:08:21,510 --> 00:08:23,350
+generadores que reciben datos,
+
+165
+00:08:25,390 --> 00:08:28,490
+en realidad ya no se los llama
+
+166
+00:08:28,490 --> 00:08:31,720
+generadores porque no estn generando nada.
+
+167
+00:08:31,720 --> 00:08:34,460
+Ahora estn recibiendo datos y haciendo algo con eso.
+
+168
+00:08:34,460 --> 00:08:36,450
+Entonces a partir de ahora, este
+
+169
+00:08:36,450 --> 00:08:38,750
+tipo de generador se conocer como una co-rutina.
+
+170
+00:08:38,750 --> 00:08:43,206
+Y en Python, se los conoce como co-rutinas porque captan
+
+171
+00:08:43,206 --> 00:08:45,810
+datos y se pueden suspender, por
+
+172
+00:08:45,810 --> 00:08:47,960
+lo que es una co-rutina.
+
+173
+00:08:47,960 --> 00:08:50,622
+En la seccin de recursos de esta conferencia,
+
+174
+00:08:50,622 --> 00:08:52,210
+tenemos algunas lecturas adicionales.
+
+175
+00:08:53,070 --> 00:08:54,710
+Est avanzado, as que tmate tu tiempo.
+
+176
+00:08:54,710 --> 00:08:57,130
+No espero que ests volando
+
+177
+00:08:57,130 --> 00:09:00,410
+por esta seccin de ninguna manera.
+
+178
+00:09:00,410 --> 00:09:02,550
+Espero que ests leyendo los recursos adicionales.
+
+179
+00:09:02,550 --> 00:09:03,480
+Hay un curso muy
+
+180
+00:09:03,480 --> 00:09:06,330
+largo sobre co-rutinas y concurrencia de David Beazley que es realmente bueno.
+
+181
+00:09:06,330 --> 00:09:09,470
+Si no ests tan interesado en saber todo
+
+182
+00:09:09,470 --> 00:09:12,110
+lo que hay que saber sobre
+
+183
+00:09:12,110 --> 00:09:14,860
+concurrencia y Python, no dudes en saltearlo.
+
+184
+00:09:14,860 --> 00:09:17,390
+Pero si realmente quiere entender lo que sucede
+
+185
+00:09:17,390 --> 00:09:20,480
+detrs de escena, lea toda la informacin adicional y
+
+186
+00:09:20,480 --> 00:09:22,760
+los recursos a los que lo conecto.
+
+187
+00:09:22,760 --> 00:09:26,610
+Eso es todo por este video.
+
+188
+00:09:26,610 --> 00:09:28,260
+Espero que esto haya sido interesante, y
+
+189
+00:09:29,610 --> 00:09:30,670
+nos vemos en el prximo.
+
+190
+00:09:30,670 --> 00:09:32,100
+&nbsp;
+
+191
+00:09:32,100 --> 00:09:33,750
+&nbsp;
+

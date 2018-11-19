@@ -1,0 +1,804 @@
+1
+00:00:00,300 --> 00:00:01,610
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,610 --> 00:00:03,470
+In this video we're going to talk about
+
+3
+00:00:03,470 --> 00:00:06,240
+processes and threads.
+
+4
+00:00:06,240 --> 00:00:08,530
+Processes and threads are getting into
+
+5
+00:00:08,530 --> 00:00:12,570
+more and more complicated topics in computer science
+
+6
+00:00:12,570 --> 00:00:16,010
+so please use the course Q&amp;A and also
+
+7
+00:00:16,010 --> 00:00:17,770
+do your own research to find other ways
+
+8
+00:00:17,770 --> 00:00:19,920
+of explaining things if anything's unclear.
+
+9
+00:00:21,410 --> 00:00:23,670
+Processes and threads are two essential parts
+
+10
+00:00:23,670 --> 00:00:26,990
+of how your computer operates and all computers
+
+11
+00:00:26,990 --> 00:00:29,100
+have processes and threads.
+
+12
+00:00:31,350 --> 00:00:35,280
+Your computer has a number of cores inside it.
+
+13
+00:00:37,420 --> 00:00:40,260
+A core is just a unit inside a computer
+
+14
+00:00:40,260 --> 00:00:43,800
+that can perform some mathematical operations.
+
+15
+00:00:44,900 --> 00:00:48,740
+Your computer has a processor, a CPU,
+
+16
+00:00:48,740 --> 00:00:52,600
+like for example an Intel i7 or an i5,
+
+17
+00:00:52,600 --> 00:00:55,360
+or an Intel Pentium, or an AMD.
+
+18
+00:00:56,240 --> 00:01:00,170
+These CPU's, these processors, have inside them
+
+19
+00:01:00,170 --> 00:01:03,610
+a number of cores and each core is
+
+20
+00:01:03,610 --> 00:01:06,570
+reasonably independent although they can communicate
+
+21
+00:01:06,570 --> 00:01:07,420
+with one another.
+
+22
+00:01:08,820 --> 00:01:11,800
+Each core I mentioned earlier is a unit
+
+23
+00:01:11,800 --> 00:01:13,780
+that can perform mathematical operations,
+
+24
+00:01:13,780 --> 00:01:15,760
+and, by the way, that's all computers do
+
+25
+00:01:15,760 --> 00:01:18,170
+is perform mathematical operations
+
+26
+00:01:18,170 --> 00:01:20,150
+and then when you have enough of them
+
+27
+00:01:20,150 --> 00:01:22,330
+they can do things like print things out
+
+28
+00:01:22,330 --> 00:01:25,280
+to the screen and, you know, display graphics and so forth.
+
+29
+00:01:26,180 --> 00:01:28,780
+So each core can be responsible for
+
+30
+00:01:28,780 --> 00:01:30,610
+essentially running one thing.
+
+31
+00:01:31,790 --> 00:01:33,620
+So going back to our philosopher example
+
+32
+00:01:33,620 --> 00:01:38,300
+you could have one philosopher on each core.
+
+33
+00:01:38,300 --> 00:01:40,460
+So each core is essentially running one philosopher,
+
+34
+00:01:40,460 --> 00:01:42,390
+which going to our previous analogy is that
+
+35
+00:01:42,390 --> 00:01:46,110
+one philosopher has the resources it needs in order to eat.
+
+36
+00:01:47,480 --> 00:01:49,460
+So here you'd have four philosophers,
+
+37
+00:01:49,460 --> 00:01:52,800
+each with two forks, eating because they've got
+
+38
+00:01:52,800 --> 00:01:54,710
+the forks necessary to eat.
+
+39
+00:01:56,200 --> 00:01:57,540
+Okay.
+
+40
+00:01:57,540 --> 00:02:00,300
+Now, of course, again in our previous analogy
+
+41
+00:02:00,300 --> 00:02:03,570
+we also had a number of waiting philosophers
+
+42
+00:02:03,570 --> 00:02:05,680
+that were waiting to eat.
+
+43
+00:02:05,680 --> 00:02:08,510
+And in computing these would be waiting threads.
+
+44
+00:02:08,510 --> 00:02:11,510
+These are threads, or things we want to do,
+
+45
+00:02:11,510 --> 00:02:15,410
+that don't have the resources to run yet.
+
+46
+00:02:15,410 --> 00:02:17,060
+In this case, these would be philosophers waiting
+
+47
+00:02:17,060 --> 00:02:20,080
+for their forks, their resources, to become available.
+
+48
+00:02:22,300 --> 00:02:23,133
+Okay.
+
+49
+00:02:24,870 --> 00:02:25,970
+So a thread
+
+50
+00:02:27,770 --> 00:02:30,550
+in computing, moving away from philosophers,
+
+51
+00:02:31,550 --> 00:02:35,900
+a thread in computing is a line of code execution.
+
+52
+00:02:35,900 --> 00:02:39,390
+For example, your Python programme can run in a single thread.
+
+53
+00:02:40,350 --> 00:02:43,390
+Or a game can run in a single thread.
+
+54
+00:02:43,390 --> 00:02:44,960
+You know, anything can run in a single thread
+
+55
+00:02:44,960 --> 00:02:47,330
+it's just the code in an application
+
+56
+00:02:47,330 --> 00:02:49,140
+that runs from top to bottom.
+
+57
+00:02:49,980 --> 00:02:51,550
+That can run in a thread
+
+58
+00:02:52,870 --> 00:02:54,950
+and you can have one thread running
+
+59
+00:02:54,950 --> 00:02:57,060
+in one core at a time.
+
+60
+00:02:57,990 --> 00:02:59,900
+So if you have four cores you can run
+
+61
+00:02:59,900 --> 00:03:03,510
+four threads at the same time, one in each core.
+
+62
+00:03:03,510 --> 00:03:04,343
+Okay.
+
+63
+00:03:06,350 --> 00:03:08,820
+Now the other word inside this presentation
+
+64
+00:03:08,820 --> 00:03:11,120
+that we wanted to look at is the word process.
+
+65
+00:03:12,340 --> 00:03:16,230
+A process is not something that runs.
+
+66
+00:03:16,230 --> 00:03:17,190
+Okay?
+
+67
+00:03:17,190 --> 00:03:20,490
+What runs on the cores are the threads,
+
+68
+00:03:20,490 --> 00:03:22,900
+but a processes is sort of a wrapper around it.
+
+69
+00:03:22,900 --> 00:03:25,820
+So a process contains at least one thread,
+
+70
+00:03:25,820 --> 00:03:29,220
+it can be more, plus some resources
+
+71
+00:03:29,220 --> 00:03:32,440
+set aside by your computer, your operating system.
+
+72
+00:03:33,610 --> 00:03:38,610
+So for example, normally the process will contain one thread
+
+73
+00:03:39,220 --> 00:03:42,920
+plus the core that the thread is running on,
+
+74
+00:03:42,920 --> 00:03:44,820
+and potentially some other resources
+
+75
+00:03:44,820 --> 00:03:48,200
+that it has reserved like a network connection,
+
+76
+00:03:48,200 --> 00:03:51,140
+or a hard drive, some file pointers,
+
+77
+00:03:51,140 --> 00:03:52,900
+or anything else.
+
+78
+00:03:52,900 --> 00:03:56,290
+And, of course, these resources continuously change
+
+79
+00:03:56,290 --> 00:03:58,450
+as the process' needs change.
+
+80
+00:03:58,450 --> 00:04:00,550
+For example, the process can reserve the network
+
+81
+00:04:00,550 --> 00:04:02,540
+for a few seconds and then release it,
+
+82
+00:04:02,540 --> 00:04:05,490
+let go of it, so another process can have it.
+
+83
+00:04:05,490 --> 00:04:07,670
+Similarly, a process can reserve a core
+
+84
+00:04:07,670 --> 00:04:10,050
+to run a thread on it for a period of time
+
+85
+00:04:10,050 --> 00:04:13,210
+and then release it so another process can have it.
+
+86
+00:04:13,210 --> 00:04:15,390
+Okay, so the thread is the thing that runs
+
+87
+00:04:16,231 --> 00:04:18,670
+and the process is what manages all the resources
+
+88
+00:04:18,670 --> 00:04:20,180
+that it needs in order to run.
+
+89
+00:04:21,340 --> 00:04:23,510
+So this is gonna be important in just a moment.
+
+90
+00:04:25,150 --> 00:04:29,640
+Let's go back and have our cores here, each running a task,
+
+91
+00:04:30,500 --> 00:04:33,400
+and we have our waiting threads, which are waiting to run.
+
+92
+00:04:35,080 --> 00:04:37,810
+Two of the threads in the cores
+
+93
+00:04:37,810 --> 00:04:40,010
+could be part of the same process.
+
+94
+00:04:41,010 --> 00:04:42,030
+Okay?
+
+95
+00:04:42,030 --> 00:04:45,710
+So here we would have the process
+
+96
+00:04:45,710 --> 00:04:49,810
+being the two cores plus the two threads,
+
+97
+00:04:49,810 --> 00:04:52,740
+plus any other resources that those threads need
+
+98
+00:04:52,740 --> 00:04:54,980
+like a network or whatever else.
+
+99
+00:04:54,980 --> 00:04:59,510
+Similarly, you could have other processes with also
+
+100
+00:04:59,510 --> 00:05:03,750
+some threads running and having their own resources.
+
+101
+00:05:03,750 --> 00:05:07,100
+In this case, process two has a resource, which is a core,
+
+102
+00:05:07,100 --> 00:05:08,290
+and it's running a thread.
+
+103
+00:05:08,290 --> 00:05:09,780
+Process three also has a resource
+
+104
+00:05:09,780 --> 00:05:12,360
+which is a core and is running a thread.
+
+105
+00:05:12,360 --> 00:05:14,800
+The waiting threads could be a part
+
+106
+00:05:14,800 --> 00:05:16,500
+of one of these processes and they just
+
+107
+00:05:16,500 --> 00:05:17,810
+happen to be waiting.
+
+108
+00:05:17,810 --> 00:05:19,630
+Or they could be part of other processes
+
+109
+00:05:19,630 --> 00:05:21,880
+which at the moment don't have any resources.
+
+110
+00:05:23,020 --> 00:05:24,950
+Okay, so the process is just the wrapper
+
+111
+00:05:24,950 --> 00:05:27,770
+around the threads and the resources they need.
+
+112
+00:05:29,150 --> 00:05:31,150
+Going back to our philosopher example,
+
+113
+00:05:31,150 --> 00:05:34,020
+where we have here our five philosophers,
+
+114
+00:05:34,020 --> 00:05:37,280
+we could have in an imaginary scenario
+
+115
+00:05:37,280 --> 00:05:39,840
+a computer that has five cores
+
+116
+00:05:41,480 --> 00:05:44,500
+and our philosopher each needs two resources to run
+
+117
+00:05:44,500 --> 00:05:47,070
+so we could say that they need two of the cores
+
+118
+00:05:47,070 --> 00:05:47,960
+in order to run.
+
+119
+00:05:49,180 --> 00:05:51,010
+So going back to the example,
+
+120
+00:05:51,010 --> 00:05:53,550
+here we would have, again, two philosophers running.
+
+121
+00:05:53,550 --> 00:05:55,460
+Each consuming two resources
+
+122
+00:05:55,460 --> 00:05:58,430
+and one resource left over that cannot be used
+
+123
+00:05:58,430 --> 00:06:00,360
+because we don't have anything that can run
+
+124
+00:06:00,360 --> 00:06:01,600
+on a single resource.
+
+125
+00:06:03,050 --> 00:06:05,600
+In computers this is normally not the case.
+
+126
+00:06:05,600 --> 00:06:08,710
+Nearly everything can run in a single core,
+
+127
+00:06:08,710 --> 00:06:11,850
+but some things benefit from running in multiple cores.
+
+128
+00:06:11,850 --> 00:06:12,683
+Okay?
+
+129
+00:06:16,140 --> 00:06:18,640
+So in computing we have
+
+130
+00:06:18,640 --> 00:06:21,240
+the cores and each one can run a thread.
+
+131
+00:06:21,240 --> 00:06:23,640
+So lets move away from the philosopher
+
+132
+00:06:23,640 --> 00:06:27,780
+analogy, it starts to break down shortly after this.
+
+133
+00:06:27,780 --> 00:06:31,660
+So when you have your two cores each running a thread,
+
+134
+00:06:31,660 --> 00:06:34,110
+the thread is represented here by a T by the way,
+
+135
+00:06:35,290 --> 00:06:36,420
+then all is good.
+
+136
+00:06:36,420 --> 00:06:38,360
+These two threads can run forever.
+
+137
+00:06:38,360 --> 00:06:40,630
+So if you just have these two threads
+
+138
+00:06:40,630 --> 00:06:42,270
+and you just have two cores
+
+139
+00:06:42,270 --> 00:06:44,210
+you can run the two threads forever.
+
+140
+00:06:44,210 --> 00:06:48,060
+They never need to stop running and that's fine.
+
+141
+00:06:48,060 --> 00:06:51,340
+An example could be one of these threads is controlling
+
+142
+00:06:51,340 --> 00:06:54,780
+what gets displayed to your monitor, your screen,
+
+143
+00:06:56,395 --> 00:06:59,450
+and another controls the cursor, your mouse,
+
+144
+00:06:59,450 --> 00:07:00,880
+that gets displayed on your screen
+
+145
+00:07:00,880 --> 00:07:04,070
+and the fact that it can move around and so forth.
+
+146
+00:07:04,070 --> 00:07:06,120
+So if you have these two threads
+
+147
+00:07:06,120 --> 00:07:08,130
+you can see your mouse moving when you move it
+
+148
+00:07:08,130 --> 00:07:10,370
+and you can see things in your monitor
+
+149
+00:07:10,370 --> 00:07:11,210
+and that's good.
+
+150
+00:07:11,210 --> 00:07:14,060
+They will run forever.
+
+151
+00:07:14,060 --> 00:07:15,770
+And, of course, these two threads could belong
+
+152
+00:07:15,770 --> 00:07:17,380
+to one process or it could belong
+
+153
+00:07:17,380 --> 00:07:19,100
+to two processes separately.
+
+154
+00:07:19,990 --> 00:07:20,823
+Okay?
+
+155
+00:07:20,823 --> 00:07:22,830
+But not to three because each process
+
+156
+00:07:22,830 --> 00:07:24,580
+has to contain at least one thread.
+
+157
+00:07:27,490 --> 00:07:30,180
+Now if we add in waiting threads,
+
+158
+00:07:30,180 --> 00:07:32,810
+which there will always be some in your computer.
+
+159
+00:07:32,810 --> 00:07:35,430
+For example, something to deal with
+
+160
+00:07:35,430 --> 00:07:36,910
+you typing in your keyboard.
+
+161
+00:07:38,120 --> 00:07:42,550
+Now you have to decide if you want to run the two threads
+
+162
+00:07:42,550 --> 00:07:45,140
+that are currently in the cores continuously
+
+163
+00:07:45,140 --> 00:07:46,470
+so that you can see things on your screen
+
+164
+00:07:46,470 --> 00:07:48,430
+and you can move your mouse,
+
+165
+00:07:48,430 --> 00:07:50,690
+then your keyboard is never gonna respond
+
+166
+00:07:50,690 --> 00:07:52,910
+because a thread that deals with your keyboard
+
+167
+00:07:52,910 --> 00:07:56,100
+is waiting and is never going to run.
+
+168
+00:07:56,100 --> 00:07:58,960
+So you have to start doing time slicing
+
+169
+00:07:58,960 --> 00:08:02,250
+otherwise the waiting threads are going to starve
+
+170
+00:08:03,230 --> 00:08:04,930
+and we don't want that.
+
+171
+00:08:04,930 --> 00:08:05,763
+Okay.
+
+172
+00:08:06,610 --> 00:08:09,820
+So time slicing, moving one thread
+
+173
+00:08:09,820 --> 00:08:11,990
+out of a core and putting another one in.
+
+174
+00:08:13,150 --> 00:08:15,500
+This is not free, by the way.
+
+175
+00:08:17,120 --> 00:08:20,930
+It requires some resources by your computer
+
+176
+00:08:20,930 --> 00:08:24,710
+in order to do that because the operating system
+
+177
+00:08:24,710 --> 00:08:27,470
+has to save the current status of the thread.
+
+178
+00:08:27,470 --> 00:08:30,640
+Remember, a thread is just a line of code that's running
+
+179
+00:08:30,640 --> 00:08:34,090
+so you have to save where the code currently is
+
+180
+00:08:34,090 --> 00:08:36,560
+so that when you bring it back into the core
+
+181
+00:08:36,560 --> 00:08:39,660
+after it's gone through the queue it doesn't have to start
+
+182
+00:08:39,660 --> 00:08:41,100
+from the beginning of that code.
+
+183
+00:08:41,100 --> 00:08:42,770
+It starts from where it left off,
+
+184
+00:08:43,800 --> 00:08:44,830
+and this is not free.
+
+185
+00:08:44,830 --> 00:08:46,790
+The operating system has to, sort of,
+
+186
+00:08:46,790 --> 00:08:48,930
+save the status, pull it out of the core,
+
+187
+00:08:48,930 --> 00:08:52,030
+bring another one in, and then when that's finished
+
+188
+00:08:52,030 --> 00:08:53,360
+remove that from the core,
+
+189
+00:08:53,360 --> 00:08:55,420
+bring your old one in, reset the status
+
+190
+00:08:55,420 --> 00:08:58,010
+back to what it was before and continue running.
+
+191
+00:08:58,010 --> 00:08:59,430
+So it's not completely free.
+
+192
+00:08:59,430 --> 00:09:01,610
+There's some communication, there's some overhead
+
+193
+00:09:01,610 --> 00:09:03,670
+in changing from one thread to another.
+
+194
+00:09:04,860 --> 00:09:08,320
+But this is time slicing and this is essentially
+
+195
+00:09:08,320 --> 00:09:10,270
+the foundations of processes and threads
+
+196
+00:09:10,270 --> 00:09:13,760
+and also on how your computer operates.
+
+197
+00:09:13,760 --> 00:09:16,090
+Over the next section I'm really excited to guide you
+
+198
+00:09:16,090 --> 00:09:19,630
+through how this works in Python.
+
+199
+00:09:19,630 --> 00:09:21,130
+So let's move over on to the next video
+
+200
+00:09:21,130 --> 00:09:22,500
+where we're gonna talk a bit more about that.
+
+201
+00:09:22,500 --> 00:09:23,890
+I'll see you there.
+

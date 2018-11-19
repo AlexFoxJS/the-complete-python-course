@@ -1,0 +1,844 @@
+1
+00:00:00,240 --> 00:00:01,500
+Instructor: Hola, y bienvenido de nuevo.
+
+2
+00:00:01,500 --> 00:00:03,230
+En este video vamos
+
+3
+00:00:03,230 --> 00:00:07,050
+a continuar con nuestro Proyecto Milestone para agregar pelculas.
+
+4
+00:00:07,050 --> 00:00:12,050
+Ahora, en el ltimo video agregamos estas tareas.
+
+5
+00:00:12,410 --> 00:00:13,610
+Y creamos muchos de
+
+6
+00:00:13,610 --> 00:00:16,700
+ellos, como decidir dnde vamos a almacenar pelculas, cul es
+
+7
+00:00:16,700 --> 00:00:18,520
+el formato de una pelcula, mostrarle
+
+8
+00:00:19,390 --> 00:00:22,440
+al usuario la interfaz principal y obtener su opinin, y
+
+9
+00:00:22,440 --> 00:00:24,550
+tambin permitir a los usuarios agregar pelculas,
+
+10
+00:00:24,550 --> 00:00:27,620
+mostrar pelculas , encuentra pelculas y deja de ejecutar el programa.
+
+11
+00:00:27,620 --> 00:00:29,140
+Ahora creo que hemos hecho un par de estos.
+
+12
+00:00:29,140 --> 00:00:31,931
+As que solo voy a agregar una X aqu,
+
+13
+00:00:31,931 --> 00:00:33,600
+para decir que los hemos hecho.
+
+14
+00:00:33,600 --> 00:00:34,433
+Y creo que lo
+
+15
+00:00:34,433 --> 00:00:36,210
+que hemos hecho es mostrarle al usuario la interfaz
+
+16
+00:00:36,210 --> 00:00:38,030
+principal, y esa es la lnea de texto aqu.
+
+17
+00:00:38,030 --> 00:00:39,650
+Y hemos recibido su opinin, y
+
+18
+00:00:39,650 --> 00:00:42,270
+tambin hemos permitido que el usuario deje de ejecutar el
+
+19
+00:00:42,270 --> 00:00:43,320
+programa cuando escriben 'q'.
+
+20
+00:00:44,720 --> 00:00:48,170
+Ahora, antes de que podamos permitir que los
+
+21
+00:00:48,170 --> 00:00:51,475
+usuarios agreguen pelculas, creo que debemos elegir qu
+
+22
+00:00:51,475 --> 00:00:53,930
+agregarn y dnde se almacenarn.
+
+23
+00:00:54,800 --> 00:00:56,460
+As que vamos a hacer estas dos tareas aqu.
+
+24
+00:00:56,460 --> 00:00:58,840
+Dnde almacenar pelculas y qu es una pelcula.
+
+25
+00:00:59,920 --> 00:01:02,780
+En un programa ms grande como dije antes, normalmente estas
+
+26
+00:01:02,780 --> 00:01:04,980
+pelculas se almacenaran en una base de datos
+
+27
+00:01:04,980 --> 00:01:07,490
+o tal vez en un archivo, o algo as.
+
+28
+00:01:07,490 --> 00:01:10,480
+Pero debido a que an no hemos analizado las bases de
+
+29
+00:01:10,480 --> 00:01:12,840
+datos y los archivos, vamos a almacenar estas pelculas
+
+30
+00:01:12,840 --> 00:01:14,620
+en una estructura que s conocemos.
+
+31
+00:01:14,620 --> 00:01:16,040
+Ahora, qu podra ser eso?
+
+32
+00:01:19,710 --> 00:01:24,210
+Estoy seguro de que adivinaste una posible estructura de datos correcta,
+
+33
+00:01:24,210 --> 00:01:28,920
+usara una lista, pero podras usar un conjunto si lo deseas.
+
+34
+00:01:28,920 --> 00:01:31,280
+No recomendara usar una tupla.
+
+35
+00:01:31,280 --> 00:01:33,550
+Entonces una lista creo que es una buena eleccin.
+
+36
+00:01:35,060 --> 00:01:37,270
+As que cre la variable llamada
+
+37
+00:01:37,270 --> 00:01:40,100
+Movies y la convert en una lista vaca.
+
+38
+00:01:40,100 --> 00:01:43,330
+Esto almacenar todas nuestras pelculas cuando estemos
+
+39
+00:01:43,330 --> 00:01:44,980
+ejecutando este programa.
+
+40
+00:01:47,290 --> 00:01:50,540
+As que decidimos dnde almacenar las pelculas, ahora
+
+41
+00:01:50,540 --> 00:01:53,210
+tenemos que decidir qu es una pelcula.
+
+42
+00:01:53,210 --> 00:01:54,810
+Cul es el formato de una pelcula?
+
+43
+00:01:56,990 --> 00:02:01,800
+Para m, creo que una pelcula va a ser un diccionario que
+
+44
+00:02:03,500 --> 00:02:08,500
+tiene un nombre, que va a ser una cadena, va a tener un
+
+45
+00:02:11,140 --> 00:02:13,760
+director, que tambin va a ser una
+
+46
+00:02:15,840 --> 00:02:17,590
+cadena, y que tambin
+
+47
+00:02:17,590 --> 00:02:19,760
+tendr un ao, eso va a
+
+48
+00:02:19,760 --> 00:02:21,100
+ser un int.
+
+49
+00:02:22,120 --> 00:02:24,800
+Estas van a ser mis pelculas.
+
+50
+00:02:24,800 --> 00:02:26,580
+Si desea almacenar algo diferente,
+
+51
+00:02:26,580 --> 00:02:28,530
+por supuesto, sintase libre de hacerlo.
+
+52
+00:02:28,530 --> 00:02:30,019
+Quiero decir, este
+
+53
+00:02:30,019 --> 00:02:31,810
+es tu programa, ser
+
+54
+00:02:31,810 --> 00:02:34,280
+bastante sencillo agregar cosas diferentes all.
+
+55
+00:02:36,350 --> 00:02:38,700
+Ahora que hemos decidido cul va a ser
+
+56
+00:02:38,700 --> 00:02:40,930
+el formato de una pelcula y dnde vamos
+
+57
+00:02:40,930 --> 00:02:43,430
+a almacenarla, sabemos que cuando agreguemos una nueva
+
+58
+00:02:43,430 --> 00:02:45,150
+pelcula, lo que vamos a hacer
+
+59
+00:02:45,150 --> 00:02:49,090
+es crear un diccionario que se vea as. y ponerlo en nuestra lista
+
+60
+00:02:49,090 --> 00:02:50,290
+As que vamos a hacer eso.
+
+61
+00:02:52,780 --> 00:02:54,720
+Debajo de la funcin
+
+62
+00:02:54,720 --> 00:02:57,950
+Men, definamos la funcin Agregar pelcula.
+
+63
+00:02:57,950 --> 00:03:00,930
+Nuevamente, si hasta ahora no se ha sentido seguro de
+
+64
+00:03:00,930 --> 00:03:02,120
+desarrollar esta funcin por
+
+65
+00:03:02,120 --> 00:03:04,470
+su cuenta, y siente que ahora tiene ms
+
+66
+00:03:04,470 --> 00:03:06,220
+confianza, pause el video y prubelo.
+
+67
+00:03:06,220 --> 00:03:07,500
+Y voy a seguir diciendo
+
+68
+00:03:07,500 --> 00:03:09,600
+esto, porque es realmente la mejor manera de aprender.
+
+69
+00:03:13,350 --> 00:03:15,780
+De acuerdo, ahora que con suerte lo has
+
+70
+00:03:15,780 --> 00:03:17,400
+abordado, o lo has hecho
+
+71
+00:03:17,400 --> 00:03:20,460
+antes, estamos listos para pedirle al usuario los detalles que
+
+72
+00:03:20,460 --> 00:03:22,040
+almacenaremos en nuestra pelcula.
+
+73
+00:03:22,040 --> 00:03:23,010
+Entonces, lo que vamos
+
+74
+00:03:23,010 --> 00:03:24,440
+a hacer es pedirle un
+
+75
+00:03:28,460 --> 00:03:30,460
+nombre al usuario, le pediremos un director al
+
+76
+00:03:33,641 --> 00:03:35,780
+usuario y le pediremos al usuario un ao.
+
+77
+00:03:42,448 --> 00:03:44,450
+Ahora dijimos que el ao va a ser
+
+78
+00:03:44,450 --> 00:03:47,640
+un nmero entero, as que voy a convertir esto en una int all
+
+79
+00:03:47,640 --> 00:03:48,630
+mismo a medida que avanzamos.
+
+80
+00:03:48,630 --> 00:03:51,390
+Solo para asegurarme de que el ao sea un nmero
+
+81
+00:03:51,390 --> 00:03:54,620
+entero, y no voy a usarlo como una cadena por accidente ni
+
+82
+00:03:54,620 --> 00:03:55,720
+nada por el estilo.
+
+83
+00:03:56,710 --> 00:03:58,950
+Y luego, todo lo que queremos hacer es
+
+84
+00:03:58,950 --> 00:04:00,280
+asegurarnos de crear un nuevo
+
+85
+00:04:00,280 --> 00:04:02,800
+diccionario, y lo colocamos en la lista de nuestra pelcula.
+
+86
+00:04:02,800 --> 00:04:04,900
+Entonces que hacer, pelculas. aadir, y
+
+87
+00:04:05,842 --> 00:04:09,180
+crear un nuevo diccionario aqu que
+
+88
+00:04:09,180 --> 00:04:14,180
+tendr el nombre, el director y las claves del ao.
+
+89
+00:04:16,280 --> 00:04:19,030
+Fjate cmo he creado este diccionario aqu,
+
+90
+00:04:19,030 --> 00:04:22,880
+dentro de la funcin de agregar, y eso est
+
+91
+00:04:22,880 --> 00:04:24,840
+bien, pero si lo prefieres
+
+92
+00:04:24,840 --> 00:04:28,160
+puedes crear una variable separada aqu, digamos, pelcula,
+
+93
+00:04:30,300 --> 00:04:32,400
+y anexar la pelcula aqu.
+
+94
+00:04:32,400 --> 00:04:35,220
+Depende totalmente de ti, lo que prefieres hacer.
+
+95
+00:04:35,220 --> 00:04:37,480
+Esto puede ser un poco ms legible
+
+96
+00:04:37,480 --> 00:04:39,590
+para usted, si elige puede hacerlo.
+
+97
+00:04:39,590 --> 00:04:42,390
+Pero para m, esto es bastante legible.
+
+98
+00:04:42,390 --> 00:04:44,550
+Esto me dice que lo que agrego a
+
+99
+00:04:44,550 --> 00:04:47,020
+mi lista es un diccionario que tiene estos datos.
+
+100
+00:04:47,920 --> 00:04:48,753
+Bueno?
+
+101
+00:04:48,753 --> 00:04:50,650
+Y s que esto es una pelcula
+
+102
+00:04:50,650 --> 00:04:52,530
+porque la lista se llama Pelculas.
+
+103
+00:04:52,530 --> 00:04:55,920
+As que no tengo que definir una variable separada llamada Pelcula solo para
+
+104
+00:04:55,920 --> 00:04:58,420
+decirme que lo que estoy creando es una pelcula.
+
+105
+00:05:00,140 --> 00:05:02,730
+Ahora tenemos nuestra funcin Agregar pelcula,
+
+106
+00:05:02,730 --> 00:05:07,620
+cada vez que vamos y ejecutamos esta funcin le pediremos
+
+107
+00:05:07,620 --> 00:05:09,560
+al usuario tres detalles,
+
+108
+00:05:09,560 --> 00:05:13,060
+y agregaremos un diccionario con esos detalles
+
+109
+00:05:13,060 --> 00:05:15,110
+en nuestra lista de pelculas.
+
+110
+00:05:15,110 --> 00:05:16,340
+Entonces, qu voy a
+
+111
+00:05:16,340 --> 00:05:19,870
+hacer, voy a evaluar nuevamente el flujo del programa solo para
+
+112
+00:05:19,870 --> 00:05:22,160
+usted, y luego vamos a ejecutar este
+
+113
+00:05:22,160 --> 00:05:24,210
+programa y verificar que todo funcione bien.
+
+114
+00:05:26,230 --> 00:05:28,510
+Tan pronto como bajamos a la lnea 58,
+
+115
+00:05:28,510 --> 00:05:30,350
+tenemos nuestra llamada de funcin de men.
+
+116
+00:05:30,350 --> 00:05:33,180
+As que vamos a pasar a la funcin
+
+117
+00:05:33,180 --> 00:05:36,300
+Men, donde le pediremos al usuario que ingrese algo.
+
+118
+00:05:36,300 --> 00:05:38,930
+Si escriben 'a', vamos a ir directamente a
+
+119
+00:05:38,930 --> 00:05:41,440
+la funcin Agregar pelcula, que se define aqu.
+
+120
+00:05:41,440 --> 00:05:45,040
+Y esto est bien porque esta funcin ya est definida por el
+
+121
+00:05:45,040 --> 00:05:47,390
+momento en que ejecutamos nuestra funcin de men.
+
+122
+00:05:48,400 --> 00:05:49,950
+As que vamos a pedirle al
+
+123
+00:05:49,950 --> 00:05:51,240
+usuario el nombre de la
+
+124
+00:05:51,240 --> 00:05:55,210
+pelcula, el director y el ao, vamos a construir un nuevo diccionario con las tres
+
+125
+00:05:55,210 --> 00:05:57,960
+claves, y los valores van a ser estas variables aqu,
+
+126
+00:05:59,550 --> 00:06:01,260
+y luego vamos a aada ese
+
+127
+00:06:01,260 --> 00:06:05,470
+diccionario a nuestra lista de pelculas que se define en la parte superior de aqu.
+
+128
+00:06:07,420 --> 00:06:08,253
+Bueno?
+
+129
+00:06:09,750 --> 00:06:13,040
+Entonces, vamos a terminar de ejecutar eso, vamos a omitir las
+
+130
+00:06:13,040 --> 00:06:15,810
+declaraciones elif, elif y else, y le vamos a
+
+131
+00:06:15,810 --> 00:06:18,310
+pedir al usuario que nos vuelva a ingresar.
+
+132
+00:06:18,310 --> 00:06:19,720
+Pueden escribir 'a' nuevamente,
+
+133
+00:06:19,720 --> 00:06:22,700
+en cuyo caso volveremos a repetir el ciclo.
+
+134
+00:06:22,700 --> 00:06:26,140
+Esto ser cierto porque a no es q, y
+
+135
+00:06:26,140 --> 00:06:28,860
+le pediremos al usuario que agregue otra pelcula.
+
+136
+00:06:28,860 --> 00:06:31,570
+Y as sucesivamente, hasta que el usuario escriba
+
+137
+00:06:31,570 --> 00:06:33,940
+'q', en cuyo caso cuando repetimos el
+
+138
+00:06:33,940 --> 00:06:37,280
+ciclo y, q ser igual a q, entonces esto ser
+
+139
+00:06:37,280 --> 00:06:39,600
+falso, y dejaremos de ejecutar el programa.
+
+140
+00:06:39,600 --> 00:06:42,530
+Cuando eso ocurra, saltaremos al final del ciclo y, donde
+
+141
+00:06:42,530 --> 00:06:44,000
+la funcin finaliza, por lo
+
+142
+00:06:44,000 --> 00:06:46,690
+tanto, volveremos a bajar a la lnea 58, y
+
+143
+00:06:46,690 --> 00:06:50,380
+ejecutaremos la lnea 59, que est vaca, y luego saldremos de nuestro programa.
+
+144
+00:06:52,040 --> 00:06:54,760
+Entonces, debido a que dentro de esta llamada a la
+
+145
+00:06:54,760 --> 00:06:56,510
+funcin del Men, todo el programa
+
+146
+00:06:56,510 --> 00:06:59,040
+se est ejecutando, posiblemente aadiremos un montn de pelculas
+
+147
+00:06:59,040 --> 00:07:00,910
+dentro de esta funcin del Men.
+
+148
+00:07:00,910 --> 00:07:02,750
+Eso est dentro del ciclo y.
+
+149
+00:07:02,750 --> 00:07:05,877
+Entonces, lo que podemos hacer despus de ejecutar la funcin
+
+150
+00:07:05,877 --> 00:07:08,540
+de men, es imprimir nuestra lista de pelculas.
+
+151
+00:07:08,540 --> 00:07:10,440
+Luego, cuando ejecutemos la funcin de
+
+152
+00:07:10,440 --> 00:07:12,090
+men, agregaremos un montn de
+
+153
+00:07:12,090 --> 00:07:13,730
+pelculas, saldremos de la funcin
+
+154
+00:07:13,730 --> 00:07:17,460
+de men al final cuando escriba 'q', pero nuestro programa no
+
+155
+00:07:17,460 --> 00:07:20,590
+saldr inmediatamente, primero ejecutar esta lnea. Imprimir Pelculas, y
+
+156
+00:07:20,590 --> 00:07:22,190
+luego terminar de ejecutarse.
+
+157
+00:07:23,070 --> 00:07:24,860
+Es por eso que es
+
+158
+00:07:24,860 --> 00:07:28,310
+importante que sepa exactamente dnde va su programa paso a
+
+159
+00:07:28,310 --> 00:07:30,160
+paso, porque esto nos permitir
+
+160
+00:07:30,160 --> 00:07:34,460
+asegurarnos de que nuestra funcin est haciendo lo que queremos que haga.
+
+161
+00:07:34,460 --> 00:07:35,630
+Entonces, ejecutemos nuestra aplicacin.
+
+162
+00:07:35,630 --> 00:07:38,450
+Una vez ms, puedes hacer clic derecho en la aplicacin. Pilo y ejectalo, o
+
+163
+00:07:38,450 --> 00:07:40,890
+si lo has hecho antes, Pie Charm
+
+164
+00:07:40,890 --> 00:07:44,190
+te dir que esta aplicacin aqu en la parte
+
+165
+00:07:44,190 --> 00:07:46,700
+superior derecha est disponible para ejecutarse, y
+
+166
+00:07:46,700 --> 00:07:47,900
+puedes ejecutarla all.
+
+167
+00:07:47,900 --> 00:07:48,733
+Bueno?
+
+168
+00:07:48,733 --> 00:07:50,920
+Pero normalmente recomendara que haga clic derecho en
+
+169
+00:07:50,920 --> 00:07:52,520
+el archivo y lo ejecute.
+
+170
+00:07:52,520 --> 00:07:53,520
+Como entonces, se asegurar de
+
+171
+00:07:53,520 --> 00:07:54,720
+que est ejecutando lo correcto.
+
+172
+00:07:55,670 --> 00:07:58,516
+Entonces, de nuevo, vemos aqu nuestra interfaz, nuestra interfaz de
+
+173
+00:07:58,516 --> 00:08:02,120
+usuario, podemos ingresar 'a', 'l', 'f' y 'q', vamos a escribir 'a'
+
+174
+00:08:02,120 --> 00:08:04,485
+ya que eso es lo nico que funciona,
+
+175
+00:08:04,485 --> 00:08:06,240
+y Voy a ingresar al nombre
+
+176
+00:08:06,240 --> 00:08:09,080
+de la pelcula, voy a ingresar a Matrix, el director.
+
+177
+00:08:09,080 --> 00:08:12,100
+Entrar en The Two Sisters de Wochowski,
+
+178
+00:08:12,100 --> 00:08:15,300
+y el ao de lanzamiento ser 1994.
+
+179
+00:08:15,300 --> 00:08:16,750
+Luego voy a escribir 'q'.
+
+180
+00:08:17,980 --> 00:08:19,470
+Y observe cmo estaba en lo
+
+181
+00:08:19,470 --> 00:08:21,490
+cierto y las pelculas se imprimen despus.
+
+182
+00:08:22,440 --> 00:08:24,370
+Lo que tenemos aqu es una
+
+183
+00:08:25,240 --> 00:08:27,130
+lista con un solo diccionario, que
+
+184
+00:08:27,130 --> 00:08:29,330
+incluye el nombre, el director y
+
+185
+00:08:29,330 --> 00:08:31,160
+el ao que ingresamos anteriormente.
+
+186
+00:08:31,160 --> 00:08:33,500
+Observe cmo el ao es un nmero entero, lo
+
+187
+00:08:33,500 --> 00:08:35,380
+cual es bueno, y los otros son cadenas.
+
+188
+00:08:36,279 --> 00:08:37,670
+Ahora esto es
+
+189
+00:08:37,670 --> 00:08:41,560
+bastante asombroso, ahora tenemos realmente una aplicacin que funciona, no
+
+190
+00:08:41,560 --> 00:08:43,700
+muy til an, que nos
+
+191
+00:08:43,700 --> 00:08:46,360
+permite agregar nuevas pelculas a nuestra lista
+
+192
+00:08:46,360 --> 00:08:48,420
+y luego mostrarlas al usuario.
+
+193
+00:08:48,420 --> 00:08:50,440
+Cuando comencemos a agregar la otra funcionalidad,
+
+194
+00:08:50,440 --> 00:08:51,950
+en los prximos dos videos,
+
+195
+00:08:51,950 --> 00:08:54,340
+vamos a encontrar mucho ms uso para ello.
+
+196
+00:08:54,340 --> 00:08:58,850
+Pero, por supuesto, porque cuando ejecutamos este programa nuevamente y escribimos
+
+197
+00:08:58,850 --> 00:09:02,250
+'q' obtenemos una lista vaca, este programa no
+
+198
+00:09:02,250 --> 00:09:05,210
+es el ms til que podra ser.
+
+199
+00:09:05,210 --> 00:09:07,940
+Cada vez que ejecutamos el programa, la lista se
+
+200
+00:09:07,940 --> 00:09:11,230
+borra, porque Python solo la recuerda dentro del tiempo de ejecucin
+
+201
+00:09:11,230 --> 00:09:12,720
+actual de la aplicacin.
+
+202
+00:09:12,720 --> 00:09:15,470
+De modo que esta es una limitacin clara
+
+203
+00:09:15,470 --> 00:09:18,870
+de nuestro programa, que superaremos cuando veamos los archivos y
+
+204
+00:09:18,870 --> 00:09:21,670
+las bases de datos, ms adelante en este curso.
+
+205
+00:09:21,670 --> 00:09:23,870
+Entonces, este programa podra ser ms til,
+
+206
+00:09:23,870 --> 00:09:26,360
+pero eso no significa que no sea un
+
+207
+00:09:26,360 --> 00:09:27,280
+gran programa para comenzar.
+
+208
+00:09:28,150 --> 00:09:30,170
+Y nuevamente, lo alentara si an
+
+209
+00:09:30,170 --> 00:09:35,170
+no lo ha hecho, para tratar de terminar de escribir las dos ltimas funciones.
+
+210
+00:09:35,450 --> 00:09:38,980
+Y si es as, pasemos al siguiente video.
+
+211
+00:09:38,980 --> 00:09:40,030
+Te ver all.
+

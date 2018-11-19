@@ -1,0 +1,1060 @@
+1
+00:00:00,125 --> 00:00:02,157
+Jos: Ol, e bem vindo de volta.
+
+2
+00:00:02,157 --> 00:00:04,351
+Neste vdeo, estamos olhando para um
+
+3
+00:00:04,351 --> 00:00:06,768
+conceito Python mais avanado chamado digitao.
+
+4
+00:00:08,624 --> 00:00:12,385
+Python  o que  conhecido como uma linguagem dinmica.
+
+5
+00:00:12,385 --> 00:00:15,153
+Em uma linguagem dinmica, no especificamos
+
+6
+00:00:15,153 --> 00:00:18,492
+o tipo de dados que uma varivel mantm.
+
+7
+00:00:18,492 --> 00:00:21,499
+Por exemplo, aqui temos um cursor, e no
+
+8
+00:00:21,499 --> 00:00:24,111
+estamos dizendo que esse cursor deva ser
+
+9
+00:00:24,111 --> 00:00:26,008
+um tipo especfico, como um
+
+10
+00:00:26,008 --> 00:00:28,735
+inteiro, uma string ou um objeto de cursor.
+
+11
+00:00:28,735 --> 00:00:31,290
+Em outras linguagens de programao, como
+
+12
+00:00:31,290 --> 00:00:34,250
+Java, por exemplo, voc diria cursor Cursor.
+
+13
+00:00:34,250 --> 00:00:37,408
+Este cursor deve ser do tipo cursor,
+
+14
+00:00:37,408 --> 00:00:39,335
+seja qual for a classe.
+
+15
+00:00:39,335 --> 00:00:41,715
+Mas em Python voc no precisa dizer isso.
+
+16
+00:00:41,715 --> 00:00:45,210
+Da mesma forma, se voc criar uma varivel com um valor
+
+17
+00:00:45,210 --> 00:00:48,705
+cinco, em Java voc teria que dizer que int x 
+
+18
+00:00:48,705 --> 00:00:50,597
+cinco porque isso especifica que x
+
+19
+00:00:50,597 --> 00:00:52,989
+deve ser um nmero inteiro o tempo todo.
+
+20
+00:00:52,989 --> 00:00:55,740
+E, se voc fizesse isso, voc receberia um
+
+21
+00:00:55,740 --> 00:00:58,503
+erro, porque a string cinco no  um inteiro.
+
+22
+00:00:58,503 --> 00:01:01,819
+Java  uma linguagem estaticamente tipada, uma linguagem na
+
+23
+00:01:01,819 --> 00:01:03,670
+qual voc precisa especificar o
+
+24
+00:01:03,670 --> 00:01:05,876
+tipo de variveis conforme as cria.
+
+25
+00:01:05,876 --> 00:01:08,674
+Mas o Python  uma linguagem tipada dinamicamente, o
+
+26
+00:01:08,674 --> 00:01:10,938
+que significa que voc no precisa fazer isso.
+
+27
+00:01:10,938 --> 00:01:13,938
+Isso significa que voc  um pouco
+
+28
+00:01:15,048 --> 00:01:17,265
+mais flexvel porque sua varivel
+
+29
+00:01:17,265 --> 00:01:19,982
+pode alterar tipos entre execues, se quiser.
+
+30
+00:01:19,982 --> 00:01:22,826
+E tambm, h um pouco menos de cdigo
+
+31
+00:01:22,826 --> 00:01:24,173
+para escrever, porque voc
+
+32
+00:01:24,173 --> 00:01:27,343
+no precisa definir constantemente o que  cada varivel.
+
+33
+00:01:27,343 --> 00:01:30,338
+No entanto, tambm tem algumas desvantagens, e a principal
+
+34
+00:01:30,338 --> 00:01:32,948
+desvantagem  que s vezes voc pode
+
+35
+00:01:32,948 --> 00:01:36,131
+usar uma varivel, pensando que  uma coisa, mas
+
+36
+00:01:36,131 --> 00:01:37,745
+realmente  outra coisa e
+
+37
+00:01:37,745 --> 00:01:39,649
+voc no est claro sobre
+
+38
+00:01:39,649 --> 00:01:41,333
+isso porque voc no tem
+
+39
+00:01:41,333 --> 00:01:43,820
+nada que lhe diz que tipo .
+
+40
+00:01:43,820 --> 00:01:47,512
+Por exemplo, se voc tem uma varivel chamada amigos
+
+41
+00:01:47,512 --> 00:01:50,763
+e  uma tupla de seus amigos.
+
+42
+00:01:50,763 --> 00:01:52,446
+Em algum momento, mais tarde no
+
+43
+00:01:52,446 --> 00:01:54,629
+programa, talvez voc esquea que  uma tupla
+
+44
+00:01:54,629 --> 00:01:57,996
+e, aqui embaixo, voc tenta fazer amigos. acrescente algo.
+
+45
+00:01:57,996 --> 00:01:59,308
+Obviamente, isso no funcionaria,
+
+46
+00:01:59,308 --> 00:02:00,840
+porque voc no pode acrescentar
+
+47
+00:02:00,840 --> 00:02:02,443
+em uma tupla, mas porque
+
+48
+00:02:02,443 --> 00:02:06,067
+no estava vendo esse cdigo naquele momento, voc no percebeu isso.
+
+49
+00:02:06,067 --> 00:02:07,377
+Esse  um dos
+
+50
+00:02:07,377 --> 00:02:10,442
+problemas com linguagens dinamicamente tipificadas, como o Python.
+
+51
+00:02:10,442 --> 00:02:15,442
+Ento, o Python introduziu no Python 3, o conceito de digitao onde voc
+
+52
+00:02:15,599 --> 00:02:18,182
+pode dizer ao seu editor, PyCharm
+
+53
+00:02:19,115 --> 00:02:22,655
+e alguns outros programas de terceiros, o que suas
+
+54
+00:02:22,655 --> 00:02:25,430
+funes retornam e quais devem ser seus
+
+55
+00:02:25,430 --> 00:02:28,495
+tipos de parmetros para que quando voc estiver
+
+56
+00:02:28,495 --> 00:02:30,225
+programando, seja um pouco
+
+57
+00:02:30,225 --> 00:02:33,081
+mais claro o que voc est fazendo.
+
+58
+00:02:33,081 --> 00:02:35,949
+Aqui est um exemplo de como voc pode
+
+59
+00:02:35,949 --> 00:02:39,095
+informar ao Python o que sua funo retorna.
+
+60
+00:02:39,095 --> 00:02:42,717
+Por exemplo, isso cria book_table, no retorna nenhum e sabemos
+
+61
+00:02:42,717 --> 00:02:45,671
+disso porque todas as funes do Python no retornam
+
+62
+00:02:45,671 --> 00:02:46,969
+nenhuma por padro, se
+
+63
+00:02:46,969 --> 00:02:49,488
+voc no incluir uma instruo de retorno.
+
+64
+00:02:49,488 --> 00:02:51,462
+Ento o que voc pode fazer?
+
+65
+00:02:51,462 --> 00:02:54,596
+Voc pode dizer ao Python que, ao chamar
+
+66
+00:02:54,596 --> 00:02:59,596
+essa funo, espera que ela retorne nenhuma, e voc faria isso da seguinte forma.
+
+67
+00:02:59,670 --> 00:03:02,526
+Aps a definio da funo, mas antes dos dois pontos
+
+68
+00:03:02,526 --> 00:03:04,276
+voc coloca isso: -> Nenhum Agora,
+
+69
+00:03:09,225 --> 00:03:12,603
+quando voc voltou para o aplicativo. py e voc chegou
+
+70
+00:03:12,603 --> 00:03:15,924
+aqui, banco de dados. create_book_table.
+
+71
+00:03:15,924 --> 00:03:20,421
+Voc pode dizer que algo como my_variable  igual a isso, mas
+
+72
+00:03:20,421 --> 00:03:21,941
+observe como agora PyCharm
+
+73
+00:03:21,941 --> 00:03:24,054
+lhe d essa linha ondulada embaixo
+
+74
+00:03:24,054 --> 00:03:27,224
+e diz create. livro. tabela no retorna nada.
+
+75
+00:03:27,224 --> 00:03:29,882
+Portanto, voc provavelmente no deseja atribu-lo a uma
+
+76
+00:03:29,882 --> 00:03:31,577
+varivel porque isso  muito
+
+77
+00:03:31,577 --> 00:03:34,077
+intil, j que o valor no ser nenhum.
+
+78
+00:03:34,077 --> 00:03:37,104
+Se voc remover o none, o que
+
+79
+00:03:37,104 --> 00:03:40,575
+voc pode fazer,  totalmente opcional, o que
+
+80
+00:03:40,575 --> 00:03:42,410
+agora desaparece, porque o
+
+81
+00:03:42,410 --> 00:03:46,724
+PhCharm no est ciente de que a funo no retorna nada.
+
+82
+00:03:46,724 --> 00:03:50,943
+Ento, novamente, voc pode incluir essas dicas de tipos, 
+
+83
+00:03:50,943 --> 00:03:53,049
+assim que elas so chamadas,
+
+84
+00:03:53,049 --> 00:03:56,132
+mas elas no so aplicadas pelo Python.
+
+85
+00:03:56,987 --> 00:04:01,120
+Eles so teis somente quando voc est desenvolvendo no PyCharm ou
+
+86
+00:04:01,120 --> 00:04:03,535
+quando voc usa alguns outros softwares
+
+87
+00:04:03,535 --> 00:04:05,625
+que analisam seu cdigo e informam
+
+88
+00:04:05,625 --> 00:04:07,692
+quando voc est fazendo coisas
+
+89
+00:04:07,692 --> 00:04:09,213
+como atribuir uma varivel
+
+90
+00:04:09,213 --> 00:04:11,767
+a uma funo que no retorna nenhum.
+
+91
+00:04:11,767 --> 00:04:15,041
+Quando voc executa seu programa, o Python ignora completamente essas
+
+92
+00:04:15,041 --> 00:04:17,386
+dicas e no faz nada com elas.
+
+93
+00:04:17,386 --> 00:04:19,836
+Voc no receber erros por us-los incorretamente ou
+
+94
+00:04:19,836 --> 00:04:21,484
+por atribuir a uma varivel
+
+95
+00:04:21,484 --> 00:04:23,249
+o valor de retorno dessa funo,
+
+96
+00:04:23,249 --> 00:04:24,607
+mesmo que no seja nenhum.
+
+97
+00:04:24,607 --> 00:04:26,593
+Ento, novamente, estes so apenas
+
+98
+00:04:26,593 --> 00:04:28,509
+para voc e o caso
+
+99
+00:04:28,509 --> 00:04:30,831
+de uso mais comum  quando
+
+100
+00:04:30,831 --> 00:04:34,748
+voc est desenvolvendo com PyCharm, porque PyCharm faz bom uso dessas coisas.
+
+101
+00:04:35,637 --> 00:04:39,585
+Ok, da mesma forma, a funo add_book tambm retorna nenhum.
+
+102
+00:04:39,585 --> 00:04:42,668
+Ento, podemos fazer com que no retorne nenhum l.
+
+103
+00:04:44,203 --> 00:04:45,607
+Agora, quando voc chama a funo,
+
+104
+00:04:45,607 --> 00:04:47,082
+se voc tentar atribu-la a uma
+
+105
+00:04:47,082 --> 00:04:48,614
+varivel, mais uma vez, voc receber
+
+106
+00:04:48,614 --> 00:04:50,367
+uma pequena mensagem dizendo que esta funo
+
+107
+00:04:50,367 --> 00:04:53,117
+no retorna nada, tem certeza de que quer fazer isso?
+
+108
+00:04:54,582 --> 00:04:55,975
+Ento, isso  para cada funo.
+
+109
+00:04:55,975 --> 00:04:59,795
+Vamos adicionar um valor de retorno para cada funo em
+
+110
+00:04:59,795 --> 00:05:01,962
+nossa interface de banco de dados.
+
+111
+00:05:03,278 --> 00:05:05,739
+Eu vou ignorar o get_all_books por
+
+112
+00:05:05,739 --> 00:05:07,608
+enquanto, faremos isso no final.
+
+113
+00:05:07,608 --> 00:05:11,691
+Ento, como voc pode ver, todas as nossas funes no retornam nenhuma.
+
+114
+00:05:14,180 --> 00:05:15,538
+E podemos adicionar isso em.
+
+115
+00:05:15,538 --> 00:05:18,278
+Agora podemos voltar para get_all_books e
+
+116
+00:05:18,278 --> 00:05:23,195
+podemos dizer que isso retornar uma lista de Dicts, pois
+
+117
+00:05:25,174 --> 00:05:28,108
+retorna uma lista de dicionrios aqui.
+
+118
+00:05:28,108 --> 00:05:29,919
+Claro, temos linhas rabiscadas vermelhas, porque
+
+119
+00:05:29,919 --> 00:05:32,473
+PyCharm no sabe o que so essas duas.
+
+120
+00:05:32,473 --> 00:05:34,377
+Ento, temos que ir e import-los.
+
+121
+00:05:34,377 --> 00:05:35,991
+Sempre que voc quiser
+
+122
+00:05:35,991 --> 00:05:40,715
+importar qualquer coisa relacionada a dicas de tipos, como essa aqui, podemos
+
+123
+00:05:40,715 --> 00:05:42,845
+import-las do mdulo de digitao.
+
+124
+00:05:42,845 --> 00:05:45,012
+Isso  novo no Python 3. 5
+
+125
+00:05:49,184 --> 00:05:50,325
+E a temos que.
+
+126
+00:05:50,325 --> 00:05:54,086
+Agora est feliz que esteja retornando uma lista de dicionrios.
+
+127
+00:05:54,086 --> 00:05:56,501
+Se voc quiser, voc tambm pode dizer
+
+128
+00:05:56,501 --> 00:05:59,953
+qual  o valor de cada uma das chaves e valores.
+
+129
+00:05:59,953 --> 00:06:04,853
+Ento poderia dizer entre parnteses, S-T-R, que significa string, esta 
+
+130
+00:06:04,853 --> 00:06:08,103
+a classe String, para as chaves, e
+
+131
+00:06:10,034 --> 00:06:11,857
+str para os valores.
+
+132
+00:06:11,857 --> 00:06:14,098
+Isso diria que sempre key  uma
+
+133
+00:06:14,098 --> 00:06:16,617
+string e todo valor  uma string.
+
+134
+00:06:16,617 --> 00:06:21,052
+Agora,  claro, sabemos que o status de leitura pode ser
+
+135
+00:06:21,052 --> 00:06:24,625
+um nmero inteiro, portanto, precisamos fazer outra coisa.
+
+136
+00:06:24,625 --> 00:06:27,414
+As chaves podem ser strings, todas as chaves
+
+137
+00:06:27,414 --> 00:06:28,691
+so strings, name, author
+
+138
+00:06:28,691 --> 00:06:32,774
+e read, mas os valores so uma unio de string e integer.
+
+139
+00:06:34,334 --> 00:06:35,773
+E, novamente, temos que
+
+140
+00:06:35,773 --> 00:06:38,606
+importar isso,  claro, do mdulo de digitao.
+
+141
+00:06:39,686 --> 00:06:41,787
+Agora isso diz que esta funo
+
+142
+00:06:41,787 --> 00:06:43,796
+retorna uma lista de dicionrios,
+
+143
+00:06:43,796 --> 00:06:45,886
+onde cada chave  uma string
+
+144
+00:06:45,886 --> 00:06:49,206
+e cada valor  uma string ou um inteiro.
+
+145
+00:06:49,206 --> 00:06:50,773
+Note que  o que
+
+146
+00:06:50,773 --> 00:06:53,525
+o sindicato faz e  isso que o Dict faz.
+
+147
+00:06:53,525 --> 00:06:54,883
+Agora, para simplificar,
+
+148
+00:06:54,883 --> 00:06:57,066
+podemos criar nossos prprios tipos.
+
+149
+00:06:57,066 --> 00:06:58,657
+O que  bem empolgante.
+
+150
+00:06:58,657 --> 00:07:00,468
+Podemos cortar este cdigo aqui
+
+151
+00:07:00,468 --> 00:07:04,171
+- vou cort-lo com o comando-x ou control-x no Windows e
+
+152
+00:07:04,171 --> 00:07:07,097
+dizer que ele retornar uma lista de livros.
+
+153
+00:07:07,097 --> 00:07:09,918
+Ento podemos ir at o topo e dizer
+
+154
+00:07:09,918 --> 00:07:13,123
+que o Livro  o que ns cortamos antes.
+
+155
+00:07:13,123 --> 00:07:18,123
+Um tipo de livro  um novo tipo que  um ditado de seqncias de caracteres
+
+156
+00:07:18,138 --> 00:07:20,182
+para seqncias de caracteres ou nmeros inteiros.
+
+157
+00:07:20,182 --> 00:07:22,817
+E aqui embaixo ns podemos usar nosso novo tipo de
+
+158
+00:07:22,817 --> 00:07:25,197
+livro para simplificar nosso cdigo e torn-lo um pouco
+
+159
+00:07:25,197 --> 00:07:27,197
+mais explcito exatamente o que est acontecendo.
+
+160
+00:07:28,703 --> 00:07:31,292
+Observe que quando voc cria um novo
+
+161
+00:07:31,292 --> 00:07:33,510
+tipo, porque  mais ou menos
+
+162
+00:07:33,510 --> 00:07:36,145
+como uma classe, mesmo que no seja
+
+163
+00:07:36,145 --> 00:07:40,093
+usado como uma classe, normalmente voc daria uma letra maiscula para comear.
+
+164
+00:07:40,093 --> 00:07:41,592
+Esta  apenas uma conveno,
+
+165
+00:07:41,592 --> 00:07:43,249
+voc pode,  claro, dar-lhes letras
+
+166
+00:07:43,249 --> 00:07:45,332
+minsculas, se voc quiser, e est tudo bem.
+
+167
+00:07:46,396 --> 00:07:49,927
+Ok, agora que analisamos os valores de
+
+168
+00:07:49,927 --> 00:07:53,037
+retorno, podemos agora ver os parmetros.
+
+169
+00:07:53,037 --> 00:07:55,219
+O nome vai ser uma
+
+170
+00:07:55,219 --> 00:07:58,238
+string, ento voc pensaria que faramos isso.
+
+171
+00:07:58,238 --> 00:08:00,200
+No entanto, esse trao e maior que
+
+172
+00:08:00,200 --> 00:08:02,314
+ usado apenas para valores de retorno.
+
+173
+00:08:02,314 --> 00:08:05,960
+Quando voc quiser determinar ou definir o tipo de um
+
+174
+00:08:05,960 --> 00:08:08,107
+parmetro, use os dois pontos aqui.
+
+175
+00:08:08,107 --> 00:08:10,209
+Levemente confuso porque o clon  normalmente
+
+176
+00:08:10,209 --> 00:08:12,450
+usado para sinalizar o incio de um bloqueio.
+
+177
+00:08:12,450 --> 00:08:15,632
+Essa  uma das poucas vezes em que voc usa
+
+178
+00:08:15,632 --> 00:08:17,558
+dois pontos para determinar outra coisa.
+
+179
+00:08:17,558 --> 00:08:19,741
+Este e o slicing da lista so dois exemplos
+
+180
+00:08:19,741 --> 00:08:21,343
+que vm ao topo da minha cabea.
+
+181
+00:08:21,343 --> 00:08:25,429
+O autor tambm ser uma string, ento  isso.
+
+182
+00:08:25,429 --> 00:08:27,693
+Observe que, se voc passar para o app. py, na funo
+
+183
+00:08:27,693 --> 00:08:31,594
+add_book e voc substitui o nome por algo que no
+
+184
+00:08:31,594 --> 00:08:34,160
+ uma string, como cinco, PyCharm agora
+
+185
+00:08:34,160 --> 00:08:36,494
+d a voc este fundo amarelo,
+
+186
+00:08:36,494 --> 00:08:38,746
+que no  to legvel, e
+
+187
+00:08:38,746 --> 00:08:41,672
+ele diz, tipo esperado str, tem int.
+
+188
+00:08:41,672 --> 00:08:44,748
+Ento, ele pode ajud-lo quando voc estiver desenvolvendo,
+
+189
+00:08:44,748 --> 00:08:48,324
+mas o Python no reforar isso quando voc estiver codificando.
+
+190
+00:08:48,324 --> 00:08:50,519
+Ento, se voc digitar cinco l e
+
+191
+00:08:50,519 --> 00:08:54,304
+executar o programa, no receber nenhum erro, apenas digitar o nome como
+
+192
+00:08:54,304 --> 00:08:56,440
+cinco e, em seguida, obter um erro
+
+193
+00:08:56,440 --> 00:08:59,607
+no SQLite, porque o tipo  definido como um texto.
+
+194
+00:09:02,326 --> 00:09:04,102
+Voltando ao banco de dados,
+
+195
+00:09:04,102 --> 00:09:06,331
+podemos fazer o mesmo para qualquer
+
+196
+00:09:06,331 --> 00:09:09,106
+outra funo que precise de parmetros, como mark_book_as_read,
+
+197
+00:09:09,106 --> 00:09:11,689
+tambm uma string, e delete_book, tambm uma string.
+
+198
+00:09:14,424 --> 00:09:17,523
+No so muitas as bibliotecas e projetos do Python, e
+
+199
+00:09:17,523 --> 00:09:19,404
+coisas assim, usam dicas de tipos,
+
+200
+00:09:19,404 --> 00:09:20,879
+porque so bem novas.
+
+201
+00:09:20,879 --> 00:09:24,664
+Mas, eu recomendo us-lo em seus projetos, ele ir ajud-lo ao
+
+202
+00:09:24,664 --> 00:09:27,752
+longo do tempo  medida que seus projetos crescerem.
+
+203
+00:09:27,752 --> 00:09:30,840
+E tambm d um pouco mais de legibilidade, em termos de,
+
+204
+00:09:30,840 --> 00:09:33,127
+ok, o que vai acontecer com um nome
+
+205
+00:09:33,127 --> 00:09:36,088
+aqui,  uma string ento, provavelmente vai us-lo como uma string.
+
+206
+00:09:36,088 --> 00:09:38,352
+Ento, voc no tentar acrescentar coisas a
+
+207
+00:09:38,352 --> 00:09:40,407
+ele dentro dessa funo, por exemplo.
+
+208
+00:09:40,407 --> 00:09:44,319
+De fato, se voc tentar fazer o nome. acrescentar, ele dir
+
+209
+00:09:44,319 --> 00:09:46,699
+que isso  improvvel.
+
+210
+00:09:46,699 --> 00:09:49,974
+Anexao de referncia no resolvida para string de classe.
+
+211
+00:09:49,974 --> 00:09:52,597
+O PyCharm agora acha que Name  uma
+
+212
+00:09:52,597 --> 00:09:54,420
+string, mesmo que no tenha nenhum
+
+213
+00:09:54,420 --> 00:09:55,952
+contexto sobre onde foi definido,
+
+214
+00:09:55,952 --> 00:09:58,843
+s porque voc disse que deveria ser uma string.
+
+215
+00:09:58,843 --> 00:10:01,618
+Ento, se voc tentar acrescentar alguma coisa, como se
+
+216
+00:10:01,618 --> 00:10:04,079
+fosse uma lista, ela dir, isso est errado.
+
+217
+00:10:04,079 --> 00:10:06,924
+Claro, se voc mudar isso para uma lista, agora voc
+
+218
+00:10:06,924 --> 00:10:08,921
+pode fazer o nome. acrescentar.
+
+219
+00:10:08,921 --> 00:10:10,918
+E observe como ele j gosta
+
+220
+00:10:10,918 --> 00:10:13,646
+e diz a voc, ei, voc pode acrescentar aqui.
+
+221
+00:10:13,646 --> 00:10:15,539
+Ento, digite dicas. Bastante til.
+
+222
+00:10:15,539 --> 00:10:19,309
+Ajuda voc, ajuda o PyCharm a dar-lhe boas sugestes.
+
+223
+00:10:19,309 --> 00:10:21,763
+E no geral,  medida que os aplicativos
+
+224
+00:10:21,763 --> 00:10:24,886
+crescem, isso os ajudar a manter um pouco mais de manuteno.
+
+225
+00:10:24,886 --> 00:10:27,185
+Ento, definitivamente  uma boa coisa estar fazendo.
+
+226
+00:10:27,185 --> 00:10:30,180
+Sinta-se  vontade para fazer isso para outras funes aqui,
+
+227
+00:10:30,180 --> 00:10:32,363
+mas as funes mais importantes para voc fazer
+
+228
+00:10:32,363 --> 00:10:34,256
+isso so aquelas funes das quais voc
+
+229
+00:10:34,256 --> 00:10:35,846
+vai chamar e receber valores.
+
+230
+00:10:35,846 --> 00:10:38,505
+Seus menus e coisas assim, provavelmente no so to importantes, j
+
+231
+00:10:38,505 --> 00:10:39,863
+que nada os est chamando
+
+232
+00:10:39,863 --> 00:10:41,663
+e eles no esto tomando nenhum parmetro.
+
+233
+00:10:41,663 --> 00:10:43,462
+Ento, no h muito para definir l.
+
+234
+00:10:43,462 --> 00:10:46,867
+Voc pode definir que a funo no retorna nenhum.
+
+235
+00:10:46,867 --> 00:10:49,070
+Mas, porque nada est chamando essa
+
+236
+00:10:49,070 --> 00:10:52,495
+funo, alm de voc aqui em cima, no importa muito.
+
+237
+00:10:52,495 --> 00:10:55,525
+Eu no me preocuparia muito com isso.
+
+238
+00:10:55,525 --> 00:10:59,124
+Ok, podemos passar para o DatabaseConnection
+
+239
+00:10:59,124 --> 00:11:03,594
+e tambm podemos definir que o mtodo
+
+240
+00:11:03,594 --> 00:11:05,777
+enter retornar algo.
+
+241
+00:11:05,777 --> 00:11:08,784
+E o que vai retornar no 
+
+242
+00:11:08,784 --> 00:11:11,663
+um tipo do mdulo de digitao,
+
+243
+00:11:11,663 --> 00:11:14,380
+mas um tipo do mdulo SQLite3.
+
+244
+00:11:14,380 --> 00:11:16,463
+Isso  sqlite3. Conexo Observe
+
+245
+00:11:17,990 --> 00:11:22,750
+que a conexo aqui no  um tipo, por si s.
+
+246
+00:11:22,750 --> 00:11:25,943
+ uma classe real,  algo que voc pode criar e
+
+247
+00:11:25,943 --> 00:11:27,963
+que, de fato, essa conexo  criada
+
+248
+00:11:27,963 --> 00:11:30,262
+quando voc chama sqlite3. conectar.
+
+249
+00:11:30,262 --> 00:11:31,342
+E tudo bem.
+
+250
+00:11:31,342 --> 00:11:32,665
+Voc pode dizer
+
+251
+00:11:32,665 --> 00:11:35,511
+ao PhCharm que isso retornar uma classe apropriada.
+
+252
+00:11:35,511 --> 00:11:36,344
+Totalmente legal.
+
+253
+00:11:36,344 --> 00:11:38,887
+No precisa ser um tipo do mdulo de digitao.
+
+254
+00:11:38,887 --> 00:11:41,175
+No precisa ser str ou int.
+
+255
+00:11:41,175 --> 00:11:44,066
+Pode ser uma classe que voc definiu ou
+
+256
+00:11:44,066 --> 00:11:46,493
+que est definida em algum outro mdulo.
+
+257
+00:11:46,493 --> 00:11:49,493
+Agora, quando vamos ao banco de dados. py, PyCharm ser
+
+258
+00:11:50,382 --> 00:11:54,693
+capaz de nos avisar que o objeto de conexo tem
+
+259
+00:11:54,693 --> 00:11:57,708
+todas essas coisas do mdulo SQLite, o
+
+260
+00:11:57,708 --> 00:11:59,541
+que  bastante til.
+
+261
+00:12:00,505 --> 00:12:02,479
+Ento, novamente, bom para voc, bom para PyCharm,
+
+262
+00:12:02,479 --> 00:12:04,545
+bom para seus projetos  medida que crescem.
+
+263
+00:12:04,545 --> 00:12:07,297
+Definitivamente recomendo que voc faa isso.
+
+264
+00:12:07,297 --> 00:12:08,655
+Ento,  isso para este
+
+265
+00:12:08,655 --> 00:12:10,523
+vdeo e eu vejo voc no prximo.
+

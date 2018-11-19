@@ -1,0 +1,840 @@
+1
+00:00:00,000 --> 00:00:00,877
+Jose: Ol e bem vindo de volta.
+
+2
+00:00:00,877 --> 00:00:05,040
+Neste vdeo, vamos falar sobre o log do Python.
+
+3
+00:00:05,040 --> 00:00:08,080
+Nos termos mais simples, o mdulo de registro 
+
+4
+00:00:08,080 --> 00:00:10,040
+usado para imprimir as coisas.
+
+5
+00:00:10,040 --> 00:00:12,616
+Muito parecido com a funo de impresso que voc usou antes,
+
+6
+00:00:12,616 --> 00:00:14,980
+mas o mdulo de registro  um pouco mais poderoso.
+
+7
+00:00:14,980 --> 00:00:17,300
+Ele pode ser usado para imprimir coisas
+
+8
+00:00:17,300 --> 00:00:22,300
+em um console ou em um arquivo e, essencialmente,  usado para imprimir logs.
+
+9
+00:00:22,850 --> 00:00:25,447
+No sei se j mencionamos logs
+
+10
+00:00:25,447 --> 00:00:30,447
+antes, mas um log  essencialmente tudo o que aconteceu em seu aplicativo.
+
+11
+00:00:32,020 --> 00:00:35,107
+Por exemplo, voc poderia ter um registro do seu dia
+
+12
+00:00:35,107 --> 00:00:37,530
+que voc escreve em algum tipo de caderno,
+
+13
+00:00:37,530 --> 00:00:39,680
+tudo o que aconteceu no seu dia.
+
+14
+00:00:39,680 --> 00:00:42,019
+Voc poderia ter um log de um feriado em que
+
+15
+00:00:42,019 --> 00:00:44,176
+voc anote tudo o que aconteceu durante as suas frias.
+
+16
+00:00:44,176 --> 00:00:48,260
+E voc pode ter um registro do seu aplicativo, anotando tudo o
+
+17
+00:00:48,260 --> 00:00:51,620
+que aconteceu durante o tempo de execuo do aplicativo.
+
+18
+00:00:51,620 --> 00:00:56,049
+Por exemplo, se ocorreu um erro, um problema crtico,
+
+19
+00:00:56,049 --> 00:01:00,130
+alguma informao sobre algum mtodo que est sendo executado.
+
+20
+00:01:00,130 --> 00:01:03,613
+Basicamente, qualquer coisa e esses logs so usados
+
+21
+00:01:03,613 --> 00:01:08,200
+pelos desenvolvedores para entender como os aplicativos esto sendo executados.
+
+22
+00:01:08,200 --> 00:01:10,530
+Claro, se voc tem um aplicativo muito pequeno, isso
+
+23
+00:01:10,530 --> 00:01:11,970
+talvez no seja to til.
+
+24
+00:01:11,970 --> 00:01:15,750
+ medida que seu aplicativo comear a gerar registros decentes,
+
+25
+00:01:15,750 --> 00:01:17,050
+ser muito til.
+
+26
+00:01:17,970 --> 00:01:20,830
+A coisa boa sobre o mdulo de registro ,
+
+27
+00:01:20,830 --> 00:01:23,400
+uma das boas coisas sobre o mdulo de
+
+28
+00:01:23,400 --> 00:01:26,310
+registro,  que ele possui vrios nveis de registro.
+
+29
+00:01:26,310 --> 00:01:29,920
+E voc pode ativar os nveis e desativar outros.
+
+30
+00:01:29,920 --> 00:01:33,050
+Por exemplo, enquanto voc est desenvolvendo, voc pode
+
+31
+00:01:33,050 --> 00:01:36,850
+querer usar o logger para gerar mensagens informativas sobre o
+
+32
+00:01:36,850 --> 00:01:38,930
+que est acontecendo em sua aplicao.
+
+33
+00:01:38,930 --> 00:01:41,620
+Depois de implantar seu aplicativo, voc o
+
+34
+00:01:41,620 --> 00:01:44,670
+compartilha com seus usurios e ele est em
+
+35
+00:01:44,670 --> 00:01:46,640
+execuo e voc tem muitas
+
+36
+00:01:46,640 --> 00:01:49,814
+pessoas usando-o, talvez voc no queira mensagens informativas, voc
+
+37
+00:01:49,814 --> 00:01:51,600
+s quer mensagens relacionadas a erros.
+
+38
+00:01:52,470 --> 00:01:54,040
+Ento, com um mdulo de registro, voc pode fazer isso.
+
+39
+00:01:54,040 --> 00:01:56,291
+Se voc tem instrues de impresso em todos os
+
+40
+00:01:56,291 --> 00:01:58,330
+lugares, voc no pode habilitar alguns e desabilitar outros.
+
+41
+00:01:58,330 --> 00:02:00,130
+Ento, o mdulo de registro, muito legal.
+
+42
+00:02:00,130 --> 00:02:03,370
+Ns podemos importar o registro e a primeira coisa que temos
+
+43
+00:02:03,370 --> 00:02:05,660
+que fazer  ter um novo logger.
+
+44
+00:02:05,660 --> 00:02:07,560
+Ento, vamos criar um registrador
+
+45
+00:02:07,560 --> 00:02:11,240
+varivel e haver registro. getLogger e depois temos que dar o
+
+46
+00:02:11,240 --> 00:02:12,370
+nome do logger que queremos.
+
+47
+00:02:12,370 --> 00:02:14,120
+Ento vamos cham-lo logger de teste.
+
+48
+00:02:15,300 --> 00:02:18,430
+O bom disso  que ele deve
+
+49
+00:02:18,430 --> 00:02:20,870
+ser usado em vrios arquivos.
+
+50
+00:02:20,870 --> 00:02:24,150
+Ento, se voc tem um logger chamado logger de
+
+51
+00:02:24,150 --> 00:02:27,090
+teste, e voc chama isso de um arquivo
+
+52
+00:02:27,090 --> 00:02:30,410
+diferente, ele vai lhe dar o mesmo objeto.
+
+53
+00:02:30,410 --> 00:02:32,540
+E isso  bom porque voc pode configurar
+
+54
+00:02:32,540 --> 00:02:34,570
+loggers para imprimir as coisas de maneira diferente.
+
+55
+00:02:34,570 --> 00:02:37,160
+Voc pode configurar loggers para exportar para um arquivo
+
+56
+00:02:37,160 --> 00:02:40,870
+ou para o console, ento  muito bom que voc possa fazer isso.
+
+57
+00:02:40,870 --> 00:02:44,240
+Assim, quando voc obtiver o mesmo registrador de um arquivo
+
+58
+00:02:44,240 --> 00:02:46,360
+diferente, ele ser configurado da mesma maneira.
+
+59
+00:02:46,360 --> 00:02:48,850
+Ns vamos olhar para configur-los em um momento.
+
+60
+00:02:48,850 --> 00:02:51,390
+Ento  muito simples quando voc quer imprimir as coisas,
+
+61
+00:02:51,390 --> 00:02:55,260
+tudo que voc faz  dizer logger. info por exemplo
+
+62
+00:02:56,500 --> 00:02:59,490
+e isso no vai aparecer.
+
+63
+00:02:59,490 --> 00:03:02,580
+Ou voc pode fazer algo logger. aviso e isso vai.
+
+64
+00:03:03,590 --> 00:03:04,590
+Ento voc pode execut-lo.
+
+65
+00:03:06,220 --> 00:03:11,220
+E, como voc pode ver, voc recebe um aviso: test_logger: Esta mensagem
+
+66
+00:03:13,410 --> 00:03:16,660
+Sua mensagem informativa no foi mostrada porque todos
+
+67
+00:03:16,660 --> 00:03:20,170
+os registradores padro esto configurados para que s
+
+68
+00:03:20,170 --> 00:03:23,130
+mostrem mensagens de aviso e acima.
+
+69
+00:03:23,130 --> 00:03:25,090
+Ento, aqui esto os nveis que voc tem.
+
+70
+00:03:26,290 --> 00:03:28,750
+Voc tem depurao, esse  o nvel mais baixo.
+
+71
+00:03:28,750 --> 00:03:31,740
+Voc tem informaes, esse  o nvel acima.
+
+72
+00:03:31,740 --> 00:03:34,740
+E estes dois no aparecem por padro em novos madeireiros.
+
+73
+00:03:34,740 --> 00:03:38,039
+Voc tem que dizer que eu quero estes para eles mostrarem.
+
+74
+00:03:38,039 --> 00:03:41,200
+O prximo  um aviso, estes mostram.
+
+75
+00:03:41,200 --> 00:03:44,650
+Como voc pode ver, as mensagens de aviso aparecem.
+
+76
+00:03:44,650 --> 00:03:47,814
+Ento voc tem erro e ento voc  crtico.
+
+77
+00:03:47,814 --> 00:03:50,420
+O crtico  o mais crtico,
+
+78
+00:03:50,420 --> 00:03:52,830
+ claro, como o mais importante.
+
+79
+00:03:52,830 --> 00:03:55,030
+A depurao destina-se apenas a ser usada
+
+80
+00:03:55,030 --> 00:03:57,110
+enquanto voc estiver desenvolvendo o aplicativo.
+
+81
+00:03:58,720 --> 00:04:01,830
+Ento, novamente use o nvel de depurao se voc
+
+82
+00:04:01,830 --> 00:04:04,587
+estiver desenvolvendo ou depurando e basicamente coisas que
+
+83
+00:04:04,587 --> 00:04:08,800
+voc no quer usurios, bem, nenhuma delas  para usurios, mas basicamente
+
+84
+00:04:08,800 --> 00:04:11,600
+coisas que voc s quer ver enquanto no
+
+85
+00:04:11,600 --> 00:04:14,940
+est desenvolvendo enquanto seu aplicativo est rodando para o seu Comercial.
+
+86
+00:04:15,803 --> 00:04:18,760
+E, claro, se o seu programa est prestes a falhar
+
+87
+00:04:18,760 --> 00:04:21,670
+porque voc encontrou alguma exceo crtica ou algo assim, voc
+
+88
+00:04:21,670 --> 00:04:23,640
+pode usar o logger. crtico.
+
+89
+00:04:24,590 --> 00:04:28,085
+A maneira como voc configura o seu criador de logs  que,
+
+90
+00:04:28,085 --> 00:04:32,390
+antes de cri-lo, voc deve informar o log. basicConfig e aqui voc
+
+91
+00:04:33,440 --> 00:04:38,440
+pode dizer level = logging. depurar em
+
+92
+00:04:40,570 --> 00:04:42,070
+maisculas aqui.
+
+93
+00:04:42,070 --> 00:04:45,240
+Ou info se esse  o mnimo que voc deseja mostrar. debugar se o debug for o nvel mnimo que voc quer mostrar.
+
+94
+00:04:45,240 --> 00:04:49,300
+No entanto, isso no funciona muito bem no repl. isto.
+
+95
+00:04:49,300 --> 00:04:53,090
+Ento, vamos examinar o Python para tentar.
+
+96
+00:04:53,090 --> 00:04:55,510
+Eu mudei para o Python agora eu acabei de copiar o cdigo.
+
+97
+00:04:56,500 --> 00:04:58,830
+Ento, novamente, temos o log de importao, o log. basicConfig onde o nvel que vamos
+
+98
+00:04:58,830 --> 00:05:02,620
+mostrar  pelo menos debug.
+
+99
+00:05:02,620 --> 00:05:06,300
+Em seguida, criamos um registrador chamando o registro. getLogger.
+
+100
+00:05:06,300 --> 00:05:10,190
+E ento ns imprimimos duas mensagens, uma que
+
+101
+00:05:10,190 --> 00:05:12,630
+diz que isso no aparecer e uma que diz isso.
+
+102
+00:05:12,630 --> 00:05:15,610
+Ento vamos rodar o aplicativo.
+
+103
+00:05:15,610 --> 00:05:16,700
+E voc pode ver
+
+104
+00:05:18,240 --> 00:05:20,170
+que agora tambm recebemos a mensagem de informao.
+
+105
+00:05:20,170 --> 00:05:21,970
+Eu acho que isso  porque
+
+106
+00:05:21,970 --> 00:05:25,210
+o logger de teste aqui realmente herda do que 
+
+107
+00:05:26,370 --> 00:05:29,850
+chamado de root logger e eu acho que o repl configurou
+
+108
+00:05:29,850 --> 00:05:33,630
+seu log-root para que as mensagens de debug e info no apaream.
+
+109
+00:05:33,630 --> 00:05:36,900
+Ento  por isso que isso pode no funcionar no repl
+
+110
+00:05:36,900 --> 00:05:39,400
+para voc, mas definitivamente funcionaria no Python, j
+
+111
+00:05:39,400 --> 00:05:41,110
+que voc tem controle sobre tudo.
+
+112
+00:05:41,110 --> 00:05:42,920
+Repl  afinal a execuo
+
+113
+00:05:42,920 --> 00:05:45,036
+do Python em seu prprio ambiente,
+
+114
+00:05:45,036 --> 00:05:49,040
+para que eles tambm tenham algumas de suas prprias configuraes.
+
+115
+00:05:49,040 --> 00:05:50,490
+Agora voc pode configurar
+
+116
+00:05:53,405 --> 00:05:57,840
+a sada para mostrar um pouco mais de informao, em vez de apenas
+
+117
+00:05:57,840 --> 00:06:00,630
+o nvel e o registrador que imprimiu as coisas.
+
+118
+00:06:00,630 --> 00:06:02,690
+No basicConfig voc pode ter algo como
+
+119
+00:06:02,690 --> 00:06:06,350
+formato e, em seguida, em uma string, voc pode colocar o que
+
+120
+00:06:06,350 --> 00:06:09,810
+ que voc quer formatar suas mensagens de log como.
+
+121
+00:06:09,810 --> 00:06:13,260
+Por exemplo (asctime) s.
+
+122
+00:06:13,260 --> 00:06:16,760
+Esta  a forma como a sintaxe do Python da
+
+123
+00:06:16,760 --> 00:06:19,040
+velha escola para formatao de strings e
+
+124
+00:06:19,040 --> 00:06:23,220
+vai usar a varivel asctime que estar disponvel quando isso for usado.
+
+125
+00:06:23,220 --> 00:06:27,180
+Os meios s transformam com string.
+
+126
+00:06:27,180 --> 00:06:29,620
+Ento (asctime) s por
+
+127
+00:06:29,620 --> 00:06:32,900
+exemplo% (levelname) se depois% (message) s.
+
+128
+00:06:36,854 --> 00:06:41,580
+Ento, essa coisa aqui vai parecer bem parecida com a
+
+129
+00:06:42,650 --> 00:06:46,029
+nossa mensagem existente, mas o asctime na
+
+130
+00:06:46,029 --> 00:06:51,029
+verdade vai imprimir a hora em que o log foi impresso.
+
+131
+00:06:51,140 --> 00:06:55,990
+Em vez do nvel, desculpe o levelname vai ser impresso
+
+132
+00:06:55,990 --> 00:06:59,260
+aqui, ento o que vamos imprimir agora
+
+133
+00:06:59,260 --> 00:07:01,310
+ o nome do logger.
+
+134
+00:07:01,310 --> 00:07:03,710
+Se executarmos o aplicativo, voc ver que
+
+135
+00:07:03,710 --> 00:07:07,250
+agora temos o tempo em que imprimimos, as informaes de
+
+136
+00:07:07,250 --> 00:07:09,090
+nvel e depois a mensagem.
+
+137
+00:07:09,090 --> 00:07:11,980
+Eu acho que isso  um pouco melhor porque agora se
+
+138
+00:07:11,980 --> 00:07:14,390
+voc tem um aplicativo maior e voc tem um
+
+139
+00:07:14,390 --> 00:07:17,560
+tipo de registro, voc ser capaz de dizer quando cada registro aconteceu.
+
+140
+00:07:17,560 --> 00:07:20,980
+Ento, se voc est olhando para trs, voc ser capaz de ver que
+
+141
+00:07:20,980 --> 00:07:23,660
+eu registrei esta mensagem neste momento e, em seguida, registrei
+
+142
+00:07:23,660 --> 00:07:25,593
+esta mensagem e, em seguida, ocorreu um erro.
+
+143
+00:07:25,593 --> 00:07:28,370
+Assim, voc pode reconstruir a partir
+
+144
+00:07:28,370 --> 00:07:31,658
+desses registros o que aconteceu em seu aplicativo.
+
+145
+00:07:31,658 --> 00:07:33,550
+Se voc quer configurar seu
+
+146
+00:07:36,510 --> 00:07:40,900
+logger para mxima legibilidade, eu tenho um exemplo que acho muito bom.
+
+147
+00:07:40,900 --> 00:07:43,140
+ tirado do estouro de pilha, mas acho que  bom.
+
+148
+00:07:43,140 --> 00:07:46,710
+Eu colei aqui s para voc.
+
+149
+00:07:46,710 --> 00:07:49,200
+E ento o que isso faz
+
+150
+00:07:50,160 --> 00:07:53,094
+aqui imprime o tempo como voc sabe.
+
+151
+00:07:53,094 --> 00:07:54,710
+Isso imprime o nvel, mas
+
+152
+00:07:54,710 --> 00:07:58,835
+o nome do nvel  na verdade formatado como oito espaos.
+
+153
+00:07:58,835 --> 00:08:02,630
+Ento, por exemplo, voc tem aqui informaes que ocupam quatro espaos,
+
+154
+00:08:02,630 --> 00:08:05,630
+enquanto o -8s vai adicionar quatro espaos depois dele.
+
+155
+00:08:05,630 --> 00:08:10,630
+Dessa forma, todos os seus nveis ocuparo a mesma quantidade de
+
+156
+00:08:11,010 --> 00:08:14,010
+espao e suas mensagens de log vo
+
+157
+00:08:14,010 --> 00:08:16,110
+aparecer ao lado do outro.
+
+158
+00:08:16,110 --> 00:08:19,890
+Ento entre colchetes, estes so
+
+159
+00:08:19,890 --> 00:08:22,780
+apenas colchetes normais velhos.
+
+160
+00:08:22,780 --> 00:08:24,090
+Ns vamos imprimir o nome do arquivo em
+
+161
+00:08:24,090 --> 00:08:26,360
+que o log foi impresso e o nmero da linha como um nmero.
+
+162
+00:08:26,360 --> 00:08:30,220
+Isso  o que o d significa.
+
+163
+00:08:30,220 --> 00:08:31,880
+E ento ns vamos imprimir a mensagem finalmente.
+
+164
+00:08:31,880 --> 00:08:33,690
+Ento, vamos executar isso de novo e agora voc ver
+
+165
+00:08:33,690 --> 00:08:35,450
+que isso  bastante legvel e tambm bastante til.
+
+166
+00:08:35,450 --> 00:08:38,320
+Voc est recebendo o tempo e que tipo de mensagem .
+
+167
+00:08:38,320 --> 00:08:41,000
+Voc tambm est recebendo onde a mensagem
+
+168
+00:08:41,000 --> 00:08:43,450
+foi registrada e isso  fantstico.
+
+169
+00:08:43,450 --> 00:08:44,830
+ por isso que o registro 
+
+170
+00:08:44,830 --> 00:08:46,640
+brilhante porque voc pode ver exatamente onde as coisas aconteceram.
+
+171
+00:08:46,640 --> 00:08:49,550
+E finalmente voc pode ver sua mensagem l e perceber
+
+172
+00:08:49,550 --> 00:08:50,870
+como ela  legvel.
+
+173
+00:08:50,870 --> 00:08:53,150
+Ento, eu gosto deste exemplo aqui, sinta-se  vontade para usar
+
+174
+00:08:53,150 --> 00:08:54,695
+isso no seu registro, como voc escolheu.
+
+175
+00:08:54,695 --> 00:08:58,780
+Agora eu dou-lhe alguns outros exemplos de mensagem
+
+176
+00:08:58,780 --> 00:09:02,880
+de depurao, esta  a mensagem de depurao.
+
+177
+00:09:02,880 --> 00:09:04,760
+E voc pode fazer logger claro. Ocorreu um erro
+
+178
+00:09:05,960 --> 00:09:08,999
+crtico crtico.
+
+179
+00:09:08,999 --> 00:09:12,350
+Voc pode registr-los e, como voc pode
+
+180
+00:09:13,420 --> 00:09:15,710
+ver, todos eles aparecero e
+
+181
+00:09:15,710 --> 00:09:20,370
+todos ocuparo oito espaos, porque crtico  o mais longo,
+
+182
+00:09:20,370 --> 00:09:22,330
+que ocupa oito caracteres.
+
+183
+00:09:22,330 --> 00:09:23,660
+E isso  muito til.
+
+184
+00:09:23,660 --> 00:09:25,060
+Agora voc tambm pode registrar em um arquivo em vez de no console.
+
+185
+00:09:27,620 --> 00:09:31,600
+Vamos ver como fazer isso no prximo vdeo, vou
+
+186
+00:09:31,600 --> 00:09:33,250
+mostrar rapidamente a voc.
+
+187
+00:09:33,250 --> 00:09:36,181
+E  assim que voc faz logs no Python.
+
+188
+00:09:36,181 --> 00:09:39,450
+Voc ver muitos, muitos aplicativos grandes em Python usando exatamente isso.
+
+189
+00:09:39,450 --> 00:09:44,450
+Este logger e  realmente simples assim.
+
+190
+00:09:44,750 --> 00:09:47,620
+Voc acaba de obter um registrador, voc o chama como
+
+191
+00:09:47,620 --> 00:09:50,180
+quiser e, normalmente, ele est relacionado ao seu aplicativo
+
+192
+00:09:50,180 --> 00:09:53,440
+ou  parte do aplicativo com o qual voc est trabalhando
+
+193
+00:09:53,440 --> 00:09:56,250
+e, em seguida, voc pode fazer logout de mensagens.
+
+194
+00:09:56,250 --> 00:09:57,930
+Voc normalmente v muitas
+
+195
+00:09:57,930 --> 00:10:00,770
+dessas mensagens sendo registradas porque, em alguns
+
+196
+00:10:00,770 --> 00:10:04,421
+casos, voc pode optar por mostrar apenas erros e crticas.
+
+197
+00:10:04,421 --> 00:10:06,581
+Todo o caminho de depurao quando voc est trabalhando.
+
+198
+00:10:06,581 --> 00:10:09,840
+Ento  bem legal,  muito flexvel.
+
+199
+00:10:09,840 --> 00:10:11,920
+Definitivamente recomendo fazer isso.
+
+200
+00:10:11,920 --> 00:10:14,010
+Continue usando a impresso
+
+201
+00:10:14,010 --> 00:10:17,250
+quando quiser se comunicar com seus usurios.
+
+202
+00:10:17,250 --> 00:10:18,300
+No use registros para se comunicar com seus usurios.
+
+203
+00:10:18,300 --> 00:10:20,750
+Eles ficaro muito confusos, ento continue usando o
+
+204
+00:10:20,750 --> 00:10:23,520
+print se voc quiser conversar com seus usurios.
+
+205
+00:10:23,520 --> 00:10:25,150
+O log deve ser algo completamente separado e eles
+
+206
+00:10:25,150 --> 00:10:26,940
+devem normalmente ir para um arquivo ou algo parecido.
+
+207
+00:10:26,940 --> 00:10:29,520
+Ns vamos ver como fazer isso em apenas um momento.
+
+208
+00:10:29,520 --> 00:10:31,835
+Ento  isso para este vdeo.
+
+209
+00:10:31,835 --> 00:10:33,710
+Eu vou te ver no prximo.
+
+210
+00:10:33,710 --> 00:10:35,410
+&nbsp;
+

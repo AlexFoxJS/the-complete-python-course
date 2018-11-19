@@ -1,0 +1,412 @@
+1
+00:00:00,120 --> 00:00:01,520
+Jos: Hola y bienvenido de nuevo.
+
+2
+00:00:01,520 --> 00:00:04,250
+Saba que es bastante trivial ver a
+
+3
+00:00:04,250 --> 00:00:08,520
+qu direccin accede alguien en su navegador si est conectado a
+
+4
+00:00:08,520 --> 00:00:10,760
+la misma red WiFi que alguien
+
+5
+00:00:10,760 --> 00:00:12,110
+accediendo a ellos?
+
+6
+00:00:13,400 --> 00:00:15,210
+Por lo tanto, si estuviera
+
+7
+00:00:15,210 --> 00:00:18,240
+en una cafetera y estuviera accediendo a esta pgina
+
+8
+00:00:18,240 --> 00:00:19,810
+aqu, otra persona en
+
+9
+00:00:19,810 --> 00:00:21,270
+la cafetera conectada a
+
+10
+00:00:21,270 --> 00:00:25,000
+la misma red WiFi podra fcilmente ver a qu est accediendo.
+
+11
+00:00:26,380 --> 00:00:28,290
+Entonces, por qu es eso tan importante?
+
+12
+00:00:28,290 --> 00:00:30,920
+Recuerde que cuando creamos una nueva publicacin, lo
+
+13
+00:00:30,920 --> 00:00:31,970
+que estamos haciendo
+
+14
+00:00:34,200 --> 00:00:35,780
+es algo como esto.
+
+15
+00:00:35,780 --> 00:00:38,950
+Estamos accediendo a esta pgina / publicacin / creacin
+
+16
+00:00:38,950 --> 00:00:41,160
+con estos parmetros de cadena de consulta.
+
+17
+00:00:41,160 --> 00:00:44,100
+Esto es parte de la direccin.
+
+18
+00:00:44,100 --> 00:00:47,580
+Como digo, es bastante trivial ver esto, las cosas a las
+
+19
+00:00:49,610 --> 00:00:50,560
+que ests accediendo
+
+20
+00:00:50,560 --> 00:00:52,570
+cuando ests conectado a la misma red.
+
+21
+00:00:52,570 --> 00:00:54,890
+As que obviamente para el ttulo y algo de
+
+22
+00:00:54,890 --> 00:00:57,690
+contenido, tal vez no importa que alguien ms lo lea.
+
+23
+00:00:57,690 --> 00:01:00,560
+Pero digamos que est enviando un nombre de usuario y
+
+24
+00:01:00,560 --> 00:01:02,860
+una contrasea, tal vez empiece a importar un
+
+25
+00:01:02,860 --> 00:01:06,640
+poco ms que se enven de esta manera como la direccin en lugar
+
+26
+00:01:06,640 --> 00:01:09,890
+de tal vez de una manera ms oculta y ms segura.
+
+27
+00:01:11,060 --> 00:01:13,960
+Entonces, en este video, vamos a ver esa forma ms oculta
+
+28
+00:01:13,960 --> 00:01:17,060
+y ms segura de que es un poco menos fcil de ver.
+
+29
+00:01:18,490 --> 00:01:23,490
+Pasemos a PyCharm y en lugar de usar la solicitud. args, solicitud.
+
+30
+00:01:25,160 --> 00:01:26,430
+Aqu args,
+
+31
+00:01:26,430 --> 00:01:29,170
+vamos a acceder a una carga oculta
+
+32
+00:01:29,170 --> 00:01:31,620
+que aparece en la solicitud.
+
+33
+00:01:32,520 --> 00:01:37,520
+Esta carga til oculta se llamar solicitud. forma, est bien.
+
+34
+00:01:39,830 --> 00:01:41,550
+El resto permanece igual.
+
+35
+00:01:41,550 --> 00:01:44,530
+En lugar de acceder a los parmetros de cadena de consulta,
+
+36
+00:01:44,530 --> 00:01:48,050
+vamos a acceder a la solicitud. datos de formulario.
+
+37
+00:01:48,050 --> 00:01:49,400
+Estos son algunos
+
+38
+00:01:49,400 --> 00:01:53,130
+datos ocultos que se incluyen cuando enva el formulario usando
+
+39
+00:01:54,140 --> 00:01:57,600
+HTML, pero por supuesto la direccin seguir siendo esta.
+
+40
+00:01:57,600 --> 00:01:59,510
+Entonces no queremos que la direccin sea esto.
+
+41
+00:01:59,510 --> 00:02:03,740
+Queremos que el formulario no enve los datos en este formato.
+
+42
+00:02:03,740 --> 00:02:07,560
+En cambio, queremos que el formulario enve datos como una carga
+
+43
+00:02:07,560 --> 00:02:09,560
+oculta y eso es bastante simple.
+
+44
+00:02:09,560 --> 00:02:12,130
+Si vamos a crear jinja2, todo lo
+
+45
+00:02:12,130 --> 00:02:16,510
+que tenemos que hacer es decir el mtodo es POST.
+
+46
+00:02:17,700 --> 00:02:19,870
+Cuando haces el mtodo es POST, ahora
+
+47
+00:02:19,870 --> 00:02:22,430
+el formulario va a empaquetar esta informacin y
+
+48
+00:02:22,430 --> 00:02:25,760
+la adjuntar a una carga oculta en la solicitud y la
+
+49
+00:02:25,760 --> 00:02:27,120
+enviar a travs de eso.
+
+50
+00:02:28,070 --> 00:02:30,090
+Esto se debe a que, de acuerdo con
+
+51
+00:02:30,090 --> 00:02:33,430
+los estndares de Internet, la solicitud GET no puede tener cargas tiles de
+
+52
+00:02:33,430 --> 00:02:35,350
+datos, pero la solicitud POST s puede.
+
+53
+00:02:35,350 --> 00:02:36,540
+Por lo tanto, cuando
+
+54
+00:02:36,540 --> 00:02:38,720
+usa POST, el formulario adjunta los datos
+
+55
+00:02:38,720 --> 00:02:42,200
+a esa carga en lugar de colocarlos en la barra de direcciones.
+
+56
+00:02:42,200 --> 00:02:43,630
+Hay algunos otros beneficios, como
+
+57
+00:02:43,630 --> 00:02:46,580
+la cantidad de informacin que puede enviar es mucho mayor.
+
+58
+00:02:46,580 --> 00:02:49,660
+Hay un lmite para la cantidad de caracteres en una URL,
+
+59
+00:02:49,660 --> 00:02:51,730
+de modo que si la adjunta con
+
+60
+00:02:51,730 --> 00:02:54,880
+POST, puede enviar muchos ms datos, datos mucho ms largos y
+
+61
+00:02:54,880 --> 00:02:56,220
+tambin es ms segura.
+
+62
+00:02:57,510 --> 00:03:01,580
+Sin embargo, este punto final solo est
+
+63
+00:03:01,580 --> 00:03:04,910
+preparado para aceptar solicitudes GET.
+
+64
+00:03:04,910 --> 00:03:06,890
+Si desea aceptar una solicitud
+
+65
+00:03:06,890 --> 00:03:09,460
+POST que tenga esa carga oculta de
+
+66
+00:03:09,460 --> 00:03:13,910
+datos, debe decirle a Flask que desea vincular esta aplicacin raz con
+
+67
+00:03:13,910 --> 00:03:16,990
+una forma de acceder a las solicitudes POST.
+
+68
+00:03:16,990 --> 00:03:18,640
+Eso es realmente sencillo.
+
+69
+00:03:18,640 --> 00:03:23,640
+Todo lo que tienes que hacer es decir que los mtodos son iguales a esta lista
+
+70
+00:03:24,790 --> 00:03:27,420
+aqu con la cadena POST dentro de ella.
+
+71
+00:03:27,420 --> 00:03:28,790
+Ahora lo que hemos hecho
+
+72
+00:03:28,790 --> 00:03:33,180
+es que le dijimos a Flask que esta raz aqu solo recibir solicitudes POST.
+
+73
+00:03:33,180 --> 00:03:35,210
+Si intenta acceder a ella con una solicitud GET,
+
+74
+00:03:35,210 --> 00:03:37,020
+recibir un mensaje de error y dir: "Oye,
+
+75
+00:03:37,020 --> 00:03:38,910
+no dijo que quera acceder a esto" con
+
+76
+00:03:38,910 --> 00:03:39,750
+las solicitudes GET.
+
+77
+00:03:39,750 --> 00:03:41,570
+"Solo puedes hacer solicitudes POST. " Y
+
+78
+00:03:42,784 --> 00:03:43,660
+eso es.
+
+79
+00:03:43,660 --> 00:03:46,940
+Ahora cuando ejecutamos nuestra aplicacin y volvemos a
+
+80
+00:03:46,940 --> 00:03:51,820
+Chrome y vamos a crear, le mostrar el formulario, vea que esto es
+
+81
+00:03:51,820 --> 00:03:53,040
+lo que obtiene
+
+82
+00:03:53,040 --> 00:03:53,900
+si accede
+
+83
+00:03:53,900 --> 00:03:56,140
+a l usando una solicitud GET.
+
+84
+00:03:56,140 --> 00:03:57,270
+Si pasa al
+
+85
+00:03:57,270 --> 00:04:02,270
+formulario, ver esta y mi segunda publicacin, hola, y cuando enve,
+
+86
+00:04:02,620 --> 00:04:03,980
+vuelve aqu y
+
+87
+00:04:05,050 --> 00:04:08,300
+todo funciona, y le prometo, aunque fue
+
+88
+00:04:08,300 --> 00:04:10,570
+demasiado rpido para nosotros, no
+
+89
+00:04:10,570 --> 00:04:14,220
+se envi nada como parmetros de cadena de consulta.
+
+90
+00:04:14,220 --> 00:04:17,900
+Entonces ahora podemos eliminar esto de all.
+
+91
+00:04:17,900 --> 00:04:19,440
+No se envi nada como parmetros de cadena de consulta.
+
+92
+00:04:19,440 --> 00:04:22,380
+Ahora se estn enviando, como se puede ver aqu en los
+
+93
+00:04:22,380 --> 00:04:25,420
+registros, como una solicitud POST en lugar de una solicitud GET
+
+94
+00:04:25,420 --> 00:04:27,680
+y los datos del formulario estn ocultos all.
+
+95
+00:04:28,920 --> 00:04:30,070
+Un poco ms seguro, pero
+
+96
+00:04:30,070 --> 00:04:32,390
+por supuesto todava hay ms implicaciones de seguridad en las
+
+97
+00:04:32,390 --> 00:04:33,223
+que debes pensar.
+
+98
+00:04:33,223 --> 00:04:35,930
+Simplemente enviar cosas a travs de POST no es lo suficientemente seguro.
+
+99
+00:04:35,930 --> 00:04:39,310
+Solo un poco mejor que enviarlos a travs de GET.
+
+100
+00:04:40,510 --> 00:04:41,343
+Eso es todo por este video.
+
+101
+00:04:41,343 --> 00:04:43,100
+Quera mostrarte cmo hacerlo, acceder
+
+102
+00:04:43,100 --> 00:04:46,150
+a las cosas en el formulario es muy til.
+
+103
+00:04:46,150 --> 00:04:47,750
+As que te ver en el prximo.
+

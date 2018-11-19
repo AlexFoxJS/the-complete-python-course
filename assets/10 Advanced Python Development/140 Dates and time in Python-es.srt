@@ -1,0 +1,1044 @@
+1
+00:00:00,340 --> 00:00:01,250
+Jos: Hola y bienvenido de nuevo.
+
+2
+00:00:01,250 --> 00:00:04,770
+En este video hablaremos sobre fechas y horarios.
+
+3
+00:00:04,770 --> 00:00:06,070
+Trabajar con fechas
+
+4
+00:00:06,070 --> 00:00:08,030
+y horas es una habilidad
+
+5
+00:00:08,030 --> 00:00:10,490
+extremadamente til, pero puede ser bastante confuso.
+
+6
+00:00:10,490 --> 00:00:12,080
+En este video veremos cmo
+
+7
+00:00:12,080 --> 00:00:14,090
+simplificar el trabajo con fechas y horas
+
+8
+00:00:14,090 --> 00:00:15,980
+usando los mdulos integrados de Python.
+
+9
+00:00:17,880 --> 00:00:20,070
+Ahora no puedo ensearte todo lo que hay que
+
+10
+00:00:20,070 --> 00:00:21,130
+saber sobre fechas y horarios.
+
+11
+00:00:21,130 --> 00:00:23,340
+Simplemente hay demasiado y siempre es
+
+12
+00:00:23,340 --> 00:00:25,410
+un tema polmico y difcil, pero
+
+13
+00:00:25,410 --> 00:00:28,060
+puedo ayudarte y comenzar en el camino, contarte
+
+14
+00:00:28,060 --> 00:00:31,240
+un poco sobre cmo trabajo con fechas y horarios
+
+15
+00:00:31,240 --> 00:00:34,591
+y cmo puedes trabajar con tus usuarios, fechas y horas.
+
+16
+00:00:34,591 --> 00:00:38,760
+El principal mdulo de fecha y hora en Python se llama datetime.
+
+17
+00:00:39,610 --> 00:00:42,690
+Y lo suficientemente confuso, una de las clases ms
+
+18
+00:00:42,690 --> 00:00:45,400
+importantes en ese mdulo tambin se llama datetime.
+
+19
+00:00:45,400 --> 00:00:49,000
+As que lo haremos desde la fecha de importacin de fecha y hora.
+
+20
+00:00:49,000 --> 00:00:51,720
+As que aqu estamos importando esta clase
+
+21
+00:00:51,720 --> 00:00:54,857
+de fecha y hora que nos permitir hacer
+
+22
+00:00:54,857 --> 00:00:58,130
+algunas cosas, por ejemplo, datetime. ahora.
+
+23
+00:00:59,060 --> 00:01:02,020
+Fecha y hora. ahora nos va a dar
+
+24
+00:01:02,020 --> 00:01:04,190
+la hora actual de nuestro sistema operativo.
+
+25
+00:01:04,190 --> 00:01:07,875
+Y como pueden ver, la hora actual para m es a las 15:45.
+
+26
+00:01:07,875 --> 00:01:11,410
+He estado grabando por un tiempo, probablemente debera detenerse pronto.
+
+27
+00:01:11,410 --> 00:01:16,270
+Ahora esto te est dando lo que es un objeto inoportuno a tiempo.
+
+28
+00:01:17,690 --> 00:01:21,450
+Un objeto ingenuo no sabe acerca de las zonas horarias.
+
+29
+00:01:21,450 --> 00:01:25,036
+Entonces no tiene informacin sobre la zona horaria.
+
+30
+00:01:25,036 --> 00:01:29,930
+Por lo tanto, si le doy esta hora a
+
+31
+00:01:29,930 --> 00:01:33,651
+una computadora en los Estados Unidos, no
+
+32
+00:01:33,651 --> 00:01:37,172
+sabr que deben mostrar una hora diferente.
+
+33
+00:01:37,172 --> 00:01:38,500
+Van a pensar, est
+
+34
+00:01:38,500 --> 00:01:43,010
+bien que el tiempo se muestre a las 3:45, eso es genial.
+
+35
+00:01:45,930 --> 00:01:48,438
+Lo que no saben es que estoy en el Reino
+
+36
+00:01:48,438 --> 00:01:51,040
+Unido y este es un momento en el Reino Unido.
+
+37
+00:01:52,400 --> 00:01:55,588
+Entonces, sin una informacin de zona horaria
+
+38
+00:01:55,588 --> 00:01:58,543
+como esta aqu, los objetos datetime
+
+39
+00:01:58,543 --> 00:02:00,450
+son, dira, poco tiles.
+
+40
+00:02:01,610 --> 00:02:04,120
+Y eso es porque no se los puedes dar a nadie.
+
+41
+00:02:04,120 --> 00:02:05,870
+No se lo puede mostrar a su
+
+42
+00:02:05,870 --> 00:02:07,724
+usuario porque no sabe si ese momento es
+
+43
+00:02:07,724 --> 00:02:09,010
+correcto cuando se lo muestra.
+
+44
+00:02:09,010 --> 00:02:11,428
+No sabe dnde est el usuario y
+
+45
+00:02:11,428 --> 00:02:14,460
+dnde estaba cuando grab esta vez, por lo que
+
+46
+00:02:14,460 --> 00:02:16,450
+no puede mostrarlos de una manera
+
+47
+00:02:16,450 --> 00:02:18,410
+que sea relevante para ellos.
+
+48
+00:02:18,410 --> 00:02:19,810
+Por ejemplo, si fui a
+
+49
+00:02:19,810 --> 00:02:22,620
+los Estados Unidos con este tiempo, sera en el futuro, por
+
+50
+00:02:22,620 --> 00:02:23,980
+lo que no es genial.
+
+51
+00:02:24,826 --> 00:02:28,284
+Entonces, qu hacer es decir, podemos imprimir, oh,
+
+52
+00:02:28,284 --> 00:02:30,110
+oh, oh, no eso.
+
+53
+00:02:30,110 --> 00:02:34,680
+imprimir (datetime. ahora), pero tambin podemos pasarlo en
+
+54
+00:02:34,680 --> 00:02:37,413
+la zona horaria en la que lo queremos.
+
+55
+00:02:37,413 --> 00:02:39,580
+Entonces para eso tenemos import datetime
+
+56
+00:02:39,580 --> 00:02:41,140
+y tambin tenemos que
+
+57
+00:02:41,140 --> 00:02:43,060
+importar timezone desde el mdulo datetime.
+
+58
+00:02:43,060 --> 00:02:46,530
+Y lo que vamos a hacer es decir zona horaria. UTC.
+
+59
+00:02:46,530 --> 00:02:48,810
+UTC no es realmente una zona
+
+60
+00:02:48,810 --> 00:02:51,120
+horaria, pero es el estndar de
+
+61
+00:02:51,120 --> 00:02:52,700
+tiempo universal, es el
+
+62
+00:02:52,700 --> 00:02:54,471
+horario central, y normalmente
+
+63
+00:02:54,471 --> 00:02:59,471
+coincide con GMT, y esencialmente permite que todos hablen del tiempo con
+
+64
+00:03:02,470 --> 00:03:04,430
+el mismo marco de referencia.
+
+65
+00:03:04,430 --> 00:03:07,628
+Entonces, alguien en Estados Unidos que habla sobre el horario en
+
+66
+00:03:07,628 --> 00:03:10,250
+UTC va a estar hablando de la misma hora
+
+67
+00:03:10,250 --> 00:03:13,310
+de la que hablo cuando hablo sobre el tiempo en UTC.
+
+68
+00:03:13,310 --> 00:03:15,040
+Aunque no es una zona
+
+69
+00:03:15,040 --> 00:03:18,540
+horaria real, ningn pas sigue a UTC como zona horaria.
+
+70
+00:03:18,540 --> 00:03:21,380
+Si imprimimos esto, ver que el tiempo es el
+
+71
+00:03:21,380 --> 00:03:24,760
+mismo, pero ahora tenemos lo que se llama un objeto
+
+72
+00:03:24,760 --> 00:03:28,620
+consciente, un objeto consciente de la zona horaria que dice, ms 00:00.
+
+73
+00:03:30,317 --> 00:03:34,421
+Lo que esto significa es que la hora actual
+
+74
+00:03:34,421 --> 00:03:39,421
+en UTC es igual al tiempo en UTC sin compensacin.
+
+75
+00:03:41,432 --> 00:03:45,440
+De acuerdo, entonces el tiempo aqu a la izquierda
+
+76
+00:03:45,440 --> 00:03:47,920
+es la hora UTC y ahora
+
+77
+00:03:47,920 --> 00:03:52,610
+tenemos que el desplazamiento, donde este tiempo fue tomado es cero.
+
+78
+00:03:52,610 --> 00:03:55,710
+Entonces ahora sabemos que es una hora UTC, porque el desplazamiento es cero.
+
+79
+00:03:56,755 --> 00:04:01,755
+Esta vez aqu, tambin fue una hora UTC, pero eso se debe a
+
+80
+00:04:02,730 --> 00:04:06,110
+que mi zona horaria ahora tambin tiene una compensacin
+
+81
+00:04:06,110 --> 00:04:10,220
+de cero, porque ahora estoy en GMT y GMT tambin
+
+82
+00:04:10,220 --> 00:04:13,790
+tiene un desplazamiento de cero en comparacin con UTC.
+
+83
+00:04:14,670 --> 00:04:18,560
+Sin embargo, si hiciera esto en el verano y lo
+
+84
+00:04:20,280 --> 00:04:22,000
+hiciera en el verano
+
+85
+00:04:22,000 --> 00:04:23,470
+tambin, estos seran diferentes.
+
+86
+00:04:23,470 --> 00:04:26,650
+Esto mostrara una hora ms o menos, no recuerdo
+
+87
+00:04:26,650 --> 00:04:29,740
+exactamente qu camino tomar, pero mostrar una hora
+
+88
+00:04:29,740 --> 00:04:31,310
+diferente porque estara en
+
+89
+00:04:31,310 --> 00:04:35,040
+BST, porque el Reino Unido cambia de zona horaria con
+
+90
+00:04:35,040 --> 00:04:36,270
+el horario de verano.
+
+91
+00:04:37,560 --> 00:04:42,326
+Entonces, por qu estoy ralentizando tanto con esto?
+
+92
+00:04:42,326 --> 00:04:46,180
+Es realmente importante que obtengas las fechas correctas.
+
+93
+00:04:46,180 --> 00:04:48,380
+De lo contrario, tu aplicacin mostrar los tiempos de tus usuarios
+
+94
+00:04:48,380 --> 00:04:49,920
+en el pasado o en el futuro.
+
+95
+00:04:49,920 --> 00:04:51,600
+Va a ser realmente confuso.
+
+96
+00:04:51,600 --> 00:04:54,890
+Entonces, lo que normalmente recomiendo es
+
+97
+00:04:54,890 --> 00:04:59,890
+que sus programas siempre funcionen con las horas UTC.
+
+98
+00:05:00,220 --> 00:05:03,310
+Almacene las horas UTC en su base de datos,
+
+99
+00:05:03,310 --> 00:05:05,919
+trabaje con las horas UTC en su cdigo.
+
+100
+00:05:05,919 --> 00:05:09,000
+Cuando un usuario le da un tiempo, como
+
+101
+00:05:09,000 --> 00:05:13,020
+si usted les pregunta, ingrese la fecha actual, convirtala a UTC
+
+102
+00:05:13,020 --> 00:05:14,440
+y trabaje con UTC.
+
+103
+00:05:15,566 --> 00:05:17,808
+Y solo deber convertirlo a una
+
+104
+00:05:17,808 --> 00:05:21,330
+zona horaria diferente cuando le muestre al usuario la hora.
+
+105
+00:05:22,240 --> 00:05:26,100
+Entonces, si voy a Estados Unidos y tengo esta vez almacenado,
+
+106
+00:05:26,100 --> 00:05:28,950
+lo que puedo hacer es decir que esta
+
+107
+00:05:28,950 --> 00:05:31,150
+vez fue tomada en una zona horaria
+
+108
+00:05:31,150 --> 00:05:33,560
+ms cero, convirtmosla ahora en menos siete
+
+109
+00:05:33,560 --> 00:05:35,730
+cuando vayamos a algn lugar de Amrica.
+
+110
+00:05:35,730 --> 00:05:37,750
+Reste siete horas de esto y
+
+111
+00:05:37,750 --> 00:05:40,550
+ahora puedo mostrar esto en su zona horaria
+
+112
+00:05:40,550 --> 00:05:43,770
+y la fecha y la hora ahora coincidirn.
+
+113
+00:05:43,770 --> 00:05:45,670
+Entonces, solo cuando se lo muestre
+
+114
+00:05:45,670 --> 00:05:47,320
+a un usuario, que debe
+
+115
+00:05:47,320 --> 00:05:48,960
+conocer su zona horaria para
+
+116
+00:05:48,960 --> 00:05:51,320
+hacerlo, por supuesto, lo convierta a su zona horaria.
+
+117
+00:05:51,320 --> 00:05:53,820
+Todo el resto del tiempo, ests trabajando con
+
+118
+00:05:53,820 --> 00:05:56,120
+UTC y eso simplificar las cosas masivamente.
+
+119
+00:05:57,590 --> 00:06:00,570
+De acuerdo, entonces otra cosa que
+
+120
+00:06:00,570 --> 00:06:04,899
+puedes hacer es, por supuesto, puedes hacer timedeltas, timedelta.
+
+121
+00:06:04,899 --> 00:06:08,160
+Un timedelta es solo una diferencia de tiempo.
+
+122
+00:06:08,160 --> 00:06:10,080
+Entonces puedes decir eso, por
+
+123
+00:06:10,080 --> 00:06:14,073
+ejemplo, hoy es datetime. ahora y zona horaria. utc y
+
+124
+00:06:14,073 --> 00:06:19,073
+maana es hoy ms timedelta das igual uno.
+
+125
+00:06:21,050 --> 00:06:23,869
+Lo que hace, es obtener su fecha
+
+126
+00:06:23,869 --> 00:06:27,450
+actual, fecha y hora y agrega un timedelta, que
+
+127
+00:06:27,450 --> 00:06:29,070
+es una diferencia de tiempo.
+
+128
+00:06:29,070 --> 00:06:31,840
+El delta, creo que proviene de las matemticas.
+
+129
+00:06:31,840 --> 00:06:33,880
+Esencialmente solo significa una diferencia en el
+
+130
+00:06:33,880 --> 00:06:35,350
+tiempo y la diferencia que
+
+131
+00:06:35,350 --> 00:06:38,370
+est aplicando, que est agregando es un da, 24 horas.
+
+132
+00:06:41,860 --> 00:06:45,850
+Ahora, por supuesto, el tiempo ser el mismo
+
+133
+00:06:45,850 --> 00:06:47,280
+maana que hoy.
+
+134
+00:06:47,280 --> 00:06:51,300
+Entonces, de nuevo, imprima hoy, imprima maana, ejecute esto,
+
+135
+00:06:51,300 --> 00:06:53,235
+se lo muestre y
+
+136
+00:06:53,235 --> 00:06:57,640
+tenemos el 10 de febrero a las 15:51, el 11
+
+137
+00:06:57,640 --> 00:06:59,630
+de febrero a las 15:51.
+
+138
+00:06:59,630 --> 00:07:03,340
+Entonces como pueden ver, todo igual excepto el da.
+
+139
+00:07:04,210 --> 00:07:06,980
+Y ahora esto lleva muy bien a lo siguiente.
+
+140
+00:07:06,980 --> 00:07:09,020
+Si desea formatear la fecha y
+
+141
+00:07:09,020 --> 00:07:12,260
+mostrarla de una manera ligeramente ms agradable, puede hacerlo.
+
+142
+00:07:12,260 --> 00:07:13,400
+As que eso es bueno.
+
+143
+00:07:13,400 --> 00:07:15,250
+Y normalmente veras, por supuesto, si ests
+
+144
+00:07:15,250 --> 00:07:17,830
+en el Reino Unido, veras el da en frente, luego
+
+145
+00:07:17,830 --> 00:07:19,488
+el mes y luego el ao.
+
+146
+00:07:19,488 --> 00:07:21,010
+Y si ests en Estados
+
+147
+00:07:21,010 --> 00:07:23,340
+Unidos, tendras una forma muy extraa de
+
+148
+00:07:23,340 --> 00:07:25,780
+hacer las cosas y mostraras el mes primero.
+
+149
+00:07:27,709 --> 00:07:29,942
+O si tu Python, muestra el da De hecho, hay una razn para esto,
+
+150
+00:07:29,942 --> 00:07:31,400
+pasado, que es justo. que es para clasificar.
+
+151
+00:07:32,250 --> 00:07:33,770
+El ao va primero, luego el
+
+152
+00:07:33,770 --> 00:07:35,640
+mes y luego el da para la clasificacin.
+
+153
+00:07:35,640 --> 00:07:36,950
+Y, por supuesto, para la legibilidad, no tan bueno.
+
+154
+00:07:36,950 --> 00:07:38,780
+Entonces, qu puedes
+
+155
+00:07:38,780 --> 00:07:41,080
+hacer, puedes imprimir hoy. strftime, eso significa tiempo de formato de cadena.
+
+156
+00:07:41,080 --> 00:07:42,820
+Y dentro de los corchetes,
+
+157
+00:07:42,820 --> 00:07:47,820
+le da el formato que desea.
+
+158
+00:07:51,570 --> 00:07:52,900
+Entonces en mi caso, voy a lanzar,
+
+159
+00:07:52,900 --> 00:07:54,900
+perdn% d-% m-% Y, gran Y, eso es importante,% H-% M.
+
+160
+00:07:54,900 --> 00:07:56,940
+El porcentaje d le dice a
+
+161
+00:07:56,940 --> 00:08:01,590
+la funcin strftime, nuestro mtodo, que imprima los das, as que eso ser 10.
+
+162
+00:08:04,771 --> 00:08:09,771
+Porcentaje de m pequeo, dice meses, porcentaje de Y grande
+
+163
+00:08:10,170 --> 00:08:13,840
+dice que el ao es de cuatro dgitos.
+
+164
+00:08:13,840 --> 00:08:17,000
+El porcentaje H te da las horas
+
+165
+00:08:17,000 --> 00:08:20,890
+y el porcentaje M te da los minutos.
+
+166
+00:08:20,890 --> 00:08:22,830
+Entonces puede imprimir esto y puede ver
+
+167
+00:08:22,830 --> 00:08:24,900
+que ahora obtiene un formato agradable, donde
+
+168
+00:08:24,900 --> 00:08:27,010
+el da est en frente, luego el
+
+169
+00:08:27,010 --> 00:08:29,840
+mes y el ao, 10 de febrero de 2018.
+
+170
+00:08:29,840 --> 00:08:31,640
+La hora es 15:53 y hemos perdido
+
+171
+00:08:31,640 --> 00:08:34,900
+algo de precisin all, pero puede recuperarla si lo desea agregando% s all.
+
+172
+00:08:34,900 --> 00:08:38,080
+Y puedes ver que obtienes 40 ahora.
+
+173
+00:08:38,080 --> 00:08:42,020
+Tambin puede agregar los milisegundos y la informacin de la
+
+174
+00:08:43,640 --> 00:08:45,540
+zona horaria, si lo desea.
+
+175
+00:08:45,540 --> 00:08:47,500
+Lo que es importante recordar es
+
+176
+00:08:47,500 --> 00:08:50,050
+que esta impresin aqu, no tiene la informacin
+
+177
+00:08:50,050 --> 00:08:53,870
+de la zona horaria impresa, pero el objeto en s todava tiene
+
+178
+00:08:53,870 --> 00:08:56,869
+la informacin de la zona horaria, est bien, no hemos
+
+179
+00:08:56,869 --> 00:09:00,540
+perdido eso, simplemente no lo hemos impreso, porque el forma en que
+
+180
+00:09:00,540 --> 00:09:03,160
+formateamos la cadena coincide con esta informacin que solicitamos.
+
+181
+00:09:03,160 --> 00:09:05,270
+De acuerdo, de manera similar, oh perdn borr eso.
+
+182
+00:09:05,270 --> 00:09:08,916
+Puede pedirle al usuario la fecha, como
+
+183
+00:09:08,916 --> 00:09:12,480
+la fecha de entrada del usuario.
+
+184
+00:09:12,480 --> 00:09:14,670
+Ingrese la fecha
+
+185
+00:09:14,670 --> 00:09:17,210
+en formato YYYY-mm-dd
+
+186
+00:09:17,210 --> 00:09:21,310
+y luego puede convertirla, datetime. strptime, este caso, user_date,% y-% m-% d.
+
+187
+00:09:22,230 --> 00:09:24,280
+Y asegrate de tener una gran Y all.
+
+188
+00:09:25,675 --> 00:09:30,675
+Y luego puedes imprimir user_date out.
+
+189
+00:09:34,830 --> 00:09:36,909
+Vamos a imprimirlo.
+
+190
+00:09:36,909 --> 00:09:39,800
+Explicar lo que es en un momento.
+
+191
+00:09:39,800 --> 00:09:40,860
+Ahora podemos ver
+
+192
+00:09:40,860 --> 00:09:42,730
+que pide una fecha en particular,
+
+193
+00:09:42,730 --> 00:09:45,340
+digamos en 2010-05-05 y ahora tenemos 2010-05-05 00:00:00.
+
+194
+00:09:45,340 --> 00:09:49,410
+No tenemos informacin de zona horaria aqu tampoco.
+
+195
+00:09:49,410 --> 00:09:53,800
+Entonces que esta pasando?
+
+196
+00:09:53,800 --> 00:09:56,580
+Le hemos pedido al mdulo de fecha y hora que llame al strptime,
+
+197
+00:09:57,480 --> 00:09:59,050
+lo que significa tiempo de anlisis de cadenas.
+
+198
+00:09:59,050 --> 00:10:02,257
+Este es el tiempo de formato de cadena.
+
+199
+00:10:02,257 --> 00:10:05,150
+Tiempo de Parse.
+
+200
+00:10:05,150 --> 00:10:07,550
+Luego, colocamos nuestra cadena que queremos analizar.
+
+201
+00:10:08,472 --> 00:10:10,010
+Eso es lo que
+
+202
+00:10:10,010 --> 00:10:13,380
+el usuario ingres, presumiblemente en este formato, YYYY-mm-dd.
+
+203
+00:10:13,380 --> 00:10:15,110
+Y luego dijimos, est
+
+204
+00:10:15,110 --> 00:10:19,460
+bien, y por cierto esta cadena va a estar en este
+
+205
+00:10:19,460 --> 00:10:21,900
+formato, as que ahora puedes entender.
+
+206
+00:10:21,900 --> 00:10:23,340
+% Y es un ao de cuatro dgitos,% m es un
+
+207
+00:10:23,340 --> 00:10:24,900
+mes de dos dgitos,% d es un da de dos dgitos.
+
+208
+00:10:24,900 --> 00:10:29,755
+Entonces ahora la funcin strptime tiene la fecha y
+
+209
+00:10:29,755 --> 00:10:32,600
+su formato, y puede unirlos
+
+210
+00:10:32,600 --> 00:10:37,570
+y darnos un nuevo objeto datetime que tenga los
+
+211
+00:10:37,570 --> 00:10:38,990
+datos apropiados.
+
+212
+00:10:38,990 --> 00:10:41,031
+Pero, por supuesto, no le hemos dado las horas, los
+
+213
+00:10:41,031 --> 00:10:43,920
+minutos o los segundos, por lo que todos los valores predeterminados son cero.
+
+214
+00:10:43,920 --> 00:10:45,900
+Observe que no tenemos informacin de zona horaria all.
+
+215
+00:10:45,900 --> 00:10:48,840
+Tendremos que pedirle al usuario la informacin de la zona
+
+216
+00:10:52,580 --> 00:10:54,860
+horaria por separado y deberamos incluirla en esta
+
+217
+00:10:54,860 --> 00:10:55,990
+cadena de anlisis.
+
+218
+00:10:55,990 --> 00:10:57,710
+O, de hecho,
+
+219
+00:10:57,710 --> 00:11:01,200
+si queramos imprimirlo, tendramos que imprimirlo aqu.
+
+220
+00:11:01,200 --> 00:11:02,850
+No puedo recordar por la parte superior
+
+221
+00:11:02,850 --> 00:11:04,750
+de mi cabeza exactamente qu porcentaje es.
+
+222
+00:11:06,060 --> 00:11:07,490
+Creo que es% zed, pero voy
+
+223
+00:11:07,490 --> 00:11:08,610
+a incluir un PDF sobre
+
+224
+00:11:08,610 --> 00:11:12,040
+el anlisis y el formateo de citas, solo estas cosas aqu, lo que significan y
+
+225
+00:11:12,040 --> 00:11:14,470
+cmo las usan, adjuntas a la seccin de recursos de esta conferencia.
+
+226
+00:11:14,470 --> 00:11:16,373
+Entonces no vayas a ningn lado.
+
+227
+00:11:16,373 --> 00:11:19,050
+Descargue eso si est interesado en saber un poco ms
+
+228
+00:11:19,050 --> 00:11:20,110
+sobre estas fechas, cmo
+
+229
+00:11:20,110 --> 00:11:22,120
+las formatear y cmo las analizar, y s.
+
+230
+00:11:22,120 --> 00:11:24,030
+Solo quera contarte un poco sobre estos mdulos de fecha
+
+231
+00:11:24,030 --> 00:11:26,320
+y hora, algunas de las cosas que puedes hacer con ellos.
+
+232
+00:11:26,320 --> 00:11:29,640
+Otra cosa que puede hacer por cierto, timedelta puede tener
+
+233
+00:11:29,640 --> 00:11:32,210
+horas, puede tener minutos, puede tener segundos, puede
+
+234
+00:11:32,210 --> 00:11:33,043
+tener semanas all.
+
+235
+00:11:33,043 --> 00:11:36,670
+Entonces, hay algunas cosas que puede hacer en
+
+236
+00:11:36,670 --> 00:11:39,100
+trminos de agregar timedeltas all.
+
+237
+00:11:39,100 --> 00:11:40,710
+Por supuesto, tambin puede restar timedeltas si lo desea.
+
+238
+00:11:40,710 --> 00:11:43,054
+Hay ms que ver con las fechas y
+
+239
+00:11:43,054 --> 00:11:45,954
+los horarios, pero posiblemente no pueda abarcar todo el mdulo
+
+240
+00:11:46,990 --> 00:11:49,450
+de fecha y hora sin aburrirlo, en primer lugar,
+
+241
+00:11:49,450 --> 00:11:52,654
+y tambin sin un caso de uso ms especfico para estos.
+
+242
+00:11:52,654 --> 00:11:55,970
+Entonces, si tiene alguna pregunta sobre fechas y
+
+243
+00:11:55,970 --> 00:12:00,250
+horas, pregunte en el Slack Channel, incluso si todos estn
+
+244
+00:12:00,250 --> 00:12:02,352
+relacionados con el curso, estar
+
+245
+00:12:02,352 --> 00:12:04,070
+encantado de ayudarlo.
+
+246
+00:12:04,070 --> 00:12:05,820
+Y esa es realmente la mejor manera de continuar hacindolo.
+
+247
+00:12:05,820 --> 00:12:07,470
+Cuando tenga preguntas sobre
+
+248
+00:12:07,470 --> 00:12:10,670
+la fecha y la hora, descubra, investigue a travs
+
+249
+00:12:10,670 --> 00:12:13,596
+de la documentacin oficial de Python, lo que
+
+250
+00:12:13,596 --> 00:12:17,323
+otras personas preguntan en Slack y en Stack Overflow, y
+
+251
+00:12:17,323 --> 00:12:21,200
+eso realmente le dar todas las dems herramientas que necesite.
+
+252
+00:12:21,200 --> 00:12:22,979
+Pero en trminos de lidiar con fechas y
+
+253
+00:12:22,979 --> 00:12:25,230
+horas simples en sus programas, esto debera ser suficiente para comenzar.
+
+254
+00:12:25,230 --> 00:12:28,160
+Tiene objetos datetime, timedeltas y
+
+255
+00:12:28,160 --> 00:12:31,000
+tambin conoce zonas horarias.
+
+256
+00:12:31,000 --> 00:12:34,350
+Y tambin puede formatear la hora y analizar
+
+257
+00:12:34,350 --> 00:12:36,040
+cualquier entrada del usuario.
+
+258
+00:12:36,040 --> 00:12:38,768
+Entonces eso es todo por este video.
+
+259
+00:12:38,768 --> 00:12:41,969
+Espero que les haya gustado y nos veremos en el prximo.
+
+260
+00:12:41,969 --> 00:12:43,409
+&nbsp;
+
+261
+00:12:43,409 --> 00:12:46,209
+&nbsp;
+

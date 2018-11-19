@@ -1,0 +1,568 @@
+1
+00:00:00,032 --> 00:00:01,738
+<v Jose>Hi, and welcome back.</v>
+
+2
+00:00:01,738 --> 00:00:03,775
+In this video, we're going to look at using the
+
+3
+00:00:03,775 --> 00:00:07,455
+requests library to download page content so that
+
+4
+00:00:07,455 --> 00:00:10,377
+we can then parse it with BeautifulSoup.
+
+5
+00:00:10,377 --> 00:00:12,241
+The first thing to do is, once again,
+
+6
+00:00:12,241 --> 00:00:14,894
+we're going to instal a library.
+
+7
+00:00:14,894 --> 00:00:16,870
+Let's go over to our Preferences which,
+
+8
+00:00:16,870 --> 00:00:19,187
+remember on a Mac, is under PyCharm
+
+9
+00:00:19,187 --> 00:00:20,992
+Community Edition, and Preferences.
+
+10
+00:00:20,992 --> 00:00:23,603
+On Windows, I believe, it's under File.
+
+11
+00:00:23,603 --> 00:00:25,372
+And it should be down there somewhere.
+
+12
+00:00:25,372 --> 00:00:27,351
+Let's go to your Preferences, and once again,
+
+13
+00:00:27,351 --> 00:00:29,801
+find the Project section here, and then
+
+14
+00:00:29,801 --> 00:00:31,567
+go into the Project Interpreter.
+
+15
+00:00:31,567 --> 00:00:34,025
+Press the plus icon down here,
+
+16
+00:00:34,025 --> 00:00:36,525
+and find the requests library.
+
+17
+00:00:37,444 --> 00:00:39,693
+You can see that I've already got it installed,
+
+18
+00:00:39,693 --> 00:00:44,281
+but if you don't have it installed yet, just press instal.
+
+19
+00:00:44,281 --> 00:00:46,677
+Okay, I've got it here so, I'm going to
+
+20
+00:00:46,677 --> 00:00:50,101
+press instal, actually, to just to update it.
+
+21
+00:00:50,101 --> 00:00:54,079
+Update it to the latest version, and that should be fine.
+
+22
+00:00:54,079 --> 00:00:57,330
+Okay, now when we've got it installed, we can use
+
+23
+00:00:57,330 --> 00:01:00,184
+the requests library from within our Python code.
+
+24
+00:01:00,184 --> 00:01:02,711
+So, let's create a new Python file,
+
+25
+00:01:02,711 --> 00:01:04,794
+that I'm going to call
+
+26
+00:01:04,794 --> 00:01:06,294
+scraping_books.py.
+
+27
+00:01:08,702 --> 00:01:12,285
+And here we're going to do import requests.
+
+28
+00:01:13,518 --> 00:01:18,126
+We're also going to do from bs4 import BeautifulSoup.
+
+29
+00:01:18,126 --> 00:01:22,160
+Now, if you want to find out the page content
+
+30
+00:01:22,160 --> 00:01:25,465
+and download the pages in Python, all you'll
+
+31
+00:01:25,465 --> 00:01:29,125
+ever have to do, is do something like this.
+
+32
+00:01:29,125 --> 00:01:31,125
+Page = requests.get
+
+33
+00:01:32,709 --> 00:01:34,858
+and then, as a string, you must
+
+34
+00:01:34,858 --> 00:01:36,490
+put the page that you want to load.
+
+35
+00:01:36,490 --> 00:01:41,490
+So that's, for example, http://www.example.com,
+
+36
+00:01:42,197 --> 00:01:44,981
+and then, print(page.content).
+
+37
+00:01:44,981 --> 00:01:46,662
+So example.com is a sample site that
+
+38
+00:01:46,662 --> 00:01:50,723
+you can also use just to test things out.
+
+39
+00:01:50,723 --> 00:01:52,313
+And what's happening here is we're asking
+
+40
+00:01:52,313 --> 00:01:54,615
+the requests module, and we're calling
+
+41
+00:01:54,615 --> 00:01:57,615
+the get function within that module.
+
+42
+00:01:59,468 --> 00:02:01,384
+The get function
+
+43
+00:02:01,384 --> 00:02:02,658
+does some
+
+44
+00:02:02,658 --> 00:02:03,491
+http
+
+45
+00:02:05,551 --> 00:02:06,967
+transactions in the background,
+
+46
+00:02:06,967 --> 00:02:08,850
+some http requests.
+
+47
+00:02:08,850 --> 00:02:11,238
+It's a bit more technical than
+
+48
+00:02:11,238 --> 00:02:13,550
+we're going to go into in this course.
+
+49
+00:02:13,550 --> 00:02:17,208
+But essentially, it goes and asks the server
+
+50
+00:02:17,208 --> 00:02:20,833
+that is where the website is stored,
+
+51
+00:02:20,833 --> 00:02:22,220
+for the page.
+
+52
+00:02:22,220 --> 00:02:24,472
+And then the server can decide to respond with the page
+
+53
+00:02:24,472 --> 00:02:27,232
+content, or it can decide to respond with something else.
+
+54
+00:02:27,232 --> 00:02:29,263
+The server can basically decide what to do
+
+55
+00:02:29,263 --> 00:02:32,096
+when this happens, when we ask it.
+
+56
+00:02:32,998 --> 00:02:35,987
+And hopefully, it will respond with the page content.
+
+57
+00:02:35,987 --> 00:02:38,146
+That's what normally happens.
+
+58
+00:02:38,146 --> 00:02:39,813
+Once we've got that,
+
+59
+00:02:42,777 --> 00:02:45,876
+we receive the page content,
+
+60
+00:02:45,876 --> 00:02:48,643
+and also a couple more small bits of information,
+
+61
+00:02:48,643 --> 00:02:51,772
+like a status code, which tells us whether
+
+62
+00:02:51,772 --> 00:02:55,758
+there was an error or not, and a few more things.
+
+63
+00:02:55,758 --> 00:02:57,787
+The other things are not terribly important.
+
+64
+00:02:57,787 --> 00:03:00,186
+The content is what we're most interested in.
+
+65
+00:03:00,186 --> 00:03:03,686
+So the requests module converts that response
+
+66
+00:03:03,686 --> 00:03:05,128
+that comes from the server, that's in that
+
+67
+00:03:05,128 --> 00:03:09,217
+sort of complex format, converts it into an object in
+
+68
+00:03:09,217 --> 00:03:13,907
+Python that we can then access the content property of.
+
+69
+00:03:13,907 --> 00:03:18,259
+So let's run this file and see what happens.
+
+70
+00:03:18,259 --> 00:03:21,565
+As you can see, we get a string here.
+
+71
+00:03:21,565 --> 00:03:25,934
+It's a pretty long string because the contents
+
+72
+00:03:25,934 --> 00:03:28,970
+get downloaded all into a single line.
+
+73
+00:03:28,970 --> 00:03:31,912
+But you can see that there's a &lt;p&gt; tag in here:
+
+74
+00:03:31,912 --> 00:03:33,595
+This domain is established to be used
+
+75
+00:03:33,595 --> 00:03:36,483
+for illustrative examples in documents.
+
+76
+00:03:36,483 --> 00:03:37,316
+So this is what we're doing.
+
+77
+00:03:37,316 --> 00:03:41,755
+So this is what the example.com website looks like.
+
+78
+00:03:41,755 --> 00:03:44,338
+It's got a &lt;h1&gt; tag, a &lt;p&gt; tag,
+
+79
+00:03:45,244 --> 00:03:48,262
+and some more information, which is a link.
+
+80
+00:03:48,262 --> 00:03:50,009
+And if you right-click it and inspect it,
+
+81
+00:03:50,009 --> 00:03:52,601
+which is what I've done here, you see that
+
+82
+00:03:52,601 --> 00:03:56,934
+you get the body, which is the main section in html.
+
+83
+00:03:57,856 --> 00:04:01,294
+Then there's a &lt;div&gt; which is just a block of content,
+
+84
+00:04:01,294 --> 00:04:04,292
+and inside that &lt;div&gt; we've got three main tags.
+
+85
+00:04:04,292 --> 00:04:06,724
+The &lt;h1&gt; tag, the &lt;p&gt; tag, which contains
+
+86
+00:04:06,724 --> 00:04:09,748
+the paragraph, and another &lt;p&gt; tag, which
+
+87
+00:04:09,748 --> 00:04:12,298
+contains an &lt;a&gt; tag, which is a link.
+
+88
+00:04:12,298 --> 00:04:14,235
+And that has an attribute 'href',
+
+89
+00:04:14,235 --> 00:04:15,820
+which is the link that it goes to,
+
+90
+00:04:15,820 --> 00:04:18,931
+and the text inside it is more information.
+
+91
+00:04:18,931 --> 00:04:20,857
+So let's go back to PyCharm, and we're
+
+92
+00:04:20,857 --> 00:04:25,151
+going to try to parse through this html code.
+
+93
+00:04:25,151 --> 00:04:27,508
+Essentially it'll respond with something like this.
+
+94
+00:04:27,508 --> 00:04:29,804
+The html of the page.
+
+95
+00:04:29,804 --> 00:04:32,286
+So if we wanted, we could parse
+
+96
+00:04:32,286 --> 00:04:34,726
+it with BeautifulSoup as well.
+
+97
+00:04:34,726 --> 00:04:38,914
+We could do something like soup = BeautifulSoup
+
+98
+00:04:38,914 --> 00:04:41,866
+of the page.content and, of course, we must give it
+
+99
+00:04:41,866 --> 00:04:45,426
+the 'html.parser' and then we can print,
+
+100
+00:04:45,426 --> 00:04:50,205
+for example, print(soup.find), there's an h1 on the page,
+
+101
+00:04:50,205 --> 00:04:52,384
+I know this because I've looked at the page before,
+
+102
+00:04:52,384 --> 00:04:55,139
+.string, and then we could print this out.
+
+103
+00:04:55,139 --> 00:04:59,122
+And you can see that we get Example Domain out.
+
+104
+00:04:59,122 --> 00:05:00,808
+All we did here is nothing new.
+
+105
+00:05:00,808 --> 00:05:03,891
+We got the page content, this is new.
+
+106
+00:05:05,375 --> 00:05:07,853
+Then the other things are not new.
+
+107
+00:05:07,853 --> 00:05:09,416
+We created a BeautifulSoup object,
+
+108
+00:05:09,416 --> 00:05:10,993
+we parsed it in the page content,
+
+109
+00:05:10,993 --> 00:05:13,553
+that's the html content of the page,
+
+110
+00:05:13,553 --> 00:05:15,009
+given it the 'html.parser', cause that's
+
+111
+00:05:15,009 --> 00:05:16,909
+what it's gonna use to parse through
+
+112
+00:05:16,909 --> 00:05:19,088
+the content and try to understand it.
+
+113
+00:05:19,088 --> 00:05:23,838
+And finally, we found 'h1' and we've printed as a string.
+
+114
+00:05:25,029 --> 00:05:25,862
+Okay.
+
+115
+00:05:27,095 --> 00:05:29,530
+The new thing here is this get.
+
+116
+00:05:29,530 --> 00:05:30,799
+And all we're doing, you can think
+
+117
+00:05:30,799 --> 00:05:33,421
+of it as, getting the page content.
+
+118
+00:05:33,421 --> 00:05:34,362
+What's happening in the background is
+
+119
+00:05:34,362 --> 00:05:36,114
+a bit more technical, as I mentioned earlier.
+
+120
+00:05:36,114 --> 00:05:38,974
+Nothing you should be worrying about.
+
+121
+00:05:38,974 --> 00:05:41,111
+Also, you can of course, do everything
+
+122
+00:05:41,111 --> 00:05:42,772
+we did in the last few videos.
+
+123
+00:05:42,772 --> 00:05:45,688
+You can do soup.select_one, and then you can give
+
+124
+00:05:45,688 --> 00:05:48,271
+it a different type of locator,
+
+125
+00:05:49,220 --> 00:05:50,387
+like this one,
+
+126
+00:05:53,547 --> 00:05:54,380
+'href'.
+
+127
+00:05:54,380 --> 00:05:56,780
+And here, what we're accessing is,
+
+128
+00:05:56,780 --> 00:06:00,023
+the &lt;a&gt; tag, which is within a &lt;p&gt; tag,
+
+129
+00:06:00,023 --> 00:06:02,576
+and we're accessing the 'href' attribute of that.
+
+130
+00:06:02,576 --> 00:06:04,914
+So this is going to be a link.
+
+131
+00:06:04,914 --> 00:06:07,110
+Can run this again.
+
+132
+00:06:07,110 --> 00:06:11,277
+Oh, sorry, this should be square brackets, my bad.
+
+133
+00:06:12,226 --> 00:06:14,809
+And we get now, this link here.
+
+134
+00:06:16,330 --> 00:06:18,219
+So, this is an example of how you may
+
+135
+00:06:18,219 --> 00:06:21,357
+go about downloading a page and accessing
+
+136
+00:06:21,357 --> 00:06:24,513
+some properties and some tags in it.
+
+137
+00:06:24,513 --> 00:06:27,196
+We're going to look at another example in the coming
+
+138
+00:06:27,196 --> 00:06:31,045
+videos with some more interesting things going on.
+
+139
+00:06:31,045 --> 00:06:34,118
+We're gonna look at that book store that we saw earlier on.
+
+140
+00:06:34,118 --> 00:06:36,431
+And we're going to start, sort of, understanding
+
+141
+00:06:36,431 --> 00:06:39,366
+multiple pieces of data at the same time.
+
+142
+00:06:39,366 --> 00:06:41,923
+So, with that said, I'll see you on the next video.
+

@@ -1,0 +1,840 @@
+1
+00:00:00,000 --> 00:00:01,410
+Orador: Ol e bem vindo de volta.
+
+2
+00:00:01,410 --> 00:00:02,243
+Neste vdeo,
+
+3
+00:00:02,243 --> 00:00:06,403
+vamos analisar a criao da nossa primeira classe de rvore binria.
+
+4
+00:00:07,440 --> 00:00:09,560
+Vamos comear criando um novo projeto que criei aqui
+
+5
+00:00:09,560 --> 00:00:11,580
+na minha rea de trabalho e, em seguida,
+
+6
+00:00:11,580 --> 00:00:13,420
+clique com o boto direito do mouse e,
+
+7
+00:00:13,420 --> 00:00:15,530
+ claro, estou criando um novo arquivo Python.
+
+8
+00:00:15,530 --> 00:00:17,663
+Ns vamos chamar esse app. py.
+
+9
+00:00:18,500 --> 00:00:20,850
+E tambm vou criar alguns outros arquivos que
+
+10
+00:00:20,850 --> 00:00:22,300
+vou chamar n. py, e outro
+
+11
+00:00:24,030 --> 00:00:28,210
+que eu vou chamar de binrio. rvore. py.
+
+12
+00:00:28,210 --> 00:00:29,480
+OK.
+
+13
+00:00:29,480 --> 00:00:32,530
+Portanto, temos trs arquivos: app, n e rvore binria.
+
+14
+00:00:32,530 --> 00:00:34,030
+Vou mant-los abertos aqui
+
+15
+00:00:34,030 --> 00:00:36,720
+e vou esconder a barra lateral s
+
+16
+00:00:36,720 --> 00:00:38,563
+para termos mais espao.
+
+17
+00:00:39,500 --> 00:00:41,123
+E vamos comear.
+
+18
+00:00:42,350 --> 00:00:47,280
+Nossa rvore binria ter um ponto de partida que ser
+
+19
+00:00:47,280 --> 00:00:49,330
+um n e, em
+
+20
+00:00:49,330 --> 00:00:52,720
+seguida, poderemos adicionar novos ns a ela.
+
+21
+00:00:52,720 --> 00:00:56,420
+A primeira coisa a fazer  criar nossa classe de n.
+
+22
+00:00:56,420 --> 00:00:59,969
+Nossa classe de n ser apenas um objeto simples que
+
+23
+00:00:59,969 --> 00:01:03,864
+possui um valor, um n  esquerda e um n  direita.
+
+24
+00:01:03,864 --> 00:01:06,048
+Ento, vamos dizer n de
+
+25
+00:01:06,048 --> 00:01:09,715
+classe e vai ter um mtodo init, um valor,
+
+26
+00:01:11,400 --> 00:01:14,504
+e vai ter auto. value =
+
+27
+00:01:14,504 --> 00:01:18,736
+value, self. esquerda = nenhum, eu. certo = nenhum
+
+28
+00:01:18,736 --> 00:01:19,569
+OK.
+
+29
+00:01:19,569 --> 00:01:21,780
+Ento, quando criamos um novo
+
+30
+00:01:21,780 --> 00:01:25,730
+n, ele s comea como nada, sem filhos, essencialmente.
+
+31
+00:01:25,730 --> 00:01:28,480
+Nada  esquerda, nada  direita.
+
+32
+00:01:28,480 --> 00:01:30,290
+E o valor vai ser o que
+
+33
+00:01:30,290 --> 00:01:32,083
+for que passamos para o mtodo init.
+
+34
+00:01:32,980 --> 00:01:37,043
+Aqui tambm adicionarei um mtodo de reprovao curto
+
+35
+00:01:37,043 --> 00:01:39,360
+apenas porque iremos imprimir
+
+36
+00:01:39,360 --> 00:01:44,360
+as coisas e pode ser til conseguir uma boa representao
+
+37
+00:01:44,530 --> 00:01:46,710
+do valor do n.
+
+38
+00:01:46,710 --> 00:01:49,110
+Ento, esse  o mtodo repr, quando ns
+
+39
+00:01:49,110 --> 00:01:51,653
+o imprimimos vamos ver o n cinco, por exemplo.
+
+40
+00:01:53,760 --> 00:01:55,800
+Vamos apenas verificar se tudo isso est funcionando escrevendo
+
+41
+00:01:55,800 --> 00:01:58,490
+um pequeno script aqui no aplicativo. py.
+
+42
+00:01:58,490 --> 00:02:01,760
+Ns vamos dizer do n, n de importao, e
+
+43
+00:02:01,760 --> 00:02:03,747
+ento ns vamos criar um
+
+44
+00:02:03,747 --> 00:02:06,890
+novo n, ento eu vou ter o valor cinco.
+
+45
+00:02:06,890 --> 00:02:08,210
+E ento eu vou criar
+
+46
+00:02:08,210 --> 00:02:09,950
+um novo n que ter o valor
+
+47
+00:02:09,950 --> 00:02:10,900
+nove e vou criar
+
+48
+00:02:10,900 --> 00:02:12,670
+um novo n que ter o valor 13.
+
+49
+00:02:12,670 --> 00:02:15,163
+Vou atribuir estas duas variveis:
+
+50
+00:02:16,470 --> 00:02:21,470
+left equal that, head equal that e right equal that.
+
+51
+00:02:23,410 --> 00:02:24,610
+E agora vamos
+
+52
+00:02:24,610 --> 00:02:29,610
+fazer algo como cabea. esquerda = n esquerdo, cabea. direito = o n direito, e
+
+53
+00:02:31,010 --> 00:02:34,590
+devemos ser capazes de fazer coisas como imprimir a cabea, imprimir a
+
+54
+00:02:34,590 --> 00:02:37,713
+cabea para a esquerda, imprimir a cabea para a direita.
+
+55
+00:02:39,300 --> 00:02:40,540
+Roteiro bem simples.
+
+56
+00:02:40,540 --> 00:02:44,430
+Nada realmente est acontecendo, exceto que criamos
+
+57
+00:02:44,430 --> 00:02:47,510
+nossa primeira rvore binria aqui.
+
+58
+00:02:47,510 --> 00:02:50,430
+Ns temos nosso n principal, e ento ns estamos definindo os
+
+59
+00:02:50,430 --> 00:02:52,210
+ns esquerdo e direito, ento estamos terminando
+
+60
+00:02:52,210 --> 00:02:54,063
+com algum tipo de rvore triangular l.
+
+61
+00:02:54,930 --> 00:02:58,610
+Se ns executarmos o app. py vemos n nove,
+
+62
+00:02:58,610 --> 00:03:00,763
+n cinco, n 13 impresso.
+
+63
+00:03:03,030 --> 00:03:04,980
+Se voc estiver interessado, voc
+
+64
+00:03:04,980 --> 00:03:08,440
+sabe que esta  uma travessia de pr-ordem
+
+65
+00:03:08,440 --> 00:03:12,250
+da rvore, mesmo que ainda no tenhamos percorrido nada.
+
+66
+00:03:12,250 --> 00:03:14,740
+Acabamos de imprimir alguns ns.
+
+67
+00:03:14,740 --> 00:03:16,800
+Mas a primeira coisa que imprimimos  o n principal,
+
+68
+00:03:16,800 --> 00:03:18,840
+depois fomos para a esquerda e imprimimos esse n, e
+
+69
+00:03:18,840 --> 00:03:20,650
+ento fomos para a direita e imprimimos esse n.
+
+70
+00:03:20,650 --> 00:03:24,233
+Portanto, este  um exemplo de uma travessia simples de pr-encomenda.
+
+71
+00:03:25,690 --> 00:03:27,490
+Ok, ns temos isso, agora vamos deletar
+
+72
+00:03:27,490 --> 00:03:30,543
+isso e comear a trabalhar na nossa classe de rvore binria.
+
+73
+00:03:31,610 --> 00:03:34,720
+Neste vdeo, s vamos trabalhar na adio de um novo n.
+
+74
+00:03:34,720 --> 00:03:37,530
+Vamos implementar o que j vimos na palestra
+
+75
+00:03:37,530 --> 00:03:39,516
+e depois adicionaremos mais alguns
+
+76
+00:03:39,516 --> 00:03:43,223
+vdeos para falar sobre encontrar ns e fazer a travessia.
+
+77
+00:03:44,850 --> 00:03:47,230
+Ento, vamos dizer a partir do n de importao do
+
+78
+00:03:47,230 --> 00:03:49,540
+n, e isso ser til em apenas um momento.
+
+79
+00:03:49,540 --> 00:03:51,570
+E ento ns vamos criar nossa
+
+80
+00:03:51,570 --> 00:03:53,320
+classe de rvore binria, vai
+
+81
+00:03:53,320 --> 00:03:57,553
+ter um mtodo init, e isso vai requerer esse ponto de partida,
+
+82
+00:03:59,130 --> 00:04:01,870
+e vai ser auto. cabea, eu, cabea = cabea.
+
+83
+00:04:01,870 --> 00:04:03,400
+Ento, esse ser o
+
+84
+00:04:03,400 --> 00:04:06,100
+tipo de raiz da rvore binria, a cabea.
+
+85
+00:04:06,100 --> 00:04:09,006
+Voc vai ver isso chamado de raiz e voc ver isso
+
+86
+00:04:09,006 --> 00:04:10,583
+chamado de cabea, ou est bem.
+
+87
+00:04:11,850 --> 00:04:13,910
+Ento vamos trabalhar no nosso
+
+88
+00:04:13,910 --> 00:04:18,700
+mtodo add, que est pegando um novo n que tambm ser um n.
+
+89
+00:04:18,700 --> 00:04:20,880
+Observe como estou adicionando dicas de tipos aqui,
+
+90
+00:04:20,880 --> 00:04:23,800
+apenas para que o Python possa nos dizer que um n
+
+91
+00:04:23,800 --> 00:04:25,873
+tem um valor e assim por diante.
+
+92
+00:04:28,450 --> 00:04:32,410
+E ento, mais uma vez, vamos comear no topo da rvore, ento
+
+93
+00:04:32,410 --> 00:04:37,410
+vamos dizer que o n atual  auto. cabea.
+
+94
+00:04:37,810 --> 00:04:39,200
+Agora o n atual est
+
+95
+00:04:39,200 --> 00:04:41,283
+apontando para o topo da nossa rvore.
+
+96
+00:04:42,460 --> 00:04:44,823
+Agora queremos passar pela
+
+97
+00:04:45,900 --> 00:04:49,450
+rvore at adicionarmos um novo n ou
+
+98
+00:04:49,450 --> 00:04:51,980
+chegarmos ao fundo da rvore.
+
+99
+00:04:51,980 --> 00:04:56,230
+Ento, enquanto o n atual, vamos dizer, se o valor do novo n
+
+100
+00:04:56,230 --> 00:04:58,500
+ igual ao valor do n atual,
+
+101
+00:04:58,500 --> 00:05:00,850
+ns temos um problema porque isso significa
+
+102
+00:05:00,850 --> 00:05:02,600
+que estamos tentando adicionar um
+
+103
+00:05:02,600 --> 00:05:04,960
+n que j existe em nossa rvore.
+
+104
+00:05:04,960 --> 00:05:06,971
+Ns meio que percorremos a nossa
+
+105
+00:05:06,971 --> 00:05:10,320
+rvore de alguma forma, e acabamos com dois ns iguais.
+
+106
+00:05:10,320 --> 00:05:12,370
+Ento, aqui vamos levantar um erro de valor.
+
+107
+00:05:12,370 --> 00:05:16,403
+Eu vou dizer que um n com esse valor j existe.
+
+108
+00:05:18,890 --> 00:05:21,370
+Agora vamos trabalhar no nosso elfo.
+
+109
+00:05:21,370 --> 00:05:24,350
+Se o valor do novo n for menor que o
+
+110
+00:05:24,350 --> 00:05:27,893
+valor do n atual, se o valor do novo n for menor
+
+111
+00:05:29,020 --> 00:05:32,093
+que o valor do n atual, ento iremos para a esquerda.
+
+112
+00:05:33,020 --> 00:05:35,573
+Ento, vamos dizer se o n atual. esquerda.
+
+113
+00:05:37,180 --> 00:05:40,123
+Isso significa que h um n  esquerda.
+
+114
+00:05:41,130 --> 00:05:44,803
+Vamos dizer n atual = n atual. esquerda.
+
+115
+00:05:46,960 --> 00:05:48,000
+Simples o suficiente.
+
+116
+00:05:48,000 --> 00:05:49,620
+Se houver um n 
+
+117
+00:05:49,620 --> 00:05:51,657
+esquerda de onde estamos atualmente, isso
+
+118
+00:05:51,657 --> 00:05:53,700
+significa que ainda temos mais viagens
+
+119
+00:05:53,700 --> 00:05:55,223
+a fazer para chegar l.
+
+120
+00:05:56,980 --> 00:05:59,740
+Se no houver nenhum n, isso significa que
+
+121
+00:05:59,740 --> 00:06:02,940
+o novo n que queremos adicionar pertence ao seu lugar.
+
+122
+00:06:02,940 --> 00:06:07,660
+Ento, vamos dizer o n atual. esquerda = novo n.
+
+123
+00:06:07,660 --> 00:06:10,090
+E  claro que ento
+
+124
+00:06:10,090 --> 00:06:14,653
+ns samos do loop para no continuarmos repetindo infinitamente, essencialmente.
+
+125
+00:06:16,600 --> 00:06:20,300
+E ento ns vamos adicionar um elif se o novo n. valor  maior que
+
+126
+00:06:20,300 --> 00:06:22,563
+o valor do n atual.
+
+127
+00:06:23,840 --> 00:06:24,673
+Ns fazemos o mesmo.
+
+128
+00:06:24,673 --> 00:06:29,110
+Se o n atual. certo, isso significa que h um n
+
+129
+00:06:29,110 --> 00:06:30,880
+ direita, queremos ir para ele.
+
+130
+00:06:30,880 --> 00:06:33,633
+Ento, vamos dizer que o n atual = o n atual est correto.
+
+131
+00:06:34,560 --> 00:06:36,280
+Caso contrrio, queremos colocar um novo n
+
+132
+00:06:36,280 --> 00:06:39,530
+ direita, ento vamos dizer o n atual right = new node.
+
+133
+00:06:39,530 --> 00:06:41,053
+E ns vamos quebrar de novo.
+
+134
+00:06:44,210 --> 00:06:45,210
+Espero que isso faa sentido.
+
+135
+00:06:45,210 --> 00:06:46,620
+Ns olhamos na palestra, e 
+
+136
+00:06:46,620 --> 00:06:48,720
+por isso que estou passando rapidamente por isso.
+
+137
+00:06:48,720 --> 00:06:51,898
+Mas essencialmente tudo o que acontece  que
+
+138
+00:06:51,898 --> 00:06:54,133
+temos um n, que est no
+
+139
+00:06:55,160 --> 00:06:59,070
+topo da rvore, e ento comeamos a iterar esse loop.
+
+140
+00:06:59,070 --> 00:07:02,210
+Em cada ponto, se nos depararmos com o acrscimo de um
+
+141
+00:07:02,210 --> 00:07:03,923
+n que j est l, sairemos.
+
+142
+00:07:05,040 --> 00:07:09,482
+Caso contrrio, se o novo n for menor que o n atual, e esse
+
+143
+00:07:09,482 --> 00:07:11,773
+tipo de bloco lida com a esquerda.
+
+144
+00:07:12,710 --> 00:07:15,720
+Caso contrrio, se o novo n for maior que o n
+
+145
+00:07:15,720 --> 00:07:17,863
+atual, esse cdigo tratar da execuo correta.
+
+146
+00:07:18,870 --> 00:07:22,560
+O cdigo da esquerda diz, se houver um n
+
+147
+00:07:22,560 --> 00:07:25,810
+l, v para l, caso contrrio, adicione-o.
+
+148
+00:07:25,810 --> 00:07:27,940
+E o cdigo certo faz a mesma coisa.
+
+149
+00:07:27,940 --> 00:07:29,680
+Se houver um n 
+
+150
+00:07:29,680 --> 00:07:32,193
+direita, mova-o para l, caso contrrio, adicione-o.
+
+151
+00:07:34,180 --> 00:07:37,530
+Observe que os ns em si no mudam conforme voc
+
+152
+00:07:37,530 --> 00:07:38,500
+passa por isso.
+
+153
+00:07:38,500 --> 00:07:43,080
+Tudo o que voc est fazendo  adicionar um tipo de propriedade aqui, o que
+
+154
+00:07:43,080 --> 00:07:44,923
+o torna igual ao novo n.
+
+155
+00:07:45,880 --> 00:07:50,880
+Ento, o que est acontecendo em segundo plano  que a propriedade certa se
+
+156
+00:07:51,040 --> 00:07:54,260
+torna o mesmo objeto que o novo n .
+
+157
+00:07:54,260 --> 00:07:56,810
+ uma referncia ao mesmo lugar na memria.
+
+158
+00:07:56,810 --> 00:07:59,070
+Ns olhamos para a mutabilidade antes.
+
+159
+00:07:59,070 --> 00:08:03,400
+Este n atual. certo vai ser a mesma entidade,
+
+160
+00:08:03,400 --> 00:08:06,690
+a mesma coisa na memria que o novo n .
+
+161
+00:08:06,690 --> 00:08:10,610
+Ento,  medida que voc executa isso vrias vezes, o n
+
+162
+00:08:10,610 --> 00:08:14,310
+atual,  direita e  esquerda, acaba construindo essa rvore.
+
+163
+00:08:14,310 --> 00:08:17,530
+Voc no perde o valor do novo n
+
+164
+00:08:17,530 --> 00:08:22,410
+quando chega ao final do mtodo porque esse valor agora  apontado
+
+165
+00:08:22,410 --> 00:08:24,453
+pela propriedade em cada n.
+
+166
+00:08:25,440 --> 00:08:29,730
+E, claro, o ponto de partida dessa cadeia
+
+167
+00:08:29,730 --> 00:08:32,503
+de propriedades  a cabea.
+
+168
+00:08:33,420 --> 00:08:36,110
+Se voc perder a cabea, a rvore
+
+169
+00:08:36,110 --> 00:08:38,870
+inteira simplesmente desaparece porque voc no tem
+
+170
+00:08:38,870 --> 00:08:42,010
+nada que permita alcanar qualquer um dos ns.
+
+171
+00:08:42,010 --> 00:08:46,793
+O que quero dizer  que a cabea aponta para outros ns.
+
+172
+00:08:48,000 --> 00:08:50,280
+Se de alguma forma voc perder sua referncia 
+
+173
+00:08:50,280 --> 00:08:53,220
+cabea, voc no tem nada apontando para os outros ns, voc
+
+174
+00:08:53,220 --> 00:08:54,670
+no tem uma maneira de
+
+175
+00:08:54,670 --> 00:08:56,330
+acess-los porque no h nenhum lugar
+
+176
+00:08:56,330 --> 00:08:58,140
+neste cdigo que as crianas estejam armazenadas.
+
+177
+00:08:58,140 --> 00:09:01,703
+As crianas so armazenadas apenas como referncias na cabea.
+
+178
+00:09:02,690 --> 00:09:06,110
+Ento, no entanto, apenas uma coisa interessante l.
+
+179
+00:09:06,110 --> 00:09:08,760
+Certifique-se de no definir a cabea para nada ou
+
+180
+00:09:08,760 --> 00:09:10,750
+qualquer coisa assim, ento voc vai perder
+
+181
+00:09:10,750 --> 00:09:12,000
+a sua rvore inteira.
+
+182
+00:09:14,240 --> 00:09:16,760
+Agora que temos essa rvore aqui, podemos
+
+183
+00:09:16,760 --> 00:09:20,913
+escrever em nosso aplicativo um script curto para adicionar ns, mas no
+
+184
+00:09:21,770 --> 00:09:23,670
+temos uma maneira de recuperar ns.
+
+185
+00:09:23,670 --> 00:09:26,160
+Ns no temos como imprimir a rvore.
+
+186
+00:09:26,160 --> 00:09:29,380
+Ento no h muito que possamos fazer l.
+
+187
+00:09:29,380 --> 00:09:30,920
+Mas vamos fazer assim mesmo.
+
+188
+00:09:30,920 --> 00:09:34,440
+Ns vamos fazer a partir da importao de rvore binria, rvore binria.
+
+189
+00:09:38,080 --> 00:09:40,940
+E ns vamos dizer que a rvore  uma
+
+190
+00:09:40,940 --> 00:09:43,890
+nova rvore binria e a cabea  um novo
+
+191
+00:09:43,890 --> 00:09:45,733
+n, que ter o valor nove.
+
+192
+00:09:46,780 --> 00:09:51,780
+Ento ns vamos dizer rvore. adicione um novo n com o valor cinco.
+
+193
+00:09:53,230 --> 00:09:56,783
+E rvore. adicione um novo n com o valor 11.
+
+194
+00:09:58,850 --> 00:10:00,210
+O que voc acha que vai
+
+195
+00:10:00,210 --> 00:10:05,210
+acontecer quando imprimirmos a rvore? cabea, rvore. cabea. esquerda e
+
+196
+00:10:06,760 --> 00:10:09,713
+rvore. cabea. certo?
+
+197
+00:10:11,540 --> 00:10:14,420
+Qual n ser a cabea, qual
+
+198
+00:10:14,420 --> 00:10:16,860
+n ser a esquerda, qual
+
+199
+00:10:16,860 --> 00:10:18,660
+n ser o certo?
+
+200
+00:10:20,550 --> 00:10:21,433
+Vamos tentar.
+
+201
+00:10:23,090 --> 00:10:27,057
+Observe como a cabea  nove, cinco est  esquerda
+
+202
+00:10:27,057 --> 00:10:29,420
+e 11 est  direita, ento
+
+203
+00:10:29,420 --> 00:10:34,420
+nosso cdigo colocou automaticamente os ns onde eles pertencem, porque cinco foram
+
+204
+00:10:34,490 --> 00:10:38,670
+adicionados depois das nove e voc meio que passou por
+
+205
+00:10:38,670 --> 00:10:41,630
+isso e descobriu que cinco era na
+
+206
+00:10:41,630 --> 00:10:44,593
+verdade, menos de nove, ento colocamos  esquerda.
+
+207
+00:10:47,120 --> 00:10:47,953
+OK.
+
+208
+00:10:47,953 --> 00:10:49,830
+No prximo vdeo, vamos ver
+
+209
+00:10:49,830 --> 00:10:53,710
+como podemos imprimir a rvore em ordem, ento eu
+
+210
+00:10:53,710 --> 00:10:54,903
+vejo voc l.
+

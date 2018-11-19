@@ -1,0 +1,628 @@
+1
+00:00:00,090 --> 00:00:01,450
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,450 --> 00:00:04,340
+In this video, we're going to talk about yapf.
+
+3
+00:00:04,340 --> 00:00:07,910
+Yapf is a Python formatter, in fact it stands
+
+4
+00:00:07,910 --> 00:00:12,910
+for Yet Another Python Formatter and it's used for things
+
+5
+00:00:13,410 --> 00:00:16,310
+that a linter wouldn't really catch,
+
+6
+00:00:16,310 --> 00:00:20,490
+but that are important still.
+
+7
+00:00:20,490 --> 00:00:24,140
+For example, you've got here some code that I've written.
+
+8
+00:00:24,140 --> 00:00:27,710
+And if you've been developing in Python for a while,
+
+9
+00:00:27,710 --> 00:00:30,483
+you may see somethings that are just a bit weird.
+
+10
+00:00:31,320 --> 00:00:34,200
+For example you got a list here, this is fine,
+
+11
+00:00:34,200 --> 00:00:36,550
+you've got two elements and then, you've got another
+
+12
+00:00:36,550 --> 00:00:39,110
+element and a new line which maybe okay.
+
+13
+00:00:39,110 --> 00:00:40,510
+Then you've got an element in a new line
+
+14
+00:00:40,510 --> 00:00:45,260
+but is less indented than the previous element.
+
+15
+00:00:45,260 --> 00:00:48,530
+You've got four loop here that has a colon this time,
+
+16
+00:00:48,530 --> 00:00:51,620
+but then the body is on the same line.
+
+17
+00:00:51,620 --> 00:00:54,653
+This is okay in Python, it's just a bit strange.
+
+18
+00:00:55,540 --> 00:00:58,503
+Then you've got a print statement, this is, we're done here.
+
+19
+00:00:58,503 --> 00:01:03,120
+But, it's using single quotation marks and it's escaping
+
+20
+00:01:03,120 --> 00:01:04,960
+another single quotation mark inside it.
+
+21
+00:01:04,960 --> 00:01:06,670
+It would probably be better
+
+22
+00:01:06,670 --> 00:01:09,953
+to use double quotation marks here instead.
+
+23
+00:01:11,090 --> 00:01:15,100
+But, hey this is fine, this is Python code that actually
+
+24
+00:01:15,100 --> 00:01:16,723
+works, you know, we can run it.
+
+25
+00:01:17,660 --> 00:01:20,790
+Run app py, you can see that things have printed out.
+
+26
+00:01:20,790 --> 00:01:24,660
+So this all okay, the linter wouldn't necessarily complain,
+
+27
+00:01:24,660 --> 00:01:27,350
+although, it would complain about the missing doc string.
+
+28
+00:01:27,350 --> 00:01:29,600
+They always complain about that.
+
+29
+00:01:29,600 --> 00:01:32,113
+But what about the format, right?
+
+30
+00:01:33,150 --> 00:01:35,990
+Well the format is also important.
+
+31
+00:01:35,990 --> 00:01:38,930
+You want all the code within a project
+
+32
+00:01:38,930 --> 00:01:41,110
+to have consistent format.
+
+33
+00:01:41,110 --> 00:01:44,040
+The reason for that is so that as you go from one file
+
+34
+00:01:44,040 --> 00:01:45,610
+to another it looks the same.
+
+35
+00:01:45,610 --> 00:01:49,210
+You're not encountering any jarring experiences that are
+
+36
+00:01:49,210 --> 00:01:53,520
+a bit strange, and also so that everybody working
+
+37
+00:01:53,520 --> 00:01:56,780
+on the project, if you're working with more people,
+
+38
+00:01:56,780 --> 00:02:00,610
+has the same standards of what a good style is
+
+39
+00:02:00,610 --> 00:02:02,660
+or what the style project is.
+
+40
+00:02:02,660 --> 00:02:06,410
+That way you're not going to, sort of, go from one file
+
+41
+00:02:06,410 --> 00:02:08,930
+to another and be able to know who wrote it,
+
+42
+00:02:08,930 --> 00:02:10,990
+just from what the code looks like.
+
+43
+00:02:10,990 --> 00:02:13,260
+Everybody should have a consistent style
+
+44
+00:02:13,260 --> 00:02:16,360
+so that the code base is the same for everyone
+
+45
+00:02:16,360 --> 00:02:18,240
+and it doesn't feel, some files
+
+46
+00:02:18,240 --> 00:02:21,400
+don't feel wrong to some people.
+
+47
+00:02:21,400 --> 00:02:23,340
+For that, you have the formatters.
+
+48
+00:02:23,340 --> 00:02:26,290
+The formatters you can, sort of, customise them
+
+49
+00:02:26,290 --> 00:02:29,580
+and tell them what style you want and then all you do
+
+50
+00:02:29,580 --> 00:02:33,570
+is run your files through the formatter and it will change
+
+51
+00:02:33,570 --> 00:02:36,790
+the files such that they are still valid Python code,
+
+52
+00:02:36,790 --> 00:02:40,970
+but sort of, rearrange the elements around to match a style
+
+53
+00:02:40,970 --> 00:02:42,943
+that everyone in your team likes.
+
+54
+00:02:44,290 --> 00:02:47,180
+So, if we go back to the terminal,
+
+55
+00:02:47,180 --> 00:02:48,760
+what you're going to do is, once again,
+
+56
+00:02:48,760 --> 00:02:53,340
+you're going to do ptp3.6 or ptp3 depending
+
+57
+00:02:53,340 --> 00:02:55,700
+on how many versions of Python you've got installed.
+
+58
+00:02:55,700 --> 00:02:59,420
+Instal yapf, yet another python formatter.
+
+59
+00:02:59,420 --> 00:03:01,450
+You're going to instal that and in my case,
+
+60
+00:03:01,450 --> 00:03:03,960
+it's already installed, possibly was installed
+
+61
+00:03:03,960 --> 00:03:06,730
+in a different Python version and then all you have
+
+62
+00:03:06,730 --> 00:03:10,270
+to do is run yapf and see if something happens.
+
+63
+00:03:10,270 --> 00:03:13,080
+What will happen normally with yapf is it will just hang.
+
+64
+00:03:13,080 --> 00:03:18,020
+Which is not a very nice way of running a programme,
+
+65
+00:03:18,020 --> 00:03:22,510
+but because yapf needs a file to format.
+
+66
+00:03:22,510 --> 00:03:25,230
+If you don't give it, I'm not really sure what's it's doing,
+
+67
+00:03:25,230 --> 00:03:28,050
+but it just seems to hang up.
+
+68
+00:03:28,050 --> 00:03:31,010
+So if that happens just press control and C and that will
+
+69
+00:03:31,010 --> 00:03:33,090
+terminate the programme and then you can run it again
+
+70
+00:03:33,090 --> 00:03:35,010
+and give it the file that you want to format
+
+71
+00:03:35,010 --> 00:03:40,010
+and when you run that it's going to give you the new file.
+
+72
+00:03:41,060 --> 00:03:45,100
+So this is what the file should look like according to yapf.
+
+73
+00:03:46,168 --> 00:03:48,660
+As you can see all the elements are in one line
+
+74
+00:03:48,660 --> 00:03:50,630
+and you've got a new line after the four loop.
+
+75
+00:03:50,630 --> 00:03:54,040
+Notice that yapf has not changed the single quotation marks
+
+76
+00:03:54,040 --> 00:03:56,740
+to double quotation marks, just because it's got
+
+77
+00:03:56,740 --> 00:03:58,560
+an inner escaped quotation marks.
+
+78
+00:03:58,560 --> 00:04:00,830
+So yapf hasn't really cared about that,
+
+79
+00:04:00,830 --> 00:04:02,270
+and you know I can get behind that.
+
+80
+00:04:02,270 --> 00:04:06,120
+I think this is okay, but there are other formatters
+
+81
+00:04:06,120 --> 00:04:07,313
+that would change that.
+
+82
+00:04:08,560 --> 00:04:13,560
+So if you like this, then you can just do yapf--help
+
+83
+00:04:13,590 --> 00:04:15,520
+and it will tell you the different options
+
+84
+00:04:15,520 --> 00:04:17,020
+you can give yapf.
+
+85
+00:04:17,020 --> 00:04:22,020
+So you can use -h or --help to bring this help message up.
+
+86
+00:04:23,330 --> 00:04:26,960
+<v ->v or --version to see what version of yapf you've got.</v>
+
+87
+00:04:26,960 --> 00:04:30,280
+Then you've got -d or --dif, either of these two options
+
+88
+00:04:30,280 --> 00:04:33,210
+is valid to print out the difference between you're local
+
+89
+00:04:33,210 --> 00:04:36,320
+file and the file the yapf is creating
+
+90
+00:04:36,320 --> 00:04:40,370
+and you've got another one recursive in place and so forth.
+
+91
+00:04:40,370 --> 00:04:43,480
+Really the one we're interested in is the in place.
+
+92
+00:04:43,480 --> 00:04:46,000
+This is going to make changes to the file.
+
+93
+00:04:46,000 --> 00:04:51,000
+So if we do yapf-I app.py, nothing seems to happen.
+
+94
+00:04:51,350 --> 00:04:53,490
+When we go back to pycharm you can see
+
+95
+00:04:53,490 --> 00:04:56,000
+that the file has changed.
+
+96
+00:04:56,000 --> 00:04:59,743
+Now we got everything in one line and this is in two lines.
+
+97
+00:05:00,680 --> 00:05:03,330
+If you do decide to use pycharm,
+
+98
+00:05:03,330 --> 00:05:05,483
+pycharm comes with its own formatter,
+
+99
+00:05:06,430 --> 00:05:09,380
+so if we do this, you'll see that pycharm actually tells
+
+100
+00:05:09,380 --> 00:05:12,120
+us that you're doing something a bit weird here.
+
+101
+00:05:12,120 --> 00:05:15,483
+PEP 8 continuation line under indented for visual indent.
+
+102
+00:05:16,317 --> 00:05:20,130
+You find that visual indent means that this isn't a required
+
+103
+00:05:20,130 --> 00:05:23,110
+indent in Python, just a visual thing and it tells
+
+104
+00:05:23,110 --> 00:05:26,630
+you according to PEP 8, which is the, sort of,
+
+105
+00:05:26,630 --> 00:05:30,720
+style guide for Python this is a strange thing to do.
+
+106
+00:05:30,720 --> 00:05:32,420
+It also tells you here PEP 8 multiple
+
+107
+00:05:32,420 --> 00:05:34,310
+statements in one line.
+
+108
+00:05:34,310 --> 00:05:36,410
+So the four is one statement that prints another
+
+109
+00:05:36,410 --> 00:05:38,680
+statement that is telling you shouldn't do this.
+
+110
+00:05:38,680 --> 00:05:40,840
+And also, by the way, you can then put a semicolon
+
+111
+00:05:40,840 --> 00:05:43,760
+and put more statements in there if you want,
+
+112
+00:05:43,760 --> 00:05:45,592
+it's going to tell you again this not something
+
+113
+00:05:45,592 --> 00:05:47,383
+you want to do.
+
+114
+00:05:47,383 --> 00:05:49,550
+This is not something all people know about Python,
+
+115
+00:05:49,550 --> 00:05:51,330
+you can use semicolons in Python as well,
+
+116
+00:05:51,330 --> 00:05:52,410
+just like you can in Java
+
+117
+00:05:52,410 --> 00:05:55,320
+and JavaScript to separate multiple statements in one line,
+
+118
+00:05:55,320 --> 00:05:56,500
+but it's a bit weird.
+
+119
+00:05:56,500 --> 00:05:59,060
+What you can do in pycharm, though, is that you can select
+
+120
+00:05:59,060 --> 00:06:00,610
+everything and then you can go to code
+
+121
+00:06:00,610 --> 00:06:04,580
+and you can go to reformat code
+
+122
+00:06:04,580 --> 00:06:07,330
+and it'll format it if it can.
+
+123
+00:06:07,330 --> 00:06:11,700
+So, once again that reformat code
+
+124
+00:06:11,700 --> 00:06:14,650
+and that will do what it can.
+
+125
+00:06:14,650 --> 00:06:15,880
+I'm not sure what altering net lines
+
+126
+00:06:15,880 --> 00:06:17,330
+is going to do, nothing.
+
+127
+00:06:17,330 --> 00:06:21,160
+So has you can see it didn't quite fix this problem here
+
+128
+00:06:21,160 --> 00:06:23,050
+and that's because depending on the formatter
+
+129
+00:06:23,050 --> 00:06:27,610
+it will consider some things to be fixable, sort of,
+
+130
+00:06:27,610 --> 00:06:31,130
+if you do this pretty much any formatter will tell you.
+
+131
+00:06:31,130 --> 00:06:32,120
+You're definitely doing something
+
+132
+00:06:32,120 --> 00:06:33,750
+you don't want to do there.
+
+133
+00:06:33,750 --> 00:06:37,380
+But if you do this, in some cases you may want to do this.
+
+134
+00:06:37,380 --> 00:06:39,780
+In this case, pycharm's formatter
+
+135
+00:06:39,780 --> 00:06:43,360
+doesn't change it for you, yapf does.
+
+136
+00:06:43,360 --> 00:06:46,430
+So that's just a difference between formatters and there
+
+137
+00:06:46,430 --> 00:06:48,840
+are ways of customising the formatters.
+
+138
+00:06:48,840 --> 00:06:52,130
+Yapf can be customised, I'm not sure if pycharm
+
+139
+00:06:52,130 --> 00:06:54,030
+can be customised too, actually.
+
+140
+00:06:54,030 --> 00:06:56,610
+To make it change it if you want.
+
+141
+00:06:56,610 --> 00:06:58,810
+We're not going to go into that in this course, though,
+
+142
+00:06:58,810 --> 00:07:01,780
+that's for something for you to investigate if you want
+
+143
+00:07:01,780 --> 00:07:05,520
+to customise it more to your needs, but of course,
+
+144
+00:07:05,520 --> 00:07:08,080
+the little grey lines in pycharm still tell you where
+
+145
+00:07:08,080 --> 00:07:10,020
+you're doing something a bit strange and in that case
+
+146
+00:07:10,020 --> 00:07:12,203
+you can just fix it manually, if you want.
+
+147
+00:07:13,070 --> 00:07:15,120
+So that's it, that's how you use the pycharm
+
+148
+00:07:15,120 --> 00:07:17,890
+formatter and also yapf.
+
+149
+00:07:17,890 --> 00:07:19,970
+I'm gonna put another link to another
+
+150
+00:07:19,970 --> 00:07:22,570
+formatter that is up and coming called black,
+
+151
+00:07:22,570 --> 00:07:27,360
+that is more strict, if you wish.
+
+152
+00:07:27,360 --> 00:07:28,840
+It will change more things,
+
+153
+00:07:28,840 --> 00:07:31,760
+but allegedly for a nicer end experience.
+
+154
+00:07:31,760 --> 00:07:33,850
+So I'll put a link on that in the lecture
+
+155
+00:07:33,850 --> 00:07:35,933
+so you can give it a go if you want.
+
+156
+00:07:36,770 --> 00:07:37,880
+That's it for this video, though.
+
+157
+00:07:37,880 --> 00:07:40,523
+Hope you've enjoyed it, and I'll see you on the next one.
+

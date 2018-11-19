@@ -1,0 +1,732 @@
+1
+00:00:00,330 --> 00:00:01,550
+Jose: Ol e bem vindo de volta.
+
+2
+00:00:01,550 --> 00:00:04,450
+Neste vdeo, vamos ver como usar
+
+3
+00:00:04,450 --> 00:00:07,440
+decoradores que eles mesmos adotam parmetros.
+
+4
+00:00:07,440 --> 00:00:09,490
+No ltimo vdeo, vimos como podemos
+
+5
+00:00:09,490 --> 00:00:11,960
+obter a funo para obter um parmetro.
+
+6
+00:00:11,960 --> 00:00:13,330
+Agora neste vdeo, vamos ver
+
+7
+00:00:13,330 --> 00:00:15,580
+como fazer com que o decorador obtenha um parmetro.
+
+8
+00:00:16,797 --> 00:00:19,440
+No ltimo vdeo, quando queramos fazer
+
+9
+00:00:19,440 --> 00:00:22,570
+a nossa funo pegar um parmetro, tudo o
+
+10
+00:00:23,720 --> 00:00:26,130
+que fizemos foi colocar no parmetro
+
+11
+00:00:26,130 --> 00:00:29,060
+que queremos usar, colocar dentro da funo
+
+12
+00:00:29,060 --> 00:00:31,700
+que ir substituir a nossa funo,
+
+13
+00:00:31,700 --> 00:00:35,320
+para que eles tenham a mesma assinatura, e ento
+
+14
+00:00:35,320 --> 00:00:39,960
+Naturalmente, chame a funo original com esse parmetro no ponto de us-lo.
+
+15
+00:00:39,960 --> 00:00:42,460
+Ento, claro, voc vai querer
+
+16
+00:00:44,120 --> 00:00:46,610
+usar o parmetro quando precisar.
+
+17
+00:00:48,120 --> 00:00:51,990
+Ento  assim que voc pode pegar a funo para pegar um parmetro
+
+18
+00:00:51,990 --> 00:00:55,210
+mas ns dissemos que no era muito genrico e no .
+
+19
+00:00:55,210 --> 00:00:58,180
+Ns vamos aprender como torn-lo mais genrico em breve.
+
+20
+00:00:59,370 --> 00:01:00,800
+Mas, na verdade, h
+
+21
+00:01:00,800 --> 00:01:04,420
+outro problema, que  que, se o seu access_level  convidado,
+
+22
+00:01:04,420 --> 00:01:05,760
+voc no tem acesso.
+
+23
+00:01:05,760 --> 00:01:09,260
+Se o seu access_level  admin, voc faz.
+
+24
+00:01:09,260 --> 00:01:12,390
+E isso  difcil de codificar aqui no decorador.
+
+25
+00:01:13,620 --> 00:01:15,810
+Mas e se voc quisesse mudar
+
+26
+00:01:15,810 --> 00:01:19,110
+esse decorador para que outros usurios pudessem acess-lo?
+
+27
+00:01:19,110 --> 00:01:23,360
+Como, por exemplo, apenas usurios normais.
+
+28
+00:01:23,360 --> 00:01:26,370
+Voc poderia, claro, ir a este decorador e dizer se
+
+29
+00:01:26,370 --> 00:01:27,880
+o usurio, voc pode acessar.
+
+30
+00:01:29,300 --> 00:01:31,520
+Mas isso  um
+
+31
+00:01:31,520 --> 00:01:34,512
+pouco limitador, porque quem usa um
+
+32
+00:01:34,512 --> 00:01:38,070
+decorador, no pode decidir com qual access_level
+
+33
+00:01:38,070 --> 00:01:40,740
+voc pode acessar uma funo.
+
+34
+00:01:40,740 --> 00:01:42,720
+Ento, o que estou dizendo 
+
+35
+00:01:42,720 --> 00:01:44,630
+que gostaria de poder modificar
+
+36
+00:01:46,030 --> 00:01:48,490
+esse decorador para dizer, admin, por exemplo.
+
+37
+00:01:50,140 --> 00:01:52,840
+E agora essa funo s ser acessvel
+
+38
+00:01:52,840 --> 00:01:55,990
+por usurios que tenham um access_level de admin.
+
+39
+00:01:58,740 --> 00:02:00,240
+Ento  isso que queremos fazer.
+
+40
+00:02:01,260 --> 00:02:04,690
+Mas devemos fazer algo que torne este decorador
+
+41
+00:02:04,690 --> 00:02:06,120
+um pouco mais
+
+42
+00:02:06,120 --> 00:02:08,190
+complicado, para poder fazer isso.
+
+43
+00:02:09,430 --> 00:02:13,320
+Lembre-se, um decorador  uma funo que recebe uma
+
+44
+00:02:14,160 --> 00:02:16,280
+funo e retorna outra funo.
+
+45
+00:02:17,460 --> 00:02:19,590
+Essa funo que ele retorna
+
+46
+00:02:19,590 --> 00:02:22,240
+deve chamar a funo original e tambm
+
+47
+00:02:22,240 --> 00:02:23,870
+pode fazer outras coisas.
+
+48
+00:02:23,870 --> 00:02:25,710
+Neste caso, s o chama
+
+49
+00:02:25,710 --> 00:02:28,140
+se o access_level do usurio for user.
+
+50
+00:02:30,070 --> 00:02:31,800
+Ento isso no deve mudar.
+
+51
+00:02:31,800 --> 00:02:36,800
+Ento, ns sabemos disso e tambm sabemos que quando temos algo, seguido por
+
+52
+00:02:37,590 --> 00:02:41,300
+um par de colchetes, esta  uma chamada de funo.
+
+53
+00:02:42,210 --> 00:02:44,600
+Vamos esquecer o @ por um momento.
+
+54
+00:02:44,600 --> 00:02:47,030
+Se voc viu isso no Python, voc
+
+55
+00:02:47,030 --> 00:02:50,530
+acha que isso deve ser algum tipo de chamada de funo.
+
+56
+00:02:50,530 --> 00:02:52,100
+Porque tem os suportes.
+
+57
+00:02:52,100 --> 00:02:56,120
+Portanto, deve haver uma funo chamada user_has_permission e essa funo
+
+58
+00:02:56,120 --> 00:02:58,320
+deve ter um parmetro e
+
+59
+00:02:59,200 --> 00:03:02,190
+estou passando esse argumento para esse parmetro, admin.
+
+60
+00:03:03,320 --> 00:03:04,970
+E eu diria que voc estaria correto.
+
+61
+00:03:05,820 --> 00:03:10,820
+Em, acredito, todos os casos, isso significa que em Python.
+
+62
+00:03:11,120 --> 00:03:13,310
+Suportes significa que h uma chamada de funo.
+
+63
+00:03:15,360 --> 00:03:18,710
+E, portanto, deve haver um parmetro na funo
+
+64
+00:03:18,710 --> 00:03:20,370
+para poder passar isso.
+
+65
+00:03:20,370 --> 00:03:21,360
+Mas no existe.
+
+66
+00:03:21,360 --> 00:03:24,680
+Porque aqui a funo  essa.
+
+67
+00:03:25,620 --> 00:03:28,470
+Esse  o parmetro, esse  o argumento.
+
+68
+00:03:28,470 --> 00:03:31,140
+Ento no h nada para levar no admin.
+
+69
+00:03:31,140 --> 00:03:34,180
+Outra coisa que noto quando fao isso 
+
+70
+00:03:34,180 --> 00:03:36,350
+quando usamos nosso decorador normalmente,
+
+71
+00:03:36,350 --> 00:03:38,300
+no h conjunto de colchetes.
+
+72
+00:03:39,320 --> 00:03:40,530
+Hmm.
+
+73
+00:03:40,530 --> 00:03:42,000
+Mas esta  claramente uma funo,
+
+74
+00:03:42,000 --> 00:03:44,640
+ento por que no h um conjunto de colchetes no final?
+
+75
+00:03:46,500 --> 00:03:50,870
+Bem, porque a sintaxe do decorador faz isso por ns.
+
+76
+00:03:50,870 --> 00:03:55,870
+Ns fazemos my_function = user_has_permission (my_function) Ok, essa sintaxe
+
+77
+00:03:56,070 --> 00:04:00,390
+de decorador faz essa funo chamar por ns.
+
+78
+00:04:00,390 --> 00:04:02,850
+Isso  parte de sua utilidade.
+
+79
+00:04:04,560 --> 00:04:06,410
+Ento, o que acontece quando fazemos isso?
+
+80
+00:04:10,630 --> 00:04:15,330
+Isso agora substitui o que anteriormente no era uma chamada de funo.
+
+81
+00:04:17,210 --> 00:04:21,330
+Ento, quando fazemos isso, estamos fazendo isso.
+
+82
+00:04:21,330 --> 00:04:24,180
+Estamos chamando a funo user_has_permission, que
+
+83
+00:04:25,050 --> 00:04:29,690
+deve retornar uma funo que chamamos ento, com a funo
+
+84
+00:04:29,690 --> 00:04:31,810
+original como um argumento.
+
+85
+00:04:33,660 --> 00:04:36,050
+Ento, neste ponto, voc sabe, mente explodida.
+
+86
+00:04:36,050 --> 00:04:38,220
+Que diabos est acontecendo aqui?
+
+87
+00:04:38,220 --> 00:04:41,350
+E isso pode ficar bastante confuso porque, como
+
+88
+00:04:41,350 --> 00:04:44,070
+eles dizem no filme Inception, voc sabe,
+
+89
+00:04:44,070 --> 00:04:45,970
+temos que ir mais fundo.
+
+90
+00:04:46,850 --> 00:04:48,810
+Ns temos que ir a outro nvel profundo.
+
+91
+00:04:48,810 --> 00:04:52,150
+Porque anteriormente ns temos um decorador que
+
+92
+00:04:52,150 --> 00:04:53,570
+retorna uma funo.
+
+93
+00:04:55,010 --> 00:04:57,100
+E o decorador aceita a funo.
+
+94
+00:04:58,240 --> 00:05:03,240
+Agora precisamos de uma funo que retorne uma funo, que receba
+
+95
+00:05:03,760 --> 00:05:05,410
+uma funo, que ento
+
+96
+00:05:05,410 --> 00:05:07,156
+retorna outra funo.
+
+97
+00:05:07,156 --> 00:05:09,400
+(risos) Ento isso  bem ridculo.
+
+98
+00:05:09,400 --> 00:05:12,330
+Vamos escrever algum cdigo para tornar isso um pouco mais claro.
+
+99
+00:05:13,430 --> 00:05:18,130
+Ns vamos fazer uma espcie de terceiro nvel.
+
+100
+00:05:20,600 --> 00:05:24,240
+E isso vai realmente ser access_level.
+
+101
+00:05:26,280 --> 00:05:28,810
+Vamos recuar tudo
+
+102
+00:05:28,810 --> 00:05:32,270
+isso e depois retornar user_has_permission.
+
+103
+00:05:33,870 --> 00:05:35,300
+OK.
+
+104
+00:05:35,300 --> 00:05:36,133
+Assim.
+
+105
+00:05:37,440 --> 00:05:40,050
+O que est acontecendo agora 
+
+106
+00:05:40,050 --> 00:05:42,000
+que o decorador que
+
+107
+00:05:42,000 --> 00:05:45,360
+estamos chamando agora ser chamado de third_level, ok?
+
+108
+00:05:48,320 --> 00:05:50,010
+No  um bom nome para um
+
+109
+00:05:50,010 --> 00:05:51,140
+decorador, vamos mud-lo em
+
+110
+00:05:51,140 --> 00:05:52,330
+um momento, eu s no
+
+111
+00:05:52,330 --> 00:05:54,760
+quero mudar muitas coisas de uma vez para vocs.
+
+112
+00:05:54,760 --> 00:05:57,030
+Ns temos o
+
+113
+00:05:57,030 --> 00:06:01,830
+decorador third_level, que  chamado, essencialmente, assim.
+
+114
+00:06:01,830 --> 00:06:06,180
+Portanto, a funo third_level aceita o access_level,
+
+115
+00:06:06,180 --> 00:06:07,990
+que  admin.
+
+116
+00:06:10,060 --> 00:06:13,300
+Dentro desta funo, definimos outra funo.
+
+117
+00:06:15,110 --> 00:06:18,530
+Esta funo  a que leva em uma funo, ok?
+
+118
+00:06:19,470 --> 00:06:23,360
+Ento, third_level retorna a funo que recebe
+
+119
+00:06:23,360 --> 00:06:24,840
+uma funo.
+
+120
+00:06:24,840 --> 00:06:27,130
+Quando chamamos third_level, obtemos
+
+121
+00:06:27,130 --> 00:06:30,620
+uma funo que recebe uma funo.
+
+122
+00:06:31,460 --> 00:06:33,640
+Ento ns temos uma chamada de funo, e
+
+123
+00:06:33,640 --> 00:06:35,490
+esta funo est entrando em func.
+
+124
+00:06:38,230 --> 00:06:40,260
+Eu sei que h muitos
+
+125
+00:06:41,680 --> 00:06:44,398
+colchetes aqui, mas essencialmente, o que
+
+126
+00:06:44,398 --> 00:06:48,880
+estamos fazendo  fazer isso, user_has_permission  third_level of admin.
+
+127
+00:06:48,880 --> 00:06:51,560
+E depois voltamos ao que sabemos.
+
+128
+00:06:54,721 --> 00:06:55,554
+Que.
+
+129
+00:06:56,544 --> 00:06:58,020
+Isso  essencialmente o que est
+
+130
+00:06:58,020 --> 00:07:00,310
+acontecendo, mas apenas uma linha, quando voc faz isso.
+
+131
+00:07:02,060 --> 00:07:06,190
+Agora, porque ele tem os colchetes, essa  uma chamada de
+
+132
+00:07:06,190 --> 00:07:09,700
+funo que  avaliada antes de o decorador ser executado.
+
+133
+00:07:09,700 --> 00:07:14,020
+Ento, criamos uma funo que aceita este access_level e o
+
+134
+00:07:14,020 --> 00:07:16,130
+melhor  que podemos us-la,
+
+135
+00:07:16,130 --> 00:07:20,550
+ento, em vez de user, podemos substitu-la por access_level.
+
+136
+00:07:22,430 --> 00:07:25,420
+Mas acabamos com trs funes, uma dentro da outra.
+
+137
+00:07:28,040 --> 00:07:29,930
+Espero que isso faa um pouco de sentido.
+
+138
+00:07:29,930 --> 00:07:33,800
+Pode ser bastante complicado entender completamente.
+
+139
+00:07:33,800 --> 00:07:35,840
+Mas pense nisso dessa maneira.
+
+140
+00:07:35,840 --> 00:07:40,050
+O que estamos fazendo  que estamos chamando a funo,
+
+141
+00:07:40,050 --> 00:07:44,230
+dando a ela um parmetro access_level, desculpe, um argumento.
+
+142
+00:07:44,230 --> 00:07:46,640
+Ento isso cria outra funo, e
+
+143
+00:07:46,640 --> 00:07:48,470
+esse  o nosso decorador.
+
+144
+00:07:49,330 --> 00:07:50,610
+Normalmente, quando chamamos um
+
+145
+00:07:50,610 --> 00:07:52,120
+decorador, no temos os colchetes.
+
+146
+00:07:53,060 --> 00:07:56,340
+Ento isso nos d o decorador, que apenas age
+
+147
+00:07:56,340 --> 00:07:57,780
+como normal, pega a
+
+148
+00:07:57,780 --> 00:08:01,230
+funo e ento a envolve e retorna outra funo que
+
+149
+00:08:01,230 --> 00:08:02,970
+faz as coisas e ento
+
+150
+00:08:02,970 --> 00:08:06,090
+chama a funo original aqui com qualquer argumento.
+
+151
+00:08:06,090 --> 00:08:09,410
+O benefcio  que podemos usar qualquer argumento
+
+152
+00:08:09,410 --> 00:08:11,780
+que passamos para o decorador original,
+
+153
+00:08:12,650 --> 00:08:14,400
+como o access_level nesse caso.
+
+154
+00:08:15,370 --> 00:08:19,340
+Ento, se agora, voc sabe, imprima (my_function ('movies')).
+
+155
+00:08:22,482 --> 00:08:27,310
+Observe como o decorador third_level tem o argumento admin e nosso access_level
+
+156
+00:08:27,310 --> 00:08:28,860
+ user, quando ns
+
+157
+00:08:28,860 --> 00:08:31,150
+executamos isso, no obtemos nenhum.
+
+158
+00:08:31,150 --> 00:08:35,060
+Mas se mudarmos isso para o usurio e executarmos
+
+159
+00:08:35,060 --> 00:08:39,580
+isso, agora a senha do painel de filmes  1234.
+
+160
+00:08:40,770 --> 00:08:42,970
+Ento, como voc pode ver, isso est sendo usado l.
+
+161
+00:08:44,040 --> 00:08:46,991
+Normalmente, os nomes seriam user_has_permission
+
+162
+00:08:46,991 --> 00:08:50,580
+seria o decorador que voc usa.
+
+163
+00:08:50,580 --> 00:08:53,130
+E dentro dele voc definiria uma
+
+164
+00:08:53,130 --> 00:08:56,490
+funo que pode ser chamada como quiser,
+
+165
+00:08:56,490 --> 00:08:57,390
+como meu_decorador.
+
+166
+00:08:58,240 --> 00:09:00,890
+E ento isso seria o que  retornado no final.
+
+167
+00:09:00,890 --> 00:09:04,480
+Ento, muito importante, user_has_permission define uma
+
+168
+00:09:04,480 --> 00:09:07,310
+funo e depois a retorna.
+
+169
+00:09:08,190 --> 00:09:12,110
+O decorador define uma funo e depois a retorna.
+
+170
+00:09:12,110 --> 00:09:14,080
+ muito importante que os nveis
+
+171
+00:09:14,080 --> 00:09:15,860
+de indentao estejam todos corretos aqui.
+
+172
+00:09:15,860 --> 00:09:19,720
+A funo mais interna deve chamar a funo original, de modo que
+
+173
+00:09:21,200 --> 00:09:22,190
+seja um decorador.
+
+174
+00:09:22,190 --> 00:09:24,610
+Caso contrrio,  apenas uma funo de ordem superior.
+
+175
+00:09:26,070 --> 00:09:27,970
+Espero que isso faa sentido.
+
+176
+00:09:27,970 --> 00:09:32,970
+Vimos como adicionar argumentos a um decorador, e isso significa adicionar um
+
+177
+00:09:33,020 --> 00:09:34,960
+terceiro nvel de definies
+
+178
+00:09:34,960 --> 00:09:36,660
+de funo dentro dele.
+
+179
+00:09:38,020 --> 00:09:40,420
+Se voc tiver alguma dvida, por favor, pergunte no curso Q &amp; A.
+
+180
+00:09:40,420 --> 00:09:42,130
+Ns seramos mais do que felizes em ajud-lo.
+
+181
+00:09:42,130 --> 00:09:43,890
+Ns no queremos que isso seja confuso.
+
+182
+00:09:43,890 --> 00:09:47,020
+Mas a verdade  que pode ser um pouco complicado.
+
+183
+00:09:47,020 --> 00:09:49,520
+Ento, com isso dito, vejo vocs no prximo vdeo.
+

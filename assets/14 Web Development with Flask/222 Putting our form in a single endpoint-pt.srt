@@ -1,0 +1,272 @@
+1
+00:00:00,000 --> 00:00:01,150
+Narrador: Ol e bem vindo de volta.
+
+2
+00:00:01,150 --> 00:00:02,910
+Neste vdeo, vamos simplificar
+
+3
+00:00:02,910 --> 00:00:04,530
+um pouco nosso cdigo
+
+4
+00:00:04,530 --> 00:00:07,880
+do Flask, permitindo que nosso ponto final aqui
+
+5
+00:00:07,880 --> 00:00:12,420
+fornea o U para o formulrio e receba os dados.
+
+6
+00:00:12,420 --> 00:00:14,230
+Ento, ser um pouco
+
+7
+00:00:14,230 --> 00:00:17,180
+melhor, menos rotas para os usurios acessarem
+
+8
+00:00:17,180 --> 00:00:21,000
+e, geralmente, um pouco mais fceis de navegar.
+
+9
+00:00:21,000 --> 00:00:24,110
+O que vamos fazer  fazer duas coisas.
+
+10
+00:00:24,110 --> 00:00:25,860
+Vamos permitir que
+
+11
+00:00:27,050 --> 00:00:30,060
+este ponto final tambm receba solicitaes.
+
+12
+00:00:30,060 --> 00:00:33,400
+Agora, o navegador recebe solicitaes.
+
+13
+00:00:34,820 --> 00:00:37,170
+O formulrio postar solicitaes.
+
+14
+00:00:37,170 --> 00:00:40,930
+Ento, sabemos que, se recebermos uma solicitao que  get,
+
+15
+00:00:40,930 --> 00:00:44,100
+esse  o navegador que deseja carregar a pgina.
+
+16
+00:00:44,100 --> 00:00:47,150
+E, provavelmente, o usurio quer ver o formulrio.
+
+17
+00:00:48,030 --> 00:00:49,700
+Se os usurios visualizarem a solicitao
+
+18
+00:00:49,700 --> 00:00:52,130
+de postagem, saberemos que o formulrio nos envia dados.
+
+19
+00:00:52,130 --> 00:00:54,900
+E, portanto, devemos lidar com os dados desse formulrio.
+
+20
+00:00:56,070 --> 00:01:00,220
+Ento, se o mtodo de requisio for post,
+
+21
+00:01:01,330 --> 00:01:03,210
+faremos todas essas coisas.
+
+22
+00:01:04,060 --> 00:01:06,040
+Obtenha o ttulo no formulrio,
+
+23
+00:01:06,040 --> 00:01:07,760
+obtenha o contedo do
+
+24
+00:01:07,760 --> 00:01:09,280
+formulrio, crie uma nova
+
+25
+00:01:09,280 --> 00:01:12,710
+postagem e redirecione o usurio para a postagem.
+
+26
+00:01:12,710 --> 00:01:13,730
+Assim que retornamos,
+
+27
+00:01:13,730 --> 00:01:15,870
+voc sabe disso pelo conhecimento geral do
+
+28
+00:01:15,870 --> 00:01:18,570
+Python, assim que retornamos, penso, a funo termina.
+
+29
+00:01:19,450 --> 00:01:22,300
+Ento, se temos outro retorno
+
+30
+00:01:28,050 --> 00:01:31,100
+aqui, esse retorno s ser executado
+
+31
+00:01:31,100 --> 00:01:33,100
+se no o executarmos.
+
+32
+00:01:34,480 --> 00:01:37,140
+E ns sempre executaremos este se
+
+33
+00:01:37,140 --> 00:01:39,650
+o mtodo de requisio for postado.
+
+34
+00:01:39,650 --> 00:01:42,000
+Ento, se o mtodo de solicitao no
+
+35
+00:01:42,000 --> 00:01:44,450
+for post, ns iremos direto para esse retorno.
+
+36
+00:01:46,446 --> 00:01:49,330
+E isso significa que, se o navegador fizer
+
+37
+00:01:49,330 --> 00:01:51,640
+uma solicitao get, processaremos o modelo.
+
+38
+00:01:51,640 --> 00:01:54,120
+Se recebermos uma solicitao de postagem
+
+39
+00:01:54,120 --> 00:01:56,640
+do formulrio, lidaremos com esses dados.
+
+40
+00:01:56,640 --> 00:02:00,030
+Agora no precisamos mais / postar / formulrio porque
+
+41
+00:02:00,030 --> 00:02:02,040
+esse ponto final pode ser ambos.
+
+42
+00:02:02,040 --> 00:02:03,700
+E  um pouco mais
+
+43
+00:02:03,700 --> 00:02:05,160
+simples ter o mesmo
+
+44
+00:02:05,160 --> 00:02:08,540
+ponto final lidando com a maneira de criar dados, alm
+
+45
+00:02:08,540 --> 00:02:10,620
+de lidar com essa entrada de dados.
+
+46
+00:02:11,840 --> 00:02:14,540
+Nossa criar. jinja2 tambm tem que mudar
+
+47
+00:02:14,540 --> 00:02:17,380
+para que esta ao aqui agora possa ser removida.
+
+48
+00:02:18,420 --> 00:02:20,430
+Se voc remover a ao,
+
+49
+00:02:20,430 --> 00:02:24,650
+isso significa usar a pgina atual em que voc est.
+
+50
+00:02:24,650 --> 00:02:25,870
+E como a pgina
+
+51
+00:02:25,870 --> 00:02:27,820
+atual  a pgina que serve o
+
+52
+00:02:28,670 --> 00:02:31,280
+modelo, tambm  a pgina que recebe os dados,
+
+53
+00:02:31,280 --> 00:02:33,500
+no precisamos de uma ao por l.
+
+54
+00:02:33,500 --> 00:02:35,350
+Isso tambm simplifica as coisas,
+
+55
+00:02:35,350 --> 00:02:37,130
+porque se voc mudar esse
+
+56
+00:02:37,130 --> 00:02:40,160
+formulrio ou alterar as URLs ou algo assim, as
+
+57
+00:02:40,160 --> 00:02:41,700
+coisas podem quebrar o formulrio.
+
+58
+00:02:41,700 --> 00:02:42,930
+Mas agora, porque 
+
+59
+00:02:42,930 --> 00:02:44,810
+a mesma pgina, tanto dando forma
+
+60
+00:02:44,810 --> 00:02:46,790
+ao usurio quanto aceitando a entrada
+
+61
+00:02:46,790 --> 00:02:49,210
+do formulrio,  apenas um pouco mais estvel.
+
+62
+00:02:50,280 --> 00:02:52,680
+E assim, aqui, simplifica um pouco o seu cdigo,
+
+63
+00:02:52,680 --> 00:02:54,330
+tornando-o um pouco mais fcil de trabalhar.
+
+64
+00:02:54,330 --> 00:02:56,810
+E tambm reduz a quantidade de cdigo que voc tem.
+
+65
+00:02:56,810 --> 00:02:58,520
+Todas as coisas boas.
+
+66
+00:02:58,520 --> 00:02:59,750
+Ento  isso para este vdeo.
+
+67
+00:02:59,750 --> 00:03:00,820
+Eu queria te mostrar como fazer isso.
+
+68
+00:03:00,820 --> 00:03:02,470
+E eu vejo voc no prximo.
+

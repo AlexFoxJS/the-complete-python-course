@@ -1,0 +1,836 @@
+1
+00:00:00,100 --> 00:00:01,160
+<v Jose>Hi, and welcome back.</v>
+
+2
+00:00:01,160 --> 00:00:04,280
+In this video we're going to talk about context managers
+
+3
+00:00:04,280 --> 00:00:06,850
+and we're going to be developing our own.
+
+4
+00:00:06,850 --> 00:00:09,540
+This is not something that a lot of Python Courses get into,
+
+5
+00:00:09,540 --> 00:00:12,460
+so you should feel pretty good that you're getting this deep
+
+6
+00:00:12,460 --> 00:00:14,630
+into the inner workings of Python
+
+7
+00:00:14,630 --> 00:00:17,510
+and how to do some pretty advanced stuff.
+
+8
+00:00:17,510 --> 00:00:19,500
+In the last section we looked at files
+
+9
+00:00:19,500 --> 00:00:21,830
+and particularly at a new bit of syntax.
+
+10
+00:00:21,830 --> 00:00:24,260
+Thus said, something like this, I'm just gonna put it here
+
+11
+00:00:24,260 --> 00:00:25,740
+and I'm gonna delete in a moment.
+
+12
+00:00:25,740 --> 00:00:26,780
+With something, something, something,
+
+13
+00:00:26,780 --> 00:00:29,010
+as something, something, something, colon,
+
+14
+00:00:30,310 --> 00:00:31,550
+and then do stuff.
+
+15
+00:00:32,470 --> 00:00:35,628
+And this here was the context manager.
+
+16
+00:00:35,628 --> 00:00:38,130
+And by context we mean that the current status
+
+17
+00:00:38,130 --> 00:00:39,860
+of the application at the point
+
+18
+00:00:39,860 --> 00:00:43,520
+in which this block runs, is modified by this statement,
+
+19
+00:00:43,520 --> 00:00:45,670
+that it's controlled by that statement.
+
+20
+00:00:45,670 --> 00:00:48,140
+You could even see, it's managed by it.
+
+21
+00:00:49,700 --> 00:00:51,920
+And that means that it modifies the status,
+
+22
+00:00:51,920 --> 00:00:54,400
+or the context, when you go in,
+
+23
+00:00:54,400 --> 00:00:57,150
+and it also modifies it when you go out.
+
+24
+00:00:57,150 --> 00:00:59,750
+That allows you to do some set up when you start,
+
+25
+00:00:59,750 --> 00:01:01,760
+and some tear down when you end.
+
+26
+00:01:03,370 --> 00:01:05,120
+We can create our own context managers.
+
+27
+00:01:05,120 --> 00:01:06,880
+That is reasonably straightforward.
+
+28
+00:01:07,931 --> 00:01:12,050
+So that we can use that syntax for our database connections.
+
+29
+00:01:12,890 --> 00:01:15,330
+We can see, and I've been pretty explicit
+
+30
+00:01:15,330 --> 00:01:17,800
+throughout this section in, for example,
+
+31
+00:01:17,800 --> 00:01:19,540
+copying and pasting code.
+
+32
+00:01:19,540 --> 00:01:21,660
+We can see that we've got a setup.
+
+33
+00:01:22,570 --> 00:01:24,826
+And we've got a tear down,
+
+34
+00:01:24,826 --> 00:01:28,180
+and this happens for every function in this file,
+
+35
+00:01:28,180 --> 00:01:31,430
+pretty much, except for this one that doesn't have a commit.
+
+36
+00:01:31,430 --> 00:01:32,263
+So as you can see
+
+37
+00:01:32,263 --> 00:01:36,750
+there is here a good idea that is using a context manager,
+
+38
+00:01:36,750 --> 00:01:39,980
+so that we don't have to get this done every time.
+
+39
+00:01:41,730 --> 00:01:44,850
+Let's create a context manager for our database connections,
+
+40
+00:01:44,850 --> 00:01:46,460
+so that we don't have to open
+
+41
+00:01:46,460 --> 00:01:48,260
+and close the connection every time.
+
+42
+00:01:50,150 --> 00:01:51,660
+In order to create a context manager,
+
+43
+00:01:51,660 --> 00:01:55,340
+all we have to do is go into our utils package, for example,
+
+44
+00:01:55,340 --> 00:01:56,660
+and create a new Python file,
+
+45
+00:01:56,660 --> 00:02:01,640
+which I'm going to call database_connection.py.
+
+46
+00:02:03,600 --> 00:02:06,760
+This database connection is going to import sqlite3,
+
+47
+00:02:06,760 --> 00:02:08,970
+because it's going to actually connect to the database
+
+48
+00:02:08,970 --> 00:02:11,240
+and it needs sqlite3 to connect.
+
+49
+00:02:11,240 --> 00:02:15,610
+And it's going to be a class, database connection class.
+
+50
+00:02:17,140 --> 00:02:19,220
+A database connection,
+
+51
+00:02:19,220 --> 00:02:23,060
+in order to be able to be used as a context manager,
+
+52
+00:02:23,060 --> 00:02:26,680
+it of course needs two dunder methods.
+
+53
+00:02:26,680 --> 00:02:28,340
+Remember dunder methods are the way
+
+54
+00:02:28,340 --> 00:02:30,550
+that everything happens in Python
+
+55
+00:02:30,550 --> 00:02:32,850
+and if you want to use a with statement,
+
+56
+00:02:32,850 --> 00:02:34,380
+you need two Dunder Methods.
+
+57
+00:02:34,380 --> 00:02:39,020
+You need enter and you need exit.
+
+58
+00:02:41,350 --> 00:02:44,410
+Notice how the exit method has a few arguments here.
+
+59
+00:02:44,410 --> 00:02:46,400
+We're gonna talk about what these are in the next videos,
+
+60
+00:02:46,400 --> 00:02:48,650
+so don't worry too much about them right now.
+
+61
+00:02:49,590 --> 00:02:52,010
+Naturally, the enter dunder method,
+
+62
+00:02:52,010 --> 00:02:54,980
+it's called when you go into the context manager
+
+63
+00:02:54,980 --> 00:02:56,370
+right before you start running it,
+
+64
+00:02:56,370 --> 00:02:59,130
+and the exit method is executed
+
+65
+00:02:59,130 --> 00:03:02,010
+right when you leave the context manager.
+
+66
+00:03:02,010 --> 00:03:04,880
+When we now have these two methods,
+
+67
+00:03:04,880 --> 00:03:07,830
+we can go over to database.py,
+
+68
+00:03:07,830 --> 00:03:10,890
+we can remove the sqlite3 import,
+
+69
+00:03:10,890 --> 00:03:15,890
+and instead we can say, from database connection,
+
+70
+00:03:15,980 --> 00:03:17,570
+notice how I'm using a relative import here,
+
+71
+00:03:17,570 --> 00:03:21,750
+.database_connection, import, database connection class.
+
+72
+00:03:22,760 --> 00:03:27,410
+Now, instead of doing this, or rather,
+
+73
+00:03:27,410 --> 00:03:29,670
+instead of doing this here,
+
+74
+00:03:29,670 --> 00:03:34,210
+we can say with database connection, as connection,
+
+75
+00:03:35,550 --> 00:03:37,650
+and then we can just keep this stuff here.
+
+76
+00:03:38,680 --> 00:03:40,680
+Of course, this has to be indented
+
+77
+00:03:40,680 --> 00:03:44,090
+so that they are inside this context manager block.
+
+78
+00:03:45,960 --> 00:03:48,910
+Okay, this is the syntax with database connection,
+
+79
+00:03:48,910 --> 00:03:51,280
+create a new object of type database connection
+
+80
+00:03:52,160 --> 00:03:53,920
+as this connection variable,
+
+81
+00:03:53,920 --> 00:03:55,570
+this is the variable we create now
+
+82
+00:03:55,570 --> 00:03:58,610
+so that it can be used inside the context manager.
+
+83
+00:03:58,610 --> 00:04:00,660
+And then, we can create a cursor with it,
+
+84
+00:04:00,660 --> 00:04:03,350
+and then we can execute whatever we want.
+
+85
+00:04:03,350 --> 00:04:06,360
+Of course, we could make this database connection
+
+86
+00:04:06,360 --> 00:04:08,080
+return a cursor object,
+
+87
+00:04:08,080 --> 00:04:12,360
+but I think that would be fairly confusing.
+
+88
+00:04:12,360 --> 00:04:14,780
+A database connection probably should return a connection,
+
+89
+00:04:14,780 --> 00:04:15,700
+and not a cursor.
+
+90
+00:04:17,640 --> 00:04:20,410
+So, of course, our enter and exit methods
+
+91
+00:04:20,410 --> 00:04:22,020
+don't do anything yet.
+
+92
+00:04:22,020 --> 00:04:25,880
+So this connection variable here is going to contain none.
+
+93
+00:04:26,790 --> 00:04:29,750
+That's what this enter method returns.
+
+94
+00:04:29,750 --> 00:04:31,480
+Pass just means do nothing.
+
+95
+00:04:31,480 --> 00:04:35,825
+All functions, all methods in Python return none by default,
+
+96
+00:04:35,825 --> 00:04:38,740
+so this connection variable will be none.
+
+97
+00:04:38,740 --> 00:04:39,890
+We don't wanna do that.
+
+98
+00:04:40,820 --> 00:04:44,340
+Of course, here we are also creating a new object,
+
+99
+00:04:44,340 --> 00:04:47,950
+therefore, if we want, not necessary, but if we want,
+
+100
+00:04:47,950 --> 00:04:50,850
+we can also have an init method here.
+
+101
+00:04:51,720 --> 00:04:53,870
+This init method is going to be called first
+
+102
+00:04:53,870 --> 00:04:55,860
+when we initialise this object
+
+103
+00:04:55,860 --> 00:04:57,933
+and then the enter method is going to be called
+
+104
+00:04:57,933 --> 00:05:00,559
+as we go into the context manager
+
+105
+00:05:00,559 --> 00:05:02,338
+and the exit method is gonna be called
+
+106
+00:05:02,338 --> 00:05:03,938
+as we leave the context manager.
+
+107
+00:05:05,850 --> 00:05:08,410
+Of course, we have to initialise the connection.
+
+108
+00:05:08,410 --> 00:05:13,410
+We have to do this sqlite3.connect, so let's do it.
+
+109
+00:05:14,110 --> 00:05:18,410
+I think we should do the sqlite3.connect in here,
+
+110
+00:05:18,410 --> 00:05:20,090
+in the enter method,
+
+111
+00:05:20,090 --> 00:05:24,550
+so we can return sqlite3.connect, data.db.
+
+112
+00:05:26,270 --> 00:05:28,260
+Now, when we go back to database.py,
+
+113
+00:05:29,240 --> 00:05:34,240
+this connection variable is now a sqlite3 connect result.
+
+114
+00:05:35,280 --> 00:05:39,460
+It's the result of whatever the enter method returned.
+
+115
+00:05:39,460 --> 00:05:40,440
+So, that's correct.
+
+116
+00:05:41,287 --> 00:05:45,230
+Now, this will all work, but when we go to the end,
+
+117
+00:05:45,230 --> 00:05:47,450
+we've not yet added any code to commit
+
+118
+00:05:47,450 --> 00:05:49,120
+and close the connection.
+
+119
+00:05:49,120 --> 00:05:51,960
+So, we have to do that in here in the exit method.
+
+120
+00:05:53,740 --> 00:05:56,547
+Now, we don't have access to this connection
+
+121
+00:05:56,547 --> 00:05:58,250
+inside this class,
+
+122
+00:05:58,250 --> 00:06:01,430
+there's no way to access the connection that we've got,
+
+123
+00:06:01,430 --> 00:06:04,210
+and it's not passed to us as a parameter.
+
+124
+00:06:05,090 --> 00:06:07,690
+So what to do is use this init method
+
+125
+00:06:07,690 --> 00:06:11,040
+to say self.connection is none.
+
+126
+00:06:11,940 --> 00:06:14,400
+Then, we're gonna say self.connection
+
+127
+00:06:14,400 --> 00:06:18,040
+is this connection here, return self.connection.
+
+128
+00:06:19,010 --> 00:06:20,470
+Now, we're doing the same thing,
+
+129
+00:06:20,470 --> 00:06:22,130
+but we've defined a new property
+
+130
+00:06:22,130 --> 00:06:23,830
+of our database connection class
+
+131
+00:06:23,830 --> 00:06:27,640
+that is going to store this sqlite3.connect result,
+
+132
+00:06:27,640 --> 00:06:29,650
+the enter method is going to return that,
+
+133
+00:06:29,650 --> 00:06:32,290
+which means it's usable from our database.py,
+
+134
+00:06:32,290 --> 00:06:34,600
+and now we have access to it here in our exit method
+
+135
+00:06:34,600 --> 00:06:36,680
+as well as self.connection,
+
+136
+00:06:36,680 --> 00:06:39,520
+so we can do self.connection.commit,
+
+137
+00:06:39,520 --> 00:06:42,150
+and self.connection.close.
+
+138
+00:06:43,650 --> 00:06:46,670
+There are some instances where we won't need to commit,
+
+139
+00:06:46,670 --> 00:06:48,540
+but it's okay to leave that there
+
+140
+00:06:48,540 --> 00:06:50,490
+even when we don't need to.
+
+141
+00:06:50,490 --> 00:06:52,740
+The sqlite will just not do anything,
+
+142
+00:06:52,740 --> 00:06:54,640
+if we call commit but there's nothing to commit,
+
+143
+00:06:54,640 --> 00:06:57,220
+no change is made to the database so this is fine.
+
+144
+00:06:57,220 --> 00:07:02,220
+Okay, I would improve this by also saying self.host = host,
+
+145
+00:07:06,690 --> 00:07:10,550
+and pass this in here as a parameter to the init method,
+
+146
+00:07:10,550 --> 00:07:13,640
+and instead of data.db, use self.host.
+
+147
+00:07:14,860 --> 00:07:17,410
+That way, when we go back to our database.py,
+
+148
+00:07:17,410 --> 00:07:20,110
+we can say data.db in here,
+
+149
+00:07:20,110 --> 00:07:21,580
+and that makes things a bit more explicit.
+
+150
+00:07:21,580 --> 00:07:23,450
+We can see that we're now connected to a database
+
+151
+00:07:23,450 --> 00:07:25,770
+called data.db, we're getting the connection here,
+
+152
+00:07:25,770 --> 00:07:27,990
+presumably everything is being handled,
+
+153
+00:07:27,990 --> 00:07:30,680
+including closing the connection and everything like that.
+
+154
+00:07:30,680 --> 00:07:32,920
+This looks pretty similar to,
+
+155
+00:07:32,920 --> 00:07:37,920
+with open books.txt in read mode as file, as you can see,
+
+156
+00:07:38,166 --> 00:07:41,090
+the open here is a class as well,
+
+157
+00:07:41,090 --> 00:07:44,140
+it's creating a new object of type open,
+
+158
+00:07:44,140 --> 00:07:47,480
+and it's getting two parameters to the init method,
+
+159
+00:07:47,480 --> 00:07:49,820
+and then the enter function inside this class
+
+160
+00:07:49,820 --> 00:07:52,190
+is returning a file for which we're using
+
+161
+00:07:52,190 --> 00:07:53,530
+as this variable here.
+
+162
+00:07:54,480 --> 00:07:55,850
+Very much the same, of course,
+
+163
+00:07:55,850 --> 00:07:58,640
+this has another argument there, but that's fine.
+
+164
+00:07:59,630 --> 00:08:01,950
+What we've done is we've created a new object,
+
+165
+00:08:01,950 --> 00:08:04,440
+and we've given it what we want to do with that object,
+
+166
+00:08:04,440 --> 00:08:06,490
+connect to databse.db,
+
+167
+00:08:06,490 --> 00:08:09,090
+and that is gonna handle everything for us.
+
+168
+00:08:09,090 --> 00:08:12,670
+This with statement is a very Pythonic way of writing code.
+
+169
+00:08:12,670 --> 00:08:14,780
+It's not something that other programming languages have,
+
+170
+00:08:14,780 --> 00:08:17,060
+and I really encourage you to use it.
+
+171
+00:08:18,180 --> 00:08:20,410
+Now that we've got it, of course, we can copy it
+
+172
+00:08:20,410 --> 00:08:24,610
+and use it on all of our functions.
+
+173
+00:08:26,190 --> 00:08:28,580
+In the at book, we do exactly the same thing.
+
+174
+00:08:28,580 --> 00:08:30,870
+Notice how this context manager
+
+175
+00:08:30,870 --> 00:08:33,990
+is gonna commit at the end as well, so nothing to do here.
+
+176
+00:08:34,860 --> 00:08:39,860
+Also here, we can of course, do all of this.
+
+177
+00:08:40,930 --> 00:08:43,160
+We don't have to close the connection,
+
+178
+00:08:43,160 --> 00:08:44,150
+and we can return books
+
+179
+00:08:44,150 --> 00:08:46,410
+either inside or outside the context manager,
+
+180
+00:08:46,410 --> 00:08:48,210
+it's up to you, it doesn't matter.
+
+181
+00:08:48,210 --> 00:08:52,360
+I'm gonna leave it outside, just for kicks.
+
+182
+00:08:53,791 --> 00:08:56,770
+We can do it here as well, of course,
+
+183
+00:08:59,100 --> 00:09:01,050
+and we can, of course, also do it here.
+
+184
+00:09:04,830 --> 00:09:07,510
+Now this code is made much simpler.
+
+185
+00:09:08,530 --> 00:09:10,920
+None of this code has to deal with connecting to a database
+
+186
+00:09:10,920 --> 00:09:13,940
+or committing or closing the connection.
+
+187
+00:09:13,940 --> 00:09:16,590
+All of that is done for us with this context manager.
+
+188
+00:09:17,700 --> 00:09:19,330
+That means that if we were to forget
+
+189
+00:09:19,330 --> 00:09:20,950
+to commit or close or something,
+
+190
+00:09:20,950 --> 00:09:22,540
+now we can no longer forget,
+
+191
+00:09:22,540 --> 00:09:25,490
+because as soon as we do this everything is handled for us.
+
+192
+00:09:27,610 --> 00:09:30,630
+You could try to make another context manager
+
+193
+00:09:30,630 --> 00:09:32,430
+which generates the cursor,
+
+194
+00:09:32,430 --> 00:09:35,280
+and then use a single context manager for both.
+
+195
+00:09:35,280 --> 00:09:37,320
+You can try that if you want, play around with it,
+
+196
+00:09:37,320 --> 00:09:38,680
+and see what you come up with,
+
+197
+00:09:38,680 --> 00:09:40,810
+if that's something that interests you.
+
+198
+00:09:40,810 --> 00:09:42,490
+Context managers are really exciting,
+
+199
+00:09:42,490 --> 00:09:44,100
+and it's quite cool to work with them,
+
+200
+00:09:44,100 --> 00:09:45,960
+and really finally understand
+
+201
+00:09:45,960 --> 00:09:48,000
+what's going on behind the scenes.
+
+202
+00:09:48,000 --> 00:09:50,760
+With almost everything in Python, what's going on,
+
+203
+00:09:50,760 --> 00:09:53,420
+is that some dunder method is getting called.
+
+204
+00:09:56,017 --> 00:09:59,630
+When you do with, the init method gets called first
+
+205
+00:09:59,630 --> 00:10:02,520
+for the object you're initialising, then the enter method,
+
+206
+00:10:02,520 --> 00:10:04,960
+and finally the exit method at the end.
+
+207
+00:10:04,960 --> 00:10:06,040
+In the next video we're going to look at
+
+208
+00:10:06,040 --> 00:10:08,480
+these three things here, so don't go anywhere.
+
+209
+00:10:08,480 --> 00:10:10,030
+I'll see you on the next video.
+

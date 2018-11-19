@@ -1,0 +1,232 @@
+1
+00:00:00,000 --> 00:00:01,490
+Instructor: Hola, y bienvenido de nuevo.
+
+2
+00:00:01,490 --> 00:00:02,750
+En este video
+
+3
+00:00:02,750 --> 00:00:05,900
+vamos a configurar nuestro proyecto para raspar las cotizaciones.
+
+4
+00:00:05,900 --> 00:00:07,440
+Bueno de aquellos que he creado
+
+5
+00:00:07,440 --> 00:00:09,230
+un nuevo proyecto llamado Scraping Quotes.
+
+6
+00:00:09,230 --> 00:00:12,220
+El cdigo al cual est vinculado en la
+
+7
+00:00:12,220 --> 00:00:15,330
+conferencia, as que sintete libre de echarle un vistazo
+
+8
+00:00:15,330 --> 00:00:19,090
+si lo deseas, pero te recomiendo que revises los videos aqu
+
+9
+00:00:19,090 --> 00:00:21,580
+y justo antes de ingresar al cdigo.
+
+10
+00:00:21,580 --> 00:00:22,610
+Porque la forma en
+
+11
+00:00:22,610 --> 00:00:24,840
+que vamos a estructurar la aplicacin puede ser un
+
+12
+00:00:24,840 --> 00:00:27,878
+poco diferente o ms complicada que otras cosas que hemos hecho antes.
+
+13
+00:00:27,878 --> 00:00:30,100
+Vamos a crear un nuevo archivo de
+
+14
+00:00:30,100 --> 00:00:31,740
+Python, que ser la aplicacin.
+
+15
+00:00:32,640 --> 00:00:35,180
+Este va a ser el punto de entrada de nuestra aplicacin.
+
+16
+00:00:35,180 --> 00:00:37,150
+Vamos a ejecutar este archivo.
+
+17
+00:00:38,090 --> 00:00:40,830
+Tambin vamos a crear un par de paquetes.
+
+18
+00:00:40,830 --> 00:00:43,940
+Vamos a crear un paquete de pginas.
+
+19
+00:00:43,940 --> 00:00:45,510
+Vamos a crear un
+
+20
+00:00:45,510 --> 00:00:48,810
+nuevo paquete tambin en la parte superior llamada localizadores.
+
+21
+00:00:48,810 --> 00:00:51,570
+Entonces, observe cmo nuestro proyecto de
+
+22
+00:00:51,570 --> 00:00:55,400
+citas raspadas contiene localizadores, pginas y aplicaciones, y finalmente,
+
+23
+00:00:55,400 --> 00:00:56,880
+tambin vamos a
+
+24
+00:00:56,880 --> 00:00:59,380
+crear un paquete final llamado analizadores.
+
+25
+00:01:00,400 --> 00:01:03,330
+Entonces ahora contiene tres paquetes diferentes;
+
+26
+00:01:03,330 --> 00:01:05,940
+localizadores, pginas, analizadores y aplicaciones
+
+27
+00:01:07,410 --> 00:01:10,210
+El propsito de estos es separar
+
+28
+00:01:10,210 --> 00:01:13,000
+las diferentes partes de nuestro programa.
+
+29
+00:01:13,000 --> 00:01:14,923
+Los localizadores contendrn, lo
+
+30
+00:01:14,923 --> 00:01:17,830
+adivinaron, los localizadores de dnde estn las
+
+31
+00:01:17,830 --> 00:01:21,410
+cosas en el html, cmo podemos encontrar cosas.
+
+32
+00:01:21,410 --> 00:01:24,800
+Las pginas contendrn el cdigo para usar
+
+33
+00:01:24,800 --> 00:01:28,920
+esos localizadores para encontrar cosas particulares en una pgina.
+
+34
+00:01:28,920 --> 00:01:32,240
+Y finalmente, los analizadores son muy similares a las pginas,
+
+35
+00:01:32,240 --> 00:01:35,370
+pero para cosas especficas con las que queremos trabajar.
+
+36
+00:01:35,370 --> 00:01:36,830
+Ahora bien.
+
+37
+00:01:36,830 --> 00:01:39,340
+Entonces vamos a crear algunos archivos.
+
+38
+00:01:39,340 --> 00:01:42,350
+Para los localizadores vamos a crear dos
+
+39
+00:01:42,350 --> 00:01:43,650
+archivos; localizadores de
+
+40
+00:01:45,350 --> 00:01:48,680
+citas, y tambin un localizador de pginas de citas.
+
+41
+00:01:51,020 --> 00:01:53,720
+Los localizadores de citas son aquellos
+
+42
+00:01:53,720 --> 00:01:56,190
+localizadores que se usan cuando queremos
+
+43
+00:01:56,190 --> 00:01:58,810
+extraer informacin de una sola cotizacin.
+
+44
+00:01:58,810 --> 00:02:01,040
+Los localizadores de pginas de citas son los
+
+45
+00:02:01,040 --> 00:02:03,670
+localizadores para cuando queremos extraer citas de una pgina.
+
+46
+00:02:04,910 --> 00:02:09,010
+En las pginas vamos a crear una pgina de citas.
+
+47
+00:02:09,010 --> 00:02:11,630
+Esto va a contener algn cdigo relacionado con la
+
+48
+00:02:11,630 --> 00:02:13,470
+obtencin de datos de la pgina
+
+49
+00:02:13,470 --> 00:02:15,870
+de citas, que es la pgina principal que
+
+50
+00:02:15,870 --> 00:02:17,390
+vimos anteriormente en el video anterior.
+
+51
+00:02:17,390 --> 00:02:20,460
+Y, finalmente, los analizadores contendrn una
+
+52
+00:02:20,460 --> 00:02:23,751
+cita, una cita, y obtendr una
+
+53
+00:02:23,751 --> 00:02:27,760
+etiqueta, y podr encontrar datos de cotizacin
+
+54
+00:02:27,760 --> 00:02:29,860
+dentro de esa etiqueta.
+
+55
+00:02:29,860 --> 00:02:32,500
+De acuerdo, pasemos al siguiente video
+
+56
+00:02:32,500 --> 00:02:34,700
+donde comenzaremos a escribir algunos
+
+57
+00:02:34,700 --> 00:02:39,500
+de estos localizadores comparando y encontrando cosas usando el navegador.
+
+58
+00:02:39,500 --> 00:02:41,050
+Te ver en el prximo video.
+

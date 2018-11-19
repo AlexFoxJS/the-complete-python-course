@@ -1,0 +1,812 @@
+1
+00:00:00,000 --> 00:00:01,382
+<v ->Hi and welcome back.</v>
+
+2
+00:00:01,382 --> 00:00:02,215
+In this video,
+
+3
+00:00:02,215 --> 00:00:05,952
+I wanted to show you a little bit about deleting nodes
+
+4
+00:00:05,952 --> 00:00:07,367
+in a binary tree.
+
+5
+00:00:07,367 --> 00:00:09,518
+Deleting nodes is the most complicated part
+
+6
+00:00:09,518 --> 00:00:12,175
+of dealing with a binary tree
+
+7
+00:00:12,175 --> 00:00:15,508
+because you can delete any node in here,
+
+8
+00:00:17,206 --> 00:00:21,494
+so let's start talking about deleting nodes
+
+9
+00:00:21,494 --> 00:00:24,156
+and you'll progressively understand why it's such
+
+10
+00:00:24,156 --> 00:00:25,823
+a complicated thing.
+
+11
+00:00:27,636 --> 00:00:29,984
+Let's start with this tree here as an example.
+
+12
+00:00:29,984 --> 00:00:33,136
+Let's imagine we want to delete the node three.
+
+13
+00:00:33,136 --> 00:00:37,266
+Let's say we want to delete three from this tree.
+
+14
+00:00:37,266 --> 00:00:39,981
+The first thing we have to think about is
+
+15
+00:00:39,981 --> 00:00:42,731
+what makes three be in this tree?
+
+16
+00:00:45,141 --> 00:00:46,667
+It may be a bit of a strange question,
+
+17
+00:00:46,667 --> 00:00:50,508
+but remember we've got our binary tree object,
+
+18
+00:00:50,508 --> 00:00:54,914
+and the binary tree object knows about this head node,
+
+19
+00:00:54,914 --> 00:00:57,094
+the root of the tree.
+
+20
+00:00:57,094 --> 00:01:00,078
+It doesn't know about any other nodes.
+
+21
+00:01:00,078 --> 00:01:04,083
+The binary tree object only knows about this six.
+
+22
+00:01:04,083 --> 00:01:07,916
+The six points to five and six points to nine,
+
+23
+00:01:09,457 --> 00:01:11,907
+that's the left and the right.
+
+24
+00:01:11,907 --> 00:01:15,390
+So you could say that five is in the tree
+
+25
+00:01:15,390 --> 00:01:17,890
+because the head points to it.
+
+26
+00:01:19,226 --> 00:01:22,132
+If the head did not point to it,
+
+27
+00:01:22,132 --> 00:01:24,995
+then you wouldn't know that it's in the tree,
+
+28
+00:01:24,995 --> 00:01:27,861
+so therefore it wouldn't be in the tree.
+
+29
+00:01:27,861 --> 00:01:30,352
+Similarly three is in the tree,
+
+30
+00:01:30,352 --> 00:01:33,707
+because five points to it and the head points to five.
+
+31
+00:01:33,707 --> 00:01:36,467
+It's the relationships between these nodes
+
+32
+00:01:36,467 --> 00:01:39,134
+that end up describing the tree.
+
+33
+00:01:40,017 --> 00:01:42,917
+If you made five not point to three,
+
+34
+00:01:42,917 --> 00:01:45,084
+if you deleted this arrow,
+
+35
+00:01:46,188 --> 00:01:47,653
+nothing would point to three,
+
+36
+00:01:47,653 --> 00:01:51,655
+you wouldn't have any variables of this node
+
+37
+00:01:51,655 --> 00:01:54,442
+and Python would recognise that there are no
+
+38
+00:01:54,442 --> 00:01:56,061
+variables referenced in this node.
+
+39
+00:01:56,061 --> 00:01:57,620
+Nothing is pointing to it.
+
+40
+00:01:57,620 --> 00:01:59,023
+It's completely isolated.
+
+41
+00:01:59,023 --> 00:02:03,369
+You've go no way of accessing this node in your programme,
+
+42
+00:02:03,369 --> 00:02:04,968
+and when Python realises that,
+
+43
+00:02:04,968 --> 00:02:07,000
+what it does is it deletes it from memory,
+
+44
+00:02:07,000 --> 00:02:10,010
+or at least it allows other programmes to overtake
+
+45
+00:02:10,010 --> 00:02:15,010
+that memory and other variables to override that memory.
+
+46
+00:02:15,037 --> 00:02:17,253
+So if nothing points to a node,
+
+47
+00:02:17,253 --> 00:02:19,421
+that is essentially the same as deleting it,
+
+48
+00:02:19,421 --> 00:02:23,616
+because Python takes care of that for you.
+
+49
+00:02:23,616 --> 00:02:25,182
+With that said,
+
+50
+00:02:25,182 --> 00:02:28,007
+if we wanted to delete this node three,
+
+51
+00:02:28,007 --> 00:02:31,404
+now you know all you have to do is make node five
+
+52
+00:02:31,404 --> 00:02:32,737
+not point to it.
+
+53
+00:02:33,949 --> 00:02:35,230
+If instead of three,
+
+54
+00:02:35,230 --> 00:02:36,647
+we point to none,
+
+55
+00:02:44,030 --> 00:02:45,859
+then three is deleted.
+
+56
+00:02:45,859 --> 00:02:47,723
+Three would still be here somewhere,
+
+57
+00:02:47,723 --> 00:02:50,247
+but Python would be aware that you're not using it
+
+58
+00:02:50,247 --> 00:02:52,721
+and it would eventually erase it from memory
+
+59
+00:02:52,721 --> 00:02:57,015
+or it would be overwritten by something else.
+
+60
+00:02:57,015 --> 00:02:59,269
+So that's how you delete a node
+
+61
+00:02:59,269 --> 00:03:02,319
+that has no children itself.
+
+62
+00:03:02,319 --> 00:03:06,039
+Notice how three has no left and no right.
+
+63
+00:03:06,039 --> 00:03:08,393
+When a node has no left and no right,
+
+64
+00:03:08,393 --> 00:03:11,208
+all you have to do is set the parent
+
+65
+00:03:11,208 --> 00:03:13,458
+to not point to it anymore.
+
+66
+00:03:17,857 --> 00:03:20,197
+Let's say you want to delete node number 5 here
+
+67
+00:03:20,197 --> 00:03:22,898
+which does have a child.
+
+68
+00:03:22,898 --> 00:03:25,172
+Five points to three.
+
+69
+00:03:25,172 --> 00:03:29,214
+If you now say six doesn't point to five,
+
+70
+00:03:29,214 --> 00:03:32,603
+what you've done is you've deleted five and three.
+
+71
+00:03:32,603 --> 00:03:36,233
+You've deleted the entire branch here.
+
+72
+00:03:36,233 --> 00:03:38,439
+That may not be what you want.
+
+73
+00:03:38,439 --> 00:03:41,263
+If you want to delete node five only,
+
+74
+00:03:41,263 --> 00:03:44,180
+knowing that it has only one child,
+
+75
+00:03:45,077 --> 00:03:47,827
+all you have to do is delete five
+
+76
+00:03:48,792 --> 00:03:51,125
+and make six point to three.
+
+77
+00:03:52,031 --> 00:03:54,281
+Essentially skip over five.
+
+78
+00:03:55,791 --> 00:03:59,178
+The way to do that is just make six point to three
+
+79
+00:03:59,178 --> 00:04:01,945
+straight away like this.
+
+80
+00:04:01,945 --> 00:04:04,102
+Nothing points to five now.
+
+81
+00:04:04,102 --> 00:04:05,428
+Six doesn't point to five.
+
+82
+00:04:05,428 --> 00:04:06,924
+Three doesn't point to five,
+
+83
+00:04:06,924 --> 00:04:08,611
+even though five points to three.
+
+84
+00:04:08,611 --> 00:04:10,083
+Nothing points to three
+
+85
+00:04:10,083 --> 00:04:12,992
+and if you don't have a variable for this node,
+
+86
+00:04:12,992 --> 00:04:15,813
+it would get erased from memory as well.
+
+87
+00:04:15,813 --> 00:04:19,071
+So when you want to delete a node that has one child,
+
+88
+00:04:19,071 --> 00:04:23,959
+all you have to do is point the parent over to the child
+
+89
+00:04:23,959 --> 00:04:28,209
+and then nothing points to the initial parent five.
+
+90
+00:04:29,405 --> 00:04:33,738
+Those two are the easy scenarios in a tree deletion.
+
+91
+00:04:34,595 --> 00:04:35,929
+When you have no children,
+
+92
+00:04:35,929 --> 00:04:36,762
+very easy,
+
+93
+00:04:36,762 --> 00:04:38,252
+just point and none.
+
+94
+00:04:38,252 --> 00:04:39,136
+When you have one child,
+
+95
+00:04:39,136 --> 00:04:39,969
+very easy,
+
+96
+00:04:39,969 --> 00:04:42,695
+just get the parent to point to the child instead
+
+97
+00:04:42,695 --> 00:04:43,695
+of the node.
+
+98
+00:04:44,603 --> 00:04:49,226
+But when you want to delete a node that has two children,
+
+99
+00:04:49,226 --> 00:04:52,904
+then it becomes a bit more complicated.
+
+100
+00:04:52,904 --> 00:04:53,821
+Here's why.
+
+101
+00:04:54,874 --> 00:04:56,285
+When you want to delete five,
+
+102
+00:04:56,285 --> 00:05:00,382
+all you do is make six point to the child.
+
+103
+00:05:00,382 --> 00:05:01,760
+If you want to delete nine,
+
+104
+00:05:01,760 --> 00:05:02,739
+maybe you'd think,
+
+105
+00:05:02,739 --> 00:05:05,665
+"Hey, just make six point to the child, right?"
+
+106
+00:05:05,665 --> 00:05:06,998
+"That'll do it."
+
+107
+00:05:09,517 --> 00:05:12,100
+It doesn't quite work that way.
+
+108
+00:05:13,737 --> 00:05:17,570
+Imagine you decide to make six point to seven.
+
+109
+00:05:18,676 --> 00:05:20,224
+Now six points to seven,
+
+110
+00:05:20,224 --> 00:05:21,805
+seven points to eight,
+
+111
+00:05:21,805 --> 00:05:24,638
+but nothing points to all of this,
+
+112
+00:05:25,986 --> 00:05:27,207
+so you delete nine,
+
+113
+00:05:27,207 --> 00:05:29,185
+twelve and eleven in it's entirety
+
+114
+00:05:29,185 --> 00:05:31,196
+'cause nothing points to nine,
+
+115
+00:05:31,196 --> 00:05:32,626
+so Python removes it.
+
+116
+00:05:32,626 --> 00:05:33,593
+Nothing points to 12,
+
+117
+00:05:33,593 --> 00:05:35,597
+if nine's deleted,
+
+118
+00:05:35,597 --> 00:05:36,934
+so Python removes that.
+
+119
+00:05:36,934 --> 00:05:37,937
+Then nothing points to 11,
+
+120
+00:05:37,937 --> 00:05:40,280
+so Python removes that.
+
+121
+00:05:40,280 --> 00:05:41,113
+Not great.
+
+122
+00:05:45,456 --> 00:05:49,605
+It would be nice if you could delete nine
+
+123
+00:05:49,605 --> 00:05:51,438
+and put seven in here.
+
+124
+00:05:52,701 --> 00:05:55,534
+But then you'd have to delete this
+
+125
+00:05:58,105 --> 00:06:01,698
+make seven point to eight and this doesn't work,
+
+126
+00:06:01,698 --> 00:06:04,005
+because now eight is on the left
+
+127
+00:06:04,005 --> 00:06:06,147
+and eight cannot be on the left of seven
+
+128
+00:06:06,147 --> 00:06:09,602
+because that would be strange, right?
+
+129
+00:06:09,602 --> 00:06:12,108
+Eight is bigger than seven so it should be at the right,
+
+130
+00:06:12,108 --> 00:06:13,841
+but 12 is also bigger than seven,
+
+131
+00:06:13,841 --> 00:06:15,203
+so it should also be at the right,
+
+132
+00:06:15,203 --> 00:06:16,796
+so now seven ends up with two right nodes,
+
+133
+00:06:16,796 --> 00:06:18,978
+which you cannot have.
+
+134
+00:06:18,978 --> 00:06:20,728
+So how do we do this?
+
+135
+00:06:22,829 --> 00:06:24,726
+Nine has two children,
+
+136
+00:06:24,726 --> 00:06:28,337
+which we're gonna call two sub-branches.
+
+137
+00:06:28,337 --> 00:06:30,609
+We've got our left branch here
+
+138
+00:06:30,609 --> 00:06:32,609
+and a right branch here.
+
+139
+00:06:34,505 --> 00:06:37,743
+We said we can't put seven here because then,
+
+140
+00:06:37,743 --> 00:06:40,300
+what do we do with the eight?
+
+141
+00:06:40,300 --> 00:06:42,383
+But we can put eight here
+
+142
+00:06:43,939 --> 00:06:45,257
+and delete that.
+
+143
+00:06:45,257 --> 00:06:46,935
+This is okay.
+
+144
+00:06:46,935 --> 00:06:48,333
+Now seven is smaller than eight
+
+145
+00:06:48,333 --> 00:06:49,594
+and it stays at the left,
+
+146
+00:06:49,594 --> 00:06:51,431
+12 is bigger than eight and it stays at the right,
+
+147
+00:06:51,431 --> 00:06:53,205
+so this is fine.
+
+148
+00:06:53,205 --> 00:06:56,303
+Similarly we can put 11 here,
+
+149
+00:06:56,303 --> 00:06:57,774
+this child,
+
+150
+00:06:57,774 --> 00:06:59,791
+and delete 11 from here.
+
+151
+00:06:59,791 --> 00:07:01,645
+Seven is smaller than 11,
+
+152
+00:07:01,645 --> 00:07:02,708
+so this is fine,
+
+153
+00:07:02,708 --> 00:07:04,708
+and 12 is bigger than 11,
+
+154
+00:07:04,708 --> 00:07:06,556
+so this is fine.
+
+155
+00:07:06,556 --> 00:07:07,393
+Okay?
+
+156
+00:07:07,393 --> 00:07:08,976
+So what am I doing?
+
+157
+00:07:09,817 --> 00:07:12,900
+What I'm doing is in the left branch,
+
+158
+00:07:14,237 --> 00:07:18,237
+you can pick the node that is most to the right.
+
+159
+00:07:19,286 --> 00:07:20,986
+In this branch,
+
+160
+00:07:20,986 --> 00:07:23,403
+the right most node is eight.
+
+161
+00:07:24,489 --> 00:07:28,323
+You know that's gonna be the biggest node in this branch.
+
+162
+00:07:28,323 --> 00:07:32,027
+The biggest node in the branch is always gonna be bigger
+
+163
+00:07:32,027 --> 00:07:33,194
+than this one,
+
+164
+00:07:34,916 --> 00:07:37,570
+because in this branch the biggest node is eight,
+
+165
+00:07:37,570 --> 00:07:40,536
+therefore eight has to be bigger than seven,
+
+166
+00:07:40,536 --> 00:07:42,514
+and not only that,
+
+167
+00:07:42,514 --> 00:07:45,665
+but you know that the biggest node in this branch
+
+168
+00:07:45,665 --> 00:07:49,513
+is always going to be smaller than this node.
+
+169
+00:07:49,513 --> 00:07:50,346
+Why?
+
+170
+00:07:50,346 --> 00:07:53,078
+Because if this node was bigger than this one,
+
+171
+00:07:53,078 --> 00:07:54,828
+it would end up here.
+
+172
+00:07:56,376 --> 00:07:59,385
+So when you're deleting a node with two children,
+
+173
+00:07:59,385 --> 00:08:03,542
+you can just replace the node by the largest node
+
+174
+00:08:03,542 --> 00:08:05,125
+in the left branch.
+
+175
+00:08:06,951 --> 00:08:10,157
+Or by the smallest node in the right branch.
+
+176
+00:08:10,157 --> 00:08:12,700
+The left most node in the right branch.
+
+177
+00:08:12,700 --> 00:08:14,350
+Those are the two options.
+
+178
+00:08:14,350 --> 00:08:16,566
+Either the largest node in the left branch
+
+179
+00:08:16,566 --> 00:08:19,267
+or the smallest node in the right branch.
+
+180
+00:08:19,267 --> 00:08:23,477
+That gives you one node that is closest to this one.
+
+181
+00:08:23,477 --> 00:08:25,531
+Then you can replace it,
+
+182
+00:08:25,531 --> 00:08:27,781
+essentially put eight here,
+
+183
+00:08:28,736 --> 00:08:30,403
+and delete this one.
+
+184
+00:08:31,745 --> 00:08:34,087
+What we're doing there is just saying
+
+185
+00:08:34,087 --> 00:08:35,918
+this is the one we want to delete
+
+186
+00:08:35,918 --> 00:08:39,610
+so the parent is now going to point
+
+187
+00:08:39,610 --> 00:08:43,443
+to the right most node in the left sub branch.
+
+188
+00:08:46,302 --> 00:08:48,359
+So the parent's going to point to the right most node
+
+189
+00:08:48,359 --> 00:08:50,584
+in the left sub branch.
+
+190
+00:08:50,584 --> 00:08:54,224
+This node's parent is gonna point to none,
+
+191
+00:08:54,224 --> 00:08:55,921
+already deleted,
+
+192
+00:08:55,921 --> 00:08:59,694
+and the eight node is going to point to this
+
+193
+00:08:59,694 --> 00:09:00,559
+and this;
+
+194
+00:09:00,559 --> 00:09:05,263
+the children of the original node you wanted to delete.
+
+195
+00:09:05,263 --> 00:09:07,449
+Programming that is not so simple,
+
+196
+00:09:07,449 --> 00:09:09,244
+let me tell you that.
+
+197
+00:09:09,244 --> 00:09:11,430
+There is quite a lot of code that we have to write
+
+198
+00:09:11,430 --> 00:09:14,137
+in order to get that deletion working.
+
+199
+00:09:14,137 --> 00:09:18,620
+I just wanted you to be aware of these difficulties
+
+200
+00:09:18,620 --> 00:09:23,179
+as we start in the next video coding these deletions.
+
+201
+00:09:23,179 --> 00:09:24,029
+Okay?
+
+202
+00:09:24,029 --> 00:09:25,205
+Thanks for joining me.
+
+203
+00:09:25,205 --> 00:09:26,990
+I'll see you on the next video.
+

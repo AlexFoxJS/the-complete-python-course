@@ -1,0 +1,300 @@
+1
+00:00:00,211 --> 00:00:01,718
+Instrutor: Ol, bem vindo de volta.
+
+2
+00:00:01,718 --> 00:00:05,005
+Neste vdeo, eu queria contar um pouco sobre filas, e eu
+
+3
+00:00:05,005 --> 00:00:06,995
+s queria fazer isso antes do
+
+4
+00:00:06,995 --> 00:00:08,981
+prximo vdeo em que vamos usar
+
+5
+00:00:08,981 --> 00:00:10,814
+um, s para voc ter uma
+
+6
+00:00:10,814 --> 00:00:13,698
+ideia de como elas so e como voc os usa.
+
+7
+00:00:13,698 --> 00:00:16,335
+Ento, aqui est um exemplo do que poderia ser uma fila.
+
+8
+00:00:16,335 --> 00:00:18,529
+Bela animao l.
+
+9
+00:00:18,529 --> 00:00:21,429
+Aqui est um exemplo mais realista de uma fila.
+
+10
+00:00:21,429 --> 00:00:22,894
+Digamos que voc tenha uma
+
+11
+00:00:22,894 --> 00:00:24,679
+fila de pessoas para entrar em
+
+12
+00:00:24,679 --> 00:00:26,675
+algum tipo de edifcio e, 
+
+13
+00:00:26,675 --> 00:00:28,833
+claro, as pessoas vo se juntar 
+
+14
+00:00:28,833 --> 00:00:33,047
+fila no final, e elas vo sair da fila desde o incio.
+
+15
+00:00:33,047 --> 00:00:34,677
+Ento, isso  uma fila.
+
+16
+00:00:34,677 --> 00:00:36,349
+Voc sabe como as filas j
+
+17
+00:00:36,349 --> 00:00:38,977
+funcionam, particularmente se voc est no Reino Unido, onde
+
+18
+00:00:38,977 --> 00:00:40,927
+gostamos de fazer fila para tudo, e
+
+19
+00:00:40,927 --> 00:00:43,302
+ realmente a mesma coisa na programao.
+
+20
+00:00:43,302 --> 00:00:46,285
+Vamos dizer que voc tem essa lista
+
+21
+00:00:46,285 --> 00:00:50,898
+aqui, e voc pode adicionar um elemento no final da lista,
+
+22
+00:00:50,898 --> 00:00:53,937
+assim, ns adicionamos Jen no final da
+
+23
+00:00:53,937 --> 00:00:58,937
+lista, e normalmente fazemos isso em uma lista com o adicione o mtodo.
+
+24
+00:00:59,498 --> 00:01:03,395
+Agora, o que voc no sabia  que existe uma estrutura de
+
+25
+00:01:03,395 --> 00:01:07,119
+dados, como uma lista, na qual voc tambm pode remover um elemento.
+
+26
+00:01:07,119 --> 00:01:11,036
+Isso seria, para essa estrutura, o popleft.
+
+27
+00:01:12,081 --> 00:01:13,604
+A estrutura aqui que eu
+
+28
+00:01:13,604 --> 00:01:16,214
+estou falando  chamada de fila de duas extremidades.
+
+29
+00:01:16,214 --> 00:01:17,738
+Vou falar sobre isso em
+
+30
+00:01:17,738 --> 00:01:19,384
+um minuto, mas para essa fila
+
+31
+00:01:19,384 --> 00:01:22,568
+de duas pontas, o popleft remover o elemento mais  esquerda,
+
+32
+00:01:22,568 --> 00:01:25,776
+o append far a mesma coisa na frente da lista.
+
+33
+00:01:25,776 --> 00:01:27,350
+Se voc pensa "da direita
+
+34
+00:01:27,350 --> 00:01:29,902
+para a esquerda" em vez disso, se voc
+
+35
+00:01:29,902 --> 00:01:32,138
+der uma espcie de mudana, ento os
+
+36
+00:01:32,138 --> 00:01:35,695
+fins se opem, e voc tem essa lista para comear, voc pode
+
+37
+00:01:35,695 --> 00:01:38,221
+acrescentar algo  esquerda e,  claro, isso
+
+38
+00:01:38,221 --> 00:01:40,294
+ser chamado appendleft, e voc pode remover
+
+39
+00:01:40,294 --> 00:01:42,752
+algo do final, e isso  chamado de pop.
+
+40
+00:01:42,752 --> 00:01:44,960
+Ento, o que voc est vendo aqui
+
+41
+00:01:44,960 --> 00:01:46,918
+ que voc pode adicionar elementos de
+
+42
+00:01:46,918 --> 00:01:49,536
+uma das extremidades e pode remover elementos das extremidades.
+
+43
+00:01:49,536 --> 00:01:52,169
+Ento, uma fila onde voc pode adicionar
+
+44
+00:01:52,169 --> 00:01:55,086
+ou remover coisas de qualquer lado  chamada
+
+45
+00:01:56,127 --> 00:01:58,968
+deque, ou na verdade, algum disse como "deck",
+
+46
+00:01:58,968 --> 00:02:00,744
+que eu acho muito estranho,
+
+47
+00:02:00,744 --> 00:02:02,688
+ou uma fila de duas pontas.
+
+48
+00:02:02,688 --> 00:02:06,072
+Ento,  um deque ou uma fila de duas pontas.
+
+49
+00:02:06,072 --> 00:02:07,989
+Se voc s puder adicionar elementos
+
+50
+00:02:07,989 --> 00:02:09,821
+de um lado e remov-los do
+
+51
+00:02:09,821 --> 00:02:13,408
+outro lado, como uma fila normal, isso  chamado de fila.
+
+52
+00:02:13,408 --> 00:02:16,048
+Voc ter os dois em programao.
+
+53
+00:02:16,048 --> 00:02:19,440
+O Python tem algo chamado deque, uma fila com duas
+
+54
+00:02:19,440 --> 00:02:21,408
+extremidades, e tambm tem algo chamado
+
+55
+00:02:21,408 --> 00:02:23,741
+de fila, e voc pode us-los.
+
+56
+00:02:23,741 --> 00:02:26,024
+Outra coisa que  muito semelhante
+
+57
+00:02:26,024 --> 00:02:28,295
+a filas  essa coisa que
+
+58
+00:02:28,295 --> 00:02:31,134
+temos aqui, e essa coisa  chamada de pilha.
+
+59
+00:02:31,134 --> 00:02:34,180
+Em uma pilha, voc pode remover coisas da parte
+
+60
+00:02:34,180 --> 00:02:36,458
+superior e adicion-las novamente na parte superior.
+
+61
+00:02:36,458 --> 00:02:40,409
+Observe como, em uma fila, voc pode adicionar coisas de uma
+
+62
+00:02:40,409 --> 00:02:44,421
+extremidade e remov-las da outra, imitando uma fila real, como quando
+
+63
+00:02:44,421 --> 00:02:48,895
+voc faz fila para ir  farmcia ou algo assim, e em
+
+64
+00:02:48,895 --> 00:02:53,536
+uma pilha, voc adiciona e remove da fila mesmo fim, de modo
+
+65
+00:02:53,536 --> 00:02:57,612
+que  como uma pilha de cartas ou uma pilha de
+
+66
+00:02:57,612 --> 00:03:00,013
+moedas, e estas tm usos diferentes.
+
+67
+00:03:00,013 --> 00:03:01,520
+Nos prximos vdeos, vamos
+
+68
+00:03:01,520 --> 00:03:03,665
+ver alguns usos da fila.
+
+69
+00:03:03,665 --> 00:03:05,382
+Ns no vamos olhar para os usos de uma pilha.
+
+70
+00:03:05,382 --> 00:03:07,689
+Descobri que eles no so to teis
+
+71
+00:03:07,689 --> 00:03:09,014
+na programao do dia-a-dia.
+
+72
+00:03:09,014 --> 00:03:11,682
+Eles podem ser teis em cenrios muito
+
+73
+00:03:11,682 --> 00:03:13,521
+limitados, ento no vamos usar
+
+74
+00:03:13,521 --> 00:03:16,457
+stacks, mas vamos usar filas no prximo vdeo.
+
+75
+00:03:16,457 --> 00:03:18,374
+Ento, eu vou te ver l.
+

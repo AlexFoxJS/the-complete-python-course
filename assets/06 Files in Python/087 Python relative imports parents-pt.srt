@@ -1,0 +1,360 @@
+1
+00:00:00,050 --> 00:00:02,174
+Jos: Ol e bem vindo de volta, neste
+
+2
+00:00:02,174 --> 00:00:04,174
+vdeo, vamos falar sobre a importao de pais.
+
+3
+00:00:05,506 --> 00:00:10,506
+Eu vou executar o aplicativo. py novamente, e observe como o primeiro
+
+4
+00:00:10,778 --> 00:00:14,845
+arquivo que foi importado  "find", e o arquivo "find" primeiro
+
+5
+00:00:14,845 --> 00:00:17,380
+importou "file_operations", ento esse  o primeiro
+
+6
+00:00:17,380 --> 00:00:19,236
+arquivo que executa a concluso,
+
+7
+00:00:19,236 --> 00:00:24,077
+e ns imprimimos "utils. comum. file_operations "," find
+
+8
+00:00:24,077 --> 00:00:28,744
+"file, em seguida, imprime" utils. encontre ", aqui embaixo, e o aplicativo ento imprime" main ". Vou apagar essa
+
+9
+00:00:30,195 --> 00:00:34,028
+Indo para as operaes de arquivo, como poderamos. importao l, a propsito. Como podemos importar os pais?
+
+10
+00:00:34,028 --> 00:00:39,028
+Ento, no aplicativo. py, eu vou dizer
+
+11
+00:00:39,516 --> 00:00:42,183
+"de utils. comum. file_operations ", ou melhor,"
+
+12
+00:00:43,256 --> 00:00:45,311
+importar utils. comum. file_operations ", agora isso vai
+
+13
+00:00:45,311 --> 00:00:49,896
+entrar em file_operations, e como podemos importar o
+
+14
+00:00:49,896 --> 00:00:54,773
+erro" not found ", dentro de" find "?
+
+15
+00:00:54,773 --> 00:00:58,736
+Bem, mais uma vez, existem duas maneiras ", de utils. ache "import NotFoundError", ento quando
+
+16
+00:00:58,736 --> 00:01:01,486
+ns rodarmos isto, "utils. find "ser a primeira linha
+
+17
+00:01:03,432 --> 00:01:07,913
+a ser impressa, porque"
+
+18
+00:01:07,913 --> 00:01:12,830
+app "est importando" file_operations ".
+
+19
+00:01:14,208 --> 00:01:17,428
+"file_operations" est importando "find", "find"  o arquivo que no
+
+20
+00:01:17,428 --> 00:01:19,427
+est importando nada, aquele executa a
+
+21
+00:01:19,427 --> 00:01:22,612
+concluso, volta para "file_operation", imprime o nome, depois volta para
+
+22
+00:01:22,612 --> 00:01:24,375
+"app" e imprime esse nome.
+
+23
+00:01:24,375 --> 00:01:27,996
+Como voc pode ver,  exatamente isso
+
+24
+00:01:27,996 --> 00:01:31,772
+que acontece "localizar" as impresses primeiro, "utils. comum. file_operations "imprime em segundo, e" main
+
+25
+00:01:31,772 --> 00:01:33,517
+"imprime em terceiro.
+
+26
+00:01:33,517 --> 00:01:37,548
+Agora, se queremos importar o
+
+27
+00:01:37,548 --> 00:01:41,723
+pai, podemos fazer isso, podemos dizer "find" para passar para o pacote pai, e a
+
+28
+00:01:41,723 --> 00:01:45,952
+maneira como fazemos isso, no  com um nico ponto, mas com dois pontos.
+
+29
+00:01:45,952 --> 00:01:49,677
+Dois pontos dizem "Voc est dentro
+
+30
+00:01:49,677 --> 00:01:54,482
+comum, eu quero que voc v" at utils. ", Vejo?
+
+31
+00:01:54,482 --> 00:01:59,125
+Observe como o pacote atual  "comum. file_operations "ou melhor, agora
+
+32
+00:01:59,125 --> 00:02:00,792
+estamos
+
+33
+00:02:01,861 --> 00:02:05,422
+em" utils. comum. file_operations ", quando voc d um nico
+
+34
+00:02:05,422 --> 00:02:07,186
+ponto, ele coloca voc em" utils. comum ", quando voc d dois pontos, ele coloca
+
+35
+00:02:07,186 --> 00:02:11,705
+voc em" utils ", em seguida," utils. encontrar "est bem.
+
+36
+00:02:11,705 --> 00:02:15,896
+Ento, isso  substitudo por "utils". ", e ento voc pode acessar"
+
+37
+00:02:15,896 --> 00:02:20,896
+find "nele, e isso funciona bem, como
+
+38
+00:02:21,385 --> 00:02:26,352
+voc pode ver, eu apenas reran o
+
+39
+00:02:26,352 --> 00:02:31,067
+aplicativo e ele funciona, ele sobe por dois pacotes, lembre-se que estamos aqui
+
+40
+00:02:31,067 --> 00:02:35,650
+em" file_operations ", sobe para dois pacotes, para "utils", desculpe um pacote
+
+41
+00:02:37,239 --> 00:02:41,072
+para "utils", e ento ele encontra o mdulo "find" l.
+
+42
+00:02:41,072 --> 00:02:43,807
+Claro, o que acontece se ns rodarmos "file_operations"?
+
+43
+00:02:43,807 --> 00:02:48,307
+Agora, ele diz um erro ligeiramente diferente, "tentativa de importao"
+
+44
+00:02:49,278 --> 00:02:53,611
+para alm do pacote de nvel superior ", porque isso
+
+45
+00:02:57,286 --> 00:03:00,670
+" main ", no tem nenhum pacote pai,
+
+46
+00:03:00,670 --> 00:03:05,503
+lembre-se, se isso " main ", no  como ns pode
+
+47
+00:03:06,339 --> 00:03:11,339
+subir um pacote, s poderamos subir um pacote se isso  "utils". comum. file_operations ", ento podemos subir um pacote para" utils ", mas se
+
+48
+00:03:11,365 --> 00:03:16,009
+isso " main ", no podemos ir a lugar nenhum, porque
+
+49
+00:03:16,009 --> 00:03:20,842
+no h para onde
+
+50
+00:03:22,091 --> 00:03:25,509
+ir, no h outros pacotes no nome.
+
+51
+00:03:25,509 --> 00:03:29,541
+ok?
+
+52
+00:03:29,541 --> 00:03:34,541
+Portanto, essa  uma importao pai, que voc pode fazer, contanto que voc esteja executando esse arquivo como um mdulo e
+
+53
+00:03:34,589 --> 00:03:35,422
+no como um script.
+
+54
+00:03:39,067 --> 00:03:42,504
+Ento,  perigoso, porque, digamos que voc quisesse
+
+55
+00:03:42,504 --> 00:03:47,309
+imprimir o nome desse arquivo para descobrir exatamente o que ,
+
+56
+00:03:47,309 --> 00:03:51,502
+voc no pode faz-lo, se tiver uma importao relativa.
+
+57
+00:03:51,502 --> 00:03:54,741
+Voc s pode fazer isso, se tiver "utils". comum. encontre ",
+
+58
+00:03:54,741 --> 00:03:58,178
+desculpe", utils. find ", agora que isso tem uma importao absoluta,
+
+59
+00:03:58,178 --> 00:04:03,178
+voc pode absolutamente executar
+
+60
+00:04:03,503 --> 00:04:07,716
+este arquivo, e importa" utils. find ", e ento este " main ".
+
+61
+00:04:07,716 --> 00:04:11,242
+Ento isso funciona.
+
+62
+00:04:11,242 --> 00:04:15,165
+Ento, por que isso funciona?
+
+63
+00:04:15,165 --> 00:04:16,332
+Como ele sabe que "utils"
+
+64
+00:04:18,189 --> 00:04:20,600
+est no topo do pacote, quando ele mesmo est aqui embaixo?
+
+65
+00:04:20,600 --> 00:04:23,573
+Bem, isso  uma coisa para o PYTHONPATH.
+
+66
+00:04:23,573 --> 00:04:25,906
+Ento, no vamos falar sobre o PYTHONPATH, mas apenas
+
+67
+00:04:26,916 --> 00:04:29,916
+saber que ele define o nvel mais alto do seu projeto.
+
+68
+00:04:31,576 --> 00:04:34,797
+Ento, se o seu PYTHONPATH que PyCharm define para voc,
+
+69
+00:04:34,797 --> 00:04:38,252
+estiver definido como "imports_project", ento voc pode fazer importaes absolutas a
+
+70
+00:04:38,252 --> 00:04:41,148
+partir de l, e esse  o propsito do
+
+71
+00:04:41,148 --> 00:04:45,329
+PYTHONPATH, mas novamente no vamos entrar nisso ainda, ns falarei sobre isso mais
+
+72
+00:04:45,329 --> 00:04:48,113
+tarde, quando falarmos sobre a execuo do Python a
+
+73
+00:04:48,113 --> 00:04:50,710
+partir do terminal, ao contrrio do PyCharm.
+
+74
+00:04:50,710 --> 00:04:54,880
+Mas  por isso que isso funciona.
+
+75
+00:04:54,880 --> 00:04:58,677
+Ento, agora que aprendemos sobre importaes relativas e absolutas, podemos
+
+76
+00:04:58,677 --> 00:05:01,034
+comear a entender exatamente o que
+
+77
+00:05:01,034 --> 00:05:04,255
+est acontecendo, quando importamos as coisas, e se
+
+78
+00:05:04,255 --> 00:05:07,819
+voc quiser fazer importaes relativas, faa-as, se quiser, lembre-se
+
+79
+00:05:07,819 --> 00:05:11,310
+, voc pode no conseguir mais executar esses arquivos
+
+80
+00:05:11,310 --> 00:05:15,143
+como scripts, e executar arquivos como scripts pode ser til
+
+81
+00:05:15,143 --> 00:05:18,616
+quando voc deseja executar alguma coisa especfica neles.
+
+82
+00:05:18,616 --> 00:05:21,621
+Talvez para depur-los ou entender o que est acontecendo em
+
+83
+00:05:21,621 --> 00:05:24,987
+um arquivo, e assim as importaes absolutas, eu acho, so melhores,
+
+84
+00:05:24,987 --> 00:05:27,848
+e eu encorajaria voc a us-las, mas voc vai
+
+85
+00:05:27,848 --> 00:05:31,519
+encontrar importaes relativas em todos os lugares, conforme voc aprende mais Python.
+
+86
+00:05:31,519 --> 00:05:34,434
+Ento  isso para este vdeo, espero que
+
+87
+00:05:34,434 --> 00:05:39,149
+tenham gostado e espero que voc tenha aprendido alguma coisa, e eu vou
+
+88
+00:05:39,149 --> 00:05:40,913
+te ver no prximo.
+
+89
+00:05:40,913 --> 00:05:42,406
+&nbsp;
+
+90
+00:05:42,406 --> 00:05:43,890
+&nbsp;
+

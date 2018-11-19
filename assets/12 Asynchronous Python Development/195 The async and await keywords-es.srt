@@ -1,0 +1,472 @@
+1
+00:00:00,280 --> 00:00:01,679
+-: [Jose Salvatierra] Hola bienvenido.
+
+2
+00:00:01,679 --> 00:00:05,541
+En este video vamos a presentar asincrn y esperar.
+
+3
+00:00:05,541 --> 00:00:09,906
+Estas dos piezas de sintaxis son bastante nuevas en
+
+4
+00:00:09,906 --> 00:00:13,691
+Python y son extremadamente utilizadas en la actualidad
+
+5
+00:00:13,691 --> 00:00:16,025
+cada vez que escribes un
+
+6
+00:00:16,025 --> 00:00:19,211
+cdigo Python que utiliza un desarrollo asincrnico.
+
+7
+00:00:19,211 --> 00:00:21,766
+Por ejemplo, hay muchos frameworks de Python
+
+8
+00:00:21,766 --> 00:00:24,115
+y una especie de bibliotecas que
+
+9
+00:00:24,115 --> 00:00:28,620
+usted puede usar que le permiten ejecutar cosas juntas, ms o menos
+
+10
+00:00:28,620 --> 00:00:32,701
+todas en el mismo hilo, pero ceder el uno al otro
+
+11
+00:00:32,701 --> 00:00:34,845
+para evitar tiempos de espera.
+
+12
+00:00:34,845 --> 00:00:37,512
+Y nadie entendi el rendimiento, por
+
+13
+00:00:39,399 --> 00:00:43,320
+lo que se invent una nueva palabra clave
+
+14
+00:00:43,320 --> 00:00:45,403
+para deshacerse del rendimiento.
+
+15
+00:00:46,256 --> 00:00:50,568
+Y esta palabra clave se llama la palabra clave await.
+
+16
+00:00:50,568 --> 00:00:53,415
+As que vamos a reescribir este cdigo,
+
+17
+00:00:53,415 --> 00:00:54,959
+va a ser una
+
+18
+00:00:54,959 --> 00:00:57,397
+pequea reescritura, para usar asincrnico y
+
+19
+00:00:57,397 --> 00:01:01,685
+esperar y vers cmo de repente tiene mucho ms sentido.
+
+20
+00:01:01,685 --> 00:01:06,592
+As que vamos a reescribir esto para usar la nueva sintaxis de Python
+
+21
+00:01:06,592 --> 00:01:09,146
+y vers cmo tiene mucho ms sentido.
+
+22
+00:01:09,146 --> 00:01:13,729
+En esencia, vamos a dejar esto exactamente igual, pero ahora debemos
+
+23
+00:01:15,014 --> 00:01:18,207
+decirle a Python que este no es un
+
+24
+00:01:18,207 --> 00:01:21,574
+generador que de alguna manera puede aceptar datos.
+
+25
+00:01:21,574 --> 00:01:24,824
+Ahora tenemos que decir que esto es una corrutina.
+
+26
+00:01:25,905 --> 00:01:28,655
+Entonces decimos @coroutine y es rojo porque no
+
+27
+00:01:30,834 --> 00:01:31,733
+sabe de qu
+
+28
+00:01:31,733 --> 00:01:36,539
+se trata, as que tenemos que importarlo, as que desde los tipos importamos coroutine.
+
+29
+00:01:36,539 --> 00:01:38,250
+Y luego le gusta.
+
+30
+00:01:38,250 --> 00:01:40,205
+Debe hacer esto para
+
+31
+00:01:40,205 --> 00:01:42,705
+que podamos hacer lo siguiente
+
+32
+00:01:43,961 --> 00:01:45,378
+que est esperando_g.
+
+33
+00:01:48,762 --> 00:01:53,762
+No le gusta esto porque debe hacer async def all.
+
+34
+00:01:54,059 --> 00:01:56,987
+Ahora que tenemos nuestra funcin asncrona,
+
+35
+00:01:56,987 --> 00:02:01,295
+esto le dice a Python que puede esperar corrutinas.
+
+36
+00:02:01,295 --> 00:02:02,839
+Y cuando esperamos una
+
+37
+00:02:02,839 --> 00:02:06,296
+corrutina que es exactamente lo mismo que rendimiento de.
+
+38
+00:02:06,296 --> 00:02:09,296
+Ahora podemos aceptar datos a travs de este
+
+39
+00:02:10,617 --> 00:02:14,012
+envo que pasa a g, que es este generador
+
+40
+00:02:14,012 --> 00:02:16,636
+aqu, esta corutina que lo acepta a
+
+41
+00:02:16,636 --> 00:02:21,508
+travs del rendimiento y se enva a saludo y luego imprime las cosas.
+
+42
+00:02:21,508 --> 00:02:26,508
+Tenga en cuenta que cuando esperamos de la misma manera que
+
+43
+00:02:26,784 --> 00:02:30,617
+cuando cedemos, espera a que termine toda esta funcin.
+
+44
+00:02:31,950 --> 00:02:35,068
+Entonces aqu el ciclo while, esencialmente esto est esperando
+
+45
+00:02:35,068 --> 00:02:37,447
+a que termine todo el ciclo while.
+
+46
+00:02:37,447 --> 00:02:39,143
+Pero puede suspenderse a la
+
+47
+00:02:39,143 --> 00:02:41,645
+mitad, ese es el punto total del rendimiento.
+
+48
+00:02:41,645 --> 00:02:44,918
+Entonces, cuando envas algo, esto se pasa
+
+49
+00:02:44,918 --> 00:02:47,535
+a g, que luego reanuda la
+
+50
+00:02:47,535 --> 00:02:50,533
+funcin despus del rendimiento y luego si
+
+51
+00:02:50,533 --> 00:02:54,478
+vuelves al inicio del rendimiento y luego se suspende
+
+52
+00:02:54,478 --> 00:02:56,686
+y esta funcin esta lnea
+
+53
+00:02:56,686 --> 00:02:59,989
+aqu todava no ha terminado corriendo.
+
+54
+00:02:59,989 --> 00:03:03,476
+Cuando enva un poco ms, pasa a g
+
+55
+00:03:03,476 --> 00:03:05,903
+y luego contina funcionando esta funcin.
+
+56
+00:03:05,903 --> 00:03:08,313
+Pero await_g an no ha terminado de
+
+57
+00:03:08,313 --> 00:03:10,896
+ejecutarse hasta que esta corrutina haya terminado.
+
+58
+00:03:11,889 --> 00:03:14,116
+Si imprimimos algo como Starting y
+
+59
+00:03:14,116 --> 00:03:16,729
+aqu algo como Ending, vers lo
+
+60
+00:03:16,729 --> 00:03:17,920
+que quiero decir.
+
+61
+00:03:17,920 --> 00:03:21,745
+Si pulsamos Play, puede ver que imprimimos Starting
+
+62
+00:03:21,745 --> 00:03:23,666
+but Ending nunca se
+
+63
+00:03:23,666 --> 00:03:27,450
+imprime porque no hemos terminado de ejecutar la coroutine.
+
+64
+00:03:27,450 --> 00:03:31,998
+El coroutine tiene un bucle y contina funcionando hasta que los amigos estn vacos
+
+65
+00:03:31,998 --> 00:03:34,343
+y no hayamos revisado a todos los
+
+66
+00:03:34,343 --> 00:03:35,951
+amigos, solo hemos pasado por
+
+67
+00:03:35,951 --> 00:03:38,201
+dos de los amigos con nuestros dos saludos.
+
+68
+00:03:38,201 --> 00:03:39,277
+Si quisiramos pasar por
+
+69
+00:03:39,277 --> 00:03:42,444
+todos los amigos, podemos hacer eso y solo haciendo esto.
+
+70
+00:03:43,399 --> 00:03:46,370
+Y ahora, si ejecutamos esto de nuevo, podemos
+
+71
+00:03:46,370 --> 00:03:48,417
+ver que obtenemos Ending al
+
+72
+00:03:48,417 --> 00:03:50,705
+final y luego obtenemos nuestra StopIteration
+
+73
+00:03:50,705 --> 00:03:53,410
+porque la corotine finaliz y sabes que
+
+74
+00:03:53,410 --> 00:03:55,409
+cuando terminas la coroutine o
+
+75
+00:03:55,409 --> 00:03:59,837
+un generador obtienes una StopIteration para indicar que este es el final.
+
+76
+00:03:59,837 --> 00:04:00,964
+Entonces esto es realmente importante.
+
+77
+00:04:00,964 --> 00:04:03,285
+La espera, al igual que
+
+78
+00:04:03,285 --> 00:04:04,780
+ceder, son exactamente
+
+79
+00:04:04,780 --> 00:04:08,718
+lo mismo, espera a que termine, pero puede suspender
+
+80
+00:04:08,718 --> 00:04:10,968
+la funcin en el medio.
+
+81
+00:04:12,765 --> 00:04:14,820
+Por lo tanto, una forma un
+
+82
+00:04:14,820 --> 00:04:19,633
+poco mejor de hacer esto podra ser que, en lugar de enviar saludos arbitrarios,
+
+83
+00:04:19,633 --> 00:04:22,226
+una de las cosas ms importantes es que
+
+84
+00:04:22,226 --> 00:04:23,809
+puede enviar, por ejemplo, Hola.
+
+85
+00:04:25,298 --> 00:04:29,298
+Pero luego puede obtener otra cosa del usuario y
+
+86
+00:04:31,399 --> 00:04:35,638
+luego puede hacer un saludo. enviar saludo).
+
+87
+00:04:35,638 --> 00:04:38,584
+Y luego puedes copiarlos y pegarlos de nuevo.
+
+88
+00:04:38,584 --> 00:04:41,495
+Esto es ahora una multitarea adecuada.
+
+89
+00:04:41,495 --> 00:04:45,257
+Porque cuando lo ejecutas, ahora haces que el usuario escriba
+
+90
+00:04:45,257 --> 00:04:48,112
+y tan pronto como el usuario escribe,
+
+91
+00:04:48,112 --> 00:04:50,456
+esto contina ejecutando la funcin de
+
+92
+00:04:50,456 --> 00:04:53,789
+arriba y se imprime, oh, lo siento, Jos, Jos.
+
+93
+00:04:54,766 --> 00:04:55,599
+Hola.
+
+94
+00:04:57,261 --> 00:04:58,579
+Hola Charlie.
+
+95
+00:04:58,579 --> 00:05:00,082
+Y luego tu programa termina.
+
+96
+00:05:00,082 --> 00:05:02,178
+Ya hemos revisado a todos nuestros amigos.
+
+97
+00:05:02,178 --> 00:05:05,095
+Entonces, cmo termina el programa all.
+
+98
+00:05:06,496 --> 00:05:10,009
+Hay ms usos, muchos ms usos, por supuesto, para
+
+99
+00:05:10,009 --> 00:05:12,691
+esta sintaxis async y aguarda y
+
+100
+00:05:12,691 --> 00:05:16,405
+para la programacin concurrente en Python como un todo.
+
+101
+00:05:16,405 --> 00:05:19,596
+Entonces, todo lo que han visto hasta ahora es
+
+102
+00:05:19,596 --> 00:05:22,732
+una especie de ejemplos abstractos que acabo de mostrarles
+
+103
+00:05:22,732 --> 00:05:23,852
+all, pero necesitamos
+
+104
+00:05:23,852 --> 00:05:27,726
+ver una forma de utilizar estas funciones en el mundo real.
+
+105
+00:05:27,726 --> 00:05:29,119
+En el prximo video
+
+106
+00:05:29,119 --> 00:05:32,463
+voy a sugerir que veas algunas charlas, y esas plticas
+
+107
+00:05:32,463 --> 00:05:35,754
+nuevamente te guiarn a travs de lo que asincronizar
+
+108
+00:05:35,754 --> 00:05:37,934
+y esperar significar y cmo haces
+
+109
+00:05:37,934 --> 00:05:41,664
+concurrencia en Python y tambin incluirn algunos ejemplos del mundo real.
+
+110
+00:05:41,664 --> 00:05:45,626
+Y luego, despus, estamos trabajando para agregar algo ms de
+
+111
+00:05:45,626 --> 00:05:49,407
+contenido en el curso sobre algunos ejemplos del mundo real
+
+112
+00:05:49,407 --> 00:05:51,490
+del uso de asincrnicas y aguardar.
+
+113
+00:05:52,449 --> 00:05:55,032
+Entonces, si eso an no est
+
+114
+00:05:55,032 --> 00:05:58,992
+en curso, vuelva a consultarlo ms tarde y lo agregaremos.
+
+115
+00:05:58,992 --> 00:06:00,373
+Sin embargo, con suerte,
+
+116
+00:06:00,373 --> 00:06:02,373
+ahora entiendes cmo sincronizar y esperar
+
+117
+00:06:03,282 --> 00:06:06,718
+el trabajo, y eso es mediante el uso de estos generadores.
+
+118
+00:06:06,718 --> 00:06:10,006
+Dicho esto, te ver en el siguiente video.
+

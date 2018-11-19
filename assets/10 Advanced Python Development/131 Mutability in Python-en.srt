@@ -1,0 +1,748 @@
+1
+00:00:00,210 --> 00:00:01,490
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,490 --> 00:00:04,210
+In this video, I wanted to talk about a really important
+
+3
+00:00:04,210 --> 00:00:07,580
+concept in programming which is mutability.
+
+4
+00:00:08,730 --> 00:00:10,720
+Somethings in Python are mutable
+
+5
+00:00:10,720 --> 00:00:14,850
+and some things are immutable, so what is mutable?
+
+6
+00:00:15,980 --> 00:00:18,300
+A mutable pice of data is one that
+
+7
+00:00:18,300 --> 00:00:21,310
+you can change after you've created it.
+
+8
+00:00:21,310 --> 00:00:24,870
+An immutable piece of data is one you cannot change.
+
+9
+00:00:26,280 --> 00:00:27,610
+Here you may be wondering,
+
+10
+00:00:27,610 --> 00:00:29,530
+aren't all pieces of data mutable?
+
+11
+00:00:29,530 --> 00:00:33,070
+Like, when you create a variable, you can then change it?
+
+12
+00:00:33,070 --> 00:00:35,520
+Yes, that is true, however the
+
+13
+00:00:35,520 --> 00:00:37,820
+variable itself is not the piece of data.
+
+14
+00:00:39,670 --> 00:00:43,610
+Let's go back to our dictionary that has how long
+
+15
+00:00:43,610 --> 00:00:45,480
+ago we saw some of our friends.
+
+16
+00:00:48,670 --> 00:00:51,620
+Here the data is the dictionary.
+
+17
+00:00:53,200 --> 00:00:56,770
+So Python creates this dictionary and then the variable
+
+18
+00:00:56,770 --> 00:00:59,998
+is essentially like a Post-It note that's been attached
+
+19
+00:00:59,998 --> 00:01:04,998
+to the data that says this piece of data now has this name.
+
+20
+00:01:08,070 --> 00:01:13,070
+However, when you do something like another variable
+
+21
+00:01:13,610 --> 00:01:18,610
+equal friends last seen, these two are the same dictionary.
+
+22
+00:01:20,200 --> 00:01:23,870
+Once again, what we've done is we've attached another name
+
+23
+00:01:23,870 --> 00:01:26,590
+to the value in here, this dictionary here.
+
+24
+00:01:28,170 --> 00:01:31,420
+This is a really important concept in programming.
+
+25
+00:01:31,420 --> 00:01:35,040
+Let's forget about this name tagging for just a moment.
+
+26
+00:01:35,040 --> 00:01:37,980
+And I'll ask you, "How do you know it's mutable?"
+
+27
+00:01:39,040 --> 00:01:42,010
+Well whenever we create a new dictionary, it's stored
+
+28
+00:01:42,010 --> 00:01:45,440
+physically in your computer's RAM, random access memory,
+
+29
+00:01:45,440 --> 00:01:47,880
+which is a type of memory that only lives while
+
+30
+00:01:47,880 --> 00:01:50,460
+the computer is on and your app is running.
+
+31
+00:01:50,460 --> 00:01:53,450
+As soon as your app terminates, your programme finishes.
+
+32
+00:01:53,450 --> 00:01:58,310
+And if we run this and it reaches the end, the RAM does
+
+33
+00:01:58,310 --> 00:02:01,880
+get lost or rather the memory that was assigned to
+
+34
+00:02:01,880 --> 00:02:04,840
+this Python programme gets lost and then it
+
+35
+00:02:04,840 --> 00:02:06,870
+can get overwritten by other programmes.
+
+36
+00:02:08,810 --> 00:02:13,290
+Python can give us the ID of the object.
+
+37
+00:02:13,290 --> 00:02:17,450
+The ID function here is used to give us the ID of any object
+
+38
+00:02:17,450 --> 00:02:20,270
+and in this case we're parsing a friends last seen variable
+
+39
+00:02:20,270 --> 00:02:22,120
+here which points to this dictionary.
+
+40
+00:02:23,260 --> 00:02:25,330
+So it can give us the ID of that
+
+41
+00:02:25,330 --> 00:02:28,890
+and in the majority of Python implementations,
+
+42
+00:02:28,890 --> 00:02:31,330
+that's an interesting concept by itself,
+
+43
+00:02:31,330 --> 00:02:33,700
+but in your Python implementation, the one you will be
+
+44
+00:02:33,700 --> 00:02:37,080
+running most likely and certainly here in repl.it,
+
+45
+00:02:37,080 --> 00:02:40,590
+the ID is the address of the object in memory.
+
+46
+00:02:40,590 --> 00:02:43,600
+And that's precisely the first cell in a group of cells
+
+47
+00:02:43,600 --> 00:02:46,300
+in your RAM which stores your object.
+
+48
+00:02:46,300 --> 00:02:50,560
+This ID function here gives you the first cell in the group.
+
+49
+00:02:50,560 --> 00:02:51,970
+That's because the object can take up
+
+50
+00:02:51,970 --> 00:02:53,770
+multiple cells and they normally do.
+
+51
+00:02:55,490 --> 00:02:59,580
+Okay, so let's run this programme.
+
+52
+00:03:00,810 --> 00:03:05,800
+And now you get a number, seemingly arbitrary number.
+
+53
+00:03:05,800 --> 00:03:08,210
+But when we run the programme again, notice that we
+
+54
+00:03:08,210 --> 00:03:09,890
+get a slightly different number.
+
+55
+00:03:09,890 --> 00:03:11,130
+It wasn't so easy to see but
+
+56
+00:03:11,130 --> 00:03:12,780
+trust me it's a different number.
+
+57
+00:03:14,120 --> 00:03:19,120
+Now when we say friends last seen is now this dictionary,
+
+58
+00:03:21,950 --> 00:03:25,480
+which looks the same but is an entirely new dictionary.
+
+59
+00:03:26,570 --> 00:03:29,080
+And you can tell that by once again calling the
+
+60
+00:03:29,080 --> 00:03:31,830
+friends last seen function, the ID.
+
+61
+00:03:31,830 --> 00:03:34,940
+Notice how these two numbers are very slightly different.
+
+62
+00:03:36,010 --> 00:03:39,320
+That's because these objects are not the same object.
+
+63
+00:03:39,320 --> 00:03:42,440
+They are two objects which have the same content.
+
+64
+00:03:43,410 --> 00:03:45,610
+Think for example of two cars coming out of a
+
+65
+00:03:45,610 --> 00:03:48,640
+production line, they both have four wheels, a steering
+
+66
+00:03:48,640 --> 00:03:51,120
+wheel, they both may be red, they both are the same
+
+67
+00:03:51,120 --> 00:03:54,540
+make and model but they're not the same car.
+
+68
+00:03:54,540 --> 00:03:56,990
+Same thing here, we have a variable which
+
+69
+00:03:56,990 --> 00:04:00,010
+has a name and that is assigned to
+
+70
+00:04:00,010 --> 00:04:03,940
+this dictionary here, this particular object.
+
+71
+00:04:05,010 --> 00:04:08,470
+And then we get the idea of it, then we assign it to another
+
+72
+00:04:08,470 --> 00:04:12,000
+dictionary which looks the same, and get the ID of it.
+
+73
+00:04:12,000 --> 00:04:15,940
+And those two dictionaries are created one after another.
+
+74
+00:04:17,260 --> 00:04:20,990
+The reason why this dictionary cannot have the same ID
+
+75
+00:04:20,990 --> 00:04:23,930
+as this one is that when the time this is created
+
+76
+00:04:23,930 --> 00:04:26,880
+and the time this is created, this one still exists.
+
+77
+00:04:26,880 --> 00:04:29,700
+So they cannot possibly appear in the same place.
+
+78
+00:04:29,700 --> 00:04:31,550
+The other one is taking up the space.
+
+79
+00:04:32,840 --> 00:04:35,310
+Okay so even though the dictionaries have
+
+80
+00:04:35,310 --> 00:04:37,950
+the same values, the ID values are different.
+
+81
+00:04:37,950 --> 00:04:41,030
+New dictionaries were created each time
+
+82
+00:04:41,030 --> 00:04:42,740
+and hence their memory addresses,
+
+83
+00:04:42,740 --> 00:04:45,390
+what the ID function returns, are different.
+
+84
+00:04:47,190 --> 00:04:49,590
+However, what if we do this?
+
+85
+00:04:49,590 --> 00:04:52,350
+We create a new dictionary here which has an entirely
+
+86
+00:04:52,350 --> 00:04:57,350
+new ID and then we say friends last seen, Rolf is now zero.
+
+87
+00:05:00,250 --> 00:05:04,030
+What do we think this is going to print?
+
+88
+00:05:04,030 --> 00:05:06,670
+Is it going to print an entirely new ID
+
+89
+00:05:06,670 --> 00:05:09,300
+or will it print the same ID as before?
+
+90
+00:05:14,160 --> 00:05:17,500 line:15% 
+Well it doesn't really matter what you guessed,
+
+91
+00:05:17,500 --> 00:05:21,360
+but what matters is that the ID will be the same.
+
+92
+00:05:21,360 --> 00:05:24,500
+As you can see, these last two numbers here are identical.
+
+93
+00:05:25,610 --> 00:05:27,480
+That's because when we run this line
+
+94
+00:05:27,480 --> 00:05:32,260
+of code we have modified this object.
+
+95
+00:05:32,260 --> 00:05:36,670
+We have not created a new object, we have mutated it.
+
+96
+00:05:36,670 --> 00:05:39,890
+This is a mutable data structure, the dictionary.
+
+97
+00:05:41,820 --> 00:05:46,120
+Okay, this is the case with many many things in Python.
+
+98
+00:05:46,120 --> 00:05:48,750
+When you create your own classes and you change a property
+
+99
+00:05:48,750 --> 00:05:51,720
+of your objects, you're not creating new objects.
+
+100
+00:05:51,720 --> 00:05:54,600
+You're just changing something that is already there.
+
+101
+00:05:54,600 --> 00:05:57,810
+However, there are a few immutable things in Python.
+
+102
+00:05:59,280 --> 00:06:01,200
+Integers, for example, are immutable.
+
+103
+00:06:03,050 --> 00:06:07,090
+Let's say that you get my int and that's five.
+
+104
+00:06:07,090 --> 00:06:12,090
+And then you say print ID of my int.
+
+105
+00:06:16,520 --> 00:06:20,740
+When we run this we'll get an ID for our integer object.
+
+106
+00:06:22,240 --> 00:06:25,410
+But how can we modify the five?
+
+107
+00:06:25,410 --> 00:06:29,230
+You cannot change five, five is always five.
+
+108
+00:06:29,230 --> 00:06:30,720
+If you make it six, that's an entirely
+
+109
+00:06:30,720 --> 00:06:33,210
+new thing, an entirely different thing.
+
+110
+00:06:33,210 --> 00:06:38,210
+So indeed if you do my int is equal to my int plus one
+
+111
+00:06:41,240 --> 00:06:44,060
+and then you print the ID of my int,
+
+112
+00:06:44,060 --> 00:06:46,420
+that's going to be an entirely different value.
+
+113
+00:06:46,420 --> 00:06:48,460
+And as you can see here, it's pretty similar
+
+114
+00:06:48,460 --> 00:06:50,060
+but it's not quite the same one.
+
+115
+00:06:52,380 --> 00:06:56,100
+So integers are an example of something that is immutable.
+
+116
+00:06:56,100 --> 00:06:59,870
+You cannot change it because five is always five.
+
+117
+00:07:00,960 --> 00:07:02,260
+Other things that are immutable
+
+118
+00:07:02,260 --> 00:07:05,080
+are floats, strings, and tuples.
+
+119
+00:07:06,150 --> 00:07:09,900
+You cannot change tuples for example, okay?
+
+120
+00:07:11,660 --> 00:07:14,060
+Lists, however, are mutable and
+
+121
+00:07:14,060 --> 00:07:15,710
+I'm going to show you an example.
+
+122
+00:07:16,980 --> 00:07:21,750
+Let's have a friends list, Rolf and Jose.
+
+123
+00:07:24,510 --> 00:07:28,640
+Then we can print the ID of friends.
+
+124
+00:07:29,630 --> 00:07:31,640
+We can then do something like append.
+
+125
+00:07:33,740 --> 00:07:36,040
+And then we can print the ID of friends again.
+
+126
+00:07:37,000 --> 00:07:40,470
+And now notice how these two will have the same ID.
+
+127
+00:07:42,030 --> 00:07:45,950
+We've got five values here, so we'll now get seven
+
+128
+00:07:45,950 --> 00:07:48,630
+and these two down here have the same ID exactly.
+
+129
+00:07:49,600 --> 00:07:52,240
+We've changed or mutated the list,
+
+130
+00:07:52,240 --> 00:07:54,940
+we have not created a new list.
+
+131
+00:07:54,940 --> 00:07:56,280
+When you use list comprehension
+
+132
+00:07:56,280 --> 00:07:58,380
+for example, a new list is created.
+
+133
+00:07:59,640 --> 00:08:04,630
+So these are the immutable types in Python.
+
+134
+00:08:08,700 --> 00:08:12,950
+Integers, floats, strings, tuples.
+
+135
+00:08:14,270 --> 00:08:15,940
+And there's not many more, in fact I don't
+
+136
+00:08:15,940 --> 00:08:18,720
+know any other immutable types.
+
+137
+00:08:19,660 --> 00:08:24,340
+So what is really happening when we mutate an object?
+
+138
+00:08:25,470 --> 00:08:28,260
+Maybe you can see a pattern here,
+
+139
+00:08:28,260 --> 00:08:30,420
+which is that we've got a mutable type
+
+140
+00:08:32,510 --> 00:08:36,180
+and then here, well but this is our mutable
+
+141
+00:08:36,180 --> 00:08:37,850
+type in this case, the dictionary.
+
+142
+00:08:37,850 --> 00:08:39,710
+And then here we're mutating it.
+
+143
+00:08:41,740 --> 00:08:44,820
+So what's happening here on the innards of Python?
+
+144
+00:08:45,710 --> 00:08:49,250
+Well this is happening, friends last seen set item.
+
+145
+00:08:54,497 --> 00:08:57,330
+A function is happening, a function call is occurring.
+
+146
+00:08:59,050 --> 00:09:02,290
+This function call here that takes in self as
+
+147
+00:09:02,290 --> 00:09:07,290
+an argument is modifying the self object.
+
+148
+00:09:07,540 --> 00:09:10,240
+It is not creating a new dictionary
+
+149
+00:09:10,240 --> 00:09:13,810
+which you would do with like, you know, creating a new
+
+150
+00:09:13,810 --> 00:09:18,590
+dictionary you would be like, Rolf is now zero.
+
+151
+00:09:18,590 --> 00:09:20,880
+This would create a new dictionary.
+
+152
+00:09:20,880 --> 00:09:23,540
+But this set item function is not creating
+
+153
+00:09:23,540 --> 00:09:25,840
+a new dictionary, it is modifying self.
+
+154
+00:09:25,840 --> 00:09:30,840
+That is why it mutates the data, it does not recreate it.
+
+155
+00:09:33,600 --> 00:09:35,520
+So what happens when we do this?
+
+156
+00:09:39,430 --> 00:09:44,380
+Well something happens when we add my int plus one together.
+
+157
+00:09:44,380 --> 00:09:47,980
+This happens, my int add one.
+
+158
+00:09:52,440 --> 00:09:55,270
+But the difference is the add function
+
+159
+00:09:56,150 --> 00:09:57,720
+takes in the value of self
+
+160
+00:10:02,240 --> 00:10:07,240
+and returns a new integer object,
+
+161
+00:10:08,530 --> 00:10:09,950
+potentially something like this.
+
+162
+00:10:09,950 --> 00:10:12,690
+I'm not exactly sure how the innards work,
+
+163
+00:10:12,690 --> 00:10:15,300
+but all I know is that it returns a new integer object.
+
+164
+00:10:15,300 --> 00:10:18,440
+It does not modify self, which could be for example
+
+165
+00:10:18,440 --> 00:10:23,040
+self dot value plus equal one.
+
+166
+00:10:24,750 --> 00:10:27,440
+This could modify self, potentially.
+
+167
+00:10:30,220 --> 00:10:35,220
+Okay, note that my int plus equal one is another
+
+168
+00:10:35,700 --> 00:10:40,180
+function call, my int iadd self one.
+
+169
+00:10:43,750 --> 00:10:46,920
+If the int object was programmed to create
+
+170
+00:10:46,920 --> 00:10:50,740
+a new int object when this function call happens then the
+
+171
+00:10:50,740 --> 00:10:54,980
+int object would not be mutable, it would be immutable.
+
+172
+00:10:54,980 --> 00:10:58,390
+Because this iadd function is programmed to create a new
+
+173
+00:10:58,390 --> 00:11:01,940
+int object every time, the int object
+
+174
+00:11:01,940 --> 00:11:05,140
+is immutable, you cannot change it.
+
+175
+00:11:05,140 --> 00:11:07,220
+So immutability.
+
+176
+00:11:09,510 --> 00:11:13,700
+All functions return new int objects.
+
+177
+00:11:14,750 --> 00:11:17,370
+You cannot change existing int objects.
+
+178
+00:11:18,900 --> 00:11:21,710
+This is why some of these things are
+
+179
+00:11:21,710 --> 00:11:23,860
+immutable and some of them are mutable.
+
+180
+00:11:24,990 --> 00:11:28,440
+Because you create new objects of their type
+
+181
+00:11:28,440 --> 00:11:32,910
+when you call some functions and in other cases you never
+
+182
+00:11:32,910 --> 00:11:36,650
+modify existing objects, you only create new objects.
+
+183
+00:11:38,650 --> 00:11:40,430
+This is the concept of immutability
+
+184
+00:11:40,430 --> 00:11:43,580
+and it's sort of difficult to wrap your head around it.
+
+185
+00:11:43,580 --> 00:11:45,260
+But in the next video we're going to look at
+
+186
+00:11:45,260 --> 00:11:48,100
+some examples of where mutability matters.
+
+187
+00:11:48,100 --> 00:11:50,050
+So I'll see you in the very next video.
+

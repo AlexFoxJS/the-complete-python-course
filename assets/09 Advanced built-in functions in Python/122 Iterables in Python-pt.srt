@@ -1,0 +1,588 @@
+1
+00:00:00,392 --> 00:00:01,503
+Jose: Ol e bem vindo de volta.
+
+2
+00:00:01,503 --> 00:00:05,636
+Neste vdeo, estamos vendo iteraes no Python.
+
+3
+00:00:05,636 --> 00:00:07,667
+No ltimo vdeo ns olhamos para
+
+4
+00:00:07,667 --> 00:00:10,584
+iteradores, ento o que diabos  um itervel?
+
+5
+00:00:11,624 --> 00:00:13,831
+Bem, um itervel  um objeto
+
+6
+00:00:13,831 --> 00:00:18,132
+que possui um mtodo __iter __ () ou um mtodo __iter __ ().
+
+7
+00:00:18,132 --> 00:00:20,965
+Ento, algo que se parece com isso.
+
+8
+00:00:25,420 --> 00:00:29,036
+Depois de definir esse mtodo em qualquer
+
+9
+00:00:29,036 --> 00:00:31,301
+objeto, isso  agora itervel.
+
+10
+00:00:31,301 --> 00:00:33,884
+Ento, vamos definir algo aqui.
+
+11
+00:00:34,862 --> 00:00:37,862
+Vamos definir um FirstHundredIterable.
+
+12
+00:00:39,661 --> 00:00:41,890
+Este FirstHundredIterable apenas ir definir este
+
+13
+00:00:41,890 --> 00:00:45,867
+mtodo __iter __ (), ou __iter (), e este mtodo __iter
+
+14
+00:00:45,867 --> 00:00:49,754
+__ () diz ao Python que voc quer ser capaz de
+
+15
+00:00:49,754 --> 00:00:53,186
+iterar sobre este itervel, como em um loop for,
+
+16
+00:00:53,186 --> 00:00:55,620
+ou voc quer fazer parte disso, ou
+
+17
+00:00:55,620 --> 00:00:58,073
+voc quer transform-lo em uma lista.
+
+18
+00:00:58,073 --> 00:01:00,173
+O que isso tem para retornar?
+
+19
+00:01:00,173 --> 00:01:02,572
+Tem que devolver um iterador.
+
+20
+00:01:02,572 --> 00:01:06,822
+Ento, retorne FirstHundredGenerator ().
+
+21
+00:01:09,653 --> 00:01:12,070
+Agora voc pode fazer algo
+
+22
+00:01:13,045 --> 00:01:16,212
+como imprimir a soma de FirstHundredIterable,
+
+23
+00:01:18,139 --> 00:01:22,056
+e ele vai gostar, e lhe dir 4950.
+
+24
+00:01:23,254 --> 00:01:25,587
+Voc tambm pode iter-lo usando um
+
+25
+00:01:28,971 --> 00:01:31,563
+loop for e tudo ficar bem.
+
+26
+00:01:31,563 --> 00:01:34,979
+Ele tambm lhe dar todos os nmeros l.
+
+27
+00:01:34,979 --> 00:01:38,301
+Ento  isso que faz um itervel.
+
+28
+00:01:38,301 --> 00:01:42,143
+Nada de mgico, no precisa fazer nada inventado.
+
+29
+00:01:42,143 --> 00:01:45,059
+Para o Python, para se tornar um itervel, tudo o
+
+30
+00:01:45,059 --> 00:01:48,394
+que voc precisa fazer  definir esse mtodo, e esse mtodo
+
+31
+00:01:48,394 --> 00:01:49,788
+deve retornar algo que voc
+
+32
+00:01:49,788 --> 00:01:51,497
+pode chamar __next __ ().
+
+33
+00:01:51,497 --> 00:01:54,505
+Tem que devolver um iterador.
+
+34
+00:01:54,505 --> 00:01:56,167
+Todos os geradores so iteradores,
+
+35
+00:01:56,167 --> 00:01:59,250
+ento  claro que isso pode ser um gerador.
+
+36
+00:02:00,593 --> 00:02:04,176
+Agora, se voc quiser tornar isso um pouco mais
+
+37
+00:02:05,594 --> 00:02:07,011
+simples, o que voc
+
+38
+00:02:08,098 --> 00:02:10,805
+pode fazer, em vez de ter uma H este mtodo __iter __ ()
+
+39
+00:02:10,805 --> 00:02:14,414
+classe separada retornando o FirstHundredIterator, voc pode se perguntar. aqui que est retornando um objeto deste tipo.
+
+40
+00:02:14,414 --> 00:02:15,682
+O que 
+
+41
+00:02:15,682 --> 00:02:18,804
+FirstHundredGenerator () no contexto dessa classe?
+
+42
+00:02:18,804 --> 00:02:21,567
+Esta  uma pergunta muito vaga, mas eu diria que  auto.
+
+43
+00:02:21,567 --> 00:02:23,996
+Self  sempre o objeto
+
+44
+00:02:23,996 --> 00:02:28,996
+atual, e o que voc est fazendo aqui  que voc
+
+45
+00:02:29,648 --> 00:02:31,725
+est retornando um objeto,
+
+46
+00:02:31,725 --> 00:02:34,500
+ento certamente voc pode fazer isso.
+
+47
+00:02:34,500 --> 00:02:36,167
+Agora voc no precisa mais
+
+48
+00:02:40,099 --> 00:02:40,932
+deste FirstHundredIterable, e
+
+49
+00:02:42,079 --> 00:02:46,168
+voc pode simplesmente retornar FirstHundredGenerator () aqui, e ele vai ficar como agora.
+
+50
+00:02:46,168 --> 00:02:51,168
+Agora seu gerador  um pouco mais confuso porque  tanto um iterador quanto
+
+51
+00:02:51,342 --> 00:02:53,798
+um itervel, e isso pode ser confuso
+
+52
+00:02:53,798 --> 00:02:56,092
+em alguns casos, mas pode ser realmente
+
+53
+00:02:56,092 --> 00:02:59,422
+til em outros porque  muito mais curto do
+
+54
+00:02:59,422 --> 00:03:01,490
+que ter uma classe separada para
+
+55
+00:03:01,490 --> 00:03:02,840
+fazer isso por voc.
+
+56
+00:03:02,840 --> 00:03:05,270
+Novamente, o itervel retornou um iterador
+
+57
+00:03:05,270 --> 00:03:07,518
+usando este mtodo __iter __ ().
+
+58
+00:03:07,518 --> 00:03:10,916
+Assim, voc tambm pode fazer isso a partir do iterador, j que o
+
+59
+00:03:10,916 --> 00:03:12,944
+self  sempre um iterador, porque self 
+
+60
+00:03:12,944 --> 00:03:15,517
+o objeto que possui esse mtodo dunder __next __ ().
+
+61
+00:03:15,517 --> 00:03:19,231
+Ento mencionei muito mais cedo no curso algo sobre loops
+
+62
+00:03:19,231 --> 00:03:24,231
+for e como precisvamos de um objeto que tivesse dunder __len __ ()
+
+63
+00:03:24,546 --> 00:03:26,626
+e dunder __getitem __ () definido.
+
+64
+00:03:26,626 --> 00:03:29,944
+Ento, o que  aquilo?
+
+65
+00:03:29,944 --> 00:03:34,895
+Vamos definir outro itervel, e ele ter
+
+66
+00:03:34,895 --> 00:03:36,559
+um __len
+
+67
+00:03:36,559 --> 00:03:39,059
+__ (), len (self. carros), e eu vou inicializar carros aqui em cima.
+
+68
+00:03:41,466 --> 00:03:45,799
+Ento, digamos que temos auto. cars  igual a essa lista de dois elementos, ento
+
+69
+00:03:47,101 --> 00:03:52,101
+definimos um mtodo dunder __len __
+
+70
+00:04:00,281 --> 00:04:02,139
+(), que
+
+71
+00:04:02,139 --> 00:04:06,376
+retorna o tamanho da lista, e tambm definimos um mtodo
+
+72
+00:04:06,376 --> 00:04:09,121
+__getitem __ () que recebe o
+
+73
+00:04:09,121 --> 00:04:12,977
+ndice que queremos recuperar, e apenas retorna auto. carros [i].
+
+74
+00:04:12,977 --> 00:04:15,732
+Anteriormente no curso, vimos isso e eu disse que quando
+
+75
+00:04:15,732 --> 00:04:18,232
+voc tem um objeto parecido
+
+76
+00:04:20,339 --> 00:04:23,838
+com esse que tem o mtodo __len __ () e __getitem __ (),
+
+77
+00:04:23,838 --> 00:04:25,611
+voc pode usar o loop nele.
+
+78
+00:04:25,611 --> 00:04:28,635
+E, de fato, se fizermos por carro em AnotherIterable (), voc ver
+
+79
+00:04:28,635 --> 00:04:30,548
+que isso imprime os carros, Fiesta e Focus.
+
+80
+00:04:30,548 --> 00:04:35,548
+Ento isso  uma itervel tambm?
+
+81
+00:04:38,661 --> 00:04:43,422
+No possui um mtodo __iter __ ().
+
+82
+00:04:43,422 --> 00:04:45,244
+No retorna nenhum gerador.
+
+83
+00:04:45,244 --> 00:04:47,226
+E a resposta  sim.
+
+84
+00:04:47,226 --> 00:04:49,895
+Em Python, voc pode ter seus iterveis definidos com um
+
+85
+00:04:49,895 --> 00:04:52,054
+mtodo __iter __ () que retorna um itervel,
+
+86
+00:04:52,054 --> 00:04:55,270
+ou voc pode ter um objeto que tenha comprimento e getitem.
+
+87
+00:04:55,270 --> 00:04:57,740
+Ambos so iterveis e voc pode usar loops for, voc Desculpe, no __len __ (),
+
+88
+00:04:57,740 --> 00:05:00,951
+pode usar __sum __ (), voc pode usar __len __ () neles. voc pode usar __list __ () neles. Ento, essas duas coisas so iterveis.
+
+89
+00:05:00,951 --> 00:05:04,492
+Agora est bem?
+
+90
+00:05:04,492 --> 00:05:07,227
+E agora aprendemos um pouco
+
+91
+00:05:07,227 --> 00:05:11,665
+sobre iterables, como eles so diferentes dos iteradores, mas
+
+92
+00:05:11,665 --> 00:05:15,201
+eles esto normalmente juntos, de mos dadas.
+
+93
+00:05:15,201 --> 00:05:16,804
+Um iterador  usado para obter
+
+94
+00:05:16,804 --> 00:05:19,521
+o prximo valor e um itervel  usado para passar
+
+95
+00:05:19,521 --> 00:05:22,141
+por cima de todos os valores de um iterador.
+
+96
+00:05:22,141 --> 00:05:26,543
+Ento, um iterador permite que voc v mais passo-a-passo, caso queira fazer
+
+97
+00:05:26,543 --> 00:05:30,029
+isso, chamando __next __ (), e o itervel permite
+
+98
+00:05:30,029 --> 00:05:32,358
+que voc repasse todos os elementos.
+
+99
+00:05:32,358 --> 00:05:33,555
+Ento  isso para este vdeo.
+
+100
+00:05:33,555 --> 00:05:36,219
+Se no faz muito sentido e voc est se
+
+101
+00:05:36,219 --> 00:05:39,010
+perguntando, "Bem, por que diabos eu vou precisar disso? "No
+
+102
+00:05:39,010 --> 00:05:42,904
+se preocupe.
+
+103
+00:05:42,904 --> 00:05:44,636
+Em algumas sees, voc vai ficar tipo "Oh meu
+
+104
+00:05:44,636 --> 00:05:46,210
+Deus, isso faz muito sentido",  medida que
+
+105
+00:05:46,210 --> 00:05:48,483
+aprendemos sobre o Python assncrono.
+
+106
+00:05:48,483 --> 00:05:49,420
+Apenas dando algumas dicas aqui.
+
+107
+00:05:49,420 --> 00:05:51,071
+E tambm, quando voc quiser usar ou passar por cima
+
+108
+00:05:51,071 --> 00:05:53,584
+de uma lista um pouco mais longa, voc pode usar geradores para fazer isso.
+
+109
+00:05:53,584 --> 00:05:55,938
+Agora deixe-me tambm dizer, agora que
+
+110
+00:05:55,938 --> 00:05:57,623
+estamos aqui, que em
+
+111
+00:05:57,623 --> 00:06:01,623
+vez de ter my_numbers = [x for x in [1,
+
+112
+00:06:02,950 --> 00:06:07,950
+2, 3, 4, 5]] por exemplo, isso  uma compreenso da lista.
+
+113
+00:06:08,065 --> 00:06:11,360
+my_numbers_gen (), voc pode fazer uma compreenso do gerador.
+
+114
+00:06:11,360 --> 00:06:15,293
+Esta instncia no  muito til, mas agora
+
+115
+00:06:15,293 --> 00:06:17,876
+tambm  um objeto gerador.
+
+116
+00:06:19,935 --> 00:06:23,435
+Qual  apenas um atalho para iterar sobre uma seqncia.
+
+117
+00:06:24,368 --> 00:06:29,368
+Voc pode fazer o prximo (my_numbers_gen).
+
+118
+00:06:30,651 --> 00:06:33,885
+Voc pode imprimi-lo.
+
+119
+00:06:33,885 --> 00:06:36,838
+Ento, a compreenso do gerador, uma coisa muito
+
+120
+00:06:36,838 --> 00:06:40,245
+popular para fazer tambm, nem  aquela impressa l fora.
+
+121
+00:06:40,245 --> 00:06:43,321
+Ento, s queria mencionar isso.
+
+122
+00:06:43,321 --> 00:06:45,795
+Esta no  a compreenso da
+
+123
+00:06:45,795 --> 00:06:48,449
+tupla; esta  uma compreenso geradora.
+
+124
+00:06:48,449 --> 00:06:52,361
+E ns podemos us-lo para criar um objeto gerador em tempo real, vamos chamar __next __
+
+125
+00:06:52,361 --> 00:06:53,479
+() nessa sintaxe tambm.
+
+126
+00:06:53,479 --> 00:06:55,361
+Novamente, tudo o que ele faz  passar por cima dessa
+
+127
+00:06:55,361 --> 00:06:57,377
+lista e gerar cada nmero como voc chama __next __ ().
+
+128
+00:06:57,377 --> 00:07:00,748
+Portanto, no copia a lista inteira, o que isso faz.
+
+129
+00:07:00,748 --> 00:07:04,249
+Isso copia a lista e d outra cpia.
+
+130
+00:07:04,249 --> 00:07:06,640
+Isso permite que voc analise
+
+131
+00:07:06,640 --> 00:07:10,268
+um por um sem copiar toda a lista.
+
+132
+00:07:10,268 --> 00:07:13,560
+Claro que este exemplo no  muito bom.
+
+133
+00:07:13,560 --> 00:07:16,249
+Voc poderia apenas iterar sobre essa lista, j que
+
+134
+00:07:16,249 --> 00:07:18,444
+voc j a acessou, mas pode ser til
+
+135
+00:07:18,444 --> 00:07:21,111
+em outros casos, como quando voc est interagindo com
+
+136
+00:07:22,438 --> 00:07:23,959
+outro gerador e voc quer
+
+137
+00:07:23,959 --> 00:07:25,389
+fazer algumas alteraes nele rapidamente.
+
+138
+00:07:25,389 --> 00:07:27,684
+Por isso, pode ser til em casos prximos.
+
+139
+00:07:27,684 --> 00:07:29,827
+Ns vamos encontrar mais exemplos disso mais tarde.
+
+140
+00:07:29,827 --> 00:07:32,069
+Eu s queria te dar um pouco da sintaxe.
+
+141
+00:07:32,069 --> 00:07:35,165
+De qualquer forma,  isso para este vdeo.
+
+142
+00:07:35,165 --> 00:07:37,682
+No quero mais ficar com voc.
+
+143
+00:07:37,682 --> 00:07:39,977
+Eu vou te ver no prximo.
+
+144
+00:07:39,977 --> 00:07:41,686
+&nbsp;
+
+145
+00:07:41,686 --> 00:07:42,876
+&nbsp;
+
+146
+00:07:42,876 --> 00:07:44,162
+&nbsp;
+
+147
+00:07:44,162 --> 00:07:46,579
+&nbsp;
+

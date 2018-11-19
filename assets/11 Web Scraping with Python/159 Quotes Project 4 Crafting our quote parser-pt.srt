@@ -1,0 +1,328 @@
+1
+00:00:00,470 --> 00:00:02,070
+Instrutor: Ol e bem vindo de
+
+2
+00:00:02,070 --> 00:00:03,320
+volta, no ltimo vdeo, eu
+
+3
+00:00:03,320 --> 00:00:04,430
+disse que iramos olhar
+
+4
+00:00:04,430 --> 00:00:05,970
+as pginas, mas eu realmente acho
+
+5
+00:00:05,970 --> 00:00:08,410
+que faz mais sentido olhar primeiro para o analisador de cotaes.
+
+6
+00:00:08,410 --> 00:00:10,130
+Ento, o que eu fiz
+
+7
+00:00:10,130 --> 00:00:12,980
+foi abrir aqui o analisador de cotaes e
+
+8
+00:00:12,980 --> 00:00:17,980
+o que vamos fazer , em primeiro lugar, importar nossos localizadores de cotao.
+
+9
+00:00:17,980 --> 00:00:21,150
+E ento vamos criar a classe
+
+10
+00:00:21,150 --> 00:00:23,830
+QuoteParser, e essa classe ser
+
+11
+00:00:23,830 --> 00:00:28,830
+usada para, de acordo com um dos divs especficos,
+
+12
+00:00:29,460 --> 00:00:32,680
+descobrir os dados sobre a cotao.
+
+13
+00:00:34,060 --> 00:00:36,840
+Citar contedo, autor e tags.
+
+14
+00:00:38,040 --> 00:00:40,820
+Agora, isso vai fazer uso de uma coisa nova,
+
+15
+00:00:40,820 --> 00:00:42,810
+em Sopa Bonita que ns no
+
+16
+00:00:42,810 --> 00:00:44,910
+vimos antes, mas mesmo assim, esse 
+
+17
+00:00:44,910 --> 00:00:49,230
+o propsito deste projeto, introduzir as coisas, e  isso, o que vamos
+
+18
+00:00:49,230 --> 00:00:51,230
+receber aqui no mtodo init, um
+
+19
+00:00:51,230 --> 00:00:55,180
+pai, e depois vamos nos dizer. pai pai igual.
+
+20
+00:00:56,600 --> 00:01:00,550
+S para explicar porque estou chamando esse parmetro de pai, aqui.
+
+21
+00:01:02,320 --> 00:01:07,320
+Voltando ao Chrome, o que vamos dar ao
+
+22
+00:01:07,370 --> 00:01:11,790
+nosso analisador de cotaes  essa tag div.
+
+23
+00:01:13,500 --> 00:01:15,300
+Ento, esse ser nosso primeiro analisador de cotaes.
+
+24
+00:01:15,300 --> 00:01:17,760
+Ns vamos dar a esta tag div.
+
+25
+00:01:17,760 --> 00:01:19,140
+E o nosso segundo analisador de cotaes,
+
+26
+00:01:19,140 --> 00:01:20,350
+vamos dar a esta tag div.
+
+27
+00:01:20,350 --> 00:01:23,100
+E o terceiro analisador de cotaes, daremos a ele essa tag div.
+
+28
+00:01:24,350 --> 00:01:26,050
+Anteriormente, com a Beautiful Soup,
+
+29
+00:01:26,050 --> 00:01:30,380
+analisamos o carregamento usando a Beautiful Soup em toda a pgina.
+
+30
+00:01:30,380 --> 00:01:31,900
+E ento fomos capazes
+
+31
+00:01:31,900 --> 00:01:34,840
+de pesquisar em toda a pgina usando Sopa Bonita.
+
+32
+00:01:34,840 --> 00:01:38,750
+Mas, na verdade, quando voc encontra um elemento com Beautiful Soup,
+
+33
+00:01:38,750 --> 00:01:41,640
+por exemplo, voc encontra essa div usando Beautiful
+
+34
+00:01:42,810 --> 00:01:45,640
+Soup, ento voc pode pesquisar apenas nesse elemento.
+
+35
+00:01:46,600 --> 00:01:48,910
+Ento, o que vamos fazer ,
+
+36
+00:01:48,910 --> 00:01:53,400
+nossa pgina de cotaes vai encontrar esses elementos e vai dar a
+
+37
+00:01:53,400 --> 00:01:55,880
+cada elemento um objeto analisador de cotao,
+
+38
+00:01:56,730 --> 00:02:00,720
+e eles vo usar esse elemento para encontrar os filhos.
+
+39
+00:02:00,720 --> 00:02:03,457
+Nesse caso, os filhos desse elemento sero
+
+40
+00:02:03,457 --> 00:02:07,440
+o contedo da cotao, o autor e as tags.
+
+41
+00:02:09,360 --> 00:02:13,900
+Vamos voltar ao PyCharm e rapidamente
+
+42
+00:02:15,610 --> 00:02:19,610
+escrever esses mtodos de propriedade aqui.
+
+43
+00:02:19,610 --> 00:02:23,010
+O contedo da citao vai retornar,
+
+44
+00:02:23,010 --> 00:02:25,420
+bem, ele vai ter um
+
+45
+00:02:25,420 --> 00:02:29,640
+localizador que ser quotelocators. contedo e vai voltar
+
+46
+00:02:29,640 --> 00:02:34,640
+a si mesmo. pai selecione um, localizador. corda.
+
+47
+00:02:35,720 --> 00:02:39,940
+Observe como voc . pai vai ser essa
+
+48
+00:02:39,940 --> 00:02:42,799
+tag div, que inclui a citao,
+
+49
+00:02:42,799 --> 00:02:47,750
+mas Beautiful Soup nos permite selecionar e procurar dentro do pai.
+
+50
+00:02:47,750 --> 00:02:50,770
+No precisa estar apenas na prpria pgina, pode estar
+
+51
+00:02:50,770 --> 00:02:52,420
+em qualquer um dos elementos.
+
+52
+00:02:54,380 --> 00:02:58,500
+Ok, ento para o autor, vai
+
+53
+00:02:59,670 --> 00:03:02,150
+ser bem parecido.
+
+54
+00:03:02,150 --> 00:03:05,810
+O localizador, neste caso, ser o localizador do autor e, em
+
+55
+00:03:05,810 --> 00:03:09,240
+seguida, retornar para si mesmo. pai, selecione
+
+56
+00:03:09,240 --> 00:03:12,730
+um, localizador. string, muito semelhante.
+
+57
+00:03:12,730 --> 00:03:14,270
+E finalmente, as tags.
+
+58
+00:03:15,340 --> 00:03:19,690
+Tags, o localizador vai ser quotelocators. tags e vai voltar
+
+59
+00:03:21,580 --> 00:03:25,940
+a si mesmo. pai. selecione (localizador).
+
+60
+00:03:27,630 --> 00:03:30,339
+Novamente, isso selecionar todos
+
+61
+00:03:30,339 --> 00:03:34,260
+os itens de tag individuais disponveis.
+
+62
+00:03:34,260 --> 00:03:38,220
+Se voc quisesse, voc poderia extrair o texto
+
+63
+00:03:38,220 --> 00:03:42,710
+de cada elemento fazendo e. string para e e isso.
+
+64
+00:03:43,570 --> 00:03:46,960
+Ento, isso seria definitivamente uma opo tambm, ok?
+
+65
+00:03:48,530 --> 00:03:51,900
+Agora, isso no faz muito sentido at que tenhamos nos
+
+66
+00:03:51,900 --> 00:03:55,110
+juntado ao nosso programa e tudo comea a fazer um
+
+67
+00:03:55,110 --> 00:03:57,410
+pouco mais de sentido, acredite em mim.
+
+68
+00:03:57,410 --> 00:04:02,410
+Eu tambm vou adicionar aqui um mtodo rapr que retornar
+
+69
+00:04:02,570 --> 00:04:07,570
+esta citao, self. contedo por si mesmo. autor, ok?
+
+70
+00:04:12,580 --> 00:04:14,730
+Isso  apenas para que, quando executamos nosso
+
+71
+00:04:14,730 --> 00:04:17,570
+aplicativo, possamos imprimir esses objetos analisadores de cotao, e isso pode
+
+72
+00:04:17,570 --> 00:04:19,220
+fazer um pouco mais de sentido.
+
+73
+00:04:20,910 --> 00:04:25,710
+At agora, o que vamos receber  uma tag Beautiful Soup que
+
+74
+00:04:25,710 --> 00:04:28,650
+ o div que contm esta citao.
+
+75
+00:04:28,650 --> 00:04:32,150
+Dentro desse div, haver apenas um localizador para o contedo,
+
+76
+00:04:32,150 --> 00:04:35,180
+um para o autor e outro para as tags.
+
+77
+00:04:35,180 --> 00:04:37,000
+Ento, no seremos capazes
+
+78
+00:04:37,000 --> 00:04:40,730
+de nos confundirmos com citaes diferentes neste nvel, ok?
+
+79
+00:04:40,730 --> 00:04:43,160
+Agora, vamos para a pgina de cotaes
+
+80
+00:04:43,160 --> 00:04:46,810
+e podemos comear a juntar o programa e comear a fazer
+
+81
+00:04:46,810 --> 00:04:48,640
+um pouco mais de sentido.
+
+82
+00:04:48,640 --> 00:04:50,440
+Vejo voc no prximo vdeo.
+

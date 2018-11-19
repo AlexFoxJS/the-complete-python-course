@@ -1,0 +1,1192 @@
+1
+00:00:00,032 --> 00:00:01,300
+Jose: Y bienvenido de nuevo.
+
+2
+00:00:01,300 --> 00:00:03,010
+En esta seccin, estamos
+
+3
+00:00:03,010 --> 00:00:06,730
+hablando de algunos principios ms avanzados orientados a objetos.
+
+4
+00:00:06,730 --> 00:00:08,860
+As que he creado este proyecto de muestra
+
+5
+00:00:08,860 --> 00:00:10,170
+aqu, llamado Advanced OOP, solo
+
+6
+00:00:10,170 --> 00:00:11,290
+un pequeo proyecto en
+
+7
+00:00:11,290 --> 00:00:12,570
+el que vamos a crear
+
+8
+00:00:12,570 --> 00:00:14,800
+algunos archivos para explicar algunos de estos conceptos.
+
+9
+00:00:15,820 --> 00:00:17,990
+Hay dos archivos aqu ahora.
+
+10
+00:00:17,990 --> 00:00:19,360
+Tenemos usuario. py, y
+
+11
+00:00:20,320 --> 00:00:22,343
+en este archivo, todo lo
+
+12
+00:00:22,343 --> 00:00:24,941
+que tenemos es una clase corta
+
+13
+00:00:24,941 --> 00:00:27,000
+que representa a un usuario.
+
+14
+00:00:27,000 --> 00:00:28,870
+Entonces tienes un mtodo init, arreglando
+
+15
+00:00:28,870 --> 00:00:30,200
+un nombre de usuario y
+
+16
+00:00:30,200 --> 00:00:31,930
+una contrasea, y los configura como
+
+17
+00:00:31,930 --> 00:00:33,850
+las propiedades del objeto que has creado,
+
+18
+00:00:33,850 --> 00:00:35,770
+y luego tiene otros dos mtodos.
+
+19
+00:00:35,770 --> 00:00:39,260
+Un mtodo de inicio de sesin, simplemente devuelve que ha iniciado sesin.
+
+20
+00:00:39,260 --> 00:00:41,090
+Potencialmente, esto debera hacer algo como
+
+21
+00:00:41,090 --> 00:00:42,980
+verificar una base de datos, comparar
+
+22
+00:00:42,980 --> 00:00:44,140
+la contrasea que proporcion
+
+23
+00:00:44,140 --> 00:00:45,260
+con la contrasea en
+
+24
+00:00:45,260 --> 00:00:47,029
+la base de datos, o algo
+
+25
+00:00:47,029 --> 00:00:48,990
+as, y tiene un mtodo repr.
+
+26
+00:00:48,990 --> 00:00:51,860
+Clase bastante normal, ya sabes, crears cosas
+
+27
+00:00:51,860 --> 00:00:53,340
+como estas todo el
+
+28
+00:00:53,340 --> 00:00:55,530
+tiempo en tu proyecto, y
+
+29
+00:00:55,530 --> 00:00:59,000
+luego tenemos un administrador. clase py,
+
+30
+00:00:59,000 --> 00:01:01,850
+hereda del usuario.
+
+31
+00:01:01,850 --> 00:01:04,230
+Entonces toma todos los mtodos del usuario, y luego
+
+32
+00:01:05,436 --> 00:01:07,290
+lo que tenemos es otro mtodo de
+
+33
+00:01:07,290 --> 00:01:08,995
+inicio en esta clase de administrador,
+
+34
+00:01:08,995 --> 00:01:10,440
+toma un nombre de usuario,
+
+35
+00:01:10,440 --> 00:01:11,780
+una contrasea y un nivel
+
+36
+00:01:12,670 --> 00:01:15,230
+de acceso, y luego eso llama al usuario init
+
+37
+00:01:15,230 --> 00:01:17,530
+y establece la propiedad del nivel de acceso.
+
+38
+00:01:18,408 --> 00:01:21,140
+Potencialmente, este nivel de acceso podra ser
+
+39
+00:01:21,140 --> 00:01:24,680
+algo as como superusuario o administrador o algo as,
+
+40
+00:01:24,680 --> 00:01:27,020
+diferentes niveles de privilegio de administrador.
+
+41
+00:01:27,900 --> 00:01:31,430
+Luego, el mtodo repr tiene el administrador, el
+
+42
+00:01:31,430 --> 00:01:33,350
+nombre de usuario y
+
+43
+00:01:33,350 --> 00:01:36,535
+el acceso, y finalmente tambin incluye un
+
+44
+00:01:36,535 --> 00:01:39,870
+mtodo to_dict, que devuelve una representacin del diccionario
+
+45
+00:01:39,870 --> 00:01:41,940
+de este objeto de administracin.
+
+46
+00:01:41,940 --> 00:01:44,480
+Entonces devuelve el nombre de usuario como auto. nombre de usuario, contrasea
+
+47
+00:01:44,480 --> 00:01:45,620
+como auto. contrasea
+
+48
+00:01:45,620 --> 00:01:47,890
+y acceso, auto. acceso.
+
+49
+00:01:47,890 --> 00:01:51,080
+Simplemente devuelve un diccionario y usando
+
+50
+00:01:51,080 --> 00:01:53,820
+este diccionario, podramos recrear el objeto.
+
+51
+00:01:53,820 --> 00:01:57,000
+As que esto es similar a, por ejemplo, si quisiera guardar esto
+
+52
+00:01:57,000 --> 00:01:58,970
+en una base de datos, simplemente tomara
+
+53
+00:01:58,970 --> 00:02:00,840
+cada una de las propiedades de este
+
+54
+00:02:00,840 --> 00:02:01,673
+diccionario, podra ponerlas
+
+55
+00:02:01,673 --> 00:02:03,540
+en una base de datos, por ejemplo.
+
+56
+00:02:04,640 --> 00:02:07,296
+Ahora, digamos que queremos crear algn tipo
+
+57
+00:02:07,296 --> 00:02:08,610
+de base de datos.
+
+58
+00:02:08,610 --> 00:02:11,428
+Voy a crear un archivo de base de datos en memoria,
+
+59
+00:02:11,428 --> 00:02:13,280
+llmalo base de datos. py, y simplemente
+
+60
+00:02:13,280 --> 00:02:14,790
+codifcalo en vivo frente a
+
+61
+00:02:14,790 --> 00:02:17,610
+ti, porque creo que es algo interesante por lo que pasar.
+
+62
+00:02:17,610 --> 00:02:18,700
+Al crear esta
+
+63
+00:02:18,700 --> 00:02:20,330
+base de datos, la
+
+64
+00:02:20,330 --> 00:02:23,460
+usaremos para explicar cmo funciona la herencia mltiple.
+
+65
+00:02:24,500 --> 00:02:26,920
+As que voy a crear esta base de datos
+
+66
+00:02:26,920 --> 00:02:29,360
+de clase, y la clase de base de datos
+
+67
+00:02:29,360 --> 00:02:32,240
+va a tener una variable de clase llamada contenido, y una
+
+68
+00:02:33,320 --> 00:02:35,860
+variable de clase es solo una variable que existe dentro
+
+69
+00:02:35,860 --> 00:02:38,870
+de la clase en lugar de dentro del objeto, para que pueda
+
+70
+00:02:39,880 --> 00:02:43,660
+acceder a esto como base de datos. contenido, y siempre
+
+71
+00:02:43,660 --> 00:02:45,860
+le dar este diccionario.
+
+72
+00:02:47,190 --> 00:02:49,440
+Luego vamos a tener un par de
+
+73
+00:02:49,440 --> 00:02:50,600
+mtodos, un par
+
+74
+00:02:50,600 --> 00:02:54,160
+de mtodos de clase, insertar, que va a tomar algunos
+
+75
+00:02:54,160 --> 00:02:56,390
+datos, y los va a insertar
+
+76
+00:02:56,390 --> 00:03:00,960
+en la base de datos. contenido ('usuarios'). anexar (datos).
+
+77
+00:03:03,400 --> 00:03:07,263
+Entonces otra vez, base de datos. el contenido es este diccionario
+
+78
+00:03:07,263 --> 00:03:10,990
+aqu, y todo lo que hacemos es agregar a la
+
+79
+00:03:10,990 --> 00:03:13,320
+lista de usuarios los datos que
+
+80
+00:03:13,320 --> 00:03:15,240
+recibimos en el mtodo de insercin.
+
+81
+00:03:15,240 --> 00:03:16,360
+Como este es un
+
+82
+00:03:16,360 --> 00:03:18,107
+mtodo de clase, podemos reemplazar la
+
+83
+00:03:18,107 --> 00:03:23,107
+base de datos por cls, ya que cls y la base de datos son lo mismo.
+
+84
+00:03:24,720 --> 00:03:26,980
+Luego tendremos otro mtodo de
+
+85
+00:03:26,980 --> 00:03:28,340
+clase que se
+
+86
+00:03:29,790 --> 00:03:33,280
+eliminar, y esto tendr una funcin de
+
+87
+00:03:33,280 --> 00:03:34,970
+bsqueda y todo lo
+
+88
+00:03:34,970 --> 00:03:39,970
+que har es hacer cls. contenido ('usuarios') igual usuario para el
+
+89
+00:03:40,750 --> 00:03:43,430
+usuario en cls. contenido ('usuarios') si
+
+90
+00:03:43,430 --> 00:03:45,030
+no es buscador (usuario).
+
+91
+00:03:47,140 --> 00:03:49,340
+Bastante, ya sabes, forma estndar de
+
+92
+00:03:49,340 --> 00:03:51,130
+eliminar algo de una lista.
+
+93
+00:03:51,130 --> 00:03:52,770
+Haga una lista de comprensin
+
+94
+00:03:52,770 --> 00:03:56,091
+y coloque todos los elementos de esa lista en
+
+95
+00:03:56,091 --> 00:04:00,330
+una nueva lista siempre que no coincidan con esta funcin de bsqueda.
+
+96
+00:04:00,330 --> 00:04:01,640
+Entonces, la funcin del
+
+97
+00:04:01,640 --> 00:04:05,600
+buscador podra ser algo as como lambda x, el nombre de
+
+98
+00:04:07,430 --> 00:04:09,120
+usuario x no es Rolf.
+
+99
+00:04:10,970 --> 00:04:12,310
+As que esta podra
+
+100
+00:04:12,310 --> 00:04:15,230
+ser la funcin de bsqueda, y si no
+
+101
+00:04:15,230 --> 00:04:16,850
+coincide con eso, la eliminaremos.
+
+102
+00:04:19,640 --> 00:04:21,730
+Finalmente, solo para completar, y
+
+103
+00:04:21,730 --> 00:04:24,310
+porque por supuesto necesitaremos esto, agreguemos
+
+104
+00:04:24,310 --> 00:04:27,110
+un mtodo de clase final, que
+
+105
+00:04:27,110 --> 00:04:28,730
+ser un hallazgo.
+
+106
+00:04:30,130 --> 00:04:32,070
+De acuerdo, y esto va a
+
+107
+00:04:32,070 --> 00:04:35,850
+devolver usuario para usuario en cls. contenido ('usuarios') si
+
+108
+00:04:35,850 --> 00:04:37,010
+buscador (usuario).
+
+109
+00:04:38,166 --> 00:04:40,816
+As que esta vez encontrar todos los usuarios que
+
+110
+00:04:41,749 --> 00:04:43,370
+coincidan con la funcin lambda.
+
+111
+00:04:43,370 --> 00:04:47,050
+As que de nuevo lambda x, x nombre de usuario es
+
+112
+00:04:47,050 --> 00:04:48,340
+Rolf, esto va a
+
+113
+00:04:50,030 --> 00:04:51,040
+encontrar todos los
+
+114
+00:04:51,040 --> 00:04:54,290
+usuarios en la base de datos que coincidan con esta
+
+115
+00:04:54,290 --> 00:04:56,240
+funcin lambda, por lo que encontrar
+
+116
+00:04:56,240 --> 00:04:57,840
+todos los usuarios que tengan
+
+117
+00:04:57,840 --> 00:04:59,790
+nombre de usuario de Rolf.
+
+118
+00:05:01,220 --> 00:05:02,053
+Bueno.
+
+119
+00:05:03,520 --> 00:05:06,360
+Esta es nuestra base de datos de muestra.
+
+120
+00:05:06,360 --> 00:05:10,410
+Entonces, cuando importamos esta clase, inicializaremos esta variable
+
+121
+00:05:10,410 --> 00:05:13,490
+de contenido y luego podremos insertar,
+
+122
+00:05:13,490 --> 00:05:16,330
+eliminar o buscar datos dentro
+
+123
+00:05:16,330 --> 00:05:19,300
+de esta variable de clase.
+
+124
+00:05:19,300 --> 00:05:21,620
+Tenga en cuenta que si creamos
+
+125
+00:05:21,620 --> 00:05:23,890
+varios objetos de tipo base de
+
+126
+00:05:23,890 --> 00:05:27,070
+datos, todos tendrn la misma variable de contenido.
+
+127
+00:05:27,070 --> 00:05:28,840
+Esta variable es una variable de
+
+128
+00:05:28,840 --> 00:05:31,200
+clase, no es una variable de instancia, por
+
+129
+00:05:31,200 --> 00:05:33,080
+lo que no cambia por objeto,
+
+130
+00:05:33,080 --> 00:05:35,780
+todos los objetos tienen la misma variable de instancia.
+
+131
+00:05:35,780 --> 00:05:40,640
+Entonces, volviendo a nuestro administrador. py, digamos que queremos
+
+132
+00:05:40,640 --> 00:05:44,310
+insertar esto en nuestra base de datos.
+
+133
+00:05:44,310 --> 00:05:45,180
+Qu podamos hacer?
+
+134
+00:05:46,130 --> 00:05:48,480
+Bueno, podramos decir algo como guardar, y luego hacer
+
+135
+00:05:49,541 --> 00:05:52,890
+algo como base de datos. insertar (self. to_dict ()).
+
+136
+00:05:55,360 --> 00:05:57,460
+Y tendremos que importar la base de datos tambin.
+
+137
+00:06:01,597 --> 00:06:04,230
+De acuerdo, este es el mtodo
+
+138
+00:06:04,230 --> 00:06:06,740
+de guardar implementado en nuestro administrador.
+
+139
+00:06:06,740 --> 00:06:10,250
+Ahora si creamos otro archivo, vamos a llamarlo aplicacin. py, y queremos que pruebe esto
+
+140
+00:06:12,300 --> 00:06:13,990
+como el administrador creando un
+
+141
+00:06:13,990 --> 00:06:15,631
+objeto y luego guardndolo en
+
+142
+00:06:15,631 --> 00:06:17,231
+la base de datos, y
+
+143
+00:06:17,231 --> 00:06:18,600
+luego tal vez encontrndolo
+
+144
+00:06:18,600 --> 00:06:19,510
+de nuevo, podramos hacerlo.
+
+145
+00:06:21,380 --> 00:06:22,690
+Podemos importar la clase
+
+146
+00:06:22,690 --> 00:06:25,080
+de administrador, decir que a es administrador,
+
+147
+00:06:25,080 --> 00:06:28,470
+rolf y, uno dos tres cuatro, y el nivel
+
+148
+00:06:28,470 --> 00:06:31,130
+de acceso va a ser, digamos tres.
+
+149
+00:06:31,130 --> 00:06:33,460
+Entonces podemos hacer a. guardar, y luego
+
+150
+00:06:33,460 --> 00:06:38,370
+podemos hacer imprimir (Base de datos. find (lambda x:
+
+151
+00:06:38,370 --> 00:06:42,300
+x ('username') es 'rolf')).
+
+152
+00:06:42,300 --> 00:06:44,950
+Por supuesto, tendremos que importar la base de datos tambin.
+
+153
+00:06:47,610 --> 00:06:49,780
+De acuerdo, vamos a ejecutar la aplicacin. py.
+
+154
+00:06:51,108 --> 00:06:52,870
+Y como pueden ver,
+
+155
+00:06:52,870 --> 00:06:54,870
+recuperamos lo que esperaban.
+
+156
+00:06:54,870 --> 00:06:58,720
+El resultado de esta base de datos. encontrar.
+
+157
+00:07:00,530 --> 00:07:02,920
+As que eso est bien.
+
+158
+00:07:02,920 --> 00:07:04,450
+Qu pasara si quisiramos
+
+159
+00:07:04,450 --> 00:07:07,000
+crear otra cosa que podamos guardar
+
+160
+00:07:07,000 --> 00:07:09,180
+en la base de datos?
+
+161
+00:07:09,180 --> 00:07:11,230
+Digamos, por ejemplo, que queramos crear algo
+
+162
+00:07:14,450 --> 00:07:16,460
+as como una tienda. py.
+
+163
+00:07:16,460 --> 00:07:18,350
+Esta va a ser una tienda de
+
+164
+00:07:18,350 --> 00:07:20,310
+clases, y va a tener todas sus
+
+165
+00:07:20,310 --> 00:07:22,560
+cosas, y luego va a tener un to_dict,
+
+166
+00:07:23,800 --> 00:07:25,360
+y eso va a hacer algo,
+
+167
+00:07:25,360 --> 00:07:27,120
+y va a tener un ahorro, y
+
+168
+00:07:27,120 --> 00:07:28,450
+eso va a hacer la
+
+169
+00:07:29,673 --> 00:07:31,680
+base de datos. insertar (self. to_dict ()).
+
+170
+00:07:38,850 --> 00:07:40,120
+Como puede ver,
+
+171
+00:07:41,580 --> 00:07:45,540
+tenemos cierta duplicacin entre el administrador y la tienda.
+
+172
+00:07:46,860 --> 00:07:49,640
+Hay una cosa que est completamente duplicada,
+
+173
+00:07:49,640 --> 00:07:52,500
+y una cosa que est parcialmente duplicada.
+
+174
+00:07:52,500 --> 00:07:54,160
+Lo nico que est completamente
+
+175
+00:07:54,160 --> 00:07:57,840
+duplicado, y lo que vamos a resolver en este video, es
+
+176
+00:07:57,840 --> 00:07:59,130
+este mtodo de guardar.
+
+177
+00:07:59,130 --> 00:08:02,950
+El mtodo de guardar est completamente duplicado entre el administrador y la tienda.
+
+178
+00:08:02,950 --> 00:08:04,240
+Entonces, como pueden ver, tienen
+
+179
+00:08:04,240 --> 00:08:06,172
+esto guardado, y es una base de
+
+180
+00:08:06,172 --> 00:08:07,190
+datos. insertar (self. to_dict
+
+181
+00:08:08,680 --> 00:08:11,000
+()), y en la tienda tienes exactamente lo mismo.
+
+182
+00:08:11,000 --> 00:08:13,100
+Def save, Base de datos. insertar (self. to_dict ()).
+
+183
+00:08:14,690 --> 00:08:16,330
+Entonces, en ambos casos, el
+
+184
+00:08:16,330 --> 00:08:18,720
+mtodo save, todo lo que hace, es tomar
+
+185
+00:08:18,720 --> 00:08:20,060
+el objeto actual, cualquier
+
+186
+00:08:20,060 --> 00:08:22,600
+objeto del que hablemos, ya sea una tienda
+
+187
+00:08:22,600 --> 00:08:23,870
+o un administrador, lo
+
+188
+00:08:23,870 --> 00:08:27,238
+est convirtiendo a un diccionario usando su mtodo to_dict, y luego
+
+189
+00:08:27,238 --> 00:08:29,220
+es ponerlo en la base de datos.
+
+190
+00:08:30,210 --> 00:08:31,840
+Lo mismo, el mismo cdigo.
+
+191
+00:08:31,840 --> 00:08:33,480
+Lo que est parcialmente
+
+192
+00:08:33,480 --> 00:08:35,930
+duplicado es este mtodo to_dict.
+
+193
+00:08:35,930 --> 00:08:38,360
+Como puede ver, tanto el administrador
+
+194
+00:08:38,360 --> 00:08:41,240
+como la tienda tienen un mtodo to_dict,
+
+195
+00:08:41,240 --> 00:08:44,830
+pero la implementacin del mtodo, lo que hace, es
+
+196
+00:08:44,830 --> 00:08:46,330
+diferente entre ambos.
+
+197
+00:08:46,330 --> 00:08:48,390
+La tienda aqu probablemente regrese, no s,
+
+198
+00:08:48,390 --> 00:08:50,010
+qu artculos hay en ella, o
+
+199
+00:08:50,010 --> 00:08:51,020
+el nombre de
+
+200
+00:08:51,020 --> 00:08:52,700
+la tienda, o la direccin, etctera.
+
+201
+00:08:52,700 --> 00:08:54,300
+El administrador est devolviendo el nombre de
+
+202
+00:08:54,300 --> 00:08:56,320
+usuario, la contrasea y el nivel de acceso.
+
+203
+00:08:56,320 --> 00:08:59,050
+Pero como puede ver, ambos tienen un to_dict.
+
+204
+00:09:00,390 --> 00:09:01,770
+Entonces, a lo largo
+
+205
+00:09:01,770 --> 00:09:03,190
+de la prxima seccin
+
+206
+00:09:03,190 --> 00:09:05,910
+aprenderemos estas tcnicas que nos permitirn reducir esta
+
+207
+00:09:05,910 --> 00:09:08,410
+duplicacin y tambin mejorar la estabilidad y
+
+208
+00:09:08,410 --> 00:09:10,210
+la consistencia de nuestros programas.
+
+209
+00:09:11,120 --> 00:09:15,610
+Para resolver este problema de salvar, podramos hacer,
+
+210
+00:09:15,610 --> 00:09:17,630
+por supuesto, una cosa.
+
+211
+00:09:17,630 --> 00:09:20,530
+Lo primero que podramos hacer es cortarlo desde all.
+
+212
+00:09:21,832 --> 00:09:25,840
+Si quisiramos eliminarlo de la clase de administrador, podramos
+
+213
+00:09:25,840 --> 00:09:27,590
+ponerlo en usuario, verdad?
+
+214
+00:09:30,100 --> 00:09:33,660
+Ahora, por supuesto, tendremos que importar la base de
+
+215
+00:09:33,660 --> 00:09:35,290
+datos desde aqu, para
+
+216
+00:09:35,290 --> 00:09:38,150
+que funcione, pero la verdad es que
+
+217
+00:09:38,150 --> 00:09:40,660
+la tienda no hereda del usuario,
+
+218
+00:09:40,660 --> 00:09:44,360
+por lo que no tendr disponible ese mtodo to_dict.
+
+219
+00:09:44,360 --> 00:09:46,230
+Lo siento, ese mtodo de guardar disponible.
+
+220
+00:09:46,230 --> 00:09:48,490
+Entonces no queremos hacer eso.
+
+221
+00:09:50,710 --> 00:09:55,020
+Lo que queremos hacer es tener una tercera clase, o ms
+
+222
+00:09:55,020 --> 00:09:56,380
+bien una cuarta
+
+223
+00:09:56,380 --> 00:09:59,500
+clase, que contenga este mtodo de guardar solamente.
+
+224
+00:09:59,500 --> 00:10:00,850
+As que voy a hacer exactamente
+
+225
+00:10:00,850 --> 00:10:02,600
+eso, voy a crear un nuevo archivo de
+
+226
+00:10:03,750 --> 00:10:05,890
+Python, voy a llamarlo guardable. py, y hay una razn
+
+227
+00:10:05,890 --> 00:10:08,510
+por la que lo llamo salvable. py, como explicar
+
+228
+00:10:09,490 --> 00:10:12,210
+ms adelante en el curso, y
+
+229
+00:10:13,370 --> 00:10:15,750
+esto va a ser una clase
+
+230
+00:10:15,750 --> 00:10:17,290
+ahorrable, y todo lo
+
+231
+00:10:17,290 --> 00:10:19,980
+que har es implementar este mtodo.
+
+232
+00:10:23,730 --> 00:10:26,390
+Entonces tenemos que importar eso.
+
+233
+00:10:26,390 --> 00:10:27,800
+Observe cmo dice, no
+
+234
+00:10:27,800 --> 00:10:30,450
+s qu es un mtodo to_dict, porque
+
+235
+00:10:30,450 --> 00:10:33,880
+no lo tenemos definido dentro de esta clase, y vamos
+
+236
+00:10:33,880 --> 00:10:35,160
+a solucionar esto ms
+
+237
+00:10:35,160 --> 00:10:36,390
+adelante en esta
+
+238
+00:10:36,390 --> 00:10:38,368
+seccin, pero por ahora, todo lo
+
+239
+00:10:38,368 --> 00:10:40,580
+que necesitamos es pasa a admin.
+
+240
+00:10:41,720 --> 00:10:44,460
+Ya no es necesario importar la base de datos
+
+241
+00:10:44,460 --> 00:10:47,670
+aqu, pero desde guardar, importar y guardar, y ahora despus
+
+242
+00:10:48,570 --> 00:10:50,080
+del usuario, incluir guardable all,
+
+243
+00:10:54,640 --> 00:10:55,870
+ahora ya no necesitamos
+
+244
+00:10:55,870 --> 00:10:58,190
+importar la base de datos, no necesitamos
+
+245
+00:10:58,190 --> 00:11:00,040
+un mtodo de guardado all.
+
+246
+00:11:01,330 --> 00:11:04,180
+Recuerde, la herencia es muy similar a copiar el
+
+247
+00:11:04,180 --> 00:11:07,070
+cdigo y ponerlo en esta clase, por lo que
+
+248
+00:11:07,070 --> 00:11:11,300
+tan pronto como herede tanto del usuario como del salvable, todo lo que
+
+249
+00:11:11,300 --> 00:11:13,600
+Python hace es cuando llama a un
+
+250
+00:11:13,600 --> 00:11:16,580
+mtodo, como el propio. save, va al usuario,
+
+251
+00:11:16,580 --> 00:11:19,670
+trata de encontrar ese mtodo, y si no
+
+252
+00:11:19,670 --> 00:11:21,450
+existe en el usuario,
+
+253
+00:11:21,450 --> 00:11:24,240
+se guarda y se puede encontrar all.
+
+254
+00:11:24,240 --> 00:11:26,300
+As que se va a encontrar a s mismo. guardar dentro de esta
+
+255
+00:11:26,300 --> 00:11:27,660
+superclase, y va a llamarlo,
+
+256
+00:11:27,660 --> 00:11:28,910
+pero va a ser
+
+257
+00:11:28,910 --> 00:11:31,930
+capaz de encontrar uno mismo. to_dict en la
+
+258
+00:11:31,930 --> 00:11:33,050
+clase de administrador.
+
+259
+00:11:34,820 --> 00:11:35,653
+As
+
+260
+00:11:37,790 --> 00:11:42,470
+que de nuevo, yo. save se buscar en admin, luego
+
+261
+00:11:43,530 --> 00:11:44,710
+en usuario y
+
+262
+00:11:45,550 --> 00:11:46,670
+luego en saveable.
+
+263
+00:11:48,260 --> 00:11:49,410
+Dnde se encontrar.
+
+264
+00:11:51,950 --> 00:11:55,130
+Yo. save usa self. to_dict,
+
+265
+00:11:56,670 --> 00:12:01,670
+y nuevamente yo. to_dict se buscar en admin,
+
+266
+00:12:03,050 --> 00:12:04,200
+donde se encontrar.
+
+267
+00:12:05,740 --> 00:12:07,300
+Y eso es.
+
+268
+00:12:07,300 --> 00:12:09,300
+As que hay un rbol de, de
+
+269
+00:12:10,295 --> 00:12:12,320
+tipo de llamadas de mtodo que ocurre
+
+270
+00:12:12,320 --> 00:12:14,230
+cuando tienes herencia, y esa es la
+
+271
+00:12:14,230 --> 00:12:16,300
+primera clase que heredas, la de la
+
+272
+00:12:16,300 --> 00:12:19,380
+izquierda es, bueno, por supuesto, la clase en la que ests
+
+273
+00:12:19,380 --> 00:12:22,100
+es la primera que se busca, y luego el
+
+274
+00:12:22,100 --> 00:12:23,430
+de la izquierda, y luego
+
+275
+00:12:23,430 --> 00:12:26,320
+el que est junto a l, y as sucesivamente.
+
+276
+00:12:26,320 --> 00:12:29,290
+Entonces, al usar una herencia mltiple como
+
+277
+00:12:29,290 --> 00:12:31,880
+esta, puedes extraer la funcionalidad que
+
+278
+00:12:31,880 --> 00:12:34,570
+se comparte entre objetos similares, y clases
+
+279
+00:12:34,570 --> 00:12:36,900
+similares, como usuario a administrador, pero
+
+280
+00:12:36,900 --> 00:12:40,510
+tambin entre clases ms abstractas, como la clase guardable
+
+281
+00:12:40,510 --> 00:12:42,660
+no es un usuario, podra
+
+282
+00:12:42,660 --> 00:12:44,960
+ser cualquier cosa en tu aplicacin.
+
+283
+00:12:44,960 --> 00:12:47,577
+Para que pueda extraer partes especficas de la
+
+284
+00:12:47,577 --> 00:12:49,720
+funcionalidad en una clase como esta.
+
+285
+00:12:51,290 --> 00:12:52,780
+Por supuesto que no es
+
+286
+00:12:52,780 --> 00:12:56,060
+genial, porque tienes esta referencia de atributo no resuelto, as
+
+287
+00:12:56,060 --> 00:12:59,110
+que vamos a ver cmo solucionar esto muy pronto.
+
+288
+00:13:00,190 --> 00:13:03,010
+De nuevo, si ejecuta la aplicacin. Pi, vers que todo
+
+289
+00:13:03,010 --> 00:13:04,320
+funciona bien, no se
+
+290
+00:13:04,320 --> 00:13:06,380
+queja, no te da error, porque
+
+291
+00:13:06,380 --> 00:13:09,370
+exactamente lo que dije antes es lo que est sucediendo.
+
+292
+00:13:09,370 --> 00:13:11,730
+El mtodo save se puede guardar, el mtodo
+
+293
+00:13:11,730 --> 00:13:13,320
+to_dict est en admin, y
+
+294
+00:13:13,320 --> 00:13:15,070
+todos funcionan de la misma manera.
+
+295
+00:13:16,160 --> 00:13:17,050
+Eso es todo
+
+296
+00:13:17,050 --> 00:13:18,590
+por este video, quera darle una
+
+297
+00:13:18,590 --> 00:13:20,140
+introduccin rpida a la herencia mltiple,
+
+298
+00:13:20,140 --> 00:13:21,790
+y nos vemos en la prxima.
+

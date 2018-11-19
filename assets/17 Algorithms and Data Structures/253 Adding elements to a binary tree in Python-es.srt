@@ -1,0 +1,840 @@
+1
+00:00:00,000 --> 00:00:01,410
+Orador: Hola y bienvenido de nuevo.
+
+2
+00:00:01,410 --> 00:00:02,243
+En este
+
+3
+00:00:02,243 --> 00:00:06,403
+video vamos a ver cmo crear nuestra primera clase de rbol binario.
+
+4
+00:00:07,440 --> 00:00:09,560
+Comencemos creando un nuevo proyecto que he creado
+
+5
+00:00:09,560 --> 00:00:11,580
+aqu en mi escritorio y luego haga
+
+6
+00:00:11,580 --> 00:00:13,420
+clic con el botn secundario, y por
+
+7
+00:00:13,420 --> 00:00:15,530
+supuesto, estoy creando un nuevo archivo de Python.
+
+8
+00:00:15,530 --> 00:00:17,663
+Vamos a llamar a esta aplicacin. py.
+
+9
+00:00:18,500 --> 00:00:20,850
+Y tambin voy a crear un par de otros archivos
+
+10
+00:00:20,850 --> 00:00:22,300
+que llamar nodo. py, y
+
+11
+00:00:24,030 --> 00:00:28,210
+otro que llamar binario. rbol. py.
+
+12
+00:00:28,210 --> 00:00:29,480
+Bueno.
+
+13
+00:00:29,480 --> 00:00:32,530
+Entonces tenemos tres archivos: aplicacin, nodo y rbol binario.
+
+14
+00:00:32,530 --> 00:00:34,030
+Voy a mantenerlos abiertos
+
+15
+00:00:34,030 --> 00:00:36,720
+aqu y esconder la barra lateral para que
+
+16
+00:00:36,720 --> 00:00:38,563
+tengamos un poco ms de espacio.
+
+17
+00:00:39,500 --> 00:00:41,123
+Y vamos a comenzar.
+
+18
+00:00:42,350 --> 00:00:47,280
+Nuestro rbol binario va a tener un punto de partida
+
+19
+00:00:47,280 --> 00:00:49,330
+que va a ser
+
+20
+00:00:49,330 --> 00:00:52,720
+un nodo, y luego podremos agregarle nuevos nodos.
+
+21
+00:00:52,720 --> 00:00:56,420
+Lo primero que debemos hacer es crear nuestra clase de nodo.
+
+22
+00:00:56,420 --> 00:00:59,969
+Nuestra clase de nodo solo va a ser un objeto
+
+23
+00:00:59,969 --> 00:01:03,864
+simple que tiene un valor, un nodo izquierdo y uno derecho.
+
+24
+00:01:03,864 --> 00:01:06,048
+As que vamos a decir nodo
+
+25
+00:01:06,048 --> 00:01:09,715
+de clase y va a tener un mtodo init, un valor,
+
+26
+00:01:11,400 --> 00:01:14,504
+y va a tener auto. valor =
+
+27
+00:01:14,504 --> 00:01:18,736
+valor, auto. left = none, auto. derecha = ninguna
+
+28
+00:01:18,736 --> 00:01:19,569
+Bueno.
+
+29
+00:01:19,569 --> 00:01:21,780
+Entonces, cuando creamos un nuevo nodo,
+
+30
+00:01:21,780 --> 00:01:25,730
+simplemente va a comenzar como nada, no hay nios esencialmente.
+
+31
+00:01:25,730 --> 00:01:28,480
+Nada a la izquierda, nada a la derecha.
+
+32
+00:01:28,480 --> 00:01:30,290
+Y el valor va a ser lo
+
+33
+00:01:30,290 --> 00:01:32,083
+que sea que pasemos al mtodo init.
+
+34
+00:01:32,980 --> 00:01:37,043
+Aqu tambin voy a agregar un mtodo de recuperacin
+
+35
+00:01:37,043 --> 00:01:39,360
+corta solo porque vamos a
+
+36
+00:01:39,360 --> 00:01:44,360
+imprimir cosas y puede ser til poder obtener una buena representacin
+
+37
+00:01:44,530 --> 00:01:46,710
+del valor del nodo.
+
+38
+00:01:46,710 --> 00:01:49,110
+Entonces este es el mtodo repr, cuando lo
+
+39
+00:01:49,110 --> 00:01:51,653
+imprimimos vamos a ver el nodo cinco, por ejemplo.
+
+40
+00:01:53,760 --> 00:01:55,800
+Vamos a verificar que todo esto funcione al escribir un
+
+41
+00:01:55,800 --> 00:01:58,490
+pequeo script aqu en la aplicacin. py.
+
+42
+00:01:58,490 --> 00:02:01,760
+Vamos a decir desde nodo, nodo de importacin, y
+
+43
+00:02:01,760 --> 00:02:03,747
+luego vamos a crear un
+
+44
+00:02:03,747 --> 00:02:06,890
+nuevo nodo, luego voy a tener el valor cinco.
+
+45
+00:02:06,890 --> 00:02:08,210
+Y luego voy a crear un
+
+46
+00:02:08,210 --> 00:02:09,950
+nuevo nodo que tendr el valor nueve, y
+
+47
+00:02:09,950 --> 00:02:10,900
+voy a crear un
+
+48
+00:02:10,900 --> 00:02:12,670
+nuevo nodo que tendr el valor 13.
+
+49
+00:02:12,670 --> 00:02:15,163
+Voy a asignar estas dos
+
+50
+00:02:16,470 --> 00:02:21,470
+variables: left equal that, head equal that, y right equal that.
+
+51
+00:02:23,410 --> 00:02:24,610
+Y ahora vamos
+
+52
+00:02:24,610 --> 00:02:29,610
+a hacer algo como cabeza. left = left node, head. right = el nodo
+
+53
+00:02:31,010 --> 00:02:34,590
+derecho, y deberamos poder hacer cosas como imprimir la
+
+54
+00:02:34,590 --> 00:02:37,713
+cabeza, imprimir la cabeza izquierda, imprimir la cabeza derecha.
+
+55
+00:02:39,300 --> 00:02:40,540
+Guin bastante simple.
+
+56
+00:02:40,540 --> 00:02:44,430
+Nada realmente est sucediendo, excepto que hemos creado
+
+57
+00:02:44,430 --> 00:02:47,510
+nuestro primer rbol tipo binario aqu.
+
+58
+00:02:47,510 --> 00:02:50,430
+Tenemos nuestro nodo principal, y luego estamos configurando los nodos
+
+59
+00:02:50,430 --> 00:02:52,210
+izquierdo y derecho, as que terminamos
+
+60
+00:02:52,210 --> 00:02:54,063
+con una especie de rbol triangular all.
+
+61
+00:02:54,930 --> 00:02:58,610
+Si ejecutamos la aplicacin py vemos el nodo nueve,
+
+62
+00:02:58,610 --> 00:03:00,763
+nodo cinco, nodo 13 impreso.
+
+63
+00:03:03,030 --> 00:03:04,980
+Si ests interesado, sabes
+
+64
+00:03:04,980 --> 00:03:08,440
+que este es un recorrido de pre-pedido del
+
+65
+00:03:08,440 --> 00:03:12,250
+rbol, aunque todava no hemos cruzado realmente nada.
+
+66
+00:03:12,250 --> 00:03:14,740
+Acabamos de imprimir algunos de los nodos.
+
+67
+00:03:14,740 --> 00:03:16,800
+Pero lo primero que hemos impreso es el nodo principal, luego
+
+68
+00:03:16,800 --> 00:03:18,840
+hemos ido a la izquierda e impreso ese nodo, y luego
+
+69
+00:03:18,840 --> 00:03:20,650
+hemos ido a la derecha e imprimimos ese nodo.
+
+70
+00:03:20,650 --> 00:03:24,233
+Este es un ejemplo de un recorrido simple de prepedido.
+
+71
+00:03:25,690 --> 00:03:27,490
+De acuerdo, tenemos esto, ahora vamos a
+
+72
+00:03:27,490 --> 00:03:30,543
+eliminar eso y comenzaremos a trabajar en nuestra clase de rbol binario.
+
+73
+00:03:31,610 --> 00:03:34,720
+En este video, solo vamos a trabajar para agregar un nuevo nodo.
+
+74
+00:03:34,720 --> 00:03:37,530
+Vamos a implementar lo que ya hemos visto en la
+
+75
+00:03:37,530 --> 00:03:39,516
+conferencia y luego vamos a agregar algunos
+
+76
+00:03:39,516 --> 00:03:43,223
+videos ms para hablar sobre cmo encontrar nodos y hacer el recorrido.
+
+77
+00:03:44,850 --> 00:03:47,230
+As que vamos a decir desde el nodo de importacin
+
+78
+00:03:47,230 --> 00:03:49,540
+de nodos, y esto ser til en solo un momento.
+
+79
+00:03:49,540 --> 00:03:51,570
+Y luego vamos a crear nuestra
+
+80
+00:03:51,570 --> 00:03:53,320
+clase de rbol binario, va
+
+81
+00:03:53,320 --> 00:03:57,553
+a tener un mtodo init, y eso requerir este punto de partida, y
+
+82
+00:03:59,130 --> 00:04:01,870
+va a ser uno mismo. cabeza, yo, cabeza = cabeza
+
+83
+00:04:01,870 --> 00:04:03,400
+Entonces este ser el
+
+84
+00:04:03,400 --> 00:04:06,100
+tipo de raz del rbol binario, la cabeza.
+
+85
+00:04:06,100 --> 00:04:09,006
+Vers que se llama raz y vers que se llama
+
+86
+00:04:09,006 --> 00:04:10,583
+cabeza, o bien est bien.
+
+87
+00:04:11,850 --> 00:04:13,910
+Entonces, vamos a trabajar en nuestro
+
+88
+00:04:13,910 --> 00:04:18,700
+mtodo add, que est tomando un nuevo nodo que tambin ser un nodo.
+
+89
+00:04:18,700 --> 00:04:20,880
+Observe cmo estoy agregando sugerencias de
+
+90
+00:04:20,880 --> 00:04:23,800
+tipo aqu, solo para que Python pueda decirnos que
+
+91
+00:04:23,800 --> 00:04:25,873
+un nodo tiene un valor, etc.
+
+92
+00:04:28,450 --> 00:04:32,410
+Y luego, una vez ms, vamos a comenzar en la parte superior del rbol, por lo que
+
+93
+00:04:32,410 --> 00:04:37,410
+vamos a decir que el nodo actual es uno mismo. cabeza.
+
+94
+00:04:37,810 --> 00:04:39,200
+Ahora el nodo actual apunta
+
+95
+00:04:39,200 --> 00:04:41,283
+a la parte superior de nuestro rbol.
+
+96
+00:04:42,460 --> 00:04:44,823
+Ahora queremos movernos por el
+
+97
+00:04:45,900 --> 00:04:49,450
+rbol, hasta que agreguemos un nuevo nodo o
+
+98
+00:04:49,450 --> 00:04:51,980
+lleguemos al final del rbol.
+
+99
+00:04:51,980 --> 00:04:56,230
+Entonces, mientras que el nodo actual, diremos, si el valor del nuevo nodo
+
+100
+00:04:56,230 --> 00:04:58,500
+es igual al valor del nodo actual,
+
+101
+00:04:58,500 --> 00:05:00,850
+tenemos un problema porque eso significa que
+
+102
+00:05:00,850 --> 00:05:02,600
+estamos tratando de agregar un
+
+103
+00:05:02,600 --> 00:05:04,960
+nodo que ya existe en nuestro rbol.
+
+104
+00:05:04,960 --> 00:05:06,971
+De alguna manera hemos pasado por
+
+105
+00:05:06,971 --> 00:05:10,320
+nuestro rbol, y hemos terminado con dos nodos iguales.
+
+106
+00:05:10,320 --> 00:05:12,370
+As que aqu vamos a plantear un error de valor.
+
+107
+00:05:12,370 --> 00:05:16,403
+Voy a decir que ya existe un nodo con ese valor.
+
+108
+00:05:18,890 --> 00:05:21,370
+Ahora vamos a trabajar en nuestro elif.
+
+109
+00:05:21,370 --> 00:05:24,350
+Si el nuevo valor del nodo es menor que el
+
+110
+00:05:24,350 --> 00:05:27,893
+valor del nodo actual, si el nuevo valor del nodo es menor
+
+111
+00:05:29,020 --> 00:05:32,093
+que el valor del nodo actual, entonces iremos a la izquierda.
+
+112
+00:05:33,020 --> 00:05:35,573
+Entonces, diremos si el nodo actual. izquierda.
+
+113
+00:05:37,180 --> 00:05:40,123
+Eso significa que hay un nodo a la izquierda.
+
+114
+00:05:41,130 --> 00:05:44,803
+Diremos nodo actual = nodo actual. izquierda.
+
+115
+00:05:46,960 --> 00:05:48,000
+Suficientemente simple.
+
+116
+00:05:48,000 --> 00:05:49,620
+Si hay un nodo a
+
+117
+00:05:49,620 --> 00:05:51,657
+la izquierda de donde estamos actualmente,
+
+118
+00:05:51,657 --> 00:05:53,700
+eso significa que todava tenemos que hacer
+
+119
+00:05:53,700 --> 00:05:55,223
+ms viajes para llegar all.
+
+120
+00:05:56,980 --> 00:05:59,740
+Si no hay un nodo, eso significa que
+
+121
+00:05:59,740 --> 00:06:02,940
+el nuevo nodo que queremos agregar pertenece a su lugar.
+
+122
+00:06:02,940 --> 00:06:07,660
+As que vamos a decir el nodo actual. left = nuevo nodo.
+
+123
+00:06:07,660 --> 00:06:10,090
+Y, por supuesto, luego salimos
+
+124
+00:06:10,090 --> 00:06:14,653
+del ciclo para que no continuemos iterando infinitamente, esencialmente.
+
+125
+00:06:16,600 --> 00:06:20,300
+Y luego vamos a agregar un elif si el nuevo nodo. el valor es mayor
+
+126
+00:06:20,300 --> 00:06:22,563
+que el valor del nodo actual.
+
+127
+00:06:23,840 --> 00:06:24,673
+Hacemos lo mismo
+
+128
+00:06:24,673 --> 00:06:29,110
+Si el nodo actual. correcto, eso significa que hay un nodo a
+
+129
+00:06:29,110 --> 00:06:30,880
+la derecha, queremos ir a l.
+
+130
+00:06:30,880 --> 00:06:33,633
+As que diremos nodo actual = nodo actual correcto.
+
+131
+00:06:34,560 --> 00:06:36,280
+De lo contrario, queremos poner un nuevo nodo
+
+132
+00:06:36,280 --> 00:06:39,530
+a la derecha, por lo que vamos a decir nodo actual derecho = nodo nuevo.
+
+133
+00:06:39,530 --> 00:06:41,053
+Y vamos a romper de nuevo.
+
+134
+00:06:44,210 --> 00:06:45,210
+Espero que esto tenga sentido.
+
+135
+00:06:45,210 --> 00:06:46,620
+Lo hemos visto en la conferencia
+
+136
+00:06:46,620 --> 00:06:48,720
+y es por eso que lo estoy pasando muy rpido.
+
+137
+00:06:48,720 --> 00:06:51,898
+Pero esencialmente todo lo que sucede es que tenemos
+
+138
+00:06:51,898 --> 00:06:54,133
+un nodo, que est en la
+
+139
+00:06:55,160 --> 00:06:59,070
+parte superior del rbol, y luego comenzamos a iterar este ciclo.
+
+140
+00:06:59,070 --> 00:07:02,210
+En cada punto, si encontramos que estamos agregando un nodo
+
+141
+00:07:02,210 --> 00:07:03,923
+que ya est all, saldremos.
+
+142
+00:07:05,040 --> 00:07:09,482
+De lo contrario, si el nuevo nodo es menor que el nodo actual, y este
+
+143
+00:07:09,482 --> 00:07:11,773
+bloque trata de ir hacia la izquierda.
+
+144
+00:07:12,710 --> 00:07:15,720
+De lo contrario, si el nuevo nodo es mayor que el nodo actual,
+
+145
+00:07:15,720 --> 00:07:17,863
+este cdigo aqu trata de ir a la derecha.
+
+146
+00:07:18,870 --> 00:07:22,560
+El cdigo de la izquierda dice: si hay un
+
+147
+00:07:22,560 --> 00:07:25,810
+nodo all, muvete all, de lo contrario, agrgalo.
+
+148
+00:07:25,810 --> 00:07:27,940
+Y el cdigo correcto hace lo mismo.
+
+149
+00:07:27,940 --> 00:07:29,680
+Si hay un nodo a
+
+150
+00:07:29,680 --> 00:07:32,193
+la derecha, muvase all, de lo contrario, agrguelo.
+
+151
+00:07:34,180 --> 00:07:37,530
+Tenga en cuenta que los nodos en s no cambian a medida
+
+152
+00:07:37,530 --> 00:07:38,500
+que avanza en esto.
+
+153
+00:07:38,500 --> 00:07:43,080
+Todo lo que hace es agregar un tipo de propiedad aqu, que lo
+
+154
+00:07:43,080 --> 00:07:44,923
+hace igual al nuevo nodo.
+
+155
+00:07:45,880 --> 00:07:50,880
+Entonces, lo que sucede en el fondo es que la propiedad correcta se
+
+156
+00:07:51,040 --> 00:07:54,260
+convierte en el mismo objeto que el nuevo nodo.
+
+157
+00:07:54,260 --> 00:07:56,810
+Es una referencia al mismo lugar en la memoria.
+
+158
+00:07:56,810 --> 00:07:59,070
+Hemos analizado la mutabilidad antes.
+
+159
+00:07:59,070 --> 00:08:03,400
+Este nodo actual. la derecha ser la misma entidad,
+
+160
+00:08:03,400 --> 00:08:06,690
+lo mismo en la memoria que el nuevo nodo.
+
+161
+00:08:06,690 --> 00:08:10,610
+Entonces, al ejecutar esto varias veces, el nodo
+
+162
+00:08:10,610 --> 00:08:14,310
+actual derecho e izquierdo, termina construyendo este rbol.
+
+163
+00:08:14,310 --> 00:08:17,530
+No se pierde el valor de un nuevo nodo
+
+164
+00:08:17,530 --> 00:08:22,410
+cuando se llega al final del mtodo, ya que la propiedad de cada
+
+165
+00:08:22,410 --> 00:08:24,453
+nodo apunta a ese valor.
+
+166
+00:08:25,440 --> 00:08:29,730
+Y, por supuesto, el punto de partida de esta
+
+167
+00:08:29,730 --> 00:08:32,503
+cadena de propiedades es la cabeza.
+
+168
+00:08:33,420 --> 00:08:36,110
+Si pierde la cabeza, todo el rbol
+
+169
+00:08:36,110 --> 00:08:38,870
+desaparece porque no tiene nada que le
+
+170
+00:08:38,870 --> 00:08:42,010
+permita llegar a ninguno de los nodos.
+
+171
+00:08:42,010 --> 00:08:46,793
+Lo que quiero decir es que la cabeza apunta a otros nodos.
+
+172
+00:08:48,000 --> 00:08:50,280
+Si de alguna manera pierde su referencia a la
+
+173
+00:08:50,280 --> 00:08:53,220
+cabeza, no tiene nada apuntando a los otros nodos, no tiene
+
+174
+00:08:53,220 --> 00:08:54,670
+una forma de acceder a ellos
+
+175
+00:08:54,670 --> 00:08:56,330
+porque no hay ningn lugar en
+
+176
+00:08:56,330 --> 00:08:58,140
+este cdigo que los nios estn almacenados.
+
+177
+00:08:58,140 --> 00:09:01,703
+Los nios solo se almacenan como referencias en la cabeza.
+
+178
+00:09:02,690 --> 00:09:06,110
+Entonces, sin embargo, solo una cosa interesante all.
+
+179
+00:09:06,110 --> 00:09:08,760
+Asegrate de no configurar la cabeza para nada
+
+180
+00:09:08,760 --> 00:09:10,750
+o algo as porque entonces perders
+
+181
+00:09:10,750 --> 00:09:12,000
+todo tu rbol.
+
+182
+00:09:14,240 --> 00:09:16,760
+Ahora que tenemos este rbol aqu, podramos escribir
+
+183
+00:09:16,760 --> 00:09:20,913
+en nuestra aplicacin una secuencia de comandos corta para agregar nodos, pero realmente no
+
+184
+00:09:21,770 --> 00:09:23,670
+tenemos una manera de recuperar nodos.
+
+185
+00:09:23,670 --> 00:09:26,160
+No tenemos forma de imprimir el rbol.
+
+186
+00:09:26,160 --> 00:09:29,380
+Entonces no hay mucho que podamos hacer all.
+
+187
+00:09:29,380 --> 00:09:30,920
+Pero hagmoslo de todos modos.
+
+188
+00:09:30,920 --> 00:09:34,440
+Lo haremos desde la importacin de rbol binario, rbol binario.
+
+189
+00:09:38,080 --> 00:09:40,940
+Y vamos a decir que tree es un nuevo
+
+190
+00:09:40,940 --> 00:09:43,890
+rbol binario y que la cabeza es un nuevo
+
+191
+00:09:43,890 --> 00:09:45,733
+nodo, que tendr el valor nueve.
+
+192
+00:09:46,780 --> 00:09:51,780
+Entonces vamos a decir rbol. agregue un nuevo nodo con valor cinco.
+
+193
+00:09:53,230 --> 00:09:56,783
+Y rbol. agregue un nuevo nodo con el valor 11.
+
+194
+00:09:58,850 --> 00:10:00,210
+Qu crees que va a
+
+195
+00:10:00,210 --> 00:10:05,210
+pasar cuando imprimimos un rbol? cabeza, rbol cabeza. izquierda y
+
+196
+00:10:06,760 --> 00:10:09,713
+rbol. cabeza. derecho?
+
+197
+00:10:11,540 --> 00:10:14,420
+Qu nodo va a ser la cabeza, qu
+
+198
+00:10:14,420 --> 00:10:16,860
+nodo va a ser la izquierda, qu
+
+199
+00:10:16,860 --> 00:10:18,660
+nodo va a ser el derecho?
+
+200
+00:10:20,550 --> 00:10:21,433
+Probmoslo.
+
+201
+00:10:23,090 --> 00:10:27,057
+Observe que la cabeza es nueve, cinco est a la izquierda
+
+202
+00:10:27,057 --> 00:10:29,420
+y 11 est a la derecha, por
+
+203
+00:10:29,420 --> 00:10:34,420
+lo que nuestro cdigo ha colocado automticamente los nodos donde pertenecen, porque cinco se
+
+204
+00:10:34,490 --> 00:10:38,670
+agregaron despus de las nueve y de alguna manera pas por esto
+
+205
+00:10:38,670 --> 00:10:41,630
+y descubri que cinco eran De hecho, menos
+
+206
+00:10:41,630 --> 00:10:44,593
+de nueve, as que lo colocamos a la izquierda.
+
+207
+00:10:47,120 --> 00:10:47,953
+Bueno.
+
+208
+00:10:47,953 --> 00:10:49,830
+En el siguiente video, vamos
+
+209
+00:10:49,830 --> 00:10:53,710
+a ver cmo podemos imprimir el rbol en orden, as que
+
+210
+00:10:53,710 --> 00:10:54,903
+te ver all.
+

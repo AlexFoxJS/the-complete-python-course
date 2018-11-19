@@ -1,0 +1,600 @@
+1
+00:00:00,415 --> 00:00:01,616
+-: [Jose Salvatierra] Ol e bem vindo de volta.
+
+2
+00:00:01,616 --> 00:00:02,449
+Neste vdeo,
+
+3
+00:00:02,449 --> 00:00:06,116
+estamos analisando como lidar com erros em gerenciadores de contexto.
+
+4
+00:00:06,999 --> 00:00:09,790
+O mtodo de sada e o mtodo de sada
+
+5
+00:00:09,790 --> 00:00:11,307
+dos gerenciadores de contexto possuem
+
+6
+00:00:11,307 --> 00:00:13,307
+trs argumentos: tipo exc, vogal e TB.
+
+7
+00:00:14,820 --> 00:00:16,627
+Eles representam o tipo de
+
+8
+00:00:16,627 --> 00:00:20,714
+exceo, o valor de exceo e o rastreio de exceo.
+
+9
+00:00:20,714 --> 00:00:24,280
+Ns vamos olhar exatamente o que eles so em apenas um momento.
+
+10
+00:00:24,280 --> 00:00:26,891
+E essas coisas existem porque durante a
+
+11
+00:00:26,891 --> 00:00:28,249
+execuo de um gerenciador
+
+12
+00:00:28,249 --> 00:00:31,180
+de contexto,  possvel que ocorra um erro.
+
+13
+00:00:31,180 --> 00:00:35,230
+Por exemplo, se formos para a funo add_book, poderemos encontrar
+
+14
+00:00:35,230 --> 00:00:37,594
+um erro quando tentarmos inserir um
+
+15
+00:00:37,594 --> 00:00:40,403
+livro com um nome que j exista.
+
+16
+00:00:40,403 --> 00:00:45,049
+Nesse caso, um erro ser levantado pelo sequel lite, e antes
+
+17
+00:00:45,049 --> 00:00:47,714
+de travar o nosso programa, ele
+
+18
+00:00:47,714 --> 00:00:50,214
+ir para o mtodo de sada.
+
+19
+00:00:51,069 --> 00:00:52,444
+OK.
+
+20
+00:00:52,444 --> 00:00:54,017
+Assim, mesmo que um
+
+21
+00:00:54,017 --> 00:00:57,189
+anncio seja gerado, ainda assim chamaremos o mtodo
+
+22
+00:00:57,189 --> 00:01:00,039
+de sada primeiro, e ele ter alguns
+
+23
+00:01:00,039 --> 00:01:03,336
+valores aqui e, assim que o mtodo de sada
+
+24
+00:01:03,336 --> 00:01:05,271
+terminar, o erro continuar a
+
+25
+00:01:05,271 --> 00:01:06,808
+aumentar e interromper o
+
+26
+00:01:06,808 --> 00:01:10,584
+programa, a menos que seja manipulado em uma tentativa, exceto.
+
+27
+00:01:10,584 --> 00:01:13,860
+Se nenhum erro ocorrer, todos eles no tm valores, portanto,
+
+28
+00:01:13,860 --> 00:01:17,082
+todos eles no so nenhum. D.
+
+29
+00:01:17,082 --> 00:01:19,869
+Ento aqui est um tipo de coisa que podemos fazer na sada.
+
+30
+00:01:19,869 --> 00:01:21,774
+Claro que podemos fechar uma conexo,
+
+31
+00:01:21,774 --> 00:01:23,412
+mesmo que tenha ocorrido um erro.
+
+32
+00:01:23,412 --> 00:01:26,452
+Caso contrrio, teramos que usar uma tentativa, exceto aqui.
+
+33
+00:01:26,452 --> 00:01:27,892
+Ento, mais cedo,
+
+34
+00:01:27,892 --> 00:01:29,891
+quando recebemos um erro ao
+
+35
+00:01:29,891 --> 00:01:31,766
+inserir um livro, no fechamos
+
+36
+00:01:31,766 --> 00:01:35,188
+a conexo porque o programa travou antes disso.
+
+37
+00:01:35,188 --> 00:01:36,722
+Agora, mesmo que tenhamos um erro
+
+38
+00:01:36,722 --> 00:01:39,634
+na execuo, ainda vamos para c e entramos e fechamos.
+
+39
+00:01:39,634 --> 00:01:41,839
+Podemos fechar o arquivo, mesmo que nunca tenha acontecido,
+
+40
+00:01:41,839 --> 00:01:43,212
+a mesma coisa que aqui.
+
+41
+00:01:43,212 --> 00:01:44,587
+Podemos imprimir algo no console
+
+42
+00:01:44,587 --> 00:01:46,551
+quando algo est sendo executado, especialmente se
+
+43
+00:01:46,551 --> 00:01:47,791
+um erro aconteceu, podemos dizer
+
+44
+00:01:47,791 --> 00:01:50,440
+"Ei, ns rodamos este gerenciador de contexto, mas isso nunca
+
+45
+00:01:50,440 --> 00:01:52,753
+aconteceu durante sua execuo. "Podemos destruir
+
+46
+00:01:52,753 --> 00:01:56,188
+qualquer coisa da qual dependemos no
+
+47
+00:01:56,188 --> 00:01:57,955
+gerenciador de contexto.
+
+48
+00:01:57,955 --> 00:02:00,245
+Ento, por exemplo, poderamos destruir essa
+
+49
+00:02:00,245 --> 00:02:02,142
+conexo, poderamos destruir um manipulador
+
+50
+00:02:02,142 --> 00:02:05,306
+de arquivos, poderamos fazer o que quisssemos.
+
+51
+00:02:05,306 --> 00:02:07,419
+Lembre-se que os gerentes de contexto so apenas isso.
+
+52
+00:02:07,419 --> 00:02:10,164
+So funes usadas para gerenciar o contexto, e
+
+53
+00:02:10,164 --> 00:02:13,445
+o Python nos fornece um pouco de acar sinttico, a
+
+54
+00:02:13,445 --> 00:02:14,911
+instruo "com", que nos
+
+55
+00:02:14,911 --> 00:02:16,615
+permite fazer essas coisas, mas
+
+56
+00:02:16,615 --> 00:02:17,731
+so apenas funes
+
+57
+00:02:17,731 --> 00:02:20,052
+sendo executadas no incio ou no final.
+
+58
+00:02:20,052 --> 00:02:21,324
+Acontece que a funo
+
+59
+00:02:21,324 --> 00:02:24,029
+de sada  chamada mesmo quando h uma exceo,
+
+60
+00:02:24,029 --> 00:02:25,921
+um erro, que  praticamente o
+
+61
+00:02:25,921 --> 00:02:27,754
+mesmo que uma tentativa, exceto o bloco.
+
+62
+00:02:28,955 --> 00:02:30,846
+Voc pode fazer isso manualmente
+
+63
+00:02:30,846 --> 00:02:32,402
+sem usar gerenciadores de
+
+64
+00:02:32,402 --> 00:02:35,113
+contexto, mas provavelmente acabar sendo menos legvel.
+
+65
+00:02:35,113 --> 00:02:37,548
+E esta  provavelmente a melhor escolha.
+
+66
+00:02:37,548 --> 00:02:40,686
+E o Python realmente gosta desses gerenciadores de contexto.
+
+67
+00:02:40,686 --> 00:02:43,960
+Isso adiciona legibilidade e reduz a repetio em seu
+
+68
+00:02:43,960 --> 00:02:46,903
+cdigo, o que  bom para um dos
+
+69
+00:02:46,903 --> 00:02:49,486
+locatrios principais da programao, que no se repete.
+
+70
+00:02:50,614 --> 00:02:51,447
+OK.
+
+71
+00:02:52,549 --> 00:02:56,560
+Vamos definir um ponto de interrupo na linha 14,
+
+72
+00:02:56,560 --> 00:03:01,152
+a sada, o mtodo de sada abaixo do nosso gerenciador
+
+73
+00:03:01,152 --> 00:03:05,012
+de contexto e, em seguida, executaremos nosso aplicativo.
+
+74
+00:03:05,012 --> 00:03:08,993
+Ns estamos indo para adicionar um livro que vai
+
+75
+00:03:08,993 --> 00:03:13,599
+ser casaco limpo, e depois vamos adicionar o mesmo livro novamente.
+
+76
+00:03:13,599 --> 00:03:16,663
+Observe como agora temos um erro de integridade aqui.
+
+77
+00:03:16,663 --> 00:03:20,786
+Diz que a restrio UNIQUE falhou: livros. nome E isso
+
+78
+00:03:20,786 --> 00:03:25,195
+aqui no interior do Sequel A3 acontece
+
+79
+00:03:25,195 --> 00:03:28,028
+quando tentamos executar essa coisa.
+
+80
+00:03:28,988 --> 00:03:32,718
+Agora, vamos em frente e depurar nosso aplicativo neste momento. Oh sim,
+
+81
+00:03:32,718 --> 00:03:35,635
+E, mais uma vez, v para o console, oh, Isso correu, no precisamos fazer isso.
+
+82
+00:03:38,562 --> 00:03:41,114
+acho que podemos ter. desculpe. Vamos l, v para
+
+83
+00:03:41,114 --> 00:03:44,506
+A, digite clean code, e agora observe como nosso cdigo para aqui.
+
+84
+00:03:44,506 --> 00:03:47,589
+Podemos passar para o depurador e ver que
+
+85
+00:03:49,578 --> 00:03:52,800
+temos alguns valores para o valor de execuo e
+
+86
+00:03:52,800 --> 00:03:55,001
+o rastreio de execuo de volta.
+
+87
+00:03:55,001 --> 00:03:58,110
+O rastreio  esse objeto de retorno de rastreio
+
+88
+00:03:58,110 --> 00:04:01,819
+e o valor  que essa restrio UNIQUE falhou em livros. name Ento, quando temos uma
+
+89
+00:04:01,819 --> 00:04:05,297
+exceo, a funo exit
+
+90
+00:04:05,297 --> 00:04:10,297
+ chamada, mas
+
+91
+00:04:11,340 --> 00:04:14,020
+tem alguns valores nela.
+
+92
+00:04:14,020 --> 00:04:17,119
+Gostaria de saber se exc_type tem algum valor. Sim. Este  o erro de integridade que recebemos anteriormente, esse
+
+93
+00:04:17,119 --> 00:04:19,536
+ um tipo do erro que foi chamado.
+
+94
+00:04:21,063 --> 00:04:23,786
+Ento, como voc pode ver, estes no so mais nenhum.
+
+95
+00:04:23,786 --> 00:04:24,642
+Eles tm alguns valores.
+
+96
+00:04:24,642 --> 00:04:27,765
+Ento, o que podemos
+
+97
+00:04:27,765 --> 00:04:30,590
+fazer  parar o
+
+98
+00:04:30,590 --> 00:04:33,316
+nosso programa, e
+
+99
+00:04:33,316 --> 00:04:35,799
+podemos dizer se
+
+100
+00:04:35,799 --> 00:04:37,471
+exc_type ou
+
+101
+00:04:37,471 --> 00:04:40,721
+exc_val ou exc_tb: self. conexo. feche sem cometer
+
+102
+00:04:41,645 --> 00:04:42,562
+nada.
+
+103
+00:04:43,472 --> 00:04:44,305
+Caso contrrio, confirme e feche.
+
+104
+00:04:45,322 --> 00:04:46,155
+A razo para isso
+
+105
+00:04:48,765 --> 00:04:50,515
+ que, se
+
+106
+00:04:54,708 --> 00:04:57,041
+um erro aconteceu,  possvel, embora improvvel, que nosso banco de dados
+
+107
+00:04:58,214 --> 00:05:00,964
+tenha sido deixado em um estado inconsistente, um estado que no  to bom.
+
+108
+00:05:07,733 --> 00:05:10,146
+Por exemplo, se voc tentar inserir alguns
+
+109
+00:05:10,146 --> 00:05:12,431
+dados primeiro e, em seguida, quiser inserir
+
+110
+00:05:12,431 --> 00:05:15,869
+outra coisa, isso depende dos dados anteriores, mas voc receber
+
+111
+00:05:15,869 --> 00:05:17,608
+um erro quando isso acontecer.
+
+112
+00:05:17,608 --> 00:05:20,232
+Ento, o que fazer,  se houver uma
+
+113
+00:05:20,232 --> 00:05:21,625
+exceo acontecer, feche a conexo.
+
+114
+00:05:21,625 --> 00:05:23,226
+Caso contrrio, confirme e feche.
+
+115
+00:05:23,226 --> 00:05:25,778
+Observe como se exc_type ou exc_val
+
+116
+00:05:25,778 --> 00:05:28,783
+ou exc_tb apenas significa no  nenhum.
+
+117
+00:05:28,783 --> 00:05:30,111
+Tudo isso  a mesma coisa.
+
+118
+00:05:30,111 --> 00:05:32,938
+Exc_type no  nenhum ou exc_value no
+
+119
+00:05:32,938 --> 00:05:37,282
+ nenhum ou exc_tb no  nenhum, pode ser encurtado para isso.
+
+120
+00:05:37,282 --> 00:05:39,199
+Portanto, sinta-se  vontade para usar esse tipo de sintaxe.
+
+121
+00:05:43,657 --> 00:05:44,809
+Lembre-se que a instruo ou
+
+122
+00:05:44,809 --> 00:05:47,268
+fornece o segundo valor se o primeiro for falso E.
+
+123
+00:05:47,268 --> 00:05:51,390
+Nenhum  um valor E falso, portanto, isso lhe d exc_val.
+
+124
+00:05:51,390 --> 00:05:55,360
+Exc_val  nenhum, que tambm  falso E.
+
+125
+00:05:55,360 --> 00:05:57,978
+Ento isso te d exc_tb.
+
+126
+00:05:57,978 --> 00:06:00,652
+Exc_tb tambm no  nenhum,
+
+127
+00:06:00,652 --> 00:06:05,236
+que tambm  falso E, ento voc entra aqui.
+
+128
+00:06:05,236 --> 00:06:07,399
+Porque essa coisa toda  avaliada
+
+129
+00:06:07,399 --> 00:06:09,384
+como exc_tb, o que  falso.
+
+130
+00:06:09,384 --> 00:06:12,436
+OK.
+
+131
+00:06:12,436 --> 00:06:14,099
+Caso contrrio, voc executa o
+
+132
+00:06:14,099 --> 00:06:16,382
+else, que confirma e fecha a conexo.
+
+133
+00:06:16,382 --> 00:06:17,632
+Ento  isso para este vdeo, s queria mostrar a
+
+134
+00:06:18,679 --> 00:06:19,615
+voc quais so os parmetros do mtodo de
+
+135
+00:06:19,615 --> 00:06:20,669
+sada e que tipo de coisas eles guardam.
+
+136
+00:06:20,669 --> 00:06:24,002
+E o tipo  o tipo de exceo, essa
+
+137
+00:06:24,904 --> 00:06:26,916
+ a classe da exceo.
+
+138
+00:06:26,916 --> 00:06:30,489
+O valor  qualquer argumento que foi passado
+
+139
+00:06:30,489 --> 00:06:32,833
+para a exceo quando foi gerado.
+
+140
+00:06:32,833 --> 00:06:34,454
+Normalmente, essa  uma mensagem de
+
+141
+00:06:34,454 --> 00:06:36,690
+descrio e o tb  o rastreio da exceo.
+
+142
+00:06:36,690 --> 00:06:39,243
+Isso onde a exceo aconteceu em todas as linhas e
+
+143
+00:06:39,243 --> 00:06:40,891
+todos os arquivos onde foi visto.
+
+144
+00:06:40,891 --> 00:06:42,846
+Ento  isso para este vdeo,
+
+145
+00:06:42,846 --> 00:06:45,399
+espero que voc tenha aprendido alguma coisa,
+
+146
+00:06:45,399 --> 00:06:47,907
+e eu vou te ver no prximo.
+
+147
+00:06:47,907 --> 00:06:51,264
+&nbsp;
+
+148
+00:06:51,264 --> 00:06:52,184
+&nbsp;
+
+149
+00:06:52,184 --> 00:06:53,642
+&nbsp;
+
+150
+00:06:53,642 --> 00:06:55,076
+&nbsp;
+

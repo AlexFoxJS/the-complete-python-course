@@ -1,0 +1,1000 @@
+1
+00:00:00,320 --> 00:00:01,750
+<v Narrator>Hi, welcome back.</v>
+
+2
+00:00:01,750 --> 00:00:04,450
+In this video, we're going to talk about for loops
+
+3
+00:00:04,450 --> 00:00:06,120
+and the range function.
+
+4
+00:00:06,120 --> 00:00:07,740
+We've just looked up Y loops,
+
+5
+00:00:07,740 --> 00:00:10,650
+and the for loop allows us to do some similar things,
+
+6
+00:00:10,650 --> 00:00:12,700
+but also gives us some extra power.
+
+7
+00:00:14,630 --> 00:00:17,540
+So, what does the for loop do?
+
+8
+00:00:17,540 --> 00:00:20,260
+It allows us to go over each element
+
+9
+00:00:20,260 --> 00:00:22,470
+out of a series of elements.
+
+10
+00:00:22,470 --> 00:00:25,430
+For example, each element of a list.
+
+11
+00:00:25,430 --> 00:00:27,660
+Let's start with a list of prime numbers.
+
+12
+00:00:28,920 --> 00:00:30,590
+And let's say I want to print out
+
+13
+00:00:30,590 --> 00:00:33,070
+that two is a prime number, three is a prime number,
+
+14
+00:00:33,070 --> 00:00:35,700
+five's a prime number, and so forth.
+
+15
+00:00:35,700 --> 00:00:39,620
+The easy way of course is to do just two is a prime number.
+
+16
+00:00:40,680 --> 00:00:42,340
+And then go for three.
+
+17
+00:00:44,170 --> 00:00:45,003
+And so on.
+
+18
+00:00:45,970 --> 00:00:48,210
+This is boring, let's not do that.
+
+19
+00:00:49,480 --> 00:00:53,340
+The other option would be to use a for loop.
+
+20
+00:00:53,340 --> 00:00:56,760
+And a for loop allows us to go over each element.
+
+21
+00:00:56,760 --> 00:00:59,600
+So we'll say for prime and primes,
+
+22
+00:01:01,140 --> 00:01:05,250
+and what this does is create a new variable called prime.
+
+23
+00:01:06,440 --> 00:01:11,280
+Prime will be the number two the first time the loop runs,
+
+24
+00:01:11,280 --> 00:01:14,310
+and then when the loop ends it will go back to the top,
+
+25
+00:01:14,310 --> 00:01:17,520
+prime will now become three, then it will do it again
+
+26
+00:01:17,520 --> 00:01:20,160
+and it'll become five, and so forth.
+
+27
+00:01:20,160 --> 00:01:23,770
+Notice that for and in are keywords in Python,
+
+28
+00:01:23,770 --> 00:01:26,160
+they have to be there, and the primes of course
+
+29
+00:01:26,160 --> 00:01:28,040
+is the list that we want to go over.
+
+30
+00:01:29,080 --> 00:01:31,930
+Then there's a colon and everything after the colon
+
+31
+00:01:31,930 --> 00:01:35,680
+has four spaces in front at least, at least two spaces,
+
+32
+00:01:35,680 --> 00:01:38,900
+and is indented more so that it belongs inside the loop.
+
+33
+00:01:38,900 --> 00:01:41,460
+Whatever we write here will be the body of our loop
+
+34
+00:01:41,460 --> 00:01:45,720
+and we can print prime is a prime number.
+
+35
+00:01:49,320 --> 00:01:53,220
+Now, this is going to run once with prime being two
+
+36
+00:01:53,220 --> 00:01:54,900
+because that's the first value.
+
+37
+00:01:54,900 --> 00:01:58,530
+Then when it runs, we'll reach the end of the block,
+
+38
+00:01:58,530 --> 00:02:01,350
+so we'll go back to the top and prime will be three.
+
+39
+00:02:01,350 --> 00:02:03,100
+Then we'll go back to the top and prime will be five
+
+40
+00:02:03,100 --> 00:02:04,260
+and so forth.
+
+41
+00:02:04,260 --> 00:02:06,250
+Let's run this and see what happens.
+
+42
+00:02:08,490 --> 00:02:10,620
+Notice that we print out two is a prime number,
+
+43
+00:02:10,620 --> 00:02:13,190
+three, five, seven, 11 are all prime numbers.
+
+44
+00:02:15,470 --> 00:02:17,960
+It is not only lists that we can iterate over,
+
+45
+00:02:17,960 --> 00:02:21,031
+we could for example have a set of kid ages
+
+46
+00:02:21,031 --> 00:02:24,380
+in a tuple or tuple.
+
+47
+00:02:24,380 --> 00:02:27,340
+But I'm not going to confuse you so much with that.
+
+48
+00:02:27,340 --> 00:02:30,540
+Then we can say for age in kid ages.
+
+49
+00:02:30,540 --> 00:02:32,870
+And once again, syntax exactly the same,
+
+50
+00:02:32,870 --> 00:02:34,960
+we've just got our sequence here,
+
+51
+00:02:34,960 --> 00:02:37,760
+lists and tuples are both types of sequences,
+
+52
+00:02:38,690 --> 00:02:43,400
+and then we can say for our variable in our sequence.
+
+53
+00:02:43,400 --> 00:02:45,800
+And in this case the variable's going to be called age,
+
+54
+00:02:45,800 --> 00:02:48,260
+so we can use that inside the block.
+
+55
+00:02:48,260 --> 00:02:51,140
+Remember the colon at the end, defines the start of a block.
+
+56
+00:02:51,140 --> 00:02:56,140
+And we can see I have a age old kid.
+
+57
+00:02:58,760 --> 00:03:01,060
+We should probably have year in there as well.
+
+58
+00:03:02,174 --> 00:03:03,660
+This is not true for me, I don't have any kids,
+
+59
+00:03:03,660 --> 00:03:06,660
+but nonetheless you can see that this prints out
+
+60
+00:03:06,660 --> 00:03:08,810
+that I have a three year old kid, a seven year old kid,
+
+61
+00:03:08,810 --> 00:03:09,910
+and a 12 year old kid.
+
+62
+00:03:11,710 --> 00:03:15,660
+I said a moment ago that these two are examples of sequence,
+
+63
+00:03:15,660 --> 00:03:18,670
+and that's sort of true, but most importantly,
+
+64
+00:03:18,670 --> 00:03:22,130
+these two are what Python calls iterables.
+
+65
+00:03:23,470 --> 00:03:27,390
+An iterable is something that you can use a for loop in.
+
+66
+00:03:27,390 --> 00:03:30,590
+So anything that's an iterable, you can use a for loop with.
+
+67
+00:03:30,590 --> 00:03:32,740
+We'll learn much more about iterables
+
+68
+00:03:32,740 --> 00:03:35,750
+and what iterables really are later on in the course,
+
+69
+00:03:35,750 --> 00:03:37,810
+so don't worry too much about understanding them,
+
+70
+00:03:37,810 --> 00:03:39,570
+just know that of course these things
+
+71
+00:03:39,570 --> 00:03:41,511
+that have many values separated by commas
+
+72
+00:03:41,511 --> 00:03:45,120
+are most likely iterables because they are sequences.
+
+73
+00:03:48,030 --> 00:03:50,390
+Let's now talk about the range function.
+
+74
+00:03:50,390 --> 00:03:53,230
+Instead of iterating over a pre-existing list,
+
+75
+00:03:53,230 --> 00:03:55,550
+we can use the range function to iterate over a
+
+76
+00:03:55,550 --> 00:03:57,870
+specific range of numbers.
+
+77
+00:03:57,870 --> 00:04:02,870
+So for I in range 20, we can print I for example.
+
+78
+00:04:05,140 --> 00:04:08,900
+What the range 20 does is essentially gives us a list
+
+79
+00:04:08,900 --> 00:04:11,300
+that goes from zero all the way up to 19,
+
+80
+00:04:11,300 --> 00:04:13,720
+so it has 20 values in total.
+
+81
+00:04:13,720 --> 00:04:16,730
+Again, I would be zero the first time the loop runs,
+
+82
+00:04:16,730 --> 00:04:19,560
+then it would be one, then it would be two, and so forth
+
+83
+00:04:19,560 --> 00:04:24,560
+because this is zero, one, two, all the way up to 19.
+
+84
+00:04:26,620 --> 00:04:27,590
+Let's print it out.
+
+85
+00:04:29,950 --> 00:04:31,690
+And you can see that we get from zero
+
+86
+00:04:31,690 --> 00:04:34,550
+all the way up to 19, 20 is not included.
+
+87
+00:04:36,410 --> 00:04:40,890
+But the range function doesn't quite produce a list.
+
+88
+00:04:40,890 --> 00:04:43,570
+We'll talk about exactly what the range function is,
+
+89
+00:04:43,570 --> 00:04:46,130
+it's called a generator in Python.
+
+90
+00:04:46,130 --> 00:04:47,750
+We're going to talk about that later on in the course,
+
+91
+00:04:47,750 --> 00:04:49,620
+and I just keep saying later on.
+
+92
+00:04:49,620 --> 00:04:52,150
+I want to introduce concepts sort of naturally,
+
+93
+00:04:52,150 --> 00:04:55,480
+so I don't want to add too much complexity all of a sudden.
+
+94
+00:04:55,480 --> 00:05:00,480
+But notice that when we print range of 10,
+
+95
+00:05:01,100 --> 00:05:03,250
+we're not going to print out a list.
+
+96
+00:05:05,010 --> 00:05:07,190
+We're going to print out this thing that says
+
+97
+00:05:07,190 --> 00:05:09,100
+range from zero to 10.
+
+98
+00:05:10,330 --> 00:05:13,250
+That's because the range function does not give us a list,
+
+99
+00:05:13,250 --> 00:05:16,310
+it gives us something else that we can also iterate over,
+
+100
+00:05:16,310 --> 00:05:19,860
+we can also use a for loop on, but it's not quite a list.
+
+101
+00:05:21,030 --> 00:05:22,700
+We'll learn much more about that later on,
+
+102
+00:05:22,700 --> 00:05:24,300
+so don't worry about that, I just wanted to
+
+103
+00:05:24,300 --> 00:05:25,670
+sort of tell you.
+
+104
+00:05:25,670 --> 00:05:27,230
+And just in case you decide to look into
+
+105
+00:05:27,230 --> 00:05:30,040
+what the range function is, it's not a list, what is it?
+
+106
+00:05:30,040 --> 00:05:32,170
+We'll look into it, and you'll definitely
+
+107
+00:05:32,170 --> 00:05:33,720
+understand everything about it.
+
+108
+00:05:34,670 --> 00:05:36,630
+Sometimes you also need to be able to iterate
+
+109
+00:05:36,630 --> 00:05:38,460
+over dictionaries.
+
+110
+00:05:38,460 --> 00:05:41,900
+It's not too common, but it can be really useful.
+
+111
+00:05:41,900 --> 00:05:45,810
+For example, let's say we have a dictionary of my friends
+
+112
+00:05:46,660 --> 00:05:48,890
+and the dates that you've last seen your friends.
+
+113
+00:05:48,890 --> 00:05:52,290 line:15% 
+So let's say that you last saw Jose six days ago,
+
+114
+00:05:52,290 --> 00:05:57,290 line:15% 
+Rolf 12 days ago, and Anne let's say also six days ago.
+
+115
+00:05:59,550 --> 00:06:03,070 line:15% 
+You can iterate over a dictionary by doing this.
+
+116
+00:06:08,420 --> 00:06:11,430 line:15% 
+What do you think the name variable is going to contain
+
+117
+00:06:11,430 --> 00:06:13,480 line:15% 
+every time you go through the dictionary?
+
+118
+00:06:15,373 --> 00:06:17,220 line:15% 
+Well, I'm pretty sure you can guess from just
+
+119
+00:06:17,220 --> 00:06:19,950 line:15% 
+the name of the variable, but this variable,
+
+120
+00:06:19,950 --> 00:06:21,990 line:15% 
+as you iterate over the dictionary,
+
+121
+00:06:21,990 --> 00:06:23,810 line:15% 
+is going to contain the key.
+
+122
+00:06:23,810 --> 00:06:26,360 line:15% 
+That's going to be Jose the first time it goes through,
+
+123
+00:06:26,360 --> 00:06:27,770 line:15% 
+Rolf the second time it goes through,
+
+124
+00:06:27,770 --> 00:06:30,300 line:15% 
+and Anne the third time it goes through.
+
+125
+00:06:30,300 --> 00:06:34,120 line:15% 
+So you could say, I last saw name
+
+126
+00:06:35,250 --> 00:06:38,740 line:15% 
+but you don't have the days, X days ago.
+
+127
+00:06:40,830 --> 00:06:45,460
+We can of course run this, and you'll see that we get
+
+128
+00:06:45,460 --> 00:06:48,197
+I last saw Jose X days ago, Rolf X days ago
+
+129
+00:06:48,197 --> 00:06:49,710
+and Anne X days ago.
+
+130
+00:06:51,270 --> 00:06:55,970 line:15% 
+Now, we know how to get the value out of a dictionary
+
+131
+00:06:55,970 --> 00:06:57,510 line:15% 
+when we know the key.
+
+132
+00:06:57,510 --> 00:06:59,280 line:15% 
+Hint, it's something like this,
+
+133
+00:06:59,280 --> 00:07:04,280 line:15% 
+my friends Jose will give us the six, the value.
+
+134
+00:07:06,040 --> 00:07:10,490
+So how would you replace X by that value there?
+
+135
+00:07:14,590 --> 00:07:16,690 line:15% 
+I'm sure you've got that, an easy way to do that
+
+136
+00:07:16,690 --> 00:07:20,050 line:15% 
+is by saying my friends name, like so.
+
+137
+00:07:23,500 --> 00:07:25,150 line:15% 
+There we go.
+
+138
+00:07:25,150 --> 00:07:26,380
+Now we can run this.
+
+139
+00:07:28,550 --> 00:07:31,320 line:15% 
+And it says I last say Jose six days ago,
+
+140
+00:07:31,320 --> 00:07:33,020 line:15% 
+I last saw Rolf 12 days ago,
+
+141
+00:07:33,020 --> 00:07:34,700 line:15% 
+and I last saw Anne six days ago.
+
+142
+00:07:36,200 --> 00:07:39,360 line:15% 
+However, there is an even easier way.
+
+143
+00:07:39,360 --> 00:07:44,360 line:15% 
+And that's by doing for name, comma, days in
+
+144
+00:07:44,620 --> 00:07:47,100 line:15% 
+my friends dot items.
+
+145
+00:07:47,100 --> 00:07:49,140 line:15% 
+This is a new thing in Python Three,
+
+146
+00:07:49,140 --> 00:07:51,520 line:15% 
+and you can now do for name comma days in my friends
+
+147
+00:07:51,520 --> 00:07:55,760 line:15% 
+or items, and this will allow you to use
+
+148
+00:07:55,760 --> 00:07:56,890 line:15% 
+the days variable there.
+
+149
+00:07:56,890 --> 00:08:00,680 line:15% 
+Name is gonna be this, days is gonna be that.
+
+150
+00:08:03,050 --> 00:08:05,250 line:15% 
+So what is this dot items thing?
+
+151
+00:08:06,250 --> 00:08:09,570 line:15% 
+Well, fortunately we can just print it out
+
+152
+00:08:09,570 --> 00:08:11,530 line:15% 
+and have a look, see what it is.
+
+153
+00:08:11,530 --> 00:08:15,210 line:15% 
+So let's print my friends dot items and look.
+
+154
+00:08:17,920 --> 00:08:20,960 line:15% 
+You can see that it's a dict items thing.
+
+155
+00:08:21,970 --> 00:08:23,270 line:15% 
+We don't know what that is,
+
+156
+00:08:23,270 --> 00:08:25,600 line:15% 
+but don't worry too much about the dict items.
+
+157
+00:08:25,600 --> 00:08:28,528 line:15% 
+This is called a view in Python,
+
+158
+00:08:28,528 --> 00:08:30,900 line:15% 
+and it's not really important right now.
+
+159
+00:08:30,900 --> 00:08:32,597 line:15% 
+We'll understand more about it later on.
+
+160
+00:08:32,597 --> 00:08:35,370 line:15% 
+But what's important is the list that's inside of it.
+
+161
+00:08:36,290 --> 00:08:40,160 line:15% 
+This list here is really what the dot items gives you.
+
+162
+00:08:41,530 --> 00:08:44,840 line:15% 
+So why is that important?
+
+163
+00:08:44,840 --> 00:08:49,580 line:15% 
+Well, let's copy that and I'm going to paste it here.
+
+164
+00:08:52,000 --> 00:08:55,250 line:15% 
+And then notice how we can iterate over this list directly
+
+165
+00:08:55,250 --> 00:08:57,260 line:15% 
+as if it were my friends or items.
+
+166
+00:08:57,260 --> 00:09:02,200 line:15% 
+So for name days in my, sorry for...
+
+167
+00:09:03,270 --> 00:09:05,950 line:15% 
+I'm gonna go for explaining this a slightly different way.
+
+168
+00:09:05,950 --> 00:09:10,950 line:15% 
+For T, in that, now T is going to be
+
+169
+00:09:12,860 --> 00:09:15,950 line:15% 
+one of these elements, the tuple.
+
+170
+00:09:15,950 --> 00:09:18,380 line:15% 
+Then it's going to be that, and then it's going to be that.
+
+171
+00:09:18,380 --> 00:09:20,980 line:15% 
+As we iterate over the list.
+
+172
+00:09:20,980 --> 00:09:23,330 line:15% 
+If we print T, you'll see exactly what I mean.
+
+173
+00:09:25,730 --> 00:09:27,700 line:15% 
+Notice that a tuple gets printed out,
+
+174
+00:09:27,700 --> 00:09:30,020 line:15% 
+and then another tuple, and then another tuple
+
+175
+00:09:30,020 --> 00:09:32,790 line:15% 
+because our list has three tuples here.
+
+176
+00:09:35,760 --> 00:09:39,120 line:15% 
+What we can do in Python is we can say
+
+177
+00:09:39,120 --> 00:09:44,120 line:15% 
+that N V for example as two variables equal T.
+
+178
+00:09:46,870 --> 00:09:50,270 line:15% 
+So N will be the first value of the tuple,
+
+179
+00:09:50,270 --> 00:09:53,220 line:15% 
+and V will be the second value of the tuple
+
+180
+00:09:53,220 --> 00:09:54,810 line:15% 
+because T is a tuple.
+
+181
+00:09:55,970 --> 00:09:58,360 line:15% 
+Python realises that what you're trying to do here
+
+182
+00:09:58,360 --> 00:10:00,650 line:15% 
+is some pretty bizarre thing.
+
+183
+00:10:00,650 --> 00:10:05,310 line:15% 
+And it says okay, N and V match the structure
+
+184
+00:10:05,310 --> 00:10:08,360 line:15% 
+of this tuple here, so therefore we'll assume
+
+185
+00:10:08,360 --> 00:10:11,610 line:15% 
+that you want to de-structure the tuple
+
+186
+00:10:11,610 --> 00:10:15,220 line:15% 
+and put the name in here and the value in here.
+
+187
+00:10:17,290 --> 00:10:19,090 line:15% 
+Notice that instead of N comma V,
+
+188
+00:10:19,090 --> 00:10:21,440 line:15% 
+you can make this into a tuple if that
+
+189
+00:10:21,440 --> 00:10:23,320 line:15% 
+helps you understand it a bit easier.
+
+190
+00:10:23,320 --> 00:10:27,180 line:15% 
+This tuple here is equal to this tuple here,
+
+191
+00:10:27,180 --> 00:10:30,730 line:15% 
+and the variables get created, and you can then use them,
+
+192
+00:10:31,860 --> 00:10:34,320 line:15% 
+print N, print V.
+
+193
+00:10:34,320 --> 00:10:37,650 line:15% 
+Let's run that, and notice how now you get
+
+194
+00:10:37,650 --> 00:10:42,050 line:15% 
+Jose and six, Rolf and 12, and Anne and six.
+
+195
+00:10:42,050 --> 00:10:44,450 line:15% 
+This here is called tuple de-structuring.
+
+196
+00:10:44,450 --> 00:10:46,130 line:15% 
+It's quite a popular thing to do in Python,
+
+197
+00:10:46,130 --> 00:10:49,680 line:15% 
+it allows you to get a tuple and extract it into
+
+198
+00:10:49,680 --> 00:10:52,570 line:15% 
+multiple variables so that you can use them.
+
+199
+00:10:52,570 --> 00:10:56,410 line:15% 
+But of course one of the most used cases is when you
+
+200
+00:10:56,410 --> 00:11:00,570 line:15% 
+undo this completely, and you just put it in the for loop.
+
+201
+00:11:02,400 --> 00:11:04,940 line:15% 
+This works totally the same way and is indeed
+
+202
+00:11:04,940 --> 00:11:08,280 line:15% 
+what we did up here with name and days.
+
+203
+00:11:08,280 --> 00:11:10,210 line:15% 
+I just wanted to show you how that works,
+
+204
+00:11:10,210 --> 00:11:12,820 line:15% 
+we went a bit off-track here, the video wasn't meant
+
+205
+00:11:12,820 --> 00:11:14,610 line:15% 
+to cover this, but I wanted to give you
+
+206
+00:11:14,610 --> 00:11:18,662 line:15% 
+a quick bit of info on exactly how items works.
+
+207
+00:11:18,662 --> 00:11:22,060 line:15% 
+And some extra as well, if you want to check
+
+208
+00:11:22,060 --> 00:11:23,840 line:15% 
+whether you have a particular friend,
+
+209
+00:11:23,840 --> 00:11:26,707 line:15% 
+you can do so quite easily in Python.
+
+210
+00:11:26,707 --> 00:11:31,707 line:15% 
+You could say if name equal equal Rolf,
+
+211
+00:11:33,560 --> 00:11:38,560 line:15% 
+you can print I know Rolf, and let's not print that.
+
+212
+00:11:40,840 --> 00:11:44,070 line:15% 
+Now, for name and days and the items
+
+213
+00:11:44,070 --> 00:11:46,140 line:15% 
+that is gonna give you the name of the person
+
+214
+00:11:46,140 --> 00:11:47,930 line:15% 
+and the days since you last saw them.
+
+215
+00:11:47,930 --> 00:11:49,830 line:15% 
+And then we've just added a short if statement
+
+216
+00:11:49,830 --> 00:11:51,080 line:15% 
+that says that if name is Rolf,
+
+217
+00:11:51,080 --> 00:11:54,020 line:15% 
+you're gonna print something, okay?
+
+218
+00:11:55,220 --> 00:11:57,070 line:15% 
+So of course, now we can run this
+
+219
+00:11:57,070 --> 00:11:59,160 line:15% 
+and it will print out I know Rolf.
+
+220
+00:12:00,000 --> 00:12:01,760 line:15% 
+We thought that this might happen.
+
+221
+00:12:03,520 --> 00:12:08,040 line:15% 
+Now we can extend it further by saying something like this.
+
+222
+00:12:09,270 --> 00:12:11,500 line:15% 
+Who do I know?
+
+223
+00:12:11,500 --> 00:12:15,050 line:15% 
+It's gonna be Anne, and then we're gonna check
+
+224
+00:12:15,050 --> 00:12:17,880 line:15% 
+whether Anne is in our friends.
+
+225
+00:12:17,880 --> 00:12:22,880 line:15% 
+The way to do that is if, who do I know in my friends,
+
+226
+00:12:25,230 --> 00:12:28,290 line:15% 
+print, I also know Anne.
+
+227
+00:12:29,760 --> 00:12:33,800 line:15% 
+This in keyword just means, it's a bully in comparison
+
+228
+00:12:33,800 --> 00:12:35,780 line:15% 
+in this case because it's an if statement,
+
+229
+00:12:35,780 --> 00:12:37,580 line:15% 
+and it's going to allow us to check whether
+
+230
+00:12:37,580 --> 00:12:42,110 line:15% 
+this variable here, Anne, is in my friends.
+
+231
+00:12:42,110 --> 00:12:44,440 line:15% 
+And these are just the keys.
+
+232
+00:12:45,450 --> 00:12:47,893
+So that's Jose, Rolf or Anne, and this going to return true,
+
+233
+00:12:47,893 --> 00:12:52,582 line:15% 
+so when we run this, we should also see I know know Anne
+
+234
+00:12:52,582 --> 00:12:53,560 line:15% 
+down there.
+
+235
+00:12:54,600 --> 00:12:57,500 line:15% 
+And the in keyword can be used for dictionaries,
+
+236
+00:12:57,500 --> 00:13:00,430 line:15% 
+tuples, or lists, or indeed any iterable.
+
+237
+00:13:00,430 --> 00:13:03,040 line:15% 
+So any lists, tuple, dictionaries which are iterables,
+
+238
+00:13:03,040 --> 00:13:05,770 line:15% 
+and we'll also encounter other iterables later on,
+
+239
+00:13:05,770 --> 00:13:07,950 line:15% 
+you can use the in keyword in them.
+
+240
+00:13:09,960 --> 00:13:12,640
+For now, I'm going to revert this back to printing
+
+241
+00:13:12,640 --> 00:13:16,130
+the good ol' text that we were printing before.
+
+242
+00:13:16,130 --> 00:13:21,130
+I last saw name days days ago,
+
+243
+00:13:21,810 --> 00:13:24,830
+just because I am going to share this code with you,
+
+244
+00:13:24,830 --> 00:13:26,710
+and we want this to be correct.
+
+245
+00:13:26,710 --> 00:13:28,664
+So that's it for this video, I wanted to show you
+
+246
+00:13:28,664 --> 00:13:31,700
+how to use the for loop and the range function,
+
+247
+00:13:31,700 --> 00:13:33,670
+and then we also delved into dictionaries
+
+248
+00:13:33,670 --> 00:13:37,300
+and the items method as well, as well as the in keyword.
+
+249
+00:13:37,300 --> 00:13:39,120
+So quite a lot of stuff we covered in this video,
+
+250
+00:13:39,120 --> 00:13:42,120
+hope you're not too bored, and I'll see you on the next one.
+

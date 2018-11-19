@@ -1,0 +1,532 @@
+1
+00:00:00,000 --> 00:00:01,360
+Jose: Ol e bem vindo de volta.
+
+2
+00:00:01,360 --> 00:00:04,510
+Neste vdeo, obteremos a contagem de pginas
+
+3
+00:00:04,510 --> 00:00:09,040
+da prpria pgina, em vez de codific-la para 50.
+
+4
+00:00:09,040 --> 00:00:14,040
+Ento, em vez de 50, queremos pgina. page_count, por exemplo.
+
+5
+00:00:15,500 --> 00:00:19,540
+Agora, isso ser uma propriedade de nosso
+
+6
+00:00:19,540 --> 00:00:22,720
+AllBooksPage, ento vamos l e adicion-lo.
+
+7
+00:00:22,720 --> 00:00:26,362
+O que ns queremos fazer , claro, ter alguma
+
+8
+00:00:26,362 --> 00:00:28,430
+propriedade aqui que diga page_count
+
+9
+00:00:29,479 --> 00:00:33,290
+e ela retornar, vamos comear com 50, mas 
+
+10
+00:00:33,290 --> 00:00:35,400
+claro que isso vai retornar
+
+11
+00:00:35,400 --> 00:00:37,270
+algo vindo da pgina.
+
+12
+00:00:37,270 --> 00:00:40,610
+Vamos at o Chrome e descobrir o que isso pode ser.
+
+13
+00:00:42,650 --> 00:00:45,110
+Aqui, passamos agora para o Chrome, onde
+
+14
+00:00:45,110 --> 00:00:47,120
+temos a pgina, e queremos clicar
+
+15
+00:00:47,120 --> 00:00:50,160
+com o boto direito do mouse e inspecionar.
+
+16
+00:00:50,160 --> 00:00:51,910
+Isso vai nos levar at o
+
+17
+00:00:51,910 --> 00:00:54,130
+inspetor e vai destacar a coisa que inspecionamos.
+
+18
+00:00:54,130 --> 00:00:56,730
+Neste caso  um li, no interessante.
+
+19
+00:00:56,730 --> 00:00:58,270
+Se descermos at o final
+
+20
+00:00:58,270 --> 00:01:01,180
+e clicarmos com o boto direito e inspecionarmos o
+
+21
+00:01:01,180 --> 00:01:04,130
+50, agora teremos algo um pouco mais interessante, que
+
+22
+00:01:04,130 --> 00:01:05,770
+ este pager aqui.
+
+23
+00:01:05,770 --> 00:01:07,210
+Eu s vou expandir isso e
+
+24
+00:01:08,440 --> 00:01:09,730
+perceber como o site muda,
+
+25
+00:01:09,730 --> 00:01:12,180
+mas o HTML no est mudando, ento est tudo bem.
+
+26
+00:01:13,300 --> 00:01:15,820
+Ento ns temos um monte de coisas aqui.
+
+27
+00:01:16,670 --> 00:01:20,470
+Ns temos um li, que tem uma classe de corrente,
+
+28
+00:01:21,720 --> 00:01:24,330
+e que contm uma pgina de 50.
+
+29
+00:01:25,640 --> 00:01:28,820
+L ns temos um UL que  um pager.
+
+30
+00:01:28,820 --> 00:01:31,700
+A propsito, eu sei que estou rolando para o alto.
+
+31
+00:01:31,700 --> 00:01:33,990
+Ento este  o pager l.
+
+32
+00:01:33,990 --> 00:01:37,350
+Isso  dentro de uma div que est dentro de
+
+33
+00:01:39,690 --> 00:01:41,790
+outra div que est dentro da seo.
+
+34
+00:01:41,790 --> 00:01:46,690
+Ento, como voc pode ver, bastante semelhante a onde
+
+35
+00:01:48,120 --> 00:01:50,510
+esto os diferentes livros.
+
+36
+00:01:50,510 --> 00:01:53,390
+Ns temos, em vez de dentro dessa classe,
+
+37
+00:01:53,390 --> 00:01:54,760
+ns temos um pager.
+
+38
+00:01:54,760 --> 00:01:57,700
+E dentro dessa classe de pager, essa UL, temos um
+
+39
+00:01:57,700 --> 00:02:00,590
+item de lista, que  a classe atual que tem
+
+40
+00:02:00,590 --> 00:02:02,300
+a pgina um de 50.
+
+41
+00:02:03,660 --> 00:02:07,700
+Ento o que vamos fazer  extrair esta classe aqui.
+
+42
+00:02:07,700 --> 00:02:10,160
+E o que ns vamos fazer 
+
+43
+00:02:10,160 --> 00:02:12,514
+ir at a pgina superior da div
+
+44
+00:02:12,514 --> 00:02:14,562
+entrar, ento ns vamos pegar a
+
+45
+00:02:14,562 --> 00:02:17,000
+seo, ento ns vamos pegar o pager,
+
+46
+00:02:17,000 --> 00:02:19,790
+e ento ns vamos fi a corrente.
+
+47
+00:02:19,790 --> 00:02:22,380
+E isso nos dar a pgina um dos 50.
+
+48
+00:02:22,380 --> 00:02:25,930
+Ento, vamos voltar ao PyCharm e configurar isso.
+
+49
+00:02:29,690 --> 00:02:32,970
+Vamos abrir o AllBooksPageLocators e
+
+50
+00:02:34,050 --> 00:02:37,430
+aqui vamos adicionar um novo localizador.
+
+51
+00:02:37,430 --> 00:02:40,654
+Este localizador ser o localizador de pagers
+
+52
+00:02:40,654 --> 00:02:45,654
+e ser div. seo page_inner ul. pager li. atual e que
+
+53
+00:02:46,880 --> 00:02:50,100
+vai nos dar esse elemento que acabamos de
+
+54
+00:02:50,100 --> 00:02:53,125
+encontrar que contm uma pgina de 50.
+
+55
+00:02:53,125 --> 00:02:55,870
+Voltando ao AllBooksPage, em vez
+
+56
+00:02:55,870 --> 00:02:58,765
+de retornar 50, vamos obter
+
+57
+00:02:58,765 --> 00:03:01,440
+o contedo dessa tag.
+
+58
+00:03:01,440 --> 00:03:03,022
+Ento, vamos fazer contedo igual a
+
+59
+00:03:03,022 --> 00:03:06,260
+si mesmo. sopa. select_one (AllBooksPageLocators. PAGER). string e
+
+60
+00:03:14,520 --> 00:03:17,310
+isso vai nos dar uma pgina de 50.
+
+61
+00:03:17,310 --> 00:03:19,050
+E ento vamos usar expresses
+
+62
+00:03:19,050 --> 00:03:20,950
+regulares para extrair os 50.
+
+63
+00:03:20,950 --> 00:03:24,060
+E eu acho que voc pode fazer isso olhando
+
+64
+00:03:24,060 --> 00:03:27,130
+para a moeda que olhamos no book_parser, voc pode
+
+65
+00:03:27,130 --> 00:03:30,210
+fazer a mesma coisa para a pgina um dos 50.
+
+66
+00:03:30,210 --> 00:03:31,910
+E o que estamos interessados neste
+
+67
+00:03:31,910 --> 00:03:34,460
+caso so os 50 que chegam no final.
+
+68
+00:03:34,460 --> 00:03:37,000
+Ento, usando o mdulo de expresso regular,
+
+69
+00:03:37,000 --> 00:03:40,760
+a funo de pesquisa dentro dele, acho que voc pode encontr-lo.
+
+70
+00:03:40,760 --> 00:03:42,510
+D uma chance e depois volte
+
+71
+00:03:42,510 --> 00:03:44,070
+para o vdeo e continuaremos.
+
+72
+00:03:48,830 --> 00:03:50,210
+Eu espero que voc tenha conseguido.
+
+73
+00:03:50,210 --> 00:03:52,960
+Tudo o que temos que fazer ,
+
+74
+00:03:52,960 --> 00:03:55,070
+claro, em primeiro lugar definir nosso
+
+75
+00:03:55,070 --> 00:04:00,070
+padro, que vai ser pgina zero a nove mais de e entre parnteses
+
+76
+00:04:01,200 --> 00:04:02,580
+zero a nove mais,
+
+77
+00:04:04,050 --> 00:04:06,120
+porque isso vai ser uma
+
+78
+00:04:06,120 --> 00:04:11,120
+pgina ou pgina 10 ou 20 ou qualquer outra coisa 50 por exemplo.
+
+79
+00:04:11,230 --> 00:04:12,940
+E dentro dos parnteses,
+
+80
+00:04:12,940 --> 00:04:16,481
+lembre-se, ns recebemos nosso grupo quando pesquisamos.
+
+81
+00:04:16,481 --> 00:04:19,100
+Ento vamos criar o nosso
+
+82
+00:04:19,100 --> 00:04:24,010
+matcher, que ser o re. busca de padro no contedo.
+
+83
+00:04:25,010 --> 00:04:27,110
+Ns temos que importar re e outro
+
+84
+00:04:27,110 --> 00:04:29,679
+pedacinho da conveno do Python, quando voc importa um
+
+85
+00:04:29,679 --> 00:04:32,890
+mdulo, eu acho que j disse isso antes, quando voc importar
+
+86
+00:04:32,890 --> 00:04:35,484
+um mdulo, certifique-se de que ele esteja no topo.
+
+87
+00:04:35,484 --> 00:04:38,160
+Outras importaes de mdulo que voc no importa
+
+88
+00:04:38,160 --> 00:04:41,580
+do seu prprio cdigo ficam abaixo dele e, finalmente, as
+
+89
+00:04:41,580 --> 00:04:44,600
+importaes de seu prprio cdigo ficam abaixo disso.
+
+90
+00:04:44,600 --> 00:04:47,610
+Ento esse estilo de importao fica no topo.
+
+91
+00:04:49,190 --> 00:04:51,230
+E ento ns temos o nmero de pginas que
+
+92
+00:04:51,230 --> 00:04:53,720
+ um int de matcher. grupo 1).
+
+93
+00:04:54,958 --> 00:04:56,815
+Lembre-se de matcher. group (0)
+
+94
+00:04:56,815 --> 00:04:59,720
+vai ser a pgina inteira uma das 50.
+
+95
+00:04:59,720 --> 00:05:01,210
+O primeiro grupo, grupo um,
+
+96
+00:05:01,210 --> 00:05:03,540
+vai ser o que estiver dentro dos parnteses.
+
+97
+00:05:03,540 --> 00:05:05,300
+Agora, se voc tiver vrios conjuntos de colchetes,
+
+98
+00:05:05,300 --> 00:05:08,200
+isso seria o grupo dois e o grupo trs e assim por diante.
+
+99
+00:05:09,914 --> 00:05:10,890
+E  isso.
+
+100
+00:05:10,890 --> 00:05:12,650
+Em seguida, retornamos as pginas
+
+101
+00:05:12,650 --> 00:05:17,300
+e isso nos dar o nmero de pginas em todo o site.
+
+102
+00:05:17,300 --> 00:05:19,540
+Vamos voltar ao aplicativo e agora
+
+103
+00:05:19,540 --> 00:05:22,596
+podemos ver que isso no ficou mais amarelo,
+
+104
+00:05:22,596 --> 00:05:24,510
+o que foi um erro antes.
+
+105
+00:05:24,510 --> 00:05:27,830
+Agora  a pgina. page_count  visto como vlido.
+
+106
+00:05:27,830 --> 00:05:29,300
+Podemos rodar o menu novamente.
+
+107
+00:05:29,300 --> 00:05:30,150
+Deixe-me fechar isso
+
+108
+00:05:32,030 --> 00:05:33,630
+e no devemos ter nenhum erro.
+
+109
+00:05:34,996 --> 00:05:36,360
+Mas deve demorar um pouco.
+
+110
+00:05:39,960 --> 00:05:40,793
+E a temos que.
+
+111
+00:05:40,793 --> 00:05:42,670
+Parece estar carregado.
+
+112
+00:05:42,670 --> 00:05:47,261
+Podemos obter os melhores livros e podemos ver que eles esto l.
+
+113
+00:05:47,261 --> 00:05:49,280
+E isso  muito legal.
+
+114
+00:05:49,280 --> 00:05:51,930
+Agora extramos com sucesso mais algumas informaes
+
+115
+00:05:51,930 --> 00:05:52,800
+da pgina.
+
+116
+00:05:52,800 --> 00:05:55,014
+E como voc pode ver,
+
+117
+00:05:55,014 --> 00:05:57,860
+no h nada muito mgico acontecendo aqui.
+
+118
+00:05:57,860 --> 00:06:01,290
+Tudo o que estamos fazendo  selecionar ou
+
+119
+00:06:01,290 --> 00:06:05,060
+encontrar o localizador que queremos usar em seu navegador
+
+120
+00:06:05,060 --> 00:06:07,110
+e, em seguida, apenas obt-lo,
+
+121
+00:06:07,110 --> 00:06:09,090
+ou talvez fazer alguma expresso
+
+122
+00:06:09,090 --> 00:06:11,030
+regular para extrair algo dele.
+
+123
+00:06:11,030 --> 00:06:13,200
+Expresses regulares muito poderosas.
+
+124
+00:06:13,200 --> 00:06:14,880
+Pode ser um pouco confuso, ento
+
+125
+00:06:14,880 --> 00:06:16,770
+eu recomendo que voc os estude
+
+126
+00:06:16,770 --> 00:06:20,490
+com mais profundidade  medida que voc avana seu conhecimento de programao.
+
+127
+00:06:20,490 --> 00:06:21,690
+Pode ser realmente til.
+
+128
+00:06:23,170 --> 00:06:24,190
+Mas  isso para este vdeo.
+
+129
+00:06:24,190 --> 00:06:26,130
+Eu s queria mostrar outro
+
+130
+00:06:26,130 --> 00:06:28,520
+exemplo de extrair alguns dados do site
+
+131
+00:06:28,520 --> 00:06:30,330
+e como isso  fcil.
+
+132
+00:06:30,330 --> 00:06:32,310
+Tudo o que voc est procurando so padres.
+
+133
+00:06:32,310 --> 00:06:35,270
+Ento, com isso dito, vejo vocs no prximo vdeo.
+

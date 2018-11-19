@@ -1,0 +1,1180 @@
+1
+00:00:00,000 --> 00:00:01,180
+Jose: Ol e bem vindo de volta.
+
+2
+00:00:01,180 --> 00:00:04,500
+Neste vdeo, estamos analisando as importaes relativas.
+
+3
+00:00:04,500 --> 00:00:06,590
+As importaes relativas parecem ser mais
+
+4
+00:00:06,590 --> 00:00:08,890
+problemticas do que valem no Python, porque
+
+5
+00:00:08,890 --> 00:00:11,380
+muitas pessoas no sabem como elas funcionam.
+
+6
+00:00:11,380 --> 00:00:13,760
+No  algo que se fala com frequncia,
+
+7
+00:00:13,760 --> 00:00:15,450
+e h algumas coisas que voc
+
+8
+00:00:15,450 --> 00:00:19,140
+precisa saber sobre o Python para poder usar as importaes relativas com sucesso.
+
+9
+00:00:19,140 --> 00:00:21,350
+Geralmente, porm, direi que as
+
+10
+00:00:21,350 --> 00:00:23,830
+importaes relativas provavelmente no valem a
+
+11
+00:00:23,830 --> 00:00:25,570
+pena devido a suas limitaes.
+
+12
+00:00:25,570 --> 00:00:26,670
+Vamos falar sobre eles.
+
+13
+00:00:27,840 --> 00:00:30,590
+No ltimo vdeo, vimos o arquivo de operaes de
+
+14
+00:00:30,590 --> 00:00:33,160
+arquivos que temos aqui com duas funes: salvar no
+
+15
+00:00:33,160 --> 00:00:34,510
+arquivo e ler o arquivo.
+
+16
+00:00:35,840 --> 00:00:38,550
+E em nosso aplicativo ponto py quando
+
+17
+00:00:38,550 --> 00:00:43,550
+queramos import-lo, fizemos a partir do utils dot que abre este pacote utils.
+
+18
+00:00:43,620 --> 00:00:46,870
+Operaes de arquivo, que abre o arquivo de operaes de arquivo.
+
+19
+00:00:46,870 --> 00:00:49,230
+Importe essas duas funes.
+
+20
+00:00:49,230 --> 00:00:53,290
+Quando ns importamos um arquivo como dizemos, faa isso, o Python vai
+
+21
+00:00:53,290 --> 00:00:56,570
+para o arquivo e navega para ele e o executa
+
+22
+00:00:57,560 --> 00:00:58,600
+e ento nos
+
+23
+00:00:59,720 --> 00:01:01,530
+d acesso s funes que
+
+24
+00:01:01,530 --> 00:01:02,730
+foram definidas nele.
+
+25
+00:01:03,780 --> 00:01:05,980
+Ento, se tivermos impresso ...
+
+26
+00:01:05,980 --> 00:01:07,100
+Oh, whoa, whoa.
+
+27
+00:01:08,410 --> 00:01:11,900
+Se imprimirmos o ol dentro das operaes de arquivo,
+
+28
+00:01:13,270 --> 00:01:15,770
+voltamos ao aplicativo e executamos o app
+
+29
+00:01:17,640 --> 00:01:20,460
+dot py, observe como obtemos oi impresso.
+
+30
+00:01:20,460 --> 00:01:23,270
+Porque, novamente, quando voc importa o arquivo, isso
+
+31
+00:01:23,270 --> 00:01:25,930
+vai para esse arquivo e o executa.
+
+32
+00:01:25,930 --> 00:01:28,970
+Define as funes, no executa as funes.
+
+33
+00:01:28,970 --> 00:01:32,090
+Ele define as funes, executa qualquer cdigo que esteja l
+
+34
+00:01:32,090 --> 00:01:34,330
+e, no final, volta e d acesso
+
+35
+00:01:34,330 --> 00:01:36,220
+a essas coisas que voc importou.
+
+36
+00:01:37,547 --> 00:01:39,210
+O que o Python est
+
+37
+00:01:39,210 --> 00:01:42,010
+fazendo em segundo plano  essencialmente construir um dicionrio
+
+38
+00:01:42,010 --> 00:01:45,430
+de nome de funo para o contedo da funo e 
+
+39
+00:01:45,430 --> 00:01:47,250
+realmente isso que est lhe devolvendo
+
+40
+00:01:47,250 --> 00:01:50,110
+e ento voc pode us-los como funes l.
+
+41
+00:01:50,110 --> 00:01:54,170
+Ento, o arquivo  executado quando voc o importa.
+
+42
+00:01:54,170 --> 00:01:56,250
+Isso  algo que  importante saber.
+
+43
+00:01:57,170 --> 00:02:00,790
+Ento, o que fizemos aqui  uma importao absoluta.
+
+44
+00:02:00,790 --> 00:02:03,160
+Ns comeamos no topo do nosso projeto dentro
+
+45
+00:02:03,160 --> 00:02:04,760
+da pasta do projeto de importaes.
+
+46
+00:02:04,760 --> 00:02:06,780
+Esse  o pacote de utilitrios.
+
+47
+00:02:06,780 --> 00:02:08,150
+Isso  no topo.
+
+48
+00:02:08,150 --> 00:02:09,270
+Ns acessamos isso.
+
+49
+00:02:09,270 --> 00:02:11,290
+Ento acessamos as operaes de
+
+50
+00:02:11,290 --> 00:02:13,220
+arquivo e isso  chamado
+
+51
+00:02:13,220 --> 00:02:16,930
+de importao absoluta porque definimos o caminho absoluto das importaes.
+
+52
+00:02:19,210 --> 00:02:23,360
+Se tivssemos dentro de utils um novo pacote, chamado por exemplo
+
+53
+00:02:24,330 --> 00:02:26,370
+common, esse  um nome
+
+54
+00:02:26,370 --> 00:02:28,600
+de pacote bem comum, e ns
+
+55
+00:02:28,600 --> 00:02:31,200
+movemos as operaes de arquivo para l.
+
+56
+00:02:31,200 --> 00:02:33,300
+Lembre-se de desmarcar a pesquisa de referncias.
+
+57
+00:02:34,420 --> 00:02:36,380
+Agora ns pegamos esse arquivo desconhecido.
+
+58
+00:02:36,380 --> 00:02:38,210
+No pode resolv-lo.
+
+59
+00:02:38,210 --> 00:02:39,043
+Ento, o que
+
+60
+00:02:39,043 --> 00:02:43,000
+ns temos que fazer  utils pontuar operaes de arquivo de ponto comuns.
+
+61
+00:02:43,000 --> 00:02:45,320
+Estamos acessando o pacote utils e
+
+62
+00:02:45,320 --> 00:02:47,306
+o pacote comum dentro dele, e
+
+63
+00:02:47,306 --> 00:02:50,539
+ento o arquivo de operaes de arquivo dentro dele.
+
+64
+00:02:50,539 --> 00:02:52,160
+E ento podemos importar dele.
+
+65
+00:02:52,160 --> 00:02:55,080
+Isso, novamente,  uma importao absoluta.
+
+66
+00:02:57,650 --> 00:03:01,060
+Observe como comeamos no nvel de app dot py em
+
+67
+00:03:01,060 --> 00:03:04,380
+todas as instncias, mas isso  um efeito colateral.
+
+68
+00:03:04,380 --> 00:03:06,580
+O importante  que comeamos
+
+69
+00:03:06,580 --> 00:03:09,090
+no topo do nosso projeto.
+
+70
+00:03:09,090 --> 00:03:09,923
+OK.
+
+71
+00:03:11,290 --> 00:03:13,020
+Ento, e se tivssemos algo assim?
+
+72
+00:03:13,020 --> 00:03:15,910
+Vamos criar um novo arquivo dentro de utils, um novo arquivo Python.
+
+73
+00:03:15,910 --> 00:03:19,690
+Observe dentro utils, no dentro comum.
+
+74
+00:03:19,690 --> 00:03:21,670
+E vamos chamar isso de encontrar ponto py.
+
+75
+00:03:23,090 --> 00:03:24,920
+E neste arquivo, vou colocar
+
+76
+00:03:24,920 --> 00:03:29,240
+uma funo que ir encontrar um elemento particular dentro de uma lista.
+
+77
+00:03:30,540 --> 00:03:34,946
+Ento, digamos, o find in vai receber um itervel, ele vai pegar uma
+
+78
+00:03:34,946 --> 00:03:36,430
+funo localizadora, e vai
+
+79
+00:03:36,430 --> 00:03:38,330
+levar um valor esperado, e ento
+
+80
+00:03:39,970 --> 00:03:42,520
+ele vai dizer, para o que  itervel.
+
+81
+00:03:44,600 --> 00:03:48,210
+Se finder eu igual igual esperado.
+
+82
+00:03:48,210 --> 00:03:49,043
+Oh finder
+
+83
+00:03:49,920 --> 00:03:50,753
+Tudo bem.
+
+84
+00:03:50,753 --> 00:03:52,730
+Voltar i.
+
+85
+00:03:52,730 --> 00:03:56,520
+Caso contrrio, vamos lanar um erro no
+
+86
+00:03:56,520 --> 00:04:01,520
+encontrado e dizer que no foi encontrado no itervel fornecido.
+
+87
+00:04:02,000 --> 00:04:04,040
+ claro que temos que criar um erro desse
+
+88
+00:04:04,040 --> 00:04:05,570
+tipo e voc sabe como fazer isso.
+
+89
+00:04:05,570 --> 00:04:08,800
+Crie este erro no encontrado dentro desta classe.
+
+90
+00:04:13,020 --> 00:04:15,310
+Tenho certeza de que voc conseguiu que
+
+91
+00:04:15,310 --> 00:04:20,310
+todos faam  dizer erro de classe no encontrado estende de exceo e no faz nada,
+
+92
+00:04:20,740 --> 00:04:21,760
+uma vez que
+
+93
+00:04:21,760 --> 00:04:23,460
+no temos quaisquer argumentos extras
+
+94
+00:04:23,460 --> 00:04:24,910
+que no a mensagem l.
+
+95
+00:04:26,620 --> 00:04:29,470
+Agora temos essa funo de encontrar aqui.
+
+96
+00:04:29,470 --> 00:04:31,250
+E, novamente, se formos
+
+97
+00:04:31,250 --> 00:04:32,530
+para app dot
+
+98
+00:04:32,530 --> 00:04:35,490
+py, podemos import-lo e voc saberia como
+
+99
+00:04:35,490 --> 00:04:39,190
+import-lo tambm de utils dot find import find in.
+
+100
+00:04:39,190 --> 00:04:42,210
+E ento isso nos permite encontrar em uma lista particular.
+
+101
+00:04:44,910 --> 00:04:47,870
+Se estamos em encontrar ponto py, e queramos
+
+102
+00:04:47,870 --> 00:04:51,090
+ter acesso s operaes de arquivo por algum
+
+103
+00:04:51,090 --> 00:04:54,020
+motivo como, este  apenas um exemplo, ento
+
+104
+00:04:54,020 --> 00:04:56,010
+h duas maneiras de faz-lo.
+
+105
+00:04:58,880 --> 00:05:01,220
+Existem trs maneiras que as pessoas normalmente tentam.
+
+106
+00:05:01,220 --> 00:05:03,500
+Duas maneiras corretas e uma maneira errada.
+
+107
+00:05:03,500 --> 00:05:04,800
+E este  o caminho errado.
+
+108
+00:05:11,370 --> 00:05:13,140
+Essa  a maneira errada de fazer isso, ok?
+
+109
+00:05:13,140 --> 00:05:14,830
+Ento no faa isso.
+
+110
+00:05:14,830 --> 00:05:18,170
+Voc acha que, como estamos atualmente encontrando o dot
+
+111
+00:05:18,170 --> 00:05:21,620
+py, que est dentro dos utils, poderamos dizer que as
+
+112
+00:05:21,620 --> 00:05:25,240
+operaes comuns de arquivos de ponto importam save to file.
+
+113
+00:05:26,275 --> 00:05:29,300
+E isso faz sentido na maioria das linguagens, mas
+
+114
+00:05:29,300 --> 00:05:31,390
+realmente o que est acontecendo aqui
+
+115
+00:05:31,390 --> 00:05:35,390
+ que o Python acha que estamos fazendo uma importao absoluta,
+
+116
+00:05:35,390 --> 00:05:38,020
+porque ns no dissemos o contrrio e, portanto,
+
+117
+00:05:38,020 --> 00:05:40,920
+temos que comear no topo do nosso projeto.
+
+118
+00:05:42,450 --> 00:05:45,150
+Assim, a nica maneira correta de fazer
+
+119
+00:05:45,150 --> 00:05:49,700
+isso  utils dot operaes de arquivo de ponto comum e gosta disso.
+
+120
+00:05:49,700 --> 00:05:51,500
+Outra opo  informar ao
+
+121
+00:05:51,500 --> 00:05:53,900
+Python que queremos iniciar a partir da
+
+122
+00:05:53,900 --> 00:05:55,730
+pasta atual, a pasta utils.
+
+123
+00:05:55,730 --> 00:05:59,240
+Ento, podemos fazer isso removendo os utils, mas
+
+124
+00:05:59,240 --> 00:06:00,440
+mantendo o ponto.
+
+125
+00:06:00,440 --> 00:06:03,810
+E o que isso significa agora  razoavelmente inconsistente
+
+126
+00:06:03,810 --> 00:06:06,600
+com o resto do uso de pontos
+
+127
+00:06:06,600 --> 00:06:09,400
+no Python, mas significa dentro da pasta atual.
+
+128
+00:06:09,400 --> 00:06:14,400
+Ento, na pasta atual, comum em operaes de arquivos comuns e
+
+129
+00:06:14,870 --> 00:06:17,470
+isso agora  uma importao relativa.
+
+130
+00:06:18,370 --> 00:06:20,060
+Uma importao relativa 
+
+131
+00:06:20,060 --> 00:06:23,240
+uma importao que inicia a partir do arquivo
+
+132
+00:06:23,240 --> 00:06:25,230
+atual ou do arquivo atual
+
+133
+00:06:25,230 --> 00:06:29,510
+com o qual estamos trabalhando e pode ir para outro pacote.
+
+134
+00:06:32,100 --> 00:06:36,890
+Ento tudo isso  bom, mas existem alguns problemas.
+
+135
+00:06:38,930 --> 00:06:39,960
+Aqui est o primeiro problema.
+
+136
+00:06:39,960 --> 00:06:42,080
+Vamos correr encontrar o ponto py.
+
+137
+00:06:46,200 --> 00:06:47,040
+No to bom.
+
+138
+00:06:47,040 --> 00:06:51,330
+Recebemos um erro de mdulo no encontrado quando corremos encontrar o ponto py.
+
+139
+00:06:52,410 --> 00:06:53,243
+OK.
+
+140
+00:06:53,243 --> 00:06:54,780
+Vamos falar sobre isso daqui a pouco.
+
+141
+00:06:54,780 --> 00:06:55,850
+Eu quero mostrar-lhe
+
+142
+00:06:55,850 --> 00:06:58,320
+porque esta no  uma boa ideia
+
+143
+00:06:58,320 --> 00:06:59,750
+na maioria dos casos.
+
+144
+00:07:01,530 --> 00:07:06,010
+Se voc executar app dot py, tudo funciona.
+
+145
+00:07:06,010 --> 00:07:09,040
+Observe como o app dot py est importando o find e
+
+146
+00:07:10,140 --> 00:07:12,120
+que est sendo executado, o que significa
+
+147
+00:07:12,120 --> 00:07:13,990
+que este cdigo est sendo executado tambm.
+
+148
+00:07:14,850 --> 00:07:16,740
+E est funcionando quando fazemos isso.
+
+149
+00:07:16,740 --> 00:07:19,180
+Est funcionando quando rodamos app dot py.
+
+150
+00:07:19,180 --> 00:07:21,850
+No est funcionando quando corremos encontrar o ponto py.
+
+151
+00:07:23,140 --> 00:07:25,320
+E isso  o que eu estava
+
+152
+00:07:25,320 --> 00:07:28,900
+falando sobre a execuo de um arquivo como script versus como mdulo.
+
+153
+00:07:28,900 --> 00:07:31,450
+H apenas algumas diferenas l.
+
+154
+00:07:31,450 --> 00:07:36,450
+Ento, vamos falar sobre exatamente por que isso no funciona quando corremos encontrar o ponto
+
+155
+00:07:37,210 --> 00:07:38,610
+py e por que
+
+156
+00:07:38,610 --> 00:07:40,970
+funciona quando executamos o app dot py.
+
+157
+00:07:40,970 --> 00:07:43,080
+E para fazer isso, temos que
+
+158
+00:07:43,080 --> 00:07:45,930
+falar sobre a varivel do nome do dunder.
+
+159
+00:07:48,260 --> 00:07:52,300
+Ento, vou remover o cdigo que estamos usando, no nos
+
+160
+00:07:52,300 --> 00:07:54,140
+importamos mais com isso.
+
+161
+00:07:54,140 --> 00:07:58,130
+Mas o que eu vou fazer  imprimir underscore sublinhado
+
+162
+00:07:58,130 --> 00:07:59,230
+nome sublinhado sublinhado.
+
+163
+00:08:00,970 --> 00:08:02,017
+Vou imprimir sublinhado sublinhado
+
+164
+00:08:02,017 --> 00:08:04,120
+nome sublinhado sublinhado para o aplicativo dot py.
+
+165
+00:08:04,120 --> 00:08:06,570
+Voc sabe o valor que isso vai ter?
+
+166
+00:08:09,180 --> 00:08:12,560
+Eu no espero que voc, mas o
+
+167
+00:08:12,560 --> 00:08:16,140
+valor  sublinhado sublinhado principal sublinhado sublinhado.
+
+168
+00:08:16,140 --> 00:08:18,060
+Ento tem um nome principal do dunder.
+
+169
+00:08:20,030 --> 00:08:23,370
+Sempre que voc executar um arquivo como um script,
+
+170
+00:08:23,370 --> 00:08:25,610
+isto  sempre que voc executar
+
+171
+00:08:25,610 --> 00:08:29,890
+qualquer coisa, como app dot py ou encontrar ponto py ou
+
+172
+00:08:29,890 --> 00:08:31,800
+operaes de arquivo dot py,
+
+173
+00:08:31,800 --> 00:08:34,850
+ento sublinhado sublinhado nome sublinhado sublinhado desse arquivo
+
+174
+00:08:34,850 --> 00:08:37,740
+ser sempre sublinhado sublinhado principal sublinhado sublinhado.
+
+175
+00:08:37,740 --> 00:08:41,380
+Ento o principal  sempre o nome do arquivo que voc executou.
+
+176
+00:08:42,690 --> 00:08:44,480
+Ento isso  uma coisa importante.
+
+177
+00:08:44,480 --> 00:08:47,820
+Vamos ento procurar o ponto py e imprimir seu nome.
+
+178
+00:08:49,350 --> 00:08:50,980
+O que voc acha que isso
+
+179
+00:08:50,980 --> 00:08:53,470
+vai ser quando executarmos o nosso ponto py?
+
+180
+00:08:53,470 --> 00:08:54,640
+Ns vamos correr nosso ponto py.
+
+181
+00:08:54,640 --> 00:08:56,940
+O que voc acha que vamos ver impresso?
+
+182
+00:09:01,530 --> 00:09:04,360
+Espero que voc tenha pensado nisso, ou talvez at tenha executado o cdigo
+
+183
+00:09:04,360 --> 00:09:06,460
+para que eu possa mostrar exatamente o que est acontecendo.
+
+184
+00:09:07,530 --> 00:09:10,000
+Primeiro de tudo, obtemos utils dot
+
+185
+00:09:10,000 --> 00:09:14,750
+find porque eu disse que quando voc importa, voc executa o arquivo.
+
+186
+00:09:14,750 --> 00:09:17,610
+Portanto, esse arquivo de operaes de arquivo  executado
+
+187
+00:09:17,610 --> 00:09:20,540
+primeiro e, em seguida, o segundo ponto  executado.
+
+188
+00:09:20,540 --> 00:09:23,260
+Ento ns imprimimos esse nome aqui.
+
+189
+00:09:23,260 --> 00:09:26,090
+Ento utils dot find  executado primeiro aqui e
+
+190
+00:09:26,090 --> 00:09:28,160
+ns imprimimos o nome na parte inferior.
+
+191
+00:09:28,160 --> 00:09:31,290
+E o nome agora  utils dot find.
+
+192
+00:09:34,040 --> 00:09:38,150
+E isso  porque  isso que ns importamos, utils dot find.
+
+193
+00:09:38,150 --> 00:09:42,010
+Ento o Python vai at aqui, encontra o arquivo e agora decide
+
+194
+00:09:42,010 --> 00:09:45,520
+que agora esse arquivo ser chamado de utils dot find.
+
+195
+00:09:47,540 --> 00:09:49,055
+Ento ns imprimimos o underscore
+
+196
+00:09:49,055 --> 00:09:52,330
+do underscore do underscore do sublinhado do sublinhado e este  ainda
+
+197
+00:09:52,330 --> 00:09:54,060
+principal porque ns funcionamos este arquivo.
+
+198
+00:09:56,090 --> 00:09:57,670
+Vamos ver o ponto py
+
+199
+00:09:59,933 --> 00:10:04,770
+e agora eu vou voltar para a coisa que funciona, os utils pontuam operaes de
+
+200
+00:10:04,770 --> 00:10:07,260
+arquivo de pontos comuns e ns estamos rodando
+
+201
+00:10:07,260 --> 00:10:09,190
+para encontrar o ponto py.
+
+202
+00:10:11,910 --> 00:10:13,920
+Perceba como ficamos principais porque corremos
+
+203
+00:10:13,920 --> 00:10:15,380
+encontrar o dot py
+
+204
+00:10:16,810 --> 00:10:19,840
+e o nome dele  sempre main, pois 
+
+205
+00:10:19,840 --> 00:10:21,190
+o arquivo que rodamos.
+
+206
+00:10:24,700 --> 00:10:29,100
+Ento, se voltarmos ao aplicativo em execuo e, a propsito, eu
+
+207
+00:10:32,200 --> 00:10:35,030
+removi os utils l, e vamos para
+
+208
+00:10:36,230 --> 00:10:38,690
+as operaes comuns de arquivos e
+
+209
+00:10:38,690 --> 00:10:40,610
+imprimimos o nome aqui tambm.
+
+210
+00:10:42,610 --> 00:10:45,220
+Vamos voltar a executar o aplicativo e ver o que acontece.
+
+211
+00:10:47,270 --> 00:10:49,560
+Ok, nada terrivelmente inesperado.
+
+212
+00:10:49,560 --> 00:10:52,330
+Ns comeamos principal para o aplicativo,
+
+213
+00:10:54,160 --> 00:10:56,960
+temos utils ponto encontrar para encontrar,
+
+214
+00:10:58,270 --> 00:11:02,920
+e de alguma forma temos utils dot operaes de arquivo
+
+215
+00:11:02,920 --> 00:11:05,430
+de ponto comum para operaes
+
+216
+00:11:05,430 --> 00:11:09,030
+de arquivo, embora tenha sido importado assim, aqui.
+
+217
+00:11:11,390 --> 00:11:14,220
+Claro, ns tambm importamos aqui, ento esse
+
+218
+00:11:14,220 --> 00:11:16,440
+ o nome que tem.
+
+219
+00:11:16,440 --> 00:11:19,090
+Vamos remover essa importao e executar o aplicativo novamente.
+
+220
+00:11:22,310 --> 00:11:25,490
+Observe como os utils pontuam operaes de arquivo de ponto
+
+221
+00:11:25,490 --> 00:11:27,620
+comuns ainda  o primeiro arquivo.
+
+222
+00:11:30,150 --> 00:11:31,700
+Quando fazemos--
+
+223
+00:11:31,700 --> 00:11:32,860
+bem, desculpe.
+
+224
+00:11:32,860 --> 00:11:33,693
+Deixe-me explicar isso.
+
+225
+00:11:33,693 --> 00:11:36,390
+Eu estava pulando direto para outra coisa l.
+
+226
+00:11:36,390 --> 00:11:39,420
+Quando importamos de utils dot find, esta  a
+
+227
+00:11:39,420 --> 00:11:40,590
+primeira coisa que acontece.
+
+228
+00:11:40,590 --> 00:11:44,250
+Ns vamos encontrar e, em seguida, ns importamos as operaes de arquivo.
+
+229
+00:11:45,700 --> 00:11:47,840
+Portanto, esse arquivo de operaes de arquivo  o
+
+230
+00:11:47,840 --> 00:11:49,520
+primeiro a ser executado at a concluso.
+
+231
+00:11:49,520 --> 00:11:50,710
+Imprimimos o nome, que
+
+232
+00:11:50,710 --> 00:11:53,130
+ uma operao comum de arquivos utils.
+
+233
+00:11:53,130 --> 00:11:56,020
+Ento voltamos para encontrar, aps a importao,
+
+234
+00:11:56,020 --> 00:11:57,410
+e passamos por
+
+235
+00:11:57,410 --> 00:12:00,750
+isso e acabamos imprimindo o nome, utils dot find.
+
+236
+00:12:00,750 --> 00:12:03,550
+E finalmente voltamos para c e imprimimos o nome do aplicativo.
+
+237
+00:12:03,550 --> 00:12:04,420
+Isso  o principal.
+
+238
+00:12:05,950 --> 00:12:10,420
+Como voc pode ver, o nome das operaes de
+
+239
+00:12:10,420 --> 00:12:14,580
+arquivo no  operaes de arquivo de pontos comuns.
+
+240
+00:12:14,580 --> 00:12:18,660
+ utils dot operaes de arquivo de
+
+241
+00:12:18,660 --> 00:12:22,050
+pontos comuns porque este ponto final
+
+242
+00:12:22,050 --> 00:12:26,870
+aqui significa acessar o pacote atual no nome.
+
+243
+00:12:27,710 --> 00:12:29,450
+Ento isso  util.
+
+244
+00:12:30,550 --> 00:12:33,080
+O nome do arquivo  utils dot find.
+
+245
+00:12:33,080 --> 00:12:35,320
+Quando voc faz um ponto no
+
+246
+00:12:35,320 --> 00:12:39,230
+incio, ele diz para pegar o pacote util e acessar
+
+247
+00:12:39,230 --> 00:12:42,200
+o pacote comum dentro dele e o pacote
+
+248
+00:12:42,200 --> 00:12:44,450
+de operaes do arquivo dentro dele.
+
+249
+00:12:48,430 --> 00:12:50,380
+Assim, o nome final termina
+
+250
+00:12:50,380 --> 00:12:53,610
+como utils dot operaes de arquivo de ponto comum.
+
+251
+00:12:53,610 --> 00:12:57,790
+Agora, por que no funciona quando corremos encontrar o ponto py?
+
+252
+00:13:01,650 --> 00:13:03,500
+Mais uma vez, vou importar daqui.
+
+253
+00:13:04,920 --> 00:13:06,930
+Por que no funciona com uma importao relativa quando
+
+254
+00:13:06,930 --> 00:13:08,130
+corremos encontrar o ponto py?
+
+255
+00:13:09,160 --> 00:13:14,160
+Bem, porque o ponto  principal e principal no  util.
+
+256
+00:13:17,030 --> 00:13:20,375
+Ento, ele tenta acessar o sublinhado sublinhado principal underscore sublinhado
+
+257
+00:13:20,375 --> 00:13:23,140
+dot operaes de arquivo de ponto comuns e
+
+258
+00:13:23,140 --> 00:13:26,690
+isso no vai funcionar porque main no  um pacote.
+
+259
+00:13:30,400 --> 00:13:33,490
+E  por isso que as importaes relativas podem ser um pouco dolorosas.
+
+260
+00:13:33,490 --> 00:13:35,600
+E, de fato, se executarmos isso novamente,
+
+261
+00:13:35,600 --> 00:13:39,830
+voc ver que obtemos um ponto principal sem nome de mdulo comum, porque  exatamente
+
+262
+00:13:39,830 --> 00:13:41,410
+isso que ele est tentando fazer.
+
+263
+00:13:41,410 --> 00:13:46,080
+Est tentando acessar o pacote deste nome e apenas
+
+264
+00:13:46,080 --> 00:13:49,390
+anex-lo ao que quer que esteja aqui.
+
+265
+00:13:51,560 --> 00:13:53,000
+OK.
+
+266
+00:13:53,000 --> 00:13:55,920
+Ento,  claro que, se encontrar estava
+
+267
+00:13:55,920 --> 00:13:58,920
+em outra pasta, este pacote poderia ser o
+
+268
+00:13:58,920 --> 00:14:01,260
+meu ponto de ponto de projeto.
+
+269
+00:14:01,260 --> 00:14:03,290
+Este seria o pacote find
+
+270
+00:14:03,290 --> 00:14:05,880
+e tudo seria adicionado ao incio.
+
+271
+00:14:05,880 --> 00:14:08,640
+Ento, o que quer que seja que encontre,
+
+272
+00:14:08,640 --> 00:14:10,840
+vai ser acrescentado na frente e, em
+
+273
+00:14:10,840 --> 00:14:13,080
+seguida, ser acrescentado na parte de trs.
+
+274
+00:14:13,080 --> 00:14:14,410
+Esses dois juntos
+
+275
+00:14:14,410 --> 00:14:18,160
+sero o caminho absoluto das operaes de arquivos.
+
+276
+00:14:18,160 --> 00:14:21,730
+Claro, se voc executar o find como um script, voc
+
+277
+00:14:21,730 --> 00:14:25,550
+adiciona main aqui, o que no  vlido, porque esse
+
+278
+00:14:25,550 --> 00:14:27,300
+no  um pacote vlido.
+
+279
+00:14:28,780 --> 00:14:33,730
+Mas isso funciona se voc executar o app dot py.
+
+280
+00:14:33,730 --> 00:14:36,890
+E isso funciona porque voc j enviou
+
+281
+00:14:36,890 --> 00:14:39,830
+esse arquivo de localizao dentro dos utilitrios.
+
+282
+00:14:39,830 --> 00:14:43,350
+Ento, quando voc vai encontrar, o nome  utils dot find,
+
+283
+00:14:43,350 --> 00:14:46,160
+ento o que  adicionado aqui  utils.
+
+284
+00:14:46,160 --> 00:14:48,310
+Isso  o que est acontecendo em segundo plano.
+
+285
+00:14:50,380 --> 00:14:53,910
+Isso funciona quando voc no executa o arquivo como um script.
+
+286
+00:14:53,910 --> 00:14:56,280
+No funciona quando voc o executa como um script.
+
+287
+00:14:57,910 --> 00:14:59,640
+Ento  isso para importaes
+
+288
+00:14:59,640 --> 00:15:01,610
+relativas onde estamos importando crianas.
+
+289
+00:15:01,610 --> 00:15:04,930
+Lembre-se que o pacote comum aqui  filho do
+
+290
+00:15:04,930 --> 00:15:07,350
+pacote do usurio no qual estamos atualmente.
+
+291
+00:15:07,350 --> 00:15:10,040
+No prximo vdeo, vamos ver as importaes dos pais.
+
+292
+00:15:10,040 --> 00:15:13,830
+Como o mdulo de operaes de arquivo pode importar, por
+
+293
+00:15:13,830 --> 00:15:16,120
+exemplo, este erro no foi encontrado.
+
+294
+00:15:16,120 --> 00:15:16,953
+Vamos l.
+
+295
+00:15:16,953 --> 00:15:18,480
+Ento te vejo daqui a pouco.
+

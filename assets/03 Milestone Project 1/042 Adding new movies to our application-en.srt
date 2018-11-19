@@ -1,0 +1,844 @@
+1
+00:00:00,240 --> 00:00:01,500 line:15% 
+<v Instructor>Hi, and welcome back.</v>
+
+2
+00:00:01,500 --> 00:00:03,230 line:15% 
+In this video we're going to continue
+
+3
+00:00:03,230 --> 00:00:07,050 line:15% 
+with our Milestone Project on adding movies.
+
+4
+00:00:07,050 --> 00:00:12,050
+Now, in the last video we added these tasks.
+
+5
+00:00:12,410 --> 00:00:13,610
+And we created a bunch of them,
+
+6
+00:00:13,610 --> 00:00:16,700
+like deciding where we're going to store movies,
+
+7
+00:00:16,700 --> 00:00:18,520
+what is the format of a movie,
+
+8
+00:00:19,390 --> 00:00:22,440
+to show the user the main interface and get their input,
+
+9
+00:00:22,440 --> 00:00:24,550
+and also to allow users to add movies,
+
+10
+00:00:24,550 --> 00:00:27,620
+show movies, find movies, and stop running the programme.
+
+11
+00:00:27,620 --> 00:00:29,140
+Now I think we've done a couple of these.
+
+12
+00:00:29,140 --> 00:00:31,931
+So I'm gonna just add an X here,
+
+13
+00:00:31,931 --> 00:00:33,600
+to say that we've done them.
+
+14
+00:00:33,600 --> 00:00:34,433
+And I think what we've done,
+
+15
+00:00:34,433 --> 00:00:36,210
+is we've shown the user the main interface,
+
+16
+00:00:36,210 --> 00:00:38,030
+and that's this line of text here.
+
+17
+00:00:38,030 --> 00:00:39,650
+And we've gotten their input,
+
+18
+00:00:39,650 --> 00:00:42,270
+and also we've allowed the user to stop running the programme
+
+19
+00:00:42,270 --> 00:00:43,320
+when they type 'q'.
+
+20
+00:00:44,720 --> 00:00:48,170
+Now, before we can allow users to add movies,
+
+21
+00:00:48,170 --> 00:00:51,475
+I think we need to choose what it is that they're gonna add,
+
+22
+00:00:51,475 --> 00:00:53,930
+and where they're gonna be stored.
+
+23
+00:00:54,800 --> 00:00:56,460
+So we're gonna do these two tasks up here.
+
+24
+00:00:56,460 --> 00:00:58,840
+Where to store movies, and what is a movie.
+
+25
+00:00:59,920 --> 00:01:02,780
+In a larger programme as I said earlier on,
+
+26
+00:01:02,780 --> 00:01:04,980
+normally these movies would be stored in a database
+
+27
+00:01:04,980 --> 00:01:07,490
+or maybe a file, or something like that.
+
+28
+00:01:07,490 --> 00:01:10,480
+But because we've not looked at databases and files yet,
+
+29
+00:01:10,480 --> 00:01:12,840
+we're going to store these movies in a structure
+
+30
+00:01:12,840 --> 00:01:14,620
+that we do know.
+
+31
+00:01:14,620 --> 00:01:16,040
+Now, what might that be?
+
+32
+00:01:19,710 --> 00:01:24,210
+I'm sure you guessed a potential correct data structure,
+
+33
+00:01:24,210 --> 00:01:28,920
+I would use a list, but you could use a set if you wanted.
+
+34
+00:01:28,920 --> 00:01:31,280
+I wouldn't recommend using a tuple.
+
+35
+00:01:31,280 --> 00:01:33,550
+So a list I think is a good choice.
+
+36
+00:01:35,060 --> 00:01:37,270
+So I've created the variable called Movies,
+
+37
+00:01:37,270 --> 00:01:40,100
+and made it equal to an empty list.
+
+38
+00:01:40,100 --> 00:01:43,330
+This is going to store all of our movies
+
+39
+00:01:43,330 --> 00:01:44,980
+when we are running this programme.
+
+40
+00:01:47,290 --> 00:01:50,540
+So we've decided where to store the movies,
+
+41
+00:01:50,540 --> 00:01:53,210
+now we have to decide, what is a movie?
+
+42
+00:01:53,210 --> 00:01:54,810
+What's the format of a movie?
+
+43
+00:01:56,990 --> 00:02:01,800
+For me, I think that a movie is going to be a dictionary
+
+44
+00:02:03,500 --> 00:02:08,500
+that has a name, that's going to be a string,
+
+45
+00:02:11,140 --> 00:02:13,760
+it's going to have a director,
+
+46
+00:02:15,840 --> 00:02:17,590
+that's also going to be a string,
+
+47
+00:02:17,590 --> 00:02:19,760
+and it's also going to have a year,
+
+48
+00:02:19,760 --> 00:02:21,100
+that's going to be an int.
+
+49
+00:02:22,120 --> 00:02:24,800
+These are going to be my movies.
+
+50
+00:02:24,800 --> 00:02:26,580
+If you want to store something different,
+
+51
+00:02:26,580 --> 00:02:28,530
+by all means, feel free to do so.
+
+52
+00:02:28,530 --> 00:02:30,019
+I mean, this is your programme,
+
+53
+00:02:30,019 --> 00:02:31,810
+it'll be fairly straightforward
+
+54
+00:02:31,810 --> 00:02:34,280
+to add different things in there.
+
+55
+00:02:36,350 --> 00:02:38,700
+Now that we've decided what the format of a movie
+
+56
+00:02:38,700 --> 00:02:40,930
+is going to be, and where we're gonna store them,
+
+57
+00:02:40,930 --> 00:02:43,430
+we know that when we add a new movie,
+
+58
+00:02:43,430 --> 00:02:45,150
+what we're gonna to is create a dictionary
+
+59
+00:02:45,150 --> 00:02:49,090
+that looks like this, and put it into our list.
+
+60
+00:02:49,090 --> 00:02:50,290
+So let's go and do that.
+
+61
+00:02:52,780 --> 00:02:54,720
+Underneath the Menu function,
+
+62
+00:02:54,720 --> 00:02:57,950
+let's define the Add Movie function.
+
+63
+00:02:57,950 --> 00:03:00,930
+Again, if up til now you've not felt confident to develop
+
+64
+00:03:00,930 --> 00:03:02,120
+this function on your own,
+
+65
+00:03:02,120 --> 00:03:04,470
+and you feel like you're more confident now,
+
+66
+00:03:04,470 --> 00:03:06,220
+pause the video and give it a go.
+
+67
+00:03:06,220 --> 00:03:07,500
+And I'm gonna keep saying this,
+
+68
+00:03:07,500 --> 00:03:09,600
+because it's really the best way to learn.
+
+69
+00:03:13,350 --> 00:03:15,780
+Okay, now that hopefully you've tackled it,
+
+70
+00:03:15,780 --> 00:03:17,400
+or you've done it earlier on,
+
+71
+00:03:17,400 --> 00:03:20,460
+we're ready to ask the user for the details
+
+72
+00:03:20,460 --> 00:03:22,040
+that we're gonna store in our movie.
+
+73
+00:03:22,040 --> 00:03:23,010
+So what we're gonna do,
+
+74
+00:03:23,010 --> 00:03:24,440
+is ask the user for a name,
+
+75
+00:03:28,460 --> 00:03:30,460
+we're gonna ask the user for a director,
+
+76
+00:03:33,641 --> 00:03:35,780
+and we're gonna ask the user for a year.
+
+77
+00:03:42,448 --> 00:03:44,450
+Now we did say the year is going to be an integer,
+
+78
+00:03:44,450 --> 00:03:47,640
+so I'm gonna turn this into an int right there
+
+79
+00:03:47,640 --> 00:03:48,630
+as we go along.
+
+80
+00:03:48,630 --> 00:03:51,390
+Just to make sure that the year is an integer,
+
+81
+00:03:51,390 --> 00:03:54,620
+and I'm not gonna use it as a string by accident
+
+82
+00:03:54,620 --> 00:03:55,720
+or anything like that.
+
+83
+00:03:56,710 --> 00:03:58,950
+And then all we wanna do is make sure that we
+
+84
+00:03:58,950 --> 00:04:00,280
+create a new dictionary,
+
+85
+00:04:00,280 --> 00:04:02,800
+and we put it into our movie's list.
+
+86
+00:04:02,800 --> 00:04:04,900
+So what to do, movies.append,
+
+87
+00:04:05,842 --> 00:04:09,180
+and create a new dictionary here which is going to have
+
+88
+00:04:09,180 --> 00:04:14,180
+the name, director, and the year keys.
+
+89
+00:04:16,280 --> 00:04:19,030
+Notice how I've created this dictionary here,
+
+90
+00:04:19,030 --> 00:04:22,880
+inside the append function, and that's totally fine to do,
+
+91
+00:04:22,880 --> 00:04:24,840
+but if you prefer you can create a separate variable
+
+92
+00:04:24,840 --> 00:04:28,160
+up here, say like, movie is this,
+
+93
+00:04:30,300 --> 00:04:32,400
+and append the movie here.
+
+94
+00:04:32,400 --> 00:04:35,220
+Totally up to you, what you prefer doing.
+
+95
+00:04:35,220 --> 00:04:37,480
+This may be slightly more readable for you,
+
+96
+00:04:37,480 --> 00:04:39,590
+if you choose you can do that.
+
+97
+00:04:39,590 --> 00:04:42,390
+But for me, this is fairly readable.
+
+98
+00:04:42,390 --> 00:04:44,550
+This tells me that what I'm appending to my list
+
+99
+00:04:44,550 --> 00:04:47,020
+is a dictionary that has these pieces of data.
+
+100
+00:04:47,920 --> 00:04:48,753
+Okay?
+
+101
+00:04:48,753 --> 00:04:50,650
+And I know that this is a movie
+
+102
+00:04:50,650 --> 00:04:52,530
+because the list is called Movies.
+
+103
+00:04:52,530 --> 00:04:55,920
+So I don't have to define a separate variable called Movie
+
+104
+00:04:55,920 --> 00:04:58,420
+just to tell me that what I'm creating is a movie.
+
+105
+00:05:00,140 --> 00:05:02,730
+Now we've got our Add Movie function,
+
+106
+00:05:02,730 --> 00:05:07,620
+whenever we go and run this function we're going to ask the
+
+107
+00:05:07,620 --> 00:05:09,560
+user for three details,
+
+108
+00:05:09,560 --> 00:05:13,060
+and we're going to append a dictionary with those details
+
+109
+00:05:13,060 --> 00:05:15,110
+into our movies list.
+
+110
+00:05:15,110 --> 00:05:16,340
+So what I'm going to do,
+
+111
+00:05:16,340 --> 00:05:19,870
+is I'm going to evaluate the flow of the programme again
+
+112
+00:05:19,870 --> 00:05:22,160
+just for you, and then we're going to run this programme
+
+113
+00:05:22,160 --> 00:05:24,210
+and check that everything's working well.
+
+114
+00:05:26,230 --> 00:05:28,510
+As soon as we go down to line 58,
+
+115
+00:05:28,510 --> 00:05:30,350
+we've got our Menu function call.
+
+116
+00:05:30,350 --> 00:05:33,180
+So we're going to jump over to the Menu function,
+
+117
+00:05:33,180 --> 00:05:36,300
+where we're going to ask the user to enter something.
+
+118
+00:05:36,300 --> 00:05:38,930
+If they type 'a' we're going to jump right into
+
+119
+00:05:38,930 --> 00:05:41,440
+the Add Movie function, which is defined down here.
+
+120
+00:05:41,440 --> 00:05:45,040
+And this is fine because this function is already defined
+
+121
+00:05:45,040 --> 00:05:47,390
+by the time that we run our Menu function.
+
+122
+00:05:48,400 --> 00:05:49,950
+So we're gonna ask the user for the movie name,
+
+123
+00:05:49,950 --> 00:05:51,240
+director, and year,
+
+124
+00:05:51,240 --> 00:05:55,210
+we're gonna construct a new dictionary with the three keys,
+
+125
+00:05:55,210 --> 00:05:57,960
+and the values are going to be these variables up here,
+
+126
+00:05:59,550 --> 00:06:01,260
+and then we're going to append that dictionary
+
+127
+00:06:01,260 --> 00:06:05,470
+into our Movies list that is defined at the top in here.
+
+128
+00:06:07,420 --> 00:06:08,253
+Okay?
+
+129
+00:06:09,750 --> 00:06:13,040
+So, then we're going to finish running that,
+
+130
+00:06:13,040 --> 00:06:15,810
+we're going to skip the elif, elif, and else statements,
+
+131
+00:06:15,810 --> 00:06:18,310
+and we're going to ask the user for input again.
+
+132
+00:06:18,310 --> 00:06:19,720
+They can type 'a' again,
+
+133
+00:06:19,720 --> 00:06:22,700
+in which case we will go back to repeating the loop.
+
+134
+00:06:22,700 --> 00:06:26,140
+This will be true because a is not q,
+
+135
+00:06:26,140 --> 00:06:28,860
+and we will ask the user to add another movie.
+
+136
+00:06:28,860 --> 00:06:31,570
+And so on and so on, until the user types 'q',
+
+137
+00:06:31,570 --> 00:06:33,940
+in which case when we repeat the y loop,
+
+138
+00:06:33,940 --> 00:06:37,280
+q will be equal to q, so this will be false,
+
+139
+00:06:37,280 --> 00:06:39,600
+and we will stop running the programme.
+
+140
+00:06:39,600 --> 00:06:42,530
+When that happens, we will jump to the end of the y loop,
+
+141
+00:06:42,530 --> 00:06:44,000
+where the function ends,
+
+142
+00:06:44,000 --> 00:06:46,690
+so then we will jump back down to line 58,
+
+143
+00:06:46,690 --> 00:06:50,380
+and run line 59 which is empty, and then exit our programme.
+
+144
+00:06:52,040 --> 00:06:54,760
+So because inside this Menu function call,
+
+145
+00:06:54,760 --> 00:06:56,510
+the entire program's running,
+
+146
+00:06:56,510 --> 00:06:59,040
+we will potentially be adding a bunch of movies
+
+147
+00:06:59,040 --> 00:07:00,910
+inside this Menu function.
+
+148
+00:07:00,910 --> 00:07:02,750
+That's inside the y loop.
+
+149
+00:07:02,750 --> 00:07:05,877
+So what we can do after running the Menu function,
+
+150
+00:07:05,877 --> 00:07:08,540
+is print our movies list.
+
+151
+00:07:08,540 --> 00:07:10,440
+Then, when we run the Menu function,
+
+152
+00:07:10,440 --> 00:07:12,090
+we'll add a bunch of movies,
+
+153
+00:07:12,090 --> 00:07:13,730
+we will exit the Menu function at the end
+
+154
+00:07:13,730 --> 00:07:17,460
+when we type 'q', but our programme won't exit immediately,
+
+155
+00:07:17,460 --> 00:07:20,590
+it will first run this line Print Movies,
+
+156
+00:07:20,590 --> 00:07:22,190
+and then it will finish running.
+
+157
+00:07:23,070 --> 00:07:24,860
+This is why it's important for you to know
+
+158
+00:07:24,860 --> 00:07:28,310
+exactly where your programme is going step by step,
+
+159
+00:07:28,310 --> 00:07:30,160
+because this is now going to allow us to
+
+160
+00:07:30,160 --> 00:07:34,460
+make sure that our function is doing what we want it to do.
+
+161
+00:07:34,460 --> 00:07:35,630
+So let's run our app.
+
+162
+00:07:35,630 --> 00:07:38,450
+Once again you can right click app.py and run it,
+
+163
+00:07:38,450 --> 00:07:40,890
+or if you've done that before,
+
+164
+00:07:40,890 --> 00:07:44,190
+Pie Charm will tell you that this app thing here on the top
+
+165
+00:07:44,190 --> 00:07:46,700
+right is available for running,
+
+166
+00:07:46,700 --> 00:07:47,900
+and you can just run it in there.
+
+167
+00:07:47,900 --> 00:07:48,733
+Okay?
+
+168
+00:07:48,733 --> 00:07:50,920
+But normally I'd recommend that you right click the file,
+
+169
+00:07:50,920 --> 00:07:52,520
+and run it.
+
+170
+00:07:52,520 --> 00:07:53,520
+As then you'll make sure that you are
+
+171
+00:07:53,520 --> 00:07:54,720
+running the right thing.
+
+172
+00:07:55,670 --> 00:07:58,516
+So again, we see here our interface,
+
+173
+00:07:58,516 --> 00:08:02,120
+our user interface we can enter 'a', 'l', 'f', and 'q',
+
+174
+00:08:02,120 --> 00:08:04,485
+we're gonna type 'a' since that's the only thing
+
+175
+00:08:04,485 --> 00:08:06,240
+that's working, and we're gonna enter movie name,
+
+176
+00:08:06,240 --> 00:08:09,080
+I'm going to enter the Matrix, the director.
+
+177
+00:08:09,080 --> 00:08:12,100
+I'm gonna enter Wochowski's The Two Sisters,
+
+178
+00:08:12,100 --> 00:08:15,300
+and the release year is gonna be 1994.
+
+179
+00:08:15,300 --> 00:08:16,750
+Then I'm gonna type 'q'.
+
+180
+00:08:17,980 --> 00:08:19,470
+And notice how I was right
+
+181
+00:08:19,470 --> 00:08:21,490
+and the movies get printed out after.
+
+182
+00:08:22,440 --> 00:08:24,370
+What we've got here is a list
+
+183
+00:08:25,240 --> 00:08:27,130
+with a single dictionary in it,
+
+184
+00:08:27,130 --> 00:08:29,330
+including the name, director,
+
+185
+00:08:29,330 --> 00:08:31,160
+and year that we've entered earlier.
+
+186
+00:08:31,160 --> 00:08:33,500
+Notice how the year is an integer, which is all good,
+
+187
+00:08:33,500 --> 00:08:35,380
+and the others are strings.
+
+188
+00:08:36,279 --> 00:08:37,670
+Now this is pretty awesome,
+
+189
+00:08:37,670 --> 00:08:41,560
+we've got really now a working application,
+
+190
+00:08:41,560 --> 00:08:43,700
+not terribly useful yet,
+
+191
+00:08:43,700 --> 00:08:46,360
+that allows us to add new movies into our list,
+
+192
+00:08:46,360 --> 00:08:48,420
+and then show them out to the user.
+
+193
+00:08:48,420 --> 00:08:50,440
+When we start adding the other functionality,
+
+194
+00:08:50,440 --> 00:08:51,950
+in the next couple of videos,
+
+195
+00:08:51,950 --> 00:08:54,340
+we're gonna find much more use for it.
+
+196
+00:08:54,340 --> 00:08:58,850
+But of course, because when we run this programme again,
+
+197
+00:08:58,850 --> 00:09:02,250
+and we type 'q' we get an empty list,
+
+198
+00:09:02,250 --> 00:09:05,210
+this programme isn't the most useful that it could be.
+
+199
+00:09:05,210 --> 00:09:07,940
+Every time we run the programme the list gets erased,
+
+200
+00:09:07,940 --> 00:09:11,230
+because Python only remembers it within the current runtime
+
+201
+00:09:11,230 --> 00:09:12,720
+of the app.
+
+202
+00:09:12,720 --> 00:09:15,470
+So this is a clear limitation of our programme,
+
+203
+00:09:15,470 --> 00:09:18,870
+and it is one we will surpass when we look at files
+
+204
+00:09:18,870 --> 00:09:21,670
+and databases, later on in this course.
+
+205
+00:09:21,670 --> 00:09:23,870
+So, this programme could be more useful,
+
+206
+00:09:23,870 --> 00:09:26,360
+but that doesn't mean it's not a great programme
+
+207
+00:09:26,360 --> 00:09:27,280
+to get started.
+
+208
+00:09:28,150 --> 00:09:30,170
+And again, I would encourage you if you've not done so
+
+209
+00:09:30,170 --> 00:09:35,170
+already, to try to finish writing the last two functions.
+
+210
+00:09:35,450 --> 00:09:38,980 line:15% 
+And if so, let's go on to the next video.
+
+211
+00:09:38,980 --> 00:09:40,030 line:15% 
+I will see you there.
+

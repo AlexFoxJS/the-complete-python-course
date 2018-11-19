@@ -1,0 +1,1132 @@
+1
+00:00:00,350 --> 00:00:01,820
+Jos: Hola y bienvenido de nuevo.
+
+2
+00:00:01,820 --> 00:00:03,160
+En este video, vamos
+
+3
+00:00:03,160 --> 00:00:06,350
+a permitir que los usuarios encuentren una pelcula en este programa.
+
+4
+00:00:07,590 --> 00:00:10,310
+Tenemos la mayora del programa listo en
+
+5
+00:00:10,310 --> 00:00:12,830
+el que pueden agregar pelculas y
+
+6
+00:00:12,830 --> 00:00:15,650
+pelculas y, por supuesto, repetir esta entrada
+
+7
+00:00:15,650 --> 00:00:17,570
+continuamente hasta que presionen Q.
+
+8
+00:00:17,570 --> 00:00:18,610
+Ahora tenemos que
+
+9
+00:00:18,610 --> 00:00:19,940
+permitirles encontrar una pelcula.
+
+10
+00:00:20,890 --> 00:00:22,700
+Entonces, qu significa encontrar una pelcula?
+
+11
+00:00:24,110 --> 00:00:26,767
+Bien, le preguntaremos al usuario qu
+
+12
+00:00:26,767 --> 00:00:29,350
+es lo que quieren buscar.
+
+13
+00:00:30,730 --> 00:00:33,730
+Nombre, director o ao?
+
+14
+00:00:35,120 --> 00:00:37,580
+Luego vamos a preguntarles qu valor quieren
+
+15
+00:00:37,580 --> 00:00:41,500
+buscar, por ejemplo, todas las pelculas hechas en 1994 o todas
+
+16
+00:00:41,500 --> 00:00:46,280
+las pelculas del director, Wachowskis o todas las pelculas llamadas, no s el
+
+17
+00:00:46,280 --> 00:00:49,850
+musical de la escuela secundaria, no s muchas pelculas, me
+
+18
+00:00:49,850 --> 00:00:52,310
+acabo de dar cuenta de que tal
+
+19
+00:00:52,310 --> 00:00:53,470
+vez este no
+
+20
+00:00:53,470 --> 00:00:55,170
+era un buen proyecto.
+
+21
+00:00:56,040 --> 00:00:57,200
+De todos modos, entonces, no
+
+22
+00:00:58,320 --> 00:00:59,770
+agreguemos el musical de la escuela
+
+23
+00:00:59,770 --> 00:01:01,710
+secundaria a nuestras pelculas, pero tal vez podamos
+
+24
+00:01:01,710 --> 00:01:03,990
+agregar un par de otras pelculas que tengan aos
+
+25
+00:01:03,990 --> 00:01:05,070
+similares o directores similares.
+
+26
+00:01:06,510 --> 00:01:10,260
+Vamos a desarrollar esta funcin de bsqueda de guin de subrayado.
+
+27
+00:01:11,370 --> 00:01:14,620
+Una vez ms, porque esto se usa despus de mostrar pelculas,
+
+28
+00:01:14,620 --> 00:01:16,860
+uno pensara que tal vez debera ir
+
+29
+00:01:16,860 --> 00:01:19,370
+aqu, pero como mostrar pelculas usa mostrar detalles
+
+30
+00:01:19,370 --> 00:01:22,200
+de la pelcula, eso debera ir directamente debajo de
+
+31
+00:01:22,200 --> 00:01:24,490
+las pelculas de muestra y luego podemos agregarlo.
+
+32
+00:01:29,370 --> 00:01:30,940
+Agreguemos nuestra funcin buscar pelcula,
+
+33
+00:01:30,940 --> 00:01:33,360
+observe cmo desaparece la lnea ondulada roja,
+
+34
+00:01:33,360 --> 00:01:35,270
+PyCharm est contento pero, por supuesto,
+
+35
+00:01:35,270 --> 00:01:38,360
+nos falta algo de contenido aqu y PyCharm nos
+
+36
+00:01:38,360 --> 00:01:42,100
+dice esto por esta lnea roja y ondulada, se espera una sangra.
+
+37
+00:01:42,100 --> 00:01:44,920
+No tenemos nada sangrado en esta funcin, por
+
+38
+00:01:44,920 --> 00:01:46,720
+lo que PyCharm solo ser
+
+39
+00:01:46,720 --> 00:01:48,510
+feliz una vez que tengamos algo.
+
+40
+00:01:49,600 --> 00:01:51,120
+Y lo que vamos
+
+41
+00:01:51,120 --> 00:01:55,210
+a hacer es preguntarle al usuario qu propiedad quiere buscar.
+
+42
+00:01:55,210 --> 00:01:57,550
+Ya sea nombre, director o ao.
+
+43
+00:02:07,970 --> 00:02:09,240
+Y luego les
+
+44
+00:02:09,240 --> 00:02:11,590
+preguntaremos exactamente qu valor quieren buscar.
+
+45
+00:02:19,170 --> 00:02:21,510
+Ahora tenemos dos cosas, tenemos
+
+46
+00:02:22,570 --> 00:02:24,940
+lo que estn buscando y
+
+47
+00:02:24,940 --> 00:02:27,180
+qu propiedad es eso.
+
+48
+00:02:27,180 --> 00:02:30,830
+Entonces, desarrollemos algo que nos permita
+
+49
+00:02:30,830 --> 00:02:33,050
+ir y encontrar esto.
+
+50
+00:02:35,920 --> 00:02:37,310
+Vamos a crear una nueva
+
+51
+00:02:37,310 --> 00:02:40,670
+lista de pelculas encontradas, por cada pelcula que encontremos que coincida
+
+52
+00:02:40,670 --> 00:02:42,090
+con estas dos cosas, vamos
+
+53
+00:02:42,090 --> 00:02:44,220
+a agregarla a esta lista y luego
+
+54
+00:02:44,220 --> 00:02:46,570
+vamos a decirle al usuario la lista.
+
+55
+00:02:47,760 --> 00:02:50,780
+Para pelculas en pelculas, esta es nuestra lista de pelculas principal, la
+
+56
+00:02:50,780 --> 00:02:52,670
+pelcula es una variable que vamos a
+
+57
+00:02:52,670 --> 00:02:54,270
+usar para cada iteracin del ciclo.
+
+58
+00:02:55,540 --> 00:02:56,920
+Vamos a decir
+
+59
+00:02:58,220 --> 00:02:59,053
+si los
+
+60
+00:03:00,500 --> 00:03:01,420
+corchetes de
+
+61
+00:03:02,320 --> 00:03:07,320
+la pelcula, encontrar por, recordar encontrar por va a ser uno
+
+62
+00:03:07,560 --> 00:03:11,090
+de, uno de ao, nombre o director.
+
+63
+00:03:12,760 --> 00:03:17,250
+Entonces, si el ao de la pelcula es igual a buscar,
+
+64
+00:03:17,250 --> 00:03:18,083
+este es
+
+65
+00:03:19,600 --> 00:03:22,900
+exactamente el valor que estn buscando, entonces vamos
+
+66
+00:03:22,900 --> 00:03:24,510
+a decir encontrado, oh
+
+67
+00:03:24,510 --> 00:03:25,343
+lo siento,
+
+68
+00:03:25,343 --> 00:03:27,300
+encontr el apndice de punto, pelcula.
+
+69
+00:03:29,160 --> 00:03:31,910
+Y luego, al final, vamos a
+
+70
+00:03:32,913 --> 00:03:35,870
+poder imprimir los detalles de la pelcula
+
+71
+00:03:35,870 --> 00:03:38,700
+o algo as, porque ahora vamos a
+
+72
+00:03:38,700 --> 00:03:40,810
+volver a encontrar, de acuerdo?
+
+73
+00:03:45,110 --> 00:03:47,840
+As que esta funcin de bsqueda de pelculas ahora le
+
+74
+00:03:47,840 --> 00:03:49,850
+pregunta al usuario qu propiedad de la
+
+75
+00:03:49,850 --> 00:03:51,820
+pelcula est buscando y qu est buscando.
+
+76
+00:03:53,050 --> 00:03:54,980
+Entonces est creando una nueva
+
+77
+00:03:54,980 --> 00:03:56,910
+lista y repasando todas nuestras
+
+78
+00:03:56,910 --> 00:03:59,760
+pelculas, verificando si la propiedad de la pelcula
+
+79
+00:03:59,760 --> 00:04:02,250
+que estn buscando es exactamente lo que
+
+80
+00:04:02,250 --> 00:04:04,850
+estn esperando y luego va a agregar
+
+81
+00:04:04,850 --> 00:04:07,010
+esa pelcula a nuestra lista de
+
+82
+00:04:07,010 --> 00:04:09,700
+resultados y luego va a volver que .
+
+83
+00:04:12,040 --> 00:04:13,460
+Bueno?
+
+84
+00:04:13,460 --> 00:04:15,660
+Creo que podemos extraer parte de esto en
+
+85
+00:04:15,660 --> 00:04:17,770
+una funcin separada para hacer que esta funcin
+
+86
+00:04:17,770 --> 00:04:20,180
+sea ligeramente ms corta y ligeramente ms agradable.
+
+87
+00:04:20,180 --> 00:04:22,230
+Entonces, qu vamos a hacer es solo eso?
+
+88
+00:04:24,770 --> 00:04:26,720
+Vamos a definir una nueva
+
+89
+00:04:26,720 --> 00:04:28,670
+funcin a la que voy
+
+90
+00:04:31,560 --> 00:04:34,860
+a llamar algo as como buscar por atributos
+
+91
+00:04:37,810 --> 00:04:41,470
+y esto tomar dos cosas, lo que el usuario
+
+92
+00:04:41,470 --> 00:04:43,020
+est buscando y voy
+
+93
+00:04:43,020 --> 00:04:45,440
+a llamar a esto esperado, porque
+
+94
+00:04:45,440 --> 00:04:47,260
+ese es el valor esperado
+
+95
+00:04:47,260 --> 00:04:49,250
+de la pelcula que estn buscando.
+
+96
+00:04:49,250 --> 00:04:51,590
+Y va a ser una funcin de bsqueda.
+
+97
+00:04:52,580 --> 00:04:55,390
+Ahora todo lo que haces es esto, porque quera incluir
+
+98
+00:04:55,390 --> 00:04:57,730
+funciones de lamda en este proyecto y esta
+
+99
+00:04:57,730 --> 00:04:59,800
+es realmente la mejor manera de hacerlo.
+
+100
+00:04:59,800 --> 00:05:02,160
+Esta funcin aqu est totalmente bien, al incluir
+
+101
+00:05:02,160 --> 00:05:03,450
+esta funcin de bsqueda,
+
+102
+00:05:03,450 --> 00:05:06,870
+nuestro programa va a ser un poco ms agradable, est bien?
+
+103
+00:05:06,870 --> 00:05:08,550
+Esta funcin buscar por
+
+104
+00:05:08,550 --> 00:05:10,200
+atributo har todo esto.
+
+105
+00:05:13,310 --> 00:05:14,480
+Bueno?
+
+106
+00:05:14,480 --> 00:05:16,250
+Va a definir una lista
+
+107
+00:05:16,250 --> 00:05:17,400
+vaca de pelculas
+
+108
+00:05:17,400 --> 00:05:19,150
+que hemos encontrado y luego
+
+109
+00:05:19,150 --> 00:05:20,990
+va a repasar las pelculas
+
+110
+00:05:20,990 --> 00:05:23,700
+y las devolver al final, excepto que en
+
+111
+00:05:24,710 --> 00:05:26,890
+lugar de encontrar la pelcula, usar este buscador.
+
+112
+00:05:28,400 --> 00:05:29,233
+No, lo
+
+113
+00:05:29,233 --> 00:05:31,620
+siento, busca, oh, no puedo
+
+114
+00:05:31,620 --> 00:05:34,200
+deletrear hoy, pelcula de bsqueda.
+
+115
+00:05:34,200 --> 00:05:35,610
+Entonces este buscador va
+
+116
+00:05:35,610 --> 00:05:37,740
+a ser una funcin que va
+
+117
+00:05:37,740 --> 00:05:41,320
+a tomar la pelcula como argumento y va a
+
+118
+00:05:41,320 --> 00:05:43,390
+escupir un valor y eso
+
+119
+00:05:43,390 --> 00:05:45,200
+ser exactamente igual al esperado.
+
+120
+00:05:47,510 --> 00:05:49,180
+Ahora, cmo hacemos esto?
+
+121
+00:05:49,180 --> 00:05:50,013
+Estoy seguro de
+
+122
+00:05:50,013 --> 00:05:52,130
+que lo sabes y si no lo
+
+123
+00:05:52,130 --> 00:05:53,960
+has implementado de esta manera, no
+
+124
+00:05:53,960 --> 00:05:56,330
+esperara que lo hicieras, por favor, pausa el
+
+125
+00:05:56,330 --> 00:06:00,160
+video ahora y prubalo, cmo usaras esta funcin de bsqueda por atributo dentro
+
+126
+00:06:00,160 --> 00:06:02,010
+de tu encontrar la funcin de la pelcula?
+
+127
+00:06:05,570 --> 00:06:08,360
+Lo que hara, es agregar una funcin
+
+128
+00:06:09,980 --> 00:06:13,170
+lamda para que las pelculas que estamos buscando
+
+129
+00:06:17,321 --> 00:06:18,221
+encuentren por
+
+130
+00:06:19,100 --> 00:06:21,600
+atributo, el valor esperado es la
+
+131
+00:06:21,600 --> 00:06:23,450
+bsqueda de valor y
+
+132
+00:06:25,630 --> 00:06:29,580
+la funcin finder es una lamda donde est tomando
+
+133
+00:06:29,580 --> 00:06:33,150
+un parmetro y est regresando la bsqueda por clave
+
+134
+00:06:33,150 --> 00:06:34,540
+de ese parmetro.
+
+135
+00:06:37,910 --> 00:06:40,100
+Ahora s que esto complica las
+
+136
+00:06:40,100 --> 00:06:41,870
+cosas probablemente innecesariamente, pero solo
+
+137
+00:06:41,870 --> 00:06:44,470
+quera mostrarte un ejemplo de dnde podra ser
+
+138
+00:06:46,110 --> 00:06:48,550
+til y puedes pensar, bueno, esto no
+
+139
+00:06:48,550 --> 00:06:50,330
+es realmente til, quiero decir
+
+140
+00:06:50,330 --> 00:06:52,590
+que podemos simplificarlo y tener una pelcula
+
+141
+00:06:52,590 --> 00:06:54,730
+y usarla. los corchetes y eso
+
+142
+00:06:57,290 --> 00:07:00,150
+es correcto, pero si esto es particularmente til
+
+143
+00:07:00,150 --> 00:07:01,880
+cuando no sabemos, o ms
+
+144
+00:07:01,880 --> 00:07:04,880
+bien cuando esta funcin aqu no sabe qu pelcula es.
+
+145
+00:07:05,800 --> 00:07:07,270
+Ya sea un diccionario,
+
+146
+00:07:07,270 --> 00:07:09,570
+potencialmente si se trata de una
+
+147
+00:07:09,570 --> 00:07:11,310
+lista y devolvera el primer
+
+148
+00:07:11,310 --> 00:07:15,910
+atributo de eso, si es algo que tiene que devolver una porcin, ya
+
+149
+00:07:15,910 --> 00:07:18,150
+sabes, no importa, lo nico que
+
+150
+00:07:18,150 --> 00:07:20,350
+importa es que est ejecutando lo
+
+151
+00:07:20,350 --> 00:07:22,035
+que sea que le digamos
+
+152
+00:07:22,035 --> 00:07:24,910
+para encontrarlo y luego volver, se compara con
+
+153
+00:07:24,910 --> 00:07:27,950
+el valor esperado, que podra ser cualquier cosa.
+
+154
+00:07:27,950 --> 00:07:32,110
+Entonces, esta funcin aqu ahora es realmente genrica y no
+
+155
+00:07:32,110 --> 00:07:36,110
+tiene que depender realmente de las pelculas y ahora
+
+156
+00:07:37,590 --> 00:07:39,680
+puede confiar en otra cosa
+
+157
+00:07:39,680 --> 00:07:41,340
+si as lo queremos.
+
+158
+00:07:41,340 --> 00:07:45,220
+Podramos analizar en las pelculas como un parmetro, o ms
+
+159
+00:07:45,220 --> 00:07:47,320
+bien los tems y luego
+
+160
+00:07:47,320 --> 00:07:49,580
+podemos hacer lo mismo en los
+
+161
+00:07:50,760 --> 00:07:53,020
+tems y hacer esto, esta es
+
+162
+00:07:53,020 --> 00:07:54,460
+ahora una funcin realmente
+
+163
+00:07:54,460 --> 00:07:56,470
+genrica donde solo encontramos una
+
+164
+00:07:56,470 --> 00:08:00,920
+pelcula dentro de estos tems por esta funcin arbitraria que Tambin
+
+165
+00:08:00,920 --> 00:08:03,300
+lo he dado, de acuerdo?
+
+166
+00:08:04,270 --> 00:08:08,910
+Entonces podemos analizar en, whoops, luego pelculas ah, est bien?
+
+167
+00:08:08,910 --> 00:08:11,920
+Y, por supuesto, las pelculas se encuentran pelculas.
+
+168
+00:08:13,230 --> 00:08:14,980
+No puedes hacer eso, a
+
+169
+00:08:14,980 --> 00:08:16,740
+Python realmente no le gusta eso.
+
+170
+00:08:16,740 --> 00:08:19,430
+Movies es una variable definida en la parte superior, por lo que
+
+171
+00:08:19,430 --> 00:08:20,780
+las pelculas de guiones bajos encontradas
+
+172
+00:08:20,780 --> 00:08:22,070
+sern las pelculas que hayamos encontrado.
+
+173
+00:08:23,050 --> 00:08:25,020
+Ahora esta funcin es realmente genrica,
+
+174
+00:08:25,020 --> 00:08:26,520
+puedes usarla en cualquier proyecto,
+
+175
+00:08:26,520 --> 00:08:27,740
+no tiene que ser
+
+176
+00:08:27,740 --> 00:08:30,190
+sobre pelculas, no tiene que ser sobre algo
+
+177
+00:08:30,190 --> 00:08:34,630
+especfico, pero esta funcin se puede usar para buscar cosas, lo cual es bastante
+
+178
+00:08:34,630 --> 00:08:35,680
+bueno .
+
+179
+00:08:37,210 --> 00:08:39,730
+Ahora, queremos imprimir los detalles de las pelculas que
+
+180
+00:08:39,730 --> 00:08:40,980
+hemos encontrado y ya
+
+181
+00:08:42,268 --> 00:08:43,420
+tenemos una funcin para
+
+182
+00:08:43,420 --> 00:08:44,810
+imprimir los detalles de las
+
+183
+00:08:44,810 --> 00:08:46,300
+pelculas, se llama show movies.
+
+184
+00:08:47,570 --> 00:08:49,040
+Repasa todas nuestras pelculas y
+
+185
+00:08:49,040 --> 00:08:50,030
+muestra los detalles.
+
+186
+00:08:50,030 --> 00:08:52,690
+As que vamos a llamar a eso mostrar pelculas.
+
+187
+00:08:52,690 --> 00:08:55,190
+Pero, por supuesto, no muestra los detalles
+
+188
+00:08:55,190 --> 00:08:57,150
+de nuestras pelculas encontradas, muestra los
+
+189
+00:08:57,150 --> 00:08:59,200
+detalles de todas las pelculas, entonces,
+
+190
+00:08:59,200 --> 00:09:00,870
+cmo podemos cambiar eso?
+
+191
+00:09:02,060 --> 00:09:03,690
+Cmo podramos hacer que esta funcin
+
+192
+00:09:03,690 --> 00:09:05,760
+muestre solo detalles de nuestras pelculas encontradas?
+
+193
+00:09:11,600 --> 00:09:12,600
+Estoy seguro de
+
+194
+00:09:12,600 --> 00:09:14,480
+que lo tienes, todo lo
+
+195
+00:09:15,880 --> 00:09:17,770
+que tenemos que hacer es
+
+196
+00:09:17,770 --> 00:09:20,800
+analizar en nuestras pelculas encontradas como argumento, aceptarlo
+
+197
+00:09:20,800 --> 00:09:24,940
+aqu como un parmetro y usarlo dentro de este ciclo for.
+
+198
+00:09:24,940 --> 00:09:28,080
+Por supuesto, ahora, cuando lo llamamos aqu, PyCharm
+
+199
+00:09:28,080 --> 00:09:29,640
+ya nos est diciendo,
+
+200
+00:09:29,640 --> 00:09:31,930
+hey, has olvidado algo, hay un
+
+201
+00:09:31,930 --> 00:09:35,630
+subrayado amarillo o fondo amarillo en ese aparato y dice
+
+202
+00:09:35,630 --> 00:09:38,270
+que las pelculas de parmetros no estn
+
+203
+00:09:38,270 --> 00:09:42,390
+llenas, as que tenemos que decirle que use nuestra lista de
+
+204
+00:09:42,390 --> 00:09:44,380
+pelculas, la lista global aqu
+
+205
+00:09:45,230 --> 00:09:47,370
+cuando estamos ejecutando la funcin aqu
+
+206
+00:09:48,960 --> 00:09:52,220
+y aqu abajo, podemos usar nuestras pelculas encontradas.
+
+207
+00:09:52,220 --> 00:09:54,460
+As que ahora esta funcin tambin es bastante
+
+208
+00:09:55,300 --> 00:09:56,830
+genrica, para cada una de
+
+209
+00:09:56,830 --> 00:09:58,160
+las pelculas, mostrar los detalles
+
+210
+00:09:58,160 --> 00:10:01,600
+de la pelcula y no importa si esa es la lista de
+
+211
+00:10:01,600 --> 00:10:05,210
+pelculas principal definida aqu o cualquier otra lista de pelculas que analicemos,
+
+212
+00:10:05,210 --> 00:10:06,660
+as que es bastante guay.
+
+213
+00:10:06,660 --> 00:10:08,710
+Hemos mejorado nuestro programa masivamente y ahora est
+
+214
+00:10:09,580 --> 00:10:11,570
+listo para usarse, est listo para el
+
+215
+00:10:11,570 --> 00:10:12,650
+horario de mxima audiencia.
+
+216
+00:10:12,650 --> 00:10:14,000
+Vamos a ejecutarlo, haz clic
+
+217
+00:10:14,000 --> 00:10:16,410
+derecho en la aplicacin. py y ejecutarlo.
+
+218
+00:10:17,860 --> 00:10:19,870
+Ahora, podemos ver que podemos agregar
+
+219
+00:10:24,560 --> 00:10:27,500
+una pelcula y podemos agregar otra si as
+
+220
+00:10:27,500 --> 00:10:30,300
+lo deseamos, no conozco ninguna otra pelcula desarrollada
+
+221
+00:10:30,300 --> 00:10:33,040
+en 1994, as que vamos a tener que
+
+222
+00:10:34,170 --> 00:10:37,970
+buscar algo as como rpido y furioso, y lo hago No
+
+223
+00:10:37,970 --> 00:10:40,940
+conozco al director de esta pelcula, lo siento.
+
+224
+00:10:40,940 --> 00:10:43,240
+Digamos que fue desarrollado en 1994 tambin.
+
+225
+00:10:43,240 --> 00:10:45,880
+Probablemente estoy alejando a muchos de ustedes
+
+226
+00:10:45,880 --> 00:10:47,700
+de decir eso, pero, oigan.
+
+227
+00:10:47,700 --> 00:10:50,060
+Podemos ver nuestras pelculas y luego tenemos el nombre
+
+228
+00:10:50,060 --> 00:10:51,770
+y el director y el lanzamiento
+
+229
+00:10:51,770 --> 00:10:52,720
+de estas dos
+
+230
+00:10:53,670 --> 00:10:56,300
+pelculas y luego tambin podemos encontrar una pelcula especfica,
+
+231
+00:10:56,300 --> 00:10:58,360
+entonces, qu propiedad de la pelcula estamos buscando?
+
+232
+00:10:58,360 --> 00:11:00,080
+Digamos ao.
+
+233
+00:11:00,080 --> 00:11:01,230
+Que ests buscando?
+
+234
+00:11:01,230 --> 00:11:02,080
+1994.
+
+235
+00:11:03,450 --> 00:11:04,380
+Ninguna encontrada y
+
+236
+00:11:05,690 --> 00:11:08,450
+ahora sabes por qu es eso, espero.
+
+237
+00:11:10,420 --> 00:11:13,310
+Por supuesto, no se encontr ninguno porque el ao
+
+238
+00:11:13,310 --> 00:11:16,730
+es un nmero entero y lo que hemos ingresado aqu
+
+239
+00:11:16,730 --> 00:11:19,830
+dentro de este en el que est buscando es
+
+240
+00:11:19,830 --> 00:11:23,610
+una cadena, entonces lo que vamos a tener que hacer es
+
+241
+00:11:23,610 --> 00:11:26,210
+convertir el ao en el, volver a una
+
+242
+00:11:27,610 --> 00:11:29,149
+cadena que est totalmente bien
+
+243
+00:11:29,149 --> 00:11:33,218
+hacer o potencialmente tratar el resultado de lo que sea que hemos
+
+244
+00:11:33,218 --> 00:11:35,120
+encontrado como una cadena temporalmente.
+
+245
+00:11:36,230 --> 00:11:39,080
+As que depende de nosotros lo que vamos
+
+246
+00:11:39,080 --> 00:11:40,930
+a hacer, en mi caso,
+
+247
+00:11:40,930 --> 00:11:43,950
+creo que lo ms fcil es revertir nuestro interrogatorio
+
+248
+00:11:43,950 --> 00:11:45,850
+aqu y convertirlo en una cadena.
+
+249
+00:11:45,850 --> 00:11:47,200
+Simplemente parece un poco ms fcil.
+
+250
+00:11:48,070 --> 00:11:49,650
+Entonces ahora tenemos que volver a ejecutar la
+
+251
+00:11:49,650 --> 00:11:51,050
+aplicacin y podemos probar esto de nuevo.
+
+252
+00:11:54,100 --> 00:11:56,440
+A, B, 1994 y luego haremos
+
+253
+00:11:57,460 --> 00:12:00,590
+B, C, por esto es extremadamente aburrido, lo
+
+254
+00:12:00,590 --> 00:12:01,760
+siento por eso.
+
+255
+00:12:01,760 --> 00:12:02,610
+Entonces podemos encontrar
+
+256
+00:12:02,610 --> 00:12:04,920
+una pelcula en 1994, disculpe ao tras ao
+
+257
+00:12:05,850 --> 00:12:07,570
+y lo que estamos buscando es
+
+258
+00:12:08,410 --> 00:12:10,230
+1994 y luego obtenemos estas dos
+
+259
+00:12:10,230 --> 00:12:12,630
+pelculas, B y, perdn A y B.
+
+260
+00:12:14,950 --> 00:12:16,270
+As que felicitaciones por
+
+261
+00:12:16,270 --> 00:12:18,280
+llegar al final de este proyecto.
+
+262
+00:12:18,280 --> 00:12:20,640
+Estoy bastante seguro de que probablemente no
+
+263
+00:12:20,640 --> 00:12:23,160
+implement el proyecto exactamente como lo hice aqu,
+
+264
+00:12:23,160 --> 00:12:24,860
+pero eso est totalmente bien.
+
+265
+00:12:24,860 --> 00:12:27,457
+Hay tantas maneras de implementar cualquier proyecto en
+
+266
+00:12:27,457 --> 00:12:29,590
+Python y cada forma es tan buena
+
+267
+00:12:29,590 --> 00:12:31,150
+como cualquier otra, siempre y
+
+268
+00:12:31,150 --> 00:12:32,290
+cuando todas funcionen y
+
+269
+00:12:32,290 --> 00:12:34,650
+hagan lo que usted quiere que hagan.
+
+270
+00:12:34,650 --> 00:12:36,700
+As que no te preocupes si no has hecho exactamente
+
+271
+00:12:36,700 --> 00:12:38,120
+lo mismo o si no has usado
+
+272
+00:12:38,120 --> 00:12:40,380
+las funciones de lamda o si sabes que no has usado
+
+273
+00:12:40,380 --> 00:12:42,010
+esta funcin de bsqueda, lo que sea, no importa.
+
+274
+00:12:42,010 --> 00:12:43,520
+Mientras su proyecto funcione,
+
+275
+00:12:43,520 --> 00:12:45,270
+eso es lo ms importante.
+
+276
+00:12:45,270 --> 00:12:46,680
+Y la razn por la
+
+277
+00:12:46,680 --> 00:12:48,770
+cual reviso este proyecto despus es para
+
+278
+00:12:48,770 --> 00:12:51,510
+mostrarle algunas formas ms avanzadas de hacer las cosas.
+
+279
+00:12:51,510 --> 00:12:54,290
+Pero todos los proyectos son buenos y sin duda
+
+280
+00:12:54,290 --> 00:12:56,670
+la programacin es la mejor manera de aprender,
+
+281
+00:12:56,670 --> 00:12:59,070
+por eso te animo a seguir hacindolo.
+
+282
+00:13:00,060 --> 00:13:01,290
+Eso es todo por este
+
+283
+00:13:01,290 --> 00:13:02,740
+video, nos vemos en el prximo.
+

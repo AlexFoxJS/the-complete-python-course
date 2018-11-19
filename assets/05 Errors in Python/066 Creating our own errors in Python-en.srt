@@ -1,0 +1,1220 @@
+1
+00:00:00,250 --> 00:00:01,440
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,440 --> 00:00:04,230
+In this video we're talking about creating our own errors
+
+3
+00:00:04,230 --> 00:00:05,150
+in Python.
+
+4
+00:00:06,250 --> 00:00:07,730
+Let's go over to our errors project
+
+5
+00:00:07,730 --> 00:00:09,900
+and I'm going to create a new file.
+
+6
+00:00:09,900 --> 00:00:11,550
+I'm going to call this errors.py.
+
+7
+00:00:13,360 --> 00:00:16,040
+And we've got now ourselves a blank file.
+
+8
+00:00:16,040 --> 00:00:18,140
+We've looked at how we can raise errors
+
+9
+00:00:18,140 --> 00:00:20,830
+but we've only used the built in errors.
+
+10
+00:00:20,830 --> 00:00:23,420
+That's for example raise TypeError.
+
+11
+00:00:25,909 --> 00:00:30,550
+We've got this type and we've created a new object of it.
+
+12
+00:00:30,550 --> 00:00:32,619
+And that's what we raise.
+
+13
+00:00:32,619 --> 00:00:36,660
+Now we know how to create a class
+
+14
+00:00:36,660 --> 00:00:39,280
+that extends everything from another class,
+
+15
+00:00:39,280 --> 00:00:40,710
+essentially a copy.
+
+16
+00:00:40,710 --> 00:00:42,520
+How do we create a class that is essentially a copy
+
+17
+00:00:42,520 --> 00:00:43,353
+of another class?
+
+18
+00:00:43,353 --> 00:00:44,710
+By using inheritance.
+
+19
+00:00:45,620 --> 00:00:48,180
+If we had to create a custom error
+
+20
+00:00:49,250 --> 00:00:51,700
+so that we can do MyCustomError,
+
+21
+00:00:54,700 --> 00:00:59,700
+remember this is a class and it has to inherit from
+
+22
+00:01:01,170 --> 00:01:04,010
+one of the built in errors.
+
+23
+00:01:04,010 --> 00:01:06,480
+You can pick any you want, for example TypeError.
+
+24
+00:01:07,592 --> 00:01:10,050
+Go ahead and close the video and try to create
+
+25
+00:01:10,050 --> 00:01:12,210
+a class that would inherit from a TypeError.
+
+26
+00:01:12,210 --> 00:01:14,470
+How you may go about that?
+
+27
+00:01:14,470 --> 00:01:15,310
+It's fairly straightforward,
+
+28
+00:01:15,310 --> 00:01:16,910
+it'll just be a couple of lines.
+
+29
+00:01:21,040 --> 00:01:23,000
+Okay, I hope you managed that.
+
+30
+00:01:23,000 --> 00:01:24,140
+Very straightforward.
+
+31
+00:01:24,140 --> 00:01:26,300
+But it can be a bit confusing when you encounter
+
+32
+00:01:26,300 --> 00:01:29,110
+that you have to do something in a new scenario
+
+33
+00:01:29,110 --> 00:01:31,050
+that you haven't thought of before.
+
+34
+00:01:31,050 --> 00:01:32,910
+Creating a class that extends a TypeError
+
+35
+00:01:32,910 --> 00:01:34,520
+is just like creating a class that extends
+
+36
+00:01:34,520 --> 00:01:35,950
+any other class.
+
+37
+00:01:35,950 --> 00:01:39,560
+Class, MyCustomeError, TypeError.
+
+38
+00:01:41,860 --> 00:01:44,510
+And then of course we need the indented block
+
+39
+00:01:44,510 --> 00:01:47,120
+but we can type pass
+
+40
+00:01:47,120 --> 00:01:49,170
+to just pass through and not do anything.
+
+41
+00:01:50,080 --> 00:01:52,740
+Now we can raise MyCustomError
+
+42
+00:01:52,740 --> 00:01:55,740
+because it essentially is a TypeError
+
+43
+00:01:55,740 --> 00:01:57,240
+it's just got a new name now.
+
+44
+00:01:58,740 --> 00:02:00,060
+So we can raise it,
+
+45
+00:02:00,060 --> 00:02:03,100
+let's right click errors.py and run it.
+
+46
+00:02:03,100 --> 00:02:04,580
+By the way,
+
+47
+00:02:04,580 --> 00:02:06,780
+if you start getting accustomed to pressing the play button
+
+48
+00:02:06,780 --> 00:02:08,340
+up here on the right,
+
+49
+00:02:08,340 --> 00:02:12,080
+that's fine, but make sure to check what you are running
+
+50
+00:02:12,080 --> 00:02:13,530
+which is this thing here.
+
+51
+00:02:13,530 --> 00:02:15,070
+And right now you're running app.
+
+52
+00:02:15,070 --> 00:02:17,040
+Should you press play, you're going to run app.py
+
+53
+00:02:17,040 --> 00:02:17,873
+not errors.py,
+
+54
+00:02:17,873 --> 00:02:21,160
+so you may want to run errors.
+
+55
+00:02:21,160 --> 00:02:25,140
+Now notice how you get MyCustomError thing here.
+
+56
+00:02:26,260 --> 00:02:29,100
+But it doesn't have a message or anything like that.
+
+57
+00:02:29,100 --> 00:02:32,750
+And what you then get is underscore, underscore main,
+
+58
+00:02:32,750 --> 00:02:35,070
+underscore, underscore, dot, MyCustomError.
+
+59
+00:02:37,070 --> 00:02:39,910
+Don't worry too much about the main part.
+
+60
+00:02:39,910 --> 00:02:42,320
+We're going to look into exactly what it means
+
+61
+00:02:42,320 --> 00:02:43,644
+in the next section.
+
+62
+00:02:43,644 --> 00:02:47,589
+But just know that you manage to now raise and error
+
+63
+00:02:47,589 --> 00:02:49,520
+which is called MyCustomError and of course,
+
+64
+00:02:49,520 --> 00:02:50,680
+you can put in here
+
+65
+00:02:55,929 --> 00:02:56,762
+some message.
+
+66
+00:02:56,762 --> 00:02:57,595
+This is a pretty terrible message,
+
+67
+00:02:57,595 --> 00:02:59,100
+but you know you can.
+
+68
+00:02:59,100 --> 00:03:02,030
+Now we've made this edit and I'd also like to intersperse
+
+69
+00:03:02,030 --> 00:03:04,720
+into here some Py charm goodness.
+
+70
+00:03:04,720 --> 00:03:09,130
+Now our run file has changed errors.py.
+
+71
+00:03:09,130 --> 00:03:10,610
+So, we can press the play button up here
+
+72
+00:03:10,610 --> 00:03:11,690
+on the right,
+
+73
+00:03:11,690 --> 00:03:14,390
+or we can press the play button down here on the left,
+
+74
+00:03:15,470 --> 00:03:17,010
+and that's fine.
+
+75
+00:03:17,010 --> 00:03:18,760
+That's gonna rerun that file.
+
+76
+00:03:18,760 --> 00:03:21,690
+And now you can see that you get a nice description
+
+77
+00:03:21,690 --> 00:03:23,950
+beside your name of the error.
+
+78
+00:03:24,930 --> 00:03:27,750
+This is how you can create your custom errors.
+
+79
+00:03:28,880 --> 00:03:33,880
+Now of course, you can have a custom error
+
+80
+00:03:34,060 --> 00:03:38,710
+that takes in some more data other than just a message
+
+81
+00:03:38,710 --> 00:03:41,930
+and this is part of the power of these custom errors
+
+82
+00:03:41,930 --> 00:03:43,500
+that for example,
+
+83
+00:03:43,500 --> 00:03:46,770
+say you want your custom error to include an error code.
+
+84
+00:03:46,770 --> 00:03:47,950
+These things are fairly popular.
+
+85
+00:03:47,950 --> 00:03:49,710
+For example if you've ever got a printer
+
+86
+00:03:49,710 --> 00:03:51,177
+you'll know that they give you error codes
+
+87
+00:03:51,177 --> 00:03:52,399
+all over the place
+
+88
+00:03:52,399 --> 00:03:55,002
+and sometimes it can be useful to have error codes
+
+89
+00:03:55,002 --> 00:03:56,440
+in your messages.
+
+90
+00:03:56,440 --> 00:03:59,820
+Now, an option is of course to have something like
+
+91
+00:03:59,820 --> 00:04:04,100
+error code 500, ouch an error happened.
+
+92
+00:04:04,100 --> 00:04:07,640
+But, you don't know that this error code is 500
+
+93
+00:04:07,640 --> 00:04:09,420
+from a programme point of view
+
+94
+00:04:09,420 --> 00:04:10,710
+because of course this is a string,
+
+95
+00:04:10,710 --> 00:04:13,342
+it's just some letters and numbers and symbols
+
+96
+00:04:13,342 --> 00:04:15,980
+and Python can't interpret it.
+
+97
+00:04:15,980 --> 00:04:18,620
+If you then wanted to check whether your error
+
+98
+00:04:18,620 --> 00:04:19,924
+has a code 500 or not,
+
+99
+00:04:19,924 --> 00:04:22,120
+it would not be so easy.
+
+100
+00:04:22,120 --> 00:04:25,084
+So, instead, the best thing to do is to have two arguments,
+
+101
+00:04:25,084 --> 00:04:29,040
+the message and then the code, for example 500.
+
+102
+00:04:30,660 --> 00:04:32,170
+But, in order to do that,
+
+103
+00:04:32,170 --> 00:04:37,060
+we have to define a new constructor in MyCustomError.
+
+104
+00:04:37,060 --> 00:04:39,220
+So, let's do that
+
+105
+00:04:39,220 --> 00:04:43,950
+and what we want to do is call the superclass constructor
+
+106
+00:04:43,950 --> 00:04:48,010
+with, I'm sorry, message code,
+
+107
+00:04:48,010 --> 00:04:50,890
+call the superclass constructor with a message
+
+108
+00:04:50,890 --> 00:04:52,710
+as an argument.
+
+109
+00:04:52,710 --> 00:04:55,070
+It's called the superclass init method
+
+110
+00:04:55,070 --> 00:04:56,880
+with the message as an argument
+
+111
+00:04:56,880 --> 00:04:59,070
+and then set the code to be a property
+
+112
+00:04:59,070 --> 00:05:01,570
+of MyCustomError's object.
+
+113
+00:05:01,570 --> 00:05:03,650
+So, pause the video and give that a go.
+
+114
+00:05:08,507 --> 00:05:09,760
+I hope you managed.
+
+115
+00:05:09,760 --> 00:05:12,960
+In order to call the init method of the superclass
+
+116
+00:05:12,960 --> 00:05:16,380
+all we do is init message.
+
+117
+00:05:16,380 --> 00:05:19,470
+So, now we are passing the message parameter
+
+118
+00:05:19,470 --> 00:05:21,780
+to the init method of the superclass
+
+119
+00:05:21,780 --> 00:05:23,300
+which is TypeError.
+
+120
+00:05:23,300 --> 00:05:27,580
+And we can also so self dot code equals code,
+
+121
+00:05:28,510 --> 00:05:29,343
+like that.
+
+122
+00:05:31,520 --> 00:05:32,660
+Okay?
+
+123
+00:05:32,660 --> 00:05:37,660
+Now we have this here and we can play the errors file again.
+
+124
+00:05:38,600 --> 00:05:42,490
+But notice how we don't get any extra information
+
+125
+00:05:42,490 --> 00:05:44,260
+in the message.
+
+126
+00:05:44,260 --> 00:05:46,200
+We've got "Ouch, an error happened,"
+
+127
+00:05:46,200 --> 00:05:48,830
+and we don't know that it's an error code 500.
+
+128
+00:05:48,830 --> 00:05:52,260
+All we've got this this 500 code on the line
+
+129
+00:05:52,260 --> 00:05:54,460
+where we actually raised the error because this is the line
+
+130
+00:05:54,460 --> 00:05:57,910
+where we raised the error and we've typed 500 in there.
+
+131
+00:05:57,910 --> 00:05:58,838
+So, what can we do?
+
+132
+00:05:58,838 --> 00:06:02,190
+Well, we could put the error code in here again
+
+133
+00:06:04,450 --> 00:06:06,650
+but of course that's not great
+
+134
+00:06:06,650 --> 00:06:07,900
+because if you then go and change this
+
+135
+00:06:07,900 --> 00:06:09,850
+when you say 400, then also have to go here
+
+136
+00:06:09,850 --> 00:06:11,370
+and change the string.
+
+137
+00:06:11,370 --> 00:06:12,748
+So, not fantastic.
+
+138
+00:06:12,748 --> 00:06:14,760
+We don't want to do that.
+
+139
+00:06:14,760 --> 00:06:19,375
+What can we do instead in order to include this error code
+
+140
+00:06:19,375 --> 00:06:21,040
+inside the message?
+
+141
+00:06:26,730 --> 00:06:28,270
+I hope you managed that.
+
+142
+00:06:28,270 --> 00:06:31,000
+All you have to is, when I show you,
+
+143
+00:06:31,000 --> 00:06:32,430
+if you didn't quite manage,
+
+144
+00:06:32,430 --> 00:06:34,340
+is fairly obvious, but of course,
+
+145
+00:06:34,340 --> 00:06:36,340
+you have think in this way.
+
+146
+00:06:36,340 --> 00:06:37,840
+You just want to create a new string
+
+147
+00:06:37,840 --> 00:06:42,480
+that says error code, code, message.
+
+148
+00:06:44,110 --> 00:06:44,943
+That's it.
+
+149
+00:06:45,980 --> 00:06:48,590
+And we're just creating a new string
+
+150
+00:06:48,590 --> 00:06:51,520
+which we now replace the message we got in
+
+151
+00:06:51,520 --> 00:06:55,090
+by this other string that contains the error code as well.
+
+152
+00:06:56,750 --> 00:07:00,300
+And, in order to being thinking this way,
+
+153
+00:07:00,300 --> 00:07:01,780
+that takes time.
+
+154
+00:07:03,798 --> 00:07:06,100
+You can essentially do anything you want.
+
+155
+00:07:06,100 --> 00:07:10,470
+All that's happening in these method calls,
+
+156
+00:07:10,470 --> 00:07:13,580
+calling the init method and raising things like that,
+
+157
+00:07:13,580 --> 00:07:15,630
+data is moving from one place to another.
+
+158
+00:07:16,510 --> 00:07:17,830
+You've got this string
+
+159
+00:07:18,810 --> 00:07:22,000
+and that string is now being assigned to message.
+
+160
+00:07:22,000 --> 00:07:24,460
+Then that message was going to go over to this init method
+
+161
+00:07:24,460 --> 00:07:26,600
+where it was going to be assigned to something else.
+
+162
+00:07:26,600 --> 00:07:29,240
+Some place in Python's code, that message
+
+163
+00:07:29,240 --> 00:07:30,620
+was going to be used
+
+164
+00:07:30,620 --> 00:07:33,110
+in order to print it out to the console.
+
+165
+00:07:33,110 --> 00:07:35,860
+But, that is just a string.
+
+166
+00:07:37,209 --> 00:07:41,270
+You can put in there, you can put any string value you want
+
+167
+00:07:41,270 --> 00:07:43,410
+which means you can modify in here
+
+168
+00:07:43,410 --> 00:07:45,610
+and just pass in slightly different data.
+
+169
+00:07:45,610 --> 00:07:47,220
+That's totally fine.
+
+170
+00:07:47,220 --> 00:07:48,780
+Not a problem there at all.
+
+171
+00:07:48,780 --> 00:07:50,780
+All we're doing is modifying some data,
+
+172
+00:07:50,780 --> 00:07:53,920
+passing it over to the next level which is the TypeError.
+
+173
+00:07:53,920 --> 00:07:55,494
+And at any level of our programme,
+
+174
+00:07:55,494 --> 00:07:56,830
+any line we want,
+
+175
+00:07:56,830 --> 00:07:59,690
+we can change the data that we're passing around.
+
+176
+00:07:59,690 --> 00:08:01,473
+And that's really what programming's all about,
+
+177
+00:08:01,473 --> 00:08:06,270
+passing data, passing messages from one place to another.
+
+178
+00:08:07,730 --> 00:08:09,490
+Anyway, now that we've looked
+
+179
+00:08:09,490 --> 00:08:11,710
+at how to create your own custom errors,
+
+180
+00:08:11,710 --> 00:08:15,050
+I also wanted to give you come more Python goodness,
+
+181
+00:08:15,050 --> 00:08:16,600
+which is the docstring.
+
+182
+00:08:16,600 --> 00:08:19,440
+We've not looked at docstrings yet,
+
+183
+00:08:19,440 --> 00:08:22,430
+but, well, I'm about to tell you about them.
+
+184
+00:08:22,430 --> 00:08:27,430
+Under the class and not inside the init method
+
+185
+00:08:27,670 --> 00:08:30,170
+you can type a multi line string,
+
+186
+00:08:30,170 --> 00:08:31,160
+and if you remember correctly,
+
+187
+00:08:31,160 --> 00:08:33,590
+the multi line strings are those that have
+
+188
+00:08:33,590 --> 00:08:37,560
+three quotation marks at the start and three at the end.
+
+189
+00:08:37,560 --> 00:08:40,090
+This is a multi line string
+
+190
+00:08:40,090 --> 00:08:42,480
+which means you can, for example, down here,
+
+191
+00:08:42,480 --> 00:08:47,480
+print the mutli-line string that says, "Hello, how are you?"
+
+192
+00:08:51,790 --> 00:08:52,623
+Like so.
+
+193
+00:08:54,933 --> 00:08:56,070
+And of course you can not do that
+
+194
+00:08:56,070 --> 00:08:57,330
+because you have raised an error there.
+
+195
+00:08:57,330 --> 00:08:58,870
+But this is fine, you know.
+
+196
+00:08:58,870 --> 00:09:01,590
+You can run this here and what you get
+
+197
+00:09:01,590 --> 00:09:04,113
+is a bunch of lines there
+
+198
+00:09:04,113 --> 00:09:07,950
+with the indentation and everything else.
+
+199
+00:09:09,520 --> 00:09:11,820
+If you do that, now you get two lines.
+
+200
+00:09:11,820 --> 00:09:13,300
+Of course this is a new line here,
+
+201
+00:09:13,300 --> 00:09:15,600
+so you may want to do this instead.
+
+202
+00:09:15,600 --> 00:09:17,390
+Now you get them all in a single line.
+
+203
+00:09:17,390 --> 00:09:19,340
+This is multi-line string.
+
+204
+00:09:20,700 --> 00:09:23,250
+And, multi-line strings are pretty useful
+
+205
+00:09:23,250 --> 00:09:24,500
+when you have a really long string
+
+206
+00:09:24,500 --> 00:09:26,920
+that you want to print out or otherwise use.
+
+207
+00:09:26,920 --> 00:09:30,725
+But also, when you have a multi-line string,
+
+208
+00:09:30,725 --> 00:09:33,710
+directly underneath a class,
+
+209
+00:09:33,710 --> 00:09:37,380
+or directly underneath a method or a function
+
+210
+00:09:38,366 --> 00:09:40,420
+you can actually type some stuff here
+
+211
+00:09:40,420 --> 00:09:44,160
+that will be a docstring.
+
+212
+00:09:44,160 --> 00:09:46,550
+That's some information about what the class does
+
+213
+00:09:46,550 --> 00:09:49,090
+or when it's used or why it's used,
+
+214
+00:09:49,090 --> 00:09:52,620
+so that other Python developers can look at it
+
+215
+00:09:52,620 --> 00:09:55,300
+and understand what it does and also it becomes
+
+216
+00:09:55,300 --> 00:09:57,820
+a part of your code and I'll show you exactly
+
+217
+00:09:57,820 --> 00:09:59,330
+what that means in just a moment.
+
+218
+00:09:59,330 --> 00:10:01,550
+So, let's say we wanted to tell other developers
+
+219
+00:10:01,550 --> 00:10:05,910
+that MyCustomError exception raised when a specific
+
+220
+00:10:05,910 --> 00:10:07,600
+error code is needed.
+
+221
+00:10:07,600 --> 00:10:09,190
+Because this has a code here.
+
+222
+00:10:10,540 --> 00:10:12,707
+And then we're gonna rename MyCustomError
+
+223
+00:10:12,707 --> 00:10:17,580
+to RunTimeErrorWithCode for example.
+
+224
+00:10:17,580 --> 00:10:19,470
+Not a very good name but, you know.
+
+225
+00:10:20,880 --> 00:10:22,500
+So now, what we can do,
+
+226
+00:10:23,600 --> 00:10:27,090
+is we can, well, whenever we're looking at this code,
+
+227
+00:10:27,090 --> 00:10:29,620
+we quickly see, okay, this is an exception that's raised
+
+228
+00:10:29,620 --> 00:10:32,120
+when a specific error code is needed, that's cool.
+
+229
+00:10:34,000 --> 00:10:38,897
+And that helps us understand exactly what this is for.
+
+230
+00:10:38,897 --> 00:10:43,000
+If you were to create an object of this type
+
+231
+00:10:43,000 --> 00:10:47,350
+without raising it, just for the sake of example,
+
+232
+00:10:50,050 --> 00:10:55,050
+you can do print, err, dot, underscore, underscore, doc,
+
+233
+00:10:55,559 --> 00:10:56,480
+underscore, underscore.
+
+234
+00:10:56,480 --> 00:11:01,480
+Of course we're gonna give it the arguments that it needs.
+
+235
+00:11:03,190 --> 00:11:05,440
+So, you can complete the variable name
+
+236
+00:11:05,440 --> 00:11:08,560
+which is your object dot, underscore, underscore, doc,
+
+237
+00:11:09,716 --> 00:11:10,570
+underscore, underscore.
+
+238
+00:11:10,570 --> 00:11:12,790
+And that is going to give you the docstring
+
+239
+00:11:12,790 --> 00:11:14,650
+that you wrote there.
+
+240
+00:11:14,650 --> 00:11:17,690
+This is particularly useful when you are developing
+
+241
+00:11:17,690 --> 00:11:21,067
+and you want to, you know, look at what something
+
+242
+00:11:21,067 --> 00:11:23,300
+is defined to be.
+
+243
+00:11:24,370 --> 00:11:26,920
+Maybe not so useful when you're
+
+244
+00:11:26,920 --> 00:11:28,560
+writing a programme, but nonetheless,
+
+245
+00:11:28,560 --> 00:11:31,970
+it's interesting that Python sees this thing here,
+
+246
+00:11:31,970 --> 00:11:33,520
+which is just a string,
+
+247
+00:11:33,520 --> 00:11:36,200
+as something that has particular meaning.
+
+248
+00:11:36,200 --> 00:11:39,000
+And using docstrings, for example in functions,
+
+249
+00:11:39,000 --> 00:11:41,800
+particularly complex functions,
+
+250
+00:11:41,800 --> 00:11:43,432
+and in classes to explain what they do,
+
+251
+00:11:43,432 --> 00:11:48,265
+and you can also use them at the very top of your file
+
+252
+00:11:48,265 --> 00:11:50,850
+as a module definition
+
+253
+00:11:50,850 --> 00:11:53,980
+or what this file is all about.
+
+254
+00:11:53,980 --> 00:11:54,870
+You can do that as well,
+
+255
+00:11:54,870 --> 00:11:56,470
+you can put a docstring up here.
+
+256
+00:11:58,040 --> 00:12:02,770
+There are many tools that will read those docstrings
+
+257
+00:12:02,770 --> 00:12:03,940
+and create a nice page
+
+258
+00:12:03,940 --> 00:12:05,730
+explaining sort of what your classes do
+
+259
+00:12:05,730 --> 00:12:06,594
+and what your methods do
+
+260
+00:12:06,594 --> 00:12:10,110
+and this is for creating documentation
+
+261
+00:12:10,110 --> 00:12:11,380
+and it can be pretty useful.
+
+262
+00:12:11,380 --> 00:12:13,780
+And that's really how the docstring came to be.
+
+263
+00:12:13,780 --> 00:12:16,561
+It was people wanting to add some descriptions
+
+264
+00:12:16,561 --> 00:12:18,957
+on what their classes and their methods do.
+
+265
+00:12:18,957 --> 00:12:20,340
+So, feel free to do that,
+
+266
+00:12:20,340 --> 00:12:21,370
+particularly if you create
+
+267
+00:12:21,370 --> 00:12:23,800
+any more slightly more complex functions
+
+268
+00:12:23,800 --> 00:12:25,530
+as we see in the following sections
+
+269
+00:12:25,530 --> 00:12:27,220
+we're going to be actually merging
+
+270
+00:12:27,220 --> 00:12:28,400
+all our Python knowledge together
+
+271
+00:12:28,400 --> 00:12:30,030
+and creating some nicer projects.
+
+272
+00:12:30,030 --> 00:12:31,799
+You can use docstrings in those cases
+
+273
+00:12:31,799 --> 00:12:35,640
+just to explain what exactly these things are for
+
+274
+00:12:35,640 --> 00:12:37,960
+when you come back to them weeks down the line
+
+275
+00:12:37,960 --> 00:12:39,840
+or when you're working with someone else
+
+276
+00:12:39,840 --> 00:12:41,402
+and you want them to be able to understand
+
+277
+00:12:41,402 --> 00:12:44,292
+exactly what happened more easily.
+
+278
+00:12:44,292 --> 00:12:45,560
+Okay?
+
+279
+00:12:46,810 --> 00:12:48,680
+And of course you can have your docstring
+
+280
+00:12:48,680 --> 00:12:49,513
+just as an aside.
+
+281
+00:12:49,513 --> 00:12:51,610
+You can have you docstring in a single line.
+
+282
+00:12:51,610 --> 00:12:56,350
+This is a single line multi-line docstring.
+
+283
+00:12:56,350 --> 00:12:59,540
+This is also fine, in case you want to save space.
+
+284
+00:12:59,540 --> 00:13:01,060
+You can the docstring in here,
+
+285
+00:13:01,060 --> 00:13:02,770
+but the docstring must have
+
+286
+00:13:02,770 --> 00:13:05,950
+these triple double quotation marks,
+
+287
+00:13:05,950 --> 00:13:08,070
+so these three.
+
+288
+00:13:08,070 --> 00:13:10,590
+That's just the convention for docstrings.
+
+289
+00:13:10,590 --> 00:13:11,900
+Okay?
+
+290
+00:13:11,900 --> 00:13:13,040
+All right, that's it for this video.
+
+291
+00:13:13,040 --> 00:13:15,000
+We talked about how to create our own errors
+
+292
+00:13:15,000 --> 00:13:16,980
+by extending from a particular error
+
+293
+00:13:16,980 --> 00:13:19,280
+and if you don't want to extend from TypeError
+
+294
+00:13:19,280 --> 00:13:22,220
+because your error is just not a TypeError,
+
+295
+00:13:22,220 --> 00:13:26,060
+for example, you can just extend from Exception,
+
+296
+00:13:26,060 --> 00:13:27,590
+sorry, not Error.
+
+297
+00:13:27,590 --> 00:13:29,040
+You can extend from Exception
+
+298
+00:13:29,040 --> 00:13:32,390
+which is the most base Exception class
+
+299
+00:13:32,390 --> 00:13:34,360
+that you should inherit from.
+
+300
+00:13:34,360 --> 00:13:36,550
+Don't extend from Base Exception.
+
+301
+00:13:36,550 --> 00:13:37,770
+That's not for us to use.
+
+302
+00:13:37,770 --> 00:13:39,510
+Just extend from Exception.
+
+303
+00:13:39,510 --> 00:13:41,180
+And that's fine.
+
+304
+00:13:41,180 --> 00:13:43,515
+Okay, that's it for this video again.
+
+305
+00:13:43,515 --> 00:13:45,800
+And I'll see you on the very next one.
+

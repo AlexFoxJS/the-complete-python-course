@@ -1,0 +1,64 @@
+<html>
+                <head>
+                <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                <title>029 Solution an improved lottery</title>
+                </head>
+                <body>
+                <div class="container">
+                <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <p class="lead"><p>Welcome back to another coding exercise solution!</p>
+
+<p>This is my solution to the coding exercise. Again, it may be slightly different from yours!</p>
+
+
+
+<pre class="prettyprint linenums">import random
+
+# This line creates a set with 6 random numbers
+lottery_numbers = set(random.sample(list(range(22)), 6))
+
+# Here are your players; find out who has the most numbers matching lottery_numbers!
+players = [
+    {'name': 'Rolf', 'numbers': {1, 3, 5, 7, 9, 11}},
+    {'name': 'Charlie', 'numbers': {2, 7, 9, 22, 10, 5}},
+    {'name': 'Anna', 'numbers': {13, 14, 15, 16, 17, 18}},
+    {'name': 'Jen', 'numbers': {19, 20, 12, 7, 3, 5}}
+]
+
+# Then, print out a line such as "Jen won 1000.".
+# The winnings are calculated with the formula:
+# 100 ** len(numbers_matched)
+
+top_player = players[0]  # start by saying "the top matching player is the first one"
+
+for player in players:  # Go over each player
+    matched_numbers = len(player['numbers'].intersection(lottery_numbers))  # Calculate how many numbers they matched
+    if matched_numbers &gt; len(top_player['numbers'].intersection(lottery_numbers)):  # If they matched more than the current top player...
+        top_player = player  # Say this player is the new top player
+
+# Calculate their winnings using the formula!
+winnings = 100 ** len(top_player['numbers'].intersection(lottery_numbers))
+
+# Then print out—here in Udemy we have to use .format, but normally you'd want to use f-strings.
+print('{} won {}.'.format(top_player['name'], winnings))<br></pre>
+
+
+
+
+
+<p>Let me know how you got on!</p>
+
+
+
+<p>Kind regards,</p>
+
+
+
+<p>— Jose and the Teclado team</p></p>
+                </div>
+                </div>
+                </div>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+                </body>
+                </html>

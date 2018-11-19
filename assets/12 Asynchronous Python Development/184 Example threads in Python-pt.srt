@@ -1,0 +1,1084 @@
+1
+00:00:00,140 --> 00:00:01,510
+Jos: Ol, e bem vindo de volta!
+
+2
+00:00:01,510 --> 00:00:02,620
+Neste vdeo, vamos
+
+3
+00:00:02,620 --> 00:00:07,240
+analisar alguns cdigos de exemplo do que abordamos no ltimo.
+
+4
+00:00:07,240 --> 00:00:08,860
+Ento eu criei um novo projeto
+
+5
+00:00:08,860 --> 00:00:10,660
+em Python, eu chamei de concorrncia.
+
+6
+00:00:10,660 --> 00:00:12,810
+E vamos criar um novo arquivo
+
+7
+00:00:12,810 --> 00:00:17,120
+aqui, um novo arquivo Python que eu vou chamar de threads.
+
+8
+00:00:17,120 --> 00:00:18,920
+Ok, a propsito, este
+
+9
+00:00:18,920 --> 00:00:22,200
+cdigo est disponvel no incio da seo
+
+10
+00:00:22,200 --> 00:00:25,070
+que est no GitHub deste curso.
+
+11
+00:00:26,320 --> 00:00:28,770
+Ento, digamos que voc tenha algum
+
+12
+00:00:28,770 --> 00:00:31,810
+cdigo que queira executar, como vimos anteriormente, que
+
+13
+00:00:31,810 --> 00:00:33,760
+pede ao usurio algo e
+
+14
+00:00:33,760 --> 00:00:36,560
+ento algum outro cdigo faz um clculo complexo.
+
+15
+00:00:37,690 --> 00:00:39,540
+Ok, ns vamos ter
+
+16
+00:00:40,670 --> 00:00:42,000
+duas funes: a
+
+17
+00:00:43,320 --> 00:00:46,680
+funo ask_user, isso vai receber alguma informao do
+
+18
+00:00:48,610 --> 00:00:51,090
+usurio, e ento ir construir essa
+
+19
+00:00:54,370 --> 00:00:56,170
+saudao e finalmente imprimiremos.
+
+20
+00:00:58,330 --> 00:01:00,430
+Isto  o que esta funo faz.
+
+21
+00:01:00,430 --> 00:01:05,190
+E como voc sabe, essa funo aqui vai aguardar
+
+22
+00:01:05,190 --> 00:01:07,220
+o usurio digitar algo.
+
+23
+00:01:08,200 --> 00:01:09,033
+Voc sabe, ok?
+
+24
+00:01:09,033 --> 00:01:11,630
+Estas funes aqui, ou estas declaraes
+
+25
+00:01:11,630 --> 00:01:14,350
+aqui, no vo esperar por nada.
+
+26
+00:01:14,350 --> 00:01:18,000
+Ns diramos que esta  uma operao de bloqueio,
+
+27
+00:01:18,000 --> 00:01:20,940
+uma operao onde o seu segmento est
+
+28
+00:01:20,940 --> 00:01:22,690
+bloqueado, esperando que algo acontea.
+
+29
+00:01:24,040 --> 00:01:27,400
+Ento, essas operaes so o que torna seu cdigo encadeado lento.
+
+30
+00:01:27,400 --> 00:01:28,980
+OK, no se preocupe muito
+
+31
+00:01:28,980 --> 00:01:31,440
+com isso, vamos explorar esse conceito mais e
+
+32
+00:01:31,440 --> 00:01:32,590
+mais nos prximos vdeos.
+
+33
+00:01:34,080 --> 00:01:35,290
+Ento voc tambm
+
+34
+00:01:35,290 --> 00:01:37,230
+ter uma funo de clculo complexa.
+
+35
+00:01:38,660 --> 00:01:41,100
+Isso vai fazer algo como o print
+
+36
+00:01:41,100 --> 00:01:43,330
+comeou a calcular, e ento vai
+
+37
+00:01:44,450 --> 00:01:46,430
+fazer algo que demore um pouco.
+
+38
+00:01:46,430 --> 00:01:49,000
+ s vai fazer algo muito
+
+39
+00:01:49,000 --> 00:01:54,000
+bobo, x  potncia de dois para x na faixa de 20 milhes.
+
+40
+00:01:55,740 --> 00:01:56,810
+Ok, vinte milhes?
+
+41
+00:01:57,900 --> 00:01:59,350
+Sim, 20 milhes serviro.
+
+42
+00:01:59,350 --> 00:02:01,190
+Ento isso deve levar cerca de seis
+
+43
+00:02:01,190 --> 00:02:02,590
+ou sete segundos na minha mquina.
+
+44
+00:02:02,590 --> 00:02:04,620
+Pode demorar mais ou menos em sua
+
+45
+00:02:04,620 --> 00:02:06,710
+mquina, basta ajustar o nmero de acordo.
+
+46
+00:02:07,780 --> 00:02:11,970
+Ok, ento vai fazer isso e  isso.
+
+47
+00:02:11,970 --> 00:02:13,890
+Ento vamos fazer o ask_user primeiro
+
+48
+00:02:15,270 --> 00:02:17,670
+e depois vamos fazer nosso clculo complexo.
+
+49
+00:02:18,780 --> 00:02:21,540
+Agora,  claro que no vamos saber quanto tempo eles
+
+50
+00:02:21,540 --> 00:02:23,610
+demoram a menos que comeamos a cronometr-los.
+
+51
+00:02:23,610 --> 00:02:26,920
+Ento, vamos importar tempo no topo e
+
+52
+00:02:26,920 --> 00:02:30,850
+tudo o que vou fazer , cada funo, tempo.
+
+53
+00:02:30,850 --> 00:02:32,780
+Ento, vamos fazer o start = time. time ()
+
+54
+00:02:34,658 --> 00:02:39,658
+e no final ns vamos imprimir o ask_user.
+
+55
+00:02:39,699 --> 00:02:44,699
+hora do ask_user. tempo menos incio.
+
+56
+00:02:46,920 --> 00:02:50,790
+Ok, a mesma coisa para o clculo complexo.
+
+57
+00:02:58,660 --> 00:03:03,090
+Agora, tambm vou fazer isso para o programa inteiro,
+
+58
+00:03:03,090 --> 00:03:07,600
+ento vou acompanhar quanto tempo o programa inteiro levou.
+
+59
+00:03:18,160 --> 00:03:19,550
+Assim, ok?
+
+60
+00:03:20,880 --> 00:03:23,280
+Novamente, tudo o que est acontecendo aqui
+
+61
+00:03:23,280 --> 00:03:25,780
+ antes de tudo, ns iniciamos um
+
+62
+00:03:25,780 --> 00:03:27,470
+temporizador, ento lanamos a funo
+
+63
+00:03:27,470 --> 00:03:29,640
+ask_user que inicia um temporizador dentro daquela
+
+64
+00:03:29,640 --> 00:03:33,120
+funo, pede ao usurio alguma entrada, aguarda o usurio digitar,
+
+65
+00:03:33,120 --> 00:03:35,380
+constri uma nova string e imprime e
+
+66
+00:03:35,380 --> 00:03:37,550
+depois vai imprimir a hora do fim.
+
+67
+00:03:38,810 --> 00:03:41,730
+Ento, ele vai lanar a funo de clculo
+
+68
+00:03:41,730 --> 00:03:43,200
+complexo, que vai iniciar
+
+69
+00:03:43,200 --> 00:03:45,170
+um cronmetro, imprimir que comeou a
+
+70
+00:03:45,170 --> 00:03:46,670
+calcular, passar por essa
+
+71
+00:03:46,670 --> 00:03:49,780
+compreenso de lista que  bastante abrangente e, quando
+
+72
+00:03:49,780 --> 00:03:51,120
+estiver pronta, ser impressa.
+
+73
+00:03:51,120 --> 00:03:53,750
+Agora o clculo complexo levou um certo tempo.
+
+74
+00:03:53,750 --> 00:03:55,700
+E ento, no final, vamos
+
+75
+00:03:55,700 --> 00:03:58,650
+imprimir que o thread nico demorou algum tempo.
+
+76
+00:03:58,650 --> 00:04:01,240
+Voc sabe de todo o desenvolvimento do Python que estamos
+
+77
+00:04:01,240 --> 00:04:02,630
+fazendo at aqui, que isso
+
+78
+00:04:02,630 --> 00:04:04,630
+vai ser executado de cima para baixo.
+
+79
+00:04:04,630 --> 00:04:06,120
+Voc sabe, isso vai acontecer primeiro,
+
+80
+00:04:06,120 --> 00:04:08,490
+ento este aqui, nossa execuo vai pular para c,
+
+81
+00:04:08,490 --> 00:04:10,900
+ento aqui, ento aqui, ento vai voltar, e ento
+
+82
+00:04:10,900 --> 00:04:12,990
+vai para c e assim por diante.
+
+83
+00:04:12,990 --> 00:04:15,650
+Este  um nico segmento.
+
+84
+00:04:15,650 --> 00:04:18,570
+Este  o nosso tempo de execuo normal do Python.
+
+85
+00:04:18,570 --> 00:04:20,660
+Devemos escrever nosso cdigo e ele
+
+86
+00:04:20,660 --> 00:04:22,320
+ executado de cima para
+
+87
+00:04:22,320 --> 00:04:24,100
+baixo, porque o encadeamento  essa
+
+88
+00:04:24,100 --> 00:04:27,920
+linha de execuo que fornecemos ao ncleo da CPU para ser executado.
+
+89
+00:04:27,920 --> 00:04:31,810
+Ento, se ns rodarmos esse arquivo, se ns rodamos threads, a primeira coisa que vai fazer
+
+90
+00:04:31,810 --> 00:04:32,643
+ me perguntar
+
+91
+00:04:32,643 --> 00:04:34,770
+o meu nome, eu vou digitar, oh, e eu
+
+92
+00:04:36,300 --> 00:04:38,410
+acho que coloquei um zero a menos aqui, no
+
+93
+00:04:38,410 --> 00:04:39,540
+peguei longo O suficiente.
+
+94
+00:04:39,540 --> 00:04:41,040
+E observe como o clculo complexo
+
+95
+00:04:41,040 --> 00:04:43,140
+levou seis segundos, eu quero pegar, eu quero
+
+96
+00:04:43,140 --> 00:04:45,740
+levar seis segundos, ento eu vou rodar de novo.
+
+97
+00:04:47,600 --> 00:04:50,380
+Ento, esse  o meu nome e levou um
+
+98
+00:04:50,380 --> 00:04:54,120
+ponto e seis segundos para executar a funo ask_user e comeou a calcular.
+
+99
+00:04:54,120 --> 00:04:58,380
+Demorou cerca de 6. 4 segundos para executar o clculo complexo.
+
+100
+00:04:58,380 --> 00:05:01,560
+E no total, ele adiciona esses dois essencialmente, alm de um
+
+101
+00:05:01,560 --> 00:05:03,390
+pouco de tempo, no muito, mas uma
+
+102
+00:05:03,390 --> 00:05:07,200
+pequena quantidade, o thread nico levou 8. 14
+
+103
+00:05:08,550 --> 00:05:12,280
+Esta pequena quantidade de extras  porque, voc
+
+104
+00:05:12,280 --> 00:05:15,310
+sabe, tem que pular daqui para a
+
+105
+00:05:15,310 --> 00:05:18,100
+funo, e isso leva alguns nanossegundos.
+
+106
+00:05:18,100 --> 00:05:20,740
+Ento no ser uma adio exata.
+
+107
+00:05:20,740 --> 00:05:24,520
+Mas voc sabe, no geral  sequencial.
+
+108
+00:05:24,520 --> 00:05:27,460
+Primeiro executamos isso, ento executamos isso e o total
+
+109
+00:05:27,460 --> 00:05:30,160
+ mais ou menos a adio de ambos.
+
+110
+00:05:31,790 --> 00:05:32,623
+Agora tudo bem.
+
+111
+00:05:33,640 --> 00:05:35,140
+Agora, o que vamos
+
+112
+00:05:35,140 --> 00:05:36,740
+fazer  desmoronar essas funes.
+
+113
+00:05:36,740 --> 00:05:38,850
+Isto no os elimina, apenas oculta os cdigos, pelo que 
+
+114
+00:05:38,850 --> 00:05:40,150
+um pouco mais fcil de ver.
+
+115
+00:05:40,150 --> 00:05:42,630
+Eles ainda esto fazendo a mesma coisa, ok.
+
+116
+00:05:42,630 --> 00:05:44,130
+E o que
+
+117
+00:05:44,130 --> 00:05:47,380
+vamos fazer, ento,  de threading import Thread.
+
+118
+00:05:48,470 --> 00:05:50,650
+Ento, vamos importar a classe de segmento
+
+119
+00:05:50,650 --> 00:05:51,880
+do mdulo de segmentao.
+
+120
+00:05:51,880 --> 00:05:53,280
+O mdulo de threading vem com
+
+121
+00:05:53,280 --> 00:05:54,800
+o Python, voc no precisa instalar nada.
+
+122
+00:05:54,800 --> 00:05:57,080
+Isso nos d acesso a threads.
+
+123
+00:05:57,940 --> 00:05:59,460
+Sempre que criamos um tpico, isso
+
+124
+00:05:59,460 --> 00:06:01,080
+vai para o sistema operacional e
+
+125
+00:06:01,080 --> 00:06:02,650
+ele vai pedir ao sistema operacional
+
+126
+00:06:02,650 --> 00:06:05,610
+para nos fornecer um novo tpico e o sistema operacional vai
+
+127
+00:06:05,610 --> 00:06:07,750
+ser como, ok, voc vai, novo tpico, voc
+
+128
+00:06:07,750 --> 00:06:09,550
+pode rodar o que quiser em isto.
+
+129
+00:06:10,750 --> 00:06:12,240
+E o que
+
+130
+00:06:12,240 --> 00:06:17,240
+vamos fazer  dizer que o thread one  Thread e o
+
+131
+00:06:17,850 --> 00:06:22,420
+alvo vai ser o nosso clculo complexo. Observe que o alvo
+
+132
+00:06:22,420 --> 00:06:24,960
+ a funo de clculo complexa
+
+133
+00:06:24,960 --> 00:06:27,410
+e no o resultado disso.
+
+134
+00:06:27,410 --> 00:06:29,100
+Ento, no vamos executar a
+
+135
+00:06:29,100 --> 00:06:31,060
+funo aqui, vamos apenas pass-la para
+
+136
+00:06:31,060 --> 00:06:33,560
+o thread e quando pedirmos ao thread
+
+137
+00:06:33,560 --> 00:06:34,720
+para comear, o
+
+138
+00:06:34,720 --> 00:06:39,220
+que ele vai fazer  comear um novo thread executando apenas esse clculo complexo.
+
+139
+00:06:39,220 --> 00:06:40,800
+E o thread dois ser
+
+140
+00:06:40,800 --> 00:06:43,670
+um novo thread onde o alvo  a funo ask_user.
+
+141
+00:06:44,560 --> 00:06:48,000
+Agora, OK, agora temos trs threads: um thread
+
+142
+00:06:48,000 --> 00:06:49,490
+principal, responsvel pela execuo
+
+143
+00:06:49,490 --> 00:06:51,480
+do aplicativo, um thread responsvel
+
+144
+00:06:51,480 --> 00:06:52,430
+pela execuo
+
+145
+00:06:52,430 --> 00:06:54,330
+do clculo complexo e outro
+
+146
+00:06:54,330 --> 00:06:55,730
+thread responsvel pela
+
+147
+00:06:55,730 --> 00:06:57,310
+execuo da funo ask_user.
+
+148
+00:06:57,310 --> 00:06:59,400
+Ento vamos rodar esses dois ao mesmo tempo e
+
+149
+00:06:59,400 --> 00:07:00,710
+vamos ver o que acontece, ok?
+
+150
+00:07:00,710 --> 00:07:05,040
+O resoluto  fazer o tempo. tempo, medir o tempo
+
+151
+00:07:05,040 --> 00:07:10,040
+de incio, thread. comear, desculpe thread1. start (), thread2. comear().
+
+152
+00:07:13,090 --> 00:07:14,700
+Agora, esses tpicos foram iniciados e
+
+153
+00:07:16,110 --> 00:07:19,180
+esto sendo executados ao mesmo tempo que nosso segmento principal.
+
+154
+00:07:19,180 --> 00:07:21,930
+Ok, agora temos trs threads em execuo ao mesmo tempo.
+
+155
+00:07:21,930 --> 00:07:23,160
+Quando comeamos este, a
+
+156
+00:07:23,160 --> 00:07:25,140
+funo de clculo complexa est em execuo.
+
+157
+00:07:25,140 --> 00:07:28,240
+Quando comeamos este, a funo ask_user est em execuo.
+
+158
+00:07:28,240 --> 00:07:30,650
+E tambm, nosso thread principal, que  responsvel
+
+159
+00:07:30,650 --> 00:07:33,330
+por executar este cdigo, tambm est em execuo.
+
+160
+00:07:33,330 --> 00:07:36,010
+Ento temos que dizer ao nosso thread principal
+
+161
+00:07:36,010 --> 00:07:38,190
+para esperar que esses dois threads terminem.
+
+162
+00:07:38,190 --> 00:07:43,190
+A maneira como fazemos isso: thread1. join () e thread2. Junte-se().
+
+163
+00:07:46,630 --> 00:07:49,070
+Isso informa ao nosso thread principal que esperar
+
+164
+00:07:49,070 --> 00:07:52,580
+que o thread one termine e espere que o thread dois termine.
+
+165
+00:07:52,580 --> 00:07:54,960
+Novamente, estes aqui so o que chamamos
+
+166
+00:07:54,960 --> 00:07:57,330
+de operaes de bloqueio, porque eles esto
+
+167
+00:07:57,330 --> 00:08:00,520
+fazendo esse thread esperar at que algo acontea.
+
+168
+00:08:00,520 --> 00:08:01,840
+Mas neste caso queremos fazer
+
+169
+00:08:01,840 --> 00:08:04,000
+isso porque queremos esperar at que os threads terminem
+
+170
+00:08:04,000 --> 00:08:06,340
+antes que possamos calcular o tempo final do thread.
+
+171
+00:08:06,340 --> 00:08:10,340
+Ento, vamos dizer que o tempo total de dois
+
+172
+00:08:11,190 --> 00:08:14,470
+threads  o tempo. tempo menos incio.
+
+173
+00:08:15,950 --> 00:08:16,783
+Agora ok.
+
+174
+00:08:18,360 --> 00:08:19,310
+Isto  bom.
+
+175
+00:08:19,310 --> 00:08:20,700
+No se preocupe com essa coisa amarela.
+
+176
+00:08:20,700 --> 00:08:23,460
+Vamos rodar isso de novo e ver o que acontece.
+
+177
+00:08:23,460 --> 00:08:25,560
+O que voc acha que vai acontecer?
+
+178
+00:08:27,030 --> 00:08:29,380
+Pense nisso antes de continuarmos.
+
+179
+00:08:31,480 --> 00:08:33,730
+Pergunte-me pelo meu nome, levei alguns segundos para fazer
+
+180
+00:08:33,730 --> 00:08:35,470
+isso e ele comea a calcular, e
+
+181
+00:08:36,690 --> 00:08:37,523
+no final vai
+
+182
+00:08:37,523 --> 00:08:39,640
+demorar mais ou menos a mesma quantidade que
+
+183
+00:08:39,640 --> 00:08:41,440
+antes, oito segundos, ento ele pergunta pelo
+
+184
+00:08:41,440 --> 00:08:43,820
+meu nome de novo, demorou um pouco mais agora,
+
+185
+00:08:44,740 --> 00:08:49,240
+apenas para digitar, mas observe como no total, levou 6. 45 segundos em vez
+
+186
+00:08:49,240 --> 00:08:52,130
+de 8. 36 segundos.
+
+187
+00:08:53,040 --> 00:08:54,680
+Mas o clculo complexo levou
+
+188
+00:08:54,680 --> 00:08:56,730
+essencialmente a mesma quantidade de tempo.
+
+189
+00:08:58,070 --> 00:08:59,770
+O ask_user demorou
+
+190
+00:09:01,130 --> 00:09:05,020
+ainda mais, mas isso  bom porque, no
+
+191
+00:09:05,020 --> 00:09:09,120
+total, ns tomamos a funo de execuo mais
+
+192
+00:09:09,120 --> 00:09:11,670
+longa, porque a funo ask_user
+
+193
+00:09:11,670 --> 00:09:15,070
+no fez nada alm de esperar, ok?
+
+194
+00:09:16,560 --> 00:09:19,860
+A diferena entre esses dois tempos 
+
+195
+00:09:19,860 --> 00:09:23,880
+a quantidade de CPU necessria para a funo ask_user
+
+196
+00:09:23,880 --> 00:09:27,650
+e quanto tempo levamos para alternar entre os
+
+197
+00:09:27,650 --> 00:09:31,380
+threads na CPU, no processador em seu curso.
+
+198
+00:09:32,460 --> 00:09:34,020
+Como voc pode ver, no muito disso.
+
+199
+00:09:34,020 --> 00:09:36,980
+No total, o tempo de duas threads levou mais ou
+
+200
+00:09:36,980 --> 00:09:39,180
+menos a mesma quantidade de tempo que o
+
+201
+00:09:39,180 --> 00:09:40,560
+seu clculo complexo, porque sua
+
+202
+00:09:40,560 --> 00:09:43,380
+funo ask_user no precisou realmente da CPU para nada.
+
+203
+00:09:43,380 --> 00:09:45,380
+Apenas criou uma nova string,  isso.
+
+204
+00:09:47,020 --> 00:09:48,010
+Ento, espero que isso faa
+
+205
+00:09:48,010 --> 00:09:49,580
+sentido,  para isso que servem os tpicos.
+
+206
+00:09:51,130 --> 00:09:53,210
+ para reduzir o tempo de espera.
+
+207
+00:09:53,210 --> 00:09:56,930
+Quando voc tem uma operao de bloqueio como essa entrada,
+
+208
+00:09:56,930 --> 00:10:00,360
+que est aguardando, fazendo seu programa esperar por algo,
+
+209
+00:10:00,360 --> 00:10:02,970
+ um bom uso para um thread.
+
+210
+00:10:02,970 --> 00:10:05,620
+Se voc tem uma funo como esse clculo
+
+211
+00:10:06,820 --> 00:10:09,730
+complexo, usar um thread no  uma tima idia.
+
+212
+00:10:09,730 --> 00:10:13,210
+E aqui est um exemplo final para voc.
+
+213
+00:10:13,210 --> 00:10:15,270
+Voc sabe, cdigo encadeado,
+
+214
+00:10:15,270 --> 00:10:18,500
+eu no vou usar a funo ask_user.
+
+215
+00:10:20,010 --> 00:10:22,160
+Eu vou usar a funo de clculo complexo novamente.
+
+216
+00:10:22,160 --> 00:10:23,780
+Ento, agora teremos dois
+
+217
+00:10:23,780 --> 00:10:25,950
+threads, ambos executando o clculo complexo.
+
+218
+00:10:25,950 --> 00:10:27,810
+Separe instncias dele, mas ambos
+
+219
+00:10:27,810 --> 00:10:29,510
+vo calcular a mesma coisa.
+
+220
+00:10:30,520 --> 00:10:32,630
+Ok, vamos rodar isso de novo.
+
+221
+00:10:32,630 --> 00:10:33,960
+Ele me perguntar pelo meu
+
+222
+00:10:33,960 --> 00:10:36,330
+nome primeiro, porque esse  o cdigo single-threaded e agora
+
+223
+00:10:36,330 --> 00:10:38,540
+vamos ver o que acontece com o nosso clculo.
+
+224
+00:10:38,540 --> 00:10:41,350
+Lembre-se, apenas um segmento pode ser executado por vez, ok?
+
+225
+00:10:41,350 --> 00:10:42,930
+Portanto, voc no pode executar os
+
+226
+00:10:42,930 --> 00:10:44,770
+dois ao mesmo tempo, mas comeamos a
+
+227
+00:10:44,770 --> 00:10:46,590
+calcular duas vezes, porque so duas funes
+
+228
+00:10:46,590 --> 00:10:48,660
+em execuo, cada uma em um thread.
+
+229
+00:10:48,660 --> 00:10:50,210
+E agora vamos ver o que acontece.
+
+230
+00:10:53,160 --> 00:10:54,710
+Observe como est demorando um pouco.
+
+231
+00:10:55,630 --> 00:10:57,370
+L voc tem isso.
+
+232
+00:10:57,370 --> 00:10:59,180
+Clculo complexo agora leva o dobro
+
+233
+00:10:59,180 --> 00:11:02,030
+do tempo de execuo porque eles no podem rodar
+
+234
+00:11:02,030 --> 00:11:05,190
+ao mesmo tempo, ento o sistema operacional estava meio que
+
+235
+00:11:05,190 --> 00:11:07,780
+dando um pouco de tempo para um, ento
+
+236
+00:11:07,780 --> 00:11:09,380
+puxando para fora e dando
+
+237
+00:11:09,380 --> 00:11:10,640
+um pouco de tempo
+
+238
+00:11:10,640 --> 00:11:12,070
+para o outro. , em
+
+239
+00:11:12,070 --> 00:11:14,140
+seguida, puxando para fora e voltando para
+
+240
+00:11:14,140 --> 00:11:15,820
+o primeiro, em seguida, indo
+
+241
+00:11:15,820 --> 00:11:17,900
+para o segundo e assim por diante,
+
+242
+00:11:17,900 --> 00:11:21,300
+alternando entre os dois, mas todos eles precisaram de todo esse
+
+243
+00:11:21,300 --> 00:11:23,070
+tempo na CPU para calcular as coisas.
+
+244
+00:11:23,070 --> 00:11:26,010
+Ento, no total, o que voc fez foi espalhar o tempo
+
+245
+00:11:26,010 --> 00:11:27,540
+que cada um estava correndo.
+
+246
+00:11:27,540 --> 00:11:31,890
+E voc meio que intercalava um com o outro continuamente e
+
+247
+00:11:31,890 --> 00:11:34,490
+no final levou o dobro do tempo.
+
+248
+00:11:35,910 --> 00:11:39,710
+Se voc tivesse executado estes sequencialmente sem threads, seria realmente
+
+249
+00:11:39,710 --> 00:11:41,570
+mais rpido porque voc no
+
+250
+00:11:41,570 --> 00:11:43,660
+teria que lidar com a remoo
+
+251
+00:11:43,660 --> 00:11:46,070
+de um thread e colocar outro.
+
+252
+00:11:46,070 --> 00:11:49,460
+Ento, se voc est fazendo coisas que exigem a
+
+253
+00:11:49,460 --> 00:11:51,980
+CPU o tempo todo, no use threads.
+
+254
+00:11:51,980 --> 00:11:54,150
+ intil em Python.
+
+255
+00:11:54,150 --> 00:11:56,950
+Existem outras maneiras de fazer coisas semelhantes,
+
+256
+00:11:56,950 --> 00:11:59,540
+como aprenderemos, que poderiam ser melhores.
+
+257
+00:12:00,890 --> 00:12:03,410
+Agora vamos voltar para a nossa funo ask_user
+
+258
+00:12:03,410 --> 00:12:06,080
+aqui, mais uma vez esse cdigo est disponvel no
+
+259
+00:12:06,080 --> 00:12:07,930
+GitHub, faa o download dele, brinque
+
+260
+00:12:07,930 --> 00:12:10,590
+com ele, rode-o para voc, voc sabe, faa algumas
+
+261
+00:12:10,590 --> 00:12:11,750
+mudanas, pense um pouco.
+
+262
+00:12:11,750 --> 00:12:14,840
+Essas coisas so complicadas, ok?
+
+263
+00:12:14,840 --> 00:12:17,830
+H uma razo pela qual muitos cursos no entram nisso,
+
+264
+00:12:17,830 --> 00:12:20,920
+porque  difcil e eu espero que vocs venham ao
+
+265
+00:12:20,920 --> 00:12:22,350
+curso de perguntas e respostas
+
+266
+00:12:22,350 --> 00:12:25,400
+e faam perguntas e, voc sabe, estou aqui para ajud-lo
+
+267
+00:12:25,400 --> 00:12:27,110
+se algo no estiver claro.
+
+268
+00:12:28,190 --> 00:12:31,160
+Ento, por favor, use esse recurso.
+
+269
+00:12:31,160 --> 00:12:34,240
+Eu quero que voc deixe este curso sabendo sobre essas coisas.
+
+270
+00:12:35,500 --> 00:12:37,190
+Ento  isso para este vdeo, obrigado por se
+
+271
+00:12:37,190 --> 00:12:39,440
+juntar a mim neste e eu vou te ver no prximo.
+

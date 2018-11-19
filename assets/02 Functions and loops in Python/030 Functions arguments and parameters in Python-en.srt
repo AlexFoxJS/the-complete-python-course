@@ -1,0 +1,1300 @@
+1
+00:00:00,160 --> 00:00:01,620
+<v Narrator>Hi there and welcome back.</v>
+
+2
+00:00:01,620 --> 00:00:02,740
+In this video, we're going to look
+
+3
+00:00:02,740 --> 00:00:05,120
+at functions and arguments.
+
+4
+00:00:06,130 --> 00:00:08,750
+We've learned a whole bunch of Python already.
+
+5
+00:00:08,750 --> 00:00:11,800
+From variables and data types, to loops,
+
+6
+00:00:11,800 --> 00:00:13,460
+f statements, and dictionaries.
+
+7
+00:00:14,310 --> 00:00:17,000
+Functions are a entirely new concept,
+
+8
+00:00:17,000 --> 00:00:19,750
+but I'm sure that you're gonna grasp it really quickly.
+
+9
+00:00:20,750 --> 00:00:22,930
+In its' simplest terms, a function
+
+10
+00:00:22,930 --> 00:00:26,530
+is a name for a block of code.
+
+11
+00:00:26,530 --> 00:00:30,240
+Any piece of code you have, you can turn it into a function.
+
+12
+00:00:30,240 --> 00:00:31,440
+Let's look at some code.
+
+13
+00:00:35,580 --> 00:00:38,960
+We've got a line defining a variable.
+
+14
+00:00:38,960 --> 00:00:42,068
+And that's been assigned to this input
+
+15
+00:00:42,068 --> 00:00:44,040
+which asks the user for their name
+
+16
+00:00:44,040 --> 00:00:45,420
+and allows them to enter it.
+
+17
+00:00:45,420 --> 00:00:47,330
+And then whatever the user types is going to
+
+18
+00:00:47,330 --> 00:00:49,190
+be assigned to name.
+
+19
+00:00:50,710 --> 00:00:52,450
+And then we can sort of say, "Hello.
+
+20
+00:00:52,450 --> 00:00:54,340
+"Hello name."
+
+21
+00:00:55,410 --> 00:00:56,850
+It's pretty basic stuff.
+
+22
+00:00:56,850 --> 00:00:59,500
+We've done this before, nothing new here.
+
+23
+00:00:59,500 --> 00:01:02,620
+Let's run it and type in our name.
+
+24
+00:01:02,620 --> 00:01:04,700
+And it says, "Hello, Jose."
+
+25
+00:01:05,970 --> 00:01:08,920
+We can turn this into a function.
+
+26
+00:01:10,470 --> 00:01:15,470
+Let's do that by saying def, that's a Python key word.
+
+27
+00:01:16,180 --> 00:01:17,430
+Notice how it turns blue.
+
+28
+00:01:18,510 --> 00:01:20,290
+Something like greet, this is gonna
+
+29
+00:01:20,290 --> 00:01:22,300
+be the name of the function.
+
+30
+00:01:22,300 --> 00:01:25,370
+Open and closing brackets is important.
+
+31
+00:01:25,370 --> 00:01:30,260
+Colon, because that signifies the start of a block of code.
+
+32
+00:01:30,260 --> 00:01:32,590
+And notice how this editor automatically
+
+33
+00:01:32,590 --> 00:01:34,350
+gives us four spaces.
+
+34
+00:01:34,350 --> 00:01:37,370
+Because the code that's underneath the colon
+
+35
+00:01:37,370 --> 00:01:39,160
+always has to be indented.
+
+36
+00:01:40,150 --> 00:01:41,330
+And in here, we're just gonna put
+
+37
+00:01:41,330 --> 00:01:43,940
+exactly the same thing that we put before.
+
+38
+00:01:45,960 --> 00:01:46,860
+Nothing new there.
+
+39
+00:01:47,730 --> 00:01:50,620
+Now, whenever we run this function,
+
+40
+00:01:50,620 --> 00:01:52,660
+whenever we execute this function,
+
+41
+00:01:52,660 --> 00:01:57,040
+the code is gonna run from top to bottom as normal.
+
+42
+00:01:59,350 --> 00:02:02,880
+So, okay, what does that mean then?
+
+43
+00:02:02,880 --> 00:02:05,670
+Let's turn these two into comments.
+
+44
+00:02:08,870 --> 00:02:12,820
+Sorry, my bad, space, too many.
+
+45
+00:02:12,820 --> 00:02:17,500
+That's it, my God, that's difficult to type.
+
+46
+00:02:19,040 --> 00:02:22,500
+So we got our function called greet.
+
+47
+00:02:22,500 --> 00:02:24,380
+And it asks the user for their name.
+
+48
+00:02:24,380 --> 00:02:26,580
+So let's run this code and see what happens.
+
+49
+00:02:28,770 --> 00:02:31,440
+Nothing happened, we're not waiting for anything.
+
+50
+00:02:31,440 --> 00:02:35,490
+This code doesn't actually do,
+
+51
+00:02:35,490 --> 00:02:36,610
+okay it does something but it doesn't
+
+52
+00:02:36,610 --> 00:02:38,350
+actually ask the user for their name
+
+53
+00:02:38,350 --> 00:02:40,000
+and it doesn't print to anything.
+
+54
+00:02:40,000 --> 00:02:43,560
+All that we've done here is we've defined a function.
+
+55
+00:02:43,560 --> 00:02:45,710
+A function, if you've looked at them in mathematics
+
+56
+00:02:45,710 --> 00:02:50,710
+before in the past, a function is sort of like a box.
+
+57
+00:02:52,380 --> 00:02:54,640
+You give it some values and it gives
+
+58
+00:02:54,640 --> 00:02:57,800
+you some more values out, or it does something.
+
+59
+00:02:57,800 --> 00:03:00,510
+In this case, this function, when we run it
+
+60
+00:03:00,510 --> 00:03:01,650
+is gonna ask the user for their name
+
+61
+00:03:01,650 --> 00:03:03,380
+and print a greeting out.
+
+62
+00:03:03,380 --> 00:03:06,450
+But we have to run the function first.
+
+63
+00:03:08,800 --> 00:03:12,260
+The way we run a function, is we type its' name out,
+
+64
+00:03:14,490 --> 00:03:18,230
+and then we type in open and closing brackets.
+
+65
+00:03:21,090 --> 00:03:23,170
+So again, before we press play,
+
+66
+00:03:23,170 --> 00:03:25,490
+we've got the def keyword, which is
+
+67
+00:03:25,490 --> 00:03:28,240
+a Python key word to define a new function.
+
+68
+00:03:28,240 --> 00:03:30,340
+Right after, we've got the name of the function
+
+69
+00:03:30,340 --> 00:03:32,540
+which can include letters, numbers, and underscores
+
+70
+00:03:32,540 --> 00:03:34,260
+but again, cannot start with a number,
+
+71
+00:03:34,260 --> 00:03:36,410
+just like a Python variable.
+
+72
+00:03:36,410 --> 00:03:39,220
+Then you'll have your pair of brackets.
+
+73
+00:03:39,220 --> 00:03:42,600
+In later videos, we're gonna put things inside the brackets,
+
+74
+00:03:42,600 --> 00:03:45,580
+that's why they are there, but not in this video.
+
+75
+00:03:45,580 --> 00:03:49,090
+And then we've got this colon, which signifies
+
+76
+00:03:49,090 --> 00:03:50,580
+the start of a blog and whatever
+
+77
+00:03:50,580 --> 00:03:53,210
+is underneath the colon is gonna be indented.
+
+78
+00:03:53,210 --> 00:03:55,670
+And all the lines that are indented
+
+79
+00:03:55,670 --> 00:03:58,080
+are gonna be a part of this function.
+
+80
+00:03:58,080 --> 00:04:00,190
+And when you run the function, all the indented
+
+81
+00:04:00,190 --> 00:04:01,340
+lines are going to run.
+
+82
+00:04:04,060 --> 00:04:05,210
+Okay, let's press play.
+
+83
+00:04:06,100 --> 00:04:10,340
+And as you can see, we get the enter your name,
+
+84
+00:04:10,340 --> 00:04:12,120
+and then hello, your name.
+
+85
+00:04:14,480 --> 00:04:17,630
+You'll see this is called running the function.
+
+86
+00:04:17,630 --> 00:04:19,220
+But frequently you may see it called
+
+87
+00:04:19,220 --> 00:04:22,610
+as executing the function, or even,
+
+88
+00:04:22,610 --> 00:04:25,690
+calling the function, that's the most popular one by far.
+
+89
+00:04:25,690 --> 00:04:27,050
+Whenever you run the function, what you're doing
+
+90
+00:04:27,050 --> 00:04:29,230
+is you're calling the function.
+
+91
+00:04:29,230 --> 00:04:31,616
+Because you're saying, "Hey, greet."
+
+92
+00:04:31,616 --> 00:04:33,020
+And then you're gonna run the thing that's there,
+
+93
+00:04:33,020 --> 00:04:35,050
+really bad pun, but yeah.
+
+94
+00:04:35,920 --> 00:04:37,580
+You're calling it out and it's gonna start running.
+
+95
+00:04:37,580 --> 00:04:41,150
+And then when the run time finishes,
+
+96
+00:04:41,150 --> 00:04:42,950
+when you run through all the code here,
+
+97
+00:04:42,950 --> 00:04:44,470
+and you reach the end of the function.
+
+98
+00:04:44,470 --> 00:04:46,480
+Notice how there's no more indented code here,
+
+99
+00:04:46,480 --> 00:04:48,570
+the next line is unindented.
+
+100
+00:04:48,570 --> 00:04:53,560
+Then you're going to go back to wherever you go.
+
+101
+00:04:53,560 --> 00:04:58,490
+So if we print a line before we run the function,
+
+102
+00:04:58,490 --> 00:04:59,530
+then we run the function.
+
+103
+00:04:59,530 --> 00:05:00,850
+And then we print another line after
+
+104
+00:05:00,850 --> 00:05:03,750
+we run the function, you'll see what I mean.
+
+105
+00:05:03,750 --> 00:05:05,880
+We print it out before the function
+
+106
+00:05:06,870 --> 00:05:08,850
+because that's the first line here.
+
+107
+00:05:08,850 --> 00:05:11,480
+Then we run the greet function, which moved
+
+108
+00:05:11,480 --> 00:05:14,700
+our code over to line number five.
+
+109
+00:05:14,700 --> 00:05:16,700
+And then we get asked to enter our name.
+
+110
+00:05:18,070 --> 00:05:20,310
+Then we print the name.
+
+111
+00:05:20,310 --> 00:05:24,060
+And finally we print out, hello, after the function.
+
+112
+00:05:24,060 --> 00:05:27,850
+So then the flow was, we start at line number one,
+
+113
+00:05:27,850 --> 00:05:28,683
+blah, blah, blah.
+
+114
+00:05:28,683 --> 00:05:30,420
+We get to number four, we define the function.
+
+115
+00:05:30,420 --> 00:05:32,790
+Now this greet function exists.
+
+116
+00:05:32,790 --> 00:05:36,200
+But we don't run it, we don't go into the function itself.
+
+117
+00:05:36,200 --> 00:05:39,524
+So these two lines of code are completely ignored for now.
+
+118
+00:05:39,524 --> 00:05:42,380
+Then we print out before the function.
+
+119
+00:05:42,380 --> 00:05:44,450
+Then we reach this greet, which calls the function
+
+120
+00:05:44,450 --> 00:05:46,790
+and we jump over to line number five.
+
+121
+00:05:47,720 --> 00:05:51,090
+We run through this and then we print out hello.
+
+122
+00:05:51,090 --> 00:05:53,270
+And then we jump back to after the greet
+
+123
+00:05:53,270 --> 00:05:54,950
+function, line 11.
+
+124
+00:05:54,950 --> 00:05:57,680
+Nothing there, line 12 prints hello.
+
+125
+00:05:57,680 --> 00:06:01,050
+That is how this flow of data is going.
+
+126
+00:06:01,050 --> 00:06:04,330
+How our programme is jumping around.
+
+127
+00:06:06,300 --> 00:06:10,060
+Calling functions, particularly if you have a lot of them,
+
+128
+00:06:10,060 --> 00:06:14,400
+we're talking thousands, can slow down your programme.
+
+129
+00:06:14,400 --> 00:06:18,180
+But you need to have a lot of functions for that to happen.
+
+130
+00:06:18,180 --> 00:06:21,360
+So just don't worry about performance
+
+131
+00:06:21,360 --> 00:06:24,340
+when you're defining functions, it's fine.
+
+132
+00:06:24,340 --> 00:06:25,950
+You're never going to run into problems
+
+133
+00:06:25,950 --> 00:06:27,720
+for running too many functions.
+
+134
+00:06:27,720 --> 00:06:29,870
+You're gonna need a lot of functions for that.
+
+135
+00:06:31,370 --> 00:06:33,610
+Now, a couple of videos ago, we looked
+
+136
+00:06:33,610 --> 00:06:37,950
+at some code that looked like this.
+
+137
+00:06:37,950 --> 00:06:42,370
+This code was used for finding prime numbers.
+
+138
+00:06:42,370 --> 00:06:44,230
+And if you can't recall this code here,
+
+139
+00:06:44,230 --> 00:06:46,490
+jump back a few videos and you'll find it.
+
+140
+00:06:46,490 --> 00:06:50,470
+It's in the four loop, in the two key words video,
+
+141
+00:06:50,470 --> 00:06:51,810
+the break and continue.
+
+142
+00:06:53,300 --> 00:06:56,540
+So what this does is it finds prime numbers.
+
+143
+00:06:57,670 --> 00:06:59,330
+But it is a rather long piece of code.
+
+144
+00:06:59,330 --> 00:07:02,130
+And it would be much more understandable
+
+145
+00:07:02,130 --> 00:07:05,950
+if we could extract some of these things into functions.
+
+146
+00:07:06,790 --> 00:07:08,480
+If I didn't tell you what this code does,
+
+147
+00:07:08,480 --> 00:07:11,090
+it wouldn't be easy for you to know what it does.
+
+148
+00:07:11,090 --> 00:07:13,580
+But if we extract it, it will be.
+
+149
+00:07:15,470 --> 00:07:18,090
+Let's start by doing this.
+
+150
+00:07:18,090 --> 00:07:20,060
+We're gonna cut this piece of code out
+
+151
+00:07:20,060 --> 00:07:23,960
+and we're gonna call it check if prime n.
+
+152
+00:07:25,690 --> 00:07:30,690
+Now check if prime, is likely going to take in a number.
+
+153
+00:07:31,300 --> 00:07:33,176
+And we're gonna look at exactly what
+
+154
+00:07:33,176 --> 00:07:35,550
+this means in a moment, and check whether
+
+155
+00:07:35,550 --> 00:07:36,940
+it is a prime number.
+
+156
+00:07:38,580 --> 00:07:40,320
+However, this function does not exist.
+
+157
+00:07:40,320 --> 00:07:42,790
+We have to define it and we must define
+
+158
+00:07:42,790 --> 00:07:46,650
+it before we call the function.
+
+159
+00:07:46,650 --> 00:07:48,250
+So it must be defined above.
+
+160
+00:07:48,250 --> 00:07:49,770
+So we're gonna paste in here.
+
+161
+00:07:52,790 --> 00:07:55,230
+Now, this here is not a function.
+
+162
+00:07:55,230 --> 00:07:56,900
+But we can put it inside a function
+
+163
+00:07:56,900 --> 00:08:01,050
+by doing def check if prime n.
+
+164
+00:08:08,250 --> 00:08:09,700
+There you have it.
+
+165
+00:08:09,700 --> 00:08:11,620
+Now we've put this code into a function.
+
+166
+00:08:11,620 --> 00:08:13,380
+And I appreciate that now we've got something
+
+167
+00:08:13,380 --> 00:08:14,960
+inside our brackets and it's not terribly
+
+168
+00:08:14,960 --> 00:08:17,700
+clear what it is, so let me explain.
+
+169
+00:08:20,040 --> 00:08:22,240
+We have our four loop that was previously
+
+170
+00:08:22,240 --> 00:08:24,520
+right on top of this four loop.
+
+171
+00:08:24,520 --> 00:08:26,640
+And that creates a variable called n.
+
+172
+00:08:27,850 --> 00:08:32,560
+Then we're jumping in to the check if prime function.
+
+173
+00:08:32,560 --> 00:08:35,260
+This runs the function that was defined above.
+
+174
+00:08:35,260 --> 00:08:37,730
+And it puts the n inside the brackets.
+
+175
+00:08:39,284 --> 00:08:40,960
+And you can think of this pair of brackets
+
+176
+00:08:40,960 --> 00:08:44,020
+as sort of a teleportation device.
+
+177
+00:08:44,020 --> 00:08:49,020
+The value of n here, is going to be assigned to n here.
+
+178
+00:08:53,070 --> 00:08:56,240
+If we change this into number,
+
+179
+00:08:56,240 --> 00:08:58,940
+then we must change all the n's here into number two.
+
+180
+00:09:04,350 --> 00:09:05,550
+I think we got them all.
+
+181
+00:09:07,030 --> 00:09:09,081
+Then the same thing happens.
+
+182
+00:09:09,081 --> 00:09:11,330
+N here, the value of n, which is gonna
+
+183
+00:09:11,330 --> 00:09:13,810
+be two, or three, or four, is now gonna
+
+184
+00:09:13,810 --> 00:09:15,650
+be assigned to number.
+
+185
+00:09:15,650 --> 00:09:18,060
+So number is gonna be two, and three,
+
+186
+00:09:18,060 --> 00:09:20,810
+and then four, whenever we execute this thing here.
+
+187
+00:09:22,560 --> 00:09:24,420
+And then we're just going to run through our
+
+188
+00:09:24,420 --> 00:09:25,960
+function as before.
+
+189
+00:09:27,100 --> 00:09:28,340
+And this function is going to check
+
+190
+00:09:28,340 --> 00:09:30,130
+whether the number that we received
+
+191
+00:09:30,130 --> 00:09:33,780
+inside the brackets down here is a prime number or not.
+
+192
+00:09:37,535 --> 00:09:40,230
+And the way we can check that, is we can
+
+193
+00:09:41,680 --> 00:09:46,680
+delete this stuff here and say, "Check if prime five,"
+
+194
+00:09:46,800 --> 00:09:48,330
+which is a prime number.
+
+195
+00:09:48,330 --> 00:09:49,590
+And if we run that,
+
+196
+00:09:52,600 --> 00:09:55,720
+I think we messed something up there.
+
+197
+00:09:56,700 --> 00:09:58,180
+Some indentation error there.
+
+198
+00:09:58,180 --> 00:10:01,450
+Else has to be in the same level as the four.
+
+199
+00:10:01,450 --> 00:10:02,700
+And let's run that again.
+
+200
+00:10:05,840 --> 00:10:08,270
+Now we get that five is a prime number.
+
+201
+00:10:08,270 --> 00:10:10,710
+But we don't get whether any other number
+
+202
+00:10:10,710 --> 00:10:12,760
+is a prime number, just the five,
+
+203
+00:10:12,760 --> 00:10:14,850
+because that's the number that we parsed in.
+
+204
+00:10:14,850 --> 00:10:17,760
+So here, five gets assigned to the variable number
+
+205
+00:10:17,760 --> 00:10:20,810
+which has been used throughout this entire bit of code.
+
+206
+00:10:22,560 --> 00:10:27,560
+If we go back and go back to our loop here,
+
+207
+00:10:28,660 --> 00:10:30,480
+now where going to start a two.
+
+208
+00:10:30,480 --> 00:10:32,480
+We're gonna check if it's a prime number.
+
+209
+00:10:32,480 --> 00:10:33,490
+Then we're gonna go to three,
+
+210
+00:10:33,490 --> 00:10:34,440
+we're gonna check if it's a prime number.
+
+211
+00:10:34,440 --> 00:10:36,840
+Then we're gonna go to four and so on and so on.
+
+212
+00:10:37,750 --> 00:10:41,720
+Now, I'm sure that this is more readable.
+
+213
+00:10:41,720 --> 00:10:43,480
+Not because the code is any simpler,
+
+214
+00:10:43,480 --> 00:10:44,890
+the code is the same.
+
+215
+00:10:44,890 --> 00:10:46,440
+But because now it has a name.
+
+216
+00:10:46,440 --> 00:10:48,260
+And when you read that, you can say,
+
+217
+00:10:48,260 --> 00:10:50,700
+"Okay, I'm not entirely sure exactly
+
+218
+00:10:50,700 --> 00:10:53,198
+"what this code does but I know it checks
+
+219
+00:10:53,198 --> 00:10:57,200
+"for whether the number here is a prime number or not."
+
+220
+00:10:58,430 --> 00:11:01,950
+By the way, this number is called a parameter.
+
+221
+00:11:01,950 --> 00:11:03,990
+That's what it is, that's what it is called.
+
+222
+00:11:03,990 --> 00:11:07,210
+When you define that your function
+
+223
+00:11:07,210 --> 00:11:10,560
+can receive a value that's called a parameter.
+
+224
+00:11:10,560 --> 00:11:14,040
+And the n here, that's the value we're sending,
+
+225
+00:11:14,980 --> 00:11:16,520
+that's called an argument.
+
+226
+00:11:16,520 --> 00:11:20,000
+So n is called an argument.
+
+227
+00:11:20,000 --> 00:11:23,240
+And here, number is called a parameter.
+
+228
+00:11:29,547 --> 00:11:30,380
+That's what it's called.
+
+229
+00:11:30,380 --> 00:11:32,080
+So parameter is the receiving end,
+
+230
+00:11:32,080 --> 00:11:33,870
+argument is the giving end.
+
+231
+00:11:33,870 --> 00:11:36,630
+Okay, let's go back down here.
+
+232
+00:11:36,630 --> 00:11:37,840
+And of course, we can put this
+
+233
+00:11:37,840 --> 00:11:41,020
+into another function if we were to want to do that.
+
+234
+00:11:41,020 --> 00:11:44,470
+Def check primes.
+
+235
+00:11:45,430 --> 00:11:49,420
+And then we could do that into there.
+
+236
+00:11:49,420 --> 00:11:51,510
+Now, if we run this code again,
+
+237
+00:11:51,510 --> 00:11:54,930
+we get asked to type in our name because that's above.
+
+238
+00:11:54,930 --> 00:11:57,180
+And then nothing happens.
+
+239
+00:11:57,180 --> 00:11:59,430
+Because, again, this function has been defined
+
+240
+00:11:59,430 --> 00:12:00,460
+but it's not been ran.
+
+241
+00:12:00,460 --> 00:12:02,290
+So we have to run it.
+
+242
+00:12:02,290 --> 00:12:06,200
+Check if primes there.
+
+243
+00:12:06,200 --> 00:12:10,620
+Now when we run it again, we'll see the output.
+
+244
+00:12:10,620 --> 00:12:13,230
+Two is a prime number, three's a prime number, and so on.
+
+245
+00:12:15,000 --> 00:12:19,710
+How could we make it so that it doesn't go up to 10?
+
+246
+00:12:19,710 --> 00:12:23,180
+How could we make it so it goes up to any number
+
+247
+00:12:23,180 --> 00:12:25,640
+that we parse in, into the brackets?
+
+248
+00:12:25,640 --> 00:12:27,270
+So imagine I wanna put 100 here.
+
+249
+00:12:28,670 --> 00:12:32,430
+And then make this loop go from two to 100.
+
+250
+00:12:32,430 --> 00:12:33,530
+How would you do that?
+
+251
+00:12:38,496 --> 00:12:39,329
+How you got that.
+
+252
+00:12:39,329 --> 00:12:42,640
+All to do, is to create a new parameter here.
+
+253
+00:12:43,479 --> 00:12:44,312
+I'm gonna call mine limit.
+
+254
+00:12:44,312 --> 00:12:46,760
+You can call them whatever you want, by the way.
+
+255
+00:12:46,760 --> 00:12:48,540
+And then just use it there.
+
+256
+00:12:50,210 --> 00:12:52,680
+Now this is gonna be a bit longer.
+
+257
+00:12:52,680 --> 00:12:55,400
+But you get all the numbers up to 100 there.
+
+258
+00:12:57,570 --> 00:12:58,640
+Pretty cool, eh?
+
+259
+00:13:01,020 --> 00:13:03,710
+All right, so now we've got this here.
+
+260
+00:13:03,710 --> 00:13:05,500
+I just wanted to give you one last tidbit
+
+261
+00:13:05,500 --> 00:13:08,470
+of information before we continue.
+
+262
+00:13:08,470 --> 00:13:12,250
+And it's that, remember functions are defined
+
+263
+00:13:12,250 --> 00:13:14,780
+in the order in which they appear in your file.
+
+264
+00:13:15,652 --> 00:13:17,330
+In this case, check if prime is defined first
+
+265
+00:13:17,330 --> 00:13:19,430
+and then check if prime is defined second.
+
+266
+00:13:20,470 --> 00:13:22,690
+They are not executed.
+
+267
+00:13:22,690 --> 00:13:25,070
+So we don't run through this four loop
+
+268
+00:13:25,070 --> 00:13:26,760
+when the function gets defined.
+
+269
+00:13:27,920 --> 00:13:32,610
+So, because check if prime is used inside check primes,
+
+270
+00:13:32,610 --> 00:13:37,040
+we can actually put check primes in front.
+
+271
+00:13:41,930 --> 00:13:43,940
+Now, this looks like it could be wrong
+
+272
+00:13:43,940 --> 00:13:47,790
+because check primes uses check if prime.
+
+273
+00:13:47,790 --> 00:13:50,930
+And check if prime doesn't exist at this point and time.
+
+274
+00:13:50,930 --> 00:13:52,930
+It only exists after.
+
+275
+00:13:52,930 --> 00:13:55,330
+But remember, we define the function first,
+
+276
+00:13:55,330 --> 00:13:57,090
+then we define this one.
+
+277
+00:13:57,090 --> 00:13:59,610
+And we only run check primes down here
+
+278
+00:13:59,610 --> 00:14:01,460
+when both are already defined.
+
+279
+00:14:01,460 --> 00:14:03,810
+So by the time we go into check primes,
+
+280
+00:14:03,810 --> 00:14:05,330
+check if prime was already defined
+
+281
+00:14:05,330 --> 00:14:08,600
+because it was defined before we ran the function.
+
+282
+00:14:08,600 --> 00:14:09,820
+And the reason I'm telling you this
+
+283
+00:14:09,820 --> 00:14:12,870
+is because, personally, I know that I
+
+284
+00:14:12,870 --> 00:14:16,422
+and many other people like to have,
+
+285
+00:14:16,422 --> 00:14:20,210
+the most important function at the top.
+
+286
+00:14:20,210 --> 00:14:21,450
+And in this case, the most important
+
+287
+00:14:21,450 --> 00:14:22,700
+function is check primes.
+
+288
+00:14:23,540 --> 00:14:25,730
+And as you read this code you can sort
+
+289
+00:14:25,730 --> 00:14:28,260
+of read it like a newspaper, top to bottom.
+
+290
+00:14:28,260 --> 00:14:30,080
+Check primes, okay, what does that do?
+
+291
+00:14:30,080 --> 00:14:31,840
+It takes in a limit and it goes in
+
+292
+00:14:31,840 --> 00:14:32,980
+a loop from two to limit.
+
+293
+00:14:32,980 --> 00:14:34,800
+And for each number it checks if it's a prime.
+
+294
+00:14:34,800 --> 00:14:36,980
+Cool, what does check if prime do?
+
+295
+00:14:36,980 --> 00:14:39,290
+Okay, let's go into the next line and find out.
+
+296
+00:14:39,290 --> 00:14:41,810
+Well, it's if they're in the wrong way around
+
+297
+00:14:41,810 --> 00:14:43,730
+the first thing you see is this check if prime function.
+
+298
+00:14:43,730 --> 00:14:45,960
+And you wonder, "Where is it used?
+
+299
+00:14:45,960 --> 00:14:47,880
+"Why do I care about this function?"
+
+300
+00:14:47,880 --> 00:14:49,170
+And you won't find out until you've
+
+301
+00:14:49,170 --> 00:14:51,500
+gone down to the bottom of the file.
+
+302
+00:14:51,500 --> 00:14:56,410
+So I like to have the functions that use
+
+303
+00:14:56,410 --> 00:14:58,640
+other functions at the top.
+
+304
+00:14:58,640 --> 00:15:00,630
+And if your function uses multiple functions
+
+305
+00:15:00,630 --> 00:15:02,970
+then they will all be underneath.
+
+306
+00:15:02,970 --> 00:15:05,810
+Of course, you cannot call the function
+
+307
+00:15:05,810 --> 00:15:08,440
+before it's been defined, but you can use
+
+308
+00:15:08,440 --> 00:15:10,870
+it before it's been defined if it's not
+
+309
+00:15:10,870 --> 00:15:13,870
+being actually called until afterwards.
+
+310
+00:15:13,870 --> 00:15:15,290
+So, hopefully that makes a bit of sense.
+
+311
+00:15:15,290 --> 00:15:16,830
+I know it's quite contrived, the way that,
+
+312
+00:15:16,830 --> 00:15:20,390
+you know, defining and calling all works together.
+
+313
+00:15:20,390 --> 00:15:22,640
+But just think like a computer.
+
+314
+00:15:22,640 --> 00:15:25,160
+The functions only actually execute
+
+315
+00:15:25,160 --> 00:15:27,190
+when you call them down here.
+
+316
+00:15:28,190 --> 00:15:29,240
+That's it for this video.
+
+317
+00:15:29,240 --> 00:15:32,140
+We talked about functions, and arguments, and parameters.
+
+318
+00:15:32,140 --> 00:15:33,670
+And so I hope that was useful.
+
+319
+00:15:33,670 --> 00:15:35,530
+Please ask questions in the course q and a,
+
+320
+00:15:35,530 --> 00:15:36,890
+if you have any.
+
+321
+00:15:36,890 --> 00:15:38,610
+We are there to help you out.
+
+322
+00:15:38,610 --> 00:15:39,900
+And we don't want you to be confused,
+
+323
+00:15:39,900 --> 00:15:42,810
+if anything does seem confusing.
+
+324
+00:15:42,810 --> 00:15:44,020
+So that's it for this video.
+
+325
+00:15:44,020 --> 00:15:45,470
+I'll see you on the next one.
+

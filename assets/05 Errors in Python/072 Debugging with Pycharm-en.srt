@@ -1,0 +1,1484 @@
+1
+00:00:00,110 --> 00:00:01,274
+<v ->Hi welcome back.</v>
+
+2
+00:00:01,274 --> 00:00:03,507
+In this video we are talking about debugging.
+
+3
+00:00:03,507 --> 00:00:06,764
+Particularly, using the pycharm debugger.
+
+4
+00:00:06,764 --> 00:00:08,516
+The term debugging actually comes from
+
+5
+00:00:08,516 --> 00:00:11,693
+one of the first computers that was built.
+
+6
+00:00:11,693 --> 00:00:13,979
+You know, computer back in the day were massive
+
+7
+00:00:13,979 --> 00:00:17,148
+behemoths, taking up entire rooms.
+
+8
+00:00:17,148 --> 00:00:20,815
+And their cabling was actually just exposed.
+
+9
+00:00:22,005 --> 00:00:26,338
+It turns out that a moth flew into one of the cables
+
+10
+00:00:27,353 --> 00:00:29,972
+and some of the transistors there.
+
+11
+00:00:29,972 --> 00:00:32,152
+It caused the short circuit.
+
+12
+00:00:32,152 --> 00:00:35,204
+Hence, the term debugging was coined.
+
+13
+00:00:35,204 --> 00:00:38,742
+It is actually removing bugs from the cables
+
+14
+00:00:38,742 --> 00:00:40,404
+or in our case, from the code,
+
+15
+00:00:40,404 --> 00:00:45,209
+so that our programmes don't crash and don't perform badly.
+
+16
+00:00:45,209 --> 00:00:47,192
+So we are going to try to remove
+
+17
+00:00:47,192 --> 00:00:50,714
+any bugs from, say, our programme here.
+
+18
+00:00:50,714 --> 00:00:53,252
+And lets imagine that our bug is that
+
+19
+00:00:53,252 --> 00:00:56,335
+we have misspelt this metrics click
+
+20
+00:00:59,881 --> 00:01:01,177
+and it should be clicks
+
+21
+00:01:01,177 --> 00:01:03,034
+because that is what the data is like.
+
+22
+00:01:03,034 --> 00:01:04,379
+So, lets imagine we don't know that
+
+23
+00:01:04,379 --> 00:01:05,939
+and we are tying to find out
+
+24
+00:01:05,939 --> 00:01:07,971
+what this problem could be like,
+
+25
+00:01:07,971 --> 00:01:11,481
+or what this bug could be caused by.
+
+26
+00:01:11,481 --> 00:01:15,986
+Naturally we have a nice exception handling here,
+
+27
+00:01:15,986 --> 00:01:18,769
+but as you can see we've not reraised the exception.
+
+28
+00:01:18,769 --> 00:01:21,764
+So all we are going to see is incorrect values provided.
+
+29
+00:01:21,764 --> 00:01:22,983
+We are going to look through our code
+
+30
+00:01:22,983 --> 00:01:25,240
+and so forth, and we are not going to find anything.
+
+31
+00:01:25,240 --> 00:01:26,802
+We eventually reach the point
+
+32
+00:01:26,802 --> 00:01:29,475
+where we are going to have to debug.
+
+33
+00:01:29,475 --> 00:01:33,892
+To debug, what to do is to make sure that the correct
+
+34
+00:01:35,730 --> 00:01:39,813
+file is selected, right click it and press debug.
+
+35
+00:01:41,267 --> 00:01:45,004
+Now, debugging is just going to run
+
+36
+00:01:45,004 --> 00:01:47,769
+your application, your file as normal.
+
+37
+00:01:47,769 --> 00:01:51,269
+So right now, if we right click and debug,
+
+38
+00:01:52,451 --> 00:01:54,006
+it's going to load up.
+
+39
+00:01:54,006 --> 00:01:55,097
+It's going to be a bit slower
+
+40
+00:01:55,097 --> 00:01:56,360
+than just running the application
+
+41
+00:01:56,360 --> 00:01:57,193
+because there are a few more things
+
+42
+00:01:57,193 --> 00:01:58,581
+happening in the background.
+
+43
+00:01:58,581 --> 00:01:59,643
+And then we are going to see
+
+44
+00:01:59,643 --> 00:02:01,926
+incorrect values provided to our calculation function.
+
+45
+00:02:01,926 --> 00:02:04,738
+Because of course, we've got that key error
+
+46
+00:02:04,738 --> 00:02:08,507
+caused by the incorrect key being used there.
+
+47
+00:02:08,507 --> 00:02:13,016
+Now, if we weren't able to realise that this is misspelt,
+
+48
+00:02:13,016 --> 00:02:16,099
+we might decide to set a break point.
+
+49
+00:02:17,842 --> 00:02:22,758
+A break point allows our programme to stop at any point,
+
+50
+00:02:22,758 --> 00:02:24,802
+and we can check values of things
+
+51
+00:02:24,802 --> 00:02:28,552
+and we can run functions and see what breaks.
+
+52
+00:02:29,473 --> 00:02:32,663
+This error here, is raised by
+
+53
+00:02:32,663 --> 00:02:34,267
+the performed calculation function.
+
+54
+00:02:34,267 --> 00:02:35,708
+We know that because it's the only thing
+
+55
+00:02:35,708 --> 00:02:37,783
+that is running in this line.
+
+56
+00:02:37,783 --> 00:02:39,016
+We know that this is the thing
+
+57
+00:02:39,016 --> 00:02:41,414
+that must be causing the error.
+
+58
+00:02:41,414 --> 00:02:46,234
+Otherwise, it would not be caught by this key error here.
+
+59
+00:02:46,234 --> 00:02:47,515
+So, we can set a break point,
+
+60
+00:02:47,515 --> 00:02:48,731
+and in order to do that,
+
+61
+00:02:48,731 --> 00:02:52,195
+just go over to the left here beside line thirteen
+
+62
+00:02:52,195 --> 00:02:54,002
+and just click it.
+
+63
+00:02:54,002 --> 00:02:58,512
+Then a red circle will appear, the line will go red,
+
+64
+00:02:58,512 --> 00:02:59,491
+and this tells you that
+
+65
+00:02:59,491 --> 00:03:02,713
+you have set a break point on line thirteen.
+
+66
+00:03:02,713 --> 00:03:04,428
+Lets run the debugger again,
+
+67
+00:03:04,428 --> 00:03:07,737
+you can either right click and press debug user score
+
+68
+00:03:07,737 --> 00:03:09,974
+or now that this has just recently ran
+
+69
+00:03:09,974 --> 00:03:12,781
+you can press the bug icon here.
+
+70
+00:03:12,781 --> 00:03:14,788
+Or of course, you can go to the top right
+
+71
+00:03:14,788 --> 00:03:16,705
+and press the bug icon.
+
+72
+00:03:17,706 --> 00:03:20,268
+Make sure that the right thing is selected,
+
+73
+00:03:20,268 --> 00:03:22,935
+user score, in order to do that.
+
+74
+00:03:24,920 --> 00:03:28,977
+Now, we can see that our programme has stopped.
+
+75
+00:03:28,977 --> 00:03:30,736
+It stopped here on the break point,
+
+76
+00:03:30,736 --> 00:03:31,706
+the line is now blue,
+
+77
+00:03:31,706 --> 00:03:34,968
+that tells us this is the current line that we are running.
+
+78
+00:03:34,968 --> 00:03:37,252
+The line has not ran yet.
+
+79
+00:03:37,252 --> 00:03:40,441
+So we have stopped just before the line.
+
+80
+00:03:40,441 --> 00:03:44,216
+The break point will always stop just before the line.
+
+81
+00:03:44,216 --> 00:03:47,455
+We can see that our user parameter here,
+
+82
+00:03:47,455 --> 00:03:49,927
+has a value of user rolf.
+
+83
+00:03:49,927 --> 00:03:52,933
+We cannot select this text here,
+
+84
+00:03:52,933 --> 00:03:55,041
+think of it as some floating info.
+
+85
+00:03:55,041 --> 00:03:56,941
+It just tells you what the value
+
+86
+00:03:56,941 --> 00:03:59,973
+of the variables in scope currently are.
+
+87
+00:03:59,973 --> 00:04:01,065
+It's really handy.
+
+88
+00:04:01,065 --> 00:04:04,243
+And notice how this uses that repr function.
+
+89
+00:04:04,243 --> 00:04:06,700
+Earlier on when we talked about repr and str fucntions,
+
+90
+00:04:06,700 --> 00:04:08,257
+I told you the repr function
+
+91
+00:04:08,257 --> 00:04:11,590
+was most useful for development purposes
+
+92
+00:04:12,451 --> 00:04:14,273
+and this is why.
+
+93
+00:04:14,273 --> 00:04:17,052
+Because whenever you see a variable
+
+94
+00:04:17,052 --> 00:04:18,974
+pycharm is going to show you the repr
+
+95
+00:04:18,974 --> 00:04:23,668
+of that variable when it is telling you the values of it.
+
+96
+00:04:23,668 --> 00:04:26,470
+If you open the debugger tab here on the left,
+
+97
+00:04:26,470 --> 00:04:28,371
+which may be open by default,
+
+98
+00:04:28,371 --> 00:04:29,903
+you'll see a bunch of stuff.
+
+99
+00:04:29,903 --> 00:04:33,317
+And it can be pretty scary the first time you see it.
+
+100
+00:04:33,317 --> 00:04:35,456
+The most important part here,
+
+101
+00:04:35,456 --> 00:04:39,206
+is these variables and these buttons up here.
+
+102
+00:04:40,527 --> 00:04:41,566
+The variables, once again,
+
+103
+00:04:41,566 --> 00:04:44,910
+tell you what variables you've currently got in scope.
+
+104
+00:04:44,910 --> 00:04:47,292
+Inside this function we only have one variabal,
+
+105
+00:04:47,292 --> 00:04:49,459
+that's the user parameter.
+
+106
+00:04:50,458 --> 00:04:55,002
+Here you can also open it up using this triangle
+
+107
+00:04:55,002 --> 00:04:57,932
+and then it tells you all the properties of the user
+
+108
+00:04:57,932 --> 00:05:00,205
+at this point in time, currently,
+
+109
+00:05:00,205 --> 00:05:02,790
+before we have executed this function here.
+
+110
+00:05:02,790 --> 00:05:06,277
+Remember this function is meant to update the user score
+
+111
+00:05:06,277 --> 00:05:10,218
+but it has not ran yet, so it's still zero, as it should be
+
+112
+00:05:10,218 --> 00:05:13,757
+from the init method that was called earlier on.
+
+113
+00:05:13,757 --> 00:05:15,275
+You've also got the engagement metric,
+
+114
+00:05:15,275 --> 00:05:17,307
+which is a diction, we can open that
+
+115
+00:05:17,307 --> 00:05:18,821
+and it tells you the clicks key
+
+116
+00:05:18,821 --> 00:05:21,909
+and the hits key and their values.
+
+117
+00:05:21,909 --> 00:05:25,689
+You can also up the name and you can see that it's rolf.
+
+118
+00:05:25,689 --> 00:05:27,774
+You get a lot of information from these things
+
+119
+00:05:27,774 --> 00:05:30,884
+including their types, dict, int, str.
+
+120
+00:05:30,884 --> 00:05:32,629
+The length of the dictionity,
+
+121
+00:05:32,629 --> 00:05:34,011
+and you get these numbers here
+
+122
+00:05:34,011 --> 00:05:37,594
+that you don't have to worry about for now.
+
+123
+00:05:39,178 --> 00:05:41,946
+We now know that, on running this function,
+
+124
+00:05:41,946 --> 00:05:43,784
+an error is going to happen.
+
+125
+00:05:43,784 --> 00:05:45,747
+We know that because this error
+
+126
+00:05:45,747 --> 00:05:46,946
+was being caught on this line
+
+127
+00:05:46,946 --> 00:05:49,251
+and that's the only function that is running.
+
+128
+00:05:49,251 --> 00:05:51,421
+So there are a few things we can do.
+
+129
+00:05:51,421 --> 00:05:52,831
+The first thing I would do,
+
+130
+00:05:52,831 --> 00:05:56,449
+when encountering this thing here, is to use the calculator.
+
+131
+00:05:56,449 --> 00:05:59,193
+This is the expression evaluator.
+
+132
+00:05:59,193 --> 00:06:03,533
+What that is used for is running any arbitrary python code.
+
+133
+00:06:03,533 --> 00:06:07,190
+Were going to select the entire thing after the equal sign,
+
+134
+00:06:07,190 --> 00:06:11,189
+that's perform calculation including user.engagement metrics
+
+135
+00:06:11,189 --> 00:06:14,019
+Just select it, you don't need to copy it or anything.
+
+136
+00:06:14,019 --> 00:06:16,193
+Then press the calculator icon.
+
+137
+00:06:16,193 --> 00:06:19,025
+Now you've got the expression evaluated
+
+138
+00:06:19,025 --> 00:06:22,027
+and it's pasted in the thing that you've just selected.
+
+139
+00:06:22,027 --> 00:06:25,404
+So that's perform calculation with user.engagement metrics
+
+140
+00:06:25,404 --> 00:06:26,737
+as the argument.
+
+141
+00:06:27,972 --> 00:06:31,487
+You can run this code, lets press evaluate.
+
+142
+00:06:31,487 --> 00:06:35,070
+Notice how now we get this key error click.
+
+143
+00:06:35,939 --> 00:06:37,228
+That is pretty cool.
+
+144
+00:06:37,228 --> 00:06:38,942
+The console, which is, by the way,
+
+145
+00:06:38,942 --> 00:06:43,457
+behind here on this console tab, does not show anything.
+
+146
+00:06:43,457 --> 00:06:46,040
+It doesn't catch the error or anything like that
+
+147
+00:06:46,040 --> 00:06:51,040
+because this is a completely separate run time, if you wish.
+
+148
+00:06:51,173 --> 00:06:53,220
+So this is not running our programme,
+
+149
+00:06:53,220 --> 00:06:54,783
+this is just running this function here,
+
+150
+00:06:54,783 --> 00:06:57,785
+completely separately using the data
+
+151
+00:06:57,785 --> 00:06:59,409
+that you've got in your scope.
+
+152
+00:06:59,409 --> 00:07:02,683
+That's what you can use, the user variable here.
+
+153
+00:07:02,683 --> 00:07:05,137
+We get a key error, which is click.
+
+154
+00:07:05,137 --> 00:07:06,816
+So now we've got a bit more information,
+
+155
+00:07:06,816 --> 00:07:10,566
+we know that the click property is incorrect.
+
+156
+00:07:12,733 --> 00:07:15,959
+Okay, lets say that that doesn't tell us enough information
+
+157
+00:07:15,959 --> 00:07:19,459
+and we want to stop here inside this line.
+
+158
+00:07:20,485 --> 00:07:24,721
+Just to look at what the metrics object is.
+
+159
+00:07:24,721 --> 00:07:26,821
+Well, there are two ways you can so that,
+
+160
+00:07:26,821 --> 00:07:29,267
+you can set a break point in that line,
+
+161
+00:07:29,267 --> 00:07:30,696
+and remember the break point
+
+162
+00:07:30,696 --> 00:07:33,447
+is going to make you stop right before the line executes.
+
+163
+00:07:33,447 --> 00:07:35,699
+So the error won't happen yet
+
+164
+00:07:35,699 --> 00:07:38,491
+when you stop at this break point.
+
+165
+00:07:38,491 --> 00:07:39,953
+If you set a break point there,
+
+166
+00:07:39,953 --> 00:07:42,974
+you can press continue, resume programme execution,
+
+167
+00:07:42,974 --> 00:07:45,770
+that's this icon over here, the play icon.
+
+168
+00:07:45,770 --> 00:07:47,923
+You can press that and that is just going to continue
+
+169
+00:07:47,923 --> 00:07:50,465
+your programme until the next break point
+
+170
+00:07:50,465 --> 00:07:54,097
+or until it terminates, if you don't have a break point.
+
+171
+00:07:54,097 --> 00:07:56,235
+So you can set a break point and press continue.
+
+172
+00:07:56,235 --> 00:07:59,018
+Another option is for us to use these buttons here,
+
+173
+00:07:59,018 --> 00:08:00,983
+these are really useful.
+
+174
+00:08:00,983 --> 00:08:05,983
+This first one here, steps over to the next line in the file
+
+175
+00:08:08,420 --> 00:08:10,665
+So what's the next line after this one,
+
+176
+00:08:10,665 --> 00:08:12,196
+not the next line that we run,
+
+177
+00:08:12,196 --> 00:08:14,909
+but the next line in this scope.
+
+178
+00:08:14,909 --> 00:08:17,438
+The next line will be this, print
+
+179
+00:08:17,438 --> 00:08:19,747
+because the exception is going to be raised
+
+180
+00:08:19,747 --> 00:08:22,208
+by this this function here, this line.
+
+181
+00:08:22,208 --> 00:08:23,547
+So when we raise the exception,
+
+182
+00:08:23,547 --> 00:08:26,076
+were going to go into the except.
+
+183
+00:08:26,076 --> 00:08:28,492
+I'll show you exactly what happened.
+
+184
+00:08:28,492 --> 00:08:30,646
+See, we are going to the except,
+
+185
+00:08:30,646 --> 00:08:32,026
+nothing happens here of course
+
+186
+00:08:32,026 --> 00:08:33,414
+and then we can step over again,
+
+187
+00:08:33,414 --> 00:08:36,422
+and now we are inside the exception block.
+
+188
+00:08:36,422 --> 00:08:39,270
+Step over moves onto the next line
+
+189
+00:08:39,270 --> 00:08:42,447
+in the current scope, the current block.
+
+190
+00:08:42,447 --> 00:08:44,521
+So it will just go over into the next one.
+
+191
+00:08:44,521 --> 00:08:45,675
+If you are within a function,
+
+192
+00:08:45,675 --> 00:08:47,909
+it will stay within that function.
+
+193
+00:08:47,909 --> 00:08:50,356
+If you are in a class, it will stay within that class
+
+194
+00:08:50,356 --> 00:08:51,439
+and so forth.
+
+195
+00:08:52,738 --> 00:08:55,054
+Now, we are already too late,
+
+196
+00:08:55,054 --> 00:08:57,398
+the error has already happened,
+
+197
+00:08:57,398 --> 00:08:59,987
+so we are no longer going to be able to go back here.
+
+198
+00:08:59,987 --> 00:09:02,850
+If we now set a break point inside this line
+
+199
+00:09:02,850 --> 00:09:06,254
+and we press continue, we already passed that.
+
+200
+00:09:06,254 --> 00:09:07,533
+So what were going to do is
+
+201
+00:09:07,533 --> 00:09:09,722
+this break point here is going to get ignored
+
+202
+00:09:09,722 --> 00:09:12,502
+and we are just going to resume the programme execution
+
+203
+00:09:12,502 --> 00:09:13,668
+until the end.
+
+204
+00:09:13,668 --> 00:09:16,324
+Let's press continue now.
+
+205
+00:09:16,324 --> 00:09:18,456
+As you can see, the programme continues,
+
+206
+00:09:18,456 --> 00:09:20,017
+the blue line has disappeared
+
+207
+00:09:20,017 --> 00:09:23,019
+and the console now has this little, small
+
+208
+00:09:23,019 --> 00:09:24,488
+yellow arrow there that tells you that
+
+209
+00:09:24,488 --> 00:09:26,949
+hey, new control output has happened
+
+210
+00:09:26,949 --> 00:09:29,466
+since you last saw this tab.
+
+211
+00:09:29,466 --> 00:09:30,932
+When you click on it, it disappears.
+
+212
+00:09:30,932 --> 00:09:33,246
+Now you can see the output of your programme.
+
+213
+00:09:33,246 --> 00:09:36,015
+Incorrect values provided to our calculation function.
+
+214
+00:09:36,015 --> 00:09:37,515
+Nothing new there.
+
+215
+00:09:38,553 --> 00:09:40,783
+I'm going to remove the break point on line 22
+
+216
+00:09:40,783 --> 00:09:44,017
+and run the programme again, debugging the programme again.
+
+217
+00:09:44,017 --> 00:09:45,276
+Once again, we will stop
+
+218
+00:09:45,276 --> 00:09:48,361
+at our original break point in line thirteen.
+
+219
+00:09:48,361 --> 00:09:52,194
+Except now, we are going to go into step into.
+
+220
+00:09:53,722 --> 00:09:56,726
+Step into takes us into the function
+
+221
+00:09:56,726 --> 00:09:59,223
+that we are running in that line.
+
+222
+00:09:59,223 --> 00:10:01,904
+If we are running multiple functions it'll take us
+
+223
+00:10:01,904 --> 00:10:05,679
+into the first function that runs on that line.
+
+224
+00:10:05,679 --> 00:10:07,960
+But here, we are only running one function
+
+225
+00:10:07,960 --> 00:10:10,411
+so step into takes us into the function
+
+226
+00:10:10,411 --> 00:10:11,975
+and now this line is blue.
+
+227
+00:10:11,975 --> 00:10:14,711
+This is the line we are currently running.
+
+228
+00:10:14,711 --> 00:10:18,024
+Notice how now the metrics parameter, here.
+
+229
+00:10:18,024 --> 00:10:20,469
+We also get the contents of it.
+
+230
+00:10:20,469 --> 00:10:22,886
+Clicks is 61 and hits is 100.
+
+231
+00:10:24,951 --> 00:10:28,266
+For me, this is as far as I would have to go,
+
+232
+00:10:28,266 --> 00:10:30,775
+of course, before noticing that clicks and click
+
+233
+00:10:30,775 --> 00:10:34,412
+are completely different strings, there's an s missing there
+
+234
+00:10:34,412 --> 00:10:36,425
+So then you would just change this to an s
+
+235
+00:10:36,425 --> 00:10:38,483
+and you would rerun the programme.
+
+236
+00:10:38,483 --> 00:10:40,767
+Change it to an s, notice how now that disappears
+
+237
+00:10:40,767 --> 00:10:42,706
+because we've made a change.
+
+238
+00:10:42,706 --> 00:10:45,199
+You can just rerun the programme by
+
+239
+00:10:45,199 --> 00:10:48,366
+pressing this button here on the left.
+
+240
+00:10:51,097 --> 00:10:55,491
+Now we are back at our perform calculation break point.
+
+241
+00:10:55,491 --> 00:10:59,402
+We can step over, in order to move over to the next line
+
+242
+00:10:59,402 --> 00:11:03,474
+and now we know that we should move into the else line.
+
+243
+00:11:03,474 --> 00:11:04,875
+That's what happens indeed
+
+244
+00:11:04,875 --> 00:11:06,522
+because there is nothing there on the else,
+
+245
+00:11:06,522 --> 00:11:07,710
+it just moves on to the next line
+
+246
+00:11:07,710 --> 00:11:11,743
+that actually does something which is this if.
+
+247
+00:11:11,743 --> 00:11:14,168
+Now here, we've got the user.score,
+
+248
+00:11:14,168 --> 00:11:16,334
+which was set by this line above.
+
+249
+00:11:16,334 --> 00:11:21,334
+If we open up user, we can see that the score is 505.
+
+250
+00:11:21,454 --> 00:11:24,477
+So my 502 earlier on was completely wrong.
+
+251
+00:11:24,477 --> 00:11:27,301
+It's 505 but it is greater than 500,
+
+252
+00:11:27,301 --> 00:11:29,053
+so once again, we can step over
+
+253
+00:11:29,053 --> 00:11:32,113
+and that will take us into the next line in this function
+
+254
+00:11:32,113 --> 00:11:34,395
+which is send engagement notification.
+
+255
+00:11:34,395 --> 00:11:35,926
+Now that we're here, we know that
+
+256
+00:11:35,926 --> 00:11:38,759
+we are going to send the engagement notification
+
+257
+00:11:38,759 --> 00:11:42,189
+because this is the function that is about to run.
+
+258
+00:11:42,189 --> 00:11:47,189
+If you want, you can step into and that takes you into
+
+259
+00:11:47,398 --> 00:11:49,717
+the send engagement notification function.
+
+260
+00:11:49,717 --> 00:11:52,262
+Potentially, if this was doing something more interesting
+
+261
+00:11:52,262 --> 00:11:54,954
+you could, of course, have a look at it.
+
+262
+00:11:54,954 --> 00:11:58,245
+If you want, you can select this f string entirely.
+
+263
+00:11:58,245 --> 00:12:01,333
+You can run the calculator and evaluate it
+
+264
+00:12:01,333 --> 00:12:03,576
+and see what it's going to give you.
+
+265
+00:12:03,576 --> 00:12:08,576
+This is totally fine and a lot a lot of the development
+
+266
+00:12:08,729 --> 00:12:12,436
+is happening on the debugger when I'm at work.
+
+267
+00:12:12,436 --> 00:12:14,664
+You're constantly, sort of, debugging
+
+268
+00:12:14,664 --> 00:12:17,023
+and making small changes running the calculator
+
+269
+00:12:17,023 --> 00:12:20,405
+to see exactly what do I want to include in this function.
+
+270
+00:12:20,405 --> 00:12:22,466
+Once you figure it out with the calculator,
+
+271
+00:12:22,466 --> 00:12:27,148
+just put it in and that simplifies development quite a bit.
+
+272
+00:12:27,148 --> 00:12:30,211
+By the way, this button here is step out.
+
+273
+00:12:30,211 --> 00:12:33,770
+It takes you to whatever function called you
+
+274
+00:12:33,770 --> 00:12:35,034
+where you are right now.
+
+275
+00:12:35,034 --> 00:12:37,587
+So if you step out, now you are here.
+
+276
+00:12:37,587 --> 00:12:39,318
+But this function has already ran,
+
+277
+00:12:39,318 --> 00:12:40,552
+so that is important.
+
+278
+00:12:40,552 --> 00:12:43,220
+Now, in this line you are after the function.
+
+279
+00:12:43,220 --> 00:12:45,151
+Not before it.
+
+280
+00:12:45,151 --> 00:12:46,784
+So if you were to step over,
+
+281
+00:12:46,784 --> 00:12:49,517
+now you would exit the function entirely.
+
+282
+00:12:49,517 --> 00:12:52,826
+Then you go back to right after the function
+
+283
+00:12:52,826 --> 00:12:55,945
+that you called which brought you into there.
+
+284
+00:12:55,945 --> 00:12:58,336
+I'm going to remove this break point, by the way.
+
+285
+00:12:58,336 --> 00:13:00,734
+So now we are after this function.
+
+286
+00:13:00,734 --> 00:13:04,449
+If we press step over we are going to end the programme.
+
+287
+00:13:04,449 --> 00:13:06,945
+As you can see all the blue lines that appear
+
+288
+00:13:06,945 --> 00:13:08,671
+and now we see, in the console,
+
+289
+00:13:08,671 --> 00:13:12,254
+the notification that was sent to our user.
+
+290
+00:13:13,909 --> 00:13:15,802
+Once again, I'm just going to debug the programme
+
+291
+00:13:15,802 --> 00:13:17,013
+with he break point
+
+292
+00:13:17,013 --> 00:13:19,436
+to give you an overview of what we've seen.
+
+293
+00:13:19,436 --> 00:13:22,053
+What we have seen is that we can set break points
+
+294
+00:13:22,053 --> 00:13:26,662
+and that causes a programme to stop when we are in debug mode,
+
+295
+00:13:26,662 --> 00:13:29,477
+not when we are in normal play mode.
+
+296
+00:13:29,477 --> 00:13:31,264
+If you are in normal play mode,
+
+297
+00:13:31,264 --> 00:13:33,218
+break points are going to be ignored.
+
+298
+00:13:33,218 --> 00:13:35,284
+You can set a break point by clicking the line
+
+299
+00:13:35,284 --> 00:13:37,754
+and that's going to stop your programme there.
+
+300
+00:13:37,754 --> 00:13:40,046
+You've got access to all of the variables
+
+301
+00:13:40,046 --> 00:13:41,533
+in the current scope.
+
+302
+00:13:41,533 --> 00:13:43,726
+Pycharm is nice enough to give you their values there.
+
+303
+00:13:43,726 --> 00:13:48,457
+But you can also see them down here in the variables tab.
+
+304
+00:13:48,457 --> 00:13:51,949
+You can open them up and have a look at them and so forth.
+
+305
+00:13:51,949 --> 00:13:54,201
+You've got the calculator icon,
+
+306
+00:13:54,201 --> 00:13:59,201
+on which you can run any arbitrary python function you want.
+
+307
+00:13:59,248 --> 00:14:02,041
+Or indeed, you can just look at values of things,
+
+308
+00:14:02,041 --> 00:14:03,217
+like you can type user
+
+309
+00:14:03,217 --> 00:14:05,487
+and that's going to give you the user values.
+
+310
+00:14:05,487 --> 00:14:08,728
+You can also modify the values, if you want.
+
+311
+00:14:08,728 --> 00:14:11,561
+You can say user.score equals 200.
+
+312
+00:14:12,733 --> 00:14:14,519
+This returns none but now you can see,
+
+313
+00:14:14,519 --> 00:14:15,958
+down here in your variable,
+
+314
+00:14:15,958 --> 00:14:18,679
+that your user variable now has a score of 200.
+
+315
+00:14:18,679 --> 00:14:20,981
+It is blue to tell you its just changed
+
+316
+00:14:20,981 --> 00:14:23,654
+between now and the last time
+
+317
+00:14:23,654 --> 00:14:27,149
+you pressed one of these buttons.
+
+318
+00:14:27,149 --> 00:14:29,520
+Down here, you've got your threads.
+
+319
+00:14:29,520 --> 00:14:31,534
+I wouldn't worry too much about this,
+
+320
+00:14:31,534 --> 00:14:34,951
+it's just the trace of where you've been.
+
+321
+00:14:36,154 --> 00:14:38,987
+You entered this function in here.
+
+322
+00:14:40,413 --> 00:14:42,027
+This is the function that called
+
+323
+00:14:42,027 --> 00:14:44,729
+the function you're currently in.
+
+324
+00:14:44,729 --> 00:14:48,522
+This here is the function that called your file.
+
+325
+00:14:48,522 --> 00:14:50,267
+This here is the function that called
+
+326
+00:14:50,267 --> 00:14:53,901
+the function that called the your file and so forth.
+
+327
+00:14:53,901 --> 00:14:55,548
+As you can see, python, here,
+
+328
+00:14:55,548 --> 00:14:57,482
+these with the yellow background, by the way,
+
+329
+00:14:57,482 --> 00:14:59,365
+are the ones that you didn't write.
+
+330
+00:14:59,365 --> 00:15:00,788
+These are python.
+
+331
+00:15:00,788 --> 00:15:02,876
+There is something here about setting up a debugger
+
+332
+00:15:02,876 --> 00:15:04,342
+and running it and so forth.
+
+333
+00:15:04,342 --> 00:15:05,488
+Nothing you have to worry about.
+
+334
+00:15:05,488 --> 00:15:06,638
+But, nonetheless,
+
+335
+00:15:06,638 --> 00:15:09,813
+these things are what called your file originally.
+
+336
+00:15:09,813 --> 00:15:10,990
+You'll normally be interested
+
+337
+00:15:10,990 --> 00:15:12,730
+only on the ones with a white background
+
+338
+00:15:12,730 --> 00:15:14,006
+that's these two.
+
+339
+00:15:14,006 --> 00:15:17,923
+This is the first line that ran in your programme
+
+340
+00:15:17,923 --> 00:15:20,468
+related to where you are now.
+
+341
+00:15:20,468 --> 00:15:24,510
+And this is the second line, the one where you are now.
+
+342
+00:15:24,510 --> 00:15:26,983
+Of course, we've looked at restarting,
+
+343
+00:15:26,983 --> 00:15:29,510
+continuing, which goes on to the next break point,
+
+344
+00:15:29,510 --> 00:15:32,485
+if there is one, or run until the programme finishes.
+
+345
+00:15:32,485 --> 00:15:33,866
+You can, of course, stop
+
+346
+00:15:33,866 --> 00:15:36,197
+and that just terminates your programme.
+
+347
+00:15:36,197 --> 00:15:37,143
+You can step over,
+
+348
+00:15:37,143 --> 00:15:39,620
+which goes onto the next line in this function.
+
+349
+00:15:39,620 --> 00:15:40,841
+You can step into,
+
+350
+00:15:40,841 --> 00:15:43,191
+which goes into the next function that runs,
+
+351
+00:15:43,191 --> 00:15:45,231
+in this case, perform calculation.
+
+352
+00:15:45,231 --> 00:15:48,514
+And you can step out and that brings you from a function
+
+353
+00:15:48,514 --> 00:15:52,489
+out into the function that called you right after it.
+
+354
+00:15:52,489 --> 00:15:53,873
+There's a few more buttons there,
+
+355
+00:15:53,873 --> 00:15:55,505
+feel free to experiment with them.
+
+356
+00:15:55,505 --> 00:15:57,752
+Its nothing that you have to worry too much about,
+
+357
+00:15:57,752 --> 00:15:59,406
+those are really the main ones.
+
+358
+00:15:59,406 --> 00:16:03,235
+When you are debugging, make sure to go slowly.
+
+359
+00:16:03,235 --> 00:16:06,159
+Set break points, look at values,
+
+360
+00:16:06,159 --> 00:16:07,957
+run functions to make sure
+
+361
+00:16:07,957 --> 00:16:10,510
+that they are doing what you expect.
+
+362
+00:16:10,510 --> 00:16:13,001
+That way, you're going to be able to deal with errors
+
+363
+00:16:13,001 --> 00:16:17,468
+and any problems in your programmes, really really easily.
+
+364
+00:16:17,468 --> 00:16:20,485
+Most of the time is spent debugging.
+
+365
+00:16:20,485 --> 00:16:21,975
+Just remember that.
+
+366
+00:16:21,975 --> 00:16:24,504
+Don't treat this as a secondary thing
+
+367
+00:16:24,504 --> 00:16:26,356
+that you only do when you're in trouble.
+
+368
+00:16:26,356 --> 00:16:29,996
+Use it and love it and I promise it will pay off.
+
+369
+00:16:29,996 --> 00:16:31,143
+So that's it for this video,
+
+370
+00:16:31,143 --> 00:16:35,161
+I just wanted to show you how to debug using pycharm.
+
+371
+00:16:35,161 --> 00:16:37,590
+So. I'll see you on the next one.
+

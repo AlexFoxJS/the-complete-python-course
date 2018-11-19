@@ -1,0 +1,340 @@
+1
+00:00:00,080 --> 00:00:01,170
+Instructor: Hola y bienvenido de nuevo.
+
+2
+00:00:01,170 --> 00:00:02,390
+En este video
+
+3
+00:00:02,390 --> 00:00:05,560
+estamos hablando de decorar funciones que tienen parmetros.
+
+4
+00:00:06,480 --> 00:00:08,640
+Vimos esto en el ltimo video
+
+5
+00:00:08,640 --> 00:00:11,760
+y, una vez ms, recapitulamos qu est pasando aqu.
+
+6
+00:00:11,760 --> 00:00:13,960
+Tenemos una funcin que devuelve Contrasea
+
+7
+00:00:13,960 --> 00:00:16,910
+para el panel de administracin es 1234 y
+
+8
+00:00:16,910 --> 00:00:19,450
+esa funcin no tiene ningn parmetro.
+
+9
+00:00:20,520 --> 00:00:24,220
+Luego lo decoramos con el usuario tiene el
+
+10
+00:00:24,220 --> 00:00:28,590
+decorador de permisos y lo que sucede entonces es
+
+11
+00:00:29,440 --> 00:00:34,440
+esencialmente esto, mi funcin, igual, el usuario tiene permiso, mi funcin.
+
+12
+00:00:36,950 --> 00:00:40,050
+Correcto, entonces esta funcin ahora se modifica
+
+13
+00:00:40,050 --> 00:00:44,360
+y se convierte en esta funcin func segura, que
+
+14
+00:00:45,420 --> 00:00:49,600
+es lo que devuelve el decorador, el func seguro.
+
+15
+00:00:49,600 --> 00:00:51,430
+Esa funcin segura, sin embargo,
+
+16
+00:00:51,430 --> 00:00:55,680
+obtiene el nombre y la cadena de documentacin de la funcin original en
+
+17
+00:00:55,680 --> 00:00:58,330
+virtud de estos functools. envolturas.
+
+18
+00:00:59,820 --> 00:01:01,150
+Puede ver, sin embargo,
+
+19
+00:01:01,150 --> 00:01:04,780
+que cuando llamamos a la funcin original, eso es func, esa
+
+20
+00:01:04,780 --> 00:01:06,750
+es la funcin original que pasamos,
+
+21
+00:01:06,750 --> 00:01:08,560
+la que queremos reemplazar, no
+
+22
+00:01:08,560 --> 00:01:10,290
+hay nada dentro de los
+
+23
+00:01:10,290 --> 00:01:13,070
+corchetes, por lo que no hay parmetros entre corchetes.
+
+24
+00:01:15,300 --> 00:01:18,740
+Si, por el contrario, cambiamos mi funcin para
+
+25
+00:01:18,740 --> 00:01:22,240
+que sea, algo as como el panel aqu
+
+26
+00:01:25,070 --> 00:01:29,630
+y decimos que la contrasea para cualquier panel que pasemos es
+
+27
+00:01:31,050 --> 00:01:35,030
+1234, entonces necesitamos llamar a la funcin con un argumento.
+
+28
+00:01:35,030 --> 00:01:39,370
+Podramos decir, por ejemplo, imprimir mi funcin y pelculas.
+
+29
+00:01:43,310 --> 00:01:45,950
+Entonces sera mi funcin, pelculas.
+
+30
+00:01:45,950 --> 00:01:49,000
+Las pelculas entraran en el panel e imprimiramos
+
+31
+00:01:49,000 --> 00:01:52,620
+la contrasea para el panel de pelculas en 1234.
+
+32
+00:01:52,620 --> 00:01:54,300
+Todo esto tiene sentido,
+
+33
+00:01:54,300 --> 00:01:57,310
+pero debemos recordar, sin embargo, que esta
+
+34
+00:01:59,290 --> 00:02:02,380
+funcin es reemplazada por esta funcin segura.
+
+35
+00:02:04,660 --> 00:02:06,810
+Este func seguro hereda
+
+36
+00:02:06,810 --> 00:02:10,120
+todo de la funcin original, pero
+
+37
+00:02:10,120 --> 00:02:13,610
+cuando llamamos a la funcin original,
+
+38
+00:02:15,000 --> 00:02:17,410
+no tiene ningn argumento aqu.
+
+39
+00:02:19,640 --> 00:02:21,070
+Bueno?
+
+40
+00:02:21,070 --> 00:02:23,410
+Entonces, lo que tenemos que hacer
+
+41
+00:02:23,410 --> 00:02:26,750
+es asegurarnos de que el func seguro tenga
+
+42
+00:02:28,260 --> 00:02:33,260
+un parmetro, de modo que cuando lo llamemos aqu, pueda aceptar el parmetro,
+
+43
+00:02:34,632 --> 00:02:36,970
+puede aceptar el argumento, lo siento.
+
+44
+00:02:36,970 --> 00:02:40,640
+De nuevo, mi funcin ahora es funcin segura.
+
+45
+00:02:41,630 --> 00:02:44,000
+Si el func seguro no tiene un parmetro, no
+
+46
+00:02:44,000 --> 00:02:46,250
+podemos llamar a la funcin con un parmetro.
+
+47
+00:02:47,790 --> 00:02:50,110
+Sin embargo, cuando llamamos a
+
+48
+00:02:50,110 --> 00:02:55,000
+la funcin original, tambin debemos pasar el argumento que necesita, como tal.
+
+49
+00:02:57,130 --> 00:02:59,240
+Ahora podemos ejecutar esto, pero por
+
+50
+00:02:59,240 --> 00:03:01,320
+supuesto, recuerde cambiar el nivel de
+
+51
+00:03:01,320 --> 00:03:02,920
+acceso a administrador para que
+
+52
+00:03:04,060 --> 00:03:08,590
+haga algo, y obtenemos que la contrasea para el panel de pelculas es 1234.
+
+53
+00:03:09,620 --> 00:03:13,580
+Como puede ver, func seguro necesita el parmetro
+
+54
+00:03:13,580 --> 00:03:16,100
+para que pueda aceptar el
+
+55
+00:03:16,100 --> 00:03:20,370
+argumento y la funcin original tiene que pasar el
+
+56
+00:03:20,370 --> 00:03:23,640
+argumento, porque esa funcin tiene el parmetro
+
+57
+00:03:23,640 --> 00:03:28,410
+que necesitamos para usarlo dentro de la funcin, de acuerdo?
+
+58
+00:03:29,290 --> 00:03:31,900
+Ahora bien, el problema con esto
+
+59
+00:03:31,900 --> 00:03:35,640
+es que no puede aplicar este decorador a
+
+60
+00:03:35,640 --> 00:03:37,160
+ninguna otra funcin.
+
+61
+00:03:37,160 --> 00:03:42,160
+De nuevo, si creamos una funcin llamada otra,
+
+62
+00:03:42,970 --> 00:03:46,140
+esa respuesta es Hello, por
+
+63
+00:03:46,140 --> 00:03:50,110
+ejemplo, no podemos aplicarle este decorador.
+
+64
+00:03:51,570 --> 00:03:53,730
+No podemos hacer eso porque
+
+65
+00:03:53,730 --> 00:03:57,470
+el decorador va a pasar el argumento del panel,
+
+66
+00:03:57,470 --> 00:04:00,610
+pero la otra funcin no podr recibirlo.
+
+67
+00:04:01,450 --> 00:04:03,590
+De hecho, si usamos esto,
+
+68
+00:04:06,540 --> 00:04:08,410
+vers que obtenemos un error.
+
+69
+00:04:08,410 --> 00:04:11,870
+Y esto dice, demasiadas cosas.
+
+70
+00:04:13,270 --> 00:04:16,430
+Si pasamos aqu un argumento, obtenemos un error
+
+71
+00:04:16,430 --> 00:04:17,750
+diferente que dice:
+
+72
+00:04:17,750 --> 00:04:21,300
+otro toma cero argumentos posicionales, pero uno fue dado.
+
+73
+00:04:21,300 --> 00:04:24,240
+El error anterior fue porque no pasamos el
+
+74
+00:04:24,240 --> 00:04:26,370
+parmetro que el func seguro necesita.
+
+75
+00:04:26,370 --> 00:04:28,840
+As que aqu tenemos el error de que otro,
+
+76
+00:04:28,840 --> 00:04:30,560
+no toma ningn argumento, pero le
+
+77
+00:04:30,560 --> 00:04:32,450
+diste uno, entonces, qu ests haciendo?
+
+78
+00:04:32,450 --> 00:04:33,920
+As que esto no
+
+79
+00:04:33,920 --> 00:04:37,180
+es genial porque el decorador ahora funciona para nuestra
+
+80
+00:04:37,180 --> 00:04:39,570
+funcin, pero no funciona para otra funcin.
+
+81
+00:04:39,570 --> 00:04:43,950
+Quisiramos, idealmente, hacer que nuestros decoradores sean ms
+
+82
+00:04:43,950 --> 00:04:48,950
+genricos, para que podamos usarlos en cualquier funcin que queramos.
+
+83
+00:04:49,060 --> 00:04:51,360
+Y vamos a aprender eso, cmo
+
+84
+00:04:51,360 --> 00:04:53,160
+hacerlo, en los prximos videos.
+
+85
+00:04:53,160 --> 00:04:55,560
+Entonces con eso dicho, te ver en el prximo.
+

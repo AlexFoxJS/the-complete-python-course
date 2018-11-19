@@ -1,0 +1,260 @@
+1
+00:00:00,319 --> 00:00:01,386
+<v ->Hi and welcome back.</v>
+
+2
+00:00:01,386 --> 00:00:04,423
+In this video, we're going to be installing PyCharm.
+
+3
+00:00:04,423 --> 00:00:07,293
+PyCharm is a Python editor.
+
+4
+00:00:07,293 --> 00:00:10,203
+It's a programme that lets us write our Python code
+
+5
+00:00:10,203 --> 00:00:13,919
+and run it and add other files to a project
+
+6
+00:00:13,919 --> 00:00:16,643
+and, you know, do a bunch of stuff.
+
+7
+00:00:16,643 --> 00:00:18,223
+But it's just an editor.
+
+8
+00:00:18,223 --> 00:00:20,455
+It just lets us write the code
+
+9
+00:00:20,455 --> 00:00:23,334
+and gives us a few more pieces of functionality.
+
+10
+00:00:23,334 --> 00:00:26,151
+You don't have to use PyCharm if you don't want.
+
+11
+00:00:26,151 --> 00:00:29,408
+You can use any text editor, it's just Notepad
+
+12
+00:00:29,408 --> 00:00:33,030
+on Windows or Notepad++ if you have installed that.
+
+13
+00:00:33,030 --> 00:00:35,566
+You can use Atom or Visual Studio Code,
+
+14
+00:00:35,566 --> 00:00:38,019
+you can use Sublime Text, you can use TextMate.
+
+15
+00:00:38,019 --> 00:00:40,299
+There's a lot of editors you can use out there
+
+16
+00:00:40,299 --> 00:00:44,024
+if for some reason you don't want to use PyCharm.
+
+17
+00:00:44,024 --> 00:00:47,584
+However, I'm assuming you're a beginner in Python,
+
+18
+00:00:47,584 --> 00:00:52,119
+and if so, I really recommend that you go for PyCharm.
+
+19
+00:00:52,119 --> 00:00:55,538
+It is the best editor for starting up with.
+
+20
+00:00:55,538 --> 00:00:57,626
+It gives you a lot of bang for your buck,
+
+21
+00:00:57,626 --> 00:01:00,658
+it does a lot of stuff for you and it's really helpful.
+
+22
+00:01:00,658 --> 00:01:01,961
+So I definitely recommend that.
+
+23
+00:01:01,961 --> 00:01:04,159
+And also, as you get better at Python,
+
+24
+00:01:04,159 --> 00:01:06,018
+you'll discover that PyCharm does more and more things
+
+25
+00:01:06,018 --> 00:01:07,708
+that you didn't know about before
+
+26
+00:01:07,708 --> 00:01:09,296
+that will keep making your life easy.
+
+27
+00:01:09,296 --> 00:01:12,528
+I use PyCharm at work and I recommend it for you too.
+
+28
+00:01:12,528 --> 00:01:14,591
+Anyway, that's enough of the sales pitch.
+
+29
+00:01:14,591 --> 00:01:16,426
+Don't worry, this thing is free
+
+30
+00:01:16,426 --> 00:01:18,400
+so you don't have to pay anything.
+
+31
+00:01:18,400 --> 00:01:20,983
+Go over to "www.jetbrains.com"
+
+32
+00:01:22,138 --> 00:01:27,098
+and then lets go over to Tools and find PyCharm here.
+
+33
+00:01:27,098 --> 00:01:29,252
+And notice how JetBrains has a bunch of other IDEs
+
+34
+00:01:29,252 --> 00:01:31,198
+for different programming languages.
+
+35
+00:01:31,198 --> 00:01:32,793
+You don't want to instal any of them
+
+36
+00:01:32,793 --> 00:01:35,160
+other than PyCharm, unless of course you are
+
+37
+00:01:35,160 --> 00:01:38,090
+doing some work in other languages as well.
+
+38
+00:01:38,090 --> 00:01:40,576
+So let's go into the PyCharm page
+
+39
+00:01:40,576 --> 00:01:43,552
+and then you'll be greeted with two options.
+
+40
+00:01:43,552 --> 00:01:47,104
+When you, well, first of all, press "Download Now" here,
+
+41
+00:01:47,104 --> 00:01:49,892
+and now you are greeted with two options,
+
+42
+00:01:49,892 --> 00:01:52,059
+Professional or Community.
+
+43
+00:01:53,599 --> 00:01:56,624
+Now, select the operating system that you want.
+
+44
+00:01:56,624 --> 00:01:58,521
+If you are using Windows, then go for Windows.
+
+45
+00:01:58,521 --> 00:02:02,914
+And otherwise select the other operating systems there.
+
+46
+00:02:02,914 --> 00:02:06,157
+And then make sure you go for Community edition.
+
+47
+00:02:06,157 --> 00:02:09,171
+Okay, this is free, completely free software,
+
+48
+00:02:09,171 --> 00:02:11,766
+as in you don't have to pay anything for it.
+
+49
+00:02:11,766 --> 00:02:14,734
+If you use the Professional edition, that's a free trial.
+
+50
+00:02:14,734 --> 00:02:17,818
+So after a month, I think, you'll be asked to pay.
+
+51
+00:02:17,818 --> 00:02:19,901
+So go and download the Community edition,
+
+52
+00:02:19,901 --> 00:02:22,767
+that's the version we're using in this course.
+
+53
+00:02:22,767 --> 00:02:26,252
+Of course if you're working for a company and they pay,
+
+54
+00:02:26,252 --> 00:02:27,871
+I recommend you use the Professional edition.
+
+55
+00:02:27,871 --> 00:02:30,152
+It does give you a few more things,
+
+56
+00:02:30,152 --> 00:02:32,447
+particularly as you go into web development
+
+57
+00:02:32,447 --> 00:02:34,682
+which is a key use case for Python.
+
+58
+00:02:34,682 --> 00:02:36,853
+And we'll look at that later on in the course.
+
+59
+00:02:36,853 --> 00:02:39,251
+But for now, download the Community edition,
+
+60
+00:02:39,251 --> 00:02:41,842
+instal it like any good old normal programme,
+
+61
+00:02:41,842 --> 00:02:44,328
+and then you'll be able to launch it.
+
+62
+00:02:44,328 --> 00:02:47,396
+Now, in the next video, we'll launch PyCharm
+
+63
+00:02:47,396 --> 00:02:49,456
+and we're going to look at joining PyCharm
+
+64
+00:02:49,456 --> 00:02:53,311
+with the Python version we've just installed, Python 3.6.
+
+65
+00:02:53,311 --> 00:02:56,023
+So let's go on to the next video and look at that.
+

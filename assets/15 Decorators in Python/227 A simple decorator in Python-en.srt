@@ -1,0 +1,452 @@
+1
+00:00:00,120 --> 00:00:01,310
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,310 --> 00:00:04,410
+Let's look at decorators in Python.
+
+3
+00:00:04,410 --> 00:00:07,180
+In this video, we're going to look at simple decorators
+
+4
+00:00:07,180 --> 00:00:10,080
+and then we're going to move onto more complicated things.
+
+5
+00:00:11,000 --> 00:00:14,040
+Decorators are higher-order functions,
+
+6
+00:00:14,040 --> 00:00:15,260
+remember that those are functions
+
+7
+00:00:15,260 --> 00:00:18,700
+which take other functions as arguments,
+
+8
+00:00:18,700 --> 00:00:21,130
+and decorators return a function,
+
+9
+00:00:22,110 --> 00:00:24,460
+so this is the important thing about decorators,
+
+10
+00:00:24,460 --> 00:00:26,550
+you can have a higher-order function
+
+11
+00:00:26,550 --> 00:00:27,990
+that takes in another function
+
+12
+00:00:27,990 --> 00:00:30,299
+and does things, but it won't be a decorator
+
+13
+00:00:30,299 --> 00:00:33,300
+unless it returns a function as well.
+
+14
+00:00:35,340 --> 00:00:38,630
+Let's create a simple decorator.
+
+15
+00:00:40,980 --> 00:00:45,980
+We're gonna have a function called user has permission
+
+16
+00:00:46,070 --> 00:00:48,080
+and this is going to take a function as an argument,
+
+17
+00:00:48,080 --> 00:00:49,330
+remember it must do this,
+
+18
+00:00:50,640 --> 00:00:53,340
+and then it's going to do something like
+
+19
+00:00:57,885 --> 00:01:01,210
+if user get access level
+
+20
+00:01:03,110 --> 00:01:04,230
+is admin,
+
+21
+00:01:06,260 --> 00:01:07,420
+return func,
+
+22
+00:01:09,240 --> 00:01:11,830
+otherwise it's gonna raise our runtime error,
+
+23
+00:01:11,830 --> 00:01:13,380
+let's see,
+
+24
+00:01:13,380 --> 00:01:16,580
+of course we're gonna need to call this function
+
+25
+00:01:16,580 --> 00:01:20,230
+so let's do that, let's create a function called
+
+26
+00:01:20,230 --> 00:01:22,920
+my function that says return password
+
+27
+00:01:22,920 --> 00:01:26,060
+for admin panel is one two three four,
+
+28
+00:01:26,060 --> 00:01:29,170
+not a great password and then we'll say
+
+29
+00:01:29,170 --> 00:01:34,170
+my secure function is user has permission
+
+30
+00:01:35,410 --> 00:01:36,780
+of my function.
+
+31
+00:01:40,120 --> 00:01:43,640
+We need to create our user variable so let's do that,
+
+32
+00:01:43,640 --> 00:01:48,260
+user equal username, no sorry,
+
+33
+00:01:48,260 --> 00:01:52,500
+username is Jose one two three
+
+34
+00:01:52,500 --> 00:01:55,810
+and the access level is going to be admin.
+
+35
+00:01:58,470 --> 00:01:59,750
+Okay, so what we've done here
+
+36
+00:01:59,750 --> 00:02:01,850
+is we've created a user dictionary
+
+37
+00:02:01,850 --> 00:02:05,030
+that has two properties, username and access level.
+
+38
+00:02:05,030 --> 00:02:07,090
+We have a function called my function
+
+39
+00:02:07,090 --> 00:02:10,280
+that just returns the password for the admin panel,
+
+40
+00:02:10,280 --> 00:02:12,440
+not sure if this would be a function you'd have
+
+41
+00:02:12,440 --> 00:02:14,030
+in your programmes, but nonetheless,
+
+42
+00:02:14,030 --> 00:02:16,500
+this is just an example,
+
+43
+00:02:16,500 --> 00:02:21,210
+and finally we have this decorator, user has permission.
+
+44
+00:02:21,210 --> 00:02:23,940
+This takes in a function, in this case,
+
+45
+00:02:23,940 --> 00:02:27,500
+it's gonna take my function which returns the admin panel
+
+46
+00:02:27,500 --> 00:02:31,690
+and if the user's access level is equal to admin,
+
+47
+00:02:31,690 --> 00:02:33,550
+it's gonna return that function
+
+48
+00:02:33,550 --> 00:02:35,840
+and if not, it's gonna raise a runtime error.
+
+49
+00:02:35,840 --> 00:02:37,290
+Not the best error to be raising here,
+
+50
+00:02:37,290 --> 00:02:38,990
+but again this is just an example.
+
+51
+00:02:41,894 --> 00:02:45,010
+So, my secure function run it
+
+52
+00:02:46,700 --> 00:02:49,790
+and of course this is gonna return a password
+
+53
+00:02:49,790 --> 00:02:51,980
+so we're gonna have to print it out.
+
+54
+00:02:57,820 --> 00:02:59,330
+And as you can see, we get that the password
+
+55
+00:02:59,330 --> 00:03:01,820
+for the admin panel is one two three four.
+
+56
+00:03:03,150 --> 00:03:06,880
+What if the access level was something else like guest?
+
+57
+00:03:06,880 --> 00:03:08,730
+What do you think is going to happen?
+
+58
+00:03:11,050 --> 00:03:13,700
+Well, as you would imagine, the access level
+
+59
+00:03:13,700 --> 00:03:17,020
+was not admin so we raised a runtime error.
+
+60
+00:03:17,020 --> 00:03:19,530
+Ideal thing to do here would be to create your own error
+
+61
+00:03:19,530 --> 00:03:23,250
+like not enough access error
+
+62
+00:03:23,250 --> 00:03:26,420
+or user access error or something like that,
+
+63
+00:03:26,420 --> 00:03:29,190
+and raise that instead, but as you can see
+
+64
+00:03:29,190 --> 00:03:32,850
+this is a decorator, a decorator is just a function
+
+65
+00:03:32,850 --> 00:03:36,640
+that returns another function
+
+66
+00:03:36,640 --> 00:03:38,680
+and takes in one as an argument.
+
+67
+00:03:41,160 --> 00:03:44,120
+Normally, the way you'll see a decorator created
+
+68
+00:03:44,120 --> 00:03:46,740
+is a little bit different than this,
+
+69
+00:03:46,740 --> 00:03:51,540
+you'll see that you define a function inside a secure func
+
+70
+00:03:52,840 --> 00:03:56,800
+and this function is the one that is going to
+
+71
+00:03:58,590 --> 00:04:03,590
+check this and actually run the inner function there
+
+72
+00:04:04,850 --> 00:04:09,840
+and then you're always going to return secure func.
+
+73
+00:04:11,480 --> 00:04:13,830
+Slightly different way of doing things,
+
+74
+00:04:13,830 --> 00:04:15,850
+now you define a function
+
+75
+00:04:15,850 --> 00:04:18,730
+and that function is the one that checks the access level
+
+76
+00:04:18,730 --> 00:04:21,300
+and then returns whatever the result is
+
+77
+00:04:21,300 --> 00:04:23,930
+from running the original function, my function.
+
+78
+00:04:24,860 --> 00:04:28,250
+Then, this user has permission returns secure func
+
+79
+00:04:29,400 --> 00:04:34,400
+so when you call this what you get back is secure func,
+
+80
+00:04:36,540 --> 00:04:39,410
+so my secure function will now be equal
+
+81
+00:04:39,410 --> 00:04:41,360
+to this function here.
+
+82
+00:04:42,400 --> 00:04:45,580
+Secure func, when you run my secure function,
+
+83
+00:04:45,580 --> 00:04:48,130
+you're running this thing, if user level,
+
+84
+00:04:48,130 --> 00:04:50,060
+if user get access level is admin,
+
+85
+00:04:50,060 --> 00:04:51,420
+and then that's gonna return,
+
+86
+00:04:51,420 --> 00:04:54,370
+running the original function in there,
+
+87
+00:04:54,370 --> 00:04:57,400
+so again if we run this, we now get none
+
+88
+00:04:57,400 --> 00:05:00,780
+because the access level was not admin
+
+89
+00:05:00,780 --> 00:05:04,150
+and our function doesn't return anything
+
+90
+00:05:04,150 --> 00:05:05,140
+so it returns none.
+
+91
+00:05:06,300 --> 00:05:08,430
+If we make it admin, now this function
+
+92
+00:05:08,430 --> 00:05:10,790
+is going to return the result of running func
+
+93
+00:05:10,790 --> 00:05:12,390
+which is this.
+
+94
+00:05:13,904 --> 00:05:14,954
+And there we have it.
+
+95
+00:05:15,820 --> 00:05:18,880
+So this is the sort of normal way of running
+
+96
+00:05:18,880 --> 00:05:21,600
+or creating a decorator, okay?
+
+97
+00:05:22,500 --> 00:05:26,350
+And whenever you want to make a function sort of secure now
+
+98
+00:05:26,350 --> 00:05:28,140
+all you have to do is wrap it
+
+99
+00:05:28,140 --> 00:05:31,860
+with this decorator, user has permission
+
+100
+00:05:31,860 --> 00:05:35,550
+and then your function will become secure essentially,
+
+101
+00:05:35,550 --> 00:05:38,150
+you're now checking whether the access level is correct
+
+102
+00:05:38,150 --> 00:05:40,430
+before you execute the function.
+
+103
+00:05:41,480 --> 00:05:42,580
+There are a couple of problems
+
+104
+00:05:42,580 --> 00:05:45,260
+which we're gonna look at in the very next video,
+
+105
+00:05:45,260 --> 00:05:46,830
+well in the next few videos in fact,
+
+106
+00:05:46,830 --> 00:05:48,400
+which are that, for example,
+
+107
+00:05:48,400 --> 00:05:51,900
+you still got my function and now you have
+
+108
+00:05:51,900 --> 00:05:54,200
+a separate function called my secure function.
+
+109
+00:05:55,120 --> 00:05:57,500
+You could run my function and then anybody could
+
+110
+00:05:57,500 --> 00:05:59,790
+have access to the admin panel.
+
+111
+00:05:59,790 --> 00:06:01,520
+So there's a couple issues with this code,
+
+112
+00:06:01,520 --> 00:06:04,310
+we're gonna be solving them throughout the section.
+
+113
+00:06:04,310 --> 00:06:06,810
+So with that said, I'll see you on the next video.
+

@@ -1,0 +1,1416 @@
+1
+00:00:00,080 --> 00:00:01,270
+Instrutor: Ol, e bem vindo de volta.
+
+2
+00:00:01,270 --> 00:00:04,120
+Vamos examinar a excluso de ns de uma rvore
+
+3
+00:00:04,120 --> 00:00:05,963
+binria quando eles tiverem dois filhos.
+
+4
+00:00:07,120 --> 00:00:10,750
+Ento, quando o n to_delete tem dois
+
+5
+00:00:10,750 --> 00:00:14,350
+filhos, devemos fazer algo um pouco especial.
+
+6
+00:00:14,350 --> 00:00:16,543
+Deixe-me trazer meu diagrama novamente.
+
+7
+00:00:17,440 --> 00:00:20,190
+J vimos isso antes, apenas uma rpida recapitulao.
+
+8
+00:00:20,190 --> 00:00:22,663
+Digamos que queremos excluir o n nove.
+
+9
+00:00:23,690 --> 00:00:24,780
+O que
+
+10
+00:00:24,780 --> 00:00:29,720
+devemos fazer  encontrar o n mais  direita no ramo
+
+11
+00:00:29,720 --> 00:00:32,500
+esquerdo, ento oito, ou, se preferir,
+
+12
+00:00:32,500 --> 00:00:36,190
+o n mais  esquerda no ramo direito, 11.
+
+13
+00:00:36,190 --> 00:00:38,929
+Porque codificamos um find_rightmost, vamos nos
+
+14
+00:00:38,929 --> 00:00:40,130
+ater a isso.
+
+15
+00:00:40,130 --> 00:00:42,530
+Ns vamos usar oito, neste caso, mas
+
+16
+00:00:42,530 --> 00:00:44,300
+voc pode usar 11 se
+
+17
+00:00:44,300 --> 00:00:48,063
+preferir, ento vamos encontrar o n mais  direita no ramo esquerdo.
+
+18
+00:00:48,940 --> 00:00:52,440
+Ns tambm precisaremos de seu pai, porque
+
+19
+00:00:52,440 --> 00:00:56,123
+o pai ter que apontar para os filhos.
+
+20
+00:00:58,090 --> 00:00:59,773
+Algo que sabemos 
+
+21
+00:01:00,810 --> 00:01:04,580
+que o n mais  direita neste ramo no
+
+22
+00:01:04,580 --> 00:01:06,323
+tem nada  sua direita.
+
+23
+00:01:07,730 --> 00:01:08,960
+Espero que isso faa sentido.
+
+24
+00:01:08,960 --> 00:01:11,140
+O n mais  direita neste
+
+25
+00:01:11,140 --> 00:01:13,060
+ramo no tem nada a sua
+
+26
+00:01:13,060 --> 00:01:16,630
+direita, porque se o fizesse, seria o mais  direita.
+
+27
+00:01:16,630 --> 00:01:19,610
+Ento, quando voc vai o mais longe
+
+28
+00:01:19,610 --> 00:01:23,693
+que pode, esse n tem zero ou um filho,
+
+29
+00:01:24,650 --> 00:01:25,613
+no dois.
+
+30
+00:01:27,629 --> 00:01:32,600
+Ento, isso  importante porque como parte da excluso de nove,
+
+31
+00:01:32,600 --> 00:01:35,210
+vamos ter que excluir oito, essencialmente.
+
+32
+00:01:35,210 --> 00:01:37,033
+Vamos subir oito aqui,
+
+33
+00:01:38,170 --> 00:01:41,540
+o que significa que sete tem que apontar
+
+34
+00:01:44,540 --> 00:01:45,890
+para c assim.
+
+35
+00:01:45,890 --> 00:01:47,600
+Ento, basicamente, ns exclumos oito
+
+36
+00:01:47,600 --> 00:01:49,070
+e, se oito tivessem
+
+37
+00:01:49,070 --> 00:01:51,660
+dois filhos, isso seria extremamente complicado, pois
+
+38
+00:01:51,660 --> 00:01:53,680
+estaramos excluindo um n de dois
+
+39
+00:01:53,680 --> 00:01:55,600
+filhos excluindo outro n de dois
+
+40
+00:01:55,600 --> 00:01:57,360
+filhos, isso  bem simples.
+
+41
+00:01:57,360 --> 00:02:01,100
+Se 7. 5 teve outros filhos, isso seria bom, porque
+
+42
+00:02:01,100 --> 00:02:02,853
+sete pontos a 7. 5,
+
+43
+00:02:02,853 --> 00:02:05,303
+7. As crianas de 5 ficam l, ento tudo bem.
+
+44
+00:02:08,314 --> 00:02:12,860
+E, claro, se oito no tem filhos, tudo bem.
+
+45
+00:02:12,860 --> 00:02:16,280
+No precisamos nos preocupar com isso, ento no h problema.
+
+46
+00:02:16,280 --> 00:02:18,270
+Vamos comear com este cenrio,
+
+47
+00:02:18,270 --> 00:02:21,270
+o cenrio em que queremos excluir, digamos nove,
+
+48
+00:02:21,270 --> 00:02:24,660
+e que tem um n nessa estrutura aqui.
+
+49
+00:02:24,660 --> 00:02:26,260
+Ento, a primeira coisa que
+
+50
+00:02:27,500 --> 00:02:30,860
+temos que fazer  ver se o n que queremos excluir
+
+51
+00:02:30,860 --> 00:02:33,663
+est  esquerda ou  direita de seu pai.
+
+52
+00:02:35,410 --> 00:02:37,560
+Ento, se to_delete
+
+53
+00:02:37,560 --> 00:02:42,060
+ igual a to_delete_parent. Esquerda, vamos dizer, eu vou apagar
+
+54
+00:02:42,060 --> 00:02:44,010
+este passe, a propsito, elif to_delete
+
+55
+00:02:45,803 --> 00:02:48,743
+ igual a to_delete_parent. certo, e claro, o que
+
+56
+00:02:51,211 --> 00:02:52,190
+acontece quando eles
+
+57
+00:02:52,190 --> 00:02:53,230
+so iguais, quando
+
+58
+00:02:53,230 --> 00:02:55,980
+voc quer apagar a raiz e tem dois filhos.
+
+59
+00:02:58,290 --> 00:03:00,130
+Agora, para todos eles,
+
+60
+00:03:00,130 --> 00:03:03,940
+vamos precisar do n mais  direita no ramo
+
+61
+00:03:03,940 --> 00:03:06,430
+esquerdo, ento vamos dizer o que
+
+62
+00:03:06,430 --> 00:03:09,580
+ mais igual. find_rightmost de
+
+63
+00:03:11,215 --> 00:03:12,715
+to_delete. esquerda, e
+
+64
+00:03:16,540 --> 00:03:18,650
+pai mais  direita vai
+
+65
+00:03:18,650 --> 00:03:20,200
+ser auto. find_parent
+
+66
+00:03:21,730 --> 00:03:26,023
+da extrema direita. valor.
+
+67
+00:03:27,800 --> 00:03:29,707
+Mais uma vez, find_parent, que
+
+68
+00:03:30,750 --> 00:03:34,200
+est aqui, recebe um valor e meio que percorre
+
+69
+00:03:34,200 --> 00:03:35,530
+a rvore e
+
+70
+00:03:35,530 --> 00:03:37,760
+nos diz qual  o valor
+
+71
+00:03:37,760 --> 00:03:39,503
+do pai que estamos procurando.
+
+72
+00:03:40,370 --> 00:03:43,660
+Ento, aqui temos o n mais  direita
+
+73
+00:03:43,660 --> 00:03:47,610
+no ramo esquerdo e tambm temos o rightmost_parent desse n.
+
+74
+00:03:47,610 --> 00:03:50,400
+Sabemos que  um n
+
+75
+00:03:51,340 --> 00:03:55,720
+mais  direita porque  um ramo esquerdo.
+
+76
+00:03:55,720 --> 00:03:57,400
+Para deletar left, retornar true,
+
+77
+00:03:57,400 --> 00:03:58,880
+ou no foi nenhum,
+
+78
+00:03:58,880 --> 00:04:01,940
+ento sabemos que isso no ser nada, ento
+
+79
+00:04:01,940 --> 00:04:03,040
+est tudo bem.
+
+80
+00:04:03,040 --> 00:04:04,410
+Acessando  direita. valor assim,
+
+81
+00:04:04,410 --> 00:04:07,360
+sem verificar ou sem pegar qualquer exceo, est bem,
+
+82
+00:04:07,360 --> 00:04:10,440
+porque na extrema direita. valor retornar algo.
+
+83
+00:04:10,440 --> 00:04:12,540
+Ns sabemos disso porque temos dois filhos.
+
+84
+00:04:15,180 --> 00:04:19,050
+Agora, se quisermos deletar algo da esquerda, o
+
+85
+00:04:19,050 --> 00:04:20,770
+que temos que fazer?
+
+86
+00:04:20,770 --> 00:04:22,820
+Vamos voltar ao diagrama.
+
+87
+00:04:22,820 --> 00:04:25,190
+Vamos dizer que queremos excluir Bem, vamos comear
+
+88
+00:04:25,190 --> 00:04:26,240
+com o caminho certo.
+
+89
+00:04:26,240 --> 00:04:27,790
+Vamos dizer que queremos deletar nove.
+
+90
+00:04:27,790 --> 00:04:32,790
+Ento, a primeira coisa que temos que fazer  descobrir oito, o
+
+91
+00:04:33,180 --> 00:04:36,490
+que fizemos, fizemos o n mais  direita.
+
+92
+00:04:36,490 --> 00:04:37,520
+Ento ns
+
+93
+00:04:37,520 --> 00:04:40,800
+temos que dizer, o n da direita
+
+94
+00:04:40,800 --> 00:04:44,650
+agora tem que ser igual a 12, certo?
+
+95
+00:04:44,650 --> 00:04:47,350
+Se oito vai substituir nove, o direito de
+
+96
+00:04:47,350 --> 00:04:51,443
+oito deve ser o que costumava ser o direito de nove.
+
+97
+00:04:52,710 --> 00:04:53,810
+Vamos comear com isso.
+
+98
+00:04:54,862 --> 00:04:59,097
+Mais  direita. certo tem que ser igual a to_delete. certo, ento isso significa
+
+99
+00:05:02,060 --> 00:05:05,030
+que o n mais  direita aqui,
+
+100
+00:05:05,030 --> 00:05:07,803
+oito, vai substituir nove apontando para 12.
+
+101
+00:05:10,570 --> 00:05:15,520
+O pai do to_delete agora no precisa mais apontar para nove.
+
+102
+00:05:15,520 --> 00:05:17,320
+Tem que apontar para oito.
+
+103
+00:05:17,320 --> 00:05:21,810
+Ento, o pai de to_delete tem que apontar para o n mais  direita.
+
+104
+00:05:21,810 --> 00:05:22,920
+Vamos fazer isso.
+
+105
+00:05:22,920 --> 00:05:27,147
+To_delete_parent. direito igual mais  direita.
+
+106
+00:05:28,310 --> 00:05:31,030
+E a propsito, peo desculpas profusamente.
+
+107
+00:05:31,030 --> 00:05:34,480
+Ns dissemos que amos fazer o certo primeiro, ento est a.
+
+108
+00:05:34,480 --> 00:05:38,880
+Se voc quisesse fazer a esquerda, seria exatamente o mesmo, mas
+
+109
+00:05:38,880 --> 00:05:40,380
+isso estaria na esquerda.
+
+110
+00:05:42,710 --> 00:05:46,440
+Ento descobrimos que o direito do nodo  direita deve apontar
+
+111
+00:05:46,440 --> 00:05:49,360
+para o que costumava ser o direito do to_delete,
+
+112
+00:05:49,360 --> 00:05:50,860
+ento oito apontaro para 12.
+
+113
+00:05:51,846 --> 00:05:55,350
+To_delete_parent. certo tem que apontar para
+
+114
+00:05:55,350 --> 00:05:59,160
+oito porque to_delete  igual a to_delete, ento estamos apagando nove,
+
+115
+00:05:59,160 --> 00:06:00,600
+portanto o direito dos
+
+116
+00:06:00,600 --> 00:06:03,370
+pais tem que apontar para outro lugar.
+
+117
+00:06:03,370 --> 00:06:07,670
+Se tivssemos outro n de dois filhos aqui  esquerda, seria este esquerdo,
+
+118
+00:06:07,670 --> 00:06:09,160
+que tem que apontar
+
+119
+00:06:09,160 --> 00:06:10,920
+para outro lugar, ento 
+
+120
+00:06:10,920 --> 00:06:12,513
+isso que isso est fazendo.
+
+121
+00:06:14,960 --> 00:06:16,310
+Espero que isso faa sentido.
+
+122
+00:06:18,070 --> 00:06:22,760
+Finalmente, se estivermos excluindo este, se estivermos excluindo a cabea, encontraremos
+
+123
+00:06:22,760 --> 00:06:24,490
+o n mais 
+
+124
+00:06:24,490 --> 00:06:26,350
+direita, novamente, na subrvore
+
+125
+00:06:26,350 --> 00:06:28,990
+esquerda, que ser cinco, e o
+
+126
+00:06:28,990 --> 00:06:30,740
+que temos a fazer
+
+127
+00:06:30,740 --> 00:06:34,620
+ dizer o n mais  direita deve ser
+
+128
+00:06:34,620 --> 00:06:38,163
+nove, que , novamente, esta linha aqui, mas
+
+129
+00:06:39,670 --> 00:06:43,290
+agora, to_delete_parent  igual a rightmost, isso  meio
+
+130
+00:06:43,290 --> 00:06:45,700
+correto, mas to_delete_parent  to_delete, ento
+
+131
+00:06:45,700 --> 00:06:47,400
+ o mesmo n
+
+132
+00:06:49,300 --> 00:06:51,520
+porque ambos so head, ento
+
+133
+00:06:51,520 --> 00:06:54,657
+o que faremos  auto. cabea  mais  direita.
+
+134
+00:06:59,460 --> 00:07:01,620
+Ento, se quisermos deletar essa, a
+
+135
+00:07:01,620 --> 00:07:04,973
+cabea deve se tornar o n mais  direita.
+
+136
+00:07:06,210 --> 00:07:08,940
+So os cinco, ento os cinco iriam at aqui.
+
+137
+00:07:08,940 --> 00:07:11,363
+Espero que isso faa um pouco de sentido.
+
+138
+00:07:12,410 --> 00:07:14,470
+H, no entanto, mais uma
+
+139
+00:07:14,470 --> 00:07:16,833
+coisa em que temos que pensar.
+
+140
+00:07:18,010 --> 00:07:20,460
+Vamos executar novamente nosso algoritmo
+
+141
+00:07:20,460 --> 00:07:22,240
+para excluir os ns.
+
+142
+00:07:22,240 --> 00:07:24,460
+Observe como no usamos o pai da direita, a propsito.
+
+143
+00:07:24,460 --> 00:07:25,883
+Esse  realmente o problema.
+
+144
+00:07:27,440 --> 00:07:29,573
+Vamos imaginar que estamos tentando excluir nove.
+
+145
+00:07:30,690 --> 00:07:35,123
+Ento to_delete  o direito dos pais, ento isso est correto.
+
+146
+00:07:36,130 --> 00:07:37,100
+A primeira coisa que estamos fazendo
+
+147
+00:07:37,100 --> 00:07:38,190
+ encontrar o n mais 
+
+148
+00:07:38,190 --> 00:07:41,450
+direita e definir seu direito para ser o to_delete. certo, ento essencialmente
+
+149
+00:07:41,450 --> 00:07:46,233
+movendo este 12 para baixo para o oito, assim.
+
+150
+00:07:47,306 --> 00:07:49,760
+Isso est correto: se queremos mover os oito para c, 
+
+151
+00:07:49,760 --> 00:07:51,010
+o que tem que fazer.
+
+152
+00:07:52,030 --> 00:07:56,510
+Ento estamos definindo o pai to_delete_parent. o direito de ser o n
+
+153
+00:07:56,510 --> 00:07:58,423
+mais  direita, e como
+
+154
+00:07:59,950 --> 00:08:00,783
+voc pode
+
+155
+00:08:00,783 --> 00:08:03,010
+ver, h algo que est um
+
+156
+00:08:03,010 --> 00:08:05,120
+pouco fora, o que  que
+
+157
+00:08:05,120 --> 00:08:07,540
+ns apagamos o nove, mas tambm apagamos
+
+158
+00:08:07,540 --> 00:08:10,103
+o sete, porque nada est apontando para o sete.
+
+159
+00:08:11,160 --> 00:08:12,770
+Ento temos que consertar isso.
+
+160
+00:08:12,770 --> 00:08:15,800
+O que temos que fazer  dizer
+
+161
+00:08:15,800 --> 00:08:19,463
+que oito  esquerda devem apontar para sete.
+
+162
+00:08:20,749 --> 00:08:24,540
+A direita de Seven deve apontar para oito  esquerda.
+
+163
+00:08:27,870 --> 00:08:30,250
+Ento o que temos que fazer 
+
+164
+00:08:30,250 --> 00:08:31,423
+rightmost_parent. certo  o mais  direita. esquerda
+
+165
+00:08:35,661 --> 00:08:39,411
+e, em seguida,  direita. esquerda igual a to_delete. esquerda.
+
+166
+00:08:43,640 --> 00:08:44,880
+Agora, mais uma vez, vamos passar por esse algoritmo.
+
+167
+00:08:44,880 --> 00:08:47,960
+Ns vamos mudar os outros em apenas um momento.
+
+168
+00:08:47,960 --> 00:08:48,793
+A primeira
+
+169
+00:08:48,793 --> 00:08:51,773
+coisa que estamos fazendo  acertar rightmost_parent, ento esse
+
+170
+00:08:52,900 --> 00:08:54,870
+ esse cara, igual  esquerda
+
+171
+00:08:54,870 --> 00:08:58,060
+da esquerda Oh desculpe, rightmost_parent  esse cara, sete.
+
+172
+00:08:58,060 --> 00:09:00,800
+O direito de sete vai ser agora, 7. 5
+
+173
+00:09:04,745 --> 00:09:08,940
+O mais  direita. left agora vai ser to_delete 
+
+174
+00:09:08,940 --> 00:09:11,120
+esquerda, ento sete, ento o oitavo
+
+175
+00:09:12,900 --> 00:09:15,023
+agora vai apontar para sete.
+
+176
+00:09:17,190 --> 00:09:19,960
+O direito mais  direita apontar
+
+177
+00:09:19,960 --> 00:09:22,993
+para o direito de to_delete, e o
+
+178
+00:09:26,240 --> 00:09:28,020
+direito de to_delete_parent ir
+
+179
+00:09:28,020 --> 00:09:30,913
+apontar para o n mais  direita.
+
+180
+00:09:32,140 --> 00:09:33,640
+Agora, como voc pode ver, isso  um pouco confuso.
+
+181
+00:09:33,640 --> 00:09:34,670
+Eu s vou mudar isso daqui a pouco.
+
+182
+00:09:34,670 --> 00:09:35,710
+Vai fazer sentido.
+
+183
+00:09:35,710 --> 00:09:38,930
+Nada est apontando para nove, ento podemos delet-lo.
+
+184
+00:09:38,930 --> 00:09:40,350
+Essas setas podemos excluir.
+
+185
+00:09:40,350 --> 00:09:41,850
+Ns podemos mover os oito at aqui.
+
+186
+00:09:43,960 --> 00:09:45,680
+Isso faz sentido?
+
+187
+00:09:45,680 --> 00:09:46,513
+Espero que sim.
+
+188
+00:09:47,620 --> 00:09:51,810
+Ento, esses quatro passos nos levam a essa posio.
+
+189
+00:09:51,810 --> 00:09:53,810
+Claro que este aqui est  direita.
+
+190
+00:09:56,320 --> 00:09:57,680
+Eu vou desfazer essas
+
+191
+00:09:57,680 --> 00:09:59,680
+mudanas, s porque ns temos, ainda,
+
+192
+00:09:59,680 --> 00:10:02,053
+mais um cenrio para passar, infelizmente.
+
+193
+00:10:02,930 --> 00:10:05,620
+Me desculpe: voc no viu isso. (risos) Isso 
+
+194
+00:10:05,620 --> 00:10:07,740
+para a prxima parte.
+
+195
+00:10:07,740 --> 00:10:10,590
+E tambm precisamos desses pedaos de
+
+196
+00:10:10,590 --> 00:10:13,253
+cdigo aqui nas outras partes.
+
+197
+00:10:15,188 --> 00:10:17,293
+Ento isso  necessrio em todas as ocasies.
+
+198
+00:10:20,910 --> 00:10:21,743
+Ento
+
+199
+00:10:22,960 --> 00:10:25,880
+ns temos mais um cenrio.
+
+200
+00:10:25,880 --> 00:10:27,123
+Deixe me mostrar isso para voc.
+
+201
+00:10:28,610 --> 00:10:30,690
+Ns temos este cenrio aqui.
+
+202
+00:10:30,690 --> 00:10:32,750
+Ento eu vou copiar isso, ento eu vou fazer
+
+203
+00:10:32,750 --> 00:10:34,880
+isso, ento eu vou deletar, e vou colar aqui.
+
+204
+00:10:34,880 --> 00:10:37,543
+Este  outro cenrio em que temos que pensar.
+
+205
+00:10:39,110 --> 00:10:40,070
+O que eu
+
+206
+00:10:40,070 --> 00:10:42,460
+vou fazer  apenas modific-lo um pouco.
+
+207
+00:10:42,460 --> 00:10:45,850
+Vou adicionar outro n aqui, digamos
+
+208
+00:10:45,850 --> 00:10:46,897
+6. 5,
+
+209
+00:10:49,754 --> 00:10:53,637
+isso vai ser  esquerda de sete,  claro.
+
+210
+00:10:56,180 --> 00:10:57,993
+Ento ns temos esse cenrio aqui.
+
+211
+00:10:59,340 --> 00:11:01,253
+Nine  o n que queremos excluir.
+
+212
+00:11:03,030 --> 00:11:05,980
+Sete  o n mais  direita; no tem nada para a direita.
+
+213
+00:11:07,050 --> 00:11:08,970
+Nine tambm  o pai mais 
+
+214
+00:11:08,970 --> 00:11:10,840
+direita porque sete  o mais 
+
+215
+00:11:10,840 --> 00:11:12,320
+direita, portanto o pai  nove.
+
+216
+00:11:12,320 --> 00:11:14,820
+Seis ainda  to_delete_parent.
+
+217
+00:11:15,670 --> 00:11:19,123
+Vamos tentar apagar nove usando nosso pequeno algoritmo.
+
+218
+00:11:20,180 --> 00:11:23,770
+Primeiro, o direito do rightmost_parent
+
+219
+00:11:23,770 --> 00:11:26,843
+ser o mais  esquerda.
+
+220
+00:11:28,900 --> 00:11:31,490
+Ento esse cara vai
+
+221
+00:11:31,490 --> 00:11:35,250
+apontar para 6. 5
+
+222
+00:11:35,250 --> 00:11:36,140
+Isso  o que estamos fazendo aqui.
+
+223
+00:11:36,140 --> 00:11:40,790
+Leftmost_parent, nove,  o mais  esquerda, 6. 5
+
+224
+00:11:43,793 --> 00:11:48,503
+Ento estamos dizendo mais  direita. left  to_delete. esquerda, o
+
+225
+00:11:49,750 --> 00:11:53,330
+que faz muito pouco sentido, porque
+
+226
+00:11:53,330 --> 00:11:56,613
+vai apontar para si mesmo.
+
+227
+00:11:59,005 --> 00:12:00,847
+Mais  direita. certo  to_delete. certo.
+
+228
+00:12:03,740 --> 00:12:06,080
+Ok, ento finalmente algo que faz um pouco de sentido.
+
+229
+00:12:06,080 --> 00:12:06,913
+Esta certo.
+
+230
+00:12:06,913 --> 00:12:07,746
+Ns queremos fazer isso.
+
+231
+00:12:08,780 --> 00:12:11,927
+Finalmente, o direito do to_delete_parent  o mais  direita.
+
+232
+00:12:14,140 --> 00:12:15,230
+Nada aponta para nove.
+
+233
+00:12:15,230 --> 00:12:16,993
+Ns nos livramos de todos eles,
+
+234
+00:12:18,580 --> 00:12:21,360
+mas tambm deletamos acidentalmente 6. 5 e sete
+
+235
+00:12:22,670 --> 00:12:26,270
+pontos para si, o que tambm no  ideal.
+
+236
+00:12:26,270 --> 00:12:29,483
+Ns vamos entrar em muitos loops infinitos se fizermos isso.
+
+237
+00:12:31,550 --> 00:12:35,790
+Ns no queremos fazer isso, ento como fazemos isso?
+
+238
+00:12:35,790 --> 00:12:37,360
+Bem, na verdade  bem simples.
+
+239
+00:12:37,360 --> 00:12:41,260
+O problema todo neste cenrio  que
+
+240
+00:12:41,260 --> 00:12:45,360
+to_delete  igual ao rightmost_parent, e ento ns
+
+241
+00:12:45,360 --> 00:12:47,870
+definimos algumas propriedades que temos
+
+242
+00:12:47,870 --> 00:12:50,020
+que mover de to_delete
+
+243
+00:12:50,020 --> 00:12:53,593
+e rightmost_parent, como dizemos, que simplesmente no
+
+244
+00:12:55,060 --> 00:12:59,413
+podemos fazer porque so as mesmas coisa.
+
+245
+00:13:00,830 --> 00:13:05,320
+Quando eles so a mesma coisa, a nica coisa que
+
+246
+00:13:06,410 --> 00:13:09,890
+temos que fazer  pegar o n da
+
+247
+00:13:09,890 --> 00:13:12,093
+direita e fazer 12, e
+
+248
+00:13:13,586 --> 00:13:16,260
+pegar seis e apontar para sete.
+
+249
+00:13:16,260 --> 00:13:19,393
+Isso  tudo o que temos que fazer quando so iguais.
+
+250
+00:13:20,820 --> 00:13:22,563
+Agora, nada aponta para nove
+
+251
+00:13:23,620 --> 00:13:26,483
+e sete se torna o que queramos.
+
+252
+00:13:28,650 --> 00:13:30,370
+Ento, como voc pode ver, talvez tenha sido um pouco
+
+253
+00:13:30,370 --> 00:13:31,760
+rpido demais, tudo o que temos a fazer
+
+254
+00:13:31,760 --> 00:13:33,610
+ o mais  direita. certo, que 
+
+255
+00:13:34,580 --> 00:13:37,903
+o direito de sete igual to_delete. certo, e o
+
+256
+00:13:38,870 --> 00:13:43,220
+direito to_delete_parent  o mais  direita.
+
+257
+00:13:43,220 --> 00:13:46,550
+Ento, ns s queremos fazer essas duas linhas.
+
+258
+00:13:46,550 --> 00:13:50,693
+Isso significa que precisamos desses dois para quando eles no so os mesmos.
+
+259
+00:13:51,810 --> 00:13:53,420
+Portanto, se rightmost_parent
+
+260
+00:13:55,154 --> 00:13:56,487
+no for igual
+
+261
+00:13:59,510 --> 00:14:01,517
+a to_delete, execute estas
+
+262
+00:14:02,580 --> 00:14:03,993
+duas linhas.
+
+263
+00:14:07,374 --> 00:14:11,580
+Se rightmost_parent no for igual a to_delete, execute essas duas
+
+264
+00:14:11,580 --> 00:14:13,500
+linhas e, aqui embaixo,
+
+265
+00:14:13,500 --> 00:14:14,440
+se rightmost_parent
+
+266
+00:14:14,440 --> 00:14:16,780
+no for igual a to_delete,
+
+267
+00:14:16,780 --> 00:14:18,173
+execute essas duas linhas.
+
+268
+00:14:19,930 --> 00:14:24,103
+Observe como temos nossas instrues if aqui, e esses blocos de
+
+269
+00:14:25,170 --> 00:14:27,700
+cdigo so sempre os mesmos em todas
+
+270
+00:14:27,700 --> 00:14:30,200
+as instrues if, ento podemos extra-los.
+
+271
+00:14:31,520 --> 00:14:35,020
+Podemos apenas remov-los das declaraes if e mov-los
+
+272
+00:14:35,020 --> 00:14:36,163
+para c.
+
+273
+00:14:38,660 --> 00:14:41,200
+Da mesma forma,  direita. certo  to_delete. certo, isso
+
+274
+00:14:41,200 --> 00:14:44,913
+tambm pode ser extrado e colocado aqui, e isso agora
+
+275
+00:14:50,600 --> 00:14:52,420
+se torna um pouco mais simples.
+
+276
+00:14:52,420 --> 00:14:54,530
+Ento, mais uma vez, voltando ao nosso
+
+277
+00:14:54,530 --> 00:14:56,320
+diagrama, vou deletar ou, na verdade,
+
+278
+00:14:56,320 --> 00:14:58,450
+no vamos deletar essas nuvens ainda.
+
+279
+00:14:58,450 --> 00:15:01,080
+Vamos dizer, mais uma vez, queremos
+
+280
+00:15:01,080 --> 00:15:03,850
+deletar nove, ento temos nosso pequeno algoritmo.
+
+281
+00:15:03,850 --> 00:15:05,870
+Encontramos o n mais  direita, que  sete.
+
+282
+00:15:05,870 --> 00:15:08,070
+Encontramos o rightmost_parent, que  nove.
+
+283
+00:15:09,590 --> 00:15:12,480
+O n que queremos excluir  igual ao rightmost_parent?
+
+284
+00:15:12,480 --> 00:15:15,910
+Sim, ento vamos direto para essa declarao if
+
+285
+00:15:15,910 --> 00:15:16,950
+e para c.
+
+286
+00:15:16,950 --> 00:15:19,330
+O mais  direita. n direito,
+
+287
+00:15:19,330 --> 00:15:21,910
+este aqui que ainda no
+
+288
+00:15:21,910 --> 00:15:24,333
+existe, ser o direito de to_delete.
+
+289
+00:15:27,060 --> 00:15:31,150
+Agora,  to_delete o direito do pai,
+
+290
+00:15:31,150 --> 00:15:32,390
+n esquerdo?
+
+291
+00:15:32,390 --> 00:15:34,830
+ o pai est certo?
+
+292
+00:15:34,830 --> 00:15:35,940
+Sim.
+
+293
+00:15:35,940 --> 00:15:37,893
+Ento, ns apontamos isso a.
+
+294
+00:15:39,750 --> 00:15:40,700
+Isso  tudo que precisamos.
+
+295
+00:15:42,760 --> 00:15:47,353
+Agora, vamos voltar a ter algo como um oito aqui.
+
+296
+00:15:49,240 --> 00:15:51,870
+Agora, o n mais  direita se torna o oito.
+
+297
+00:15:51,870 --> 00:15:54,223
+O rightmost_parent se torna o sete.
+
+298
+00:15:55,239 --> 00:15:57,639
+To_delete se torna nove, to_delete_parent  seis.
+
+299
+00:15:58,650 --> 00:16:00,150
+Ento este  o nosso
+
+300
+00:16:01,010 --> 00:16:04,010
+outro cenrio, e o que queremos fazer , mais uma
+
+301
+00:16:04,010 --> 00:16:08,057
+vez, queremos deletar nove, encontrar oito, achar sete como o mais  direita.
+
+302
+00:16:08,057 --> 00:16:11,080
+ rightmost_parent igual a to_delete?
+
+303
+00:16:11,080 --> 00:16:13,930
+No, ento vamos para essa declarao if.
+
+304
+00:16:13,930 --> 00:16:15,030
+Rightmost_parent. right
+
+305
+00:16:17,800 --> 00:16:21,510
+deve ser igual  esquerda mais  direita e, a
+
+306
+00:16:21,510 --> 00:16:22,343
+propsito, vamos
+
+307
+00:16:23,506 --> 00:16:26,160
+apenas adicionar este 7. 5 de volta aqui.
+
+308
+00:16:27,562 --> 00:16:28,993
+7 6, tudo bem.
+
+309
+00:16:31,010 --> 00:16:32,980
+Portanto, o direito do rightmost_parent deve ser
+
+310
+00:16:32,980 --> 00:16:34,993
+igual ao da extrema esquerda, ento ele
+
+311
+00:16:36,126 --> 00:16:38,600
+deve apontar para 7. 6
+
+312
+00:16:38,600 --> 00:16:43,600
+O mais  esquerda da direita deve ser igual a to_delete 
+
+313
+00:16:43,890 --> 00:16:48,053
+esquerda, ento este oito aqui deve agora apontar para sete.
+
+314
+00:16:49,920 --> 00:16:53,200
+O mais  direita est certo, esse cara era o mais
+
+315
+00:16:53,200 --> 00:16:57,623
+ direita, o certo deve apontar para o direito de to_delete, ento aqui embaixo.
+
+316
+00:16:58,760 --> 00:17:02,430
+E, finalmente, como nove est  direita do pai, seis devem
+
+317
+00:17:02,430 --> 00:17:05,340
+apontar  direita para o n mais  direita,
+
+318
+00:17:05,340 --> 00:17:06,173
+que  oito.
+
+319
+00:17:07,250 --> 00:17:12,250
+Ento podemos deletar nove, subir aqui e conseguimos.
+
+320
+00:17:12,340 --> 00:17:13,840
+Ns temos exatamente o que queramos.
+
+321
+00:17:15,780 --> 00:17:20,470
+Agora, este  um algoritmo extremo incompreensvel, pelo menos quando
+
+322
+00:17:20,470 --> 00:17:21,630
+voc est
+
+323
+00:17:21,630 --> 00:17:26,290
+comeando, e eu no esperaria que voc compreenda isso imediatamente
+
+324
+00:17:26,290 --> 00:17:29,433
+e, novamente, desenhe isso no papel.
+
+325
+00:17:30,280 --> 00:17:32,670
+No se sinta mal por desenh-lo.
+
+326
+00:17:32,670 --> 00:17:33,730
+Todo mundo tira isso.
+
+327
+00:17:33,730 --> 00:17:35,510
+Eu tenho muitos desenhos
+
+328
+00:17:35,510 --> 00:17:37,570
+deste material, e mesmo com
+
+329
+00:17:37,570 --> 00:17:42,570
+esses diagramas eu posso ver que no  to bvio para entender,
+
+330
+00:17:42,980 --> 00:17:45,760
+e especialmente quando voc tem 100 linhas
+
+331
+00:17:45,760 --> 00:17:49,070
+de cdigo bem, no 100, mas 50 linhas
+
+332
+00:17:49,070 --> 00:17:52,500
+de cdigo para excluir um n em um dado
+
+333
+00:17:52,500 --> 00:17:55,070
+estrutura, voc sabe que  bem complicado.
+
+334
+00:17:55,070 --> 00:17:57,610
+Espero que isso ajude, no entanto.
+
+335
+00:17:57,610 --> 00:17:59,370
+Pode aparecer em entrevistas.
+
+336
+00:17:59,370 --> 00:18:01,500
+Pode surgir em desafios de codificao.
+
+337
+00:18:01,500 --> 00:18:03,690
+ bom saber em geral quando
+
+338
+00:18:03,690 --> 00:18:05,420
+voc est lidando com bancos
+
+339
+00:18:05,420 --> 00:18:08,000
+de dados e dados que voc precisa pesquisar
+
+340
+00:18:08,000 --> 00:18:09,050
+rapidamente e assim
+
+341
+00:18:09,050 --> 00:18:12,210
+por diante e, geralmente, apenas sabendo sobre rvores binrias,
+
+342
+00:18:12,210 --> 00:18:13,240
+e que elas
+
+343
+00:18:13,240 --> 00:18:16,330
+existem, e um pouco Um pouco de uma noo
+
+344
+00:18:16,330 --> 00:18:19,310
+de como us-los, vai fazer de voc um desenvolvedor
+
+345
+00:18:19,310 --> 00:18:23,480
+mais completo, mas eu nunca tive que us-los no meu trabalho do dia-a-dia.
+
+346
+00:18:23,480 --> 00:18:26,880
+Ento entenda isso.
+
+347
+00:18:26,880 --> 00:18:28,010
+Saiba que est a.
+
+348
+00:18:28,010 --> 00:18:29,020
+No se sinta como
+
+349
+00:18:29,020 --> 00:18:31,570
+se voc tivesse que lembrar este algoritmo linha por linha,
+
+350
+00:18:31,570 --> 00:18:32,547
+porque voc no precisa,
+
+351
+00:18:32,547 --> 00:18:34,290
+e voc sempre pode voltar para o
+
+352
+00:18:34,290 --> 00:18:36,340
+curso e assistir o vdeo novamente se precisar.
+
+353
+00:18:37,740 --> 00:18:39,080
+Ento  isso para este vdeo.
+
+354
+00:18:39,080 --> 00:18:42,403
+Espero que isso ajude, e eu vou ver no prximo.
+

@@ -1,0 +1,668 @@
+1
+00:00:00,210 --> 00:00:02,294 line:15% 
+<v Instructor>Hi and welcome back.</v>
+
+2
+00:00:02,294 --> 00:00:04,330 line:15% 
+In this video we're going to finish our milestone project
+
+3
+00:00:04,330 --> 00:00:07,330
+by including the update and delete statements.
+
+4
+00:00:09,080 --> 00:00:11,410
+We've added the create book table,
+
+5
+00:00:11,410 --> 00:00:14,320
+which creates our table if it doesn't exist already.
+
+6
+00:00:14,320 --> 00:00:17,630
+We've inserted a new book into our table.
+
+7
+00:00:17,630 --> 00:00:19,810
+And we've also looked at selecting all of the books
+
+8
+00:00:19,810 --> 00:00:22,300
+from our table and returning them as dictionaries.
+
+9
+00:00:23,480 --> 00:00:25,810
+Now we've got two more functions,
+
+10
+00:00:25,810 --> 00:00:28,730
+mark book as read and delete book.
+
+11
+00:00:29,650 --> 00:00:33,500
+With our files, what these did was read the entire file,
+
+12
+00:00:33,500 --> 00:00:35,590
+find the appropriate book, update it,
+
+13
+00:00:35,590 --> 00:00:38,210
+and then save all the books back.
+
+14
+00:00:38,210 --> 00:00:42,030
+With SQL, we can actually find the correct book
+
+15
+00:00:42,030 --> 00:00:44,770
+by name on the database and update it in place,
+
+16
+00:00:44,770 --> 00:00:47,760
+so we no longer need to get all the books,
+
+17
+00:00:47,760 --> 00:00:50,540
+change one, and then save them all back.
+
+18
+00:00:50,540 --> 00:00:52,550
+For that reason, I'm going to delete this
+
+19
+00:00:52,550 --> 00:00:54,340
+save all books function.
+
+20
+00:00:54,340 --> 00:00:58,050
+And that's a good reason why it had the underscore
+
+21
+00:00:58,050 --> 00:00:58,980
+in the beginning.
+
+22
+00:00:58,980 --> 00:01:01,420
+It was something that we wanted to use internally
+
+23
+00:01:01,420 --> 00:01:03,770
+to make our interface work,
+
+24
+00:01:03,770 --> 00:01:08,370
+but it wasn't something we wanted the app to use.
+
+25
+00:01:08,370 --> 00:01:09,980
+So that's why it had the underscore before
+
+26
+00:01:09,980 --> 00:01:12,450
+to mark it as sort of private.
+
+27
+00:01:12,450 --> 00:01:13,770
+So that other parts of our programme
+
+28
+00:01:13,770 --> 00:01:15,900
+wouldn't want to use it too.
+
+29
+00:01:15,900 --> 00:01:19,320
+To mark a book as read, you know how to do this now
+
+30
+00:01:19,320 --> 00:01:21,420
+because we have to initialise error connection,
+
+31
+00:01:21,420 --> 00:01:24,270
+get a cursor, execute our update statement
+
+32
+00:01:24,270 --> 00:01:28,210
+with a where clause that would where by the name.
+
+33
+00:01:28,210 --> 00:01:30,660
+And then commit and close the connection.
+
+34
+00:01:30,660 --> 00:01:33,070
+We don't even need to turn anything or get any data
+
+35
+00:01:33,070 --> 00:01:35,750
+out of the database in order to do this.
+
+36
+00:01:35,750 --> 00:01:38,460
+I think you can implement this function on your own,
+
+37
+00:01:38,460 --> 00:01:39,540
+so give it a go.
+
+38
+00:01:44,100 --> 00:01:45,890
+I'm sure you managed to do that.
+
+39
+00:01:45,890 --> 00:01:48,280
+We just looked at the update, and all we have to do is
+
+40
+00:01:48,280 --> 00:01:51,800
+again copy this boiler plate, sqlite3.connect
+
+41
+00:01:51,800 --> 00:01:53,440
+to data.db.
+
+42
+00:01:55,440 --> 00:01:58,700
+Make sure to use the correct data file.
+
+43
+00:01:58,700 --> 00:01:59,890
+Get a cursor,
+
+44
+00:02:02,390 --> 00:02:05,190
+then execute our SQL.
+
+45
+00:02:05,190 --> 00:02:08,670
+And this is going to be update the book stable,
+
+46
+00:02:08,670 --> 00:02:13,670
+set the read to one, where the name
+
+47
+00:02:13,990 --> 00:02:16,870
+is equal to a question mark.
+
+48
+00:02:16,870 --> 00:02:20,350
+Remember you must not use f strings here
+
+49
+00:02:21,800 --> 00:02:24,580
+because that opens you up for potential
+
+50
+00:02:24,580 --> 00:02:26,350
+SQL injection attacks.
+
+51
+00:02:26,350 --> 00:02:30,300
+So what we're going to put here is a tuple of name.
+
+52
+00:02:30,300 --> 00:02:32,340
+And notice that in order to make a tuple
+
+53
+00:02:32,340 --> 00:02:35,670
+we have to include the currently brackets, sorry,
+
+54
+00:02:35,670 --> 00:02:38,160
+as well as the comma in order to say
+
+55
+00:02:38,160 --> 00:02:42,240
+this is a tuple, it's not a mathematical thing
+
+56
+00:02:42,240 --> 00:02:44,090
+that we want to evaluate first.
+
+57
+00:02:44,090 --> 00:02:47,230
+And certainly if you don't put the brackets in
+
+58
+00:02:47,230 --> 00:02:48,840
+and you just do this, it thinks that this
+
+59
+00:02:48,840 --> 00:02:53,790
+is an entirely new argument to the execute method,
+
+60
+00:02:53,790 --> 00:02:54,780
+which we don't want to do.
+
+61
+00:02:54,780 --> 00:02:56,360
+We want to make sure it's a tuple,
+
+62
+00:02:56,360 --> 00:02:57,460
+so we do it like this.
+
+63
+00:02:58,940 --> 00:03:00,950
+Now that we've ran this, we want to make sure
+
+64
+00:03:00,950 --> 00:03:03,260
+that these changes get saved to the disc.
+
+65
+00:03:03,260 --> 00:03:05,390
+So connection.commit,
+
+66
+00:03:05,390 --> 00:03:09,410
+and finally connection.close, and that's it.
+
+67
+00:03:09,410 --> 00:03:13,440
+Now we've updated our book, set the read flag to one,
+
+68
+00:03:13,440 --> 00:03:15,220
+where the name was equal to name.
+
+69
+00:03:17,920 --> 00:03:20,410
+Going over to delete book, I think you can also
+
+70
+00:03:20,410 --> 00:03:22,040
+implement this for what we have to do
+
+71
+00:03:22,040 --> 00:03:23,810
+is pretty much the same.
+
+72
+00:03:23,810 --> 00:03:26,640
+Once again, pause the video and give this a go.
+
+73
+00:03:31,570 --> 00:03:33,780
+Now I'm sure you really managed to get this.
+
+74
+00:03:33,780 --> 00:03:35,490
+What I'm going to do is copy this boiler plate,
+
+75
+00:03:35,490 --> 00:03:37,890
+not something you should be doing very often,
+
+76
+00:03:37,890 --> 00:03:40,270
+but instead of updating we're going to say
+
+77
+00:03:40,270 --> 00:03:45,270
+delete from books where the name is this question mark.
+
+78
+00:03:46,110 --> 00:03:49,610
+And once again the name gets passed in as an argument there.
+
+79
+00:03:49,610 --> 00:03:52,030
+Then we commit once again and we close.
+
+80
+00:03:52,030 --> 00:03:54,180
+We don't have to fetch any rows or anything
+
+81
+00:03:54,180 --> 00:03:56,050
+because there's nothing for us to return
+
+82
+00:03:56,050 --> 00:03:57,550
+from this delete statement.
+
+83
+00:03:59,460 --> 00:04:00,320
+And that's it.
+
+84
+00:04:00,320 --> 00:04:04,210
+We've got all the data in and out of our database
+
+85
+00:04:04,210 --> 00:04:05,330
+that we needed.
+
+86
+00:04:05,330 --> 00:04:08,921
+We can back to app.py and all we have to do
+
+87
+00:04:08,921 --> 00:04:13,490
+is potentially update this book read flag here.
+
+88
+00:04:13,490 --> 00:04:18,490
+We could say yes, if the book's read status
+
+89
+00:04:20,350 --> 00:04:22,850
+is true, otherwise no.
+
+90
+00:04:23,730 --> 00:04:27,720
+But what you didn't know is that if zero,
+
+91
+00:04:28,840 --> 00:04:31,440
+actually evaluates to false.
+
+92
+00:04:31,440 --> 00:04:34,600
+And if one, evaluates to true.
+
+93
+00:04:34,600 --> 00:04:39,420
+So if book read is one, contains the integer one,
+
+94
+00:04:39,420 --> 00:04:40,670
+we're going to get yes.
+
+95
+00:04:40,670 --> 00:04:44,030
+If it contains the integer zero, we're going to get no.
+
+96
+00:04:44,030 --> 00:04:46,480
+So we don't actually have to change this at all.
+
+97
+00:04:46,480 --> 00:04:48,670
+Python automatically treats one and zero
+
+98
+00:04:48,670 --> 00:04:51,710
+as true and false as well, which is pretty handy.
+
+99
+00:04:52,700 --> 00:04:55,300
+So we don't actually have to make any changes at all
+
+100
+00:04:56,207 --> 00:04:57,620
+to our app.py, which tells us that we've done
+
+101
+00:04:57,620 --> 00:05:01,490
+an excellent job isolating our data storage device,
+
+102
+00:05:01,490 --> 00:05:04,290
+our database, from our business logic.
+
+103
+00:05:04,290 --> 00:05:07,000
+I keep going on and on about this interface
+
+104
+00:05:07,000 --> 00:05:10,010
+because it's a really important part of programming,
+
+105
+00:05:10,010 --> 00:05:12,720
+to be able to decouple your different components
+
+106
+00:05:12,720 --> 00:05:16,330
+and make sure that they can operate without knowing
+
+107
+00:05:16,330 --> 00:05:17,980
+how the other one is implemented.
+
+108
+00:05:17,980 --> 00:05:19,180
+That's really important.
+
+109
+00:05:20,100 --> 00:05:22,770
+Let's go ahead and run our app.
+
+110
+00:05:22,770 --> 00:05:24,870
+And then we can look at adding a new book.
+
+111
+00:05:29,020 --> 00:05:31,070
+Oh and we get an error.
+
+112
+00:05:32,590 --> 00:05:35,520
+We get an error that says integrity error,
+
+113
+00:05:35,520 --> 00:05:38,790
+unique constraint failed on books.name.
+
+114
+00:05:38,790 --> 00:05:41,350
+That means that a book with this name
+
+115
+00:05:42,633 --> 00:05:43,920
+already existed in our database.
+
+116
+00:05:43,920 --> 00:05:46,330
+Interesting error, of course we know that
+
+117
+00:05:46,330 --> 00:05:47,240
+this should be an error.
+
+118
+00:05:47,240 --> 00:05:49,300
+We don't want the same book twice,
+
+119
+00:05:49,300 --> 00:05:52,460
+so what happened is that our data.db was existing
+
+120
+00:05:52,460 --> 00:05:53,740
+from the last time we ran this,
+
+121
+00:05:53,740 --> 00:05:55,140
+and I entered the same book.
+
+122
+00:05:55,999 --> 00:05:57,600
+So if you want to get rid of this error just temporarily,
+
+123
+00:05:57,600 --> 00:06:00,990
+delete data.db and run your app again.
+
+124
+00:06:00,990 --> 00:06:03,500
+Then you can enter Clean Code.
+
+125
+00:06:07,736 --> 00:06:08,890
+Then you can list all your books now,
+
+126
+00:06:08,890 --> 00:06:11,740
+and that gives you Clean Code by Robert C. Martin.
+
+127
+00:06:11,740 --> 00:06:13,880
+You can of course mark a book as read.
+
+128
+00:06:15,970 --> 00:06:17,200
+Then you can list the books again
+
+129
+00:06:17,200 --> 00:06:19,600
+and it gives you Clean Code by Robert C. Martin.
+
+130
+00:06:20,840 --> 00:06:24,230
+You can delete a book, not that you'd want
+
+131
+00:06:24,230 --> 00:06:25,360
+to delete this book.
+
+132
+00:06:25,360 --> 00:06:28,250
+And then you get nothing when you list the books back again.
+
+133
+00:06:29,210 --> 00:06:33,130
+So we've made our programme work with a database,
+
+134
+00:06:33,130 --> 00:06:36,180
+a SQL lite database, which is very very similar
+
+135
+00:06:36,180 --> 00:06:39,266
+to a postgres or a MySQL database.
+
+136
+00:06:39,266 --> 00:06:41,230
+The way we interact with it using SQL
+
+137
+00:06:41,230 --> 00:06:42,920
+is pretty much the same.
+
+138
+00:06:42,920 --> 00:06:46,600
+Postgres and MySQL are more powerful,
+
+139
+00:06:46,600 --> 00:06:49,050
+they do more things for you,
+
+140
+00:06:49,050 --> 00:06:50,990
+and they also have a bit more functionality,
+
+141
+00:06:50,990 --> 00:06:52,840
+more different types of data you can store
+
+142
+00:06:52,840 --> 00:06:55,700
+and so forth, but really what we've covered
+
+143
+00:06:55,700 --> 00:06:58,290
+is the same amongst all major databases,
+
+144
+00:06:58,290 --> 00:06:59,340
+which is really cool.
+
+145
+00:07:00,500 --> 00:07:03,900
+Of course we haven't gotten rid of the insert error
+
+146
+00:07:03,900 --> 00:07:06,390
+when we insert something that already exists,
+
+147
+00:07:06,390 --> 00:07:07,830
+but you could do that.
+
+148
+00:07:07,830 --> 00:07:11,980
+You could put a try accept here on a integrity error.
+
+149
+00:07:11,980 --> 00:07:14,430
+And just print out something that says
+
+150
+00:07:14,430 --> 00:07:17,850
+we can print out your book or you can return false
+
+151
+00:07:17,850 --> 00:07:20,090
+potentially and then in your app.py
+
+152
+00:07:21,320 --> 00:07:24,270
+say if this succeeded, print nothing.
+
+153
+00:07:24,270 --> 00:07:25,780
+And if it didn't succeed, print you've already
+
+154
+00:07:25,780 --> 00:07:28,040
+got the book in your database.
+
+155
+00:07:28,040 --> 00:07:31,466
+Feel free to extend this as far as you want,
+
+156
+00:07:31,466 --> 00:07:33,210
+and of course ask questions in the course Q and A
+
+157
+00:07:33,210 --> 00:07:34,650
+if you encounter any issues.
+
+158
+00:07:34,650 --> 00:07:36,000
+We'll be happy to help you.
+
+159
+00:07:36,934 --> 00:07:37,767
+I'm not going to bore you any longer
+
+160
+00:07:37,767 --> 00:07:39,130
+with continuing with this project.
+
+161
+00:07:39,130 --> 00:07:42,000
+We can move on to better things.
+
+162
+00:07:42,000 --> 00:07:43,930
+So with that said, I'll see you on the next video.
+
+163
+00:07:43,930 --> 00:07:46,060
+We're going to talk briefly about one more thing
+
+164
+00:07:46,060 --> 00:07:48,260
+in SQL that we didn't get to use in this project,
+
+165
+00:07:48,260 --> 00:07:49,730
+but it's still pretty important,
+
+166
+00:07:49,730 --> 00:07:52,680 line:15% 
+and then we can go over to the following section.
+
+167
+00:07:52,680 --> 00:07:53,580 line:15% 
+I'll see you soon.
+

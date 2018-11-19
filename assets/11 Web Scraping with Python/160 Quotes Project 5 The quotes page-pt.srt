@@ -1,0 +1,352 @@
+1
+00:00:00,120 --> 00:00:01,430
+Instrutor: Ol e bem vindo de volta.
+
+2
+00:00:01,430 --> 00:00:03,800
+Neste vdeo vamos criar nossa pgina de cotaes e
+
+3
+00:00:03,800 --> 00:00:05,810
+acho que tudo vai fazer sentido, e
+
+4
+00:00:05,810 --> 00:00:08,810
+vai clicar, assim que terminarmos de criar isso e escrevermos algumas
+
+5
+00:00:08,810 --> 00:00:11,990
+linhas de cdigo em nosso aplicativo. py.
+
+6
+00:00:11,990 --> 00:00:13,810
+O que vou fazer nas
+
+7
+00:00:13,810 --> 00:00:16,360
+pginas de cotao  importar o BeautifulSoup.
+
+8
+00:00:16,360 --> 00:00:19,010
+Observe como eu no fiz isso na pgina
+
+9
+00:00:19,010 --> 00:00:20,640
+de cotaes, porque no precisvamos.
+
+10
+00:00:20,640 --> 00:00:25,320
+Depois, importarei nosso localizador de pginas de cotao
+
+11
+00:00:27,018 --> 00:00:31,690
+e tambm importarei nosso analisador de cotaes.
+
+12
+00:00:32,720 --> 00:00:34,910
+Em seguida, criando uma pgina
+
+13
+00:00:34,910 --> 00:00:36,950
+de cotaes, vamos definir um
+
+14
+00:00:36,950 --> 00:00:40,490
+mtodo inato, e este vai levar o contedo da
+
+15
+00:00:40,490 --> 00:00:44,080
+pgina, ento  todo o html da pgina inteira.
+
+16
+00:00:44,080 --> 00:00:47,300
+E ns vamos carregar isso usando solicitaes, em um momento.
+
+17
+00:00:48,170 --> 00:00:50,650
+Agora isso, j sabemos e amamos.
+
+18
+00:00:50,650 --> 00:00:52,130
+Ns fizemos isso no passado.
+
+19
+00:00:52,130 --> 00:00:56,630
+Ns vamos dizer auto. sopa  BeautifulSoup de pgina, estou
+
+20
+00:00:56,630 --> 00:00:58,320
+dando um analisador html.
+
+21
+00:01:00,800 --> 00:01:02,870
+Ento, vamos definir uma propriedade aqui,
+
+22
+00:01:02,870 --> 00:01:04,000
+que so as
+
+23
+00:01:04,900 --> 00:01:06,400
+aspas, e o que isso
+
+24
+00:01:06,400 --> 00:01:08,190
+vai fazer  pegar o Vai encontrar todos eles, ento
+
+25
+00:01:08,190 --> 00:01:10,960
+localizador, que  o QuotesPageLocators. CITAES, vai se fazer. sopa. selecione com esse localizador
+
+26
+00:01:12,840 --> 00:01:15,697
+ento vai. Quote_tags e, finalmente, o que ele far  retornar um
+
+27
+00:01:15,697 --> 00:01:16,780
+analisador de cotao
+
+28
+00:01:17,860 --> 00:01:19,780
+para cada elemento em tags de cotao.
+
+29
+00:01:19,780 --> 00:01:24,780
+OK, ento espero que isso comece
+
+30
+00:01:25,660 --> 00:01:27,370
+a fazer um pouco mais de sentido.
+
+31
+00:01:27,370 --> 00:01:31,310
+O que fazemos  encontrar cada uma das divs que
+
+32
+00:01:33,030 --> 00:01:35,640
+estamos procurando, e cada uma das divs,
+
+33
+00:01:36,845 --> 00:01:39,110
+passamos cada uma delas para um
+
+34
+00:01:39,110 --> 00:01:40,940
+objeto analisador de cotaes.
+
+35
+00:01:40,940 --> 00:01:45,810
+Esse analisador de cotaes pode ento usar esse emparelhamento para encontrar crianas
+
+36
+00:01:45,810 --> 00:01:47,080
+dentro dele, ento
+
+37
+00:01:48,010 --> 00:01:49,850
+ele est fazendo auto. pai, que  o
+
+38
+00:01:49,850 --> 00:01:53,380
+div, ponto selecione um dos localizadores de contedo.
+
+39
+00:01:54,430 --> 00:01:58,870
+Ento, ele encontrar o localizador de contedo dentro deste pai e
+
+40
+00:01:58,870 --> 00:02:01,080
+no dentro de qualquer outro pai.
+
+41
+00:02:01,080 --> 00:02:04,350
+Da mesma forma para o autor e de forma semelhante para as tags.
+
+42
+00:02:04,350 --> 00:02:07,050
+Ento agora essa pgina tem essa propriedade
+
+43
+00:02:07,050 --> 00:02:09,420
+quotes e o que ela retorna
+
+44
+00:02:09,420 --> 00:02:13,060
+ um grupo de objetos do analisador de citaes
+
+45
+00:02:13,060 --> 00:02:15,960
+de tipo, do qual podemos acessar o
+
+46
+00:02:17,210 --> 00:02:21,650
+nome do autor, o contedo da aspas e as tags.
+
+47
+00:02:21,650 --> 00:02:24,950
+Ento, se formos ao nosso aplicativo. py agora, voc ver que isso comea
+
+48
+00:02:24,950 --> 00:02:28,390
+a fazer um pouco mais de sentido.
+
+49
+00:02:28,390 --> 00:02:31,880
+Eu vou importar pedidos, e da pgina de cotaes vou importar QuotesPage, esse!
+
+50
+00:02:31,880 --> 00:02:32,950
+a pgina de cotaes. Agora, a primeira
+
+51
+00:02:34,200 --> 00:02:36,870
+coisa a fazer, 
+
+52
+00:02:36,870 --> 00:02:40,660
+claro, para obter o contedo da pgina, o que devemos fazer usando solicitaes.
+
+53
+00:02:40,660 --> 00:02:43,000
+Ento pea. obtenha, http: // aspas. raspar. com. contedo.
+
+54
+00:02:43,000 --> 00:02:47,860
+Isso vai pegar a pgina e isso vai me dar
+
+55
+00:02:50,108 --> 00:02:51,980
+o contedo da pgina.
+
+56
+00:02:53,120 --> 00:02:54,270
+Agora, todo esse contedo, tudo
+
+57
+00:02:54,270 --> 00:02:56,310
+que carregamos, ns o entregamos ao nosso objeto de cotao.
+
+58
+00:02:56,310 --> 00:02:58,660
+Isso agora  analisado usando BeautifulSoup,
+
+59
+00:02:58,660 --> 00:03:03,660
+porque o construtor
+
+60
+00:03:04,860 --> 00:03:07,030
+aqui, o mtodo init, faz isso.
+
+61
+00:03:07,030 --> 00:03:09,940
+Ele pega o BeautifulSoup e analisa a pgina inteira.
+
+62
+00:03:11,020 --> 00:03:14,040
+Voltando ao aplicativo. py, ento podemos fazer
+
+63
+00:03:15,140 --> 00:03:17,680
+for_quote na pgina. citaes, impresso, citao.
+
+64
+00:03:19,110 --> 00:03:21,950
+Quando imprimimos aspas, isso ,
+
+65
+00:03:21,950 --> 00:03:25,060
+antes de tudo, a primeira pgina. Aspas nos dar objetos do analisador de cotaes,
+
+66
+00:03:25,060 --> 00:03:25,893
+e cada
+
+67
+00:03:25,893 --> 00:03:30,350
+objeto do analisador de cotao tem um mtodo repr que ser chamado
+
+68
+00:03:30,350 --> 00:03:32,130
+quando o imprimirmos.
+
+69
+00:03:32,130 --> 00:03:36,950
+Ento, quando imprimimos, ele vai passar por cada citao
+
+70
+00:03:39,640 --> 00:03:41,230
+entre aspas e a lista que
+
+71
+00:03:41,230 --> 00:03:44,270
+voltamos, e vai ser impressa.
+
+72
+00:03:44,270 --> 00:03:46,070
+Vamos clique direito. py, e
+
+73
+00:03:46,990 --> 00:03:50,010
+execut-lo, e a est.
+
+74
+00:03:50,010 --> 00:03:53,040
+Recebemos nossos objetos de cotao assim.
+
+75
+00:03:53,040 --> 00:03:56,800
+Se voc quisesse apenas imprimir o nome, desculpe, contedo do ponto,
+
+76
+00:03:56,800 --> 00:03:59,700
+no o nome, o contedo da citao, voc poderia
+
+77
+00:03:59,700 --> 00:04:01,000
+fazer isso, e ento
+
+78
+00:04:01,000 --> 00:04:03,440
+voc s tem o
+
+79
+00:04:04,340 --> 00:04:06,040
+contedo da citao aqui.
+
+80
+00:04:06,040 --> 00:04:08,670
+Espero que isso faa um pouco mais de sentido.
+
+81
+00:04:09,860 --> 00:04:12,220
+Vamos repassar novamente no prximo vdeo.
+
+82
+00:04:14,200 --> 00:04:16,390
+Eu te vejo l.
+
+83
+00:04:16,390 --> 00:04:18,120
+&nbsp;
+
+84
+00:04:18,120 --> 00:04:19,400
+&nbsp;
+
+85
+00:04:19,400 --> 00:04:22,160
+&nbsp;
+
+86
+00:04:24,180 --> 00:04:26,540
+&nbsp;
+
+87
+00:04:26,540 --> 00:04:29,010
+&nbsp;
+
+88
+00:04:29,010 --> 00:04:29,960
+&nbsp;
+

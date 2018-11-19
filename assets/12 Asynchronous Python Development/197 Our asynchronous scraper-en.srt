@@ -1,0 +1,380 @@
+1
+00:00:00,120 --> 00:00:01,690
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,690 --> 00:00:04,520
+I hope you've watched the talks from the last lecture
+
+3
+00:00:04,520 --> 00:00:08,460
+and in this one, we're going to be turning our scraper
+
+4
+00:00:08,460 --> 00:00:13,030
+that we created earlier on into an asynchronous scraper.
+
+5
+00:00:13,030 --> 00:00:15,790
+Just to use the stuff that we've learned
+
+6
+00:00:15,790 --> 00:00:18,090
+and also a couple of things that were mentioned briefly
+
+7
+00:00:18,090 --> 00:00:20,570
+in the talks that we're going to explain as well.
+
+8
+00:00:21,950 --> 00:00:24,870
+When we looked at scraping websites before,
+
+9
+00:00:24,870 --> 00:00:29,030
+we sort of got up to 50 pages here, one after another,
+
+10
+00:00:29,030 --> 00:00:33,840
+from our books.toscrape.com site, but it could be a bit slow
+
+11
+00:00:33,840 --> 00:00:35,630
+because of all these pages.
+
+12
+00:00:35,630 --> 00:00:37,650
+If you remember, when we ran the menu,
+
+13
+00:00:37,650 --> 00:00:42,020
+which I'm gonna do just now, we then sort of have a period
+
+14
+00:00:42,020 --> 00:00:44,380
+where nothing seemed to happen.
+
+15
+00:00:45,520 --> 00:00:48,630
+This was when the pages were all loading.
+
+16
+00:00:48,630 --> 00:00:51,830
+Eventually something appears once all the pages have loaded
+
+17
+00:00:51,830 --> 00:00:54,040
+and we've extracted all of the books
+
+18
+00:00:54,040 --> 00:00:57,570
+into our sort of master books list.
+
+19
+00:00:57,570 --> 00:01:02,200
+I'm just gonna exit this menu and collapse that.
+
+20
+00:01:03,070 --> 00:01:05,180
+If we could do this asynchronously,
+
+21
+00:01:05,180 --> 00:01:07,820
+we could increase the speed massively
+
+22
+00:01:07,820 --> 00:01:10,950
+and the reason for that is as follows.
+
+23
+00:01:10,950 --> 00:01:15,030
+What's happening here is that the first thing we're doing
+
+24
+00:01:15,030 --> 00:01:18,840
+is we are sort of creating a new string,
+
+25
+00:01:18,840 --> 00:01:20,750
+fairly straight forward.
+
+26
+00:01:20,750 --> 00:01:23,780
+Then we're requesting it and getting the page content,
+
+27
+00:01:24,640 --> 00:01:26,520
+and then we're sort of logging something.
+
+28
+00:01:26,520 --> 00:01:29,360
+Creating an AllBooksPage and sort of extending that.
+
+29
+00:01:31,060 --> 00:01:34,760
+The main improvement from using asynchronous requests,
+
+30
+00:01:34,760 --> 00:01:36,460
+which we're going to look at soon,
+
+31
+00:01:37,550 --> 00:01:39,620
+is in this line here, line 22.
+
+32
+00:01:40,610 --> 00:01:43,250
+The reason for that is because there are a few things
+
+33
+00:01:43,250 --> 00:01:46,640
+happening in the background when we do this.
+
+34
+00:01:46,640 --> 00:01:49,760
+This line starts a request to the server,
+
+35
+00:01:49,760 --> 00:01:52,150
+sends something to the server telling them,
+
+36
+00:01:52,150 --> 00:01:55,700
+hey, I want to start a connection to you
+
+37
+00:01:55,700 --> 00:01:58,510
+and then it has to wait for the server to respond.
+
+38
+00:01:59,400 --> 00:02:01,450
+Once the connection is set up,
+
+39
+00:02:01,450 --> 00:02:03,540
+it has to ask the server for the URL
+
+40
+00:02:03,540 --> 00:02:04,780
+that contains the page content
+
+41
+00:02:04,780 --> 00:02:06,730
+and it has to wait for the data to come back.
+
+42
+00:02:06,730 --> 00:02:08,840
+It has to download the entire page content
+
+43
+00:02:08,840 --> 00:02:11,700
+and wait for all that data to come through.
+
+44
+00:02:11,700 --> 00:02:13,220
+As you can see, there were a couple of times there
+
+45
+00:02:13,220 --> 00:02:15,510
+where we're just waiting for the server
+
+46
+00:02:15,510 --> 00:02:17,150
+to give us something.
+
+47
+00:02:17,150 --> 00:02:19,540
+To tell us that a connection has been set up
+
+48
+00:02:19,540 --> 00:02:22,040
+or to tell us that the data is now ready,
+
+49
+00:02:22,040 --> 00:02:24,240
+and, of course, for us to download the data.
+
+50
+00:02:26,430 --> 00:02:29,150
+From what we've looked at in asynchronous programming,
+
+51
+00:02:29,150 --> 00:02:34,150
+wait means potential improvements from using concurrency.
+
+52
+00:02:35,630 --> 00:02:37,870
+In Python we cannot run two things at once,
+
+53
+00:02:37,870 --> 00:02:40,820
+unless we use the multi-processing module,
+
+54
+00:02:40,820 --> 00:02:43,980
+but we could potentially send the server,
+
+55
+00:02:43,980 --> 00:02:46,580
+hey, give me this, hey, give me this, hey, give me this
+
+56
+00:02:46,580 --> 00:02:49,520
+and then just wait for all three at the same time.
+
+57
+00:02:49,520 --> 00:02:51,940
+The server will presumably be able to respond
+
+58
+00:02:51,940 --> 00:02:54,420
+to these requests more or less quickly
+
+59
+00:02:54,420 --> 00:02:57,310
+and then we won't be waiting too long.
+
+60
+00:02:57,310 --> 00:02:59,230
+We'll only be waiting for the server to respond
+
+61
+00:02:59,230 --> 00:03:02,130
+to all three, more or less, simultaneously.
+
+62
+00:03:03,820 --> 00:03:05,110
+Okay.
+
+63
+00:03:05,110 --> 00:03:08,710
+Just as we did with our simple generator task scheduler
+
+64
+00:03:08,710 --> 00:03:12,100
+where we had our three countdowns and we sort of started one
+
+65
+00:03:12,100 --> 00:03:13,810
+and then started the other, and then started the other,
+
+66
+00:03:13,810 --> 00:03:16,850
+and then we used next to go over each one.
+
+67
+00:03:16,850 --> 00:03:19,540
+We're going to be doing something like that.
+
+68
+00:03:19,540 --> 00:03:22,860
+We're going to be having a task scheduler,
+
+69
+00:03:22,860 --> 00:03:26,600
+but we're gonna use the Python asyncio library
+
+70
+00:03:26,600 --> 00:03:29,530
+in order to loop through the various tasks
+
+71
+00:03:29,530 --> 00:03:31,260
+that we'll be creating and each task is going
+
+72
+00:03:31,260 --> 00:03:34,470
+to be responsible of fetching one of these URLs.
+
+73
+00:03:36,010 --> 00:03:39,010
+We're gonna have a task per URL
+
+74
+00:03:39,010 --> 00:03:40,450
+and we're just gonna start them all
+
+75
+00:03:40,450 --> 00:03:43,550
+at the same time using yields.
+
+76
+00:03:43,550 --> 00:03:46,100
+We're gonna sort of wait and resume or suspend them
+
+77
+00:03:46,100 --> 00:03:47,210
+as data comes back.
+
+78
+00:03:48,530 --> 00:03:49,990
+Okay.
+
+79
+00:03:49,990 --> 00:03:52,080
+We're also gonna be using a new library called
+
+80
+00:03:52,080 --> 00:03:57,080
+aiohttp and we've previously used the requests library,
+
+81
+00:03:57,410 --> 00:03:59,240
+like we've done here,
+
+82
+00:03:59,240 --> 00:04:01,600
+but the requests library does not allow us
+
+83
+00:04:01,600 --> 00:04:03,280
+to make requests asynchronously.
+
+84
+00:04:03,280 --> 00:04:07,960
+It just doesn't have that juicy yield statement inside.
+
+85
+00:04:07,960 --> 00:04:11,810
+So, aiohttp does have them and it's all set up
+
+86
+00:04:11,810 --> 00:04:15,420
+to be used with asyncio, so we're gonna be using that
+
+87
+00:04:15,420 --> 00:04:19,100
+throughout this next few videos in order to turn this
+
+88
+00:04:19,100 --> 00:04:21,800
+into an asynchronous web scraper.
+
+89
+00:04:22,900 --> 00:04:27,470
+Also, as a reminder, the asyncio library is built-in,
+
+90
+00:04:27,470 --> 00:04:31,009
+aiohttp is a third-party library.
+
+91
+00:04:31,009 --> 00:04:32,040
+Just a minor distinction.
+
+92
+00:04:32,040 --> 00:04:35,410
+We're gonna be looking through that in this section.
+
+93
+00:04:36,340 --> 00:04:37,570
+Let's move onto the next video
+
+94
+00:04:37,570 --> 00:04:41,700
+and we'll start with making a first request with aiohttp.
+
+95
+00:04:41,700 --> 00:04:42,650
+I'll see you there.
+

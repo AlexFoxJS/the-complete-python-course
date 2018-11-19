@@ -1,0 +1,352 @@
+1
+00:00:00,052 --> 00:00:01,221
+<v Jose>Hi, and welcome back.</v>
+
+2
+00:00:01,221 --> 00:00:03,528
+In this video we're lookin' at some database jargon
+
+3
+00:00:03,528 --> 00:00:05,085
+that you'll need to know.
+
+4
+00:00:05,085 --> 00:00:07,945
+Starting with, what is a cursor?
+
+5
+00:00:07,945 --> 00:00:11,144
+We're also going to look at, what is commit?
+
+6
+00:00:11,144 --> 00:00:13,776
+And finally, just a couple of words on how we're gonna
+
+7
+00:00:13,776 --> 00:00:17,970
+write SQL and then then we'll move on to the next video.
+
+8
+00:00:17,970 --> 00:00:22,543
+Cursors, all operations in SQLite are made by cursors,
+
+9
+00:00:22,543 --> 00:00:26,421
+and not by the connection object itself.
+
+10
+00:00:26,421 --> 00:00:27,904
+There's two reasons for that.
+
+11
+00:00:27,904 --> 00:00:32,009
+First reason is that if we have a single connection
+
+12
+00:00:32,009 --> 00:00:35,892
+we can only perform one operation at a time.
+
+13
+00:00:35,892 --> 00:00:38,490
+If we have many cursors we can use each cursor
+
+14
+00:00:38,490 --> 00:00:41,777
+to read some data and one to write some data.
+
+15
+00:00:41,777 --> 00:00:45,716
+Remember we are limited to one write operation at a time
+
+16
+00:00:45,716 --> 00:00:49,966
+but multiple cursors can be reading data at the same time.
+
+17
+00:00:49,966 --> 00:00:52,717
+The cursor also has a specific meaning
+
+18
+00:00:52,717 --> 00:00:55,242
+and there's a reason why it's called a cursor
+
+19
+00:00:55,242 --> 00:00:58,159
+and that is, when we read some data
+
+20
+00:00:59,291 --> 00:01:01,434
+let's say we have this table here
+
+21
+00:01:01,434 --> 00:01:04,176
+and we tell the cursor to fetch some data,
+
+22
+00:01:04,176 --> 00:01:06,020
+get some data out of the database.
+
+23
+00:01:06,020 --> 00:01:09,451
+The cursor starts there, at the very top,
+
+24
+00:01:09,451 --> 00:01:12,496
+right before our first row.
+
+25
+00:01:12,496 --> 00:01:15,169
+When we tell the cursor to move over to the next line
+
+26
+00:01:15,169 --> 00:01:17,602
+it will give us the first line
+
+27
+00:01:17,602 --> 00:01:19,722
+and the cursor will move to the second row.
+
+28
+00:01:19,722 --> 00:01:24,359
+Notice how this cursor is actually like pointing at a place,
+
+29
+00:01:24,359 --> 00:01:25,379
+that's why it's called a cursor
+
+30
+00:01:25,379 --> 00:01:27,725
+because cursors are used to point at things
+
+31
+00:01:27,725 --> 00:01:28,877
+and this cursor here is pointing
+
+32
+00:01:28,877 --> 00:01:31,782
+at it's current location down the table.
+
+33
+00:01:31,782 --> 00:01:35,413
+When we read the first row, it moves over to the second row.
+
+34
+00:01:35,413 --> 00:01:38,655
+Now, when we ask the cursor to read one row
+
+35
+00:01:38,655 --> 00:01:41,964
+it's going to read one row after the one it's at now.
+
+36
+00:01:41,964 --> 00:01:44,027
+So it's going to move over to row three
+
+37
+00:01:44,027 --> 00:01:46,358
+and it would give us row two.
+
+38
+00:01:46,358 --> 00:01:47,191
+And so forth.
+
+39
+00:01:47,191 --> 00:01:50,827
+And this is really the main reason why it's called a cursor,
+
+40
+00:01:50,827 --> 00:01:53,001
+because every time you ask for a new row
+
+41
+00:01:53,001 --> 00:01:56,584
+it's going to move down and you cannot go back up.
+
+42
+00:01:56,584 --> 00:01:58,387
+So the cursor just keeps pointing down
+
+43
+00:01:58,387 --> 00:02:01,637
+and moving down as you ask it for rows.
+
+44
+00:02:02,867 --> 00:02:05,700
+Okay, so we are gonna encounter some
+
+45
+00:02:05,700 --> 00:02:08,582
+interesting functionality to do with this way
+
+46
+00:02:08,582 --> 00:02:10,999
+of operating soon.
+
+47
+00:02:12,023 --> 00:02:14,384
+Next up, the commit.
+
+48
+00:02:14,384 --> 00:02:18,981
+Commit just means, save the result to the disc.
+
+49
+00:02:18,981 --> 00:02:21,847
+And that's because we keep a bunch of data in memory
+
+50
+00:02:21,847 --> 00:02:23,278
+until we commit.
+
+51
+00:02:23,278 --> 00:02:25,322
+For example, say we want to insert some data
+
+52
+00:02:25,322 --> 00:02:27,065
+into our database,
+
+53
+00:02:27,065 --> 00:02:28,899
+we tell SQLite to insert it,
+
+54
+00:02:28,899 --> 00:02:30,744
+it doesn't actually get inserted.
+
+55
+00:02:30,744 --> 00:02:35,744
+It gets saved in memory until we say, commit all of this.
+
+56
+00:02:35,796 --> 00:02:39,378
+That allows us, for example, if we try to insert some data,
+
+57
+00:02:39,378 --> 00:02:42,189
+and it turns out to be corrupted or something like that,
+
+58
+00:02:42,189 --> 00:02:45,767
+we can then roll back and not actually save anything
+
+59
+00:02:45,767 --> 00:02:47,446
+to the disc.
+
+60
+00:02:47,446 --> 00:02:50,142
+It also allows us to write multiple things together.
+
+61
+00:02:50,142 --> 00:02:53,508
+For example, we can delete a user and insert a new user
+
+62
+00:02:53,508 --> 00:02:56,972
+and then commit and that actually proceeds to removing
+
+63
+00:02:56,972 --> 00:03:00,950
+the data from the disc and inserting the new data.
+
+64
+00:03:00,950 --> 00:03:05,319
+Let's say for example, we want to create a new purchase
+
+65
+00:03:05,319 --> 00:03:08,641
+for a user and then we want to, as a result of that,
+
+66
+00:03:08,641 --> 00:03:10,747
+update their credit card.
+
+67
+00:03:10,747 --> 00:03:13,410
+But if one fails we don't want to do the other.
+
+68
+00:03:13,410 --> 00:03:17,155
+We can try to add the purchase and if that fails
+
+69
+00:03:17,155 --> 00:03:22,155
+we will roll back and not proceed with the credit card.
+
+70
+00:03:22,237 --> 00:03:24,610
+So this commit allows us to,
+
+71
+00:03:24,610 --> 00:03:26,290
+when we are on a state where we want
+
+72
+00:03:26,290 --> 00:03:27,956
+to save things to a disc,
+
+73
+00:03:27,956 --> 00:03:30,976
+actually save them and not before.
+
+74
+00:03:30,976 --> 00:03:32,169
+So it gives us a bit of freedom
+
+75
+00:03:32,169 --> 00:03:35,186
+and also it gives us extra speed.
+
+76
+00:03:35,186 --> 00:03:36,769
+Keeping a bunch of things in memory
+
+77
+00:03:36,769 --> 00:03:38,539
+and then writing them altogether
+
+78
+00:03:38,539 --> 00:03:40,997
+is faster than writing them one by one.
+
+79
+00:03:40,997 --> 00:03:44,402
+Just due to the limitations on how the hard drives work
+
+80
+00:03:44,402 --> 00:03:47,069
+where the data's getting stored.
+
+81
+00:03:48,239 --> 00:03:51,335
+Now going to writing SQL, I'm going to redirect you over
+
+82
+00:03:51,335 --> 00:03:52,375
+to the next video.
+
+83
+00:03:52,375 --> 00:03:54,266
+SQL is English-like so the queries
+
+84
+00:03:54,266 --> 00:03:56,231
+are going to be fairly readable
+
+85
+00:03:56,231 --> 00:03:58,172
+and we're gonna do things like selecting data,
+
+86
+00:03:58,172 --> 00:04:00,156
+inserting data and things like that.
+
+87
+00:04:00,156 --> 00:04:02,676
+But we're going to do that in the very next video.
+
+88
+00:04:02,676 --> 00:04:04,593
+So I'll see you there.
+

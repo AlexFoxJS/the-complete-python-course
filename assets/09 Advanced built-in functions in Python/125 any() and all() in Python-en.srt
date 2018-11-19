@@ -1,0 +1,408 @@
+1
+00:00:00,180 --> 00:00:01,800
+<v Instructor>Hi there and welcome back.</v>
+
+2
+00:00:01,800 --> 00:00:04,930
+In this video we're talking about any and all.
+
+3
+00:00:04,930 --> 00:00:07,180
+Those are two functions that are really straightforward,
+
+4
+00:00:07,180 --> 00:00:09,130
+but in some cases can be really useful.
+
+5
+00:00:10,050 --> 00:00:12,705
+The any function takes an iterable and returns true
+
+6
+00:00:12,705 --> 00:00:15,170
+if any of its elements evaluate to true.
+
+7
+00:00:15,170 --> 00:00:17,980
+And the all function returns true
+
+8
+00:00:17,980 --> 00:00:20,820
+if all the elements evaluate to true.
+
+9
+00:00:20,820 --> 00:00:23,140
+So here's an example of when it might be useful.
+
+10
+00:00:23,140 --> 00:00:27,650
+Imagine you've got this list of friend locations.
+
+11
+00:00:27,650 --> 00:00:29,480
+It's a list of dictionaries where each dictionary
+
+12
+00:00:29,480 --> 00:00:32,330
+has a name of your friend and the location of the friend.
+
+13
+00:00:33,180 --> 00:00:36,570
+Then we ask the user for their location.
+
+14
+00:00:41,020 --> 00:00:43,220
+And then we're going to calculate which friends
+
+15
+00:00:43,220 --> 00:00:44,390
+are in that location.
+
+16
+00:00:53,200 --> 00:00:54,740
+So bit of a longer list comprehension there.
+
+17
+00:00:54,740 --> 00:00:57,250
+Just get in the friend for each of the friends
+
+18
+00:00:57,250 --> 00:00:59,949
+in friends, if their location is equal to
+
+19
+00:00:59,949 --> 00:01:03,190
+your location variable that the users entered.
+
+20
+00:01:03,190 --> 00:01:05,700
+So imagine that they enter San Francisco.
+
+21
+00:01:05,700 --> 00:01:07,780
+We're going to put in the friend object.
+
+22
+00:01:08,770 --> 00:01:11,510
+Sorry this dictionary, for each of the friends
+
+23
+00:01:11,510 --> 00:01:13,340
+if they are in San Francisco.
+
+24
+00:01:14,290 --> 00:01:17,750
+Now we could say, something like,
+
+25
+00:01:17,750 --> 00:01:19,140
+if len(friends_nearby) &gt; 0:
+
+26
+00:01:22,435 --> 00:01:24,485
+that means there are at least one friend,
+
+27
+00:01:25,345 --> 00:01:26,920
+print you are not alone.
+
+28
+00:01:29,440 --> 00:01:32,000
+I'll just to that so it's a bit more readable for you.
+
+29
+00:01:32,000 --> 00:01:33,280
+However this is not terribly nice
+
+30
+00:01:33,280 --> 00:01:36,820
+because what we want to do, is we don't care
+
+31
+00:01:36,820 --> 00:01:38,420
+about the length, what we care
+
+32
+00:01:38,420 --> 00:01:40,530
+is whether there are any friends.
+
+33
+00:01:41,560 --> 00:01:46,560
+So here is where the any friends comes in handy.
+
+34
+00:01:46,980 --> 00:01:50,580
+If any friends nearby print you are not alone.
+
+35
+00:01:50,580 --> 00:01:52,320
+What this is doing, it is going over
+
+36
+00:01:52,320 --> 00:01:54,650
+each of the elements in friends nearby
+
+37
+00:01:54,650 --> 00:01:57,270
+and it's checking whether they are truthy.
+
+38
+00:01:58,690 --> 00:02:00,640
+Now are truthy value,
+
+39
+00:02:02,440 --> 00:02:04,054
+notice how these things are not booleans,
+
+40
+00:02:04,054 --> 00:02:05,840
+they are dictionaries.
+
+41
+00:02:05,840 --> 00:02:09,590
+A truthy value is one that evaluates to true.
+
+42
+00:02:09,590 --> 00:02:13,660
+So here are some values that evaluate to false.
+
+43
+00:02:13,660 --> 00:02:14,980
+Just because there's not that many,
+
+44
+00:02:14,980 --> 00:02:16,680
+and it's always good to know them.
+
+45
+00:02:18,340 --> 00:02:21,070
+Zero evaluates to false when you try
+
+46
+00:02:21,070 --> 00:02:22,450
+to get a boolean out of it.
+
+47
+00:02:23,690 --> 00:02:24,990
+So does none of course.
+
+48
+00:02:25,990 --> 00:02:29,970
+So do empty list, empty tuple, empty sets.
+
+49
+00:02:29,970 --> 00:02:33,100
+Does does false, and of course zero point zero
+
+50
+00:02:33,100 --> 00:02:36,300
+and all these type of numbers that are zero,
+
+51
+00:02:36,300 --> 00:02:37,360
+evaluate to false.
+
+52
+00:02:38,970 --> 00:02:41,470
+You can whether something evaluates to true or false
+
+53
+00:02:41,470 --> 00:02:43,390
+by doing bool of zero.
+
+54
+00:02:45,510 --> 00:02:50,510
+So we can run that and we can enter San Francisco.
+
+55
+00:02:53,140 --> 00:02:55,510
+Notice how it says you a not alone first of all.
+
+56
+00:02:55,510 --> 00:02:56,750
+And then it also says, false
+
+57
+00:02:56,750 --> 00:02:59,947
+because bool of zero is false.
+
+58
+00:02:59,947 --> 00:03:01,980
+So that's what the any function does.
+
+59
+00:03:01,980 --> 00:03:04,560
+It goes through each element and it asks them
+
+60
+00:03:04,560 --> 00:03:08,410
+if they were a boolean, would they be true or false?
+
+61
+00:03:08,410 --> 00:03:10,000
+If any of them says true,
+
+62
+00:03:10,000 --> 00:03:12,680
+then it says, okay this is true, you're not alone.
+
+63
+00:03:14,560 --> 00:03:16,930
+You can also say all friends nearby.
+
+64
+00:03:18,020 --> 00:03:21,580
+But again, the friends nearby function
+
+65
+00:03:21,580 --> 00:03:26,160
+is going to contain either zero friends
+
+66
+00:03:26,160 --> 00:03:28,010
+or one or more friends,
+
+67
+00:03:28,010 --> 00:03:29,820
+so all doesn't make much sense
+
+68
+00:03:30,860 --> 00:03:33,670
+because all of your friends are going to be dictionaries.
+
+69
+00:03:33,670 --> 00:03:37,620
+So if one of them is true, all of them
+
+70
+00:03:37,620 --> 00:03:38,970
+are going to be true because they're all
+
+71
+00:03:38,970 --> 00:03:39,803
+going to be dictionaries,
+
+72
+00:03:39,803 --> 00:03:42,100
+and dictionaries are always true unless they're empty.
+
+73
+00:03:43,160 --> 00:03:47,620
+Any would return true if there's at least one.
+
+74
+00:03:47,620 --> 00:03:49,310
+Or false if empty,
+
+75
+00:03:50,570 --> 00:03:52,820
+so it's a pretty handy function in this case.
+
+76
+00:03:54,240 --> 00:03:55,073
+Okay.
+
+77
+00:03:56,240 --> 00:03:58,390
+Now let me just delete that.
+
+78
+00:03:58,390 --> 00:04:01,950
+And of course all would print, for example
+
+79
+00:04:01,950 --> 00:04:04,340
+all of one, two, three, four, five.
+
+80
+00:04:06,250 --> 00:04:07,620
+These will print true.
+
+81
+00:04:08,600 --> 00:04:10,710
+So I'm going to run this,
+
+82
+00:04:10,710 --> 00:04:12,780
+I say San Francisco,
+
+83
+00:04:12,780 --> 00:04:14,770
+and now notice how it says true here
+
+84
+00:04:14,770 --> 00:04:17,280
+because one, two, three, four, five are all true.
+
+85
+00:04:17,280 --> 00:04:20,030
+But as soon as we put a zero in there and run it again,
+
+86
+00:04:22,530 --> 00:04:25,660
+we now get false because not all of these things here
+
+87
+00:04:25,660 --> 00:04:28,160
+are true, one of them's false and that's the zero.
+
+88
+00:04:29,350 --> 00:04:32,020
+So it can be useful in some circumstances.
+
+89
+00:04:32,020 --> 00:04:33,750
+I just wanted you to know about this function
+
+90
+00:04:33,750 --> 00:04:35,900
+just in case you encounter a situation
+
+91
+00:04:35,900 --> 00:04:37,860
+where you need to use it.
+
+92
+00:04:37,860 --> 00:04:40,230
+This is again, of me giving you some tools
+
+93
+00:04:40,230 --> 00:04:42,570
+for you to use in your construction project.
+
+94
+00:04:42,570 --> 00:04:45,610
+You may not need them all for one particular project
+
+95
+00:04:45,610 --> 00:04:47,550
+but they may be useful for other projects.
+
+96
+00:04:47,550 --> 00:04:48,810
+And these functions are essentially
+
+97
+00:04:48,810 --> 00:04:51,120
+those slightly more obscure tools
+
+98
+00:04:51,120 --> 00:04:52,333
+a lot of people don't know about,
+
+99
+00:04:52,333 --> 00:04:54,290
+but they're still handy to know
+
+100
+00:04:54,290 --> 00:04:56,500
+and understand that they exist.
+
+101
+00:04:56,500 --> 00:04:57,420
+So that's it for this video,
+
+102
+00:04:57,420 --> 00:04:59,070
+and I'll see you on the next one.
+

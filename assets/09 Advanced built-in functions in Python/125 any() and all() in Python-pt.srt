@@ -1,0 +1,408 @@
+1
+00:00:00,180 --> 00:00:01,800
+Instrutor: Ol, seja bem vindo de volta.
+
+2
+00:00:01,800 --> 00:00:04,930
+Neste vdeo estamos falando de tudo e de todos.
+
+3
+00:00:04,930 --> 00:00:07,180
+Essas so duas funes que so realmente diretas, mas
+
+4
+00:00:07,180 --> 00:00:09,130
+em alguns casos podem ser realmente teis.
+
+5
+00:00:10,050 --> 00:00:12,705
+A funo any leva uma itervel e retorna true
+
+6
+00:00:12,705 --> 00:00:15,170
+se algum de seus elementos for avaliado como true.
+
+7
+00:00:15,170 --> 00:00:17,980
+E a funo all retorna true se
+
+8
+00:00:17,980 --> 00:00:20,820
+todos os elementos forem avaliados como true.
+
+9
+00:00:20,820 --> 00:00:23,140
+Ento aqui est um exemplo de quando pode ser til.
+
+10
+00:00:23,140 --> 00:00:27,650
+Imagine que voc tenha essa lista de locais de amigos.
+
+11
+00:00:27,650 --> 00:00:29,480
+ uma lista de dicionrios onde cada
+
+12
+00:00:29,480 --> 00:00:32,330
+dicionrio tem o nome do seu amigo e a localizao do amigo.
+
+13
+00:00:33,180 --> 00:00:36,570
+Em seguida, perguntamos ao usurio por sua localizao.
+
+14
+00:00:41,020 --> 00:00:43,220
+E ento vamos calcular quais amigos
+
+15
+00:00:43,220 --> 00:00:44,390
+esto nesse local.
+
+16
+00:00:53,200 --> 00:00:54,740
+To pouco de compreenso de lista mais longa l.
+
+17
+00:00:54,740 --> 00:00:57,250
+Basta entrar no amigo para cada um dos
+
+18
+00:00:57,250 --> 00:00:59,949
+amigos em amigos, se a localizao deles for
+
+19
+00:00:59,949 --> 00:01:03,190
+igual  sua varivel de local que os usurios inseriram.
+
+20
+00:01:03,190 --> 00:01:05,700
+Ento imagine que eles entram em So Francisco.
+
+21
+00:01:05,700 --> 00:01:07,780
+Ns vamos colocar o objeto amigo.
+
+22
+00:01:08,770 --> 00:01:11,510
+Desculpe este dicionrio, para cada um dos amigos
+
+23
+00:01:11,510 --> 00:01:13,340
+se eles estiverem em So Francisco.
+
+24
+00:01:14,290 --> 00:01:17,750
+Agora poderamos dizer, algo como, se len (friends_nearby)> 0:
+
+25
+00:01:17,750 --> 00:01:19,140
+isso significa que h
+
+26
+00:01:22,435 --> 00:01:24,485
+pelo menos um amigo, imprima
+
+27
+00:01:25,345 --> 00:01:26,920
+voc no est sozinho.
+
+28
+00:01:29,440 --> 00:01:32,000
+Eu vou apenas para isso, ento  um pouco mais legvel para voc.
+
+29
+00:01:32,000 --> 00:01:33,280
+No entanto, isso no
+
+30
+00:01:33,280 --> 00:01:36,820
+ muito bom, porque o que queremos fazer  que no nos
+
+31
+00:01:36,820 --> 00:01:38,420
+importamos com o comprimento, o
+
+32
+00:01:38,420 --> 00:01:40,530
+que nos importa  se h algum amigo.
+
+33
+00:01:41,560 --> 00:01:46,560
+Ento aqui  onde os amigos chegam a calhar.
+
+34
+00:01:46,980 --> 00:01:50,580
+Se algum amigo prximo imprimir voc no est sozinho.
+
+35
+00:01:50,580 --> 00:01:52,320
+O que isto est fazendo, est
+
+36
+00:01:52,320 --> 00:01:54,650
+indo sobre cada um dos elementos em amigos
+
+37
+00:01:54,650 --> 00:01:57,270
+prximos e est verificando se eles so verdadeiros.
+
+38
+00:01:58,690 --> 00:02:00,640
+Agora so valiosos, observe como
+
+39
+00:02:02,440 --> 00:02:04,054
+essas coisas no so
+
+40
+00:02:04,054 --> 00:02:05,840
+booleanas, elas so dicionrios.
+
+41
+00:02:05,840 --> 00:02:09,590
+Um valor geral  aquele que  avaliado como verdadeiro.
+
+42
+00:02:09,590 --> 00:02:13,660
+Ento, aqui esto alguns valores que so avaliados como falsos.
+
+43
+00:02:13,660 --> 00:02:14,980
+S porque no h
+
+44
+00:02:14,980 --> 00:02:16,680
+muitos, e  sempre bom conhec-los.
+
+45
+00:02:18,340 --> 00:02:21,070
+Zero  avaliado como falso quando voc
+
+46
+00:02:21,070 --> 00:02:22,450
+tenta obter um booleano.
+
+47
+00:02:23,690 --> 00:02:24,990
+Ento, no  claro.
+
+48
+00:02:25,990 --> 00:02:29,970
+Ento faa lista vazia, tupla vazia, conjuntos vazios.
+
+49
+00:02:29,970 --> 00:02:33,100
+Faz falso, e, claro, zero ponto zero e
+
+50
+00:02:33,100 --> 00:02:36,300
+todos esses tipos de nmeros que so zero,
+
+51
+00:02:36,300 --> 00:02:37,360
+avaliar a falsa.
+
+52
+00:02:38,970 --> 00:02:41,470
+Voc pode se algo  avaliado como verdadeiro
+
+53
+00:02:41,470 --> 00:02:43,390
+ou falso fazendo bool de zero.
+
+54
+00:02:45,510 --> 00:02:50,510
+Ento podemos executar isso e podemos entrar em So Francisco.
+
+55
+00:02:53,140 --> 00:02:55,510
+Note como voc no est sozinho em primeiro lugar.
+
+56
+00:02:55,510 --> 00:02:56,750
+E ento tambm
+
+57
+00:02:56,750 --> 00:02:59,947
+diz, falso porque bool de zero  falso.
+
+58
+00:02:59,947 --> 00:03:01,980
+Ento  isso que qualquer funo faz.
+
+59
+00:03:01,980 --> 00:03:04,560
+Ele passa por cada elemento e
+
+60
+00:03:04,560 --> 00:03:08,410
+pergunta se eles eram booleanos, seriam verdadeiros ou falsos?
+
+61
+00:03:08,410 --> 00:03:10,000
+Se algum deles diz a
+
+62
+00:03:10,000 --> 00:03:12,680
+verdade, ento diz, tudo bem, voc no est sozinho.
+
+63
+00:03:14,560 --> 00:03:16,930
+Voc tambm pode dizer todos os amigos prximos.
+
+64
+00:03:18,020 --> 00:03:21,580
+Mas, novamente, a funo de amigos prximos
+
+65
+00:03:21,580 --> 00:03:26,160
+vai conter zero amigos ou um ou mais amigos,
+
+66
+00:03:26,160 --> 00:03:28,010
+ento tudo no faz
+
+67
+00:03:28,010 --> 00:03:29,820
+muito sentido porque todos
+
+68
+00:03:30,860 --> 00:03:33,670
+os seus amigos sero dicionrios.
+
+69
+00:03:33,670 --> 00:03:37,620
+Ento, se um deles for verdadeiro, todos sero verdadeiros, porque todos
+
+70
+00:03:37,620 --> 00:03:38,970
+sero dicionrios, e os
+
+71
+00:03:38,970 --> 00:03:39,803
+dicionrios sempre
+
+72
+00:03:39,803 --> 00:03:42,100
+sero verdadeiros, a menos que estejam vazios.
+
+73
+00:03:43,160 --> 00:03:47,620
+Qualquer um retornaria verdadeiro se houvesse pelo menos um.
+
+74
+00:03:47,620 --> 00:03:49,310
+Ou false se vazio, ento
+
+75
+00:03:50,570 --> 00:03:52,820
+ uma funo bastante til nesse caso.
+
+76
+00:03:54,240 --> 00:03:55,073
+OK.
+
+77
+00:03:56,240 --> 00:03:58,390
+Agora deixe-me apagar isso.
+
+78
+00:03:58,390 --> 00:04:01,950
+E, claro, tudo seria impresso, por exemplo, todos
+
+79
+00:04:01,950 --> 00:04:04,340
+de um, dois, trs, quatro, cinco.
+
+80
+00:04:06,250 --> 00:04:07,620
+Estes iro imprimir true.
+
+81
+00:04:08,600 --> 00:04:10,710
+Ento, vou executar isso, digo So
+
+82
+00:04:10,710 --> 00:04:12,780
+Francisco, e agora percebo como isso
+
+83
+00:04:12,780 --> 00:04:14,770
+ verdade aqui porque um, dois,
+
+84
+00:04:14,770 --> 00:04:17,280
+trs, quatro, cinco so todos verdadeiros.
+
+85
+00:04:17,280 --> 00:04:20,030
+Mas assim que colocamos um zero l e o rodamos
+
+86
+00:04:22,530 --> 00:04:25,660
+novamente, agora ficamos falsos porque nem todas essas coisas so verdadeiras,
+
+87
+00:04:25,660 --> 00:04:28,160
+uma delas  falsa e esse  o zero.
+
+88
+00:04:29,350 --> 00:04:32,020
+Por isso, pode ser til em algumas circunstncias.
+
+89
+00:04:32,020 --> 00:04:33,750
+Eu s queria que voc soubesse
+
+90
+00:04:33,750 --> 00:04:35,900
+sobre essa funo apenas no caso de voc
+
+91
+00:04:35,900 --> 00:04:37,860
+encontrar uma situao em que precise us-la.
+
+92
+00:04:37,860 --> 00:04:40,230
+Isto  novamente, de mim, dando-lhe algumas ferramentas
+
+93
+00:04:40,230 --> 00:04:42,570
+para voc usar em seu projeto de construo.
+
+94
+00:04:42,570 --> 00:04:45,610
+Voc pode no precisar de todos eles para um projeto em particular,
+
+95
+00:04:45,610 --> 00:04:47,550
+mas eles podem ser teis para outros projetos.
+
+96
+00:04:47,550 --> 00:04:48,810
+E essas funes so
+
+97
+00:04:48,810 --> 00:04:51,120
+essencialmente aquelas ferramentas um pouco mais obscuras
+
+98
+00:04:51,120 --> 00:04:52,333
+que muitas pessoas no
+
+99
+00:04:52,333 --> 00:04:54,290
+conhecem, mas ainda so teis para
+
+100
+00:04:54,290 --> 00:04:56,500
+saber e entender que elas existem.
+
+101
+00:04:56,500 --> 00:04:57,420
+Ento  isso para
+
+102
+00:04:57,420 --> 00:04:59,070
+este vdeo, e eu vejo voc no prximo.
+

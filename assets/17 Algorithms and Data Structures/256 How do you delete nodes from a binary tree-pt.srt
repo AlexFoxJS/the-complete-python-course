@@ -1,0 +1,812 @@
+1
+00:00:00,000 --> 00:00:01,382
+-: Ol e bem vindo de volta.
+
+2
+00:00:01,382 --> 00:00:02,215
+Neste vdeo,
+
+3
+00:00:02,215 --> 00:00:05,952
+eu queria mostrar um pouco sobre a excluso de ns
+
+4
+00:00:05,952 --> 00:00:07,367
+em uma rvore binria.
+
+5
+00:00:07,367 --> 00:00:09,518
+Excluir ns  a parte
+
+6
+00:00:09,518 --> 00:00:12,175
+mais complicada de se lidar com uma
+
+7
+00:00:12,175 --> 00:00:15,508
+rvore binria porque voc pode excluir qualquer n
+
+8
+00:00:17,206 --> 00:00:21,494
+aqui, ento vamos comear a falar sobre a excluso de ns
+
+9
+00:00:21,494 --> 00:00:24,156
+e voc vai entender progressivamente porque 
+
+10
+00:00:24,156 --> 00:00:25,823
+uma coisa to complicada.
+
+11
+00:00:27,636 --> 00:00:29,984
+Vamos comear com esta rvore aqui como um exemplo.
+
+12
+00:00:29,984 --> 00:00:33,136
+Vamos imaginar que queremos excluir o n trs.
+
+13
+00:00:33,136 --> 00:00:37,266
+Digamos que queremos excluir trs desta rvore.
+
+14
+00:00:37,266 --> 00:00:39,981
+A primeira coisa em que temos que pensar
+
+15
+00:00:39,981 --> 00:00:42,731
+ o que faz trs estar nesta rvore?
+
+16
+00:00:45,141 --> 00:00:46,667
+Pode ser uma questo
+
+17
+00:00:46,667 --> 00:00:50,508
+estranha, mas lembre-se que temos o nosso objeto de rvore
+
+18
+00:00:50,508 --> 00:00:54,914
+binria, e o objeto de rvore binria sabe sobre esse n
+
+19
+00:00:54,914 --> 00:00:57,094
+principal, a raiz da rvore.
+
+20
+00:00:57,094 --> 00:01:00,078
+No sabe sobre nenhum outro n.
+
+21
+00:01:00,078 --> 00:01:04,083
+O objeto de rvore binria s conhece esse seis.
+
+22
+00:01:04,083 --> 00:01:07,916
+Os seis pontos para cinco e seis pontos para nove,
+
+23
+00:01:09,457 --> 00:01:11,907
+que  a esquerda e a direita.
+
+24
+00:01:11,907 --> 00:01:15,390
+Ento voc poderia dizer que cinco esto na rvore
+
+25
+00:01:15,390 --> 00:01:17,890
+porque a cabea aponta para ela.
+
+26
+00:01:19,226 --> 00:01:22,132
+Se a cabea no apontasse para ela,
+
+27
+00:01:22,132 --> 00:01:24,995
+ento voc no saberia que ela est
+
+28
+00:01:24,995 --> 00:01:27,861
+na rvore, portanto, ela no estaria na rvore.
+
+29
+00:01:27,861 --> 00:01:30,352
+Da mesma forma trs est na rvore, porque
+
+30
+00:01:30,352 --> 00:01:33,707
+cinco pontos para ela e a cabea aponta para cinco.
+
+31
+00:01:33,707 --> 00:01:36,467
+So os relacionamentos entre esses ns
+
+32
+00:01:36,467 --> 00:01:39,134
+que acabam descrevendo a rvore.
+
+33
+00:01:40,017 --> 00:01:42,917
+Se voc fez cinco no apontar para
+
+34
+00:01:42,917 --> 00:01:45,084
+trs, se voc deletou essa
+
+35
+00:01:46,188 --> 00:01:47,653
+seta, nada apontaria
+
+36
+00:01:47,653 --> 00:01:51,655
+para trs, voc no teria nenhuma varivel deste n
+
+37
+00:01:51,655 --> 00:01:54,442
+e Python reconheceria que no h
+
+38
+00:01:54,442 --> 00:01:56,061
+variveis referenciadas neste n.
+
+39
+00:01:56,061 --> 00:01:57,620
+Nada est apontando para isso.
+
+40
+00:01:57,620 --> 00:01:59,023
+Est completamente isolado.
+
+41
+00:01:59,023 --> 00:02:03,369
+Voc no tem como acessar este n em seu programa, e
+
+42
+00:02:03,369 --> 00:02:04,968
+quando o Python percebe
+
+43
+00:02:04,968 --> 00:02:07,000
+isso, o que ele faz
+
+44
+00:02:07,000 --> 00:02:10,010
+ apag-lo da memria, ou pelo menos permite
+
+45
+00:02:10,010 --> 00:02:15,010
+que outros programas ultrapassem essa memria e outras variveis para sobrescrever essa memria.
+
+46
+00:02:15,037 --> 00:02:17,253
+Portanto, se nada apontar para
+
+47
+00:02:17,253 --> 00:02:19,421
+um n, isso  essencialmente
+
+48
+00:02:19,421 --> 00:02:23,616
+o mesmo que exclu-lo, porque o Python cuida disso para voc.
+
+49
+00:02:23,616 --> 00:02:25,182
+Com isso dito, se quisermos
+
+50
+00:02:25,182 --> 00:02:28,007
+excluir esse n trs, agora voc sabe que tudo
+
+51
+00:02:28,007 --> 00:02:31,404
+o que precisa fazer  fazer com que o n cinco
+
+52
+00:02:31,404 --> 00:02:32,737
+no aponte para ele.
+
+53
+00:02:33,949 --> 00:02:35,230
+Se em vez
+
+54
+00:02:35,230 --> 00:02:36,647
+de trs, apontamos para
+
+55
+00:02:44,030 --> 00:02:45,859
+nenhum, ento trs so excludos.
+
+56
+00:02:45,859 --> 00:02:47,723
+Trs ainda estariam aqui em
+
+57
+00:02:47,723 --> 00:02:50,247
+algum lugar, mas o Python estaria ciente
+
+58
+00:02:50,247 --> 00:02:52,721
+de que voc no o est usando
+
+59
+00:02:52,721 --> 00:02:57,015
+e que eventualmente o apagaria da memria ou seria substitudo por outra coisa.
+
+60
+00:02:57,015 --> 00:02:59,269
+Ento,  assim que voc
+
+61
+00:02:59,269 --> 00:03:02,319
+exclui um n que no possui filhos.
+
+62
+00:03:02,319 --> 00:03:06,039
+Observe como trs no tem esquerda nem direito.
+
+63
+00:03:06,039 --> 00:03:08,393
+Quando um n no tem nenhum esquerdo nem
+
+64
+00:03:08,393 --> 00:03:11,208
+direito, tudo o que voc precisa fazer  configurar
+
+65
+00:03:11,208 --> 00:03:13,458
+o pai para no apontar mais para ele.
+
+66
+00:03:17,857 --> 00:03:20,197
+Digamos que voc queira excluir o
+
+67
+00:03:20,197 --> 00:03:22,898
+n nmero 5 aqui que tem um filho.
+
+68
+00:03:22,898 --> 00:03:25,172
+Cinco pontos para trs.
+
+69
+00:03:25,172 --> 00:03:29,214
+Se voc disser agora que seis no apontam para cinco,
+
+70
+00:03:29,214 --> 00:03:32,603
+o que voc fez  excluir cinco e trs.
+
+71
+00:03:32,603 --> 00:03:36,233
+Voc excluiu o ramo inteiro aqui.
+
+72
+00:03:36,233 --> 00:03:38,439
+Isso pode no ser o que voc quer.
+
+73
+00:03:38,439 --> 00:03:41,263
+Se voc quiser excluir apenas o n cinco,
+
+74
+00:03:41,263 --> 00:03:44,180
+sabendo que ele tem apenas um filho, tudo
+
+75
+00:03:45,077 --> 00:03:47,827
+o que voc precisa fazer  deletar cinco
+
+76
+00:03:48,792 --> 00:03:51,125
+e fazer seis pontos para trs.
+
+77
+00:03:52,031 --> 00:03:54,281
+Essencialmente pule mais de cinco.
+
+78
+00:03:55,791 --> 00:03:59,178
+A maneira de fazer isso  apenas fazer
+
+79
+00:03:59,178 --> 00:04:01,945
+seis pontos para trs imediatamente, assim.
+
+80
+00:04:01,945 --> 00:04:04,102
+Nada aponta para cinco agora.
+
+81
+00:04:04,102 --> 00:04:05,428
+Seis no aponta para cinco.
+
+82
+00:04:05,428 --> 00:04:06,924
+Trs no aponta para cinco,
+
+83
+00:04:06,924 --> 00:04:08,611
+embora cinco pontos para trs.
+
+84
+00:04:08,611 --> 00:04:10,083
+Nada aponta para trs
+
+85
+00:04:10,083 --> 00:04:12,992
+e se voc no tiver uma varivel para
+
+86
+00:04:12,992 --> 00:04:15,813
+esse n, ela tambm ser apagada da memria.
+
+87
+00:04:15,813 --> 00:04:19,071
+Portanto, quando voc quiser excluir um n que tenha
+
+88
+00:04:19,071 --> 00:04:23,959
+um filho, tudo o que voc precisa fazer  apontar o pai para
+
+89
+00:04:23,959 --> 00:04:28,209
+o filho e, em seguida, nada aponta para o pai inicial cinco.
+
+90
+00:04:29,405 --> 00:04:33,738
+Esses dois so os cenrios fceis em uma excluso de rvore.
+
+91
+00:04:34,595 --> 00:04:35,929
+Quando voc no tem
+
+92
+00:04:35,929 --> 00:04:36,762
+filhos,  muito
+
+93
+00:04:36,762 --> 00:04:38,252
+fcil, apenas aponta e nenhum.
+
+94
+00:04:38,252 --> 00:04:39,136
+Quando voc tem
+
+95
+00:04:39,136 --> 00:04:39,969
+um filho, muito
+
+96
+00:04:39,969 --> 00:04:42,695
+fcil,  s pegar o pai para apontar para o filho
+
+97
+00:04:42,695 --> 00:04:43,695
+em vez do n.
+
+98
+00:04:44,603 --> 00:04:49,226
+Mas quando voc deseja excluir um n que tem dois
+
+99
+00:04:49,226 --> 00:04:52,904
+filhos, ele se torna um pouco mais complicado.
+
+100
+00:04:52,904 --> 00:04:53,821
+Aqui est o porqu.
+
+101
+00:04:54,874 --> 00:04:56,285
+Quando voc quer apagar
+
+102
+00:04:56,285 --> 00:05:00,382
+cinco, tudo que voc faz  fazer seis pontos para a criana.
+
+103
+00:05:00,382 --> 00:05:01,760
+Se voc quiser excluir nove, talvez
+
+104
+00:05:01,760 --> 00:05:02,739
+voc pense: "Ei, apenas
+
+105
+00:05:02,739 --> 00:05:05,665
+faa seis pontos para a criana, certo? "" Isso vai
+
+106
+00:05:05,665 --> 00:05:06,998
+fazer isso. "No
+
+107
+00:05:09,517 --> 00:05:12,100
+funciona bem assim.
+
+108
+00:05:13,737 --> 00:05:17,570
+Imagine que voc decide fazer seis pontos a sete.
+
+109
+00:05:18,676 --> 00:05:20,224
+Agora, seis pontos a
+
+110
+00:05:20,224 --> 00:05:21,805
+sete, sete pontos a
+
+111
+00:05:21,805 --> 00:05:24,638
+oito, mas nada aponta para tudo isso, ento
+
+112
+00:05:25,986 --> 00:05:27,207
+voc exclui nove,
+
+113
+00:05:27,207 --> 00:05:29,185
+doze e onze em sua
+
+114
+00:05:29,185 --> 00:05:31,196
+totalidade porque nada aponta para nove,
+
+115
+00:05:31,196 --> 00:05:32,626
+ento o Python o remove.
+
+116
+00:05:32,626 --> 00:05:33,593
+Nada aponta para
+
+117
+00:05:33,593 --> 00:05:35,597
+12, se nove for deletado, ento
+
+118
+00:05:35,597 --> 00:05:36,934
+o Python remove isso.
+
+119
+00:05:36,934 --> 00:05:37,937
+Ento nada aponta
+
+120
+00:05:37,937 --> 00:05:40,280
+para 11, ento o Python remove isso.
+
+121
+00:05:40,280 --> 00:05:41,113
+Nada bom.
+
+122
+00:05:45,456 --> 00:05:49,605
+Seria bom se voc pudesse deletar nove e
+
+123
+00:05:49,605 --> 00:05:51,438
+colocar sete aqui.
+
+124
+00:05:52,701 --> 00:05:55,534
+Mas ento voc teria que deletar isto,
+
+125
+00:05:58,105 --> 00:06:01,698
+faa sete pontos para oito e isso no funciona,
+
+126
+00:06:01,698 --> 00:06:04,005
+porque agora oito esto  esquerda
+
+127
+00:06:04,005 --> 00:06:06,147
+e oito no podem estar
+
+128
+00:06:06,147 --> 00:06:09,602
+ esquerda das sete porque isso seria estranho, certo?
+
+129
+00:06:09,602 --> 00:06:12,108
+Oito  maior que sete, ento deve estar  direita,
+
+130
+00:06:12,108 --> 00:06:13,841
+mas 12 tambm  maior que sete,
+
+131
+00:06:13,841 --> 00:06:15,203
+ento tambm deve estar  direita,
+
+132
+00:06:15,203 --> 00:06:16,796
+ento agora sete termina com dois
+
+133
+00:06:16,796 --> 00:06:18,978
+ns  direita, o que voc no pode ter.
+
+134
+00:06:18,978 --> 00:06:20,728
+Ento, como fazemos isso?
+
+135
+00:06:22,829 --> 00:06:24,726
+Nove tem dois
+
+136
+00:06:24,726 --> 00:06:28,337
+filhos, que vamos chamar dois sub-ramos.
+
+137
+00:06:28,337 --> 00:06:30,609
+Ns temos o nosso ramo esquerdo
+
+138
+00:06:30,609 --> 00:06:32,609
+aqui e um ramo direito aqui.
+
+139
+00:06:34,505 --> 00:06:37,743
+Dissemos que no podemos colocar sete aqui porque,
+
+140
+00:06:37,743 --> 00:06:40,300
+ento, o que fazemos com os oito?
+
+141
+00:06:40,300 --> 00:06:42,383
+Mas podemos colocar oito aqui
+
+142
+00:06:43,939 --> 00:06:45,257
+e deletar isso.
+
+143
+00:06:45,257 --> 00:06:46,935
+Esta certo.
+
+144
+00:06:46,935 --> 00:06:48,333
+Agora sete  menor que
+
+145
+00:06:48,333 --> 00:06:49,594
+oito e fica  esquerda,
+
+146
+00:06:49,594 --> 00:06:51,431
+12  maior que oito e fica
+
+147
+00:06:51,431 --> 00:06:53,205
+ direita, ento est tudo bem.
+
+148
+00:06:53,205 --> 00:06:56,303
+Da mesma forma, podemos colocar 11
+
+149
+00:06:56,303 --> 00:06:57,774
+aqui, esta criana,
+
+150
+00:06:57,774 --> 00:06:59,791
+e excluir 11 daqui.
+
+151
+00:06:59,791 --> 00:07:01,645
+Sete  menor que 11,
+
+152
+00:07:01,645 --> 00:07:02,708
+ento est tudo
+
+153
+00:07:02,708 --> 00:07:04,708
+bem, e 12  maior que
+
+154
+00:07:04,708 --> 00:07:06,556
+11, ento est tudo bem.
+
+155
+00:07:06,556 --> 00:07:07,393
+OK?
+
+156
+00:07:07,393 --> 00:07:08,976
+Ento, o que estou fazendo?
+
+157
+00:07:09,817 --> 00:07:12,900
+O que estou fazendo  no ramo esquerdo,
+
+158
+00:07:14,237 --> 00:07:18,237
+voc pode escolher o n que est mais  direita.
+
+159
+00:07:19,286 --> 00:07:20,986
+Nesse ramo, o n
+
+160
+00:07:20,986 --> 00:07:23,403
+mais  direita  oito.
+
+161
+00:07:24,489 --> 00:07:28,323
+Voc sabe que vai ser o maior n neste ramo.
+
+162
+00:07:28,323 --> 00:07:32,027
+O maior n no ramo sempre ser maior que
+
+163
+00:07:32,027 --> 00:07:33,194
+esse, porque nesse
+
+164
+00:07:34,916 --> 00:07:37,570
+ramo o maior n  oito,
+
+165
+00:07:37,570 --> 00:07:40,536
+portanto oito tem que ser maior que
+
+166
+00:07:40,536 --> 00:07:42,514
+sete, e no s isso,
+
+167
+00:07:42,514 --> 00:07:45,665
+mas voc sabe que o maior n
+
+168
+00:07:45,665 --> 00:07:49,513
+nesse ramo  sempre ser menor que esse n.
+
+169
+00:07:49,513 --> 00:07:50,346
+Por qu?
+
+170
+00:07:50,346 --> 00:07:53,078
+Porque se esse n fosse maior
+
+171
+00:07:53,078 --> 00:07:54,828
+que esse, acabaria aqui.
+
+172
+00:07:56,376 --> 00:07:59,385
+Ento, quando voc est apagando um n com
+
+173
+00:07:59,385 --> 00:08:03,542
+dois filhos, voc pode simplesmente substituir o n pelo maior
+
+174
+00:08:03,542 --> 00:08:05,125
+n no ramo esquerdo.
+
+175
+00:08:06,951 --> 00:08:10,157
+Ou pelo menor n no ramo direito.
+
+176
+00:08:10,157 --> 00:08:12,700
+O n mais  esquerda no ramo direito.
+
+177
+00:08:12,700 --> 00:08:14,350
+Essas so as duas opes.
+
+178
+00:08:14,350 --> 00:08:16,566
+O maior n no ramo esquerdo
+
+179
+00:08:16,566 --> 00:08:19,267
+ou o menor n no ramo direito.
+
+180
+00:08:19,267 --> 00:08:23,477
+Isso lhe d um n que est mais prximo deste.
+
+181
+00:08:23,477 --> 00:08:25,531
+Ento voc pode substitu-lo,
+
+182
+00:08:25,531 --> 00:08:27,781
+essencialmente, colocar oito aqui
+
+183
+00:08:28,736 --> 00:08:30,403
+e excluir este.
+
+184
+00:08:31,745 --> 00:08:34,087
+O que estamos fazendo l 
+
+185
+00:08:34,087 --> 00:08:35,918
+apenas dizer que este 
+
+186
+00:08:35,918 --> 00:08:39,610
+o que queremos excluir, ento o pai agora vai
+
+187
+00:08:39,610 --> 00:08:43,443
+apontar para o n mais  direita no sub-ramo esquerdo.
+
+188
+00:08:46,302 --> 00:08:48,359
+Ento o pai vai apontar para o
+
+189
+00:08:48,359 --> 00:08:50,584
+n mais  direita no sub-ramo esquerdo.
+
+190
+00:08:50,584 --> 00:08:54,224
+O pai desse n vai apontar para
+
+191
+00:08:54,224 --> 00:08:55,921
+nenhum, j deletado,
+
+192
+00:08:55,921 --> 00:08:59,694
+e o n oito vai apontar para
+
+193
+00:08:59,694 --> 00:09:00,559
+isso e
+
+194
+00:09:00,559 --> 00:09:05,263
+isto; os filhos do n original que voc queria excluir.
+
+195
+00:09:05,263 --> 00:09:07,449
+Programao que no  to
+
+196
+00:09:07,449 --> 00:09:09,244
+simples, deixe-me dizer isso.
+
+197
+00:09:09,244 --> 00:09:11,430
+H muito cdigo que precisamos
+
+198
+00:09:11,430 --> 00:09:14,137
+escrever para que a excluso funcione.
+
+199
+00:09:14,137 --> 00:09:18,620
+Eu s queria que voc estivesse ciente dessas
+
+200
+00:09:18,620 --> 00:09:23,179
+dificuldades, pois comeamos no prximo vdeo codificando essas excluses.
+
+201
+00:09:23,179 --> 00:09:24,029
+OK?
+
+202
+00:09:24,029 --> 00:09:25,205
+Obrigado por se juntar a mim.
+
+203
+00:09:25,205 --> 00:09:26,990
+Eu vou te ver no prximo vdeo.
+

@@ -1,0 +1,952 @@
+1
+00:00:00,270 --> 00:00:01,220
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,220 --> 00:00:02,460
+In this video, we're going to look
+
+3
+00:00:02,460 --> 00:00:05,730
+at something substantially more complicated.
+
+4
+00:00:05,730 --> 00:00:07,810
+So please stay with me, and let's look
+
+5
+00:00:07,810 --> 00:00:12,160
+at queuing in threads with shared state.
+
+6
+00:00:12,160 --> 00:00:14,960
+The first thing I'm going to do is, import a few things.
+
+7
+00:00:19,619 --> 00:00:21,180
+So I'm gonna import time and random,
+
+8
+00:00:21,180 --> 00:00:25,200
+as we know to do our phasing, and I'm going to import queue.
+
+9
+00:00:25,200 --> 00:00:30,090
+The queue module has a queue in it which is going
+
+10
+00:00:30,090 --> 00:00:31,890
+to be essential for our programme to work,
+
+11
+00:00:31,890 --> 00:00:34,080
+and I'm gonna explain exactly what this queue does
+
+12
+00:00:34,080 --> 00:00:35,830
+and why it's different from a deck.
+
+13
+00:00:37,530 --> 00:00:39,040
+And then, of course from threading,
+
+14
+00:00:39,040 --> 00:00:41,020
+we're gonna import thread to start with.
+
+15
+00:00:41,020 --> 00:00:43,720
+We'll then use a thread pool executor later.
+
+16
+00:00:43,720 --> 00:00:46,076
+We're gonna have our global counter,
+
+17
+00:00:46,076 --> 00:00:48,520
+and we're also gonna have two queues.
+
+18
+00:00:48,520 --> 00:00:49,970
+We're gonna have a job queue,
+
+19
+00:00:51,410 --> 00:00:53,260
+and we're gonna have a counter queue.
+
+20
+00:00:58,880 --> 00:01:00,490
+Okay.
+
+21
+00:01:00,490 --> 00:01:01,460
+Job queue
+
+22
+00:01:04,010 --> 00:01:08,450
+is going to be the comma, the things to be printed out,
+
+23
+00:01:09,740 --> 00:01:14,740
+the counter queue is amount by which to increase counter.
+
+24
+00:01:16,210 --> 00:01:17,043
+Okay.
+
+25
+00:01:18,750 --> 00:01:23,164
+Alright, now we are going to be doing something which is
+
+26
+00:01:23,164 --> 00:01:28,164
+every time we want to increase counter,
+
+27
+00:01:28,410 --> 00:01:32,490
+we're going to put one into the queue.
+
+28
+00:01:32,490 --> 00:01:35,760
+So, we're gonna put the number one into this queue.
+
+29
+00:01:35,760 --> 00:01:38,840
+Then we're gonna have some code looking through this
+
+30
+00:01:38,840 --> 00:01:41,020
+queue and whenever a number appears, it's going
+
+31
+00:01:41,020 --> 00:01:42,820
+to increase counter by that amount.
+
+32
+00:01:44,270 --> 00:01:46,460
+At the same time, we're gonna have another thread
+
+33
+00:01:46,460 --> 00:01:50,220
+going through this job queue and whenever it sees
+
+34
+00:01:50,220 --> 00:01:53,530
+something up here in there, it's gonna print it out.
+
+35
+00:01:53,530 --> 00:01:56,200
+That's essentially how this programme is gonna work.
+
+36
+00:01:56,200 --> 00:01:59,220
+So, let's do it.
+
+37
+00:01:59,220 --> 00:02:01,610
+We're gonna first define our increment manager.
+
+38
+00:02:02,701 --> 00:02:04,970
+We're just gonna take in our global counter.
+
+39
+00:02:04,970 --> 00:02:07,220
+Remember multiple threads could be doing this
+
+40
+00:02:08,900 --> 00:02:11,300
+at the same time, and then we're gonna do
+
+41
+00:02:11,300 --> 00:02:12,630
+while true
+
+42
+00:02:15,780 --> 00:02:19,340
+it's going to get the counter from this counter queue
+
+43
+00:02:19,340 --> 00:02:23,060
+and this counter queue here has a queue
+
+44
+00:02:23,060 --> 00:02:25,060
+of multiple numbers potentially
+
+45
+00:02:25,060 --> 00:02:27,860
+by which we want to increase the counter.
+
+46
+00:02:27,860 --> 00:02:32,860
+So increment is going to be counter queue.get.
+
+47
+00:02:33,370 --> 00:02:34,600
+Okay.
+
+48
+00:02:34,600 --> 00:02:37,910
+And this is important because this
+
+49
+00:02:39,150 --> 00:02:42,200
+waits until an item is available
+
+50
+00:02:44,600 --> 00:02:46,470
+and then locks the queue.
+
+51
+00:02:47,970 --> 00:02:51,340
+Okay, so, this is going to wait until an item is
+
+52
+00:02:51,340 --> 00:02:54,530
+available and when it is, it's not going to allow
+
+53
+00:02:54,530 --> 00:02:59,210
+any other threads to get anything until we are done.
+
+54
+00:03:00,860 --> 00:03:02,470
+Then we're gonna say old counter
+
+55
+00:03:04,660 --> 00:03:05,500
+is counter,
+
+56
+00:03:07,160 --> 00:03:09,630
+counter is now old counter plus
+
+57
+00:03:11,330 --> 00:03:12,240
+the increment.
+
+58
+00:03:14,320 --> 00:03:18,500
+Then, we are going to put something into the job queue
+
+59
+00:03:18,500 --> 00:03:21,000
+a new counter value is counter
+
+60
+00:03:23,070 --> 00:03:26,220
+and we're also going to put in our lines,
+
+61
+00:03:26,220 --> 00:03:28,670
+okay, we're gonna put in these two things
+
+62
+00:03:28,670 --> 00:03:33,670
+and finally counter queue.task done.
+
+63
+00:03:34,370 --> 00:03:38,080
+This unlocks the queue,
+
+64
+00:03:38,080 --> 00:03:39,900
+so now another thread could go
+
+65
+00:03:39,900 --> 00:03:42,850
+back and get something if they wanted.
+
+66
+00:03:44,000 --> 00:03:46,080
+So as soon as something comes in here,
+
+67
+00:03:46,080 --> 00:03:48,210
+this counter queue is now locked,
+
+68
+00:03:48,210 --> 00:03:50,550
+the thread has that resource,
+
+69
+00:03:50,550 --> 00:03:53,010
+no other thread can access this resource
+
+70
+00:03:53,010 --> 00:03:56,290
+until we call task done and that marks the queue as
+
+71
+00:03:56,290 --> 00:03:58,610
+not locked anymore, another thread can
+
+72
+00:03:58,610 --> 00:04:00,070
+then go through this get.
+
+73
+00:04:02,100 --> 00:04:02,933
+Okay.
+
+74
+00:04:05,510 --> 00:04:06,750
+Go.
+
+75
+00:04:06,750 --> 00:04:07,940
+We're gonna run this
+
+76
+00:04:10,650 --> 00:04:13,220
+target is gonna be the increment manager,
+
+77
+00:04:14,390 --> 00:04:16,940
+and daemon is gonna be true, and what this means is
+
+78
+00:04:16,940 --> 00:04:19,070
+this thread is going to run continuously
+
+79
+00:04:19,070 --> 00:04:23,700
+forever until we, until it finds an error essentially.
+
+80
+00:04:25,140 --> 00:04:27,040
+And then we're gonna start that, okay.
+
+81
+00:04:29,040 --> 00:04:32,930
+So this thread is gonna run forever always while true,
+
+82
+00:04:32,930 --> 00:04:36,710
+always checking this counter queue, trying to get a thing,
+
+83
+00:04:36,710 --> 00:04:38,690
+it's gonna wait until an item is available and it's gonna
+
+84
+00:04:38,690 --> 00:04:40,400
+lock it and then it's gonna go through it and it's gonna
+
+85
+00:04:40,400 --> 00:04:42,600
+call task done, then it's gonna repeat again,
+
+86
+00:04:42,600 --> 00:04:43,570
+it's gonna wait for something
+
+87
+00:04:43,570 --> 00:04:45,270
+to become available and so forth.
+
+88
+00:04:47,530 --> 00:04:49,560
+Now, if we want to print,
+
+89
+00:04:50,700 --> 00:04:53,010
+we're gonna create a printer manager.
+
+90
+00:04:56,530 --> 00:04:59,280
+So I scroll down here, again this is gonna be
+
+91
+00:04:59,280 --> 00:05:02,920
+while true, it's gonna get the lines in the job queue
+
+92
+00:05:02,920 --> 00:05:06,680
+for line in job queue.get
+
+93
+00:05:06,680 --> 00:05:09,010
+and again this locks the queue,
+
+94
+00:05:09,010 --> 00:05:11,760
+and waits for an item to be available,
+
+95
+00:05:11,760 --> 00:05:13,210
+it's gonna print the line out
+
+96
+00:05:14,670 --> 00:05:16,870
+and at the end it's gonna
+
+97
+00:05:16,870 --> 00:05:19,400
+be job queue.task done.
+
+98
+00:05:20,350 --> 00:05:21,183
+Okay.
+
+99
+00:05:23,340 --> 00:05:26,830
+Once again we are going to run this as a daemon thread.
+
+100
+00:05:33,440 --> 00:05:34,890
+Then, we're gonna start that.
+
+101
+00:05:36,870 --> 00:05:39,150
+Okay, so the printer manager and the increment manager
+
+102
+00:05:39,150 --> 00:05:42,440
+are gonna run continuously because of that daemon flag.
+
+103
+00:05:42,440 --> 00:05:46,518
+The final part of our programme is to deal with increasing
+
+104
+00:05:46,518 --> 00:05:49,270
+the counter itself,
+
+105
+00:05:49,270 --> 00:05:52,310
+so this is going to be running constantly,
+
+106
+00:05:52,310 --> 00:05:54,390
+getting values out of counter queue
+
+107
+00:05:54,390 --> 00:05:56,940
+and increasing the counter by them.
+
+108
+00:05:56,940 --> 00:05:59,042
+This is going to be running continuously
+
+109
+00:05:59,042 --> 00:05:59,875
+printing things out,
+
+110
+00:05:59,875 --> 00:06:02,060
+all we have to do is to put something
+
+111
+00:06:02,060 --> 00:06:05,160
+into our queue, so let's create another thread,
+
+112
+00:06:05,160 --> 00:06:07,140
+or another function that is going
+
+113
+00:06:07,140 --> 00:06:09,530
+to be our increment counter
+
+114
+00:06:09,530 --> 00:06:11,790
+and this is all is going to do is
+
+115
+00:06:11,790 --> 00:06:15,940
+do counter queue.put one, it's gonna put the number
+
+116
+00:06:15,940 --> 00:06:19,330
+one into the queue, then it's gonna get received
+
+117
+00:06:19,330 --> 00:06:21,810
+by this increment manager which is going to increment
+
+118
+00:06:21,810 --> 00:06:24,860
+the counter by that amount, and it's going to put
+
+119
+00:06:24,860 --> 00:06:28,860
+two things into the job queue which is then going
+
+120
+00:06:28,860 --> 00:06:31,030
+to print them out as it runs.
+
+121
+00:06:32,620 --> 00:06:33,453
+Okay.
+
+122
+00:06:34,770 --> 00:06:37,590
+Then, we're gonna make a few worker threads.
+
+123
+00:06:37,590 --> 00:06:40,270
+Worker threads these are gonna be threads
+
+124
+00:06:40,270 --> 00:06:42,990
+where the target is this increment counter
+
+125
+00:06:44,410 --> 00:06:47,910
+for thread in range 10, we're gonna make 10 of them,
+
+126
+00:06:49,120 --> 00:06:50,620
+and all we gonna do is start them.
+
+127
+00:06:50,620 --> 00:06:54,980
+So for thread in worker threads, thread start,
+
+128
+00:06:56,120 --> 00:06:58,420
+and we're gonna wait for them to finish for thread
+
+129
+00:06:58,420 --> 00:07:01,010
+in worker threads, thread.join
+
+130
+00:07:01,860 --> 00:07:03,050
+and at the end we're gonna wait
+
+131
+00:07:03,050 --> 00:07:04,260
+for the counter queue
+
+132
+00:07:06,580 --> 00:07:11,090
+to finish, to not have anything left in the queue
+
+133
+00:07:11,090 --> 00:07:15,810
+and the job queue to also not have anything left in it.
+
+134
+00:07:15,810 --> 00:07:18,850
+Notice how we are joining the queues, not the daemon
+
+135
+00:07:18,850 --> 00:07:20,319
+threads because this daemon threads are never gonna stop,
+
+136
+00:07:20,319 --> 00:07:23,000
+they're always gonna be running, okay.
+
+137
+00:07:23,000 --> 00:07:24,370
+So, we're joining on the queue.
+
+138
+00:07:24,370 --> 00:07:25,790
+When they become empty,
+
+139
+00:07:27,421 --> 00:07:29,470
+we will essentially be done.
+
+140
+00:07:31,940 --> 00:07:35,820
+As you can see this is substantially more complicated,
+
+141
+00:07:35,820 --> 00:07:37,700
+now that you have shared state, you have to start
+
+142
+00:07:37,700 --> 00:07:39,820
+having queues in there, so that your threads
+
+143
+00:07:39,820 --> 00:07:42,040
+cannot interrupt one another.
+
+144
+00:07:42,040 --> 00:07:43,040
+Let's run this code
+
+145
+00:07:44,250 --> 00:07:45,300
+and see what happens.
+
+146
+00:07:46,860 --> 00:07:51,630
+Oh, I think, oh yeah, sorry I forgot a pair of brackets.
+
+147
+00:07:51,630 --> 00:07:54,260
+What you put in the queue has to be
+
+148
+00:07:55,490 --> 00:07:57,780
+a double, my bad.
+
+149
+00:07:57,780 --> 00:07:58,780
+Let's run this again
+
+150
+00:08:00,490 --> 00:08:01,330
+and there you have it.
+
+151
+00:08:01,330 --> 00:08:04,910
+Now you get your code that looks sequential.
+
+152
+00:08:06,260 --> 00:08:07,840
+Okay.
+
+153
+00:08:07,840 --> 00:08:09,830
+Again you could just not use threads and it
+
+154
+00:08:09,830 --> 00:08:11,950
+would achieve the same purpose but if you wanted
+
+155
+00:08:11,950 --> 00:08:14,940
+to use threads you'd have to use these queues,
+
+156
+00:08:14,940 --> 00:08:19,150
+and indeed if you add the random weights,
+
+157
+00:08:19,150 --> 00:08:20,270
+which we will do,
+
+158
+00:08:21,610 --> 00:08:25,100
+you'll see that this still works, so we're gonna
+
+159
+00:08:25,100 --> 00:08:27,070
+add these weights everywhere
+
+160
+00:08:29,300 --> 00:08:32,330
+like there, we're gonna add some here,
+
+161
+00:08:33,450 --> 00:08:35,210
+we're gonna add some here,
+
+162
+00:08:36,340 --> 00:08:37,640
+we're gonna add some here,
+
+163
+00:08:38,680 --> 00:08:40,380
+and then we're gonna run it again.
+
+164
+00:08:44,771 --> 00:08:49,550
+And you can see that now we are waiting for our code
+
+165
+00:08:49,550 --> 00:08:51,580
+to sort of go through this queue
+
+166
+00:08:53,350 --> 00:08:54,880
+but only one thread is able
+
+167
+00:08:54,880 --> 00:08:56,740
+to go though this increment at once.
+
+168
+00:08:57,820 --> 00:09:00,970
+So, this still happen one by one.
+
+169
+00:09:05,580 --> 00:09:08,770
+So not terribly simple, let me tell you that.
+
+170
+00:09:09,710 --> 00:09:12,410
+Not terribly simple, again you could use a thread pool
+
+171
+00:09:12,410 --> 00:09:15,410
+executer to improve this code down here if you want,
+
+172
+00:09:15,410 --> 00:09:17,350
+we're not gonna get into that but the code indicator
+
+173
+00:09:17,350 --> 00:09:20,200
+does have this in there.
+
+174
+00:09:20,200 --> 00:09:23,210
+So again just to recap what happens is,
+
+175
+00:09:24,518 --> 00:09:27,980
+we say we're gonna access this global counter variable,
+
+176
+00:09:28,876 --> 00:09:31,270
+essentially just to tell Python that we don't want
+
+177
+00:09:31,270 --> 00:09:33,160
+to create a new variable called counter,
+
+178
+00:09:33,160 --> 00:09:34,910
+we wanna use the global counter.
+
+179
+00:09:36,430 --> 00:09:41,420
+In here, by the time we access the counter's value,
+
+180
+00:09:41,420 --> 00:09:44,850
+this has already prevented two threads from doing that
+
+181
+00:09:44,850 --> 00:09:47,750
+at the same time, so get waits until the item is available,
+
+182
+00:09:47,750 --> 00:09:51,510
+and then locks, so that only one thread can execute
+
+183
+00:09:51,510 --> 00:09:53,730
+this at a time and get a value out.
+
+184
+00:09:53,730 --> 00:09:56,550
+If you have 10 threads calling this,
+
+185
+00:09:56,550 --> 00:09:58,880
+only one is going to be able
+
+186
+00:09:58,880 --> 00:10:01,200
+to use that resource.
+
+187
+00:10:01,200 --> 00:10:05,140
+The other nine are going to wait until task done is called
+
+188
+00:10:05,140 --> 00:10:07,000
+and this becomes available again.
+
+189
+00:10:07,000 --> 00:10:08,500
+So you've got a single thread getting
+
+190
+00:10:08,500 --> 00:10:11,930
+the increment which is one, then you access
+
+191
+00:10:11,930 --> 00:10:14,650
+the current counter's value which will be zero,
+
+192
+00:10:14,650 --> 00:10:17,130
+then you'll increase it by the increment which is one,
+
+193
+00:10:17,130 --> 00:10:20,050
+make it one and put these two things here
+
+194
+00:10:20,050 --> 00:10:21,620
+into the job queue,
+
+195
+00:10:22,670 --> 00:10:26,760
+then task done so you go back to the top
+
+196
+00:10:26,760 --> 00:10:30,020
+and another thread is able to do the get.
+
+197
+00:10:30,020 --> 00:10:32,660
+When they access the counter value, that's one now,
+
+198
+00:10:32,660 --> 00:10:34,990
+because the previous state already incremented it.
+
+199
+00:10:34,990 --> 00:10:37,400
+And then you can increase it again and so forth.
+
+200
+00:10:37,400 --> 00:10:39,820
+So essentially what you doing here, is you are creating
+
+201
+00:10:39,820 --> 00:10:43,130
+this bottle neck for threads to only be able to access
+
+202
+00:10:43,130 --> 00:10:45,680
+a resource at one at a time, okay.
+
+203
+00:10:47,000 --> 00:10:50,610
+Again, this is essentially single threaded code,
+
+204
+00:10:50,610 --> 00:10:54,020
+but it goes to show that when you need threads
+
+205
+00:10:54,020 --> 00:10:57,500
+to share a state, you need these queues.
+
+206
+00:10:57,500 --> 00:11:00,610
+Think of the printer in your office,
+
+207
+00:11:00,610 --> 00:11:02,710
+if you have one, the printer in your office
+
+208
+00:11:02,710 --> 00:11:05,910
+can receive jobs from a lot of different people at once,
+
+209
+00:11:05,910 --> 00:11:08,520
+but it can only print one at a time.
+
+210
+00:11:08,520 --> 00:11:10,710
+So that's what we've got here, we've got a queue
+
+211
+00:11:10,710 --> 00:11:13,880
+of print jobs and the printer is then just continuously
+
+212
+00:11:13,880 --> 00:11:16,550
+printing them out as soon as it sees them but it doesn't
+
+213
+00:11:16,550 --> 00:11:19,470
+do them all at the same time, it does them one by one.
+
+214
+00:11:20,380 --> 00:11:22,970
+Similarly because we're accessing a unique resource
+
+215
+00:11:22,970 --> 00:11:26,400
+the counter we also must do that one by one, if we get
+
+216
+00:11:26,400 --> 00:11:28,080
+two things incremented by the counter at once,
+
+217
+00:11:28,080 --> 00:11:31,180
+we saw that happens in the last video, they just sort
+
+218
+00:11:31,180 --> 00:11:34,320
+of go mental and with this start changing at the same time.
+
+219
+00:11:34,320 --> 00:11:36,720
+If you got your printer to print two things at once,
+
+220
+00:11:36,720 --> 00:11:38,980
+you can imagine how that wouldn't go so well either,
+
+221
+00:11:38,980 --> 00:11:40,680
+it sees sort of words from one document
+
+222
+00:11:40,680 --> 00:11:43,030
+and words from another all printed out together,
+
+223
+00:11:43,030 --> 00:11:44,950
+it wouldn't be pretty.
+
+224
+00:11:44,950 --> 00:11:49,480
+When you want a shared resource, you must use a queue,
+
+225
+00:11:49,480 --> 00:11:52,970
+and the queue.Queue package here the queue package is
+
+226
+00:11:52,970 --> 00:11:55,600
+good because is has this locking thing and this
+
+227
+00:11:55,600 --> 00:11:57,510
+task done thing, so this is made
+
+228
+00:11:57,510 --> 00:12:00,300
+for multi threaded access to a queue.
+
+229
+00:12:01,650 --> 00:12:04,470
+The deck which is something that is atomic,
+
+230
+00:12:05,350 --> 00:12:07,730
+does not get interrupted when you add or remove elements
+
+231
+00:12:07,730 --> 00:12:10,417
+from it, but it also does not lock, so you can have multiple
+
+232
+00:12:10,417 --> 00:12:13,630
+things, appending things to a deck at the same time,
+
+233
+00:12:13,630 --> 00:12:15,440
+and that can be handy in other situations as
+
+234
+00:12:15,440 --> 00:12:17,330
+you'll see from the talks that are linked
+
+235
+00:12:17,330 --> 00:12:18,490
+to you later on.
+
+236
+00:12:19,650 --> 00:12:20,680
+That's it for this video,
+
+237
+00:12:20,680 --> 00:12:23,470
+hopefully this didn't melt you brains
+
+238
+00:12:23,470 --> 00:12:25,120
+and I'll see you on the next one.
+

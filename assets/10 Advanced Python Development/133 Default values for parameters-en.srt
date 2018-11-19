@@ -1,0 +1,468 @@
+1
+00:00:00,180 --> 00:00:01,770
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,770 --> 00:00:02,650
+In this video, we're looking
+
+3
+00:00:02,650 --> 00:00:06,060
+at default values for parameters.
+
+4
+00:00:06,060 --> 00:00:07,280
+If you already know a bit of Python,
+
+5
+00:00:07,280 --> 00:00:10,506
+you may wonder why we didn't cover this earlier.
+
+6
+00:00:10,506 --> 00:00:13,480
+And quite simply the reason is that we didn't need it.
+
+7
+00:00:14,850 --> 00:00:16,570
+Now we do and we're gonna start looking
+
+8
+00:00:16,570 --> 00:00:19,210
+at a couple of instances where having default values
+
+9
+00:00:19,210 --> 00:00:21,010
+with parameters is gonna be useful.
+
+10
+00:00:21,010 --> 00:00:22,890
+So let's get right on it.
+
+11
+00:00:22,890 --> 00:00:25,180
+Whenever we call a function that has parameters,
+
+12
+00:00:25,180 --> 00:00:29,180
+we are expected to give it an equal number of parameters.
+
+13
+00:00:29,180 --> 00:00:33,080
+We already know this, so I'll show you some example code.
+
+14
+00:00:33,080 --> 00:00:36,340
+Here's some accounts, like a checking account.
+
+15
+00:00:36,340 --> 00:00:39,570
+Let's see, that has $1,958 in it
+
+16
+00:00:39,570 --> 00:00:42,940
+or pounds if you're in the UK.
+
+17
+00:00:42,940 --> 00:00:46,490
+3695.50 in your savings.
+
+18
+00:00:46,490 --> 00:00:49,330
+That's a pretty respectable amount of money.
+
+19
+00:00:49,330 --> 00:00:52,160
+Then we're gonna have a function add_balance,
+
+20
+00:00:52,160 --> 00:00:53,360
+which is going to take an amount,
+
+21
+00:00:53,360 --> 00:00:55,090
+which is going to be a float and a name,
+
+22
+00:00:55,090 --> 00:00:56,090
+which is going to be a string.
+
+23
+00:00:56,090 --> 00:00:57,740
+And it's going to return a float.
+
+24
+00:00:58,850 --> 00:01:01,330
+The reason I'm including it here,
+
+25
+00:01:01,330 --> 00:01:03,830
+the type hinting that we've looked at in the past.
+
+26
+00:01:05,190 --> 00:01:08,050
+Also, just for completeness, I am going to say function
+
+27
+00:01:08,050 --> 00:01:10,810
+to update the balance of an account
+
+28
+00:01:10,810 --> 00:01:12,830
+and return the new balance.
+
+29
+00:01:14,060 --> 00:01:15,660
+Include that log string in there
+
+30
+00:01:15,660 --> 00:01:18,780
+just so you know what this function's all about.
+
+31
+00:01:18,780 --> 00:01:21,300
+As you can see, this function, add_balance,
+
+32
+00:01:21,300 --> 00:01:23,710
+is going to update the balance of an account
+
+33
+00:01:23,710 --> 00:01:25,850
+and return the new balance.
+
+34
+00:01:25,850 --> 00:01:29,050
+The two arguments it takes are the amount
+
+35
+00:01:29,050 --> 00:01:31,220
+to increase the balance by
+
+36
+00:01:31,220 --> 00:01:33,660
+and the name of the account that we're gonna change.
+
+37
+00:01:33,660 --> 00:01:37,250
+Then it's gonna go over to your accounts global dictionary
+
+38
+00:01:37,250 --> 00:01:39,200
+and it's going to change it.
+
+39
+00:01:39,200 --> 00:01:43,240
+So, accounts name
+
+40
+00:01:43,240 --> 00:01:45,390
+plus equal amount
+
+41
+00:01:45,390 --> 00:01:47,000
+and then it's going to return accounts name.
+
+42
+00:01:47,000 --> 00:01:49,660
+It's going to return the new balance of the account.
+
+43
+00:01:51,210 --> 00:01:52,930
+Accounts name, for example, for checking
+
+44
+00:01:52,930 --> 00:01:54,860
+is going to be 1958.
+
+45
+00:01:54,860 --> 00:01:57,510
+Let's say we say 200 in here is gonna go,
+
+46
+00:01:57,510 --> 00:01:58,570
+increase it by 200.
+
+47
+00:01:58,570 --> 00:02:00,910
+I'm not even gonna try to do the math here.
+
+48
+00:02:00,910 --> 00:02:02,450
+Then it's going to return the new amount
+
+49
+00:02:02,450 --> 00:02:04,690
+of accounts name, so that should be a float.
+
+50
+00:02:06,600 --> 00:02:09,230
+However, what we can do, of course,
+
+51
+00:02:09,230 --> 00:02:13,950
+is add balance 500.00 to savings
+
+52
+00:02:13,950 --> 00:02:16,900
+and then print account savings
+
+53
+00:02:16,900 --> 00:02:18,670
+and it should tell us the new balance
+
+54
+00:02:18,670 --> 00:02:20,450
+which should be in the four thousands.
+
+55
+00:02:21,320 --> 00:02:23,020
+Oh, sorry, accounts savings.
+
+56
+00:02:25,145 --> 00:02:27,190
+As you can see, 4,195.5.
+
+57
+00:02:28,500 --> 00:02:30,440
+Notice how the zero at the end gets dropped,
+
+58
+00:02:30,440 --> 00:02:32,360
+but in my code I like having two decimal places
+
+59
+00:02:32,360 --> 00:02:34,770
+for currency just to keep things clearer.
+
+60
+00:02:36,270 --> 00:02:39,940
+What you didn't know that you could do is you can say
+
+61
+00:02:39,940 --> 00:02:44,370
+that by default, all new balances are going to go
+
+62
+00:02:44,370 --> 00:02:45,620
+to your checking account.
+
+63
+00:02:47,100 --> 00:02:52,100
+So the name here is going to be checking, by default.
+
+64
+00:02:53,540 --> 00:02:58,470
+And the way we do that is we add equal checking.
+
+65
+00:03:00,250 --> 00:03:01,980
+Okay, so the name is a string
+
+66
+00:03:01,980 --> 00:03:04,010
+and its' default value is checking.
+
+67
+00:03:05,170 --> 00:03:07,960
+That means that if we do not pass a string
+
+68
+00:03:07,960 --> 00:03:10,880
+through this argument, which we can do now,
+
+69
+00:03:10,880 --> 00:03:12,650
+we can not pass a string to it.
+
+70
+00:03:12,650 --> 00:03:14,150
+We can not pass anything to it
+
+71
+00:03:15,040 --> 00:03:17,660
+and we print out the checking at the end,
+
+72
+00:03:17,660 --> 00:03:21,700
+we should see it has increased by $500,
+
+73
+00:03:21,700 --> 00:03:23,000
+not 500 units.
+
+74
+00:03:24,270 --> 00:03:26,140
+If you don't wanna use type hinting,
+
+75
+00:03:26,140 --> 00:03:27,960
+then all you have to do is get rid of that.
+
+76
+00:03:27,960 --> 00:03:31,280
+Okay and this stays the same, name equals checking.
+
+77
+00:03:31,280 --> 00:03:33,370
+And that's that, okay.
+
+78
+00:03:35,090 --> 00:03:36,920
+Frequently, actually, if you don't have type hinting,
+
+79
+00:03:36,920 --> 00:03:40,000
+you'll see this written like so, without the spaces
+
+80
+00:03:40,000 --> 00:03:41,230
+and when you do have type hinting,
+
+81
+00:03:41,230 --> 00:03:43,530
+you'll see it written like so, all with spaces.
+
+82
+00:03:43,530 --> 00:03:45,850
+It's up to you how many spaces you want
+
+83
+00:03:45,850 --> 00:03:47,150
+to put in there, whether you wanna put spaces
+
+84
+00:03:47,150 --> 00:03:49,050
+or not spaces, totally fine.
+
+85
+00:03:51,590 --> 00:03:53,190
+Now, something important that you have to know
+
+86
+00:03:53,190 --> 00:03:55,930
+about these names arguments, this is what they're called
+
+87
+00:03:55,930 --> 00:03:59,430
+as soon as you have the default argument there,
+
+88
+00:03:59,430 --> 00:04:02,870
+is that you cannot have this
+
+89
+00:04:04,390 --> 00:04:07,130
+here, oops sorry,
+
+90
+00:04:07,130 --> 00:04:09,660
+you cannot have this here.
+
+91
+00:04:12,050 --> 00:04:13,820
+This will be illegal.
+
+92
+00:04:13,820 --> 00:04:16,200
+When you run it, it'll tell you here.
+
+93
+00:04:16,200 --> 00:04:18,580
+Syntax error, known default argument
+
+94
+00:04:18,580 --> 00:04:20,320
+follows default argument.
+
+95
+00:04:20,320 --> 00:04:21,950
+So you cannot do this.
+
+96
+00:04:21,950 --> 00:04:23,870
+Any argument that has a default value
+
+97
+00:04:24,840 --> 00:04:27,740
+has to follow arguments that do not
+
+98
+00:04:27,740 --> 00:04:28,573
+have default values.
+
+99
+00:04:28,573 --> 00:04:29,480
+So in this case, the amount
+
+100
+00:04:29,480 --> 00:04:31,240
+does not have a default value.
+
+101
+00:04:31,240 --> 00:04:34,030
+The name does, so the name has to go at the end.
+
+102
+00:04:34,030 --> 00:04:35,280
+If you have many arguments,
+
+103
+00:04:35,280 --> 00:04:38,860
+some of which have default values,
+
+104
+00:04:38,860 --> 00:04:40,260
+they must all go at the end.
+
+105
+00:04:41,240 --> 00:04:42,073
+Okay?
+
+106
+00:04:43,280 --> 00:04:44,113
+That's it.
+
+107
+00:04:44,113 --> 00:04:46,350
+This is default values for arguments.
+
+108
+00:04:46,350 --> 00:04:48,620
+You can have many arguments, many default values.
+
+109
+00:04:48,620 --> 00:04:50,130
+One default value per argument,
+
+110
+00:04:50,130 --> 00:04:52,460
+of course and we're gonna learn more
+
+111
+00:04:52,460 --> 00:04:53,530
+about these default values
+
+112
+00:04:53,530 --> 00:04:56,340
+and how to use them in subsequent videos,
+
+113
+00:04:56,340 --> 00:04:57,490
+in just a couple of videos.
+
+114
+00:04:57,490 --> 00:04:58,510
+In fact, in the next video,
+
+115
+00:04:58,510 --> 00:05:00,210
+and in coming videos too.
+
+116
+00:05:00,210 --> 00:05:01,290
+So, that's it for this one.
+
+117
+00:05:01,290 --> 00:05:02,670
+I'll see you on the next one.
+

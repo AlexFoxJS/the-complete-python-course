@@ -1,0 +1,636 @@
+1
+00:00:00,038 --> 00:00:01,356
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,356 --> 00:00:04,165
+Let's talk about regular expressions.
+
+3
+00:00:04,165 --> 00:00:07,136
+First thing, and most important thing, is that when we write
+
+4
+00:00:07,136 --> 00:00:11,265
+regular expressions we are writing with a language.
+
+5
+00:00:11,265 --> 00:00:13,755
+Now, regular expressions are not a programming language,
+
+6
+00:00:13,755 --> 00:00:16,922
+but there is still some syntax and some keywords
+
+7
+00:00:16,922 --> 00:00:21,222
+that we have to know when we use regular expressions.
+
+8
+00:00:21,222 --> 00:00:23,083
+And we use the syntax and the keywords
+
+9
+00:00:23,083 --> 00:00:25,465
+to express what we want.
+
+10
+00:00:25,465 --> 00:00:27,578
+So let's look at some examples of regular expressions
+
+11
+00:00:27,578 --> 00:00:30,638
+so we know, sort of, what it is.
+
+12
+00:00:30,638 --> 00:00:32,055
+Here's some text.
+
+13
+00:00:33,416 --> 00:00:37,155
+And, as you can see in this text, there are some patterns.
+
+14
+00:00:37,155 --> 00:00:39,467
+You can broadly spot this pattern, I think it's a
+
+15
+00:00:39,467 --> 00:00:41,389
+reasonably straightforward pattern,
+
+16
+00:00:41,389 --> 00:00:45,564
+you can see an a, followed by a number, followed by a space,
+
+17
+00:00:45,564 --> 00:00:47,417
+and that sort of repeats five times.
+
+18
+00:00:47,417 --> 00:00:49,679
+You've got a, number, space, a, number, space,
+
+19
+00:00:49,679 --> 00:00:52,387
+a, number, space, a, number, space, a, number.
+
+20
+00:00:52,387 --> 00:00:54,025
+Notice how there's no space at the end,
+
+21
+00:00:54,025 --> 00:00:57,019
+so that's an interesting one.
+
+22
+00:00:57,019 --> 00:01:00,769
+The other pattern that is there, is this one:
+
+23
+00:01:01,940 --> 00:01:05,690
+a1 space, a3 space, a9 space, a5 space, a4.
+
+24
+00:01:05,690 --> 00:01:08,049
+So that's the entire string.
+
+25
+00:01:08,049 --> 00:01:10,882
+So, in regular expressions, we can
+
+26
+00:01:12,171 --> 00:01:13,754
+use the language to
+
+27
+00:01:15,014 --> 00:01:19,173
+define the patterns that we're looking for.
+
+28
+00:01:19,173 --> 00:01:22,547
+So here we could define, let's look for a pattern which is
+
+29
+00:01:22,547 --> 00:01:25,465
+an a followed by a number followed by a space.
+
+30
+00:01:25,465 --> 00:01:29,783
+And the regular expression runners would then give us,
+
+31
+00:01:29,783 --> 00:01:32,478
+"Hey, we've found some instances of this pattern
+
+32
+00:01:32,478 --> 00:01:34,395
+in this text".
+
+33
+00:01:34,395 --> 00:01:35,849
+Okay.
+
+34
+00:01:35,849 --> 00:01:37,444
+Let's look at another example we're gonna look,
+
+35
+00:01:37,444 --> 00:01:40,760
+just a couple examples of patterns so that
+
+36
+00:01:40,760 --> 00:01:43,635
+you know, sort of a bit of what we're looking for.
+
+37
+00:01:43,635 --> 00:01:45,463
+Here's another pattern.
+
+38
+00:01:45,463 --> 00:01:48,465
+We've got Jose comma space, Rolf comma space,
+
+39
+00:01:48,465 --> 00:01:50,632
+Charlie comma space, Adam.
+
+40
+00:01:52,470 --> 00:01:56,767
+So what I see here are some characters, like letters,
+
+41
+00:01:56,767 --> 00:02:00,684
+followed by a comma, followed by a space. Okay?
+
+42
+00:02:01,915 --> 00:02:04,079
+This is a pattern, potentially.
+
+43
+00:02:04,079 --> 00:02:06,672
+Of course the other pattern is the entire string again,
+
+44
+00:02:06,672 --> 00:02:11,041
+but that's gonna be a case for every instance.
+
+45
+00:02:11,041 --> 00:02:13,531
+Let's look at this one. Here's some URLs,
+
+46
+00:02:13,531 --> 00:02:15,812
+some addresses of the internet.
+
+47
+00:02:15,812 --> 00:02:18,969
+And what I see are one of two things.
+
+48
+00:02:18,969 --> 00:02:23,097
+The first one, I see a bunch of characters, followed by
+
+49
+00:02:23,097 --> 00:02:26,513
+a newline character, remember the backslash n,
+
+50
+00:02:26,513 --> 00:02:28,587
+that we've looked at before.
+
+51
+00:02:28,587 --> 00:02:29,960
+So here the characters include letters, they include
+
+52
+00:02:29,960 --> 00:02:33,254
+the dot, the colon, the forward slashes.
+
+53
+00:02:33,254 --> 00:02:35,270
+You've got a bunch of characters there, and you've got
+
+54
+00:02:35,270 --> 00:02:36,915
+a newline at the end.
+
+55
+00:02:36,915 --> 00:02:41,171
+So that's one of the patterns I see in here.
+
+56
+00:02:41,171 --> 00:02:44,437
+The other pattern where you analyse each line,
+
+57
+00:02:44,437 --> 00:02:47,048
+you can see that every line is fairly similar
+
+58
+00:02:47,048 --> 00:02:48,679
+with the line below.
+
+59
+00:02:48,679 --> 00:02:53,046
+You have http at the start. All of these patterns,
+
+60
+00:02:53,046 --> 00:02:56,546
+all of these lines have http at the start.
+
+61
+00:02:57,742 --> 00:03:00,742
+Sometimes https is followed by an s.
+
+62
+00:03:01,918 --> 00:03:06,356
+In three of the cases you've got http, followed by an s.
+
+63
+00:03:06,356 --> 00:03:09,710
+And in all cases that is then followed by colon,
+
+64
+00:03:09,710 --> 00:03:12,127
+forward slash, forward slash.
+
+65
+00:03:13,054 --> 00:03:15,887
+Sometimes that is followed by www.
+
+66
+00:03:18,610 --> 00:03:23,093
+And that is followed by some characters, like google,
+
+67
+00:03:23,093 --> 00:03:26,814
+facebook, twitter, udemy, tecladocode.
+
+68
+00:03:26,814 --> 00:03:30,814
+And finally, this is always followed by dot com.
+
+69
+00:03:31,923 --> 00:03:33,900
+So as you can see, this isn't
+
+70
+00:03:33,900 --> 00:03:38,837
+a definition of all URLs, because some URLs as you know
+
+71
+00:03:38,837 --> 00:03:43,254
+end in dot net, or dot me, or in dot it, or whatever.
+
+72
+00:03:44,695 --> 00:03:47,408
+This is just at the finish of the patterns that we can see
+
+73
+00:03:47,408 --> 00:03:50,324
+in the text that we're analysing.
+
+74
+00:03:50,324 --> 00:03:54,379
+So, http is always there, sometimes you've got an s.
+
+75
+00:03:54,379 --> 00:03:57,387
+Following either of those, you've got the colon,
+
+76
+00:03:57,387 --> 00:04:00,302
+forward slash, forward slash. Sometimes you've got www,
+
+77
+00:04:00,302 --> 00:04:03,237
+in other cases you just have the characters,
+
+78
+00:04:03,237 --> 00:04:05,570
+and you always have dot com.
+
+79
+00:04:06,530 --> 00:04:10,613
+Here's one final example. You've got some emails.
+
+80
+00:04:11,669 --> 00:04:14,601
+So what I see here is a combination
+
+81
+00:04:14,601 --> 00:04:18,434
+of letters, numbers, periods, and underscores,
+
+82
+00:04:19,436 --> 00:04:20,726
+which you can see for example,
+
+83
+00:04:20,726 --> 00:04:22,810
+"Jose" is a combination of letters, "rolf" is
+
+84
+00:04:22,810 --> 00:04:26,910
+a combination of letters, "char.lie" is a combination of
+
+85
+00:04:26,910 --> 00:04:29,279
+letters and periods, "Anna" is a combination of letters,
+
+86
+00:04:29,279 --> 00:04:32,563
+"jen45" is a combination of letters and numbers,
+
+87
+00:04:32,563 --> 00:04:35,874
+and "someone_is_awesome" is a combination
+
+88
+00:04:35,874 --> 00:04:38,000
+of letters and underscores.
+
+89
+00:04:38,000 --> 00:04:39,253
+So you've got this combination of
+
+90
+00:04:39,253 --> 00:04:41,726
+potentially different characters, and that's always followed
+
+91
+00:04:41,726 --> 00:04:42,976
+by an @ symbol.
+
+92
+00:04:44,958 --> 00:04:47,661
+As you can see, in all cases, no matter the combination,
+
+93
+00:04:47,661 --> 00:04:50,161
+you end up having an @ symbol.
+
+94
+00:04:52,051 --> 00:04:54,837
+And that's always followed by some characters,
+
+95
+00:04:54,837 --> 00:04:57,399
+and it seems that those characters are always letters.
+
+96
+00:04:57,399 --> 00:05:00,200
+You've got tecladocode, you've got google, twitter, gmail,
+
+97
+00:05:00,200 --> 00:05:01,867
+icloud, and example.
+
+98
+00:05:02,855 --> 00:05:06,361
+Those are followed by a dot, a period.
+
+99
+00:05:06,361 --> 00:05:09,016
+You've got tecladocode and then you've got dot,
+
+100
+00:05:09,016 --> 00:05:12,258
+google and then you've got dot, twitter then you've got dot,
+
+101
+00:05:12,258 --> 00:05:13,341
+and so forth.
+
+102
+00:05:14,299 --> 00:05:16,748
+And finally you have some characters.
+
+103
+00:05:16,748 --> 00:05:19,523
+And it seems from this example that these characters are
+
+104
+00:05:19,523 --> 00:05:22,773
+always gonna be either com, me, or net.
+
+105
+00:05:23,876 --> 00:05:27,618
+And then you end up with dot com, dot me, or dot net.
+
+106
+00:05:27,618 --> 00:05:31,369
+But of course we can be fairly smart and we can say
+
+107
+00:05:31,369 --> 00:05:33,715
+you know, it's possible that if what we're looking at
+
+108
+00:05:33,715 --> 00:05:36,446
+are emails, the characters at the end
+
+109
+00:05:36,446 --> 00:05:39,354
+may be slightly different, in some cases.
+
+110
+00:05:39,354 --> 00:05:41,811
+We're not seeing them here, but you know, it could be,
+
+111
+00:05:41,811 --> 00:05:42,847
+could be different.
+
+112
+00:05:42,847 --> 00:05:46,066
+Let's not say that it can only be com, me and net.
+
+113
+00:05:46,066 --> 00:05:50,483
+Maybe lets say that they can be any character.
+
+114
+00:05:50,483 --> 00:05:53,791
+So, getting regex, regular expressions,
+
+115
+00:05:53,791 --> 00:05:57,303
+is a matter of seeing the patterns,
+
+116
+00:05:57,303 --> 00:05:59,824
+being able to identify the patterns,
+
+117
+00:05:59,824 --> 00:06:02,687
+being able to look at a text and say, "Okay, these are
+
+118
+00:06:02,687 --> 00:06:07,066
+the potential characters and symbols that I can see,
+
+119
+00:06:07,066 --> 00:06:09,470
+this is the order they're gonna appear them"
+
+120
+00:06:09,470 --> 00:06:13,104
+and of course, you have to be able to express those patterns
+
+121
+00:06:13,104 --> 00:06:15,354
+using the language.
+
+122
+00:06:15,354 --> 00:06:19,343
+So that's what we're gonna be learning in the next video.
+
+123
+00:06:19,343 --> 00:06:22,413
+But I'll tell you there are four most important components
+
+124
+00:06:22,413 --> 00:06:23,993
+in regex.
+
+125
+00:06:23,993 --> 00:06:26,946
+You're going to be using these essentially all the time.
+
+126
+00:06:26,946 --> 00:06:31,561
+First one is the dot. The dot means "anything".
+
+127
+00:06:31,561 --> 00:06:34,474
+Letters, number, symbols, anything you can think of
+
+128
+00:06:34,474 --> 00:06:35,807
+except newlines.
+
+129
+00:06:37,934 --> 00:06:40,446
+Remember the newline character, back slash n,
+
+130
+00:06:40,446 --> 00:06:43,940
+the dot means "anything" except that.
+
+131
+00:06:43,940 --> 00:06:47,273
+The plus symbols means "one or more of".
+
+132
+00:06:48,887 --> 00:06:52,565
+The asterisk means "zero or more of",
+
+133
+00:06:52,565 --> 00:06:56,942
+and the question mark means "zero or one of".
+
+134
+00:06:56,942 --> 00:06:59,760
+So, let's analyse one expression using these
+
+135
+00:06:59,760 --> 00:07:01,798
+pieces of syntax.
+
+136
+00:07:01,798 --> 00:07:03,548
+Jose@tecladocode.com.
+
+137
+00:07:04,557 --> 00:07:09,307
+You could say this is dot star. The dot means "anything",
+
+138
+00:07:10,732 --> 00:07:13,669
+the start means "zero or more of".
+
+139
+00:07:13,669 --> 00:07:16,712
+So that's "zero or more of anything".
+
+140
+00:07:16,712 --> 00:07:19,769
+Naturally, pretty much any pattern is going to match that,
+
+141
+00:07:19,769 --> 00:07:21,795
+because you've got zero or more of anything,
+
+142
+00:07:21,795 --> 00:07:24,646
+that can be any character or symbol or anything else,
+
+143
+00:07:24,646 --> 00:07:28,252
+so of course this pattern is going to match that.
+
+144
+00:07:28,252 --> 00:07:32,222
+You've got dot plus, the plus means "one or more of".
+
+145
+00:07:32,222 --> 00:07:35,297
+So here you've got a dot, you have at least one character
+
+146
+00:07:35,297 --> 00:07:39,447
+in the pattern, so it is going to match.
+
+147
+00:07:39,447 --> 00:07:44,447
+You could also have something like "jose@tecladocode\.com".
+
+148
+00:07:46,397 --> 00:07:48,403
+So here you're matching the entire pattern,
+
+149
+00:07:48,403 --> 00:07:51,621
+but of course you have to put a backslash in front of any
+
+150
+00:07:51,621 --> 00:07:55,411 line:15% 
+symbol that means something in regular expressions,
+
+151
+00:07:55,411 --> 00:07:57,608 line:15% 
+otherwise it means "anything".
+
+152
+00:07:57,608 --> 00:07:59,955 line:15% 
+Like we know the dot in a regular expression pattern means
+
+153
+00:07:59,955 --> 00:08:04,145 line:15% 
+"anything", so you have to put a backslash in front of it
+
+154
+00:08:04,145 --> 00:08:07,895 line:15% 
+so it means the dot, and not just any symbol.
+
+155
+00:08:10,666 --> 00:08:14,753 line:15% 
+This is a bit abstract, so let's go to a better regex editor
+
+156
+00:08:14,753 --> 00:08:17,029
+and we're going to look at a bunch of examples in the next
+
+157
+00:08:17,029 --> 00:08:19,979
+video, so that you sort of start getting a bit more
+
+158
+00:08:19,979 --> 00:08:23,394
+of an idea of how these regular expressions work.
+
+159
+00:08:23,394 --> 00:08:27,561
+So with that said, I'll see you on the next video.
+

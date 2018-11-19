@@ -1,0 +1,828 @@
+1
+00:00:00,090 --> 00:00:01,510
+-: Hola y bienvenido de nuevo.
+
+2
+00:00:01,510 --> 00:00:04,120
+En este video vamos a hablar sobre un tema
+
+3
+00:00:04,120 --> 00:00:07,130
+del que nadie habla en los cursos en lnea, as que
+
+4
+00:00:07,130 --> 00:00:09,800
+espero que est entusiasmado con la cobertura de este.
+
+5
+00:00:09,800 --> 00:00:12,380
+Y ese es el Python GIL.
+
+6
+00:00:12,380 --> 00:00:14,980
+El bloqueo de intrprete global.
+
+7
+00:00:14,980 --> 00:00:16,610
+Este es un tema
+
+8
+00:00:16,610 --> 00:00:20,090
+bastante avanzado y no vamos a entrar en todo
+
+9
+00:00:20,955 --> 00:00:22,870
+el texto tcnico, pero vamos
+
+10
+00:00:22,870 --> 00:00:24,550
+a cubrir lo que
+
+11
+00:00:24,550 --> 00:00:28,310
+es, por qu est all y lo que significa para nosotros.
+
+12
+00:00:30,240 --> 00:00:31,920
+Entonces, cuando inicias una aplicacin
+
+13
+00:00:33,800 --> 00:00:36,500
+de Python, obtienes un nuevo proceso de Python.
+
+14
+00:00:36,500 --> 00:00:38,190
+Ahora sabemos qu es
+
+15
+00:00:38,190 --> 00:00:43,190
+un proceso, un proceso es, al menos, un hilo y algunos recursos.
+
+16
+00:00:43,680 --> 00:00:46,610
+De modo que el proceso puede tratar de entrar en
+
+17
+00:00:46,610 --> 00:00:50,010
+un ncleo, salir del ncleo, reservar algunos recursos que necesita, como
+
+18
+00:00:50,010 --> 00:00:52,300
+acceder a un archivo o algo as.
+
+19
+00:00:53,820 --> 00:00:57,930
+As que obtienes un hilo en Python, obtienes el hilo principal,
+
+20
+00:00:57,930 --> 00:01:00,620
+pero puedes hacer ms hilos si quieres.
+
+21
+00:01:00,620 --> 00:01:03,330
+Cuando ejecutas una aplicacin de Python, obtienes un hilo que
+
+22
+00:01:03,330 --> 00:01:06,010
+se ejecuta a travs de tu cdigo de Python de
+
+23
+00:01:06,010 --> 00:01:09,600
+arriba a abajo como hemos visto, pero puedes crear ms hilos si quieres.
+
+24
+00:01:09,600 --> 00:01:12,170
+Vamos a ver cmo puedes hacer eso.
+
+25
+00:01:12,170 --> 00:01:14,010
+Pero dado que sabemos que solo
+
+26
+00:01:14,010 --> 00:01:17,590
+un hilo puede ejecutarse en un ncleo a la vez, por
+
+27
+00:01:17,590 --> 00:01:21,050
+qu lo hara? Cul es el beneficio de hacer ms hilos?
+
+28
+00:01:24,370 --> 00:01:26,740
+Bueno, por supuesto, el beneficio de hacer ms
+
+29
+00:01:26,740 --> 00:01:29,310
+hilos es para poder ejecutar uno en cada ncleo.
+
+30
+00:01:29,310 --> 00:01:31,600
+Si su computadora tiene ms de un ncleo, puede
+
+31
+00:01:31,600 --> 00:01:34,070
+hacer que Python cree dos hilos y los ejecute en
+
+32
+00:01:34,070 --> 00:01:35,470
+dos ncleos al mismo tiempo.
+
+33
+00:01:35,470 --> 00:01:37,270
+No tan rapido.
+
+34
+00:01:38,530 --> 00:01:41,870
+Debido a la forma en que se implement Python,
+
+35
+00:01:41,870 --> 00:01:46,110
+las personas que escribieron Python no pueden ejecutar dos hilos en
+
+36
+00:01:46,110 --> 00:01:48,290
+un proceso al mismo tiempo.
+
+37
+00:01:48,290 --> 00:01:51,560
+Por lo tanto, si su proceso de Python crea otro
+
+38
+00:01:52,420 --> 00:01:54,820
+hilo, el hilo principal y el otro hilo
+
+39
+00:01:54,820 --> 00:01:58,550
+no se podrn ejecutar al mismo tiempo, incluso si tiene dos ncleos.
+
+40
+00:01:58,550 --> 00:02:03,140
+Y eso es porque cada proceso en Python crea un
+
+41
+00:02:03,140 --> 00:02:07,395
+recurso clave, un recurso crtico, y cuando un hilo
+
+42
+00:02:07,395 --> 00:02:11,060
+se est ejecutando, debe adquirir ese recurso.
+
+43
+00:02:11,060 --> 00:02:14,010
+Y cada proceso crea solo uno de estos.
+
+44
+00:02:14,010 --> 00:02:16,250
+De acuerdo, piense en ello como un ncleo, excepto
+
+45
+00:02:16,250 --> 00:02:18,810
+que no es un ncleo, es solo otro tipo de recurso.
+
+46
+00:02:18,810 --> 00:02:21,060
+El proceso crea este recurso nico y
+
+47
+00:02:21,900 --> 00:02:24,550
+cuando un hilo se est ejecutando debe adquirirlo.
+
+48
+00:02:24,550 --> 00:02:27,210
+Y Python va a verificar que su hilo tenga
+
+49
+00:02:27,210 --> 00:02:28,810
+ese recurso antes de ejecutarlo.
+
+50
+00:02:29,810 --> 00:02:32,390
+Como solo hay uno de esos recursos, solo
+
+51
+00:02:32,390 --> 00:02:35,340
+puede ejecutar un hilo en ese proceso a la vez.
+
+52
+00:02:37,150 --> 00:02:40,220
+Entonces, pueden pensar, por qu se est creando este recurso?
+
+53
+00:02:41,430 --> 00:02:42,300
+Y esa es una
+
+54
+00:02:42,300 --> 00:02:45,140
+buena pregunta, vamos a entrar en eso en solo un momento.
+
+55
+00:02:45,140 --> 00:02:49,260
+El recurso en cuestin aqu se llama GIL.
+
+56
+00:02:51,620 --> 00:02:53,850
+Ese es el recurso que el proceso crea
+
+57
+00:02:53,850 --> 00:02:55,250
+y los hilos deben adquirir.
+
+58
+00:02:55,250 --> 00:02:58,600
+GIL es la cerradura de intrprete global.
+
+59
+00:02:58,600 --> 00:03:03,150
+Y un bloqueo es un tipo especfico de recurso en cdigo enhebrado.
+
+60
+00:03:03,150 --> 00:03:04,770
+Entonces, esto es lo que crea
+
+61
+00:03:04,770 --> 00:03:06,910
+el proceso, este bloqueo de intrprete global.
+
+62
+00:03:06,910 --> 00:03:09,977
+Un hilo debe adquirirlo para poder ejecutarlo, y luego
+
+63
+00:03:09,977 --> 00:03:12,820
+debe liberarlo para que se ejecute otro hilo.
+
+64
+00:03:12,820 --> 00:03:15,930
+Entonces no puedes ejecutar dos hilos al mismo tiempo.
+
+65
+00:03:15,930 --> 00:03:20,270
+De acuerdo, y qu hay de las mltiples pitones?
+
+66
+00:03:20,270 --> 00:03:22,690
+Estoy seguro de que has ejecutado varias aplicaciones de Python antes
+
+67
+00:03:22,690 --> 00:03:24,540
+y corrieron una al lado de la otra, verdad?
+
+68
+00:03:25,820 --> 00:03:29,270
+Bueno, s, podemos lanzar mltiples procesos de Python como
+
+69
+00:03:29,270 --> 00:03:32,660
+vimos y simplemente abriendo otra aplicacin de Python y
+
+70
+00:03:32,660 --> 00:03:36,130
+eso est bien porque cada proceso crea su propio
+
+71
+00:03:36,130 --> 00:03:38,670
+GIL. Cada proceso crea su propio hilo.
+
+72
+00:03:38,670 --> 00:03:42,030
+Pero no pueden colaborar, no puede
+
+73
+00:03:42,030 --> 00:03:44,900
+tener colaboracin entre procesos fcilmente.
+
+74
+00:03:44,900 --> 00:03:48,700
+Quiero decir que hay formas de hacerlo, pero no es gratis,
+
+75
+00:03:48,700 --> 00:03:50,470
+es bastante costoso, se necesita
+
+76
+00:03:50,470 --> 00:03:53,320
+mucha potencia informtica para comunicarse entre dos procesos.
+
+77
+00:03:53,320 --> 00:03:56,050
+As es como se disearon las computadoras
+
+78
+00:03:56,050 --> 00:03:58,883
+para que pueda tener recursos separados en
+
+79
+00:03:58,883 --> 00:04:02,560
+cada proceso y, en esencia, son entidades completamente separadas.
+
+80
+00:04:04,910 --> 00:04:06,430
+No pueden compartir datos fcilmente.
+
+81
+00:04:06,430 --> 00:04:10,060
+Por ejemplo, si tiene algunas variables en un proceso, no
+
+82
+00:04:10,060 --> 00:04:12,930
+puede enviar sus valores a otro proceso y
+
+83
+00:04:12,930 --> 00:04:16,060
+recibir respuestas de vuelta, no es tan fcil.
+
+84
+00:04:16,060 --> 00:04:18,610
+Mientras que es bastante fcil cuando ests haciendo hilos.
+
+85
+00:04:22,020 --> 00:04:26,165
+Entonces, cul es el sentido de los hilos en Python entonces?
+
+86
+00:04:26,165 --> 00:04:28,580
+Python te permite crear hilos.
+
+87
+00:04:28,580 --> 00:04:30,020
+Cul es el punto de los hilos?
+
+88
+00:04:30,020 --> 00:04:34,120
+A veces, cuando vas a conferencias o hablas con personas,
+
+89
+00:04:34,120 --> 00:04:35,869
+la gente te dice
+
+90
+00:04:35,869 --> 00:04:39,241
+hilos en Python, son basura, no debes usarlos.
+
+91
+00:04:39,241 --> 00:04:42,410
+Porque usar hilos no es gratis.
+
+92
+00:04:42,410 --> 00:04:44,140
+Se necesita algo de poder de cmputo,
+
+93
+00:04:44,140 --> 00:04:46,870
+como dije en el ltimo video, eliminarlos de los ncleos
+
+94
+00:04:46,870 --> 00:04:49,500
+volver a ponerlos, por lo que cuando tienes hilos puedes
+
+95
+00:04:49,500 --> 00:04:52,940
+ver realmente que tu cdigo de Python se vuelve un poco ms lento.
+
+96
+00:04:52,940 --> 00:04:54,770
+Entonces, cul es el punto de los hilos?
+
+97
+00:04:54,770 --> 00:04:57,630
+Si no se pueden ejecutar al mismo tiempo, y tambin
+
+98
+00:04:57,630 --> 00:05:00,180
+pueden hacer que su cdigo sea ms lento.
+
+99
+00:05:01,670 --> 00:05:03,740
+Bueno, digamos que tienes un
+
+100
+00:05:03,740 --> 00:05:07,450
+programa de Python que hace dos cosas, solo estas dos.
+
+101
+00:05:07,450 --> 00:05:10,050
+Una de las cosas que hace es
+
+102
+00:05:10,050 --> 00:05:13,350
+hacer una operacin matemtica compleja, algo que lleva mucho tiempo.
+
+103
+00:05:13,350 --> 00:05:17,190
+Digamos que hilo, esta operacin lleva mucho tiempo porque es un
+
+104
+00:05:17,190 --> 00:05:19,320
+clculo complejo, su computadora tiene que
+
+105
+00:05:19,320 --> 00:05:21,080
+hacer muchas cosas en la
+
+106
+00:05:21,080 --> 00:05:23,810
+CPU, en su procesador para llegar a una solucin.
+
+107
+00:05:25,040 --> 00:05:27,720
+Y tambin hace una cosa completamente separada, este programa.
+
+108
+00:05:27,720 --> 00:05:29,410
+Que es colabora con un usuario.
+
+109
+00:05:29,410 --> 00:05:32,430
+Le pide al usuario alguna informacin, luego la saluda
+
+110
+00:05:32,430 --> 00:05:34,340
+o le permite elegir algo de
+
+111
+00:05:34,340 --> 00:05:36,240
+un men o algo as.
+
+112
+00:05:36,240 --> 00:05:38,290
+Esta operacin puede llevar mucho tiempo porque
+
+113
+00:05:38,290 --> 00:05:40,660
+el usuario puede tardar mucho tiempo en escribir.
+
+114
+00:05:42,120 --> 00:05:43,120
+Entonces puedes ver
+
+115
+00:05:43,120 --> 00:05:46,360
+que hay dos cosas diferentes que estn sucediendo aqu.
+
+116
+00:05:46,360 --> 00:05:47,193
+Nmero uno,
+
+117
+00:05:47,193 --> 00:05:50,330
+su computadora est siendo utilizada para realizar clculos y
+
+118
+00:05:50,330 --> 00:05:53,420
+la nmero dos, la computadora no est siendo
+
+119
+00:05:53,420 --> 00:05:56,600
+utilizada porque est esperando que el usuario escriba algo.
+
+120
+00:05:56,600 --> 00:05:59,280
+Pero toda la operacin de solicitar la entrada y saludar
+
+121
+00:05:59,280 --> 00:06:01,160
+al usuario puede tomar mucho tiempo debido
+
+122
+00:06:01,160 --> 00:06:02,230
+a esa espera.
+
+123
+00:06:03,860 --> 00:06:07,416
+Entonces en un solo hilo puedes hacer uno de estos dos.
+
+124
+00:06:07,416 --> 00:06:09,930
+Primero haga su clculo matemtico, que llevar
+
+125
+00:06:09,930 --> 00:06:11,050
+mucho tiempo porque
+
+126
+00:06:11,050 --> 00:06:13,220
+hay muchas cosas que hacer y
+
+127
+00:06:13,220 --> 00:06:15,390
+luego puede interactuar con el usuario,
+
+128
+00:06:15,390 --> 00:06:17,500
+pedirle algo y devolverle el saludo.
+
+129
+00:06:17,500 --> 00:06:20,350
+Pero observe cmo este, tambin hay un rectngulo bastante grande
+
+130
+00:06:20,350 --> 00:06:23,200
+que era mi forma de indicar que esto puede llevar
+
+131
+00:06:23,200 --> 00:06:25,200
+un tiempo porque el usuario tiene que
+
+132
+00:06:25,200 --> 00:06:27,980
+escribir, y la escritura del usuario normalmente lleva mucho tiempo.
+
+133
+00:06:27,980 --> 00:06:29,780
+Esta es una opcin, un cdigo de un
+
+134
+00:06:29,780 --> 00:06:31,690
+solo hilo o, por supuesto, puede hacer lo contrario.
+
+135
+00:06:31,690 --> 00:06:34,140
+Primero puede pedirle algo al usuario, y
+
+136
+00:06:34,140 --> 00:06:36,630
+luego puede ejecutar su clculo matemtico despus.
+
+137
+00:06:38,560 --> 00:06:40,996
+En cualquier caso, estos hilos terminan
+
+138
+00:06:40,996 --> 00:06:43,121
+tomando una cantidad razonable de tiempo.
+
+139
+00:06:43,121 --> 00:06:46,150
+Este nico hilo termina tomando una cantidad de
+
+140
+00:06:46,150 --> 00:06:47,870
+tiempo razonable en general.
+
+141
+00:06:50,680 --> 00:06:54,190
+Entonces podemos hacer multitarea cooperativa.
+
+142
+00:06:55,120 --> 00:06:57,910
+Pero debes recordar, no importa lo que hagamos,
+
+143
+00:06:57,910 --> 00:07:00,820
+solo podemos ejecutar una cosa a la vez.
+
+144
+00:07:01,660 --> 00:07:03,330
+As que aqu es cmo
+
+145
+00:07:03,330 --> 00:07:05,430
+se vera la multitarea cooperativa en Python.
+
+146
+00:07:05,430 --> 00:07:08,560
+Esta es una de las partes emocionantes sobre Python, por cierto.
+
+147
+00:07:08,560 --> 00:07:13,560
+En primer lugar, ejecutara parte del cdigo de usuario, donde le
+
+148
+00:07:13,610 --> 00:07:16,030
+pedira al usuario que lo ingrese.
+
+149
+00:07:16,030 --> 00:07:18,340
+Y luego liberara inmediatamente el
+
+150
+00:07:19,854 --> 00:07:22,734
+GIL y ejecutara su clculo matemtico.
+
+151
+00:07:22,734 --> 00:07:26,520
+Recuerde, cuando el hilo del usuario libera el GIL, otro
+
+152
+00:07:26,520 --> 00:07:27,900
+hilo que est esperando
+
+153
+00:07:27,900 --> 00:07:29,680
+puede adquirirlo y usarlo.
+
+154
+00:07:31,150 --> 00:07:32,730
+Y ese hilo continuar
+
+155
+00:07:32,730 --> 00:07:34,780
+ejecutndose hasta que liberen el GIL.
+
+156
+00:07:35,840 --> 00:07:38,091
+Entonces, cuando el usuario responda,
+
+157
+00:07:38,091 --> 00:07:42,630
+este cdigo tendr algo para decir "oye", si el
+
+158
+00:07:42,630 --> 00:07:45,170
+usuario responde suelta el GIL.
+
+159
+00:07:45,170 --> 00:07:48,050
+As que lanzamos el GIL y volvemos al
+
+160
+00:07:48,050 --> 00:07:50,750
+usuario. Y aqu podemos saludar al usuario, que
+
+161
+00:07:50,750 --> 00:07:53,760
+es realmente rpido porque estamos construyendo una cadena
+
+162
+00:07:53,760 --> 00:07:56,180
+e imprimindola y luego podemos liberar el
+
+163
+00:07:56,180 --> 00:07:59,440
+GIL inmediatamente y volver a ejecutar nuestro clculo matemtico.
+
+164
+00:08:00,990 --> 00:08:05,430
+Observe cmo el segmento amarillo es ms pequeo ahora en
+
+165
+00:08:06,546 --> 00:08:10,394
+conjunto, porque lo que hemos eliminado, todo lo
+
+166
+00:08:10,394 --> 00:08:12,580
+que haba all, era nuestro
+
+167
+00:08:12,580 --> 00:08:16,600
+cdigo a la espera de que el usuario escriba.
+
+168
+00:08:16,600 --> 00:08:20,930
+Y debido a los hilos, ya no necesitamos hacer eso.
+
+169
+00:08:21,840 --> 00:08:23,230
+Bueno?
+
+170
+00:08:23,230 --> 00:08:28,230
+Porque ahora nuestros hilos solo se estn ejecutando cuando hay
+
+171
+00:08:28,680 --> 00:08:31,870
+cosas que hacer en la computadora.
+
+172
+00:08:32,730 --> 00:08:35,890
+Cuando el usuario est esperando, o estamos esperando que
+
+173
+00:08:35,890 --> 00:08:40,210
+el usuario escriba, o algunos datos ingresen a un programa desde algn
+
+174
+00:08:40,210 --> 00:08:42,540
+lugar, no tenemos que estar esperando.
+
+175
+00:08:42,540 --> 00:08:44,940
+Podemos estar haciendo otra cosa durante ese tiempo.
+
+176
+00:08:45,840 --> 00:08:50,840
+Observe que este conjunto inferior de rectngulos tomara un poco ms de
+
+177
+00:08:50,910 --> 00:08:55,140
+tiempo que solo la adicin del usuario y el clculo
+
+178
+00:08:55,140 --> 00:08:56,570
+matemtico debido a
+
+179
+00:08:56,570 --> 00:08:59,580
+que los hilos se comunican entre s,
+
+180
+00:08:59,580 --> 00:09:02,070
+se libera GIL, se adquiere GIL. y ser puesto en el ncleo y luego retirado del ncleo.
+
+181
+00:09:02,070 --> 00:09:04,110
+As que habra un poco de sobrecarga,
+
+182
+00:09:04,110 --> 00:09:06,480
+pero en general, tomara menos tiempo que el anterior.
+
+183
+00:09:06,480 --> 00:09:10,610
+Volviendo a lo que es el punto de los hilos
+
+184
+00:09:13,390 --> 00:09:16,460
+en Python es reducir el tiempo de espera.
+
+185
+00:09:17,710 --> 00:09:20,120
+Eso es todo.
+
+186
+00:09:21,770 --> 00:09:23,820
+Si todos sus hilos estn haciendo
+
+187
+00:09:23,820 --> 00:09:26,200
+cosas en Python, si todos sus hilos
+
+188
+00:09:26,200 --> 00:09:30,470
+estn usando su CPU, su procesador, el hilo mltiple no lo ayudar en Python.
+
+189
+00:09:30,470 --> 00:09:33,320
+Porque a Python no le
+
+190
+00:09:33,320 --> 00:09:38,096
+va muy bien que ejecute cosas en paralelo.
+
+191
+00:09:38,096 --> 00:09:40,530
+Y la razn por la que esto funciona es porque
+
+192
+00:09:41,700 --> 00:09:44,720
+el sistema operativo dar prioridad a los hilos que estn haciendo cosas.
+
+193
+00:09:44,720 --> 00:09:46,910
+Entonces en este caso sale hilo de clculo matemtico.
+
+194
+00:09:46,910 --> 00:09:49,570
+Entonces, si un hilo est esperando, se ejecutar con menos frecuencia
+
+195
+00:09:49,570 --> 00:09:52,740
+porque el sistema operativo se dar cuenta de que hay un hilo que
+
+196
+00:09:52,740 --> 00:09:55,450
+quiere usar el CPU, y hay un hilo que no lo hace.
+
+197
+00:09:55,450 --> 00:09:58,580
+Probablemente se ejecute el que hace un poco ms a menudo.
+
+198
+00:09:58,580 --> 00:10:01,460
+Para que tenga ms tiempo en la CPU.
+
+199
+00:10:01,460 --> 00:10:04,230
+De acuerdo, eso es todo por este video.
+
+200
+00:10:05,980 --> 00:10:07,650
+Solo quera contarte sobre el GIL
+
+201
+00:10:07,650 --> 00:10:10,260
+de Python y ahora sabes que no puedes ejecutar dos
+
+202
+00:10:10,260 --> 00:10:12,770
+hilos al mismo tiempo en Python bajo el mismo proceso.
+
+203
+00:10:12,770 --> 00:10:16,690
+Pero hay cosas que puede hacer para que su cdigo
+
+204
+00:10:16,690 --> 00:10:18,910
+sea ms eficiente con el uso
+
+205
+00:10:18,910 --> 00:10:21,930
+de hilos si su cdigo implica esperar.
+
+206
+00:10:21,930 --> 00:10:24,140
+Eso es todo por este video, nos vemos en el prximo.
+
+207
+00:10:25,309 --> 00:10:28,250
+&nbsp;
+

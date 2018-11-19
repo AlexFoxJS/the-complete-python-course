@@ -1,0 +1,600 @@
+1
+00:00:00,415 --> 00:00:01,616
+<v ->[Jose Salvatierra] Hi and welcome back.</v>
+
+2
+00:00:01,616 --> 00:00:02,449
+In this video we are looking at
+
+3
+00:00:02,449 --> 00:00:06,116
+how to deal with errors in context managers.
+
+4
+00:00:06,999 --> 00:00:09,790
+The exit method and under exit method of context managers
+
+5
+00:00:09,790 --> 00:00:11,307
+has three arguments:
+
+6
+00:00:11,307 --> 00:00:13,307
+exc type, vowel, and TB.
+
+7
+00:00:14,820 --> 00:00:16,627
+These stand for exception type,
+
+8
+00:00:16,627 --> 00:00:20,714
+exception value, and exception trace back.
+
+9
+00:00:20,714 --> 00:00:24,280
+We're gonna look at exactly what they are in just a moment.
+
+10
+00:00:24,280 --> 00:00:26,891
+And these things exist because during the execution
+
+11
+00:00:26,891 --> 00:00:28,249
+of a context manager,
+
+12
+00:00:28,249 --> 00:00:31,180
+it is possible that an error will occur.
+
+13
+00:00:31,180 --> 00:00:35,230
+For example, if we go to the add_book function,
+
+14
+00:00:35,230 --> 00:00:37,594
+we could encounter an error when we try to insert
+
+15
+00:00:37,594 --> 00:00:40,403
+a book with a name that already exists.
+
+16
+00:00:40,403 --> 00:00:45,049
+In that case, an error will be raised by sequel lite,
+
+17
+00:00:45,049 --> 00:00:47,714
+and before it crashes our programme,
+
+18
+00:00:47,714 --> 00:00:50,214
+it will go to the exit method.
+
+19
+00:00:51,069 --> 00:00:52,444
+Okay.
+
+20
+00:00:52,444 --> 00:00:54,017
+So even if an advert is raised,
+
+21
+00:00:54,017 --> 00:00:57,189
+we'll still call the exit method first,
+
+22
+00:00:57,189 --> 00:01:00,039
+and it will have some values here,
+
+23
+00:01:00,039 --> 00:01:03,336
+and then once the exit method has finished running,
+
+24
+00:01:03,336 --> 00:01:05,271
+the error will continue to be raised
+
+25
+00:01:05,271 --> 00:01:06,808
+and will crash our programme
+
+26
+00:01:06,808 --> 00:01:10,584
+unless it's handled in a try except.
+
+27
+00:01:10,584 --> 00:01:13,860
+If no error occurs, all of these have none values,
+
+28
+00:01:13,860 --> 00:01:17,082
+so all of these are none I.D.
+
+29
+00:01:17,082 --> 00:01:19,869
+So here's some sort of stuff we can do in exit.
+
+30
+00:01:19,869 --> 00:01:21,774
+Of course we can close a connection,
+
+31
+00:01:21,774 --> 00:01:23,412
+even though an error happened.
+
+32
+00:01:23,412 --> 00:01:26,452
+Otherwise, we would have to use a try except here.
+
+33
+00:01:26,452 --> 00:01:27,892
+So earlier on, when we got an error
+
+34
+00:01:27,892 --> 00:01:29,891
+in inserting a book,
+
+35
+00:01:29,891 --> 00:01:31,766
+we didn't actually close the connection
+
+36
+00:01:31,766 --> 00:01:35,188
+because the programme crashed before that.
+
+37
+00:01:35,188 --> 00:01:36,722
+Now, even if we get an error on the execute,
+
+38
+00:01:36,722 --> 00:01:39,634
+we still go here, and we come in and close.
+
+39
+00:01:39,634 --> 00:01:41,839
+We can close the file, even though it never happened,
+
+40
+00:01:41,839 --> 00:01:43,212
+same thing as here.
+
+41
+00:01:43,212 --> 00:01:44,587
+We can print something to the console
+
+42
+00:01:44,587 --> 00:01:46,551
+when something finishing executing,
+
+43
+00:01:46,551 --> 00:01:47,791
+particularly if an error happened,
+
+44
+00:01:47,791 --> 00:01:50,440
+we can say "Hey, we ran this context manager,
+
+45
+00:01:50,440 --> 00:01:52,753
+but it never happened during it's execution."
+
+46
+00:01:52,753 --> 00:01:56,188
+We can destroy anything we depended on
+
+47
+00:01:56,188 --> 00:01:57,955
+in the context manager.
+
+48
+00:01:57,955 --> 00:02:00,245
+So for example we could destroy this connection,
+
+49
+00:02:00,245 --> 00:02:02,142
+we could destroy a file handler,
+
+50
+00:02:02,142 --> 00:02:05,306
+we could do anything we want.
+
+51
+00:02:05,306 --> 00:02:07,419
+Remember than context managers are just that.
+
+52
+00:02:07,419 --> 00:02:10,164
+They are functions used to manage the context,
+
+53
+00:02:10,164 --> 00:02:13,445
+and Python gives us some syntactic sugar,
+
+54
+00:02:13,445 --> 00:02:14,911
+the "with" statement,
+
+55
+00:02:14,911 --> 00:02:16,615
+that allows us to do these things,
+
+56
+00:02:16,615 --> 00:02:17,731
+but they are just functions
+
+57
+00:02:17,731 --> 00:02:20,052
+running at the start or at the end.
+
+58
+00:02:20,052 --> 00:02:21,324
+It just so happens that the exit function
+
+59
+00:02:21,324 --> 00:02:24,029
+gets called even when there's an exception,,
+
+60
+00:02:24,029 --> 00:02:25,921
+an error, which is pretty much the same
+
+61
+00:02:25,921 --> 00:02:27,754
+as a try except block.
+
+62
+00:02:28,955 --> 00:02:30,846
+You can do this stuff manually
+
+63
+00:02:30,846 --> 00:02:32,402
+without using context managers,
+
+64
+00:02:32,402 --> 00:02:35,113
+but it's probably gonna end up being less readable.
+
+65
+00:02:35,113 --> 00:02:37,548
+And so this is probably the better choice.
+
+66
+00:02:37,548 --> 00:02:40,686
+And Python really likes these context managers.
+
+67
+00:02:40,686 --> 00:02:43,960
+These add readability and reduce repetition in your code
+
+68
+00:02:43,960 --> 00:02:46,903
+which is good for one of programmings core tenants
+
+69
+00:02:46,903 --> 00:02:49,486
+which is don't repeat yourself.
+
+70
+00:02:50,614 --> 00:02:51,447
+Okay.
+
+71
+00:02:52,549 --> 00:02:56,560
+Let's go and set a breakpoint in sideline 14,
+
+72
+00:02:56,560 --> 00:03:01,152
+the exit, the under exit method here of our context manager,
+
+73
+00:03:01,152 --> 00:03:05,012
+and then we are going to run our app.
+
+74
+00:03:05,012 --> 00:03:08,993
+We're going to add a book which is going to be clean coat,
+
+75
+00:03:08,993 --> 00:03:13,599
+and then we're going to add the same book again.
+
+76
+00:03:13,599 --> 00:03:16,663
+Notice how now we get an integrity error here.
+
+77
+00:03:16,663 --> 00:03:20,786
+It says UNIQUE restraint failed: books.name
+
+78
+00:03:20,786 --> 00:03:25,195
+And that's in here in the Sequel A3 interior happen
+
+79
+00:03:25,195 --> 00:03:28,028
+when we try to execute this thing.
+
+80
+00:03:28,988 --> 00:03:32,718
+Now, let's go ahead and debug our app this time.
+
+81
+00:03:32,718 --> 00:03:35,635
+And, once again, go to the console,
+
+82
+00:03:38,562 --> 00:03:41,114
+Oh, I think we may have... Oh yeah, sorry.
+
+83
+00:03:41,114 --> 00:03:44,506
+This has ran, we don't need to do that.
+
+84
+00:03:44,506 --> 00:03:47,589
+Let's over, go to A, type clean code,
+
+85
+00:03:49,578 --> 00:03:52,800
+and now notice how our code stops in here.
+
+86
+00:03:52,800 --> 00:03:55,001
+We can go over to the debugger
+
+87
+00:03:55,001 --> 00:03:58,110
+and see that we have a couple of values for
+
+88
+00:03:58,110 --> 00:04:01,819
+the execution value and execution trace back.
+
+89
+00:04:01,819 --> 00:04:05,297
+The trace back is this trace back object,
+
+90
+00:04:05,297 --> 00:04:10,297
+and the value is this UNIQUE constraint failed on books.name
+
+91
+00:04:11,340 --> 00:04:14,020
+So when we have an exception happen,
+
+92
+00:04:14,020 --> 00:04:17,119
+the exit function gets called,
+
+93
+00:04:17,119 --> 00:04:19,536
+but it has some values in it.
+
+94
+00:04:21,063 --> 00:04:23,786
+I wonder if exc_type has any value...
+
+95
+00:04:23,786 --> 00:04:24,642
+Yes it does.
+
+96
+00:04:24,642 --> 00:04:27,765
+This is the integrity error that we got earlier,
+
+97
+00:04:27,765 --> 00:04:30,590
+this is a type of the error that was called.
+
+98
+00:04:30,590 --> 00:04:33,316
+So as you can see, these are not none anymore.
+
+99
+00:04:33,316 --> 00:04:35,799
+They have some values.
+
+100
+00:04:35,799 --> 00:04:37,471
+So what we can do is,
+
+101
+00:04:37,471 --> 00:04:40,721
+we can stop our programme, and we can say
+
+102
+00:04:41,645 --> 00:04:42,562
+if exc_type
+
+103
+00:04:43,472 --> 00:04:44,305
+or exc_val
+
+104
+00:04:45,322 --> 00:04:46,155
+or exc_tb:
+
+105
+00:04:48,765 --> 00:04:50,515
+self.connection.close
+
+106
+00:04:54,708 --> 00:04:57,041
+without committing anything.
+
+107
+00:04:58,214 --> 00:05:00,964
+Otherwise, commit and then close.
+
+108
+00:05:07,733 --> 00:05:10,146
+The reason for this is that if an error happened,
+
+109
+00:05:10,146 --> 00:05:12,431
+it's possible, though unlikely,
+
+110
+00:05:12,431 --> 00:05:15,869
+that our database has been left in an inconsistent state,
+
+111
+00:05:15,869 --> 00:05:17,608
+a state that is not so good.
+
+112
+00:05:17,608 --> 00:05:20,232
+For example, if you try to enter some data first
+
+113
+00:05:20,232 --> 00:05:21,625
+and then you want to enter something else,
+
+114
+00:05:21,625 --> 00:05:23,226
+that depends on the previous data,
+
+115
+00:05:23,226 --> 00:05:25,778
+but you get an error when that happens.
+
+116
+00:05:25,778 --> 00:05:28,783
+So what to do, is if there is an exception happen,
+
+117
+00:05:28,783 --> 00:05:30,111
+close the connection.
+
+118
+00:05:30,111 --> 00:05:32,938
+Otherwise, commit and then close.
+
+119
+00:05:32,938 --> 00:05:37,282
+Notice how if exc_type or exc_val or exc_tb
+
+120
+00:05:37,282 --> 00:05:39,199
+just means is not none.
+
+121
+00:05:43,657 --> 00:05:44,809
+These are all the same thing.
+
+122
+00:05:44,809 --> 00:05:47,268
+Exc_type is not none or exc_value is not none
+
+123
+00:05:47,268 --> 00:05:51,390
+or exc_tb is not none can be shortened to this.
+
+124
+00:05:51,390 --> 00:05:55,360
+So feel free to use this type of syntax instead.
+
+125
+00:05:55,360 --> 00:05:57,978
+Remember the or statement gives you the second value
+
+126
+00:05:57,978 --> 00:06:00,652
+if the first one was false E.
+
+127
+00:06:00,652 --> 00:06:05,236
+None is a false E value, so this gives you exc_val.
+
+128
+00:06:05,236 --> 00:06:07,399
+Exc_val is none, which is also false E.
+
+129
+00:06:07,399 --> 00:06:09,384
+So that gives you exc_tb.
+
+130
+00:06:09,384 --> 00:06:12,436
+Exc_tb is also none, which is also false E,
+
+131
+00:06:12,436 --> 00:06:14,099
+so then you go into here.
+
+132
+00:06:14,099 --> 00:06:16,382
+Because this whole thing evaluates as exc_tb,
+
+133
+00:06:16,382 --> 00:06:17,632
+which is false.
+
+134
+00:06:18,679 --> 00:06:19,615
+Okay.
+
+135
+00:06:19,615 --> 00:06:20,669
+If not, you run the else,
+
+136
+00:06:20,669 --> 00:06:24,002
+which commits and closes the connection.
+
+137
+00:06:24,904 --> 00:06:26,916
+So that's it for this video, just wanted to show you
+
+138
+00:06:26,916 --> 00:06:30,489
+what the exit method parameters are,
+
+139
+00:06:30,489 --> 00:06:32,833
+and what type of things they hold.
+
+140
+00:06:32,833 --> 00:06:34,454
+And the type is the exception type,
+
+141
+00:06:34,454 --> 00:06:36,690
+that's the class of the exception.
+
+142
+00:06:36,690 --> 00:06:39,243
+The value is any arguments that were passed
+
+143
+00:06:39,243 --> 00:06:40,891
+to the exception when it was raised.
+
+144
+00:06:40,891 --> 00:06:42,846
+Normally, that's a description message,
+
+145
+00:06:42,846 --> 00:06:45,399
+and the tb is the trace back of the exception.
+
+146
+00:06:45,399 --> 00:06:47,907
+That where the exception happened in all the lines
+
+147
+00:06:47,907 --> 00:06:51,264
+and all the files where it was seen.
+
+148
+00:06:51,264 --> 00:06:52,184
+So that's it for this video,
+
+149
+00:06:52,184 --> 00:06:53,642
+hope you learned something,
+
+150
+00:06:53,642 --> 00:06:55,076
+and I'll see you on the next one.
+

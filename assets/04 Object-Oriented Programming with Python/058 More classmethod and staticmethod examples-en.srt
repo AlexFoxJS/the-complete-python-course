@@ -1,0 +1,1052 @@
+1
+00:00:00,200 --> 00:00:01,110
+<v Instructor>Hi, welcome back.</v>
+
+2
+00:00:01,110 --> 00:00:02,340
+Let's look at some examples
+
+3
+00:00:02,340 --> 00:00:05,302
+of class method and static method.
+
+4
+00:00:05,302 --> 00:00:07,160
+There was some terrible examples in the last video,
+
+5
+00:00:07,160 --> 00:00:08,570
+so I just wanted to apologise,
+
+6
+00:00:08,570 --> 00:00:10,430
+but I wanted to show you the syntax
+
+7
+00:00:10,430 --> 00:00:11,950
+for those two types of method,
+
+8
+00:00:11,950 --> 00:00:13,900
+the class method and the static method.
+
+9
+00:00:16,230 --> 00:00:18,920
+Let's have a class here,
+
+10
+00:00:19,900 --> 00:00:21,010
+which is going to be the basis
+
+11
+00:00:21,010 --> 00:00:22,540
+of the example in this video,
+
+12
+00:00:22,540 --> 00:00:23,920
+and I think it's gonna be a better example
+
+13
+00:00:23,920 --> 00:00:26,090
+for you to understand in which situations
+
+14
+00:00:26,090 --> 00:00:28,380
+do you use which type of method.
+
+15
+00:00:31,080 --> 00:00:34,040
+We've got this FixedFloat class.
+
+16
+00:00:34,040 --> 00:00:37,220
+It's got an init method in which an amount property
+
+17
+00:00:37,220 --> 00:00:39,627
+gets initialised in the object,
+
+18
+00:00:39,627 --> 00:00:42,110
+and then it's got a repr method,
+
+19
+00:00:42,110 --> 00:00:44,500
+which returns a string representing the object.
+
+20
+00:00:44,500 --> 00:00:45,700
+We've looked at this type of method,
+
+21
+00:00:45,700 --> 00:00:48,070
+at this exact method before,
+
+22
+00:00:48,070 --> 00:00:49,960
+and all it's doing is it's printing FixedFloat,
+
+23
+00:00:49,960 --> 00:00:52,910
+the class name, and then self.amount,
+
+24
+00:00:52,910 --> 00:00:55,248
+which is the amount that we initialised earlier.
+
+25
+00:00:55,248 --> 00:00:58,200
+And this is a interesting Python construct,
+
+26
+00:00:58,200 --> 00:01:00,140
+that allows us to print the amount
+
+27
+00:01:00,140 --> 00:01:02,470
+to two decimal places;
+
+28
+00:01:02,470 --> 00:01:06,220
+not three, not four, not five, not one, just two.
+
+29
+00:01:06,220 --> 00:01:09,480
+So for example, if were printing 15.50,
+
+30
+00:01:09,480 --> 00:01:12,320
+Python would normally print 15.5.
+
+31
+00:01:12,320 --> 00:01:15,750
+But with this construct here, it will print 15.50.
+
+32
+00:01:16,750 --> 00:01:18,210
+So this is a FixedFloat,
+
+33
+00:01:18,210 --> 00:01:21,190
+a float to a fixed number of decimal places.
+
+34
+00:01:22,550 --> 00:01:24,790
+If we wanted to create our number,
+
+35
+00:01:24,790 --> 00:01:28,430
+and it be a FixedFloat like 18.5746,
+
+36
+00:01:29,690 --> 00:01:32,470
+then we can print the number and it will print out
+
+37
+00:01:32,470 --> 00:01:34,170
+that this is a FixedFloat of 18.57
+
+38
+00:01:37,492 --> 00:01:39,350
+So okay, this does something.
+
+39
+00:01:39,350 --> 00:01:43,250
+What is a use case that this could be useful for?
+
+40
+00:01:44,890 --> 00:01:47,060
+Well, for example, for a currency,
+
+41
+00:01:47,060 --> 00:01:49,320
+you could imagine using something like this.
+
+42
+00:01:49,320 --> 00:01:51,830
+For some currencies, that are always to two decimal places
+
+43
+00:01:51,830 --> 00:01:53,640
+but sometimes they trade in the stock markets
+
+44
+00:01:53,640 --> 00:01:57,160
+to many more decimal places, in the currency markets.
+
+45
+00:01:57,160 --> 00:02:00,440
+So anyway, it could be useful in some scenarios.
+
+46
+00:02:00,440 --> 00:02:04,060
+Now imagine we wanted to get a new FixedFloat object
+
+47
+00:02:04,060 --> 00:02:06,960
+as a result from summing two floats.
+
+48
+00:02:08,640 --> 00:02:11,490
+We could something like this, from_sum.
+
+49
+00:02:13,400 --> 00:02:14,910
+And then of course, this is an instance method,
+
+50
+00:02:14,910 --> 00:02:18,210
+so it takes self, it takes value1 and value2.
+
+51
+00:02:19,200 --> 00:02:21,110
+And what this is going to return
+
+52
+00:02:21,110 --> 00:02:24,880
+is a new FixedFloat object of value1 plus value2.
+
+53
+00:02:25,950 --> 00:02:29,360
+So again, maybe not something you would wanna do.
+
+54
+00:02:29,360 --> 00:02:30,850
+You could just add the values together
+
+55
+00:02:30,850 --> 00:02:34,300
+and then create a FixedFloat object from the result.
+
+56
+00:02:34,300 --> 00:02:36,040
+But lets say we want to do this for
+
+57
+00:02:36,040 --> 00:02:39,200
+a particular reason that you'll see in a moment.
+
+58
+00:02:39,200 --> 00:02:42,770
+Now if we wanted to create a new FixedFloat object,
+
+59
+00:02:42,770 --> 00:02:44,240
+that is a result of two values,
+
+60
+00:02:44,240 --> 00:02:48,900
+we could say, new_number is number.from_sum,
+
+61
+00:02:48,900 --> 00:02:51,000
+Notice how we have to do number.from_sum
+
+62
+00:02:51,000 --> 00:02:53,250
+because this is an instance method;
+
+63
+00:02:53,250 --> 00:02:56,150
+it doesn't have any decorators on top.
+
+64
+00:02:56,150 --> 00:03:00,300
+And it'll be something like 19.575 and 0.789
+
+65
+00:03:04,020 --> 00:03:07,190
+Then we can print the new_number, like so.
+
+66
+00:03:09,877 --> 00:03:12,670
+Now we get a new FixedFloat object, which is 20.36.
+
+67
+00:03:12,670 --> 00:03:15,980
+That's the FixedFloat that has been returned
+
+68
+00:03:15,980 --> 00:03:18,980
+which adds up the two numbers together, 19 and 0.7
+
+69
+00:03:21,532 --> 00:03:24,020
+However, I don't really like this.
+
+70
+00:03:24,020 --> 00:03:26,930
+Because in order to call the from_sum method,
+
+71
+00:03:26,930 --> 00:03:30,500
+we've had to first create a FixedFloat object,
+
+72
+00:03:30,500 --> 00:03:33,350
+that we never used, right?
+
+73
+00:03:33,350 --> 00:03:35,879
+We only used it to call this method,
+
+74
+00:03:35,879 --> 00:03:38,940
+we never used self inside this method
+
+75
+00:03:38,940 --> 00:03:41,650
+and we never used this number anywhere else.
+
+76
+00:03:41,650 --> 00:03:44,680
+So really creating an object for this
+
+77
+00:03:44,680 --> 00:03:46,870
+is not that useful.
+
+78
+00:03:46,870 --> 00:03:48,030
+You should only create objects
+
+79
+00:03:48,030 --> 00:03:49,380
+when you're gonna use them.
+
+80
+00:03:51,100 --> 00:03:55,860
+So instead, we could make this a staticmethod.
+
+81
+00:03:55,860 --> 00:03:58,910
+Remove the self, and now you no longer
+
+82
+00:03:58,910 --> 00:04:00,810
+need the object there.
+
+83
+00:04:00,810 --> 00:04:03,680
+Which means that instead of calling it with the object,
+
+84
+00:04:03,680 --> 00:04:06,270
+you can just call it with the class.
+
+85
+00:04:06,270 --> 00:04:09,430
+Remember, we no longer need to pass the object in here,
+
+86
+00:04:09,430 --> 00:04:10,870
+so just call it with the class
+
+87
+00:04:10,870 --> 00:04:12,300
+and don't pass the object in.
+
+88
+00:04:12,300 --> 00:04:15,080
+And then, value1 is this and value2 is that.
+
+89
+00:04:16,470 --> 00:04:19,120
+We can run it again and see the same thing comes out.
+
+90
+00:04:20,520 --> 00:04:21,730
+So that looks a bit better.
+
+91
+00:04:21,730 --> 00:04:23,560
+Now we don't have the useless parameter
+
+92
+00:04:23,560 --> 00:04:25,250
+and we don't need to create an object
+
+93
+00:04:25,250 --> 00:04:27,210
+before we call the method.
+
+94
+00:04:27,210 --> 00:04:28,043
+Awesome.
+
+95
+00:04:28,880 --> 00:04:32,980
+However, lets extend this example a bit more
+
+96
+00:04:32,980 --> 00:04:35,830
+and create a new class, which is going to be
+
+97
+00:04:35,830 --> 00:04:39,450
+a currency class that extends that FixedFloat class.
+
+98
+00:04:39,450 --> 00:04:40,930
+Lets call it Euro.
+
+99
+00:04:41,960 --> 00:04:44,170
+And this is going to extend this FixedFloat class
+
+100
+00:04:44,170 --> 00:04:45,840
+because Euros are normally printed out
+
+101
+00:04:45,840 --> 00:04:47,290
+as two decimal places too.
+
+102
+00:04:48,320 --> 00:04:50,670
+Now we have another init method,
+
+103
+00:04:50,670 --> 00:04:53,800
+where self and amount are called.
+
+104
+00:04:53,800 --> 00:04:58,800
+We are going to call super, init with amount.
+
+105
+00:05:00,420 --> 00:05:02,420
+And also we're going to define a new property,
+
+106
+00:05:02,420 --> 00:05:04,360
+specific to Euro objects,
+
+107
+00:05:05,240 --> 00:05:06,750
+which is going to be the symbol.
+
+108
+00:05:06,750 --> 00:05:09,980
+And that's gonna be the Euro symbol.
+
+109
+00:05:09,980 --> 00:05:11,530
+But it you're using Python 2.7,
+
+110
+00:05:12,540 --> 00:05:13,840
+it probably won't like this.
+
+111
+00:05:13,840 --> 00:05:15,690
+So make sure you're using Python 3.6,
+
+112
+00:05:16,820 --> 00:05:18,960
+as this symbol is a Unicode symbol.
+
+113
+00:05:20,890 --> 00:05:22,100
+Okay.
+
+114
+00:05:22,100 --> 00:05:23,830
+Now we've got this here.
+
+115
+00:05:23,830 --> 00:05:27,320
+Lets also, override this repr method,
+
+116
+00:05:30,300 --> 00:05:34,020
+in order to return now a Euro class.
+
+117
+00:05:34,020 --> 00:05:37,180
+Euro, and were gonna say self.symbol,
+
+118
+00:05:37,180 --> 00:05:39,900
+self.amount to two decimal places.
+
+119
+00:05:41,850 --> 00:05:42,683
+Okay.
+
+120
+00:05:42,683 --> 00:05:45,670
+Now if we create a new Euro object,
+
+121
+00:05:45,670 --> 00:05:47,390
+which we shall do it right here.
+
+122
+00:05:47,390 --> 00:05:49,780
+And money is
+
+123
+00:05:52,540 --> 00:05:57,540
+Euro of 18.786,
+
+124
+00:05:57,875 --> 00:06:00,150
+and then we can print money out.
+
+125
+00:06:00,150 --> 00:06:01,070
+So lets run that.
+
+126
+00:06:02,660 --> 00:06:04,740
+You can see that we have this Euro now,
+
+127
+00:06:04,740 --> 00:06:08,280
+which was the currency code, sorry the currency symbol,
+
+128
+00:06:08,280 --> 00:06:10,180
+which is pretty cool, it's a bit nice.
+
+129
+00:06:12,686 --> 00:06:14,280
+Now we've defined this class that
+
+130
+00:06:14,280 --> 00:06:16,030
+extends the FixedFloat class.
+
+131
+00:06:16,030 --> 00:06:18,070
+And it's got its init method and that
+
+132
+00:06:18,070 --> 00:06:20,520
+calls the parent's init method to set the amount.
+
+133
+00:06:20,520 --> 00:06:22,320
+And the repr method that overrides
+
+134
+00:06:22,320 --> 00:06:26,360
+the parent's repr method to include the symbol and so forth.
+
+135
+00:06:26,360 --> 00:06:28,750
+It doesn't have the from_sum method though.
+
+136
+00:06:29,670 --> 00:06:33,530
+So what happens, when do that money is Euro,
+
+137
+00:06:35,229 --> 00:06:39,020
+from_sum of 16.758
+
+138
+00:06:39,020 --> 00:06:41,660
+and 9.999?
+
+139
+00:06:41,660 --> 00:06:43,370
+What are we gonna see printed out?
+
+140
+00:06:49,260 --> 00:06:51,320
+I hope you guessed correctly.
+
+141
+00:06:51,320 --> 00:06:53,220
+The Euro.from_sum method,
+
+142
+00:06:53,220 --> 00:06:55,640
+has been inherited from FixedFloat.
+
+143
+00:06:55,640 --> 00:06:58,110
+So it's just going to be this one here.
+
+144
+00:06:58,110 --> 00:07:01,830
+What it's going to return is a FixedFloat object.
+
+145
+00:07:01,830 --> 00:07:04,940
+So this Euro.from_sum, really is going to return,
+
+146
+00:07:04,940 --> 00:07:07,230
+a FixedFloat object, which doesn't make any sense.
+
+147
+00:07:07,230 --> 00:07:09,520
+It should be a Euro object surely,
+
+148
+00:07:09,520 --> 00:07:12,030
+since that's what we called it with.
+
+149
+00:07:12,030 --> 00:07:14,300
+Lets run this, and you see that I'm correct
+
+150
+00:07:14,300 --> 00:07:16,450
+in saying that a FixedFloat comes out.
+
+151
+00:07:17,320 --> 00:07:18,920
+So we don't want that.
+
+152
+00:07:18,920 --> 00:07:20,970
+What we want to do instead is make sure
+
+153
+00:07:20,970 --> 00:07:23,810
+that we are returning an object of the type
+
+154
+00:07:23,810 --> 00:07:26,010
+of the class we called it with,
+
+155
+00:07:26,010 --> 00:07:31,010
+so that we are never faced with this bug, really.
+
+156
+00:07:31,130 --> 00:07:33,370
+The way we can do that is by changing
+
+157
+00:07:33,370 --> 00:07:36,140
+this staticmethod to a classmethod.
+
+158
+00:07:36,140 --> 00:07:38,760
+And I'll need cls value there.
+
+159
+00:07:38,760 --> 00:07:42,810
+Now this is the class that we called it with.
+
+160
+00:07:42,810 --> 00:07:46,830
+If we call Euro.from_sum, Python is smart enough
+
+161
+00:07:46,830 --> 00:07:49,610
+to include Euro as the first argument
+
+162
+00:07:49,610 --> 00:07:52,610
+and therefore as the first parameter to this method.
+
+163
+00:07:54,520 --> 00:07:56,170
+Then we return, we don't wanna
+
+164
+00:07:56,170 --> 00:07:57,810
+return a FixedFloat of course.
+
+165
+00:07:57,810 --> 00:07:59,720
+What we're gonna do is return
+
+166
+00:07:59,720 --> 00:08:02,940
+cls and use it as if it were the class.
+
+167
+00:08:02,940 --> 00:08:04,420
+Because it is.
+
+168
+00:08:04,420 --> 00:08:06,850
+So if we call it from a FixedFloat number,
+
+169
+00:08:06,850 --> 00:08:09,080
+that's gonna be a FixedFloat.
+
+170
+00:08:09,080 --> 00:08:12,990
+If we call it from a Euro, like here,
+
+171
+00:08:12,990 --> 00:08:14,440
+it's gonna be a Euro.
+
+172
+00:08:15,860 --> 00:08:17,050
+Okay. Lets run it.
+
+173
+00:08:18,110 --> 00:08:20,180
+And now you can see that we get it correct.
+
+174
+00:08:20,180 --> 00:08:22,830
+And we have the symbol and the Euro in here
+
+175
+00:08:22,830 --> 00:08:23,990
+as we would expect.
+
+176
+00:08:25,290 --> 00:08:26,123
+Okay.
+
+177
+00:08:26,123 --> 00:08:27,440
+So that's really cool.
+
+178
+00:08:27,440 --> 00:08:30,450
+When we call Euro.from_sum, Euro is the cls.
+
+179
+00:08:30,450 --> 00:08:33,600
+When we call FixedFloat.from_sum, FixedFloat is the cls,
+
+180
+00:08:34,890 --> 00:08:35,940
+which is really cool.
+
+181
+00:08:37,380 --> 00:08:39,700
+This is one of the examples where
+
+182
+00:08:39,700 --> 00:08:41,640
+you would use a class method.
+
+183
+00:08:42,730 --> 00:08:45,500
+And a lot of the Python community is
+
+184
+00:08:45,500 --> 00:08:49,170
+quite strongly against static methods as a whole.
+
+185
+00:08:49,170 --> 00:08:52,990
+They say, a static method is just a class method
+
+186
+00:08:52,990 --> 00:08:55,910
+with slightly less functionality and no benefits.
+
+187
+00:08:57,060 --> 00:08:59,350
+And I am tempted to agree with them.
+
+188
+00:08:59,350 --> 00:09:02,290
+I would recommend that you use a class method
+
+189
+00:09:02,290 --> 00:09:05,150
+whenever you want something that doesn't need self.
+
+190
+00:09:06,110 --> 00:09:09,490
+And whenever you want to call FixedFloat
+
+191
+00:09:09,490 --> 00:09:12,870
+inside a class method, just replace it for cls.
+
+192
+00:09:12,870 --> 00:09:16,580
+If you then inherit form that class,
+
+193
+00:09:16,580 --> 00:09:18,780
+all the methods will still be usable
+
+194
+00:09:18,780 --> 00:09:20,700
+in the way you'd expect,
+
+195
+00:09:20,700 --> 00:09:23,470
+because cls will automatically be populated
+
+196
+00:09:23,470 --> 00:09:25,320
+from the class that you're using
+
+197
+00:09:25,320 --> 00:09:27,250
+and not the class that you programmed in.
+
+198
+00:09:27,250 --> 00:09:28,870
+So it just lets you make your methods
+
+199
+00:09:28,870 --> 00:09:31,870
+a bit more generic and generally is a bit nicer.
+
+200
+00:09:31,870 --> 00:09:34,510
+Static method, you can also call it,
+
+201
+00:09:34,510 --> 00:09:37,360
+for example, if this is a static method as it was before,
+
+202
+00:09:39,000 --> 00:09:41,820
+you call it in the same way, FixedFloat.from_sum,
+
+203
+00:09:41,820 --> 00:09:45,620
+only now you've lost that reference to FixedFloat.
+
+204
+00:09:45,620 --> 00:09:48,270
+So how the static method doesn't actually add anything,
+
+205
+00:09:48,270 --> 00:09:50,320
+it doesn't make your code any simpler.
+
+206
+00:09:50,320 --> 00:09:51,850
+Your code looks the same,
+
+207
+00:09:51,850 --> 00:09:55,420
+but you've lost that functionality which is the cls.
+
+208
+00:09:55,420 --> 00:09:58,930
+So generally, I would advice using class methods
+
+209
+00:09:58,930 --> 00:10:00,150
+whenever possible.
+
+210
+00:10:00,150 --> 00:10:01,680
+Oh wait. Not whenever possible.
+
+211
+00:10:01,680 --> 00:10:03,020
+My apologies. Not that.
+
+212
+00:10:03,020 --> 00:10:04,750
+Use class methods whenever you want
+
+213
+00:10:04,750 --> 00:10:07,300
+to use a method that doesn't use self.
+
+214
+00:10:07,300 --> 00:10:09,980
+Don't use static methods, generally.
+
+215
+00:10:09,980 --> 00:10:13,430
+I don't see that they are that useful
+
+216
+00:10:13,430 --> 00:10:15,360
+when you've got class methods.
+
+217
+00:10:15,360 --> 00:10:18,020
+However, there are a couple instances
+
+218
+00:10:18,020 --> 00:10:21,790
+when using a static method can be interesting.
+
+219
+00:10:21,790 --> 00:10:23,570
+And that's, for example, when you know
+
+220
+00:10:23,570 --> 00:10:24,880
+that the class you're developing is
+
+221
+00:10:24,880 --> 00:10:27,220
+not gonna get inherited from,
+
+222
+00:10:27,220 --> 00:10:31,360
+and in fact, when I am coding, and I use a static method,
+
+223
+00:10:31,360 --> 00:10:33,460
+it tells me that this class is
+
+224
+00:10:33,460 --> 00:10:35,110
+not going to get inherited from.
+
+225
+00:10:35,110 --> 00:10:37,360
+It's something that, when I use a static method,
+
+226
+00:10:37,360 --> 00:10:40,200
+it's like telling myself, it's safe to do this
+
+227
+00:10:40,200 --> 00:10:41,700
+because I'm not going to use this class
+
+228
+00:10:41,700 --> 00:10:43,970
+anywhere else to inherit from.
+
+229
+00:10:43,970 --> 00:10:45,010
+Whereas when you use a class method,
+
+230
+00:10:45,010 --> 00:10:47,590
+you sort of telling, I don't know if
+
+231
+00:10:47,590 --> 00:10:50,370
+this class is gonna get inherited from later on.
+
+232
+00:10:50,370 --> 00:10:51,530
+So that's the only place where
+
+233
+00:10:51,530 --> 00:10:54,010
+I would use a static method when I know
+
+234
+00:10:54,010 --> 00:10:55,920
+and I wanna make sure that I'm not gonna
+
+235
+00:10:55,920 --> 00:10:57,680
+inherit from that class.
+
+236
+00:10:57,680 --> 00:10:59,810
+The fact that it's used static methods
+
+237
+00:10:59,810 --> 00:11:02,320
+tells me that I don't want to inherit from here.
+
+238
+00:11:03,880 --> 00:11:06,500
+You'll see, you'll understand more about what I mean
+
+239
+00:11:06,500 --> 00:11:08,680
+as we move over to future sections.
+
+240
+00:11:08,680 --> 00:11:10,760
+We're gonna use static methods a couple of times,
+
+241
+00:11:10,760 --> 00:11:14,090
+but we're normally going to stick with class methods.
+
+242
+00:11:14,090 --> 00:11:16,910
+Anyway, this was, hopefully a slightly better example,
+
+243
+00:11:16,910 --> 00:11:19,140
+helps you understand where to use static
+
+244
+00:11:19,140 --> 00:11:20,880
+and where to use class methods,
+
+245
+00:11:20,880 --> 00:11:23,670
+and exactly what they are useful for.
+
+246
+00:11:23,670 --> 00:11:25,670
+Also remember, static and class methods
+
+247
+00:11:25,670 --> 00:11:27,520
+can be called from the object,
+
+248
+00:11:27,520 --> 00:11:31,940
+so you could have your object
+
+249
+00:11:31,940 --> 00:11:34,040
+calling the from_sum method and that would be totally fine.
+
+250
+00:11:34,040 --> 00:11:36,920
+You would just see the class of the object that called it
+
+251
+00:11:36,920 --> 00:11:38,450
+or you can call it with the class
+
+252
+00:11:38,450 --> 00:11:41,860
+and then the class is just that, class too.
+
+253
+00:11:41,860 --> 00:11:46,510
+And so what I mean by that is that this is fine.
+
+254
+00:11:49,137 --> 00:11:52,010
+new_number.from_sum is fine.
+
+255
+00:11:52,010 --> 00:11:56,020
+It just gonna see the class as the class of this object.
+
+256
+00:11:56,020 --> 00:11:58,440
+It's not really something you should do normally though.
+
+257
+00:11:58,440 --> 00:12:01,500
+Normally, just use the class name, FixedFloat.from_sum.
+
+258
+00:12:01,500 --> 00:12:04,290
+That's a better way of going about things.
+
+259
+00:12:04,290 --> 00:12:05,610
+Anyway that's it for this video.
+
+260
+00:12:05,610 --> 00:12:06,870
+Hopefully I haven't confused you
+
+261
+00:12:06,870 --> 00:12:08,780
+anymore that you were before.
+
+262
+00:12:08,780 --> 00:12:10,320
+And this helped a little bit.
+
+263
+00:12:10,320 --> 00:12:11,870
+I'll see you on the next video.
+

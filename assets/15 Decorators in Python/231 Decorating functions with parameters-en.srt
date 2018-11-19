@@ -1,0 +1,340 @@
+1
+00:00:00,080 --> 00:00:01,170
+<v Instructor>Hi and welcome back.</v>
+
+2
+00:00:01,170 --> 00:00:02,390
+In this video we're talking about
+
+3
+00:00:02,390 --> 00:00:05,560
+decorating functions that have parameters.
+
+4
+00:00:06,480 --> 00:00:08,640
+We saw this in the last video,
+
+5
+00:00:08,640 --> 00:00:11,760
+and once again let's recap what's happening here.
+
+6
+00:00:11,760 --> 00:00:13,960
+We've got a function that returns
+
+7
+00:00:13,960 --> 00:00:16,910
+Password for the admin panel is 1234
+
+8
+00:00:16,910 --> 00:00:19,450
+and that function does not have any parameters.
+
+9
+00:00:20,520 --> 00:00:24,220
+We then decorate it with the user has permission decorator
+
+10
+00:00:24,220 --> 00:00:28,590
+and what happens then is essentially this,
+
+11
+00:00:29,440 --> 00:00:34,440
+my function, equal, user has permission, my function.
+
+12
+00:00:36,950 --> 00:00:40,050
+Right, so this function now gets modified
+
+13
+00:00:40,050 --> 00:00:44,360
+and turned into this secure func function,
+
+14
+00:00:45,420 --> 00:00:49,600
+which is what the decorator returns, the secure func.
+
+15
+00:00:49,600 --> 00:00:51,430
+That secure function, though,
+
+16
+00:00:51,430 --> 00:00:55,680
+gets the name and the doc string of the original function
+
+17
+00:00:55,680 --> 00:00:58,330
+by virtue of this functools.wraps.
+
+18
+00:00:59,820 --> 00:01:01,150
+You can see, however,
+
+19
+00:01:01,150 --> 00:01:04,780
+that when we call the original function, that's func,
+
+20
+00:01:04,780 --> 00:01:06,750
+that's the original function that we passed in,
+
+21
+00:01:06,750 --> 00:01:08,560
+the one we wanna replace,
+
+22
+00:01:08,560 --> 00:01:10,290
+there is nothing inside the brackets,
+
+23
+00:01:10,290 --> 00:01:13,070
+so there are no parameters in the brackets.
+
+24
+00:01:15,300 --> 00:01:18,740
+If we instead change my function to be,
+
+25
+00:01:18,740 --> 00:01:22,240
+something like panel here and we say
+
+26
+00:01:25,070 --> 00:01:29,630
+that the password for whatever panel we pass in is 1234,
+
+27
+00:01:31,050 --> 00:01:35,030
+then we need to call the function with an argument.
+
+28
+00:01:35,030 --> 00:01:39,370
+We could say for example, print my function and movies.
+
+29
+00:01:43,310 --> 00:01:45,950
+Then it would be my function, movies.
+
+30
+00:01:45,950 --> 00:01:49,000
+movies would go into panel, and we would print
+
+31
+00:01:49,000 --> 00:01:52,620
+the password for the movies panel is 1234.
+
+32
+00:01:52,620 --> 00:01:54,300
+This all makes sense,
+
+33
+00:01:54,300 --> 00:01:57,310
+but we must remember, though, this function
+
+34
+00:01:59,290 --> 00:02:02,380
+gets replaced by this secure func.
+
+35
+00:02:04,660 --> 00:02:06,810
+This secure func
+
+36
+00:02:06,810 --> 00:02:10,120
+inherits everything from the original function,
+
+37
+00:02:10,120 --> 00:02:13,610
+but when we call the original function,
+
+38
+00:02:15,000 --> 00:02:17,410
+it does not have any arguments here.
+
+39
+00:02:19,640 --> 00:02:21,070
+Okay?
+
+40
+00:02:21,070 --> 00:02:23,410
+So what we have to do is make sure
+
+41
+00:02:23,410 --> 00:02:26,750
+that secure func has a parameter,
+
+42
+00:02:28,260 --> 00:02:33,260
+so that when we call it, here, it can accept the parameter,
+
+43
+00:02:34,632 --> 00:02:36,970
+it can accept the argument, sorry.
+
+44
+00:02:36,970 --> 00:02:40,640
+Again, my function is now secure func.
+
+45
+00:02:41,630 --> 00:02:44,000
+If secure func does not have a parameter,
+
+46
+00:02:44,000 --> 00:02:46,250
+we cannot call the function with a parameter.
+
+47
+00:02:47,790 --> 00:02:50,110
+However when we call the original function,
+
+48
+00:02:50,110 --> 00:02:55,000
+we must also pass in the argument that it needs, like so.
+
+49
+00:02:57,130 --> 00:02:59,240
+Now we can run this, but of course remember
+
+50
+00:02:59,240 --> 00:03:01,320
+to change the access level to admin
+
+51
+00:03:01,320 --> 00:03:02,920
+in order for it to do something,
+
+52
+00:03:04,060 --> 00:03:08,590
+and we get that the password for the movies panel is 1234.
+
+53
+00:03:09,620 --> 00:03:13,580
+So as you can see, secure func needs the parameter
+
+54
+00:03:13,580 --> 00:03:16,100
+so that it can accept the argument
+
+55
+00:03:16,100 --> 00:03:20,370
+and the original function has to get the argument passed in,
+
+56
+00:03:20,370 --> 00:03:23,640
+because that function has the parameter that we need
+
+57
+00:03:23,640 --> 00:03:28,410
+in order to use it within the function, okay?
+
+58
+00:03:29,290 --> 00:03:31,900
+Now the problem though with this
+
+59
+00:03:31,900 --> 00:03:35,640
+is that you cannot apply this decorator
+
+60
+00:03:35,640 --> 00:03:37,160
+to any other function.
+
+61
+00:03:37,160 --> 00:03:42,160
+Again, if we create a function called another,
+
+62
+00:03:42,970 --> 00:03:46,140
+that return's Hello, for example,
+
+63
+00:03:46,140 --> 00:03:50,110
+we cannot apply this decorator to it.
+
+64
+00:03:51,570 --> 00:03:53,730
+We cannot do that because the decorator
+
+65
+00:03:53,730 --> 00:03:57,470
+is going to pass in the panel argument,
+
+66
+00:03:57,470 --> 00:04:00,610
+but the another function is not gonna be able to receive it.
+
+67
+00:04:01,450 --> 00:04:03,590
+Indeed, if we use this,
+
+68
+00:04:06,540 --> 00:04:08,410
+you'll see that we just get an error.
+
+69
+00:04:08,410 --> 00:04:11,870
+And this says, too many things.
+
+70
+00:04:13,270 --> 00:04:16,430
+If we actually pass in an argument here,
+
+71
+00:04:16,430 --> 00:04:17,750
+we get a different error which says,
+
+72
+00:04:17,750 --> 00:04:21,300
+another takes zero positional arguments but one was given.
+
+73
+00:04:21,300 --> 00:04:24,240
+The error before was because we didn't pass in the parameter
+
+74
+00:04:24,240 --> 00:04:26,370
+that secure func needs.
+
+75
+00:04:26,370 --> 00:04:28,840
+So here we get the error that another,
+
+76
+00:04:28,840 --> 00:04:30,560
+doesn't take any arguments, but you gave it one,
+
+77
+00:04:30,560 --> 00:04:32,450
+so what are you doing?
+
+78
+00:04:32,450 --> 00:04:33,920
+So this is not great
+
+79
+00:04:33,920 --> 00:04:37,180
+because the decorator now works for our function,
+
+80
+00:04:37,180 --> 00:04:39,570
+but it doesn't work for another function.
+
+81
+00:04:39,570 --> 00:04:43,950
+We'd like, ideally, to make our decorators more generic,
+
+82
+00:04:43,950 --> 00:04:48,950
+so that we can use them in any function we want.
+
+83
+00:04:49,060 --> 00:04:51,360
+And we're gonna be learning that, how to do that,
+
+84
+00:04:51,360 --> 00:04:53,160
+over the next few videos.
+
+85
+00:04:53,160 --> 00:04:55,560
+So with that said, I'll see you on the next one.
+

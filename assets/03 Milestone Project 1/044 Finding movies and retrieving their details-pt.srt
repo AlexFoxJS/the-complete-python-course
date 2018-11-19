@@ -1,0 +1,1132 @@
+1
+00:00:00,350 --> 00:00:01,820
+Jose: Ol e bem vindo de volta.
+
+2
+00:00:01,820 --> 00:00:03,160
+Neste vdeo, vamos permitir
+
+3
+00:00:03,160 --> 00:00:06,350
+que os usurios encontrem um filme neste programa.
+
+4
+00:00:07,590 --> 00:00:10,310
+Temos a maior parte do programa pronta
+
+5
+00:00:10,310 --> 00:00:12,830
+para adicionar filmes e exibir filmes
+
+6
+00:00:12,830 --> 00:00:15,650
+e,  claro, repetir essa entrada continuamente
+
+7
+00:00:15,650 --> 00:00:17,570
+at que eles pressionem Q.
+
+8
+00:00:17,570 --> 00:00:18,610
+Agora temos que permitir
+
+9
+00:00:18,610 --> 00:00:19,940
+que eles encontrem um filme.
+
+10
+00:00:20,890 --> 00:00:22,700
+Ento, o que significa encontrar um filme?
+
+11
+00:00:24,110 --> 00:00:26,767
+Bem, ns vamos perguntar ao usurio
+
+12
+00:00:26,767 --> 00:00:29,350
+que o que eles querem procurar?
+
+13
+00:00:30,730 --> 00:00:33,730
+Nome, diretor ou ano?
+
+14
+00:00:35,120 --> 00:00:37,580
+Ento ns vamos perguntar a eles qual
+
+15
+00:00:37,580 --> 00:00:41,500
+o valor que eles querem pesquisar, por exemplo, todos os filmes
+
+16
+00:00:41,500 --> 00:00:46,280
+feitos em 1994 ou todos os filmes do diretor, Wachowskis ou todos os filmes
+
+17
+00:00:46,280 --> 00:00:49,850
+chamados, eu no sei do ensino mdio musical, eu no
+
+18
+00:00:49,850 --> 00:00:52,310
+sei muitos filmes, eu acabei de perceber
+
+19
+00:00:52,310 --> 00:00:53,470
+que talvez este
+
+20
+00:00:53,470 --> 00:00:55,170
+no tenha sido um bom projeto.
+
+21
+00:00:56,040 --> 00:00:57,200
+De qualquer forma, ento,
+
+22
+00:00:58,320 --> 00:00:59,770
+no vamos adicionar o ensino
+
+23
+00:00:59,770 --> 00:01:01,710
+mdio musical aos nossos filmes, mas talvez
+
+24
+00:01:01,710 --> 00:01:03,990
+possamos adicionar alguns outros filmes que tenham anos
+
+25
+00:01:03,990 --> 00:01:05,070
+semelhantes ou diretores similares.
+
+26
+00:01:06,510 --> 00:01:10,260
+Vamos desenvolver essa funo de filme de sublinhado.
+
+27
+00:01:11,370 --> 00:01:14,620
+Novamente, como isso  usado depois dos filmes do programa,
+
+28
+00:01:14,620 --> 00:01:16,860
+voc acha que talvez deva acontecer aqui,
+
+29
+00:01:16,860 --> 00:01:19,370
+mas porque os filmes de exibio usam detalhes
+
+30
+00:01:19,370 --> 00:01:22,200
+do filme, que devem ser exibidos diretamente abaixo dos
+
+31
+00:01:22,200 --> 00:01:24,490
+filmes do programa e podemos adicion-lo depois.
+
+32
+00:01:29,370 --> 00:01:30,940
+Vamos adicionar nossa funo de
+
+33
+00:01:30,940 --> 00:01:33,360
+encontrar filme, notar como a linha rabiscada
+
+34
+00:01:33,360 --> 00:01:35,270
+vermelha desaparece, PyCharm est feliz, mas
+
+35
+00:01:35,270 --> 00:01:38,360
+ claro que estamos perdendo algum contedo aqui e
+
+36
+00:01:38,360 --> 00:01:42,100
+PyCharm nos diz isso por esta linha sinuosa vermelha, indentao esperada.
+
+37
+00:01:42,100 --> 00:01:44,920
+Ns no temos nada recuado sob esta funo,
+
+38
+00:01:44,920 --> 00:01:46,720
+ento agora PyCharm s ser
+
+39
+00:01:46,720 --> 00:01:48,510
+feliz quando tivermos alguma coisa.
+
+40
+00:01:49,600 --> 00:01:51,120
+E o que vamos
+
+41
+00:01:51,120 --> 00:01:55,210
+fazer  primeiro perguntarmos ao usurio qual propriedade eles querem procurar.
+
+42
+00:01:55,210 --> 00:01:57,550
+Seja nome, diretor ou ano.
+
+43
+00:02:07,970 --> 00:02:09,240
+E ento ns vamos perguntar
+
+44
+00:02:09,240 --> 00:02:11,590
+a eles exatamente qual valor eles querem procurar.
+
+45
+00:02:19,170 --> 00:02:21,510
+Agora temos duas coisas, temos
+
+46
+00:02:22,570 --> 00:02:24,940
+o que eles esto procurando
+
+47
+00:02:24,940 --> 00:02:27,180
+e qual propriedade  essa.
+
+48
+00:02:27,180 --> 00:02:30,830
+Ento, vamos agora desenvolver algo que nos
+
+49
+00:02:30,830 --> 00:02:33,050
+permita ir e encontrar isso.
+
+50
+00:02:35,920 --> 00:02:37,310
+Vamos criar uma nova
+
+51
+00:02:37,310 --> 00:02:40,670
+lista de filmes encontrados, para cada filme que encontrarmos
+
+52
+00:02:40,670 --> 00:02:42,090
+combinando essas duas coisas,
+
+53
+00:02:42,090 --> 00:02:44,220
+vamos adicion-lo a esta lista e
+
+54
+00:02:44,220 --> 00:02:46,570
+ento vamos dizer ao usurio a lista.
+
+55
+00:02:47,760 --> 00:02:50,780
+Para filmes em filmes, esta  a nossa lista principal de filmes,
+
+56
+00:02:50,780 --> 00:02:52,670
+o filme  uma varivel que vamos
+
+57
+00:02:52,670 --> 00:02:54,270
+usar para cada iterao do loop.
+
+58
+00:02:55,540 --> 00:02:56,920
+Ns vamos
+
+59
+00:02:58,220 --> 00:02:59,053
+dizer
+
+60
+00:03:00,500 --> 00:03:01,420
+se colchetes
+
+61
+00:03:02,320 --> 00:03:07,320
+de filme, encontrar por, lembre-se de encontrar vai ser
+
+62
+00:03:07,560 --> 00:03:11,090
+um dos, um ano, nome ou diretor.
+
+63
+00:03:12,760 --> 00:03:17,250
+Ento, se o ano do filme  igual a procurar, esse
+
+64
+00:03:17,250 --> 00:03:18,083
+ exatamente
+
+65
+00:03:19,600 --> 00:03:22,900
+o valor que eles esto procurando, ento ns
+
+66
+00:03:22,900 --> 00:03:24,510
+vamos dizer que achei,
+
+67
+00:03:24,510 --> 00:03:25,343
+oh desculpe,
+
+68
+00:03:25,343 --> 00:03:27,300
+ache ponto acrescentado, filme.
+
+69
+00:03:29,160 --> 00:03:31,910
+E ento, no final, vamos
+
+70
+00:03:32,913 --> 00:03:35,870
+imprimir os detalhes do filme
+
+71
+00:03:35,870 --> 00:03:38,700
+ou algo assim, por enquanto,
+
+72
+00:03:38,700 --> 00:03:40,810
+vamos apenas encontrar, ok?
+
+73
+00:03:45,110 --> 00:03:47,840
+Portanto, essa funo de localizar filme agora est perguntando
+
+74
+00:03:47,840 --> 00:03:49,850
+ao usurio qual propriedade do filme est
+
+75
+00:03:49,850 --> 00:03:51,820
+procurando e o que est procurando.
+
+76
+00:03:53,050 --> 00:03:54,980
+Ento, est criando uma nova
+
+77
+00:03:54,980 --> 00:03:56,910
+lista e analisando todos os
+
+78
+00:03:56,910 --> 00:03:59,760
+nossos filmes, verificando se a propriedade do filme
+
+79
+00:03:59,760 --> 00:04:02,250
+que eles esto procurando  exatamente o
+
+80
+00:04:02,250 --> 00:04:04,850
+que eles esto esperando, e ento ele
+
+81
+00:04:04,850 --> 00:04:07,010
+vai anexar o filme  nossa
+
+82
+00:04:07,010 --> 00:04:09,700
+lista e ento ele retornar .
+
+83
+00:04:12,040 --> 00:04:13,460
+OK?
+
+84
+00:04:13,460 --> 00:04:15,660
+Acho que podemos extrair parte disso em uma
+
+85
+00:04:15,660 --> 00:04:17,770
+funo separada para tornar essa funo um
+
+86
+00:04:17,770 --> 00:04:20,180
+pouco mais curta e um pouco mais agradvel.
+
+87
+00:04:20,180 --> 00:04:22,230
+Ento, o que vamos fazer  apenas isso.
+
+88
+00:04:24,770 --> 00:04:26,720
+Ns vamos definir uma nova
+
+89
+00:04:26,720 --> 00:04:28,670
+funo que eu vou chamar
+
+90
+00:04:31,560 --> 00:04:34,860
+de algo como find por atributos e isso
+
+91
+00:04:37,810 --> 00:04:41,470
+vai levar duas coisas, o que o usurio est
+
+92
+00:04:41,470 --> 00:04:43,020
+procurando e eu vou
+
+93
+00:04:43,020 --> 00:04:45,440
+chamar isso de esperado, porque esse
+
+94
+00:04:45,440 --> 00:04:47,260
+ o valor esperado do
+
+95
+00:04:47,260 --> 00:04:49,250
+filme que eles esto procurando.
+
+96
+00:04:49,250 --> 00:04:51,590
+E vai ser uma funo de busca.
+
+97
+00:04:52,580 --> 00:04:55,390
+Agora tudo o que voc faz, porque eu queria
+
+98
+00:04:55,390 --> 00:04:57,730
+incluir funes lamda neste projeto e essa 
+
+99
+00:04:57,730 --> 00:04:59,800
+realmente a melhor maneira de fazer isso.
+
+100
+00:04:59,800 --> 00:05:02,160
+Esta funo aqui est totalmente bem,
+
+101
+00:05:02,160 --> 00:05:03,450
+incluindo esta funo
+
+102
+00:05:03,450 --> 00:05:06,870
+localizadora, o nosso programa ser um pouco mais legal, ok?
+
+103
+00:05:06,870 --> 00:05:08,550
+Este achado por funo de
+
+104
+00:05:08,550 --> 00:05:10,200
+atributo vai fazer tudo isso.
+
+105
+00:05:13,310 --> 00:05:14,480
+OK?
+
+106
+00:05:14,480 --> 00:05:16,250
+Ele vai definir uma lista vazia
+
+107
+00:05:16,250 --> 00:05:17,400
+de filmes que ns
+
+108
+00:05:17,400 --> 00:05:19,150
+encontramos e ento vai passar por
+
+109
+00:05:19,150 --> 00:05:20,990
+cima dos filmes e vai devolv-los
+
+110
+00:05:20,990 --> 00:05:23,700
+no final, exceto que ao invs de filme aparecer,
+
+111
+00:05:24,710 --> 00:05:26,890
+ele vai usar esse localizador.
+
+112
+00:05:28,400 --> 00:05:29,233
+No, desculpe,
+
+113
+00:05:29,233 --> 00:05:31,620
+ache, oh eu no posso
+
+114
+00:05:31,620 --> 00:05:34,200
+soletrar hoje, filme de finder.
+
+115
+00:05:34,200 --> 00:05:35,610
+Ento, este localizador
+
+116
+00:05:35,610 --> 00:05:37,740
+ser uma funo que vai
+
+117
+00:05:37,740 --> 00:05:41,320
+levar o filme como um argumento e vai
+
+118
+00:05:41,320 --> 00:05:43,390
+cuspir um valor e que
+
+119
+00:05:43,390 --> 00:05:45,200
+ser exatamente igual ao esperado.
+
+120
+00:05:47,510 --> 00:05:49,180
+Agora, como fazemos isso?
+
+121
+00:05:49,180 --> 00:05:50,013
+Tenho certeza que
+
+122
+00:05:50,013 --> 00:05:52,130
+voc sabe e se voc no implementou isso
+
+123
+00:05:52,130 --> 00:05:53,960
+dessa maneira, eu no esperaria que voc
+
+124
+00:05:53,960 --> 00:05:56,330
+o fizesse, por favor pause o vdeo agora e
+
+125
+00:05:56,330 --> 00:06:00,160
+d uma chance, como voc usaria essa funo de atributo por atributo de dentro
+
+126
+00:06:00,160 --> 00:06:02,010
+do seu encontrar a funo de filme?
+
+127
+00:06:05,570 --> 00:06:08,360
+O que eu faria,  que eu
+
+128
+00:06:09,980 --> 00:06:13,170
+adicionaria uma funo lamda para que os filmes
+
+129
+00:06:17,321 --> 00:06:18,221
+que procuramos
+
+130
+00:06:19,100 --> 00:06:21,600
+fossem encontrados por atributo, o valor
+
+131
+00:06:21,600 --> 00:06:23,450
+esperado  o valor procurado
+
+132
+00:06:25,630 --> 00:06:29,580
+e a funo finder  uma lamda em que est
+
+133
+00:06:29,580 --> 00:06:33,150
+recebendo um parmetro e est retornando o achado pela
+
+134
+00:06:33,150 --> 00:06:34,540
+chave desse parmetro.
+
+135
+00:06:37,910 --> 00:06:40,100
+Agora eu sei que isso est complicando
+
+136
+00:06:40,100 --> 00:06:41,870
+as coisas provavelmente desnecessariamente, mas eu
+
+137
+00:06:41,870 --> 00:06:44,470
+s queria mostrar um exemplo de onde isso
+
+138
+00:06:46,110 --> 00:06:48,550
+pode ser til e voc pode pensar, bem,
+
+139
+00:06:48,550 --> 00:06:50,330
+isso no  realmente til, quero
+
+140
+00:06:50,330 --> 00:06:52,590
+dizer, ns podemos simplificar e ter filmes
+
+141
+00:06:52,590 --> 00:06:54,730
+e usar os colchetes e isso 
+
+142
+00:06:57,290 --> 00:07:00,150
+certo, mas se isso  particularmente til quando no
+
+143
+00:07:00,150 --> 00:07:01,880
+sabemos, ou melhor, quando esta
+
+144
+00:07:01,880 --> 00:07:04,880
+funo aqui no sabe o que  filme.
+
+145
+00:07:05,800 --> 00:07:07,270
+Quer se trate de
+
+146
+00:07:07,270 --> 00:07:09,570
+um dicionrio, potencialmente quer seja uma
+
+147
+00:07:09,570 --> 00:07:11,310
+lista e retornaria o primeiro
+
+148
+00:07:11,310 --> 00:07:15,910
+atributo disso, seja algo que deva devolver uma fatia, voc sabe, no importa,
+
+149
+00:07:15,910 --> 00:07:18,150
+tudo o que importa  que
+
+150
+00:07:18,150 --> 00:07:20,350
+esteja executando o que quer que
+
+151
+00:07:20,350 --> 00:07:22,035
+tenhamos dito para encontrar por
+
+152
+00:07:22,035 --> 00:07:24,910
+e, em seguida, ele est retornando, est verificando
+
+153
+00:07:24,910 --> 00:07:27,950
+o valor esperado que poderia ser qualquer coisa.
+
+154
+00:07:27,950 --> 00:07:32,110
+Ento essa funo aqui  realmente genrica e
+
+155
+00:07:32,110 --> 00:07:36,110
+no precisa depender de filmes e agora
+
+156
+00:07:37,590 --> 00:07:39,680
+pode confiar em outra
+
+157
+00:07:39,680 --> 00:07:41,340
+coisa se quisermos.
+
+158
+00:07:41,340 --> 00:07:45,220
+Ns poderamos analisar os filmes como um parmetro, ou
+
+159
+00:07:45,220 --> 00:07:47,320
+melhor, os itens e, em
+
+160
+00:07:47,320 --> 00:07:49,580
+seguida, podemos fazer apenas para
+
+161
+00:07:50,760 --> 00:07:53,020
+eu em itens e fazer
+
+162
+00:07:53,020 --> 00:07:54,460
+isso, agora 
+
+163
+00:07:54,460 --> 00:07:56,470
+uma funo realmente genrica, onde
+
+164
+00:07:56,470 --> 00:08:00,920
+ apenas encontrar um filme dentro desses itens por essa
+
+165
+00:08:00,920 --> 00:08:03,300
+funo arbitrria que ns tambm dei, ok?
+
+166
+00:08:04,270 --> 00:08:08,910
+Ento podemos analisar, whoops, depois filmes l, ok?
+
+167
+00:08:08,910 --> 00:08:11,920
+E, claro, filmes so encontrados filmes.
+
+168
+00:08:13,230 --> 00:08:14,980
+Voc no pode fazer isso,
+
+169
+00:08:14,980 --> 00:08:16,740
+o Python realmente no gosta disso.
+
+170
+00:08:16,740 --> 00:08:19,430
+Filmes  uma varivel definida no topo, ento
+
+171
+00:08:19,430 --> 00:08:20,780
+os filmes sublinhados sero
+
+172
+00:08:20,780 --> 00:08:22,070
+os filmes que encontramos.
+
+173
+00:08:23,050 --> 00:08:25,020
+Agora essa funo  realmente genrica,
+
+174
+00:08:25,020 --> 00:08:26,520
+voc pode us-la em qualquer
+
+175
+00:08:26,520 --> 00:08:27,740
+projeto, no precisa ser
+
+176
+00:08:27,740 --> 00:08:30,190
+sobre filmes, no precisa ser nada especfico,
+
+177
+00:08:30,190 --> 00:08:34,630
+mas essa funo pode ser usada para encontrar por coisas, o que 
+
+178
+00:08:34,630 --> 00:08:35,680
+bem legal .
+
+179
+00:08:37,210 --> 00:08:39,730
+Agora, queremos imprimir os detalhes dos filmes que
+
+180
+00:08:39,730 --> 00:08:40,980
+encontramos e j temos
+
+181
+00:08:42,268 --> 00:08:43,420
+uma funo para imprimir
+
+182
+00:08:43,420 --> 00:08:44,810
+os detalhes dos filmes, 
+
+183
+00:08:44,810 --> 00:08:46,300
+chamada de filmes de exibio.
+
+184
+00:08:47,570 --> 00:08:49,040
+Ele repassa todos os nossos filmes
+
+185
+00:08:49,040 --> 00:08:50,030
+e mostra os detalhes.
+
+186
+00:08:50,030 --> 00:08:52,690
+Ento vamos chamar isso de show movies.
+
+187
+00:08:52,690 --> 00:08:55,190
+Mas  claro, no est mostrando os detalhes
+
+188
+00:08:55,190 --> 00:08:57,150
+de nossos filmes encontrados, est mostrando
+
+189
+00:08:57,150 --> 00:08:59,200
+os detalhes de todos os filmes,
+
+190
+00:08:59,200 --> 00:09:00,870
+ento como podemos mudar isso?
+
+191
+00:09:02,060 --> 00:09:03,690
+Como poderamos fazer essa funo
+
+192
+00:09:03,690 --> 00:09:05,760
+mostrar detalhes apenas de nossos filmes encontrados?
+
+193
+00:09:11,600 --> 00:09:12,600
+Tenho certeza
+
+194
+00:09:12,600 --> 00:09:14,480
+que voc entendeu, tudo o
+
+195
+00:09:15,880 --> 00:09:17,770
+que temos a fazer 
+
+196
+00:09:17,770 --> 00:09:20,800
+analisar nossos filmes encontrados como um argumento,
+
+197
+00:09:20,800 --> 00:09:24,940
+aceit-lo aqui como um parmetro e us-lo dentro deste loop.
+
+198
+00:09:24,940 --> 00:09:28,080
+Claro, agora, quando ns o chamamos aqui, o
+
+199
+00:09:28,080 --> 00:09:29,640
+PyCharm j est nos
+
+200
+00:09:29,640 --> 00:09:31,930
+dizendo, ei, voc esqueceu de algo
+
+201
+00:09:31,930 --> 00:09:35,630
+que h um sublinhado amarelo ou fundo amarelo naquela chave
+
+202
+00:09:35,630 --> 00:09:38,270
+e diz que a lista de filmes
+
+203
+00:09:38,270 --> 00:09:42,390
+de parmetros est vazia, ento temos que dizer para usar nossa
+
+204
+00:09:42,390 --> 00:09:44,380
+lista de filmes, a lista
+
+205
+00:09:45,230 --> 00:09:47,370
+global aqui quando estamos executando a
+
+206
+00:09:48,960 --> 00:09:52,220
+funo aqui e aqui, podemos usar nossos filmes encontrados.
+
+207
+00:09:52,220 --> 00:09:54,460
+Ento agora essa funo tambm  bem
+
+208
+00:09:55,300 --> 00:09:56,830
+genrica, para cada um dos
+
+209
+00:09:56,830 --> 00:09:58,160
+filmes, ele mostra os
+
+210
+00:09:58,160 --> 00:10:01,600
+detalhes do filme e no importa se essa  a lista
+
+211
+00:10:01,600 --> 00:10:05,210
+principal de filmes definida aqui ou qualquer outra lista de filmes que
+
+212
+00:10:05,210 --> 00:10:06,660
+analisamos, ento  bonito legal.
+
+213
+00:10:06,660 --> 00:10:08,710
+Melhoramos o nosso programa massivamente e agora ele
+
+214
+00:10:09,580 --> 00:10:11,570
+est pronto para ser usado, est pronto
+
+215
+00:10:11,570 --> 00:10:12,650
+para o horrio nobre.
+
+216
+00:10:12,650 --> 00:10:14,000
+Vamos execut-lo, clique
+
+217
+00:10:14,000 --> 00:10:16,410
+direito app. py e execut-lo.
+
+218
+00:10:17,860 --> 00:10:19,870
+Agora, podemos ver que podemos
+
+219
+00:10:24,560 --> 00:10:27,500
+adicionar um filme e podemos adicionar outro filme,
+
+220
+00:10:27,500 --> 00:10:30,300
+se quisermos, eu no conheo nenhum outro
+
+221
+00:10:30,300 --> 00:10:33,040
+filme desenvolvido em 1994 e por isso
+
+222
+00:10:34,170 --> 00:10:37,970
+vamos ter que ir para algo como rpido e furioso
+
+223
+00:10:37,970 --> 00:10:40,940
+e eu no conheo o diretor deste filme, desculpe.
+
+224
+00:10:40,940 --> 00:10:43,240
+Vamos dizer que foi desenvolvido em 1994 tambm.
+
+225
+00:10:43,240 --> 00:10:45,880
+Eu provavelmente estou alienando muitos de vocs
+
+226
+00:10:45,880 --> 00:10:47,700
+dizendo isso, mas, ei.
+
+227
+00:10:47,700 --> 00:10:50,060
+Ns podemos ver nossos filmes e ento ns temos
+
+228
+00:10:50,060 --> 00:10:51,770
+o nome e o diretor e
+
+229
+00:10:51,770 --> 00:10:52,720
+lanamos aqui esses
+
+230
+00:10:53,670 --> 00:10:56,300
+dois filmes e ento tambm podemos encontrar um filme
+
+231
+00:10:56,300 --> 00:10:58,360
+especfico, ento qual propriedade do filme estamos procurando?
+
+232
+00:10:58,360 --> 00:11:00,080
+Vamos dizer ano.
+
+233
+00:11:00,080 --> 00:11:01,230
+O que voc est procurando?
+
+234
+00:11:01,230 --> 00:11:02,080
+1994.
+
+235
+00:11:03,450 --> 00:11:04,380
+Nenhum encontrado e
+
+236
+00:11:05,690 --> 00:11:08,450
+agora voc sabe por que isso , eu espero.
+
+237
+00:11:10,420 --> 00:11:13,310
+ claro, nenhum foi encontrado porque o ano
+
+238
+00:11:13,310 --> 00:11:16,730
+ um inteiro e o que ns inserimos aqui
+
+239
+00:11:16,730 --> 00:11:19,830
+dentro de onde voc est procurando  uma
+
+240
+00:11:19,830 --> 00:11:23,610
+string, ento o que ns teremos que fazer  transformar
+
+241
+00:11:23,610 --> 00:11:26,210
+o ano no, de volta em uma
+
+242
+00:11:27,610 --> 00:11:29,149
+string que  totalmente
+
+243
+00:11:29,149 --> 00:11:33,218
+bom fazer ou potencialmente tratar o resultado de qualquer coisa que
+
+244
+00:11:33,218 --> 00:11:35,120
+tenhamos encontrado como uma string temporariamente.
+
+245
+00:11:36,230 --> 00:11:39,080
+Ento, cabe a ns o que vamos fazer, no
+
+246
+00:11:39,080 --> 00:11:40,930
+meu caso, acho que a coisa
+
+247
+00:11:40,930 --> 00:11:43,950
+mais fcil a fazer  reverter nossa intromisso aqui
+
+248
+00:11:43,950 --> 00:11:45,850
+e transform-la em uma string.
+
+249
+00:11:45,850 --> 00:11:47,200
+Parece um pouco mais fcil.
+
+250
+00:11:48,070 --> 00:11:49,650
+Ento agora temos que reexecutar o
+
+251
+00:11:49,650 --> 00:11:51,050
+aplicativo e podemos testar isso novamente.
+
+252
+00:11:54,100 --> 00:11:56,440
+A, B, 1994 e depois vamos
+
+253
+00:11:57,460 --> 00:12:00,590
+fazer B, C, por isso  extremamente chato,
+
+254
+00:12:00,590 --> 00:12:01,760
+desculpe por isso.
+
+255
+00:12:01,760 --> 00:12:02,610
+Ento ns podemos
+
+256
+00:12:02,610 --> 00:12:04,920
+encontrar um filme em 1994, desculpe por ano
+
+257
+00:12:05,850 --> 00:12:07,570
+e o que estamos procurando 
+
+258
+00:12:08,410 --> 00:12:10,230
+1994 e ento ns temos esses
+
+259
+00:12:10,230 --> 00:12:12,630
+dois filmes, B e, desculpe A e B.
+
+260
+00:12:14,950 --> 00:12:16,270
+Ento parabns por
+
+261
+00:12:16,270 --> 00:12:18,280
+chegar ao final deste projeto.
+
+262
+00:12:18,280 --> 00:12:20,640
+Estou bastante confiante de que voc provavelmente
+
+263
+00:12:20,640 --> 00:12:23,160
+no implementou o projeto exatamente como eu fiz
+
+264
+00:12:23,160 --> 00:12:24,860
+aqui, mas est tudo bem.
+
+265
+00:12:24,860 --> 00:12:27,457
+Existem muitas maneiras de implementar qualquer projeto em
+
+266
+00:12:27,457 --> 00:12:29,590
+Python e todas as maneiras so to
+
+267
+00:12:29,590 --> 00:12:31,150
+boas quanto qualquer outra, desde
+
+268
+00:12:31,150 --> 00:12:32,290
+que todas funcionem e
+
+269
+00:12:32,290 --> 00:12:34,650
+faam o que voc quer que elas faam.
+
+270
+00:12:34,650 --> 00:12:36,700
+Ento no se preocupe se voc no fez exatamente a
+
+271
+00:12:36,700 --> 00:12:38,120
+mesma coisa ou se voc no usou
+
+272
+00:12:38,120 --> 00:12:40,380
+as funes lamda ou voc sabe que no usou essa funo
+
+273
+00:12:40,380 --> 00:12:42,010
+localizadora, seja qual for, isso no importa.
+
+274
+00:12:42,010 --> 00:12:43,520
+Enquanto o seu projeto funcionar,
+
+275
+00:12:43,520 --> 00:12:45,270
+isso  o mais importante.
+
+276
+00:12:45,270 --> 00:12:46,680
+E a razo pela qual
+
+277
+00:12:46,680 --> 00:12:48,770
+eu estou passando por este projeto 
+
+278
+00:12:48,770 --> 00:12:51,510
+mostrar algumas maneiras mais avanadas de fazer as coisas.
+
+279
+00:12:51,510 --> 00:12:54,290
+Mas todos os projetos so bons e certamente a programao
+
+280
+00:12:54,290 --> 00:12:56,670
+ a melhor maneira de aprender e  por
+
+281
+00:12:56,670 --> 00:12:59,070
+isso que eu encorajo voc a continuar fazendo isso.
+
+282
+00:13:00,060 --> 00:13:01,290
+ isso para este
+
+283
+00:13:01,290 --> 00:13:02,740
+vdeo, vejo voc no prximo.
+

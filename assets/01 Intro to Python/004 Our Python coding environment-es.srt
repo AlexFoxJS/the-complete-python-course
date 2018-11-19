@@ -1,0 +1,328 @@
+1
+00:00:00,370 --> 00:00:02,260
+Hola, bienvenidos.
+
+2
+00:00:02,260 --> 00:00:04,950
+En este video vamos a hablar sobre repl. eso.
+
+3
+00:00:06,140 --> 00:00:09,500
+Cuando comienza un nuevo curso de codificacin, el instructor normalmente
+
+4
+00:00:09,500 --> 00:00:11,980
+le pide que instale un montn de cosas.
+
+5
+00:00:11,980 --> 00:00:14,800
+Por ejemplo, puedo pedirte que instales Python, puedo pedirte
+
+6
+00:00:14,800 --> 00:00:17,780
+que instales en algn lugar para escribir tu cdigo de
+
+7
+00:00:17,780 --> 00:00:20,780
+Python. Un ejemplo popular es el ejemplo popular de PyCharm.
+
+8
+00:00:20,780 --> 00:00:23,700
+Pero normalmente hay problemas que vienen de
+
+9
+00:00:24,930 --> 00:00:27,570
+eso y ahora que estamos aprendiendo los
+
+10
+00:00:27,570 --> 00:00:30,250
+principios bsicos de Python y vamos a
+
+11
+00:00:30,250 --> 00:00:32,100
+empezar desde el principio, no
+
+12
+00:00:32,100 --> 00:00:36,129
+necesitamos el poder que nos brinda algo tan especfico.
+
+13
+00:00:36,129 --> 00:00:37,810
+Entonces, lo que vamos a
+
+14
+00:00:37,810 --> 00:00:40,750
+hacer en este curso es que comenzaremos con
+
+15
+00:00:40,750 --> 00:00:44,830
+un entorno de codificacin en la nube. Eso nos permitir aprender rpidamente
+
+16
+00:00:44,830 --> 00:00:47,930
+Python. Y luego, cuando hagamos la transicin hacia la
+
+17
+00:00:47,930 --> 00:00:50,850
+construccin de aplicaciones ms grandes y complejas, estaremos
+
+18
+00:00:50,850 --> 00:00:52,750
+descargando e instalando todas esas herramientas.
+
+19
+00:00:53,740 --> 00:00:55,800
+Pero para empezar, no necesitamos eso porque
+
+20
+00:00:55,800 --> 00:00:58,610
+vamos a aprender cmo funciona Python y podemos hacerlo de
+
+21
+00:00:58,610 --> 00:01:01,040
+una manera muy fcil y efectiva en este
+
+22
+00:01:01,040 --> 00:01:02,770
+entorno de codificacin en la nube.
+
+23
+00:01:04,510 --> 00:01:06,490
+A travs de este video vamos a hablar sobre
+
+24
+00:01:06,490 --> 00:01:09,550
+por qu recomiendo usar esto y por qu creo que debera usar esto.
+
+25
+00:01:09,550 --> 00:01:13,610
+Pasemos a repl. en su navegador, y ser
+
+26
+00:01:13,610 --> 00:01:15,970
+recibido con esta pgina web.
+
+27
+00:01:15,970 --> 00:01:18,670
+Y en l, puede buscar un idioma
+
+28
+00:01:18,670 --> 00:01:20,420
+y vamos a seleccionar Python3.
+
+29
+00:01:21,646 --> 00:01:25,010
+Python3 aqu es Python 3. 6 que es la ltima versin
+
+30
+00:01:25,010 --> 00:01:27,060
+de Python en el momento de la
+
+31
+00:01:27,060 --> 00:01:29,780
+grabacin, aunque Python 3. 7 est saliendo pronto.
+
+32
+00:01:29,780 --> 00:01:33,820
+Entonces puedes usar todos los constructos modernos de Python y
+
+33
+00:01:33,820 --> 00:01:37,530
+vamos a aprender sobre todos ellos en este curso.
+
+34
+00:01:37,530 --> 00:01:41,280
+Uno de los beneficios clave de usar repl. y la razn principal
+
+35
+00:01:41,280 --> 00:01:44,673
+por la que recomiendo que lo use,
+
+36
+00:01:44,673 --> 00:01:49,673
+es porque su cdigo siempre se guarda en una URL nica.
+
+37
+00:01:51,750 --> 00:01:54,610
+Entonces, en cualquier momento, puede compartir su cdigo
+
+38
+00:01:54,610 --> 00:01:57,210
+con este enlace aqu y puede enviarlo
+
+39
+00:01:57,210 --> 00:02:00,600
+si tiene alguna pregunta o si desea algn comentario.
+
+40
+00:02:00,600 --> 00:02:01,880
+O incluso si tiene algn
+
+41
+00:02:01,880 --> 00:02:03,880
+problema y no sabe lo que est causando.
+
+42
+00:02:05,290 --> 00:02:08,600
+Lo que ves aqu es tu cdigo Python a la izquierda.
+
+43
+00:02:08,600 --> 00:02:10,740
+Y el segundo botn, el botn de
+
+44
+00:02:10,740 --> 00:02:13,040
+ejecucin, ejecutar su cdigo y le mostrar el
+
+45
+00:02:13,040 --> 00:02:14,380
+resultado aqu a la derecha.
+
+46
+00:02:15,780 --> 00:02:17,970
+Eso significa que puede ejecutar su
+
+47
+00:02:17,970 --> 00:02:21,150
+cdigo fcilmente y probarlo a medida que avanza
+
+48
+00:02:21,150 --> 00:02:24,060
+sin tener que descargar cosas y ejecutarlas
+
+49
+00:02:24,060 --> 00:02:25,690
+en la consola, etc.
+
+50
+00:02:26,977 --> 00:02:28,170
+Bueno?
+
+51
+00:02:28,170 --> 00:02:30,660
+As que mientras escribimos nuestro cdigo Python,
+
+52
+00:02:30,660 --> 00:02:34,540
+vamos a ejecutarlo con mucha frecuencia ya que esa es la
+
+53
+00:02:34,540 --> 00:02:37,260
+mejor manera de aprender, probando cosas, escribiendo cdigo,
+
+54
+00:02:37,260 --> 00:02:38,660
+jugando con l, cambindolo
+
+55
+00:02:38,660 --> 00:02:41,240
+y viendo cmo los cambios afectan el Salir.
+
+56
+00:02:42,770 --> 00:02:45,900
+A lo largo de todo el curso, con frecuencia les
+
+57
+00:02:45,900 --> 00:02:49,470
+pedir que pause el video y prueben las cosas ustedes mismos.
+
+58
+00:02:49,470 --> 00:02:53,060
+Te animo a detener el video cuando te lo pida, y
+
+59
+00:02:53,060 --> 00:02:56,040
+tratar de implementar el cdigo con el que trabajamos
+
+60
+00:02:56,040 --> 00:02:56,873
+en ese momento.
+
+61
+00:02:57,870 --> 00:03:00,760
+Al probar cosas y programarse usted
+
+62
+00:03:00,760 --> 00:03:03,560
+mismo, realmente acelerar su aprendizaje masivamente.
+
+63
+00:03:04,800 --> 00:03:07,350
+Adems, siempre te animo a
+
+64
+00:03:07,350 --> 00:03:10,320
+escribir cdigo junto con el video.
+
+65
+00:03:10,320 --> 00:03:12,680
+No solo mire el video y diga que va
+
+66
+00:03:12,680 --> 00:03:14,940
+a escribir el cdigo ms tarde porque los dos
+
+67
+00:03:14,940 --> 00:03:16,670
+sabemos lo que va a pasar, lo
+
+68
+00:03:16,670 --> 00:03:19,070
+ver y luego no escribir el cdigo y luego se
+
+69
+00:03:19,070 --> 00:03:20,000
+olvidar de todo y
+
+70
+00:03:20,000 --> 00:03:22,060
+eso es una prdida de tiempo para todos.
+
+71
+00:03:22,060 --> 00:03:25,680
+Entonces, qu hacer es codificar junto a m y cuando le
+
+72
+00:03:25,680 --> 00:03:27,530
+pido que pause el video y
+
+73
+00:03:28,515 --> 00:03:30,690
+haga algo de ejercicio, haga exactamente eso.
+
+74
+00:03:30,690 --> 00:03:33,070
+Adems, a lo largo del curso tambin
+
+75
+00:03:33,070 --> 00:03:35,530
+tendr ejercicios dedicados en Udemy que usted
+
+76
+00:03:35,530 --> 00:03:38,660
+puede completar y poner a prueba su conocimiento de
+
+77
+00:03:38,660 --> 00:03:39,590
+esa manera tambin.
+
+78
+00:03:40,740 --> 00:03:41,970
+Entonces eso es todo por este video.
+
+79
+00:03:41,970 --> 00:03:44,240
+Espero que ests configurado con repl. eso.
+
+80
+00:03:44,240 --> 00:03:47,160
+En el prximo video comenzaremos con Python.
+
+81
+00:03:47,160 --> 00:03:51,210
+Vamos a ver las variables y los nmeros.
+
+82
+00:03:51,210 --> 00:03:53,510
+Entonces eso es todo y te ver en el prximo.
+

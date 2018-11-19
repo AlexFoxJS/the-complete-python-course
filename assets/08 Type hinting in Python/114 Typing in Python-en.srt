@@ -1,0 +1,1060 @@
+1
+00:00:00,125 --> 00:00:02,157
+<v Jose>Hi there, and welcome back.</v>
+
+2
+00:00:02,157 --> 00:00:04,351
+In this video we're looking at a more advanced
+
+3
+00:00:04,351 --> 00:00:06,768
+Python concept called typing.
+
+4
+00:00:08,624 --> 00:00:12,385
+Python is what's known as a dynamic language.
+
+5
+00:00:12,385 --> 00:00:15,153
+In a dynamic language, we don't specify
+
+6
+00:00:15,153 --> 00:00:18,492
+what type of data a variable holds.
+
+7
+00:00:18,492 --> 00:00:21,499
+For example, here we've got a cursor,
+
+8
+00:00:21,499 --> 00:00:24,111
+and we're not saying that this cursor has to be
+
+9
+00:00:24,111 --> 00:00:26,008
+a specific type, like an integer,
+
+10
+00:00:26,008 --> 00:00:28,735
+or a string, or a cursor object.
+
+11
+00:00:28,735 --> 00:00:31,290
+In other programing languages, like Java for example,
+
+12
+00:00:31,290 --> 00:00:34,250
+you would say Cursor cursor.
+
+13
+00:00:34,250 --> 00:00:37,408
+This cursor has to be of type cursor,
+
+14
+00:00:37,408 --> 00:00:39,335
+whatever class this is.
+
+15
+00:00:39,335 --> 00:00:41,715
+But in Python you don't have to say that.
+
+16
+00:00:41,715 --> 00:00:45,210
+Similarly, if you create a variable with a value five,
+
+17
+00:00:45,210 --> 00:00:48,705
+in Java you would have to say int x is five
+
+18
+00:00:48,705 --> 00:00:50,597
+because that specifies that x
+
+19
+00:00:50,597 --> 00:00:52,989
+has to be an integer at all times.
+
+20
+00:00:52,989 --> 00:00:55,740
+And, if you were to do this, you would get an error,
+
+21
+00:00:55,740 --> 00:00:58,503
+because the string five is not an integer.
+
+22
+00:00:58,503 --> 00:01:01,819
+Java is a statically typed language,
+
+23
+00:01:01,819 --> 00:01:03,670
+a language where you have to specify
+
+24
+00:01:03,670 --> 00:01:05,876
+the type of variables as you create them.
+
+25
+00:01:05,876 --> 00:01:08,674
+But Python is a dynamically typed language,
+
+26
+00:01:08,674 --> 00:01:10,938
+which means you don't have to do that.
+
+27
+00:01:10,938 --> 00:01:13,938
+It means you are a bit more flexible
+
+28
+00:01:15,048 --> 00:01:17,265
+because your variable can change types
+
+29
+00:01:17,265 --> 00:01:19,982
+between executions if you want.
+
+30
+00:01:19,982 --> 00:01:22,826
+And also, there's a bit less code to write
+
+31
+00:01:22,826 --> 00:01:24,173
+because you don't have to constantly
+
+32
+00:01:24,173 --> 00:01:27,343
+define what every variable is.
+
+33
+00:01:27,343 --> 00:01:30,338
+However, it also has some drawbacks,
+
+34
+00:01:30,338 --> 00:01:32,948
+and the main drawback is that sometimes
+
+35
+00:01:32,948 --> 00:01:36,131
+you can use a variable, thinking it is one thing,
+
+36
+00:01:36,131 --> 00:01:37,745
+but really it's something else
+
+37
+00:01:37,745 --> 00:01:39,649
+and you're not clear about that
+
+38
+00:01:39,649 --> 00:01:41,333
+because you don't have anything
+
+39
+00:01:41,333 --> 00:01:43,820
+that tells you what type it is.
+
+40
+00:01:43,820 --> 00:01:47,512
+For example, if you have a variable called friends
+
+41
+00:01:47,512 --> 00:01:50,763
+and it's a tuple of your friends.
+
+42
+00:01:50,763 --> 00:01:52,446
+At some point, later in the programme,
+
+43
+00:01:52,446 --> 00:01:54,629
+maybe you forget it's a tuple and down here,
+
+44
+00:01:54,629 --> 00:01:57,996
+you try to do friends.append something.
+
+45
+00:01:57,996 --> 00:01:59,308
+Obviously this wouldn't work,
+
+46
+00:01:59,308 --> 00:02:00,840
+because you can't append on a tuple,
+
+47
+00:02:00,840 --> 00:02:02,443
+but because weren't seeing this code
+
+48
+00:02:02,443 --> 00:02:06,067
+at that moment in time, you didn't realise that.
+
+49
+00:02:06,067 --> 00:02:07,377
+That's one of the problems with
+
+50
+00:02:07,377 --> 00:02:10,442
+dynamically typed languages like Python.
+
+51
+00:02:10,442 --> 00:02:15,442
+So, Python has introduced in Python 3, the concept of typing
+
+52
+00:02:15,599 --> 00:02:18,182
+where you can tell your editor,
+
+53
+00:02:19,115 --> 00:02:22,655
+PyCharm and some other third party programmes,
+
+54
+00:02:22,655 --> 00:02:25,430
+what your functions return
+
+55
+00:02:25,430 --> 00:02:28,495
+and what your parameter types should be
+
+56
+00:02:28,495 --> 00:02:30,225
+so that when you're programming,
+
+57
+00:02:30,225 --> 00:02:33,081
+it's a bit clearer what you're doing.
+
+58
+00:02:33,081 --> 00:02:35,949
+Here's an example on how you might
+
+59
+00:02:35,949 --> 00:02:39,095
+tell Python what your function returns.
+
+60
+00:02:39,095 --> 00:02:42,717
+For example, this create book_table, returns none,
+
+61
+00:02:42,717 --> 00:02:45,671
+and we know that because all Python functions
+
+62
+00:02:45,671 --> 00:02:46,969
+return none by default,
+
+63
+00:02:46,969 --> 00:02:49,488
+if you don't include a return statement.
+
+64
+00:02:49,488 --> 00:02:51,462
+So, what can you do?
+
+65
+00:02:51,462 --> 00:02:54,596
+You can tell Python that when you call this function
+
+66
+00:02:54,596 --> 00:02:59,596
+you expect it to return none, and you'd do this like so.
+
+67
+00:02:59,670 --> 00:03:02,526
+After the function definition, but before the colon
+
+68
+00:03:02,526 --> 00:03:04,276
+you put this: -&gt; None
+
+69
+00:03:09,225 --> 00:03:12,603
+Now when you got back to app.py
+
+70
+00:03:12,603 --> 00:03:15,924
+and you've got here, database.create_book_table.
+
+71
+00:03:15,924 --> 00:03:20,421
+You can say something like my_variable equals that,
+
+72
+00:03:20,421 --> 00:03:21,941
+but notice how now PyCharm gives you
+
+73
+00:03:21,941 --> 00:03:24,054
+this squiggly line underneath and it says
+
+74
+00:03:24,054 --> 00:03:27,224
+create.book.table doesn't return anything.
+
+75
+00:03:27,224 --> 00:03:29,882
+Therefore you probably don't want to assign it to a variable
+
+76
+00:03:29,882 --> 00:03:31,577
+because that's pretty pointless,
+
+77
+00:03:31,577 --> 00:03:34,077
+since the value is going to be none.
+
+78
+00:03:34,077 --> 00:03:37,104
+If you remove the none, which you can do of course,
+
+79
+00:03:37,104 --> 00:03:40,575
+it's totally optional, that now disappears,
+
+80
+00:03:40,575 --> 00:03:42,410
+because PhCharm is not aware
+
+81
+00:03:42,410 --> 00:03:46,724
+that the function doesn't return anything.
+
+82
+00:03:46,724 --> 00:03:50,943
+So, again you can include these type hints,
+
+83
+00:03:50,943 --> 00:03:53,049
+that's what they're called,
+
+84
+00:03:53,049 --> 00:03:56,132
+but, they are not enforced by Python.
+
+85
+00:03:56,987 --> 00:04:01,120
+These are only useful when you're developing in PyCharm
+
+86
+00:04:01,120 --> 00:04:03,535
+or when you use a couple other pieces of software
+
+87
+00:04:03,535 --> 00:04:05,625
+that will analyse your code and tell you
+
+88
+00:04:05,625 --> 00:04:07,692
+when you are doing things like
+
+89
+00:04:07,692 --> 00:04:09,213
+assigning a variable to a function
+
+90
+00:04:09,213 --> 00:04:11,767
+that is meant to return none.
+
+91
+00:04:11,767 --> 00:04:15,041
+When you run your programme, Python completely ignores
+
+92
+00:04:15,041 --> 00:04:17,386
+these type hints and it doesn't do anything with them.
+
+93
+00:04:17,386 --> 00:04:19,836
+You won't get any errors for using them incorrectly
+
+94
+00:04:19,836 --> 00:04:21,484
+or for assigning to a variable
+
+95
+00:04:21,484 --> 00:04:23,249
+the return value of this function,
+
+96
+00:04:23,249 --> 00:04:24,607
+even if it is none.
+
+97
+00:04:24,607 --> 00:04:26,593
+So again, these are only just for you
+
+98
+00:04:26,593 --> 00:04:28,509
+and the most common use case is
+
+99
+00:04:28,509 --> 00:04:30,831
+when you are developing with PyCharm,
+
+100
+00:04:30,831 --> 00:04:34,748
+because PyCharm makes good use of these things.
+
+101
+00:04:35,637 --> 00:04:39,585
+Okay, similarly, the add_book function also returns none.
+
+102
+00:04:39,585 --> 00:04:42,668
+So, we can make it return none there.
+
+103
+00:04:44,203 --> 00:04:45,607
+Now when you call the function,
+
+104
+00:04:45,607 --> 00:04:47,082
+if you try to assign it to a variable,
+
+105
+00:04:47,082 --> 00:04:48,614
+once again, you'll get a wee messaging saying
+
+106
+00:04:48,614 --> 00:04:50,367
+hey this function doesn't return anything,
+
+107
+00:04:50,367 --> 00:04:53,117
+are you sure you want to do this?
+
+108
+00:04:54,582 --> 00:04:55,975
+So, that's for each function.
+
+109
+00:04:55,975 --> 00:04:59,795
+Let's go and add a return value for each function
+
+110
+00:04:59,795 --> 00:05:01,962
+in our database interface.
+
+111
+00:05:03,278 --> 00:05:05,739
+I'm going to ignore the get_all_books for now,
+
+112
+00:05:05,739 --> 00:05:07,608
+we'll do this one at the end.
+
+113
+00:05:07,608 --> 00:05:11,691
+So as you can see, all our functions return none.
+
+114
+00:05:14,180 --> 00:05:15,538
+And we can add that in.
+
+115
+00:05:15,538 --> 00:05:18,278
+Now we can go back to get_all_books
+
+116
+00:05:18,278 --> 00:05:23,195
+and we can say that this is going to return a list of Dicts
+
+117
+00:05:25,174 --> 00:05:28,108
+because it returns a list of dictionaries here.
+
+118
+00:05:28,108 --> 00:05:29,919
+Of course, we get red squiggly lines,
+
+119
+00:05:29,919 --> 00:05:32,473
+because PyCharm doesn't know what these two are.
+
+120
+00:05:32,473 --> 00:05:34,377
+So, we have to go and import them.
+
+121
+00:05:34,377 --> 00:05:35,991
+Whenever you want to import anything
+
+122
+00:05:35,991 --> 00:05:40,715
+that's related to type hinting, like this here,
+
+123
+00:05:40,715 --> 00:05:42,845
+we can import it from the typing module.
+
+124
+00:05:42,845 --> 00:05:45,012
+This is new in Python 3.5.
+
+125
+00:05:49,184 --> 00:05:50,325
+And, there we have it.
+
+126
+00:05:50,325 --> 00:05:54,086
+Now it's happy that it's returning a list of dictionaries.
+
+127
+00:05:54,086 --> 00:05:56,501
+If you want, you can also tell it
+
+128
+00:05:56,501 --> 00:05:59,953
+what each of the keys and values are.
+
+129
+00:05:59,953 --> 00:06:04,853
+So could say inside brackets, S-T-R, which means string,
+
+130
+00:06:04,853 --> 00:06:08,103
+this is the String class, for the keys,
+
+131
+00:06:10,034 --> 00:06:11,857
+and str for the values.
+
+132
+00:06:11,857 --> 00:06:14,098
+That would say that ever key is a string
+
+133
+00:06:14,098 --> 00:06:16,617
+and every value is a string.
+
+134
+00:06:16,617 --> 00:06:21,052
+Now of course we know that the read status can be an integer
+
+135
+00:06:21,052 --> 00:06:24,625
+therefore, we must do something else.
+
+136
+00:06:24,625 --> 00:06:27,414
+The keys can be strings, all of the keys are strings,
+
+137
+00:06:27,414 --> 00:06:28,691
+name, author, and read,
+
+138
+00:06:28,691 --> 00:06:32,774
+but the values are a union of string and integer.
+
+139
+00:06:34,334 --> 00:06:35,773
+And, again we have to import this,
+
+140
+00:06:35,773 --> 00:06:38,606
+of course, from the typing module.
+
+141
+00:06:39,686 --> 00:06:41,787
+Now this says that this function
+
+142
+00:06:41,787 --> 00:06:43,796
+returns a list of dictionaries,
+
+143
+00:06:43,796 --> 00:06:45,886
+where each key is a string and each value is
+
+144
+00:06:45,886 --> 00:06:49,206
+either a string or an integer.
+
+145
+00:06:49,206 --> 00:06:50,773
+Notice that's what the union does
+
+146
+00:06:50,773 --> 00:06:53,525
+and this is what the Dict does.
+
+147
+00:06:53,525 --> 00:06:54,883
+Now, in order to simplify,
+
+148
+00:06:54,883 --> 00:06:57,066
+we can actually create our own types.
+
+149
+00:06:57,066 --> 00:06:58,657
+Which is pretty exciting.
+
+150
+00:06:58,657 --> 00:07:00,468
+We can cut this code here--
+
+151
+00:07:00,468 --> 00:07:04,171
+I'm going to cut it with command-x, or control-x in Windows,
+
+152
+00:07:04,171 --> 00:07:07,097
+and say that it's going to return a list of books.
+
+153
+00:07:07,097 --> 00:07:09,918
+Then we can go up to the top
+
+154
+00:07:09,918 --> 00:07:13,123
+and say that Book is what we cut earlier.
+
+155
+00:07:13,123 --> 00:07:18,123
+A Book type is a new type that is a Dict of strings
+
+156
+00:07:18,138 --> 00:07:20,182
+to strings or integers.
+
+157
+00:07:20,182 --> 00:07:22,817
+And then down here we can use our new book type
+
+158
+00:07:22,817 --> 00:07:25,197
+to simplify our code and make it a bit more explicit
+
+159
+00:07:25,197 --> 00:07:27,197
+exactly what's going on.
+
+160
+00:07:28,703 --> 00:07:31,292
+Notice that when you create a new type,
+
+161
+00:07:31,292 --> 00:07:33,510
+because it's sorta like a class,
+
+162
+00:07:33,510 --> 00:07:36,145
+even though it's not used as a class,
+
+163
+00:07:36,145 --> 00:07:40,093
+you normally would give them a capital letter to begin with.
+
+164
+00:07:40,093 --> 00:07:41,592
+This is just a convention, you can of course,
+
+165
+00:07:41,592 --> 00:07:43,249
+give them lower case letters if you want,
+
+166
+00:07:43,249 --> 00:07:45,332
+and, that's totally fine.
+
+167
+00:07:46,396 --> 00:07:49,927
+Okay, now that we've looked at return values,
+
+168
+00:07:49,927 --> 00:07:53,037
+we can now look at the parameters.
+
+169
+00:07:53,037 --> 00:07:55,219
+The name is going to be a string,
+
+170
+00:07:55,219 --> 00:07:58,238
+so you'd think that we would do this.
+
+171
+00:07:58,238 --> 00:08:00,200
+However, this dash and greater than
+
+172
+00:08:00,200 --> 00:08:02,314
+is only used for return values.
+
+173
+00:08:02,314 --> 00:08:05,960
+When you want to determine or define the type of a parameter
+
+174
+00:08:05,960 --> 00:08:08,107
+you use the colon here.
+
+175
+00:08:08,107 --> 00:08:10,209
+Mildly confusing because the colon is normally used
+
+176
+00:08:10,209 --> 00:08:12,450
+to signal the start of a block.
+
+177
+00:08:12,450 --> 00:08:15,632
+This is one of the few times, where you use a colon
+
+178
+00:08:15,632 --> 00:08:17,558
+to determine something else.
+
+179
+00:08:17,558 --> 00:08:19,741
+This and list slicing are two examples
+
+180
+00:08:19,741 --> 00:08:21,343
+that come to the top of my head.
+
+181
+00:08:21,343 --> 00:08:25,429
+Author is also going to be a string, so that's that.
+
+182
+00:08:25,429 --> 00:08:27,693
+Notice that if you go over to app.py,
+
+183
+00:08:27,693 --> 00:08:31,594
+into the add_book function and you replace name
+
+184
+00:08:31,594 --> 00:08:34,160
+by something that's not a string, like five,
+
+185
+00:08:34,160 --> 00:08:36,494
+PyCharm now gives you this yellow background,
+
+186
+00:08:36,494 --> 00:08:38,746
+that is not so readable, and it says,
+
+187
+00:08:38,746 --> 00:08:41,672
+expected type str, got int.
+
+188
+00:08:41,672 --> 00:08:44,748
+So, it can help you when you're developing,
+
+189
+00:08:44,748 --> 00:08:48,324
+but Python is not going to enforce this when you're coding.
+
+190
+00:08:48,324 --> 00:08:50,519
+So if you do type five there and you run the programme,
+
+191
+00:08:50,519 --> 00:08:54,304
+you won't get any errors, you'll just input the name as five
+
+192
+00:08:54,304 --> 00:08:56,440
+and then you'll get an error in SQLite,
+
+193
+00:08:56,440 --> 00:08:59,607
+because the type is defined as a text.
+
+194
+00:09:02,326 --> 00:09:04,102
+Going back to database, we can do the same
+
+195
+00:09:04,102 --> 00:09:06,331
+for any other functions that need parameters,
+
+196
+00:09:06,331 --> 00:09:09,106
+like mark_book_as_read, also a string,
+
+197
+00:09:09,106 --> 00:09:11,689
+and delete_book, also a string.
+
+198
+00:09:14,424 --> 00:09:17,523
+Not too many of Python's libraries and projects,
+
+199
+00:09:17,523 --> 00:09:19,404
+and things like that, use type hinting,
+
+200
+00:09:19,404 --> 00:09:20,879
+because it is quite new.
+
+201
+00:09:20,879 --> 00:09:24,664
+But, I can recommend using it in your projects,
+
+202
+00:09:24,664 --> 00:09:27,752
+it will help you over time as your projects grow.
+
+203
+00:09:27,752 --> 00:09:30,840
+And also it give a bit more readability, in terms of,
+
+204
+00:09:30,840 --> 00:09:33,127
+okay, what's going to happen with a name here,
+
+205
+00:09:33,127 --> 00:09:36,088
+it's a string so, probably going to use it as a string.
+
+206
+00:09:36,088 --> 00:09:38,352
+Then, you won't try to append things to it
+
+207
+00:09:38,352 --> 00:09:40,407
+inside this function, for example.
+
+208
+00:09:40,407 --> 00:09:44,319
+Indeed, if you try to do name.append,
+
+209
+00:09:44,319 --> 00:09:46,699
+it will tell you that this is unlikely.
+
+210
+00:09:46,699 --> 00:09:49,974
+Unresolved reference append for class string.
+
+211
+00:09:49,974 --> 00:09:52,597
+PyCharm now thinks that Name is a string,
+
+212
+00:09:52,597 --> 00:09:54,420
+even though it doesn't have any context
+
+213
+00:09:54,420 --> 00:09:55,952
+on where it was defined,
+
+214
+00:09:55,952 --> 00:09:58,843
+just because you said that it should be a string.
+
+215
+00:09:58,843 --> 00:10:01,618
+So if you try to append something, as if it were a list,
+
+216
+00:10:01,618 --> 00:10:04,079
+it will tell you, this is wrong.
+
+217
+00:10:04,079 --> 00:10:06,924
+Of course, if you change this to a list,
+
+218
+00:10:06,924 --> 00:10:08,921
+now you can do name.append.
+
+219
+00:10:08,921 --> 00:10:10,918
+And, notice how it already likes it and tells you,
+
+220
+00:10:10,918 --> 00:10:13,646
+hey you can append here.
+
+221
+00:10:13,646 --> 00:10:15,539
+So, type hinting. Pretty useful.
+
+222
+00:10:15,539 --> 00:10:19,309
+Helps you, helps PyCharm give you good suggestions.
+
+223
+00:10:19,309 --> 00:10:21,763
+And overall, as you apps grow it's going to help them
+
+224
+00:10:21,763 --> 00:10:24,886
+stay a bit more maintainable.
+
+225
+00:10:24,886 --> 00:10:27,185
+So, definitely a good thing to be doing.
+
+226
+00:10:27,185 --> 00:10:30,180
+Feel free to do that for other functions in here,
+
+227
+00:10:30,180 --> 00:10:32,363
+but the most important functions for you to do that in
+
+228
+00:10:32,363 --> 00:10:34,256
+are those functions that you're going to call
+
+229
+00:10:34,256 --> 00:10:35,846
+and receive values from.
+
+230
+00:10:35,846 --> 00:10:38,505
+Your menus and things like that, probably not so important
+
+231
+00:10:38,505 --> 00:10:39,863
+since nothing's calling them
+
+232
+00:10:39,863 --> 00:10:41,663
+and they're not taking any parameters.
+
+233
+00:10:41,663 --> 00:10:43,462
+So, there not much to define there.
+
+234
+00:10:43,462 --> 00:10:46,867
+You could define that the function returns none.
+
+235
+00:10:46,867 --> 00:10:49,070
+But, because nothing's calling this function,
+
+236
+00:10:49,070 --> 00:10:52,495
+other than you up here, it doesn't matter much.
+
+237
+00:10:52,495 --> 00:10:55,525
+I wouldn't worry too much about that.
+
+238
+00:10:55,525 --> 00:10:59,124
+Okay, we can go over to the DatabaseConnection
+
+239
+00:10:59,124 --> 00:11:03,594
+and we can also define that the enter method
+
+240
+00:11:03,594 --> 00:11:05,777
+is going to returns something.
+
+241
+00:11:05,777 --> 00:11:08,784
+And what it's going to return is,
+
+242
+00:11:08,784 --> 00:11:11,663
+not a type from the typing module,
+
+243
+00:11:11,663 --> 00:11:14,380
+but a type from the SQLite3 module.
+
+244
+00:11:14,380 --> 00:11:16,463
+That's sqlite3.Connection
+
+245
+00:11:17,990 --> 00:11:22,750
+Notice that the connection here is not a type, per se.
+
+246
+00:11:22,750 --> 00:11:25,943
+It is an actual class, it is something that you can create
+
+247
+00:11:25,943 --> 00:11:27,963
+and that indeed, this connection gets created
+
+248
+00:11:27,963 --> 00:11:30,262
+when you call sqlite3.connect.
+
+249
+00:11:30,262 --> 00:11:31,342
+And that's fine.
+
+250
+00:11:31,342 --> 00:11:32,665
+You can tell PhCharm that
+
+251
+00:11:32,665 --> 00:11:35,511
+this is going to return a proper class.
+
+252
+00:11:35,511 --> 00:11:36,344
+Totally cool.
+
+253
+00:11:36,344 --> 00:11:38,887
+It doesn't haven't to be a type from the typing module.
+
+254
+00:11:38,887 --> 00:11:41,175
+It doesn't have to be str or int.
+
+255
+00:11:41,175 --> 00:11:44,066
+It can be an actually class that you have defined
+
+256
+00:11:44,066 --> 00:11:46,493
+or that is defined in some other module.
+
+257
+00:11:46,493 --> 00:11:49,493
+Now, when we go over to database.py,
+
+258
+00:11:50,382 --> 00:11:54,693
+PyCharm will be able to advise us that the connection object
+
+259
+00:11:54,693 --> 00:11:57,708
+has all these things from the SQLite module,
+
+260
+00:11:57,708 --> 00:11:59,541
+which is pretty handy.
+
+261
+00:12:00,505 --> 00:12:02,479
+So again, good for you, good for PyCharm,
+
+262
+00:12:02,479 --> 00:12:04,545
+good for your projects as they grow.
+
+263
+00:12:04,545 --> 00:12:07,297
+Definitely recommend that you do this.
+
+264
+00:12:07,297 --> 00:12:08,655
+So, that's it for this video
+
+265
+00:12:08,655 --> 00:12:10,523
+and I'll see you on the next one.
+

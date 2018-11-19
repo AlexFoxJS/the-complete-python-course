@@ -1,0 +1,668 @@
+1
+00:00:00,210 --> 00:00:02,294
+Instrutor: Ol e bem vindo de volta.
+
+2
+00:00:02,294 --> 00:00:04,330
+Neste vdeo, vamos concluir nosso projeto
+
+3
+00:00:04,330 --> 00:00:07,330
+de marco incluindo as instrues de atualizao e excluso.
+
+4
+00:00:09,080 --> 00:00:11,410
+Adicionamos a tabela de criao de livros,
+
+5
+00:00:11,410 --> 00:00:14,320
+que cria nossa tabela se ela ainda no existir.
+
+6
+00:00:14,320 --> 00:00:17,630
+Ns inserimos um novo livro em nossa mesa.
+
+7
+00:00:17,630 --> 00:00:19,810
+E tambm analisamos a seleo de todos os
+
+8
+00:00:19,810 --> 00:00:22,300
+livros da nossa tabela e os retornamos como dicionrios.
+
+9
+00:00:23,480 --> 00:00:25,810
+Agora temos mais duas funes,
+
+10
+00:00:25,810 --> 00:00:28,730
+marcar livro como lido e excluir livro.
+
+11
+00:00:29,650 --> 00:00:33,500
+Com nossos arquivos, o que eles fizeram foi ler o arquivo
+
+12
+00:00:33,500 --> 00:00:35,590
+inteiro, encontrar o livro apropriado, atualiz-lo
+
+13
+00:00:35,590 --> 00:00:38,210
+e salvar todos os livros de volta.
+
+14
+00:00:38,210 --> 00:00:42,030
+Com o SQL, podemos encontrar o livro correto pelo nome no
+
+15
+00:00:42,030 --> 00:00:44,770
+banco de dados e atualiz-lo no lugar, de
+
+16
+00:00:44,770 --> 00:00:47,760
+modo que no precisamos mais pegar todos os
+
+17
+00:00:47,760 --> 00:00:50,540
+livros, alterar um deles e salv-los novamente.
+
+18
+00:00:50,540 --> 00:00:52,550
+Por esse motivo, vou excluir essa
+
+19
+00:00:52,550 --> 00:00:54,340
+funo salvar todos os livros.
+
+20
+00:00:54,340 --> 00:00:58,050
+E essa  uma boa razo para ter o sublinhado
+
+21
+00:00:58,050 --> 00:00:58,980
+no comeo.
+
+22
+00:00:58,980 --> 00:01:01,420
+Era algo que queramos usar
+
+23
+00:01:01,420 --> 00:01:03,770
+internamente para fazer nossa interface
+
+24
+00:01:03,770 --> 00:01:08,370
+funcionar, mas no era algo que queramos que o aplicativo usasse.
+
+25
+00:01:08,370 --> 00:01:09,980
+Ento  por isso que tinha
+
+26
+00:01:09,980 --> 00:01:12,450
+o sublinhado antes para marc-lo como uma espcie de privado.
+
+27
+00:01:12,450 --> 00:01:13,770
+Para que outras partes
+
+28
+00:01:13,770 --> 00:01:15,900
+do nosso programa no o usem tambm.
+
+29
+00:01:15,900 --> 00:01:19,320
+Para marcar um livro como lido, voc sabe como fazer
+
+30
+00:01:19,320 --> 00:01:21,420
+isso agora, porque temos que inicializar
+
+31
+00:01:21,420 --> 00:01:24,270
+a conexo de erro, obter um cursor, executar nossa
+
+32
+00:01:24,270 --> 00:01:28,210
+instruo de atualizao com uma clusula where, que seria onde pelo nome.
+
+33
+00:01:28,210 --> 00:01:30,660
+E ento confirme e feche a conexo.
+
+34
+00:01:30,660 --> 00:01:33,070
+Nem precisamos transformar nada ou obter dados
+
+35
+00:01:33,070 --> 00:01:35,750
+do banco de dados para fazer isso.
+
+36
+00:01:35,750 --> 00:01:38,460
+Eu acho que voc pode implementar essa funo por conta prpria,
+
+37
+00:01:38,460 --> 00:01:39,540
+ento d uma chance.
+
+38
+00:01:44,100 --> 00:01:45,890
+Tenho certeza que voc conseguiu fazer isso.
+
+39
+00:01:45,890 --> 00:01:48,280
+Ns apenas olhamos para a atualizao, e tudo o que temos a
+
+40
+00:01:48,280 --> 00:01:51,800
+fazer  copiar novamente esta placa de caldeira, sqlite3. conectar-se aos
+
+41
+00:01:51,800 --> 00:01:53,440
+dados. db.
+
+42
+00:01:55,440 --> 00:01:58,700
+Certifique-se de usar o arquivo de dados correto.
+
+43
+00:01:58,700 --> 00:01:59,890
+Pegue um
+
+44
+00:02:02,390 --> 00:02:05,190
+cursor e execute nosso SQL.
+
+45
+00:02:05,190 --> 00:02:08,670
+E isso vai ser atualizar o livro
+
+46
+00:02:08,670 --> 00:02:13,670
+estvel, defina a leitura para um, onde o nome 
+
+47
+00:02:13,990 --> 00:02:16,870
+igual a um ponto de interrogao.
+
+48
+00:02:16,870 --> 00:02:20,350
+Lembre-se que voc no deve usar strings aqui
+
+49
+00:02:21,800 --> 00:02:24,580
+porque isso o abre para potenciais ataques
+
+50
+00:02:24,580 --> 00:02:26,350
+de injeo de SQL.
+
+51
+00:02:26,350 --> 00:02:30,300
+Ento, o que vamos colocar aqui  uma tupla de nome.
+
+52
+00:02:30,300 --> 00:02:32,340
+E observe que, para fazer
+
+53
+00:02:32,340 --> 00:02:35,670
+uma tupla, temos que incluir os colchetes atuais,
+
+54
+00:02:35,670 --> 00:02:38,160
+desculpe, assim como a vrgula, para
+
+55
+00:02:38,160 --> 00:02:42,240
+dizer que isso  uma tupla, no  uma coisa
+
+56
+00:02:42,240 --> 00:02:44,090
+matemtica que queremos avaliar primeiro.
+
+57
+00:02:44,090 --> 00:02:47,230
+E, certamente, se voc no colocar os parnteses e
+
+58
+00:02:47,230 --> 00:02:48,840
+fizer isso, ele acha
+
+59
+00:02:48,840 --> 00:02:53,790
+que esse  um argumento inteiramente novo para o mtodo de execuo, que
+
+60
+00:02:53,790 --> 00:02:54,780
+no queremos fazer.
+
+61
+00:02:54,780 --> 00:02:56,360
+Queremos ter certeza de que 
+
+62
+00:02:56,360 --> 00:02:57,460
+uma tupla, ento fazemos assim.
+
+63
+00:02:58,940 --> 00:03:00,950
+Agora que executamos isso, queremos garantir
+
+64
+00:03:00,950 --> 00:03:03,260
+que essas alteraes sejam salvas no disco.
+
+65
+00:03:03,260 --> 00:03:05,390
+Ento conexo. commit
+
+66
+00:03:05,390 --> 00:03:09,410
+e, finalmente, conexo. perto, e  isso.
+
+67
+00:03:09,410 --> 00:03:13,440
+Agora que atualizamos nosso livro, defina o sinalizador de leitura para um, onde
+
+68
+00:03:13,440 --> 00:03:15,220
+o nome  igual ao nome.
+
+69
+00:03:17,920 --> 00:03:20,410
+Indo para apagar o livro, eu acho que voc tambm
+
+70
+00:03:20,410 --> 00:03:22,040
+pode implementar isso para o que
+
+71
+00:03:22,040 --> 00:03:23,810
+temos que fazer  praticamente o mesmo.
+
+72
+00:03:23,810 --> 00:03:26,640
+Mais uma vez, pause o vdeo e tente.
+
+73
+00:03:31,570 --> 00:03:33,780
+Agora eu tenho certeza que voc realmente conseguiu isso.
+
+74
+00:03:33,780 --> 00:03:35,490
+O que eu vou fazer 
+
+75
+00:03:35,490 --> 00:03:37,890
+copiar este prato da caldeira, no algo que
+
+76
+00:03:37,890 --> 00:03:40,270
+voc deveria estar fazendo com muita frequncia, mas
+
+77
+00:03:40,270 --> 00:03:45,270
+ao invs de atualizar vamos dizer deletar de livros onde o nome  esse ponto de interrogao.
+
+78
+00:03:46,110 --> 00:03:49,610
+E mais uma vez o nome  passado como um argumento l.
+
+79
+00:03:49,610 --> 00:03:52,030
+Ento nos comprometemos mais uma vez e fechamos.
+
+80
+00:03:52,030 --> 00:03:54,180
+No precisamos buscar nenhuma linha ou nada,
+
+81
+00:03:54,180 --> 00:03:56,050
+porque no h nada para ns
+
+82
+00:03:56,050 --> 00:03:57,550
+retornarmos dessa declarao de excluso.
+
+83
+00:03:59,460 --> 00:04:00,320
+E  isso.
+
+84
+00:04:00,320 --> 00:04:04,210
+Ns temos todos os dados dentro e fora do nosso banco de
+
+85
+00:04:04,210 --> 00:04:05,330
+dados que precisvamos.
+
+86
+00:04:05,330 --> 00:04:08,921
+Podemos voltar ao aplicativo. py e tudo o que
+
+87
+00:04:08,921 --> 00:04:13,490
+temos a fazer  potencialmente atualizar este livro ler bandeira aqui.
+
+88
+00:04:13,490 --> 00:04:18,490
+Poderamos dizer sim, se o status de leitura do livro
+
+89
+00:04:20,350 --> 00:04:22,850
+for verdadeiro, caso contrrio, no.
+
+90
+00:04:23,730 --> 00:04:27,720
+Mas o que voc no sabia  que, se zero,
+
+91
+00:04:28,840 --> 00:04:31,440
+na verdade,  avaliado como falso.
+
+92
+00:04:31,440 --> 00:04:34,600
+E se um for avaliado como verdadeiro.
+
+93
+00:04:34,600 --> 00:04:39,420
+Ento, se o livro lido  um, contm o inteiro, ns
+
+94
+00:04:39,420 --> 00:04:40,670
+vamos receber sim.
+
+95
+00:04:40,670 --> 00:04:44,030
+Se ele contiver o inteiro zero, ns vamos obter no.
+
+96
+00:04:44,030 --> 00:04:46,480
+Ento, na verdade, no precisamos mudar isso.
+
+97
+00:04:46,480 --> 00:04:48,670
+O Python trata automaticamente um e zero
+
+98
+00:04:48,670 --> 00:04:51,710
+como true e false tambm, o que  bastante til.
+
+99
+00:04:52,700 --> 00:04:55,300
+Ento, na verdade, no precisamos fazer alteraes no
+
+100
+00:04:56,207 --> 00:04:57,620
+nosso aplicativo. py, que
+
+101
+00:04:57,620 --> 00:05:01,490
+nos diz que fizemos um excelente trabalho isolando nosso dispositivo de armazenamento de
+
+102
+00:05:01,490 --> 00:05:04,290
+dados, nosso banco de dados, da nossa lgica de negcios.
+
+103
+00:05:04,290 --> 00:05:07,000
+Eu continuo falando sobre essa interface porque
+
+104
+00:05:07,000 --> 00:05:10,010
+ uma parte realmente importante da programao,
+
+105
+00:05:10,010 --> 00:05:12,720
+para poder separar seus diferentes componentes e
+
+106
+00:05:12,720 --> 00:05:16,330
+garantir que eles possam operar sem saber como o
+
+107
+00:05:16,330 --> 00:05:17,980
+outro  implementado.
+
+108
+00:05:17,980 --> 00:05:19,180
+Isso  muito importante.
+
+109
+00:05:20,100 --> 00:05:22,770
+Vamos em frente e executar nosso aplicativo.
+
+110
+00:05:22,770 --> 00:05:24,870
+E ento podemos olhar para adicionar um novo livro.
+
+111
+00:05:29,020 --> 00:05:31,070
+Ah, e ns recebemos um erro.
+
+112
+00:05:32,590 --> 00:05:35,520
+Recebemos um erro que diz que o erro de integridade,
+
+113
+00:05:35,520 --> 00:05:38,790
+a restrio exclusiva, falhou nos livros. nome.
+
+114
+00:05:38,790 --> 00:05:41,350
+Isso significa que um livro com esse nome j existia
+
+115
+00:05:42,633 --> 00:05:43,920
+em nosso banco de dados.
+
+116
+00:05:43,920 --> 00:05:46,330
+Erro interessante, claro que sabemos que isso deve
+
+117
+00:05:46,330 --> 00:05:47,240
+ser um erro.
+
+118
+00:05:47,240 --> 00:05:49,300
+Ns no queremos o mesmo livro duas vezes, ento
+
+119
+00:05:49,300 --> 00:05:52,460
+o que aconteceu  que nossos dados. DB existia desde a ltima vez
+
+120
+00:05:52,460 --> 00:05:53,740
+que rodamos isso, e eu
+
+121
+00:05:53,740 --> 00:05:55,140
+entrei no mesmo livro.
+
+122
+00:05:55,999 --> 00:05:57,600
+Ento, se voc quiser se livrar
+
+123
+00:05:57,600 --> 00:06:00,990
+desse erro apenas temporariamente, exclua os dados. db e execute seu aplicativo novamente.
+
+124
+00:06:00,990 --> 00:06:03,500
+Ento voc pode inserir o Cdigo Limpo.
+
+125
+00:06:07,736 --> 00:06:08,890
+Ento voc pode listar todos os seus livros
+
+126
+00:06:08,890 --> 00:06:11,740
+agora, e isso lhe d Cdigo Limpo por Robert C. Martin.
+
+127
+00:06:11,740 --> 00:06:13,880
+Voc pode, claro, marcar um livro como lido.
+
+128
+00:06:15,970 --> 00:06:17,200
+Ento voc pode listar os livros novamente e
+
+129
+00:06:17,200 --> 00:06:19,600
+ele lhe d Clean Code por Robert C. Martin.
+
+130
+00:06:20,840 --> 00:06:24,230
+Voc pode excluir um livro, no que voc queira
+
+131
+00:06:24,230 --> 00:06:25,360
+excluir este livro.
+
+132
+00:06:25,360 --> 00:06:28,250
+E ento voc no ganha nada quando voc lista os livros de volta.
+
+133
+00:06:29,210 --> 00:06:33,130
+Assim, fizemos nosso programa funcionar com um banco de
+
+134
+00:06:33,130 --> 00:06:36,180
+dados SQL, que  muito semelhante a
+
+135
+00:06:36,180 --> 00:06:39,266
+um banco de dados postgres ou MySQL.
+
+136
+00:06:39,266 --> 00:06:41,230
+A maneira como interagimos com ele usando
+
+137
+00:06:41,230 --> 00:06:42,920
+SQL  praticamente a mesma coisa.
+
+138
+00:06:42,920 --> 00:06:46,600
+Postgres e MySQL so mais poderosos, eles fazem mais coisas para voc,
+
+139
+00:06:46,600 --> 00:06:49,050
+e eles tambm tm um pouco mais de
+
+140
+00:06:49,050 --> 00:06:50,990
+funcionalidade, mais tipos diferentes de dados
+
+141
+00:06:50,990 --> 00:06:52,840
+que voc pode armazenar e assim
+
+142
+00:06:52,840 --> 00:06:55,700
+por diante, mas realmente o que ns cobrimos  o
+
+143
+00:06:55,700 --> 00:06:58,290
+mesmo entre todos os principais bancos de dados, o
+
+144
+00:06:58,290 --> 00:06:59,340
+que  muito legal.
+
+145
+00:07:00,500 --> 00:07:03,900
+ claro que no nos livramos do erro de insero
+
+146
+00:07:03,900 --> 00:07:06,390
+quando inserimos algo que j existe, mas
+
+147
+00:07:06,390 --> 00:07:07,830
+voc poderia fazer isso.
+
+148
+00:07:07,830 --> 00:07:11,980
+Voc poderia colocar uma tentativa de aceitar aqui em um erro de integridade.
+
+149
+00:07:11,980 --> 00:07:14,430
+E basta imprimir algo que diz que podemos imprimir
+
+150
+00:07:14,430 --> 00:07:17,850
+o seu livro ou voc pode devolver o falso em potencial e, em
+
+151
+00:07:17,850 --> 00:07:20,090
+seguida, no seu aplicativo. py diz se
+
+152
+00:07:21,320 --> 00:07:24,270
+isso for bem sucedido, no imprima nada.
+
+153
+00:07:24,270 --> 00:07:25,780
+E se no tiver xito, imprima
+
+154
+00:07:25,780 --> 00:07:28,040
+voc j tem o livro em seu banco de dados.
+
+155
+00:07:28,040 --> 00:07:31,466
+Sinta-se  vontade para estender isso o quanto quiser, e, claro,
+
+156
+00:07:31,466 --> 00:07:33,210
+fazer perguntas no curso Q e
+
+157
+00:07:33,210 --> 00:07:34,650
+A, caso encontre algum problema.
+
+158
+00:07:34,650 --> 00:07:36,000
+Ficaremos felizes em ajud-lo.
+
+159
+00:07:36,934 --> 00:07:37,767
+Eu no vou mais
+
+160
+00:07:37,767 --> 00:07:39,130
+te aborrecer com a continuao deste projeto.
+
+161
+00:07:39,130 --> 00:07:42,000
+Podemos nos mover para coisas melhores.
+
+162
+00:07:42,000 --> 00:07:43,930
+Ento, com isso dito, vejo vocs no prximo vdeo.
+
+163
+00:07:43,930 --> 00:07:46,060
+Vamos falar brevemente sobre mais uma coisa
+
+164
+00:07:46,060 --> 00:07:48,260
+em SQL que no conseguimos usar neste
+
+165
+00:07:48,260 --> 00:07:49,730
+projeto, mas ainda  muito
+
+166
+00:07:49,730 --> 00:07:52,680
+importante, e ento podemos passar para a prxima seo.
+
+167
+00:07:52,680 --> 00:07:53,580
+Eu te vejo em breve.
+

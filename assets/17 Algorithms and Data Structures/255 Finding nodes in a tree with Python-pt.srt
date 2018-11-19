@@ -1,0 +1,300 @@
+1
+00:00:00,220 --> 00:00:02,300
+Jos: Ol, e bem vindo de volta.
+
+2
+00:00:02,300 --> 00:00:03,510
+Neste vdeo, vamos
+
+3
+00:00:03,510 --> 00:00:06,203
+procurar encontrar um n na nossa rvore binria.
+
+4
+00:00:07,550 --> 00:00:08,660
+Encontrar um n
+
+5
+00:00:08,660 --> 00:00:10,760
+ser realmente simples, porque j
+
+6
+00:00:10,760 --> 00:00:13,220
+analisamos a adio de ns, por
+
+7
+00:00:13,220 --> 00:00:16,303
+isso sabemos como navegar em nossa rvore.
+
+8
+00:00:18,470 --> 00:00:21,590
+Vamos criar aqui um mtodo find, e
+
+9
+00:00:21,590 --> 00:00:23,820
+vamos procurar por um valor
+
+10
+00:00:23,820 --> 00:00:25,810
+especfico que ser um inteiro.
+
+11
+00:00:25,810 --> 00:00:29,490
+Observe que os valores de nossos ns so todos inteiros, ento
+
+12
+00:00:29,490 --> 00:00:31,010
+o valor que estamos
+
+13
+00:00:31,010 --> 00:00:32,710
+procurando tambm ser um inteiro.
+
+14
+00:00:33,980 --> 00:00:35,710
+Ns vamos fazer praticamente
+
+15
+00:00:35,710 --> 00:00:37,990
+exatamente como o mtodo add faz.
+
+16
+00:00:37,990 --> 00:00:39,640
+Ns vamos comear na cabea.
+
+17
+00:00:42,160 --> 00:00:45,750
+E enquanto existir, vamos dizer, se o valor que
+
+18
+00:00:45,750 --> 00:00:47,670
+estamos procurando, perceber que este
+
+19
+00:00:47,670 --> 00:00:49,430
+ o parmetro aqui, 
+
+20
+00:00:49,430 --> 00:00:52,713
+exatamente igual ao valor do n atual, agora no
+
+21
+00:00:53,820 --> 00:00:55,360
+vamos gerar um erro.
+
+22
+00:00:55,360 --> 00:00:57,830
+Ns vamos dizer "voc achou", certo?
+
+23
+00:00:57,830 --> 00:00:59,570
+Este  o valor que estamos procurando.
+
+24
+00:00:59,570 --> 00:01:01,450
+Se existir, significa que estamos bem. O valor que procuramos  maior do que
+
+25
+00:01:01,450 --> 00:01:03,443
+Ento, vamos retornar o n atual. se o valor do n atual, temos que mover
+
+26
+00:01:05,860 --> 00:01:07,510
+De outra forma. o. para a direita porque estamos procurando algo
+
+27
+00:01:07,510 --> 00:01:08,650
+que deve estar  direita
+
+28
+00:01:10,170 --> 00:01:11,210
+desse n atual.
+
+29
+00:01:11,210 --> 00:01:13,403
+Ento ns diramos current_node = current_node. certo.
+
+30
+00:01:14,950 --> 00:01:16,860
+E, finalmente, se no for igual a e no for
+
+31
+00:01:16,860 --> 00:01:18,690
+maior que, isso significa que deve ser menor que.
+
+32
+00:01:18,690 --> 00:01:22,440
+O n atual  current_node. esquerda.
+
+33
+00:01:22,440 --> 00:01:26,043
+Por fim, se chegarmos
+
+34
+00:01:26,950 --> 00:01:30,500
+ao final do loop e no encontrarmos nada,
+
+35
+00:01:30,500 --> 00:01:32,840
+geraremos um erro de pesquisa.
+
+36
+00:01:32,840 --> 00:01:34,983
+Eu vou dizer
+
+37
+00:01:36,440 --> 00:01:39,500
+no n com valor, o valor no foi encontrado.
+
+38
+00:01:39,500 --> 00:01:41,480
+Agora, observe como, aqui ns apenas
+
+39
+00:01:41,480 --> 00:01:43,840
+usamos "else" dentro disso, se elif else,
+
+40
+00:01:43,840 --> 00:01:47,343
+porque o valor, a primeira verificao foi o valor 
+
+41
+00:01:48,190 --> 00:01:50,083
+igual ao valor do n atual.
+
+42
+00:01:51,350 --> 00:01:54,440
+A segunda verificao foi que o valor
+
+43
+00:01:54,440 --> 00:01:57,970
+ maior que o valor do n atual.
+
+44
+00:01:57,970 --> 00:01:59,520
+A nica coisa que resta  quando o valor
+
+45
+00:01:59,520 --> 00:02:00,820
+ menor que o valor do n atual.
+
+46
+00:02:00,820 --> 00:02:02,330
+Ento podemos usar "else". "Ns tambm podemos
+
+47
+00:02:02,330 --> 00:02:03,810
+fazer o mesmo
+
+48
+00:02:03,810 --> 00:02:05,660
+aqui, no nosso add.
+
+49
+00:02:05,660 --> 00:02:08,480
+Ento, mais uma vez, se o valor do n for igual ao valor do n
+
+50
+00:02:08,480 --> 00:02:10,160
+atual, geraremos um erro.
+
+51
+00:02:10,160 --> 00:02:12,060
+Se for menos do que, vamos para a esquerda.
+
+52
+00:02:12,060 --> 00:02:13,563
+O nico que resta  quando no  igual a,
+
+53
+00:02:14,520 --> 00:02:15,958
+no menos que, isso significa que deve ser maior que.
+
+54
+00:02:15,958 --> 00:02:19,000
+Ns nos movemos para a direita.
+
+55
+00:02:19,000 --> 00:02:21,073
+OK?
+
+56
+00:02:21,940 --> 00:02:24,980
+ assim que voc encontra ns em uma rvore binria,
+
+57
+00:02:24,980 --> 00:02:27,950
+ento vamos em frente e voltar ao nosso aplicativo. py e print
+
+58
+00:02:27,950 --> 00:02:28,783
+(rvore. find (11)), e
+
+59
+00:02:29,730 --> 00:02:30,563
+vemos que isso
+
+60
+00:02:31,430 --> 00:02:34,260
+imprime o n 11 que foi encontrado em nossa rvore.
+
+61
+00:02:34,260 --> 00:02:38,100
+Ento, eu s queria gui-lo atravs da
+
+62
+00:02:38,100 --> 00:02:39,350
+implementao desta
+
+63
+00:02:42,300 --> 00:02:45,400
+rvore binria, porque  uma pergunta freqente feita em entrevistas e,
+
+64
+00:02:45,400 --> 00:02:46,750
+voc sabe, desafios de cdigo.
+
+65
+00:02:49,410 --> 00:02:50,960
+Alm disso,  muito
+
+66
+00:02:50,960 --> 00:02:53,830
+usado em partes especficas do desenvolvimento de software,
+
+67
+00:02:53,830 --> 00:02:56,270
+por isso  interessante saber sobre isso.
+
+68
+00:02:56,270 --> 00:02:59,450
+Espero que tenha gostado de aprender sobre essa estrutura de
+
+69
+00:02:59,450 --> 00:03:02,770
+dados mais avanada, bem como sobre a complexidade e a
+
+70
+00:03:02,770 --> 00:03:04,060
+execuo da pesquisa binria.
+
+71
+00:03:04,060 --> 00:03:05,960
+Obrigado por se juntar a mim, e vejo vocs no prximo vdeo.
+
+72
+00:03:05,960 --> 00:03:07,800
+&nbsp;
+
+73
+00:03:07,800 --> 00:03:10,630
+&nbsp;
+
+74
+00:03:10,630 --> 00:03:15,630
+&nbsp;
+
+75
+00:03:15,680 --> 00:03:18,580
+&nbsp;
+

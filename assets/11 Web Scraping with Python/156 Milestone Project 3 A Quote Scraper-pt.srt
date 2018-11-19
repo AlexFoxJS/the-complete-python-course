@@ -1,0 +1,324 @@
+1
+00:00:00,270 --> 00:00:01,710
+-: Ol e bem vindo de volta.
+
+2
+00:00:01,710 --> 00:00:03,990
+Neste vdeo, estamos procurando raspar esta pgina
+
+3
+00:00:03,990 --> 00:00:06,640
+de cotaes que voc v aqui e vamos
+
+4
+00:00:06,640 --> 00:00:09,220
+fazer isso antes de passar para os livros
+
+5
+00:00:09,220 --> 00:00:11,830
+s porque este  um pouco mais simples.
+
+6
+00:00:11,830 --> 00:00:14,980
+E o que vou ensinar nos prximos vdeos 
+
+7
+00:00:14,980 --> 00:00:18,530
+como estruturar seus aplicativos de raspagem para que voc possa
+
+8
+00:00:18,530 --> 00:00:20,880
+fazer o que quiser com eles.
+
+9
+00:00:21,850 --> 00:00:24,060
+Nesta seo, vamos construir dois projetos.
+
+10
+00:00:24,060 --> 00:00:25,720
+O raspador de pgina de cotaes
+
+11
+00:00:25,720 --> 00:00:27,980
+e, em seguida, o raspador de pgina de
+
+12
+00:00:27,980 --> 00:00:30,530
+livros que ser realmente muito semelhante, pelo menos na estrutura.
+
+13
+00:00:31,670 --> 00:00:34,360
+Vamos comear analisando esta pgina de citaes.
+
+14
+00:00:35,630 --> 00:00:39,700
+A propsito, a URL  aspas. raspar. com, sinta-se 
+
+15
+00:00:39,700 --> 00:00:41,890
+vontade para dar uma olhada
+
+16
+00:00:41,890 --> 00:00:44,040
+tambm, se quiser brincar com isso.
+
+17
+00:00:45,040 --> 00:00:46,890
+O que temos , como voc pode
+
+18
+00:00:46,890 --> 00:00:48,520
+ver alguns elementos diferentes na tela.
+
+19
+00:00:48,520 --> 00:00:51,080
+Ns temos algum tipo de ttulo aqui
+
+20
+00:00:51,080 --> 00:00:54,500
+em cima, temos uma pgina de login aqui no canto
+
+21
+00:00:54,500 --> 00:00:55,860
+superior direito, temos 10
+
+22
+00:00:55,860 --> 00:01:00,090
+tags top, ento essas coisas so supostamente clicveis, ento esses so links.
+
+23
+00:01:00,090 --> 00:01:05,090
+Ento voc tem citaes individuais nestes retngulos aqui,
+
+24
+00:01:05,140 --> 00:01:07,310
+estes tipos de cartas.
+
+25
+00:01:07,310 --> 00:01:11,310
+Sempre que voc v algo que parece estruturado assim, voc
+
+26
+00:01:11,310 --> 00:01:13,490
+sabe que vai ser fcil.
+
+27
+00:01:13,490 --> 00:01:15,680
+Esta pgina foi projetada para raspar,
+
+28
+00:01:15,680 --> 00:01:19,640
+ento,  claro, ser um pouco mais simples do que outras
+
+29
+00:01:19,640 --> 00:01:21,850
+pginas que voc pode ver na natureza.
+
+30
+00:01:21,850 --> 00:01:23,930
+Mas o que vamos aprender
+
+31
+00:01:23,930 --> 00:01:27,040
+nesta seo realmente nos ajudar a raspar qualquer
+
+32
+00:01:27,040 --> 00:01:29,790
+pgina, no apenas essas pginas mais simples.
+
+33
+00:01:29,790 --> 00:01:32,600
+Ento, o que temos aqui so vrias cartas diferentes.
+
+34
+00:01:32,600 --> 00:01:36,750
+E cada carto contm uma citao, assim como o autor e
+
+35
+00:01:36,750 --> 00:01:39,810
+um monte de tags aqui que podemos raspar.
+
+36
+00:01:39,810 --> 00:01:41,900
+O que vamos fazer  criar um
+
+37
+00:01:41,900 --> 00:01:45,730
+programa que nos d o contedo da citao e tambm o autor.
+
+38
+00:01:46,700 --> 00:01:48,600
+ isso, um programa bem simples.
+
+39
+00:01:48,600 --> 00:01:51,510
+Novamente, o que voc aprende significar que voc ser
+
+40
+00:01:51,510 --> 00:01:54,840
+capaz de estender esse programa alm disso por qualquer quantia.
+
+41
+00:01:56,620 --> 00:01:59,780
+Ento, vamos comear inspecionando a fonte da pgina apenas
+
+42
+00:01:59,780 --> 00:02:01,520
+para saber como ela .
+
+43
+00:02:02,820 --> 00:02:05,610
+Como voc pode ver aqui  direita,
+
+44
+00:02:05,610 --> 00:02:09,710
+temos o corpo do HTML que contm todo o contedo.
+
+45
+00:02:09,710 --> 00:02:13,400
+L dentro temos um div que tem um continer de classe.
+
+46
+00:02:13,400 --> 00:02:15,450
+Isso contm todo o contedo tambm.
+
+47
+00:02:16,450 --> 00:02:20,270
+Em seguida, temos uma linha que  uma caixa de cabealho e,
+
+48
+00:02:20,270 --> 00:02:22,240
+ao lado dela, temos outra linha,
+
+49
+00:02:22,240 --> 00:02:23,890
+que  o restante do contedo.
+
+50
+00:02:25,830 --> 00:02:30,830
+Dentro dessa linha temos um nmero de, bem, duas colunas.
+
+51
+00:02:30,928 --> 00:02:32,800
+Um que  col-nd-8 e
+
+52
+00:02:34,003 --> 00:02:36,100
+o outro ne que  col-nd-4.
+
+53
+00:02:37,008 --> 00:02:40,680
+E tambm tem outra classe chamada caixa de tags.
+
+54
+00:02:40,680 --> 00:02:43,390
+Ento, essas so as tags, so as citaes.
+
+55
+00:02:43,390 --> 00:02:47,090
+Nas cotaes, temos um nmero de divs, cada
+
+56
+00:02:47,090 --> 00:02:52,090
+div com uma cotao de classe que possui uma das cotaes.
+
+57
+00:02:52,200 --> 00:02:55,930
+Portanto, sabemos que cada uma dessas divs ser
+
+58
+00:02:55,930 --> 00:03:00,110
+exatamente idntica a todas as outras, exceto no contedo.
+
+59
+00:03:00,110 --> 00:03:03,960
+Mas dentro de uma div, temos um span que tem
+
+60
+00:03:03,960 --> 00:03:06,091
+um texto de classe e que
+
+61
+00:03:06,091 --> 00:03:11,091
+contm a citao, e outro span que contm por e tambm uma tag pequena
+
+62
+00:03:11,120 --> 00:03:12,980
+que contm o autor, tambm
+
+63
+00:03:12,980 --> 00:03:16,310
+um link que contm a pgina sobre desse autor.
+
+64
+00:03:18,012 --> 00:03:21,940
+Ento tem outro div que contm as tags.
+
+65
+00:03:21,940 --> 00:03:25,426
+H algumas coisas aqui, e entre elas h
+
+66
+00:03:25,426 --> 00:03:28,390
+uma tag e uma tag de classe.
+
+67
+00:03:29,770 --> 00:03:34,280
+Ento, dentro dessa tag, temos mudanas, pensamentos profundos, pensamento, mundo
+
+68
+00:03:34,280 --> 00:03:36,300
+e assim por diante.
+
+69
+00:03:37,340 --> 00:03:39,480
+Se voc visse qualquer outra dessas citaes,
+
+70
+00:03:39,480 --> 00:03:41,570
+veria que ela  essencialmente a mesma.
+
+71
+00:03:41,570 --> 00:03:44,140
+Um intervalo com tags de classe e que contm uma cotao.
+
+72
+00:03:44,140 --> 00:03:47,060
+Outro perodo que contm uma tag por e pequena que
+
+73
+00:03:47,060 --> 00:03:50,280
+contm o autor e, em seguida, outra div aqui com as tags.
+
+74
+00:03:50,280 --> 00:03:51,113
+E assim por diante.
+
+75
+00:03:52,020 --> 00:03:56,890
+Por isso, sabemos que enquanto conseguirmos esses divs e para
+
+76
+00:03:56,890 --> 00:04:01,580
+cada div obter esses dados, poderemos extrair todos os
+
+77
+00:04:01,580 --> 00:04:04,140
+dados que precisamos da pgina.
+
+78
+00:04:04,140 --> 00:04:05,720
+Ento vamos fazer isso no prximo vdeo.
+
+79
+00:04:05,720 --> 00:04:09,440
+Vamos estruturar nosso novo aplicativo para
+
+80
+00:04:09,440 --> 00:04:11,610
+poder entender essa pgina.
+
+81
+00:04:11,610 --> 00:04:13,330
+Vejo voc no prximo vdeo.
+

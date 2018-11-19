@@ -1,0 +1,352 @@
+1
+00:00:00,052 --> 00:00:01,221
+Jos: Ol, e bem vindo de volta.
+
+2
+00:00:01,221 --> 00:00:03,528
+Neste vdeo, estamos olhando para algum jargo de banco
+
+3
+00:00:03,528 --> 00:00:05,085
+de dados que voc precisa saber.
+
+4
+00:00:05,085 --> 00:00:07,945
+Comeando com, o que  um cursor?
+
+5
+00:00:07,945 --> 00:00:11,144
+Ns tambm vamos olhar, o que  cometer?
+
+6
+00:00:11,144 --> 00:00:13,776
+E finalmente, apenas algumas palavras sobre como
+
+7
+00:00:13,776 --> 00:00:17,970
+vamos escrever o SQL e depois passaremos para o prximo vdeo.
+
+8
+00:00:17,970 --> 00:00:22,543
+Cursores, todas as operaes no SQLite so feitas por
+
+9
+00:00:22,543 --> 00:00:26,421
+cursores, e no pelo prprio objeto de conexo.
+
+10
+00:00:26,421 --> 00:00:27,904
+Existem duas razes para isso.
+
+11
+00:00:27,904 --> 00:00:32,009
+A primeira razo  que, se tivermos uma nica
+
+12
+00:00:32,009 --> 00:00:35,892
+conexo, s poderemos realizar uma operao por vez.
+
+13
+00:00:35,892 --> 00:00:38,490
+Se tivermos muitos cursores, podemos usar cada cursor
+
+14
+00:00:38,490 --> 00:00:41,777
+para ler alguns dados e um para gravar alguns dados.
+
+15
+00:00:41,777 --> 00:00:45,716
+Lembre-se de que estamos limitados a uma operao de gravao de
+
+16
+00:00:45,716 --> 00:00:49,966
+cada vez, mas vrios cursores podem ler dados ao mesmo tempo.
+
+17
+00:00:49,966 --> 00:00:52,717
+O cursor tambm tem um significado especfico e
+
+18
+00:00:52,717 --> 00:00:55,242
+h uma razo pela qual ele  chamado
+
+19
+00:00:55,242 --> 00:00:58,159
+de cursor e isto , quando lemos alguns dados,
+
+20
+00:00:59,291 --> 00:01:01,434
+digamos que temos essa tabela aqui e
+
+21
+00:01:01,434 --> 00:01:04,176
+dizemos ao cursor para buscar alguns dados, obter
+
+22
+00:01:04,176 --> 00:01:06,020
+alguns dados do banco de dados.
+
+23
+00:01:06,020 --> 00:01:09,451
+O cursor comea a, bem no
+
+24
+00:01:09,451 --> 00:01:12,496
+alto, logo antes da primeira linha.
+
+25
+00:01:12,496 --> 00:01:15,169
+Quando dizemos ao cursor para passar para a prxima
+
+26
+00:01:15,169 --> 00:01:17,602
+linha, ele nos dar a primeira linha e
+
+27
+00:01:17,602 --> 00:01:19,722
+o cursor se mover para a segunda linha.
+
+28
+00:01:19,722 --> 00:01:24,359
+Observe como este cursor  realmente como apontar para um lugar,  por isso que ele
+
+29
+00:01:24,359 --> 00:01:25,379
+ chamado de
+
+30
+00:01:25,379 --> 00:01:27,725
+cursor porque os cursores so usados para apontar
+
+31
+00:01:27,725 --> 00:01:28,877
+as coisas e este
+
+32
+00:01:28,877 --> 00:01:31,782
+cursor aqui est apontando para sua localizao atual na mesa.
+
+33
+00:01:31,782 --> 00:01:35,413
+Quando lemos a primeira linha, ela passa para a segunda linha.
+
+34
+00:01:35,413 --> 00:01:38,655
+Agora, quando pedimos ao cursor para ler uma linha,
+
+35
+00:01:38,655 --> 00:01:41,964
+ele vai ler uma linha depois da que est agora.
+
+36
+00:01:41,964 --> 00:01:44,027
+Ento, vai passar para a linha
+
+37
+00:01:44,027 --> 00:01:46,358
+trs e nos dar a linha dois.
+
+38
+00:01:46,358 --> 00:01:47,191
+E assim por diante.
+
+39
+00:01:47,191 --> 00:01:50,827
+E esta  realmente a principal razo pela qual ela  chamada
+
+40
+00:01:50,827 --> 00:01:53,001
+de cursor, porque toda vez que voc
+
+41
+00:01:53,001 --> 00:01:56,584
+pede uma nova linha ela vai descer e voc no pode voltar.
+
+42
+00:01:56,584 --> 00:01:58,387
+Ento o cursor continua apontando para
+
+43
+00:01:58,387 --> 00:02:01,637
+baixo e se movendo para baixo enquanto voc pede por linhas.
+
+44
+00:02:02,867 --> 00:02:05,700
+Ok, ento vamos encontrar algumas funcionalidades
+
+45
+00:02:05,700 --> 00:02:08,582
+interessantes para fazer com esta maneira
+
+46
+00:02:08,582 --> 00:02:10,999
+de operar em breve.
+
+47
+00:02:12,023 --> 00:02:14,384
+Em seguida, o commit.
+
+48
+00:02:14,384 --> 00:02:18,981
+Commit apenas significa salvar o resultado no disco.
+
+49
+00:02:18,981 --> 00:02:21,847
+E isso porque mantemos muitos dados na
+
+50
+00:02:21,847 --> 00:02:23,278
+memria at nos comprometermos.
+
+51
+00:02:23,278 --> 00:02:25,322
+Por exemplo, digamos que queremos inserir alguns
+
+52
+00:02:25,322 --> 00:02:27,065
+dados em nosso banco de dados,
+
+53
+00:02:27,065 --> 00:02:28,899
+informamos ao SQLite para inseri-lo, ele
+
+54
+00:02:28,899 --> 00:02:30,744
+no  inserido de fato.
+
+55
+00:02:30,744 --> 00:02:35,744
+Ele  salvo na memria at que digamos, comprometa tudo isso.
+
+56
+00:02:35,796 --> 00:02:39,378
+Isso nos permite, por exemplo, se tentarmos inserir
+
+57
+00:02:39,378 --> 00:02:42,189
+alguns dados, e ele acabar corrompido
+
+58
+00:02:42,189 --> 00:02:45,767
+ou algo do tipo, podemos reverter e no
+
+59
+00:02:45,767 --> 00:02:47,446
+salvar nada no disco.
+
+60
+00:02:47,446 --> 00:02:50,142
+Tambm nos permite escrever vrias coisas juntas.
+
+61
+00:02:50,142 --> 00:02:53,508
+Por exemplo, podemos excluir um usurio, inserir um novo
+
+62
+00:02:53,508 --> 00:02:56,972
+usurio e, em seguida, confirmar e, na verdade, proceder 
+
+63
+00:02:56,972 --> 00:03:00,950
+remoo dos dados do disco e  insero dos novos dados.
+
+64
+00:03:00,950 --> 00:03:05,319
+Por exemplo, digamos que queremos criar uma nova compra
+
+65
+00:03:05,319 --> 00:03:08,641
+para um usurio e, como resultado disso,
+
+66
+00:03:08,641 --> 00:03:10,747
+atualizamos seu carto de crdito.
+
+67
+00:03:10,747 --> 00:03:13,410
+Mas se um falhar, no queremos fazer o outro.
+
+68
+00:03:13,410 --> 00:03:17,155
+Podemos tentar adicionar a compra e, se isso
+
+69
+00:03:17,155 --> 00:03:22,155
+falhar, voltaremos atrs e no prosseguiremos com o carto de crdito.
+
+70
+00:03:22,237 --> 00:03:24,610
+Ento, esse commit nos permite, quando
+
+71
+00:03:24,610 --> 00:03:26,290
+estamos em um estado
+
+72
+00:03:26,290 --> 00:03:27,956
+onde queremos salvar coisas
+
+73
+00:03:27,956 --> 00:03:30,976
+em um disco, salv-las e no antes.
+
+74
+00:03:30,976 --> 00:03:32,169
+Isso nos d um
+
+75
+00:03:32,169 --> 00:03:35,186
+pouco de liberdade e tambm nos d velocidade extra.
+
+76
+00:03:35,186 --> 00:03:36,769
+Manter um monte de coisas
+
+77
+00:03:36,769 --> 00:03:38,539
+na memria e depois escrev-las 
+
+78
+00:03:38,539 --> 00:03:40,997
+mais rpido do que escrev-las uma por uma.
+
+79
+00:03:40,997 --> 00:03:44,402
+Apenas devido s limitaes de como os discos rgidos
+
+80
+00:03:44,402 --> 00:03:47,069
+funcionam onde os dados esto sendo armazenados.
+
+81
+00:03:48,239 --> 00:03:51,335
+Agora vou escrever SQL, vou redirecion-lo para
+
+82
+00:03:51,335 --> 00:03:52,375
+o prximo vdeo.
+
+83
+00:03:52,375 --> 00:03:54,266
+SQL  como o ingls,
+
+84
+00:03:54,266 --> 00:03:56,231
+ento as consultas sero legveis e
+
+85
+00:03:56,231 --> 00:03:58,172
+faremos coisas como selecionar dados,
+
+86
+00:03:58,172 --> 00:04:00,156
+inserir dados e coisas do tipo.
+
+87
+00:04:00,156 --> 00:04:02,676
+Mas vamos fazer isso no prximo vdeo.
+
+88
+00:04:02,676 --> 00:04:04,593
+Ento te vejo l.
+

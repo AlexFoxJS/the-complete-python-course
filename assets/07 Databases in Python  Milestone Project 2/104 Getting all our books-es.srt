@@ -1,0 +1,548 @@
+1
+00:00:00,230 --> 00:00:01,610
+Jos: Hola y bienvenido de nuevo.
+
+2
+00:00:01,610 --> 00:00:03,300
+En este video vamos a
+
+3
+00:00:03,300 --> 00:00:06,380
+agregar declaraciones seleccionadas a nuestro proyecto de hito.
+
+4
+00:00:07,650 --> 00:00:09,190
+Antes que nada, recordemos
+
+5
+00:00:09,190 --> 00:00:11,360
+borrar este hito, o el archivo
+
+6
+00:00:11,360 --> 00:00:13,470
+books, aqu porque ya no lo necesitamos.
+
+7
+00:00:13,470 --> 00:00:15,340
+Solo para asegurarnos de que nos da un
+
+8
+00:00:15,340 --> 00:00:16,840
+error cuando intentamos usarlo, no lo
+
+9
+00:00:16,840 --> 00:00:18,390
+estamos utilizando mal en ningn lado.
+
+10
+00:00:19,260 --> 00:00:22,690
+Luego, pasemos a nuestra funcin get_all_books y observemos cmo
+
+11
+00:00:22,690 --> 00:00:25,010
+ahora nos ha dado dos errores.
+
+12
+00:00:25,010 --> 00:00:27,560
+Est intentando abrir el archivo books_ que ya no
+
+13
+00:00:27,560 --> 00:00:29,830
+existe, y no debera porque no queremos usarlo.
+
+14
+00:00:29,830 --> 00:00:32,430
+Y tambin est usando el mdulo json que no debera,
+
+15
+00:00:32,430 --> 00:00:34,590
+porque una vez ms, ya no estamos usando json.
+
+16
+00:00:36,060 --> 00:00:38,450
+Queremos recuperar todos los libros de
+
+17
+00:00:38,450 --> 00:00:41,030
+nuestra base de datos, de nuestra tabla.
+
+18
+00:00:42,090 --> 00:00:44,950
+Sabes cmo hacer todo esto,
+
+19
+00:00:44,950 --> 00:00:48,620
+excepto en realidad recuperar los libros.
+
+20
+00:00:48,620 --> 00:00:50,690
+Entonces, usted sabe cmo configurar
+
+21
+00:00:50,690 --> 00:00:52,290
+la conexin, obtener un
+
+22
+00:00:52,290 --> 00:00:54,340
+cursor, ejecutar la consulta que
+
+23
+00:00:54,340 --> 00:00:56,690
+seleccionar todos nuestros libros, commit y close.
+
+24
+00:00:56,690 --> 00:00:59,010
+Te animo a dar esto ahora.
+
+25
+00:00:59,010 --> 00:01:01,810
+Simplemente implemente todo lo que sepa sobre esta funcin y
+
+26
+00:01:01,810 --> 00:01:03,010
+luego le explicaremos exactamente
+
+27
+00:01:03,010 --> 00:01:05,470
+qu es lo que nos falta y cmo funciona.
+
+28
+00:01:10,210 --> 00:01:11,320
+Espero que tengas eso.
+
+29
+00:01:11,320 --> 00:01:13,110
+Todo lo que tenemos que hacer es,
+
+30
+00:01:13,110 --> 00:01:14,970
+por supuesto, antes que nada, abrir una conexin.
+
+31
+00:01:18,090 --> 00:01:20,500
+Asegrese de usar el mismo archivo de datos que
+
+32
+00:01:20,500 --> 00:01:23,220
+antes para que todas estas conexiones vayan al mismo archivo.
+
+33
+00:01:24,270 --> 00:01:25,370
+Obtener un cursor
+
+34
+00:01:27,960 --> 00:01:30,320
+Luego ejecuta nuestra
+
+35
+00:01:30,320 --> 00:01:34,770
+consulta, que ser SELECCIONADA * FROM libros.
+
+36
+00:01:34,770 --> 00:01:36,100
+Y eso nos dar el
+
+37
+00:01:36,100 --> 00:01:38,480
+nombre, el autor y el estado de lectura.
+
+38
+00:01:40,440 --> 00:01:42,440
+Entonces podemos comprometernos.
+
+39
+00:01:43,900 --> 00:01:47,420
+Pero, por supuesto, no hemos escrito nada en nuestra base
+
+40
+00:01:47,420 --> 00:01:50,330
+de datos, acabamos de leer algo de l.
+
+41
+00:01:50,330 --> 00:01:53,160
+Entonces, no hay nada que guardar en el disco.
+
+42
+00:01:53,160 --> 00:01:56,790
+Por lo tanto, no necesitamos comprometernos en este caso.
+
+43
+00:01:57,950 --> 00:02:01,270
+Podemos ir directamente a la conexin. cerca.
+
+44
+00:02:02,670 --> 00:02:07,670
+Ahora, no hemos guardado el resultado de esto en ninguna variable.
+
+45
+00:02:08,870 --> 00:02:10,170
+Entonces, tan pronto como cerremos
+
+46
+00:02:10,170 --> 00:02:12,180
+la conexin, por supuesto, esto se va a
+
+47
+00:02:12,180 --> 00:02:14,390
+perder; no vamos a tener acceso a nuestros libros.
+
+48
+00:02:15,860 --> 00:02:18,120
+Y aqu est la parte interesante o la
+
+49
+00:02:18,120 --> 00:02:19,730
+parte interesante sobre los cursores.
+
+50
+00:02:19,730 --> 00:02:21,180
+Recuerda lo que expliqu sobre
+
+51
+00:02:21,180 --> 00:02:23,030
+los cursores, que son un puntero.
+
+52
+00:02:23,030 --> 00:02:24,630
+Cuando realiza una instruccin de seleccin
+
+53
+00:02:24,630 --> 00:02:27,420
+que comienza en la parte superior de su tabla y
+
+54
+00:02:27,420 --> 00:02:30,950
+luego pasa a la siguiente fila cuando solicita la siguiente fila, y luego
+
+55
+00:02:30,950 --> 00:02:32,310
+pasa a la siguiente, y
+
+56
+00:02:32,310 --> 00:02:35,230
+as sucesivamente, hasta que llega al final de la mesa.
+
+57
+00:02:35,230 --> 00:02:38,950
+Bueno, ahora que hemos ejecutado una consulta con una seleccin, el
+
+58
+00:02:38,950 --> 00:02:42,350
+cursor est en la parte superior de los resultados devueltos.
+
+59
+00:02:42,350 --> 00:02:46,470
+Y queremos bajar una por una, todas las filas, hasta que
+
+60
+00:02:46,470 --> 00:02:48,840
+lleguemos al final de la tabla
+
+61
+00:02:48,840 --> 00:02:50,950
+para recuperar todas nuestras filas.
+
+62
+00:02:52,160 --> 00:02:54,610
+La forma en que hacemos eso
+
+63
+00:02:54,610 --> 00:02:57,220
+es, por ejemplo, lo que decimos: libros,
+
+64
+00:02:57,220 --> 00:02:59,100
+que ahora es nuestra variable
+
+65
+00:03:00,140 --> 00:03:05,140
+de libros, es cursor dot, y observe cmo hay unos pocos mtodos de
+
+66
+00:03:05,570 --> 00:03:07,430
+bsqueda aqu: usted tiene fetchall,
+
+67
+00:03:07,430 --> 00:03:09,754
+y eso le dar todas las
+
+68
+00:03:09,754 --> 00:03:13,290
+filas; fetchmany, y eso toma un argumento aqu, que
+
+69
+00:03:13,290 --> 00:03:15,630
+es cuntas filas quieres recuperar; y
+
+70
+00:03:15,630 --> 00:03:18,670
+fetchone, que le brinda la fila superior de
+
+71
+00:03:18,670 --> 00:03:22,000
+su tabla, de sus resultados establecidos solamente.
+
+72
+00:03:22,000 --> 00:03:24,040
+As que vamos a buscar fetchall.
+
+73
+00:03:24,040 --> 00:03:26,110
+Y recuerde que nuestros resultados sern
+
+74
+00:03:26,110 --> 00:03:29,300
+la tabla completa porque hemos seleccionado * FROM books que
+
+75
+00:03:29,300 --> 00:03:31,110
+nos da todas las columnas, y No sabemos cmo hacer eso
+
+76
+00:03:31,110 --> 00:03:33,560
+no hemos limitado ninguna cantidad de filas. todava; vamos a aprender en un momento.
+
+77
+00:03:33,560 --> 00:03:34,640
+Entonces, esto nos va
+
+78
+00:03:34,640 --> 00:03:36,240
+a dar toda la mesa; cursor. fetchall nos va a dar todas las filas.
+
+79
+00:03:36,240 --> 00:03:38,690
+Si quisieras solo un libro, podras
+
+80
+00:03:38,690 --> 00:03:42,290
+buscar uno, pero eso
+
+81
+00:03:42,290 --> 00:03:45,850
+te dar el mejor libro de tu lista.
+
+82
+00:03:45,850 --> 00:03:46,737
+Ahora bien, cuando
+
+83
+00:03:46,737 --> 00:03:48,910
+hagas fetchall, te dar bsicamente una lista de tuplas.
+
+84
+00:03:50,750 --> 00:03:53,880
+Cada tupla va a tener nombre, autor, estado de
+
+85
+00:03:53,880 --> 00:03:56,990
+lectura, y luego nombre, autor, estado de lectura, etc.
+
+86
+00:03:58,010 --> 00:04:01,890
+Entonces cuando haces fetchall, esencialmente obtienes esta lista aqu.
+
+87
+00:04:01,890 --> 00:04:06,200
+Entonces podemos devolver eso y luego hacer que nuestro programa Solo los traer
+
+88
+00:04:06,200 --> 00:04:09,640
+acceda al elemento zeroth de una tupla, el O podramos convertir de vuelta. Convierta estas tuplas que recibimos en
+
+89
+00:04:10,640 --> 00:04:15,298
+primer elemento de una tupla, el segundo elemento de una tupla. estas tuplas que estamos recibiendo. diccionarios, para que el resto de nuestro programa
+
+90
+00:04:15,298 --> 00:04:19,050
+pueda seguir usndolas como lo hara normalmente.
+
+91
+00:04:19,050 --> 00:04:20,960
+Y creo que esto es lo
+
+92
+00:04:20,960 --> 00:04:25,573
+mejor que puede hacer, solo asegrese de que estamos usando estructuras de datos consistentes.
+
+93
+00:04:25,573 --> 00:04:27,570
+De nuevo, qu hacer es ir a
+
+94
+00:04:27,570 --> 00:04:30,580
+buscarlos todos, pero poner esto en una lista de comprensin.
+
+95
+00:04:30,580 --> 00:04:32,170
+Entonces lo que vamos a hacer
+
+96
+00:04:32,170 --> 00:04:34,790
+en esta lista de comprensin se pone en un diccionario
+
+97
+00:04:34,790 --> 00:04:36,350
+de nombre, ser la fila cero.
+
+98
+00:04:36,350 --> 00:04:39,570
+Observe cmo va a ser el primer elemento de la fila.
+
+99
+00:04:40,600 --> 00:04:43,480
+El autor ser la fila uno,
+
+100
+00:04:43,480 --> 00:04:47,021
+y la lectura ser la fila dos.
+
+101
+00:04:47,021 --> 00:04:49,130
+Y s que las cosas estn desapareciendo
+
+102
+00:04:49,130 --> 00:04:51,880
+del costado de la pantalla, as que recuperlas.
+
+103
+00:04:51,880 --> 00:04:54,990
+Voy a eliminar esto ahora.
+
+104
+00:04:54,990 --> 00:04:57,790
+Y ahora observe cmo tenemos una lista de comprensin que pone
+
+105
+00:04:59,020 --> 00:05:01,330
+un diccionario como el primer valor aqu de nuestra
+
+106
+00:05:01,330 --> 00:05:04,030
+lista de comprensin en esta nueva lista, donde fila es cada
+
+107
+00:05:04,030 --> 00:05:05,980
+uno de los elementos en el cursor. fetchall.
+
+108
+00:05:05,980 --> 00:05:10,020
+Observe que cada uno de los elementos es una tupla.
+
+109
+00:05:10,960 --> 00:05:12,600
+De modo que accedemos a
+
+110
+00:05:14,430 --> 00:05:17,970
+la fila cero como nombre, a la fila uno como autor
+
+111
+00:05:17,970 --> 00:05:20,960
+y a la fila dos como estado de lectura.
+
+112
+00:05:20,960 --> 00:05:24,300
+Con suerte, esto tiene sentido.
+
+113
+00:05:24,300 --> 00:05:28,160
+Al hacer esto, terminaremos con una
+
+114
+00:05:29,092 --> 00:05:31,830
+lista de diccionarios, donde cada diccionario representa nuestro libro.
+
+115
+00:05:31,830 --> 00:05:33,920
+Luego, al final, despus de cerrar la conexin,
+
+116
+00:05:33,920 --> 00:05:35,170
+podemos devolver los libros.
+
+117
+00:05:35,170 --> 00:05:37,930
+Y esa es la lista aqu.
+
+118
+00:05:37,930 --> 00:05:40,030
+Ahora nuestra aplicacin. py que usaba nombre de
+
+119
+00:05:40,030 --> 00:05:43,740
+libro, lectura de libro y autor de libro, no
+
+120
+00:05:43,740 --> 00:05:46,880
+tiene que cambiar en absoluto porque todava est
+
+121
+00:05:46,880 --> 00:05:49,220
+usando un diccionario en segundo plano.
+
+122
+00:05:49,220 --> 00:05:51,430
+A pesar de que nuestra base de
+
+123
+00:05:51,430 --> 00:05:52,680
+datos no devuelve diccionarios,
+
+124
+00:05:54,050 --> 00:05:57,760
+la interfaz que hemos diseado aqu
+
+125
+00:05:57,760 --> 00:06:01,540
+ha mantenido las caractersticas consistentes para que nuestra lgica de negocios, nuestra aplicacin. py, no tiene que cambiar.
+
+126
+00:06:01,540 --> 00:06:02,990
+Y eso es algo realmente bueno de hacer.
+
+127
+00:06:03,830 --> 00:06:08,830
+Ahora que hemos seleccionado todos los libros, podemos ir
+
+128
+00:06:08,860 --> 00:06:11,580
+a ver lo siguiente que
+
+129
+00:06:11,580 --> 00:06:14,260
+est filtrando para libros especficos
+
+130
+00:06:14,260 --> 00:06:17,190
+usando la instruccin where.
+
+131
+00:06:17,190 --> 00:06:20,050
+Veamos eso en el prximo video.
+
+132
+00:06:20,050 --> 00:06:21,900
+&nbsp;
+
+133
+00:06:23,420 --> 00:06:25,600
+&nbsp;
+
+134
+00:06:25,600 --> 00:06:27,860
+&nbsp;
+
+135
+00:06:27,860 --> 00:06:30,400
+&nbsp;
+
+136
+00:06:30,400 --> 00:06:32,100
+&nbsp;
+
+137
+00:06:32,100 --> 00:06:33,950
+&nbsp;
+

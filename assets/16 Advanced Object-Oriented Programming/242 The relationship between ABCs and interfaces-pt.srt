@@ -1,0 +1,468 @@
+1
+00:00:00,200 --> 00:00:01,550
+Jos: Oi bem vindo de volta.
+
+2
+00:00:01,550 --> 00:00:05,460
+Neste vdeo, queria mover essa classe abstrata para o nosso
+
+3
+00:00:05,460 --> 00:00:08,750
+outro cdigo apenas para dar outro exemplo de
+
+4
+00:00:08,750 --> 00:00:10,860
+como isso pode ser til.
+
+5
+00:00:12,020 --> 00:00:15,610
+Indo para o nosso saveable. py lembre-se que ele tem
+
+6
+00:00:15,610 --> 00:00:20,420
+esse mtodo save que chama um to. mtodo dict, mas a
+
+7
+00:00:20,420 --> 00:00:24,210
+classe salvadora no tem esse mtodo definido.
+
+8
+00:00:25,240 --> 00:00:30,240
+No entanto, ele depende de uma subclasse como admin para implementar
+
+9
+00:00:30,370 --> 00:00:32,730
+o to. mtodo dict.
+
+10
+00:00:34,340 --> 00:00:37,470
+Baseando-se na subclasse para implementar o para. O mtodo dict
+
+11
+00:00:37,470 --> 00:00:42,470
+est bem, mas  ainda melhor se voc forar a subclasse
+
+12
+00:00:42,670 --> 00:00:44,500
+a implementar o mtodo.
+
+13
+00:00:44,500 --> 00:00:48,870
+E agora que voc tem mtodos ABC e abstratos, voc pode.
+
+14
+00:00:48,870 --> 00:00:53,470
+Ento vamos em frente e implementar isso usando um ABC.
+
+15
+00:00:53,470 --> 00:00:55,820
+Ento, de abc_import, ABCMeta e abstractmethod
+
+16
+00:00:58,650 --> 00:01:02,780
+e agora podemos definir o para. mtodo dict usando este mtodo
+
+17
+00:01:02,780 --> 00:01:06,150
+abstrato, podemos dizer para. ditar e depois apenas
+
+18
+00:01:08,170 --> 00:01:11,450
+pass-lo, o que significa que no faz nada.
+
+19
+00:01:11,450 --> 00:01:14,830
+Agora isso  feliz porque diz: "Ok, eu posso ver que" h
+
+20
+00:01:14,830 --> 00:01:16,860
+um para. mtodo dict definido. "Mas na
+
+21
+00:01:17,740 --> 00:01:20,230
+verdade no faz nada nesta aula.
+
+22
+00:01:20,230 --> 00:01:23,570
+S faz coisas no para. dict.
+
+23
+00:01:23,570 --> 00:01:25,900
+Todo o propsito do mtodo abstrato
+
+24
+00:01:25,900 --> 00:01:30,540
+ forar a subclasse a implementar o mtodo de que precisa.
+
+25
+00:01:32,650 --> 00:01:36,450
+Novamente, o fato de termos essa classe salvavlica agora
+
+26
+00:01:36,450 --> 00:01:39,930
+significa que admin  uma instncia de salvvel.
+
+27
+00:01:41,100 --> 00:01:43,370
+E isso pode ser muito bom se voc
+
+28
+00:01:43,370 --> 00:01:45,740
+quiser uma lista de coisas que podem ser salvas.
+
+29
+00:01:45,740 --> 00:01:47,930
+Voc pode ento chamar salvar em cada um deles,
+
+30
+00:01:47,930 --> 00:01:49,940
+mesmo que eles no sejam todos objetos administrativos.
+
+31
+00:01:51,120 --> 00:01:53,270
+Se cortarmos o salvvel daqui e
+
+32
+00:01:54,390 --> 00:01:57,160
+o colocarmos no usurio. py, agora o
+
+33
+00:02:03,860 --> 00:02:08,860
+usurio se torna salvvel e admin tambm  economizvel porque
+
+34
+00:02:09,260 --> 00:02:11,610
+ uma subclasse do usurio.
+
+35
+00:02:11,610 --> 00:02:15,280
+Ento, novamente, admin tem um para. dict.
+
+36
+00:02:15,280 --> 00:02:19,370
+Ento, quando dizemos algum objeto administrativo. salve, ele vai ligar
+
+37
+00:02:19,370 --> 00:02:21,980
+para o admin. dict.
+
+38
+00:02:21,980 --> 00:02:24,650
+Se tivermos algum objeto de usurio e chamamos de salvar,
+
+39
+00:02:25,990 --> 00:02:28,750
+ele ligar para o usurio. dict, que no existe,
+
+40
+00:02:28,750 --> 00:02:30,100
+ento temos que implement-lo.
+
+41
+00:02:34,360 --> 00:02:35,580
+Ento  s isso.
+
+42
+00:02:40,310 --> 00:02:43,740
+Agora o usurio tem um para. dict, admin tem um para. dict que
+
+43
+00:02:43,740 --> 00:02:47,611
+o substitui e ambos podem ser salvos
+
+44
+00:02:47,611 --> 00:02:50,260
+usando a classe salvvel.
+
+45
+00:02:51,920 --> 00:02:56,000
+A partir de agora voc pode se referir a saveable como uma interface.
+
+46
+00:02:56,000 --> 00:03:00,700
+By the way, desculpe, eu esqueci de definir essa metaclasse l.
+
+47
+00:03:00,700 --> 00:03:01,720
+Isto  importante,
+
+48
+00:03:01,720 --> 00:03:03,690
+claro, caso contrrio, no faz muito sentido.
+
+49
+00:03:03,690 --> 00:03:06,240
+O Python no conseguir entender o que est acontecendo.
+
+50
+00:03:07,240 --> 00:03:11,740
+To fcil de salvar aqui  uma super classe porque  uma
+
+51
+00:03:11,740 --> 00:03:15,650
+aula abstrata, voc pode ver que  uma aula aqui.
+
+52
+00:03:15,650 --> 00:03:17,450
+Em muitas outras linguagens de
+
+53
+00:03:17,450 --> 00:03:19,780
+programao, isso seria conhecido como uma
+
+54
+00:03:20,880 --> 00:03:23,830
+interface porque define a funcionalidade que deveria estar
+
+55
+00:03:23,830 --> 00:03:25,340
+em uma subclasse.
+
+56
+00:03:25,340 --> 00:03:27,460
+Isso  o que  uma interface.
+
+57
+00:03:27,460 --> 00:03:31,180
+Uma interface no  uma classe que voc pode instanciar.
+
+58
+00:03:31,180 --> 00:03:33,100
+ uma coisa na programao
+
+59
+00:03:33,100 --> 00:03:36,040
+que define o que uma subclasse deve fazer.
+
+60
+00:03:36,940 --> 00:03:40,190
+Ento, nesses termos, e para aderir a essa
+
+61
+00:03:40,190 --> 00:03:45,190
+definio, esta  uma interface, mas porque tem esse mtodo de salvar
+
+62
+00:03:45,210 --> 00:03:49,080
+que  realmente implementado, no podemos dizer que isso
+
+63
+00:03:49,080 --> 00:03:51,600
+ uma interface no sentido tradicional.
+
+64
+00:03:52,610 --> 00:03:56,800
+No entanto, eu gosto bastante dessas citaes nas interfaces do Python.
+
+65
+00:03:56,800 --> 00:03:59,290
+Eu gosto deles porque voc pode defini-los como interfaces.
+
+66
+00:03:59,290 --> 00:04:03,310
+Apenas diga que as subclasses devem implementar o para. mtodo dict.
+
+67
+00:04:03,310 --> 00:04:06,410
+E voc tambm pode adicionar algumas funcionalidades que
+
+68
+00:04:06,410 --> 00:04:10,120
+so compartilhadas entre as subclasses, como este mtodo de salvar.
+
+69
+00:04:10,120 --> 00:04:13,670
+Em Java, por exemplo, voc pode definir interfaces como
+
+70
+00:04:13,670 --> 00:04:17,310
+algo que  separado das classes, coisas completamente diferentes.
+
+71
+00:04:17,310 --> 00:04:20,430
+Ento voc pode definir em Java coisas como essas.
+
+72
+00:04:20,430 --> 00:04:22,760
+A subclasse deve implementar esse mtodo.
+
+73
+00:04:22,760 --> 00:04:25,190
+Mas em Java voc no pode definir ou pelo
+
+74
+00:04:25,190 --> 00:04:28,090
+menos no conseguiu quando eu fiz Java h muito tempo.
+
+75
+00:04:28,090 --> 00:04:30,860
+Voc no pode definir o mtodo salvar.
+
+76
+00:04:30,860 --> 00:04:33,470
+Voc no pode dizer que a
+
+77
+00:04:33,470 --> 00:04:36,170
+subclasse poder fazer isso tambm e implement-la.
+
+78
+00:04:37,140 --> 00:04:41,400
+Portanto,  muito til no Python que essas interfaces possam ter as
+
+79
+00:04:41,400 --> 00:04:43,820
+duas definies do que a subclasse deve
+
+80
+00:04:43,820 --> 00:04:47,160
+ser capaz de fazer, implementar e tambm fornecer algumas
+
+81
+00:04:47,160 --> 00:04:49,710
+funcionalidades que sero compartilhadas entre as subclasses.
+
+82
+00:04:51,090 --> 00:04:54,440
+E  isso que uma interface  em Python.
+
+83
+00:04:54,440 --> 00:04:55,710
+ o mais perto que voc vai conseguir.
+
+84
+00:04:55,710 --> 00:05:00,570
+Voc no tem interfaces definidas como em outras linguagens, como
+
+85
+00:05:00,570 --> 00:05:05,570
+em Java, mas voc tem mtodos abstratos e ABC que
+
+86
+00:05:05,880 --> 00:05:07,760
+permitem forar subclasses a
+
+87
+00:05:07,760 --> 00:05:09,530
+implementar coisas especficas.
+
+88
+00:05:09,530 --> 00:05:11,980
+E ento, claro, se
+
+89
+00:05:11,980 --> 00:05:16,330
+entrarmos em aplicativo e voc tiver alguns usurios.
+
+90
+00:05:21,410 --> 00:05:26,210
+Voc ter que importar usurio, claro.
+
+91
+00:05:26,210 --> 00:05:31,210
+Voc pode, naturalmente, ter uma lista de
+
+92
+00:05:32,640 --> 00:05:37,640
+usurios e, em seguida, salv-los todos assim.
+
+93
+00:05:40,310 --> 00:05:44,400
+Isso  perfeitamente correto porque cada usurio  uma subclasse
+
+94
+00:05:44,400 --> 00:05:47,500
+ou implementa a interface que pode ser salva.
+
+95
+00:05:47,500 --> 00:05:49,420
+Como todos eles implementam a interface,
+
+96
+00:05:49,420 --> 00:05:52,370
+voc sabe que todos eles tero o mtodo save ali.
+
+97
+00:05:53,610 --> 00:05:56,580
+Se voc no tem certeza quando vai usar isso, no
+
+98
+00:05:56,580 --> 00:06:00,690
+se preocupe, o propsito de eu te ensinar sobre esses conceitos avanados em programao
+
+99
+00:06:00,690 --> 00:06:03,650
+orientada a objetos no  para que voc obtenha imediatamente
+
+100
+00:06:03,650 --> 00:06:07,000
+algumas idias sobre o que fazer com eles mas  medida
+
+101
+00:06:07,980 --> 00:06:11,000
+que voc desenvolve mais, talvez quando voc consegue um emprego
+
+102
+00:06:11,000 --> 00:06:14,090
+fazendo desenvolvimento em Python ou talvez j tenha um emprego
+
+103
+00:06:14,090 --> 00:06:16,670
+e trabalhe cada vez mais com o Python, voc
+
+104
+00:06:16,670 --> 00:06:18,620
+se encontrar em uma situao em que
+
+105
+00:06:18,620 --> 00:06:20,660
+essa ser a coisa perfeita para usar.
+
+106
+00:06:20,660 --> 00:06:21,760
+E sabendo
+
+107
+00:06:21,760 --> 00:06:24,830
+disso, voc poder projetar programas muito melhor.
+
+108
+00:06:24,830 --> 00:06:27,750
+Claro, tente, d uma chance, escreva o cdigo,
+
+109
+00:06:27,750 --> 00:06:30,440
+baixe o cdigo que disponibilizei nesta seo e
+
+110
+00:06:30,440 --> 00:06:33,330
+brinque com ele para que voc o internalize.
+
+111
+00:06:33,330 --> 00:06:35,820
+Caso contrrio, alguns meses na linha voc ter esquecido que
+
+112
+00:06:35,820 --> 00:06:38,370
+isso existe e se voc encontrar uma situao onde voc
+
+113
+00:06:38,370 --> 00:06:40,520
+vai precisar disso, voc no vai se lembrar.
+
+114
+00:06:40,520 --> 00:06:43,620
+Ento, certifique-se de brincar com isso e dar uma chance e eu
+
+115
+00:06:43,620 --> 00:06:44,950
+vou v-lo no prximo vdeo.
+
+116
+00:06:44,950 --> 00:06:47,280
+Ns vamos falar sobre outra coisa.
+
+117
+00:06:47,280 --> 00:06:48,230
+Eu te vejo l.
+

@@ -1,0 +1,800 @@
+1
+00:00:00,380 --> 00:00:01,750
+Jos: Hola y bienvenido de nuevo.
+
+2
+00:00:01,750 --> 00:00:05,030
+En este video estamos hablando de valores de retorno.
+
+3
+00:00:05,030 --> 00:00:07,730
+As que djame que te cuente sobre esto que las
+
+4
+00:00:07,730 --> 00:00:09,450
+funciones pueden hacer, que es extremadamente til.
+
+5
+00:00:10,490 --> 00:00:13,820
+La devolucin de valores puede ser un poco confusa al principio.
+
+6
+00:00:13,820 --> 00:00:15,660
+As que vamos a programar juntos y
+
+7
+00:00:15,660 --> 00:00:16,840
+luego jugar con su
+
+8
+00:00:16,840 --> 00:00:18,560
+cdigo para ver qu hacen sus cambios.
+
+9
+00:00:18,560 --> 00:00:20,180
+Eso te ayudar a entender mejor
+
+10
+00:00:20,180 --> 00:00:21,670
+las cosas a medida que avanzamos.
+
+11
+00:00:21,670 --> 00:00:25,860
+Desarrollemos dos funciones, que calculan cinco ms cinco.
+
+12
+00:00:25,860 --> 00:00:27,450
+Vamos a comenzar simple.
+
+13
+00:00:27,450 --> 00:00:29,410
+Una de estas funciones devolver el valor.
+
+14
+00:00:29,410 --> 00:00:31,410
+El otro va a imprimir el valor.
+
+15
+00:00:31,410 --> 00:00:34,010
+De acuerdo, entonces definir una funcin
+
+16
+00:00:34,890 --> 00:00:37,580
+llamada i_return y devolver cinco ms cinco.
+
+17
+00:00:39,070 --> 00:00:40,070
+Est bien y luego
+
+18
+00:00:40,070 --> 00:00:41,620
+voy a definir otra funcin llamada
+
+19
+00:00:43,270 --> 00:00:45,680
+i_print y eso va a imprimir cinco ms cinco.
+
+20
+00:00:46,640 --> 00:00:47,473
+Bueno?
+
+21
+00:00:49,200 --> 00:00:52,120
+Ahora, un par de cosas.
+
+22
+00:00:52,120 --> 00:00:56,480
+Si llamas a i_return y ejecutas este cdigo, puedes
+
+23
+00:00:58,350 --> 00:01:00,910
+ver que no sale nada.
+
+24
+00:01:00,910 --> 00:01:03,040
+Y si llama a i_print y llama a este
+
+25
+00:01:03,040 --> 00:01:04,170
+cdigo, sabe lo que suceder.
+
+26
+00:01:04,170 --> 00:01:07,010
+Sabes que los tiempos 10 van a salir.
+
+27
+00:01:07,010 --> 00:01:08,450
+Tienes tus 10 all.
+
+28
+00:01:08,450 --> 00:01:12,130
+Entonces, la impresin se est comportando como era de esperar.
+
+29
+00:01:12,130 --> 00:01:14,820
+Cuando lo llamas, imprime cosas.
+
+30
+00:01:14,820 --> 00:01:16,720
+Entonces, qu devuelve hacer?
+
+31
+00:01:16,720 --> 00:01:19,950
+Obviamente no est imprimiendo nada en nuestra consola aqu.
+
+32
+00:01:19,950 --> 00:01:22,320
+A nuestra interfaz de texto.
+
+33
+00:01:23,270 --> 00:01:24,880
+Pero est haciendo algo.
+
+34
+00:01:24,880 --> 00:01:27,080
+Entonces, continuemos y creemos dos variables.
+
+35
+00:01:27,990 --> 00:01:29,610
+La primera variable que voy
+
+36
+00:01:29,610 --> 00:01:31,240
+a llamar resultado y ser i_return.
+
+37
+00:01:32,950 --> 00:01:36,780
+Observe cmo aqu estamos llamando a la funcin i_return
+
+38
+00:01:36,780 --> 00:01:39,630
+y cualquier valor que nos d
+
+39
+00:01:39,630 --> 00:01:42,310
+se va a asignar al resultado.
+
+40
+00:01:42,310 --> 00:01:44,960
+Y de manera similar, crear otra
+
+41
+00:01:44,960 --> 00:01:47,260
+variable y la llamar i_print.
+
+42
+00:01:47,260 --> 00:01:49,310
+Aqu llamamos a la funcin i_print, cualquiera
+
+43
+00:01:49,310 --> 00:01:50,970
+que sea el valor que nos
+
+44
+00:01:50,970 --> 00:01:52,510
+da, vamos a asignar a otra.
+
+45
+00:02:03,230 --> 00:02:05,230
+Entonces, qu crees que vamos a ver?
+
+46
+00:02:06,100 --> 00:02:07,270
+Y puede responder esa pregunta
+
+47
+00:02:07,270 --> 00:02:08,880
+simplemente escribiendo este cdigo y ejecutndolo.
+
+48
+00:02:08,880 --> 00:02:10,930
+Esa es la mejor manera de hacerlo.
+
+49
+00:02:14,650 --> 00:02:18,140
+Lo que veremos es que el resultado es 10.
+
+50
+00:02:18,140 --> 00:02:19,680
+Otra es ninguna.
+
+51
+00:02:20,559 --> 00:02:21,970
+Aqu, mralo.
+
+52
+00:02:23,930 --> 00:02:26,770
+El resultado es 10, eso es bueno.
+
+53
+00:02:26,770 --> 00:02:28,890
+Y otro es ninguno.
+
+54
+00:02:28,890 --> 00:02:29,900
+Qu significa eso?
+
+55
+00:02:31,170 --> 00:02:35,630
+Bueno, devolver un valor hace exactamente eso.
+
+56
+00:02:35,630 --> 00:02:38,390
+Le devuelve un valor a la persona que llama.
+
+57
+00:02:38,390 --> 00:02:40,480
+Entonces aqu llamamos a la funcin, se ejecuta
+
+58
+00:02:40,480 --> 00:02:41,640
+a travs de la
+
+59
+00:02:41,640 --> 00:02:43,950
+funcin, en este caso solo hay una lnea.
+
+60
+00:02:43,950 --> 00:02:46,820
+Y luego, cualquier valor que se devuelva,
+
+61
+00:02:46,820 --> 00:02:48,640
+ahora reemplaza la funcin.
+
+62
+00:02:48,640 --> 00:02:51,300
+Entonces ahora esto es 10.
+
+63
+00:02:51,300 --> 00:02:52,950
+Esta funcin ahora es 10.
+
+64
+00:02:53,800 --> 00:02:55,240
+El resultado es igual
+
+65
+00:02:56,570 --> 00:02:58,730
+a 10, i_print, pero no devuelve nada.
+
+66
+00:02:59,920 --> 00:03:01,420
+Simplemente imprime cinco ms cinco,
+
+67
+00:03:01,420 --> 00:03:03,410
+que vimos aqu arriba a la derecha.
+
+68
+00:03:04,370 --> 00:03:09,150
+As que imprimimos 10 pero en realidad no devolvimos nada.
+
+69
+00:03:09,150 --> 00:03:12,640
+Entonces i_print no devuelve ninguno.
+
+70
+00:03:12,640 --> 00:03:15,410
+Lo predeterminado para cualquier funcin
+
+71
+00:03:15,410 --> 00:03:17,800
+en Python es devolver ninguno.
+
+72
+00:03:17,800 --> 00:03:19,830
+Y ninguno es un valor especial en
+
+73
+00:03:19,830 --> 00:03:21,390
+Python, tambin es una palabra clave.
+
+74
+00:03:21,390 --> 00:03:24,210
+Eso simplemente no significa nada, vaco o vaco.
+
+75
+00:03:24,210 --> 00:03:26,550
+Sabes, nada fue devuelto.
+
+76
+00:03:26,550 --> 00:03:28,200
+Fallo al devolver algo
+
+77
+00:03:28,200 --> 00:03:30,640
+Lo siento, mi mal, olvdate del fracaso.
+
+78
+00:03:30,640 --> 00:03:33,180
+Ninguno no es un fracaso.
+
+79
+00:03:33,180 --> 00:03:35,480
+Simplemente significa vaco.
+
+80
+00:03:35,480 --> 00:03:37,960
+Es un valor perfectamente bueno.
+
+81
+00:03:42,640 --> 00:03:45,330
+Otro no es ninguno, lo que significa que
+
+82
+00:03:45,330 --> 00:03:47,030
+la funcin no devolvi nada.
+
+83
+00:03:47,030 --> 00:03:49,320
+Y eso est totalmente bien.
+
+84
+00:03:49,320 --> 00:03:52,190
+Hacer eso est totalmente bien para no devolver
+
+85
+00:03:52,190 --> 00:03:55,110
+nada, si no quieres que tu funcin devuelva algo.
+
+86
+00:03:56,130 --> 00:03:58,750
+Si desea que su
+
+87
+00:03:58,750 --> 00:04:02,140
+funcin imprima algo, puede simplemente llamarlo.
+
+88
+00:04:02,140 --> 00:04:04,780
+No es necesario asignarlo a una variable.
+
+89
+00:04:04,780 --> 00:04:06,770
+Porque eso sera una variable desperdiciada,
+
+90
+00:04:06,770 --> 00:04:08,940
+ya que en realidad no devuelve nada.
+
+91
+00:04:08,940 --> 00:04:10,690
+Pero an puede llamar a
+
+92
+00:04:11,640 --> 00:04:13,840
+la funcin e imprimir su valor.
+
+93
+00:04:17,350 --> 00:04:20,002
+Volvamos all.
+
+94
+00:04:20,002 --> 00:04:22,580
+Ahora, definamos otra funcin que
+
+95
+00:04:23,840 --> 00:04:27,640
+usar una variable y luego la devolver.
+
+96
+00:04:33,475 --> 00:04:36,770
+Entonces tenemos una adicin de cinco ms cinco, eso es 10.
+
+97
+00:04:36,770 --> 00:04:37,603
+No s por qu
+
+98
+00:04:37,603 --> 00:04:39,560
+estoy diciendo eso, estoy bastante seguro de que puedes agregarlo ahora.
+
+99
+00:04:39,560 --> 00:04:41,450
+Especialmente cinco ms cinco.
+
+100
+00:04:41,450 --> 00:04:43,447
+As que ahora vamos a imprimir cinco ms cinco.
+
+101
+00:04:43,447 --> 00:04:46,670
+Vamos a imprimir 10 y vamos a devolver 10.
+
+102
+00:04:47,790 --> 00:04:50,160
+Ahora, esta funcin hace ambas cosas.
+
+103
+00:04:51,640 --> 00:04:53,920
+El resultado es cinco y podemos,
+
+104
+00:04:53,920 --> 00:04:56,260
+un segundo, imprimir el resultado si quisiramos.
+
+105
+00:04:56,260 --> 00:04:59,130
+As que ahora vamos a ver 10 impreso algunas veces.
+
+106
+00:05:00,060 --> 00:05:01,910
+Vemos 10 y luego vemos otros
+
+107
+00:05:01,910 --> 00:05:05,070
+10 porque lo hemos impreso aqu, luego lo hemos devuelto,
+
+108
+00:05:05,070 --> 00:05:07,020
+luego volvemos a bajar aqu.
+
+109
+00:05:07,020 --> 00:05:10,150
+El resultado ahora es 10 e imprimimos.
+
+110
+00:05:10,150 --> 00:05:10,983
+Muy genial.
+
+111
+00:05:12,020 --> 00:05:14,838
+Entonces, muchos estudiantes inicialmente estn bastante confundidos porque
+
+112
+00:05:14,838 --> 00:05:18,520
+la impresin de un valor se lo dice al usuario.
+
+113
+00:05:18,520 --> 00:05:20,590
+Lo muestra en una interfaz de texto.
+
+114
+00:05:21,530 --> 00:05:24,210
+Pero la funcin en realidad no devuelve ninguno.
+
+115
+00:05:24,210 --> 00:05:26,420
+Todas las funciones de Python devuelven ninguna a
+
+116
+00:05:26,420 --> 00:05:28,880
+menos que les diga que hagan lo contrario.
+
+117
+00:05:30,160 --> 00:05:31,170
+Entonces, cuando regresemos, la
+
+118
+00:05:31,170 --> 00:05:33,780
+funcin devuelve el valor a la persona que llama.
+
+119
+00:05:34,640 --> 00:05:36,210
+Bueno?
+
+120
+00:05:36,210 --> 00:05:37,810
+Entonces, algo importante: cuando alcanzas
+
+121
+00:05:38,830 --> 00:05:42,230
+un retorno dentro de una funcin, ese es el final
+
+122
+00:05:42,230 --> 00:05:43,930
+de la funcin, de acuerdo?
+
+123
+00:05:43,930 --> 00:05:46,430
+La funcin deja de funcionar si
+
+124
+00:05:46,430 --> 00:05:50,490
+tiene una devolucin y luego imprime algo aqu, hola.
+
+125
+00:05:50,490 --> 00:05:51,780
+Esto no va a funcionar.
+
+126
+00:05:53,630 --> 00:05:56,740
+Puedes ver que hola nunca se imprime aqu.
+
+127
+00:05:56,740 --> 00:06:01,460
+Porque la funcin ha terminado antes de llegar al saludo.
+
+128
+00:06:01,460 --> 00:06:04,590
+Tan pronto como regrese, ese es el control devuelto
+
+129
+00:06:04,590 --> 00:06:06,850
+a la parte principal del programa.
+
+130
+00:06:06,850 --> 00:06:10,590
+El 10 ahora est reemplazando a cinco, y el resultado ahora es
+
+131
+00:06:10,590 --> 00:06:12,340
+10, y luego continuamos imprimiendo aqu.
+
+132
+00:06:13,670 --> 00:06:14,503
+Bueno?
+
+133
+00:06:16,560 --> 00:06:19,400
+Adems, la variable de adicin que
+
+134
+00:06:19,400 --> 00:06:24,400
+se cre dentro de esta funcin ya no es vlida despus
+
+135
+00:06:24,770 --> 00:06:27,010
+de que la funcin haya regresado.
+
+136
+00:06:28,010 --> 00:06:30,100
+Entonces, si imprimimos la suma aqu,
+
+137
+00:06:31,810 --> 00:06:33,660
+veremos que obtenemos un error, porque
+
+138
+00:06:34,570 --> 00:06:36,070
+la variable de adicin
+
+139
+00:06:36,070 --> 00:06:37,990
+se cre dentro de la funcin.
+
+140
+00:06:37,990 --> 00:06:40,200
+No vive fuera de la funcin.
+
+141
+00:06:40,200 --> 00:06:41,820
+Tan pronto como la
+
+142
+00:06:41,820 --> 00:06:45,000
+funcin finaliza, esa variable se devuelve a Python
+
+143
+00:06:45,000 --> 00:06:47,920
+y se recicla y devuelve a la computadora
+
+144
+00:06:47,920 --> 00:06:49,000
+en algn momento.
+
+145
+00:06:49,000 --> 00:06:51,360
+Y ya no es vlido aqu.
+
+146
+00:06:51,360 --> 00:06:53,370
+Esa es una parte importante de Python, una
+
+147
+00:06:53,370 --> 00:06:54,690
+parte importante de la programacin.
+
+148
+00:06:54,690 --> 00:06:56,350
+Y se llama alcance.
+
+149
+00:06:56,350 --> 00:06:58,400
+Ese es el concepto de alcance.
+
+150
+00:06:58,400 --> 00:07:01,390
+Y se dice que esta variable tiene un alcance de funcin.
+
+151
+00:07:01,390 --> 00:07:03,410
+Solo est vivo dentro de esta funcin.
+
+152
+00:07:07,300 --> 00:07:08,770
+Esa es una distincin
+
+153
+00:07:08,770 --> 00:07:12,760
+importante entre devolver la suma variable, que no es lo
+
+154
+00:07:12,760 --> 00:07:14,010
+que hacemos.
+
+155
+00:07:14,970 --> 00:07:17,220
+Lo que hacemos es devolver el valor de la variable.
+
+156
+00:07:18,740 --> 00:07:20,080
+Esa es una distincin importante.
+
+157
+00:07:20,080 --> 00:07:25,080
+Esta variable es solo un nombre para este cinco ms cinco.
+
+158
+00:07:26,160 --> 00:07:30,060
+Cuando volvemos, estamos diciendo: "Est bien, aqu tienes, 10. "No decimos," Aqu
+
+159
+00:07:30,060 --> 00:07:32,220
+tienes, adems. "La adicin
+
+160
+00:07:32,220 --> 00:07:34,830
+es solo un nombre.
+
+161
+00:07:34,830 --> 00:07:38,020
+Entonces, devolvemos 10 y la suma se pierde.
+
+162
+00:07:38,020 --> 00:07:39,290
+Ahora esto es 10.
+
+163
+00:07:39,290 --> 00:07:41,400
+Esto no es una adicin, esto es 10.
+
+164
+00:07:41,400 --> 00:07:44,360
+El resultado ahora es 10.
+
+165
+00:07:44,360 --> 00:07:46,640
+Esto es importante, ser cada vez ms importante a
+
+166
+00:07:46,640 --> 00:07:49,410
+medida que aprendes ms sobre python y a medida que te desarrollas.
+
+167
+00:07:49,410 --> 00:07:52,650
+Realmente estoy tratando de establecer los cimientos adecuados para ti.
+
+168
+00:07:52,650 --> 00:07:54,870
+En lugar de mentirte y decir: "Oye, s solo
+
+169
+00:07:54,870 --> 00:07:57,920
+devuelve la variable, lo que sea". "El hecho de que
+
+170
+00:07:57,920 --> 00:07:59,010
+devolvamos el valor
+
+171
+00:07:59,010 --> 00:08:00,920
+de la variable es importante.
+
+172
+00:08:02,150 --> 00:08:04,700
+Entonces, como se cre una variable dentro de la
+
+173
+00:08:04,700 --> 00:08:06,480
+funcin, no existe fuera de ella.
+
+174
+00:08:07,860 --> 00:08:12,500
+Y este es el caso para muchos bloques.
+
+175
+00:08:12,500 --> 00:08:15,240
+Y recuerda que el bloque es lo que hay debajo del colon.
+
+176
+00:08:15,240 --> 00:08:17,135
+Tenemos un bloque aqu.
+
+177
+00:08:17,135 --> 00:08:21,530
+En algunos bloques ver que la variable permanece activa despus del
+
+178
+00:08:21,530 --> 00:08:23,290
+final del bloque, pero
+
+179
+00:08:23,290 --> 00:08:27,060
+siempre es una mala idea usar una variable fuera
+
+180
+00:08:27,060 --> 00:08:29,540
+del bloque en el que fue declarada.
+
+181
+00:08:29,540 --> 00:08:32,980
+De acuerdo, generalmente tratando de mantener sus variables
+
+182
+00:08:32,980 --> 00:08:36,480
+solo usadas y definidas dentro del mismo bloque.
+
+183
+00:08:36,480 --> 00:08:39,580
+A menos que el bloque sea un bloque interno.
+
+184
+00:08:39,580 --> 00:08:42,180
+Entonces, si tuvieras una declaracin if aqu,
+
+185
+00:08:43,580 --> 00:08:46,540
+puedes usar la suma aqu, eso est totalmente bien.
+
+186
+00:08:46,540 --> 00:08:49,470
+Porque este bloque est dentro del bloque en
+
+187
+00:08:49,470 --> 00:08:51,620
+el que se defini la variable.
+
+188
+00:08:51,620 --> 00:08:54,790
+De acuerdo, de todos modos hay una razn por la que estoy diciendo eso.
+
+189
+00:08:54,790 --> 00:08:57,160
+Como descubrirs muy pronto.
+
+190
+00:08:58,350 --> 00:08:59,440
+Pero eso es todo por este video.
+
+191
+00:08:59,440 --> 00:09:02,088
+No quiero realmente confundirte por ms tiempo.
+
+192
+00:09:02,088 --> 00:09:05,780
+Lo que hemos aprendido sobre los valores de retorno de las funciones y
+
+193
+00:09:05,780 --> 00:09:08,010
+cmo la impresin y el retorno son diferentes.
+
+194
+00:09:08,010 --> 00:09:10,240
+Y cmo el retorno nos permite
+
+195
+00:09:10,240 --> 00:09:12,110
+entonces esencialmente reemplazar la funcin
+
+196
+00:09:12,110 --> 00:09:14,480
+por el valor que se devolvi.
+
+197
+00:09:14,480 --> 00:09:16,650
+Y luego podemos hacer cosas como asignarlas a
+
+198
+00:09:16,650 --> 00:09:18,160
+variables y cosas por el estilo.
+
+199
+00:09:18,160 --> 00:09:19,430
+As que eso es todo por
+
+200
+00:09:19,430 --> 00:09:21,060
+este video, y nos vemos en el prximo.
+

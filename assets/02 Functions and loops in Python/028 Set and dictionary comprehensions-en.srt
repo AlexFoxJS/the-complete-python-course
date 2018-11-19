@@ -1,0 +1,524 @@
+1
+00:00:00,240 --> 00:00:02,010
+<v Instructor>Hi, and welcome back, in this video,</v>
+
+2
+00:00:02,010 --> 00:00:04,290
+we're continuing with comprehensions and looking
+
+3
+00:00:04,290 --> 00:00:06,750
+at sets and dictionary comprehension.
+
+4
+00:00:08,880 --> 00:00:11,120
+In the last video, we looked at how to do
+
+5
+00:00:11,120 --> 00:00:14,170
+something that is actually really well-suited for sets.
+
+6
+00:00:14,170 --> 00:00:18,730
+We have two lists, we somehow made them match.
+
+7
+00:00:18,730 --> 00:00:19,920
+Then, we build up this comprehension
+
+8
+00:00:19,920 --> 00:00:23,580
+that would calculate the union of them.
+
+9
+00:00:24,820 --> 00:00:28,490
+Now, if you didn't notice this is a prime example for sets,
+
+10
+00:00:29,550 --> 00:00:32,170
+then I'm telling you now, this is a prime example for sets.
+
+11
+00:00:32,170 --> 00:00:34,940
+Let's say we've got our friends, and that's
+
+12
+00:00:34,940 --> 00:00:39,940
+a set of Rolf, Anna, and Charlie, and then we've got
+
+13
+00:00:41,480 --> 00:00:44,160
+our guests, which is gonna be another set.
+
+14
+00:00:46,830 --> 00:00:48,320
+Now, just copy that from my notes
+
+15
+00:00:48,320 --> 00:00:51,110
+'cause I don't want to bore you too much.
+
+16
+00:00:51,110 --> 00:00:56,110
+Of course, if these were uppercase, you would have to have
+
+17
+00:00:56,930 --> 00:01:01,460
+a set comprehension here to turn them into lowercase.
+
+18
+00:01:01,460 --> 00:01:04,080
+The way you would do that is you would say guests
+
+19
+00:01:04,080 --> 00:01:09,080
+lower is name lower for name and guests,
+
+20
+00:01:09,140 --> 00:01:11,974
+exactly the same thing as the set comprehension
+
+21
+00:01:11,974 --> 00:01:14,090
+as the list comprehension.
+
+22
+00:01:14,090 --> 00:01:16,780
+All you do is you replace the square brackets, which tell
+
+23
+00:01:16,780 --> 00:01:20,620
+you it's a list by curly braces, which tells you it's a set.
+
+24
+00:01:20,620 --> 00:01:22,629
+Other than that, exactly the same thing,
+
+25
+00:01:22,629 --> 00:01:27,330
+and all you've got is now this lowercase guest set.
+
+26
+00:01:27,330 --> 00:01:29,180
+Of course, our set is already lowercase
+
+27
+00:01:29,180 --> 00:01:32,404
+because I think you already know how to do that.
+
+28
+00:01:32,404 --> 00:01:35,120
+Now, if you wanted to calculate present friends,
+
+29
+00:01:36,630 --> 00:01:41,090
+you could do name, dot, capitalise
+
+30
+00:01:41,090 --> 00:01:46,090
+for name in guests if name in friends, okay.
+
+31
+00:01:51,390 --> 00:01:56,110
+However, there is an even better way of doing that,
+
+32
+00:01:56,110 --> 00:02:01,110
+which is that present friends is friends union guests.
+
+33
+00:02:04,810 --> 00:02:08,856
+Now, this is, I just clicked my fingers, by the way.
+
+34
+00:02:08,856 --> 00:02:11,630
+That was way too hipster, even for me.
+
+35
+00:02:11,630 --> 00:02:15,270
+This is why guests can be really useful.
+
+36
+00:02:15,270 --> 00:02:17,260
+When you need to calculate when things are matching,
+
+37
+00:02:17,260 --> 00:02:20,360
+or when things are different, sets can be really useful.
+
+38
+00:02:20,360 --> 00:02:24,210
+Of course, this is not going to end up as capitalised names.
+
+39
+00:02:24,210 --> 00:02:26,560
+If you have to capitalise, then you'll have to do
+
+40
+00:02:26,560 --> 00:02:29,890
+name dot capitalised for name in that.
+
+41
+00:02:31,250 --> 00:02:34,050
+See, this gives you the set of both names,
+
+42
+00:02:34,050 --> 00:02:36,040
+and then all you're doing is you're going over them
+
+43
+00:02:36,040 --> 00:02:39,030
+and capitalising them, putting them into a new set,
+
+44
+00:02:39,030 --> 00:02:41,200
+but now you no longer have to check whether one is
+
+45
+00:02:41,200 --> 00:02:43,610
+in the other and so on and so forth.
+
+46
+00:02:43,610 --> 00:02:47,660
+All you do now is you've got the ones that match,
+
+47
+00:02:47,660 --> 00:02:49,650
+and then you can do whatever you want with them.
+
+48
+00:02:53,100 --> 00:02:54,740
+Finally, dictionary comprehension
+
+49
+00:02:54,740 --> 00:02:59,060
+is extremely powerful and is extremely underused.
+
+50
+00:02:59,060 --> 00:03:02,870
+Let's say you've got some names, like for example,
+
+51
+00:03:03,920 --> 00:03:07,500
+Rolf, Anna, and Charlie, and I always resort
+
+52
+00:03:07,500 --> 00:03:09,500
+to these names by the way because I don't really know
+
+53
+00:03:09,500 --> 00:03:12,210
+that many British or English names,
+
+54
+00:03:12,210 --> 00:03:16,890
+and time last seem is going to be 10, 15, and eight.
+
+55
+00:03:17,960 --> 00:03:19,530
+This is pretty similar to that dictionary
+
+56
+00:03:19,530 --> 00:03:23,820
+that we saw earlier where you would have Rolf is 10,
+
+57
+00:03:23,820 --> 00:03:28,820
+Anna is 15, and Charlie at eight.
+
+58
+00:03:31,130 --> 00:03:33,058
+So, we want to construct this dictionary
+
+59
+00:03:33,058 --> 00:03:34,900
+from these two lists.
+
+60
+00:03:37,862 --> 00:03:39,850
+How to do it, pretty straightforward.
+
+61
+00:03:39,850 --> 00:03:43,880
+Friends last seen is equal to, now we're gonna have
+
+62
+00:03:43,880 --> 00:03:47,010
+a set comprehension here, names i
+
+63
+00:03:49,758 --> 00:03:54,758
+time last seen i for i in range len names.
+
+64
+00:03:57,370 --> 00:04:00,560
+Woof, that is some comprehension there.
+
+65
+00:04:02,750 --> 00:04:05,420
+I told you earlier on in the course that a set,
+
+66
+00:04:05,420 --> 00:04:08,010
+rather that the dictionary is just like a set,
+
+67
+00:04:08,010 --> 00:04:10,000
+except instead of good old normal values,
+
+68
+00:04:10,000 --> 00:04:14,090
+you've got values and sort of keys and their values.
+
+69
+00:04:15,230 --> 00:04:17,900
+Same thing with dictionary comprehension.
+
+70
+00:04:17,900 --> 00:04:20,960
+You've just got the colon in the middle, and that tells you
+
+71
+00:04:20,960 --> 00:04:24,260
+that this is a dictionary, and you can put a key value pair
+
+72
+00:04:24,260 --> 00:04:27,570
+inside this dictionary and what you're doing is you're
+
+73
+00:04:27,570 --> 00:04:32,570
+getting the i'th index of the names list and the i'th index
+
+74
+00:04:32,670 --> 00:04:37,670
+of the timeline as seen list and i is each of the numbers
+
+75
+00:04:39,400 --> 00:04:44,220
+in this range, and the range is from zero up to the length
+
+76
+00:04:44,220 --> 00:04:47,140
+of the names list, which is three, so from zero to three
+
+77
+00:04:47,140 --> 00:04:49,800
+not including, that's zero to two including.
+
+78
+00:04:50,650 --> 00:04:52,170
+So, the first time you go through,
+
+79
+00:04:52,170 --> 00:04:56,610
+names zero colon time last seen zero, that's Rolf 10.
+
+80
+00:04:56,610 --> 00:05:00,190
+Second time, Anna 15, third time, Charlie eight.
+
+81
+00:05:02,120 --> 00:05:03,330
+Pretty good.
+
+82
+00:05:04,710 --> 00:05:08,890
+Now, instead of doing that, because this operation is
+
+83
+00:05:08,890 --> 00:05:11,880
+actually so popular, to have two lists and build
+
+84
+00:05:11,880 --> 00:05:14,440
+a dictionary out of them, so you can relate to them,
+
+85
+00:05:14,440 --> 00:05:17,410
+and they are a bit more accessible, there's actually
+
+86
+00:05:17,410 --> 00:05:20,340
+something you can do, which is much better.
+
+87
+00:05:20,340 --> 00:05:22,640
+I'm just telling you this as an extra, not something
+
+88
+00:05:22,640 --> 00:05:25,240
+you really have to know, but it's pretty popular.
+
+89
+00:05:26,220 --> 00:05:29,550
+You can do friends last seen is
+
+90
+00:05:29,550 --> 00:05:34,480
+dict of zip of names and time last seen.
+
+91
+00:05:36,720 --> 00:05:39,610
+Okay, so if you're scratching your head right now,
+
+92
+00:05:39,610 --> 00:05:41,840
+that's good, which means you're paying attention.
+
+93
+00:05:41,840 --> 00:05:45,140
+I'm not expecting you to know what's going on right off
+
+94
+00:05:45,140 --> 00:05:50,140
+the bat, but a challenge for you, what does zip do?
+
+95
+00:05:56,220 --> 00:06:00,350
+Hopefully, you paused the video, and you maybe
+
+96
+00:06:00,350 --> 00:06:03,480
+printed zip out, or maybe you went and googled it.
+
+97
+00:06:03,480 --> 00:06:04,470
+What I'm gonna do is I'm gonna
+
+98
+00:06:04,470 --> 00:06:07,790
+print zip of names and time last seen.
+
+99
+00:06:11,930 --> 00:06:16,040
+You got a zip object, which is not that useful,
+
+100
+00:06:16,040 --> 00:06:19,210
+and that's because Python 3.6 does some funky stuff here,
+
+101
+00:06:19,210 --> 00:06:23,810
+and it shows you exactly the thing that's in the background.
+
+102
+00:06:24,800 --> 00:06:28,450
+Really, what this is doing is it's giving you a list
+
+103
+00:06:28,450 --> 00:06:33,450
+of couples, Rolf and 10, and then Anna and 15,
+
+104
+00:06:38,910 --> 00:06:43,760
+and then Charlie and eight.
+
+105
+00:06:45,010 --> 00:06:48,400
+This is what that zip is doing essentially.
+
+106
+00:06:48,400 --> 00:06:50,660
+I say essentially because we're gonna look later on
+
+107
+00:06:50,660 --> 00:06:52,650
+in the course at what it's actually doing,
+
+108
+00:06:52,650 --> 00:06:55,290
+but this is more or less what it's doing.
+
+109
+00:06:55,290 --> 00:06:59,680
+When you call dict on this, you get a dictionary
+
+110
+00:07:01,980 --> 00:07:06,510
+matching these two together as you can see down here.
+
+111
+00:07:09,090 --> 00:07:14,090
+So, when you do dict of zip of names and time last seen,
+
+112
+00:07:14,740 --> 00:07:19,690
+that gives you a list of couples for each of these elements
+
+113
+00:07:19,690 --> 00:07:24,340
+and then dict runs those couples into key value pairs.
+
+114
+00:07:24,340 --> 00:07:27,610
+If you don't believe me, just print this out
+
+115
+00:07:27,610 --> 00:07:31,230
+and run it, and there you have it.
+
+116
+00:07:32,150 --> 00:07:34,580
+This was just some extra info for you
+
+117
+00:07:34,580 --> 00:07:39,010
+to enjoy and zip is a pretty popular in Python.
+
+118
+00:07:39,010 --> 00:07:42,100
+It was called i zip in Python 2.7, so maybe you know it
+
+119
+00:07:42,100 --> 00:07:44,920
+as that if you've done some Python before, but in Python 3,
+
+120
+00:07:44,920 --> 00:07:47,490
+it's called zip, and it's a really popular thing
+
+121
+00:07:47,490 --> 00:07:50,350
+that you may see around when you look at Python code.
+
+122
+00:07:50,350 --> 00:07:52,760
+Also, if you have multiple lists, and you wanna sort
+
+123
+00:07:52,760 --> 00:07:54,330
+of mash them all together, merge them together
+
+124
+00:07:54,330 --> 00:07:56,610
+into a dictionary, it's a really useful tool.
+
+125
+00:07:57,810 --> 00:07:59,920
+Anyway, that's it for this video.
+
+126
+00:07:59,920 --> 00:08:02,680
+I won't keep you any longer, this was
+
+127
+00:08:02,680 --> 00:08:04,590
+sets and list comprehension, it's just
+
+128
+00:08:04,590 --> 00:08:06,540
+set and dictionary comprehension,
+
+129
+00:08:06,540 --> 00:08:08,530
+just the same as list comprehension,
+
+130
+00:08:08,530 --> 00:08:11,420
+only you have to use curly braces instead.
+
+131
+00:08:11,420 --> 00:08:14,250
+That's it, and I'll see you on the next one.
+

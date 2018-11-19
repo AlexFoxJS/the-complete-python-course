@@ -1,0 +1,412 @@
+1
+00:00:00,120 --> 00:00:01,520
+Jose: Ol e bem vindo de volta.
+
+2
+00:00:01,520 --> 00:00:04,250
+Voc sabia que  bastante trivial ver
+
+3
+00:00:04,250 --> 00:00:08,520
+qual endereo algum est acessando em seu navegador se voc estiver
+
+4
+00:00:08,520 --> 00:00:10,760
+conectado  mesma rede Wi-Fi que
+
+5
+00:00:10,760 --> 00:00:12,110
+algum que est acessando?
+
+6
+00:00:13,400 --> 00:00:15,210
+Ento, se voc estivesse em
+
+7
+00:00:15,210 --> 00:00:18,240
+uma cafeteria e estivesse acessando esta pgina aqui,
+
+8
+00:00:18,240 --> 00:00:19,810
+algum na cafeteria conectada
+
+9
+00:00:19,810 --> 00:00:21,270
+ mesma rede Wi-Fi
+
+10
+00:00:21,270 --> 00:00:25,000
+pode facilmente ver o que voc est acessando.
+
+11
+00:00:26,380 --> 00:00:28,290
+Ento, por que isso  importante?
+
+12
+00:00:28,290 --> 00:00:30,920
+Lembre-se de quando criamos um novo post,
+
+13
+00:00:30,920 --> 00:00:31,970
+o que estamos
+
+14
+00:00:34,200 --> 00:00:35,780
+fazendo  algo assim.
+
+15
+00:00:35,780 --> 00:00:38,950
+Estamos acessando esta pgina / post / create com
+
+16
+00:00:38,950 --> 00:00:41,160
+esses parmetros de string de consulta.
+
+17
+00:00:41,160 --> 00:00:44,100
+Isso tudo faz parte do endereo.
+
+18
+00:00:44,100 --> 00:00:47,580
+Como eu digo,  bem trivial ver essas coisas que
+
+19
+00:00:49,610 --> 00:00:50,560
+voc est acessando
+
+20
+00:00:50,560 --> 00:00:52,570
+quando est conectado  mesma rede.
+
+21
+00:00:52,570 --> 00:00:54,890
+Ento, obviamente, para o ttulo e algum
+
+22
+00:00:54,890 --> 00:00:57,690
+contedo, talvez no importe que algum o leia.
+
+23
+00:00:57,690 --> 00:01:00,560
+Mas digamos que voc est enviando um nome de usurio
+
+24
+00:01:00,560 --> 00:01:02,860
+e uma senha, talvez comece a importar um
+
+25
+00:01:02,860 --> 00:01:06,640
+pouco mais que eles esto sendo enviados desta forma como o endereo, em
+
+26
+00:01:06,640 --> 00:01:09,890
+vez de talvez de uma forma mais oculta e mais segura.
+
+27
+00:01:11,060 --> 00:01:13,960
+Ento, neste vdeo, vamos olhar para essa forma mais oculta
+
+28
+00:01:13,960 --> 00:01:17,060
+e mais segura que  um pouco menos fcil de ver.
+
+29
+00:01:18,490 --> 00:01:23,490
+Vamos at o PyCharm e, em vez de usar o pedido. args, request.
+
+30
+00:01:25,160 --> 00:01:26,430
+args
+
+31
+00:01:26,430 --> 00:01:29,170
+aqui, estaremos acessando uma carga
+
+32
+00:01:29,170 --> 00:01:31,620
+oculta que aparece na solicitao.
+
+33
+00:01:32,520 --> 00:01:37,520
+Essa carga oculta ser chamada de solicitao. forma, tudo bem.
+
+34
+00:01:39,830 --> 00:01:41,550
+O resto permanece o mesmo.
+
+35
+00:01:41,550 --> 00:01:44,530
+Em vez de acessar os parmetros da string de
+
+36
+00:01:44,530 --> 00:01:48,050
+consulta, estaremos acessando a solicitao. dados de formulrio.
+
+37
+00:01:48,050 --> 00:01:49,400
+Estes so alguns dados
+
+38
+00:01:49,400 --> 00:01:53,130
+ocultos que so includos quando voc envia o formulrio usando
+
+39
+00:01:54,140 --> 00:01:57,600
+HTML, mas  claro que o endereo ainda ser esse.
+
+40
+00:01:57,600 --> 00:01:59,510
+Ento, no queremos que o endereo seja assim.
+
+41
+00:01:59,510 --> 00:02:03,740
+Queremos que o formulrio no envie os dados nesse formato.
+
+42
+00:02:03,740 --> 00:02:07,560
+Em vez disso, queremos que o formulrio envie dados como uma carga
+
+43
+00:02:07,560 --> 00:02:09,560
+oculta e isso  bastante simples.
+
+44
+00:02:09,560 --> 00:02:12,130
+Se formos criar. jinja2, tudo o
+
+45
+00:02:12,130 --> 00:02:16,510
+que temos a fazer  dizer que o mtodo  POST.
+
+46
+00:02:17,700 --> 00:02:19,870
+Quando voc faz o mtodo 
+
+47
+00:02:19,870 --> 00:02:22,430
+POST, agora o formulrio vai empacotar essas informaes
+
+48
+00:02:22,430 --> 00:02:25,760
+e ir anex-las a uma carga oculta na solicitao e
+
+49
+00:02:25,760 --> 00:02:27,120
+envi-las por meio disso.
+
+50
+00:02:28,070 --> 00:02:30,090
+Isso porque, de acordo com os
+
+51
+00:02:30,090 --> 00:02:33,430
+padres da Internet, a solicitao GET no pode ter cargas de
+
+52
+00:02:33,430 --> 00:02:35,350
+dados, mas a solicitao POST pode.
+
+53
+00:02:35,350 --> 00:02:36,540
+Ento, quando voc usa
+
+54
+00:02:36,540 --> 00:02:38,720
+o POST, o formulrio anexa os dados
+
+55
+00:02:38,720 --> 00:02:42,200
+a essa carga ao invs de coloc-los na barra de endereos.
+
+56
+00:02:42,200 --> 00:02:43,630
+Existem alguns outros benefcios, como
+
+57
+00:02:43,630 --> 00:02:46,580
+a quantidade de informaes que voc pode enviar  muito maior.
+
+58
+00:02:46,580 --> 00:02:49,660
+H um limite para o nmero de caracteres em um
+
+59
+00:02:49,660 --> 00:02:51,730
+URL, portanto, se voc anex-lo usando o
+
+60
+00:02:51,730 --> 00:02:54,880
+POST, poder enviar muito mais dados, dados muito mais longos
+
+61
+00:02:54,880 --> 00:02:56,220
+e tambm mais seguros.
+
+62
+00:02:57,510 --> 00:03:01,580
+Este endpoint aqui, porm, est preparado
+
+63
+00:03:01,580 --> 00:03:04,910
+apenas para aceitar pedidos GET.
+
+64
+00:03:04,910 --> 00:03:06,890
+Se voc quiser aceitar uma
+
+65
+00:03:06,890 --> 00:03:09,460
+solicitao POST com essa carga oculta
+
+66
+00:03:09,460 --> 00:03:13,910
+de dados, dever informar ao Flask que deseja vincular esse aplicativo
+
+67
+00:03:13,910 --> 00:03:16,990
+raiz a uma maneira de acessar solicitaes POST.
+
+68
+00:03:16,990 --> 00:03:18,640
+Isso  realmente simples.
+
+69
+00:03:18,640 --> 00:03:23,640
+Tudo o que voc precisa fazer  dizer que os mtodos so iguais a essa
+
+70
+00:03:24,790 --> 00:03:27,420
+lista aqui com a string POST dentro dela.
+
+71
+00:03:27,420 --> 00:03:28,790
+Agora, o que fizemos
+
+72
+00:03:28,790 --> 00:03:33,180
+foi dizer ao Flask que essa raiz aqui s receber solicitaes POST.
+
+73
+00:03:33,180 --> 00:03:35,210
+Se voc tentar acess-lo com uma solicitao
+
+74
+00:03:35,210 --> 00:03:37,020
+GET, receber um erro e dir: "Ei,
+
+75
+00:03:37,020 --> 00:03:38,910
+voc no disse que queria acessar isso"
+
+76
+00:03:38,910 --> 00:03:39,750
+com solicitaes GET.
+
+77
+00:03:39,750 --> 00:03:41,570
+"Voc s pode fazer solicitaes POST. " E
+
+78
+00:03:42,784 --> 00:03:43,660
+ isso.
+
+79
+00:03:43,660 --> 00:03:46,940
+Agora, quando executarmos nosso aplicativo e voltarmos
+
+80
+00:03:46,940 --> 00:03:51,820
+ao Chrome e formos criar, mostrarei o formulrio, veja o
+
+81
+00:03:51,820 --> 00:03:53,040
+que voc obtm
+
+82
+00:03:53,040 --> 00:03:53,900
+se acess-lo
+
+83
+00:03:53,900 --> 00:03:56,140
+usando uma solicitao GET.
+
+84
+00:03:56,140 --> 00:03:57,270
+Se voc passar
+
+85
+00:03:57,270 --> 00:04:02,270
+para o formulrio, voc ver este e meu segundo post, oi, e quando voc
+
+86
+00:04:02,620 --> 00:04:03,980
+enviar, voc voltar aqui
+
+87
+00:04:05,050 --> 00:04:08,300
+e tudo funciona e eu prometo a voc, mesmo
+
+88
+00:04:08,300 --> 00:04:10,570
+que seja muito rpido para ns
+
+89
+00:04:10,570 --> 00:04:14,220
+vermos, nada foi enviado como parmetros de string de consulta.
+
+90
+00:04:14,220 --> 00:04:17,900
+Ento, agora podemos excluir isso de l.
+
+91
+00:04:17,900 --> 00:04:19,440
+Nada foi enviado como parmetros de string de consulta.
+
+92
+00:04:19,440 --> 00:04:22,380
+Agora eles esto sendo enviados, como voc pode ver aqui nos
+
+93
+00:04:22,380 --> 00:04:25,420
+logs, como uma solicitao POST em vez de uma solicitao GET
+
+94
+00:04:25,420 --> 00:04:27,680
+e os dados do formulrio esto ocultos nela.
+
+95
+00:04:28,920 --> 00:04:30,070
+Um pouco mais seguro, mas
+
+96
+00:04:30,070 --> 00:04:32,390
+ claro que ainda h mais implicaes de segurana nas
+
+97
+00:04:32,390 --> 00:04:33,223
+quais voc deve pensar.
+
+98
+00:04:33,223 --> 00:04:35,930
+Apenas enviar coisas via POST no  seguro o suficiente.
+
+99
+00:04:35,930 --> 00:04:39,310
+Apenas um pouco melhor do que envi-los via GET.
+
+100
+00:04:40,510 --> 00:04:41,343
+ isso para este vdeo.
+
+101
+00:04:41,343 --> 00:04:43,100
+Eu queria te mostrar como
+
+102
+00:04:43,100 --> 00:04:46,150
+fazer isso, acessar coisas no formulrio  muito til.
+
+103
+00:04:46,150 --> 00:04:47,750
+Ento eu vou te ver no prximo.
+

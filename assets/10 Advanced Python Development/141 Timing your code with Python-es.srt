@@ -1,0 +1,1048 @@
+1
+00:00:00,480 --> 00:00:02,120
+Jos: Hola y bienvenido de nuevo.
+
+2
+00:00:02,120 --> 00:00:04,760
+Adems del mdulo de fecha y hora, que se utiliza
+
+3
+00:00:04,760 --> 00:00:07,400
+para tratar objetos que contienen tanto la fecha como la
+
+4
+00:00:07,400 --> 00:00:11,100
+hora, tambin tenemos un mdulo de fecha y un mdulo de tiempo separado.
+
+5
+00:00:11,100 --> 00:00:14,330
+Estn acostumbrados a tratar fechas y horas por separado.
+
+6
+00:00:14,330 --> 00:00:15,510
+En este video,
+
+7
+00:00:15,510 --> 00:00:17,410
+veremos cmo sincronizar sus funciones.
+
+8
+00:00:17,410 --> 00:00:20,823
+Cunto tardan en ejecutarse utilizando el mdulo de tiempo.
+
+9
+00:00:22,180 --> 00:00:24,260
+Entonces, cmo va a funcionar?
+
+10
+00:00:24,260 --> 00:00:26,580
+Bueno, va a ser muy directo.
+
+11
+00:00:26,580 --> 00:00:30,330
+Antes de ejecutar el cdigo que queremos cronometrar,
+
+12
+00:00:30,330 --> 00:00:33,070
+vamos a ver la hora actual.
+
+13
+00:00:33,070 --> 00:00:36,210
+Despus de ejecutar el cdigo, tambin veremos el tiempo actual,
+
+14
+00:00:36,210 --> 00:00:39,570
+que ser de unos pocos segundos o algunos milisegundos ms tarde.
+
+15
+00:00:39,570 --> 00:00:41,510
+Y luego restamos uno del otro y
+
+16
+00:00:41,510 --> 00:00:42,950
+eso nos dar la diferencia
+
+17
+00:00:42,950 --> 00:00:45,440
+entre la hora actual al comienzo y la hora
+
+18
+00:00:45,440 --> 00:00:47,340
+actual al final, y eso nos dir
+
+19
+00:00:47,340 --> 00:00:49,343
+cunto tard el cdigo en ejecutarse.
+
+20
+00:00:50,260 --> 00:00:52,220
+Por qu podra ser til?
+
+21
+00:00:52,220 --> 00:00:55,990
+A veces, no sabrs si usar un cdigo especfico u
+
+22
+00:00:55,990 --> 00:00:57,820
+otra cosa porque no sabes
+
+23
+00:00:57,820 --> 00:01:00,860
+cul es ms rpido si ambos hacen lo mismo.
+
+24
+00:01:00,860 --> 00:01:03,430
+Por ejemplo, debera usar listas de
+
+25
+00:01:03,430 --> 00:01:05,440
+comprensin o lista y Mapa?
+
+26
+00:01:05,440 --> 00:01:07,230
+Vamos a ver eso en este video.
+
+27
+00:01:07,230 --> 00:01:08,270
+Echemos un vistazo a un ejemplo.
+
+28
+00:01:08,270 --> 00:01:11,940
+Lo primero que vamos a hacer es importar el mdulo de tiempo.
+
+29
+00:01:11,940 --> 00:01:14,420
+Esto tiene un conjunto de funciones que puedes
+
+30
+00:01:14,420 --> 00:01:16,043
+usar para lidiar con los tiempos.
+
+31
+00:01:16,950 --> 00:01:18,720
+Y ahora vamos a llegar a una
+
+32
+00:01:18,720 --> 00:01:20,170
+funcin que tendremos en cuenta.
+
+33
+00:01:20,170 --> 00:01:22,950
+Veremos cunto tarda en ejecutarse.
+
+34
+00:01:22,950 --> 00:01:27,510
+Va a ser una funcin simple que se llama poderes y toma
+
+35
+00:01:27,510 --> 00:01:29,770
+en un solo argumento que va
+
+36
+00:01:29,770 --> 00:01:32,890
+a ser un nmero y luego devuelve una
+
+37
+00:01:32,890 --> 00:01:36,310
+simple lista de comprensin que hace algo como esto.
+
+38
+00:01:36,310 --> 00:01:41,310
+Entonces te da una nueva lista donde x est dentro del lmite de rango.
+
+39
+00:01:41,360 --> 00:01:45,030
+As que va desde cero hasta cualquier nmero que le demos
+
+40
+00:01:45,030 --> 00:01:48,123
+y cada nmero se convierte en la potencia de dos.
+
+41
+00:01:48,970 --> 00:01:51,580
+As que solo le da un poco de clculo all.
+
+42
+00:01:51,580 --> 00:01:54,060
+Es una operacin bastante rpida, es realmente rpida.
+
+43
+00:01:54,060 --> 00:01:56,393
+Pero podemos ver cunto tiempo lleva.
+
+44
+00:01:57,860 --> 00:01:59,380
+Bueno.
+
+45
+00:01:59,380 --> 00:02:02,220
+Ahora, para mostrarte exactamente cmo
+
+46
+00:02:02,220 --> 00:02:06,680
+funciona esto, lo vamos a imprimir solo para que
+
+47
+00:02:06,680 --> 00:02:08,240
+sepas qu hace.
+
+48
+00:02:08,240 --> 00:02:10,750
+Puedes ver aqu, comienza en cero.
+
+49
+00:02:10,750 --> 00:02:13,770
+Cero a la potencia de dos es cero, luego va a uno.
+
+50
+00:02:13,770 --> 00:02:15,953
+Uno para el poder de dos es uno.
+
+51
+00:02:15,953 --> 00:02:18,620
+Dos para el poder de dos son cuatro.
+
+52
+00:02:18,620 --> 00:02:19,860
+Tres para el poder de dos es nueve.
+
+53
+00:02:19,860 --> 00:02:20,723
+Etctera.
+
+54
+00:02:21,980 --> 00:02:22,813
+Bueno.
+
+55
+00:02:23,910 --> 00:02:27,000
+Ahora, comencemos cronometrando esta funcin.
+
+56
+00:02:27,000 --> 00:02:30,610
+Lo primero que debe hacer es obtener la hora actual
+
+57
+00:02:30,610 --> 00:02:32,610
+antes de ejecutar la funcin.
+
+58
+00:02:32,610 --> 00:02:35,760
+As que ten en cuenta que aqu en la lnea seis, todava no
+
+59
+00:02:35,760 --> 00:02:36,593
+ejecuta la funcin.
+
+60
+00:02:36,593 --> 00:02:37,920
+Solo lo hemos definido.
+
+61
+00:02:37,920 --> 00:02:39,540
+Entonces, qu vamos a hacer, vamos a
+
+62
+00:02:39,540 --> 00:02:41,623
+decir que el inicio es hora punto tiempo.
+
+63
+00:02:42,500 --> 00:02:47,500
+Time dot time es, as el mdulo de tiempo y el tiempo
+
+64
+00:02:48,270 --> 00:02:51,630
+de funcin dentro de ese mdulo le da
+
+65
+00:02:52,949 --> 00:02:57,949
+la hora actual en el, bien, le da la hora actual desde 1970.
+
+66
+00:02:58,280 --> 00:03:01,190
+Por lo tanto, le da la cantidad de
+
+67
+00:03:01,190 --> 00:03:06,190
+segundos que han pasado desde 1970 y de esa manera puede verlo potencialmente si
+
+68
+00:03:06,970 --> 00:03:08,333
+fuera la hora actual.
+
+69
+00:03:10,340 --> 00:03:13,170
+Ahora te da en segundos pero
+
+70
+00:03:13,170 --> 00:03:17,070
+tambin incluye muchos lugares decimales para darte suficiente precisin.
+
+71
+00:03:17,070 --> 00:03:19,440
+Entonces, si esto tomara solo un par de
+
+72
+00:03:19,440 --> 00:03:22,310
+milisegundos o un par de nanosegundos, an lo sabras.
+
+73
+00:03:22,310 --> 00:03:25,070
+Esta es la hora actual al comienzo.
+
+74
+00:03:25,070 --> 00:03:30,070
+Entonces vamos a hacer poderes de, digamos, 50,000, 500,000.
+
+75
+00:03:31,207 --> 00:03:33,313
+500,000, vamos 500,000.
+
+76
+00:03:35,110 --> 00:03:38,603
+Y luego vamos a calcular el tiempo final.
+
+77
+00:03:40,408 --> 00:03:43,577
+Lo que puedes ver es exactamente lo mismo, pero es
+
+78
+00:03:44,550 --> 00:03:47,770
+despus de que la funcin se haya ejecutado, as que
+
+79
+00:03:47,770 --> 00:03:51,300
+bsicamente nos da tiempo, y luego vamos a ver el tiempo
+
+80
+00:03:51,300 --> 00:03:54,010
+final despus de que eso haya sucedido.
+
+81
+00:03:54,010 --> 00:03:57,450
+Porque recuerda que estas declaraciones ocurren una despus de la otra.
+
+82
+00:03:57,450 --> 00:04:00,920
+Y luego vamos a imprimir, terminar menos comenzar.
+
+83
+00:04:00,920 --> 00:04:02,764
+Fin va a ser el nmero ms grande.
+
+84
+00:04:02,764 --> 00:04:06,130
+Esa es la cantidad de segundos pasados desde 1970.
+
+85
+00:04:06,130 --> 00:04:08,200
+El inicio es realmente el nmero ms pequeo
+
+86
+00:04:08,200 --> 00:04:10,310
+porque ocurri antes, por lo que esto nos
+
+87
+00:04:10,310 --> 00:04:13,604
+dar un nmero positivo, que es la diferencia entre el final y el comienzo.
+
+88
+00:04:13,604 --> 00:04:16,230
+Existe la cantidad de segundos o milisegundos que
+
+89
+00:04:16,230 --> 00:04:18,073
+esta funcin tom aqu para ejecutarse.
+
+90
+00:04:19,180 --> 00:04:20,130
+Bueno.
+
+91
+00:04:20,130 --> 00:04:22,880
+Me doy cuenta de que mis notas en realidad tienen uno menos cero.
+
+92
+00:04:22,880 --> 00:04:25,210
+Probmoslo con uno menos cero all en
+
+93
+00:04:25,210 --> 00:04:27,603
+caso de que esperemos aqu durante mucho tiempo.
+
+94
+00:04:29,110 --> 00:04:31,060
+S, eso fue un buen grito, creo.
+
+95
+00:04:31,060 --> 00:04:34,390
+Como puede ver, le toma un poco de tiempo
+
+96
+00:04:34,390 --> 00:04:36,340
+intentarlo y all lo tiene.
+
+97
+00:04:36,340 --> 00:04:39,163
+Seis punto siete nueve segundos.
+
+98
+00:04:40,160 --> 00:04:43,380
+Entonces, ya sabes, eso te dice cunto tiempo tardo en
+
+99
+00:04:43,380 --> 00:04:44,793
+ejecutar esta lista de comprensin.
+
+100
+00:04:45,640 --> 00:04:48,660
+Adems de, ya sabes, llamar a la funcin y dems.
+
+101
+00:04:48,660 --> 00:04:52,710
+Podra ser unos pocos nano segundos ms corto si no
+
+102
+00:04:52,710 --> 00:04:54,060
+tuviramos una funcin.
+
+103
+00:04:54,060 --> 00:04:57,520
+Si hiciramos esto aqu, pero ya sabes, todo lleva un poco de
+
+104
+00:04:57,520 --> 00:04:59,410
+tiempo en Python y en cualquier lenguaje
+
+105
+00:04:59,410 --> 00:05:01,150
+de programacin, y eso es algo
+
+106
+00:05:01,150 --> 00:05:02,950
+con lo que tenemos que lidiar.
+
+107
+00:05:04,300 --> 00:05:06,670
+Ahora, as es como sincronizas tu cdigo, pero
+
+108
+00:05:06,670 --> 00:05:10,250
+por supuesto, agregar este tiempo de inicio y finalizacin antes y despus
+
+109
+00:05:10,250 --> 00:05:12,470
+de cada fragmento de cdigo que quieras cronometrar,
+
+110
+00:05:12,470 --> 00:05:13,840
+puede ser un poco engorroso.
+
+111
+00:05:13,840 --> 00:05:16,940
+Entonces, en cambio, podemos convertirlo en una funcin.
+
+112
+00:05:16,940 --> 00:05:20,550
+Podemos convertir esto aqu, la medicin del tiempo de inicio y la medicin en
+
+113
+00:05:20,550 --> 00:05:22,930
+el tiempo de finalizacin en una especie de funcin
+
+114
+00:05:22,930 --> 00:05:24,600
+de tiempo de ejecucin de medida.
+
+115
+00:05:24,600 --> 00:05:27,230
+Eso es lo que vamos a hacer aqu.
+
+116
+00:05:27,230 --> 00:05:32,030
+Donde digo medida de tiempo de ejecucin y que va
+
+117
+00:05:32,030 --> 00:05:35,090
+a tomar otra funcin que queremos medir.
+
+118
+00:05:35,090 --> 00:05:36,690
+Bueno.
+
+119
+00:05:36,690 --> 00:05:39,210
+Y en esto, vamos a comenzar mirando la
+
+120
+00:05:39,210 --> 00:05:41,340
+hora actual, luego vamos a ejecutar la
+
+121
+00:05:41,340 --> 00:05:44,370
+funcin y luego vamos a ver la hora del final.
+
+122
+00:05:44,370 --> 00:05:47,223
+Y luego vamos a imprimir el final menos el inicio.
+
+123
+00:05:48,470 --> 00:05:49,303
+Bueno.
+
+124
+00:05:49,303 --> 00:05:52,050
+Bsicamente, estamos tomando todo esto y es
+
+125
+00:05:52,050 --> 00:05:55,600
+lo mismo que tenemos aqu, excepto que ahora es
+
+126
+00:05:55,600 --> 00:05:59,650
+un poco ms genrico porque podemos pasar cualquier funcin que queramos.
+
+127
+00:05:59,650 --> 00:06:00,900
+Bueno.
+
+128
+00:06:00,900 --> 00:06:03,020
+Y la funcin que vamos a pasar
+
+129
+00:06:03,020 --> 00:06:06,450
+ahora, vamos a decir medir el tiempo de ejecucin de los
+
+130
+00:06:08,140 --> 00:06:09,297
+poderes lambda 50,000, 500,000.
+
+131
+00:06:09,297 --> 00:06:10,913
+500,000 es correcto
+
+132
+00:06:11,940 --> 00:06:12,773
+Bueno.
+
+133
+00:06:12,773 --> 00:06:16,070
+As que hemos definido una funcin de tierra y
+
+134
+00:06:16,070 --> 00:06:19,070
+cuando llamas a esta funcin, ejecutar la funcin
+
+135
+00:06:19,070 --> 00:06:21,100
+de poderes con un nmero dado.
+
+136
+00:06:21,100 --> 00:06:22,440
+Tenga en cuenta que hemos tenido que hacerlo
+
+137
+00:06:22,440 --> 00:06:23,530
+de esta manera, pasando una funcin lambda.
+
+138
+00:06:23,530 --> 00:06:26,070
+No podemos pasar la funcin de poderes
+
+139
+00:06:26,070 --> 00:06:28,160
+all, aunque sera bueno porque entonces
+
+140
+00:06:28,160 --> 00:06:31,490
+no tenemos forma de pasar el argumento que necesita.
+
+141
+00:06:31,490 --> 00:06:33,520
+Entonces la funcin lambda nos permite hacer eso.
+
+142
+00:06:33,520 --> 00:06:37,000
+Ahora crea una funcin que no tiene argumentos pero llama
+
+143
+00:06:37,000 --> 00:06:39,580
+a otra funcin que s tiene argumentos.
+
+144
+00:06:39,580 --> 00:06:42,790
+Es solo una manera ms fcil de hacer esto aqu.
+
+145
+00:06:42,790 --> 00:06:46,473
+Nuevamente, si ejecutamos eso, lo tenemos aqu.
+
+146
+00:06:48,140 --> 00:06:50,820
+Creo que me he perdido; Creo que tenemos un cero
+
+147
+00:06:50,820 --> 00:06:51,710
+o ms antes.
+
+148
+00:06:51,710 --> 00:06:54,220
+Es por eso que tom mucho menos tiempo.
+
+149
+00:06:54,220 --> 00:06:55,200
+Pero est bien.
+
+150
+00:06:55,200 --> 00:06:56,860
+Si agregamos uno ms.
+
+151
+00:06:56,860 --> 00:06:59,950
+Tardar seis segundos y siete segundos, alrededor
+
+152
+00:06:59,950 --> 00:07:00,993
+de seis segundos.
+
+153
+00:07:05,840 --> 00:07:06,673
+Aqu vamos.
+
+154
+00:07:06,673 --> 00:07:07,632
+Siete punto cuatro.
+
+155
+00:07:07,632 --> 00:07:09,730
+Este es solo el final de la carga que
+
+156
+00:07:09,730 --> 00:07:13,310
+actualmente se replica, la cantidad de energa que pueden dar a nuestro programa en comparacin con
+
+157
+00:07:13,310 --> 00:07:14,730
+los programas de otras personas que
+
+158
+00:07:14,730 --> 00:07:16,230
+tambin se estn ejecutando al mismo tiempo.
+
+159
+00:07:17,340 --> 00:07:18,173
+Bueno.
+
+160
+00:07:19,520 --> 00:07:23,250
+As que, como un pequeo aparte aqu, esta funcin de
+
+161
+00:07:23,250 --> 00:07:28,250
+tiempo de ejecucin de medicin es, por supuesto, un decorador o una funcin
+
+162
+00:07:28,300 --> 00:07:33,300
+de orden superior y la funcin de potencias aqu es una funcin de
+
+163
+00:07:34,450 --> 00:07:37,160
+primera clase porque la estamos pasando o
+
+164
+00:07:37,160 --> 00:07:39,023
+podramos pasarla como una argumento.
+
+165
+00:07:40,411 --> 00:07:41,658
+Bueno.
+
+166
+00:07:41,658 --> 00:07:45,940
+Ahora, si solo quisiramos sincronizar la ejecucin de fragmentos de cdigos
+
+167
+00:07:45,940 --> 00:07:49,070
+pequeos, podemos examinar un mdulo separado que es
+
+168
+00:07:49,070 --> 00:07:51,003
+el mdulo de tiempo.
+
+169
+00:07:51,880 --> 00:07:52,900
+Bueno.
+
+170
+00:07:52,900 --> 00:07:56,630
+As que vamos a importar el tiempo aqu y voy
+
+171
+00:07:56,630 --> 00:07:58,860
+a disminuir este cero nuevamente para
+
+172
+00:07:58,860 --> 00:08:00,820
+no tener que esperar demasiado.
+
+173
+00:08:00,820 --> 00:08:05,710
+Tenemos el mdulo timeit y el mdulo timeit tiene una funcin
+
+174
+00:08:05,710 --> 00:08:08,700
+timeit dentro de la cual se puede
+
+175
+00:08:08,700 --> 00:08:13,700
+pasar una cadena y esta cadena tiene que ser una declaracin de
+
+176
+00:08:13,713 --> 00:08:16,590
+Python a la que se quiere hora.
+
+177
+00:08:16,590 --> 00:08:19,963
+Por ejemplo, podemos tomar esto aqu.
+
+178
+00:08:22,300 --> 00:08:25,450
+En lugar de lmite, pasaremos diez y luego
+
+179
+00:08:25,450 --> 00:08:28,033
+te dir cunto tiempo lleva correr.
+
+180
+00:08:29,460 --> 00:08:32,010
+Por lo tanto, puede ser bastante til tambin.
+
+181
+00:08:32,010 --> 00:08:37,010
+Ahora si ejecutamos esto aqu, puede ver que no
+
+182
+00:08:37,370 --> 00:08:39,180
+es instantneo, verdad?
+
+183
+00:08:39,180 --> 00:08:41,360
+Todava se est cargando aunque el rango solo
+
+184
+00:08:41,360 --> 00:08:42,193
+llega a diez.
+
+185
+00:08:43,030 --> 00:08:45,620
+Esto se debe a que la funcin timeit
+
+186
+00:08:45,620 --> 00:08:49,440
+en realidad se ejecuta de esta manera muchas veces y luego le
+
+187
+00:08:49,440 --> 00:08:52,063
+da el total necesario para hacer muchas iteraciones.
+
+188
+00:08:53,020 --> 00:08:56,210
+Por lo tanto, puede ser til porque ahora tiene
+
+189
+00:08:56,210 --> 00:09:00,290
+una declaracin aqu que no tardar mucho tiempo en ejecutarse, pero
+
+190
+00:09:00,290 --> 00:09:02,830
+el mdulo de tiempo le indica una
+
+191
+00:09:02,830 --> 00:09:05,150
+especie de promedio o total en muchas
+
+192
+00:09:05,150 --> 00:09:06,530
+iteraciones, cunto tiempo tomar.
+
+193
+00:09:06,530 --> 00:09:09,840
+Y eso es precisamente porque si solo lo ejecuta
+
+194
+00:09:09,840 --> 00:09:12,380
+una vez y desea compararlo con otra
+
+195
+00:09:12,380 --> 00:09:17,227
+cosa, por ejemplo, diga el tiempo de la lista de mapa lambda x,
+
+196
+00:09:19,910 --> 00:09:22,453
+x a la potencia de dos rangos,
+
+197
+00:09:25,920 --> 00:09:26,753
+ah vamos.
+
+198
+00:09:27,670 --> 00:09:30,030
+Digamos que quera comparar estos dos.
+
+199
+00:09:30,030 --> 00:09:34,680
+Si no estuvieras simplemente comparando esta afirmacin con un rango de
+
+200
+00:09:34,680 --> 00:09:37,460
+diez contra esta a un rango de
+
+201
+00:09:37,460 --> 00:09:39,450
+diez, ambos tomarn tan poco
+
+202
+00:09:39,450 --> 00:09:42,480
+tiempo cero punto cero cero cero cero
+
+203
+00:09:42,480 --> 00:09:44,900
+cero segundos que realmente no vas
+
+204
+00:09:44,900 --> 00:09:48,143
+a tener una muy buena comparacin all.
+
+205
+00:09:49,160 --> 00:09:53,160
+Entonces, al comparar entre muchos miles de iteraciones,
+
+206
+00:09:53,160 --> 00:09:56,080
+obtienes una comparacin ligeramente mejor.
+
+207
+00:09:56,080 --> 00:09:57,130
+Corramos eso de nuevo.
+
+208
+00:10:00,580 --> 00:10:02,730
+Por cierto, recuerda que esto es bastante
+
+209
+00:10:02,730 --> 00:10:05,820
+lento porque replicar no es una plataforma muy rpida.
+
+210
+00:10:05,820 --> 00:10:07,080
+No es para el rendimiento.
+
+211
+00:10:07,080 --> 00:10:09,530
+Est destinado a la funcionalidad que le permite ejecutar
+
+212
+00:10:09,530 --> 00:10:10,780
+este cdigo en la nube.
+
+213
+00:10:10,780 --> 00:10:12,310
+Entonces, si ejecuta esto en su computadora, es
+
+214
+00:10:12,310 --> 00:10:13,510
+probable que sea mucho ms rpido.
+
+215
+00:10:15,800 --> 00:10:19,690
+Pero veremos cul es mejor y probablemente descubramos que van a
+
+216
+00:10:19,690 --> 00:10:20,880
+estar ms o
+
+217
+00:10:20,880 --> 00:10:22,410
+menos igual, tal vez
+
+218
+00:10:22,410 --> 00:10:24,910
+incluso Map ser un poco ms lento.
+
+219
+00:10:27,770 --> 00:10:28,980
+S, all lo tienes.
+
+220
+00:10:28,980 --> 00:10:31,700
+El mapa es un poco ms lento porque tienes
+
+221
+00:10:31,700 --> 00:10:34,280
+que crear el generador; tienes que mapearlo y luego
+
+222
+00:10:34,280 --> 00:10:36,410
+tienes que convertir todo en una lista,
+
+223
+00:10:36,410 --> 00:10:38,590
+mientras que la comprensin de la lista
+
+224
+00:10:38,590 --> 00:10:40,530
+te crea una lista desde el principio.
+
+225
+00:10:40,530 --> 00:10:44,390
+Esto plantea la pregunta: cul utilizar si no
+
+226
+00:10:44,390 --> 00:10:46,570
+siempre usa listas de comprensin?
+
+227
+00:10:46,570 --> 00:10:48,150
+Parecen ser ms rpidos.
+
+228
+00:10:48,150 --> 00:10:52,510
+Y, sin embargo, la respuesta es: si quieres una lista de cosas, utiliza
+
+229
+00:10:52,510 --> 00:10:54,320
+la comprensin de la lista.
+
+230
+00:10:54,320 --> 00:10:55,680
+Es mas rapido.
+
+231
+00:10:55,680 --> 00:10:58,980
+Creo que es ms legible, ciertamente ms corto y no
+
+232
+00:10:58,980 --> 00:11:02,230
+hay una buena razn por la que no deberas usarlo.
+
+233
+00:11:02,230 --> 00:11:05,530
+Pero si quera usar los elementos de esta
+
+234
+00:11:05,530 --> 00:11:10,530
+lista, estos poderes, uno por uno, luego use Map y use el
+
+235
+00:11:10,620 --> 00:11:12,100
+generador que le da.
+
+236
+00:11:12,100 --> 00:11:14,300
+No lo convierta en una lista.
+
+237
+00:11:14,300 --> 00:11:17,380
+De esta forma, no tendr que perder el tiempo
+
+238
+00:11:17,380 --> 00:11:19,000
+para ordenar su lista completa.
+
+239
+00:11:19,000 --> 00:11:21,450
+Puede usar los elementos uno por uno,
+
+240
+00:11:21,450 --> 00:11:24,730
+ya que son generados por la funcin de Mapa.
+
+241
+00:11:24,730 --> 00:11:27,250
+Entonces solo depende de qu, cmo vas
+
+242
+00:11:27,250 --> 00:11:30,803
+a consumir estas cosas, que deberas decidir cul usar.
+
+243
+00:11:31,950 --> 00:11:35,750
+La inhibicin tambin es cuestin de legibilidad y, como
+
+244
+00:11:35,750 --> 00:11:36,870
+dije antes, para
+
+245
+00:11:36,870 --> 00:11:41,420
+m, la comprensin de la lista es mucho ms legible, as
+
+246
+00:11:41,420 --> 00:11:43,780
+que casi siempre elegira eso.
+
+247
+00:11:43,780 --> 00:11:46,160
+Pero algunas personas prefieren Map porque estn acostumbradas a
+
+248
+00:11:46,160 --> 00:11:48,710
+hacer ese extremo de sus lenguajes de programacin, por
+
+249
+00:11:48,710 --> 00:11:51,830
+lo que tambin es una buena razn para usar Maps en
+
+250
+00:11:51,830 --> 00:11:52,730
+lugar de comprensiones.
+
+251
+00:11:54,090 --> 00:11:55,144
+De todos modos, eso es todo por este video.
+
+252
+00:11:55,144 --> 00:11:57,130
+Solo quera darle un resumen rpido sobre
+
+253
+00:11:57,130 --> 00:11:59,800
+cmo puede programar su cdigo y por qu es posible
+
+254
+00:11:59,800 --> 00:12:01,840
+que desee hacerlo y espero que este haya
+
+255
+00:12:01,840 --> 00:12:05,700
+sido un buen experimento para que pueda ver ms en las comprensiones y mapas.
+
+256
+00:12:05,700 --> 00:12:08,460
+De nuevo, puede usar el mdulo de tiempo, calcular
+
+257
+00:12:08,460 --> 00:12:10,870
+el tiempo de inicio y el de finalizacin
+
+258
+00:12:10,870 --> 00:12:12,190
+para el momento que desee.
+
+259
+00:12:12,190 --> 00:12:15,910
+Esto puede ser til en muchos escenarios y es muy flexible.
+
+260
+00:12:15,910 --> 00:12:19,090
+O si desea programar pequeos fragmentos de cdigo,
+
+261
+00:12:19,090 --> 00:12:23,780
+puede usar el mdulo timeit y eso tambin puede ser rpido y fcil.
+
+262
+00:12:23,780 --> 00:12:26,680
+Eso es todo por este video y nos vemos en el prximo.
+

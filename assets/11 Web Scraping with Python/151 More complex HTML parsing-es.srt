@@ -1,0 +1,1872 @@
+1
+00:00:00,180 --> 00:00:01,300
+Jos: Hola y bienvenido de nuevo.
+
+2
+00:00:01,300 --> 00:00:02,380
+En este video estamos
+
+3
+00:00:02,380 --> 00:00:04,030
+viendo algo un poco ms complicado.
+
+4
+00:00:04,030 --> 00:00:07,500
+Comprender algunos HTML un poco ms complejos.
+
+5
+00:00:07,500 --> 00:00:09,690
+Vamos a crear un nuevo archivo
+
+6
+00:00:10,560 --> 00:00:13,230
+en nuestro proyecto, que voy a llamar middle_html.
+
+7
+00:00:14,567 --> 00:00:16,560
+Por cierto, los archivos del proyecto, que
+
+8
+00:00:16,560 --> 00:00:18,550
+estn disponibles al comienzo de esta seccin,
+
+9
+00:00:18,550 --> 00:00:19,840
+tambin contienen este cdigo exacto
+
+10
+00:00:19,840 --> 00:00:21,120
+y puedes echarle un vistazo.
+
+11
+00:00:21,120 --> 00:00:23,230
+Los archivos pueden nombrarse de forma ligeramente diferente.
+
+12
+00:00:23,230 --> 00:00:24,830
+Y eso debera estar bien, espero.
+
+13
+00:00:25,760 --> 00:00:27,550
+Una vez ms, vamos a
+
+14
+00:00:27,550 --> 00:00:30,380
+hacer lo mismo desde bs4_import BeautifulSoup y
+
+15
+00:00:30,380 --> 00:00:33,200
+luego voy a pegar algo de HTML.
+
+16
+00:00:33,200 --> 00:00:35,870
+En este caso, nuestro HTML representar un
+
+17
+00:00:35,870 --> 00:00:40,210
+artculo que est en venta en un sitio web en lnea.
+
+18
+00:00:40,210 --> 00:00:42,290
+Entonces digamos que hemos logrado extraer
+
+19
+00:00:42,290 --> 00:00:43,890
+el contenido del sitio web.
+
+20
+00:00:43,890 --> 00:00:45,570
+Vamos a ver cmo hacerlo.
+
+21
+00:00:45,570 --> 00:00:47,640
+Y hemos terminado con este HTML aqu.
+
+22
+00:00:48,760 --> 00:00:53,760
+Y con este HTML, podemos averiguar el precio del artculo, la
+
+23
+00:00:53,990 --> 00:00:56,500
+clasificacin por estrellas del artculo, etc.
+
+24
+00:00:57,470 --> 00:01:00,470
+Djame mostrarte exactamente cmo se ve en el sitio web.
+
+25
+00:01:00,470 --> 00:01:02,250
+Entonces tendr ms sentido.
+
+26
+00:01:03,220 --> 00:01:06,000
+Lo que tenemos aqu es un sitio web de
+
+27
+00:01:06,000 --> 00:01:07,940
+demostracin para fines de raspado web.
+
+28
+00:01:07,940 --> 00:01:10,810
+Y digamos que hemos logrado extraer
+
+29
+00:01:10,810 --> 00:01:13,500
+algo de contenido HTML de l.
+
+30
+00:01:13,500 --> 00:01:16,250
+El contenido que he extrado y puesto en
+
+31
+00:01:16,250 --> 00:01:19,410
+el archivo, es el contenido que representa este objeto exactamente.
+
+32
+00:01:19,410 --> 00:01:21,630
+Este poco de HTML aqu.
+
+33
+00:01:21,630 --> 00:01:24,710
+Podra hacer como una imagen, una calificacin, un ttulo,
+
+34
+00:01:24,710 --> 00:01:28,310
+que parece estar perdido en parte y el precio y luego
+
+35
+00:01:28,310 --> 00:01:30,330
+si est en stock o no,
+
+36
+00:01:30,330 --> 00:01:33,260
+y, finalmente, un botn para agregarlo a la cesta.
+
+37
+00:01:34,150 --> 00:01:39,150
+Entonces este HTML aqu es lo que hemos copiado en nuestro archivo.
+
+38
+00:01:39,840 --> 00:01:41,980
+Y, de nuevo, vamos a aprender a
+
+39
+00:01:41,980 --> 00:01:44,230
+obtener el HTML del sitio muy pronto.
+
+40
+00:01:44,230 --> 00:01:47,790
+As que regresemos a PyCharm y miremos el HTML.
+
+41
+00:01:49,130 --> 00:01:50,600
+Esto es lo que tenemos.
+
+42
+00:01:50,600 --> 00:01:54,840
+Tenemos un elemento de lista aqu.
+
+43
+00:01:54,840 --> 00:01:59,060
+Eso es porque cada elemento est realmente en una lista en
+
+44
+00:01:59,060 --> 00:02:00,450
+el sitio web.
+
+45
+00:02:00,450 --> 00:02:03,040
+Por lo tanto, un elemento es un elemento de lista de una
+
+46
+00:02:03,040 --> 00:02:05,470
+gran lista que est formateada y estructurada de una manera diferente
+
+47
+00:02:05,470 --> 00:02:07,010
+a la que normalmente vera en las listas.
+
+48
+00:02:07,950 --> 00:02:11,030
+Luego, tiene un artculo dentro.
+
+49
+00:02:11,030 --> 00:02:13,590
+Puede ver que el artculo abarca,
+
+50
+00:02:13,590 --> 00:02:15,690
+esencialmente, todo el documento y
+
+51
+00:02:15,690 --> 00:02:18,150
+eso es todo lo que nos interesa.
+
+52
+00:02:18,150 --> 00:02:22,810
+Tenemos un div, que tiene un contenedor de imgenes de clase.
+
+53
+00:02:22,810 --> 00:02:24,550
+Y un div en
+
+54
+00:02:24,550 --> 00:02:28,330
+HTML normalmente es algo utilizado para estructurar su contenido.
+
+55
+00:02:28,330 --> 00:02:30,100
+As que piensa en l como un rectngulo
+
+56
+00:02:30,100 --> 00:02:31,700
+y puedes poner cosas dentro de l.
+
+57
+00:02:31,700 --> 00:02:34,680
+Y luego aqu, lo que han puesto, es un
+
+58
+00:02:34,680 --> 00:02:38,050
+enlace y ese es el a que se usa para vincular.
+
+59
+00:02:38,050 --> 00:02:42,520
+href es la url o la direccin de la pgina
+
+60
+00:02:42,520 --> 00:02:45,030
+a la que va el enlace.
+
+61
+00:02:45,030 --> 00:02:48,590
+Y, dentro del enlace, observe cmo el enlace comienza aqu,
+
+62
+00:02:48,590 --> 00:02:51,390
+y termina aqu en esta etiqueta de cierre.
+
+63
+00:02:51,390 --> 00:02:53,020
+Tienes una imagen.
+
+64
+00:02:53,020 --> 00:02:57,760
+Esta es una etiqueta de imagen y esta es la fuente de la imagen.
+
+65
+00:02:57,760 --> 00:03:00,150
+Algunos archivos jpeg.
+
+66
+00:03:00,150 --> 00:03:04,380
+Tiene algo de propiedad alt y tiene una propiedad de clase.
+
+67
+00:03:05,310 --> 00:03:09,200
+La propiedad alt es el texto alternativo para mostrar si la
+
+68
+00:03:09,200 --> 00:03:12,170
+imagen no se puede cargar por algn motivo.
+
+69
+00:03:12,170 --> 00:03:14,720
+As que ese es el ttulo del libro, en realidad.
+
+70
+00:03:14,720 --> 00:03:16,080
+Una luz en el tico.
+
+71
+00:03:18,410 --> 00:03:22,400
+Fuera del div tenemos una etiqueta p, una etiqueta de prrafo, que se usa
+
+72
+00:03:22,400 --> 00:03:23,940
+para la calificacin de estrellas.
+
+73
+00:03:23,940 --> 00:03:26,530
+Esta es una forma un poco extraa de hacer
+
+74
+00:03:26,530 --> 00:03:30,390
+una calificacin de estrellas, pero se puede ver que hay una clasificacin de estrellas
+
+75
+00:03:30,390 --> 00:03:33,330
+de clase y otra clase, que est separada por un espacio
+
+76
+00:03:33,330 --> 00:03:35,450
+en HTML, llamado Tres, con una T. mayscula.
+
+77
+00:03:36,490 --> 00:03:38,920
+Entonces, este libro tiene tres estrellas.
+
+78
+00:03:38,920 --> 00:03:42,220
+Pero puedes dentro de l hay cinco etiquetas i
+
+79
+00:03:42,220 --> 00:03:44,230
+que se utilizan para los iconos.
+
+80
+00:03:44,230 --> 00:03:46,680
+Entonces puede ver que debemos mirar Tres,
+
+81
+00:03:46,680 --> 00:03:50,720
+esta clase aqu, y no la cantidad de etiquetas i porque
+
+82
+00:03:50,720 --> 00:03:53,030
+las etiquetas i son siempre cinco.
+
+83
+00:03:53,030 --> 00:03:54,370
+Entonces no queremos ver eso.
+
+84
+00:03:54,370 --> 00:03:56,200
+Queremos ver este Tres.
+
+85
+00:03:57,290 --> 00:03:59,990
+Luego, fuera de la p tienes una h3, que
+
+86
+00:03:59,990 --> 00:04:01,510
+es el ttulo del libro.
+
+87
+00:04:01,510 --> 00:04:04,350
+Y puedes ver que los contenidos de h3 Presumiblemente, el nombre del libro es demasiado largo y no
+
+88
+00:04:04,350 --> 00:04:06,205
+son A Light in the. podra mostrarse completamente en el sitio web.
+
+89
+00:04:06,205 --> 00:04:08,910
+Sin embargo, el h3 contiene dentro de l,
+
+90
+00:04:08,910 --> 00:04:11,100
+un enlace a la pgina del libro,
+
+91
+00:04:11,100 --> 00:04:14,100
+presumiblemente, y tambin tiene una propiedad de ttulo, un
+
+92
+00:04:14,100 --> 00:04:17,660
+atributo de ttulo, que tambin es el ttulo del libro.
+
+93
+00:04:17,660 --> 00:04:21,380
+Entonces tienes un div que es el precio del producto.
+
+94
+00:04:21,380 --> 00:04:23,130
+Y dentro de l, tienes
+
+95
+00:04:24,400 --> 00:04:26,700
+una etiqueta p, que contiene la clase,
+
+96
+00:04:26,700 --> 00:04:29,440
+color_precio, y que contiene el precio del libro
+
+97
+00:04:29,440 --> 00:04:31,230
+con un smbolo de libra delante.
+
+98
+00:04:31,230 --> 00:04:33,130
+Tambin dentro del div, tienes esta otra etiqueta p
+
+99
+00:04:33,130 --> 00:04:34,880
+con la clase in_stock y otra clase llamada disponibilidad.
+
+100
+00:04:36,050 --> 00:04:38,819
+Presumiblemente, esta clase in_stock solo estar
+
+101
+00:04:38,819 --> 00:04:42,990
+presente en el documento cuando la cosa est en stock.
+
+102
+00:04:43,850 --> 00:04:47,100
+Y si est agotado,
+
+103
+00:04:47,100 --> 00:04:49,640
+posiblemente diga algo ms.
+
+104
+00:04:49,640 --> 00:04:50,480
+No lo sabemos
+
+105
+00:04:50,480 --> 00:04:52,290
+Dentro de esa etiqueta p tienes una i clase que proviene
+
+106
+00:04:52,290 --> 00:04:53,240
+del cono, una etiqueta i, lo
+
+107
+00:04:54,290 --> 00:04:56,510
+siento, es para un cono y tiene un cono de clase, ok.
+
+108
+00:04:56,510 --> 00:04:59,770
+Entonces has gpt el texto en stock.
+
+109
+00:04:59,770 --> 00:05:02,330
+Observe cmo esto est extraamente formateado.
+
+110
+00:05:03,630 --> 00:05:04,920
+Y, finalmente, tienes un formulario que tiene un botn.
+
+111
+00:05:04,920 --> 00:05:07,600
+No tienes que preocuparte demasiado por eso.
+
+112
+00:05:07,600 --> 00:05:11,768
+No vamos a investigar esto.
+
+113
+00:05:11,768 --> 00:05:12,860
+Luego cierras el div que comenzaste aqu.
+
+114
+00:05:12,860 --> 00:05:14,560
+Finalmente cierras el artculo.
+
+115
+00:05:14,560 --> 00:05:17,540
+Cierra el elemento de la lista, que es para todo el asunto.
+
+116
+00:05:17,540 --> 00:05:18,860
+Y luego cierras tu HTML.
+
+117
+00:05:18,860 --> 00:05:21,780
+Entonces, en cierto modo, entendemos este cdigo.
+
+118
+00:05:21,780 --> 00:05:23,230
+Tal vez no es la cosa ms clara del mundo.
+
+119
+00:05:24,130 --> 00:05:26,480
+Pero vamos a tratar de extraer algunos datos de ella.
+
+120
+00:05:26,480 --> 00:05:28,770
+Entonces, hagamos eso.
+
+121
+00:05:28,770 --> 00:05:32,130
+Lo primero es, por supuesto, crear nuestra sopa.
+
+122
+00:05:32,130 --> 00:05:34,000
+As que vamos a
+
+123
+00:05:34,000 --> 00:05:37,440
+hacer BeautifulSoup de ITEM_THML y el html. analizador
+
+124
+00:05:37,440 --> 00:05:40,371
+Luego, comenzaremos por ubicar el nombre del elemento.
+
+125
+00:05:40,371 --> 00:05:42,954
+Bueno?
+
+126
+00:05:44,670 --> 00:05:49,670
+Entonces, el nombre del elemento, el ttulo del libro, es, por ejemplo, en este a,
+
+127
+00:05:49,710 --> 00:05:50,543
+recuerdas que tenemos
+
+128
+00:05:50,543 --> 00:05:55,100
+una imagen all que tiene una propiedad alt, que es el ttulo del libro.
+
+129
+00:05:55,100 --> 00:05:59,330
+O, ms normalmente, podemos sacarlo del ttulo real.
+
+130
+00:05:59,330 --> 00:06:02,350
+Este es un ttulo 3, como sabes.
+
+131
+00:06:03,240 --> 00:06:06,240
+Y dentro de l hay una a y la a tiene un ttulo
+
+132
+00:06:06,240 --> 00:06:08,180
+de propiedad y ese es el ttulo del libro.
+
+133
+00:06:08,180 --> 00:06:11,890
+No podemos sacar el contenido de la propiedad
+
+134
+00:06:11,890 --> 00:06:13,660
+de cadena porque tiene
+
+135
+00:06:13,660 --> 00:06:17,560
+tres puntos y le falta una parte del ttulo.
+
+136
+00:06:17,560 --> 00:06:18,940
+Entonces, tenemos que pasar por aqu, de acuerdo?
+
+137
+00:06:18,940 --> 00:06:20,530
+Vamos a hacer eso.
+
+138
+00:06:20,530 --> 00:06:24,410
+Vamos a crear una funcin, que ser
+
+139
+00:06:24,410 --> 00:06:25,243
+find_item_name.
+
+140
+00:06:25,243 --> 00:06:26,509
+Voy a presentarles una nueva forma
+
+141
+00:06:26,509 --> 00:06:27,759
+de ubicar las cosas que creo
+
+142
+00:06:30,750 --> 00:06:32,730
+que es sustancialmente ms fcil que la forma predeterminada.
+
+143
+00:06:32,730 --> 00:06:34,660
+Entonces, vamos a identificar
+
+144
+00:06:34,660 --> 00:06:38,030
+desde el comienzo de nuestro documento, qu
+
+145
+00:06:38,930 --> 00:06:43,800
+camino de los nios nos dar nuestro elemento, nuestro elemento a.
+
+146
+00:06:43,800 --> 00:06:48,750
+Como puede ver, nuestra etiqueta de ttulo, nuestra propiedad de ttulo aqu est
+
+147
+00:06:48,750 --> 00:06:49,790
+en esta etiqueta.
+
+148
+00:06:50,930 --> 00:06:55,140
+La etiqueta a est en la etiqueta h3.
+
+149
+00:06:55,140 --> 00:06:57,070
+La etiqueta h3 est en la etiqueta del artculo.
+
+150
+00:06:57,070 --> 00:06:59,410
+La etiqueta del artculo est en la etiqueta
+
+151
+00:06:59,410 --> 00:07:03,180
+li, que est en la etiqueta del cuerpo, que est en la etiqueta HTML.
+
+152
+00:07:03,180 --> 00:07:05,400
+Entonces, vamos a ver a cualquiera de estos padres.
+
+153
+00:07:05,400 --> 00:07:08,160
+Podemos comenzar en cualquier lugar.
+
+154
+00:07:10,000 --> 00:07:15,000
+Podemos comenzar en el li.
+
+155
+00:07:15,570 --> 00:07:16,640
+Podemos comenzar en el artculo.
+
+156
+00:07:16,640 --> 00:07:18,470
+Podemos comenzar en la h3.
+
+157
+00:07:18,470 --> 00:07:19,890
+Y vamos a decir, el artculo es el primero, por ejemplo.
+
+158
+00:07:19,890 --> 00:07:21,690
+Luego viene h3.
+
+159
+00:07:21,690 --> 00:07:25,640
+Luego viene a.
+
+160
+00:07:26,490 --> 00:07:28,760
+Y puede ver eso porque este div aqu, por ejemplo, est en el
+
+161
+00:07:28,760 --> 00:07:29,910
+mismo nivel que esta etiqueta p.
+
+162
+00:07:31,090 --> 00:07:35,330
+La sangra no es muy buena, pero puedes ver que
+
+163
+00:07:35,330 --> 00:07:39,100
+la etiqueta div se abre aqu y se cierra
+
+164
+00:07:39,100 --> 00:07:41,620
+aqu, lo que significa que la
+
+165
+00:07:41,620 --> 00:07:44,790
+etiqueta p no est dentro de ella.
+
+166
+00:07:44,790 --> 00:07:46,850
+Y la etiqueta p se cierra aqu, lo que
+
+167
+00:07:46,850 --> 00:07:49,300
+significa que la etiqueta h3 no est dentro de ella.
+
+168
+00:07:49,300 --> 00:07:50,760
+Entonces, todos estn en el mismo
+
+169
+00:07:50,760 --> 00:07:52,920
+nivel, lo que significa que son todos hijos del artculo.
+
+170
+00:07:52,920 --> 00:07:54,330
+Y el a es un hijo de un h3.
+
+171
+00:07:54,330 --> 00:07:57,360
+Entonces, lo que tenemos, esencialmente, en nuestro localizador, es que
+
+172
+00:07:57,360 --> 00:07:58,930
+tenemos un artculo, luego separados
+
+173
+00:07:58,930 --> 00:08:01,620
+por un espacio, tenemos un h3 y tenemos un a.
+
+174
+00:08:02,460 --> 00:08:05,050
+Y este tipo de jerarqua permite a BeautifulSoup
+
+175
+00:08:05,050 --> 00:08:07,080
+encontrar elementos muy fcilmente, de acuerdo?
+
+176
+00:08:08,350 --> 00:08:11,660
+Si quiere limitarse a un artculo especfico,
+
+177
+00:08:11,660 --> 00:08:15,510
+por ejemplo, si ha tenido muchos artculos, observe
+
+178
+00:08:16,780 --> 00:08:20,690
+cmo este artculo tiene una clase de producto_pod.
+
+179
+00:08:20,690 --> 00:08:23,208
+Entonces puedes decir el artculo. producto_pod.
+
+180
+00:08:23,208 --> 00:08:27,420
+Y lo que esto significa ahora, es que ests buscando el
+
+181
+00:08:28,650 --> 00:08:31,880
+artculo que tiene la
+
+182
+00:08:35,350 --> 00:08:38,020
+clase product_pod, y dentro de l, ests
+
+183
+00:08:38,020 --> 00:08:41,833
+buscando un h3, y dentro de l ests buscando un a.
+
+184
+00:08:41,833 --> 00:08:43,284
+Y esto, una vez que
+
+185
+00:08:43,284 --> 00:08:45,680
+lo haces, por ejemplo, item_name es sopa. select_one (locator) te va a dar
+
+186
+00:08:45,680 --> 00:08:47,810
+lo que sea que esto genere.
+
+187
+00:08:47,810 --> 00:08:52,660
+Esto aqu se conoce como
+
+188
+00:08:54,460 --> 00:08:58,180
+un localizador CSS y es realmente poderoso.
+
+189
+00:08:59,020 --> 00:09:02,620
+Nos permite esencialmente hacer este tipo de cosas.
+
+190
+00:09:02,620 --> 00:09:03,840
+Y es la forma
+
+191
+00:09:03,840 --> 00:09:06,890
+en que CSS, el lenguaje CSS, tambin localiza cosas.
+
+192
+00:09:06,890 --> 00:09:10,680
+No vamos a ver CSS en este curso, o al menos no
+
+193
+00:09:10,680 --> 00:09:11,780
+todava, pero, y
+
+194
+00:09:11,780 --> 00:09:13,902
+eso es lo que se llama, esencialmente.
+
+195
+00:09:13,902 --> 00:09:16,240
+En sus trminos ms simples, podemos obtener el elemento
+
+196
+00:09:16,240 --> 00:09:18,290
+principal, restringirlo por una clase si queremos y
+
+197
+00:09:19,540 --> 00:09:22,530
+luego pasar a un elemento secundario, y luego a otro elemento
+
+198
+00:09:22,530 --> 00:09:25,250
+secundario, y as sucesivamente, hasta que tengamos una jerarqua que
+
+199
+00:09:25,250 --> 00:09:27,390
+no se repita en todo el sitio.
+
+200
+00:09:27,390 --> 00:09:30,580
+Entonces, si solo tienes un artculo con un producto_pod,
+
+201
+00:09:30,580 --> 00:09:33,330
+uno h3 y uno a, entonces eso te
+
+202
+00:09:33,330 --> 00:09:36,030
+dar esta jerarqua aqu que puedes buscar.
+
+203
+00:09:36,030 --> 00:09:38,940
+Ahora que tienes el, no
+
+204
+00:09:38,940 --> 00:09:41,390
+vamos a llamarlo item_name, lo
+
+205
+00:09:43,220 --> 00:09:44,330
+llamaremos item_link.
+
+206
+00:09:44,330 --> 00:09:45,430
+Ahora que tienes el
+
+207
+00:09:45,430 --> 00:09:46,920
+item_link, podemos decir item_name = item_link. attrs ['ttulo'].
+
+208
+00:09:46,920 --> 00:09:48,060
+Nuevamente, esto accede a los atributos del enlace.
+
+209
+00:09:48,060 --> 00:09:52,910
+Nuestro enlace est aqu.
+
+210
+00:09:54,880 --> 00:09:58,330
+Y vamos a acceder a la propiedad del ttulo o al
+
+211
+00:09:58,330 --> 00:09:59,670
+atributo de ese enlace.
+
+212
+00:10:01,530 --> 00:10:04,390
+Y luego podemos imprimir el nombre del elemento.
+
+213
+00:10:04,390 --> 00:10:06,310
+Vamos a ejecutar la funcin.
+
+214
+00:10:07,410 --> 00:10:09,410
+Y, recuerde ejecutar su archivo middle_html, y, puede ver que obtenemos
+
+215
+00:10:11,820 --> 00:10:12,800
+una luz en el tico impresa.
+
+216
+00:10:12,800 --> 00:10:16,530
+Ahora usando estos localizadores, puedes
+
+217
+00:10:16,530 --> 00:10:19,380
+ubicar cualquier cosa.
+
+218
+00:10:21,800 --> 00:10:23,370
+As que aqu hay un pequeo desafo para ti.
+
+219
+00:10:23,370 --> 00:10:25,800
+Usando un localizador, vas a usar el mismo.
+
+220
+00:10:25,800 --> 00:10:27,970
+Descubre el enlace a esta pgina de artculos.
+
+221
+00:10:27,970 --> 00:10:30,940
+Entonces, lo que ests buscando es este href aqu.
+
+222
+00:10:30,940 --> 00:10:35,390
+Estoy seguro de que puedes hacerlo.
+
+223
+00:10:35,390 --> 00:10:39,110
+Espero que hayas logrado.
+
+224
+00:10:39,110 --> 00:10:40,260
+Todo lo que tenemos que
+
+225
+00:10:45,610 --> 00:10:46,630
+hacer es, esencialmente, acceder
+
+226
+00:10:46,630 --> 00:10:50,530
+al mismo localizador, pero en lugar del ttulo, acceder a otro atributo, que es el atributo href.
+
+227
+00:10:50,530 --> 00:10:53,400
+As que vamos a copiar, pegar aqu
+
+228
+00:10:53,400 --> 00:10:57,040
+y vamos a llamarlo find_item_link, y luego vamos
+
+229
+00:10:57,040 --> 00:10:58,190
+a acceder al
+
+230
+00:11:01,170 --> 00:11:02,610
+atributo href aqu.
+
+231
+00:11:02,610 --> 00:11:06,020
+De nuevo, es el mismo elemento, artculo
+
+232
+00:11:06,020 --> 00:11:07,820
+con la clase product_pod.
+
+233
+00:11:07,820 --> 00:11:09,130
+La etiqueta h3 que es un nio.
+
+234
+00:11:09,130 --> 00:11:11,220
+La etiqueta a que es hija de eso.
+
+235
+00:11:11,220 --> 00:11:13,500
+Y luego vamos a seleccionar eso y, finalmente,
+
+236
+00:11:13,500 --> 00:11:15,540
+vamos a acceder al atributo de eso,
+
+237
+00:11:16,597 --> 00:11:17,930
+y lo vamos a imprimir.
+
+238
+00:11:17,930 --> 00:11:22,040
+Pero, por supuesto, ahora que tenemos este item_link es un
+
+239
+00:11:22,040 --> 00:11:23,682
+buen nombre para nuestro
+
+240
+00:11:23,682 --> 00:11:25,896
+enlace, vamos a hacer esto.
+
+241
+00:11:25,896 --> 00:11:27,770
+As que acceda al elemento, lo siento, la
+
+242
+00:11:27,770 --> 00:11:30,060
+etiqueta, y luego acceda a la propiedad href de eso.
+
+243
+00:11:30,060 --> 00:11:34,110
+Y luego podemos sacar eso a la luz.
+
+244
+00:11:34,110 --> 00:11:36,210
+Ooh, borremos esto.
+
+245
+00:11:36,210 --> 00:11:37,750
+Y corre de nuevo.
+
+246
+00:11:40,320 --> 00:11:42,310
+Y ahora pueden ver que obtenemos el ttulo y luego
+
+247
+00:11:44,710 --> 00:11:45,730
+tambin recibimos el enlace aqu.
+
+248
+00:11:47,440 --> 00:11:49,250
+Este es un enlace relativo, por lo que no le
+
+249
+00:11:49,250 --> 00:11:51,180
+proporciona el nombre de dominio completo, el sitio web y todo.
+
+250
+00:11:52,140 --> 00:11:55,800
+Esta bien.
+
+251
+00:11:55,800 --> 00:11:59,780
+Aprenderemos cmo lidiar con eso ms adelante.
+
+252
+00:11:59,780 --> 00:12:00,613
+Bueno?
+
+253
+00:12:00,613 --> 00:12:02,820
+Usando este localizador ahora podemos encontrar otras cosas.
+
+254
+00:12:04,790 --> 00:12:05,930
+Por lo tanto, podemos
+
+255
+00:12:05,930 --> 00:12:09,020
+encontrar, por ejemplo, el precio del artculo y la calificacin del artculo.
+
+256
+00:12:09,880 --> 00:12:12,050
+No es tan fcil de hacer porque vas
+
+257
+00:12:12,050 --> 00:12:14,091
+a tener que hacer algunos otros clculos.
+
+258
+00:12:14,091 --> 00:12:18,060
+Por ejemplo, si quiere encontrar el precio
+
+259
+00:12:18,060 --> 00:12:19,820
+del artculo, que
+
+260
+00:12:19,820 --> 00:12:23,200
+est aqu, ver el artculo.
+
+261
+00:12:23,200 --> 00:12:24,810
+Entonces, potencialmente puede ver una
+
+262
+00:12:24,810 --> 00:12:27,020
+p que tiene la clase price_color.
+
+263
+00:12:27,020 --> 00:12:28,570
+Y luego vas a
+
+264
+00:12:28,570 --> 00:12:31,180
+mirar su contenido, el contenido de la cadena.
+
+265
+00:12:31,180 --> 00:12:32,460
+Pero este no es un nmero, es una cadena.
+
+266
+00:12:32,460 --> 00:12:33,840
+Por lo tanto, es posible que
+
+267
+00:12:34,760 --> 00:12:37,850
+desee quitar el signo de libra y usar una expresin regular para extraer este grupo.
+
+268
+00:12:37,850 --> 00:12:40,650
+Creo que este sera un gran ejercicio
+
+269
+00:12:40,650 --> 00:12:44,160
+para nosotros para revisar lo que hemos aprendido en
+
+270
+00:12:45,160 --> 00:12:47,150
+la ltima seccin y probarlo.
+
+271
+00:12:47,150 --> 00:12:50,200
+Intenta extraer 51. 77 como un flotante usando BeautifulSoup y
+
+272
+00:12:50,200 --> 00:12:51,280
+expresiones regulares.
+
+273
+00:12:51,280 --> 00:12:56,280
+Dale una oportunidad.
+
+274
+00:12:57,740 --> 00:12:59,760
+Pausa el video y ve por l.
+
+275
+00:12:59,760 --> 00:13:00,593
+Espero que hayas logrado.
+
+276
+00:13:00,593 --> 00:13:01,940
+Es una forma un poco ms complicada de hacer las cosas.
+
+277
+00:13:07,680 --> 00:13:08,513
+Pero lo que vamos a hacer es, antes que nada, localizar esto.
+
+278
+00:13:08,513 --> 00:13:11,800
+Antes que nada, saca esta cadena con BeautifulSoup.
+
+279
+00:13:11,800 --> 00:13:14,540
+As que voy a crear una nueva funcin, find_item_price.
+
+280
+00:13:14,540 --> 00:13:17,050
+Y luego voy a
+
+281
+00:13:17,050 --> 00:13:20,920
+definir mi localizador, que ser artculo. producto_pod y dentro de
+
+282
+00:13:23,620 --> 00:13:25,940
+l tenemos p. price_color.
+
+283
+00:13:25,940 --> 00:13:29,070
+Entonces ac estamos accediendo al artculo que tiene esta
+
+284
+00:13:29,070 --> 00:13:31,890
+clase y el p que tiene esta clase.
+
+285
+00:13:31,890 --> 00:13:34,780
+Y eso nos dar una comprensin bastante buena,
+
+286
+00:13:34,780 --> 00:13:36,560
+o le dar a BeautifulSoup
+
+287
+00:13:36,560 --> 00:13:39,530
+una buena comprensin de cmo llegar all.
+
+288
+00:13:39,530 --> 00:13:41,000
+Luego, vamos a acceder al item_price
+
+289
+00:13:41,000 --> 00:13:42,320
+que va a ser sopa. seleccionar. uno (localizador). cuerda.
+
+290
+00:13:43,680 --> 00:13:45,780
+Todo lo que sucede aqu es que estamos encontrando esa etiqueta y
+
+291
+00:13:46,820 --> 00:13:51,750
+estamos accediendo al contenido de la cadena.
+
+292
+00:13:52,590 --> 00:13:55,590
+As que esto nos dar el signo de la libra 51. 77 o por mucho
+
+293
+00:13:55,590 --> 00:13:57,520
+que fuera.
+
+294
+00:13:57,520 --> 00:14:01,190
+S, 51. 77, entonces esto nos ha dado eso.
+
+295
+00:14:01,190 --> 00:14:02,130
+Ahora, tenemos esto, tenemos que
+
+296
+00:14:02,130 --> 00:14:04,630
+usar nuestra expresin regular para extraerlo.
+
+297
+00:14:06,890 --> 00:14:09,830
+Entonces, yendo a la parte superior del archivo, voy a
+
+298
+00:14:09,830 --> 00:14:11,830
+importar el mdulo re, importar re.
+
+299
+00:14:11,830 --> 00:14:13,060
+Observe cmo estoy haciendo esta importacin en la parte superior del archivo.
+
+300
+00:14:13,060 --> 00:14:17,880
+Y de bla, bla, bla, importa algo
+
+301
+00:14:17,880 --> 00:14:21,840
+ms directamente debajo de l.
+
+302
+00:14:21,840 --> 00:14:24,970
+Esta es una especie de convencin de Python para hacer este
+
+303
+00:14:24,970 --> 00:14:25,980
+tipo de importaciones en
+
+304
+00:14:25,980 --> 00:14:29,160
+la parte superior, este tipo de importaciones justo debajo de ellas.
+
+305
+00:14:29,160 --> 00:14:30,910
+Ahora que tenemos el mdulo
+
+306
+00:14:30,910 --> 00:14:33,210
+re, podemos definir nuestro patrn, la
+
+307
+00:14:34,540 --> 00:14:36,380
+expresin regular que estamos buscando.
+
+308
+00:14:36,380 --> 00:14:37,790
+Y esto va a ser,
+
+309
+00:14:37,790 --> 00:14:40,670
+en primer lugar, el smbolo de la libra 51. 77.
+
+310
+00:14:40,670 --> 00:14:42,750
+Esto va a coincidir.
+
+311
+00:14:42,750 --> 00:14:46,240
+Queremos extraer 51. 77 como un nmero.
+
+312
+00:14:46,240 --> 00:14:47,590
+As que vamos a ponerlo dentro
+
+313
+00:14:47,590 --> 00:14:52,590
+de estos corchetes para que podamos extraerlo usando el grupo.
+
+314
+00:14:52,890 --> 00:14:54,800
+Entonces, por supuesto, no estamos interesados en esto 51. 77 solamente, pero si
+
+315
+00:14:54,800 --> 00:14:56,990
+el precio cambiara, querramos obtener
+
+316
+00:14:58,350 --> 00:15:01,350
+el precio cambiado.
+
+317
+00:15:01,350 --> 00:15:03,240
+Entonces, en lugar de poner 51. 77 aqu, vamos a tener
+
+318
+00:15:03,240 --> 00:15:05,620
+que usar algo que nos permita obtener
+
+319
+00:15:05,620 --> 00:15:08,400
+un rango de nmeros.
+
+320
+00:15:08,400 --> 00:15:10,900
+Y la forma en que vamos a hacer
+
+321
+00:15:10,900 --> 00:15:14,000
+eso es haciendo cero a nueve dentro de los corchetes.
+
+322
+00:15:14,000 --> 00:15:15,754
+Este es un rango de nmeros de cero a nueve.
+
+323
+00:15:15,754 --> 00:15:18,420
+Entonces vamos a hacer ms, as que
+
+324
+00:15:18,420 --> 00:15:21,530
+eso nos dar uno o ms de estos nmeros.
+
+325
+00:15:21,530 --> 00:15:23,910
+Y luego, vamos a asegurarnos de poner
+
+326
+00:15:23,910 --> 00:15:25,560
+una barra invertida delante del
+
+327
+00:15:26,600 --> 00:15:30,290
+punto para que coincida con el punto y no con nada,
+
+328
+00:15:30,290 --> 00:15:33,010
+que es lo que significa en las expresiones regulares.
+
+329
+00:15:33,010 --> 00:15:35,630
+Y para el 77, vamos a hacer lo mismo.
+
+330
+00:15:35,630 --> 00:15:36,580
+Cero a nueve ms.
+
+331
+00:15:36,580 --> 00:15:39,340
+Luego vamos a buscar y obtener nuestros grupos.
+
+332
+00:15:39,340 --> 00:15:41,640
+Entonces nuestros grupos, o
+
+333
+00:15:43,760 --> 00:15:46,230
+nuestro emparejador, sern re. bsqueda (patrn y precio_partido).
+
+334
+00:15:46,230 --> 00:15:50,028
+Y, nuevamente, esto nos va a dar dos grupos.
+
+335
+00:15:50,028 --> 00:15:51,720
+Grupo cero,
+
+336
+00:15:54,750 --> 00:15:58,740
+que va a ser todo lo que coincida.
+
+337
+00:15:58,740 --> 00:16:01,710
+Y luego matcher. grupo (1), que va a ser el primer grupo que se
+
+338
+00:16:01,710 --> 00:16:02,950
+encuentra entre los corchetes.
+
+339
+00:16:04,010 --> 00:16:07,190
+Entonces eso ser 51. 77 sin el smbolo de la libra.
+
+340
+00:16:07,190 --> 00:16:09,850
+De acuerdo, esto va a ser 51. 77.
+
+341
+00:16:09,850 --> 00:16:14,460
+Esto va a ser 51. 77 sin el smbolo.
+
+342
+00:16:14,460 --> 00:16:16,630
+Entonces podemos, de hecho, convertirlo en una carroza.
+
+343
+00:16:16,630 --> 00:16:20,520
+Est bien, estamos imprimiendo el flotador de este matcher.
+
+344
+00:16:20,520 --> 00:16:23,470
+Y, entonces, corramos eso y veamos qu pasa.
+
+345
+00:16:25,210 --> 00:16:28,670
+Y, como puede ver, obtenemos 51. 77 con el signo de
+
+346
+00:16:29,680 --> 00:16:32,200
+la libra, y 51. 77 sin el signo de la libra.
+
+347
+00:16:34,610 --> 00:16:37,820
+Digamos que queramos imprimirlo pero con
+
+348
+00:16:37,820 --> 00:16:40,290
+un 20% de descuento.
+
+349
+00:16:42,500 --> 00:16:44,450
+Podemos multiplicar por 0. 8 y esto debera funcionar porque
+
+350
+00:16:45,547 --> 00:16:48,400
+es un nmero ahora, no es una cadena.
+
+351
+00:16:48,400 --> 00:16:50,660
+Y, como pueden ver, funciona.
+
+352
+00:16:50,660 --> 00:16:52,910
+Tenemos 41. 416.
+
+353
+00:16:54,684 --> 00:16:55,620
+As que eso es bastante increble.
+
+354
+00:16:55,620 --> 00:16:57,620
+Ahora hemos aprendido a extraer un
+
+355
+00:16:58,690 --> 00:17:00,450
+nmero usando BeautifulSoup y expresiones regulares de un sitio web.
+
+356
+00:17:00,450 --> 00:17:03,467
+Entonces, por ejemplo, las cosas que podemos hacer ahora, una
+
+357
+00:17:03,467 --> 00:17:08,010
+vez que aprendemos, por supuesto, cmo interactuar con el sitio web, lo cual haremos en breve,
+
+358
+00:17:08,010 --> 00:17:10,130
+en esta seccin, puede, por ejemplo, rastrear
+
+359
+00:17:10,130 --> 00:17:12,080
+los precios de los artculos en lnea.
+
+360
+00:17:12,080 --> 00:17:14,680
+Por ejemplo, supongamos que juegas al bdminton y
+
+361
+00:17:14,680 --> 00:17:18,000
+quieres rastrear el precio de las raquetas de bdminton con
+
+362
+00:17:18,000 --> 00:17:21,000
+el tiempo para saber cundo deberas comprar uno.
+
+363
+00:17:21,000 --> 00:17:23,620
+Podras hacer esto con una simple aplicacin de
+
+364
+00:17:23,620 --> 00:17:26,140
+Python que bsicamente descarga el sitio y
+
+365
+00:17:26,140 --> 00:17:28,310
+lo examina usando algo como esto.
+
+366
+00:17:28,310 --> 00:17:30,050
+Finalmente, descubramos la calificacin del artculo.
+
+367
+00:17:30,050 --> 00:17:32,980
+La calificacin ser un poco ms
+
+368
+00:17:34,870 --> 00:17:37,500
+complicada porque tenemos que mirar exactamente
+
+369
+00:17:37,500 --> 00:17:40,920
+un atributo, que es este Tres aqu.
+
+370
+00:17:40,920 --> 00:17:45,920
+Pero, por supuesto, esto est en una etiqueta p y
+
+371
+00:17:45,970 --> 00:17:48,270
+hay muchas etiquetas p.
+
+372
+00:17:48,270 --> 00:17:50,510
+Entonces, descubramos esto.
+
+373
+00:17:50,510 --> 00:17:52,920
+Bajemos aqu.
+
+374
+00:17:52,920 --> 00:17:54,680
+Vamos a hacer def_find_item_rating.
+
+375
+00:17:57,810 --> 00:17:58,730
+El localizador ser artculo. product_pod,
+
+376
+00:17:58,730 --> 00:18:01,580
+product_pod, y dentro de
+
+377
+00:18:02,720 --> 00:18:06,190
+l, p. clasificacin por estrellas.
+
+378
+00:18:07,204 --> 00:18:08,840
+Eso es porque el prrafo que estamos buscando es el
+
+379
+00:18:08,840 --> 00:18:11,760
+que tiene esta clasificacin de estrellas de clase.
+
+380
+00:18:13,100 --> 00:18:14,880
+En CSS, las clases estn siempre separadas por espacios.
+
+381
+00:18:14,880 --> 00:18:18,460
+Entonces, qu tiene esta etiqueta p es de dos clases.
+
+382
+00:18:18,460 --> 00:18:22,250
+Estrellas y tres.
+
+383
+00:18:22,250 --> 00:18:24,780
+As que estamos buscando el prrafo que
+
+384
+00:18:24,780 --> 00:18:27,800
+tiene la clase de clasificacin de estrellas y
+
+385
+00:18:27,800 --> 00:18:29,210
+tambin tiene otras clases.
+
+386
+00:18:29,210 --> 00:18:30,830
+Pero no estamos limitados solo a este.
+
+387
+00:18:30,830 --> 00:18:32,600
+Entonces este localizador encontrar ese prrafo.
+
+388
+00:18:32,600 --> 00:18:35,420
+Tiene una p. clasificacin por estrellas.
+
+389
+00:18:35,420 --> 00:18:38,280
+Y si quisiramos tambin encontrarlo con la clase Tres,
+
+390
+00:18:38,280 --> 00:18:40,270
+podramos hacer esto.
+
+391
+00:18:40,270 --> 00:18:42,520
+Pero no queremos encontrarlo con dos clases, solo en
+
+392
+00:18:42,520 --> 00:18:44,200
+caso de que la calificacin cambie.
+
+393
+00:18:44,200 --> 00:18:46,210
+Entonces, vamos a pegarnos con esto solamente.
+
+394
+00:18:46,210 --> 00:18:47,990
+El elemento de calificacin de estrellas, la etiqueta o
+
+395
+00:18:47,990 --> 00:18:50,120
+la etiqueta de clasificacin de estrellas va a ser sopa. select_one (locator).
+
+396
+00:18:52,680 --> 00:18:56,730
+Entonces, esto nos da la etiqueta, est bien?
+
+397
+00:18:56,730 --> 00:18:58,730
+Ahora podemos obtener las etiquetas de clase.
+
+398
+00:19:01,470 --> 00:19:04,780
+Entonces las clases son star-rating_tag. attrs ('clase').
+
+399
+00:19:05,670 --> 00:19:09,140
+Y esto es ahora cuando BeautifulSoup lo extrae va
+
+400
+00:19:09,140 --> 00:19:13,560
+a ser dos clases, estas dos.
+
+401
+00:19:15,770 --> 00:19:18,430
+Esto es lo que nos va a dar.
+
+402
+00:19:18,430 --> 00:19:23,120
+Entonces tenemos que descubrir qu es esto.
+
+403
+00:19:23,120 --> 00:19:24,650
+Pero, recuerda, podra ser el primero.
+
+404
+00:19:24,650 --> 00:19:26,860
+No necesariamente tiene que ser la segunda
+
+405
+00:19:28,000 --> 00:19:30,920
+clase, por lo que esta lista podra ser as.
+
+406
+00:19:30,920 --> 00:19:33,440
+No podemos simplemente seleccionar el segundo elemento.
+
+407
+00:19:33,440 --> 00:19:36,500
+Eso sera demasiado fcil.
+
+408
+00:19:36,500 --> 00:19:40,480
+Entonces, qu vamos a hacer? Vamos a recrear esta lista
+
+409
+00:19:40,480 --> 00:19:42,290
+de clases, pero sin esta
+
+410
+00:19:42,290 --> 00:19:43,700
+clasificacin de estrellas.
+
+411
+00:19:43,700 --> 00:19:46,670
+Estoy seguro de que puedes hacerlo usando una lista
+
+412
+00:19:46,670 --> 00:19:49,210
+de comprensin o la funcin de filtro.
+
+413
+00:19:49,210 --> 00:19:51,970
+Darle una oportunidad.
+
+414
+00:19:51,970 --> 00:19:53,670
+Estoy seguro de que has logrado.
+
+415
+00:19:53,670 --> 00:19:54,503
+Hay dos formas en que podemos hacer esto.
+
+416
+00:20:00,390 --> 00:20:01,550
+Podramos decir que ratings_classes es r para r en
+
+417
+00:20:01,550 --> 00:20:02,810
+las clases si r no es igual a 'star-rating'.
+
+418
+00:20:02,810 --> 00:20:07,810
+Esta sera una forma.
+
+419
+00:20:08,390 --> 00:20:12,180
+O podramos hacer rating_classes = filtro de lambda x para x no es star-rating
+
+420
+00:20:13,600 --> 00:20:14,490
+en las clases.
+
+421
+00:20:14,490 --> 00:20:16,970
+De acuerdo, cualquiera de estos sera perfectamente adecuado.
+
+422
+00:20:16,970 --> 00:20:21,970
+Los cdigos que vers en lnea tienen esto.
+
+423
+00:20:25,400 --> 00:20:28,490
+As que vamos a dejar la lista de comprensin en el video.
+
+424
+00:20:28,490 --> 00:20:32,180
+Si quieres ver la otra forma de hacer las cosas, echa un
+
+425
+00:20:32,180 --> 00:20:35,530
+vistazo al video que est vinculado al comienzo de la conferencia
+
+426
+00:20:35,530 --> 00:20:38,730
+y tambin, al comienzo de la seccin, y tambin en
+
+427
+00:20:38,730 --> 00:20:39,563
+la conferencia.
+
+428
+00:20:39,563 --> 00:20:42,750
+Ahora esta lista aqu debe contener un solo elemento.
+
+429
+00:20:42,750 --> 00:20:45,400
+Este Tres.
+
+430
+00:20:46,750 --> 00:20:50,350
+Entonces, podemos decir print (rating_classes) [0].
+
+431
+00:20:50,350 --> 00:20:51,250
+Estamos asumiendo
+
+432
+00:20:52,200 --> 00:20:56,770
+que el prrafo no va a tener otras etiquetas, por ejemplo, hola clase.
+
+433
+00:20:57,610 --> 00:21:00,440
+Sera extrao
+
+434
+00:21:00,440 --> 00:21:05,440
+Pero, sabes, puede suceder.
+
+435
+00:21:05,970 --> 00:21:06,840
+Y este mtodo, si ese es el caso, no es ideal para eso.
+
+436
+00:21:06,840 --> 00:21:08,140
+Pero, al mirar algunos
+
+437
+00:21:08,140 --> 00:21:13,140
+de los artculos en el sitio web, parece que solo son dos clases.
+
+438
+00:21:13,570 --> 00:21:16,960
+Star-rating y la calificacin.
+
+439
+00:21:16,960 --> 00:21:19,240
+Entonces eso podra ser Cuatro, o Cinco, o Tres y as sucesivamente.
+
+440
+00:21:19,240 --> 00:21:22,080
+Finalmente, llamemos a este find_item_rating y ejecute
+
+441
+00:21:22,080 --> 00:21:24,740
+esto y all lo tiene aqu abajo.
+
+442
+00:21:26,340 --> 00:21:29,910
+Tenemos el nmero de estrellas en este libro.
+
+443
+00:21:29,910 --> 00:21:33,710
+Entonces podramos usar esto ahora para buscar libros y podramos,
+
+444
+00:21:33,710 --> 00:21:35,880
+por ejemplo, descargar toda la
+
+445
+00:21:35,880 --> 00:21:38,360
+pgina y encontrar qu libros tienen
+
+446
+00:21:38,360 --> 00:21:41,420
+cinco estrellas y pesan menos de 20 libras.
+
+447
+00:21:41,420 --> 00:21:43,610
+Y eso sera algo que podramos hacer.
+
+448
+00:21:43,610 --> 00:21:46,100
+Pero antes de hacerlo, por supuesto, tenemos
+
+449
+00:21:46,100 --> 00:21:48,940
+que aprender a extraer el contenido del sitio
+
+450
+00:21:48,940 --> 00:21:50,340
+descargando el sitio web.
+
+451
+00:21:50,340 --> 00:21:54,760
+As que vamos a hacer eso muy pronto.
+
+452
+00:21:54,760 --> 00:21:56,860
+Pero primero solo quiero contarte un poco
+
+453
+00:21:56,860 --> 00:21:58,600
+sobre cmo mejorar esta estructura.
+
+454
+00:21:58,600 --> 00:22:00,520
+No siempre lo hars o
+
+455
+00:22:00,520 --> 00:22:04,020
+no querrs tener estas funciones de alto nivel para cada
+
+456
+00:22:04,020 --> 00:22:05,200
+cosa que encuentres.
+
+457
+00:22:05,200 --> 00:22:09,970
+No querrs que tus funciones impriman
+
+458
+00:22:09,970 --> 00:22:11,520
+cosas necesariamente.
+
+459
+00:22:11,520 --> 00:22:12,640
+As que vamos a hacer las cosas un poco mejor.
+
+460
+00:22:12,640 --> 00:22:14,520
+Vamos a empezar a separar
+
+461
+00:22:14,520 --> 00:22:16,230
+las cosas en clases y
+
+462
+00:22:16,230 --> 00:22:19,370
+cosas as para que tengas una mejor idea de
+
+463
+00:22:19,370 --> 00:22:20,203
+cmo recomiendo
+
+464
+00:22:20,203 --> 00:22:21,760
+que analices el HTML
+
+465
+00:22:21,760 --> 00:22:23,860
+y lo manejes bien en tus programas.
+
+466
+00:22:24,800 --> 00:22:26,900
+Entonces, dicho esto, nos vemos en el siguiente video.
+
+467
+00:22:26,900 --> 00:22:29,270
+&nbsp;
+
+468
+00:22:29,270 --> 00:22:31,570
+&nbsp;
+

@@ -1,0 +1,1268 @@
+1
+00:00:00,270 --> 00:00:01,103
+Instructor: Hola.
+
+2
+00:00:01,103 --> 00:00:03,120
+Bienvenido de nuevo al curso.
+
+3
+00:00:03,120 --> 00:00:06,210
+En este video vamos a ver si las declaraciones.
+
+4
+00:00:06,210 --> 00:00:08,680
+La sentencia if es una construccin
+
+5
+00:00:08,680 --> 00:00:10,280
+clave en cualquier lenguaje
+
+6
+00:00:10,280 --> 00:00:13,480
+de programacin porque nos permite tomar decisiones.
+
+7
+00:00:13,480 --> 00:00:15,690
+Por ejemplo, piensa en un juego.
+
+8
+00:00:15,690 --> 00:00:18,460
+Si el usuario presiona la flecha hacia arriba,
+
+9
+00:00:18,460 --> 00:00:20,350
+quiere que el personaje avance.
+
+10
+00:00:20,350 --> 00:00:21,830
+Si presionan la flecha hacia
+
+11
+00:00:21,830 --> 00:00:23,940
+abajo, quieres que se muevan hacia atrs.
+
+12
+00:00:23,940 --> 00:00:28,350
+La nica forma de hacerlo es permitiendo que su programa
+
+13
+00:00:28,350 --> 00:00:30,160
+tome la decisin de,
+
+14
+00:00:30,160 --> 00:00:33,340
+si se mueve hacia adelante o si retrocede.
+
+15
+00:00:33,340 --> 00:00:34,360
+Y la forma de hacerlo en
+
+16
+00:00:34,360 --> 00:00:35,560
+la programacin es con una declaracin if.
+
+17
+00:00:36,710 --> 00:00:37,970
+Vamos a sumergirnos en
+
+18
+00:00:37,970 --> 00:00:41,020
+el cdigo, ya que eso lo explicar incluso mejor que yo.
+
+19
+00:00:41,020 --> 00:00:43,170
+Vamos a definir una variable llamada programador y
+
+20
+00:00:43,170 --> 00:00:44,660
+hacer que sea igual a verdadero.
+
+21
+00:00:44,660 --> 00:00:46,900
+Recuerde, la verdad es una palabra clave
+
+22
+00:00:46,900 --> 00:00:49,040
+en Python que significa, bueno, cierto.
+
+23
+00:00:49,040 --> 00:00:50,140
+Significa que si.
+
+24
+00:00:50,140 --> 00:00:52,190
+Significa que algo es cierto o
+
+25
+00:00:52,190 --> 00:00:54,350
+que debera suceder o es vlido.
+
+26
+00:00:55,870 --> 00:01:00,170
+Ahora podemos decir si el programador es verdadero y observar cmo
+
+27
+00:01:00,170 --> 00:01:02,120
+el es azul porque tambin
+
+28
+00:01:02,120 --> 00:01:04,380
+es una palabra clave de Python.
+
+29
+00:01:05,530 --> 00:01:07,930
+Y luego hay dos puntos al final.
+
+30
+00:01:07,930 --> 00:01:09,040
+Entonces podemos hacer algo
+
+31
+00:01:09,040 --> 00:01:12,120
+como imprimir que eres increble, y si an no eres
+
+32
+00:01:13,240 --> 00:01:14,870
+un programador, ests en camino
+
+33
+00:01:14,870 --> 00:01:16,610
+de convertirte en uno, por lo
+
+34
+00:01:16,610 --> 00:01:18,360
+que sers increble muy pronto.
+
+35
+00:01:19,310 --> 00:01:21,810
+Ahora, un par de cosas aqu que
+
+36
+00:01:21,810 --> 00:01:24,870
+debe observar es, por supuesto, que tiene la
+
+37
+00:01:24,870 --> 00:01:28,320
+palabra clave if al comienzo, luego tiene una comparacin booleana.
+
+38
+00:01:28,320 --> 00:01:31,920
+En este caso, tienes este programador es cierto.
+
+39
+00:01:31,920 --> 00:01:34,950
+Ahora, como el programador es verdadero,
+
+40
+00:01:34,950 --> 00:01:39,420
+verdadero es cierto, siempre va a evaluar como verdadero.
+
+41
+00:01:39,420 --> 00:01:41,710
+Entonces, cuando esto aqu se evale como
+
+42
+00:01:41,710 --> 00:01:45,190
+verdadero, vamos a ejecutar lo que est debajo de este punto.
+
+43
+00:01:46,090 --> 00:01:47,460
+As que esa ser la impresin.
+
+44
+00:01:47,460 --> 00:01:49,600
+Observe tambin, muy importante, que la
+
+45
+00:01:49,600 --> 00:01:52,400
+impresin tiene una cantidad de espacios en el frente.
+
+46
+00:01:52,400 --> 00:01:54,060
+Aqu, tiene cuatro espacios,
+
+47
+00:01:54,060 --> 00:01:57,130
+y no importa cuntos espacios tenga.
+
+48
+00:01:57,130 --> 00:02:01,070
+Normalmente, colocas dos espacios o cuatro espacios.
+
+49
+00:02:01,070 --> 00:02:05,020
+No puede poner cero espacios porque si pone cero
+
+50
+00:02:05,020 --> 00:02:09,350
+espacios, Python no sabe que pertenece a esta instruccin if.
+
+51
+00:02:09,350 --> 00:02:11,630
+Simplemente piensa que es una nueva lnea de
+
+52
+00:02:11,630 --> 00:02:13,760
+cdigo que no est relacionada con el if.
+
+53
+00:02:13,760 --> 00:02:15,600
+Entonces normalmente pondra cuatro espacios, creo
+
+54
+00:02:15,600 --> 00:02:16,580
+que he puesto
+
+55
+00:02:16,580 --> 00:02:18,190
+cuatro all, Uno, dos, tres, cuatro,
+
+56
+00:02:18,190 --> 00:02:19,450
+cinco, ah, no puedo contar.
+
+57
+00:02:19,450 --> 00:02:21,130
+Normalmente pondra cuatro espacios
+
+58
+00:02:21,130 --> 00:02:22,900
+y ahora lo que esto
+
+59
+00:02:22,900 --> 00:02:25,950
+significa es que si esto se evala como
+
+60
+00:02:25,950 --> 00:02:28,150
+verdadero, entonces ejecuta lo que est
+
+61
+00:02:29,560 --> 00:02:33,740
+debajo del colon para tantas lneas como estn sangradas, y luego,
+
+62
+00:02:34,840 --> 00:02:35,850
+eventualmente, cuando desea
+
+63
+00:02:35,850 --> 00:02:37,850
+continuar ejecutando algo que es
+
+64
+00:02:37,850 --> 00:02:39,620
+sin relacin con esa declaracin
+
+65
+00:02:39,620 --> 00:02:41,890
+if, por ejemplo, una nueva instruccin
+
+66
+00:02:41,890 --> 00:02:46,760
+if u otra cosa donde estamos fuera del if, entonces observe cmo
+
+67
+00:02:46,760 --> 00:02:49,760
+esta lnea ya no est sangrada.
+
+68
+00:02:49,760 --> 00:02:52,540
+Ahora, sangra solo significa los espacios en el frente.
+
+69
+00:02:52,540 --> 00:02:54,460
+Observe cmo esta lnea no est sangrada, lo
+
+70
+00:02:54,460 --> 00:02:56,490
+que significa que no est relacionada con el if.
+
+71
+00:02:58,210 --> 00:03:00,450
+De todos modos, vamos a dejarlo como eres increble.
+
+72
+00:03:02,690 --> 00:03:05,590
+De acuerdo, entonces podemos tener otro como,
+
+73
+00:03:05,590 --> 00:03:08,890
+es programador, y luego eso ser falso,
+
+74
+00:03:08,890 --> 00:03:12,080
+y si el programador es cierto, vamos
+
+75
+00:03:12,080 --> 00:03:14,190
+a imprimir que eres increble.
+
+76
+00:03:16,100 --> 00:03:18,840
+Ahora, sabemos que esto no se va
+
+77
+00:03:18,840 --> 00:03:22,320
+a imprimir, porque lo falso es cierto no es correcto.
+
+78
+00:03:22,320 --> 00:03:25,330
+False no es cierto, por lo que no debera ejecutarse.
+
+79
+00:03:25,330 --> 00:03:26,580
+Si ejecutamos este programa
+
+80
+00:03:26,580 --> 00:03:29,540
+ahora, deberamos ver que est impresionante impreso una vez
+
+81
+00:03:29,540 --> 00:03:31,800
+y luego nada impreso la segunda vez.
+
+82
+00:03:31,800 --> 00:03:32,633
+Vamos a por ello.
+
+83
+00:03:34,210 --> 00:03:35,810
+De acuerdo, eso es lo que vemos.
+
+84
+00:03:35,810 --> 00:03:37,450
+Eres impresionante, sale primero, esa
+
+85
+00:03:37,450 --> 00:03:39,590
+es la lnea nmero cuatro, y luego
+
+86
+00:03:39,590 --> 00:03:42,140
+eres increble, no sale por segunda vez porque
+
+87
+00:03:42,140 --> 00:03:43,760
+lo falso no es verdad.
+
+88
+00:03:44,710 --> 00:03:47,640
+Por supuesto, puede cambiar esto a no es cierto y luego
+
+89
+00:03:47,640 --> 00:03:48,610
+ejecutarlo y ahora ver
+
+90
+00:03:48,610 --> 00:03:50,510
+que est impresionante impreso dos veces.
+
+91
+00:03:50,510 --> 00:03:53,860
+Sin embargo, los no programadores no son tan geniales, as
+
+92
+00:03:53,860 --> 00:03:55,360
+que queremos hacer otra cosa.
+
+93
+00:03:56,550 --> 00:03:58,070
+Cmo podemos hacer eso?
+
+94
+00:03:58,070 --> 00:03:59,990
+Bueno, Python es bastante similar al
+
+95
+00:03:59,990 --> 00:04:02,950
+ingls, as que solo usa la palabra clave else, y
+
+96
+00:04:02,950 --> 00:04:04,670
+luego te permite hacer esto, y
+
+97
+00:04:04,670 --> 00:04:07,040
+si eso no funciona, puedes hacer otra cosa.
+
+98
+00:04:07,040 --> 00:04:09,930
+Y nuevamente, esa es solo la palabra clave else
+
+99
+00:04:09,930 --> 00:04:12,200
+y dos puntos, y luego, ms sangras
+
+100
+00:04:12,200 --> 00:04:13,860
+aqu abajo para este bloque
+
+101
+00:04:13,860 --> 00:04:16,170
+pertenecern ahora a la declaracin else, y
+
+102
+00:04:16,170 --> 00:04:18,670
+usted puede imprimir algo si eso no sucedi.
+
+103
+00:04:19,810 --> 00:04:21,590
+Aprende algo de programacin.
+
+104
+00:04:23,330 --> 00:04:26,080
+Est bien, creo que esto parece muy bien, al menos
+
+105
+00:04:26,080 --> 00:04:27,250
+me parece muy bien,
+
+106
+00:04:27,250 --> 00:04:29,660
+espero que ese sea el caso para ti tambin.
+
+107
+00:04:29,660 --> 00:04:31,810
+El bloque sangrado aqu se
+
+108
+00:04:31,810 --> 00:04:34,800
+ejecutar si esta condicin se evala como verdadera.
+
+109
+00:04:36,400 --> 00:04:38,220
+Y si tiene una instruccin
+
+110
+00:04:38,220 --> 00:04:41,200
+else, que no es necesaria, es completamente opcional,
+
+111
+00:04:41,200 --> 00:04:45,040
+aqu se ejecutar si no se ejecut, est bien?
+
+112
+00:04:45,040 --> 00:04:46,750
+Lo siento, si esto no se ejecut.
+
+113
+00:04:46,750 --> 00:04:50,030
+Entonces, si esto es falso, entonces se ejecutar el resto.
+
+114
+00:04:50,030 --> 00:04:52,980
+Si esto es cierto, entonces esto se ejecutar.
+
+115
+00:04:52,980 --> 00:04:54,320
+Por lo tanto, es una
+
+116
+00:04:54,320 --> 00:04:56,790
+forma muy ingeniosa de manejar el flujo en sus programas.
+
+117
+00:04:58,470 --> 00:05:00,390
+Observe, por supuesto, que la
+
+118
+00:05:00,390 --> 00:05:02,000
+sangra tiene que ser correcta.
+
+119
+00:05:02,000 --> 00:05:04,590
+Esta otra cosa est relacionada con
+
+120
+00:05:04,590 --> 00:05:07,500
+el if, pero no pertenece al if.
+
+121
+00:05:07,500 --> 00:05:10,640
+Por lo tanto, tienen el mismo nivel de sangra
+
+122
+00:05:10,640 --> 00:05:13,560
+y los bloques que se ejecutan estn ms sangrados
+
+123
+00:05:13,560 --> 00:05:16,410
+para mostrar que pertenecen a este punto dentro
+
+124
+00:05:16,410 --> 00:05:18,660
+de este bloque y, de manera similar,
+
+125
+00:05:18,660 --> 00:05:20,150
+estn sangrados para mostrar
+
+126
+00:05:20,150 --> 00:05:23,260
+que pertenecen a este punto dentro de este bloque.
+
+127
+00:05:23,260 --> 00:05:24,750
+Ahora, tan pronto como desee
+
+128
+00:05:24,750 --> 00:05:27,130
+ejecutar algo que no est relacionado con el
+
+129
+00:05:27,130 --> 00:05:30,180
+resto, simplemente desinstlelo, elimine los espacios al frente y estar
+
+130
+00:05:30,180 --> 00:05:31,280
+listo para continuar.
+
+131
+00:05:32,420 --> 00:05:33,730
+Bueno?
+
+132
+00:05:33,730 --> 00:05:37,440
+Por supuesto, puedes verificar si algo es falso en lugar de
+
+133
+00:05:37,440 --> 00:05:39,700
+verdadero, y eso est totalmente bien.
+
+134
+00:05:39,700 --> 00:05:42,880
+Puedes imprimir aprender algo de programacin y, por
+
+135
+00:05:42,880 --> 00:05:45,460
+supuesto, puedes hacer otra cosa y
+
+136
+00:05:45,460 --> 00:05:47,530
+puedes imprimir que eres increble.
+
+137
+00:05:47,530 --> 00:05:51,170
+As que esto es exactamente lo que hicimos aqu, excepto que est invertido.
+
+138
+00:05:51,170 --> 00:05:54,340
+Ahora, tenemos un si comprobando si el programador es falso y
+
+139
+00:05:54,340 --> 00:05:56,491
+estamos diciendo que aprendamos algo de programacin y
+
+140
+00:05:56,491 --> 00:05:58,450
+si el programador no fue falso, eso
+
+141
+00:05:58,450 --> 00:06:01,010
+significa que fue cierto, entonces imprimimos que usted es
+
+142
+00:06:01,010 --> 00:06:02,610
+asombroso, porque los programadores son geniales.
+
+143
+00:06:04,020 --> 00:06:05,580
+Bueno?
+
+144
+00:06:05,580 --> 00:06:06,670
+Ahora, un par de cosas
+
+145
+00:06:06,670 --> 00:06:08,920
+ms que puedes hacer, y solo voy a mostrarte algunos fragmentos
+
+146
+00:06:08,920 --> 00:06:11,840
+de sintaxis para que ests al tanto del tipo de cosas que puedes hacer.
+
+147
+00:06:11,840 --> 00:06:15,550
+Puede verificar si el programador no es verdadero,
+
+148
+00:06:16,600 --> 00:06:18,900
+lo cual es solo una
+
+149
+00:06:18,900 --> 00:06:23,430
+forma artificial de verificar si es falso o no.
+
+150
+00:06:23,430 --> 00:06:26,490
+Puede imprimir para aprender algo de programacin
+
+151
+00:06:28,470 --> 00:06:31,880
+y, por supuesto, tambin podemos hacer comprobaciones mltiples
+
+152
+00:06:31,880 --> 00:06:35,900
+en una utilizando y si el programador no es
+
+153
+00:06:35,900 --> 00:06:40,100
+cierto y el programador no es cinco, por ejemplo.
+
+154
+00:06:40,100 --> 00:06:41,890
+Eso no tendra ningn sentido
+
+155
+00:06:41,890 --> 00:06:44,570
+pero, ya sabes, puedes unirte a los controles
+
+156
+00:06:44,570 --> 00:06:48,380
+booleanos aqu con y y con o, como vimos en otros videos.
+
+157
+00:06:48,380 --> 00:06:49,470
+Y eso est totalmente bien.
+
+158
+00:06:49,470 --> 00:06:51,700
+Entonces, sea lo que sea que
+
+159
+00:06:51,700 --> 00:06:54,110
+haya aqu, hasta que el colon evale
+
+160
+00:06:54,110 --> 00:06:55,940
+si es verdadero o falso,
+
+161
+00:06:55,940 --> 00:06:58,390
+entonces esto se ejecutar si es verdad.
+
+162
+00:06:58,390 --> 00:07:00,790
+El resto se ejecutar si fue falso.
+
+163
+00:07:02,950 --> 00:07:06,350
+Ahora, definamos dos variables, el programador es
+
+164
+00:07:06,350 --> 00:07:07,900
+falso y es
+
+165
+00:07:07,900 --> 00:07:10,750
+impresionante, lo cual es cierto.
+
+166
+00:07:11,780 --> 00:07:13,230
+Ahora, voy a presionar Enter varias
+
+167
+00:07:13,230 --> 00:07:14,900
+veces para que parezca un poco ms
+
+168
+00:07:14,900 --> 00:07:18,360
+centrado en tu pantalla. Creo que ser una experiencia de lectura ms agradable para ti.
+
+169
+00:07:18,360 --> 00:07:21,070
+Ahora, si es programador, vamos
+
+170
+00:07:22,450 --> 00:07:25,240
+a imprimir que eres el mejor.
+
+171
+00:07:26,530 --> 00:07:28,440
+Esta es una nueva
+
+172
+00:07:29,460 --> 00:07:32,640
+sintaxis aqu y lo que esto significa
+
+173
+00:07:32,640 --> 00:07:35,330
+esencialmente es si el programador es verdadero.
+
+174
+00:07:35,330 --> 00:07:37,320
+Solo el es verdadero es opcional
+
+175
+00:07:37,320 --> 00:07:40,070
+porque esto tambin se lee bastante bien en ingls.
+
+176
+00:07:40,070 --> 00:07:42,640
+Si es programador, entonces vas a hacer algo.
+
+177
+00:07:44,130 --> 00:07:46,270
+Tambin podra decir si el
+
+178
+00:07:46,270 --> 00:07:50,020
+programador es verdadero, pero ambos leen bien en ingls.
+
+179
+00:07:50,020 --> 00:07:52,010
+Entonces, en Python nos permite, bajo
+
+180
+00:07:53,155 --> 00:07:56,870
+la suposicin de que esto va a leer muy bien para
+
+181
+00:07:56,870 --> 00:07:59,980
+omitir, es cierto y esto tambin se ejecuta.
+
+182
+00:07:59,980 --> 00:08:01,600
+Entonces, si ejecutamos esto aqu,
+
+183
+00:08:01,600 --> 00:08:03,250
+deberamos ver que eres el mejor.
+
+184
+00:08:03,250 --> 00:08:04,840
+En realidad, no lo veremos porque es falso.
+
+185
+00:08:04,840 --> 00:08:07,960
+Disculpas, si cambiamos esto a verdadero, lo veremos.
+
+186
+00:08:09,890 --> 00:08:11,160
+Y aqu puedes ver que eres
+
+187
+00:08:11,160 --> 00:08:12,380
+el mejor impreso que hay.
+
+188
+00:08:12,380 --> 00:08:13,850
+Tan genial.
+
+189
+00:08:15,140 --> 00:08:19,260
+Ahora, qu pasa si queremos imprimir que eres el mejor si
+
+190
+00:08:19,260 --> 00:08:20,960
+son programadores, pero queremos
+
+191
+00:08:20,960 --> 00:08:23,930
+imprimir que quizs no eres el mejor, pero
+
+192
+00:08:23,930 --> 00:08:26,710
+an as eres increble si son geniales?
+
+193
+00:08:26,710 --> 00:08:29,390
+Y si no son ni programadores ni
+
+194
+00:08:29,390 --> 00:08:32,220
+geniales, queremos imprimir algo ms como, ser increble.
+
+195
+00:08:33,390 --> 00:08:35,660
+Bueno, podemos hacer esto de varias maneras.
+
+196
+00:08:35,660 --> 00:08:38,110
+Podemos decir si el programador imprime
+
+197
+00:08:38,110 --> 00:08:39,300
+eso, si es
+
+198
+00:08:40,820 --> 00:08:45,820
+impresionante, imprime que no eres el mejor, pero igual de increble.
+
+199
+00:08:48,624 --> 00:08:53,624
+Y, por supuesto, si no es programador o es
+
+200
+00:08:57,400 --> 00:08:59,860
+increble, imprimir ser increble.
+
+201
+00:08:59,860 --> 00:09:02,040
+Entonces, esto es algo que
+
+202
+00:09:02,040 --> 00:09:04,990
+podramos hacer, ya sabes, podra funcionar.
+
+203
+00:09:04,990 --> 00:09:07,040
+Si son programadores, vamos a imprimir que eres el mejor.
+
+204
+00:09:07,040 --> 00:09:07,873
+Si son increbles,
+
+205
+00:09:07,873 --> 00:09:09,590
+vamos a imprimir que no eres el
+
+206
+00:09:09,590 --> 00:09:10,980
+mejor, pero an as eres increble.
+
+207
+00:09:10,980 --> 00:09:11,813
+Y aqu
+
+208
+00:09:11,813 --> 00:09:15,220
+estamos usando una de estas expresiones booleanas compuestas,
+
+209
+00:09:15,220 --> 00:09:18,090
+es programador o es increble que nos
+
+210
+00:09:18,090 --> 00:09:19,660
+dar esta si es
+
+211
+00:09:19,660 --> 00:09:22,040
+verdadera, o esta si la primera
+
+212
+00:09:22,040 --> 00:09:23,530
+es falsa, recurdalo.
+
+213
+00:09:23,530 --> 00:09:25,780
+Y aqu nos dar la verdad,
+
+214
+00:09:27,130 --> 00:09:30,150
+y si no, vamos a imprimir ser increble.
+
+215
+00:09:30,150 --> 00:09:32,730
+Entonces, si ninguno de estos es cierto,
+
+216
+00:09:32,730 --> 00:09:34,430
+vamos a imprimir ser increble.
+
+217
+00:09:35,440 --> 00:09:38,470
+Sin embargo, qu sucede si los hacemos todos verdaderos?
+
+218
+00:09:39,830 --> 00:09:41,150
+Vamos a imprimir que
+
+219
+00:09:41,150 --> 00:09:43,690
+eres el mejor, porque el programador ser cierto.
+
+220
+00:09:43,690 --> 00:09:44,523
+Entonces vamos a imprimir que
+
+221
+00:09:44,523 --> 00:09:46,112
+no eres el mejor, pero an as eres increble.
+
+222
+00:09:46,112 --> 00:09:47,420
+Eso no tiene mucho sentido
+
+223
+00:09:47,420 --> 00:09:49,670
+porque acabamos de decirles que son los mejores.
+
+224
+00:09:49,670 --> 00:09:51,240
+Y luego no vamos a imprimir ser increble.
+
+225
+00:09:51,240 --> 00:09:53,620
+As que eso es bueno, porque ya son increbles,
+
+226
+00:09:53,620 --> 00:09:54,630
+ya que est aqu.
+
+227
+00:09:54,630 --> 00:09:58,230
+Vamos a ejecutar esto y te mostrar exactamente lo que eso significa.
+
+228
+00:09:58,230 --> 00:10:00,260
+Mira ahora estamos imprimiendo ambos.
+
+229
+00:10:00,260 --> 00:10:02,980
+Eres el mejor, y luego no eres el mejor.
+
+230
+00:10:02,980 --> 00:10:05,420
+No es una buena experiencia para nuestros usuarios.
+
+231
+00:10:06,380 --> 00:10:11,200
+Entonces, lo que podemos hacer es hacer que estos dos elementos estn relacionados,
+
+232
+00:10:11,200 --> 00:10:14,050
+de modo que si este se ejecuta,
+
+233
+00:10:15,320 --> 00:10:16,810
+este no se ejecutar.
+
+234
+00:10:18,330 --> 00:10:20,860
+Y de manera similar, este solo se
+
+235
+00:10:20,860 --> 00:10:22,220
+ejecutar si este no.
+
+236
+00:10:23,469 --> 00:10:27,100
+Y la forma en que hacemos eso es decir elif en lugar de if.
+
+237
+00:10:28,210 --> 00:10:30,840
+Ahora, si este se ejecuta, este
+
+238
+00:10:31,680 --> 00:10:32,730
+ser salteado
+
+239
+00:10:32,730 --> 00:10:35,040
+y ser ignorado por completo.
+
+240
+00:10:35,040 --> 00:10:37,070
+Sin embargo, si este es
+
+241
+00:10:37,070 --> 00:10:39,260
+falso, saltaremos al siguiente elif
+
+242
+00:10:39,260 --> 00:10:40,820
+y lo comprobaremos.
+
+243
+00:10:40,820 --> 00:10:44,280
+Y si tuviramos ms elifs aqu, lo cual puede hacer, entonces saltara a
+
+244
+00:10:44,280 --> 00:10:46,900
+este si este no se ejecutara, y luego al siguiente
+
+245
+00:10:46,900 --> 00:10:48,360
+si ese no se ejecutara,
+
+246
+00:10:48,360 --> 00:10:49,310
+y as sucesivamente.
+
+247
+00:10:49,310 --> 00:10:53,750
+Entonces solo ejecutar una de estas declaraciones.
+
+248
+00:10:53,750 --> 00:10:55,640
+O este, o este.
+
+249
+00:10:56,820 --> 00:10:59,570
+Y, por supuesto, si son programadores, imprimimos
+
+250
+00:10:59,570 --> 00:11:01,040
+que eres el mejor.
+
+251
+00:11:01,040 --> 00:11:02,980
+Si no son programadores pero son
+
+252
+00:11:02,980 --> 00:11:05,580
+geniales, imprimimos que no eres el mejor, pero
+
+253
+00:11:05,580 --> 00:11:07,970
+eres increble, y si ninguno de estos
+
+254
+00:11:07,970 --> 00:11:10,760
+sucediera, si no fueran programadores y no fueran geniales,
+
+255
+00:11:10,760 --> 00:11:13,070
+entonces podemos simplemente hacer otra cosa aqu.
+
+256
+00:11:14,100 --> 00:11:18,550
+Porque esto solo se ejecuta cuando ninguno de los anteriores se ejecut.
+
+257
+00:11:19,470 --> 00:11:20,920
+Est bien, entonces ahora podemos ejecutar esto.
+
+258
+00:11:22,210 --> 00:11:23,730
+Podemos ver que decimos que
+
+259
+00:11:23,730 --> 00:11:26,020
+eres el mejor, porque el programador es cierto,
+
+260
+00:11:26,020 --> 00:11:28,480
+si hacemos esto falso, ahora dir que no
+
+261
+00:11:28,480 --> 00:11:30,710
+eres el mejor, pero an as eres increble.
+
+262
+00:11:30,710 --> 00:11:32,730
+Y si hacemos las dos cosas
+
+263
+00:11:32,730 --> 00:11:35,130
+falsas, veremos que decimos que sean increbles.
+
+264
+00:11:37,190 --> 00:11:38,970
+De acuerdo, puedes ser increble y
+
+265
+00:11:38,970 --> 00:11:41,020
+ests en camino de ser increble.
+
+266
+00:11:42,150 --> 00:11:44,230
+Bien, como resumen, aqu hay algunas cosas que
+
+267
+00:11:44,230 --> 00:11:45,560
+podemos hacer, y solo voy
+
+268
+00:11:45,560 --> 00:11:47,010
+a escribirlas como comentarios para su
+
+269
+00:11:47,010 --> 00:11:48,160
+beneficio, por supuesto, pueden ver
+
+270
+00:11:48,160 --> 00:11:50,660
+este cdigo en la seccin de recursos de esta conferencia.
+
+271
+00:11:50,660 --> 00:11:54,020
+Si presiona el botn del plan de estudios en la parte superior izquierda, y
+
+272
+00:11:54,020 --> 00:11:55,290
+luego puede ver que esto
+
+273
+00:11:55,290 --> 00:11:57,990
+tiene un enlace de recurso asociado, y este es el cdigo.
+
+274
+00:12:01,000 --> 00:12:03,450
+Puedes decir si el programador es verdadero,
+
+275
+00:12:03,450 --> 00:12:05,800
+y eso funcionar debajo del colon siempre
+
+276
+00:12:06,709 --> 00:12:08,120
+que esto sea cierto.
+
+277
+00:12:08,120 --> 00:12:09,930
+Entonces, si el programador es verdadero, entonces
+
+278
+00:12:09,930 --> 00:12:12,270
+lo que est debajo del colon se va a ejecutar.
+
+279
+00:12:12,270 --> 00:12:14,570
+Y esto se puede acortar a si es programador.
+
+280
+00:12:16,640 --> 00:12:20,560
+Del mismo modo, podemos decir si el programador es falso,
+
+281
+00:12:20,560 --> 00:12:23,080
+o si no es el programador.
+
+282
+00:12:24,320 --> 00:12:25,820
+Estos dos significan lo mismo.
+
+283
+00:12:27,610 --> 00:12:29,180
+Podemos tener else, lo
+
+284
+00:12:29,180 --> 00:12:31,820
+que significa que si este no se ejecuta,
+
+285
+00:12:31,820 --> 00:12:32,850
+este se ejecutar.
+
+286
+00:12:34,120 --> 00:12:39,120
+Y podemos tener elif es increble, por ejemplo, lo que
+
+287
+00:12:39,180 --> 00:12:41,290
+significa que si este
+
+288
+00:12:43,240 --> 00:12:45,130
+no se ejecuta, entonces
+
+289
+00:12:45,130 --> 00:12:46,850
+evaluaremos este, y si
+
+290
+00:12:47,970 --> 00:12:49,390
+este no se
+
+291
+00:12:49,390 --> 00:12:51,140
+ejecuta, entonces ejecutaremos este.
+
+292
+00:12:51,140 --> 00:12:51,973
+Bueno?
+
+293
+00:12:51,973 --> 00:12:54,810
+Eso nos permite encadenar estas declaraciones if para que
+
+294
+00:12:54,810 --> 00:12:56,820
+solo podamos ejecutar una de ellas.
+
+295
+00:12:58,430 --> 00:12:59,540
+De acuerdo, entonces eso es todo por este video.
+
+296
+00:12:59,540 --> 00:13:00,610
+Se est haciendo
+
+297
+00:13:00,610 --> 00:13:02,630
+un poco ms largo, solo quera
+
+298
+00:13:02,630 --> 00:13:04,050
+presentarte este concepto de
+
+299
+00:13:04,050 --> 00:13:06,990
+sentencias if, porque nos permite redirigir nuestra programacin a
+
+300
+00:13:06,990 --> 00:13:10,310
+diferentes flujos, hacer algo o hacer otra cosa y nos
+
+301
+00:13:10,310 --> 00:13:12,260
+permitir hacer cosas como si se
+
+302
+00:13:12,260 --> 00:13:13,890
+presiona la flecha, luego avanza,
+
+303
+00:13:13,890 --> 00:13:16,210
+se presiona la flecha hacia abajo, luego
+
+304
+00:13:16,210 --> 00:13:18,800
+hacia abajo, se presiona la flecha hacia la
+
+305
+00:13:18,800 --> 00:13:21,500
+izquierda, luego hacia la izquierda, luego se presiona
+
+306
+00:13:21,500 --> 00:13:23,680
+la flecha hacia la derecha, luego hacia
+
+307
+00:13:23,680 --> 00:13:25,120
+la derecha, y as sucesivamente.
+
+308
+00:13:25,120 --> 00:13:26,160
+Entonces estas declaraciones
+
+309
+00:13:26,160 --> 00:13:28,970
+if son realmente un bloque fundamental de programacin,
+
+310
+00:13:28,970 --> 00:13:30,680
+y es realmente importante saber
+
+311
+00:13:30,680 --> 00:13:32,420
+sobre ellas y cmo usarlas.
+
+312
+00:13:32,420 --> 00:13:36,900
+Y esto fue solo una descripcin general de cmo puede abordarlos, y por supuesto, vamos
+
+313
+00:13:36,900 --> 00:13:38,510
+a hablar mucho ms sobre
+
+314
+00:13:38,510 --> 00:13:41,132
+estas cosas a medida que avanza el curso, a
+
+315
+00:13:41,132 --> 00:13:44,070
+medida que construimos algunos de los proyectos en el curso.
+
+316
+00:13:44,070 --> 00:13:47,120
+De acuerdo, entonces dicho eso, te ver en el siguiente video, as
+
+317
+00:13:47,120 --> 00:13:47,970
+que alcnzame all.
+

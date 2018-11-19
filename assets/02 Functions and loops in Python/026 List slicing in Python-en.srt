@@ -1,0 +1,432 @@
+1
+00:00:00,400 --> 00:00:01,570
+<v Instructor>Hi and welcome back.</v>
+
+2
+00:00:01,570 --> 00:00:04,790
+In this video I wanted to tell you about list slicing.
+
+3
+00:00:06,600 --> 00:00:08,460
+Let's have a list of my friends,
+
+4
+00:00:08,460 --> 00:00:10,620
+which are just strings.
+
+5
+00:00:10,620 --> 00:00:13,110
+And let's say I wanted to get friends,
+
+6
+00:00:13,110 --> 00:00:15,110
+from two 'til four.
+
+7
+00:00:15,110 --> 00:00:19,040
+Remember, this is zero, one, two, three and four.
+
+8
+00:00:19,040 --> 00:00:22,720
+So, two 'til four should be Anna to Mary.
+
+9
+00:00:22,720 --> 00:00:26,320
+But normally in Python the last one is not included,
+
+10
+00:00:26,320 --> 00:00:28,730
+so two 'til four is actually Anna and Charlie.
+
+11
+00:00:29,660 --> 00:00:33,710
+The way we do that, is instead of accessing friends two
+
+12
+00:00:33,710 --> 00:00:37,740
+and then adding it to friends three,
+
+13
+00:00:37,740 --> 00:00:38,990
+which would be an option,
+
+14
+00:00:39,850 --> 00:00:44,300
+we can do this, friends two until four.
+
+15
+00:00:44,300 --> 00:00:46,950
+Four is not included, so that gives us two and three.
+
+16
+00:00:48,640 --> 00:00:49,910
+Okay?
+
+17
+00:00:49,910 --> 00:00:54,800
+List slicing is really useful in many scenarios,
+
+18
+00:00:54,800 --> 00:00:57,950
+because it's a way to construct a new list.
+
+19
+00:00:59,230 --> 00:01:01,350
+It's a very Pythonic way at that.
+
+20
+00:01:02,840 --> 00:01:05,040
+Now the first number here, as you know,
+
+21
+00:01:05,040 --> 00:01:08,070
+is the starting index of the slice.
+
+22
+00:01:08,070 --> 00:01:11,250
+That's two, and four is the ending index of the slice,
+
+23
+00:01:11,250 --> 00:01:12,100
+that's four.
+
+24
+00:01:13,710 --> 00:01:15,590
+But we can also use negative numbers,
+
+25
+00:01:15,590 --> 00:01:18,070
+which means we start counting from the end.
+
+26
+00:01:18,070 --> 00:01:18,920
+For example,
+
+27
+00:01:19,760 --> 00:01:21,860
+let me print, friends minus one.
+
+28
+00:01:21,860 --> 00:01:24,570
+You can always do this at any point,
+
+29
+00:01:24,570 --> 00:01:27,170
+whenever you want to get the last element of a list.
+
+30
+00:01:28,030 --> 00:01:29,250
+See, that was Mary.
+
+31
+00:01:29,250 --> 00:01:30,950
+Friends minus one is Mary,
+
+32
+00:01:30,950 --> 00:01:33,890
+because it starts counting at the very end.
+
+33
+00:01:33,890 --> 00:01:35,190
+Now, the normal thing
+
+34
+00:01:35,190 --> 00:01:37,500
+would be to say this is minus zero, right?
+
+35
+00:01:37,500 --> 00:01:39,100
+Because if Rolf is zero,
+
+36
+00:01:39,100 --> 00:01:40,240
+and that's the first element,
+
+37
+00:01:40,240 --> 00:01:43,260
+surely the last element should be minus zero.
+
+38
+00:01:43,260 --> 00:01:45,610
+But of course minus zero's not a number,
+
+39
+00:01:45,610 --> 00:01:49,260
+so the next best thing is minus one.
+
+40
+00:01:49,260 --> 00:01:51,650
+So minus one gives you the last element,
+
+41
+00:01:51,650 --> 00:01:53,440
+one gives you the second element.
+
+42
+00:01:55,470 --> 00:01:59,020
+So you can do minus one up until minus three, for example.
+
+43
+00:02:01,780 --> 00:02:05,080
+But sadly, this is not really something you can do.
+
+44
+00:02:05,080 --> 00:02:06,600
+You'd think that minus one 'til minus three
+
+45
+00:02:06,600 --> 00:02:09,830
+would somehow give you this reverse list here of.
+
+46
+00:02:09,830 --> 00:02:11,760
+And Mary and Charlie, right?
+
+47
+00:02:11,760 --> 00:02:14,740
+Minus three being Anna, and not being included.
+
+48
+00:02:15,640 --> 00:02:17,390
+But Python doesn't quite like that,
+
+49
+00:02:17,390 --> 00:02:19,700
+so these actually have to be reversed.
+
+50
+00:02:19,700 --> 00:02:23,570
+So you always have to go left to right in your list.
+
+51
+00:02:23,570 --> 00:02:26,950
+Minus three being Anna, minus one being Mary.
+
+52
+00:02:28,070 --> 00:02:29,910
+Okay, and again you get Anna and Charlie,
+
+53
+00:02:29,910 --> 00:02:32,780
+because the last index here is not included.
+
+54
+00:02:33,910 --> 00:02:35,760
+So you get minus three and minus two.
+
+55
+00:02:37,480 --> 00:02:39,910
+If we wanted to get our last three friends,
+
+56
+00:02:39,910 --> 00:02:42,100
+which is a very popular operation,
+
+57
+00:02:42,100 --> 00:02:43,150
+just the last three,
+
+58
+00:02:43,150 --> 00:02:45,110
+or maybe the top two or something like that,
+
+59
+00:02:45,110 --> 00:02:48,260
+you can print friends, and then minus three,
+
+60
+00:02:48,260 --> 00:02:51,070
+which would give you Anna, a colon,
+
+61
+00:02:51,960 --> 00:02:53,570
+and that's it, nothing else.
+
+62
+00:02:53,570 --> 00:02:55,780
+And that says minus three up until and including
+
+63
+00:02:55,780 --> 00:02:57,030
+the very end of the list.
+
+64
+00:02:57,870 --> 00:03:00,040
+So that gives you Anna, Charlie and Mary.
+
+65
+00:03:00,040 --> 00:03:01,410
+Really useful stuff.
+
+66
+00:03:01,410 --> 00:03:04,120
+But particularly useful is when you want to get,
+
+67
+00:03:04,120 --> 00:03:05,960
+for example, your top two friends.
+
+68
+00:03:06,840 --> 00:03:08,500
+Well you can do that.
+
+69
+00:03:08,500 --> 00:03:12,620
+Starting at zero, up to index number two, not including.
+
+70
+00:03:12,620 --> 00:03:14,540
+So that gives you zero and one.
+
+71
+00:03:14,540 --> 00:03:16,580
+And again you get Rolf and Jose.
+
+72
+00:03:19,610 --> 00:03:21,690
+You can also do, friends
+
+73
+00:03:23,490 --> 00:03:25,370
+minus two, like so.
+
+74
+00:03:25,370 --> 00:03:26,870 line:15% 
+So what's that gonna give you?
+
+75
+00:03:30,560 --> 00:03:31,790 line:15% 
+Hopefully you got that correct.
+
+76
+00:03:31,790 --> 00:03:34,170
+It's gonna start at zero, that's Rolf.
+
+77
+00:03:34,170 --> 00:03:36,890
+And it's gonna go all the way up to index minus two,
+
+78
+00:03:36,890 --> 00:03:38,060
+which is Charlie,
+
+79
+00:03:38,060 --> 00:03:40,600
+remember, minus one is Mary, minus two is Charlie.
+
+80
+00:03:40,600 --> 00:03:41,910
+This is not gonna be included,
+
+81
+00:03:41,910 --> 00:03:43,660
+so it's gonna give you these three.
+
+82
+00:03:45,080 --> 00:03:45,930
+And there you go.
+
+83
+00:03:47,480 --> 00:03:51,060
+This can be a pretty confusing way of thinking about things,
+
+84
+00:03:51,060 --> 00:03:53,620
+but it can be really useful.
+
+85
+00:03:53,620 --> 00:03:56,480
+For example, imagine we're interacting with a list,
+
+86
+00:03:58,870 --> 00:04:03,150
+like a table, and the first thing in the table
+
+87
+00:04:03,150 --> 00:04:05,500
+is gonna be the column names,
+
+88
+00:04:05,500 --> 00:04:08,980
+and everything else in the table is gonna be data.
+
+89
+00:04:08,980 --> 00:04:11,020
+Maybe we'll want to get
+
+90
+00:04:11,020 --> 00:04:13,210
+all the data excluding the table names.
+
+91
+00:04:13,210 --> 00:04:18,040
+Then we can do, my table one, colon.
+
+92
+00:04:18,040 --> 00:04:21,830
+That gives us index to one onwards, until the very end.
+
+93
+00:04:21,830 --> 00:04:24,930
+Presumably index zero would be the table headers.
+
+94
+00:04:26,010 --> 00:04:27,440
+And I use that example,
+
+95
+00:04:27,440 --> 00:04:28,940
+not because I want to confuse you
+
+96
+00:04:28,940 --> 00:04:30,510
+talking about tables all of a sudden,
+
+97
+00:04:30,510 --> 00:04:32,590
+but because we're actually going to use that example
+
+98
+00:04:32,590 --> 00:04:34,120
+later on in the course.
+
+99
+00:04:34,120 --> 00:04:37,740
+So this is why list slicing is introduced here.
+
+100
+00:04:37,740 --> 00:04:40,030
+Just want you to know, this is something you can do,
+
+101
+00:04:40,030 --> 00:04:41,660
+and we will be using it later on,
+
+102
+00:04:41,660 --> 00:04:44,330
+and we'll be able to refresh our memory on it.
+
+103
+00:04:44,330 --> 00:04:45,710
+Anyway, that's it for this video.
+
+104
+00:04:45,710 --> 00:04:49,290
+Pre-Pythonic way of constructing new lists.
+
+105
+00:04:49,290 --> 00:04:50,870
+And so remember you can use this
+
+106
+00:04:50,870 --> 00:04:54,420
+whenever you want a part of a list or something like that.
+
+107
+00:04:54,420 --> 00:04:55,590
+Anyway, that's it for this video.
+
+108
+00:04:55,590 --> 00:04:57,040
+I'll see you on the next one.
+

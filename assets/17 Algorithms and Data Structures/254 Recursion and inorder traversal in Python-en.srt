@@ -1,0 +1,1192 @@
+1
+00:00:00,110 --> 00:00:01,560
+<v Instructor>Hi and welcome back.</v>
+
+2
+00:00:01,560 --> 00:00:02,840
+In this video we're going to look at
+
+3
+00:00:02,840 --> 00:00:05,730
+how we can print our tree.
+
+4
+00:00:05,730 --> 00:00:07,550
+And as part of printing our tree,
+
+5
+00:00:07,550 --> 00:00:10,793
+we're going to have to look at something called recursion.
+
+6
+00:00:11,650 --> 00:00:15,380
+Recursion is something that can be quite tricky
+
+7
+00:00:15,380 --> 00:00:18,160
+to really fully get your head around
+
+8
+00:00:18,160 --> 00:00:21,380
+but it's a very simple concept, in fact.
+
+9
+00:00:21,380 --> 00:00:25,190
+Something I'll say about recursion, and also binary trees,
+
+10
+00:00:25,190 --> 00:00:28,330
+is that you won't be using these very often
+
+11
+00:00:28,330 --> 00:00:29,760
+in your day jobs.
+
+12
+00:00:29,760 --> 00:00:33,310
+I, for example, work in web development.
+
+13
+00:00:33,310 --> 00:00:35,530
+I do a lot of sort of back-end development
+
+14
+00:00:35,530 --> 00:00:39,340
+and front end with JavaScript and so forth
+
+15
+00:00:39,340 --> 00:00:40,960
+and back end with Python.
+
+16
+00:00:40,960 --> 00:00:43,750
+And I have never used binary trees
+
+17
+00:00:43,750 --> 00:00:46,670
+or recursion in my day job.
+
+18
+00:00:46,670 --> 00:00:48,630
+Nonetheless, it's something that can pop up
+
+19
+00:00:48,630 --> 00:00:51,070
+in coding challenges, interviews and so forth,
+
+20
+00:00:51,070 --> 00:00:53,460
+so it's good to know about it and it's also,
+
+21
+00:00:53,460 --> 00:00:56,680
+in software, it's used behind the scenes,
+
+22
+00:00:56,680 --> 00:00:58,320
+like in databases and things like that.
+
+23
+00:00:58,320 --> 00:01:00,430
+So it's useful to know about it
+
+24
+00:01:00,430 --> 00:01:02,400
+and that's why we're sort of going through it.
+
+25
+00:01:02,400 --> 00:01:03,920
+But don't worry too much about
+
+26
+00:01:03,920 --> 00:01:06,610
+fully getting your head around all the use cases
+
+27
+00:01:06,610 --> 00:01:09,100
+and how you use them extensively.
+
+28
+00:01:09,100 --> 00:01:11,110
+It's just not really worth it.
+
+29
+00:01:11,110 --> 00:01:12,730
+Although I will give you some more resources
+
+30
+00:01:12,730 --> 00:01:14,030
+in case you're interested.
+
+31
+00:01:15,030 --> 00:01:17,593
+In order to traverse in order,
+
+32
+00:01:19,320 --> 00:01:22,690
+we are going to use recursion.
+
+33
+00:01:22,690 --> 00:01:27,213
+So, let's first, inorder_recursive.
+
+34
+00:01:30,490 --> 00:01:34,713
+I'll type out a wee method here.
+
+35
+00:01:40,250 --> 00:01:41,920
+I'll type out a wee method
+
+36
+00:01:41,920 --> 00:01:44,700
+and I'll explain exactly what's happening.
+
+37
+00:01:44,700 --> 00:01:46,251
+And also, as part of this, I'll explain, of course,
+
+38
+00:01:46,251 --> 00:01:47,147
+what recursion is.
+
+39
+00:01:47,147 --> 00:01:49,297
+'cause I know that we've not done that yet.
+
+40
+00:01:50,570 --> 00:01:55,060
+What we've done here in this inorder method is,
+
+41
+00:01:55,060 --> 00:01:56,670
+it doesn't take any arguments,
+
+42
+00:01:56,670 --> 00:02:00,460
+but it calls another private method in Python.
+
+43
+00:02:00,460 --> 00:02:02,260
+By the way, I'm not sure if I've mentioned this, but,
+
+44
+00:02:02,260 --> 00:02:03,610
+when your methods and your variables
+
+45
+00:02:03,610 --> 00:02:06,150
+start with an underscore, that means they're private,
+
+46
+00:02:06,150 --> 00:02:09,380
+or you don't want other people calling them.
+
+47
+00:02:09,380 --> 00:02:12,990
+So we call this private method inorder_recursive,
+
+48
+00:02:12,990 --> 00:02:16,613
+with self.head as the argument.
+
+49
+00:02:17,460 --> 00:02:20,350
+Self.head becomes current_node
+
+50
+00:02:20,350 --> 00:02:22,333
+in this inorder_recursive method.
+
+51
+00:02:24,530 --> 00:02:27,360
+So this inorder_recursive method, all it's going to do,
+
+52
+00:02:27,360 --> 00:02:30,623
+is it's gonna say, if the current_node is none,
+
+53
+00:02:31,900 --> 00:02:33,460
+then we're gonna return.
+
+54
+00:02:33,460 --> 00:02:35,380
+Okay, we're gonna terminate the method
+
+55
+00:02:35,380 --> 00:02:38,833
+if current_node is none, we're gonna terminate.
+
+56
+00:02:40,260 --> 00:02:42,640
+Then what it's going to do,
+
+57
+00:02:42,640 --> 00:02:43,583
+is it's gonna say,
+
+58
+00:02:45,740 --> 00:02:48,970
+call itself, but
+
+59
+00:02:48,970 --> 00:02:50,763
+with current_node.left.
+
+60
+00:02:51,870 --> 00:02:53,470
+Okay, so as you can see,
+
+61
+00:02:53,470 --> 00:02:56,423
+this inorder_recursive method calls itself.
+
+62
+00:02:57,680 --> 00:02:59,500
+This is recursion.
+
+63
+00:02:59,500 --> 00:03:02,973
+Recursion is when a method or a function calls itself.
+
+64
+00:03:04,040 --> 00:03:07,200
+What happens when you call yourself is
+
+65
+00:03:08,270 --> 00:03:10,313
+something rather interesting.
+
+66
+00:03:11,958 --> 00:03:14,108
+We're gonna talk about it in just a moment.
+
+67
+00:03:15,240 --> 00:03:17,580
+And then we're gonna print the current_node
+
+68
+00:03:17,580 --> 00:03:19,640
+and then we are going to
+
+69
+00:03:21,660 --> 00:03:24,340
+call ourselves with the right node.
+
+70
+00:03:26,570 --> 00:03:29,963
+Here's what happens when you do recursion.
+
+71
+00:03:30,960 --> 00:03:35,350
+The inorder method calls self.inorder_recursive.
+
+72
+00:03:35,350 --> 00:03:36,323
+So we end up here.
+
+73
+00:03:38,520 --> 00:03:43,300
+Now, Python knows that the inorder_recursive method
+
+74
+00:03:43,300 --> 00:03:45,880
+was called by the inorder method.
+
+75
+00:03:45,880 --> 00:03:46,713
+It knows that.
+
+76
+00:03:46,713 --> 00:03:50,070
+It keeps track of who called who, for example,
+
+77
+00:03:50,070 --> 00:03:53,283
+so it can tell you in the stack traces in your errors.
+
+78
+00:03:54,300 --> 00:03:58,093
+So it knows that the inorder method called us.
+
+79
+00:03:58,990 --> 00:03:59,850
+We run through this.
+
+80
+00:03:59,850 --> 00:04:01,600
+Presumably we pass.
+
+81
+00:04:01,600 --> 00:04:05,690
+And then we call ourselves again inorder_recursive.
+
+82
+00:04:05,690 --> 00:04:06,990
+So, we go back to the top.
+
+83
+00:04:08,010 --> 00:04:10,380
+Now current_node is a different node.
+
+84
+00:04:10,380 --> 00:04:15,380
+But we know that we got called by inorder_recursive.
+
+85
+00:04:15,540 --> 00:04:19,440
+So Python knows inorder called inorder_recursive,
+
+86
+00:04:19,440 --> 00:04:21,683
+inorder_recursive called inorder_recursive.
+
+87
+00:04:22,600 --> 00:04:24,410
+Then we go again.
+
+88
+00:04:24,410 --> 00:04:25,920
+If we call ourselves again,
+
+89
+00:04:25,920 --> 00:04:28,020
+Python now starts constructing
+
+90
+00:04:28,860 --> 00:04:31,790
+a collection of how did these calls go.
+
+91
+00:04:31,790 --> 00:04:33,140
+Who called who?
+
+92
+00:04:33,140 --> 00:04:36,670
+What were the arguments or the values of the parameters
+
+93
+00:04:36,670 --> 00:04:38,070
+when each method was called?
+
+94
+00:04:40,990 --> 00:04:44,550
+Eventually we reach the leftmost node of the tree.
+
+95
+00:04:44,550 --> 00:04:45,633
+We print it out.
+
+96
+00:04:46,860 --> 00:04:49,260
+Then we go right and eventually
+
+97
+00:04:49,260 --> 00:04:53,800
+we sort of are at the right, or the leftmost
+
+98
+00:04:53,800 --> 00:04:57,430
+or rather rightmost node in the left branch of the tree
+
+99
+00:04:57,430 --> 00:05:01,603
+and we reach the end of the method.
+
+100
+00:05:04,440 --> 00:05:09,220
+What happens then is the method returns control
+
+101
+00:05:09,220 --> 00:05:10,743
+to whoever called it.
+
+102
+00:05:12,220 --> 00:05:15,667
+So, if inorder calls inorder_recursive
+
+103
+00:05:15,667 --> 00:05:17,900
+and inorder_recursive calls itself,
+
+104
+00:05:17,900 --> 00:05:21,840
+that constructs a collection of method calls
+
+105
+00:05:21,840 --> 00:05:23,710
+and then, when the method returns,
+
+106
+00:05:23,710 --> 00:05:26,553
+we go back to the previous call.
+
+107
+00:05:27,950 --> 00:05:31,490
+It's difficult to explain, without actually looking at it.
+
+108
+00:05:31,490 --> 00:05:32,930
+So what we're going to do is
+
+109
+00:05:32,930 --> 00:05:35,510
+we are going to use this and debug it.
+
+110
+00:05:35,510 --> 00:05:38,210
+So I'm gonna set a wee breakpoint here
+
+111
+00:05:38,210 --> 00:05:40,460
+before this method call happens
+
+112
+00:05:40,460 --> 00:05:43,260
+and we're gonna go over to our app.py
+
+113
+00:05:43,260 --> 00:05:48,010
+and print or do tree.inorder.
+
+114
+00:05:48,010 --> 00:05:50,050
+We're gonna call the inorder method here
+
+115
+00:05:50,050 --> 00:05:53,430
+after we ad a few nodes and then, in the binary-tree file,
+
+116
+00:05:53,430 --> 00:05:54,730
+we're gonna set a breakpoint
+
+117
+00:05:54,730 --> 00:05:57,523
+in the inorder_recursive method.
+
+118
+00:05:58,580 --> 00:05:59,880
+Then we're going to debug.
+
+119
+00:06:03,500 --> 00:06:06,823
+Now here begins the interesting part.
+
+120
+00:06:08,500 --> 00:06:10,003
+And I'm gonna try to go quite slowly with this
+
+121
+00:06:10,003 --> 00:06:13,570
+because I know it's a tricky concept.
+
+122
+00:06:13,570 --> 00:06:16,770
+I'm probably, my explanations really haven't helped so far.
+
+123
+00:06:16,770 --> 00:06:18,450
+Here on the left, we're gonna start looking
+
+124
+00:06:18,450 --> 00:06:19,473
+at this main thread.
+
+125
+00:06:19,473 --> 00:06:22,320
+It's not something we've looked at before in Python.
+
+126
+00:06:22,320 --> 00:06:23,930
+But the main thread,
+
+127
+00:06:23,930 --> 00:06:26,310
+now that you know a little bit about
+
+128
+00:06:26,310 --> 00:06:29,010
+asynchronous programming and threads and so forth in Python,
+
+129
+00:06:29,010 --> 00:06:29,843
+the main thread
+
+130
+00:06:29,843 --> 00:06:32,720
+is really the thread that does stuff in Python
+
+131
+00:06:32,720 --> 00:06:33,820
+and here you can see that
+
+132
+00:06:33,820 --> 00:06:35,740
+we don't have any other threads in this application.
+
+133
+00:06:35,740 --> 00:06:37,823
+We've not launched any other threads.
+
+134
+00:06:39,510 --> 00:06:42,450
+If you click any of these places,
+
+135
+00:06:42,450 --> 00:06:47,340
+you'll be taken to where the call started
+
+136
+00:06:47,340 --> 00:06:49,320
+for where you currently are.
+
+137
+00:06:49,320 --> 00:06:51,713
+So we're currently here, in this line,
+
+138
+00:06:52,620 --> 00:06:56,120
+which is in our binary-tree file, line 32.
+
+139
+00:06:56,120 --> 00:06:57,910
+So here, the main thread tells us
+
+140
+00:06:57,910 --> 00:07:01,470
+that we are inside the inorder_recursive function
+
+141
+00:07:01,470 --> 00:07:04,133
+in the binary_tree.py file, line 32.
+
+142
+00:07:05,160 --> 00:07:08,200
+And it tells us that this function
+
+143
+00:07:08,200 --> 00:07:11,120
+was called by the inorder function.
+
+144
+00:07:11,120 --> 00:07:14,890
+See this is directly below where we currently are down here.
+
+145
+00:07:14,890 --> 00:07:18,420
+So the inorder function binary_tree, line 27,
+
+146
+00:07:18,420 --> 00:07:20,653
+was who called us.
+
+147
+00:07:21,800 --> 00:07:23,700
+And who called them?
+
+148
+00:07:23,700 --> 00:07:25,720
+Well, it was app.py, line eight.
+
+149
+00:07:25,720 --> 00:07:27,260
+So if we go to app.py, line eight
+
+150
+00:07:27,260 --> 00:07:30,043
+you can see that tree.inorder was called here.
+
+151
+00:07:31,790 --> 00:07:34,060
+Who called app.py?
+
+152
+00:07:34,060 --> 00:07:36,300
+Some Python stuff.
+
+153
+00:07:36,300 --> 00:07:38,220
+The Python debugger execute file.
+
+154
+00:07:38,220 --> 00:07:39,790
+Don't worry about that.
+
+155
+00:07:39,790 --> 00:07:43,310
+For us, the execution started at app.py,
+
+156
+00:07:43,310 --> 00:07:47,525
+then called in_order and then called inorder_recursive.
+
+157
+00:07:47,525 --> 00:07:52,303
+The current_node in this call is node nine.
+
+158
+00:07:54,690 --> 00:07:56,890
+Because that's the head that we called with.
+
+159
+00:07:58,160 --> 00:08:00,490
+Now, we can go into this function.
+
+160
+00:08:00,490 --> 00:08:04,973
+Let's go in by doing this, Step Into.
+
+161
+00:08:05,930 --> 00:08:08,820
+Notice how now things changed.
+
+162
+00:08:08,820 --> 00:08:11,290
+The current_node for one, is node five
+
+163
+00:08:11,290 --> 00:08:13,923
+because that's current_node.left as it was before.
+
+164
+00:08:15,150 --> 00:08:17,760
+And now the main thread has changed.
+
+165
+00:08:17,760 --> 00:08:20,723
+We are in the inorder_recursive function, line 30.
+
+166
+00:08:21,630 --> 00:08:24,930
+We were called by the inorder_recursive function in line 32,
+
+167
+00:08:24,930 --> 00:08:27,747
+this one here, and that was called by inorder
+
+168
+00:08:27,747 --> 00:08:29,820
+and that was called by app.py.
+
+169
+00:08:29,820 --> 00:08:32,230
+And one of the great thing about PyCharm is
+
+170
+00:08:32,230 --> 00:08:34,660
+that you can actually click on it.
+
+171
+00:08:34,660 --> 00:08:35,580
+And when you click on it,
+
+172
+00:08:35,580 --> 00:08:38,910
+you can see that the current_node in here
+
+173
+00:08:38,910 --> 00:08:40,930
+was node nine, the head.
+
+174
+00:08:40,930 --> 00:08:43,090
+You click back to where we currently are,
+
+175
+00:08:43,090 --> 00:08:44,633
+the current_node is node five.
+
+176
+00:08:47,720 --> 00:08:49,700
+So, once again, let's Step Over,
+
+177
+00:08:49,700 --> 00:08:51,825
+we go into this line again.
+
+178
+00:08:51,825 --> 00:08:54,310
+Current_node.left is none.
+
+179
+00:08:54,310 --> 00:08:55,570
+And we know that.
+
+180
+00:08:55,570 --> 00:08:58,053
+So let's Step Into once again.
+
+181
+00:08:59,070 --> 00:09:02,160
+Notice how now we are in this recursive stack.
+
+182
+00:09:02,160 --> 00:09:05,600
+By the way, this thing here is a stack,
+
+183
+00:09:05,600 --> 00:09:08,370
+because new things get pushed at the top.
+
+184
+00:09:08,370 --> 00:09:11,480
+We're gonna see how they pop from the top as well.
+
+185
+00:09:11,480 --> 00:09:14,903
+Now we are at the last call in this chain.
+
+186
+00:09:15,850 --> 00:09:19,095
+Current_node is now none because the current_node
+
+187
+00:09:19,095 --> 00:09:23,520
+in the previous execution had a left of none.
+
+188
+00:09:23,520 --> 00:09:25,840
+So right now, current_node is none.
+
+189
+00:09:25,840 --> 00:09:30,203
+So what we do is we are going to just Return.
+
+190
+00:09:31,590 --> 00:09:36,300
+When we Return, this method call terminates
+
+191
+00:09:36,300 --> 00:09:38,400
+and we go back to the previous one.
+
+192
+00:09:38,400 --> 00:09:41,130
+So notice how now we're gonna jump down here,
+
+193
+00:09:41,130 --> 00:09:43,693
+but this is going to disappear.
+
+194
+00:09:45,090 --> 00:09:46,650
+See?
+
+195
+00:09:46,650 --> 00:09:48,840
+The method call we were at before disappeared
+
+196
+00:09:48,840 --> 00:09:51,070
+because that's the end of that call
+
+197
+00:09:51,070 --> 00:09:53,023
+and we go back to where we were before.
+
+198
+00:09:54,270 --> 00:09:57,910
+If we Step Into, notice how
+
+199
+00:09:57,910 --> 00:09:59,450
+it doesn't go into this method anymore
+
+200
+00:09:59,450 --> 00:10:01,140
+because we've already ran that.
+
+201
+00:10:01,140 --> 00:10:02,673
+Now it goes over to the print.
+
+202
+00:10:05,890 --> 00:10:08,590
+Then we can go over to the next line.
+
+203
+00:10:08,590 --> 00:10:10,760
+We can Step Into this line
+
+204
+00:10:10,760 --> 00:10:13,537
+and, once again, we are at the inorder_recursive method.
+
+205
+00:10:13,537 --> 00:10:16,420
+But, once again, the current_node is none.
+
+206
+00:10:16,420 --> 00:10:19,853
+If you check back, we're still at node five here.
+
+207
+00:10:21,270 --> 00:10:22,970
+We're still at node five here
+
+208
+00:10:22,970 --> 00:10:26,510
+and all that's happened is the right was none.
+
+209
+00:10:26,510 --> 00:10:30,070
+So when we called inorder_recursive with the right node,
+
+210
+00:10:30,070 --> 00:10:31,670
+that is none so, once again,
+
+211
+00:10:31,670 --> 00:10:34,173
+we're gonna return, and we end up back here.
+
+212
+00:10:35,730 --> 00:10:38,009
+You know that when we reach the end of a method
+
+213
+00:10:38,009 --> 00:10:41,460
+in Python, the end of a function,
+
+214
+00:10:41,460 --> 00:10:43,160
+that returns.
+
+215
+00:10:43,160 --> 00:10:45,570
+So, as soon as we press Step Over,
+
+216
+00:10:45,570 --> 00:10:47,220
+this function is gonna terminate.
+
+217
+00:10:47,220 --> 00:10:49,290
+Guess where we're gonna go next.
+
+218
+00:10:49,290 --> 00:10:51,113
+We're gonna go back here.
+
+219
+00:10:52,090 --> 00:10:54,362
+We're gonna go back to the previous execution
+
+220
+00:10:54,362 --> 00:10:57,160
+where the current_node was nine.
+
+221
+00:10:57,160 --> 00:10:59,150
+So I'm gonna go back to where we currently are,
+
+222
+00:10:59,150 --> 00:11:03,223
+press Step Over, and notice that's exactly what happens.
+
+223
+00:11:04,490 --> 00:11:06,470
+And once again, if we press Step Into,
+
+224
+00:11:06,470 --> 00:11:09,200
+this has already happened.
+
+225
+00:11:09,200 --> 00:11:12,830
+We've already ran the inorder_recursive function
+
+226
+00:11:12,830 --> 00:11:15,800
+for the left node of current_node.
+
+227
+00:11:15,800 --> 00:11:18,040
+Notice how we're back at the top of our stack
+
+228
+00:11:18,040 --> 00:11:19,743
+and the current_node is the head.
+
+229
+00:11:21,240 --> 00:11:22,930
+So once again we print.
+
+230
+00:11:22,930 --> 00:11:25,540
+And then we go back into the inorder_recursive
+
+231
+00:11:25,540 --> 00:11:27,648
+onto the right branch.
+
+232
+00:11:27,648 --> 00:11:30,989
+So, current_node now is node eleven.
+
+233
+00:11:30,989 --> 00:11:34,489
+Node eleven is the right node of the head.
+
+234
+00:11:36,199 --> 00:11:38,170
+So, going back to where we currently are,
+
+235
+00:11:38,170 --> 00:11:39,940
+this is not gonna happen.
+
+236
+00:11:39,940 --> 00:11:40,930
+This is going to happen.
+
+237
+00:11:40,930 --> 00:11:43,990
+We're gonna go into the inorder_recursive with a left.
+
+238
+00:11:43,990 --> 00:11:46,639
+The left is none because we didn't add anymore nodes.
+
+239
+00:11:46,639 --> 00:11:49,090
+Once again, this is gonna be none.
+
+240
+00:11:49,090 --> 00:11:50,223
+This is gonna return.
+
+241
+00:11:51,170 --> 00:11:53,300
+And, once again, were gonna go over to the right,
+
+242
+00:11:53,300 --> 00:11:55,030
+which is also none.
+
+243
+00:11:55,030 --> 00:11:56,760
+And that's just gonna return.
+
+244
+00:11:56,760 --> 00:11:58,700
+And now we have already, by the way,
+
+245
+00:11:58,700 --> 00:11:59,830
+printed out our nodes
+
+246
+00:11:59,830 --> 00:12:01,373
+because this print statement has happened there
+
+247
+00:12:01,373 --> 00:12:04,513
+in between everything that's been going on.
+
+248
+00:12:05,400 --> 00:12:07,140
+So now we're gonna finish this method
+
+249
+00:12:07,140 --> 00:12:10,790
+because we've already run through the recursion.
+
+250
+00:12:10,790 --> 00:12:13,881
+We are now at the end of the inorder_recursive method
+
+251
+00:12:13,881 --> 00:12:16,010
+with the head as current_node.
+
+252
+00:12:16,010 --> 00:12:17,363
+So when we press Next,
+
+253
+00:12:18,200 --> 00:12:21,170
+that is the end of the recursive method
+
+254
+00:12:21,170 --> 00:12:23,050
+and we can continue
+
+255
+00:12:23,050 --> 00:12:25,043
+and we've reached the end of our programme.
+
+256
+00:12:27,260 --> 00:12:28,883
+This is recursion.
+
+257
+00:12:30,900 --> 00:12:32,090
+Really important in recursion is
+
+258
+00:12:32,090 --> 00:12:34,660
+you end up with that stack of method calls
+
+259
+00:12:34,660 --> 00:12:38,750
+and when one returns, it goes back to the previous call.
+
+260
+00:12:38,750 --> 00:12:43,110
+So this is why we can sort of go deeper into our tree
+
+261
+00:12:43,110 --> 00:12:45,390
+by going left and then left and then left and then left
+
+262
+00:12:45,390 --> 00:12:46,670
+until we reach the end,
+
+263
+00:12:46,670 --> 00:12:48,713
+and then it just goes back one by one.
+
+264
+00:12:50,090 --> 00:12:52,690
+Really, please, use the debugger
+
+265
+00:12:52,690 --> 00:12:55,760
+to inspect and learn and play around with this,
+
+266
+00:12:55,760 --> 00:12:57,830
+because it's a tricky thing to get right.
+
+267
+00:12:57,830 --> 00:13:00,760
+Recursion is difficult to get your head around.
+
+268
+00:13:00,760 --> 00:13:02,400
+It's also not used all that often
+
+269
+00:13:02,400 --> 00:13:07,400
+in what I'd call product-oriented software companies.
+
+270
+00:13:07,414 --> 00:13:09,600
+But, nonetheless, it's an interesting thing.
+
+271
+00:13:09,600 --> 00:13:12,503
+And it's useful for things like these.
+
+272
+00:13:13,960 --> 00:13:15,860
+I'd also like to give you a challenge.
+
+273
+00:13:16,710 --> 00:13:20,880
+This code here prints the tree inorder.
+
+274
+00:13:20,880 --> 00:13:21,890
+I'd like to give you a challenge
+
+275
+00:13:21,890 --> 00:13:24,603
+of printing the tree, preorder.
+
+276
+00:13:26,200 --> 00:13:28,500
+So, you can go ahead and do that.
+
+277
+00:13:28,500 --> 00:13:30,990
+Try to print the tree, preorder,
+
+278
+00:13:30,990 --> 00:13:32,900
+which is going to be a very similar piece of code,
+
+279
+00:13:32,900 --> 00:13:34,833
+but just to give you a little bit more experience
+
+280
+00:13:34,833 --> 00:13:36,803
+writing recursive code.
+
+281
+00:13:48,160 --> 00:13:49,700
+Hopefully you got that.
+
+282
+00:13:49,700 --> 00:13:52,710
+All you have to do, if you wanna write this in preorder,
+
+283
+00:13:52,710 --> 00:13:54,160
+is, of course, move the print
+
+284
+00:13:56,400 --> 00:13:58,883
+to before the other things happen.
+
+285
+00:14:00,010 --> 00:14:01,510
+And then you end up with preorder
+
+286
+00:14:01,510 --> 00:14:02,343
+and you have to, of course,
+
+287
+00:14:02,343 --> 00:14:03,900
+change these names there as well.
+
+288
+00:14:07,460 --> 00:14:08,570
+That's it for this video.
+
+289
+00:14:08,570 --> 00:14:11,580
+Hopefully, you enjoyed looking at recursion
+
+290
+00:14:11,580 --> 00:14:14,080
+in PyCharm here.
+
+291
+00:14:14,080 --> 00:14:17,830
+And looking at the inorder traversal of a tree.
+
+292
+00:14:17,830 --> 00:14:19,300
+By the way, just before we finish,
+
+293
+00:14:19,300 --> 00:14:20,840
+of course if you just run the file,
+
+294
+00:14:20,840 --> 00:14:24,500
+you end up with five, nine, 11 printed it in order
+
+295
+00:14:25,360 --> 00:14:29,430
+in-order order, I guess, in-order format.
+
+296
+00:14:29,430 --> 00:14:31,000
+And, so again, that's it.
+
+297
+00:14:31,000 --> 00:14:32,100
+Thank you for joining me.
+
+298
+00:14:32,100 --> 00:14:33,750
+And I'll see you on the next one.
+

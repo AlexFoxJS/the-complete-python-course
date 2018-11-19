@@ -1,0 +1,1872 @@
+1
+00:00:00,180 --> 00:00:01,300
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,300 --> 00:00:02,380
+In this video we're looking at
+
+3
+00:00:02,380 --> 00:00:04,030
+something a bit more complicated.
+
+4
+00:00:04,030 --> 00:00:07,500
+Understanding some slightly more complex HTML.
+
+5
+00:00:07,500 --> 00:00:09,690
+Let's create a new file in our project,
+
+6
+00:00:10,560 --> 00:00:13,230
+which I'm gonna call middle_html.
+
+7
+00:00:14,567 --> 00:00:16,560
+By the way, the files in the project,
+
+8
+00:00:16,560 --> 00:00:18,550
+which are available at the start of this section,
+
+9
+00:00:18,550 --> 00:00:19,840
+also contain this exact code
+
+10
+00:00:19,840 --> 00:00:21,120
+and you can have a look at them.
+
+11
+00:00:21,120 --> 00:00:23,230
+The files may be named slightly differently.
+
+12
+00:00:23,230 --> 00:00:24,830
+And that should be fine, I hope.
+
+13
+00:00:25,760 --> 00:00:27,550
+Once again, we're gonna do the same
+
+14
+00:00:27,550 --> 00:00:30,380
+from bs4_import BeautifulSoup
+
+15
+00:00:30,380 --> 00:00:33,200
+and then I'm to paste in some HTML.
+
+16
+00:00:33,200 --> 00:00:35,870
+In this case, our HTML is going to represent
+
+17
+00:00:35,870 --> 00:00:40,210
+an item that being on sale in an online website.
+
+18
+00:00:40,210 --> 00:00:42,290
+So let's say we've managed to extract
+
+19
+00:00:42,290 --> 00:00:43,890
+the content from the website.
+
+20
+00:00:43,890 --> 00:00:45,570
+We're gonna look at how to do that.
+
+21
+00:00:45,570 --> 00:00:47,640
+And we've ended up with this HTML here.
+
+22
+00:00:48,760 --> 00:00:53,760
+And with this HTML, we can find out the price of the item,
+
+23
+00:00:53,990 --> 00:00:56,500
+the star-rating of the item and so forth.
+
+24
+00:00:57,470 --> 00:01:00,470
+Let me show you exactly what this looks like on the website.
+
+25
+00:01:00,470 --> 00:01:02,250
+Then it'll make a bit more sense.
+
+26
+00:01:03,220 --> 00:01:06,000
+What we've got here is a demo website
+
+27
+00:01:06,000 --> 00:01:07,940
+for web-scraping purposes.
+
+28
+00:01:07,940 --> 00:01:10,810
+And let's say we've managed to extract
+
+29
+00:01:10,810 --> 00:01:13,500
+some HTML content from it.
+
+30
+00:01:13,500 --> 00:01:16,250
+The content that I've extracted and put in the file,
+
+31
+00:01:16,250 --> 00:01:19,410
+is the content that represents this object exactly.
+
+32
+00:01:19,410 --> 00:01:21,630
+This bit of HTML here.
+
+33
+00:01:21,630 --> 00:01:24,710
+It could do as an image, a rating, a title,
+
+34
+00:01:24,710 --> 00:01:28,310
+which seems to be partly missing and the price
+
+35
+00:01:28,310 --> 00:01:30,330
+and then whether it's in stock or not,
+
+36
+00:01:30,330 --> 00:01:33,260
+and, finally, a button to add it to the basket.
+
+37
+00:01:34,150 --> 00:01:39,150
+So this HTML here is what we've copied into our file.
+
+38
+00:01:39,840 --> 00:01:41,980
+And, again, we're going to learn how to get the HTML
+
+39
+00:01:41,980 --> 00:01:44,230
+from the site very soon.
+
+40
+00:01:44,230 --> 00:01:47,790
+So let's go back into PyCharm and look at the HTML.
+
+41
+00:01:49,130 --> 00:01:50,600
+This is what we've got.
+
+42
+00:01:50,600 --> 00:01:54,840
+We've got a list item here.
+
+43
+00:01:54,840 --> 00:01:59,060
+That's because each element is actually in a list
+
+44
+00:01:59,060 --> 00:02:00,450
+in the website.
+
+45
+00:02:00,450 --> 00:02:03,040
+So, an element is a list item of a big list
+
+46
+00:02:03,040 --> 00:02:05,470
+that is formatted and structured in a bit of a different way
+
+47
+00:02:05,470 --> 00:02:07,010
+than you'd normally see lists.
+
+48
+00:02:07,950 --> 00:02:11,030
+Then, it's got an article inside it.
+
+49
+00:02:11,030 --> 00:02:13,590
+You can see that the article spans, essentially,
+
+50
+00:02:13,590 --> 00:02:15,690
+the entire document and that is
+
+51
+00:02:15,690 --> 00:02:18,150
+everything that we're interested in.
+
+52
+00:02:18,150 --> 00:02:22,810
+We've got a div, whose has a class image container.
+
+53
+00:02:22,810 --> 00:02:24,550
+And a div in HTML is normally
+
+54
+00:02:24,550 --> 00:02:28,330
+just something used to structure your content.
+
+55
+00:02:28,330 --> 00:02:30,100
+So think of it as a rectangle
+
+56
+00:02:30,100 --> 00:02:31,700
+and you can put things inside it.
+
+57
+00:02:31,700 --> 00:02:34,680
+And then here, what they've put, is a link and
+
+58
+00:02:34,680 --> 00:02:38,050
+that's the a which is used for linking.
+
+59
+00:02:38,050 --> 00:02:42,520
+href is the url or the address of the page
+
+60
+00:02:42,520 --> 00:02:45,030
+that the link goes to.
+
+61
+00:02:45,030 --> 00:02:48,590
+And, inside the link, notice how the link starts here,
+
+62
+00:02:48,590 --> 00:02:51,390
+and ends here in this closing tag.
+
+63
+00:02:51,390 --> 00:02:53,020
+You've got a image.
+
+64
+00:02:53,020 --> 00:02:57,760
+This is an image tag and this is the source of the image.
+
+65
+00:02:57,760 --> 00:03:00,150
+Some jpeg file.
+
+66
+00:03:00,150 --> 00:03:04,380
+It's got some alt property and it's got a class property.
+
+67
+00:03:05,310 --> 00:03:09,200
+The alt property is the alternate text to show
+
+68
+00:03:09,200 --> 00:03:12,170
+if the image cannot load for some reason.
+
+69
+00:03:12,170 --> 00:03:14,720
+So that is the title of the book, actually.
+
+70
+00:03:14,720 --> 00:03:16,080
+A Light in the Attic.
+
+71
+00:03:18,410 --> 00:03:22,400
+Outside the div we have a p tag, a paragraph tag,
+
+72
+00:03:22,400 --> 00:03:23,940
+which is used for the star-rating.
+
+73
+00:03:23,940 --> 00:03:26,530
+This is a bit of a bizarre way of doing a star-rating,
+
+74
+00:03:26,530 --> 00:03:30,390
+but you can see that there is a class star-rating
+
+75
+00:03:30,390 --> 00:03:33,330
+and another class, which is separated by a space in HTML,
+
+76
+00:03:33,330 --> 00:03:35,450
+called Three, with a capital T.
+
+77
+00:03:36,490 --> 00:03:38,920
+So, this book has three stars.
+
+78
+00:03:38,920 --> 00:03:42,220
+But you can inside it there are five i tags
+
+79
+00:03:42,220 --> 00:03:44,230
+which are used for icons.
+
+80
+00:03:44,230 --> 00:03:46,680
+So you can see that we must look at Three,
+
+81
+00:03:46,680 --> 00:03:50,720
+this class here, and not at the number of i tags
+
+82
+00:03:50,720 --> 00:03:53,030
+because the i tags are always five.
+
+83
+00:03:53,030 --> 00:03:54,370
+So we don't wanna look at that.
+
+84
+00:03:54,370 --> 00:03:56,200
+We wanna look at this Three.
+
+85
+00:03:57,290 --> 00:03:59,990
+Then outside the p you have an h3,
+
+86
+00:03:59,990 --> 00:04:01,510
+which is the title of the book.
+
+87
+00:04:01,510 --> 00:04:04,350
+And you can see that the contents of the h3 are
+
+88
+00:04:04,350 --> 00:04:06,205
+A Light in the ...
+
+89
+00:04:06,205 --> 00:04:08,910
+Presumably, the book name is too long
+
+90
+00:04:08,910 --> 00:04:11,100
+and it couldn't be displayed fully on the website.
+
+91
+00:04:11,100 --> 00:04:14,100
+However, the h3 contains inside it,
+
+92
+00:04:14,100 --> 00:04:17,660
+a link to the book page presumably,
+
+93
+00:04:17,660 --> 00:04:21,380
+and also has a title property in it, a title attribute,
+
+94
+00:04:21,380 --> 00:04:23,130
+that is also the title of the book.
+
+95
+00:04:24,400 --> 00:04:26,700
+Then you've got a div which is the product price.
+
+96
+00:04:26,700 --> 00:04:29,440
+And inside it, you've got a p tag, which contains
+
+97
+00:04:29,440 --> 00:04:31,230
+the class, price_color,
+
+98
+00:04:31,230 --> 00:04:33,130
+and that contains the price of the book
+
+99
+00:04:33,130 --> 00:04:34,880
+with a pound symbol in front of it.
+
+100
+00:04:36,050 --> 00:04:38,819
+Also inside the div, you have this other p tag
+
+101
+00:04:38,819 --> 00:04:42,990
+with class in_stock and another class called availability.
+
+102
+00:04:43,850 --> 00:04:47,100
+Presumably this class in_stock will only be present
+
+103
+00:04:47,100 --> 00:04:49,640
+in the document when the thing is in stock.
+
+104
+00:04:49,640 --> 00:04:50,480
+And if it's out of stock,
+
+105
+00:04:50,480 --> 00:04:52,290
+it'll say something else, possibly.
+
+106
+00:04:52,290 --> 00:04:53,240
+We don't know that.
+
+107
+00:04:54,290 --> 00:04:56,510
+Inside that p tag you've got an i class
+
+108
+00:04:56,510 --> 00:04:59,770
+which is from icon, an i tag, sorry, that's for an icon,
+
+109
+00:04:59,770 --> 00:05:02,330
+and that has a class icon-ok.
+
+110
+00:05:03,630 --> 00:05:04,920
+Then you've gpt the text In stock.
+
+111
+00:05:04,920 --> 00:05:07,600
+Notice how this is weirdly formatted.
+
+112
+00:05:07,600 --> 00:05:11,768
+And, finally, you've got a form that has a button in it.
+
+113
+00:05:11,768 --> 00:05:12,860
+You don't have to worry too much about that.
+
+114
+00:05:12,860 --> 00:05:14,560
+We're not gonna be looking into this.
+
+115
+00:05:14,560 --> 00:05:17,540
+Then you close the div that you started up here.
+
+116
+00:05:17,540 --> 00:05:18,860
+Finally you close the article.
+
+117
+00:05:18,860 --> 00:05:21,780
+You close the list item, which is for the entire thing.
+
+118
+00:05:21,780 --> 00:05:23,230
+And then you close your HTML.
+
+119
+00:05:24,130 --> 00:05:26,480
+So, we sort of understand this code.
+
+120
+00:05:26,480 --> 00:05:28,770
+Maybe it's not the clearest thing in the world.
+
+121
+00:05:28,770 --> 00:05:32,130
+But we are going to try to extract some data from it.
+
+122
+00:05:32,130 --> 00:05:34,000
+So, let's do just that.
+
+123
+00:05:34,000 --> 00:05:37,440
+The first thing is, of course, to create our soup.
+
+124
+00:05:37,440 --> 00:05:40,371
+So we're gonna do BeautifulSoup of
+
+125
+00:05:40,371 --> 00:05:42,954
+ITEM_THML, and the html.parser.
+
+126
+00:05:44,670 --> 00:05:49,670
+Then, we're going to start by locating the item name.
+
+127
+00:05:49,710 --> 00:05:50,543
+Okay?
+
+128
+00:05:50,543 --> 00:05:55,100
+So the item name, the title of the book, is, for example,
+
+129
+00:05:55,100 --> 00:05:59,330
+in this a, you remember we've got an image there
+
+130
+00:05:59,330 --> 00:06:02,350
+that has an alt property, which is the title of the book.
+
+131
+00:06:03,240 --> 00:06:06,240
+Or, more normally, we can get it off the actual title.
+
+132
+00:06:06,240 --> 00:06:08,180
+This is a heading 3, as you know.
+
+133
+00:06:08,180 --> 00:06:11,890
+And inside it there's an a and the a has a property title
+
+134
+00:06:11,890 --> 00:06:13,660
+and that's the title of the book.
+
+135
+00:06:13,660 --> 00:06:17,560
+We cannot get the content out of the string property
+
+136
+00:06:17,560 --> 00:06:18,940
+because that has a three dots
+
+137
+00:06:18,940 --> 00:06:20,530
+and it's missing part of the title.
+
+138
+00:06:20,530 --> 00:06:24,410
+So we must get it through here, okay?
+
+139
+00:06:24,410 --> 00:06:25,243
+Let's do that.
+
+140
+00:06:25,243 --> 00:06:26,509
+Let's create a function, which is gonna be
+
+141
+00:06:26,509 --> 00:06:27,759
+find_item_name.
+
+142
+00:06:30,750 --> 00:06:32,730
+I'm going to introduce to you a new way
+
+143
+00:06:32,730 --> 00:06:34,660
+of locating things which I think is
+
+144
+00:06:34,660 --> 00:06:38,030
+substantially easier than the default way.
+
+145
+00:06:38,930 --> 00:06:43,800
+So, we're going to identify from the start of our document,
+
+146
+00:06:43,800 --> 00:06:48,750
+what path of children will give us our element,
+
+147
+00:06:48,750 --> 00:06:49,790
+our a element.
+
+148
+00:06:50,930 --> 00:06:55,140
+So as you can see, our title tag, our title property here
+
+149
+00:06:55,140 --> 00:06:57,070
+is in this a tag.
+
+150
+00:06:57,070 --> 00:06:59,410
+The a tag is in the h3 tag.
+
+151
+00:06:59,410 --> 00:07:03,180
+The h3 tag is in the article tag.
+
+152
+00:07:03,180 --> 00:07:05,400
+The article tag is in the li tag,
+
+153
+00:07:05,400 --> 00:07:08,160
+which is in the body tag, which is in the HTML tag.
+
+154
+00:07:10,000 --> 00:07:15,000
+So, we're going to look at any of these parents.
+
+155
+00:07:15,570 --> 00:07:16,640
+We can start at anywhere.
+
+156
+00:07:16,640 --> 00:07:18,470
+We can start in the li.
+
+157
+00:07:18,470 --> 00:07:19,890
+We can start at the article.
+
+158
+00:07:19,890 --> 00:07:21,690
+We can start at the h3.
+
+159
+00:07:21,690 --> 00:07:25,640
+And we're gonna say, article is the first one, for example.
+
+160
+00:07:26,490 --> 00:07:28,760
+Then comes h3.
+
+161
+00:07:28,760 --> 00:07:29,910
+Then comes a.
+
+162
+00:07:31,090 --> 00:07:35,330
+And you can see that because this div here, for example,
+
+163
+00:07:35,330 --> 00:07:39,100
+is in the same level as this p tag.
+
+164
+00:07:39,100 --> 00:07:41,620
+The indentation is not very good,
+
+165
+00:07:41,620 --> 00:07:44,790
+but you can see that the div tag opens here
+
+166
+00:07:44,790 --> 00:07:46,850
+and it closes here, which means
+
+167
+00:07:46,850 --> 00:07:49,300
+the p tag is not inside it.
+
+168
+00:07:49,300 --> 00:07:50,760
+And the p tag closes here, which means
+
+169
+00:07:50,760 --> 00:07:52,920
+the h3 tag is not inside it.
+
+170
+00:07:52,920 --> 00:07:54,330
+So these are all on the same level,
+
+171
+00:07:54,330 --> 00:07:57,360
+which means they're all children of the article.
+
+172
+00:07:57,360 --> 00:07:58,930
+And the a is a children of an h3.
+
+173
+00:07:58,930 --> 00:08:01,620
+So, what we've got, essentially, in our locator,
+
+174
+00:08:02,460 --> 00:08:05,050
+is we've got an article, then separated by a space,
+
+175
+00:08:05,050 --> 00:08:07,080
+we have a h3 and we have an a.
+
+176
+00:08:08,350 --> 00:08:11,660
+And this sort of hierarchy allows BeautifulSoup
+
+177
+00:08:11,660 --> 00:08:15,510
+to find elements very easily, okay?
+
+178
+00:08:16,780 --> 00:08:20,690
+If you wanted to narrow down into a specific article,
+
+179
+00:08:20,690 --> 00:08:23,208
+for example, if you've had many articles,
+
+180
+00:08:23,208 --> 00:08:27,420
+notice how this article has a class of product_pod.
+
+181
+00:08:28,650 --> 00:08:31,880
+So you can actually say article.product_pod.
+
+182
+00:08:35,350 --> 00:08:38,020
+And what this means now, is you're looking for the article
+
+183
+00:08:38,020 --> 00:08:41,833
+that has class product_pod, and inside it,
+
+184
+00:08:41,833 --> 00:08:43,284
+you're looking for an h3,
+
+185
+00:08:43,284 --> 00:08:45,680
+and inside it you're looking for an a.
+
+186
+00:08:45,680 --> 00:08:47,810
+And this, once you do, for example,
+
+187
+00:08:47,810 --> 00:08:52,660
+item_name is soup.select_one(locator)
+
+188
+00:08:54,460 --> 00:08:58,180
+is going to give you whatever it is that this results in.
+
+189
+00:08:59,020 --> 00:09:02,620
+This thing here is known as a CSS locator
+
+190
+00:09:02,620 --> 00:09:03,840
+and is really powerful.
+
+191
+00:09:03,840 --> 00:09:06,890
+It allows us to essentially do this sort of thing.
+
+192
+00:09:06,890 --> 00:09:10,680
+And it's the way that CSS, the CSS language,
+
+193
+00:09:10,680 --> 00:09:11,780
+also locates things.
+
+194
+00:09:11,780 --> 00:09:13,902
+We're not gonna look into CSS in this course,
+
+195
+00:09:13,902 --> 00:09:16,240
+or at least not yet, but,
+
+196
+00:09:16,240 --> 00:09:18,290
+and that's what it's called, essentially.
+
+197
+00:09:19,540 --> 00:09:22,530
+In its simplest terms, we can get the parent,
+
+198
+00:09:22,530 --> 00:09:25,250
+narrow it down by a class if we want
+
+199
+00:09:25,250 --> 00:09:27,390
+and then go down to a child, and then another child,
+
+200
+00:09:27,390 --> 00:09:30,580
+and so forth, until we have a hierarchy
+
+201
+00:09:30,580 --> 00:09:33,330
+that is not repeated throughout the site.
+
+202
+00:09:33,330 --> 00:09:36,030
+So if you only have one article with a product_pod,
+
+203
+00:09:36,030 --> 00:09:38,940
+one h3 and one a, then that's gonna give you
+
+204
+00:09:38,940 --> 00:09:41,390
+this hierarchy here that you can search for.
+
+205
+00:09:43,220 --> 00:09:44,330
+Now that you've got the,
+
+206
+00:09:44,330 --> 00:09:45,430
+we're not gonna call it item_name,
+
+207
+00:09:45,430 --> 00:09:46,920
+we're gonna call it item_link.
+
+208
+00:09:46,920 --> 00:09:48,060
+Now that you've got the item_link,
+
+209
+00:09:48,060 --> 00:09:52,910
+we can say item_name = item_link.attrs['title'].
+
+210
+00:09:54,880 --> 00:09:58,330
+Again, this accesses the attributes of the link.
+
+211
+00:09:58,330 --> 00:09:59,670
+Our link is here.
+
+212
+00:10:01,530 --> 00:10:04,390
+And we're gonna access the title property
+
+213
+00:10:04,390 --> 00:10:06,310
+or attribute of that link.
+
+214
+00:10:07,410 --> 00:10:09,410
+And then we can print the item name out.
+
+215
+00:10:11,820 --> 00:10:12,800
+Let's run the function.
+
+216
+00:10:12,800 --> 00:10:16,530
+And, remember to run you middle_html file, and,
+
+217
+00:10:16,530 --> 00:10:19,380
+you can see that we get A Light in the Attic printed out.
+
+218
+00:10:21,800 --> 00:10:23,370
+Now using these locators,
+
+219
+00:10:23,370 --> 00:10:25,800
+you can essentially locate anything.
+
+220
+00:10:25,800 --> 00:10:27,970
+So here's a small challenge for you.
+
+221
+00:10:27,970 --> 00:10:30,940
+Using a locator, you're gonna actually use the same one.
+
+222
+00:10:30,940 --> 00:10:35,390
+Find out the link to this items page.
+
+223
+00:10:35,390 --> 00:10:39,110
+So what you're looking for is this href here.
+
+224
+00:10:39,110 --> 00:10:40,260
+I'm sure you can do it.
+
+225
+00:10:45,610 --> 00:10:46,630
+I hope you managed.
+
+226
+00:10:46,630 --> 00:10:50,530
+All that we have to do is, essentially, access the same
+
+227
+00:10:50,530 --> 00:10:53,400
+locator, but instead of the title,
+
+228
+00:10:53,400 --> 00:10:57,040
+access another attribute, which is the href attribute.
+
+229
+00:10:57,040 --> 00:10:58,190
+So we're going to copy,
+
+230
+00:11:01,170 --> 00:11:02,610
+paste it in here and we're gonna call it
+
+231
+00:11:02,610 --> 00:11:06,020
+find_item_link, and then we're going to access the
+
+232
+00:11:06,020 --> 00:11:07,820
+href attribute here.
+
+233
+00:11:07,820 --> 00:11:09,130
+Again, it's the same element,
+
+234
+00:11:09,130 --> 00:11:11,220
+article with product_pod class.
+
+235
+00:11:11,220 --> 00:11:13,500
+The h3 tag which is a child.
+
+236
+00:11:13,500 --> 00:11:15,540
+The a tag which is a child of that.
+
+237
+00:11:16,597 --> 00:11:17,930
+And then we're gonna select that
+
+238
+00:11:17,930 --> 00:11:22,040
+and, finally, we're gonna access the attribute of that,
+
+239
+00:11:22,040 --> 00:11:23,682
+and we're gonna print it out.
+
+240
+00:11:23,682 --> 00:11:25,896
+But, of course, now that we have this item_link
+
+241
+00:11:25,896 --> 00:11:27,770
+that's a pretty good name for our link,
+
+242
+00:11:27,770 --> 00:11:30,060
+we're gonna just do this.
+
+243
+00:11:30,060 --> 00:11:34,110
+So access the item, sorry, the tag,
+
+244
+00:11:34,110 --> 00:11:36,210
+and then access the href property of that.
+
+245
+00:11:36,210 --> 00:11:37,750
+And then we can bring that out.
+
+246
+00:11:40,320 --> 00:11:42,310
+Ooh, let's delete this.
+
+247
+00:11:44,710 --> 00:11:45,730
+And run again.
+
+248
+00:11:47,440 --> 00:11:49,250
+And now you can see that we get the title
+
+249
+00:11:49,250 --> 00:11:51,180
+and then we get the link here as well.
+
+250
+00:11:52,140 --> 00:11:55,800
+This is a relative link, so it doesn't give you the
+
+251
+00:11:55,800 --> 00:11:59,780
+entire domain name and the website and everything.
+
+252
+00:11:59,780 --> 00:12:00,613
+That's okay.
+
+253
+00:12:00,613 --> 00:12:02,820
+We'll learn how to deal with that later on.
+
+254
+00:12:04,790 --> 00:12:05,930
+Okay?
+
+255
+00:12:05,930 --> 00:12:09,020
+Using this locator now we can find other things.
+
+256
+00:12:09,880 --> 00:12:12,050
+So, we can find, for example, the item price
+
+257
+00:12:12,050 --> 00:12:14,091
+and the item rating.
+
+258
+00:12:14,091 --> 00:12:18,060
+It's not so easy to do because you're gonna have to do
+
+259
+00:12:18,060 --> 00:12:19,820
+some other calculations.
+
+260
+00:12:19,820 --> 00:12:23,200
+For example, if you wanted to find the item's price,
+
+261
+00:12:23,200 --> 00:12:24,810
+which is here,
+
+262
+00:12:24,810 --> 00:12:27,020
+you're gonna look at article.
+
+263
+00:12:27,020 --> 00:12:28,570
+Then you're potentially look at a p
+
+264
+00:12:28,570 --> 00:12:31,180
+that has price_color class.
+
+265
+00:12:31,180 --> 00:12:32,460
+And then you're gonna look at its contents,
+
+266
+00:12:32,460 --> 00:12:33,840
+the string contents of it.
+
+267
+00:12:34,760 --> 00:12:37,850
+But this is not a number, it is a string.
+
+268
+00:12:37,850 --> 00:12:40,650
+So you may want to strip out the pound sign
+
+269
+00:12:40,650 --> 00:12:44,160
+and use a regular expression to extract this group.
+
+270
+00:12:45,160 --> 00:12:47,150
+I think this would be a great exercise
+
+271
+00:12:47,150 --> 00:12:50,200
+for us to review what we've learned in the last section
+
+272
+00:12:50,200 --> 00:12:51,280
+and give it a go.
+
+273
+00:12:51,280 --> 00:12:56,280
+Try to extract 51.77 as a float using BeautifulSoup
+
+274
+00:12:57,740 --> 00:12:59,760
+and regular expressions.
+
+275
+00:12:59,760 --> 00:13:00,593
+Give that a go.
+
+276
+00:13:00,593 --> 00:13:01,940
+Pause the video and go for it.
+
+277
+00:13:07,680 --> 00:13:08,513
+I hope you managed.
+
+278
+00:13:08,513 --> 00:13:11,800
+It's a bit of a more-complicated way to go about things.
+
+279
+00:13:11,800 --> 00:13:14,540
+But what we're going to do is, first of all, locate this.
+
+280
+00:13:14,540 --> 00:13:17,050
+First of all, get this string out with BeautifulSoup.
+
+281
+00:13:17,050 --> 00:13:20,920
+So I'm going to create a new function, find_item_price.
+
+282
+00:13:23,620 --> 00:13:25,940
+And then I'm going to define my locator,
+
+283
+00:13:25,940 --> 00:13:29,070
+which is gonna be article.product_pod
+
+284
+00:13:29,070 --> 00:13:31,890
+and inside it we've got p.price_color.
+
+285
+00:13:31,890 --> 00:13:34,780
+So here we're accessing the article that has this class
+
+286
+00:13:34,780 --> 00:13:36,560
+and the p that has this class.
+
+287
+00:13:36,560 --> 00:13:39,530
+And that's gonna give us a pretty good understanding, or,
+
+288
+00:13:39,530 --> 00:13:41,000
+it's gonna give BeautifulSoup a good understanding
+
+289
+00:13:41,000 --> 00:13:42,320
+of how to get there.
+
+290
+00:13:43,680 --> 00:13:45,780
+Then, we're going to access the item_price
+
+291
+00:13:46,820 --> 00:13:51,750
+which is going to be soup.select.one(locator).string.
+
+292
+00:13:52,590 --> 00:13:55,590
+All that's happening here is we're finding that tag
+
+293
+00:13:55,590 --> 00:13:57,520
+and we're accessing the string content of it.
+
+294
+00:13:57,520 --> 00:14:01,190
+So this is gonna give us pound sign 51.77
+
+295
+00:14:01,190 --> 00:14:02,130
+or however much it was.
+
+296
+00:14:02,130 --> 00:14:04,630
+Yeah, 51.77, so this has given us that.
+
+297
+00:14:06,890 --> 00:14:09,830
+Now, we have this, we have to use our regular expression
+
+298
+00:14:09,830 --> 00:14:11,830
+in order to extract it.
+
+299
+00:14:11,830 --> 00:14:13,060
+So, going to the top of the file,
+
+300
+00:14:13,060 --> 00:14:17,880
+I'm gonna import the re module, import re.
+
+301
+00:14:17,880 --> 00:14:21,840
+Notice how I am doing this import re at the top of the file.
+
+302
+00:14:21,840 --> 00:14:24,970
+And from blah blah blah, import something else
+
+303
+00:14:24,970 --> 00:14:25,980
+directly underneath it.
+
+304
+00:14:25,980 --> 00:14:29,160
+This is Python sort-of convention to do
+
+305
+00:14:29,160 --> 00:14:30,910
+these type of imports at the top,
+
+306
+00:14:30,910 --> 00:14:33,210
+this type of imports just directly below them.
+
+307
+00:14:34,540 --> 00:14:36,380
+Now that we've got the re module,
+
+308
+00:14:36,380 --> 00:14:37,790
+we can define our pattern,
+
+309
+00:14:37,790 --> 00:14:40,670
+the regular expression we're looking for.
+
+310
+00:14:40,670 --> 00:14:42,750
+And this is going to be, first of all,
+
+311
+00:14:42,750 --> 00:14:46,240
+the pound symbol 51.77.
+
+312
+00:14:46,240 --> 00:14:47,590
+This is going to match.
+
+313
+00:14:47,590 --> 00:14:52,590
+We want to extract 51.77 as a number.
+
+314
+00:14:52,890 --> 00:14:54,800
+So we're gonna put it inside these brackets
+
+315
+00:14:54,800 --> 00:14:56,990
+so that we can extract it using the group.
+
+316
+00:14:58,350 --> 00:15:01,350
+Then, of course, we're not interested in this 51.77 only,
+
+317
+00:15:01,350 --> 00:15:03,240
+but if the price were to change,
+
+318
+00:15:03,240 --> 00:15:05,620
+we'd wanna get the changed price.
+
+319
+00:15:05,620 --> 00:15:08,400
+So instead of putting 51.77 in here,
+
+320
+00:15:08,400 --> 00:15:10,900
+we're gonna have to use something that will allow us
+
+321
+00:15:10,900 --> 00:15:14,000
+to get a range of numbers.
+
+322
+00:15:14,000 --> 00:15:15,754
+And the way we're gonna do that is by doing
+
+323
+00:15:15,754 --> 00:15:18,420
+zero to nine inside the square brackets.
+
+324
+00:15:18,420 --> 00:15:21,530
+This is a range of numbers from zero to nine.
+
+325
+00:15:21,530 --> 00:15:23,910
+Then we're gonna do plus, so that's gonna give us
+
+326
+00:15:23,910 --> 00:15:25,560
+one or more of these numbers.
+
+327
+00:15:26,600 --> 00:15:30,290
+And then, we're going to make sure to put a backslash
+
+328
+00:15:30,290 --> 00:15:33,010
+in front of the dot so that it matches
+
+329
+00:15:33,010 --> 00:15:35,630
+the dot and not anything, which is what it means
+
+330
+00:15:35,630 --> 00:15:36,580
+in regular expressions.
+
+331
+00:15:36,580 --> 00:15:39,340
+And for the 77, we're going to do the same.
+
+332
+00:15:39,340 --> 00:15:41,640
+Zero to nine plus.
+
+333
+00:15:43,760 --> 00:15:46,230
+Then we're going to search and get our groups.
+
+334
+00:15:46,230 --> 00:15:50,028
+So our groups, or our matcher is going to be
+
+335
+00:15:50,028 --> 00:15:51,720
+re.search(pattern, and item_price).
+
+336
+00:15:54,750 --> 00:15:58,740
+And, again, this is going to give us two groups.
+
+337
+00:15:58,740 --> 00:16:01,710
+Group zero, which is going to be the entire
+
+338
+00:16:01,710 --> 00:16:02,950
+thing that matches.
+
+339
+00:16:04,010 --> 00:16:07,190
+And then matcher.group(1), which is going to be
+
+340
+00:16:07,190 --> 00:16:09,850
+the first group that is between the brackets.
+
+341
+00:16:09,850 --> 00:16:14,460
+So that's gonna be 51.77 without the pound symbol.
+
+342
+00:16:14,460 --> 00:16:16,630
+Okay, this is gonna be 51.77.
+
+343
+00:16:16,630 --> 00:16:20,520
+This is gonna be 51.77 without the symbol.
+
+344
+00:16:20,520 --> 00:16:23,470
+So we can, indeed, turn it into a float.
+
+345
+00:16:25,210 --> 00:16:28,670
+Okay, we're printing out the float of this matcher.
+
+346
+00:16:29,680 --> 00:16:32,200
+And, so let's run that and see what happens.
+
+347
+00:16:34,610 --> 00:16:37,820
+And, as you can see, we get 51.77 with the pound sign,
+
+348
+00:16:37,820 --> 00:16:40,290
+and 51.77 without the pound sign.
+
+349
+00:16:42,500 --> 00:16:44,450
+Let's say we wanted to print it out but
+
+350
+00:16:45,547 --> 00:16:48,400
+at a 20% discount.
+
+351
+00:16:48,400 --> 00:16:50,660
+We can multiply by 0.8 and this should work
+
+352
+00:16:50,660 --> 00:16:52,910
+because it's a number now, it's not a string.
+
+353
+00:16:54,684 --> 00:16:55,620
+And, as you can see, it works.
+
+354
+00:16:55,620 --> 00:16:57,620
+We get 41.416.
+
+355
+00:16:58,690 --> 00:17:00,450
+So that's pretty awesome.
+
+356
+00:17:00,450 --> 00:17:03,467
+We have now learned how to extract a number
+
+357
+00:17:03,467 --> 00:17:08,010
+using BeautifulSoup and regular expressions from a website.
+
+358
+00:17:08,010 --> 00:17:10,130
+So, for example, the things that we can do now,
+
+359
+00:17:10,130 --> 00:17:12,080
+once we learn, of course, how to interact with the website,
+
+360
+00:17:12,080 --> 00:17:14,680
+which we will do shortly, in this section,
+
+361
+00:17:14,680 --> 00:17:18,000
+you can, for example, track item prices online.
+
+362
+00:17:18,000 --> 00:17:21,000
+For example, let's say you play badminton
+
+363
+00:17:21,000 --> 00:17:23,620
+and you wanna track the price of badminton rackets
+
+364
+00:17:23,620 --> 00:17:26,140
+over time in order to find out when you should buy one.
+
+365
+00:17:26,140 --> 00:17:28,310
+You could do this with a simple Python app
+
+366
+00:17:28,310 --> 00:17:30,050
+that essentially downloads the site
+
+367
+00:17:30,050 --> 00:17:32,980
+and looks through it using something like this.
+
+368
+00:17:34,870 --> 00:17:37,500
+Finally, let's find out the item's rating.
+
+369
+00:17:37,500 --> 00:17:40,920
+The rating is gonna be a bit more complicated
+
+370
+00:17:40,920 --> 00:17:45,920
+because we have to look at exactly one attribute,
+
+371
+00:17:45,970 --> 00:17:48,270
+which is this Three here.
+
+372
+00:17:48,270 --> 00:17:50,510
+But, of course, this is in a p tag
+
+373
+00:17:50,510 --> 00:17:52,920
+and there are many p tags around.
+
+374
+00:17:52,920 --> 00:17:54,680
+So, let's find this out.
+
+375
+00:17:57,810 --> 00:17:58,730
+Let's go down here.
+
+376
+00:17:58,730 --> 00:18:01,580
+We're gonna do def_find_item_rating.
+
+377
+00:18:02,720 --> 00:18:06,190
+The locator is going to be article.product_pod,
+
+378
+00:18:07,204 --> 00:18:08,840
+product_pod,
+
+379
+00:18:08,840 --> 00:18:11,760
+and inside it, p.star-rating.
+
+380
+00:18:13,100 --> 00:18:14,880
+That is because the paragraph we're looking for
+
+381
+00:18:14,880 --> 00:18:18,460
+is the one that has this class star-rating.
+
+382
+00:18:18,460 --> 00:18:22,250
+In CSS, classes are always separated by spaces.
+
+383
+00:18:22,250 --> 00:18:24,780
+So what this p tag has is two classes.
+
+384
+00:18:24,780 --> 00:18:27,800
+Star-rating and Three.
+
+385
+00:18:27,800 --> 00:18:29,210
+So we're looking for the paragraph
+
+386
+00:18:29,210 --> 00:18:30,830
+that has the star-rating class
+
+387
+00:18:30,830 --> 00:18:32,600
+and it also has other classes.
+
+388
+00:18:32,600 --> 00:18:35,420
+But we're not limited to only this one.
+
+389
+00:18:35,420 --> 00:18:38,280
+So this locator will find that paragraph.
+
+390
+00:18:38,280 --> 00:18:40,270
+It has a p.star-rating.
+
+391
+00:18:40,270 --> 00:18:42,520
+And if we wanted to also found it with the Three class,
+
+392
+00:18:42,520 --> 00:18:44,200
+we could do this.
+
+393
+00:18:44,200 --> 00:18:46,210
+But we don't want to find it with two classes,
+
+394
+00:18:46,210 --> 00:18:47,990
+just in case the rating changes.
+
+395
+00:18:47,990 --> 00:18:50,120
+So, we're gonna stick it with this only.
+
+396
+00:18:52,680 --> 00:18:56,730
+The star-rating element, the tag, or the star-rating tag
+
+397
+00:18:56,730 --> 00:18:58,730
+is going to be soup.select_one(locator).
+
+398
+00:19:01,470 --> 00:19:04,780
+So this gives us the tag, okay?
+
+399
+00:19:05,670 --> 00:19:09,140
+Now, we can get the class tags out of it.
+
+400
+00:19:09,140 --> 00:19:13,560
+So the classes are star-rating_tag.attrs('class').
+
+401
+00:19:15,770 --> 00:19:18,430
+And this is now when BeautifulSoup extracts it
+
+402
+00:19:18,430 --> 00:19:23,120
+it's going to be two classes, these two.
+
+403
+00:19:23,120 --> 00:19:24,650
+This is what it's gonna give us.
+
+404
+00:19:24,650 --> 00:19:26,860
+So we need to find out what this is.
+
+405
+00:19:28,000 --> 00:19:30,920
+But, remember, it could be the first one.
+
+406
+00:19:30,920 --> 00:19:33,440
+It doesn't necessarily have to be the second class,
+
+407
+00:19:33,440 --> 00:19:36,500
+so this list could be like this.
+
+408
+00:19:36,500 --> 00:19:40,480
+We cannot just select the second element.
+
+409
+00:19:40,480 --> 00:19:42,290
+That would be too easy.
+
+410
+00:19:42,290 --> 00:19:43,700
+So what we're going to do, is
+
+411
+00:19:43,700 --> 00:19:46,670
+we're going to recreate this classes list,
+
+412
+00:19:46,670 --> 00:19:49,210
+but without this star-rating.
+
+413
+00:19:49,210 --> 00:19:51,970
+I'm sure you can do that using either a list comprehension
+
+414
+00:19:51,970 --> 00:19:53,670
+or the filter function.
+
+415
+00:19:53,670 --> 00:19:54,503
+Give it a go.
+
+416
+00:20:00,390 --> 00:20:01,550
+I'm sure you managed.
+
+417
+00:20:01,550 --> 00:20:02,810
+There are two ways that we could do this.
+
+418
+00:20:02,810 --> 00:20:07,810
+We could say rating_classes is r for r in classes
+
+419
+00:20:08,390 --> 00:20:12,180
+if r is not equal to 'star-rating'.
+
+420
+00:20:13,600 --> 00:20:14,490
+This would be one way.
+
+421
+00:20:14,490 --> 00:20:16,970
+Or we could do rating_classes equals filter
+
+422
+00:20:16,970 --> 00:20:21,970
+of lambda x for x is not star-rating in classes.
+
+423
+00:20:25,400 --> 00:20:28,490
+Okay, either of these would be perfectly suitable.
+
+424
+00:20:28,490 --> 00:20:32,180
+The codes that you'll see online has this.
+
+425
+00:20:32,180 --> 00:20:35,530
+So we're gonna leave the list comprehension in the video.
+
+426
+00:20:35,530 --> 00:20:38,730
+If you wanna look out at the other way of doing things
+
+427
+00:20:38,730 --> 00:20:39,563
+check out the video
+
+428
+00:20:39,563 --> 00:20:42,750
+which is linked at the start of the lecture and also,
+
+429
+00:20:42,750 --> 00:20:45,400
+at the start of the section, and also in the lecture.
+
+430
+00:20:46,750 --> 00:20:50,350
+Now this list here should contain a single element.
+
+431
+00:20:50,350 --> 00:20:51,250
+This Three.
+
+432
+00:20:52,200 --> 00:20:56,770
+So, we can just say print(rating_classes)[0].
+
+433
+00:20:57,610 --> 00:21:00,440
+We're assuming that the paragraph is not going to have
+
+434
+00:21:00,440 --> 00:21:05,440
+any other tags, say, for example, hello class.
+
+435
+00:21:05,970 --> 00:21:06,840
+It would be weird.
+
+436
+00:21:06,840 --> 00:21:08,140
+But, you know, it can happen.
+
+437
+00:21:08,140 --> 00:21:13,140
+And this method, if that's the case, is not ideal for that.
+
+438
+00:21:13,570 --> 00:21:16,960
+But, through looking at a few of the items on the website,
+
+439
+00:21:16,960 --> 00:21:19,240
+it seems that they're only ever two classes.
+
+440
+00:21:19,240 --> 00:21:22,080
+Star-rating and the rating.
+
+441
+00:21:22,080 --> 00:21:24,740
+So that could be Four, or Five, or Three and so on.
+
+442
+00:21:26,340 --> 00:21:29,910
+Finally, let's call this one find_item_rating
+
+443
+00:21:29,910 --> 00:21:33,710
+and run this and there you have it down here.
+
+444
+00:21:33,710 --> 00:21:35,880
+We've got the number of stars in this book.
+
+445
+00:21:35,880 --> 00:21:38,360
+So we could use this now to search the books
+
+446
+00:21:38,360 --> 00:21:41,420
+and we could, for example, download the entire page
+
+447
+00:21:41,420 --> 00:21:43,610
+and find which books have five stars
+
+448
+00:21:43,610 --> 00:21:46,100
+and are under 20 pounds.
+
+449
+00:21:46,100 --> 00:21:48,940
+And that would be something that we could do.
+
+450
+00:21:48,940 --> 00:21:50,340
+But before we do that, of course,
+
+451
+00:21:50,340 --> 00:21:54,760
+we have to learn to extract the content from the site
+
+452
+00:21:54,760 --> 00:21:56,860
+by downloading the website.
+
+453
+00:21:56,860 --> 00:21:58,600
+So we're going to do that very soon.
+
+454
+00:21:58,600 --> 00:22:00,520
+But first I just want to tell you a little bit
+
+455
+00:22:00,520 --> 00:22:04,020
+about how to improve on this structure.
+
+456
+00:22:04,020 --> 00:22:05,200
+You're not always going to,
+
+457
+00:22:05,200 --> 00:22:09,970
+or you're not gonna want to have these top-level functions
+
+458
+00:22:09,970 --> 00:22:11,520
+for each thing you're finding.
+
+459
+00:22:11,520 --> 00:22:12,640
+You're not gonna want your functions
+
+460
+00:22:12,640 --> 00:22:14,520
+to be printing things out, necessarily.
+
+461
+00:22:14,520 --> 00:22:16,230
+So we're gonna make things a bit better.
+
+462
+00:22:16,230 --> 00:22:19,370
+We're going to start separating things into classes
+
+463
+00:22:19,370 --> 00:22:20,203
+and things like that
+
+464
+00:22:20,203 --> 00:22:21,760
+just so you have a better idea
+
+465
+00:22:21,760 --> 00:22:23,860
+of how I'd recommend that you go about
+
+466
+00:22:24,800 --> 00:22:26,900
+parsing the HTML and sort of
+
+467
+00:22:26,900 --> 00:22:29,270
+dealing with it nicely in your programmes.
+
+468
+00:22:29,270 --> 00:22:31,570
+So, with that said, see you on the next video.
+

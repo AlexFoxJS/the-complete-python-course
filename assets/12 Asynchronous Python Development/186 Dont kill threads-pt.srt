@@ -1,0 +1,172 @@
+1
+00:00:00,050 --> 00:00:01,227
+Instrutor: Ol, bem vindo de volta.
+
+2
+00:00:01,227 --> 00:00:02,652
+Neste vdeo, eu s queria
+
+3
+00:00:02,652 --> 00:00:04,728
+contar um pouco sobre como matar tpicos.
+
+4
+00:00:04,728 --> 00:00:07,210
+Voltei aqui no cdigo para o cdigo antes
+
+5
+00:00:07,210 --> 00:00:09,579
+de usar o ThreadPoolExecutor e observe que
+
+6
+00:00:09,579 --> 00:00:11,602
+ns temos thread1. start e
+
+7
+00:00:11,602 --> 00:00:13,111
+thread2. comear.
+
+8
+00:00:13,111 --> 00:00:15,634
+Ento, temos espao para escrever mais cdigo
+
+9
+00:00:15,634 --> 00:00:17,797
+e depois esperamos que eles terminem.
+
+10
+00:00:17,797 --> 00:00:21,002
+Dentro deste espao aqui, voc poderia escrever algum cdigo para
+
+11
+00:00:21,002 --> 00:00:25,127
+matar o tpico, por exemplo, se ele atende a algum critrio ou
+
+12
+00:00:25,127 --> 00:00:28,070
+talvez voc no precise mais dele ou algo assim.
+
+13
+00:00:28,070 --> 00:00:31,596
+Voc poderia escrever algum cdigo para matar o tpico,
+
+14
+00:00:31,596 --> 00:00:34,199
+mas voc no deveria fazer isso.
+
+15
+00:00:34,199 --> 00:00:38,530
+No mate um fio. Espere que termine.
+
+16
+00:00:38,530 --> 00:00:43,440
+Se voc matar um thread manualmente sem ter muito cuidado, o que
+
+17
+00:00:43,440 --> 00:00:47,991
+pode acontecer  que o seu thread tenha adquirido o GIL, voc
+
+18
+00:00:47,991 --> 00:00:52,010
+o mate antes de liberar o GIL, e ento o
+
+19
+00:00:52,010 --> 00:00:55,466
+que voc tem  que o GIL se foi.
+
+20
+00:00:55,466 --> 00:00:56,995
+Nenhum outro segmento pode peg-lo
+
+21
+00:00:56,995 --> 00:00:58,713
+porque no foi lanado antes.
+
+22
+00:00:58,713 --> 00:01:01,880
+Threads no liberaro os recursos
+
+23
+00:01:03,062 --> 00:01:04,710
+apenas matando-os.
+
+24
+00:01:04,710 --> 00:01:06,527
+Voc precisa liberar os
+
+25
+00:01:06,527 --> 00:01:09,205
+recursos manualmente no prprio cdigo do segmento.
+
+26
+00:01:09,205 --> 00:01:10,916
+Se voc tem seu thread e ele
+
+27
+00:01:10,916 --> 00:01:12,782
+ iniciado, e ele est usando o GIL
+
+28
+00:01:12,782 --> 00:01:15,832
+e depois voc o mata, o GIL acabou, nenhum outro segmento pode
+
+29
+00:01:15,832 --> 00:01:18,016
+obter o GIL, seu programa em Python ir parar.
+
+30
+00:01:18,016 --> 00:01:20,275
+Ele no terminar, porque o thread
+
+31
+00:01:20,275 --> 00:01:22,314
+aqui estar esperando para terminar, mas
+
+32
+00:01:22,314 --> 00:01:24,579
+no ser capaz de fazer nada,
+
+33
+00:01:24,579 --> 00:01:27,142
+e se isso acontecer, se voc tiver
+
+34
+00:01:27,142 --> 00:01:30,698
+um recurso que est sendo usado e nada mais puder
+
+35
+00:01:30,698 --> 00:01:32,924
+us-lo, isso  chamado de um
+
+36
+00:01:32,924 --> 00:01:35,209
+impasse na computao, e  uma coisa ruim.
+
+37
+00:01:35,209 --> 00:01:37,725
+Ento, tenha cuidado. No mate tpicos.
+
+38
+00:01:37,725 --> 00:01:39,531
+E isso  tudo que eu digo.
+
+39
+00:01:39,531 --> 00:01:41,683
+No elimine tpicos, no  fcil
+
+40
+00:01:41,683 --> 00:01:43,212
+de fazer e no recomendo.
+
+41
+00:01:43,212 --> 00:01:45,143
+Se voc matar tpicos, voc ter
+
+42
+00:01:45,143 --> 00:01:46,662
+problemas, ento no faa isso.
+
+43
+00:01:46,662 --> 00:01:48,767
+ isso para este vdeo. Eu vejo voc no prximo.
+

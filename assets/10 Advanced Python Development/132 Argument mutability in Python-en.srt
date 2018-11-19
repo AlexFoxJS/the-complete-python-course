@@ -1,0 +1,932 @@
+1
+00:00:00,120 --> 00:00:01,360
+<v ->Hi, and welcome back.</v>
+
+2
+00:00:01,360 --> 00:00:03,390
+In the last video, we looked at mutability,
+
+3
+00:00:03,390 --> 00:00:04,390
+and now we're going to look at
+
+4
+00:00:04,390 --> 00:00:06,350
+passing arguments in Python.
+
+5
+00:00:08,030 --> 00:00:10,310
+Let's look at a couple examples of arguments in Python,
+
+6
+00:00:10,310 --> 00:00:12,660
+and I'm going to show you this dictionary here.
+
+7
+00:00:14,960 --> 00:00:19,240
+Dictionaries are a great example of mutable data structures.
+
+8
+00:00:19,240 --> 00:00:23,300
+And then we'll create a function called see friend
+
+9
+00:00:23,300 --> 00:00:25,400
+that is going to allow us to see a friend
+
+10
+00:00:25,400 --> 00:00:26,900
+that we didn't see for a long time.
+
+11
+00:00:26,900 --> 00:00:31,900
+So see friend, friends, name, and this function,
+
+12
+00:00:32,630 --> 00:00:36,820
+all it will do, it'll say friends name equals zero.
+
+13
+00:00:36,820 --> 00:00:40,530
+If we pass in friends last seen and Rolf,
+
+14
+00:00:40,530 --> 00:00:44,250
+it'll set Rolf's value to zero instead of 31.
+
+15
+00:00:44,250 --> 00:00:47,870
+Now here comes the interesting bit.
+
+16
+00:00:47,870 --> 00:00:51,640
+We're going to print out the ID of friends here,
+
+17
+00:00:52,880 --> 00:00:54,020
+inside the function.
+
+18
+00:00:54,020 --> 00:00:56,450
+This is the parameter friends.
+
+19
+00:00:56,450 --> 00:01:00,760
+Then, we're also going to print the ID of friends last seen,
+
+20
+00:01:00,760 --> 00:01:03,360
+which is our dictionary that is in the global scope.
+
+21
+00:01:05,300 --> 00:01:10,300
+Finally, we are going to call see friend
+
+22
+00:01:11,830 --> 00:01:14,810
+with friends last seen and Rolf,
+
+23
+00:01:15,680 --> 00:01:18,450
+and we're going to print the ID of friends last seen.
+
+24
+00:01:20,040 --> 00:01:22,180
+How many different numbers do you think
+
+25
+00:01:22,180 --> 00:01:23,710
+we're going to see here?
+
+26
+00:01:28,070 --> 00:01:32,010
+Hopefully the answer was one, one number only.
+
+27
+00:01:32,010 --> 00:01:33,430
+But, I mean, we'll see.
+
+28
+00:01:35,860 --> 00:01:38,810
+Notice how the first thing we printed out
+
+29
+00:01:38,810 --> 00:01:40,740
+was this friends last seen here,
+
+30
+00:01:41,700 --> 00:01:43,250
+and it's a number.
+
+31
+00:01:44,330 --> 00:01:47,420
+Then we called see friends, and we passed in
+
+32
+00:01:47,420 --> 00:01:48,740
+friends last seen.
+
+33
+00:01:49,700 --> 00:01:52,060
+The name changed over to friends,
+
+34
+00:01:52,060 --> 00:01:55,400
+but actually the number is still the same.
+
+35
+00:01:55,400 --> 00:01:58,380
+It's still the same dictionary, this one here.
+
+36
+00:01:59,790 --> 00:02:02,120
+Finally, when we exited the function after changing
+
+37
+00:02:02,120 --> 00:02:05,770
+the inner property of the friends dictionary,
+
+38
+00:02:05,770 --> 00:02:08,440
+we printed out the ID and it was still the same.
+
+39
+00:02:11,310 --> 00:02:13,070
+Now let's do something else.
+
+40
+00:02:13,070 --> 00:02:17,130
+I'm going to print the ID of friends last seen, Rolf,
+
+41
+00:02:17,130 --> 00:02:18,750
+before we call the function,
+
+42
+00:02:19,870 --> 00:02:22,130
+and then we're going to print the ID
+
+43
+00:02:22,130 --> 00:02:26,160
+of friends last seen Rolf, after we call the function.
+
+44
+00:02:27,280 --> 00:02:30,590
+Notice how friends last seen Rolf will have changed
+
+45
+00:02:30,590 --> 00:02:33,080
+from 31 to zero.
+
+46
+00:02:33,080 --> 00:02:35,070
+Now how many different numbers do you think
+
+47
+00:02:35,070 --> 00:02:38,990
+we're going to see printed out in total, one, two, or three?
+
+48
+00:02:42,530 --> 00:02:44,320
+Hopefully you said three.
+
+49
+00:02:44,320 --> 00:02:47,440
+Friends last seen Rolf here is the number 31,
+
+50
+00:02:48,310 --> 00:02:51,230
+friend last seen Rolf here is the number zero,
+
+51
+00:02:51,230 --> 00:02:54,890
+integers are immutable, so whenever we change one,
+
+52
+00:02:54,890 --> 00:02:56,710
+that is a new integer being created.
+
+53
+00:02:56,710 --> 00:02:57,543
+Let's run it.
+
+54
+00:02:58,960 --> 00:03:03,610
+And as you can see, we have now three dictionaries here.
+
+55
+00:03:03,610 --> 00:03:07,100
+Sorry, three different numbers here.
+
+56
+00:03:07,100 --> 00:03:11,030
+The first one is this friends last seen.
+
+57
+00:03:11,970 --> 00:03:15,040
+The second one is this ID of Rolf,
+
+58
+00:03:15,040 --> 00:03:16,850
+and that's this one here,
+
+59
+00:03:16,850 --> 00:03:19,350
+then we print the ID of the friends dictionary,
+
+60
+00:03:19,350 --> 00:03:20,650
+same one as the first one,
+
+61
+00:03:21,970 --> 00:03:25,270
+then we print the ID of the new Rolf number,
+
+62
+00:03:25,270 --> 00:03:28,520
+and notice how two and four are different,
+
+63
+00:03:29,920 --> 00:03:31,820
+and finally we print the ID of the dictionary AN,
+
+64
+00:03:31,820 --> 00:03:32,720
+which is the same.
+
+65
+00:03:34,830 --> 00:03:38,340
+So this is mutability in action.
+
+66
+00:03:38,340 --> 00:03:41,470
+What we've seen is that the friends last seen dictionary
+
+67
+00:03:42,750 --> 00:03:44,920
+has not changed itself,
+
+68
+00:03:44,920 --> 00:03:47,890
+but one of the properties inside it has.
+
+69
+00:03:47,890 --> 00:03:50,640
+Even though at no point we have modified
+
+70
+00:03:50,640 --> 00:03:52,690
+the friends last seen dictionary.
+
+71
+00:03:52,690 --> 00:03:55,940
+We've only modified the value that we passed
+
+72
+00:03:55,940 --> 00:03:58,040
+to the function in there.
+
+73
+00:03:59,120 --> 00:04:00,560
+Let me delete the IDs
+
+74
+00:04:00,560 --> 00:04:01,980
+so I can explain things a bit better
+
+75
+00:04:01,980 --> 00:04:04,440
+without all that gibberish.
+
+76
+00:04:05,610 --> 00:04:08,630
+So again, what's happening is that these variables,
+
+77
+00:04:08,630 --> 00:04:10,660
+friends last seen and friends
+
+78
+00:04:10,660 --> 00:04:13,630
+are just post-it notes on the value,
+
+79
+00:04:13,630 --> 00:04:15,900
+the value being this dictionary,
+
+80
+00:04:15,900 --> 00:04:18,810
+this dictionary specifically with this ID
+
+81
+00:04:18,810 --> 00:04:20,540
+that we had got.
+
+82
+00:04:21,660 --> 00:04:25,270
+When we pass the value here,
+
+83
+00:04:25,270 --> 00:04:27,290
+what's happening is that we are passing
+
+84
+00:04:27,290 --> 00:04:28,740
+the value of the variable,
+
+85
+00:04:28,740 --> 00:04:31,110
+we're not passing the variable itself,
+
+86
+00:04:31,110 --> 00:04:34,900
+so the dictionary now gets assigned to friends.
+
+87
+00:04:36,000 --> 00:04:40,870
+Friends is just another post-it note on the dictionary.
+
+88
+00:04:42,370 --> 00:04:46,210
+Indeed, we can print whether friends equal
+
+89
+00:04:46,210 --> 00:04:48,300
+friends last seen.
+
+90
+00:04:48,300 --> 00:04:52,790
+The equal equal is going to compare the contents,
+
+91
+00:04:53,660 --> 00:04:56,470
+so if there were two distinct dictionaries
+
+92
+00:04:56,470 --> 00:04:58,760
+with distinct contents, this would return true,
+
+93
+00:04:58,760 --> 00:05:02,560
+but is compares for the IDs,
+
+94
+00:05:02,560 --> 00:05:04,030
+so it's gonna tells us whether they are
+
+95
+00:05:04,030 --> 00:05:06,240
+exactly the same object,
+
+96
+00:05:06,240 --> 00:05:09,300
+and when we run it, we get true,
+
+97
+00:05:09,300 --> 00:05:12,140
+because this friends variable here
+
+98
+00:05:12,140 --> 00:05:14,540
+that has the value of friends last seen
+
+99
+00:05:14,540 --> 00:05:17,010
+is actually the same as the friends last seen variable
+
+100
+00:05:17,010 --> 00:05:18,420
+that was defined up here.
+
+101
+00:05:18,420 --> 00:05:21,010
+The same dictionary exactly.
+
+102
+00:05:21,010 --> 00:05:24,300
+Therefore, when we mutate one,
+
+103
+00:05:25,280 --> 00:05:28,210
+that is changing the Rolf property
+
+104
+00:05:28,210 --> 00:05:29,560
+of this dictionary up here.
+
+105
+00:05:30,720 --> 00:05:34,920
+Therefore, friends last seen Rolf
+
+106
+00:05:34,920 --> 00:05:38,850
+will have the value zero after we run the function.
+
+107
+00:05:38,850 --> 00:05:39,700
+There we have it.
+
+108
+00:05:42,660 --> 00:05:45,600
+So mutability can be quite dangerous,
+
+109
+00:05:45,600 --> 00:05:47,950
+because if you change the dictionary in this function,
+
+110
+00:05:47,950 --> 00:05:49,890
+and you're thinking hey, yeah, we changed the dictionary
+
+111
+00:05:49,890 --> 00:05:50,723
+and now we can use it,
+
+112
+00:05:50,723 --> 00:05:55,420
+for example say you wanted to use it here some more,
+
+113
+00:05:56,500 --> 00:05:59,150
+you may not realise that it's actually changing
+
+114
+00:05:59,150 --> 00:06:02,000
+everywhere else that you use that same dictionary,
+
+115
+00:06:02,000 --> 00:06:03,450
+so it can be quite dangerous.
+
+116
+00:06:04,830 --> 00:06:06,048
+Okay.
+
+117
+00:06:06,048 --> 00:06:07,698
+That's the concept of mutability.
+
+118
+00:06:09,650 --> 00:06:14,080
+However, if you go and have something like
+
+119
+00:06:14,080 --> 00:06:17,660
+age is 20 and then have a function that is increase age,
+
+120
+00:06:23,970 --> 00:06:25,060
+and you do this,
+
+121
+00:06:26,340 --> 00:06:31,340
+then you say ID of age, increase age, age, ID of age,
+
+122
+00:06:33,810 --> 00:06:36,040
+what we're doing here is defining a variable.
+
+123
+00:06:36,040 --> 00:06:38,530
+That is a post-it on the value 20.
+
+124
+00:06:40,200 --> 00:06:43,900
+Then, we are getting the ID of that 20,
+
+125
+00:06:43,900 --> 00:06:46,670
+we're calling increase age, which has the value 20,
+
+126
+00:06:46,670 --> 00:06:50,470
+so current age is another post-it on 20,
+
+127
+00:06:50,470 --> 00:06:53,840
+and now we're saying this post-it
+
+128
+00:06:53,840 --> 00:06:56,800
+now points to 20 plus one,
+
+129
+00:06:56,800 --> 00:06:59,470
+so that's 21, an entirely different number.
+
+130
+00:06:59,470 --> 00:07:02,530
+Then when we return, we print out the ID of age.
+
+131
+00:07:03,640 --> 00:07:05,620
+What do you think we're going to see?
+
+132
+00:07:05,620 --> 00:07:07,950
+Are we going to see the same number twice,
+
+133
+00:07:07,950 --> 00:07:11,580
+or are we going to see two different numbers?
+
+134
+00:07:17,810 --> 00:07:20,780
+Well, we see nothing, because we didn't print them out.
+
+135
+00:07:20,780 --> 00:07:22,810
+Let's see if you guessed that one.
+
+136
+00:07:23,670 --> 00:07:24,503
+Let's print it.
+
+137
+00:07:27,390 --> 00:07:30,400
+We get the same number twice.
+
+138
+00:07:30,400 --> 00:07:33,520
+What does that tell us on the value of age?
+
+139
+00:07:33,520 --> 00:07:35,820
+What is age here?
+
+140
+00:07:35,820 --> 00:07:37,470
+Age here is 20.
+
+141
+00:07:37,470 --> 00:07:38,640
+What is age here?
+
+142
+00:07:39,760 --> 00:07:42,540
+Well, it must be 20, because it's got the same ID,
+
+143
+00:07:42,540 --> 00:07:46,140
+and we know that numbers are all different objects.
+
+144
+00:07:47,940 --> 00:07:51,450
+So what's happened is that this current age variable
+
+145
+00:07:51,450 --> 00:07:54,360
+has the number 20 assigned to it,
+
+146
+00:07:55,320 --> 00:07:56,590
+but then what we've done is we've said
+
+147
+00:07:56,590 --> 00:08:01,590
+now the current age variable is a post-it on 21, not on 20.
+
+148
+00:08:02,120 --> 00:08:03,950
+Age is still a post-it on 20.
+
+149
+00:08:05,670 --> 00:08:08,770
+So the number 20 has not changed.
+
+150
+00:08:08,770 --> 00:08:10,660
+It is only the variables that have moved
+
+151
+00:08:10,660 --> 00:08:12,440
+from one to another.
+
+152
+00:08:14,430 --> 00:08:18,220
+Again, an important concept for mutability.
+
+153
+00:08:18,220 --> 00:08:21,300
+If you do this on an immutable object,
+
+154
+00:08:21,300 --> 00:08:23,160
+it'll just change within the function.
+
+155
+00:08:23,160 --> 00:08:26,190
+This variable will now point somewhere else,
+
+156
+00:08:26,190 --> 00:08:28,510
+but the outer elements will not change.
+
+157
+00:08:30,350 --> 00:08:31,900
+Let's give you a third example.
+
+158
+00:08:33,171 --> 00:08:35,040
+A list of prime numbers.
+
+159
+00:08:36,560 --> 00:08:39,160
+The ID of primes will be something,
+
+160
+00:08:39,160 --> 00:08:41,910
+we'll have to remember to print it this time, though,
+
+161
+00:08:41,910 --> 00:08:45,430
+then we'll say primes plus equal seven and 11,
+
+162
+00:08:46,520 --> 00:08:49,290
+and then we'll print the ID of primes.
+
+163
+00:08:49,290 --> 00:08:51,290
+What do we think we're going to see now?
+
+164
+00:08:58,600 --> 00:09:00,500
+We get the same ID back.
+
+165
+00:09:01,410 --> 00:09:04,850
+That is some bizarre functionality, right?
+
+166
+00:09:04,850 --> 00:09:09,850
+This one is primes equal primes plus seven, 11.
+
+167
+00:09:10,220 --> 00:09:14,740
+Surely, it should be a different thing.
+
+168
+00:09:14,740 --> 00:09:17,470
+We've moved the variable from pointing to this list
+
+169
+00:09:17,470 --> 00:09:19,870
+now points to the longer list.
+
+170
+00:09:21,040 --> 00:09:25,600
+But remember, when I said that this is equivalent to this,
+
+171
+00:09:25,600 --> 00:09:28,400
+I was lying, it is not.
+
+172
+00:09:28,400 --> 00:09:33,400
+What's happening here is that primes is equal to
+
+173
+00:09:34,120 --> 00:09:36,420
+primes dot iadd.
+
+174
+00:09:38,530 --> 00:09:39,363
+That.
+
+175
+00:09:40,390 --> 00:09:43,330
+And it is up to the implementation of this function
+
+176
+00:09:43,330 --> 00:09:45,890
+whether it's going to modify primes,
+
+177
+00:09:45,890 --> 00:09:48,540
+or whether it's going to create a new list,
+
+178
+00:09:48,540 --> 00:09:50,650
+that determines whether this is going to be
+
+179
+00:09:50,650 --> 00:09:52,400
+the same object or a different one.
+
+180
+00:09:53,512 --> 00:09:54,345
+Okay.
+
+181
+00:09:56,704 --> 00:09:58,240
+And in this case, in case of the list,
+
+182
+00:09:58,240 --> 00:10:00,990
+and in case of a lot of objects,
+
+183
+00:10:00,990 --> 00:10:04,900
+when you do iadd, when you do plus equal, or minus equal,
+
+184
+00:10:04,900 --> 00:10:07,310
+or times equal, or divide equal,
+
+185
+00:10:08,150 --> 00:10:11,260
+the Python official documentation says that
+
+186
+00:10:11,260 --> 00:10:16,260
+when you do that, one of these iadd or isub,
+
+187
+00:10:16,370 --> 00:10:19,440
+or imul for multiply,
+
+188
+00:10:19,440 --> 00:10:22,310
+they should modify the object if possible.
+
+189
+00:10:22,310 --> 00:10:25,320
+So in the case of lists, iadd modifies the list.
+
+190
+00:10:26,780 --> 00:10:28,380
+Okay.
+
+191
+00:10:28,380 --> 00:10:30,940
+Of course, if you do primes equal
+
+192
+00:10:32,500 --> 00:10:35,580
+two, three, five, plus that,
+
+193
+00:10:35,580 --> 00:10:39,310
+we're going to see two different numbers printed out here,
+
+194
+00:10:39,310 --> 00:10:42,790
+because these are two things.
+
+195
+00:10:42,790 --> 00:10:45,440
+What if we do primes equal primes plus that?
+
+196
+00:10:48,240 --> 00:10:52,080
+We also get two entirely different objects printed.
+
+197
+00:10:52,950 --> 00:10:55,290
+Again, what's happening here is
+
+198
+00:10:55,290 --> 00:10:59,760
+primes equal primes add seven, 11.
+
+199
+00:11:00,600 --> 00:11:01,750
+It is not iadd.
+
+200
+00:11:01,750 --> 00:11:06,470
+Iadd is meant to, where possible, modify self,
+
+201
+00:11:07,370 --> 00:11:10,010
+add does not have that requirement.
+
+202
+00:11:10,010 --> 00:11:12,230
+And in the case of lists, it has been implemented
+
+203
+00:11:12,230 --> 00:11:14,620
+so that it creates a new list.
+
+204
+00:11:14,620 --> 00:11:17,870
+So this is why this creates a new list entirely.
+
+205
+00:11:19,990 --> 00:11:20,870
+Okay.
+
+206
+00:11:20,870 --> 00:11:23,060
+So it's all up to the implementation
+
+207
+00:11:23,060 --> 00:11:26,130
+whether the objects are mutable or not.
+
+208
+00:11:28,240 --> 00:11:29,500
+So enough of this.
+
+209
+00:11:29,500 --> 00:11:31,510
+Just remember when you pass something to a function,
+
+210
+00:11:31,510 --> 00:11:34,400
+then you can potentially mutate that thing,
+
+211
+00:11:34,400 --> 00:11:36,320
+and then the value outside the function
+
+212
+00:11:36,320 --> 00:11:38,190
+will have changed, too.
+
+213
+00:11:38,190 --> 00:11:39,630
+For example, with dictionaries,
+
+214
+00:11:39,630 --> 00:11:42,610
+and you can do it with lists as well if you use plus equal,
+
+215
+00:11:42,610 --> 00:11:45,540
+or indeed any other of the i-something functions,
+
+216
+00:11:46,740 --> 00:11:49,830
+unless the thing you pass to the function is immutable,
+
+217
+00:11:49,830 --> 00:11:52,080
+in which case, when you try to change it,
+
+218
+00:11:52,080 --> 00:11:55,580
+it won't have changed outside the function, only inside.
+
+219
+00:11:55,580 --> 00:11:57,380
+Essentially what you've done is you've moved the variable
+
+220
+00:11:57,380 --> 00:11:58,970
+from one place to another.
+
+221
+00:12:00,770 --> 00:12:04,460
+Okay, that's it, I hope that this starts to make
+
+222
+00:12:04,460 --> 00:12:06,270
+a little bit of sense.
+
+223
+00:12:06,270 --> 00:12:08,480
+As you programme more in Python,
+
+224
+00:12:08,480 --> 00:12:12,090
+I think you'll be glad to have received this lecture from me
+
+225
+00:12:12,090 --> 00:12:13,280
+in order to understand a bit more
+
+226
+00:12:13,280 --> 00:12:15,080
+of what's going on behind the scenes
+
+227
+00:12:15,080 --> 00:12:17,350
+with mutability and different variables.
+
+228
+00:12:17,350 --> 00:12:19,680
+It really is a frequent question
+
+229
+00:12:19,680 --> 00:12:21,800
+on a lot of online Python forums,
+
+230
+00:12:21,800 --> 00:12:23,460
+questions, and stock overflow.
+
+231
+00:12:23,460 --> 00:12:24,410
+So it's really good to know
+
+232
+00:12:24,410 --> 00:12:26,280
+that this is how things are handled.
+
+233
+00:12:27,300 --> 00:12:29,800
+So with that said, I'll see you on the next video.
+

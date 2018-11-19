@@ -1,0 +1,960 @@
+1
+00:00:00,385 --> 00:00:01,442 line:15% 
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,442 --> 00:00:05,481 line:15% 
+In this video we're looking at lambda functions.
+
+3
+00:00:05,481 --> 00:00:09,594
+Here's a function and this function has two parameters.
+
+4
+00:00:09,594 --> 00:00:12,596
+As per usual Python standards, we've got a parameter
+
+5
+00:00:12,596 --> 00:00:15,005
+called x and then a comma that separates it
+
+6
+00:00:15,005 --> 00:00:18,146
+from the next parameter called y.
+
+7
+00:00:18,146 --> 00:00:20,916
+Now, as you know, whenever we call this function
+
+8
+00:00:20,916 --> 00:00:22,503
+we'll give it two parameters
+
+9
+00:00:22,503 --> 00:00:24,540
+and again they'll be separated by a comma
+
+10
+00:00:24,540 --> 00:00:28,159
+5 will go into x, 10 will go into y
+
+11
+00:00:28,159 --> 00:00:30,576
+and then this will return 15.
+
+12
+00:00:32,924 --> 00:00:35,855
+Now that we've covered functions in some of the forms,
+
+13
+00:00:35,855 --> 00:00:39,031
+we can look at a new form of function
+
+14
+00:00:39,031 --> 00:00:41,314
+and that's an anonymous function,
+
+15
+00:00:41,314 --> 00:00:44,000
+a function with no name.
+
+16
+00:00:44,000 --> 00:00:45,794
+But, wait, didn't it say in the last video
+
+17
+00:00:45,794 --> 00:00:49,834
+that functions are names for blocks of code?
+
+18
+00:00:49,834 --> 00:00:51,503
+And I did say that.
+
+19
+00:00:51,503 --> 00:00:54,509
+Add to here is a name for the block of code
+
+20
+00:00:54,509 --> 00:00:57,028
+that is enclosed within it
+
+21
+00:00:57,028 --> 00:01:01,339
+but there are also functions that don't have names.
+
+22
+00:01:01,339 --> 00:01:03,250
+They're anonymous functions
+
+23
+00:01:03,250 --> 00:01:07,195
+and they're useful in a small but important number of places
+
+24
+00:01:07,195 --> 00:01:08,538
+so in this section I just want to tell you
+
+25
+00:01:08,538 --> 00:01:10,813
+about anonymous functions, how to create them
+
+26
+00:01:10,813 --> 00:01:14,272
+and how to use them and soon, in a future section,
+
+27
+00:01:14,272 --> 00:01:15,496
+we're going to look into places
+
+28
+00:01:15,496 --> 00:01:17,933
+where they can be really useful
+
+29
+00:01:17,933 --> 00:01:21,592
+and, believe me, anonymous functions are -
+
+30
+00:01:21,592 --> 00:01:22,980
+pretty much everyone in programing -
+
+31
+00:01:22,980 --> 00:01:24,246
+they are really popular
+
+32
+00:01:24,246 --> 00:01:26,563
+particularly in some programing languages
+
+33
+00:01:26,563 --> 00:01:28,796
+so knowing about them is really useful
+
+34
+00:01:28,796 --> 00:01:30,749
+and when we reach that later section,
+
+35
+00:01:30,749 --> 00:01:34,941
+you'll be glad that you know more about anonymous functions.
+
+36
+00:01:34,941 --> 00:01:37,343
+So, by the way, anonymous function and lambda function
+
+37
+00:01:37,343 --> 00:01:39,863
+same thing in Python but in other programing languages,
+
+38
+00:01:39,863 --> 00:01:43,082
+they're just called anonymous functions.
+
+39
+00:01:43,082 --> 00:01:44,625
+So we've got this function here.
+
+40
+00:01:44,625 --> 00:01:46,917
+I have two things in two parameters
+
+41
+00:01:46,917 --> 00:01:49,068
+and returns the sum of them.
+
+42
+00:01:49,068 --> 00:01:53,235
+We can re-write this as a lambda function like so.
+
+43
+00:01:57,705 --> 00:01:59,862
+Pretty straight-forward I hope.
+
+44
+00:01:59,862 --> 00:02:02,588
+Sorry for that, I just hit the microphone there.
+
+45
+00:02:02,588 --> 00:02:04,508
+We've got the lambda - keyword.
+
+46
+00:02:04,508 --> 00:02:06,052
+That's a keyword in Python
+
+47
+00:02:06,052 --> 00:02:08,102
+and then we've got x comma y.
+
+48
+00:02:08,102 --> 00:02:10,140
+These are the two arguments.
+
+49
+00:02:10,140 --> 00:02:13,517
+Then we've got a colon which declares that what follows
+
+50
+00:02:13,517 --> 00:02:17,014
+is now something else and this here is
+
+51
+00:02:17,014 --> 00:02:19,329
+the return value of the function.
+
+52
+00:02:19,329 --> 00:02:22,098
+Notice how we don't have to type out return explicitly.
+
+53
+00:02:22,098 --> 00:02:26,245
+Lambda functions already know how to do that.
+
+54
+00:02:26,245 --> 00:02:27,787
+So how do you call these functions?
+
+55
+00:02:27,787 --> 00:02:29,454
+How do you run them?
+
+56
+00:02:31,571 --> 00:02:35,404
+We know that add two is 10 and 5, for example.
+
+57
+00:02:36,256 --> 00:02:38,839
+What about the lambda function?
+
+58
+00:02:42,068 --> 00:02:44,683
+Well it's a good question.
+
+59
+00:02:44,683 --> 00:02:48,385
+In Python, when Python realises that
+
+60
+00:02:48,385 --> 00:02:51,684
+something you've declared, like a function or a variable
+
+61
+00:02:51,684 --> 00:02:55,338
+or something like that is no longer going to be used,
+
+62
+00:02:55,338 --> 00:02:57,332
+Python automatically destroys it
+
+63
+00:02:57,332 --> 00:02:59,198
+in order to give you more performance
+
+64
+00:02:59,198 --> 00:03:03,996
+and free up memory in your computer and things like that.
+
+65
+00:03:03,996 --> 00:03:07,167
+This anonymous function doesn't have a name.
+
+66
+00:03:07,167 --> 00:03:10,595
+Ergo, therefore we cannot use it after
+
+67
+00:03:10,595 --> 00:03:13,559
+because we have no way of referring to it.
+
+68
+00:03:13,559 --> 00:03:17,096
+As soon as it's created, Python destroys it
+
+69
+00:03:17,096 --> 00:03:20,639
+and it says here, statement seems to have no effect.
+
+70
+00:03:20,639 --> 00:03:23,444
+We're defining, well, we're not really defining anything.
+
+71
+00:03:23,444 --> 00:03:25,439
+We're saying, hey this is a function
+
+72
+00:03:25,439 --> 00:03:29,343
+and then immediately destroyed, completely useless.
+
+73
+00:03:29,343 --> 00:03:32,266
+So if we wanted to use the lambda function,
+
+74
+00:03:32,266 --> 00:03:35,433
+we will have to put it inside brackets
+
+75
+00:03:38,690 --> 00:03:41,626
+and then, as usual, we put the brackets
+
+76
+00:03:41,626 --> 00:03:43,416
+just like for the add two function.
+
+77
+00:03:43,416 --> 00:03:47,033
+That means we're calling this thing that precedes it
+
+78
+00:03:47,033 --> 00:03:49,024
+with the values 10 and 5.
+
+79
+00:03:49,024 --> 00:03:51,221
+So there's lambda function here.
+
+80
+00:03:51,221 --> 00:03:52,765
+10 will go into x.
+
+81
+00:03:52,765 --> 00:03:54,840
+5 will go into y.
+
+82
+00:03:54,840 --> 00:03:57,923
+Notice how this is a staple in Python
+
+83
+00:03:59,305 --> 00:04:00,260
+and I was going to say cuisine
+
+84
+00:04:00,260 --> 00:04:02,498
+but that's really cuisine, is it?
+
+85
+00:04:02,498 --> 00:04:05,114
+This is a staple in Python programing.
+
+86
+00:04:05,114 --> 00:04:08,075
+Brackets mean call the function
+
+87
+00:04:08,075 --> 00:04:10,636
+and that works for good old normal functions
+
+88
+00:04:10,636 --> 00:04:14,616
+and lambda functions, too, same thing.
+
+89
+00:04:14,616 --> 00:04:17,872
+So you can, of course, print this out
+
+90
+00:04:17,872 --> 00:04:20,316
+which is starting to get quite confusing
+
+91
+00:04:20,316 --> 00:04:22,106
+but you can see that you get 15 also.
+
+92
+00:04:22,106 --> 00:04:24,507
+I'm not lying to you.
+
+93
+00:04:24,507 --> 00:04:26,170
+Now this is pretty terrible
+
+94
+00:04:26,170 --> 00:04:29,670
+because there's a lot a brackets in there.
+
+95
+00:04:31,064 --> 00:04:31,921
+It just doesn't make a lot of sense.
+
+96
+00:04:31,921 --> 00:04:34,487
+I mean, every time you want to use this lambda function,
+
+97
+00:04:34,487 --> 00:04:36,239
+you have to define it.
+
+98
+00:04:36,239 --> 00:04:39,415
+I mean, what's that going to do to performance.
+
+99
+00:04:39,415 --> 00:04:41,165
+It's not going to be good for performance,
+
+100
+00:04:41,165 --> 00:04:42,386
+let me tell you that.
+
+101
+00:04:42,386 --> 00:04:46,694
+Not only is it unreadable because it's confusing,
+
+102
+00:04:46,694 --> 00:04:48,122
+the fact that you have to define the function
+
+103
+00:04:48,122 --> 00:04:49,628
+every time you want to use it
+
+104
+00:04:49,628 --> 00:04:52,711
+is not particularly efficient either.
+
+105
+00:04:57,813 --> 00:05:02,244
+So what we can do is instead we can give it a name.
+
+106
+00:05:02,244 --> 00:05:05,494
+Let's say that we can say sum or add is
+
+107
+00:05:07,487 --> 00:05:09,487
+lambda x, y x plus y.
+
+108
+00:05:11,762 --> 00:05:16,033
+Now this anonymous function, we have given it a name.
+
+109
+00:05:16,033 --> 00:05:17,373
+It sort of defeats the purpose of
+
+110
+00:05:17,373 --> 00:05:19,956
+anonymous functions, didn't it?
+
+111
+00:05:20,989 --> 00:05:25,061
+Yes, it sort of defeats the purpose of anonymous functions
+
+112
+00:05:25,061 --> 00:05:27,579
+but there is a benefit to this
+
+113
+00:05:27,579 --> 00:05:31,617
+which is that this function is a really simple function
+
+114
+00:05:31,617 --> 00:05:36,130
+and it reads as, once you're accustomed to reading this,
+
+115
+00:05:36,130 --> 00:05:41,130
+it reads as this is a process that takes in these values
+
+116
+00:05:41,416 --> 00:05:44,955
+and it processes them to give you that.
+
+117
+00:05:44,955 --> 00:05:47,924
+Slightly simpler than defining the whole function,
+
+118
+00:05:47,924 --> 00:05:50,812
+less boilerplate, you know.
+
+119
+00:05:50,812 --> 00:05:53,088
+Readability is an important thing here
+
+120
+00:05:53,088 --> 00:05:57,505
+and for simpler functions, this can be more readable.
+
+121
+00:05:59,799 --> 00:06:02,484
+Okay, something important for me to say is
+
+122
+00:06:02,484 --> 00:06:04,719
+that as we've seen that these brackets are used
+
+123
+00:06:04,719 --> 00:06:06,110
+for calling functions,
+
+124
+00:06:06,110 --> 00:06:10,057
+either anonymous functions or proper functions,
+
+125
+00:06:10,057 --> 00:06:14,982
+lambda functions and "proper functions" are the same thing.
+
+126
+00:06:14,982 --> 00:06:18,805
+Inside Python, they're undistinguishable.
+
+127
+00:06:18,805 --> 00:06:21,609
+Whenever you can use one, you can use the other
+
+128
+00:06:21,609 --> 00:06:23,776
+and vice versa, of course.
+
+129
+00:06:24,908 --> 00:06:28,240
+Now let's talk about first-class functions.
+
+130
+00:06:28,240 --> 00:06:31,123
+First-class function means that
+
+131
+00:06:31,123 --> 00:06:35,276
+a function can be an argument to another function.
+
+132
+00:06:35,276 --> 00:06:36,703
+What does that mean?
+
+133
+00:06:36,703 --> 00:06:39,620
+Okay, let's define equal functions.
+
+134
+00:06:45,449 --> 00:06:47,159
+Let's define this function.
+
+135
+00:06:47,159 --> 00:06:49,103
+This is a pretty bizarre function
+
+136
+00:06:49,103 --> 00:06:54,103
+because it's called who, takes in a parameter called data
+
+137
+00:06:54,351 --> 00:06:57,196
+and another called identify
+
+138
+00:06:57,196 --> 00:07:00,342
+but this identify you can see is a function
+
+139
+00:07:00,342 --> 00:07:02,267
+because we're using the bracket notation after it
+
+140
+00:07:02,267 --> 00:07:04,379
+which means we're running a function
+
+141
+00:07:04,379 --> 00:07:06,615
+so we've got this identify function
+
+142
+00:07:06,615 --> 00:07:09,015
+and we're giving it the data function
+
+143
+00:07:09,015 --> 00:07:11,098
+in order to do something.
+
+144
+00:07:12,919 --> 00:07:17,919
+So, for example, we could define my identifier function
+
+145
+00:07:18,209 --> 00:07:22,459
+which given some data is going to return data name.
+
+146
+00:07:28,899 --> 00:07:31,732
+So if we do my identifier function
+
+147
+00:07:33,207 --> 00:07:36,290
+and we give it a dictionary name Jose
+
+148
+00:07:38,946 --> 00:07:41,836
+that is going to return data name.
+
+149
+00:07:41,836 --> 00:07:44,003
+I'm sorry, some data name.
+
+150
+00:07:44,844 --> 00:07:48,221
+The dictionary is going to be some data.
+
+151
+00:07:48,221 --> 00:07:50,374
+This function is going to return some data
+
+152
+00:07:50,374 --> 00:07:51,389
+and using square bracket notation is
+
+153
+00:07:51,389 --> 00:07:54,438
+going to access the name property of some data
+
+154
+00:07:54,438 --> 00:07:56,760
+which is going to be Jose
+
+155
+00:07:56,760 --> 00:07:59,510
+so if we print that, we get Jose.
+
+156
+00:08:01,077 --> 00:08:04,817
+Now that it's clear what my identifier function does,
+
+157
+00:08:04,817 --> 00:08:08,984
+let's extract the data into proper dictionary name
+
+158
+00:08:11,123 --> 00:08:13,206
+Jose surname Salvatierra.
+
+159
+00:08:15,353 --> 00:08:16,353
+There we go.
+
+160
+00:08:17,510 --> 00:08:19,664
+And instead of printing that,
+
+161
+00:08:19,664 --> 00:08:24,664
+we're going to print who of user and my identifier function.
+
+162
+00:08:25,126 --> 00:08:26,872
+Notice how my identifier function doesn't have
+
+163
+00:08:26,872 --> 00:08:28,705
+open and closing brackets at the end
+
+164
+00:08:28,705 --> 00:08:30,741
+because we're not executing this function,
+
+165
+00:08:30,741 --> 00:08:32,991
+we're just referring to it.
+
+166
+00:08:33,915 --> 00:08:36,244
+Now the who function does have the brackets
+
+167
+00:08:36,244 --> 00:08:37,077
+and inside the brackets,
+
+168
+00:08:37,077 --> 00:08:39,168
+we've got user, that's our dictionary,
+
+169
+00:08:39,168 --> 00:08:40,347
+my identifier function,
+
+170
+00:08:40,347 --> 00:08:42,147
+that's the function we defined up here
+
+171
+00:08:42,147 --> 00:08:43,975
+so this who function is going to run
+
+172
+00:08:43,975 --> 00:08:48,001
+and it's going to return running the identify function
+
+173
+00:08:48,001 --> 00:08:52,837
+which is my identifier function with data which is user.
+
+174
+00:08:52,837 --> 00:08:55,033
+So it's going to run my identifier function with user
+
+175
+00:08:55,033 --> 00:08:57,955
+and it's going to return the name Jose.
+
+176
+00:08:57,955 --> 00:08:59,743
+Let's run that.
+
+177
+00:08:59,743 --> 00:09:02,344
+As you can see, we get Jose out
+
+178
+00:09:02,344 --> 00:09:04,300
+and this is a very common way
+
+179
+00:09:04,300 --> 00:09:08,249
+of using first-class functions in Python.
+
+180
+00:09:08,249 --> 00:09:10,248
+You have a function that does something
+
+181
+00:09:10,248 --> 00:09:12,888
+but it is someway extended by the functionality
+
+182
+00:09:12,888 --> 00:09:16,911
+of another function that you pass in as an argument
+
+183
+00:09:16,911 --> 00:09:19,555
+that way you can decide what the who function is
+
+184
+00:09:19,555 --> 00:09:22,222
+going to retrieve from the data.
+
+185
+00:09:23,214 --> 00:09:25,817
+For this to make sense, assume you don't have access
+
+186
+00:09:25,817 --> 00:09:28,780
+to modifying the who function
+
+187
+00:09:28,780 --> 00:09:30,241
+because it's part of Python
+
+188
+00:09:30,241 --> 00:09:32,359
+or because it was written by somebody else.
+
+189
+00:09:32,359 --> 00:09:33,376
+You know, this is part of a library
+
+190
+00:09:33,376 --> 00:09:35,208
+that does have a few complex things
+
+191
+00:09:35,208 --> 00:09:37,568
+and you can pass in a function
+
+192
+00:09:37,568 --> 00:09:41,351
+to make the who function do something different
+
+193
+00:09:41,351 --> 00:09:44,197
+than it would otherwise do
+
+194
+00:09:44,197 --> 00:09:46,106
+and, of course, we could re-write this
+
+195
+00:09:46,106 --> 00:09:49,110
+slightly more concisely by using a lambda function
+
+196
+00:09:49,110 --> 00:09:51,263
+getting rid of my identify function
+
+197
+00:09:51,263 --> 00:09:55,180
+and instead passing a lambda x x name there.
+
+198
+00:09:59,683 --> 00:10:01,106
+This lambda function does the same
+
+199
+00:10:01,106 --> 00:10:03,439
+as our previous function did
+
+200
+00:10:04,441 --> 00:10:08,774
+and, once again, if we run this, we'll get Jose out.
+
+201
+00:10:11,186 --> 00:10:12,485
+So instead of defining a function
+
+202
+00:10:12,485 --> 00:10:14,109
+that needs a name and so on,
+
+203
+00:10:14,109 --> 00:10:17,318
+we can just create one right where it's used
+
+204
+00:10:17,318 --> 00:10:19,319
+here in the lambda function that does
+
+205
+00:10:19,319 --> 00:10:21,784
+exactly the same thing with less verbosity.
+
+206
+00:10:21,784 --> 00:10:24,636
+It's less boilerplate code.
+
+207
+00:10:24,636 --> 00:10:25,900
+Lambda functions are really useful
+
+208
+00:10:25,900 --> 00:10:28,384
+when you're using them as a first-class function
+
+209
+00:10:28,384 --> 00:10:29,717
+like we do here.
+
+210
+00:10:32,168 --> 00:10:34,894
+Okay, so this may not be terribly clear
+
+211
+00:10:34,894 --> 00:10:37,011
+and I appreciate that.
+
+212
+00:10:37,011 --> 00:10:41,484
+As we create our own projects knowing that this can be done,
+
+213
+00:10:41,484 --> 00:10:46,332
+will open some doors and I know it's not easy to see now,
+
+214
+00:10:46,332 --> 00:10:49,183
+but it took me a few years, actually, to realise
+
+215
+00:10:49,183 --> 00:10:51,016
+that this can be done.
+
+216
+00:10:52,814 --> 00:10:53,952
+I wasn't aware that this is something
+
+217
+00:10:53,952 --> 00:10:55,904
+that you could do in Python
+
+218
+00:10:55,904 --> 00:10:58,053
+and it would've made some things much simpler
+
+219
+00:10:58,053 --> 00:11:01,550
+so I just wanted to tell you about it now
+
+220
+00:11:01,550 --> 00:11:03,791
+before you're left wondering
+
+221
+00:11:03,791 --> 00:11:07,450
+whether there are better ways of doing things.
+
+222
+00:11:07,450 --> 00:11:10,664
+So now that we've introduced first-class functions
+
+223
+00:11:10,664 --> 00:11:14,525
+which are just functions that you pass as an argument,
+
+224
+00:11:14,525 --> 00:11:17,127
+we can introduce higher order functions.
+
+225
+00:11:17,127 --> 00:11:20,786
+A higher order function is the who function.
+
+226
+00:11:20,786 --> 00:11:23,957
+It's a function that accepts a function as an argument.
+
+227
+00:11:23,957 --> 00:11:27,653
+This is just some lingo for programing first-class functions
+
+228
+00:11:27,653 --> 00:11:31,799
+in Python because you can pass them as arguments.
+
+229
+00:11:31,799 --> 00:11:33,263
+Higher order functions are those
+
+230
+00:11:33,263 --> 00:11:36,348
+who accept functions as arguments.
+
+231
+00:11:36,348 --> 00:11:38,868
+Some programming languages don't support first-class
+
+232
+00:11:38,868 --> 00:11:40,455
+and higher order functions
+
+233
+00:11:40,455 --> 00:11:41,758
+but as we'll see throughout the course,
+
+234
+00:11:41,758 --> 00:11:43,794
+they can end up being quite handy,
+
+235
+00:11:43,794 --> 00:11:46,927
+particularly in cases like this one here.
+
+236
+00:11:46,927 --> 00:11:48,880
+You'll see many more examples as we move through
+
+237
+00:11:48,880 --> 00:11:50,385
+so don't worry.
+
+238
+00:11:50,385 --> 00:11:55,385
+This is not a utterly bizarre and useless functionality.
+
+239
+00:11:55,585 --> 00:11:58,705 line:15% 
+So with that said, let's move over to the next video.
+
+240
+00:11:58,705 --> 00:12:00,023 line:15% 
+So I'll see you there.
+

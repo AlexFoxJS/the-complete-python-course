@@ -1,0 +1,732 @@
+1
+00:00:00,330 --> 00:00:01,550
+Jos: Hola y bienvenido de nuevo.
+
+2
+00:00:01,550 --> 00:00:04,450
+En este video, vamos a ver cmo
+
+3
+00:00:04,450 --> 00:00:07,440
+usar decoradores que ellos mismos toman los parmetros.
+
+4
+00:00:07,440 --> 00:00:09,490
+En el ltimo video, vimos cmo
+
+5
+00:00:09,490 --> 00:00:11,960
+podemos obtener la funcin para tomar un parmetro.
+
+6
+00:00:11,960 --> 00:00:13,330
+Ahora en este video, vamos a
+
+7
+00:00:13,330 --> 00:00:15,580
+ver cmo lograr que el decorador tome un parmetro.
+
+8
+00:00:16,797 --> 00:00:19,440
+En el ltimo video, cuando quisimos hacer
+
+9
+00:00:19,440 --> 00:00:22,570
+que nuestra funcin tomara un parmetro, todo lo
+
+10
+00:00:23,720 --> 00:00:26,130
+que hicimos fue poner el parmetro
+
+11
+00:00:26,130 --> 00:00:29,060
+que queremos usar, ponerlo dentro de la funcin
+
+12
+00:00:29,060 --> 00:00:31,700
+que reemplazar nuestra funcin, para que tengan
+
+13
+00:00:31,700 --> 00:00:35,320
+la misma firma, y luego , por supuesto, llame
+
+14
+00:00:35,320 --> 00:00:39,960
+a la funcin original con ese parmetro en el momento de usarlo.
+
+15
+00:00:39,960 --> 00:00:42,460
+Entonces, por supuesto, querrs usar
+
+16
+00:00:44,120 --> 00:00:46,610
+el parmetro cuando lo necesites.
+
+17
+00:00:48,120 --> 00:00:51,990
+Entonces, as es como se puede obtener la funcin para tomar un parmetro,
+
+18
+00:00:51,990 --> 00:00:55,210
+pero dijimos que no era muy genrico y no lo es.
+
+19
+00:00:55,210 --> 00:00:58,180
+Vamos a aprender cmo hacerlo ms genrico pronto.
+
+20
+00:00:59,370 --> 00:01:00,800
+Pero, en realidad, hay
+
+21
+00:01:00,800 --> 00:01:04,420
+otro problema, que es que si access_level es guest,
+
+22
+00:01:04,420 --> 00:01:05,760
+no tienes acceso.
+
+23
+00:01:05,760 --> 00:01:09,260
+Si access_level es admin, lo haces.
+
+24
+00:01:09,260 --> 00:01:12,390
+Y eso est codificado aqu en el decorador.
+
+25
+00:01:13,620 --> 00:01:15,810
+Pero, y si quisieras cambiar este
+
+26
+00:01:15,810 --> 00:01:19,110
+decorador para que otros usuarios puedan acceder a l?
+
+27
+00:01:19,110 --> 00:01:23,360
+Como, por ejemplo, solo usuarios normales.
+
+28
+00:01:23,360 --> 00:01:26,370
+Por supuesto, puede ir a este decorador y decir
+
+29
+00:01:26,370 --> 00:01:27,880
+si es usuario, puede acceder.
+
+30
+00:01:29,300 --> 00:01:31,520
+Pero esto es un
+
+31
+00:01:31,520 --> 00:01:34,512
+poco limitante, porque quien usa un
+
+32
+00:01:34,512 --> 00:01:38,070
+decorador no puede decidir con qu access_level
+
+33
+00:01:38,070 --> 00:01:40,740
+puede acceder a una funcin.
+
+34
+00:01:40,740 --> 00:01:42,720
+Entonces, lo que estoy diciendo es
+
+35
+00:01:42,720 --> 00:01:44,630
+que me gustara poder modificar
+
+36
+00:01:46,030 --> 00:01:48,490
+este decorador para decir, admin, por ejemplo.
+
+37
+00:01:50,140 --> 00:01:52,840
+Y ahora esta funcin solo ser accesible
+
+38
+00:01:52,840 --> 00:01:55,990
+para los usuarios que tengan un access_level de administrador.
+
+39
+00:01:58,740 --> 00:02:00,240
+Entonces esto es lo que queremos hacer.
+
+40
+00:02:01,260 --> 00:02:04,690
+Pero debemos hacer algo que haga que este decorador
+
+41
+00:02:04,690 --> 00:02:06,120
+sea un poco ms
+
+42
+00:02:06,120 --> 00:02:08,190
+complicado, para poder hacer esto.
+
+43
+00:02:09,430 --> 00:02:13,320
+Recuerde, un decorador es una funcin que toma una
+
+44
+00:02:14,160 --> 00:02:16,280
+funcin y devuelve otra funcin.
+
+45
+00:02:17,460 --> 00:02:19,590
+La funcin que devuelve debe
+
+46
+00:02:19,590 --> 00:02:22,240
+llamar a la funcin original y tambin
+
+47
+00:02:22,240 --> 00:02:23,870
+puede hacer otras cosas.
+
+48
+00:02:23,870 --> 00:02:25,710
+En este caso, solo lo llama
+
+49
+00:02:25,710 --> 00:02:28,140
+si el access_level del usuario es usuario.
+
+50
+00:02:30,070 --> 00:02:31,800
+Entonces esto no debe cambiar.
+
+51
+00:02:31,800 --> 00:02:36,800
+Entonces lo sabemos y tambin sabemos que cuando tenemos algo, seguido de un
+
+52
+00:02:37,590 --> 00:02:41,300
+par de corchetes, se trata de una llamada a funcin.
+
+53
+00:02:42,210 --> 00:02:44,600
+Olvidmonos del @ por un momento.
+
+54
+00:02:44,600 --> 00:02:47,030
+Si vieras esto en Python, pensaras que
+
+55
+00:02:47,030 --> 00:02:50,530
+esto debe ser una especie de llamada a la funcin.
+
+56
+00:02:50,530 --> 00:02:52,100
+Porque tiene los corchetes.
+
+57
+00:02:52,100 --> 00:02:56,120
+Entonces debe haber una funcin llamada user_has_permission y esa funcin
+
+58
+00:02:56,120 --> 00:02:58,320
+debe tener un parmetro y
+
+59
+00:02:59,200 --> 00:03:02,190
+estoy pasando este argumento a ese parmetro, admin.
+
+60
+00:03:03,320 --> 00:03:04,970
+Y yo dira que estaras en lo cierto.
+
+61
+00:03:05,820 --> 00:03:10,820
+En, creo, todos los casos esto significa que en Python.
+
+62
+00:03:11,120 --> 00:03:13,310
+Brackets significa que hay una llamada de funcin.
+
+63
+00:03:15,360 --> 00:03:18,710
+Y, por lo tanto, debe haber un parmetro en la
+
+64
+00:03:18,710 --> 00:03:20,370
+funcin para poder pasar esto.
+
+65
+00:03:20,370 --> 00:03:21,360
+Pero no hay.
+
+66
+00:03:21,360 --> 00:03:24,680
+Porque aqu la funcin es esta.
+
+67
+00:03:25,620 --> 00:03:28,470
+Este es el parmetro, este es el argumento.
+
+68
+00:03:28,470 --> 00:03:31,140
+Entonces no hay nada que tomar en el administrador.
+
+69
+00:03:31,140 --> 00:03:34,180
+Otra cosa que not cuando hago esto es
+
+70
+00:03:34,180 --> 00:03:36,350
+cuando usamos nuestro decorador normalmente, no
+
+71
+00:03:36,350 --> 00:03:38,300
+hay un conjunto de corchetes.
+
+72
+00:03:39,320 --> 00:03:40,530
+Hmm.
+
+73
+00:03:40,530 --> 00:03:42,000
+Pero esta es claramente una funcin,
+
+74
+00:03:42,000 --> 00:03:44,640
+entonces por qu no hay un conjunto de corchetes al final?
+
+75
+00:03:46,500 --> 00:03:50,870
+Bueno, porque la sintaxis del decorador lo hace por nosotros.
+
+76
+00:03:50,870 --> 00:03:55,870
+Hacemos my_function = user_has_permission (my_function) Bien, esta sintaxis
+
+77
+00:03:56,070 --> 00:04:00,390
+de decorador nos llama a esta funcin.
+
+78
+00:04:00,390 --> 00:04:02,850
+Eso es parte de su utilidad.
+
+79
+00:04:04,560 --> 00:04:06,410
+Entonces, qu sucede cuando hacemos esto?
+
+80
+00:04:10,630 --> 00:04:15,330
+Esto ahora reemplaza lo que anteriormente no era una llamada a funcin.
+
+81
+00:04:17,210 --> 00:04:21,330
+Entonces cuando hacemos esto, estamos haciendo esto.
+
+82
+00:04:21,330 --> 00:04:24,180
+Estamos llamando a la funcin user_has_permission,
+
+83
+00:04:25,050 --> 00:04:29,690
+que tiene que devolver una funcin que luego llamamos, con
+
+84
+00:04:29,690 --> 00:04:31,810
+la funcin original como argumento.
+
+85
+00:04:33,660 --> 00:04:36,050
+As que en este punto es, ya sabes, la mente impresionado.
+
+86
+00:04:36,050 --> 00:04:38,220
+Qu diablos est pasando aqu?
+
+87
+00:04:38,220 --> 00:04:41,350
+Y puede ser bastante confuso porque, como
+
+88
+00:04:41,350 --> 00:04:44,070
+dicen en la pelcula Inception, ya
+
+89
+00:04:44,070 --> 00:04:45,970
+sabes, tenemos que profundizar ms.
+
+90
+00:04:46,850 --> 00:04:48,810
+Tenemos que ir a otro nivel profundo.
+
+91
+00:04:48,810 --> 00:04:52,150
+Porque previamente tenemos un decorador que
+
+92
+00:04:52,150 --> 00:04:53,570
+devuelve una funcin.
+
+93
+00:04:55,010 --> 00:04:57,100
+Y el decorador toma la funcin.
+
+94
+00:04:58,240 --> 00:05:03,240
+Ahora necesitamos una funcin que devuelva una funcin, que adopte
+
+95
+00:05:03,760 --> 00:05:05,410
+una funcin, que
+
+96
+00:05:05,410 --> 00:05:07,156
+luego devuelva otra funcin.
+
+97
+00:05:07,156 --> 00:05:09,400
+(Risas) Entonces esto es bastante ridculo.
+
+98
+00:05:09,400 --> 00:05:12,330
+Vamos a escribir un cdigo para que quede un poco ms claro.
+
+99
+00:05:13,430 --> 00:05:18,130
+Vamos a hacer una especie de tercer nivel.
+
+100
+00:05:20,600 --> 00:05:24,240
+Y esto va a ser access_level.
+
+101
+00:05:26,280 --> 00:05:28,810
+Vamos a sangrar todo eso
+
+102
+00:05:28,810 --> 00:05:32,270
+y luego vamos a devolver user_has_permission.
+
+103
+00:05:33,870 --> 00:05:35,300
+Bueno.
+
+104
+00:05:35,300 --> 00:05:36,133
+Asi que.
+
+105
+00:05:37,440 --> 00:05:40,050
+Lo que est sucediendo ahora es
+
+106
+00:05:40,050 --> 00:05:42,000
+que el decorador que
+
+107
+00:05:42,000 --> 00:05:45,360
+estamos llamando ahora se llamar third_level, est bien?
+
+108
+00:05:48,320 --> 00:05:50,010
+No es un buen nombre para un
+
+109
+00:05:50,010 --> 00:05:51,140
+decorador, vamos a cambiarlo
+
+110
+00:05:51,140 --> 00:05:52,330
+en un momento, simplemente no
+
+111
+00:05:52,330 --> 00:05:54,760
+quera cambiar demasiadas cosas a la vez para ustedes.
+
+112
+00:05:54,760 --> 00:05:57,030
+Tenemos el decorador
+
+113
+00:05:57,030 --> 00:06:01,830
+third_level, que se llama, esencialmente, as.
+
+114
+00:06:01,830 --> 00:06:06,180
+Entonces la funcin third_level toma el access_level,
+
+115
+00:06:06,180 --> 00:06:07,990
+que es admin.
+
+116
+00:06:10,060 --> 00:06:13,300
+Dentro de esta funcin definimos otra funcin.
+
+117
+00:06:15,110 --> 00:06:18,530
+Esta funcin es la que tiene una funcin, de acuerdo?
+
+118
+00:06:19,470 --> 00:06:23,360
+Entonces third_level devuelve la funcin que toma
+
+119
+00:06:23,360 --> 00:06:24,840
+una funcin.
+
+120
+00:06:24,840 --> 00:06:27,130
+Cuando llamamos a third_level,
+
+121
+00:06:27,130 --> 00:06:30,620
+obtenemos una funcin que adopta una funcin.
+
+122
+00:06:31,460 --> 00:06:33,640
+Entonces tenemos una llamada a funcin,
+
+123
+00:06:33,640 --> 00:06:35,490
+y esta funcin va a func.
+
+124
+00:06:38,230 --> 00:06:40,260
+S que hay muchos
+
+125
+00:06:41,680 --> 00:06:44,398
+corchetes aqu, pero esencialmente, lo que
+
+126
+00:06:44,398 --> 00:06:48,880
+estamos haciendo es hacer esto, user_has_permission es third_level of admin.
+
+127
+00:06:48,880 --> 00:06:51,560
+Y luego volvemos a lo que sabemos.
+
+128
+00:06:54,721 --> 00:06:55,554
+Ese.
+
+129
+00:06:56,544 --> 00:06:58,020
+Esto es esencialmente lo que
+
+130
+00:06:58,020 --> 00:07:00,310
+est sucediendo, pero solo una lnea, cuando haces esto.
+
+131
+00:07:02,060 --> 00:07:06,190
+Ahora porque tiene los corchetes, esta es una llamada de funcin
+
+132
+00:07:06,190 --> 00:07:09,700
+que se evala antes de que se ejecute el decorador.
+
+133
+00:07:09,700 --> 00:07:14,020
+Entonces creamos una funcin que toma este access_level y lo
+
+134
+00:07:14,020 --> 00:07:16,130
+mejor es que podemos usarlo,
+
+135
+00:07:16,130 --> 00:07:20,550
+entonces en lugar de usuario, podemos reemplazarlo por access_level.
+
+136
+00:07:22,430 --> 00:07:25,420
+Pero terminamos con tres funciones, una dentro de otra.
+
+137
+00:07:28,040 --> 00:07:29,930
+Espero que esto tenga un poco de sentido.
+
+138
+00:07:29,930 --> 00:07:33,800
+Puede ser bastante complicado entenderlo completamente.
+
+139
+00:07:33,800 --> 00:07:35,840
+Pero pinselo de esta manera.
+
+140
+00:07:35,840 --> 00:07:40,050
+Lo que estamos haciendo es que estamos llamando a la
+
+141
+00:07:40,050 --> 00:07:44,230
+funcin, dndole un parmetro access_level, lo siento, un argumento.
+
+142
+00:07:44,230 --> 00:07:46,640
+Entonces eso crea otra funcin, y
+
+143
+00:07:46,640 --> 00:07:48,470
+ese es nuestro decorador.
+
+144
+00:07:49,330 --> 00:07:50,610
+Normalmente cuando llamamos a un
+
+145
+00:07:50,610 --> 00:07:52,120
+decorador, no tenemos los corchetes.
+
+146
+00:07:53,060 --> 00:07:56,340
+Entonces eso nos da el decorador, que solo acta
+
+147
+00:07:56,340 --> 00:07:57,780
+como normal, toma la
+
+148
+00:07:57,780 --> 00:08:01,230
+funcin y luego la envuelve y devuelve otra funcin que
+
+149
+00:08:01,230 --> 00:08:02,970
+hace las cosas y luego
+
+150
+00:08:02,970 --> 00:08:06,090
+llama a la funcin original aqu con cualquier argumento.
+
+151
+00:08:06,090 --> 00:08:09,410
+El beneficio es que podemos usar cualquier argumento que
+
+152
+00:08:09,410 --> 00:08:11,780
+hayamos pasado al decorador original, como
+
+153
+00:08:12,650 --> 00:08:14,400
+el access_level en este caso.
+
+154
+00:08:15,370 --> 00:08:19,340
+Entonces, si ahora, ya sabes, imprime (mi_funcin ('pelculas')).
+
+155
+00:08:22,482 --> 00:08:27,310
+Observe cmo el decorador third_level tiene el argumento admin y nuestro
+
+156
+00:08:27,310 --> 00:08:28,860
+access_level es usuario,
+
+157
+00:08:28,860 --> 00:08:31,150
+cuando ejecutamos esto, obtenemos ninguno.
+
+158
+00:08:31,150 --> 00:08:35,060
+Pero si cambiamos esto a usuario y lo ejecutamos,
+
+159
+00:08:35,060 --> 00:08:39,580
+ahora obtenemos la contrasea para el panel de pelculas 1234.
+
+160
+00:08:40,770 --> 00:08:42,970
+Como puede ver, esto se est utilizando all.
+
+161
+00:08:44,040 --> 00:08:46,991
+Normalmente los nombres seran user_has_permission,
+
+162
+00:08:46,991 --> 00:08:50,580
+sera el decorador que usas.
+
+163
+00:08:50,580 --> 00:08:53,130
+Y dentro de eso definiras una funcin
+
+164
+00:08:53,130 --> 00:08:56,490
+que se puede llamar cualquier cosa que quieras, realmente,
+
+165
+00:08:56,490 --> 00:08:57,390
+como my_decorator.
+
+166
+00:08:58,240 --> 00:09:00,890
+Y luego eso sera lo que se devuelve al final.
+
+167
+00:09:00,890 --> 00:09:04,480
+Entonces, muy importante, user_has_permission define una
+
+168
+00:09:04,480 --> 00:09:07,310
+funcin y luego la devuelve.
+
+169
+00:09:08,190 --> 00:09:12,110
+El decorador define una funcin y luego la devuelve.
+
+170
+00:09:12,110 --> 00:09:14,080
+Es muy importante que los niveles
+
+171
+00:09:14,080 --> 00:09:15,860
+de sangrado sean correctos aqu.
+
+172
+00:09:15,860 --> 00:09:19,720
+La funcin ms interna debe llamar a la funcin original, para que
+
+173
+00:09:21,200 --> 00:09:22,190
+sea un decorador.
+
+174
+00:09:22,190 --> 00:09:24,610
+De lo contrario, es solo una funcin de orden superior.
+
+175
+00:09:26,070 --> 00:09:27,970
+Espero que esto tenga sentido.
+
+176
+00:09:27,970 --> 00:09:32,970
+Hemos analizado cmo agregar argumentos a un decorador, y eso ha significado agregar
+
+177
+00:09:33,020 --> 00:09:34,960
+un tercer nivel de definiciones
+
+178
+00:09:34,960 --> 00:09:36,660
+de funciones dentro de l.
+
+179
+00:09:38,020 --> 00:09:40,420
+Si tiene alguna pregunta, pregunte en el curso Preguntas y respuestas.
+
+180
+00:09:40,420 --> 00:09:42,130
+Estaremos ms que felices de ayudarte.
+
+181
+00:09:42,130 --> 00:09:43,890
+No queremos que esto sea confuso.
+
+182
+00:09:43,890 --> 00:09:47,020
+Pero la verdad es que puede ser un poco complicado.
+
+183
+00:09:47,020 --> 00:09:49,520
+Entonces con eso dicho, nos vemos en el prximo video.
+

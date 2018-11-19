@@ -1,0 +1,896 @@
+1
+00:00:00,340 --> 00:00:01,490
+<v ->Hi, and welcome back.</v>
+
+2
+00:00:01,490 --> 00:00:04,740
+In this video we're looking at raising errors in Python.
+
+3
+00:00:04,740 --> 00:00:07,640
+In the last lecture, I showed you the syntax real quickly,
+
+4
+00:00:07,640 --> 00:00:09,780
+but we're just gonna go over it again in this video
+
+5
+00:00:09,780 --> 00:00:12,530
+and give you a couple examples so that you know
+
+6
+00:00:12,530 --> 00:00:15,090
+in which scenarios you should be raising errors.
+
+7
+00:00:15,090 --> 00:00:16,710
+And also, I'm going to introduce a new piece
+
+8
+00:00:16,710 --> 00:00:19,260
+of Python syntax that I think is pretty cool.
+
+9
+00:00:19,260 --> 00:00:21,550
+So let's right-click our project that I've just created
+
+10
+00:00:21,550 --> 00:00:24,370
+in pyshon and create a new Python file.
+
+11
+00:00:24,370 --> 00:00:26,910
+And again I'm going to call it app.py.
+
+12
+00:00:26,910 --> 00:00:29,740
+This is a pretty popular name for your first or your
+
+13
+00:00:29,740 --> 00:00:32,370
+most important file in Python that you're going to run.
+
+14
+00:00:32,370 --> 00:00:34,750
+So you can right-click it and run it.
+
+15
+00:00:34,750 --> 00:00:38,580
+Normally, this file would be called app.py or run.py,
+
+16
+00:00:39,810 --> 00:00:43,160
+it's just a name for your main, most important file.
+
+17
+00:00:44,350 --> 00:00:47,700
+Let's say we have a code that is for a garage.
+
+18
+00:00:49,130 --> 00:00:51,850
+It stores cars and you can add cars to it.
+
+19
+00:00:51,850 --> 00:00:56,130
+Let's define a class garage that has an init method
+
+20
+00:00:57,170 --> 00:01:01,770
+and it defines self.cars to be called cars.
+
+21
+00:01:01,770 --> 00:01:04,030
+Sorry, to be equal to an empty list.
+
+22
+00:01:04,030 --> 00:01:08,010
+By the way, notice how, in an attempt to reduce
+
+23
+00:01:08,010 --> 00:01:11,790
+any indentation or tab errors, I have told pyshon
+
+24
+00:01:11,790 --> 00:01:16,690
+to show me any hidden characters or invisible characters.
+
+25
+00:01:16,690 --> 00:01:19,660
+You've got these small, tiny dots that
+
+26
+00:01:19,660 --> 00:01:23,650
+you can barely see without it being in a video.
+
+27
+00:01:23,650 --> 00:01:26,160
+You can certainly not see them very well on video,
+
+28
+00:01:26,160 --> 00:01:28,040
+but you've also got these lines here.
+
+29
+00:01:28,040 --> 00:01:29,810
+So you've got these dots, that are very small,
+
+30
+00:01:29,810 --> 00:01:32,040
+I'm gonna zoom in in the video just so you can see it,
+
+31
+00:01:32,040 --> 00:01:33,820
+and you've got this line here.
+
+32
+00:01:33,820 --> 00:01:37,240
+The line tells you where an indentation level begins,
+
+33
+00:01:38,420 --> 00:01:40,300
+or where it is maintained.
+
+34
+00:01:40,300 --> 00:01:43,020
+The dots show you the spaces, so you know these
+
+35
+00:01:43,020 --> 00:01:44,550
+are not tabs, they're spaces.
+
+36
+00:01:46,194 --> 00:01:49,010
+So if we were to add another line here,
+
+37
+00:01:50,680 --> 00:01:53,980
+notice how now we've got a three line,
+
+38
+00:01:53,980 --> 00:01:57,480
+three line long grey line here that tells us that
+
+39
+00:01:57,480 --> 00:01:59,780
+the indentation is maintained for all of this.
+
+40
+00:02:02,430 --> 00:02:04,920
+So this garage has an init method.
+
+41
+00:02:04,920 --> 00:02:06,860
+It has a len method.
+
+42
+00:02:07,910 --> 00:02:11,220
+That returns len of self.cars.
+
+43
+00:02:12,210 --> 00:02:14,560
+And also it's got an add_car method
+
+44
+00:02:14,560 --> 00:02:18,070
+that takes in a car that we're going to add as an argument.
+
+45
+00:02:18,070 --> 00:02:21,550
+However, we've not yet had the chance of working on this
+
+46
+00:02:21,550 --> 00:02:24,030
+too much, so what we're gonna do, is we're gonna print,
+
+47
+00:02:24,030 --> 00:02:26,680
+"This method is a work in progress."
+
+48
+00:02:28,320 --> 00:02:30,130
+This is obviously not the right way to go about it,
+
+49
+00:02:30,130 --> 00:02:33,970
+as you know now, but then let's say that
+
+50
+00:02:35,500 --> 00:02:37,920
+we are using this garage, so we're gonna say
+
+51
+00:02:37,920 --> 00:02:42,140
+ford garage is garage, and then ford.add_car
+
+52
+00:02:44,010 --> 00:02:45,680
+Fiesta
+
+53
+00:02:45,680 --> 00:02:48,470
+And then we wanna print the len of ford.
+
+54
+00:02:50,430 --> 00:02:54,000
+Now, this method here is going to print out something
+
+55
+00:02:54,000 --> 00:02:56,550
+onto the screen, but if we were not really paying attention,
+
+56
+00:02:56,550 --> 00:03:00,420
+if we were, for example saving this thing here to a file
+
+57
+00:03:00,420 --> 00:03:03,150
+or to a database, we may not realise that this is
+
+58
+00:03:03,150 --> 00:03:06,710
+printing something out, we would just see that
+
+59
+00:03:06,710 --> 00:03:08,780
+this is zero every time.
+
+60
+00:03:08,780 --> 00:03:09,690
+Let's run our app.
+
+61
+00:03:13,080 --> 00:03:14,420
+And as you can see here, it says,
+
+62
+00:03:14,420 --> 00:03:15,720
+"This method is a work in progress,"
+
+63
+00:03:15,720 --> 00:03:18,030
+First of all, and then it just says zero.
+
+64
+00:03:18,030 --> 00:03:20,940
+No matter how many cars we add, all we're gonna see is,
+
+65
+00:03:20,940 --> 00:03:22,460
+"This method is a work in progress"
+
+66
+00:03:22,460 --> 00:03:23,780
+Over and over again.
+
+67
+00:03:23,780 --> 00:03:26,340
+And if we were saving this length to a database or
+
+68
+00:03:26,340 --> 00:03:29,830
+just to a file or somewhere, it would always be zero.
+
+69
+00:03:29,830 --> 00:03:31,880
+If you run it, then you may wonder,
+
+70
+00:03:31,880 --> 00:03:33,430
+"Hey, what's going on here?"
+
+71
+00:03:33,430 --> 00:03:34,610
+And then you're going to have to actually
+
+72
+00:03:34,610 --> 00:03:37,940
+run the programme manually like so in PyCharm
+
+73
+00:03:37,940 --> 00:03:40,520
+to see the printouts, and then you'd see
+
+74
+00:03:40,520 --> 00:03:44,330
+"Ah, okay this method, this code isn't working yet."
+
+75
+00:03:44,330 --> 00:03:47,740
+So instead, of course, we can raise an error.
+
+76
+00:03:47,740 --> 00:03:50,230
+We can raise and all you do is raise
+
+77
+00:03:51,810 --> 00:03:55,040
+and then type a NotImplementedError.
+
+78
+00:03:56,200 --> 00:03:59,440
+And then you got brackets, so you're creating a new
+
+79
+00:03:59,440 --> 00:04:02,380
+NotImplementedError instance, this is a class,
+
+80
+00:04:02,380 --> 00:04:03,570
+you're creating a new object
+
+81
+00:04:03,570 --> 00:04:06,970
+of type NotImplementedError, and you're raising that.
+
+82
+00:04:06,970 --> 00:04:09,550
+Inside the brackets, you can put a small message,
+
+83
+00:04:10,970 --> 00:04:15,970
+We're gonna say, "We can't add cars to the garage yet."
+
+84
+00:04:16,450 --> 00:04:18,910
+Now when you run the app, which I'm gonna do by pressing
+
+85
+00:04:18,910 --> 00:04:22,890
+on the top right here, you get your nice trace back.
+
+86
+00:04:22,890 --> 00:04:23,770
+Then it says,
+
+87
+00:04:23,770 --> 00:04:27,270
+"NotImplementedError: We can't add cars to the garage yet."
+
+88
+00:04:27,270 --> 00:04:30,030
+Then it tells you where that error happened.
+
+89
+00:04:30,030 --> 00:04:33,100
+Raise NotImplementedError here, we did it manually.
+
+90
+00:04:33,960 --> 00:04:38,510
+It says line 9, in add_car, so that's line 9 of our code
+
+91
+00:04:38,510 --> 00:04:40,190
+inside the add_car function.
+
+92
+00:04:41,130 --> 00:04:42,880
+Now, where was this function called?
+
+93
+00:04:42,880 --> 00:04:47,260
+Where did this function originally happen?
+
+94
+00:04:47,260 --> 00:04:49,520
+On line 13, here,
+
+95
+00:04:49,520 --> 00:04:52,100
+and ford.add_car Fiesta
+
+96
+00:04:52,100 --> 00:04:54,700
+So as you can see, error happened here, inside this function
+
+97
+00:04:54,700 --> 00:04:55,940
+This function was called here.
+
+98
+00:04:55,940 --> 00:04:59,280
+So it tells you all the functions and parts
+
+99
+00:04:59,280 --> 00:05:02,500
+of your file where this error has gone through.
+
+100
+00:05:02,500 --> 00:05:06,650
+From being raised up until it reached the file level.
+
+101
+00:05:06,650 --> 00:05:08,890
+So that's two places right now.
+
+102
+00:05:09,940 --> 00:05:12,150
+So this is much better, cause now when we run the programme,
+
+103
+00:05:12,150 --> 00:05:14,050
+it's gonna crash, we're not gonna save
+
+104
+00:05:14,050 --> 00:05:15,220
+anything to the database, and we're gonna say,
+
+105
+00:05:15,220 --> 00:05:18,090
+"Oh, okay, it crashed, let's investigate."
+
+106
+00:05:18,090 --> 00:05:21,080
+We would see that a NotImplementedError was raised.
+
+107
+00:05:21,080 --> 00:05:22,230
+And that's all good.
+
+108
+00:05:24,870 --> 00:05:26,050
+So this is how you raise an error.
+
+109
+00:05:26,050 --> 00:05:28,970
+You use a key word, then you create a new object, you can
+
+110
+00:05:28,970 --> 00:05:31,910
+put something inside the brackets which will be the message.
+
+111
+00:05:33,120 --> 00:05:36,010
+Let's say we add another class.
+
+112
+00:05:36,950 --> 00:05:39,540
+That is gonna be a class of type car.
+
+113
+00:05:41,870 --> 00:05:44,010
+And that's take a make and a model
+
+114
+00:05:47,330 --> 00:05:48,840
+as parameters.
+
+115
+00:05:51,880 --> 00:05:55,210
+And then it's also gonna have a repr function of course,
+
+116
+00:05:55,210 --> 00:05:57,510
+because you always want these things.
+
+117
+00:05:57,510 --> 00:06:00,380
+And it's going to return a car with
+
+118
+00:06:00,380 --> 00:06:04,270
+self.make and self.model like so.
+
+119
+00:06:05,530 --> 00:06:07,210
+So this is just a representation of a car.
+
+120
+00:06:07,210 --> 00:06:08,930
+Remember the repr dunder function,
+
+121
+00:06:10,480 --> 00:06:12,320
+you can print out the car object
+
+122
+00:06:12,320 --> 00:06:15,030
+and it's gonna print something that looks like this.
+
+123
+00:06:15,030 --> 00:06:15,863
+Okay.
+
+124
+00:06:17,550 --> 00:06:21,600
+Now, the add_car function here should
+
+125
+00:06:22,990 --> 00:06:24,210
+only accept
+
+126
+00:06:25,320 --> 00:06:28,390
+the parameter being a car object.
+
+127
+00:06:29,690 --> 00:06:30,900
+So how do you do that?
+
+128
+00:06:31,790 --> 00:06:33,870
+Well pretty straightforward actually,
+
+129
+00:06:33,870 --> 00:06:37,960
+there is a built-in function in python called isinstance.
+
+130
+00:06:39,750 --> 00:06:44,750
+Isistance tells you whether the variable that you give it
+
+131
+00:06:45,140 --> 00:06:47,540
+is an instance of the type that you give it.
+
+132
+00:06:47,540 --> 00:06:49,370
+So this is the variable, car.
+
+133
+00:06:49,370 --> 00:06:52,320
+This is the type, which is the class, Car with a capital C.
+
+134
+00:06:53,350 --> 00:06:58,350
+So if not isinstance, so if car is not an instance of Car,
+
+135
+00:06:58,520 --> 00:07:01,070
+we're gonna raise a type error.
+
+136
+00:07:01,070 --> 00:07:04,280
+We're gonna say, "Tried to add a
+
+137
+00:07:05,780 --> 00:07:07,630
+"car class
+
+138
+00:07:07,630 --> 00:07:08,480
+"name
+
+139
+00:07:10,160 --> 00:07:12,010
+"to the garage,
+
+140
+00:07:12,010 --> 00:07:13,040
+"but you can only
+
+141
+00:07:14,130 --> 00:07:17,250
+"add Car objects."
+
+142
+00:07:17,250 --> 00:07:19,150
+So it's bit of a longer message there.
+
+143
+00:07:20,390 --> 00:07:23,010
+And all I've done is formatted the string
+
+144
+00:07:23,010 --> 00:07:25,050
+and said car._class_._name_
+
+145
+00:07:25,050 --> 00:07:29,210
+That's the name of the class of the variable.
+
+146
+00:07:29,210 --> 00:07:32,780
+So if this was a string, this would print out str.
+
+147
+00:07:32,780 --> 00:07:33,960
+If this was a class,
+
+148
+00:07:33,960 --> 00:07:37,130
+if this was a car, it would print out car.
+
+149
+00:07:38,370 --> 00:07:40,870
+This is just a nice bit of construct
+
+150
+00:07:40,870 --> 00:07:43,720
+that you can access for essentially any variable.
+
+151
+00:07:43,720 --> 00:07:45,680
+This gives you the class of the variable,
+
+152
+00:07:45,680 --> 00:07:48,200
+and this gives you the name of the class.
+
+153
+00:07:48,200 --> 00:07:50,090
+So we're trying to add that to the garage,
+
+154
+00:07:50,090 --> 00:07:52,130
+but you can only add car objects.
+
+155
+00:07:52,130 --> 00:07:53,340
+And then of course we're not gonna
+
+156
+00:07:53,340 --> 00:07:55,810
+raise a NotImplememntedError.
+
+157
+00:07:55,810 --> 00:08:00,020
+Now here we can say self.cars.append(car)
+
+158
+00:08:00,020 --> 00:08:01,570
+And you may wonder, "Well, why do you
+
+159
+00:08:01,570 --> 00:08:03,360
+"not put this in an else?"
+
+160
+00:08:03,360 --> 00:08:04,260
+You don't have to.
+
+161
+00:08:05,120 --> 00:08:08,210
+If the car is not an instance of the Car class,
+
+162
+00:08:08,210 --> 00:08:09,530
+we're gonna raise the error,
+
+163
+00:08:09,530 --> 00:08:11,190
+and that's gonna crash our programme.
+
+164
+00:08:11,190 --> 00:08:14,560
+We are never going to reach this line if that happens.
+
+165
+00:08:14,560 --> 00:08:18,760
+If however, it is an instance, it's not going to go in here,
+
+166
+00:08:18,760 --> 00:08:20,590
+and it's just going to go here.
+
+167
+00:08:20,590 --> 00:08:22,730
+So you don't need the else for anything,
+
+168
+00:08:22,730 --> 00:08:25,100
+because the only path--
+
+169
+00:08:25,100 --> 00:08:26,270
+there are only two paths.
+
+170
+00:08:26,270 --> 00:08:29,700
+One where this doesn't run because you raised the error,
+
+171
+00:08:29,700 --> 00:08:31,220
+and the other one where this runs,
+
+172
+00:08:31,220 --> 00:08:33,460
+and that's where you want it to run.
+
+173
+00:08:33,460 --> 00:08:34,750
+So that's sufficient.
+
+174
+00:08:35,970 --> 00:08:40,850
+So once again, let's try to add this string car.
+
+175
+00:08:42,150 --> 00:08:44,730
+And notice how now, we get a nice trace back here
+
+176
+00:08:44,730 --> 00:08:48,390
+that says, "tried to add an str to the garage,
+
+177
+00:08:48,390 --> 00:08:50,280
+"but you can only add Car objects."
+
+178
+00:08:51,276 --> 00:08:53,630
+And I think that's a pretty nice error message.
+
+179
+00:08:53,630 --> 00:08:55,100
+So, what can you do?
+
+180
+00:08:55,100 --> 00:08:59,220
+Well, you can create a new car object.
+
+181
+00:08:59,220 --> 00:09:03,250
+Let's say car, this is gonna be a Ford Fiesta,
+
+182
+00:09:03,250 --> 00:09:06,610
+and then you're gonna add that car,
+
+183
+00:09:06,610 --> 00:09:10,070
+which is a car object, into the add_car function.
+
+184
+00:09:10,070 --> 00:09:14,480
+Again, the value of the car variable is a Car object.
+
+185
+00:09:14,480 --> 00:09:16,050
+And that's what you are teleporting
+
+186
+00:09:16,050 --> 00:09:17,860
+over to this car variable.
+
+187
+00:09:20,060 --> 00:09:22,680
+So the value of the car variable is now
+
+188
+00:09:22,680 --> 00:09:25,830
+being assigned to this car variable here.
+
+189
+00:09:25,830 --> 00:09:29,140
+And then you're going to use that inside here.
+
+190
+00:09:29,140 --> 00:09:30,850
+So now we can run it.
+
+191
+00:09:30,850 --> 00:09:31,870
+And it all works.
+
+192
+00:09:31,870 --> 00:09:34,240
+We can print the len of ford.
+
+193
+00:09:35,120 --> 00:09:37,280
+And you'll see that one gets printed out,
+
+194
+00:09:37,280 --> 00:09:38,350
+which is pretty nice.
+
+195
+00:09:40,270 --> 00:09:42,470
+This is raising errors in Python.
+
+196
+00:09:42,470 --> 00:09:43,800
+It's really straightforward.
+
+197
+00:09:43,800 --> 00:09:47,240
+All you have to do is, when you want an error to happen,
+
+198
+00:09:47,240 --> 00:09:51,860
+raise it, create an object of it, remember the brackets,
+
+199
+00:09:51,860 --> 00:09:54,620
+and inside the brackets, if you want, it's totally optional,
+
+200
+00:09:54,620 --> 00:09:57,800
+you can put a nice message for when the error gets raised,
+
+201
+00:09:57,800 --> 00:10:00,930
+the person who's writing the code knows what happened.
+
+202
+00:10:02,350 --> 00:10:05,220
+Errors are most useful for developers.
+
+203
+00:10:05,220 --> 00:10:06,730
+Of course, if your users--
+
+204
+00:10:06,730 --> 00:10:08,450
+if somebody was downloading this code
+
+205
+00:10:08,450 --> 00:10:11,150
+over the internet saying, "I'm gonna run my garage."
+
+206
+00:10:11,150 --> 00:10:12,500
+Of course this is a bit basic for that,
+
+207
+00:10:12,500 --> 00:10:15,950
+but if somebody was downloading your code and using it,
+
+208
+00:10:15,950 --> 00:10:19,020
+they encountering a type error, may not be
+
+209
+00:10:19,020 --> 00:10:21,040
+terribly useful for them because
+
+210
+00:10:21,040 --> 00:10:23,520
+it doesn't tell them anything, they're not developers.
+
+211
+00:10:23,520 --> 00:10:26,040
+So errors are most useful for developers.
+
+212
+00:10:26,040 --> 00:10:28,470
+When you are writing code, or when somebody else is
+
+213
+00:10:28,470 --> 00:10:30,900
+helping you write code, working on a team,
+
+214
+00:10:31,760 --> 00:10:34,450
+having nice errors can be really helpful because then
+
+215
+00:10:34,450 --> 00:10:37,200
+when you make a mistake or you do something incorrectly,
+
+216
+00:10:37,200 --> 00:10:40,390
+you'll quickly get an error and you'll be able to fix it.
+
+217
+00:10:40,390 --> 00:10:42,550
+If you don't get errors and instead you print things out
+
+218
+00:10:42,550 --> 00:10:45,820
+like we did earlier on, you may never find out that
+
+219
+00:10:45,820 --> 00:10:48,380
+this is not working until you see that the programme
+
+220
+00:10:48,380 --> 00:10:50,640
+doesn't do what you were expecting.
+
+221
+00:10:50,640 --> 00:10:52,860
+So, raise errors, use them.
+
+222
+00:10:52,860 --> 00:10:54,810
+They'll be your best friend in no time.
+
+223
+00:10:55,980 --> 00:10:58,400
+So that's it for this video, raising errors in Python.
+
+224
+00:10:58,400 --> 00:10:59,850
+I'll see you in the next one.
+

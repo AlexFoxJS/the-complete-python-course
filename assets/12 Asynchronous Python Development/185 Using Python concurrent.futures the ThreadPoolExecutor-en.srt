@@ -1,0 +1,248 @@
+1
+00:00:00,140 --> 00:00:01,430
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,430 --> 00:00:03,320
+In this video, just wanted to tell you a little bit
+
+3
+00:00:03,320 --> 00:00:06,360
+about the concurrent.futures module
+
+4
+00:00:06,360 --> 00:00:10,110
+and how it can make our threaded code a little bit nicer.
+
+5
+00:00:10,110 --> 00:00:12,393
+Here we've got some code that creates threads,
+
+6
+00:00:12,393 --> 00:00:14,520
+starts them,
+
+7
+00:00:14,520 --> 00:00:16,240
+and then waits for them to finish.
+
+8
+00:00:17,250 --> 00:00:22,150
+What you can do instead is you can create a bunch of threads
+
+9
+00:00:22,150 --> 00:00:26,750
+with no target, then give them a target,
+
+10
+00:00:26,750 --> 00:00:28,590
+start them and join 'em.
+
+11
+00:00:30,040 --> 00:00:32,100
+And so the reason for that is,
+
+12
+00:00:32,100 --> 00:00:36,140
+if you were to create a bunch of threads with no target,
+
+13
+00:00:38,780 --> 00:00:41,700
+then you can choose which thread is going to take
+
+14
+00:00:41,700 --> 00:00:43,090
+which job afterwards.
+
+15
+00:00:43,090 --> 00:00:44,470
+And it doesn't really matter which one does,
+
+16
+00:00:44,470 --> 00:00:47,260
+but essentially you end up sort of a collection of threads
+
+17
+00:00:47,260 --> 00:00:52,040
+that you can send a task to and get a result back from.
+
+18
+00:00:53,630 --> 00:00:55,970
+The reason for that and the reason to do that,
+
+19
+00:00:55,970 --> 00:00:57,700
+and I'm going to just delete that code,
+
+20
+00:00:57,700 --> 00:00:59,650
+is to just make your code a little bit nicer.
+
+21
+00:00:59,650 --> 00:01:02,582
+So instead of importing thread from threading,
+
+22
+00:01:02,582 --> 00:01:06,430
+we're gonna do from_concurrent.futures
+
+23
+00:01:06,430 --> 00:01:08,850
+import ThreadPoolExecutor.
+
+24
+00:01:09,720 --> 00:01:12,540
+ThreadPoolExecutor is going to create a pool of threads
+
+25
+00:01:12,540 --> 00:01:15,280
+that's just a bunch of threads with no target
+
+26
+00:01:16,240 --> 00:01:20,930
+and it's going to allow us to use that pool to execute jobs
+
+27
+00:01:20,930 --> 00:01:22,430
+or in this case our functions.
+
+28
+00:01:25,070 --> 00:01:30,070
+So with ThreadPoolExecutor and max_workers is two as pool,
+
+29
+00:01:32,046 --> 00:01:34,760
+all we're saying here is create two threads
+
+30
+00:01:34,760 --> 00:01:37,340
+in this pool of threads, in this collection of threads.
+
+31
+00:01:37,340 --> 00:01:40,650
+Then we can see pool.submit(complex_calculation),
+
+32
+00:01:44,470 --> 00:01:45,580
+pool.submit(ask_user).
+
+33
+00:01:48,590 --> 00:01:49,937
+And that's it.
+
+34
+00:01:49,937 --> 00:01:52,020
+Our code has been simplified slightly now.
+
+35
+00:01:52,020 --> 00:01:53,900
+Again, this creates a pool of threads,
+
+36
+00:01:53,900 --> 00:01:57,366
+a collection of threads and then we can submit a task to it,
+
+37
+00:01:57,366 --> 00:02:00,540
+and because we've used it with this with statement,
+
+38
+00:02:00,540 --> 00:02:04,680
+all this does is it waits for the pool to finish.
+
+39
+00:02:04,680 --> 00:02:09,540
+That essentially means we don't have to call pool.shutdown.
+
+40
+00:02:11,360 --> 00:02:14,922
+Pool.shutdown will normally wait for these things to finish
+
+41
+00:02:14,922 --> 00:02:17,929
+and this is again a blocking operation.
+
+42
+00:02:17,929 --> 00:02:21,720
+But if you the with, you don't have to use pool.shutdown,
+
+43
+00:02:21,720 --> 00:02:23,220
+so it just makes your code a little bit nicer
+
+44
+00:02:23,220 --> 00:02:25,550
+using this context manager here.
+
+45
+00:02:25,550 --> 00:02:27,290
+ThreadPoolExecutor and generally the
+
+46
+00:02:27,290 --> 00:02:29,900
+concurrent.futures module is very popular
+
+47
+00:02:29,900 --> 00:02:33,737
+and as you start advancing in your Python journey,
+
+48
+00:02:33,737 --> 00:02:36,050
+and you for example go to conferences
+
+49
+00:02:36,050 --> 00:02:38,210
+or you listen to talks on YouTube or things like that,
+
+50
+00:02:38,210 --> 00:02:40,200
+you'll see the concurrent.futures module
+
+51
+00:02:40,200 --> 00:02:42,039
+mentioned every now and then.
+
+52
+00:02:42,039 --> 00:02:44,460
+ThreadPoolExecutor is a pretty popular thing
+
+53
+00:02:44,460 --> 00:02:47,031
+just to have a bunch of threads waiting
+
+54
+00:02:47,031 --> 00:02:48,890
+and then you can sort of
+
+55
+00:02:48,890 --> 00:02:51,460
+ask them to do something and get a result back,
+
+56
+00:02:51,460 --> 00:02:53,250
+ask them to do something, get a result back,
+
+57
+00:02:53,250 --> 00:02:56,770
+without having to be always creating new threads.
+
+58
+00:02:56,770 --> 00:02:58,640
+And so that's why you'd have a thread pool there,
+
+59
+00:02:58,640 --> 00:03:01,716
+to save yourself from creating new thread all the time.
+
+60
+00:03:01,716 --> 00:03:04,090
+Okay, that's it for this video.
+
+61
+00:03:04,090 --> 00:03:06,350
+Just wanted to show you this ThreadPoolExecutor
+
+62
+00:03:06,350 --> 00:03:07,800
+and I'll see on the next one.
+

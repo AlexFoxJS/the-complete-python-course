@@ -1,0 +1,928 @@
+1
+00:00:00,000 --> 00:00:01,735
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,735 --> 00:00:04,885
+In this video, we're talking about files.
+
+3
+00:00:04,885 --> 00:00:06,620
+This is a new section
+
+4
+00:00:06,620 --> 00:00:10,090
+and we are really getting into the exciting stuff now,
+
+5
+00:00:10,090 --> 00:00:12,670
+after these few videos, particularly in this section
+
+6
+00:00:12,670 --> 00:00:13,819
+and in the next section,
+
+7
+00:00:13,819 --> 00:00:17,010
+our programmes are going to be able to save their status,
+
+8
+00:00:17,010 --> 00:00:18,481
+so that we can continue later.
+
+9
+00:00:18,481 --> 00:00:19,769
+By the way, just as an advance,
+
+10
+00:00:19,769 --> 00:00:22,569
+in the next section we'll look at databases, cool stuff.
+
+11
+00:00:23,447 --> 00:00:25,180
+For example, we could write a programme
+
+12
+00:00:25,180 --> 00:00:27,210
+to store the books we want to read
+
+13
+00:00:27,210 --> 00:00:28,326
+and they won't be forgotten,
+
+14
+00:00:28,326 --> 00:00:31,035
+when the programme ends and we start it again,
+
+15
+00:00:31,035 --> 00:00:32,450
+that way, we can really start
+
+16
+00:00:32,450 --> 00:00:34,570
+developing larger applications,
+
+17
+00:00:34,570 --> 00:00:38,590
+now that, you know, the information they hold
+
+18
+00:00:38,590 --> 00:00:42,012
+starts to persist across run times.
+
+19
+00:00:42,012 --> 00:00:43,120
+From this section onwards,
+
+20
+00:00:43,120 --> 00:00:45,270
+we're going to be focusing more on building apps,
+
+21
+00:00:45,270 --> 00:00:47,580
+as opposed to just learning about concepts,
+
+22
+00:00:47,580 --> 00:00:48,451
+which is really useful,
+
+23
+00:00:48,451 --> 00:00:50,697
+I mean, you have to know what you're typing,
+
+24
+00:00:50,697 --> 00:00:52,710
+before you start typing it,
+
+25
+00:00:52,710 --> 00:00:54,175
+but the best thing to do is to actually write code,
+
+26
+00:00:54,175 --> 00:00:56,650
+of course and develop some apps.
+
+27
+00:00:56,650 --> 00:00:59,276
+So I'd like to apologise if you have been bored
+
+28
+00:00:59,276 --> 00:01:01,352
+over the last few sections, just learning,
+
+29
+00:01:01,352 --> 00:01:04,049
+you know, how to do things with Python,
+
+30
+00:01:04,049 --> 00:01:05,630
+now we're gonna build apps
+
+31
+00:01:05,630 --> 00:01:07,870
+and things are gonna get more exciting, I promise you
+
+32
+00:01:08,870 --> 00:01:11,637
+and also, we're going to be writing all our code on PyCharm,
+
+33
+00:01:11,637 --> 00:01:14,185
+as we've been doing, instead of Ripple eight,
+
+34
+00:01:14,185 --> 00:01:16,470
+we're gonna start forgetting about Ripple eight
+
+35
+00:01:16,470 --> 00:01:18,960
+as we focus more on these larger apps.
+
+36
+00:01:20,192 --> 00:01:21,513
+In Ripple eight, you can't interact
+
+37
+00:01:21,513 --> 00:01:23,778
+with files and databases and other good stuff,
+
+38
+00:01:23,778 --> 00:01:26,510
+so that's why we must stop using it now.
+
+39
+00:01:27,360 --> 00:01:30,210
+If you want to ask any questions
+
+40
+00:01:30,210 --> 00:01:32,660
+about particular pieces of code,
+
+41
+00:01:32,660 --> 00:01:34,440
+you can still post your code on Ripple eight
+
+42
+00:01:34,440 --> 00:01:38,543
+and I'll definitely be able to look at it easily.
+
+43
+00:01:38,543 --> 00:01:40,120
+I've created a new project here,
+
+44
+00:01:40,120 --> 00:01:41,876
+I've called it files_project
+
+45
+00:01:41,876 --> 00:01:44,130
+and I've created an app.py file,
+
+46
+00:01:45,450 --> 00:01:47,140
+because in this video, we're going to be dealing
+
+47
+00:01:47,140 --> 00:01:50,180
+with files and particularly text files,
+
+48
+00:01:50,180 --> 00:01:51,530
+I'm also going to right-click
+
+49
+00:01:51,530 --> 00:01:54,730
+and create a new, good old normal file
+
+50
+00:01:54,730 --> 00:01:57,410
+and I'm going to call it data.txt,
+
+51
+00:01:58,390 --> 00:02:00,900
+the .txt stands for dot text
+
+52
+00:02:00,900 --> 00:02:03,410
+and this data is going to hold some text data.
+
+53
+00:02:05,068 --> 00:02:07,500
+Now let's talk about how we can read
+
+54
+00:02:07,500 --> 00:02:10,291
+the contents of this data file using Python,
+
+55
+00:02:10,291 --> 00:02:11,946
+of course, right now it's empty,
+
+56
+00:02:11,946 --> 00:02:15,900
+but we're going to type the name of our friend, Rolf,
+
+57
+00:02:17,100 --> 00:02:20,320
+just as an example, we're going to read the data in
+
+58
+00:02:20,320 --> 00:02:22,730
+and print it out, just so you know how easy it is
+
+59
+00:02:22,730 --> 00:02:25,800
+with Python to read some data out of a file,
+
+60
+00:02:27,850 --> 00:02:28,923
+it's really straightforward,
+
+61
+00:02:28,923 --> 00:02:32,481
+all we have to do is open the file,
+
+62
+00:02:32,481 --> 00:02:35,080
+for which we have to give it the name of the file,
+
+63
+00:02:35,080 --> 00:02:37,836
+that's data.txt and you can see here,
+
+64
+00:02:37,836 --> 00:02:39,803
+you've got a nice thing in PyCharm,
+
+65
+00:02:39,803 --> 00:02:41,743
+where it tells you the arguments of this file,
+
+66
+00:02:41,743 --> 00:02:45,740
+there's a lot, there's a mode, there's a buffering,
+
+67
+00:02:45,740 --> 00:02:47,830
+encoding, errors and so forth,
+
+68
+00:02:47,830 --> 00:02:51,150
+we're only going to do comma r,
+
+69
+00:02:51,150 --> 00:02:52,900
+r is going to be the mode,
+
+70
+00:02:52,900 --> 00:02:56,160
+data.txt is going to be the name of the file
+
+71
+00:02:56,160 --> 00:02:57,984
+and the r stands for reading,
+
+72
+00:02:57,984 --> 00:03:01,010
+we're going to open a file for reading only,
+
+73
+00:03:02,530 --> 00:03:05,570
+of course, this opens the file
+
+74
+00:03:05,570 --> 00:03:09,208
+and that does something at the operating system level,
+
+75
+00:03:09,208 --> 00:03:14,208
+the operating system now has stored somewhere in its memory
+
+76
+00:03:14,550 --> 00:03:17,758
+that you have this file open and there's a certain limit
+
+77
+00:03:17,758 --> 00:03:20,490
+to the number of files you can have open at once.
+
+78
+00:03:21,763 --> 00:03:23,800
+Now other than the operating system
+
+79
+00:03:23,800 --> 00:03:25,980
+knowing that this file is now open,
+
+80
+00:03:25,980 --> 00:03:29,440
+we must also have a way to interact with the file,
+
+81
+00:03:29,440 --> 00:03:33,750
+for which we have to, of course store this object
+
+82
+00:03:34,610 --> 00:03:37,910
+that gets returned, it's called a file pointer
+
+83
+00:03:37,910 --> 00:03:40,550
+into a variable, now that we have in a variable,
+
+84
+00:03:40,550 --> 00:03:43,170
+we can do things like get a new variable,
+
+85
+00:03:43,170 --> 00:03:44,270
+which is my_file.read,
+
+86
+00:03:47,720 --> 00:03:50,330
+.read is going to read the entire contents of the file
+
+87
+00:03:50,330 --> 00:03:53,600
+as a single string and give it us as file_content.
+
+88
+00:03:54,840 --> 00:03:57,055
+Now I said earlier, that there's a limit to how many files
+
+89
+00:03:57,055 --> 00:04:01,190
+you can have simultaneously open in your computer at once,
+
+90
+00:04:01,190 --> 00:04:02,816
+I'm not lying, so the first thing
+
+91
+00:04:02,816 --> 00:04:07,300
+is to make sure you close the file, my_file.close,
+
+92
+00:04:07,300 --> 00:04:12,230
+that returns that file opener to the operating system
+
+93
+00:04:12,230 --> 00:04:15,800
+and now that file is closed, if you wanted to read it again
+
+94
+00:04:15,800 --> 00:04:17,267
+or interact with it in any other way,
+
+95
+00:04:17,267 --> 00:04:19,330
+you will not be able to do so,
+
+96
+00:04:19,330 --> 00:04:21,900
+however we've already extracted what we wanted from it,
+
+97
+00:04:21,900 --> 00:04:24,560
+that's the whole contents and we can print them out.
+
+98
+00:04:27,660 --> 00:04:30,370
+So that's it, that's really as simple as it gets,
+
+99
+00:04:30,370 --> 00:04:32,700
+let's right-click app.py and run it
+
+100
+00:04:33,542 --> 00:04:36,130
+and notice how now we get Rolf,
+
+101
+00:04:36,130 --> 00:04:38,820
+also I've increased the font size
+
+102
+00:04:38,820 --> 00:04:42,450
+of this command line just for your benefit.
+
+103
+00:04:44,920 --> 00:04:47,541
+So the file contents is now one long string
+
+104
+00:04:47,541 --> 00:04:51,290
+and when we call the .read method of the file,
+
+105
+00:04:52,270 --> 00:04:54,540
+it just goes through the entire file
+
+106
+00:04:54,540 --> 00:04:57,140
+and gives us all of its contents as a single string,
+
+107
+00:04:58,590 --> 00:05:00,475
+if the file is really, really long
+
+108
+00:05:00,475 --> 00:05:03,000
+and some of them can be tens of thousands
+
+109
+00:05:03,000 --> 00:05:05,766
+or even hundreds of thousands of lines long,
+
+110
+00:05:05,766 --> 00:05:08,366
+you could have a problem, if you decided to do this,
+
+111
+00:05:09,340 --> 00:05:12,390
+so we will learn other ways of going about it later on
+
+112
+00:05:12,390 --> 00:05:14,950
+and also remember, it's really important
+
+113
+00:05:14,950 --> 00:05:16,880
+to close the file, when we finish,
+
+114
+00:05:16,880 --> 00:05:18,760
+otherwise Python thinks we still need to keep that open
+
+115
+00:05:18,760 --> 00:05:22,136
+and it can cause problems, when the file contents change,
+
+116
+00:05:22,136 --> 00:05:23,560
+it can cause problems with having
+
+117
+00:05:23,560 --> 00:05:25,510
+too many open at the same time as well.
+
+118
+00:05:26,574 --> 00:05:29,540
+Now let's move on to writing to the file,
+
+119
+00:05:29,540 --> 00:05:31,350
+I mean, reading it is fairly straightforward,
+
+120
+00:05:31,350 --> 00:05:34,940
+just open it in on reading mode is important,
+
+121
+00:05:34,940 --> 00:05:37,006
+then you read it, then you close it,
+
+122
+00:05:37,006 --> 00:05:38,806
+then you have the content available,
+
+123
+00:05:39,700 --> 00:05:41,650
+now let's write to it.
+
+124
+00:05:43,110 --> 00:05:45,360
+After we've closed the file, that's important,
+
+125
+00:05:45,360 --> 00:05:48,158
+we can reopen it this time for writing,
+
+126
+00:05:48,158 --> 00:05:51,752
+so I'm gonna create a my_file_writing variable
+
+127
+00:05:51,752 --> 00:05:56,752
+and that's gonna be data.txt, but this time w for writing.
+
+128
+00:05:58,810 --> 00:06:02,320
+Notice by the way, that when we open a file for writing,
+
+129
+00:06:02,320 --> 00:06:05,770
+that erases the contents of the file and anything we write
+
+130
+00:06:05,770 --> 00:06:07,973
+will overwrite anything that's already there,
+
+131
+00:06:07,973 --> 00:06:10,530
+so if you wanna keep the contents of your file,
+
+132
+00:06:10,530 --> 00:06:12,278
+do not open it in w mode,
+
+133
+00:06:12,278 --> 00:06:14,403
+there are other ways that you can use,
+
+134
+00:06:14,403 --> 00:06:16,835
+other modes that won't erase the data there,
+
+135
+00:06:16,835 --> 00:06:19,980
+and instead it will keep the data there and let you edit it,
+
+136
+00:06:21,080 --> 00:06:23,430
+editing files, not so easy though
+
+137
+00:06:23,430 --> 00:06:25,650
+and that's slightly more work.
+
+138
+00:06:27,048 --> 00:06:29,385
+So now we've got the file open for writing,
+
+139
+00:06:29,385 --> 00:06:32,480
+we can write something, we can potentially write
+
+140
+00:06:32,480 --> 00:06:34,830
+the user's name, so that we remember it
+
+141
+00:06:34,830 --> 00:06:37,610
+from one time we run the programme to another.
+
+142
+00:06:37,610 --> 00:06:40,370
+Where should we ask the user for their name?
+
+143
+00:06:41,670 --> 00:06:44,870
+Should we ask for their name after we open the file
+
+144
+00:06:45,750 --> 00:06:47,130
+or before we open the file?
+
+145
+00:06:48,008 --> 00:06:50,936
+The answer is before we open the file,
+
+146
+00:06:50,936 --> 00:06:52,860
+you don't want to have your files open
+
+147
+00:06:52,860 --> 00:06:54,170
+for any longer than possible
+
+148
+00:06:54,170 --> 00:06:57,340
+and let's remember, if we have an input here,
+
+149
+00:07:00,380 --> 00:07:02,500
+the user may never type anything,
+
+150
+00:07:02,500 --> 00:07:04,421
+potentially they could just run the programme
+
+151
+00:07:04,421 --> 00:07:05,969
+and then forget about it
+
+152
+00:07:05,969 --> 00:07:08,350
+and then you would have this data.txt file
+
+153
+00:07:08,350 --> 00:07:12,440
+open potentially for a long time, you don't want to do that,
+
+154
+00:07:12,440 --> 00:07:13,480
+so the best thing to do
+
+155
+00:07:13,480 --> 00:07:15,120
+is to make sure that your files are open
+
+156
+00:07:15,120 --> 00:07:17,780
+for the smallest period of time possible
+
+157
+00:07:17,780 --> 00:07:20,943
+and that's almost always a few lines of code,
+
+158
+00:07:20,943 --> 00:07:23,890
+where you're not asking the user to do anything,
+
+159
+00:07:23,890 --> 00:07:26,550
+you just open them and close them as quickly as you can.
+
+160
+00:07:31,006 --> 00:07:32,496
+We've asked the user for their name,
+
+161
+00:07:32,496 --> 00:07:34,320
+then we've opened the file for writing
+
+162
+00:07:34,320 --> 00:07:39,210
+and now of course, we can do my_file.writing
+
+163
+00:07:39,210 --> 00:07:40,819
+my_file_writing and then dot
+
+164
+00:07:40,819 --> 00:07:42,700
+and when you do that in PyCharm, by the way,
+
+165
+00:07:42,700 --> 00:07:47,210
+you get all of the methods and properties of the object,
+
+166
+00:07:47,210 --> 00:07:49,346
+remember the dot means inside,
+
+167
+00:07:49,346 --> 00:07:51,440
+so here we're looking inside the object
+
+168
+00:07:51,440 --> 00:07:55,710
+to see what we can use and this is really great from PyCharm
+
+169
+00:07:55,710 --> 00:07:59,178
+and it lets us look at potentially what we want to call,
+
+170
+00:07:59,178 --> 00:08:00,990
+sorry, I was reading close there
+
+171
+00:08:00,990 --> 00:08:02,200
+and I was like, what do we want to close,
+
+172
+00:08:02,200 --> 00:08:04,140
+we don't wanna close anything just yet,
+
+173
+00:08:04,140 --> 00:08:06,169
+but nonetheless you can see the close method is here,
+
+174
+00:08:06,169 --> 00:08:09,140
+we're gonna be calling that in just a moment.
+
+175
+00:08:09,140 --> 00:08:11,440
+So going through this, there's a lot of stuff,
+
+176
+00:08:13,390 --> 00:08:17,240
+there is things that you may not understand what they mean,
+
+177
+00:08:17,240 --> 00:08:20,640
+like readable, readline, readlines,
+
+178
+00:08:21,760 --> 00:08:25,350
+seek, and whenever you encounter something like this,
+
+179
+00:08:25,350 --> 00:08:26,938
+that you are interested in,
+
+180
+00:08:26,938 --> 00:08:29,330
+but you don't know what it means,
+
+181
+00:08:29,330 --> 00:08:31,580
+Google it, it's really great,
+
+182
+00:08:31,580 --> 00:08:35,080
+the Python documentation, the official Python guides,
+
+183
+00:08:35,080 --> 00:08:37,520
+they can be a bit dense, but they have a lot of information
+
+184
+00:08:37,520 --> 00:08:41,490
+about how to use all these building functions,
+
+185
+00:08:41,490 --> 00:08:43,367
+like file wrappers and also information
+
+186
+00:08:43,367 --> 00:08:45,206
+on what these things mean, but of course,
+
+187
+00:08:45,206 --> 00:08:48,912
+we're gonna go and call the write method
+
+188
+00:08:48,912 --> 00:08:50,775
+and the write method takes in a string,
+
+189
+00:08:50,775 --> 00:08:52,675
+that we're going to write to the file
+
+190
+00:08:52,675 --> 00:08:55,280
+and that's gonna be the user's name,
+
+191
+00:08:56,240 --> 00:09:00,350
+finally of course, we must close the file,
+
+192
+00:09:00,350 --> 00:09:02,700
+that's very important, don't forget to do that.
+
+193
+00:09:03,910 --> 00:09:04,816
+So now, when we run our programme,
+
+194
+00:09:04,816 --> 00:09:08,410
+the first thing we're gonna do is open our file for reading,
+
+195
+00:09:08,410 --> 00:09:09,976
+print out the contents,
+
+196
+00:09:09,976 --> 00:09:12,780
+then we're going to ask the user for their name
+
+197
+00:09:12,780 --> 00:09:14,560
+and then we're gonna open the file for writing
+
+198
+00:09:14,560 --> 00:09:16,770
+and write their name to the file,
+
+199
+00:09:16,770 --> 00:09:20,110
+so if we run the file once, if we run our programme once,
+
+200
+00:09:20,110 --> 00:09:22,730
+we see Rolf, that's the current contents of the file,
+
+201
+00:09:22,730 --> 00:09:25,710
+then we can type in our name and then the programme finishes,
+
+202
+00:09:27,010 --> 00:09:29,080
+we can run it again and now we see
+
+203
+00:09:29,080 --> 00:09:32,220
+that our name has appeared there, which is fantastic,
+
+204
+00:09:32,220 --> 00:09:36,750
+it means that the file does know what's going on,
+
+205
+00:09:38,140 --> 00:09:39,660
+if you look at the file, you can see
+
+206
+00:09:39,660 --> 00:09:42,120
+that Jose is currently in the file contents,
+
+207
+00:09:43,800 --> 00:09:46,688
+then I'm gonna type Rolf, press Enter
+
+208
+00:09:46,688 --> 00:09:48,460
+and if we go back to the data.txt,
+
+209
+00:09:48,460 --> 00:09:50,250
+we see that Rolf is now in there.
+
+210
+00:09:52,229 --> 00:09:54,490
+Over the next few videos, we're going to look at
+
+211
+00:09:54,490 --> 00:09:59,490
+storing more than just a single string in the file,
+
+212
+00:09:59,870 --> 00:10:01,840
+or rather a single value in the file,
+
+213
+00:10:01,840 --> 00:10:05,800
+by looking at CSV files, Comma Separated Value files,
+
+214
+00:10:05,800 --> 00:10:08,670
+JSON files, Javascript Object Notation files
+
+215
+00:10:08,670 --> 00:10:11,433
+and also how we can do things like import
+
+216
+00:10:11,433 --> 00:10:15,120
+and things like that to make dealing with files easier
+
+217
+00:10:16,120 --> 00:10:18,500
+and also remember, we never told the file
+
+218
+00:10:18,500 --> 00:10:21,030
+to delete the contents, but as I said earlier,
+
+219
+00:10:21,030 --> 00:10:25,130
+the w mode overwrites everything that's in the file,
+
+220
+00:10:25,130 --> 00:10:28,004
+so if you open your files with w mode, they get deleted,
+
+221
+00:10:28,004 --> 00:10:30,480
+whatever you write becomes the new content,
+
+222
+00:10:30,480 --> 00:10:31,330
+be careful with that,
+
+223
+00:10:31,330 --> 00:10:33,620
+it's a dangerous operation, use it carefully.
+
+224
+00:10:35,040 --> 00:10:35,873
+That's it for this video,
+
+225
+00:10:35,873 --> 00:10:39,170
+I just wanted to show you the syntax for opening a new file
+
+226
+00:10:39,170 --> 00:10:41,327
+and two of the modes, r and w,
+
+227
+00:10:41,327 --> 00:10:42,838
+there's quite a few more modes
+
+228
+00:10:42,838 --> 00:10:46,453
+and in the Further Reading section, lecture of this section,
+
+229
+00:10:46,453 --> 00:10:49,154
+I'm going to include a link to a couple more of the modes,
+
+230
+00:10:49,154 --> 00:10:50,372
+so that you can experiment with them
+
+231
+00:10:50,372 --> 00:10:52,830
+and have a wee look at them as well.
+
+232
+00:10:52,830 --> 00:10:55,280
+So that's it for this video, I'll see you on the next one.
+

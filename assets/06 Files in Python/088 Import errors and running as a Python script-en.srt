@@ -1,0 +1,428 @@
+1
+00:00:00,200 --> 00:00:01,600
+<v Jose>Hi, welcome back.</v>
+
+2
+00:00:01,600 --> 00:00:03,440
+In this video, we're going to look at:
+
+3
+00:00:03,440 --> 00:00:06,930
+what is an import error, and also how you can run some
+
+4
+00:00:06,930 --> 00:00:10,520
+code in a file, only when the file is ran as a script
+
+5
+00:00:10,520 --> 00:00:12,150
+and not as a module.
+
+6
+00:00:12,150 --> 00:00:13,710
+It's very straight forward.
+
+7
+00:00:13,710 --> 00:00:16,880
+The import errors, though, are not so easy.
+
+8
+00:00:16,880 --> 00:00:18,990
+Let's have a look at an import error.
+
+9
+00:00:20,090 --> 00:00:23,650
+We've got app importing file operations,
+
+10
+00:00:23,650 --> 00:00:25,970
+file operations importing find,
+
+11
+00:00:25,970 --> 00:00:27,670
+and find's not importing anything.
+
+12
+00:00:28,760 --> 00:00:31,960
+Let's make find import file operations.
+
+13
+00:00:40,470 --> 00:00:43,330
+So let's do this, let's ask it to go into file operations
+
+14
+00:00:43,330 --> 00:00:45,050
+and import something specific.
+
+15
+00:00:47,573 --> 00:00:51,290
+Let's run app.py, let's see what happens.
+
+16
+00:00:53,260 --> 00:00:56,800
+Now we get an import error because what's happening
+
+17
+00:00:56,800 --> 00:01:00,410
+is app is importing utils.common.file_operations,
+
+18
+00:01:02,330 --> 00:01:04,440
+this is importing utils.find,
+
+19
+00:01:05,930 --> 00:01:09,540
+and now utils.find is importing utils.common.file_operations
+
+20
+00:01:09,540 --> 00:01:13,660
+which is already in the imported modules.
+
+21
+00:01:13,660 --> 00:01:18,140
+And Python knows about this, it keeps a global dictionary
+
+22
+00:01:18,140 --> 00:01:20,710
+of modules that have been imported already,
+
+23
+00:01:20,710 --> 00:01:23,200
+and as we try to access something in it,
+
+24
+00:01:24,410 --> 00:01:28,180
+it says, oh wait, actually, when I try to go
+
+25
+00:01:28,180 --> 00:01:31,080
+to this module to extract this function here,
+
+26
+00:01:31,080 --> 00:01:33,840
+I can't do that because when I run that,
+
+27
+00:01:33,840 --> 00:01:37,580
+it asks me to go back here, so that doesn't work.
+
+28
+00:01:39,850 --> 00:01:42,370
+Notice however, that if you ask it not to import
+
+29
+00:01:42,370 --> 00:01:45,530
+a particular thing, but just to execute the module,
+
+30
+00:01:45,530 --> 00:01:50,530
+like if you do import utils.common.file_operations,
+
+31
+00:01:52,680 --> 00:01:55,340
+it is okay with this because it sees
+
+32
+00:01:55,340 --> 00:01:57,640
+that its already imported this module,
+
+33
+00:01:57,640 --> 00:01:59,360
+therefore, nothing to do.
+
+34
+00:01:59,360 --> 00:02:01,540
+It just ignores it, because its already been imported
+
+35
+00:02:01,540 --> 00:02:03,800
+in the past, like this.
+
+36
+00:02:06,450 --> 00:02:09,670
+So that's a pretty important thing to know.
+
+37
+00:02:09,670 --> 00:02:12,090
+If your module's already imported,
+
+38
+00:02:12,090 --> 00:02:14,310
+you can import it again the same way,
+
+39
+00:02:14,310 --> 00:02:15,840
+but if your module's already imported,
+
+40
+00:02:15,840 --> 00:02:18,340
+and you want to access something specific in it,
+
+41
+00:02:18,340 --> 00:02:22,610
+Python is going to then go and look into that module again,
+
+42
+00:02:23,500 --> 00:02:26,680
+and it's going to give you an error
+
+43
+00:02:26,680 --> 00:02:28,150
+because it's going to go back and forth.
+
+44
+00:02:28,150 --> 00:02:30,550
+This is called a circular import,
+
+45
+00:02:30,550 --> 00:02:32,200
+it's not such a good thing to do.
+
+46
+00:02:34,110 --> 00:02:37,480
+Now, in some cases, a completely separate topic,
+
+47
+00:02:37,480 --> 00:02:40,190
+you'll want some code to run,
+
+48
+00:02:40,190 --> 00:02:42,600
+for example, let's go to the find function.
+
+49
+00:02:42,600 --> 00:02:45,590
+You'll want some code to run only when
+
+50
+00:02:45,590 --> 00:02:47,520
+you execute find.py.
+
+51
+00:02:47,520 --> 00:02:50,800
+So if you run find.py, you want some code to run,
+
+52
+00:02:52,020 --> 00:02:53,410
+and you can do that.
+
+53
+00:02:53,410 --> 00:02:55,040
+By the way, I'm going to delete this import there
+
+54
+00:02:55,040 --> 00:02:57,570
+because it works, but it's a circular import,
+
+55
+00:02:57,570 --> 00:02:59,310
+and I don't like that.
+
+56
+00:02:59,310 --> 00:03:01,590
+So if we were to run find.py,
+
+57
+00:03:01,590 --> 00:03:04,360
+let's say we wanna test out our finding function.
+
+58
+00:03:04,360 --> 00:03:09,360
+So we'd say, find_in Rolf, Jose, and Jen,
+
+59
+00:03:11,460 --> 00:03:15,870
+and what we're looking is lambda x,
+
+60
+00:03:20,500 --> 00:03:21,360
+yeah, that's it.
+
+61
+00:03:21,360 --> 00:03:24,590
+We're gonna just return x, and the expected is, Jose.
+
+62
+00:03:25,890 --> 00:03:29,090
+So what's gonna happen is, this list becomes the iterable
+
+63
+00:03:29,090 --> 00:03:33,010
+lambda x returns x, which returns every element
+
+64
+00:03:33,010 --> 00:03:34,130
+as we go through them,
+
+65
+00:03:34,130 --> 00:03:36,580
+and Jose is the value we're looking for.
+
+66
+00:03:36,580 --> 00:03:39,380
+So for i in iterable, goes over each element.
+
+67
+00:03:39,380 --> 00:03:42,470
+i becomes Rolf, then it becomes Jose, then it becomes Jen,
+
+68
+00:03:42,470 --> 00:03:44,860
+we run the finder function, which just gives
+
+69
+00:03:44,860 --> 00:03:48,330
+us the value that's Rolf, Jose, or Jen,
+
+70
+00:03:48,330 --> 00:03:50,410
+and we check that it's equal to the expected value,
+
+71
+00:03:50,410 --> 00:03:51,860
+which in this case is Jose.
+
+72
+00:03:51,860 --> 00:03:53,730
+i would return it if it's fact.
+
+73
+00:03:53,730 --> 00:03:57,060
+So if we run the find.py file,
+
+74
+00:03:57,060 --> 00:03:59,180
+we get Jose out, which is good.
+
+75
+00:04:00,110 --> 00:04:04,130
+But notice how find.py is imported by file operations.
+
+76
+00:04:04,130 --> 00:04:06,170
+File operations is imported by app.
+
+77
+00:04:06,170 --> 00:04:10,820
+So if we run app, we also get Jose,
+
+78
+00:04:10,820 --> 00:04:14,560
+because find was executed by the import
+
+79
+00:04:14,560 --> 00:04:15,393
+and it ran this code.
+
+80
+00:04:15,393 --> 00:04:16,420
+We don't want that.
+
+81
+00:04:16,420 --> 00:04:18,820
+Because this is only for testing the module.
+
+82
+00:04:18,820 --> 00:04:21,760
+We only want to run this code if we physically
+
+83
+00:04:21,760 --> 00:04:24,610
+right-click the module and run it.
+
+84
+00:04:24,610 --> 00:04:26,670
+If we run it as a script.
+
+85
+00:04:26,670 --> 00:04:28,380
+And we can do that with an f statement.
+
+86
+00:04:28,380 --> 00:04:30,350
+Of course, what's gonna be in our f statement?
+
+87
+00:04:30,350 --> 00:04:32,470
+We wanna check whether the name is main.
+
+88
+00:04:33,520 --> 00:04:35,070
+Go and implement it yourselves.
+
+89
+00:04:37,580 --> 00:04:42,580
+I'm sure you got that if name is main, run this.
+
+90
+00:04:45,700 --> 00:04:46,940
+Pretty straight forward stuff.
+
+91
+00:04:46,940 --> 00:04:48,600
+Of course, you have to realise that
+
+92
+00:04:48,600 --> 00:04:49,780
+this is something you can do.
+
+93
+00:04:49,780 --> 00:04:51,470
+After all, these are just a variable.
+
+94
+00:04:51,470 --> 00:04:54,290
+This is just a variable, and this is just a string.
+
+95
+00:04:54,290 --> 00:04:55,790
+So you can check whether they are equal,
+
+96
+00:04:55,790 --> 00:04:57,640
+and run something if they are.
+
+97
+00:04:57,640 --> 00:05:00,630
+Now when you run find.py, you get Jose.
+
+98
+00:05:00,630 --> 00:05:05,120
+When you run app.py, you don't because it didn't run
+
+99
+00:05:05,120 --> 00:05:06,090
+as a script.
+
+100
+00:05:06,090 --> 00:05:07,570
+The name was not main.
+
+101
+00:05:07,570 --> 00:05:10,160
+The name was utils.find.
+
+102
+00:05:11,820 --> 00:05:13,350
+That's it for this video.
+
+103
+00:05:13,350 --> 00:05:15,780
+I wanted just to show you a bit more about importing,
+
+104
+00:05:15,780 --> 00:05:18,420
+how you can run something only when you run it as a script,
+
+105
+00:05:18,420 --> 00:05:20,450
+and also how you can cause import errors,
+
+106
+00:05:20,450 --> 00:05:23,710
+and of course, that you should avoid import errors.
+
+107
+00:05:23,710 --> 00:05:26,410
+Thanks for watching, and I'll see you on the next one.
+

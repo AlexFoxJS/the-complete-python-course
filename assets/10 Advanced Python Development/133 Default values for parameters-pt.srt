@@ -1,0 +1,468 @@
+1
+00:00:00,180 --> 00:00:01,770
+Jose: Ol e bem vindo de volta.
+
+2
+00:00:01,770 --> 00:00:02,650
+Neste vdeo,
+
+3
+00:00:02,650 --> 00:00:06,060
+estamos analisando os valores padro dos parmetros.
+
+4
+00:00:06,060 --> 00:00:07,280
+Se voc j conhece um
+
+5
+00:00:07,280 --> 00:00:10,506
+pouco de Python, pode se perguntar por que no abordamos isso antes.
+
+6
+00:00:10,506 --> 00:00:13,480
+E simplesmente o motivo  que no precisamos disso.
+
+7
+00:00:14,850 --> 00:00:16,570
+Agora ns fazemos e vamos comear
+
+8
+00:00:16,570 --> 00:00:19,210
+a olhar para alguns casos em que ter valores
+
+9
+00:00:19,210 --> 00:00:21,010
+padro com parmetros ser til.
+
+10
+00:00:21,010 --> 00:00:22,890
+Ento, vamos direto ao assunto.
+
+11
+00:00:22,890 --> 00:00:25,180
+Sempre que chamamos uma funo que
+
+12
+00:00:25,180 --> 00:00:29,180
+possui parmetros, espera-se que forneamos um nmero igual de parmetros.
+
+13
+00:00:29,180 --> 00:00:33,080
+Ns j sabemos disso, ento vou mostrar um cdigo de exemplo.
+
+14
+00:00:33,080 --> 00:00:36,340
+Aqui esto algumas contas, como uma conta corrente.
+
+15
+00:00:36,340 --> 00:00:39,570
+Vamos ver, que tem $ 1,958 ou
+
+16
+00:00:39,570 --> 00:00:42,940
+libras se voc estiver no Reino Unido.
+
+17
+00:00:42,940 --> 00:00:46,490
+3695 50 em suas economias.
+
+18
+00:00:46,490 --> 00:00:49,330
+Isso  uma quantia consideravelmente respeitvel de dinheiro.
+
+19
+00:00:49,330 --> 00:00:52,160
+Ento ns vamos ter uma funo add_balance, que vai levar
+
+20
+00:00:52,160 --> 00:00:53,360
+uma quantia, que vai
+
+21
+00:00:53,360 --> 00:00:55,090
+ser um float e um nome,
+
+22
+00:00:55,090 --> 00:00:56,090
+que vai ser uma string.
+
+23
+00:00:56,090 --> 00:00:57,740
+E isso vai retornar um float.
+
+24
+00:00:58,850 --> 00:01:01,330
+A razo pela qual eu estou incluindo aqui,
+
+25
+00:01:01,330 --> 00:01:03,830
+o tipo insinuando que ns olhamos no passado.
+
+26
+00:01:05,190 --> 00:01:08,050
+Alm disso, apenas para completar, vou dizer a
+
+27
+00:01:08,050 --> 00:01:10,810
+funo para atualizar o saldo de uma conta
+
+28
+00:01:10,810 --> 00:01:12,830
+e retornar o novo saldo.
+
+29
+00:01:14,060 --> 00:01:15,660
+Inclua essa string de log
+
+30
+00:01:15,660 --> 00:01:18,780
+l apenas para saber o que  essa funo.
+
+31
+00:01:18,780 --> 00:01:21,300
+Como voc pode ver, esta funo,
+
+32
+00:01:21,300 --> 00:01:23,710
+add_balance, atualizar o saldo de uma
+
+33
+00:01:23,710 --> 00:01:25,850
+conta e retornar o novo saldo.
+
+34
+00:01:25,850 --> 00:01:29,050
+Os dois argumentos necessrios so o valor para
+
+35
+00:01:29,050 --> 00:01:31,220
+aumentar o saldo e o
+
+36
+00:01:31,220 --> 00:01:33,660
+nome da conta que vamos alterar.
+
+37
+00:01:33,660 --> 00:01:37,250
+Ento vai para o seu dicionrio global de
+
+38
+00:01:37,250 --> 00:01:39,200
+contas e vai mudar isso.
+
+39
+00:01:39,200 --> 00:01:43,240
+Ento, nome da conta mais valor igual e
+
+40
+00:01:43,240 --> 00:01:45,390
+ento ele retornar o
+
+41
+00:01:45,390 --> 00:01:47,000
+nome da conta.
+
+42
+00:01:47,000 --> 00:01:49,660
+Vai devolver o novo saldo da conta.
+
+43
+00:01:51,210 --> 00:01:52,930
+O nome da conta, por
+
+44
+00:01:52,930 --> 00:01:54,860
+exemplo, para verificao, ser 1958.
+
+45
+00:01:54,860 --> 00:01:57,510
+Vamos dizer que dizemos que 200 aqui vo,
+
+46
+00:01:57,510 --> 00:01:58,570
+aumentem em 200.
+
+47
+00:01:58,570 --> 00:02:00,910
+Eu nem vou tentar fazer as contas aqui.
+
+48
+00:02:00,910 --> 00:02:02,450
+Em seguida, ele retornar o novo
+
+49
+00:02:02,450 --> 00:02:04,690
+nome de contas, de modo que seja um float.
+
+50
+00:02:06,600 --> 00:02:09,230
+No entanto, o que podemos fazer, 
+
+51
+00:02:09,230 --> 00:02:13,950
+claro,  adicionar o saldo 500. 00 para poupana e, em seguida,
+
+52
+00:02:13,950 --> 00:02:16,900
+imprimir a poupana de contas e deve nos
+
+53
+00:02:16,900 --> 00:02:18,670
+dizer o novo equilbrio que
+
+54
+00:02:18,670 --> 00:02:20,450
+deve estar nos quatro mil.
+
+55
+00:02:21,320 --> 00:02:23,020
+Oh, desculpe, economiza contas.
+
+56
+00:02:25,145 --> 00:02:27,190
+Como voc pode ver, 4,195. 5
+
+57
+00:02:28,500 --> 00:02:30,440
+Observe como o zero no final cai, mas
+
+58
+00:02:30,440 --> 00:02:32,360
+no meu cdigo eu gosto de ter duas
+
+59
+00:02:32,360 --> 00:02:34,770
+casas decimais para moeda apenas para manter as coisas mais claras.
+
+60
+00:02:36,270 --> 00:02:39,940
+O que voc no sabia que podia fazer 
+
+61
+00:02:39,940 --> 00:02:44,370
+dizer que, por padro, todos os novos saldos esto indo para
+
+62
+00:02:44,370 --> 00:02:45,620
+a sua conta corrente.
+
+63
+00:02:47,100 --> 00:02:52,100
+Ento, o nome aqui ser verificado, por padro.
+
+64
+00:02:53,540 --> 00:02:58,470
+E a forma como fazemos isso  que adicionamos verificao igual.
+
+65
+00:03:00,250 --> 00:03:01,980
+Ok, ento o nome  uma
+
+66
+00:03:01,980 --> 00:03:04,010
+string e seu valor padro est sendo verificado.
+
+67
+00:03:05,170 --> 00:03:07,960
+Isso significa que, se no passarmos uma string atravs
+
+68
+00:03:07,960 --> 00:03:10,880
+deste argumento, o que podemos fazer agora, no podemos
+
+69
+00:03:10,880 --> 00:03:12,650
+passar uma string para ela.
+
+70
+00:03:12,650 --> 00:03:14,150
+Ns no podemos passar
+
+71
+00:03:15,040 --> 00:03:17,660
+nada a ele e ns imprimimos a
+
+72
+00:03:17,660 --> 00:03:21,700
+verificao no final, devemos ver que aumentou em US $ 500,
+
+73
+00:03:21,700 --> 00:03:23,000
+no em 500 unidades.
+
+74
+00:03:24,270 --> 00:03:26,140
+Se voc no quiser usar o tipo de dicas, ento
+
+75
+00:03:26,140 --> 00:03:27,960
+tudo que voc precisa fazer  se livrar disso.
+
+76
+00:03:27,960 --> 00:03:31,280
+Tudo bem e isso permanece o mesmo, nome  igual a verificao.
+
+77
+00:03:31,280 --> 00:03:33,370
+E isso  tudo bem.
+
+78
+00:03:35,090 --> 00:03:36,920
+Freqentemente, na verdade, se voc no tem
+
+79
+00:03:36,920 --> 00:03:40,000
+insinuaes de tipo, voc ver isso escrito assim, sem os espaos e
+
+80
+00:03:40,000 --> 00:03:41,230
+quando voc tiver insinuaes de
+
+81
+00:03:41,230 --> 00:03:43,530
+tipo, voc o ver escrito assim, todos com espaos.
+
+82
+00:03:43,530 --> 00:03:45,850
+Cabe a voc quantos espaos voc quer colocar
+
+83
+00:03:45,850 --> 00:03:47,150
+l, se voc quer
+
+84
+00:03:47,150 --> 00:03:49,050
+colocar espaos ou no espaos, totalmente bem.
+
+85
+00:03:51,590 --> 00:03:53,190
+Agora, algo importante que
+
+86
+00:03:53,190 --> 00:03:55,930
+voc tem que saber sobre esses argumentos
+
+87
+00:03:55,930 --> 00:03:59,430
+de nomes,  assim que eles so chamados assim
+
+88
+00:03:59,430 --> 00:04:02,870
+que voc tiver o argumento default l,  que
+
+89
+00:04:04,390 --> 00:04:07,130
+voc no pode ter isso aqui, oops
+
+90
+00:04:07,130 --> 00:04:09,660
+desculpe, voc no pode ter isso aqui.
+
+91
+00:04:12,050 --> 00:04:13,820
+Isso ser ilegal.
+
+92
+00:04:13,820 --> 00:04:16,200
+Quando voc o executar, ele lhe dir aqui.
+
+93
+00:04:16,200 --> 00:04:18,580
+Erro de sintaxe, o argumento padro
+
+94
+00:04:18,580 --> 00:04:20,320
+conhecido segue o argumento padro.
+
+95
+00:04:20,320 --> 00:04:21,950
+Ento voc no pode fazer isso.
+
+96
+00:04:21,950 --> 00:04:23,870
+Qualquer argumento que tenha um
+
+97
+00:04:24,840 --> 00:04:27,740
+valor padro deve seguir argumentos que no possuem
+
+98
+00:04:27,740 --> 00:04:28,573
+valores padro.
+
+99
+00:04:28,573 --> 00:04:29,480
+Portanto, neste caso,
+
+100
+00:04:29,480 --> 00:04:31,240
+o valor no possui um valor padro.
+
+101
+00:04:31,240 --> 00:04:34,030
+O nome faz, ento o nome tem que ir no final.
+
+102
+00:04:34,030 --> 00:04:35,280
+Se voc tiver
+
+103
+00:04:35,280 --> 00:04:38,860
+muitos argumentos, alguns dos quais tm valores padro, todos eles
+
+104
+00:04:38,860 --> 00:04:40,260
+devem ir no final.
+
+105
+00:04:41,240 --> 00:04:42,073
+OK?
+
+106
+00:04:43,280 --> 00:04:44,113
+ isso a.
+
+107
+00:04:44,113 --> 00:04:46,350
+Este  o valor padro para argumentos.
+
+108
+00:04:46,350 --> 00:04:48,620
+Voc pode ter muitos argumentos, muitos valores padro.
+
+109
+00:04:48,620 --> 00:04:50,130
+Um valor padro por
+
+110
+00:04:50,130 --> 00:04:52,460
+argumento,  claro, e vamos aprender mais
+
+111
+00:04:52,460 --> 00:04:53,530
+sobre esses valores
+
+112
+00:04:53,530 --> 00:04:56,340
+padro e como us-los em vdeos subseqentes, em
+
+113
+00:04:56,340 --> 00:04:57,490
+apenas alguns vdeos.
+
+114
+00:04:57,490 --> 00:04:58,510
+Na verdade, no prximo
+
+115
+00:04:58,510 --> 00:05:00,210
+vdeo e nos prximos vdeos tambm.
+
+116
+00:05:00,210 --> 00:05:01,290
+Ento,  isso para este.
+
+117
+00:05:01,290 --> 00:05:02,670
+Eu vou te ver no prximo.
+

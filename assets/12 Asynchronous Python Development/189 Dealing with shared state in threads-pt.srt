@@ -1,0 +1,728 @@
+1
+00:00:00,280 --> 00:00:01,270
+Instrutor: Ol e bem vindo de volta.
+
+2
+00:00:01,270 --> 00:00:03,350
+Neste vdeo, vamos analisar a
+
+3
+00:00:03,350 --> 00:00:06,660
+execuo de vrios threads de uma vez e
+
+4
+00:00:06,660 --> 00:00:09,090
+compartilhar algum estado entre eles.
+
+5
+00:00:09,090 --> 00:00:11,008
+Ok, ento eu limpei o
+
+6
+00:00:11,008 --> 00:00:14,920
+novo arquivo, que chamei de nonlockedthreads. py, mas antes de comearmos a
+
+7
+00:00:14,920 --> 00:00:17,670
+escrever algum cdigo, eu s queria falar sobre algo.
+
+8
+00:00:17,670 --> 00:00:21,460
+E isto , o que  uma operao atmica?
+
+9
+00:00:21,460 --> 00:00:23,040
+As operaes atmicas so muito
+
+10
+00:00:23,040 --> 00:00:25,440
+importantes quando voc est executando cdigos multiencadeados.
+
+11
+00:00:25,440 --> 00:00:28,340
+Uma operao atmica  aquela que no pode
+
+12
+00:00:28,340 --> 00:00:30,210
+ser interrompida no meio dela.
+
+13
+00:00:30,210 --> 00:00:32,130
+Ento voc no pode interromper
+
+14
+00:00:32,130 --> 00:00:35,810
+uma operao atmica na metade, mudando para um novo tpico, ok?
+
+15
+00:00:35,810 --> 00:00:37,660
+Sempre que voc estiver fazendo uma
+
+16
+00:00:37,660 --> 00:00:40,923
+operao atmica, voc sabe que ela terminar antes que voc
+
+17
+00:00:40,923 --> 00:00:43,910
+possa desconectar o fio do ncleo e colocar outro.
+
+18
+00:00:43,910 --> 00:00:47,070
+Por exemplo, uma declarao de impresso no pode imprimir apenas
+
+19
+00:00:47,070 --> 00:00:49,560
+metade da linha e, em seguida, ser interrompida.
+
+20
+00:00:50,520 --> 00:00:54,410
+Da mesma forma, acrescentando a um deque ou a um dq se voc  como
+
+21
+00:00:54,410 --> 00:00:57,110
+eu e gosta de dizer isso, acrescentar a um deque
+
+22
+00:00:57,110 --> 00:00:59,190
+no pode ser interrompido no meio do caminho.
+
+23
+00:00:59,190 --> 00:01:00,910
+Se voc comear a anexar a um
+
+24
+00:01:00,910 --> 00:01:04,262
+deque, voc diz, voc sabe, deque. acrescentar, voc sabe que a
+
+25
+00:01:04,262 --> 00:01:06,510
+coisa ser anexada ao deque antes
+
+26
+00:01:06,510 --> 00:01:09,010
+de remover o thread do ncleo, ok?
+
+27
+00:01:09,010 --> 00:01:11,220
+Portanto, as operaes atmicas so muito importantes
+
+28
+00:01:11,220 --> 00:01:14,110
+quando voc tem esse estado compartilhado entre os encadeamentos.
+
+29
+00:01:15,780 --> 00:01:17,730
+E vamos dar uma olhada em um
+
+30
+00:01:17,730 --> 00:01:20,100
+exemplo de onde teremos uma funo que no 
+
+31
+00:01:20,100 --> 00:01:22,300
+atmica e por que isso representa um problema.
+
+32
+00:01:22,300 --> 00:01:25,170
+Ok, ento vamos fazer isso.
+
+33
+00:01:26,430 --> 00:01:29,440
+Eu vou fazer, de segmentao de threads de importao, eu vou
+
+34
+00:01:29,440 --> 00:01:31,870
+usar bons threads antigos em vez do executor de
+
+35
+00:01:31,870 --> 00:01:33,670
+thread pull, apenas para isso, eu acho
+
+36
+00:01:34,940 --> 00:01:38,240
+que vai ser um pouco mais fcil de ver o que est acontecendo.
+
+37
+00:01:38,240 --> 00:01:41,030
+Ns vamos importar o tempo e tambm vamos
+
+38
+00:01:41,030 --> 00:01:43,190
+importar aleatoriamente, porque vamos randomizar algumas coisas.
+
+39
+00:01:43,190 --> 00:01:45,780
+Ento, vamos ter uma varivel
+
+40
+00:01:45,780 --> 00:01:49,360
+global no nosso arquivo, que ser zero, ok?
+
+41
+00:01:49,360 --> 00:01:50,440
+E ento ns vamos
+
+42
+00:01:50,440 --> 00:01:52,040
+ter uma funo chamada contador de incremento.
+
+43
+00:01:53,530 --> 00:01:54,830
+E o que isso
+
+44
+00:01:54,830 --> 00:01:57,627
+vai fazer,  dizer, contador global, acessar o contador
+
+45
+00:01:57,627 --> 00:01:59,637
+de variveis globais, fazer o contador
+
+46
+00:01:59,637 --> 00:02:04,290
+mais um igual e, em seguida, imprimir o novo valor do contador  contador.
+
+47
+00:02:05,220 --> 00:02:07,990
+E tambm imprimiremos algumas linhas apenas para
+
+48
+00:02:09,290 --> 00:02:11,410
+separar os novos valores do
+
+49
+00:02:11,410 --> 00:02:13,540
+contador, de um antes do outro.
+
+50
+00:02:13,540 --> 00:02:16,350
+Agora, pelo que sabemos sobre o cdigo de thread
+
+51
+00:02:16,350 --> 00:02:18,590
+nico, se fizermos para x no intervalo
+
+52
+00:02:21,130 --> 00:02:23,390
+10 e, em seguida, incrementamos o contador,
+
+53
+00:02:23,390 --> 00:02:25,330
+o que achamos que vai acontecer?
+
+54
+00:02:29,310 --> 00:02:32,210
+Espero que voc tenha dito, voc sabe, o que
+
+55
+00:02:32,210 --> 00:02:35,930
+eu esperaria  que voc comece aqui, x ser zero, voc sabe,
+
+56
+00:02:35,930 --> 00:02:37,050
+vai rodar 10 vezes.
+
+57
+00:02:37,050 --> 00:02:39,000
+A primeira vez que voc vai entrar no
+
+58
+00:02:39,000 --> 00:02:41,930
+contador de incremento, voc vai acessar o contador global, que ser zero.
+
+59
+00:02:41,930 --> 00:02:44,700
+Voc vai aumentar em um, ento vai ser um.
+
+60
+00:02:44,700 --> 00:02:46,910
+Voc vai imprimir novo valor de contador  um.
+
+61
+00:02:46,910 --> 00:02:48,310
+Voc vai imprimir essas linhas.
+
+62
+00:02:48,310 --> 00:02:49,930
+Ento, voc vai voltar para o final
+
+63
+00:02:49,930 --> 00:02:52,530
+da funo, voc vai repetir que voc est em loop, vai entrar
+
+64
+00:02:52,530 --> 00:02:55,024
+aqui novamente, o contador vai ser um agora, porque foi aumentado antes.
+
+65
+00:02:55,024 --> 00:02:57,490
+Ento voc vai aumentar em um indo at dois.
+
+66
+00:02:57,490 --> 00:02:59,370
+Voc vai imprimir novo valor de contador  dois,
+
+67
+00:02:59,370 --> 00:03:01,190
+e assim por diante, para trs, quatro, cinco, seis,
+
+68
+00:03:01,190 --> 00:03:02,500
+sete, oito e assim por diante.
+
+69
+00:03:03,440 --> 00:03:05,430
+Ento, vamos rodar este thread no bloqueado, que
+
+70
+00:03:05,430 --> 00:03:07,050
+no est usando threads, e voc
+
+71
+00:03:07,050 --> 00:03:09,240
+pode ver que isso  realmente o que acontece.
+
+72
+00:03:09,240 --> 00:03:14,030
+Voc ganha um todo at 10, coisas to boas.
+
+73
+00:03:14,030 --> 00:03:15,480
+Isso  o que esperamos.
+
+74
+00:03:16,710 --> 00:03:21,710
+Agora, o que acontece se fizermos um thread, estamos dizendo que t
+
+75
+00:03:22,700 --> 00:03:25,150
+ igual a thread e o
+
+76
+00:03:25,150 --> 00:03:27,350
+alvo  o contador de incremento?
+
+77
+00:03:28,700 --> 00:03:30,580
+E ento ns vamos remover este contador de incremento,
+
+78
+00:03:30,580 --> 00:03:32,580
+ento ns vamos fazer t. comear.
+
+79
+00:03:34,350 --> 00:03:38,520
+O que achamos que vai acontecer quando fizermos isso?
+
+80
+00:03:38,520 --> 00:03:42,150
+Deixe-me dizer que no vamos ver nenhuma diferena.
+
+81
+00:03:42,150 --> 00:03:44,540
+Ok, temos um, dois, trs, quatro, cinco,
+
+82
+00:03:44,540 --> 00:03:45,900
+seis, sete at 10.
+
+83
+00:03:45,900 --> 00:03:48,770
+Hm, ok, ento, qual foi o propsito dos tpicos e
+
+84
+00:03:48,770 --> 00:03:50,670
+eles esto correndo ao mesmo tempo?
+
+85
+00:03:53,790 --> 00:03:56,370
+Usar, escrever cdigo multithread 
+
+86
+00:03:56,370 --> 00:04:01,370
+perigoso, porque voc pode no ver o problema imediatamente.
+
+87
+00:04:01,490 --> 00:04:04,920
+O problema s pode aparecer em algumas circunstncias.
+
+88
+00:04:04,920 --> 00:04:07,810
+Aqui  onde o tempo e aleatrio vo entrar.
+
+89
+00:04:09,090 --> 00:04:10,754
+O que temos aqui ,
+
+90
+00:04:10,754 --> 00:04:13,689
+10 vezes vamos repetir esse bloco de cdigo.
+
+91
+00:04:13,689 --> 00:04:15,380
+Ns vamos criar um novo tpico.
+
+92
+00:04:15,380 --> 00:04:17,430
+O alvo vai ser contador de incremento.
+
+93
+00:04:17,430 --> 00:04:19,560
+E ento ns vamos comear a
+
+94
+00:04:19,560 --> 00:04:21,140
+discusso, e ento imediatamente
+
+95
+00:04:21,140 --> 00:04:23,650
+ns vamos passar para o prximo tpico
+
+96
+00:04:23,650 --> 00:04:27,440
+e vamos comear, mas essa funo  to rpida de
+
+97
+00:04:27,440 --> 00:04:30,570
+rodar que antes de comearmos o novo tpico,
+
+98
+00:04:30,570 --> 00:04:32,750
+essa funo j terminou de funcionar.
+
+99
+00:04:32,750 --> 00:04:35,040
+Ento, essencialmente, isso  um cdigo seqencial.
+
+100
+00:04:35,040 --> 00:04:37,020
+Essencialmente,  um nico cdigo encadeado.
+
+101
+00:04:37,020 --> 00:04:39,120
+Como voc criou um novo thread, voc
+
+102
+00:04:39,120 --> 00:04:40,780
+comeou, quando voc criou um novo
+
+103
+00:04:40,780 --> 00:04:41,760
+thread, esse j
+
+104
+00:04:41,760 --> 00:04:44,340
+terminou, ento essencialmente est acontecendo um aps o outro.
+
+105
+00:04:44,340 --> 00:04:49,000
+O que vamos fazer  fazer o
+
+106
+00:04:50,040 --> 00:04:53,620
+tempo dormir aleatoriamente. aleatrio, ok?
+
+107
+00:04:53,620 --> 00:04:55,680
+Ns vamos dormir um
+
+108
+00:04:56,560 --> 00:05:00,310
+pouco aqui, essencialmente entre cada linha, assim.
+
+109
+00:05:03,330 --> 00:05:07,340
+Esta tcnica de adio aleatria de sono entre declaraes quando voc
+
+110
+00:05:07,340 --> 00:05:10,520
+est fazendo cdigos multithreaded  chamada de fuzzying, 
+
+111
+00:05:10,520 --> 00:05:13,250
+muito popular, porque vai nos deixar ver problemas.
+
+112
+00:05:13,250 --> 00:05:14,850
+Ok, vamos rodar esse arquivo novamente.
+
+113
+00:05:20,270 --> 00:05:22,540
+Ooh, isso no parece to bom agora.
+
+114
+00:05:23,740 --> 00:05:25,810
+Ento, como voc pode ver, o que
+
+115
+00:05:25,810 --> 00:05:29,190
+aconteceu aqui agora  que todos os nossos tpicos estavam rodando
+
+116
+00:05:29,190 --> 00:05:31,950
+ao mesmo tempo, porque, voc sabe, um deles comeou
+
+117
+00:05:31,950 --> 00:05:33,740
+ento encontrou esse sono aleatrio, mas
+
+118
+00:05:33,740 --> 00:05:35,950
+nessa hora outro talvez tenha comeado e
+
+119
+00:05:35,950 --> 00:05:37,640
+encontrado outro aleatrio dormir.
+
+120
+00:05:37,640 --> 00:05:39,260
+Voc tem alguns deles
+
+121
+00:05:39,260 --> 00:05:41,510
+comeando, voc sabe, alguns deles esto
+
+122
+00:05:42,720 --> 00:05:46,180
+aqui, alguns deles esto aqui, e o que acontece
+
+123
+00:05:47,100 --> 00:05:52,100
+, voc tem alguns tpicos recebendo o valor do contador em trs e
+
+124
+00:05:52,190 --> 00:05:54,930
+aumentando-o em um, ambos ao mesmo tempo, ok?
+
+125
+00:05:54,930 --> 00:05:57,400
+Ento voc tem dois tpicos entrando no contador global.
+
+126
+00:05:57,400 --> 00:06:00,740
+Dois fios esto parados aqui, o contador  trs.
+
+127
+00:06:00,740 --> 00:06:04,080
+Ento, ambos aumentam o contador por um ao mesmo tempo.
+
+128
+00:06:04,080 --> 00:06:05,920
+Ento acaba em quatro.
+
+129
+00:06:05,920 --> 00:06:10,340
+E ento ambos imprimem novos valores de contador quatro, ok?
+
+130
+00:06:10,340 --> 00:06:12,180
+Ento cdigo multithread com estado compartilhado pode
+
+131
+00:06:12,180 --> 00:06:14,860
+ser realmente complicado para acertar, porque dois threads podem tentar
+
+132
+00:06:14,860 --> 00:06:17,500
+acessar a mesma coisa ao mesmo tempo, e voc sabe
+
+133
+00:06:17,500 --> 00:06:19,020
+que est tudo bem, voc pode
+
+134
+00:06:19,020 --> 00:06:21,320
+acessar a mesma coisa ao mesmo tempo, mas voc
+
+135
+00:06:21,320 --> 00:06:23,690
+no pode acabar com o que voc esperaria.
+
+136
+00:06:23,690 --> 00:06:26,349
+Particularmente se todos os encadeamentos estiverem alterando
+
+137
+00:06:26,349 --> 00:06:28,660
+algo nessa varivel ao mesmo tempo.
+
+138
+00:06:30,240 --> 00:06:32,820
+E voc pode no ver que, a menos que voc
+
+139
+00:06:32,820 --> 00:06:35,560
+faa essa tcnica de efervescncia ou voc sabe, outras tcnicas.
+
+140
+00:06:37,010 --> 00:06:39,780
+Ento o que temos aqui so todos
+
+141
+00:06:39,780 --> 00:06:43,370
+os nossos tpicos funcionando, voc sabe, eles esto bagunados, essencialmente.
+
+142
+00:06:43,370 --> 00:06:46,010
+Ns no podemos continuar com isso, e se voc
+
+143
+00:06:46,010 --> 00:06:48,920
+remover o efervescimento, ele funcionar, at que voc saiba, o
+
+144
+00:06:48,920 --> 00:06:50,939
+seu computador est rodando lentamente ou voc
+
+145
+00:06:50,939 --> 00:06:53,830
+tem um monte de coisas rodando ao mesmo tempo no
+
+146
+00:06:53,830 --> 00:06:55,300
+seu computador e esses tpicos
+
+147
+00:06:55,300 --> 00:06:57,220
+esto entrando e saindo claro que muito rapidamente.
+
+148
+00:06:57,220 --> 00:06:59,990
+Ento voc pode comear a encontrar problemas como este.
+
+149
+00:07:00,830 --> 00:07:04,250
+Portanto, voc deve ter cuidado ao escrever um cdigo multithread.
+
+150
+00:07:04,250 --> 00:07:06,100
+Voc deve ter muito cuidado.
+
+151
+00:07:06,100 --> 00:07:07,750
+Especialmente se voc tiver threads,
+
+152
+00:07:07,750 --> 00:07:09,270
+realmente apenas se seus
+
+153
+00:07:09,270 --> 00:07:12,190
+threads estiverem acessando ou modificando o estado compartilhado.
+
+154
+00:07:12,190 --> 00:07:14,250
+Aqui a varivel  o estado
+
+155
+00:07:14,250 --> 00:07:17,490
+compartilhado, esses threads tm metade dessa varivel compartilhada entre eles.
+
+156
+00:07:17,490 --> 00:07:18,890
+Coisas perigosas, ok?
+
+157
+00:07:20,580 --> 00:07:22,710
+Este cdigo, a propsito, e tambm
+
+158
+00:07:22,710 --> 00:07:27,430
+o cdigo que se segue  retirado de uma palestra que um dos desenvolvedores
+
+159
+00:07:27,430 --> 00:07:29,960
+de python, os criadores da linguagem python fizeram.
+
+160
+00:07:29,960 --> 00:07:31,160
+Vou lig-lo a
+
+161
+00:07:31,160 --> 00:07:34,210
+esta palestra no final desta seo,  muito bom.
+
+162
+00:07:34,210 --> 00:07:37,830
+Eu s quero gui-lo atravs dele primeiro em minhas palavras, apenas para ajud-lo
+
+163
+00:07:37,830 --> 00:07:38,790
+a entender, e
+
+164
+00:07:38,790 --> 00:07:41,290
+ento voc pode assistir a sua conversa mais tarde.
+
+165
+00:07:42,320 --> 00:07:47,080
+Ok, se quisssemos ter certeza de que as operaes acontecem sequencialmente, como queremos fazer
+
+166
+00:07:47,080 --> 00:07:49,040
+um novo valor de contador 
+
+167
+00:07:49,040 --> 00:07:50,340
+um, ento o novo
+
+168
+00:07:50,340 --> 00:07:52,380
+valor do contador  dois, trs.
+
+169
+00:07:53,550 --> 00:07:57,130
+Ento teramos que fazer algo muito mais complicado.
+
+170
+00:07:58,080 --> 00:07:59,940
+Mas, novamente, se voc quiser garantir
+
+171
+00:07:59,940 --> 00:08:02,740
+que as operaes ocorram sequencialmente, no use threads.
+
+172
+00:08:02,740 --> 00:08:04,380
+Essa  a primeira coisa.
+
+173
+00:08:04,380 --> 00:08:06,160
+Se voc quer ter certeza
+
+174
+00:08:06,160 --> 00:08:08,160
+de que as operaes acontecem seqencialmente,
+
+175
+00:08:08,160 --> 00:08:11,130
+mas voc quer usar threads, ento voc tem que
+
+176
+00:08:11,130 --> 00:08:13,600
+configurar um sistema de enfileiramento, onde cada
+
+177
+00:08:13,600 --> 00:08:18,600
+thread pode realizar a operao de incrementar o contador, mas eles acontecem um por um.
+
+178
+00:08:19,510 --> 00:08:21,910
+Ento, ser um cdigo mais complicado,
+
+179
+00:08:21,910 --> 00:08:24,420
+vamos analis-lo no prximo vdeo, como
+
+180
+00:08:24,420 --> 00:08:28,410
+voc pode fazer filas com um thread para que as
+
+181
+00:08:28,410 --> 00:08:29,730
+operaes ocorram sequencialmente.
+
+182
+00:08:29,730 --> 00:08:31,280
+Eu vou te ver no prximo vdeo.
+

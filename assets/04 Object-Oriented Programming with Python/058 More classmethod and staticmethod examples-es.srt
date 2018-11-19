@@ -1,0 +1,1052 @@
+1
+00:00:00,200 --> 00:00:01,110
+Instructor: Hola, bienvenido de nuevo.
+
+2
+00:00:01,110 --> 00:00:02,340
+Veamos algunos ejemplos
+
+3
+00:00:02,340 --> 00:00:05,302
+de mtodo de clase y mtodo esttico.
+
+4
+00:00:05,302 --> 00:00:07,160
+Hubo algunos ejemplos terribles en el ltimo
+
+5
+00:00:07,160 --> 00:00:08,570
+video, as que solo quera
+
+6
+00:00:08,570 --> 00:00:10,430
+disculparme, pero quera mostrarle la sintaxis para
+
+7
+00:00:10,430 --> 00:00:11,950
+esos dos tipos de mtodo, el
+
+8
+00:00:11,950 --> 00:00:13,900
+mtodo de clase y el mtodo esttico.
+
+9
+00:00:16,230 --> 00:00:18,920
+Tomemos una clase aqu, que ser la
+
+10
+00:00:19,900 --> 00:00:21,010
+base del ejemplo
+
+11
+00:00:21,010 --> 00:00:22,540
+en este video, y
+
+12
+00:00:22,540 --> 00:00:23,920
+creo que ser un
+
+13
+00:00:23,920 --> 00:00:26,090
+mejor ejemplo para que entiendas en
+
+14
+00:00:26,090 --> 00:00:28,380
+qu situaciones usas qu tipo de mtodo.
+
+15
+00:00:31,080 --> 00:00:34,040
+Tenemos esta clase FixedFloat.
+
+16
+00:00:34,040 --> 00:00:37,220
+Tiene un mtodo init en el que se inicializa
+
+17
+00:00:37,220 --> 00:00:39,627
+una propiedad amount en el objeto, y
+
+18
+00:00:39,627 --> 00:00:42,110
+luego se obtiene un mtodo repr, que
+
+19
+00:00:42,110 --> 00:00:44,500
+devuelve una cadena que representa el objeto.
+
+20
+00:00:44,500 --> 00:00:45,700
+Hemos examinado este tipo
+
+21
+00:00:45,700 --> 00:00:48,070
+de mtodo, con este mtodo exacto anteriormente, y todo
+
+22
+00:00:48,070 --> 00:00:49,960
+lo que hace es imprimir FixedFloat, el
+
+23
+00:00:49,960 --> 00:00:52,910
+nombre de clase, y luego self. cantidad, que es
+
+24
+00:00:52,910 --> 00:00:55,248
+la cantidad que inicializamos antes.
+
+25
+00:00:55,248 --> 00:00:58,200
+Y esta es una construccin de Python
+
+26
+00:00:58,200 --> 00:01:00,140
+interesante, que nos permite imprimir
+
+27
+00:01:00,140 --> 00:01:02,470
+la cantidad a dos decimales; no
+
+28
+00:01:02,470 --> 00:01:06,220
+tres, ni cuatro, ni cinco, ni uno, solo dos.
+
+29
+00:01:06,220 --> 00:01:09,480
+Entonces, por ejemplo, si estuviera imprimiendo 15. 50, Python normalmente
+
+30
+00:01:09,480 --> 00:01:12,320
+imprimira 15. 5.
+
+31
+00:01:12,320 --> 00:01:15,750
+Pero con este constructo aqu, imprimir 15. 50.
+
+32
+00:01:16,750 --> 00:01:18,210
+As que este es un
+
+33
+00:01:18,210 --> 00:01:21,190
+FixedFloat, un flotante a un nmero fijo de decimales.
+
+34
+00:01:22,550 --> 00:01:24,790
+Si quisiramos crear nuestro nmero,
+
+35
+00:01:24,790 --> 00:01:28,430
+sera FixedFloat como 18. 5746, entonces podemos imprimir el
+
+36
+00:01:29,690 --> 00:01:32,470
+nmero e imprimir que se trata de un
+
+37
+00:01:32,470 --> 00:01:34,170
+FixedFloat de 18. 57 As que
+
+38
+00:01:37,492 --> 00:01:39,350
+est bien, esto hace algo.
+
+39
+00:01:39,350 --> 00:01:43,250
+Para qu sirve este caso?
+
+40
+00:01:44,890 --> 00:01:47,060
+Bueno, por ejemplo, para una moneda,
+
+41
+00:01:47,060 --> 00:01:49,320
+podras imaginar usar algo como esto.
+
+42
+00:01:49,320 --> 00:01:51,830
+Para algunas monedas, siempre tienen dos decimales, pero
+
+43
+00:01:51,830 --> 00:01:53,640
+a veces cambian en las bolsas
+
+44
+00:01:53,640 --> 00:01:57,160
+a muchos lugares decimales ms, en los mercados de divisas.
+
+45
+00:01:57,160 --> 00:02:00,440
+De todos modos, podra ser til en algunos escenarios.
+
+46
+00:02:00,440 --> 00:02:04,060
+Ahora imagine que queramos obtener un nuevo objeto
+
+47
+00:02:04,060 --> 00:02:06,960
+FixedFloat como resultado de sumar dos flotadores.
+
+48
+00:02:08,640 --> 00:02:11,490
+Podramos algo as, from_sum.
+
+49
+00:02:13,400 --> 00:02:14,910
+Y luego, por supuesto, este es
+
+50
+00:02:14,910 --> 00:02:18,210
+un mtodo de instancia, por lo que toma self, toma value1 y value2.
+
+51
+00:02:19,200 --> 00:02:21,110
+Y lo que esto va
+
+52
+00:02:21,110 --> 00:02:24,880
+a devolver es un nuevo objeto FixedFloat de value1 plus value2.
+
+53
+00:02:25,950 --> 00:02:29,360
+Entonces, de nuevo, tal vez no sea algo que quieras hacer.
+
+54
+00:02:29,360 --> 00:02:30,850
+Simplemente podra agregar los valores
+
+55
+00:02:30,850 --> 00:02:34,300
+juntos y luego crear un objeto FixedFloat a partir del resultado.
+
+56
+00:02:34,300 --> 00:02:36,040
+Pero digamos que queremos hacer
+
+57
+00:02:36,040 --> 00:02:39,200
+esto por una razn particular que ver en un momento.
+
+58
+00:02:39,200 --> 00:02:42,770
+Ahora bien, si quisiramos crear un nuevo objeto FixedFloat, que es
+
+59
+00:02:42,770 --> 00:02:44,240
+el resultado de dos
+
+60
+00:02:44,240 --> 00:02:48,900
+valores, podramos decir que new_number es number. from_sum, fjate cmo tenemos que hacer
+
+61
+00:02:48,900 --> 00:02:51,000
+el nmero. from_sum porque este
+
+62
+00:02:51,000 --> 00:02:53,250
+es un mtodo de instancia;
+
+63
+00:02:53,250 --> 00:02:56,150
+no tiene decoradores en la parte superior.
+
+64
+00:02:56,150 --> 00:03:00,300
+Y ser algo as como 19. 575 y 0. 789 Entonces
+
+65
+00:03:04,020 --> 00:03:07,190
+podemos imprimir el new_number, como ese.
+
+66
+00:03:09,877 --> 00:03:12,670
+Ahora obtenemos un nuevo objeto FixedFloat, que es 20. 36.
+
+67
+00:03:12,670 --> 00:03:15,980
+Ese es el FixedFloat que se ha devuelto, que suma los
+
+68
+00:03:15,980 --> 00:03:18,980
+dos nmeros, 19 y 0. 7 Sin embargo,
+
+69
+00:03:21,532 --> 00:03:24,020
+realmente no me gusta esto.
+
+70
+00:03:24,020 --> 00:03:26,930
+Porque para llamar al mtodo
+
+71
+00:03:26,930 --> 00:03:30,500
+from_sum, primero tuvimos que crear un objeto
+
+72
+00:03:30,500 --> 00:03:33,350
+FixedFloat, que nunca usamos, verdad?
+
+73
+00:03:33,350 --> 00:03:35,879
+Solo lo usamos para llamar a este
+
+74
+00:03:35,879 --> 00:03:38,940
+mtodo, nunca utilizamos self en este mtodo y
+
+75
+00:03:38,940 --> 00:03:41,650
+nunca usamos este nmero en ningn otro lado.
+
+76
+00:03:41,650 --> 00:03:44,680
+Entonces realmente crear un objeto para
+
+77
+00:03:44,680 --> 00:03:46,870
+esto no es tan til.
+
+78
+00:03:46,870 --> 00:03:48,030
+Solo deberas crear objetos
+
+79
+00:03:48,030 --> 00:03:49,380
+cuando los vas a usar.
+
+80
+00:03:51,100 --> 00:03:55,860
+Entonces, en cambio, podramos hacer de esto un mtodo esttico.
+
+81
+00:03:55,860 --> 00:03:58,910
+Qutate el yo, y ahora ya no
+
+82
+00:03:58,910 --> 00:04:00,810
+necesitas el objeto all.
+
+83
+00:04:00,810 --> 00:04:03,680
+Lo que significa que en lugar de llamarlo con
+
+84
+00:04:03,680 --> 00:04:06,270
+el objeto, simplemente puede llamarlo con la clase.
+
+85
+00:04:06,270 --> 00:04:09,430
+Recuerda, ya no necesitamos pasar el objeto aqu, as que
+
+86
+00:04:09,430 --> 00:04:10,870
+simplemente llmalo con la clase
+
+87
+00:04:10,870 --> 00:04:12,300
+y no pases el objeto.
+
+88
+00:04:12,300 --> 00:04:15,080
+Y luego, value1 es esto y value2 es eso.
+
+89
+00:04:16,470 --> 00:04:19,120
+Podemos ejecutarlo de nuevo y ver que sale lo mismo.
+
+90
+00:04:20,520 --> 00:04:21,730
+As que eso se ve un poco mejor.
+
+91
+00:04:21,730 --> 00:04:23,560
+Ahora no tenemos el parmetro intil
+
+92
+00:04:23,560 --> 00:04:25,250
+y no necesitamos crear un
+
+93
+00:04:25,250 --> 00:04:27,210
+objeto antes de llamar al mtodo.
+
+94
+00:04:27,210 --> 00:04:28,043
+Increble.
+
+95
+00:04:28,880 --> 00:04:32,980
+Sin embargo, permitamos extender este ejemplo un poco ms y
+
+96
+00:04:32,980 --> 00:04:35,830
+crear una nueva clase, que ser una
+
+97
+00:04:35,830 --> 00:04:39,450
+clase de moneda que ample esa clase FixedFloat.
+
+98
+00:04:39,450 --> 00:04:40,930
+Vamos a llamarlo Euro.
+
+99
+00:04:41,960 --> 00:04:44,170
+Y esto extender esta clase de FixedFloat
+
+100
+00:04:44,170 --> 00:04:45,840
+porque los Euros normalmente se
+
+101
+00:04:45,840 --> 00:04:47,290
+imprimen como dos decimales tambin.
+
+102
+00:04:48,320 --> 00:04:50,670
+Ahora tenemos otro mtodo init,
+
+103
+00:04:50,670 --> 00:04:53,800
+donde se llaman self y amount.
+
+104
+00:04:53,800 --> 00:04:58,800
+Vamos a llamar a super, init con cantidad.
+
+105
+00:05:00,420 --> 00:05:02,420
+Y tambin vamos a definir una
+
+106
+00:05:02,420 --> 00:05:04,360
+nueva propiedad, especfica para los objetos
+
+107
+00:05:05,240 --> 00:05:06,750
+Euro, que ser el smbolo.
+
+108
+00:05:06,750 --> 00:05:09,980
+Y ese va a ser el smbolo del euro.
+
+109
+00:05:09,980 --> 00:05:11,530
+Pero ests usando Python 2. 7, probablemente
+
+110
+00:05:12,540 --> 00:05:13,840
+no le gustar esto.
+
+111
+00:05:13,840 --> 00:05:15,690
+As que asegrese de estar usando Python 3. 6, ya que
+
+112
+00:05:16,820 --> 00:05:18,960
+este smbolo es un smbolo Unicode.
+
+113
+00:05:20,890 --> 00:05:22,100
+Bueno.
+
+114
+00:05:22,100 --> 00:05:23,830
+Ahora tenemos esto aqu.
+
+115
+00:05:23,830 --> 00:05:27,320
+Permite, tambin, anular este mtodo repr,
+
+116
+00:05:30,300 --> 00:05:34,020
+para volver ahora a una clase Euro.
+
+117
+00:05:34,020 --> 00:05:37,180
+Euro, y iba a decir s mismo. smbolo,
+
+118
+00:05:37,180 --> 00:05:39,900
+yo. sumar dos lugares decimales
+
+119
+00:05:41,850 --> 00:05:42,683
+Bueno.
+
+120
+00:05:42,683 --> 00:05:45,670
+Ahora si creamos un nuevo objeto Euro,
+
+121
+00:05:45,670 --> 00:05:47,390
+lo haremos aqu mismo.
+
+122
+00:05:47,390 --> 00:05:49,780
+Y el dinero
+
+123
+00:05:52,540 --> 00:05:57,540
+es Euro de 18. 786, y luego
+
+124
+00:05:57,875 --> 00:06:00,150
+podemos imprimir dinero.
+
+125
+00:06:00,150 --> 00:06:01,070
+Entonces, corramos eso.
+
+126
+00:06:02,660 --> 00:06:04,740
+Puedes ver que tenemos este euro ahora,
+
+127
+00:06:04,740 --> 00:06:08,280
+que era el cdigo de moneda, perdn el smbolo de moneda, que
+
+128
+00:06:08,280 --> 00:06:10,180
+es muy bueno, es un poco agradable.
+
+129
+00:06:12,686 --> 00:06:14,280
+Ahora hemos definido esta clase
+
+130
+00:06:14,280 --> 00:06:16,030
+que ampla la clase FixedFloat.
+
+131
+00:06:16,030 --> 00:06:18,070
+Y tiene su mtodo init y llama al
+
+132
+00:06:18,070 --> 00:06:20,520
+mtodo init de los padres para establecer la cantidad.
+
+133
+00:06:20,520 --> 00:06:22,320
+Y el mtodo repr que
+
+134
+00:06:22,320 --> 00:06:26,360
+anula el mtodo repr del padre para incluir el smbolo y dems.
+
+135
+00:06:26,360 --> 00:06:28,750
+Sin embargo, no tiene el mtodo from_sum.
+
+136
+00:06:29,670 --> 00:06:33,530
+Entonces, qu ocurre cuando ese dinero
+
+137
+00:06:35,229 --> 00:06:39,020
+es en euros? 758 y
+
+138
+00:06:39,020 --> 00:06:41,660
+9. 999?
+
+139
+00:06:41,660 --> 00:06:43,370
+Qu vamos a ver impresos?
+
+140
+00:06:49,260 --> 00:06:51,320
+Espero que hayas adivinado correctamente.
+
+141
+00:06:51,320 --> 00:06:53,220
+El euro. from_sum method,
+
+142
+00:06:53,220 --> 00:06:55,640
+se ha heredado de FixedFloat.
+
+143
+00:06:55,640 --> 00:06:58,110
+As que va a ser este aqu.
+
+144
+00:06:58,110 --> 00:07:01,830
+Lo que va a devolver es un objeto FixedFloat.
+
+145
+00:07:01,830 --> 00:07:04,940
+Entonces este Euro. from_sum, realmente va a regresar,
+
+146
+00:07:04,940 --> 00:07:07,230
+un objeto FixedFloat, que no tiene ningn sentido.
+
+147
+00:07:07,230 --> 00:07:09,520
+Debera ser un objeto euro seguramente, ya
+
+148
+00:07:09,520 --> 00:07:12,030
+que es con lo que lo llamamos.
+
+149
+00:07:12,030 --> 00:07:14,300
+Vamos a ejecutar esto, y ves que estoy en
+
+150
+00:07:14,300 --> 00:07:16,450
+lo cierto al decir que sale un FixedFloat.
+
+151
+00:07:17,320 --> 00:07:18,920
+Entonces no queremos eso.
+
+152
+00:07:18,920 --> 00:07:20,970
+Lo que queremos hacer en cambio
+
+153
+00:07:20,970 --> 00:07:23,810
+es asegurarnos de que estamos devolviendo un objeto
+
+154
+00:07:23,810 --> 00:07:26,010
+del tipo de la clase con
+
+155
+00:07:26,010 --> 00:07:31,010
+la que lo llamamos, para que nunca nos enfrentemos con este error, realmente.
+
+156
+00:07:31,130 --> 00:07:33,370
+La forma en que podemos hacer eso es
+
+157
+00:07:33,370 --> 00:07:36,140
+cambiando este mtodo esttico a un mtodo de clase.
+
+158
+00:07:36,140 --> 00:07:38,760
+Y necesitar valor de cls all.
+
+159
+00:07:38,760 --> 00:07:42,810
+Ahora esta es la clase con la que lo llamamos.
+
+160
+00:07:42,810 --> 00:07:46,830
+Si llamamos euro. from_sum, Python es lo suficientemente inteligente
+
+161
+00:07:46,830 --> 00:07:49,610
+como para incluir Euro como el primer argumento y,
+
+162
+00:07:49,610 --> 00:07:52,610
+por lo tanto, como el primer parmetro de este mtodo.
+
+163
+00:07:54,520 --> 00:07:56,170
+Luego volvemos, no queremos devolver
+
+164
+00:07:56,170 --> 00:07:57,810
+un FixedFloat, por supuesto.
+
+165
+00:07:57,810 --> 00:07:59,720
+Lo que vamos a hacer es
+
+166
+00:07:59,720 --> 00:08:02,940
+devolver cls y usarlo como si fuera la clase.
+
+167
+00:08:02,940 --> 00:08:04,420
+Porque es.
+
+168
+00:08:04,420 --> 00:08:06,850
+Entonces, si lo llamamos desde un
+
+169
+00:08:06,850 --> 00:08:09,080
+nmero FixedFloat, ese ser un FixedFloat.
+
+170
+00:08:09,080 --> 00:08:12,990
+Si lo llamamos desde un euro, como aqu,
+
+171
+00:08:12,990 --> 00:08:14,440
+ser un euro.
+
+172
+00:08:15,860 --> 00:08:17,050
+Bueno. Vamos a ejecutarlo.
+
+173
+00:08:18,110 --> 00:08:20,180
+Y ahora puedes ver que lo tenemos correcto.
+
+174
+00:08:20,180 --> 00:08:22,830
+Y tenemos el smbolo y el euro aqu
+
+175
+00:08:22,830 --> 00:08:23,990
+como es de esperar.
+
+176
+00:08:25,290 --> 00:08:26,123
+Bueno.
+
+177
+00:08:26,123 --> 00:08:27,440
+As que eso es realmente genial.
+
+178
+00:08:27,440 --> 00:08:30,450
+Cuando llamamos Euro. from_sum, Euro es el cls.
+
+179
+00:08:30,450 --> 00:08:33,600
+Cuando llamamos FixedFloat. from_sum, FixedFloat es el cls,
+
+180
+00:08:34,890 --> 00:08:35,940
+que es realmente genial.
+
+181
+00:08:37,380 --> 00:08:39,700
+Este es uno de los ejemplos donde
+
+182
+00:08:39,700 --> 00:08:41,640
+usaras un mtodo de clase.
+
+183
+00:08:42,730 --> 00:08:45,500
+Y una gran parte de la comunidad de
+
+184
+00:08:45,500 --> 00:08:49,170
+Python est bastante en contra de los mtodos estticos en general.
+
+185
+00:08:49,170 --> 00:08:52,990
+Dicen que un mtodo esttico es solo un mtodo de clase
+
+186
+00:08:52,990 --> 00:08:55,910
+con una funcionalidad ligeramente menor y sin beneficios.
+
+187
+00:08:57,060 --> 00:08:59,350
+Y estoy tentado de estar de acuerdo con ellos.
+
+188
+00:08:59,350 --> 00:09:02,290
+Le recomendara que use un mtodo de clase siempre
+
+189
+00:09:02,290 --> 00:09:05,150
+que quiera algo que no necesite de s mismo.
+
+190
+00:09:06,110 --> 00:09:09,490
+Y cada vez que desee llamar a FixedFloat dentro
+
+191
+00:09:09,490 --> 00:09:12,870
+de un mtodo de clase, simplemente reemplcelo por cls.
+
+192
+00:09:12,870 --> 00:09:16,580
+Si luego heredas de esa clase, todos los mtodos
+
+193
+00:09:16,580 --> 00:09:18,780
+seguirn utilizndose de la manera que
+
+194
+00:09:18,780 --> 00:09:20,700
+esperaras, porque los cls se
+
+195
+00:09:20,700 --> 00:09:23,470
+llenarn automticamente de la clase que ests
+
+196
+00:09:23,470 --> 00:09:25,320
+utilizando y no de la
+
+197
+00:09:25,320 --> 00:09:27,250
+clase que hayas programado.
+
+198
+00:09:27,250 --> 00:09:28,870
+Por lo tanto, solo le permite hacer que
+
+199
+00:09:28,870 --> 00:09:31,870
+sus mtodos sean un poco ms genricos y, en general, es un poco ms agradable.
+
+200
+00:09:31,870 --> 00:09:34,510
+Mtodo esttico, tambin puede llamarlo, por ejemplo, si se trata
+
+201
+00:09:34,510 --> 00:09:37,360
+de un mtodo esttico como lo era antes, lo llama
+
+202
+00:09:39,000 --> 00:09:41,820
+de la misma manera, FixedFloat. from_sum, solo que
+
+203
+00:09:41,820 --> 00:09:45,620
+ahora ha perdido esa referencia a FixedFloat.
+
+204
+00:09:45,620 --> 00:09:48,270
+Entonces, cmo el mtodo esttico realmente no agrega nada? No
+
+205
+00:09:48,270 --> 00:09:50,320
+hace que su cdigo sea ms simple.
+
+206
+00:09:50,320 --> 00:09:51,850
+Tu cdigo se ve
+
+207
+00:09:51,850 --> 00:09:55,420
+igual, pero has perdido esa funcionalidad que es el cls.
+
+208
+00:09:55,420 --> 00:09:58,930
+Entonces, en general, recomendara usar mtodos de clase siempre
+
+209
+00:09:58,930 --> 00:10:00,150
+que sea posible.
+
+210
+00:10:00,150 --> 00:10:01,680
+Oh espera. No siempre que sea posible.
+
+211
+00:10:01,680 --> 00:10:03,020
+Mis disculpas. Eso no.
+
+212
+00:10:03,020 --> 00:10:04,750
+Use mtodos de clase siempre que
+
+213
+00:10:04,750 --> 00:10:07,300
+quiera usar un mtodo que no use self.
+
+214
+00:10:07,300 --> 00:10:09,980
+No use mtodos estticos, en general.
+
+215
+00:10:09,980 --> 00:10:13,430
+No veo que sean tan tiles cuando
+
+216
+00:10:13,430 --> 00:10:15,360
+tienes mtodos de clase.
+
+217
+00:10:15,360 --> 00:10:18,020
+Sin embargo, hay un par de
+
+218
+00:10:18,020 --> 00:10:21,790
+instancias cuando usar un mtodo esttico puede ser interesante.
+
+219
+00:10:21,790 --> 00:10:23,570
+Y eso es, por ejemplo,
+
+220
+00:10:23,570 --> 00:10:24,880
+cuando sabes que la
+
+221
+00:10:24,880 --> 00:10:27,220
+clase que ests desarrollando no va a
+
+222
+00:10:27,220 --> 00:10:31,360
+heredarse, y de hecho, cuando estoy codificando, y uso un mtodo esttico,
+
+223
+00:10:31,360 --> 00:10:33,460
+me dice que esta clase no
+
+224
+00:10:33,460 --> 00:10:35,110
+va a obtener heredado de.
+
+225
+00:10:35,110 --> 00:10:37,360
+Es algo que, cuando uso un mtodo esttico,
+
+226
+00:10:37,360 --> 00:10:40,200
+es como decirme a m mismo, es seguro hacer esto
+
+227
+00:10:40,200 --> 00:10:41,700
+porque no voy a usar
+
+228
+00:10:41,700 --> 00:10:43,970
+esta clase en ningn otro lugar para heredar.
+
+229
+00:10:43,970 --> 00:10:45,010
+Mientras que cuando
+
+230
+00:10:45,010 --> 00:10:47,590
+usas un mtodo de clase, algo as como
+
+231
+00:10:47,590 --> 00:10:50,370
+contar, no s si esta clase se heredar ms adelante.
+
+232
+00:10:50,370 --> 00:10:51,530
+As que ese es
+
+233
+00:10:51,530 --> 00:10:54,010
+el nico lugar donde usara un mtodo esttico cuando
+
+234
+00:10:54,010 --> 00:10:55,920
+lo sepa y quiero asegurarme de que
+
+235
+00:10:55,920 --> 00:10:57,680
+no voy a heredar de esa clase.
+
+236
+00:10:57,680 --> 00:10:59,810
+El hecho de que se usen mtodos
+
+237
+00:10:59,810 --> 00:11:02,320
+estticos me dice que no quiero heredar desde aqu.
+
+238
+00:11:03,880 --> 00:11:06,500
+Ya vers, entenders ms sobre lo que quiero decir
+
+239
+00:11:06,500 --> 00:11:08,680
+a medida que avanzamos a secciones futuras.
+
+240
+00:11:08,680 --> 00:11:10,760
+Vamos a utilizar mtodos estticos un par
+
+241
+00:11:10,760 --> 00:11:14,090
+de veces, pero normalmente vamos a seguir con los mtodos de clase.
+
+242
+00:11:14,090 --> 00:11:16,910
+De todos modos, este fue, con suerte, un ejemplo
+
+243
+00:11:16,910 --> 00:11:19,140
+ligeramente mejor, lo ayuda a entender dnde
+
+244
+00:11:19,140 --> 00:11:20,880
+usar esttica y dnde usar
+
+245
+00:11:20,880 --> 00:11:23,670
+los mtodos de clase, y para qu son tiles.
+
+246
+00:11:23,670 --> 00:11:25,670
+Tambin recuerde, los mtodos estticos y
+
+247
+00:11:25,670 --> 00:11:27,520
+de clase pueden ser llamados desde
+
+248
+00:11:27,520 --> 00:11:31,940
+el objeto, por lo que podra hacer que su objeto llame al mtodo
+
+249
+00:11:31,940 --> 00:11:34,040
+from_sum y eso sera totalmente correcto.
+
+250
+00:11:34,040 --> 00:11:36,920
+Simplemente vera la clase del objeto que lo llam
+
+251
+00:11:36,920 --> 00:11:38,450
+o puede llamarlo con la
+
+252
+00:11:38,450 --> 00:11:41,860
+clase y luego la clase es solo eso, tambin clase.
+
+253
+00:11:41,860 --> 00:11:46,510
+Y entonces, lo que quiero decir con eso es que esto est bien.
+
+254
+00:11:49,137 --> 00:11:52,010
+nuevo nmero. from_sum est bien.
+
+255
+00:11:52,010 --> 00:11:56,020
+Simplemente va a ver la clase como la clase de este objeto.
+
+256
+00:11:56,020 --> 00:11:58,440
+Sin embargo, en realidad no es algo que deba hacer normalmente.
+
+257
+00:11:58,440 --> 00:12:01,500
+Normalmente, solo use el nombre de clase FixedFloat. from_sum.
+
+258
+00:12:01,500 --> 00:12:04,290
+Esa es una mejor manera de hacer las cosas.
+
+259
+00:12:04,290 --> 00:12:05,610
+De todos modos, eso es todo por este video.
+
+260
+00:12:05,610 --> 00:12:06,870
+Espero no haberlo confundido
+
+261
+00:12:06,870 --> 00:12:08,780
+ms de lo que era antes.
+
+262
+00:12:08,780 --> 00:12:10,320
+Y esto ayud un poco.
+
+263
+00:12:10,320 --> 00:12:11,870
+Te ver en el prximo video.
+

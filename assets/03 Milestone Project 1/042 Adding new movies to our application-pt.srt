@@ -1,0 +1,844 @@
+1
+00:00:00,240 --> 00:00:01,500
+Instrutor: Ol, e bem vindo de volta.
+
+2
+00:00:01,500 --> 00:00:03,230
+Neste vdeo, vamos continuar
+
+3
+00:00:03,230 --> 00:00:07,050
+com o nosso projeto Milestone sobre a adio de filmes.
+
+4
+00:00:07,050 --> 00:00:12,050
+Agora, no ltimo vdeo, adicionamos essas tarefas.
+
+5
+00:00:12,410 --> 00:00:13,610
+E criamos um monte
+
+6
+00:00:13,610 --> 00:00:16,700
+deles, como decidir onde vamos armazenar filmes, qual  o
+
+7
+00:00:16,700 --> 00:00:18,520
+formato de um filme, mostrar ao
+
+8
+00:00:19,390 --> 00:00:22,440
+usurio a interface principal e obter sua opinio, e tambm
+
+9
+00:00:22,440 --> 00:00:24,550
+permitir que os usurios adicionem filmes, mostrem
+
+10
+00:00:24,550 --> 00:00:27,620
+filmes. , encontrar filmes e parar de executar o programa.
+
+11
+00:00:27,620 --> 00:00:29,140
+Agora acho que fizemos alguns deles.
+
+12
+00:00:29,140 --> 00:00:31,931
+Ento, vou adicionar um X aqui para
+
+13
+00:00:31,931 --> 00:00:33,600
+dizer que fizemos isso.
+
+14
+00:00:33,600 --> 00:00:34,433
+E eu acho que
+
+15
+00:00:34,433 --> 00:00:36,210
+o que fizemos foi mostrar ao usurio a interface
+
+16
+00:00:36,210 --> 00:00:38,030
+principal, e essa  a linha de texto aqui.
+
+17
+00:00:38,030 --> 00:00:39,650
+E recebemos a entrada deles e
+
+18
+00:00:39,650 --> 00:00:42,270
+tambm permitimos que o usurio pare de executar o
+
+19
+00:00:42,270 --> 00:00:43,320
+programa quando digita 'q'.
+
+20
+00:00:44,720 --> 00:00:48,170
+Agora, antes que possamos permitir que os usurios adicionem
+
+21
+00:00:48,170 --> 00:00:51,475
+filmes, acho que precisamos escolher o que eles
+
+22
+00:00:51,475 --> 00:00:53,930
+adicionaro e onde eles sero armazenados.
+
+23
+00:00:54,800 --> 00:00:56,460
+Ento vamos fazer essas duas tarefas aqui.
+
+24
+00:00:56,460 --> 00:00:58,840
+Onde armazenar filmes e o que  um filme.
+
+25
+00:00:59,920 --> 00:01:02,780
+Em um programa maior como eu disse anteriormente, normalmente
+
+26
+00:01:02,780 --> 00:01:04,980
+esses filmes seriam armazenados em um banco
+
+27
+00:01:04,980 --> 00:01:07,490
+de dados ou talvez um arquivo, ou algo parecido.
+
+28
+00:01:07,490 --> 00:01:10,480
+Mas como ainda no analisamos bancos de dados
+
+29
+00:01:10,480 --> 00:01:12,840
+e arquivos, vamos armazenar esses filmes
+
+30
+00:01:12,840 --> 00:01:14,620
+em uma estrutura que conhecemos.
+
+31
+00:01:14,620 --> 00:01:16,040
+Agora, o que isso poderia ser?
+
+32
+00:01:19,710 --> 00:01:24,210
+Tenho certeza que voc adivinhou uma possvel estrutura de dados correta,
+
+33
+00:01:24,210 --> 00:01:28,920
+eu usaria uma lista, mas voc poderia usar um conjunto se quisesse.
+
+34
+00:01:28,920 --> 00:01:31,280
+Eu no recomendaria usar uma tupla.
+
+35
+00:01:31,280 --> 00:01:33,550
+Ento uma lista eu acho que  uma boa escolha.
+
+36
+00:01:35,060 --> 00:01:37,270
+Ento, criei a varivel chamada
+
+37
+00:01:37,270 --> 00:01:40,100
+Movies e igualei-a a uma lista vazia.
+
+38
+00:01:40,100 --> 00:01:43,330
+Isso armazenar todos os nossos filmes quando
+
+39
+00:01:43,330 --> 00:01:44,980
+estivermos executando este programa.
+
+40
+00:01:47,290 --> 00:01:50,540
+Ento decidimos onde armazenar os filmes, agora temos
+
+41
+00:01:50,540 --> 00:01:53,210
+que decidir, o que  um filme?
+
+42
+00:01:53,210 --> 00:01:54,810
+Qual o formato de um filme?
+
+43
+00:01:56,990 --> 00:02:01,800
+Para mim, acho que um filme vai ser um dicionrio que
+
+44
+00:02:03,500 --> 00:02:08,500
+tem um nome, que vai ser uma string, vai ter um
+
+45
+00:02:11,140 --> 00:02:13,760
+diretor, que tambm vai ser uma
+
+46
+00:02:15,840 --> 00:02:17,590
+string, e tambm vai
+
+47
+00:02:17,590 --> 00:02:19,760
+ter um ano, Isso vai
+
+48
+00:02:19,760 --> 00:02:21,100
+ser um int.
+
+49
+00:02:22,120 --> 00:02:24,800
+Estes sero meus filmes.
+
+50
+00:02:24,800 --> 00:02:26,580
+Se voc quiser armazenar algo
+
+51
+00:02:26,580 --> 00:02:28,530
+diferente, fique  vontade para faz-lo.
+
+52
+00:02:28,530 --> 00:02:30,019
+Quer dizer, este 
+
+53
+00:02:30,019 --> 00:02:31,810
+o seu programa, ser
+
+54
+00:02:31,810 --> 00:02:34,280
+bastante simples adicionar coisas diferentes l.
+
+55
+00:02:36,350 --> 00:02:38,700
+Agora que decidimos qual ser o
+
+56
+00:02:38,700 --> 00:02:40,930
+formato de um filme, e onde
+
+57
+00:02:40,930 --> 00:02:43,430
+vamos armazen-lo, sabemos que quando adicionamos
+
+58
+00:02:43,430 --> 00:02:45,150
+um novo filme, vamos
+
+59
+00:02:45,150 --> 00:02:49,090
+criar um dicionrio com essa aparncia e coloc-lo em nossa lista.
+
+60
+00:02:49,090 --> 00:02:50,290
+Ento vamos fazer isso.
+
+61
+00:02:52,780 --> 00:02:54,720
+Abaixo da funo Menu,
+
+62
+00:02:54,720 --> 00:02:57,950
+vamos definir a funo Adicionar filme.
+
+63
+00:02:57,950 --> 00:03:00,930
+Novamente, se at agora voc no se sentiu confiante para
+
+64
+00:03:00,930 --> 00:03:02,120
+desenvolver essa funo por
+
+65
+00:03:02,120 --> 00:03:04,470
+conta prpria, e voc sente que est mais
+
+66
+00:03:04,470 --> 00:03:06,220
+confiante agora, pause o vdeo e experimente.
+
+67
+00:03:06,220 --> 00:03:07,500
+E eu vou continuar dizendo
+
+68
+00:03:07,500 --> 00:03:09,600
+isso, porque  realmente a melhor maneira de aprender.
+
+69
+00:03:13,350 --> 00:03:15,780
+Ok, agora que esperamos que voc tenha lidado
+
+70
+00:03:15,780 --> 00:03:17,400
+com isso ou j tenha feito
+
+71
+00:03:17,400 --> 00:03:20,460
+isso antes, estamos prontos para perguntar ao usurio os detalhes que
+
+72
+00:03:20,460 --> 00:03:22,040
+vamos armazenar em nosso filme.
+
+73
+00:03:22,040 --> 00:03:23,010
+Ento o que vamos
+
+74
+00:03:23,010 --> 00:03:24,440
+fazer,  pedir ao usurio
+
+75
+00:03:28,460 --> 00:03:30,460
+um nome, vamos pedir ao usurio um diretor
+
+76
+00:03:33,641 --> 00:03:35,780
+e vamos perguntar ao usurio por um ano.
+
+77
+00:03:42,448 --> 00:03:44,450
+Agora ns dissemos que o ano vai
+
+78
+00:03:44,450 --> 00:03:47,640
+ser um inteiro, ento eu vou transformar isso em um int ai
+
+79
+00:03:47,640 --> 00:03:48,630
+enquanto ns vamos junto.
+
+80
+00:03:48,630 --> 00:03:51,390
+S para ter certeza de que o ano 
+
+81
+00:03:51,390 --> 00:03:54,620
+um inteiro, e eu no vou us-lo como uma string por
+
+82
+00:03:54,620 --> 00:03:55,720
+acidente ou algo assim.
+
+83
+00:03:56,710 --> 00:03:58,950
+E ento tudo o que queremos fazer 
+
+84
+00:03:58,950 --> 00:04:00,280
+garantir que criemos um novo
+
+85
+00:04:00,280 --> 00:04:02,800
+dicionrio e o colocamos na lista do nosso filme.
+
+86
+00:04:02,800 --> 00:04:04,900
+Ento, o que fazer, filmes. adicione e
+
+87
+00:04:05,842 --> 00:04:09,180
+crie um novo dicionrio aqui que
+
+88
+00:04:09,180 --> 00:04:14,180
+ter o nome, o diretor e as chaves do ano.
+
+89
+00:04:16,280 --> 00:04:19,030
+Repare como eu criei este dicionrio aqui,
+
+90
+00:04:19,030 --> 00:04:22,880
+dentro da funo append, e isso  totalmente legal, mas
+
+91
+00:04:22,880 --> 00:04:24,840
+se voc preferir, voc pode
+
+92
+00:04:24,840 --> 00:04:28,160
+criar uma varivel separada aqui, tipo, movie is this,
+
+93
+00:04:30,300 --> 00:04:32,400
+e acrescentar o filme aqui.
+
+94
+00:04:32,400 --> 00:04:35,220
+Totalmente at voc, o que voc prefere fazer.
+
+95
+00:04:35,220 --> 00:04:37,480
+Isso pode ser um pouco mais legvel para
+
+96
+00:04:37,480 --> 00:04:39,590
+voc, se voc escolher, pode fazer isso.
+
+97
+00:04:39,590 --> 00:04:42,390
+Mas para mim, isso  bastante legvel.
+
+98
+00:04:42,390 --> 00:04:44,550
+Isso me diz que o que estou acrescentando
+
+99
+00:04:44,550 --> 00:04:47,020
+ minha lista  um dicionrio que contm esses dados.
+
+100
+00:04:47,920 --> 00:04:48,753
+OK?
+
+101
+00:04:48,753 --> 00:04:50,650
+E eu sei que isso  um
+
+102
+00:04:50,650 --> 00:04:52,530
+filme porque a lista  chamada Filmes.
+
+103
+00:04:52,530 --> 00:04:55,920
+Ento eu no tenho que definir uma varivel separada chamada Movie apenas para
+
+104
+00:04:55,920 --> 00:04:58,420
+me dizer que o que estou criando  um filme.
+
+105
+00:05:00,140 --> 00:05:02,730
+Agora ns temos nossa funo Add
+
+106
+00:05:02,730 --> 00:05:07,620
+Movie, sempre que vamos e executamos esta funo, vamos pedir ao
+
+107
+00:05:07,620 --> 00:05:09,560
+usurio trs detalhes, e
+
+108
+00:05:09,560 --> 00:05:13,060
+vamos acrescentar um dicionrio com esses detalhes em
+
+109
+00:05:13,060 --> 00:05:15,110
+nossa lista de filmes.
+
+110
+00:05:15,110 --> 00:05:16,340
+Ento, o que vou
+
+111
+00:05:16,340 --> 00:05:19,870
+fazer  avaliar o fluxo do programa novamente apenas para voc
+
+112
+00:05:19,870 --> 00:05:22,160
+e, em seguida, executar esse programa e
+
+113
+00:05:22,160 --> 00:05:24,210
+verificar se tudo est funcionando bem.
+
+114
+00:05:26,230 --> 00:05:28,510
+Assim que descemos para a linha 58, temos
+
+115
+00:05:28,510 --> 00:05:30,350
+nossa chamada de funo de Menu.
+
+116
+00:05:30,350 --> 00:05:33,180
+Ento, vamos pular para a funo Menu,
+
+117
+00:05:33,180 --> 00:05:36,300
+onde vamos pedir ao usurio para inserir algo.
+
+118
+00:05:36,300 --> 00:05:38,930
+Se eles digitarem 'a', vamos pular direto para
+
+119
+00:05:38,930 --> 00:05:41,440
+a funo Add Movie, que  definida aqui.
+
+120
+00:05:41,440 --> 00:05:45,040
+E isso  bom porque essa funo j est definida no
+
+121
+00:05:45,040 --> 00:05:47,390
+momento em que executamos nossa funo de menu.
+
+122
+00:05:48,400 --> 00:05:49,950
+Ento, vamos perguntar ao usurio
+
+123
+00:05:49,950 --> 00:05:51,240
+pelo nome do filme,
+
+124
+00:05:51,240 --> 00:05:55,210
+diretor e ano, vamos construir um novo dicionrio com as trs chaves,
+
+125
+00:05:55,210 --> 00:05:57,960
+e os valores sero essas variveis aqui em cima,
+
+126
+00:05:59,550 --> 00:06:01,260
+e ento ns vamos acrescente
+
+127
+00:06:01,260 --> 00:06:05,470
+esse dicionrio  nossa lista de filmes que est definida no topo aqui.
+
+128
+00:06:07,420 --> 00:06:08,253
+OK?
+
+129
+00:06:09,750 --> 00:06:13,040
+Ento, vamos terminar de executar isso, vamos pular
+
+130
+00:06:13,040 --> 00:06:15,810
+as instrues elif, elif e else, e
+
+131
+00:06:15,810 --> 00:06:18,310
+vamos pedir a entrada do usurio novamente.
+
+132
+00:06:18,310 --> 00:06:19,720
+Eles podem digitar 'a'
+
+133
+00:06:19,720 --> 00:06:22,700
+novamente e, nesse caso, voltaremos a repetir o loop.
+
+134
+00:06:22,700 --> 00:06:26,140
+Isso ser verdade porque a no  q, e
+
+135
+00:06:26,140 --> 00:06:28,860
+pediremos ao usurio para adicionar outro filme.
+
+136
+00:06:28,860 --> 00:06:31,570
+E assim por diante, at o usurio digitar
+
+137
+00:06:31,570 --> 00:06:33,940
+'q', caso em que, quando repetirmos o
+
+138
+00:06:33,940 --> 00:06:37,280
+loop y, q ser igual a q, ento isso ser
+
+139
+00:06:37,280 --> 00:06:39,600
+falso e deixaremos de executar o programa.
+
+140
+00:06:39,600 --> 00:06:42,530
+Quando isso acontece, vamos pular para o final do loop y,
+
+141
+00:06:42,530 --> 00:06:44,000
+onde a funo termina, ento
+
+142
+00:06:44,000 --> 00:06:46,690
+vamos pular de volta para a linha 58, e executar
+
+143
+00:06:46,690 --> 00:06:50,380
+a linha 59 que est vazia e, em seguida, sair do nosso programa.
+
+144
+00:06:52,040 --> 00:06:54,760
+Ento, porque dentro desta chamada de funo de
+
+145
+00:06:54,760 --> 00:06:56,510
+Menu, todo o programa est
+
+146
+00:06:56,510 --> 00:06:59,040
+rodando, ns estaremos potencialmente adicionando um monte de
+
+147
+00:06:59,040 --> 00:07:00,910
+filmes dentro desta funo de Menu.
+
+148
+00:07:00,910 --> 00:07:02,750
+Isso est dentro do loop y.
+
+149
+00:07:02,750 --> 00:07:05,877
+Ento, o que podemos fazer depois de executar a
+
+150
+00:07:05,877 --> 00:07:08,540
+funo Menu,  imprimir nossa lista de filmes.
+
+151
+00:07:08,540 --> 00:07:10,440
+Ento, quando executarmos a funo
+
+152
+00:07:10,440 --> 00:07:12,090
+Menu, adicionaremos vrios filmes, sairemos
+
+153
+00:07:12,090 --> 00:07:13,730
+da funo Menu no final
+
+154
+00:07:13,730 --> 00:07:17,460
+quando digitarmos 'q', mas o nosso programa no sair imediatamente,
+
+155
+00:07:17,460 --> 00:07:20,590
+ele executar primeiro esta linha. Filmes e, em seguida,
+
+156
+00:07:20,590 --> 00:07:22,190
+ele terminar a execuo.
+
+157
+00:07:23,070 --> 00:07:24,860
+ por isso que 
+
+158
+00:07:24,860 --> 00:07:28,310
+importante que voc saiba exatamente onde seu programa est indo
+
+159
+00:07:28,310 --> 00:07:30,160
+passo a passo, porque isso agora
+
+160
+00:07:30,160 --> 00:07:34,460
+nos permitir ter certeza de que nossa funo est fazendo o que queremos.
+
+161
+00:07:34,460 --> 00:07:35,630
+Ento, vamos executar nosso aplicativo.
+
+162
+00:07:35,630 --> 00:07:38,450
+Mais uma vez, voc pode clicar com o boto direito do mouse no aplicativo. py e execut-lo, ou
+
+163
+00:07:38,450 --> 00:07:40,890
+se voc j fez isso antes, Pie Charm
+
+164
+00:07:40,890 --> 00:07:44,190
+lhe dir que esta coisa de app aqui no canto
+
+165
+00:07:44,190 --> 00:07:46,700
+superior direito est disponvel para execuo, e voc
+
+166
+00:07:46,700 --> 00:07:47,900
+pode simplesmente execut-lo l.
+
+167
+00:07:47,900 --> 00:07:48,733
+OK?
+
+168
+00:07:48,733 --> 00:07:50,920
+Mas normalmente eu recomendo que voc clique com o
+
+169
+00:07:50,920 --> 00:07:52,520
+boto direito no arquivo e execute-o.
+
+170
+00:07:52,520 --> 00:07:53,520
+Como ento voc vai ter certeza
+
+171
+00:07:53,520 --> 00:07:54,720
+que voc est executando a coisa certa.
+
+172
+00:07:55,670 --> 00:07:58,516
+Ento, novamente, vemos aqui nossa interface, nossa interface de
+
+173
+00:07:58,516 --> 00:08:02,120
+usurio, podemos inserir 'a', 'l', 'f' e 'q', vamos digitar 'a', j
+
+174
+00:08:02,120 --> 00:08:04,485
+que  a nica coisa que est funcionando
+
+175
+00:08:04,485 --> 00:08:06,240
+e ns vou entrar no nome
+
+176
+00:08:06,240 --> 00:08:09,080
+do filme, vou entrar no Matrix, o diretor.
+
+177
+00:08:09,080 --> 00:08:12,100
+Eu vou entrar no The Two Sisters de
+
+178
+00:08:12,100 --> 00:08:15,300
+Wochowski, e o ano de lanamento ser em 1994.
+
+179
+00:08:15,300 --> 00:08:16,750
+Ento eu vou digitar 'q'.
+
+180
+00:08:17,980 --> 00:08:19,470
+E observe como eu estava
+
+181
+00:08:19,470 --> 00:08:21,490
+certo e os filmes foram impressos depois.
+
+182
+00:08:22,440 --> 00:08:24,370
+O que temos aqui  uma
+
+183
+00:08:25,240 --> 00:08:27,130
+lista com um nico dicionrio, incluindo
+
+184
+00:08:27,130 --> 00:08:29,330
+o nome, o diretor e o
+
+185
+00:08:29,330 --> 00:08:31,160
+ano em que entramos anteriormente.
+
+186
+00:08:31,160 --> 00:08:33,500
+Observe como o ano  um inteiro, o que
+
+187
+00:08:33,500 --> 00:08:35,380
+ bom, e os outros so strings.
+
+188
+00:08:36,279 --> 00:08:37,670
+Agora isso  muito
+
+189
+00:08:37,670 --> 00:08:41,560
+legal, ns temos realmente agora um aplicativo de trabalho, no
+
+190
+00:08:41,560 --> 00:08:43,700
+muito til ainda, que nos permite
+
+191
+00:08:43,700 --> 00:08:46,360
+adicionar novos filmes em nossa lista, e
+
+192
+00:08:46,360 --> 00:08:48,420
+ento mostr-los para o usurio.
+
+193
+00:08:48,420 --> 00:08:50,440
+Quando comeamos a adicionar a outra
+
+194
+00:08:50,440 --> 00:08:51,950
+funcionalidade, nos prximos vdeos,
+
+195
+00:08:51,950 --> 00:08:54,340
+vamos encontrar muito mais uso para ela.
+
+196
+00:08:54,340 --> 00:08:58,850
+Mas  claro, porque quando rodamos este programa novamente, e digitamos
+
+197
+00:08:58,850 --> 00:09:02,250
+'q', obtemos uma lista vazia, este programa no
+
+198
+00:09:02,250 --> 00:09:05,210
+ o mais til que poderia ser.
+
+199
+00:09:05,210 --> 00:09:07,940
+Toda vez que executamos o programa, a lista 
+
+200
+00:09:07,940 --> 00:09:11,230
+apagada, porque o Python s se lembra dela no tempo de
+
+201
+00:09:11,230 --> 00:09:12,720
+execuo atual do aplicativo.
+
+202
+00:09:12,720 --> 00:09:15,470
+Portanto, essa  uma clara limitao do nosso
+
+203
+00:09:15,470 --> 00:09:18,870
+programa, e  uma que superaremos quando examinarmos arquivos
+
+204
+00:09:18,870 --> 00:09:21,670
+e bancos de dados, mais adiante neste curso.
+
+205
+00:09:21,670 --> 00:09:23,870
+Ento, esse programa pode ser mais til,
+
+206
+00:09:23,870 --> 00:09:26,360
+mas isso no significa que no seja um
+
+207
+00:09:26,360 --> 00:09:27,280
+timo programa para comear.
+
+208
+00:09:28,150 --> 00:09:30,170
+E, novamente, eu o encorajaria se
+
+209
+00:09:30,170 --> 00:09:35,170
+voc ainda no tivesse feito isso, para tentar terminar de escrever as duas ltimas funes.
+
+210
+00:09:35,450 --> 00:09:38,980
+E se assim for, vamos ao prximo vdeo.
+
+211
+00:09:38,980 --> 00:09:40,030
+Te vejo l.
+

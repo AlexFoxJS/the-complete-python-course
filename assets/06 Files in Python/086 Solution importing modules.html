@@ -1,0 +1,51 @@
+<html>
+                <head>
+                <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                <title>086 Solution importing modules</title>
+                </head>
+                <body>
+                <div class="container">
+                <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <p class="lead"><p>Welcome back to another coding exercise solution! This was a tricky one—I hope you got most of the way there.</p>
+
+<p>This is my solution to the coding exercise. Again, it may be slightly different from yours!</p>
+
+<pre class="prettyprint linenums">from addition import Addition
+
+class Calculator:
+    @classmethod
+    def add(cls, num1, num2):
+        return Addition.add(num1, num2)  # make use of add() from Addition module
+
+    @classmethod
+    def subtract(cls, num1, num2):
+        return cls.add(num1, -num2)     # turn subtraction to adding a negative num2
+
+    @classmethod
+    def multiply(cls, num1, num2):
+        res = 0
+        for x in range(0, num2):
+            res = cls.add(res, num1)    # add num1 for num2 times
+        return res
+
+    @classmethod
+    def divide(cls, num1, num2):
+        res = 0
+        while num1 &gt;= num2:
+            num1 = cls.subtract(num1, num2)  # subtract num2 from num1 until its remainder is smaller than num2
+            res = cls.add(res, 1)   # count the times of subtraction as the result
+        return res
+</pre>
+
+<p>Let me know how you got on!</p>
+
+<p>Kind regards,</p>
+
+<p>— Jose and the Teclado team</p></p>
+                </div>
+                </div>
+                </div>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+                </body>
+                </html>

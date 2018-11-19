@@ -1,0 +1,340 @@
+1
+00:00:00,080 --> 00:00:01,170
+Instrutor: Ol e bem vindo de volta.
+
+2
+00:00:01,170 --> 00:00:02,390
+Neste vdeo estamos
+
+3
+00:00:02,390 --> 00:00:05,560
+falando de decorar funes que possuem parmetros.
+
+4
+00:00:06,480 --> 00:00:08,640
+Vimos isso no ltimo vdeo e, mais
+
+5
+00:00:08,640 --> 00:00:11,760
+uma vez, vamos recapitular o que est acontecendo aqui.
+
+6
+00:00:11,760 --> 00:00:13,960
+Ns temos uma funo que retorna
+
+7
+00:00:13,960 --> 00:00:16,910
+a senha para o painel de administrao 
+
+8
+00:00:16,910 --> 00:00:19,450
+1234 e essa funo no tem nenhum parmetro.
+
+9
+00:00:20,520 --> 00:00:24,220
+Ns, ento, decorar com o usurio tem decorador
+
+10
+00:00:24,220 --> 00:00:28,590
+de permisso e o que acontece, em seguida, 
+
+11
+00:00:29,440 --> 00:00:34,440
+essencialmente isso, minha funo, igual, usurio tem permisso, minha funo.
+
+12
+00:00:36,950 --> 00:00:40,050
+Certo, ento essa funo agora 
+
+13
+00:00:40,050 --> 00:00:44,360
+modificada e transformada nessa funo func segura, que 
+
+14
+00:00:45,420 --> 00:00:49,600
+o que o decorador retorna, a funo secure.
+
+15
+00:00:49,600 --> 00:00:51,430
+Essa funo segura, no entanto,
+
+16
+00:00:51,430 --> 00:00:55,680
+obtm o nome e a string doc da funo original em
+
+17
+00:00:55,680 --> 00:00:58,330
+virtude desse functools. Envolve
+
+18
+00:00:59,820 --> 00:01:01,150
+Voc pode ver, no
+
+19
+00:01:01,150 --> 00:01:04,780
+entanto, que quando chamamos a funo original, isto  func,
+
+20
+00:01:04,780 --> 00:01:06,750
+essa  a funo original que
+
+21
+00:01:06,750 --> 00:01:08,560
+ns passamos, a que queremos
+
+22
+00:01:08,560 --> 00:01:10,290
+substituir, no h nada dentro
+
+23
+00:01:10,290 --> 00:01:13,070
+dos colchetes, ento no h parmetros entre parnteses.
+
+24
+00:01:15,300 --> 00:01:18,740
+Se, em vez disso, mudarmos minha funo
+
+25
+00:01:18,740 --> 00:01:22,240
+para ser, algo como painel aqui e
+
+26
+00:01:25,070 --> 00:01:29,630
+dissermos que a senha para qualquer painel que passamos 
+
+27
+00:01:31,050 --> 00:01:35,030
+1234, ento precisamos chamar a funo com um argumento.
+
+28
+00:01:35,030 --> 00:01:39,370
+Poderamos dizer, por exemplo, imprimir minha funo e filmes.
+
+29
+00:01:43,310 --> 00:01:45,950
+Ento seria minha funo, filmes.
+
+30
+00:01:45,950 --> 00:01:49,000
+filmes iria para o painel, e ns imprimiramos
+
+31
+00:01:49,000 --> 00:01:52,620
+a senha para o painel de filmes  1234.
+
+32
+00:01:52,620 --> 00:01:54,300
+Isso tudo faz sentido,
+
+33
+00:01:54,300 --> 00:01:57,310
+mas devemos lembrar, porm, que essa funo
+
+34
+00:01:59,290 --> 00:02:02,380
+ substituda por essa funo segura.
+
+35
+00:02:04,660 --> 00:02:06,810
+Este func seguro herda
+
+36
+00:02:06,810 --> 00:02:10,120
+tudo da funo original, mas quando
+
+37
+00:02:10,120 --> 00:02:13,610
+ns chamamos a funo original, no
+
+38
+00:02:15,000 --> 00:02:17,410
+tem nenhum argumento aqui.
+
+39
+00:02:19,640 --> 00:02:21,070
+OK?
+
+40
+00:02:21,070 --> 00:02:23,410
+Ento, o que ns temos que
+
+41
+00:02:23,410 --> 00:02:26,750
+fazer  garantir que o func seguro tenha um
+
+42
+00:02:28,260 --> 00:02:33,260
+parmetro, de modo que quando o chamarmos, aqui, ele pode aceitar o parmetro,
+
+43
+00:02:34,632 --> 00:02:36,970
+ele pode aceitar o argumento, desculpe.
+
+44
+00:02:36,970 --> 00:02:40,640
+Mais uma vez, minha funo  agora segura func.
+
+45
+00:02:41,630 --> 00:02:44,000
+Se secure func no tiver um parmetro, no
+
+46
+00:02:44,000 --> 00:02:46,250
+podemos chamar a funo com um parmetro.
+
+47
+00:02:47,790 --> 00:02:50,110
+No entanto, quando chamamos a
+
+48
+00:02:50,110 --> 00:02:55,000
+funo original, devemos tambm passar no argumento de que ela precisa, assim.
+
+49
+00:02:57,130 --> 00:02:59,240
+Agora podemos executar isso, mas lembre-se
+
+50
+00:02:59,240 --> 00:03:01,320
+de alterar o nvel de acesso
+
+51
+00:03:01,320 --> 00:03:02,920
+para admin para que ele
+
+52
+00:03:04,060 --> 00:03:08,590
+faa alguma coisa, e a senha para o painel de filmes  1234.
+
+53
+00:03:09,620 --> 00:03:13,580
+Ento, como voc pode ver, o func seguro precisa
+
+54
+00:03:13,580 --> 00:03:16,100
+do parmetro para que ele
+
+55
+00:03:16,100 --> 00:03:20,370
+possa aceitar o argumento e a funo original tenha
+
+56
+00:03:20,370 --> 00:03:23,640
+que passar o argumento, porque essa funo
+
+57
+00:03:23,640 --> 00:03:28,410
+tem o parmetro que precisamos para us-lo dentro da funo, ok?
+
+58
+00:03:29,290 --> 00:03:31,900
+Agora, o problema  que
+
+59
+00:03:31,900 --> 00:03:35,640
+voc no pode aplicar esse decorador a
+
+60
+00:03:35,640 --> 00:03:37,160
+nenhuma outra funo.
+
+61
+00:03:37,160 --> 00:03:42,160
+Novamente, se criarmos uma funo chamada another, que
+
+62
+00:03:42,970 --> 00:03:46,140
+retorna Hello, por exemplo, no
+
+63
+00:03:46,140 --> 00:03:50,110
+podemos aplicar esse decorador a ela.
+
+64
+00:03:51,570 --> 00:03:53,730
+No podemos fazer isso porque
+
+65
+00:03:53,730 --> 00:03:57,470
+o decorador vai passar no argumento do painel,
+
+66
+00:03:57,470 --> 00:04:00,610
+mas a outra funo no poder receb-lo.
+
+67
+00:04:01,450 --> 00:04:03,590
+De fato, se usarmos isso, voc ver
+
+68
+00:04:06,540 --> 00:04:08,410
+que acabamos de receber um erro.
+
+69
+00:04:08,410 --> 00:04:11,870
+E isso diz, muitas coisas.
+
+70
+00:04:13,270 --> 00:04:16,430
+Se realmente passarmos em um argumento aqui, obtemos um
+
+71
+00:04:16,430 --> 00:04:17,750
+erro diferente, que diz,
+
+72
+00:04:17,750 --> 00:04:21,300
+outro assume zero argumentos posicionais, mas um foi dado.
+
+73
+00:04:21,300 --> 00:04:24,240
+O erro anterior foi porque no passamos no
+
+74
+00:04:24,240 --> 00:04:26,370
+parmetro que o func seguro precisa.
+
+75
+00:04:26,370 --> 00:04:28,840
+Ento aqui ns pegamos o erro que outro, no
+
+76
+00:04:28,840 --> 00:04:30,560
+aceita nenhum argumento, mas voc deu
+
+77
+00:04:30,560 --> 00:04:32,450
+um, ento o que voc est fazendo?
+
+78
+00:04:32,450 --> 00:04:33,920
+Ento, isso no 
+
+79
+00:04:33,920 --> 00:04:37,180
+timo, porque o decorador agora funciona para a nossa
+
+80
+00:04:37,180 --> 00:04:39,570
+funo, mas no funciona para outra funo.
+
+81
+00:04:39,570 --> 00:04:43,950
+Ns gostaramos, idealmente, de tornar nossos decoradores mais
+
+82
+00:04:43,950 --> 00:04:48,950
+genricos, para que pudssemos us-los em qualquer funo que desejssemos.
+
+83
+00:04:49,060 --> 00:04:51,360
+E vamos aprender isso, como fazer
+
+84
+00:04:51,360 --> 00:04:53,160
+isso, nos prximos vdeos.
+
+85
+00:04:53,160 --> 00:04:55,560
+Ento, com isso dito, vejo voc no prximo.
+

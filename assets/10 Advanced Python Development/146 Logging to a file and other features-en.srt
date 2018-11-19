@@ -1,0 +1,360 @@
+1
+00:00:00,120 --> 00:00:01,330
+<v Jose>Hi, and welcome back.</v>
+
+2
+00:00:01,330 --> 00:00:04,670
+I wanted to tell you in this video how to log to a file
+
+3
+00:00:04,670 --> 00:00:05,800
+and also a couple of things
+
+4
+00:00:05,800 --> 00:00:07,980
+about the structure of these loggers.
+
+5
+00:00:08,850 --> 00:00:11,730
+In order to log to a file, it's really straightforward.
+
+6
+00:00:11,730 --> 00:00:14,490
+All you have to do is in this basicConfig here,
+
+7
+00:00:15,330 --> 00:00:18,640
+add another argument called filename.
+
+8
+00:00:18,640 --> 00:00:22,840
+And this can be, for example, logs.txt, very simple.
+
+9
+00:00:22,840 --> 00:00:26,350
+You do this, you run your app, and then you see logs.txt
+
+10
+00:00:26,350 --> 00:00:28,700
+up here, and it contains your logs.
+
+11
+00:00:28,700 --> 00:00:30,730
+So when you're logging in your application,
+
+12
+00:00:30,730 --> 00:00:33,930
+definitely recommended to log to a separate file,
+
+13
+00:00:33,930 --> 00:00:36,560
+so that, main thing is so that your users won't be able
+
+14
+00:00:36,560 --> 00:00:40,180
+to see your logs, and also so you keep your logs
+
+15
+00:00:40,180 --> 00:00:43,430
+in order that you can then review them later on.
+
+16
+00:00:43,430 --> 00:00:45,110
+This is particularly important when we're developing
+
+17
+00:00:45,110 --> 00:00:47,280
+web applications and things like that that are running
+
+18
+00:00:47,280 --> 00:00:50,400
+for a long period of time, and you need the logs
+
+19
+00:00:50,400 --> 00:00:52,510
+in order to be able to track down problems.
+
+20
+00:00:52,510 --> 00:00:54,610
+We're gonna look at web application development
+
+21
+00:00:54,610 --> 00:00:57,560
+in a later section, so this is why I'm mentioning this now.
+
+22
+00:00:58,410 --> 00:01:00,680
+The next thing I wanted to say is, real quick,
+
+23
+00:01:00,680 --> 00:01:03,120
+how these loggers are structured.
+
+24
+00:01:03,120 --> 00:01:05,750
+Here we've got something called a test_logger.
+
+25
+00:01:05,750 --> 00:01:08,740
+But normally you would call this something like __name__.
+
+26
+00:01:10,770 --> 00:01:14,320
+That's just so each module has its own separate logger,
+
+27
+00:01:14,320 --> 00:01:17,570
+and you have a bit more, sort of, flexibility
+
+28
+00:01:17,570 --> 00:01:20,020
+with how the loggers operate.
+
+29
+00:01:20,020 --> 00:01:25,020
+However, it's also very popular for you to call your logger
+
+30
+00:01:25,270 --> 00:01:28,100
+something like, for example, let's say this app did
+
+31
+00:01:28,100 --> 00:01:30,380
+something like book handling or something.
+
+32
+00:01:30,380 --> 00:01:33,310
+You call this logger books, for example.
+
+33
+00:01:33,310 --> 00:01:35,590
+And then it's fairly popular that when you go
+
+34
+00:01:35,590 --> 00:01:38,750
+into a different part of your application,
+
+35
+00:01:38,750 --> 00:01:42,050
+you will get another logger and call it
+
+36
+00:01:42,050 --> 00:01:44,770
+like books.database, for example.
+
+37
+00:01:44,770 --> 00:01:46,970
+Let's say you are in the database file down here,
+
+38
+00:01:46,970 --> 00:01:49,500
+and you're in a new file called database.py
+
+39
+00:01:49,500 --> 00:01:51,540
+or something, and you wanna get a different logger
+
+40
+00:01:51,540 --> 00:01:53,940
+for logs related to a database.
+
+41
+00:01:55,120 --> 00:02:00,120
+When you do books.database, this is actually a child logger,
+
+42
+00:02:01,120 --> 00:02:05,690
+so you get another logger, which is a child logger of books.
+
+43
+00:02:05,690 --> 00:02:08,630
+Any configuration you've got on the books logger,
+
+44
+00:02:08,630 --> 00:02:10,919
+will be inherited by the database logger,
+
+45
+00:02:10,919 --> 00:02:12,730
+not with the books.database logger.
+
+46
+00:02:12,730 --> 00:02:15,440
+So it's normal to structure these loggers like that,
+
+47
+00:02:15,440 --> 00:02:18,220
+and sometimes you end up with some fairly long logger names.
+
+48
+00:02:18,220 --> 00:02:19,910
+That's totally fine.
+
+49
+00:02:19,910 --> 00:02:22,860
+But again, it's also very popular to call them as __name__,
+
+50
+00:02:24,130 --> 00:02:26,160
+and then they get called after the module that they're
+
+51
+00:02:26,160 --> 00:02:28,340
+currently operating in or, indeed,
+
+52
+00:02:28,340 --> 00:02:30,250
+the import path, as you know.
+
+53
+00:02:31,140 --> 00:02:34,570
+So either very popular, and I'll just mention quickly
+
+54
+00:02:34,570 --> 00:02:38,260
+that there is more on loggers than I've covered,
+
+55
+00:02:38,260 --> 00:02:40,590
+and there are things like handlers and things like that
+
+56
+00:02:40,590 --> 00:02:43,150
+that you can look into, but to be honest,
+
+57
+00:02:43,150 --> 00:02:47,060
+this is plenty for the applications that we'll be building,
+
+58
+00:02:47,060 --> 00:02:48,960
+and, indeed, for more advanced applications and, indeed,
+
+59
+00:02:48,960 --> 00:02:50,800
+for professional applications as well.
+
+60
+00:02:50,800 --> 00:02:52,870
+You've got some more advanced functionality,
+
+61
+00:02:52,870 --> 00:02:54,940
+but I've not used it that often.
+
+62
+00:02:56,480 --> 00:02:58,950
+One more thing that I'll just say right now as well,
+
+63
+00:02:58,950 --> 00:03:00,590
+if you want to form the time
+
+64
+00:03:00,590 --> 00:03:02,180
+in a particular way, you can do that.
+
+65
+00:03:02,180 --> 00:03:07,180
+You can do datefmt= and in here, you can enter
+
+66
+00:03:07,230 --> 00:03:11,410
+formats like you would with the string format time method,
+
+67
+00:03:11,410 --> 00:03:15,690
+strftime, so you can do dash D, dash M, dash Y,
+
+68
+00:03:15,690 --> 00:03:19,080
+%H, %M, %S, for example.
+
+69
+00:03:19,980 --> 00:03:22,300
+And then this would be formatted slightly differently.
+
+70
+00:03:22,300 --> 00:03:24,840
+If we look at the logs now, you can see that these old
+
+71
+00:03:24,840 --> 00:03:28,600
+ones have the complete date, including the milliseconds
+
+72
+00:03:28,600 --> 00:03:31,870
+there, and these ones are a bit more reasonable.
+
+73
+00:03:31,870 --> 00:03:34,530
+Also notice that when you run your app multiple times,
+
+74
+00:03:34,530 --> 00:03:37,310
+the logs do not get lost, and so the logs just
+
+75
+00:03:37,310 --> 00:03:40,780
+get appended to, and that's a pretty nice feature too,
+
+76
+00:03:40,780 --> 00:03:42,840
+just in case your app crashes or something,
+
+77
+00:03:42,840 --> 00:03:45,230
+and then it restarts automatically like we will do
+
+78
+00:03:45,230 --> 00:03:47,370
+in the future, your logs are not gonna get lost
+
+79
+00:03:47,370 --> 00:03:48,730
+because of that.
+
+80
+00:03:48,730 --> 00:03:50,680
+However, of course, the file can grow pretty large,
+
+81
+00:03:50,680 --> 00:03:53,480
+so that's something you have to take into consideration.
+
+82
+00:03:54,350 --> 00:03:55,700
+All right, that's it for this video.
+
+83
+00:03:55,700 --> 00:03:58,000
+Now you can use logging in your apps.
+
+84
+00:03:58,000 --> 00:04:01,480
+And honestly, you don't need anything else.
+
+85
+00:04:01,480 --> 00:04:04,690
+As you learn more Python, and as you work with other people,
+
+86
+00:04:04,690 --> 00:04:07,700
+you may encounter situations where you use some
+
+87
+00:04:07,700 --> 00:04:10,040
+other feature of the logging module.
+
+88
+00:04:10,040 --> 00:04:12,350
+But honestly, I've not had that situation yet.
+
+89
+00:04:13,280 --> 00:04:14,630
+So that's it for this video,
+
+90
+00:04:14,630 --> 00:04:16,280
+and I'll see you on the next one.
+

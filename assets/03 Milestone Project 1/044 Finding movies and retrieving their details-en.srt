@@ -1,0 +1,1132 @@
+1
+00:00:00,350 --> 00:00:01,820
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,820 --> 00:00:03,160
+In this video, we're going to
+
+3
+00:00:03,160 --> 00:00:06,350
+allow users to find a movie in this programme.
+
+4
+00:00:07,590 --> 00:00:10,310
+We've got the majority of the programme ready
+
+5
+00:00:10,310 --> 00:00:12,830
+in which they can add movies and show movies
+
+6
+00:00:12,830 --> 00:00:15,650
+and also of course, repeat this input continuously
+
+7
+00:00:15,650 --> 00:00:17,570
+until they press Q.
+
+8
+00:00:17,570 --> 00:00:18,610
+Now we have to allow them
+
+9
+00:00:18,610 --> 00:00:19,940
+to find a movie.
+
+10
+00:00:20,890 --> 00:00:22,700
+So what does finding a movie mean?
+
+11
+00:00:24,110 --> 00:00:26,767
+Well, we're gonna ask the user
+
+12
+00:00:26,767 --> 00:00:29,350
+that what do they want to search for?
+
+13
+00:00:30,730 --> 00:00:33,730
+Name, director or year?
+
+14
+00:00:35,120 --> 00:00:37,580
+Then we're gonna ask them what value they wanna search,
+
+15
+00:00:37,580 --> 00:00:41,500
+for example all the movies made in 1994
+
+16
+00:00:41,500 --> 00:00:46,280
+or all the movies by the director, Wachowskis
+
+17
+00:00:46,280 --> 00:00:49,850
+or all the movies called, I don't know
+
+18
+00:00:49,850 --> 00:00:52,310
+high school musical, I don't know very many movies,
+
+19
+00:00:52,310 --> 00:00:53,470
+I've just realised that,
+
+20
+00:00:53,470 --> 00:00:55,170
+maybe this was not a good project.
+
+21
+00:00:56,040 --> 00:00:57,200
+Anyway, so,
+
+22
+00:00:58,320 --> 00:00:59,770
+let's not add high school musical
+
+23
+00:00:59,770 --> 00:01:01,710
+to our movies but we can maybe add
+
+24
+00:01:01,710 --> 00:01:03,990
+a couple of other movies that have similar years
+
+25
+00:01:03,990 --> 00:01:05,070
+or similar directors.
+
+26
+00:01:06,510 --> 00:01:10,260
+Let's go and develop this find underscore movie function.
+
+27
+00:01:11,370 --> 00:01:14,620
+Again, because this is used after show movies,
+
+28
+00:01:14,620 --> 00:01:16,860
+you'd think that maybe it should go here
+
+29
+00:01:16,860 --> 00:01:19,370
+but because show movies uses show movie details,
+
+30
+00:01:19,370 --> 00:01:22,200
+that should go directly underneath show movies
+
+31
+00:01:22,200 --> 00:01:24,490
+and we can add this one afterwards.
+
+32
+00:01:29,370 --> 00:01:30,940
+Let's add our find movie function,
+
+33
+00:01:30,940 --> 00:01:33,360
+notice how the red squiggly line disappears,
+
+34
+00:01:33,360 --> 00:01:35,270
+PyCharm is happy but of course
+
+35
+00:01:35,270 --> 00:01:38,360
+we are missing some content here and PyCharm tells us
+
+36
+00:01:38,360 --> 00:01:42,100
+this by this red squiggly line, indent expected.
+
+37
+00:01:42,100 --> 00:01:44,920
+We don't have anything indented under this function
+
+38
+00:01:44,920 --> 00:01:46,720
+so now PyCharm will only be happy
+
+39
+00:01:46,720 --> 00:01:48,510
+once we do have something.
+
+40
+00:01:49,600 --> 00:01:51,120
+And what we're gonna do is we're first
+
+41
+00:01:51,120 --> 00:01:55,210
+gonna ask the user for what property they wanna look for.
+
+42
+00:01:55,210 --> 00:01:57,550
+Whether name, director or year.
+
+43
+00:02:07,970 --> 00:02:09,240
+And then we're gonna ask them
+
+44
+00:02:09,240 --> 00:02:11,590
+exactly for what value they want to search for.
+
+45
+00:02:19,170 --> 00:02:21,510
+Now we have two things,
+
+46
+00:02:22,570 --> 00:02:24,940
+we have what they're looking for
+
+47
+00:02:24,940 --> 00:02:27,180
+and what property that is.
+
+48
+00:02:27,180 --> 00:02:30,830
+So let's now develop something that will allow us
+
+49
+00:02:30,830 --> 00:02:33,050
+to go and find this.
+
+50
+00:02:35,920 --> 00:02:37,310
+Let's create a new list
+
+51
+00:02:37,310 --> 00:02:40,670
+of found movies, for every movie we find
+
+52
+00:02:40,670 --> 00:02:42,090
+matching these two things,
+
+53
+00:02:42,090 --> 00:02:44,220
+we're going to add it into this list
+
+54
+00:02:44,220 --> 00:02:46,570
+and then we're going to tell the user the list.
+
+55
+00:02:47,760 --> 00:02:50,780
+For movie in movies, this is our main movies list,
+
+56
+00:02:50,780 --> 00:02:52,670
+the movie is a variable that we're going to use
+
+57
+00:02:52,670 --> 00:02:54,270
+for each iteration of the loop.
+
+58
+00:02:55,540 --> 00:02:56,920
+We're gonna say if
+
+59
+00:02:58,220 --> 00:02:59,053
+movie
+
+60
+00:03:00,500 --> 00:03:01,420
+square brackets,
+
+61
+00:03:02,320 --> 00:03:07,320
+find by, remember find by is going to be one of,
+
+62
+00:03:07,560 --> 00:03:11,090
+one of year, name or director.
+
+63
+00:03:12,760 --> 00:03:17,250
+So if movie year is equal to
+
+64
+00:03:17,250 --> 00:03:18,083
+looking for,
+
+65
+00:03:19,600 --> 00:03:22,900
+this is exactly the value that they're looking for,
+
+66
+00:03:22,900 --> 00:03:24,510
+then we're gonna say found,
+
+67
+00:03:24,510 --> 00:03:25,343
+oh sorry,
+
+68
+00:03:25,343 --> 00:03:27,300
+found dot append, movie.
+
+69
+00:03:29,160 --> 00:03:31,910
+And then at the very end we're going to
+
+70
+00:03:32,913 --> 00:03:35,870
+potentially print out the movie details
+
+71
+00:03:35,870 --> 00:03:38,700
+or something like that, for now we're just gonna
+
+72
+00:03:38,700 --> 00:03:40,810
+return found, okay?
+
+73
+00:03:45,110 --> 00:03:47,840
+So this find movie function is now asking the user
+
+74
+00:03:47,840 --> 00:03:49,850
+for what property of the movie they're looking for
+
+75
+00:03:49,850 --> 00:03:51,820
+and what they're searching for.
+
+76
+00:03:53,050 --> 00:03:54,980
+Then it's creating a new list
+
+77
+00:03:54,980 --> 00:03:56,910
+and going over all our movies,
+
+78
+00:03:56,910 --> 00:03:59,760
+checking whether the property of the movie
+
+79
+00:03:59,760 --> 00:04:02,250
+that they are looking for, is exactly
+
+80
+00:04:02,250 --> 00:04:04,850
+what they are expecting
+
+81
+00:04:04,850 --> 00:04:07,010
+and then it's going to append that movie
+
+82
+00:04:07,010 --> 00:04:09,700
+into our found list and then it's gonna return that.
+
+83
+00:04:12,040 --> 00:04:13,460
+Okay?
+
+84
+00:04:13,460 --> 00:04:15,660
+I think we can extract part of this
+
+85
+00:04:15,660 --> 00:04:17,770
+into a separate function to make this function
+
+86
+00:04:17,770 --> 00:04:20,180
+slightly shorter and slightly nicer.
+
+87
+00:04:20,180 --> 00:04:22,230
+So what we're gonna do is just that.
+
+88
+00:04:24,770 --> 00:04:26,720
+We're gonna define a new function
+
+89
+00:04:26,720 --> 00:04:28,670
+which I'm gonna call something like
+
+90
+00:04:31,560 --> 00:04:34,860
+find by attributes
+
+91
+00:04:37,810 --> 00:04:41,470
+and this is going to take two things,
+
+92
+00:04:41,470 --> 00:04:43,020
+what the user is looking for
+
+93
+00:04:43,020 --> 00:04:45,440
+and I'm gonna call this expected,
+
+94
+00:04:45,440 --> 00:04:47,260
+because that's the expected value
+
+95
+00:04:47,260 --> 00:04:49,250
+of the movie that they're looking for.
+
+96
+00:04:49,250 --> 00:04:51,590
+And it's going to be a finder function.
+
+97
+00:04:52,580 --> 00:04:55,390
+Now all you do in this, because I wanted to include
+
+98
+00:04:55,390 --> 00:04:57,730
+lamda functions into this project
+
+99
+00:04:57,730 --> 00:04:59,800
+and this is really the best way to do that.
+
+100
+00:04:59,800 --> 00:05:02,160
+This function here is totally fine,
+
+101
+00:05:02,160 --> 00:05:03,450
+by including this finder function,
+
+102
+00:05:03,450 --> 00:05:06,870
+our programme is going to be just that little bit nicer, okay?
+
+103
+00:05:06,870 --> 00:05:08,550
+This find by attribute function
+
+104
+00:05:08,550 --> 00:05:10,200
+is going to do all of this stuff.
+
+105
+00:05:13,310 --> 00:05:14,480
+Okay?
+
+106
+00:05:14,480 --> 00:05:16,250
+It's going to define an empty list
+
+107
+00:05:16,250 --> 00:05:17,400
+of movies that we've found
+
+108
+00:05:17,400 --> 00:05:19,150
+and then it's gonna go over the movies
+
+109
+00:05:19,150 --> 00:05:20,990
+and it's gonna return them at the end,
+
+110
+00:05:20,990 --> 00:05:23,700
+except instead of movie find by,
+
+111
+00:05:24,710 --> 00:05:26,890
+it's going to use this finder.
+
+112
+00:05:28,400 --> 00:05:29,233
+No, sorry,
+
+113
+00:05:29,233 --> 00:05:31,620
+find, oh I can't spell today,
+
+114
+00:05:31,620 --> 00:05:34,200
+finder movie.
+
+115
+00:05:34,200 --> 00:05:35,610
+So this finder is going to be
+
+116
+00:05:35,610 --> 00:05:37,740
+a function that's going to take the movie
+
+117
+00:05:37,740 --> 00:05:41,320
+as an argument and it's going to spit out
+
+118
+00:05:41,320 --> 00:05:43,390
+a value and that's going to be
+
+119
+00:05:43,390 --> 00:05:45,200
+exactly equal to the expected.
+
+120
+00:05:47,510 --> 00:05:49,180
+Now, how do we do this?
+
+121
+00:05:49,180 --> 00:05:50,013
+I'm sure you know
+
+122
+00:05:50,013 --> 00:05:52,130
+and if you've not implemented this in this way,
+
+123
+00:05:52,130 --> 00:05:53,960
+I wouldn't expect you to,
+
+124
+00:05:53,960 --> 00:05:56,330
+please the pause the video now and give it a go,
+
+125
+00:05:56,330 --> 00:06:00,160
+how would you use this find by attribute function
+
+126
+00:06:00,160 --> 00:06:02,010
+from within your find movie function?
+
+127
+00:06:05,570 --> 00:06:08,360
+What I would do, is I would add a lamda function
+
+128
+00:06:09,980 --> 00:06:13,170
+so the movies that we're looking for are
+
+129
+00:06:17,321 --> 00:06:18,221
+find by attribute,
+
+130
+00:06:19,100 --> 00:06:21,600
+the expected value is the looking for value
+
+131
+00:06:21,600 --> 00:06:23,450
+and the finder function is a lamda
+
+132
+00:06:25,630 --> 00:06:29,580
+where it's taking in a parameter
+
+133
+00:06:29,580 --> 00:06:33,150
+and it's returning the find by key
+
+134
+00:06:33,150 --> 00:06:34,540
+of that parameter.
+
+135
+00:06:37,910 --> 00:06:40,100
+Now I know that this is complicating things
+
+136
+00:06:40,100 --> 00:06:41,870
+probably unnecessarily but I just wanted
+
+137
+00:06:41,870 --> 00:06:44,470
+to show you an example of where this might be useful
+
+138
+00:06:46,110 --> 00:06:48,550
+and you may think, well this is not really useful,
+
+139
+00:06:48,550 --> 00:06:50,330
+I mean we can just make it simpler
+
+140
+00:06:50,330 --> 00:06:52,590
+and have movie and use the square brackets
+
+141
+00:06:52,590 --> 00:06:54,730
+and that's right but
+
+142
+00:06:57,290 --> 00:07:00,150
+if this is particularly useful when we don't know,
+
+143
+00:07:00,150 --> 00:07:01,880
+or rather when this function here
+
+144
+00:07:01,880 --> 00:07:04,880
+doesn't know what movie is.
+
+145
+00:07:05,800 --> 00:07:07,270
+Whether it's a dictionary,
+
+146
+00:07:07,270 --> 00:07:09,570
+potentially whether it's a list
+
+147
+00:07:09,570 --> 00:07:11,310
+and it would return the first attribute
+
+148
+00:07:11,310 --> 00:07:15,910
+of that, whether it's something that has to return
+
+149
+00:07:15,910 --> 00:07:18,150
+a slice, you know, it doesn't care,
+
+150
+00:07:18,150 --> 00:07:20,350
+all it cares is that it's executing
+
+151
+00:07:20,350 --> 00:07:22,035
+whatever we told it to find by
+
+152
+00:07:22,035 --> 00:07:24,910
+and then it's returning, it's checking
+
+153
+00:07:24,910 --> 00:07:27,950
+against the expected value which could be anything.
+
+154
+00:07:27,950 --> 00:07:32,110
+So this function here is actually now really generic
+
+155
+00:07:32,110 --> 00:07:36,110
+and it doesn't really have to rely on movies
+
+156
+00:07:37,590 --> 00:07:39,680
+and now it can rely on something else
+
+157
+00:07:39,680 --> 00:07:41,340
+if we want it to.
+
+158
+00:07:41,340 --> 00:07:45,220
+We could parse in the movies as a parameter,
+
+159
+00:07:45,220 --> 00:07:47,320
+or rather the items
+
+160
+00:07:47,320 --> 00:07:49,580
+and then we can just do for I in items
+
+161
+00:07:50,760 --> 00:07:53,020
+and do this, this is now
+
+162
+00:07:53,020 --> 00:07:54,460
+a really generic function
+
+163
+00:07:54,460 --> 00:07:56,470
+where it's just finding a movie
+
+164
+00:07:56,470 --> 00:08:00,920
+inside these items by this arbitrary function
+
+165
+00:08:00,920 --> 00:08:03,300
+that we've also given it, okay?
+
+166
+00:08:04,270 --> 00:08:08,910
+So we can parse in, whoops, then movies in there, okay?
+
+167
+00:08:08,910 --> 00:08:11,920
+And of course movies is found movies.
+
+168
+00:08:13,230 --> 00:08:14,980
+You cannot do that,
+
+169
+00:08:14,980 --> 00:08:16,740
+Python doesn't really like that.
+
+170
+00:08:16,740 --> 00:08:19,430
+Movies is a variable defined at the top
+
+171
+00:08:19,430 --> 00:08:20,780
+so found underscore movies is going
+
+172
+00:08:20,780 --> 00:08:22,070
+to be the movies we've found.
+
+173
+00:08:23,050 --> 00:08:25,020
+Now this function is really generic,
+
+174
+00:08:25,020 --> 00:08:26,520
+you can use it in any project,
+
+175
+00:08:26,520 --> 00:08:27,740
+it doesn't have to be about movies,
+
+176
+00:08:27,740 --> 00:08:30,190
+it doesn't have to be about anything specific
+
+177
+00:08:30,190 --> 00:08:34,630
+but this function can be used to find by things,
+
+178
+00:08:34,630 --> 00:08:35,680
+which is pretty cool.
+
+179
+00:08:37,210 --> 00:08:39,730
+Now, we wanna print out the details
+
+180
+00:08:39,730 --> 00:08:40,980
+of the movies we've found
+
+181
+00:08:42,268 --> 00:08:43,420
+and we already have a function
+
+182
+00:08:43,420 --> 00:08:44,810
+for printing out details of movies,
+
+183
+00:08:44,810 --> 00:08:46,300
+it's called show movies.
+
+184
+00:08:47,570 --> 00:08:49,040
+It goes over all our movies
+
+185
+00:08:49,040 --> 00:08:50,030
+and it shows the details.
+
+186
+00:08:50,030 --> 00:08:52,690
+So let's call that show movies.
+
+187
+00:08:52,690 --> 00:08:55,190
+But of course, it's not showing the details
+
+188
+00:08:55,190 --> 00:08:57,150
+of our found movies, it's showing
+
+189
+00:08:57,150 --> 00:08:59,200
+the details of all the movies
+
+190
+00:08:59,200 --> 00:09:00,870
+so how may we change that?
+
+191
+00:09:02,060 --> 00:09:03,690
+How could we make this function
+
+192
+00:09:03,690 --> 00:09:05,760
+show details only of our found movies?
+
+193
+00:09:11,600 --> 00:09:12,600
+I'm sure you got it,
+
+194
+00:09:12,600 --> 00:09:14,480
+all we have to do is parse in
+
+195
+00:09:15,880 --> 00:09:17,770
+our found movies as an argument,
+
+196
+00:09:17,770 --> 00:09:20,800
+accept it here as a parameter
+
+197
+00:09:20,800 --> 00:09:24,940
+and use it inside this for loop.
+
+198
+00:09:24,940 --> 00:09:28,080
+Of course, now, when we call it up here,
+
+199
+00:09:28,080 --> 00:09:29,640
+PyCharm is already telling us, hey
+
+200
+00:09:29,640 --> 00:09:31,930
+you've forgotten something there's a yellow
+
+201
+00:09:31,930 --> 00:09:35,630
+underline or yellow background on that brace there
+
+202
+00:09:35,630 --> 00:09:38,270
+and it says parameter movies list unfilled
+
+203
+00:09:38,270 --> 00:09:42,390
+so we have to tell it to use our movies list,
+
+204
+00:09:42,390 --> 00:09:44,380
+the global list up here
+
+205
+00:09:45,230 --> 00:09:47,370
+when we are running the function here
+
+206
+00:09:48,960 --> 00:09:52,220
+and down here, we can use our found movies.
+
+207
+00:09:52,220 --> 00:09:54,460
+So now this function is also quite generic,
+
+208
+00:09:55,300 --> 00:09:56,830
+for each of the movies,
+
+209
+00:09:56,830 --> 00:09:58,160
+it's going to show the movie details
+
+210
+00:09:58,160 --> 00:10:01,600
+and it doesn't care whether that's the main movies list
+
+211
+00:10:01,600 --> 00:10:05,210
+defined up here or any other movies list that we parse in,
+
+212
+00:10:05,210 --> 00:10:06,660
+so that's pretty cool.
+
+213
+00:10:06,660 --> 00:10:08,710
+We've improved our programme massively
+
+214
+00:10:09,580 --> 00:10:11,570
+and now it is ready to be used,
+
+215
+00:10:11,570 --> 00:10:12,650
+it's ready for prime time.
+
+216
+00:10:12,650 --> 00:10:14,000
+Let's go and run it,
+
+217
+00:10:14,000 --> 00:10:16,410
+right click app.py and run it.
+
+218
+00:10:17,860 --> 00:10:19,870
+Now, we can see that we can add a movie
+
+219
+00:10:24,560 --> 00:10:27,500
+and we can add another movie if we want,
+
+220
+00:10:27,500 --> 00:10:30,300
+I don't know any other movies developed in 1994
+
+221
+00:10:30,300 --> 00:10:33,040
+and so we are going to
+
+222
+00:10:34,170 --> 00:10:37,970
+have to go for something like fast and furious
+
+223
+00:10:37,970 --> 00:10:40,940
+and I don't know the director of this movie, sorry.
+
+224
+00:10:40,940 --> 00:10:43,240
+Let's say it was developed in 1994 too.
+
+225
+00:10:43,240 --> 00:10:45,880
+I'm probably alienating a lot of you guys
+
+226
+00:10:45,880 --> 00:10:47,700
+from saying that but, hey.
+
+227
+00:10:47,700 --> 00:10:50,060
+We can see our movies and then we've got
+
+228
+00:10:50,060 --> 00:10:51,770
+the name and director and release here
+
+229
+00:10:51,770 --> 00:10:52,720
+of these two movies
+
+230
+00:10:53,670 --> 00:10:56,300
+and then we can also find a specific movie,
+
+231
+00:10:56,300 --> 00:10:58,360
+so what property of the movie are we looking for?
+
+232
+00:10:58,360 --> 00:11:00,080
+Let's say year.
+
+233
+00:11:00,080 --> 00:11:01,230
+What are you searching for?
+
+234
+00:11:01,230 --> 00:11:02,080
+1994.
+
+235
+00:11:03,450 --> 00:11:04,380
+None found
+
+236
+00:11:05,690 --> 00:11:08,450
+and now you know why that is, I hope.
+
+237
+00:11:10,420 --> 00:11:13,310
+Of course, none found because the year
+
+238
+00:11:13,310 --> 00:11:16,730
+is an integer and what we've input here
+
+239
+00:11:16,730 --> 00:11:19,830
+inside this where you are searching for
+
+240
+00:11:19,830 --> 00:11:23,610
+is a string so what we're gonna have to do
+
+241
+00:11:23,610 --> 00:11:26,210
+is either turn the year into the, back into a string
+
+242
+00:11:27,610 --> 00:11:29,149
+which is totally fine to do or potentially
+
+243
+00:11:29,149 --> 00:11:33,218
+treat the result of whatever it is that we've found
+
+244
+00:11:33,218 --> 00:11:35,120
+as a string temporarily.
+
+245
+00:11:36,230 --> 00:11:39,080
+So it's up to us what we're going to do,
+
+246
+00:11:39,080 --> 00:11:40,930
+in my case I think the easiest thing to do
+
+247
+00:11:40,930 --> 00:11:43,950
+is to revert our intergerness up here
+
+248
+00:11:43,950 --> 00:11:45,850
+and make it into a string.
+
+249
+00:11:45,850 --> 00:11:47,200
+It just seems a bit easier.
+
+250
+00:11:48,070 --> 00:11:49,650
+So now we have to rerun the app
+
+251
+00:11:49,650 --> 00:11:51,050
+and we can trial this again.
+
+252
+00:11:54,100 --> 00:11:56,440
+A, B, 1994
+
+253
+00:11:57,460 --> 00:12:00,590
+and then we'll do B, C, for this it is extremely boring,
+
+254
+00:12:00,590 --> 00:12:01,760
+sorry for that.
+
+255
+00:12:01,760 --> 00:12:02,610
+Then we can find a movie
+
+256
+00:12:02,610 --> 00:12:04,920
+by 1994, sorry by year
+
+257
+00:12:05,850 --> 00:12:07,570
+and what we're looking for is 1994
+
+258
+00:12:08,410 --> 00:12:10,230
+and then we get these two movies,
+
+259
+00:12:10,230 --> 00:12:12,630
+B and, sorry A and B.
+
+260
+00:12:14,950 --> 00:12:16,270
+So congratulations on reaching
+
+261
+00:12:16,270 --> 00:12:18,280
+the end of this project.
+
+262
+00:12:18,280 --> 00:12:20,640
+I'm fairly confident that your probably didn't implement
+
+263
+00:12:20,640 --> 00:12:23,160
+the project exactly like I've done here,
+
+264
+00:12:23,160 --> 00:12:24,860
+but that's totally fine.
+
+265
+00:12:24,860 --> 00:12:27,457
+There are so many ways of implementing
+
+266
+00:12:27,457 --> 00:12:29,590
+any project in Python and every way
+
+267
+00:12:29,590 --> 00:12:31,150
+is just as good as any other way,
+
+268
+00:12:31,150 --> 00:12:32,290
+as long as they all work
+
+269
+00:12:32,290 --> 00:12:34,650
+and do what you want them to do.
+
+270
+00:12:34,650 --> 00:12:36,700
+So don't worry if you've not done exactly the same thing
+
+271
+00:12:36,700 --> 00:12:38,120
+or if you've not used lamda functions
+
+272
+00:12:38,120 --> 00:12:40,380
+or you know you've not used this finder function,
+
+273
+00:12:40,380 --> 00:12:42,010
+whatever, it doesn't matter.
+
+274
+00:12:42,010 --> 00:12:43,520
+As long as your project works,
+
+275
+00:12:43,520 --> 00:12:45,270
+that's the most important thing.
+
+276
+00:12:45,270 --> 00:12:46,680
+And the reason why I'm going over
+
+277
+00:12:46,680 --> 00:12:48,770
+this project afterwards is to show you
+
+278
+00:12:48,770 --> 00:12:51,510
+some more advanced ways of doing things.
+
+279
+00:12:51,510 --> 00:12:54,290
+But all projects are good
+
+280
+00:12:54,290 --> 00:12:56,670
+and certainly programing is the best way to learn
+
+281
+00:12:56,670 --> 00:12:59,070
+which is why I encourage you to keep doing that.
+
+282
+00:13:00,060 --> 00:13:01,290
+That's it for this video,
+
+283
+00:13:01,290 --> 00:13:02,740
+I'll see you on the next one.
+

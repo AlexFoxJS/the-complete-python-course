@@ -1,0 +1,468 @@
+1
+00:00:00,180 --> 00:00:01,770
+Jos: Hola y bienvenido de nuevo.
+
+2
+00:00:01,770 --> 00:00:02,650
+En este
+
+3
+00:00:02,650 --> 00:00:06,060
+video, estamos buscando valores predeterminados para los parmetros.
+
+4
+00:00:06,060 --> 00:00:07,280
+Si ya conoces un
+
+5
+00:00:07,280 --> 00:00:10,506
+poco de Python, te preguntars por qu no cubrimos esto antes.
+
+6
+00:00:10,506 --> 00:00:13,480
+Y simplemente la razn es que no lo necesitamos.
+
+7
+00:00:14,850 --> 00:00:16,570
+Ahora lo hacemos y comenzaremos a
+
+8
+00:00:16,570 --> 00:00:19,210
+analizar algunas instancias en las que va a ser
+
+9
+00:00:19,210 --> 00:00:21,010
+til tener valores predeterminados con parmetros.
+
+10
+00:00:21,010 --> 00:00:22,890
+As que vamos a hacerlo bien.
+
+11
+00:00:22,890 --> 00:00:25,180
+Cuando llamamos a una funcin que tiene
+
+12
+00:00:25,180 --> 00:00:29,180
+parmetros, se espera que le demos el mismo nmero de parmetros.
+
+13
+00:00:29,180 --> 00:00:33,080
+Ya sabemos esto, as que te mostrar un cdigo de ejemplo.
+
+14
+00:00:33,080 --> 00:00:36,340
+Aqu hay algunas cuentas, como una cuenta de cheques.
+
+15
+00:00:36,340 --> 00:00:39,570
+Veamos, eso tiene $ 1,958 o
+
+16
+00:00:39,570 --> 00:00:42,940
+libras si ests en el Reino Unido.
+
+17
+00:00:42,940 --> 00:00:46,490
+3695. 50 en tus ahorros.
+
+18
+00:00:46,490 --> 00:00:49,330
+Esa es una cantidad de dinero bastante respetable.
+
+19
+00:00:49,330 --> 00:00:52,160
+Luego tendremos una funcin add_balance, que tomar una
+
+20
+00:00:52,160 --> 00:00:53,360
+cantidad, que ser un
+
+21
+00:00:53,360 --> 00:00:55,090
+flotador y un nombre, que
+
+22
+00:00:55,090 --> 00:00:56,090
+ser una cadena.
+
+23
+00:00:56,090 --> 00:00:57,740
+Y va a devolver un flotador.
+
+24
+00:00:58,850 --> 00:01:01,330
+La razn por la que lo incluyo aqu, el
+
+25
+00:01:01,330 --> 00:01:03,830
+tipo de insinuacin que hemos visto en el pasado.
+
+26
+00:01:05,190 --> 00:01:08,050
+Adems, solo para completar, voy a decir la
+
+27
+00:01:08,050 --> 00:01:10,810
+funcin para actualizar el saldo de una cuenta
+
+28
+00:01:10,810 --> 00:01:12,830
+y devolver el saldo nuevo.
+
+29
+00:01:14,060 --> 00:01:15,660
+Incluye esa cadena de registro
+
+30
+00:01:15,660 --> 00:01:18,780
+all para que sepas de qu se trata esta funcin.
+
+31
+00:01:18,780 --> 00:01:21,300
+Como puede ver, esta funcin, add_balance,
+
+32
+00:01:21,300 --> 00:01:23,710
+actualizar el saldo de una cuenta
+
+33
+00:01:23,710 --> 00:01:25,850
+y devolver el saldo nuevo.
+
+34
+00:01:25,850 --> 00:01:29,050
+Los dos argumentos que toma son la cantidad para
+
+35
+00:01:29,050 --> 00:01:31,220
+aumentar el saldo y el nombre
+
+36
+00:01:31,220 --> 00:01:33,660
+de la cuenta que vamos a cambiar.
+
+37
+00:01:33,660 --> 00:01:37,250
+Luego pasar a su diccionario global de cuentas
+
+38
+00:01:37,250 --> 00:01:39,200
+y lo va a cambiar.
+
+39
+00:01:39,200 --> 00:01:43,240
+Entonces, nombre de la cuenta ms la misma cantidad
+
+40
+00:01:43,240 --> 00:01:45,390
+y luego devolver el nombre
+
+41
+00:01:45,390 --> 00:01:47,000
+de la cuenta.
+
+42
+00:01:47,000 --> 00:01:49,660
+Devolver el nuevo saldo de la cuenta.
+
+43
+00:01:51,210 --> 00:01:52,930
+El nombre de la cuenta, por
+
+44
+00:01:52,930 --> 00:01:54,860
+ejemplo, para verificar va a ser 1958.
+
+45
+00:01:54,860 --> 00:01:57,510
+Digamos que decimos que 200 aqu van a ir,
+
+46
+00:01:57,510 --> 00:01:58,570
+aumentarlo en 200.
+
+47
+00:01:58,570 --> 00:02:00,910
+Ni siquiera intentar hacer los clculos aqu.
+
+48
+00:02:00,910 --> 00:02:02,450
+Luego, devolver la nueva cantidad del nombre
+
+49
+00:02:02,450 --> 00:02:04,690
+de la cuenta, por lo que debera ser un valor flotante.
+
+50
+00:02:06,600 --> 00:02:09,230
+Sin embargo, lo que podemos hacer,
+
+51
+00:02:09,230 --> 00:02:13,950
+por supuesto, es agregar saldo 500. 00 para ahorrar y luego imprimir
+
+52
+00:02:13,950 --> 00:02:16,900
+ahorros en la cuenta y debera decirnos el
+
+53
+00:02:16,900 --> 00:02:18,670
+nuevo saldo que debera estar
+
+54
+00:02:18,670 --> 00:02:20,450
+en los cuatro mil.
+
+55
+00:02:21,320 --> 00:02:23,020
+Oh, lo siento, ahorros de cuentas.
+
+56
+00:02:25,145 --> 00:02:27,190
+Como puedes ver, 4,195. 5.
+
+57
+00:02:28,500 --> 00:02:30,440
+Observe cmo se descarta el cero al final,
+
+58
+00:02:30,440 --> 00:02:32,360
+pero en mi cdigo me gusta tener dos
+
+59
+00:02:32,360 --> 00:02:34,770
+decimales para la moneda solo para mantener las cosas ms claras.
+
+60
+00:02:36,270 --> 00:02:39,940
+Lo que no saba que poda hacer es decir
+
+61
+00:02:39,940 --> 00:02:44,370
+que, de manera predeterminada, todos los saldos nuevos irn a su
+
+62
+00:02:44,370 --> 00:02:45,620
+cuenta de cheques.
+
+63
+00:02:47,100 --> 00:02:52,100
+Entonces el nombre aqu va a ser verificado, por defecto.
+
+64
+00:02:53,540 --> 00:02:58,470
+Y la forma en que hacemos eso es que agreguemos una verificacin igual.
+
+65
+00:03:00,250 --> 00:03:01,980
+Bien, entonces el nombre es una
+
+66
+00:03:01,980 --> 00:03:04,010
+cadena y su 'valor predeterminado es verificar.
+
+67
+00:03:05,170 --> 00:03:07,960
+Eso significa que si no pasamos una cadena a
+
+68
+00:03:07,960 --> 00:03:10,880
+travs de este argumento, lo cual podemos hacer ahora,
+
+69
+00:03:10,880 --> 00:03:12,650
+no podemos pasarle una cadena.
+
+70
+00:03:12,650 --> 00:03:14,150
+No podemos pasarle
+
+71
+00:03:15,040 --> 00:03:17,660
+nada e imprimimos la verificacin al
+
+72
+00:03:17,660 --> 00:03:21,700
+final, deberamos ver que ha aumentado en $ 500,
+
+73
+00:03:21,700 --> 00:03:23,000
+no en 500 unidades.
+
+74
+00:03:24,270 --> 00:03:26,140
+Si no quieres usar sugerencias tipo, entonces todo lo
+
+75
+00:03:26,140 --> 00:03:27,960
+que tienes que hacer es deshacerte de eso.
+
+76
+00:03:27,960 --> 00:03:31,280
+Est bien y esto sigue siendo lo mismo, el nombre es igual a la comprobacin.
+
+77
+00:03:31,280 --> 00:03:33,370
+Y eso es todo, est bien.
+
+78
+00:03:35,090 --> 00:03:36,920
+Con frecuencia, en realidad, si no tiene
+
+79
+00:03:36,920 --> 00:03:40,000
+sugerencias de tipo, ver esto escrito as, sin los espacios y
+
+80
+00:03:40,000 --> 00:03:41,230
+cuando tenga sugerencias de
+
+81
+00:03:41,230 --> 00:03:43,530
+tipo, lo ver escrito as, todo con espacios.
+
+82
+00:03:43,530 --> 00:03:45,850
+Depende de usted cuntos espacios quiera poner
+
+83
+00:03:45,850 --> 00:03:47,150
+all, si quiere poner
+
+84
+00:03:47,150 --> 00:03:49,050
+espacios o no espacios, totalmente bien.
+
+85
+00:03:51,590 --> 00:03:53,190
+Ahora, algo importante
+
+86
+00:03:53,190 --> 00:03:55,930
+que debes saber sobre estos argumentos
+
+87
+00:03:55,930 --> 00:03:59,430
+de nombres, as es como se llaman
+
+88
+00:03:59,430 --> 00:04:02,870
+tan pronto como tengas el argumento predeterminado
+
+89
+00:04:04,390 --> 00:04:07,130
+all, es que no puedes tenerlo
+
+90
+00:04:07,130 --> 00:04:09,660
+aqu, perdn, no puedes tenerlo aqu.
+
+91
+00:04:12,050 --> 00:04:13,820
+Esto ser ilegal.
+
+92
+00:04:13,820 --> 00:04:16,200
+Cuando lo ejecutas, te dir aqu.
+
+93
+00:04:16,200 --> 00:04:18,580
+Error de sintaxis, el argumento predeterminado
+
+94
+00:04:18,580 --> 00:04:20,320
+conocido sigue al argumento predeterminado.
+
+95
+00:04:20,320 --> 00:04:21,950
+Entonces no puedes hacer esto.
+
+96
+00:04:21,950 --> 00:04:23,870
+Cualquier argumento que tenga un
+
+97
+00:04:24,840 --> 00:04:27,740
+valor predeterminado debe seguir argumentos que no tengan
+
+98
+00:04:27,740 --> 00:04:28,573
+valores predeterminados.
+
+99
+00:04:28,573 --> 00:04:29,480
+Entonces, en este caso,
+
+100
+00:04:29,480 --> 00:04:31,240
+la cantidad no tiene un valor predeterminado.
+
+101
+00:04:31,240 --> 00:04:34,030
+El nombre lo hace, por lo que el nombre tiene que ir al final.
+
+102
+00:04:34,030 --> 00:04:35,280
+Si tiene muchos
+
+103
+00:04:35,280 --> 00:04:38,860
+argumentos, algunos de los cuales tienen valores predeterminados, todos
+
+104
+00:04:38,860 --> 00:04:40,260
+deben ir al final.
+
+105
+00:04:41,240 --> 00:04:42,073
+Bueno?
+
+106
+00:04:43,280 --> 00:04:44,113
+Eso es.
+
+107
+00:04:44,113 --> 00:04:46,350
+Esto es valores predeterminados para los argumentos.
+
+108
+00:04:46,350 --> 00:04:48,620
+Puede tener muchos argumentos, muchos valores predeterminados.
+
+109
+00:04:48,620 --> 00:04:50,130
+Un valor predeterminado por argumento,
+
+110
+00:04:50,130 --> 00:04:52,460
+por supuesto, y vamos a aprender ms acerca
+
+111
+00:04:52,460 --> 00:04:53,530
+de estos valores
+
+112
+00:04:53,530 --> 00:04:56,340
+predeterminados y cmo usarlos en videos posteriores, en solo
+
+113
+00:04:56,340 --> 00:04:57,490
+un par de videos.
+
+114
+00:04:57,490 --> 00:04:58,510
+De hecho, en el
+
+115
+00:04:58,510 --> 00:05:00,210
+prximo video, y tambin en prximos videos.
+
+116
+00:05:00,210 --> 00:05:01,290
+Entonces, eso es todo por esto.
+
+117
+00:05:01,290 --> 00:05:02,670
+Te ver en el prximo.
+

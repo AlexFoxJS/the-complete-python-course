@@ -1,0 +1,780 @@
+1
+00:00:01,029 --> 00:00:02,217
+-: [Jose Salvatierra] Hola,
+
+2
+00:00:02,217 --> 00:00:05,248
+bienvenido de nuevo En este video vamos a continuar
+
+3
+00:00:05,248 --> 00:00:09,248
+con nuestra clase de estudiantes y vamos a ver la funcin promedio.
+
+4
+00:00:10,751 --> 00:00:12,659
+En el ltimo video descubrimos
+
+5
+00:00:12,659 --> 00:00:16,742
+que cuando llamamos a una clase que crea un objeto en
+
+6
+00:00:17,659 --> 00:00:20,790
+blanco, y que pasa al mtodo de inicio dunder
+
+7
+00:00:20,790 --> 00:00:24,614
+como uno mismo, y luego, podemos modificarlo creando nuevas variables
+
+8
+00:00:24,614 --> 00:00:26,697
+dentro de ese objeto en blanco.
+
+9
+00:00:28,080 --> 00:00:32,747
+As es como estas cosas aqu terminan con una propiedad de nombre.
+
+10
+00:00:33,807 --> 00:00:35,594
+Acabo de decir propiedad y
+
+11
+00:00:35,594 --> 00:00:38,568
+comencemos a llamar las cosas por lo que son.
+
+12
+00:00:38,568 --> 00:00:41,043
+Cuando definimos una variable dentro de un
+
+13
+00:00:41,043 --> 00:00:44,334
+objeto, ya no es una variable, ahora se llama propiedad.
+
+14
+00:00:44,334 --> 00:00:46,251
+Propiedad del objeto
+
+15
+00:00:47,127 --> 00:00:49,689
+De manera similar, cuando definimos una funcin
+
+16
+00:00:49,689 --> 00:00:52,439
+como esta, la funcin promedio, dentro de una
+
+17
+00:00:53,320 --> 00:00:55,231
+clase, ya no se llama
+
+18
+00:00:55,231 --> 00:00:57,183
+funcin, que ahora se llama mtodo.
+
+19
+00:00:57,183 --> 00:01:00,063
+Lo mismo, solo un nombre diferente, para cuando,
+
+20
+00:01:00,063 --> 00:01:01,145
+cuando se habla
+
+21
+00:01:01,145 --> 00:01:03,213
+de programacin, se pueda diferenciar
+
+22
+00:01:03,213 --> 00:01:05,980
+rpidamente entre lo que se est diciendo.
+
+23
+00:01:05,980 --> 00:01:10,176
+Entonces, el alumno uno y el alumno dos saben que son
+
+24
+00:01:10,176 --> 00:01:12,855
+estudiantes, son OfType Student, porque esa es
+
+25
+00:01:12,855 --> 00:01:17,205
+la forma en que esto se cre cuando llamamos a la clase.
+
+26
+00:01:17,205 --> 00:01:19,237
+Por lo tanto, debido a que
+
+27
+00:01:19,237 --> 00:01:22,975
+son OfType Student, saben que tienen esta funcin promedio dentro de ellos.
+
+28
+00:01:22,975 --> 00:01:27,558
+Ahora, podemos llamar student_one. average () llamamos a
+
+29
+00:01:28,904 --> 00:01:30,730
+la funcin promedio
+
+30
+00:01:30,730 --> 00:01:33,647
+que est dentro de nuestro student_one.
+
+31
+00:01:35,528 --> 00:01:38,905
+Ahora, puedes ver que hay un parmetro
+
+32
+00:01:38,905 --> 00:01:41,786
+automtico aqu que claramente no cumplimos.
+
+33
+00:01:41,786 --> 00:01:44,587
+Entonces, qu crees que va a
+
+34
+00:01:44,587 --> 00:01:46,504
+pasar cuando imprimimos esto?
+
+35
+00:01:47,450 --> 00:01:48,533
+Vamos a ejecutarlo!
+
+36
+00:01:49,523 --> 00:01:53,190
+Hm, obtenemos un valor, y uno vlido en eso.
+
+37
+00:01:54,135 --> 00:01:55,468
+Entonces, por qu es eso?
+
+38
+00:01:56,348 --> 00:01:59,041
+Bueno, Python es bastante inteligente
+
+39
+00:01:59,041 --> 00:02:04,041
+y, cuando usas un objeto para llamar a una funcin
+
+40
+00:02:04,444 --> 00:02:07,084
+de la clase, se rellena
+
+41
+00:02:07,084 --> 00:02:11,026
+automticamente como el objeto que llam a esa funcin.
+
+42
+00:02:11,026 --> 00:02:12,186
+Bien, djame darte
+
+43
+00:02:12,186 --> 00:02:15,212
+otro ejemplo que puedas entender un poco ms fcilmente.
+
+44
+00:02:15,212 --> 00:02:18,255
+Llamemos a la funcin, perdn, el mtodo aqu
+
+45
+00:02:18,255 --> 00:02:19,329
+en la clase.
+
+46
+00:02:19,329 --> 00:02:21,721
+La forma en que esperas hacerlas
+
+47
+00:02:21,721 --> 00:02:23,896
+es diciendo Estudiante, que es la
+
+48
+00:02:23,896 --> 00:02:28,003
+clase, punto, para acceder a algo dentro de ella, promedio.
+
+49
+00:02:28,003 --> 00:02:30,831
+Derecha? Obtuvimos la clase, accedemos a algo
+
+50
+00:02:30,831 --> 00:02:33,980
+dentro de ella, y lo que vamos a acceder es la funcin promedio.
+
+51
+00:02:33,980 --> 00:02:37,487
+Sin embargo, si hacemos esto y lo ejecutamos,
+
+52
+00:02:37,487 --> 00:02:41,656
+ahora vemos que dice, algo no muy legible, promedio, a
+
+53
+00:02:41,656 --> 00:02:44,052
+la funcin promedio le falta
+
+54
+00:02:44,052 --> 00:02:47,135
+un argumento requerido, que es uno mismo.
+
+55
+00:02:48,994 --> 00:02:52,577
+Por lo tanto, Python obviamente no puede decir de qu objeto
+
+56
+00:02:53,675 --> 00:02:56,028
+quiere obtener el promedio, porque no lo
+
+57
+00:02:56,028 --> 00:02:57,902
+ha llamado con un objeto, lo
+
+58
+00:02:57,902 --> 00:02:59,075
+ha llamado con la
+
+59
+00:02:59,075 --> 00:03:02,002
+clase que es la definicin de un objeto.
+
+60
+00:03:02,002 --> 00:03:05,413
+Entonces, qu hacer es pasar un objeto en particular, no
+
+61
+00:03:05,413 --> 00:03:09,334
+my_student, eso es un diccionario. student_one.
+
+62
+00:03:09,334 --> 00:03:12,458
+Ahora, cuando llames a esto, student_one ser uno
+
+63
+00:03:12,458 --> 00:03:14,599
+mismo como normal en las funciones
+
+64
+00:03:14,599 --> 00:03:16,631
+de Python, y lo devolvers.
+
+65
+00:03:16,631 --> 00:03:18,565
+Entonces podemos ejecutarlo nuevamente y ahora
+
+66
+00:03:18,565 --> 00:03:20,648
+puede ver que obtenemos el valor correcto.
+
+67
+00:03:22,171 --> 00:03:23,988
+Cuando haces student_one. en promedio, Python
+
+68
+00:03:23,988 --> 00:03:26,217
+en el fondo est haciendo esto.
+
+69
+00:03:26,217 --> 00:03:28,899
+Por lo tanto, no hay magia en
+
+70
+00:03:28,899 --> 00:03:30,232
+absoluto, solo para
+
+71
+00:03:30,232 --> 00:03:32,056
+evitar que escriba muchas cosas,
+
+72
+00:03:32,056 --> 00:03:34,092
+solo puede llamar al alumno.
+
+73
+00:03:34,092 --> 00:03:36,570
+Y eso tambin tiene sentido, porque ahora ests
+
+74
+00:03:36,570 --> 00:03:38,601
+obteniendo el promedio de student_one, no
+
+75
+00:03:38,601 --> 00:03:41,451
+tienes que agradar, incluye la clase de estudiantes all.
+
+76
+00:03:41,451 --> 00:03:43,775
+El self se rellena automticamente para usted cuando
+
+77
+00:03:43,775 --> 00:03:45,680
+llama a cualquier mtodo, recuerde que
+
+78
+00:03:45,680 --> 00:03:47,915
+se trata de decir funcin dentro de
+
+79
+00:03:47,915 --> 00:03:50,498
+una clase, con el alumno como el que llama.
+
+80
+00:03:51,490 --> 00:03:53,564
+Y el estudiante aqu es quien
+
+81
+00:03:53,564 --> 00:03:56,734
+llama, porque as es como llamamos a esta funcin.
+
+82
+00:03:56,734 --> 00:03:59,234
+Bueno? as es como se llama.
+
+83
+00:04:00,228 --> 00:04:05,110
+De acuerdo, pensemos en este mtodo promedio otra vez, tenemos student_one aprobado
+
+84
+00:04:05,110 --> 00:04:08,582
+como uno mismo, y debemos recordar ahora, ese student_one
+
+85
+00:04:08,582 --> 00:04:10,086
+fue este objeto que
+
+86
+00:04:10,086 --> 00:04:12,118
+fue creado aqu vacamente, tambin
+
+87
+00:04:12,118 --> 00:04:13,716
+llamado self, pero eso
+
+88
+00:04:13,716 --> 00:04:15,633
+es solo un efecto secundario
+
+89
+00:04:15,633 --> 00:04:18,217
+de la nombrando convenciones en Python.
+
+90
+00:04:18,217 --> 00:04:20,329
+Student_one es lo que est aqu,
+
+91
+00:04:20,329 --> 00:04:24,075
+y sabemos que tiene un nombre y tambin tiene una nota.
+
+92
+00:04:24,075 --> 00:04:27,365
+Entonces cuando accedemos student_one. grados, eso es
+
+93
+00:04:27,365 --> 00:04:30,460
+lo que pasamos inicialmente aqu.
+
+94
+00:04:30,460 --> 00:04:34,033
+Y aqu tambin estamos accediendo a student_one. Sin embargo, para hacer
+
+95
+00:04:34,033 --> 00:04:36,601
+que esto sea un poco ms
+
+96
+00:04:36,601 --> 00:04:41,268
+genrico, no estamos utilizando el promedio solo en student_one, sino en self.
+
+97
+00:04:42,309 --> 00:04:44,399
+Porque nos definimos a nosotros mismos. grados, sabemos
+
+98
+00:04:44,399 --> 00:04:47,322
+que tenemos auto. grados disponibles para
+
+99
+00:04:47,322 --> 00:04:49,469
+usar en la funcin promedio.
+
+100
+00:04:49,469 --> 00:04:51,785
+Entonces podemos usar el yo. grados y auto. grados, y
+
+101
+00:04:51,785 --> 00:04:54,914
+depende de qu objeto del estudiante lo llamemos, que va
+
+102
+00:04:54,914 --> 00:04:56,901
+a utilizar ya sea estas calificaciones
+
+103
+00:04:56,901 --> 00:04:58,648
+si lo llamamos con el
+
+104
+00:04:58,648 --> 00:05:02,145
+alumno uno, o estas calificaciones si lo llamamos con el alumno dos.
+
+105
+00:05:02,145 --> 00:05:07,145
+Por cierto, podemos reescribir esta funcin por completo, haciendo que acepte
+
+106
+00:05:08,208 --> 00:05:10,625
+un alumno y devuelva la
+
+107
+00:05:11,682 --> 00:05:14,719
+suma del alumno. grados y la
+
+108
+00:05:14,719 --> 00:05:17,969
+duracin del estudiante. calificaciones, de acuerdo?
+
+109
+00:05:19,623 --> 00:05:22,456
+Vamos a imprimir student_one. grados, y luego
+
+110
+00:05:25,105 --> 00:05:27,921
+vamos a llamar a la
+
+111
+00:05:27,921 --> 00:05:29,838
+funcin promedio llamada student_one.
+
+112
+00:05:32,561 --> 00:05:33,394
+Lo primero que
+
+113
+00:05:33,394 --> 00:05:35,513
+vamos a hacer es imprimir las calificaciones
+
+114
+00:05:35,513 --> 00:05:39,013
+del alumno, que sabemos deben ser 70, 80, 90 y 99.
+
+115
+00:05:40,347 --> 00:05:42,562
+Y de hecho, entonces los tenemos aqu.
+
+116
+00:05:42,562 --> 00:05:43,740
+Luego definimos esta funcin
+
+117
+00:05:43,740 --> 00:05:46,416
+que toma un objeto de estudiante, devuelve la
+
+118
+00:05:46,416 --> 00:05:48,442
+suma de su propiedad de grados,
+
+119
+00:05:48,442 --> 00:05:50,972
+la que acabamos de imprimir aqu, y la
+
+120
+00:05:50,972 --> 00:05:53,309
+longitud, y luego se divide uno por otro.
+
+121
+00:05:53,309 --> 00:05:56,888
+Luego llamamos a esa funcin con nuestro objeto
+
+122
+00:05:56,888 --> 00:05:58,971
+student_one, pasado como un argumento.
+
+123
+00:06:00,835 --> 00:06:01,918
+Entonces, student_one-- Esto
+
+124
+00:06:01,918 --> 00:06:05,586
+es student_one, esto es student_one, student_one. grados es lo mismo
+
+125
+00:06:05,586 --> 00:06:07,798
+que acabamos de imprimir aqu.
+
+126
+00:06:07,798 --> 00:06:11,006
+Y student_one. grados es lo mismo que imprimimos aqu.
+
+127
+00:06:11,006 --> 00:06:14,011
+Y as es como se calcula el promedio.
+
+128
+00:06:14,011 --> 00:06:18,072
+De nuevo, solo para recapitular, cuando llamas a student_one. en promedio, lo
+
+129
+00:06:18,072 --> 00:06:20,620
+que sucede en el
+
+130
+00:06:20,620 --> 00:06:24,694
+fondo es (estudiante. average (student_one)) student_one se pasa
+
+131
+00:06:24,694 --> 00:06:27,694
+como self, la misma funcin que acabamos de
+
+132
+00:06:28,630 --> 00:06:31,146
+definir, solo el argumento, lo siento,
+
+133
+00:06:31,146 --> 00:06:33,141
+el parmetro se llama self.
+
+134
+00:06:33,141 --> 00:06:37,371
+Nuevamente, puede llamar a este estudiante, si lo desea.
+
+135
+00:06:37,371 --> 00:06:39,613
+Pero no es comn hacer eso.
+
+136
+00:06:39,613 --> 00:06:41,440
+Normalmente, en los mtodos, el
+
+137
+00:06:41,440 --> 00:06:43,526
+primer parmetro siempre se llama
+
+138
+00:06:43,526 --> 00:06:47,354
+self, porque se refiere al objeto que ests modificando actualmente,
+
+139
+00:06:47,354 --> 00:06:48,937
+o actuando, de acuerdo?
+
+140
+00:06:49,871 --> 00:06:51,813
+Y as es como funciona eso.
+
+141
+00:06:51,813 --> 00:06:53,952
+As es como funcionan los mtodos.
+
+142
+00:06:53,952 --> 00:06:55,007
+Y ahora
+
+143
+00:06:55,007 --> 00:06:58,910
+podemos definir los datos en los que estamos actuando
+
+144
+00:06:58,910 --> 00:07:03,055
+y la accin que estamos realizando en la misma estructura.
+
+145
+00:07:03,055 --> 00:07:05,127
+Ahora es una clase en
+
+146
+00:07:05,127 --> 00:07:06,672
+lugar de un diccionario,
+
+147
+00:07:06,672 --> 00:07:08,984
+pero esencialmente es lo mismo, nos
+
+148
+00:07:08,984 --> 00:07:11,131
+permite almacenar algunos datos y
+
+149
+00:07:11,131 --> 00:07:13,851
+ahora ampla esa funcionalidad al permitirnos almacenar
+
+150
+00:07:13,851 --> 00:07:16,830
+algunas funciones que tambin actan sobre esos datos.
+
+151
+00:07:16,830 --> 00:07:18,289
+Ahora, por supuesto,
+
+152
+00:07:18,289 --> 00:07:20,851
+la funcin promedio podra recibir algunos
+
+153
+00:07:20,851 --> 00:07:24,428
+argumentos adicionales, algunos parmetros adicionales, si lo desea.
+
+154
+00:07:24,428 --> 00:07:27,274
+Tal como lo hace el dunder en su mtodo.
+
+155
+00:07:27,274 --> 00:07:31,314
+Por lo tanto, podra pasarle algn nombre, si lo
+
+156
+00:07:31,314 --> 00:07:35,271
+desea, y luego, student_one. el promedio ahora solo obtendra
+
+157
+00:07:35,271 --> 00:07:38,141
+algo, un amigo, algn argumento ah, tambin.
+
+158
+00:07:38,141 --> 00:07:43,141
+Ese sera el segundo argumento, el segundo parmetro.
+
+159
+00:07:43,207 --> 00:07:47,799
+Bueno? De modo que el objeto actual ocupa el
+
+160
+00:07:47,799 --> 00:07:50,281
+primer lugar del self, y cualquier otro parmetro
+
+161
+00:07:50,281 --> 00:07:53,409
+se completa despus de lo que est dentro de este parntesis.
+
+162
+00:07:53,409 --> 00:07:56,693
+De todos modos, creo que he hablado sobre esto
+
+163
+00:07:56,693 --> 00:07:59,335
+lo suficiente, con suerte es ms o
+
+164
+00:07:59,335 --> 00:08:02,156
+menos claro, que una clase de estudiante
+
+165
+00:08:02,156 --> 00:08:07,139
+es simplemente algo que nos permite definir qu propiedades hay en un estudiante,
+
+166
+00:08:07,139 --> 00:08:11,654
+y tambin qu acciones puede hacer un estudiante en es su propia
+
+167
+00:08:11,654 --> 00:08:14,495
+informacin, o de hecho, si as lo
+
+168
+00:08:14,495 --> 00:08:17,158
+deseamos, en otros datos, pasando algunos argumentos.
+
+169
+00:08:17,158 --> 00:08:19,107
+Entonces eso es lo que es una clase, y eso es lo que es un objeto.
+
+170
+00:08:19,107 --> 00:08:21,195
+Y necesitamos almacenar algunos datos
+
+171
+00:08:21,195 --> 00:08:23,687
+y almacenar algunas acciones relacionadas con l.
+
+172
+00:08:23,687 --> 00:08:26,313
+Eso permite encapsular y mantener
+
+173
+00:08:26,313 --> 00:08:29,898
+todas las funcionalidades relevantes en la misma
+
+174
+00:08:29,898 --> 00:08:33,206
+estructura, en lugar de dividirlo en dos
+
+175
+00:08:33,206 --> 00:08:35,505
+estructuras separadas, como hicimos aqu.
+
+176
+00:08:35,505 --> 00:08:37,221
+As que eso es todo por este video, espero que est claro.
+
+177
+00:08:37,221 --> 00:08:38,902
+Y todas las prximas secciones usarn esto
+
+178
+00:08:38,902 --> 00:08:40,587
+cada vez ms, y a medida que
+
+179
+00:08:40,587 --> 00:08:42,000
+programes ms y ms, se
+
+180
+00:08:42,000 --> 00:08:43,890
+convertir en una especie de segunda naturaleza,
+
+181
+00:08:43,890 --> 00:08:45,288
+y vas a empezar a
+
+182
+00:08:45,288 --> 00:08:46,641
+entender esto un poco ms
+
+183
+00:08:46,641 --> 00:08:49,555
+a fondo, y estoy seguro de que lo conseguir. mejor y mejor.
+
+184
+00:08:49,555 --> 00:08:50,993
+Si est confundido, haga una pregunta
+
+185
+00:08:50,993 --> 00:08:52,565
+en la sesin de preguntas y
+
+186
+00:08:52,565 --> 00:08:54,237
+respuestas del curso, con gusto lo ayudar.
+
+187
+00:08:54,237 --> 00:08:58,127
+Pero normalmente lleva unos pocos meses hacer clic
+
+188
+00:08:58,127 --> 00:09:01,969
+completo, as que, por supuesto, intentar hacer clic
+
+189
+00:09:01,969 --> 00:09:04,688
+para ms adelante, proporcionando buenas explicaciones.
+
+190
+00:09:04,688 --> 00:09:09,569
+Pero, si simplemente te sientes un poco incmodo con todo
+
+191
+00:09:09,569 --> 00:09:11,213
+esto, est bien.
+
+192
+00:09:11,213 --> 00:09:13,689
+Solo sigue, sigue programando, sigue
+
+193
+00:09:13,689 --> 00:09:16,167
+escribiendo cdigo y todo se
+
+194
+00:09:16,167 --> 00:09:20,183
+calmar en tu subconsciente a medida que te mueves.
+
+195
+00:09:20,183 --> 00:09:23,123
+As que eso es todo por este video, nos vemos en el siguiente.
+

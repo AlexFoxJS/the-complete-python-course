@@ -1,0 +1,260 @@
+1
+00:00:00,822 --> 00:00:02,136
+<v Jose>Hi, welcome back.</v>
+
+2
+00:00:02,136 --> 00:00:04,360
+I just wanted to give you a little bit of information
+
+3
+00:00:04,360 --> 00:00:08,059
+about Mac OS, if you're using Mac OS,
+
+4
+00:00:08,059 --> 00:00:09,309
+and https URLs.
+
+5
+00:00:10,892 --> 00:00:14,841
+As you can see here, we've requested http://google.com.
+
+6
+00:00:14,841 --> 00:00:19,602
+In our app, we've requested http://books.toscrape.com.
+
+7
+00:00:19,602 --> 00:00:21,583
+And we never made an https request.
+
+8
+00:00:21,583 --> 00:00:24,264
+For example, something like this one.
+
+9
+00:00:24,264 --> 00:00:27,588
+This is John Lewis's pretty big shop in the UK,
+
+10
+00:00:27,588 --> 00:00:29,755
+but its website has https.
+
+11
+00:00:31,590 --> 00:00:34,764
+If you have just now installed Python,
+
+12
+00:00:34,764 --> 00:00:37,070
+maybe at the start of the course or recently,
+
+13
+00:00:37,070 --> 00:00:40,518
+and you're using Python 3.6 or 3.7,
+
+14
+00:00:40,518 --> 00:00:44,414
+it's possible that when you run this programme it will fail.
+
+15
+00:00:44,414 --> 00:00:47,420
+Linked to this lecture I've got a bit of code
+
+16
+00:00:47,420 --> 00:00:52,146
+that you can run to see if your Python is set up correctly.
+
+17
+00:00:52,146 --> 00:00:54,830
+If running this code fails,
+
+18
+00:00:54,830 --> 00:00:58,425
+that means that you've got a missing piece of configuration
+
+19
+00:00:58,425 --> 00:01:00,280
+in your Python code.
+
+20
+00:01:00,280 --> 00:01:03,530
+This is fine if you are using Mac OS X.
+
+21
+00:01:05,598 --> 00:01:09,410
+Your Python doesn't come with a library that it needs
+
+22
+00:01:09,410 --> 00:01:11,258
+in order to essentially verify
+
+23
+00:01:11,258 --> 00:01:14,508
+that these domains are actually secure.
+
+24
+00:01:15,780 --> 00:01:20,447
+So, OS X, Mac OS X provides deprecated or older versions
+
+25
+00:01:21,535 --> 00:01:24,733
+of an important library for verification.
+
+26
+00:01:24,733 --> 00:01:26,800
+This library is called OpenSSL
+
+27
+00:01:26,800 --> 00:01:29,583
+and Python 3.6 and 3.7 got tired
+
+28
+00:01:29,583 --> 00:01:33,519
+of using these deprecated old versions,
+
+29
+00:01:33,519 --> 00:01:37,307
+so now Python 3.6 and 3.7, and probably older versions...
+
+30
+00:01:37,307 --> 00:01:40,980
+Newer versions as well, are shipping with their own version
+
+31
+00:01:40,980 --> 00:01:42,944
+of this library.
+
+32
+00:01:42,944 --> 00:01:45,950
+Because it's their own version, it means that
+
+33
+00:01:45,950 --> 00:01:49,611
+all the certificates, you know, keys and things like that,
+
+34
+00:01:49,611 --> 00:01:51,965
+that your computer trusts by default,
+
+35
+00:01:51,965 --> 00:01:54,941
+you computer says, johnlewis.com is, you know,
+
+36
+00:01:54,941 --> 00:01:57,703
+this is secure because this certificate was created
+
+37
+00:01:57,703 --> 00:02:00,377
+by this organisation that we trust.
+
+38
+00:02:00,377 --> 00:02:03,999
+Python doesn't trust those organisations by default
+
+39
+00:02:03,999 --> 00:02:06,660
+because it's a completely different library
+
+40
+00:02:06,660 --> 00:02:08,846
+than the one that comes in your computer.
+
+41
+00:02:08,846 --> 00:02:11,577
+So if you want to make Python
+
+42
+00:02:11,577 --> 00:02:15,080
+usable with https, what you have to do
+
+43
+00:02:15,080 --> 00:02:17,118
+is you have to instal something
+
+44
+00:02:17,118 --> 00:02:19,468
+that is inside your Python folder.
+
+45
+00:02:19,468 --> 00:02:22,287
+So I'm gonna bring it up.
+
+46
+00:02:22,287 --> 00:02:24,501
+What you want to look at is, you wanna find
+
+47
+00:02:24,501 --> 00:02:27,834
+your Python folder in your applications,
+
+48
+00:02:29,146 --> 00:02:30,679
+and notice how it's Python 3.6
+
+49
+00:02:30,679 --> 00:02:34,529
+and then I've got Python 3.7 here which is a new version,
+
+50
+00:02:34,529 --> 00:02:38,574
+there is a thing here called Instal Certificates.command.
+
+51
+00:02:38,574 --> 00:02:42,099
+All you have to do is double-click that.
+
+52
+00:02:42,099 --> 00:02:43,964
+When you do that, this will work.
+
+53
+00:02:43,964 --> 00:02:45,716
+Okay, so all you have to do is double-click that,
+
+54
+00:02:45,716 --> 00:02:48,423
+that is gonna instal the certificates
+
+55
+00:02:48,423 --> 00:02:52,140
+that you need in order to trust these secure domains.
+
+56
+00:02:52,140 --> 00:02:53,868
+Again, the code linked in this lecture has some more
+
+57
+00:02:53,868 --> 00:02:57,402
+information on why this is happening
+
+58
+00:02:57,402 --> 00:02:59,586
+and, you know, how you can fix it.
+
+59
+00:02:59,586 --> 00:03:00,487
+So that's it for this video,
+
+60
+00:03:00,487 --> 00:03:01,643
+just wanted to tell you about this
+
+61
+00:03:01,643 --> 00:03:03,409
+because it's a frequent problem when you start
+
+62
+00:03:03,409 --> 00:03:06,173
+making these requests and it can be a big pain in the ass
+
+63
+00:03:06,173 --> 00:03:08,064
+to solve, especially if you don't know
+
+64
+00:03:08,064 --> 00:03:09,827
+what you're looking for.
+
+65
+00:03:09,827 --> 00:03:12,456
+That's it for this video, I'll see you on the next one.
+

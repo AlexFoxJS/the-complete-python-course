@@ -1,0 +1,780 @@
+1
+00:00:01,029 --> 00:00:02,217
+-: [Jose Salvatierra] Ol,
+
+2
+00:00:02,217 --> 00:00:05,248
+bem vindo de volta Neste vdeo vamos continuar com
+
+3
+00:00:05,248 --> 00:00:09,248
+a nossa aula de estudantes e vamos olhar para a funo mdia.
+
+4
+00:00:10,751 --> 00:00:12,659
+No ltimo vdeo, descobrimos que
+
+5
+00:00:12,659 --> 00:00:16,742
+quando chamamos uma classe que cria um objeto em branco,
+
+6
+00:00:17,659 --> 00:00:20,790
+e isso  passado para o mtodo dunder
+
+7
+00:00:20,790 --> 00:00:24,614
+init como self, e ento, podemos modific-lo criando novas variveis
+
+8
+00:00:24,614 --> 00:00:26,697
+dentro desse objeto em branco.
+
+9
+00:00:28,080 --> 00:00:32,747
+ assim que as coisas aqui acabam com uma propriedade de nome.
+
+10
+00:00:33,807 --> 00:00:35,594
+Eu acabei de dizer propriedade, e
+
+11
+00:00:35,594 --> 00:00:38,568
+vamos comear a chamar as coisas pelo que elas so.
+
+12
+00:00:38,568 --> 00:00:41,043
+Quando definimos uma varivel dentro de um objeto, isso
+
+13
+00:00:41,043 --> 00:00:44,334
+no  mais uma varivel, agora ela  chamada de propriedade.
+
+14
+00:00:44,334 --> 00:00:46,251
+Propriedade do objeto.
+
+15
+00:00:47,127 --> 00:00:49,689
+Da mesma forma, quando definimos uma funo como
+
+16
+00:00:49,689 --> 00:00:52,439
+essa, funo mdia, dentro de uma classe, isso
+
+17
+00:00:53,320 --> 00:00:55,231
+no  mais chamado de funo,
+
+18
+00:00:55,231 --> 00:00:57,183
+que agora  chamado de mtodo.
+
+19
+00:00:57,183 --> 00:01:00,063
+A mesma coisa, apenas um nome diferente, para
+
+20
+00:01:00,063 --> 00:01:01,145
+que, quando voc
+
+21
+00:01:01,145 --> 00:01:03,213
+est falando sobre programao, seja capaz
+
+22
+00:01:03,213 --> 00:01:05,980
+de diferenciar rapidamente o que voc est falando.
+
+23
+00:01:05,980 --> 00:01:10,176
+Ento, o aluno um e o aluno dois sabem que so estudantes,
+
+24
+00:01:10,176 --> 00:01:12,855
+eles so do tipo OfType Student, porque
+
+25
+00:01:12,855 --> 00:01:17,205
+ assim que isso foi criado quando ligamos para a turma.
+
+26
+00:01:17,205 --> 00:01:19,237
+Portanto, porque eles so do tipo
+
+27
+00:01:19,237 --> 00:01:22,975
+OfType Student, eles sabem que tm essa funo mdia dentro deles.
+
+28
+00:01:22,975 --> 00:01:27,558
+Agora, podemos chamar student_one. average () estamos chamando
+
+29
+00:01:28,904 --> 00:01:30,730
+a funo mdia
+
+30
+00:01:30,730 --> 00:01:33,647
+que est dentro de nosso student_one.
+
+31
+00:01:35,528 --> 00:01:38,905
+Agora, voc pode ver que h um parmetro
+
+32
+00:01:38,905 --> 00:01:41,786
+prprio aqui que claramente no estamos cumprindo.
+
+33
+00:01:41,786 --> 00:01:44,587
+Ento, o que voc acha que vai
+
+34
+00:01:44,587 --> 00:01:46,504
+acontecer quando imprimirmos isso?
+
+35
+00:01:47,450 --> 00:01:48,533
+Vamos correr!
+
+36
+00:01:49,523 --> 00:01:53,190
+Hm, obtemos um valor e um valor vlido.
+
+37
+00:01:54,135 --> 00:01:55,468
+Ento, por que isso?
+
+38
+00:01:56,348 --> 00:01:59,041
+Bem, o Python  bastante inteligente
+
+39
+00:01:59,041 --> 00:02:04,041
+e, quando voc usa um objeto para chamar uma funo da
+
+40
+00:02:04,444 --> 00:02:07,084
+classe, ele preenche automaticamente o self
+
+41
+00:02:07,084 --> 00:02:11,026
+como o objeto que chamou essa funo.
+
+42
+00:02:11,026 --> 00:02:12,186
+Ok, deixe-me dar outro
+
+43
+00:02:12,186 --> 00:02:15,212
+exemplo que voc pode entender um pouco mais facilmente.
+
+44
+00:02:15,212 --> 00:02:18,255
+Vamos chamar a funo, desculpe, o mtodo
+
+45
+00:02:18,255 --> 00:02:19,329
+aqui na classe.
+
+46
+00:02:19,329 --> 00:02:21,721
+A maneira que voc espera fazer
+
+47
+00:02:21,721 --> 00:02:23,896
+ dizer Aluno, que 
+
+48
+00:02:23,896 --> 00:02:28,003
+a classe, ponto, para acessar algo dentro dele, em mdia.
+
+49
+00:02:28,003 --> 00:02:30,831
+Certo? Ns temos a classe, acessamos
+
+50
+00:02:30,831 --> 00:02:33,980
+algo dentro dela, e o que estaremos acessando  a funo mdia.
+
+51
+00:02:33,980 --> 00:02:37,487
+No entanto, se fizermos isso e ns execut-lo,
+
+52
+00:02:37,487 --> 00:02:41,656
+agora vemos que ele diz, algo no muito legvel,
+
+53
+00:02:41,656 --> 00:02:44,052
+mdia, a funo mdia est
+
+54
+00:02:44,052 --> 00:02:47,135
+faltando um argumento necessrio, que  auto.
+
+55
+00:02:48,994 --> 00:02:52,577
+Portanto, o Python obviamente no pode dizer de qual objeto voc
+
+56
+00:02:53,675 --> 00:02:56,028
+deseja obter a mdia, porque voc no
+
+57
+00:02:56,028 --> 00:02:57,902
+o chamou com um objeto, voc
+
+58
+00:02:57,902 --> 00:02:59,075
+o chamou com a
+
+59
+00:02:59,075 --> 00:03:02,002
+classe que  a definio de um objeto.
+
+60
+00:03:02,002 --> 00:03:05,413
+Ento, o que fazer  passar um objeto em particular,
+
+61
+00:03:05,413 --> 00:03:09,334
+no my_student, que  um dicionrio. student_one.
+
+62
+00:03:09,334 --> 00:03:12,458
+Agora, quando voc chamar isso, student_one ser
+
+63
+00:03:12,458 --> 00:03:14,599
+auto-normal nas funes do Python,
+
+64
+00:03:14,599 --> 00:03:16,631
+e voc retornar isso.
+
+65
+00:03:16,631 --> 00:03:18,565
+Assim, podemos mais uma vez execut-lo e agora
+
+66
+00:03:18,565 --> 00:03:20,648
+voc pode ver que obtemos o valor correto.
+
+67
+00:03:22,171 --> 00:03:23,988
+Quando voc faz student_one. Em mdia, o
+
+68
+00:03:23,988 --> 00:03:26,217
+Python no fundo est fazendo isso.
+
+69
+00:03:26,217 --> 00:03:28,899
+Ento, no h mgica acontecendo,  s que,
+
+70
+00:03:28,899 --> 00:03:30,232
+para evitar que voc
+
+71
+00:03:30,232 --> 00:03:32,056
+digite um monte de coisas, voc
+
+72
+00:03:32,056 --> 00:03:34,092
+pode simplesmente ligar para o aluno.
+
+73
+00:03:34,092 --> 00:03:36,570
+E isso tambm faz sentido, porque agora voc
+
+74
+00:03:36,570 --> 00:03:38,601
+est obtendo a mdia de student_one, voc
+
+75
+00:03:38,601 --> 00:03:41,451
+no precisa gostar, incluir a turma de alunos l.
+
+76
+00:03:41,451 --> 00:03:43,775
+O self  automaticamente preenchido quando voc
+
+77
+00:03:43,775 --> 00:03:45,680
+chama qualquer mtodo, lembre-se de que
+
+78
+00:03:45,680 --> 00:03:47,915
+est dizendo a funo dentro de uma
+
+79
+00:03:47,915 --> 00:03:50,498
+classe, com o aluno como o chamador.
+
+80
+00:03:51,490 --> 00:03:53,564
+E o aluno aqui  o
+
+81
+00:03:53,564 --> 00:03:56,734
+chamador, porque  assim que estamos chamando essa funo.
+
+82
+00:03:56,734 --> 00:03:59,234
+OK?  assim que  chamado.
+
+83
+00:04:00,228 --> 00:04:05,110
+Ok, vamos pensar sobre este mtodo mdio novamente, temos o aluno_ sendo
+
+84
+00:04:05,110 --> 00:04:08,582
+passado como auto, e devemos nos lembrar agora, que
+
+85
+00:04:08,582 --> 00:04:10,086
+student_one era esse objeto
+
+86
+00:04:10,086 --> 00:04:12,118
+que foi criado emptilamente aqui,
+
+87
+00:04:12,118 --> 00:04:13,716
+tambm chamado self, mas
+
+88
+00:04:13,716 --> 00:04:15,633
+isso  apenas um efeito
+
+89
+00:04:15,633 --> 00:04:18,217
+colateral do convenes de nomenclatura em Python.
+
+90
+00:04:18,217 --> 00:04:20,329
+Student_one  a coisa certa aqui,
+
+91
+00:04:20,329 --> 00:04:24,075
+e sabemos que tem um nome e tambm tem notas.
+
+92
+00:04:24,075 --> 00:04:27,365
+Ento, quando ns acessamos student_one. notas,  isso
+
+93
+00:04:27,365 --> 00:04:30,460
+que passamos inicialmente at aqui.
+
+94
+00:04:30,460 --> 00:04:34,033
+E aqui tambm estamos acessando student_one. notas, no entanto, a fim
+
+95
+00:04:34,033 --> 00:04:36,601
+de tornar isso um pouco mais genrico,
+
+96
+00:04:36,601 --> 00:04:41,268
+no estamos usando a mdia apenas em student_one, mas em si mesmo.
+
+97
+00:04:42,309 --> 00:04:44,399
+Porque ns definimos o eu. notas, sabemos
+
+98
+00:04:44,399 --> 00:04:47,322
+que temos auto. notas disponveis para
+
+99
+00:04:47,322 --> 00:04:49,469
+uso na funo mdia.
+
+100
+00:04:49,469 --> 00:04:51,785
+Ento podemos usar o ego. notas e auto. notas, e
+
+101
+00:04:51,785 --> 00:04:54,914
+depende de qual objeto estudantil o chamamos, que
+
+102
+00:04:54,914 --> 00:04:56,901
+usar essas notas se as
+
+103
+00:04:56,901 --> 00:04:58,648
+chamarmos com a de
+
+104
+00:04:58,648 --> 00:05:02,145
+estudante, ou essas notas, se as chamarmos na segunda.
+
+105
+00:05:02,145 --> 00:05:07,145
+Podemos reescrever essa funo inteiramente pelo caminho, aqui embaixo, fazendo com que ela
+
+106
+00:05:08,208 --> 00:05:10,625
+aceite um aluno e ele retornar
+
+107
+00:05:11,682 --> 00:05:14,719
+a soma do aluno. notas e a
+
+108
+00:05:14,719 --> 00:05:17,969
+durao do aluno. notas, ok?
+
+109
+00:05:19,623 --> 00:05:22,456
+Ns vamos imprimir student_one. notas, e depois
+
+110
+00:05:25,105 --> 00:05:27,921
+vamos chamar a funo mdia
+
+111
+00:05:27,921 --> 00:05:29,838
+chamada off student_one.
+
+112
+00:05:32,561 --> 00:05:33,394
+A primeira coisa
+
+113
+00:05:33,394 --> 00:05:35,513
+que vamos fazer  imprimir as notas
+
+114
+00:05:35,513 --> 00:05:39,013
+do aluno, que sabemos que devem ser 70, 80, 90 e 99.
+
+115
+00:05:40,347 --> 00:05:42,562
+E, de fato, ns os pegamos aqui.
+
+116
+00:05:42,562 --> 00:05:43,740
+Em seguida, definimos essa
+
+117
+00:05:43,740 --> 00:05:46,416
+funo que recebe um objeto de aluno, retorna
+
+118
+00:05:46,416 --> 00:05:48,442
+a soma de sua propriedade de
+
+119
+00:05:48,442 --> 00:05:50,972
+notas, a que acabamos de imprimir aqui, e
+
+120
+00:05:50,972 --> 00:05:53,309
+o comprimento, e depois dividimos um por outro.
+
+121
+00:05:53,309 --> 00:05:56,888
+Ento chamamos essa funo com o nosso objeto
+
+122
+00:05:56,888 --> 00:05:58,971
+student_one, passado como argumento.
+
+123
+00:06:00,835 --> 00:06:01,918
+Ento, student_one-- Este
+
+124
+00:06:01,918 --> 00:06:05,586
+ student_one, isto  student_one, student_one. notas  a mesma coisa
+
+125
+00:06:05,586 --> 00:06:07,798
+que acabamos de imprimir aqui.
+
+126
+00:06:07,798 --> 00:06:11,006
+E student_one. notas  a mesma coisa que imprimimos aqui.
+
+127
+00:06:11,006 --> 00:06:14,011
+E ento  assim que a mdia  calculada.
+
+128
+00:06:14,011 --> 00:06:18,072
+Mais uma vez, apenas para recapitular, quando voc chama student_one. mdia, o que
+
+129
+00:06:18,072 --> 00:06:20,620
+est acontecendo no
+
+130
+00:06:20,620 --> 00:06:24,694
+fundo  (estudante. average (student_one)) student_one est sendo
+
+131
+00:06:24,694 --> 00:06:27,694
+passado como auto, mesma funo que acabamos
+
+132
+00:06:28,630 --> 00:06:31,146
+de definir, apenas o argumento, desculpe,
+
+133
+00:06:31,146 --> 00:06:33,141
+o parmetro  chamado self.
+
+134
+00:06:33,141 --> 00:06:37,371
+Mais uma vez, voc poderia ligar para este aluno, se voc quiser.
+
+135
+00:06:37,371 --> 00:06:39,613
+Mas no  comum fazer isso.
+
+136
+00:06:39,613 --> 00:06:41,440
+Normalmente, nos mtodos, o
+
+137
+00:06:41,440 --> 00:06:43,526
+primeiro parmetro  sempre chamado
+
+138
+00:06:43,526 --> 00:06:47,354
+self, porque se refere ao objeto que voc est
+
+139
+00:06:47,354 --> 00:06:48,937
+modificando ou agindo, ok?
+
+140
+00:06:49,871 --> 00:06:51,813
+E  assim que funciona.
+
+141
+00:06:51,813 --> 00:06:53,952
+ assim que os mtodos funcionam.
+
+142
+00:06:53,952 --> 00:06:55,007
+Agora, podemos
+
+143
+00:06:55,007 --> 00:06:58,910
+definir os dados em que estamos agindo e
+
+144
+00:06:58,910 --> 00:07:03,055
+a ao que estamos realizando na mesma estrutura.
+
+145
+00:07:03,055 --> 00:07:05,127
+Agora  uma classe em
+
+146
+00:07:05,127 --> 00:07:06,672
+vez de um dicionrio,
+
+147
+00:07:06,672 --> 00:07:08,984
+mas essencialmente  a mesma coisa,
+
+148
+00:07:08,984 --> 00:07:11,131
+ela nos permite armazenar alguns dados
+
+149
+00:07:11,131 --> 00:07:13,851
+e agora estende essa funcionalidade, permitindo que
+
+150
+00:07:13,851 --> 00:07:16,830
+tambm armazenemos algumas funes que atuam nesses dados.
+
+151
+00:07:16,830 --> 00:07:18,289
+Agora,  claro,
+
+152
+00:07:18,289 --> 00:07:20,851
+a funo mdia poderia receber alguns
+
+153
+00:07:20,851 --> 00:07:24,428
+argumentos extras, alguns parmetros extras, se voc quisesse.
+
+154
+00:07:24,428 --> 00:07:27,274
+Assim como o dunder em seu mtodo faz.
+
+155
+00:07:27,274 --> 00:07:31,314
+Ento voc poderia passar algum nome tambm, se voc
+
+156
+00:07:31,314 --> 00:07:35,271
+quisesse, e ento, student_one. Agora, a mdia s conseguiria
+
+157
+00:07:35,271 --> 00:07:38,141
+algo, um amigo, algum argumento ali tambm.
+
+158
+00:07:38,141 --> 00:07:43,141
+Esse seria o segundo argumento, o segundo parmetro.
+
+159
+00:07:43,207 --> 00:07:47,799
+OK? Assim, o self  preenchido primeiro pelo
+
+160
+00:07:47,799 --> 00:07:50,281
+objeto atual, quaisquer outros parmetros so preenchidos
+
+161
+00:07:50,281 --> 00:07:53,409
+depois, seja l o que estiver dentro desses colchetes.
+
+162
+00:07:53,409 --> 00:07:56,693
+De qualquer forma, acho que falei sobre isso
+
+163
+00:07:56,693 --> 00:07:59,335
+o suficiente, espero que seja mais ou
+
+164
+00:07:59,335 --> 00:08:02,156
+menos claro, que uma aula de estudantes
+
+165
+00:08:02,156 --> 00:08:07,139
+ apenas algo que nos permite definir quais propriedades so de um aluno,
+
+166
+00:08:07,139 --> 00:08:11,654
+e tambm quais aes um estudante pode fazer em so seus
+
+167
+00:08:11,654 --> 00:08:14,495
+prprios dados, ou, na verdade, se assim
+
+168
+00:08:14,495 --> 00:08:17,158
+desejarmos, em outros dados, passando alguns argumentos.
+
+169
+00:08:17,158 --> 00:08:19,107
+Ento  isso que uma classe , e  isso que um objeto .
+
+170
+00:08:19,107 --> 00:08:21,195
+E precisamos armazenar alguns dados
+
+171
+00:08:21,195 --> 00:08:23,687
+e armazenar algumas aes relacionadas a ele.
+
+172
+00:08:23,687 --> 00:08:26,313
+Isso permite encapsular e manter
+
+173
+00:08:26,313 --> 00:08:29,898
+toda a funcionalidade relevante na mesma estrutura,
+
+174
+00:08:29,898 --> 00:08:33,206
+em vez de dividi-la em duas
+
+175
+00:08:33,206 --> 00:08:35,505
+estruturas separadas, como fizemos aqui.
+
+176
+00:08:35,505 --> 00:08:37,221
+Ento  isso para este vdeo, espero que seja claro.
+
+177
+00:08:37,221 --> 00:08:38,902
+E todas as prximas sees usaro
+
+178
+00:08:38,902 --> 00:08:40,587
+isso mais e mais, e conforme
+
+179
+00:08:40,587 --> 00:08:42,000
+voc programa mais e mais,
+
+180
+00:08:42,000 --> 00:08:43,890
+ele vai se tornar uma segunda natureza,
+
+181
+00:08:43,890 --> 00:08:45,288
+e voc vai comear a
+
+182
+00:08:45,288 --> 00:08:46,641
+entender isso um pouco mais,
+
+183
+00:08:46,641 --> 00:08:49,555
+e tenho certeza que vai ficar melhor e melhor.
+
+184
+00:08:49,555 --> 00:08:50,993
+Se voc est confuso, por favor,
+
+185
+00:08:50,993 --> 00:08:52,565
+faa uma pergunta no Q &amp;
+
+186
+00:08:52,565 --> 00:08:54,237
+A do curso, terei prazer em ajud-lo.
+
+187
+00:08:54,237 --> 00:08:58,127
+Mas normalmente leva alguns meses para clicar
+
+188
+00:08:58,127 --> 00:09:01,969
+completamente, ento,  claro, tentarei fazer isso
+
+189
+00:09:01,969 --> 00:09:04,688
+clicando antes, fornecendo boas explicaes.
+
+190
+00:09:04,688 --> 00:09:09,569
+Mas, se voc est apenas levemente desconfortvel com tudo
+
+191
+00:09:09,569 --> 00:09:11,213
+isso, tudo bem.
+
+192
+00:09:11,213 --> 00:09:13,689
+Apenas continue, continue programando, continue
+
+193
+00:09:13,689 --> 00:09:16,167
+escrevendo cdigo e tudo vai
+
+194
+00:09:16,167 --> 00:09:20,183
+se estabilizar no seu subconsciente conforme voc avana.
+
+195
+00:09:20,183 --> 00:09:23,123
+Ento  isso para este vdeo, eu vou te ver no prximo.
+

@@ -1,0 +1,504 @@
+1
+00:00:00,194 --> 00:00:01,860
+Instructor: Hola, y bienvenido de nuevo.
+
+2
+00:00:01,860 --> 00:00:04,690
+Una vez que hayas abierto PyCharm por primera vez,
+
+3
+00:00:04,690 --> 00:00:07,580
+obtendrs algo que se parece ms o menos a esto.
+
+4
+00:00:07,580 --> 00:00:10,430
+Si se le solicita importar configuraciones de
+
+5
+00:00:10,430 --> 00:00:13,740
+una versin anterior de PyCharm, simplemente diga "no"
+
+6
+00:00:13,740 --> 00:00:16,640
+porque no tiene ninguna versin anterior de PyCharm.
+
+7
+00:00:16,640 --> 00:00:19,500
+A menos que, por supuesto, tenga una versin previa de
+
+8
+00:00:19,500 --> 00:00:21,490
+PyCharm de la que quiera importar configuraciones.
+
+9
+00:00:21,490 --> 00:00:22,720
+Pero si no sabe lo que significa,
+
+10
+00:00:22,720 --> 00:00:24,940
+simplemente diga "no" o "cancelar" o "salir". "Entonces asegrate de
+
+11
+00:00:26,090 --> 00:00:28,040
+abrir PyCharm, y tendrs una ventana
+
+12
+00:00:28,040 --> 00:00:30,640
+que se parece ms o menos a esta,
+
+13
+00:00:30,640 --> 00:00:33,840
+o posiblemente como una que veremos en un momento.
+
+14
+00:00:33,840 --> 00:00:38,220
+No obstante, lo que queremos hacer es entrar en Crear nuevo proyecto.
+
+15
+00:00:38,220 --> 00:00:40,700
+Creemos un nuevo proyecto, y luego tiene
+
+16
+00:00:40,700 --> 00:00:42,510
+dos cosas que debe elegir:
+
+17
+00:00:42,510 --> 00:00:45,410
+la ubicacin de su proyecto, en qu parte
+
+18
+00:00:45,410 --> 00:00:49,010
+de su computadora se ubicar este proyecto, y tambin el Intrprete.
+
+19
+00:00:49,010 --> 00:00:50,400
+Esta es la versin
+
+20
+00:00:50,400 --> 00:00:53,610
+de Python que desea usar para este proyecto.
+
+21
+00:00:53,610 --> 00:00:56,390
+Tenga en cuenta que, por ejemplo, macOS
+
+22
+00:00:56,390 --> 00:00:59,240
+viene con Python 2. 7 ya instalado.
+
+23
+00:00:59,240 --> 00:01:01,880
+Sin embargo, cuando crea un nuevo proyecto de Python, puede
+
+24
+00:01:01,880 --> 00:01:04,690
+elegir si desea usar Python 2. 7 o
+
+25
+00:01:04,690 --> 00:01:07,130
+Python 3. 6 que acabamos de instalar.
+
+26
+00:01:07,970 --> 00:01:11,250
+Python funciona bien si tiene mltiples versiones
+
+27
+00:01:11,250 --> 00:01:14,150
+todas instaladas al mismo tiempo en
+
+28
+00:01:14,150 --> 00:01:16,580
+su computadora, y es por
+
+29
+00:01:16,580 --> 00:01:20,010
+proyecto que elegir qu versin de Python usar.
+
+30
+00:01:20,010 --> 00:01:23,200
+Entonces, puedes instalar Python 3. 7 cuando sale,
+
+31
+00:01:23,200 --> 00:01:26,060
+junto con 3. 6, y eso est totalmente bien.
+
+32
+00:01:27,130 --> 00:01:30,000
+Vamos a elegir una ubicacin para nuestro proyecto.
+
+33
+00:01:30,880 --> 00:01:32,450
+Entonces, lo que voy
+
+34
+00:01:32,450 --> 00:01:35,170
+a hacer aqu es ir a mi escritorio.
+
+35
+00:01:37,130 --> 00:01:38,370
+Ahora bien.
+
+36
+00:01:38,370 --> 00:01:39,810
+Entonces, abrir el escritorio aqu,
+
+37
+00:01:39,810 --> 00:01:41,290
+y crear una nueva carpeta,
+
+38
+00:01:41,290 --> 00:01:44,150
+que se llamar "milestone_1". "Ahora, mi proyecto
+
+39
+00:01:48,070 --> 00:01:51,240
+va a estar en esta carpeta aqu.
+
+40
+00:01:52,410 --> 00:01:54,720
+Entonces, todos los archivos nuevos que creo van
+
+41
+00:01:54,720 --> 00:01:58,660
+a aparecer dentro de esa carpeta, y bsicamente todos los contenidos del ncleo
+
+42
+00:01:58,660 --> 00:02:00,030
+de este proyecto van a
+
+43
+00:02:00,030 --> 00:02:01,570
+estar dentro de esa carpeta.
+
+44
+00:02:01,570 --> 00:02:03,820
+Asegrese de elegir una carpeta que le guste.
+
+45
+00:02:04,870 --> 00:02:07,590
+Para el intrprete, tengo muchas opciones aqu, y
+
+46
+00:02:07,590 --> 00:02:09,970
+no tendr tantas opciones, pero lo que
+
+47
+00:02:09,970 --> 00:02:14,910
+quiere encontrar es 3. 6, presumiblemente. 4, que es el
+
+48
+00:02:14,910 --> 00:02:16,740
+que acabamos de descargar,
+
+49
+00:02:16,740 --> 00:02:19,890
+o 3. 7 o, ya sabes, 3. 5, o la versin
+
+50
+00:02:19,890 --> 00:02:22,740
+que tengas instalada en el momento de este video.
+
+51
+00:02:24,050 --> 00:02:26,621
+Ahora, la ltima versin actualmente es 3. 6. 4, pero
+
+52
+00:02:26,621 --> 00:02:28,960
+tengo 3. 6. 0 instalado, y,
+
+53
+00:02:28,960 --> 00:02:31,820
+ya sabes, eso est bien para los propsitos de este curso.
+
+54
+00:02:31,820 --> 00:02:34,400
+Por lo tanto, asegrese de encontrar 3. 6.
+
+55
+00:02:34,400 --> 00:02:37,850
+Asegrese de no seleccionar una invlida, si tiene alguna.
+
+56
+00:02:37,850 --> 00:02:40,450
+Seleccione solo los vlidos.
+
+57
+00:02:40,450 --> 00:02:45,000
+Y veremos por qu tengo tantas versiones ms adelante.
+
+58
+00:02:45,000 --> 00:02:47,350
+Luego puedes ir y presionar Crear.
+
+59
+00:02:47,350 --> 00:02:48,920
+Y realmente, eso es todo.
+
+60
+00:02:49,760 --> 00:02:50,800
+Entonces, un par de cosas.
+
+61
+00:02:50,800 --> 00:02:53,040
+PyCharm te muestra un consejo del da.
+
+62
+00:02:53,040 --> 00:02:54,510
+Estas cosas son
+
+63
+00:02:54,510 --> 00:02:59,000
+bastante tiles y te dan informacin sobre cmo usar PyCharm.
+
+64
+00:02:59,000 --> 00:03:02,670
+Le recomiendo que no desmarque la casilla para que cada vez que abra
+
+65
+00:03:02,670 --> 00:03:04,330
+PyCharm, obtenga esto, y tal vez
+
+66
+00:03:04,330 --> 00:03:06,320
+pueda aprender una o dos cosas.
+
+67
+00:03:06,320 --> 00:03:08,540
+Entonces, normalmente los leo.
+
+68
+00:03:08,540 --> 00:03:09,740
+No los leer hoy.
+
+69
+00:03:11,000 --> 00:03:16,000
+Entonces, lo que tenemos es nuestro proyecto aqu a la izquierda.
+
+70
+00:03:16,480 --> 00:03:18,500
+Si esta fue la primera pantalla
+
+71
+00:03:18,500 --> 00:03:21,040
+que vio cuando abri PyCharm, siempre puede
+
+72
+00:03:21,040 --> 00:03:24,880
+ir a crear un nuevo proyecto presionando en Archivo, Nuevo proyecto,
+
+73
+00:03:24,880 --> 00:03:27,980
+y eso le permitir crear un nuevo proyecto.
+
+74
+00:03:27,980 --> 00:03:30,650
+De acuerdo, entonces tienes un montn ms de opciones de men, y
+
+75
+00:03:30,650 --> 00:03:32,220
+vamos a aprender mucho sobre ellas a
+
+76
+00:03:32,220 --> 00:03:33,964
+medida que avanzamos en el curso, as que
+
+77
+00:03:33,964 --> 00:03:36,530
+no te preocupes si an no sabes lo que hacen.
+
+78
+00:03:36,530 --> 00:03:38,580
+Tiene las ediciones habituales, Deshacer,
+
+79
+00:03:38,580 --> 00:03:40,830
+Rehacer, Cortar y Copiar, y as
+
+80
+00:03:40,830 --> 00:03:44,100
+sucesivamente, y pueden ser muy tiles en muchos escenarios.
+
+81
+00:03:44,100 --> 00:03:47,230
+Entonces lo que tenemos es nuestro rbol.
+
+82
+00:03:47,230 --> 00:03:50,610
+Aqu tenemos nuestro proyecto, archivos de proyecto, problemas y
+
+83
+00:03:50,610 --> 00:03:53,140
+araazos, que es un nombre realmente malo.
+
+84
+00:03:53,140 --> 00:03:57,030
+Solo trabajaremos con Project en este curso.
+
+85
+00:03:57,030 --> 00:03:59,400
+Esto le proporciona los archivos del
+
+86
+00:03:59,400 --> 00:04:03,490
+proyecto y tambin las bibliotecas externas que estamos usando.
+
+87
+00:04:03,490 --> 00:04:04,970
+Por el momento, este proyecto solo est
+
+88
+00:04:04,970 --> 00:04:08,570
+utilizando una biblioteca externa, que es Python 3. 6.
+
+89
+00:04:08,570 --> 00:04:10,720
+Ese es el intrprete que elegimos anteriormente.
+
+90
+00:04:11,880 --> 00:04:14,730
+Y nuestro proyecto es una carpeta llamada
+
+91
+00:04:14,730 --> 00:04:16,690
+"milestone_1", que no tiene nada
+
+92
+00:04:16,690 --> 00:04:18,530
+dentro, pero podemos agregarle cosas.
+
+93
+00:04:18,530 --> 00:04:20,960
+Por ejemplo, puede hacer clic derecho sobre l
+
+94
+00:04:20,960 --> 00:04:23,220
+y agregar un nuevo archivo de Python.
+
+95
+00:04:24,500 --> 00:04:26,560
+A continuacin, obtendr este dilogo, y puede elegir qu
+
+96
+00:04:26,560 --> 00:04:28,310
+tipo de archivo va a agregar, archivo
+
+97
+00:04:28,310 --> 00:04:30,170
+de Python o prueba de unidad de Python.
+
+98
+00:04:30,170 --> 00:04:31,260
+No hagas clic en eso todava.
+
+99
+00:04:31,260 --> 00:04:32,670
+Veremos eso ms adelante.
+
+100
+00:04:32,670 --> 00:04:35,740
+Simplemente haga clic en "Archivo de Python" y lo llamar "aplicacin". "" Aplicacin "cmo se crea
+
+101
+00:04:37,230 --> 00:04:39,790
+dentro de nuestro proyecto. "Mira, tenemos nuestro
+
+102
+00:04:39,790 --> 00:04:42,820
+archivo" de la aplicacin. py, "y
+
+103
+00:04:42,820 --> 00:04:45,230
+el". py "se ha agregado al final,
+
+104
+00:04:45,230 --> 00:04:47,650
+y eso solo significa que este es un archivo de Python.
+
+105
+00:04:49,010 --> 00:04:53,270
+El nombre, "aplicacin. py, "puede ser lo
+
+106
+00:04:53,270 --> 00:04:56,737
+que quieras, pero" aplicacin. py "es un nombre bastante
+
+107
+00:04:56,737 --> 00:05:00,610
+popular para tu tipo de archivo principal en un programa de Python.
+
+108
+00:05:01,640 --> 00:05:03,160
+Cada vez que ejecutas tu
+
+109
+00:05:03,160 --> 00:05:06,350
+programa, es probable que este sea el archivo que vas a ejecutar.
+
+110
+00:05:06,350 --> 00:05:08,110
+Entonces, "aplicacin. py "es un
+
+111
+00:05:08,110 --> 00:05:09,940
+nombre bastante popular, y le aconsejo que
+
+112
+00:05:09,940 --> 00:05:12,440
+busque el archivo principal ms importante de su programa.
+
+113
+00:05:13,520 --> 00:05:16,130
+Ahora, en los prximos videos, vamos a ver
+
+114
+00:05:16,130 --> 00:05:18,250
+el desarrollo de nuestro proyecto de hito.
+
+115
+00:05:18,250 --> 00:05:20,810
+Pero primero, por supuesto, le dar un breve para
+
+116
+00:05:20,810 --> 00:05:23,870
+que pueda abordar este proyecto de hito por su cuenta.
+
+117
+00:05:23,870 --> 00:05:25,620
+Va a ser un desafo, y
+
+118
+00:05:25,620 --> 00:05:29,440
+es posible que deba investigar un poco para poder hacerlo, pero por favor.
+
+119
+00:05:29,440 --> 00:05:31,590
+No se mueva a la siguiente conferencia.
+
+120
+00:05:31,590 --> 00:05:32,510
+Darle una oportunidad.
+
+121
+00:05:32,510 --> 00:05:36,270
+Primero, intente desarrollar esta aplicacin por su cuenta, y
+
+122
+00:05:36,270 --> 00:05:38,800
+eso garantizar que aprenda mucho ms
+
+123
+00:05:38,800 --> 00:05:41,500
+rpido que solo mirar el video.
+
+124
+00:05:42,530 --> 00:05:44,320
+Y tambin, voy a conectar mi computadora
+
+125
+00:05:44,320 --> 00:05:46,032
+porttil, porque me estoy quedando sin batera.
+
+126
+00:05:46,032 --> 00:05:48,782
+Entonces con eso dicho, nos vemos en el prximo video.
+

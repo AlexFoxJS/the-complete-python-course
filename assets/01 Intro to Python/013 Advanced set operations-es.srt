@@ -1,0 +1,604 @@
+1
+00:00:00,240 --> 00:00:01,420
+Jos: Hola y bienvenido de nuevo.
+
+2
+00:00:01,420 --> 00:00:04,300
+En este video, vamos a ver las operaciones de conjunto.
+
+3
+00:00:04,300 --> 00:00:06,860
+Estas son operaciones ms avanzadas que
+
+4
+00:00:06,860 --> 00:00:08,930
+las que vimos en el
+
+5
+00:00:08,930 --> 00:00:13,420
+ltimo video y pueden ser realmente tiles en algunos casos.
+
+6
+00:00:13,420 --> 00:00:15,110
+Vamos a definir dos
+
+7
+00:00:15,110 --> 00:00:17,810
+conjuntos, establecer uno, que va a
+
+8
+00:00:17,810 --> 00:00:21,370
+ser uno, dos, tres, cuatro, cinco y establecer
+
+9
+00:00:21,370 --> 00:00:23,100
+dos, que ser uno,
+
+10
+00:00:23,100 --> 00:00:25,000
+tres, cinco, siete, nueve, once.
+
+11
+00:00:26,410 --> 00:00:27,410
+Bien, entonces estos
+
+12
+00:00:27,410 --> 00:00:29,630
+dos conjuntos, ambos tienen algunos nmeros,
+
+13
+00:00:31,050 --> 00:00:32,920
+puedes notar que algunos nmeros
+
+14
+00:00:32,920 --> 00:00:34,950
+son similares entre ambos conjuntos,
+
+15
+00:00:34,950 --> 00:00:39,890
+algunos nmeros son diferentes entre ambos conjuntos, as que veamos algunas operaciones.
+
+16
+00:00:39,890 --> 00:00:43,360
+Ahora, si has hecho matemticas en el pasado,
+
+17
+00:00:43,360 --> 00:00:45,850
+probablemente conozcas las operaciones que voy
+
+18
+00:00:45,850 --> 00:00:46,790
+a contarte.
+
+19
+00:00:47,840 --> 00:00:50,350
+Probablemente conozcas la unin de conjuntos,
+
+20
+00:00:50,350 --> 00:00:52,920
+probablemente conozcas la interseccin de conjuntos,
+
+21
+00:00:52,920 --> 00:00:54,640
+incluso puedes saber la
+
+22
+00:00:54,640 --> 00:00:56,070
+diferencia entre conjuntos.
+
+23
+00:00:56,070 --> 00:00:57,900
+As que vamos a ver esos
+
+24
+00:00:57,900 --> 00:00:59,080
+tres en este video.
+
+25
+00:01:01,510 --> 00:01:06,510
+Ahora, la interseccin de conjuntos es los elementos entre dos conjuntos que
+
+26
+00:01:06,940 --> 00:01:11,020
+coinciden, de modo que si ha establecido uno con
+
+27
+00:01:11,020 --> 00:01:13,250
+valores uno, dos, tres, cuatro
+
+28
+00:01:13,250 --> 00:01:15,340
+y cinco y establece dos
+
+29
+00:01:15,340 --> 00:01:16,960
+con valores uno, tres,
+
+30
+00:01:16,960 --> 00:01:20,470
+cinco, siete, nueve y once, el los elementos
+
+31
+00:01:20,470 --> 00:01:22,820
+que coinciden entre los dos
+
+32
+00:01:22,820 --> 00:01:24,780
+son uno tres y cinco.
+
+33
+00:01:26,280 --> 00:01:29,930
+Entonces la interseccin de esos dos conjuntos es
+
+34
+00:01:29,930 --> 00:01:33,220
+el conjunto que contiene uno, tres y cinco.
+
+35
+00:01:34,200 --> 00:01:37,390
+Regresemos a la codificacin y le mostramos exactamente lo que quiero decir.
+
+36
+00:01:38,640 --> 00:01:39,520
+Establezca uno, y
+
+37
+00:01:40,410 --> 00:01:43,060
+ahora queremos hacer algo con el conjunto uno
+
+38
+00:01:43,060 --> 00:01:46,220
+para que sea interseccin de puntos y luego dentro de
+
+39
+00:01:48,760 --> 00:01:50,960
+los corchetes de esta interseccin vamos a
+
+40
+00:01:50,960 --> 00:01:52,500
+poner el conjunto dos, ahora
+
+41
+00:01:52,500 --> 00:01:55,750
+s que no est muy claro exactamente qu son estas
+
+42
+00:01:55,750 --> 00:01:57,500
+cosas y por qu tenemos
+
+43
+00:01:57,500 --> 00:01:59,700
+estos corchetes, pero por favor tengan paciencia
+
+44
+00:01:59,700 --> 00:02:01,960
+conmigo por ahora, lo abordaremos muy pronto.
+
+45
+00:02:04,640 --> 00:02:07,110
+As que tenemos un conjunto, luego estamos
+
+46
+00:02:07,110 --> 00:02:09,580
+realizando la interseccin con el conjunto dos.
+
+47
+00:02:09,580 --> 00:02:11,250
+Eso es lo que esto significa
+
+48
+00:02:11,250 --> 00:02:12,510
+dentro de los corchetes, le
+
+49
+00:02:12,510 --> 00:02:15,120
+daremos el set dos, lo cruzaremos con el set uno.
+
+50
+00:02:15,120 --> 00:02:16,730
+Vamos a ejecutarlo y como
+
+51
+00:02:16,730 --> 00:02:19,380
+puedes ver obtenemos el set uno tres y cinco.
+
+52
+00:02:21,270 --> 00:02:23,635
+La unin de dos conjuntos
+
+53
+00:02:23,635 --> 00:02:27,280
+es para dos conjuntos que son diferentes
+
+54
+00:02:28,290 --> 00:02:31,130
+y tienen nmeros que coinciden, la
+
+55
+00:02:31,130 --> 00:02:36,130
+unin es el conjunto total de nmeros en ambos conjuntos,
+
+56
+00:02:36,360 --> 00:02:39,910
+una vez que haya eliminado los duplicados.
+
+57
+00:02:41,480 --> 00:02:44,650
+Entonces, por ejemplo, si tiene uno, dos, tres, cuatro y
+
+58
+00:02:44,650 --> 00:02:47,270
+cinco en un conjunto y uno, tres, cinco,
+
+59
+00:02:47,270 --> 00:02:50,941
+siete, nueve y once en otro conjunto, el conjunto final es
+
+60
+00:02:50,941 --> 00:02:54,470
+uno que contiene uno, dos, tres, cuatro, cinco y tambin contiene
+
+61
+00:02:54,470 --> 00:02:56,130
+siete, nueve y once.
+
+62
+00:02:58,110 --> 00:02:59,530
+Regresemos a la codificacin y le mostrar
+
+63
+00:02:59,530 --> 00:03:00,690
+exactamente lo que quiero decir.
+
+64
+00:03:03,290 --> 00:03:07,444
+Establezca una unin de punto con el conjunto dos.
+
+65
+00:03:07,444 --> 00:03:09,950
+Corramos eso.
+
+66
+00:03:13,220 --> 00:03:14,090
+Y como pueden
+
+67
+00:03:14,090 --> 00:03:16,340
+ver, tenemos uno, dos, tres, cuatro y
+
+68
+00:03:16,340 --> 00:03:18,750
+cinco y luego tenemos siete, nueve y once.
+
+69
+00:03:18,750 --> 00:03:21,160
+Entonces la unin une ambos conjuntos
+
+70
+00:03:21,160 --> 00:03:23,210
+y nos da el conjunto resultante.
+
+71
+00:03:25,570 --> 00:03:27,310
+Finalmente tenemos la diferencia, la diferencia
+
+72
+00:03:28,390 --> 00:03:29,830
+entre dos conjuntos es un
+
+73
+00:03:29,830 --> 00:03:32,850
+conjunto que le quita al otro, por lo que cualquier
+
+74
+00:03:32,850 --> 00:03:35,140
+elemento que no est en un conjunto,
+
+75
+00:03:35,140 --> 00:03:37,820
+menos cualquier elemento que est en el otro conjunto
+
+76
+00:03:37,820 --> 00:03:39,220
+generar una diferencia.
+
+77
+00:03:40,130 --> 00:03:41,850
+As que, de nuevo, si
+
+78
+00:03:41,850 --> 00:03:44,000
+tenemos un juego con uno, dos,
+
+79
+00:03:44,000 --> 00:03:45,110
+tres, cuatro y
+
+80
+00:03:45,110 --> 00:03:48,060
+cinco y el otro con uno, tres, cinco,
+
+81
+00:03:48,060 --> 00:03:51,160
+siete, nueve y once, si establece una diferencia
+
+82
+00:03:51,160 --> 00:03:53,584
+establezca dos, establezca uno menos establezca
+
+83
+00:03:53,584 --> 00:03:56,930
+dos, terminas con uno, perdn con dos y cuatro.
+
+84
+00:03:57,880 --> 00:04:00,250
+Porque eso es uno, dos, tres, cuatro,
+
+85
+00:04:00,250 --> 00:04:02,970
+cinco menos uno, tres, cinco, siete, nueve, once.
+
+86
+00:04:02,970 --> 00:04:04,830
+Volvamos a la programacin y le
+
+87
+00:04:04,830 --> 00:04:06,480
+mostraremos exactamente lo que quiero decir.
+
+88
+00:04:12,060 --> 00:04:14,090
+Aqu tenemos un conjunto, vamos a
+
+89
+00:04:14,090 --> 00:04:16,300
+calcular la diferencia con el conjunto dos.
+
+90
+00:04:18,350 --> 00:04:20,780
+Y como pueden ver, tenemos dos y cuatro.
+
+91
+00:04:22,310 --> 00:04:26,446
+Estas son tres operaciones de conjunto bastante tiles, por ejemplo, si
+
+92
+00:04:26,446 --> 00:04:30,540
+estuviera creando un programa de lotera, podra tener un conjunto para
+
+93
+00:04:30,540 --> 00:04:33,810
+los nmeros que ha elegido y otro conjunto para
+
+94
+00:04:33,810 --> 00:04:35,800
+los nmeros que han aparecido
+
+95
+00:04:35,800 --> 00:04:37,470
+en la lotera y entonces
+
+96
+00:04:37,470 --> 00:04:39,980
+sera muy fcil saber cuntos tienes bien,
+
+97
+00:04:39,980 --> 00:04:41,530
+solo haciendo la interseccin.
+
+98
+00:04:42,930 --> 00:04:45,198
+Del mismo modo, si estaba
+
+99
+00:04:45,198 --> 00:04:47,400
+verificando el nmero de visitantes
+
+100
+00:04:47,400 --> 00:04:49,250
+de una pgina web
+
+101
+00:04:49,250 --> 00:04:50,920
+y deseaba, ya sabe,
+
+102
+00:04:50,920 --> 00:04:53,040
+y tiene otro conjunto de
+
+103
+00:04:53,040 --> 00:04:54,680
+visitantes que visitaron previamente
+
+104
+00:04:54,680 --> 00:04:57,780
+su sitio, puede calcular fcilmente cules son
+
+105
+00:04:57,780 --> 00:05:00,050
+visitantes recurrentes, nuevamente utilizando el interseccin.
+
+106
+00:05:00,050 --> 00:05:02,870
+Tambin puede usar la diferencia para obtener nuevos visitantes.
+
+107
+00:05:03,810 --> 00:05:04,970
+Como puede ver,
+
+108
+00:05:04,970 --> 00:05:07,410
+estas cosas pueden ser bastante tiles
+
+109
+00:05:07,410 --> 00:05:09,960
+en algunos escenarios y tambin, es una
+
+110
+00:05:09,960 --> 00:05:14,110
+buena forma de presentar algunos conceptos ms avanzados aqu en Python.
+
+111
+00:05:14,110 --> 00:05:17,990
+Conocer conjuntos no significa que siempre recordars todo lo que hemos
+
+112
+00:05:17,990 --> 00:05:20,210
+hablado en este video, pero siempre
+
+113
+00:05:20,210 --> 00:05:24,710
+que sepas que existen estas cosas, en el futuro cuando te encuentres
+
+114
+00:05:24,710 --> 00:05:26,670
+con una situacin en la
+
+115
+00:05:26,670 --> 00:05:29,570
+que necesites utilizar uno de estos cosas, probablemente
+
+116
+00:05:29,570 --> 00:05:30,890
+vuelvan a mi mente
+
+117
+00:05:30,890 --> 00:05:33,670
+y tal vez pienses, recuerdo algo que hacer
+
+118
+00:05:33,670 --> 00:05:36,700
+con los sets que fueron tiles para obtener
+
+119
+00:05:36,700 --> 00:05:37,800
+nmeros nicos o
+
+120
+00:05:37,800 --> 00:05:39,500
+cosas as y tal vez
+
+121
+00:05:39,500 --> 00:05:43,670
+entonces irs a Google y eso ser video que cumple este propsito.
+
+122
+00:05:43,670 --> 00:05:45,540
+De nuevo, no tiene que recordar
+
+123
+00:05:45,540 --> 00:05:47,310
+todo, simplemente gurdelo en la
+
+124
+00:05:47,310 --> 00:05:48,820
+cabeza y la programacin
+
+125
+00:05:48,820 --> 00:05:51,750
+consistir en ser capaz de recombinar todo ese conocimiento
+
+126
+00:05:51,750 --> 00:05:52,850
+en algo til.
+
+127
+00:05:53,840 --> 00:05:56,310
+Adems, mencionar rpidamente que puedes hacer un
+
+128
+00:05:56,310 --> 00:05:59,800
+conjunto, un smbolo y establecer dos y eso es lo
+
+129
+00:05:59,800 --> 00:06:01,250
+mismo, por lo que
+
+130
+00:06:01,250 --> 00:06:03,330
+estos dos hacen lo mismo.
+
+131
+00:06:03,330 --> 00:06:05,680
+Puedes hacer un set, pipe set
+
+132
+00:06:06,830 --> 00:06:09,490
+two y nuevamente, estos dos son lo
+
+133
+00:06:09,490 --> 00:06:10,660
+mismo, union y
+
+134
+00:06:10,660 --> 00:06:13,230
+pipe hacen lo mismo y finalmente
+
+135
+00:06:13,230 --> 00:06:16,900
+puedes hacer set uno menos set two y estos
+
+136
+00:06:16,900 --> 00:06:18,340
+dos son lo mismo.
+
+137
+00:06:18,340 --> 00:06:20,410
+As que estos son solo atajos
+
+138
+00:06:20,410 --> 00:06:21,710
+para eso, probablemente no
+
+139
+00:06:21,710 --> 00:06:23,770
+te vayan a ser muy tiles
+
+140
+00:06:23,770 --> 00:06:25,960
+por el momento, sin embargo, esto
+
+141
+00:06:25,960 --> 00:06:28,260
+se puede hacer y nuevamente cuando vuelvas
+
+142
+00:06:28,260 --> 00:06:32,320
+a buscar en Google ms adelante en tu carrera, tambin lo recordars.
+
+143
+00:06:32,320 --> 00:06:33,700
+Entonces eso es todo por este video.
+
+144
+00:06:33,700 --> 00:06:35,360
+Los conjuntos nos sern tiles
+
+145
+00:06:35,360 --> 00:06:38,630
+cada vez ms a medida que avanzamos a lo largo
+
+146
+00:06:38,630 --> 00:06:40,410
+del curso, as que no
+
+147
+00:06:40,410 --> 00:06:42,490
+te preocupes, no es tiempo perdido.
+
+148
+00:06:42,490 --> 00:06:43,740
+Pasemos al siguiente video
+
+149
+00:06:43,740 --> 00:06:45,908
+donde veremos una extensin de conjuntos
+
+150
+00:06:45,908 --> 00:06:47,650
+que puede ser realmente til.
+
+151
+00:06:47,650 --> 00:06:48,990
+Te ver pronto.
+

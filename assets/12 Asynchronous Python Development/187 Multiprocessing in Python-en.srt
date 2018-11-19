@@ -1,0 +1,632 @@
+1
+00:00:00,120 --> 00:00:01,150 line:15% 
+<v Instructor>Hi, welcome back.</v>
+
+2
+00:00:01,150 --> 00:00:02,710 line:15% 
+In this video we're going to talk about
+
+3
+00:00:02,710 --> 00:00:05,500 line:15% 
+launching multiple processes.
+
+4
+00:00:07,580 --> 00:00:10,050
+So you can launch multiple processes with Python.
+
+5
+00:00:10,050 --> 00:00:11,900
+You can have your main Python process
+
+6
+00:00:11,900 --> 00:00:14,800
+that gets created when you launch your Python App.
+
+7
+00:00:14,800 --> 00:00:18,750
+And you can ask your Python code to launch another process.
+
+8
+00:00:18,750 --> 00:00:21,750
+When you do that, each process can have its own thread
+
+9
+00:00:21,750 --> 00:00:23,760
+running in two separate cores.
+
+10
+00:00:25,142 --> 00:00:26,580
+Okay, so the two processes would be entirely
+
+11
+00:00:26,580 --> 00:00:28,780
+separate from one another.
+
+12
+00:00:28,780 --> 00:00:31,770
+As part of doing that it can also set up communication
+
+13
+00:00:31,770 --> 00:00:34,900
+between the processes, and that communication is slow,
+
+14
+00:00:34,900 --> 00:00:36,640
+but it can allow us to run through things
+
+15
+00:00:36,640 --> 00:00:39,620
+actually at once in two separate cores.
+
+16
+00:00:39,620 --> 00:00:42,110
+It's not entirely that simple.
+
+17
+00:00:42,110 --> 00:00:44,940
+Let's have look at some code.
+
+18
+00:00:46,780 --> 00:00:49,490
+Okay, I'm going to copy some things from
+
+19
+00:00:50,380 --> 00:00:54,060
+the earlier section here.
+
+20
+00:00:54,060 --> 00:00:58,280
+Oh sorry, let's copy from here.
+
+21
+00:00:58,280 --> 00:01:00,110
+So I'm going to copy all of this,
+
+22
+00:01:00,110 --> 00:01:02,510
+and I'm going to delete the thread code in here.
+
+23
+00:01:03,580 --> 00:01:05,501
+I'm going to delete that.
+
+24
+00:01:05,501 --> 00:01:07,510
+So what we've got are our two functions,
+
+25
+00:01:07,510 --> 00:01:10,440
+ask user and complex calculation.
+
+26
+00:01:10,440 --> 00:01:12,370
+Once again we've got our timing functions
+
+27
+00:01:12,370 --> 00:01:13,940
+that we're going to ask the user first,
+
+28
+00:01:13,940 --> 00:01:15,780
+run the complex calculation second,
+
+29
+00:01:15,780 --> 00:01:17,430
+and print out how long that took.
+
+30
+00:01:18,640 --> 00:01:22,130
+If you want to have multiple processes,
+
+31
+00:01:22,130 --> 00:01:23,340
+you can do that.
+
+32
+00:01:23,340 --> 00:01:26,820
+All you have to do is say from multi processing,
+
+33
+00:01:26,820 --> 00:01:28,690
+import process.
+
+34
+00:01:29,940 --> 00:01:32,170
+Now you have the process class from the
+
+35
+00:01:32,170 --> 00:01:34,270
+multiprocessing module, and you can use that
+
+36
+00:01:34,270 --> 00:01:36,890
+to launch a new process.
+
+37
+00:01:36,890 --> 00:01:37,723
+Let's do it.
+
+38
+00:01:38,710 --> 00:01:39,660
+We're going to say,
+
+39
+00:01:41,160 --> 00:01:42,740
+the new process is process.
+
+40
+00:01:42,740 --> 00:01:46,180
+The target is complex calculation, so that's going
+
+41
+00:01:46,180 --> 00:01:48,130
+to be the target of this process.
+
+42
+00:01:48,130 --> 00:01:50,730
+And then we're going to say process start.
+
+43
+00:01:50,730 --> 00:01:52,930
+We're going to say start equals time.time.
+
+44
+00:01:53,800 --> 00:01:56,100
+We're going to ask the user for something.
+
+45
+00:01:56,100 --> 00:01:59,740
+We're going to wait for the process to finish running.
+
+46
+00:01:59,740 --> 00:02:01,750
+And then we're going to print, you know,
+
+47
+00:02:01,750 --> 00:02:06,750
+two process total time is time.time minus start.
+
+48
+00:02:09,072 --> 00:02:12,210
+Okay, very similar to what you would expect
+
+49
+00:02:12,210 --> 00:02:15,020
+from the thread code processes.
+
+50
+00:02:17,820 --> 00:02:19,100
+You've got your new process.
+
+51
+00:02:19,100 --> 00:02:21,370
+You give it a target, you start it.
+
+52
+00:02:21,370 --> 00:02:24,480
+And then when you want it to wait until it finishes,
+
+53
+00:02:24,480 --> 00:02:26,600
+you do .join and that's it.
+
+54
+00:02:28,170 --> 00:02:30,460
+Okay, very straightforward.
+
+55
+00:02:30,460 --> 00:02:32,910
+Let's run it and see what happens.
+
+56
+00:02:32,910 --> 00:02:35,310
+Let's right click the processes file and run it.
+
+57
+00:02:36,170 --> 00:02:37,310
+Asks me for my name first.
+
+58
+00:02:37,310 --> 00:02:38,660
+Then it starts calculating,
+
+59
+00:02:40,380 --> 00:02:43,490
+and then it's going to ask me for my name again.
+
+60
+00:02:43,490 --> 00:02:45,860
+And notice how that's sort of screwed up.
+
+61
+00:02:45,860 --> 00:02:49,530
+That didn't look so good there, yeah.
+
+62
+00:02:50,580 --> 00:02:54,770
+And again, it takes in, it took me a bit longer
+
+63
+00:02:54,770 --> 00:02:59,770
+to type in my name now because this was a bit messed up.
+
+64
+00:03:00,500 --> 00:03:02,060
+But it took the same amount of time
+
+65
+00:03:02,060 --> 00:03:04,110
+as the multi threaded code.
+
+66
+00:03:04,110 --> 00:03:05,830
+Some would say it takes a little bit longer,
+
+67
+00:03:05,830 --> 00:03:08,200
+it probably does take a little bit longer
+
+68
+00:03:08,200 --> 00:03:10,420
+because creating a new process is a bit more expensive
+
+69
+00:03:10,420 --> 00:03:12,040
+than creating a new thread.
+
+70
+00:03:12,040 --> 00:03:14,300
+But generally, you know, it works, yeah.
+
+71
+00:03:15,320 --> 00:03:17,632
+This thing here though, enter your name,
+
+72
+00:03:17,632 --> 00:03:20,340
+started calculating, dot, dot, dot,
+
+73
+00:03:21,341 --> 00:03:22,900
+is a symptom of the problem,
+
+74
+00:03:24,470 --> 00:03:25,890
+and the problem we're going to see it
+
+75
+00:03:25,890 --> 00:03:28,570
+when we try to do something else.
+
+76
+00:03:28,570 --> 00:03:30,240
+Which is now I'm going to create another process
+
+77
+00:03:30,240 --> 00:03:32,010
+for my ask user function.
+
+78
+00:03:35,481 --> 00:03:37,420
+So process two is going to be process,
+
+79
+00:03:37,420 --> 00:03:39,960
+and the target is going to be, ask target
+
+80
+00:03:39,960 --> 00:03:42,240
+is ask the user function.
+
+81
+00:03:42,240 --> 00:03:43,870
+Then we're going to start process one.
+
+82
+00:03:43,870 --> 00:03:46,540
+We're going to start process two.
+
+83
+00:03:48,610 --> 00:03:49,970
+We're not going to ask the user anymore
+
+84
+00:03:49,970 --> 00:03:50,803
+in the main process.
+
+85
+00:03:50,803 --> 00:03:52,300
+We have now two processes for that,
+
+86
+00:03:52,300 --> 00:03:54,380
+and we can do process2.join.
+
+87
+00:03:58,700 --> 00:04:01,170
+Okay, same thing as before.
+
+88
+00:04:01,170 --> 00:04:03,500
+We created processes, we start them,
+
+89
+00:04:03,500 --> 00:04:06,820
+we start the timer, now we wait for them to finish.
+
+90
+00:04:06,820 --> 00:04:09,680
+But you'll see that this won't work so easily.
+
+91
+00:04:09,680 --> 00:04:10,730
+Let's run this again.
+
+92
+00:04:12,020 --> 00:04:14,250
+Go on the single threaded code first.
+
+93
+00:04:15,960 --> 00:04:17,570
+Starts calculating, and then it's going to,
+
+94
+00:04:17,570 --> 00:04:20,910
+when it finishes it's going to launch my two processes.
+
+95
+00:04:20,910 --> 00:04:25,280
+But alas, we get an error.
+
+96
+00:04:25,280 --> 00:04:29,220
+And sometime after, we get the complex calculation finished.
+
+97
+00:04:30,490 --> 00:04:35,490
+So here the problem is that we get an EOF when
+
+98
+00:04:35,580 --> 00:04:38,790
+reading a line, end of file when reading a line.
+
+99
+00:04:38,790 --> 00:04:41,870
+Our process could not run this input function.
+
+100
+00:04:43,260 --> 00:04:45,240
+And the reason the function could not run
+
+101
+00:04:45,240 --> 00:04:48,247
+this input function is because it doesn't have access
+
+102
+00:04:48,247 --> 00:04:51,300
+to this terminal here.
+
+103
+00:04:52,270 --> 00:04:55,960
+Remember the processes cannot share resources very easily.
+
+104
+00:04:55,960 --> 00:04:59,430
+So it doesn't know where we're meant to be reading from
+
+105
+00:04:59,430 --> 00:05:02,040
+when we tell it to finish to finish by doing
+
+106
+00:05:02,040 --> 00:05:05,040
+process2.join, it says okay you didn't type anything.
+
+107
+00:05:05,040 --> 00:05:07,270
+There was nothing, there was no way for me
+
+108
+00:05:07,270 --> 00:05:08,470
+to get the input.
+
+109
+00:05:08,470 --> 00:05:10,180
+And also there's no way for me to type it.
+
+110
+00:05:10,180 --> 00:05:13,060
+So, you know, finish the process.
+
+111
+00:05:13,060 --> 00:05:14,800
+And you get an error there.
+
+112
+00:05:14,800 --> 00:05:17,180
+There's no place for me to type the input
+
+113
+00:05:17,180 --> 00:05:21,550
+because it doesn't have access to this thing
+
+114
+00:05:21,550 --> 00:05:22,800
+that I was about to type.
+
+115
+00:05:23,840 --> 00:05:25,960
+So a bit of a strange problem there,
+
+116
+00:05:25,960 --> 00:05:28,440
+but this is the reason why earlier on
+
+117
+00:05:28,440 --> 00:05:33,090
+you got your two lines in the same line.
+
+118
+00:05:33,090 --> 00:05:36,040
+They were accessing the console simultaneously,
+
+119
+00:05:36,040 --> 00:05:40,580
+but it was essentially, sorry, a separate entity.
+
+120
+00:05:41,500 --> 00:05:43,110
+So a bit of a complicated thing.
+
+121
+00:05:43,110 --> 00:05:46,140
+Using processes is not easy, okay.
+
+122
+00:05:46,140 --> 00:05:48,230
+Because they are separate, you start getting
+
+123
+00:05:48,230 --> 00:05:50,920
+sort of separate resources, sometimes duplicate resources,
+
+124
+00:05:50,920 --> 00:05:52,870
+one of them doesn't have access to something.
+
+125
+00:05:52,870 --> 00:05:57,870
+The other one does, so not terribly easy to use processes.
+
+126
+00:05:59,080 --> 00:06:02,770
+Normally you'll use processes if you have
+
+127
+00:06:02,770 --> 00:06:06,230
+a multi core machine like my laptop is
+
+128
+00:06:06,230 --> 00:06:09,400
+and you want to do complex calculations on both.
+
+129
+00:06:09,400 --> 00:06:11,600
+So if you want to do that, you can do that.
+
+130
+00:06:12,890 --> 00:06:15,290
+You can run the complex calculation on both machines.
+
+131
+00:06:15,290 --> 00:06:16,960
+Now you won't get this error.
+
+132
+00:06:16,960 --> 00:06:18,120
+Let's run this again.
+
+133
+00:06:20,950 --> 00:06:22,300
+And let's see what happens.
+
+134
+00:06:24,270 --> 00:06:26,010
+This is the single threaded code, by the way,
+
+135
+00:06:26,010 --> 00:06:27,770
+it took six point four seven seconds.
+
+136
+00:06:27,770 --> 00:06:30,040
+Then we started calculating price.
+
+137
+00:06:30,040 --> 00:06:31,530
+And now we're hoping the operating system
+
+138
+00:06:31,530 --> 00:06:33,279
+has given us two cores to run in,
+
+139
+00:06:33,279 --> 00:06:35,010
+and it seems like it did.
+
+140
+00:06:35,010 --> 00:06:37,090
+And now the two complex calculations ran
+
+141
+00:06:37,090 --> 00:06:39,690
+in a longer amount of time, closer to seven seconds now,
+
+142
+00:06:39,690 --> 00:06:41,640
+instead of six point four seven.
+
+143
+00:06:41,640 --> 00:06:44,340
+But they ran both at the same time.
+
+144
+00:06:44,340 --> 00:06:48,240
+This is why you use multi processing when you need
+
+145
+00:06:48,240 --> 00:06:51,130
+two things to run at the same time in the CPU.
+
+146
+00:06:51,130 --> 00:06:53,970
+If your problem is you have things that are waiting,
+
+147
+00:06:53,970 --> 00:06:58,720
+like this user input here, you don't need multi processing.
+
+148
+00:06:58,720 --> 00:07:00,220
+What you need is multi threading.
+
+149
+00:07:00,220 --> 00:07:03,100
+And you want to, you know, have cooperative
+
+150
+00:07:03,100 --> 00:07:05,120
+multi tasking between the two threads.
+
+151
+00:07:06,830 --> 00:07:08,350
+So this is multi processing.
+
+152
+00:07:08,350 --> 00:07:11,470
+I just want to show you quickly when to use it
+
+153
+00:07:11,470 --> 00:07:12,970
+and when not to use it.
+
+154
+00:07:12,970 --> 00:07:14,530
+And we're going to be encountering a couple more
+
+155
+00:07:14,530 --> 00:07:17,250
+scenarios of where we want to use this later on
+
+156
+00:07:17,250 --> 00:07:18,590
+in the course.
+
+157
+00:07:18,590 --> 00:07:19,860
+So that's it for this video,
+
+158
+00:07:19,860 --> 00:07:21,510 line:15% 
+and I'll see you in the next one.
+

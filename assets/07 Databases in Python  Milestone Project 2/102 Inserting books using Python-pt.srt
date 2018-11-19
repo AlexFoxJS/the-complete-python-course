@@ -1,0 +1,560 @@
+1
+00:00:00,160 --> 00:00:01,460
+Instrutor: Ol e bem vindo de volta.
+
+2
+00:00:01,460 --> 00:00:03,030
+Neste vdeo vamos olhar para inserir
+
+3
+00:00:03,030 --> 00:00:05,707
+um livro em um banco de dados usando nossa interface
+
+4
+00:00:05,707 --> 00:00:09,127
+de banco de dados aqui, interface. py e usando
+
+5
+00:00:09,127 --> 00:00:10,760
+o Sequel Lite.
+
+6
+00:00:11,730 --> 00:00:14,020
+Ns olhamos para a criao de uma
+
+7
+00:00:14,020 --> 00:00:17,480
+tabela antes, agora vamos passar para a funo adicionar livro aqui.
+
+8
+00:00:17,480 --> 00:00:18,750
+E a primeira coisa
+
+9
+00:00:18,750 --> 00:00:21,280
+a fazer,  claro,  configurar a
+
+10
+00:00:21,280 --> 00:00:23,710
+conexo, incluindo o cursor, comprometendo e fechando.
+
+11
+00:00:23,710 --> 00:00:25,310
+E eu s vou copiar isso que
+
+12
+00:00:25,310 --> 00:00:27,500
+voc no deveria fazer, voc deve digitar este cdigo.
+
+13
+00:00:27,500 --> 00:00:29,716
+Mas eu digitei esse cdigo vrias vezes
+
+14
+00:00:29,716 --> 00:00:32,190
+j, ento acho que vou ficar bem.
+
+15
+00:00:33,540 --> 00:00:36,780
+O que queremos executar agora vai inserir alguns
+
+16
+00:00:36,780 --> 00:00:38,710
+dados, essa  a sintaxe.
+
+17
+00:00:38,710 --> 00:00:42,000
+Insira, insira em, ento temos que especificar
+
+18
+00:00:42,000 --> 00:00:44,910
+a tabela que queremos inserir e,
+
+19
+00:00:46,010 --> 00:00:49,320
+em seguida, os valores que queremos inserir.
+
+20
+00:00:49,320 --> 00:00:51,590
+Observe agora que colocamos alguns colchetes
+
+21
+00:00:51,590 --> 00:00:54,120
+e, entre esses colchetes, separados por vrgulas,
+
+22
+00:00:54,120 --> 00:00:56,470
+vo cada uma das colunas aqui.
+
+23
+00:00:57,730 --> 00:01:00,100
+Ento podemos fazer uma de duas coisas.
+
+24
+00:01:00,100 --> 00:01:02,780
+O primeiro  fazer isso em um NSString.
+
+25
+00:01:02,780 --> 00:01:04,810
+E ento aspas colocam
+
+26
+00:01:04,810 --> 00:01:09,810
+o nome, o autor e zero porque  o status
+
+27
+00:01:09,900 --> 00:01:11,220
+vermelho, o que
+
+28
+00:01:11,220 --> 00:01:13,060
+significa falso para comear.
+
+29
+00:01:14,320 --> 00:01:16,760
+Observe como colocamos essas aspas no meio, porque 
+
+30
+00:01:16,760 --> 00:01:19,880
+o que vai ser enviado para o Sequel Lite e as
+
+31
+00:01:22,423 --> 00:01:24,720
+aspas esto ao redor delas para que o
+
+32
+00:01:24,720 --> 00:01:26,710
+Sequel Lite saiba que elas so strings.
+
+33
+00:01:26,710 --> 00:01:29,960
+Se ns no os colocarmos, ele ir pensar que este
+
+34
+00:01:29,960 --> 00:01:33,110
+ um nome de tabela e vai ficar muito confuso
+
+35
+00:01:33,110 --> 00:01:33,943
+porque ns vamos
+
+36
+00:01:33,943 --> 00:01:36,510
+tentar inserir uma tabela em outra tabela, e
+
+37
+00:01:36,510 --> 00:01:38,600
+no  como isso,  claro.
+
+38
+00:01:38,600 --> 00:01:40,535
+Portanto, certifique-se de colocar as seqncias de caracteres l
+
+39
+00:01:40,535 --> 00:01:42,535
+para que ele saiba que estas so seqncias de caracteres.
+
+40
+00:01:43,780 --> 00:01:47,270
+Podemos fazer isso, vamos rodar nosso aplicativo. py.
+
+41
+00:01:47,270 --> 00:01:49,600
+No, desculpe, eu j tinha rodado antes.
+
+42
+00:01:49,600 --> 00:01:50,980
+Eu vou correr de novo.
+
+43
+00:01:52,209 --> 00:01:55,167
+E a voc v o que acontece.
+
+44
+00:01:55,167 --> 00:01:57,020
+Ns recebemos um traceback.
+
+45
+00:01:58,030 --> 00:02:00,230
+Agora, agora, analisamos esses tracebacks?
+
+46
+00:02:00,230 --> 00:02:02,513
+Bem, ns j sabemos.
+
+47
+00:02:02,513 --> 00:02:04,730
+Este  um erro operacional do Sequel Lite.
+
+48
+00:02:04,730 --> 00:02:05,690
+Isso significa que
+
+49
+00:02:05,690 --> 00:02:07,830
+algo aconteceu quando estvamos tentando realizar uma operao.
+
+50
+00:02:07,830 --> 00:02:09,420
+E isso nos d uma
+
+51
+00:02:09,420 --> 00:02:11,470
+boa descrio, tabela, livros j existe.
+
+52
+00:02:12,350 --> 00:02:14,181
+Ns tentamos criar um
+
+53
+00:02:14,181 --> 00:02:16,920
+livro de mesa, mas ele j existia.
+
+54
+00:02:16,920 --> 00:02:20,440
+Vamos fechar isso e adicionar outro bit de sintaxe.
+
+55
+00:02:20,440 --> 00:02:24,620
+Voc pode CRIAR TABELA SE NO EXISTE.
+
+56
+00:02:24,620 --> 00:02:26,990
+Isso no  muito ingls, mas
+
+57
+00:02:26,990 --> 00:02:28,600
+isso far o trabalho.
+
+58
+00:02:28,600 --> 00:02:30,270
+Eu s vou criar os livros
+
+59
+00:02:30,270 --> 00:02:32,050
+de mesa, se ainda no existir.
+
+60
+00:02:32,050 --> 00:02:33,920
+E, claro, outra opo
+
+61
+00:02:33,920 --> 00:02:36,289
+ excluir dados. DB completamente, e isso vai ficar bem.
+
+62
+00:02:36,289 --> 00:02:38,760
+Ento eu vou fazer isso tambm.
+
+63
+00:02:38,760 --> 00:02:41,700
+Excluir dados. db, execute o aplicativo.
+
+64
+00:02:41,700 --> 00:02:43,885
+Agora funciona, voc pode par-lo.
+
+65
+00:02:43,885 --> 00:02:46,330
+Voc pode executar o aplicativo novamente, e voc
+
+66
+00:02:46,330 --> 00:02:47,470
+pode ver que ele
+
+67
+00:02:47,470 --> 00:02:50,400
+ainda funciona, embora j tenhamos o banco de dados l.
+
+68
+00:02:50,400 --> 00:02:52,020
+Vamos adicionar um novo livro.
+
+69
+00:02:52,020 --> 00:02:55,820
+Podemos dizer Cdigo Limpo, de Robert,
+
+70
+00:02:55,820 --> 00:02:57,640
+e parece funcionar.
+
+71
+00:02:57,640 --> 00:03:00,109
+ claro que, se tentarmos listar todos os
+
+72
+00:03:00,109 --> 00:03:02,440
+livros, ele ir para o nosso arquivo json,
+
+73
+00:03:02,440 --> 00:03:04,540
+de modo que no seja muito bom.
+
+74
+00:03:04,540 --> 00:03:07,424
+Por enquanto s podemos adicionar livros.
+
+75
+00:03:07,424 --> 00:03:09,550
+Ento, como voc pode ver, isso
+
+76
+00:03:09,550 --> 00:03:11,440
+funciona e podemos adicionar novos livros.
+
+77
+00:03:11,440 --> 00:03:13,870
+Ns no podemos listar livros, ou voc sabe,
+
+78
+00:03:13,870 --> 00:03:15,580
+ler livros para qualquer coisa assim.
+
+79
+00:03:15,580 --> 00:03:18,190
+Vamos parar o aplicativo e eu vou
+
+80
+00:03:18,190 --> 00:03:20,440
+voltar para essa declarao de execuo.
+
+81
+00:03:21,700 --> 00:03:25,030
+Eu disse que havia duas maneiras de executar essa execuo.
+
+82
+00:03:25,030 --> 00:03:27,440
+E esse  o primeiro a usar uma
+
+83
+00:03:27,440 --> 00:03:29,870
+string f, mas essa no  a abordagem recomendada.
+
+84
+00:03:30,875 --> 00:03:33,330
+E eis porque esta no  a abordagem recomendada.
+
+85
+00:03:33,330 --> 00:03:36,310
+Eu vou apenas um rpido conselho.
+
+86
+00:03:37,720 --> 00:03:42,720
+Onde vai colocar o contedo do nome nesta string.
+
+87
+00:03:43,340 --> 00:03:45,590
+E vamos colocar o contedo do
+
+88
+00:03:45,590 --> 00:03:46,990
+autor nesta string aqui.
+
+89
+00:03:47,990 --> 00:03:49,200
+Mas o que
+
+90
+00:03:49,200 --> 00:03:54,200
+voc no sabia,  que voc pode executar vrias instrues Sequel
+
+91
+00:03:54,360 --> 00:03:56,550
+todas juntas quando voc executa.
+
+92
+00:03:56,550 --> 00:04:01,550
+Por exemplo, digamos que o autor foi isso.
+
+93
+00:04:02,340 --> 00:04:05,840
+Vamos dizer que o contedo do autor foi isso.
+
+94
+00:04:15,020 --> 00:04:16,800
+Agora eu entendo que voc provavelmente no
+
+95
+00:04:16,800 --> 00:04:18,280
+sabe o que isso significa.
+
+96
+00:04:18,280 --> 00:04:23,150
+Mas se colocarmos esse cdigo exatamente onde o autor est, o
+
+97
+00:04:24,450 --> 00:04:28,180
+que acontece  que agora recebemos duas declaraes.
+
+98
+00:04:28,180 --> 00:04:31,500
+Este que insere um valor em livros
+
+99
+00:04:31,500 --> 00:04:34,890
+com um nome, um autor vazio e zero.
+
+100
+00:04:34,890 --> 00:04:37,800
+Um ponto e vrgula nos permite executar outra instruo
+
+101
+00:04:37,800 --> 00:04:41,300
+e essa instruo exclui a tabela de livros por completo.
+
+102
+00:04:42,870 --> 00:04:44,240
+E ento ns pegamos alguma sintaxe
+
+103
+00:04:44,240 --> 00:04:46,090
+invlida no final que provavelmente ir lanar e errar.
+
+104
+00:04:46,090 --> 00:04:48,340
+Mas, no entanto, estas duas declaraes teriam corrido.
+
+105
+00:04:48,340 --> 00:04:50,197
+Voc teria inserido alguns livros
+
+106
+00:04:50,197 --> 00:04:52,480
+e depois teria deixado cair a mesa.
+
+107
+00:04:52,480 --> 00:04:53,620
+Isso  realmente
+
+108
+00:04:53,620 --> 00:04:57,010
+perigoso, porque isso  chamado de ataque de injeo Sequel
+
+109
+00:04:57,010 --> 00:05:00,515
+e seus usurios podem ser desagradveis o suficiente para tentar faz-lo.
+
+110
+00:05:00,515 --> 00:05:04,779
+Ento, se voc tem uma substituio direta, isso 
+
+111
+00:05:04,779 --> 00:05:06,970
+chamado de interpolao de string.
+
+112
+00:05:06,970 --> 00:05:10,630
+Se voc tem uma substituio direta de uma string
+
+113
+00:05:10,630 --> 00:05:14,330
+em sua consulta, ela potencialmente abre esse caminho de ataque.
+
+114
+00:05:14,330 --> 00:05:15,240
+Ento no faa isso.
+
+115
+00:05:15,240 --> 00:05:17,550
+Em vez disso, o que voc quer
+
+116
+00:05:17,550 --> 00:05:21,210
+fazer  remover tudo e colocar um ponto de interrogao.
+
+117
+00:05:21,210 --> 00:05:23,440
+Remova tudo e coloque um ponto de interrogao.
+
+118
+00:05:23,440 --> 00:05:25,900
+Voc pode deixar o zero l se quiser.
+
+119
+00:05:25,900 --> 00:05:28,570
+Em seguida, coloque uma vrgula aps a
+
+120
+00:05:28,570 --> 00:05:32,920
+string e, dentro de uma tupla, digite o nome e o autor.
+
+121
+00:05:32,920 --> 00:05:35,060
+Certifique-se de que esta 
+
+122
+00:05:35,060 --> 00:05:37,650
+uma tupla e, em seguida, o Sequel
+
+123
+00:05:37,650 --> 00:05:41,420
+Lite vai, o Sequel Lite trs vai colocar isso l
+
+124
+00:05:41,420 --> 00:05:43,060
+dentro, esse a seguramente.
+
+125
+00:05:43,060 --> 00:05:47,510
+Ento, se eles so um ataque de injeo Sequel, voc estar seguro.
+
+126
+00:05:47,510 --> 00:05:48,570
+Ento  isso que fazer.
+
+127
+00:05:48,570 --> 00:05:51,220
+Vamos executar o aplicativo novamente,
+
+128
+00:05:51,220 --> 00:05:56,220
+vamos adicionar outro, Test Driven Development, de Ken Beck.
+
+129
+00:05:56,630 --> 00:05:58,970
+E voc pode ver que tudo isso funciona tambm,
+
+130
+00:05:58,970 --> 00:06:01,190
+e  uma maneira melhor de fazer as coisas.
+
+131
+00:06:01,190 --> 00:06:02,450
+ mais seguro.
+
+132
+00:06:02,450 --> 00:06:04,740
+Ataque por injeo sequela, muito popular.
+
+133
+00:06:04,740 --> 00:06:07,240
+No se abra em suas aplicaes.
+
+134
+00:06:07,240 --> 00:06:09,670
+E o caminho para isso  fazer
+
+135
+00:06:09,670 --> 00:06:13,400
+isso, no use strings ou formatao direta de strings em suas
+
+136
+00:06:13,400 --> 00:06:15,730
+consultas, porque isso no  seguro.
+
+137
+00:06:16,700 --> 00:06:17,730
+Ok,  isso para este vdeo.
+
+138
+00:06:17,730 --> 00:06:20,870
+Examinamos a insero de valores em nosso banco de dados.
+
+139
+00:06:20,870 --> 00:06:22,220
+Vamos para o prximo.
+
+140
+00:06:22,220 --> 00:06:23,170
+Eu te vejo l.
+

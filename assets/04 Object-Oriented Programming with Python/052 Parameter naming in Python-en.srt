@@ -1,0 +1,312 @@
+1
+00:00:00,190 --> 00:00:01,400
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,400 --> 00:00:05,340
+In this video, I just wanted to give you a small tidbit
+
+3
+00:00:05,340 --> 00:00:09,410
+of extra info regarding arguments and parameter naming.
+
+4
+00:00:11,250 --> 00:00:14,270
+Remember, object-only programming is used to help
+
+5
+00:00:14,270 --> 00:00:17,510
+conceptualise the interactions between objects.
+
+6
+00:00:18,420 --> 00:00:20,650
+So, in between parts of your system.
+
+7
+00:00:20,650 --> 00:00:22,670
+So when you have a student, now you know that you
+
+8
+00:00:22,670 --> 00:00:26,080
+can interact with something that represents a student.
+
+9
+00:00:26,080 --> 00:00:28,270
+If you had a movie class, you'd know that you
+
+10
+00:00:28,270 --> 00:00:30,830
+can interact with something that represents a movie.
+
+11
+00:00:31,760 --> 00:00:35,010
+So, let's define this movie.
+
+12
+00:00:37,647 --> 00:00:38,890
+Remember, we've got a class, and then we've
+
+13
+00:00:38,890 --> 00:00:41,590
+got the name of the class, a colon, and then we
+
+14
+00:00:41,590 --> 00:00:43,410
+can define functions underneath it.
+
+15
+00:00:44,440 --> 00:00:47,440
+All I wanted to do is define a dunder init function.
+
+16
+00:00:48,670 --> 00:00:51,910
+That takes three parameters: self, that's the
+
+17
+00:00:51,910 --> 00:00:54,090
+current object that we're dealing with that
+
+18
+00:00:54,090 --> 00:00:56,850
+was just created before we called this function.
+
+19
+00:00:56,850 --> 00:00:59,838
+Name and year, those are two parameters.
+
+20
+00:00:59,838 --> 00:01:04,210
+Then what we're going to do is a self.name is name,
+
+21
+00:01:04,210 --> 00:01:06,160
+self.year is year.
+
+22
+00:01:07,640 --> 00:01:11,240
+And this normally confuses my students a fair bit,
+
+23
+00:01:11,240 --> 00:01:13,840
+because we've got this variable we're creating here,
+
+24
+00:01:13,840 --> 00:01:15,757
+name and as you go to this variable you
+
+25
+00:01:15,757 --> 00:01:19,280
+already created up here, which is also name,
+
+26
+00:01:19,280 --> 00:01:21,670
+so name=name, what is going on?
+
+27
+00:01:23,930 --> 00:01:27,370
+This name here, remember, it's not a variable,
+
+28
+00:01:27,370 --> 00:01:30,740
+it is a property of self.
+
+29
+00:01:30,740 --> 00:01:33,900
+This variable is not getting created here,
+
+30
+00:01:33,900 --> 00:01:35,800
+it's getting created inside of self,
+
+31
+00:01:35,800 --> 00:01:37,730
+that's what the dot means.
+
+32
+00:01:37,730 --> 00:01:40,700
+So we're defining a new variable or property
+
+33
+00:01:40,700 --> 00:01:45,410
+inside self, which is called name, and that is equal
+
+34
+00:01:45,410 --> 00:01:47,920
+to the value of name variable that exists
+
+35
+00:01:47,920 --> 00:01:50,060
+in the current scope, this function,
+
+36
+00:01:50,060 --> 00:01:51,410
+that's this parameter here.
+
+37
+00:01:52,520 --> 00:01:53,720
+So this is totally fine.
+
+38
+00:01:54,750 --> 00:01:57,260
+Now our object is going to have a property name,
+
+39
+00:01:57,260 --> 00:01:59,580
+just like our student had, and its value
+
+40
+00:01:59,580 --> 00:02:01,230
+is equal to this parameter here.
+
+41
+00:02:01,230 --> 00:02:05,900
+These are two entirely distinct parts of our code
+
+42
+00:02:05,900 --> 00:02:08,430
+and parts of the structure of classes and objects.
+
+43
+00:02:09,470 --> 00:02:11,510
+So we can print (Movie('TheMatrix, 1994').name).
+
+44
+00:02:17,618 --> 00:02:19,050
+This is, by the way, just a shorthand way
+
+45
+00:02:19,050 --> 00:02:21,200
+of doing this, it's pretty not very useful
+
+46
+00:02:21,200 --> 00:02:23,470
+'cause you're just creating this movie
+
+47
+00:02:23,470 --> 00:02:25,240
+and you're not assigning it to a variable.
+
+48
+00:02:25,240 --> 00:02:27,440
+But you know, you can do that, you can create a movie,
+
+49
+00:02:27,440 --> 00:02:29,360
+you can print out its name, you can run it,
+
+50
+00:02:29,360 --> 00:02:31,500
+and you get The Matrix out, okay.
+
+51
+00:02:33,620 --> 00:02:38,620
+Of course you can store this movie inside a matrix variable.
+
+52
+00:02:40,500 --> 00:02:42,380
+And then you can print out matrix.name,
+
+53
+00:02:42,380 --> 00:02:43,810
+that's totally cool as well.
+
+54
+00:02:45,160 --> 00:02:47,690
+You can put objects inside lists and as it topples,
+
+55
+00:02:47,690 --> 00:02:49,080
+you can put them in dictionaries, you can put them
+
+56
+00:02:49,080 --> 00:02:51,280
+anywhere you would want, okay?
+
+57
+00:02:51,280 --> 00:02:56,250
+An object is just a value, like a string is, or an int.
+
+58
+00:02:57,580 --> 00:03:00,090
+You can put objects anywhere you could put a string,
+
+59
+00:03:00,090 --> 00:03:02,520
+or an integer, as long as it makes sense,
+
+60
+00:03:02,520 --> 00:03:04,590
+for example, you can not add an object to
+
+61
+00:03:04,590 --> 00:03:07,903
+another object, that probably doesn't make much sense.
+
+62
+00:03:07,903 --> 00:03:11,120
+We'll be looking later on at how you can do that,
+
+63
+00:03:11,120 --> 00:03:13,776
+but not yet, you can't do that yet.
+
+64
+00:03:13,776 --> 00:03:15,700
+Similarly, you cannot, for example,
+
+65
+00:03:15,700 --> 00:03:18,070
+multiply an object by another.
+
+66
+00:03:18,070 --> 00:03:19,480
+That probably doesn't make sense,
+
+67
+00:03:19,480 --> 00:03:21,680
+you cannot multiply two students together.
+
+68
+00:03:21,680 --> 00:03:24,870
+Okay, this is probably getting mildly inappropriate.
+
+69
+00:03:24,870 --> 00:03:27,520
+You cannot multiply two movies together, for example.
+
+70
+00:03:28,690 --> 00:03:31,210
+So, that's what objects are.
+
+71
+00:03:31,210 --> 00:03:35,600
+They are conceptualizations of entities in your programme,
+
+72
+00:03:35,600 --> 00:03:39,725
+and that's a pretty lingo-filled phrase,
+
+73
+00:03:39,725 --> 00:03:41,320
+but that's what they are.
+
+74
+00:03:41,320 --> 00:03:42,550
+They're used to represent things
+
+75
+00:03:42,550 --> 00:03:44,100
+that you want to interact with.
+
+76
+00:03:45,090 --> 00:03:46,940
+Okay, and that's it for this video, I just wanted
+
+77
+00:03:46,940 --> 00:03:50,000
+to once again reiterate what this is all about.
+
+78
+00:03:50,000 --> 00:03:53,580
+And let's move on over to the next one, see you there.
+

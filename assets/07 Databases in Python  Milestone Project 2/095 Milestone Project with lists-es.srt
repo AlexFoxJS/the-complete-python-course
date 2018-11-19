@@ -1,0 +1,1548 @@
+1
+00:00:00,420 --> 00:00:01,940
+Instructor: Hola y bienvenido de nuevo.
+
+2
+00:00:01,940 --> 00:00:03,610
+En este video, vamos a
+
+3
+00:00:03,610 --> 00:00:05,450
+implementar nuestro Proyecto Milestone dos
+
+4
+00:00:05,450 --> 00:00:09,770
+utilizando nuestra base de datos en memoria, que es una lista de Python.
+
+5
+00:00:09,770 --> 00:00:11,640
+Realmente espero que lo hayas probado
+
+6
+00:00:11,640 --> 00:00:13,040
+siguiendo el resumen del proyecto
+
+7
+00:00:13,040 --> 00:00:15,570
+e intentaste implementar este proyecto por tu cuenta,
+
+8
+00:00:15,570 --> 00:00:18,370
+y con suerte lo lograste y lo hiciste funcionar.
+
+9
+00:00:18,370 --> 00:00:20,290
+Siempre puede hacer preguntas en el curso Q y A.
+
+10
+00:00:20,290 --> 00:00:21,870
+Si necesita ayuda con algo
+
+11
+00:00:21,870 --> 00:00:22,940
+especfico antes de continuar.
+
+12
+00:00:24,010 --> 00:00:25,680
+Pero ahora que est aqu,
+
+13
+00:00:25,680 --> 00:00:28,030
+implementemos este proyecto usando listas como nuestra
+
+14
+00:00:28,030 --> 00:00:29,930
+base de datos en memoria.
+
+15
+00:00:31,440 --> 00:00:33,240
+Por supuesto, lo primero que haremos
+
+16
+00:00:33,240 --> 00:00:36,050
+ser definir la interfaz de usuario para que el usuario
+
+17
+00:00:36,050 --> 00:00:39,030
+pueda interactuar con nuestro programa y luego podamos agregar funcionalidad
+
+18
+00:00:39,030 --> 00:00:39,900
+poco a poco.
+
+19
+00:00:42,100 --> 00:00:43,880
+Lo primero que tenemos es
+
+20
+00:00:43,880 --> 00:00:45,680
+pedirle al usuario que ingrese
+
+21
+00:00:45,680 --> 00:00:47,120
+su eleccin como A,
+
+22
+00:00:47,120 --> 00:00:48,630
+L, R, D o Q.
+
+23
+00:00:48,630 --> 00:00:51,290
+Si ingresan Q, no vamos a entrar en
+
+24
+00:00:51,290 --> 00:00:54,640
+este ciclo as que aqu tenemos que tratar con cuatro opciones.
+
+25
+00:00:55,500 --> 00:00:56,960
+Si la entrada del
+
+26
+00:00:56,960 --> 00:00:57,793
+usuario es
+
+27
+00:00:59,690 --> 00:01:01,710
+A, si la entrada del usuario
+
+28
+00:01:03,550 --> 00:01:06,020
+es L, si la entrada del usuario
+
+29
+00:01:07,410 --> 00:01:09,600
+es R, y si la entrada
+
+30
+00:01:09,600 --> 00:01:10,470
+del usuario es D.
+
+31
+00:01:12,120 --> 00:01:14,020
+Y si no es ninguno de ellos,
+
+32
+00:01:14,880 --> 00:01:17,670
+podemos imprimir un comando desconocido, por favor intente de nuevo.
+
+33
+00:01:19,590 --> 00:01:20,550
+Bueno.
+
+34
+00:01:20,550 --> 00:01:22,970
+Ahora, por supuesto, para volver al principio del
+
+35
+00:01:22,970 --> 00:01:24,660
+ciclo con una entrada de
+
+36
+00:01:24,660 --> 00:01:28,100
+usuario diferente, debemos restablecer la entrada del usuario a otra cosa.
+
+37
+00:01:28,100 --> 00:01:31,120
+Para eso, vamos a preguntarle al usuario nuevamente, pero
+
+38
+00:01:31,120 --> 00:01:34,820
+asegrese de que no est dentro del otro o en ningn
+
+39
+00:01:34,820 --> 00:01:36,620
+lado, solo dentro del ciclo
+
+40
+00:01:36,620 --> 00:01:38,430
+fuera de cualquiera de estas declaraciones.
+
+41
+00:01:41,120 --> 00:01:44,410
+Tambin, tambin te di algunos consejos sobre cmo podras llamar
+
+42
+00:01:44,410 --> 00:01:48,380
+a tus funciones, as que solo voy a usar esos nombres aqu.
+
+43
+00:01:48,380 --> 00:01:51,140
+As que voy a llamar a Prompt Add
+
+44
+00:01:51,140 --> 00:01:54,730
+Book la funcin que an no existe cuando escriben A.
+
+45
+00:01:54,730 --> 00:01:57,900
+Vamos a llamar a List Books cuando escriban L.
+
+46
+00:01:57,900 --> 00:02:01,110
+Indique el libro de lectura cuando escriben R.
+
+47
+00:02:01,110 --> 00:02:04,500
+Y solicite Eliminar libro cuando escriben D.
+
+48
+00:02:04,500 --> 00:02:07,380
+La razn por la cual estas funciones tienen Prompt delante de ellos es
+
+49
+00:02:07,380 --> 00:02:10,170
+porque estas funciones no solo van a hacer cosas, sino que tambin van
+
+50
+00:02:10,170 --> 00:02:12,530
+a pedirle al usuario algo y esa es solo mi forma
+
+51
+00:02:12,530 --> 00:02:14,630
+de decirme a m mismo, ya sabes, estas funciones no
+
+52
+00:02:14,630 --> 00:02:16,280
+son No voy a preguntarle al usuario.
+
+53
+00:02:16,280 --> 00:02:18,960
+Deben pedirle al usuario cierta informacin para hacer
+
+54
+00:02:18,960 --> 00:02:20,500
+lo que quiere hacer.
+
+55
+00:02:20,500 --> 00:02:22,240
+Si desea agregar un libro, debe pedirle al usuario
+
+56
+00:02:22,240 --> 00:02:23,300
+el nombre y el autor.
+
+57
+00:02:23,300 --> 00:02:25,270
+Si desea leer un libro, debe preguntar al
+
+58
+00:02:25,270 --> 00:02:27,550
+usuario al menos el nombre, y si desea eliminar un
+
+59
+00:02:27,550 --> 00:02:29,700
+libro, tambin debe preguntar al menos por el nombre.
+
+60
+00:02:31,690 --> 00:02:35,260
+Est bien, entonces continuemos e implementemos nuestras funciones.
+
+61
+00:02:36,270 --> 00:02:38,640
+El estilo de Python sugiere que dejamos dos lneas en
+
+62
+00:02:38,640 --> 00:02:41,110
+blanco entre dos funciones, as que vamos a hacer exactamente eso.
+
+63
+00:02:41,110 --> 00:02:45,830
+Y luego vamos a definir nuestra funcin de Agregar libro rpido.
+
+64
+00:02:45,830 --> 00:02:47,270
+Lo que esto va a hacer es preguntarle
+
+65
+00:02:47,270 --> 00:02:48,580
+al usuario el nombre y el autor.
+
+66
+00:02:48,580 --> 00:02:49,440
+As que nombre,
+
+67
+00:02:53,797 --> 00:02:54,630
+y el autor
+
+68
+00:02:58,480 --> 00:03:00,150
+y luego todo lo que va
+
+69
+00:03:00,150 --> 00:03:03,920
+a hacer es pedirle a la base de datos que guarde este libro.
+
+70
+00:03:03,920 --> 00:03:06,740
+Observe cmo no va a interactuar directamente con la lista
+
+71
+00:03:06,740 --> 00:03:09,730
+de libros, pero le pedir a la base de datos
+
+72
+00:03:09,730 --> 00:03:11,870
+que guarde el libro en la lista.
+
+73
+00:03:12,860 --> 00:03:15,720
+Entonces, qu hacer aqu es decir? Database dot add
+
+74
+00:03:16,560 --> 00:03:17,990
+book, name and author.
+
+75
+00:03:19,450 --> 00:03:22,030
+Y cuando llamamos esto, pasamos el valor
+
+76
+00:03:22,030 --> 00:03:24,750
+del nombre, su cadena y el valor
+
+77
+00:03:24,750 --> 00:03:29,080
+del autor, otra cadena, a nuestra funcin de agregar libro y
+
+78
+00:03:29,080 --> 00:03:32,040
+ahora vamos a usar esta variable global para
+
+79
+00:03:32,040 --> 00:03:34,960
+anexar este diccionario que representa nuestro libro.
+
+80
+00:03:34,960 --> 00:03:38,200
+Tiene un nombre, un autor y un estado
+
+81
+00:03:38,200 --> 00:03:40,310
+rojo que comienza como falso.
+
+82
+00:03:40,310 --> 00:03:42,660
+Vamos a poder cambiar esto ms adelante.
+
+83
+00:03:44,490 --> 00:03:45,323
+Bueno.
+
+84
+00:03:46,560 --> 00:03:49,460
+Ahora podemos eliminar nuestro primer comentario, porque ya
+
+85
+00:03:49,460 --> 00:03:50,710
+lo hemos logrado.
+
+86
+00:03:50,710 --> 00:03:54,720
+Una vez ms, dejando dos lneas, podemos decir libros de listas.
+
+87
+00:03:55,770 --> 00:03:58,640
+Y la lista de libros simplemente va a pedir a la
+
+88
+00:03:58,640 --> 00:03:59,540
+base de datos
+
+89
+00:04:03,940 --> 00:04:06,850
+todos los libros, y los va a imprimir uno a uno.
+
+90
+00:04:06,850 --> 00:04:09,810
+Entonces, para libros en libros, vamos
+
+91
+00:04:11,190 --> 00:04:12,990
+a imprimir alguna
+
+92
+00:04:12,990 --> 00:04:14,590
+representacin del libro.
+
+93
+00:04:14,590 --> 00:04:15,950
+Podemos hacer eso ms tarde.
+
+94
+00:04:15,950 --> 00:04:17,710
+Por ahora, solo vamos a imprimir
+
+95
+00:04:17,710 --> 00:04:18,690
+el diccionario que volver.
+
+96
+00:04:18,690 --> 00:04:20,650
+Recuerde, estamos almacenando
+
+97
+00:04:20,650 --> 00:04:22,630
+diccionarios, los diccionarios volvern.
+
+98
+00:04:22,630 --> 00:04:25,130
+La funcin de obtener todos los libros no existe, as
+
+99
+00:04:25,130 --> 00:04:27,330
+que vamos a crearla en la base de datos.
+
+100
+00:04:32,660 --> 00:04:35,140
+Y qu debera hacer esta funcin?
+
+101
+00:04:35,140 --> 00:04:37,380
+Bueno, para obtener todos los libros, todo lo
+
+102
+00:04:37,380 --> 00:04:40,720
+que tiene que hacer es devolver esta lista que contendr todos nuestros
+
+103
+00:04:40,720 --> 00:04:43,100
+libros, por lo que solo devolvern los libros.
+
+104
+00:04:44,250 --> 00:04:48,100
+Cuando intensifiquemos este programa y trabajemos con archivos, esto se va
+
+105
+00:04:48,100 --> 00:04:50,140
+a volver ms complicado, por supuesto.
+
+106
+00:04:50,140 --> 00:04:52,590
+Va a tener que abrir un archivo y leer
+
+107
+00:04:52,590 --> 00:04:55,240
+los contenidos, y ciertamente cuando nos vayamos a las bases
+
+108
+00:04:55,240 --> 00:04:57,340
+de datos, nos volveremos an ms complicados ya
+
+109
+00:04:57,340 --> 00:04:59,430
+que tendremos que conectarnos a la base de
+
+110
+00:04:59,430 --> 00:05:00,870
+datos y recuperar los datos.
+
+111
+00:05:00,870 --> 00:05:02,860
+Pero por ahora, debido a que estamos usando una
+
+112
+00:05:02,860 --> 00:05:05,770
+base de datos en memoria simple, podemos simplemente devolver los libros all.
+
+113
+00:05:08,667 --> 00:05:11,120
+Ahora podemos eliminar nuestro comando de libros de
+
+114
+00:05:11,120 --> 00:05:13,550
+lista all porque ya lo hemos implementado.
+
+115
+00:05:14,570 --> 00:05:17,650
+Avancemos a Prompt Read Book, y esto tiene que
+
+116
+00:05:17,650 --> 00:05:19,840
+pedir el nombre del libro y
+
+117
+00:05:19,840 --> 00:05:23,340
+luego ir a la base de datos y cambiarlo para leer.
+
+118
+00:05:23,340 --> 00:05:24,530
+As que nombre, ingrese el
+
+119
+00:05:30,690 --> 00:05:33,030
+nombre del libro que acaba de leer, y luego
+
+120
+00:05:33,030 --> 00:05:34,940
+todo lo que queremos hacer es decir
+
+121
+00:05:34,940 --> 00:05:38,730
+el libro de marca de la base de datos como ledo con ese nombre.
+
+122
+00:05:39,930 --> 00:05:41,590
+Por supuesto, esta funcin no existe,
+
+123
+00:05:41,590 --> 00:05:44,680
+por lo que tenemos que ir a nuestra base de
+
+124
+00:05:44,680 --> 00:05:46,220
+datos, marcar P Y y
+
+125
+00:05:46,220 --> 00:05:47,870
+definir ese libro de marcas
+
+126
+00:05:48,970 --> 00:05:51,250
+como ledo, y se le asigna un nombre.
+
+127
+00:05:51,250 --> 00:05:53,750
+Este parmetro aqu recibir la cadena que
+
+128
+00:05:53,750 --> 00:05:55,450
+ingres el usuario, y ese
+
+129
+00:05:55,450 --> 00:05:57,270
+debera ser el nombre del libro.
+
+130
+00:05:57,270 --> 00:05:59,680
+Entonces, cmo marcaramos un libro como ledo, sabiendo
+
+131
+00:05:59,680 --> 00:06:01,680
+que tenemos una lista de libros?
+
+132
+00:06:06,970 --> 00:06:08,280
+Si no has probado esto antes,
+
+133
+00:06:08,280 --> 00:06:10,400
+entonces espero que hayas probado el video por un
+
+134
+00:06:10,400 --> 00:06:11,730
+momento y lo hayas probado.
+
+135
+00:06:11,730 --> 00:06:16,140
+Todo por hacer es solo iterar sobre los libros y si el
+
+136
+00:06:16,140 --> 00:06:20,540
+libro fue ledo, si el libro es igual al nombre que le
+
+137
+00:06:21,800 --> 00:06:23,290
+dimos, entonces di lectura
+
+138
+00:06:24,780 --> 00:06:26,540
+del libro ahora es verdadero.
+
+139
+00:06:29,760 --> 00:06:32,380
+De acuerdo, eso es todo, revisa los
+
+140
+00:06:32,380 --> 00:06:33,420
+libros y, para
+
+141
+00:06:33,420 --> 00:06:36,170
+cada libro, modifcalo si el nombre coincide.
+
+142
+00:06:36,170 --> 00:06:38,870
+Por supuesto, esto sugiere que si dos
+
+143
+00:06:38,870 --> 00:06:43,063
+libros tienen el mismo nombre, ambos sern cambiados para ser ledos,
+
+144
+00:06:43,063 --> 00:06:46,290
+pero ya sabes, podemos enfrentar ese problema ms adelante.
+
+145
+00:06:46,290 --> 00:06:48,010
+Si lo desea, por supuesto, puede cambiar
+
+146
+00:06:48,010 --> 00:06:50,470
+esto para tomar dos argumentos, el nombre y el
+
+147
+00:06:50,470 --> 00:06:54,180
+autor, y eso le da un poco ms de detalle en lo que hace.
+
+148
+00:06:57,160 --> 00:07:00,170
+Finalmente, vamos a eliminar este comentario aqu y definir
+
+149
+00:07:00,170 --> 00:07:01,680
+el prompt delete book.
+
+150
+00:07:04,580 --> 00:07:06,580
+Una vez ms, esto va a tomar un
+
+151
+00:07:13,500 --> 00:07:16,550
+nombre y va a hacer un libro de borrado de puntos de
+
+152
+00:07:16,550 --> 00:07:18,070
+base de datos con ese nombre.
+
+153
+00:07:18,070 --> 00:07:20,930
+Naturalmente, eso tampoco existe, as que una vez ms, vamos
+
+154
+00:07:20,930 --> 00:07:23,780
+a nuestra base de datos y definimos esa funcin.
+
+155
+00:07:27,410 --> 00:07:29,090
+Entonces, cmo podemos hacer eso?
+
+156
+00:07:29,090 --> 00:07:32,190
+Esta es la cosa un poco ms interesante.
+
+157
+00:07:33,220 --> 00:07:37,060
+Hay algunas maneras en que podemos eliminar un libro.
+
+158
+00:07:37,060 --> 00:07:39,860
+Pausa el video y prubalo si an no lo has hecho.
+
+159
+00:07:44,310 --> 00:07:47,020
+Una de las formas en que mis alumnos
+
+160
+00:07:47,020 --> 00:07:52,020
+suelen pensar en eliminar un libro es revisando la documentacin de la lista y ver
+
+161
+00:07:52,420 --> 00:07:54,500
+si las listas tienen alguna forma
+
+162
+00:07:54,500 --> 00:07:55,900
+de eliminar elementos de ellos.
+
+163
+00:07:57,130 --> 00:07:58,990
+Y normalmente terminamos con esto.
+
+164
+00:07:58,990 --> 00:08:00,770
+Repase cada libro, si el
+
+165
+00:08:00,770 --> 00:08:03,310
+nombre coincide con lo que queremos eliminar,
+
+166
+00:08:04,490 --> 00:08:07,990
+haga que los libros dot eliminen el libro, porque
+
+167
+00:08:07,990 --> 00:08:12,990
+los objetos de la lista tienen este mtodo de eliminacin de puntos y toman
+
+168
+00:08:13,530 --> 00:08:16,570
+uno de los objetos de la lista y
+
+169
+00:08:16,570 --> 00:08:19,520
+le permite eliminarlo por completo. de la lista.
+
+170
+00:08:20,560 --> 00:08:22,480
+Entonces esto ciertamente funcionara.
+
+171
+00:08:24,350 --> 00:08:28,010
+Sin embargo, generalmente se considera una mala
+
+172
+00:08:28,010 --> 00:08:30,340
+prctica modificar una lista mientras
+
+173
+00:08:30,340 --> 00:08:32,380
+se itera sobre ella.
+
+174
+00:08:33,400 --> 00:08:36,030
+Esto se debe a que a medida que pasa de
+
+175
+00:08:36,030 --> 00:08:37,570
+un elemento al siguiente, los elementos
+
+176
+00:08:37,570 --> 00:08:39,520
+desaparecen, Python puede confundirse un poco, por
+
+177
+00:08:39,520 --> 00:08:42,920
+lo que generalmente no es una buena idea eliminar elementos de una lista
+
+178
+00:08:42,920 --> 00:08:44,220
+mientras se itera sobre ella.
+
+179
+00:08:45,390 --> 00:08:47,120
+Sin embargo, esta es una forma en
+
+180
+00:08:47,120 --> 00:08:49,670
+que podra hacerlo, y funcionara en la mayora de las circunstancias.
+
+181
+00:08:50,820 --> 00:08:52,280
+En cambio, yo
+
+182
+00:08:53,920 --> 00:08:54,780
+hara esto.
+
+183
+00:08:56,110 --> 00:08:59,570
+Lo primero que queremos hacer es decir que los libros son iguales,
+
+184
+00:08:59,570 --> 00:09:01,890
+que esa es nuestra variable all arriba, y
+
+185
+00:09:01,890 --> 00:09:03,820
+ahora vamos a usar una lista de
+
+186
+00:09:03,820 --> 00:09:04,790
+comprensin con un condicional.
+
+187
+00:09:06,254 --> 00:09:08,770
+Una lista de comprensin con un condicional ir
+
+188
+00:09:08,770 --> 00:09:13,160
+agregando cada libro a esta nueva lista si el nombre del libro no
+
+189
+00:09:13,160 --> 00:09:16,250
+es igual al nombre que obtuvimos en nuestro argumento.
+
+190
+00:09:16,250 --> 00:09:19,330
+Agregue cada libro a una nueva lista si el nombre
+
+191
+00:09:19,330 --> 00:09:20,450
+del libro no es
+
+192
+00:09:21,640 --> 00:09:24,280
+igual al argumento del nombre que tenemos aqu,
+
+193
+00:09:24,280 --> 00:09:26,170
+el parmetro del nombre, lo siento.
+
+194
+00:09:26,170 --> 00:09:28,300
+Una vez ms, te animo a detener el
+
+195
+00:09:28,300 --> 00:09:31,350
+video y darle a esta lista de comprensin una oportunidad solo
+
+196
+00:09:31,350 --> 00:09:33,560
+para practicar, asegrate de no haber olvidado cmo
+
+197
+00:09:33,560 --> 00:09:34,910
+implementar la lista de comprensin.
+
+198
+00:09:34,910 --> 00:09:36,970
+Y si lo has hecho, entonces contina
+
+199
+00:09:36,970 --> 00:09:38,270
+mirando y lo implementaremos.
+
+200
+00:09:43,110 --> 00:09:45,620
+De acuerdo, espero que lo hayas conseguido, pero si
+
+201
+00:09:45,620 --> 00:09:47,180
+no lo hiciste, est totalmente bien.
+
+202
+00:09:47,180 --> 00:09:49,110
+Todo lo que queremos hacer es crear una
+
+203
+00:09:51,148 --> 00:09:52,590
+variable para el libro en libros
+
+204
+00:09:52,590 --> 00:09:55,110
+y luego solo queremos ponerlo dentro de la lista, recuerde
+
+205
+00:09:55,110 --> 00:09:58,270
+que este es el valor que ponemos en nuestra nueva lista si
+
+206
+00:09:58,270 --> 00:09:59,500
+el nombre del libro no
+
+207
+00:10:00,840 --> 00:10:02,440
+es igual al argumento del nombre.
+
+208
+00:10:02,440 --> 00:10:04,240
+Voy a eliminar este comentario ahora,
+
+209
+00:10:04,240 --> 00:10:05,920
+ya que no lo necesitamos ms.
+
+210
+00:10:06,820 --> 00:10:08,410
+As que esto va a
+
+211
+00:10:08,410 --> 00:10:09,880
+poner el elemento libro en
+
+212
+00:10:10,920 --> 00:10:13,830
+una nueva lista para libro en libros, que es
+
+213
+00:10:13,830 --> 00:10:17,840
+nuestra lista si el nombre del libro no es igual al parmetro.
+
+214
+00:10:17,840 --> 00:10:21,380
+Pero, por supuesto, a Python no le gusta esto y hay
+
+215
+00:10:21,380 --> 00:10:25,020
+una muy buena razn por la que estoy obteniendo una lnea
+
+216
+00:10:25,020 --> 00:10:27,130
+roja, y esto es algo contra
+
+217
+00:10:27,130 --> 00:10:29,230
+lo que debes prevenir y debes entender.
+
+218
+00:10:30,350 --> 00:10:32,360
+La razn por la que me est dando una lnea
+
+219
+00:10:32,360 --> 00:10:33,710
+roja se debe al concepto de alcance.
+
+220
+00:10:33,710 --> 00:10:35,990
+Una vez ms, mencion que el alcance aparecera
+
+221
+00:10:35,990 --> 00:10:37,750
+a lo largo del curso varias
+
+222
+00:10:37,750 --> 00:10:40,980
+veces y este es un escenario importante para entender el alcance.
+
+223
+00:10:41,950 --> 00:10:44,930
+Lo que tenemos ahora es que tenemos una
+
+224
+00:10:44,930 --> 00:10:45,980
+variable global llamada
+
+225
+00:10:47,410 --> 00:10:50,910
+libros, sin embargo, Python tambin ha creado una variable local
+
+226
+00:10:50,910 --> 00:10:51,840
+para esta funcin.
+
+227
+00:10:51,840 --> 00:10:56,170
+Esta variable, libros, solo existe dentro de esta funcin aqu, y no
+
+228
+00:10:56,170 --> 00:10:57,800
+es la misma variable
+
+229
+00:10:57,800 --> 00:10:59,670
+que la variable global, libros.
+
+230
+00:11:02,150 --> 00:11:04,650
+Entonces ahora cree que estamos estableciendo esta
+
+231
+00:11:04,650 --> 00:11:06,900
+variable, estamos creando esta nueva variable,
+
+232
+00:11:06,900 --> 00:11:08,900
+libros, pero tambin la usamos en
+
+233
+00:11:08,900 --> 00:11:12,200
+la declaracin que la crea, y esto obviamente no
+
+234
+00:11:12,200 --> 00:11:16,090
+tiene sentido porque esta variable an no existe, ya que es
+
+235
+00:11:16,090 --> 00:11:18,270
+siendo creado en esa misma lnea.
+
+236
+00:11:19,210 --> 00:11:20,840
+Lo que tenemos que hacer es
+
+237
+00:11:20,840 --> 00:11:22,850
+decirle a Python que no queremos crear
+
+238
+00:11:22,850 --> 00:11:25,510
+una nueva variable, queremos usar los libros de variables globales.
+
+239
+00:11:27,030 --> 00:11:30,880
+Otra opcin sera cambiar el nombre de esta variable, libros nuevos.
+
+240
+00:11:30,880 --> 00:11:32,470
+Es eso y luego ya no
+
+241
+00:11:32,470 --> 00:11:34,830
+se queja porque se da cuenta de que
+
+242
+00:11:34,830 --> 00:11:37,460
+esta variable que estamos usando ya debe existir, por
+
+243
+00:11:37,460 --> 00:11:39,960
+lo que en lugar de mirar en el mbito
+
+244
+00:11:39,960 --> 00:11:42,010
+local, se ve en el mbito global.
+
+245
+00:11:42,010 --> 00:11:43,410
+Sin embargo, no queremos
+
+246
+00:11:43,410 --> 00:11:46,400
+hacer eso porque queremos cambiar esta variable y,
+
+247
+00:11:46,400 --> 00:11:48,320
+para hacerlo, debemos decirle a
+
+248
+00:11:48,320 --> 00:11:51,260
+Python que estamos buscando usar una variable global
+
+249
+00:11:51,260 --> 00:11:53,030
+y eso es realmente sencillo.
+
+250
+00:11:53,030 --> 00:11:55,480
+Acabamos de hacer libros globales.
+
+251
+00:11:55,480 --> 00:11:58,300
+Lo que esto hace esencialmente es decir libros y
+
+252
+00:11:58,300 --> 00:12:01,830
+el alcance local es igual a los libros en el mbito exterior.
+
+253
+00:12:01,830 --> 00:12:03,290
+Los hace iguales,
+
+254
+00:12:03,290 --> 00:12:05,800
+y luego podemos usarlo como siempre.
+
+255
+00:12:05,800 --> 00:12:08,650
+Ahora sabe que cuando usamos esta variable, nos
+
+256
+00:12:08,650 --> 00:12:12,310
+referimos a la variable externa y, de manera similar, aqu tambin
+
+257
+00:12:12,310 --> 00:12:14,610
+nos estamos refiriendo a la variable externa.
+
+258
+00:12:14,610 --> 00:12:16,660
+Por lo tanto, no buscamos crear una
+
+259
+00:12:16,660 --> 00:12:17,920
+variable en el mbito local.
+
+260
+00:12:20,290 --> 00:12:21,123
+Bueno.
+
+261
+00:12:22,150 --> 00:12:24,510
+Eso es todo para eliminar libros, as que podemos
+
+262
+00:12:24,510 --> 00:12:27,800
+volver a nuestra aplicacin punto P Y y eliminar nuestro ltimo comentario.
+
+263
+00:12:27,800 --> 00:12:31,140
+Y ahora tenemos nuestra aplicacin completa.
+
+264
+00:12:31,140 --> 00:12:32,880
+Por supuesto, pas por esto bastante rpido.
+
+265
+00:12:32,880 --> 00:12:34,230
+Esperara que tomaras mucho
+
+266
+00:12:34,230 --> 00:12:37,970
+ms tiempo la primera vez que desarrollas esto segn el
+
+267
+00:12:37,970 --> 00:12:41,630
+resumen, pero si has llegado tan lejos conmigo, ahora con
+
+268
+00:12:41,630 --> 00:12:43,930
+suerte comprenders qu implica la creacin
+
+269
+00:12:43,930 --> 00:12:45,440
+de esta aplicacin.
+
+270
+00:12:46,320 --> 00:12:49,300
+Solo tenemos que obtener los datos del usuario,
+
+271
+00:12:50,270 --> 00:12:52,220
+crear diccionarios para los libros
+
+272
+00:12:53,220 --> 00:12:55,100
+y luego almacenarlos en una lista.
+
+273
+00:12:55,100 --> 00:12:57,730
+Cada una de las otras operaciones solo revisar nuestros
+
+274
+00:12:57,730 --> 00:12:59,240
+libros y los cambiar, revisar
+
+275
+00:12:59,240 --> 00:13:00,800
+nuestros libros y los eliminar o
+
+276
+00:13:00,800 --> 00:13:02,610
+simplemente dejar que el usuario los califique.
+
+277
+00:13:05,620 --> 00:13:07,600
+Ahora voy a hacer una pequea mejora
+
+278
+00:13:07,600 --> 00:13:09,340
+en la funcin de libros de listas.
+
+279
+00:13:09,340 --> 00:13:11,680
+Voy a imprimir algo un poco mejor.
+
+280
+00:13:11,680 --> 00:13:12,730
+As que voy
+
+281
+00:13:14,560 --> 00:13:16,500
+a imprimir el nombre del libro.
+
+282
+00:13:16,500 --> 00:13:17,600
+Ahora, por supuesto, cuando
+
+283
+00:13:17,600 --> 00:13:20,770
+usas la comilla simple dentro de un diccionario, y tienes
+
+284
+00:13:20,770 --> 00:13:22,600
+citas simples afuera en tu, en
+
+285
+00:13:22,600 --> 00:13:24,670
+tu cadena F, no le gusta eso,
+
+286
+00:13:24,670 --> 00:13:26,900
+as que voy a usar comillas dobles
+
+287
+00:13:26,900 --> 00:13:30,270
+en el exterior y solo por el beneficio de Python, voy
+
+288
+00:13:33,810 --> 00:13:36,140
+a decir el nombre del libro por el
+
+289
+00:13:37,290 --> 00:13:39,170
+autor del libro y leer ser
+
+290
+00:13:40,050 --> 00:13:41,500
+ledo en el libro.
+
+291
+00:13:43,560 --> 00:13:45,430
+As que esto ser
+
+292
+00:13:46,290 --> 00:13:49,150
+algo as como un Python fluido que
+
+293
+00:13:49,150 --> 00:13:50,820
+el autor lea como
+
+294
+00:13:50,820 --> 00:13:51,930
+falso o verdadero.
+
+295
+00:13:51,930 --> 00:13:54,170
+En mi caso, es falso, no lo he ledo todava.
+
+296
+00:13:55,500 --> 00:13:58,430
+De acuerdo, el autor es, por cierto, Luciano Romaldo, creo que as es
+
+297
+00:13:58,430 --> 00:14:00,250
+como dices su nombre, es un buen libro.
+
+298
+00:14:00,250 --> 00:14:01,200
+Deberas leerlo.
+
+299
+00:14:02,490 --> 00:14:04,820
+Entonces ahora tenemos el nombre y el autor, y
+
+300
+00:14:05,880 --> 00:14:07,520
+la lectura es verdadera o falsa.
+
+301
+00:14:07,520 --> 00:14:09,410
+Si queremos que sea un poco
+
+302
+00:14:09,410 --> 00:14:12,640
+ms agradable, podemos decir que algo as como leer es s.
+
+303
+00:14:12,640 --> 00:14:13,840
+Si el
+
+304
+00:14:15,030 --> 00:14:15,863
+libro fue
+
+305
+00:14:16,800 --> 00:14:18,170
+ledo, sino no.
+
+306
+00:14:18,170 --> 00:14:20,730
+Esta es una declaracin ternaria en Python,
+
+307
+00:14:20,730 --> 00:14:23,020
+solo significa usar este valor si esto
+
+308
+00:14:23,020 --> 00:14:24,380
+es cierto, de lo
+
+309
+00:14:24,380 --> 00:14:27,940
+contrario use este valor aqu para asignar a la variable.
+
+310
+00:14:27,940 --> 00:14:31,200
+Entonces, si la lectura del libro es cierta, va a decir que s.
+
+311
+00:14:31,200 --> 00:14:34,830
+Si la lectura del libro es falsa, va a decir que no.
+
+312
+00:14:34,830 --> 00:14:38,450
+Y recuerde, esto es esencialmente lo mismo que esto, la lectura del
+
+313
+00:14:38,450 --> 00:14:41,240
+libro es verdadera, puede eliminarla porque es verdadera, tal
+
+314
+00:14:41,240 --> 00:14:44,090
+como lo vimos en la primera sesin de este curso.
+
+315
+00:14:45,280 --> 00:14:48,710
+Ahora, en lugar de leer libros, solo podemos usar leer, ya que
+
+316
+00:14:48,710 --> 00:14:50,960
+esa es la variable que hemos creado aqu.
+
+317
+00:14:52,460 --> 00:14:56,130
+Bien, vamos a ejecutar nuestra aplicacin y ver qu pasa.
+
+318
+00:14:58,440 --> 00:14:59,310
+Nada.
+
+319
+00:14:59,310 --> 00:15:02,030
+Por supuesto, no hemos ejecutado la funcin de Men.
+
+320
+00:15:02,030 --> 00:15:03,900
+As que revisemos, hasta el fondo
+
+321
+00:15:03,900 --> 00:15:05,570
+y ejecutemos la funcin de Men.
+
+322
+00:15:05,570 --> 00:15:07,230
+Y ahora vemos nuestra entrada.
+
+323
+00:15:07,230 --> 00:15:09,540
+Voy a extender esto un poco.
+
+324
+00:15:09,540 --> 00:15:13,540
+Podemos agregar un nuevo libro, digamos por ejemplo, Cdigo limpio, este
+
+325
+00:15:13,540 --> 00:15:15,390
+es tambin un buen libro,
+
+326
+00:15:15,390 --> 00:15:16,580
+tambin puede leerlo.
+
+327
+00:15:16,580 --> 00:15:18,964
+Es por Robert C. Martin, Martin, y
+
+328
+00:15:18,964 --> 00:15:19,797
+eso es
+
+329
+00:15:21,260 --> 00:15:23,190
+todo, lo hemos agregado.
+
+330
+00:15:23,190 --> 00:15:27,440
+Ahora podemos presionar L para verlos y conseguimos Clean Code
+
+331
+00:15:27,440 --> 00:15:29,750
+por Robert C. Martin ley, no.
+
+332
+00:15:30,840 --> 00:15:34,410
+Podemos agregar otro, digamos por ejemplo, Test
+
+333
+00:15:35,720 --> 00:15:37,490
+Driven Development por
+
+334
+00:15:38,440 --> 00:15:41,820
+Kent Beck, tambin un buen libro.
+
+335
+00:15:41,820 --> 00:15:44,600
+Ahora podemos enumerarlos y podemos ver que no
+
+336
+00:15:44,600 --> 00:15:47,630
+hemos ledo ni Clean Code ni Test Driven Development,
+
+337
+00:15:47,630 --> 00:15:48,830
+pero queremos hacerlo.
+
+338
+00:15:48,830 --> 00:15:50,530
+As que vamos a leer Clean Code primero.
+
+339
+00:15:50,530 --> 00:15:54,990
+Entonces, escribimos R, y por cierto, agregamos un espacio despus de su eleccin, eso es solo una
+
+340
+00:15:54,990 --> 00:15:56,360
+mala planificacin de mi parte.
+
+341
+00:15:56,360 --> 00:15:58,060
+Se ve horrible.
+
+342
+00:15:58,060 --> 00:15:59,820
+Ingrese el nombre del libro que
+
+343
+00:15:59,820 --> 00:16:01,780
+acaba de leer, digamos Clean Code.
+
+344
+00:16:01,780 --> 00:16:03,950
+Ahora podemos volver a enumerar los libros y
+
+345
+00:16:03,950 --> 00:16:05,500
+vemos que Clean Code dice s.
+
+346
+00:16:06,940 --> 00:16:10,390
+Por supuesto, cuando dejamos de fumar y comenzamos de nuevo, no
+
+347
+00:16:12,800 --> 00:16:15,330
+tenemos ningn libro porque lo hemos almacenado en
+
+348
+00:16:15,330 --> 00:16:17,500
+una base de datos en memoria.
+
+349
+00:16:17,500 --> 00:16:20,050
+Es una base de datos que se almacena en
+
+350
+00:16:20,050 --> 00:16:23,770
+memoria en la memoria de nuestra computadora que es voltil y solo est
+
+351
+00:16:23,770 --> 00:16:25,760
+disponible mientras se ejecuta la aplicacin.
+
+352
+00:16:25,760 --> 00:16:28,950
+Tan pronto como dejamos de correr, Python borra esa
+
+353
+00:16:28,950 --> 00:16:31,120
+base de datos para ahorrar memoria.
+
+354
+00:16:32,220 --> 00:16:34,980
+No queremos esto, entonces lo que queremos
+
+355
+00:16:34,980 --> 00:16:36,610
+hacer es seguir adelante
+
+356
+00:16:36,610 --> 00:16:39,020
+y usar un archivo en su lugar.
+
+357
+00:16:40,210 --> 00:16:42,370
+Y ahora, entiendes por qu
+
+358
+00:16:43,460 --> 00:16:46,100
+he intentado desacoplar nuestra base de
+
+359
+00:16:47,010 --> 00:16:49,040
+datos de nuestra aplicacin.
+
+360
+00:16:49,040 --> 00:16:50,280
+Ahora, casi todos los
+
+361
+00:16:50,280 --> 00:16:52,420
+cambios van a estar en el
+
+362
+00:16:52,420 --> 00:16:53,900
+archivo de la base
+
+363
+00:16:53,900 --> 00:16:57,720
+de datos para que cambiemos a los archivos en lugar de
+
+364
+00:16:57,720 --> 00:16:59,760
+la base de datos en memoria.
+
+365
+00:17:00,670 --> 00:17:01,600
+Aqu hay un ejemplo.
+
+366
+00:17:03,210 --> 00:17:05,980
+Los libros ya no sern una lista.
+
+367
+00:17:05,980 --> 00:17:08,020
+Va a ser un nombre de
+
+368
+00:17:08,020 --> 00:17:10,390
+archivo, por ejemplo, libros dot T X D.
+
+369
+00:17:11,340 --> 00:17:14,090
+Agregar libro va a abrir el archivo
+
+370
+00:17:14,090 --> 00:17:16,400
+y va a agregarle un libro.
+
+371
+00:17:17,600 --> 00:17:19,770
+Obtenga todos los libros, leer el
+
+372
+00:17:19,770 --> 00:17:22,210
+archivo y devolver todos los libros.
+
+373
+00:17:22,210 --> 00:17:25,520
+Marque los libros como ledos para leer todos los libros, y
+
+374
+00:17:25,520 --> 00:17:26,620
+va a cambiar uno
+
+375
+00:17:26,620 --> 00:17:28,940
+y va a reescribirlos en el archivo.
+
+376
+00:17:28,940 --> 00:17:31,580
+Y eliminar el libro va a leer todos los libros,
+
+377
+00:17:31,580 --> 00:17:32,690
+va a eliminar uno,
+
+378
+00:17:32,690 --> 00:17:34,910
+y luego va a reescribirlo en el archivo.
+
+379
+00:17:36,320 --> 00:17:39,800
+Puede almacenar los libros en formato CSV o en formato
+
+380
+00:17:39,800 --> 00:17:41,210
+JSON, depende de usted.
+
+381
+00:17:41,210 --> 00:17:42,600
+Por supuesto, si los almacena
+
+382
+00:17:42,600 --> 00:17:44,530
+en JSON, es un poco ms fcil
+
+383
+00:17:44,530 --> 00:17:46,070
+trabajar con ellos, ya que hemos
+
+384
+00:17:46,070 --> 00:17:47,770
+trabajado con diccionarios aqu, pero si
+
+385
+00:17:47,770 --> 00:17:50,010
+los almacena en CSV, tampoco es mucho ms difcil.
+
+386
+00:17:50,010 --> 00:17:52,930
+En el siguiente video, vamos a repasar el cambio
+
+387
+00:17:52,930 --> 00:17:55,700
+para usar CSV, as que nos vemos all.
+

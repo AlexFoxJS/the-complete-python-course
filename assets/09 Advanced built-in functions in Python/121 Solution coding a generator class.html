@@ -1,0 +1,47 @@
+<html>
+                <head>
+                <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                <title>121 Solution coding a generator class</title>
+                </head>
+                <body>
+                <div class="container">
+                <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <p class="lead"><p>Welcome back to another coding exercise solution!</p>
+
+<p>This is my solution to the coding exercise. Again, it may be slightly different from yours!</p>
+
+
+
+<pre class="prettyprint linenums">class PrimeGenerator:
+    def __init__(self, stop):
+        self.stop = stop
+        self.start = 2
+
+    def __next__(self):
+        for n in range(self.start, self.stop):  # always search from current start (inclusive) to stop (exclusive)
+            for x in range(2, n):
+                if n % x == 0:      # not prime
+                    break
+            else:   # n is prime, because we've gone through the entire loop without having a non-prime situation
+                self.start = n + 1  # next time we need to start from n + 1, otherwise we will be trapped on n
+                return n    # return n for this round
+        raise StopIteration()  # this is what tells Python we've reached the end of the generator<br></pre>
+
+
+
+<p>Let me know how you got on!<br></p>
+
+
+
+<p>Kind regards,</p>
+
+
+
+<p>— Jose and the Teclado team</p></p>
+                </div>
+                </div>
+                </div>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+                </body>
+                </html>

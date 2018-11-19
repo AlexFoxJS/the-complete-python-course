@@ -1,0 +1,532 @@
+1
+00:00:00,000 --> 00:00:01,734
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,734 --> 00:00:04,313
+In this video we're looking at class method
+
+3
+00:00:04,313 --> 00:00:06,730
+and static method decorators.
+
+4
+00:00:08,013 --> 00:00:10,242
+We've looked at how we can define classes and methods
+
+5
+00:00:10,242 --> 00:00:12,821
+and including some special methods like dunder init
+
+6
+00:00:12,821 --> 00:00:15,831
+and dunder len, and all these methods had something
+
+7
+00:00:15,831 --> 00:00:19,846
+in common, which is the self parameter of the start.
+
+8
+00:00:19,846 --> 00:00:22,149
+As a reminder, I've written here some code which is
+
+9
+00:00:22,149 --> 00:00:24,249
+the Student class that we've already seen.
+
+10
+00:00:24,249 --> 00:00:26,663
+We've got self, and self.
+
+11
+00:00:26,663 --> 00:00:29,598
+Remember we can call this parameter whatever we want.
+
+12
+00:00:29,598 --> 00:00:32,700
+But the convention in Python is to call it "self".
+
+13
+00:00:32,700 --> 00:00:34,391
+The most important thing about this parameter
+
+14
+00:00:34,391 --> 00:00:36,843
+is the value that it points to.
+
+15
+00:00:36,843 --> 00:00:40,800
+The value that it represents, which is the object.
+
+16
+00:00:40,800 --> 00:00:44,403
+When we create a new object from this Student class,
+
+17
+00:00:44,403 --> 00:00:47,895
+and we call any of its methods, we are automatically
+
+18
+00:00:47,895 --> 00:00:50,216
+passing in the self parameter, and we've seen that,
+
+19
+00:00:50,216 --> 00:00:53,597
+let me just put some code in here, which creates a new
+
+20
+00:00:53,597 --> 00:00:56,979
+student Rolf, and appends a couple of marks to him,
+
+21
+00:00:56,979 --> 00:01:01,157
+and then prints out the average function.
+
+22
+00:01:01,157 --> 00:01:03,683
+Remember, what this is doing, is just doing
+
+23
+00:01:03,683 --> 00:01:07,974
+"Student.average", and passing in "rolf", so we're accessing
+
+24
+00:01:07,974 --> 00:01:11,875
+the average method of the Student class, and we're passing
+
+25
+00:01:11,875 --> 00:01:14,867
+"rolf" in as the first argument.
+
+26
+00:01:14,867 --> 00:01:17,095
+"rolf.average" does the same thing, only Python does
+
+27
+00:01:17,095 --> 00:01:19,678
+this for us, in the background.
+
+28
+00:01:22,784 --> 00:01:27,409
+So, when we do "object.method", that really is doing
+
+29
+00:01:27,409 --> 00:01:31,945
+"class.method", and then passing the object in there,
+
+30
+00:01:31,945 --> 00:01:36,607
+and this knowledge, let's just do some pretty weird stuff.
+
+31
+00:01:36,607 --> 00:01:38,706
+I don't recommend you do this, as it's gonna break things,
+
+32
+00:01:38,706 --> 00:01:43,706
+but we could do something like "Student.average('hello'),
+
+33
+00:01:44,892 --> 00:01:46,824
+passing in a string.
+
+34
+00:01:46,824 --> 00:01:50,223
+Obviously this is not gonna work, because the average method
+
+35
+00:01:50,223 --> 00:01:55,223
+here expects, an object that has a "marks" property.
+
+36
+00:01:55,331 --> 00:01:58,839
+A string does not have a "marks" property, so when we run
+
+37
+00:01:58,839 --> 00:02:00,660
+this, it's gonna tell us that a string doesn't have
+
+38
+00:02:00,660 --> 00:02:02,410
+an attribute "marks".
+
+39
+00:02:03,319 --> 00:02:04,802
+See?
+
+40
+00:02:04,802 --> 00:02:07,406
+But nonetheless, you can do this, because, "self" can be
+
+41
+00:02:07,406 --> 00:02:11,084
+anything you want, as I said earlier, the important thing is
+
+42
+00:02:11,084 --> 00:02:14,616
+the value that "self" represents, which should be an object
+
+43
+00:02:14,616 --> 00:02:18,842
+of type Student, so that it has these marks, school,
+
+44
+00:02:18,842 --> 00:02:21,889
+sorry name, school and marks properties.
+
+45
+00:02:21,889 --> 00:02:25,676
+Just remember that "self" is a parameter like any other,
+
+46
+00:02:25,676 --> 00:02:28,269
+you can give it any value you want, however doing
+
+47
+00:02:28,269 --> 00:02:31,947
+"hello.marks" is not gonna work, because the string doesn't
+
+48
+00:02:31,947 --> 00:02:33,530
+have that property.
+
+49
+00:02:34,585 --> 00:02:37,464
+Anyway, so why is this important?
+
+50
+00:02:37,464 --> 00:02:40,882
+This first type of method we've looked at, is commonly
+
+51
+00:02:40,882 --> 00:02:43,130
+called an instance method.
+
+52
+00:02:43,130 --> 00:02:46,417
+It's one that takes the caller object as the first argument,
+
+53
+00:02:46,417 --> 00:02:48,199
+and that's "self".
+
+54
+00:02:48,199 --> 00:02:50,690
+So the caller here is "rolf", when we call the average,
+
+55
+00:02:50,690 --> 00:02:54,811
+it takes in "rolf" as the first argument.
+
+56
+00:02:54,811 --> 00:02:57,860
+This is called an instance method.
+
+57
+00:02:57,860 --> 00:03:01,891
+There are two more types of method, one that takes the
+
+58
+00:03:01,891 --> 00:03:06,220
+caller's class as a first argument, and one that takes
+
+59
+00:03:06,220 --> 00:03:08,672
+nothing as the first argument.
+
+60
+00:03:08,672 --> 00:03:12,777
+So instance method takes the object, that's "rolf" as
+
+61
+00:03:12,777 --> 00:03:15,619
+the first argument, then we've got another type, which takes
+
+62
+00:03:15,619 --> 00:03:19,427
+the class, that's Student as the first argument, and
+
+63
+00:03:19,427 --> 00:03:23,733
+there's one that takes nothing as the first argument.
+
+64
+00:03:23,733 --> 00:03:26,537
+Let's have a look at one that takes the caller's class
+
+65
+00:03:26,537 --> 00:03:30,308
+as the first argument, we're going to define a new class
+
+66
+00:03:30,308 --> 00:03:33,522
+here, and I'm just going to show you the syntax and in
+
+67
+00:03:33,522 --> 00:03:35,755
+the next video, we're going to look at some examples, OK?
+
+68
+00:03:35,755 --> 00:03:37,961
+So, these examples are going to be pretty terrible,
+
+69
+00:03:37,961 --> 00:03:41,621
+we're gonna define a class which we're gonna call Foo,
+
+70
+00:03:41,621 --> 00:03:44,835
+and in it we're gonna have an @classmethod,
+
+71
+00:03:44,835 --> 00:03:45,918
+that is "hi".
+
+72
+00:03:48,268 --> 00:03:52,122
+OK, so notice, by the way I have not really said this before
+
+73
+00:03:52,122 --> 00:03:56,336
+but you do not need an init method on every class, you can
+
+74
+00:03:56,336 --> 00:03:58,917
+just ignore it and then you won't just, you just won't
+
+75
+00:03:58,917 --> 00:04:01,109
+define any properties to begin with, that's totally fine
+
+76
+00:04:01,109 --> 00:04:02,692
+you don't need one.
+
+77
+00:04:04,304 --> 00:04:07,592
+So, we've got this @classmethod decorator, and we know it's
+
+78
+00:04:07,592 --> 00:04:11,122
+a decorator because it has the @ symbol in front, and now
+
+79
+00:04:11,122 --> 00:04:14,745
+I've renamed the first argument to be "cls" instead of
+
+80
+00:04:14,745 --> 00:04:18,779
+"self", that's just to tell me that this is a class method,
+
+81
+00:04:18,779 --> 00:04:22,457
+and that this parameter is going to hold the value of the
+
+82
+00:04:22,457 --> 00:04:26,207
+class that it was called with, so that's Foo.
+
+83
+00:04:27,468 --> 00:04:29,885
+Let's print "cls.__name__"...
+
+84
+00:04:32,815 --> 00:04:34,056
+OK?
+
+85
+00:04:34,056 --> 00:04:38,723
+Then I am going to create an object of type Foo, and I'm
+
+86
+00:04:39,852 --> 00:04:43,994
+going to say "my_object.hi()",
+
+87
+00:04:43,994 --> 00:04:47,601
+now important, what's happening in the background, is that
+
+88
+00:04:47,601 --> 00:04:50,934
+not my object, my object is not getting passed as the first
+
+89
+00:04:50,934 --> 00:04:54,720
+argument, now the object's class is getting passed as the
+
+90
+00:04:54,720 --> 00:04:56,949
+first argument, so what do you think we're going to see
+
+91
+00:04:56,949 --> 00:04:58,366
+printed out here?
+
+92
+00:05:03,005 --> 00:05:06,891
+Hope you got that right, what we'll see is Foo, so let's run
+
+93
+00:05:06,891 --> 00:05:11,256
+that, and as you can see, what we see printed out here,
+
+94
+00:05:11,256 --> 00:05:15,839
+is Foo, that's because "cls.__name__" gives us the name
+
+95
+00:05:16,973 --> 00:05:21,306
+of the class, and "cls" is the class, so that's Foo.
+
+96
+00:05:22,903 --> 00:05:26,024
+Now, terrible example, I just wanted to show you the syntax,
+
+97
+00:05:26,024 --> 00:05:29,479
+and again "cls" is just a name for the parameter, you can
+
+98
+00:05:29,479 --> 00:05:32,132
+call it whatever you want, if you wanted to be really,
+
+99
+00:05:32,132 --> 00:05:35,828
+quite silly, you could call it "self", terrible idea,
+
+100
+00:05:35,828 --> 00:05:38,024
+don't do that, cause then it's just gonna confuse you.
+
+101
+00:05:38,024 --> 00:05:40,436
+OK, this is not "self", this is not the object that you're
+
+102
+00:05:40,436 --> 00:05:43,034
+currently dealing with, "cls" is just the convention,
+
+103
+00:05:43,034 --> 00:05:45,969
+because it stands for "class", just call it that, I think
+
+104
+00:05:45,969 --> 00:05:48,088
+that's a better idea.
+
+105
+00:05:48,088 --> 00:05:52,454
+Now, another example, we could, instead of add class method,
+
+106
+00:05:52,454 --> 00:05:57,287
+and define a class Bar, that's gonna have a static method,
+
+107
+00:06:07,667 --> 00:06:11,517
+and this static method takes no parameters, notice that
+
+108
+00:06:11,517 --> 00:06:14,428
+there's nothing inside there, and it just prints something,
+
+109
+00:06:14,428 --> 00:06:17,178
+"Hello, I don't take parameters."
+
+110
+00:06:19,521 --> 00:06:21,713
+I just have this really bad habit of calling parameters
+
+111
+00:06:21,713 --> 00:06:25,130
+"arguments" and vice versa, don't fall into that bad habit,
+
+112
+00:06:25,130 --> 00:06:27,397
+just call them parameters when they're here,
+
+113
+00:06:27,397 --> 00:06:30,407
+arguments when they are here,
+
+114
+00:06:30,407 --> 00:06:33,118
+and that's the correct naming.
+
+115
+00:06:33,118 --> 00:06:36,451
+Now we can say "another_object" is Bar,
+
+116
+00:06:37,707 --> 00:06:42,374
+and we can say "another_object.hi", and we can run this,
+
+117
+00:06:43,447 --> 00:06:45,416
+and now you see that it says "Hello, I don't take
+
+118
+00:06:45,416 --> 00:06:47,833
+"parameters", so that's good.
+
+119
+00:06:50,320 --> 00:06:54,239
+These pieces of syntax, are just so that you can modify
+
+120
+00:06:54,239 --> 00:06:56,322
+what the method takes in.
+
+121
+00:06:57,658 --> 00:07:00,825
+How you use them is totally up to you.
+
+122
+00:07:02,116 --> 00:07:06,015
+So frequently, the class methods are going to be used when
+
+123
+00:07:06,015 --> 00:07:10,067
+you want something, that wants to have access to the class,
+
+124
+00:07:10,067 --> 00:07:11,978
+and static methods are going to be used when you want
+
+125
+00:07:11,978 --> 00:07:14,896
+a method here, that doesn't use the current object or
+
+126
+00:07:14,896 --> 00:07:18,574
+the class, but it's somehow related to the class.
+
+127
+00:07:18,574 --> 00:07:20,283
+In the next video we're going to look at a couple of
+
+128
+00:07:20,283 --> 00:07:23,495
+examples, so just remember this syntax, for now,
+
+129
+00:07:23,495 --> 00:07:25,781
+and now in the next video we're gonna look at some examples
+
+130
+00:07:25,781 --> 00:07:27,811
+and throughout the course, we're gonna be using this
+
+131
+00:07:27,811 --> 00:07:30,648
+quite a few times, so don't worry if it doesn't fully click,
+
+132
+00:07:30,648 --> 00:07:32,339
+just wanted to show you what it looks like, now, let's
+
+133
+00:07:32,339 --> 00:07:35,123
+move on to the next video, I'll see you there.
+

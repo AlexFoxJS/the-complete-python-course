@@ -1,0 +1,380 @@
+1
+00:00:00,204 --> 00:00:01,292
+<v Jose>Hi, welcome back.</v>
+
+2
+00:00:01,292 --> 00:00:03,650
+In this video I just wanted to guide you through
+
+3
+00:00:03,650 --> 00:00:07,222
+exactly what we're going to be getting from our html
+
+4
+00:00:07,222 --> 00:00:11,739
+and the path or the locators that we're going to be getting,
+
+5
+00:00:11,739 --> 00:00:13,197
+just because I know it's not so easy
+
+6
+00:00:13,197 --> 00:00:16,092
+to look at in the browser.
+
+7
+00:00:16,092 --> 00:00:18,797
+So this is our site, as you know.
+
+8
+00:00:18,797 --> 00:00:21,609
+And we're going to start crafting
+
+9
+00:00:21,609 --> 00:00:24,439
+our locators for the books.
+
+10
+00:00:24,439 --> 00:00:26,843
+So we're going to retrieve each book as an entity
+
+11
+00:00:26,843 --> 00:00:30,030
+and we're going to feed that to our book parser.
+
+12
+00:00:30,030 --> 00:00:32,863
+So this is the div dot page inner.
+
+13
+00:00:34,139 --> 00:00:35,903
+It contains essentially all of the page content
+
+14
+00:00:35,903 --> 00:00:37,510
+except the header.
+
+15
+00:00:37,510 --> 00:00:39,598
+The only reason why you might want to scrape the header
+
+16
+00:00:39,598 --> 00:00:42,518
+is if you don't know the title of your site.
+
+17
+00:00:42,518 --> 00:00:44,936
+But because we know that, we can start here
+
+18
+00:00:44,936 --> 00:00:47,941
+at the div dot page underscore inner.
+
+19
+00:00:47,941 --> 00:00:52,774
+Inside that we have a section which contains this content,
+
+20
+00:00:53,775 --> 00:00:56,470
+so as soon as we start narrowing down our locator
+
+21
+00:00:56,470 --> 00:01:00,470
+into the section, it loses context of the topics
+
+22
+00:01:01,404 --> 00:01:03,030
+at the site and the breadcrumbs
+
+23
+00:01:03,030 --> 00:01:05,628
+and the number of results and things like that.
+
+24
+00:01:05,628 --> 00:01:09,907
+And finally each individual book is a list item.
+
+25
+00:01:09,907 --> 00:01:13,958
+And list items on this website are each individual book
+
+26
+00:01:13,958 --> 00:01:18,958
+and they also have a few classes in them, like col xs 6.
+
+27
+00:01:19,213 --> 00:01:22,046
+These columns are used for sizing,
+
+28
+00:01:23,198 --> 00:01:25,871
+and so at this point in time the website has decided
+
+29
+00:01:25,871 --> 00:01:28,525
+to use these sizes for the columns
+
+30
+00:01:28,525 --> 00:01:31,323
+but they may change in the future
+
+31
+00:01:31,323 --> 00:01:34,015
+so just keep and eye out in case it's not exactly
+
+32
+00:01:34,015 --> 00:01:38,852
+this col xs 6 class, in case it's a bit different.
+
+33
+00:01:38,852 --> 00:01:42,165
+Okay, so when we use this locator and we ask
+
+34
+00:01:42,165 --> 00:01:45,680
+BeautifulSoup to you know select all of the elements,
+
+35
+00:01:45,680 --> 00:01:48,770
+it's gonna give us a bunch of tags,
+
+36
+00:01:48,770 --> 00:01:52,009
+which are gonna be these li tags that it has found
+
+37
+00:01:52,009 --> 00:01:55,700
+and each tag contains the info for a single book
+
+38
+00:01:55,700 --> 00:01:59,668
+but we must still go deeper and get that information out
+
+39
+00:01:59,668 --> 00:02:02,076
+so we need some deeper locators.
+
+40
+00:02:02,076 --> 00:02:03,908
+The locators I'm about to show you
+
+41
+00:02:03,908 --> 00:02:07,075
+are those that are inside this li tag.
+
+42
+00:02:08,653 --> 00:02:12,712
+So for example, the title or the name of the book,
+
+43
+00:02:12,712 --> 00:02:15,552
+we can extract from that element there in the green,
+
+44
+00:02:15,552 --> 00:02:19,702
+and that will be article dot product pod h3 a.
+
+45
+00:02:19,702 --> 00:02:23,356
+So inside the article dot product pod tag,
+
+46
+00:02:23,356 --> 00:02:25,750
+which is essentially the entire book as well,
+
+47
+00:02:25,750 --> 00:02:28,395
+there is an h3 tag, a heading tag,
+
+48
+00:02:28,395 --> 00:02:32,635
+and inside that h3 there's an a tag, which is a link.
+
+49
+00:02:32,635 --> 00:02:36,694
+And alight in the dot dot dot is the text content
+
+50
+00:02:36,694 --> 00:02:38,425
+inside that tag.
+
+51
+00:02:38,425 --> 00:02:41,717
+But also the tag has a couple other properties,
+
+52
+00:02:41,717 --> 00:02:44,228
+and we can extract the book's title
+
+53
+00:02:44,228 --> 00:02:47,083
+from those properties as well.
+
+54
+00:02:47,083 --> 00:02:50,761
+If we wanted the link and, for example if we wanted to
+
+55
+00:02:50,761 --> 00:02:53,946
+click through and go to the book page,
+
+56
+00:02:53,946 --> 00:02:58,329
+not the whole set of books but just the individual book
+
+57
+00:02:58,329 --> 00:02:59,400
+in case we wanted to, sort of,
+
+58
+00:02:59,400 --> 00:03:00,803
+read some more information about the book
+
+59
+00:03:00,803 --> 00:03:02,842
+or scrape some more information about the book,
+
+60
+00:03:02,842 --> 00:03:05,971
+there is a link in that title that you can click and
+
+61
+00:03:05,971 --> 00:03:09,609
+go to the other page and of course the selector or
+
+62
+00:03:09,609 --> 00:03:11,038
+the locator is gonna be the same
+
+63
+00:03:11,038 --> 00:03:13,652
+if we wanna extract the link, only we're gonna have to
+
+64
+00:03:13,652 --> 00:03:16,402
+access the href property of that.
+
+65
+00:03:18,263 --> 00:03:20,469
+If you wanted to get the price out,
+
+66
+00:03:20,469 --> 00:03:23,596
+that element down there, you will be looking for
+
+67
+00:03:23,596 --> 00:03:26,017
+article dot product pod and the name site
+
+68
+00:03:26,017 --> 00:03:29,997
+that there's a p tag which has a class price colour.
+
+69
+00:03:29,997 --> 00:03:33,594
+So we can use that tag to extract the price
+
+70
+00:03:33,594 --> 00:03:35,974
+and then you'll be using regular expressions
+
+71
+00:03:35,974 --> 00:03:38,815
+to actually get the price out as a number.
+
+72
+00:03:38,815 --> 00:03:40,032
+We've looked at that in the past
+
+73
+00:03:40,032 --> 00:03:42,482
+in the regular special section how to do that.
+
+74
+00:03:42,482 --> 00:03:45,567
+We're gonna go over it again in this section.
+
+75
+00:03:45,567 --> 00:03:47,877
+Finally we're gonna look at the rating.
+
+76
+00:03:47,877 --> 00:03:50,223
+This book has three stars and if we wanted
+
+77
+00:03:50,223 --> 00:03:52,436
+to get the star rating, we are looking for
+
+78
+00:03:52,436 --> 00:03:57,123
+article dot product pod and then p dot star dash rating.
+
+79
+00:03:57,123 --> 00:03:59,318
+Notice the dash is not an underscore,
+
+80
+00:03:59,318 --> 00:04:01,885
+just one of the quirks of this website.
+
+81
+00:04:01,885 --> 00:04:05,469
+We'll also find that the number of stars
+
+82
+00:04:05,469 --> 00:04:10,158
+that we can see is not what we're gonna be scraping
+
+83
+00:04:10,158 --> 00:04:13,607
+so this p tag here, this p dot star rating,
+
+84
+00:04:13,607 --> 00:04:17,186
+actually has a property that contains the rating
+
+85
+00:04:17,186 --> 00:04:18,870
+so we're gonna be using that instead of
+
+86
+00:04:18,870 --> 00:04:21,064
+looking at the number of stars that are filled.
+
+87
+00:04:21,064 --> 00:04:23,278
+That's just a bit more difficult.
+
+88
+00:04:23,278 --> 00:04:27,278
+Okay so just to recap, each book is that li tag.
+
+89
+00:04:28,440 --> 00:04:31,709
+The name of the book which is inside the li tag
+
+90
+00:04:31,709 --> 00:04:34,577
+is the article dot product pod h3 a.
+
+91
+00:04:34,577 --> 00:04:36,648
+The link is also in that same tag.
+
+92
+00:04:36,648 --> 00:04:39,322
+The price is inside p dot price colour.
+
+93
+00:04:39,322 --> 00:04:42,335
+And the rating is inside p dot star dash rating.
+
+94
+00:04:42,335 --> 00:04:46,824
+So with this we can construct our locator files.
+
+95
+00:04:46,824 --> 00:04:49,491
+Let's do that in the next video.
+

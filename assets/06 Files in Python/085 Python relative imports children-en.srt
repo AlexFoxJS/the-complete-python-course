@@ -1,0 +1,1180 @@
+1
+00:00:00,000 --> 00:00:01,180
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,180 --> 00:00:04,500
+In this video, we're looking at relative imports.
+
+3
+00:00:04,500 --> 00:00:06,590
+Relative imports seem to be more trouble
+
+4
+00:00:06,590 --> 00:00:08,890
+than it's worth in Python
+
+5
+00:00:08,890 --> 00:00:11,380
+because a lot of people don't know how they work.
+
+6
+00:00:11,380 --> 00:00:13,760
+It's not something that's talked about all that often,
+
+7
+00:00:13,760 --> 00:00:15,450
+and there's a few things you have to know about Python
+
+8
+00:00:15,450 --> 00:00:19,140
+in order to make use of relative imports successfully.
+
+9
+00:00:19,140 --> 00:00:21,350
+Generally though, I'll say relative imports
+
+10
+00:00:21,350 --> 00:00:23,830
+are probably not worth doing
+
+11
+00:00:23,830 --> 00:00:25,570
+because of their limitations.
+
+12
+00:00:25,570 --> 00:00:26,670
+Let's talk about them.
+
+13
+00:00:27,840 --> 00:00:30,590
+In the last video, we looked at the file operations
+
+14
+00:00:30,590 --> 00:00:33,160
+file that we've got here with two functions:
+
+15
+00:00:33,160 --> 00:00:34,510
+save to file and read file.
+
+16
+00:00:35,840 --> 00:00:38,550
+And in our app dot py when we wanted to import it,
+
+17
+00:00:38,550 --> 00:00:43,550
+we did from utils dot that opens up this package utils.
+
+18
+00:00:43,620 --> 00:00:46,870
+File operations, that opens up the file operations file.
+
+19
+00:00:46,870 --> 00:00:49,230
+Import these two functions.
+
+20
+00:00:49,230 --> 00:00:53,290
+When we import a file like we say do this,
+
+21
+00:00:53,290 --> 00:00:56,570
+Python goes to the file and navigates to it
+
+22
+00:00:57,560 --> 00:00:58,600
+and it runs it
+
+23
+00:00:59,720 --> 00:01:01,530
+and then it gives us access to the functions
+
+24
+00:01:01,530 --> 00:01:02,730
+that were defined in it.
+
+25
+00:01:03,780 --> 00:01:05,980
+So if we have print--
+
+26
+00:01:05,980 --> 00:01:07,100
+Oh, whoa, whoa.
+
+27
+00:01:08,410 --> 00:01:11,900
+If we have print hello inside file operations,
+
+28
+00:01:13,270 --> 00:01:15,770
+and then we go back to app and we run app dot py,
+
+29
+00:01:17,640 --> 00:01:20,460
+notice how we get hello printed out.
+
+30
+00:01:20,460 --> 00:01:23,270
+Because, again, when you import the file,
+
+31
+00:01:23,270 --> 00:01:25,930
+this goes to this file and runs it.
+
+32
+00:01:25,930 --> 00:01:28,970
+It defines the functions, it doesn't run the functions.
+
+33
+00:01:28,970 --> 00:01:32,090
+It defines the functions, it runs any code that's in there,
+
+34
+00:01:32,090 --> 00:01:34,330
+and then at the end, it goes back and it gives you access
+
+35
+00:01:34,330 --> 00:01:36,220
+to those things that you imported.
+
+36
+00:01:37,547 --> 00:01:39,210
+What Python is doing in the background
+
+37
+00:01:39,210 --> 00:01:42,010
+is essentially constructing a dictionary
+
+38
+00:01:42,010 --> 00:01:45,430
+of name of function to the function contents
+
+39
+00:01:45,430 --> 00:01:47,250
+and that's really what it's giving you back
+
+40
+00:01:47,250 --> 00:01:50,110
+and then you can use them as functions there.
+
+41
+00:01:50,110 --> 00:01:54,170
+So, the file runs when you import it.
+
+42
+00:01:54,170 --> 00:01:56,250
+That's something that's important to know.
+
+43
+00:01:57,170 --> 00:02:00,790
+So what we've done up here is an absolute import.
+
+44
+00:02:00,790 --> 00:02:03,160
+We've started at the top of our project
+
+45
+00:02:03,160 --> 00:02:04,760
+inside the imports project folder.
+
+46
+00:02:04,760 --> 00:02:06,780
+That's the utils package.
+
+47
+00:02:06,780 --> 00:02:08,150
+That's at the very top.
+
+48
+00:02:08,150 --> 00:02:09,270
+We've accessed that.
+
+49
+00:02:09,270 --> 00:02:11,290
+Then we've accessed the file operations
+
+50
+00:02:11,290 --> 00:02:13,220
+and that's called an absolute import
+
+51
+00:02:13,220 --> 00:02:16,930
+because we've defined the absolute path of imports.
+
+52
+00:02:19,210 --> 00:02:23,360
+If we had inside utils a new package,
+
+53
+00:02:24,330 --> 00:02:26,370
+called for example common,
+
+54
+00:02:26,370 --> 00:02:28,600
+this is a pretty common package name,
+
+55
+00:02:28,600 --> 00:02:31,200
+and we move file operations into there.
+
+56
+00:02:31,200 --> 00:02:33,300
+Remember to uncheck search for references.
+
+57
+00:02:34,420 --> 00:02:36,380
+Now we get this unknown file.
+
+58
+00:02:36,380 --> 00:02:38,210
+It cannot resolve it.
+
+59
+00:02:38,210 --> 00:02:39,043
+So what we have to do is
+
+60
+00:02:39,043 --> 00:02:43,000
+utils dot common dot file operations.
+
+61
+00:02:43,000 --> 00:02:45,320
+We're accessing the utils package
+
+62
+00:02:45,320 --> 00:02:47,306
+and the common package inside of that,
+
+63
+00:02:47,306 --> 00:02:50,539
+and then the file operations file inside of that.
+
+64
+00:02:50,539 --> 00:02:52,160
+And then we can import from it.
+
+65
+00:02:52,160 --> 00:02:55,080
+This, again, is an absolute import.
+
+66
+00:02:57,650 --> 00:03:01,060
+Notice how we start at the level of app dot py
+
+67
+00:03:01,060 --> 00:03:04,380
+in every instance, but that's a side effect.
+
+68
+00:03:04,380 --> 00:03:06,580
+The important thing is that we start
+
+69
+00:03:06,580 --> 00:03:09,090
+at the top of our project.
+
+70
+00:03:09,090 --> 00:03:09,923
+Okay.
+
+71
+00:03:11,290 --> 00:03:13,020
+So what if we had something like this?
+
+72
+00:03:13,020 --> 00:03:15,910
+Let's create a new file inside utils, a new Python file.
+
+73
+00:03:15,910 --> 00:03:19,690
+Notice inside utils, not inside common.
+
+74
+00:03:19,690 --> 00:03:21,670
+And we'll call this find dot py.
+
+75
+00:03:23,090 --> 00:03:24,920
+And in this file, I'm gonna put a function
+
+76
+00:03:24,920 --> 00:03:29,240
+that will find a particular element inside a list.
+
+77
+00:03:30,540 --> 00:03:34,946
+So let's say, find in is gonna take in an iterable,
+
+78
+00:03:34,946 --> 00:03:36,430
+it's gonna take in a finder function,
+
+79
+00:03:36,430 --> 00:03:38,330
+and it's gonna take an expected value,
+
+80
+00:03:39,970 --> 00:03:42,520
+and then it's just going to say, for i in iterable.
+
+81
+00:03:44,600 --> 00:03:48,210
+If finder i equal equal expected.
+
+82
+00:03:48,210 --> 00:03:49,043
+Oh finder.
+
+83
+00:03:49,920 --> 00:03:50,753
+All right.
+
+84
+00:03:50,753 --> 00:03:52,730
+Return i.
+
+85
+00:03:52,730 --> 00:03:56,520
+Otherwise, we're gonna raise a not found error
+
+86
+00:03:56,520 --> 00:04:01,520
+and say expected not found in provided iterable.
+
+87
+00:04:02,000 --> 00:04:04,040
+Of course, we have to create such an error,
+
+88
+00:04:04,040 --> 00:04:05,570
+and you know how to do that.
+
+89
+00:04:05,570 --> 00:04:08,800
+Create this not found error inside this class.
+
+90
+00:04:13,020 --> 00:04:15,310
+I'm sure you managed all to do
+
+91
+00:04:15,310 --> 00:04:20,310
+is say class not found error extends from exception
+
+92
+00:04:20,740 --> 00:04:21,760
+and doesn't do anything
+
+93
+00:04:21,760 --> 00:04:23,460
+since we don't have any extra arguments
+
+94
+00:04:23,460 --> 00:04:24,910
+other than the message there.
+
+95
+00:04:26,620 --> 00:04:29,470
+Now we've got this find function here.
+
+96
+00:04:29,470 --> 00:04:31,250
+And, again, if we go to app dot py,
+
+97
+00:04:31,250 --> 00:04:32,530
+we can import it
+
+98
+00:04:32,530 --> 00:04:35,490
+and you'd know how to import it as well
+
+99
+00:04:35,490 --> 00:04:39,190
+from utils dot find import find in.
+
+100
+00:04:39,190 --> 00:04:42,210
+And then this allows us to find in a particular list.
+
+101
+00:04:44,910 --> 00:04:47,870
+If we are in find dot py,
+
+102
+00:04:47,870 --> 00:04:51,090
+and we wanted to get access to the file operations
+
+103
+00:04:51,090 --> 00:04:54,020
+for some reason like, this is just an example,
+
+104
+00:04:54,020 --> 00:04:56,010
+then there are two ways of doing it.
+
+105
+00:04:58,880 --> 00:05:01,220
+There are three ways that people normally try.
+
+106
+00:05:01,220 --> 00:05:03,500
+Two ways which are correct and one way which is wrong.
+
+107
+00:05:03,500 --> 00:05:04,800
+And this is the wrong way.
+
+108
+00:05:11,370 --> 00:05:13,140
+This is the wrong way of doing it, okay?
+
+109
+00:05:13,140 --> 00:05:14,830
+So do not do this.
+
+110
+00:05:14,830 --> 00:05:18,170
+You'd think that because we are currently in find dot py,
+
+111
+00:05:18,170 --> 00:05:21,620
+which is inside utils, we'd just be able to say
+
+112
+00:05:21,620 --> 00:05:25,240
+from common dot file operations import save to file.
+
+113
+00:05:26,275 --> 00:05:29,300
+And this makes sense in the majority of languages,
+
+114
+00:05:29,300 --> 00:05:31,390
+but really what's happening here is
+
+115
+00:05:31,390 --> 00:05:35,390
+that Python thinks that we are doing an absolute import,
+
+116
+00:05:35,390 --> 00:05:38,020
+because we've not told it otherwise,
+
+117
+00:05:38,020 --> 00:05:40,920
+and therefore, we have to start at the top of our project.
+
+118
+00:05:42,450 --> 00:05:45,150
+So the only correct way of doing this is
+
+119
+00:05:45,150 --> 00:05:49,700
+utils dot common dot file operations and it likes that.
+
+120
+00:05:49,700 --> 00:05:51,500
+Another option is to tell Python
+
+121
+00:05:51,500 --> 00:05:53,900
+that we want to start from the current folder,
+
+122
+00:05:53,900 --> 00:05:55,730
+the utils folder.
+
+123
+00:05:55,730 --> 00:05:59,240
+Then, we can do that by removing the utils,
+
+124
+00:05:59,240 --> 00:06:00,440
+but keeping the dot.
+
+125
+00:06:00,440 --> 00:06:03,810
+And what this now means is reasonably inconsistent
+
+126
+00:06:03,810 --> 00:06:06,600
+with the rest of the usage of dots in Python,
+
+127
+00:06:06,600 --> 00:06:09,400
+but it means inside the current folder.
+
+128
+00:06:09,400 --> 00:06:14,400
+So in the current folder, common in common file operations
+
+129
+00:06:14,870 --> 00:06:17,470
+and this is now a relative import.
+
+130
+00:06:18,370 --> 00:06:20,060
+A relative import is an import
+
+131
+00:06:20,060 --> 00:06:23,240
+that starts from the current file
+
+132
+00:06:23,240 --> 00:06:25,230
+or the current file that we're working with
+
+133
+00:06:25,230 --> 00:06:29,510
+and it can go down to another package there.
+
+134
+00:06:32,100 --> 00:06:36,890
+So all this is good, but there are a few problems.
+
+135
+00:06:38,930 --> 00:06:39,960
+Here's the first problem.
+
+136
+00:06:39,960 --> 00:06:42,080
+Let's run find dot py.
+
+137
+00:06:46,200 --> 00:06:47,040
+Not so good.
+
+138
+00:06:47,040 --> 00:06:51,330
+We get a module not found error when we run find dot py.
+
+139
+00:06:52,410 --> 00:06:53,243
+Okay.
+
+140
+00:06:53,243 --> 00:06:54,780
+We will talk about this in just a moment.
+
+141
+00:06:54,780 --> 00:06:55,850
+I want to--
+
+142
+00:06:55,850 --> 00:06:58,320
+I wanted to show you why this is not such a good idea
+
+143
+00:06:58,320 --> 00:06:59,750
+in the majority of cases.
+
+144
+00:07:01,530 --> 00:07:06,010
+If you run app dot py, it all works.
+
+145
+00:07:06,010 --> 00:07:09,040
+Notice how app dot py is importing find
+
+146
+00:07:10,140 --> 00:07:12,120
+and that is running find which means
+
+147
+00:07:12,120 --> 00:07:13,990
+that this code here is running, too.
+
+148
+00:07:14,850 --> 00:07:16,740
+And it's working when we do that.
+
+149
+00:07:16,740 --> 00:07:19,180
+It's working when we run app dot py.
+
+150
+00:07:19,180 --> 00:07:21,850
+It's not working when we run find dot py.
+
+151
+00:07:23,140 --> 00:07:25,320
+And that is that thing I was talking about earlier
+
+152
+00:07:25,320 --> 00:07:28,900
+about running a file as a script versus as a module.
+
+153
+00:07:28,900 --> 00:07:31,450
+There's just a couple of differences in there.
+
+154
+00:07:31,450 --> 00:07:36,450
+So, let's talk about exactly why this doesn't work
+
+155
+00:07:37,210 --> 00:07:38,610
+when we run find dot py
+
+156
+00:07:38,610 --> 00:07:40,970
+and why it works when we run app dot py.
+
+157
+00:07:40,970 --> 00:07:43,080
+And to do that, we have to talk
+
+158
+00:07:43,080 --> 00:07:45,930
+about the dunder name variable.
+
+159
+00:07:48,260 --> 00:07:52,300
+So I'm going to remove the actual code that we're using for,
+
+160
+00:07:52,300 --> 00:07:54,140
+we don't really care about it anymore.
+
+161
+00:07:54,140 --> 00:07:58,130
+But what I'm gonna do is print underscore underscore name
+
+162
+00:07:58,130 --> 00:07:59,230
+underscore underscore.
+
+163
+00:08:00,970 --> 00:08:02,017
+I'm gonna print underscore underscore
+
+164
+00:08:02,017 --> 00:08:04,120
+name underscore underscore for app dot py.
+
+165
+00:08:04,120 --> 00:08:06,570
+Do you know the value that this is going to have?
+
+166
+00:08:09,180 --> 00:08:12,560
+I don't expect you to, but the value is
+
+167
+00:08:12,560 --> 00:08:16,140
+underscore underscore main underscore underscore.
+
+168
+00:08:16,140 --> 00:08:18,060
+So there's a dunder main name.
+
+169
+00:08:20,030 --> 00:08:23,370
+Whenever you run a file as a script,
+
+170
+00:08:23,370 --> 00:08:25,610
+that is whenever you run anything,
+
+171
+00:08:25,610 --> 00:08:29,890
+like app dot py or find dot py or file operations dot py,
+
+172
+00:08:29,890 --> 00:08:31,800
+then underscore underscore name underscore underscore
+
+173
+00:08:31,800 --> 00:08:34,850
+of that file is always going to be
+
+174
+00:08:34,850 --> 00:08:37,740
+underscore underscore main underscore underscore.
+
+175
+00:08:37,740 --> 00:08:41,380
+So the main is always the name the file you've ran.
+
+176
+00:08:42,690 --> 00:08:44,480
+So that's an important thing.
+
+177
+00:08:44,480 --> 00:08:47,820
+Let's go over to find dot py then, and print it's name.
+
+178
+00:08:49,350 --> 00:08:50,980
+What do you think this is going to be
+
+179
+00:08:50,980 --> 00:08:53,470
+when we run our dot py?
+
+180
+00:08:53,470 --> 00:08:54,640
+We're gonna run our dot py.
+
+181
+00:08:54,640 --> 00:08:56,940
+What do you think we're gonna see printed out?
+
+182
+00:09:01,530 --> 00:09:04,360
+I hope you thought about it, or maybe even ran the code
+
+183
+00:09:04,360 --> 00:09:06,460
+so I can show you exactly what's going on.
+
+184
+00:09:07,530 --> 00:09:10,000
+First of all, we get utils dot find
+
+185
+00:09:10,000 --> 00:09:14,750
+because I said that when you import, you run the file.
+
+186
+00:09:14,750 --> 00:09:17,610
+So this file operations file runs first
+
+187
+00:09:17,610 --> 00:09:20,540
+and then utils dot find runs second.
+
+188
+00:09:20,540 --> 00:09:23,260
+Then we print out this name here.
+
+189
+00:09:23,260 --> 00:09:26,090
+So utils dot find runs first here
+
+190
+00:09:26,090 --> 00:09:28,160
+and we print the name at the very bottom.
+
+191
+00:09:28,160 --> 00:09:31,290
+And the name now is utils dot find.
+
+192
+00:09:34,040 --> 00:09:38,150
+And that's because that's what we imported, utils dot find.
+
+193
+00:09:38,150 --> 00:09:42,010
+So Python goes over here, finds the file, and now decides
+
+194
+00:09:42,010 --> 00:09:45,520
+that now this file will be called utils dot find.
+
+195
+00:09:47,540 --> 00:09:49,055
+Then we print underscore underscore name
+
+196
+00:09:49,055 --> 00:09:52,330
+underscore underscore and this is still main
+
+197
+00:09:52,330 --> 00:09:54,060
+because we ran this file.
+
+198
+00:09:56,090 --> 00:09:57,670
+Let's go over to find dot py
+
+199
+00:09:59,933 --> 00:10:04,770
+and now I'm going to go back to the thing that works,
+
+200
+00:10:04,770 --> 00:10:07,260
+utils dot common dot file operations
+
+201
+00:10:07,260 --> 00:10:09,190
+and we're to run find dot py.
+
+202
+00:10:11,910 --> 00:10:13,920
+Notice how we get main
+
+203
+00:10:13,920 --> 00:10:15,380
+because we ran find dot py
+
+204
+00:10:16,810 --> 00:10:19,840
+and the name of it is always main,
+
+205
+00:10:19,840 --> 00:10:21,190
+as it's the file we've ran.
+
+206
+00:10:24,700 --> 00:10:29,100
+Then, if we revert back to running app,
+
+207
+00:10:32,200 --> 00:10:35,030
+and by the way, I've removed the utils there,
+
+208
+00:10:36,230 --> 00:10:38,690
+and we go to common file operations
+
+209
+00:10:38,690 --> 00:10:40,610
+and we print the name here too.
+
+210
+00:10:42,610 --> 00:10:45,220
+Let's go back to running app and see what happens.
+
+211
+00:10:47,270 --> 00:10:49,560
+Okay, nothing terribly unexpected.
+
+212
+00:10:49,560 --> 00:10:52,330
+We get main for the app,
+
+213
+00:10:54,160 --> 00:10:56,960
+we get utils dot find for find,
+
+214
+00:10:58,270 --> 00:11:02,920
+and somehow we get utils dot common dot file operations
+
+215
+00:11:02,920 --> 00:11:05,430
+for file operations even though
+
+216
+00:11:05,430 --> 00:11:09,030
+it was imported like so, here.
+
+217
+00:11:11,390 --> 00:11:14,220
+Of course, we did also import it up here
+
+218
+00:11:14,220 --> 00:11:16,440
+so this is the name it's got.
+
+219
+00:11:16,440 --> 00:11:19,090
+Let's remove this import and run app again.
+
+220
+00:11:22,310 --> 00:11:25,490
+Notice how utils dot common dot file operations
+
+221
+00:11:25,490 --> 00:11:27,620
+is still the first file.
+
+222
+00:11:30,150 --> 00:11:31,700
+When we do--
+
+223
+00:11:31,700 --> 00:11:32,860
+Well, sorry.
+
+224
+00:11:32,860 --> 00:11:33,693
+Let me explain that.
+
+225
+00:11:33,693 --> 00:11:36,390
+I was jumping right into something else there.
+
+226
+00:11:36,390 --> 00:11:39,420
+When we import from utils dot find,
+
+227
+00:11:39,420 --> 00:11:40,590
+this is the first thing that happens.
+
+228
+00:11:40,590 --> 00:11:44,250
+We go into find and then we import file operations.
+
+229
+00:11:45,700 --> 00:11:47,840
+So this file operations file is the first one
+
+230
+00:11:47,840 --> 00:11:49,520
+to run to completion.
+
+231
+00:11:49,520 --> 00:11:50,710
+We print out the name,
+
+232
+00:11:50,710 --> 00:11:53,130
+which is utils common file operations.
+
+233
+00:11:53,130 --> 00:11:56,020
+Then we go back to find, after the import,
+
+234
+00:11:56,020 --> 00:11:57,410
+and we run through this
+
+235
+00:11:57,410 --> 00:12:00,750
+and we end up printing out the name, utils dot find.
+
+236
+00:12:00,750 --> 00:12:03,550
+And finally we go back to here and we print the app's name.
+
+237
+00:12:03,550 --> 00:12:04,420
+That's main.
+
+238
+00:12:05,950 --> 00:12:10,420
+As you can see, the file operations name
+
+239
+00:12:10,420 --> 00:12:14,580
+is not dot common dot file operations.
+
+240
+00:12:14,580 --> 00:12:18,660
+It is utils dot common dot file operations
+
+241
+00:12:18,660 --> 00:12:22,050
+because this full stop here
+
+242
+00:12:22,050 --> 00:12:26,870
+means access the current package in the name.
+
+243
+00:12:27,710 --> 00:12:29,450
+So that's utils.
+
+244
+00:12:30,550 --> 00:12:33,080
+The name of the file is utils dot find.
+
+245
+00:12:33,080 --> 00:12:35,320
+When you do a dot at the start,
+
+246
+00:12:35,320 --> 00:12:39,230
+it says get the package utils
+
+247
+00:12:39,230 --> 00:12:42,200
+and access the common package inside of it
+
+248
+00:12:42,200 --> 00:12:44,450
+and the file operations package inside of it.
+
+249
+00:12:48,430 --> 00:12:50,380
+So the end name ends up as
+
+250
+00:12:50,380 --> 00:12:53,610
+utils dot common dot file operations.
+
+251
+00:12:53,610 --> 00:12:57,790
+Now, why does it not work when we run find dot py?
+
+252
+00:13:01,650 --> 00:13:03,500
+Again, I'm going to import from here.
+
+253
+00:13:04,920 --> 00:13:06,930
+Why does it not work with a relative import
+
+254
+00:13:06,930 --> 00:13:08,130
+when we run find dot py?
+
+255
+00:13:09,160 --> 00:13:14,160
+Well, because the dot is main and main isn't utils.
+
+256
+00:13:17,030 --> 00:13:20,375
+So then it tries to access underscore underscore main
+
+257
+00:13:20,375 --> 00:13:23,140
+underscore underscore dot common dot file operations
+
+258
+00:13:23,140 --> 00:13:26,690
+and that's not gonna work because main is not a package.
+
+259
+00:13:30,400 --> 00:13:33,490
+And this is why relative imports can be a bit of a pain.
+
+260
+00:13:33,490 --> 00:13:35,600
+And indeed, if we run this again,
+
+261
+00:13:35,600 --> 00:13:39,830
+you'll see that we get a no module name main dot common
+
+262
+00:13:39,830 --> 00:13:41,410
+because that's exactly what it's trying to do.
+
+263
+00:13:41,410 --> 00:13:46,080
+It's trying to access the package of this name
+
+264
+00:13:46,080 --> 00:13:49,390
+and just appending it to whatever it is here.
+
+265
+00:13:51,560 --> 00:13:53,000
+Okay.
+
+266
+00:13:53,000 --> 00:13:55,920
+So of course if find was in another folder,
+
+267
+00:13:55,920 --> 00:13:58,920
+this package could be my project dot utils
+
+268
+00:13:58,920 --> 00:14:01,260
+dot common dot file operations.
+
+269
+00:14:01,260 --> 00:14:03,290
+This would be the find package
+
+270
+00:14:03,290 --> 00:14:05,880
+and it would all get appended to the start.
+
+271
+00:14:05,880 --> 00:14:08,640
+So whatever it is that find is in
+
+272
+00:14:08,640 --> 00:14:10,840
+is going to get appended at the front
+
+273
+00:14:10,840 --> 00:14:13,080
+and then it's going to add this at the back.
+
+274
+00:14:13,080 --> 00:14:14,410
+Those two together are going to be
+
+275
+00:14:14,410 --> 00:14:18,160
+the absolute path of file operations.
+
+276
+00:14:18,160 --> 00:14:21,730
+Of course, if you run find as a script,
+
+277
+00:14:21,730 --> 00:14:25,550
+you add main here, which is not valid,
+
+278
+00:14:25,550 --> 00:14:27,300
+because that's not a valid package.
+
+279
+00:14:28,780 --> 00:14:33,730
+But this works if you run app dot py.
+
+280
+00:14:33,730 --> 00:14:36,890
+And it works because you've now sent
+
+281
+00:14:36,890 --> 00:14:39,830
+that find file is inside utils.
+
+282
+00:14:39,830 --> 00:14:43,350
+So when you go into find, the name is utils dot find
+
+283
+00:14:43,350 --> 00:14:46,160
+so what gets appended here is utils.
+
+284
+00:14:46,160 --> 00:14:48,310
+This is what's happening in the background.
+
+285
+00:14:50,380 --> 00:14:53,910
+So this works when you don't run the file as a script.
+
+286
+00:14:53,910 --> 00:14:56,280
+Doesn't work when you do run it as a script.
+
+287
+00:14:57,910 --> 00:14:59,640
+So that's it for relative imports
+
+288
+00:14:59,640 --> 00:15:01,610
+where we're importing children.
+
+289
+00:15:01,610 --> 00:15:04,930
+Remember the common package here is a child
+
+290
+00:15:04,930 --> 00:15:07,350
+of the user's package where we're currently at.
+
+291
+00:15:07,350 --> 00:15:10,040
+In the next video, let's look at parent imports.
+
+292
+00:15:10,040 --> 00:15:13,830
+How the file operations module can import,
+
+293
+00:15:13,830 --> 00:15:16,120
+for example, this not found error.
+
+294
+00:15:16,120 --> 00:15:16,953
+Let's go there.
+
+295
+00:15:16,953 --> 00:15:18,480
+So I'll see you in just a moment.
+

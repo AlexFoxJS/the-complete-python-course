@@ -1,0 +1,440 @@
+1
+00:00:00,320 --> 00:00:01,460
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,460 --> 00:00:03,440
+In this video we're talking about opening
+
+3
+00:00:03,440 --> 00:00:05,570
+and closing files automatically so we don't
+
+4
+00:00:05,570 --> 00:00:08,990
+have to remember to call file.close at the end
+
+5
+00:00:08,990 --> 00:00:10,930
+of every time we want to use a file.
+
+6
+00:00:11,840 --> 00:00:14,350
+So far we've been opening and closing files explicitly,
+
+7
+00:00:14,350 --> 00:00:17,395
+like this, saying file equals open of something
+
+8
+00:00:17,395 --> 00:00:20,770
+and then at the end, file.close.
+
+9
+00:00:20,770 --> 00:00:22,730
+By the way, I'll just say I've copied the code
+
+10
+00:00:22,730 --> 00:00:24,750
+we wrote in the last section, and I've created
+
+11
+00:00:24,750 --> 00:00:26,790
+another file for it, just because I'm going
+
+12
+00:00:26,790 --> 00:00:28,390
+to change it slightly and I don't want us
+
+13
+00:00:28,390 --> 00:00:30,540
+to lose any of the files here.
+
+14
+00:00:30,540 --> 00:00:32,330
+These files again, are all on the gid hub,
+
+15
+00:00:32,330 --> 00:00:34,040
+so you can access them if you want,
+
+16
+00:00:34,040 --> 00:00:36,007
+and the link to do that is at the start
+
+17
+00:00:36,007 --> 00:00:38,210
+of this section, the first lecture.
+
+18
+00:00:39,410 --> 00:00:41,570
+So we've been opening and closing files automatically
+
+19
+00:00:41,570 --> 00:00:45,079
+like so, but Python actually has a piece of syntax
+
+20
+00:00:45,079 --> 00:00:48,793
+which is extremely handy for these scenarios.
+
+21
+00:00:48,793 --> 00:00:52,320
+And the scenario that this represents is a
+
+22
+00:00:52,320 --> 00:00:54,410
+pretty general scenario in which we have
+
+23
+00:00:54,410 --> 00:00:57,610
+to do some set up and some tear down.
+
+24
+00:00:57,610 --> 00:00:59,560
+The set up is we have to open the file,
+
+25
+00:00:59,560 --> 00:01:02,890
+and the tear down is that we have to close the file.
+
+26
+00:01:02,890 --> 00:01:05,020
+A set up is just a keyword for something that happens
+
+27
+00:01:05,020 --> 00:01:07,620
+at the start, and a tear down is a keyword
+
+28
+00:01:07,620 --> 00:01:11,640
+or a concept for something that happens at the end.
+
+29
+00:01:12,795 --> 00:01:15,660
+Another example would be opening a database connection
+
+30
+00:01:15,660 --> 00:01:17,090
+at the start, and at the end,
+
+31
+00:01:17,090 --> 00:01:18,910
+closing the database connection.
+
+32
+00:01:18,910 --> 00:01:20,920
+So as you can see, opening and closing things, pretty
+
+33
+00:01:20,920 --> 00:01:25,120
+popular thing and this is a set up and tear down approach.
+
+34
+00:01:26,230 --> 00:01:27,920
+The construct that we're going to learn about,
+
+35
+00:01:27,920 --> 00:01:29,820
+this piece of syntax that Python offers,
+
+36
+00:01:29,820 --> 00:01:32,000
+is called a with statement.
+
+37
+00:01:32,000 --> 00:01:33,330
+You may have seen this around if you looked
+
+38
+00:01:33,330 --> 00:01:37,736
+at some Python code before, and they use the with keyword,
+
+39
+00:01:37,736 --> 00:01:41,080
+and they're also known as context managers.
+
+40
+00:01:41,080 --> 00:01:44,230
+Context managers are reasonably advanced concepts
+
+41
+00:01:44,230 --> 00:01:45,860
+and we're going to look at them more in depth
+
+42
+00:01:45,860 --> 00:01:47,620
+in the next section, we're gonna be programming
+
+43
+00:01:47,620 --> 00:01:50,120
+some context managers, but I just wanted to teach you
+
+44
+00:01:50,120 --> 00:01:51,970
+how to use them so you start getting familiar
+
+45
+00:01:51,970 --> 00:01:53,610
+with them, and in the next session,
+
+46
+00:01:53,610 --> 00:01:55,930
+everything's gonna be much simpler.
+
+47
+00:01:55,930 --> 00:01:58,360
+In addition, they simplify our code greatly,
+
+48
+00:01:58,360 --> 00:02:00,101
+and reduce the errors that we can cause
+
+49
+00:02:00,101 --> 00:02:02,040
+by forgetting to close files.
+
+50
+00:02:03,600 --> 00:02:07,920
+So instead of doing this here, we can say
+
+51
+00:02:10,700 --> 00:02:14,320
+with open as file.
+
+52
+00:02:16,270 --> 00:02:19,370
+Then we can do this, and we can do that.
+
+53
+00:02:21,060 --> 00:02:24,900
+That replaces our previous code.
+
+54
+00:02:24,900 --> 00:02:29,900
+Now we do with, then we open, we call the open function,
+
+55
+00:02:29,965 --> 00:02:33,380
+and then we do as file, so that whatever the
+
+56
+00:02:33,380 --> 00:02:37,620
+out open function returns, goes into this variable,
+
+57
+00:02:37,620 --> 00:02:39,990
+then we can use that variable when we reach
+
+58
+00:02:39,990 --> 00:02:43,020
+the end of this indented block, notice the colon
+
+59
+00:02:43,020 --> 00:02:44,570
+at the end there.
+
+60
+00:02:44,570 --> 00:02:46,310
+When reach the end of the indented block,
+
+61
+00:02:46,310 --> 00:02:49,080
+it automatically closes the file for us.
+
+62
+00:02:50,380 --> 00:02:53,580
+This here is called a context manager.
+
+63
+00:02:53,580 --> 00:02:57,410
+And it doesn't happen magically, the open function
+
+64
+00:02:57,410 --> 00:03:00,800
+has defined that it can be used with a context manager,
+
+65
+00:03:00,800 --> 00:03:03,061
+so you cannot just do this with anything you want,
+
+66
+00:03:03,061 --> 00:03:05,940
+but you have to define that you want to be able
+
+67
+00:03:05,940 --> 00:03:08,890
+to use a context manager with your stuff,
+
+68
+00:03:08,890 --> 00:03:10,460
+and if you do that, you can start
+
+69
+00:03:10,460 --> 00:03:12,832
+using context mangers like so.
+
+70
+00:03:12,832 --> 00:03:14,160
+In the next section, we're going to look
+
+71
+00:03:14,160 --> 00:03:16,609
+at developing and programming our own context managers,
+
+72
+00:03:16,609 --> 00:03:19,080
+but I wanted to show you this scenario
+
+73
+00:03:19,080 --> 00:03:20,980
+in which you can use a context manager without
+
+74
+00:03:20,980 --> 00:03:22,853
+even knowing how it's programmed
+
+75
+00:03:22,853 --> 00:03:25,270
+to simplify your code and make it better.
+
+76
+00:03:26,290 --> 00:03:29,910
+So again, this allows you to open the file at the start,
+
+77
+00:03:29,910 --> 00:03:32,100
+and automatically close it at the end.
+
+78
+00:03:32,100 --> 00:03:34,048
+And the closing at the end happens because the open
+
+79
+00:03:34,048 --> 00:03:37,221
+has said that when you reach the end of the block,
+
+80
+00:03:37,221 --> 00:03:39,230
+the file shall close automatically.
+
+81
+00:03:40,600 --> 00:03:42,017
+Okay, there's no magic going on here,
+
+82
+00:03:42,017 --> 00:03:45,540
+the open function is defined to close the file at the end.
+
+83
+00:03:46,640 --> 00:03:51,300
+Now, I'd encourage you to do the same for this file here.
+
+84
+00:03:51,300 --> 00:03:53,329
+Replace it by a context manager,
+
+85
+00:03:53,329 --> 00:03:55,530
+as that's gonna give you a little bit
+
+86
+00:03:55,530 --> 00:03:58,220
+more practise implementing this stuff.
+
+87
+00:04:03,370 --> 00:04:04,890
+I hope you managed.
+
+88
+00:04:04,890 --> 00:04:07,170
+Again, all you have to do is put the with
+
+89
+00:04:07,170 --> 00:04:10,110
+at the start and then as the variable.
+
+90
+00:04:10,110 --> 00:04:13,140
+The variable here file now gets created
+
+91
+00:04:13,140 --> 00:04:15,360
+as a result of this open.
+
+92
+00:04:15,360 --> 00:04:17,820
+Whatever's indented is going to be in the with,
+
+93
+00:04:17,820 --> 00:04:19,630
+and at the end of the with, the file's
+
+94
+00:04:19,630 --> 00:04:21,410
+gonna close automatically, so we don't
+
+95
+00:04:21,410 --> 00:04:23,050
+need file close either.
+
+96
+00:04:25,094 --> 00:04:28,870
+Notice how for json.loads, or dump s, you don't
+
+97
+00:04:28,870 --> 00:04:31,650
+need to do anything withs, because there's no file
+
+98
+00:04:31,650 --> 00:04:33,370
+to open or close, these things are just going
+
+99
+00:04:33,370 --> 00:04:36,480
+straight into, or straight out of strings.
+
+100
+00:04:36,480 --> 00:04:38,620
+So there's nothing to open or close.
+
+101
+00:04:40,360 --> 00:04:42,280
+So that's it, a quick introduction
+
+102
+00:04:42,280 --> 00:04:44,830
+to context managers, and they're called
+
+103
+00:04:44,830 --> 00:04:46,370
+context managers because they help you
+
+104
+00:04:46,370 --> 00:04:48,890
+manage the context of you application
+
+105
+00:04:48,890 --> 00:04:51,590
+in which you now have this file open.
+
+106
+00:04:51,590 --> 00:04:53,760
+And they manage the context by keeping file open
+
+107
+00:04:53,760 --> 00:04:56,790
+during the context manager, and not before it
+
+108
+00:04:56,790 --> 00:04:59,180
+or after it, so that's why they're called context managers,
+
+109
+00:04:59,180 --> 00:05:02,210
+we're gonna learn about them in the next section.
+
+110
+00:05:02,210 --> 00:05:04,850
+That's it for this video, I'll see you on the next one.
+

@@ -1,0 +1,1684 @@
+1
+00:00:00,440 --> 00:00:01,510
+Jose: Ol e bem vindo de volta.
+
+2
+00:00:01,510 --> 00:00:05,550
+Neste vdeo, vamos falar sobre erros no Python.
+
+3
+00:00:05,550 --> 00:00:07,610
+Ns vamos falar sobre alguns deles.
+
+4
+00:00:07,610 --> 00:00:09,010
+Eu s quero dizer algo
+
+5
+00:00:09,010 --> 00:00:10,360
+sobre esses erros internos.
+
+6
+00:00:10,360 --> 00:00:11,960
+Os erros que vm com o
+
+7
+00:00:11,960 --> 00:00:13,810
+Python, para que quando eles aparecem em
+
+8
+00:00:13,810 --> 00:00:16,430
+seus programas, voc saiba exatamente o que eles significam.
+
+9
+00:00:16,430 --> 00:00:18,780
+Voc no ter que perder tempo tentando
+
+10
+00:00:18,780 --> 00:00:21,880
+descobrir o que eles so e como eles aconteceram.
+
+11
+00:00:22,870 --> 00:00:25,050
+Ns vamos levar alguns erros.
+
+12
+00:00:25,050 --> 00:00:28,610
+Ns vamos falar sobre o IndexError e o que isso significa.
+
+13
+00:00:28,610 --> 00:00:31,260
+Um KeyError e NameError.
+
+14
+00:00:32,227 --> 00:00:34,817
+Esses tipos de erros acontecem quando voc
+
+15
+00:00:34,817 --> 00:00:38,280
+acessa algo que no faz sentido ou est errado.
+
+16
+00:00:38,280 --> 00:00:39,820
+Ns vamos olhar para
+
+17
+00:00:39,820 --> 00:00:41,890
+AttributeError, que  bastante relacionado.
+
+18
+00:00:41,890 --> 00:00:43,670
+Ento, vamos ver o NotImplementedError.
+
+19
+00:00:43,670 --> 00:00:46,970
+Este  um erro que voc pode usar, pode ser muito til.
+
+20
+00:00:46,970 --> 00:00:49,930
+Ns vamos olhar para RuntimeError ou o erro genrico.
+
+21
+00:00:49,930 --> 00:00:52,190
+ento vamos ver tambm SyntaxError.
+
+22
+00:00:52,190 --> 00:00:55,280
+Isso acontece quando voc atrapalha escrever cdigo
+
+23
+00:00:55,280 --> 00:00:57,610
+Python, voc no escreve Python.
+
+24
+00:00:57,610 --> 00:01:00,710
+Ns vamos olhar para IndentationError e TabError.
+
+25
+00:01:00,710 --> 00:01:05,710
+Isso acontece quando no atrapalha os espaos ou as
+
+26
+00:01:05,920 --> 00:01:08,890
+guias ou quando voc as mistura.
+
+27
+00:01:08,890 --> 00:01:11,290
+Ns vamos olhar para TypeError e ValueError.
+
+28
+00:01:12,740 --> 00:01:15,610
+Isso acontece quando voc atribui valores errados
+
+29
+00:01:15,610 --> 00:01:19,350
+ou valores do tipo errado a algumas funes internas.
+
+30
+00:01:19,350 --> 00:01:22,115
+Ento, vamos ver o ImportError e quando
+
+31
+00:01:22,115 --> 00:01:23,130
+isso acontecer.
+
+32
+00:01:23,130 --> 00:01:24,730
+Tambm vamos falar brevemente
+
+33
+00:01:24,730 --> 00:01:27,440
+sobre DeprecationWarning e como voc pode usar isso.
+
+34
+00:01:28,900 --> 00:01:31,350
+Ento, o IndexError, o IndexError acontece
+
+35
+00:01:31,350 --> 00:01:33,137
+quando voc faz algo assim.
+
+36
+00:01:33,137 --> 00:01:35,650
+As trs primeiras linhas, a propsito, so apenas o
+
+37
+00:01:35,650 --> 00:01:37,780
+tipo de introduo do Python quando voc executa
+
+38
+00:01:37,780 --> 00:01:39,320
+o Python no seu console.
+
+39
+00:01:39,320 --> 00:01:42,660
+Eu vou te ensinar como fazer isso em algumas sees.
+
+40
+00:01:42,660 --> 00:01:46,180
+Basicamente, ns definimos amigos como Rolf e Anne.
+
+41
+00:01:46,180 --> 00:01:47,940
+Ento acessamos os amigos [2], mas
+
+42
+00:01:47,940 --> 00:01:50,410
+ claro que os amigos [2] no existem
+
+43
+00:01:50,410 --> 00:01:53,720
+porque os amigos s tm duas coisas, zero e uma.
+
+44
+00:01:53,720 --> 00:01:56,610
+Quando voc acessa amigos [2], isso  um IndexError
+
+45
+00:01:56,610 --> 00:01:59,480
+porque voc acessou um ndice que no existia.
+
+46
+00:01:59,480 --> 00:02:01,720
+Nesse caso, ele informa que o ndice da lista
+
+47
+00:02:01,720 --> 00:02:02,770
+estava fora do intervalo.
+
+48
+00:02:02,770 --> 00:02:04,260
+Voc est tentando acessar
+
+49
+00:02:04,260 --> 00:02:06,620
+dois, mas voc s vai at um.
+
+50
+00:02:06,620 --> 00:02:08,730
+Este  um tipo de IndexError.
+
+51
+00:02:08,730 --> 00:02:11,930
+Observe como o Traceback informa onde o arquivo, a linha e o
+
+52
+00:02:13,404 --> 00:02:16,010
+mdulo ou a funo em que voc o executou.
+
+53
+00:02:16,010 --> 00:02:19,230
+Neste caso, porque estou executando o Python no
+
+54
+00:02:19,230 --> 00:02:20,500
+modo de interpretao.
+
+55
+00:02:20,500 --> 00:02:23,420
+Isso significa que voc est apenas executando o Python interativamente.
+
+56
+00:02:24,830 --> 00:02:26,750
+Ele  executado assim que voc
+
+57
+00:02:26,750 --> 00:02:30,010
+digita, ento o arquivo  exatamente o que estou digitando.
+
+58
+00:02:30,010 --> 00:02:31,300
+Isso  o que este arquivo  chamado.
+
+59
+00:02:31,300 --> 00:02:33,450
+A linha  a nmero um porque,
+
+60
+00:02:33,450 --> 00:02:36,350
+novamente, cada linha  a nmero um no modo interpretativo.
+
+61
+00:02:36,350 --> 00:02:38,730
+O mdulo  apenas o mdulo que estou
+
+62
+00:02:38,730 --> 00:02:41,200
+executando, e isso significa apenas quando ele diz em
+
+63
+00:02:41,200 --> 00:02:44,390
+&lt;module>, isso significa apenas que voc est executando a linha diretamente.
+
+64
+00:02:44,390 --> 00:02:46,340
+Voc no est passando por nenhuma funo.
+
+65
+00:02:47,790 --> 00:02:50,980
+Portanto, h IndexError, acontece quando voc acessa um ndice que
+
+66
+00:02:50,980 --> 00:02:52,420
+no existe ou executa
+
+67
+00:02:52,420 --> 00:02:53,970
+um ndice que est incorreto.
+
+68
+00:02:55,490 --> 00:02:58,300
+Ento ns temos KeyError e isso  bastante
+
+69
+00:02:58,300 --> 00:03:00,100
+semelhante ao que vimos anteriormente.
+
+70
+00:03:00,100 --> 00:03:03,090
+Mas agora temos o cdigo correto, o nome do
+
+71
+00:03:03,090 --> 00:03:06,750
+filme, o diretor do filme e o lanamento do filme.
+
+72
+00:03:06,750 --> 00:03:08,870
+No entanto, deve ser ano.
+
+73
+00:03:09,800 --> 00:03:11,540
+Lembre-se de que, em nosso
+
+74
+00:03:11,540 --> 00:03:13,520
+milestone_1, usamos a chave do ano.
+
+75
+00:03:13,520 --> 00:03:15,350
+Vamos supor que usamos bem a
+
+76
+00:03:15,350 --> 00:03:17,170
+chave do ano para esse cdigo.
+
+77
+00:03:17,170 --> 00:03:20,320
+O que ns vamos conseguir ento  esse bom Traceback.
+
+78
+00:03:20,320 --> 00:03:23,200
+O que temos agora  o KeyError
+
+79
+00:03:23,200 --> 00:03:26,810
+e a descrio deste KeyError  bastante terrvel.
+
+80
+00:03:26,810 --> 00:03:27,980
+Eu no gosto desta
+
+81
+00:03:27,980 --> 00:03:31,240
+descrio porque diz apenas que a chave que voc usou mal.
+
+82
+00:03:31,240 --> 00:03:34,921
+Por isso, diz KeyError: 'release'.
+
+83
+00:03:34,921 --> 00:03:37,490
+No  muito til, mas agora voc sabe que usou
+
+84
+00:03:37,490 --> 00:03:39,300
+a chave de liberao em algum momento
+
+85
+00:03:39,300 --> 00:03:40,530
+em que no deveria.
+
+86
+00:03:40,530 --> 00:03:42,570
+Ento, se o Traceback for
+
+87
+00:03:42,570 --> 00:03:45,390
+bom, voc ver qual linha ocorreu esse erro.
+
+88
+00:03:45,390 --> 00:03:47,950
+Voc usou isso aqui no lanamento do
+
+89
+00:03:47,950 --> 00:03:51,200
+filme e, novamente, ele diz que essa linha
+
+90
+00:03:51,200 --> 00:03:52,809
+estava dentro de show_movie_details.
+
+91
+00:03:52,809 --> 00:03:55,840
+Show_movie_details foi executado como show_movie_details com o
+
+92
+00:03:55,840 --> 00:03:57,800
+filme dentro dele e isso
+
+93
+00:03:57,800 --> 00:03:59,490
+aconteceu dentro de show_movies.
+
+94
+00:03:59,490 --> 00:04:01,630
+Isso foi executado dentro do menu
+
+95
+00:04:01,630 --> 00:04:03,060
+e o menu foi
+
+96
+00:04:03,060 --> 00:04:06,330
+executado dentro do &lt;module> ou do arquivo que voc executou.
+
+97
+00:04:06,330 --> 00:04:08,520
+Observe como tudo isso est dentro
+
+98
+00:04:08,520 --> 00:04:12,220
+de um arquivo chamado app. py porque  isso que o nosso
+
+99
+00:04:12,220 --> 00:04:13,520
+arquivo foi chamado em milestone_1.
+
+100
+00:04:14,730 --> 00:04:17,960
+Portanto, o KeyError acontece quando voc usa uma chave
+
+101
+00:04:17,960 --> 00:04:19,880
+incorretamente, ou a chave no
+
+102
+00:04:19,880 --> 00:04:22,090
+existe, mas o filme  um dicionrio.
+
+103
+00:04:23,491 --> 00:04:25,490
+Temos filme sendo um
+
+104
+00:04:25,490 --> 00:04:29,290
+dicionrio e depois acessamos a chave incorreta.
+
+105
+00:04:29,290 --> 00:04:31,560
+Se o filme fosse uma lista, como no ltimo
+
+106
+00:04:31,560 --> 00:04:33,480
+vdeo, teramos um tipo diferente de erro.
+
+107
+00:04:34,680 --> 00:04:35,940
+Ns tambm temos NameError.
+
+108
+00:04:37,331 --> 00:04:39,910
+O NameError acontece como vimos anteriormente,
+
+109
+00:04:39,910 --> 00:04:41,040
+no ltimo vdeo,
+
+110
+00:04:41,040 --> 00:04:43,770
+quando a varivel no est definida.
+
+111
+00:04:43,770 --> 00:04:46,630
+Ento, aqui, eu acabei de lanar o Python e eu disse print (ol).
+
+112
+00:04:46,630 --> 00:04:49,810
+A varivel hello, mas  claro que hello no est
+
+113
+00:04:49,810 --> 00:04:54,080
+definida, ento eu recebo um NameError que diz o nome 'hello no est definido.
+
+114
+00:04:54,960 --> 00:04:57,690
+ claro que a impresso da string 'hello'
+
+115
+00:04:57,690 --> 00:04:59,430
+ainda funcionaria porque o sting
+
+116
+00:04:59,430 --> 00:05:02,935
+'hello'  apenas um conjunto de caracteres e nmeros, ou smbolos.
+
+117
+00:05:02,935 --> 00:05:05,820
+O Python no o avalia para uma
+
+118
+00:05:05,820 --> 00:05:07,200
+varivel, ento isso funcionaria.
+
+119
+00:05:07,200 --> 00:05:09,540
+Mas imprimir a varivel 'hello' no funciona.
+
+120
+00:05:09,540 --> 00:05:12,118
+Este  realmente um erro muito comum para
+
+121
+00:05:12,118 --> 00:05:14,910
+os meus alunos, onde eles se esquecem, ou vocs
+
+122
+00:05:14,910 --> 00:05:17,860
+se esquecem de colocar as aspas ao redor da string.
+
+123
+00:05:17,860 --> 00:05:19,310
+Acontece com todos.
+
+124
+00:05:19,310 --> 00:05:21,470
+Lembre-se apenas se voc receber um NameError
+
+125
+00:05:21,470 --> 00:05:23,880
+para algo que ser impresso, apenas verifique se
+
+126
+00:05:23,880 --> 00:05:25,860
+ele precisa de aspas em torno dele.
+
+127
+00:05:25,860 --> 00:05:26,940
+Isso  uma coisa
+
+128
+00:05:26,940 --> 00:05:28,290
+bastante popular, ento fique de olho.
+
+129
+00:05:29,610 --> 00:05:31,520
+Vamos ver tambm o AttributeError.
+
+130
+00:05:31,520 --> 00:05:33,630
+AttributeError  bastante popular quando voc est
+
+131
+00:05:33,630 --> 00:05:35,050
+comeando a lidar com objetos.
+
+132
+00:05:36,240 --> 00:05:38,710
+Neste cdigo aqui, ns fomos a minha lista
+
+133
+00:05:38,710 --> 00:05:42,090
+de amigos que tem trs cordas: Roth, Jose e Charlie.
+
+134
+00:05:42,090 --> 00:05:45,110
+Ento ns temos alguns amigos que esto por perto: Roth e Anna.
+
+135
+00:05:46,260 --> 00:05:47,410
+Note que estes dois so listas
+
+136
+00:05:47,410 --> 00:05:49,760
+e ento eu estou fazendo amigos. interseco
+
+137
+00:05:49,760 --> 00:05:51,260
+de friends_nearby.
+
+138
+00:05:51,260 --> 00:05:53,440
+A interseo  algo que podemos fazer com
+
+139
+00:05:53,440 --> 00:05:55,410
+conjuntos, se voc se lembra, ns olhamos para
+
+140
+00:05:55,410 --> 00:05:56,690
+isso mais cedo no curso.
+
+141
+00:05:56,690 --> 00:05:58,970
+No  algo que voc pode fazer com listas.
+
+142
+00:05:58,970 --> 00:06:01,120
+Ento voc recebe um AttributeError.
+
+143
+00:06:01,120 --> 00:06:04,863
+O objeto 'list' como nenhum atributo 'interseo'.
+
+144
+00:06:04,863 --> 00:06:06,361
+Voc no pode fazer interseo
+
+145
+00:06:06,361 --> 00:06:08,560
+porque a lista no sabe o que .
+
+146
+00:06:08,560 --> 00:06:10,350
+Portanto, esta  uma mensagem de erro mais agradvel.
+
+147
+00:06:10,350 --> 00:06:13,030
+Ele informa qual objeto voc tentou usar, neste
+
+148
+00:06:13,030 --> 00:06:14,910
+caso, um objeto de lista.
+
+149
+00:06:14,910 --> 00:06:17,620
+E diz-lhe o que voc tentou fazer que voc
+
+150
+00:06:17,620 --> 00:06:20,530
+no pode fazer, neste caso, use o atributo de interseo.
+
+151
+00:06:24,123 --> 00:06:26,440
+Este  um erro muito bom quando voc consegue, voc
+
+152
+00:06:26,440 --> 00:06:28,690
+diz, ok, eu estraguei tudo, usei a coisa errada l.
+
+153
+00:06:30,070 --> 00:06:33,450
+Ns temos NotImplementedError e este  um erro que voc no
+
+154
+00:06:33,450 --> 00:06:35,170
+ver com muita frequncia, mas
+
+155
+00:06:35,170 --> 00:06:37,370
+ um erro que voc pode usar.
+
+156
+00:06:38,730 --> 00:06:40,920
+Veja como voc pode us-lo.
+
+157
+00:06:40,920 --> 00:06:44,005
+Ns temos uma classe que tem um mtodo init, um construtor.
+
+158
+00:06:44,005 --> 00:06:45,750
+E leva um nome de usurio e uma
+
+159
+00:06:45,750 --> 00:06:46,970
+senha e, em seguida, define-los.
+
+160
+00:06:46,970 --> 00:06:48,590
+Ento tem um mtodo de login.
+
+161
+00:06:49,530 --> 00:06:51,770
+Mas ainda no trabalhamos no mtodo de login,
+
+162
+00:06:51,770 --> 00:06:53,070
+por isso ainda no funciona.
+
+163
+00:06:53,940 --> 00:06:57,480
+Em vez de retornar nenhum ou no fazer
+
+164
+00:06:57,480 --> 00:07:01,253
+nada, podemos, em vez disso, gerar um NotImplementedError.
+
+165
+00:07:01,253 --> 00:07:03,380
+Essa  a sintaxe para gerar um erro.
+
+166
+00:07:03,380 --> 00:07:04,760
+Vamos ver isso
+
+167
+00:07:04,760 --> 00:07:06,980
+com mais detalhes nos prximos vdeos.
+
+168
+00:07:06,980 --> 00:07:09,330
+Em seguida, dentro dos colchetes, voc pode colocar
+
+169
+00:07:09,330 --> 00:07:10,680
+uma pequena descrio dizendo algo
+
+170
+00:07:10,680 --> 00:07:12,820
+como: Esse recurso ainda no foi implementado.
+
+171
+00:07:12,820 --> 00:07:15,310
+O que vai acontecer  quando algum
+
+172
+00:07:15,310 --> 00:07:17,200
+chamar esse mtodo, eles vo receber
+
+173
+00:07:17,200 --> 00:07:19,440
+um erro e ele vai dizer NotImplementedError,
+
+174
+00:07:19,440 --> 00:07:21,510
+este recurso ainda no foi implementado.
+
+175
+00:07:21,510 --> 00:07:24,920
+Ento vai dizer quando voc ligou para o usurio. entrar.
+
+176
+00:07:26,110 --> 00:07:27,131
+ um erro
+
+177
+00:07:27,131 --> 00:07:29,150
+bem legal de se levantar quando voc
+
+178
+00:07:29,150 --> 00:07:30,750
+ainda no conseguiu implementar algo.
+
+179
+00:07:32,740 --> 00:07:35,880
+Um RuntimeError, RuntimeError,  um erro bastante genrico.
+
+180
+00:07:37,340 --> 00:07:39,850
+No  muito claro quando isso acontece.
+
+181
+00:07:39,850 --> 00:07:41,470
+Eu j vi isso algumas
+
+182
+00:07:42,450 --> 00:07:44,570
+vezes, mas no  um erro que
+
+183
+00:07:44,570 --> 00:07:46,200
+voc ver com muita frequncia.
+
+184
+00:07:46,200 --> 00:07:48,240
+Este , essencialmente, um erro de base.
+
+185
+00:07:48,240 --> 00:07:52,670
+Uma classe base e outros erros herdam desta.
+
+186
+00:07:52,670 --> 00:07:56,580
+Outros erros como std este para ser RuntimeErrors.
+
+187
+00:07:56,580 --> 00:07:58,140
+Um RuntimeError  apenas um erro que acontece
+
+188
+00:07:58,140 --> 00:07:59,640
+quando voc est executando o seu programa.
+
+189
+00:07:59,640 --> 00:08:00,940
+Isso  basicamente qualquer coisa.
+
+190
+00:08:02,150 --> 00:08:03,692
+Ns temos o SyntaxError.
+
+191
+00:08:03,692 --> 00:08:06,570
+SyntaxError  quando ns bagunamos o Python.
+
+192
+00:08:07,480 --> 00:08:08,890
+Aqui temos algum bagunando na
+
+193
+00:08:08,890 --> 00:08:10,590
+definio de sua classe User.
+
+194
+00:08:10,590 --> 00:08:14,370
+Voc pode ver, voc consegue identificar a coisa que est faltando?
+
+195
+00:08:14,370 --> 00:08:19,370
+Para mim, isso  como um grande espao em branco, onde algo deveria estar.
+
+196
+00:08:19,660 --> 00:08:23,410
+Mas, claro, para voc, pode no ser to bvio no momento.
+
+197
+00:08:23,410 --> 00:08:25,500
+ medida que voc se familiariza com
+
+198
+00:08:25,500 --> 00:08:26,970
+o Python, ao programar mais
+
+199
+00:08:26,970 --> 00:08:28,240
+e encontrar mais desses erros.
+
+200
+00:08:28,240 --> 00:08:31,220
+Isso vai comear a se tornar uma coisa cada
+
+201
+00:08:31,220 --> 00:08:32,670
+vez maior e maior.
+
+202
+00:08:33,580 --> 00:08:35,680
+Qual  o clon.
+
+203
+00:08:35,680 --> 00:08:37,860
+O clon est faltando no final da aula.
+
+204
+00:08:37,860 --> 00:08:40,710
+Essa  uma sintaxe ilegal porque voc tem classe
+
+205
+00:08:40,710 --> 00:08:42,630
+User e depois espera dois pontos.
+
+206
+00:08:42,630 --> 00:08:46,240
+Ento voc receber um SyntaxError, dizendo sintaxe ilegal.
+
+207
+00:08:47,810 --> 00:08:50,410
+Ento ns temos IndentationError, razoavelmente relacionado.
+
+208
+00:08:50,410 --> 00:08:53,270
+Tambm  um problema com a sintaxe no Python.
+
+209
+00:08:53,270 --> 00:08:56,330
+O erro pode surgir de algo assim.
+
+210
+00:08:56,330 --> 00:08:58,530
+Voc definiu a funo add_two (x, y), voc
+
+211
+00:08:58,530 --> 00:09:01,350
+coloca dois pontos depois e lembra que o bloco da
+
+212
+00:09:01,350 --> 00:09:02,990
+funo tem que ser indentado.
+
+213
+00:09:02,990 --> 00:09:05,200
+Tem que ter pelo menos dois
+
+214
+00:09:05,200 --> 00:09:07,490
+espaos na frente, de preferncia quatro espaos.
+
+215
+00:09:07,490 --> 00:09:10,735
+Esse retorno x + y no possui espaos na frente.
+
+216
+00:09:10,735 --> 00:09:12,610
+Ento voc obteria um IndentationError
+
+217
+00:09:12,610 --> 00:09:15,090
+e diria algo como o bloco de
+
+218
+00:09:16,180 --> 00:09:18,010
+recuo esperado aps a concluso
+
+219
+00:09:18,010 --> 00:09:19,950
+da funo, ou algo assim.
+
+220
+00:09:19,950 --> 00:09:22,900
+Basicamente voc pode fazer isso se quiser.
+
+221
+00:09:22,900 --> 00:09:25,180
+Voc pode recuar e colocar e
+
+222
+00:09:25,180 --> 00:09:28,280
+isso significa que essa funo no faz nada.
+
+223
+00:09:28,280 --> 00:09:30,319
+Ento voc pode colocar o retorno x + y na parte inferior.
+
+224
+00:09:30,319 --> 00:09:33,920
+Claro que isso tambm seria um erro, voc
+
+225
+00:09:33,920 --> 00:09:35,720
+sabe qual erro seria?
+
+226
+00:09:37,920 --> 00:09:40,330
+Eu espero que voc tenha isso, seria um
+
+227
+00:09:40,330 --> 00:09:42,920
+NameError porque  claro que xey no seria definido.
+
+228
+00:09:42,920 --> 00:09:45,010
+Eles so definidos apenas dentro da funo.
+
+229
+00:09:45,010 --> 00:09:47,200
+Lembre-se do conceito de escopo, eles
+
+230
+00:09:47,200 --> 00:09:49,170
+no vivem fora da funo.
+
+231
+00:09:49,170 --> 00:09:50,900
+Ento, assim que a funo terminar,
+
+232
+00:09:50,900 --> 00:09:52,440
+x e y no existiro mais.
+
+233
+00:09:52,440 --> 00:09:55,400
+Voc est usando-os aqui fora da funo,
+
+234
+00:09:55,400 --> 00:09:59,280
+porque o corpo da funo  apenas o bloco recuado.
+
+235
+00:09:59,280 --> 00:10:00,330
+Isso lhe daria um NameError,
+
+236
+00:10:00,330 --> 00:10:01,740
+voc est tentando usar x e
+
+237
+00:10:01,740 --> 00:10:03,340
+y, duas coisas que no esto definidas.
+
+238
+00:10:05,134 --> 00:10:06,443
+Ento ns temos um TabError.
+
+239
+00:10:06,443 --> 00:10:08,680
+Um TabError  um erro bastante freqente
+
+240
+00:10:08,680 --> 00:10:10,530
+quando voc alterna entre editores.
+
+241
+00:10:10,530 --> 00:10:12,890
+Portanto, tenha cuidado quando estiver alternando
+
+242
+00:10:12,890 --> 00:10:15,140
+entre editores, isso no acontece.
+
+243
+00:10:15,140 --> 00:10:18,100
+Aqui temos uma funo add_two e, em
+
+244
+00:10:18,100 --> 00:10:20,460
+seguida, o corpo recuado foi
+
+245
+00:10:20,460 --> 00:10:22,090
+recuado com quatro espaos.
+
+246
+00:10:22,090 --> 00:10:25,810
+Isso  o que aquele pequeno colchete significa.
+
+247
+00:10:25,810 --> 00:10:28,910
+O colchete na parte inferior da linha.
+
+248
+00:10:28,910 --> 00:10:31,960
+Espao, espao, espao, espao, retorno x + y.
+
+249
+00:10:31,960 --> 00:10:33,130
+Portanto, h
+
+250
+00:10:33,130 --> 00:10:37,310
+quatro espaos l, a sintaxe totalmente legtima do Python.
+
+251
+00:10:37,310 --> 00:10:38,800
+Voc pode recuar usando quatro
+
+252
+00:10:38,800 --> 00:10:41,500
+espaos, mas observe como a funo pow foi definida
+
+253
+00:10:41,500 --> 00:10:43,800
+usando um caractere de tabulao no incio em
+
+254
+00:10:43,800 --> 00:10:45,230
+vez de quatro espaos.
+
+255
+00:10:45,230 --> 00:10:46,740
+O Python realmente no gosta quando
+
+256
+00:10:46,740 --> 00:10:48,700
+voc mistura e combina tipos de recuo.
+
+257
+00:10:50,090 --> 00:10:52,660
+Eu no tenho certeza se isso funcionaria,
+
+258
+00:10:52,660 --> 00:10:57,170
+mas certamente dentro de uma funo, no misture e combine tipos.
+
+259
+00:10:57,170 --> 00:10:59,780
+Tente no misturar e combinar tipos de recuo, em
+
+260
+00:10:59,780 --> 00:11:01,310
+qualquer um dos seus programas.
+
+261
+00:11:01,310 --> 00:11:04,260
+Decida agora se voc quer usar abas ou espaos e
+
+262
+00:11:04,260 --> 00:11:05,410
+se ater a isso.
+
+263
+00:11:05,410 --> 00:11:07,330
+Pelo menos dentro de um projeto.
+
+264
+00:11:08,990 --> 00:11:10,970
+Ento, novamente, estes so espaos.
+
+265
+00:11:10,970 --> 00:11:13,160
+Estas so guias, no as misture.
+
+266
+00:11:15,860 --> 00:11:17,540
+A propsito, vamos voltar
+
+267
+00:11:17,540 --> 00:11:19,130
+a isso e rapidamente
+
+268
+00:11:19,130 --> 00:11:22,350
+mencionarei a funo pow, o que ela faz.
+
+269
+00:11:22,350 --> 00:11:24,730
+Porque no acho que tenhamos encontrado essa sintaxe antes.
+
+270
+00:11:24,730 --> 00:11:27,340
+Ns temos dois argumentos, n e
+
+271
+00:11:28,254 --> 00:11:31,460
+esp e est retornando n vezes vezes exp.
+
+272
+00:11:31,460 --> 00:11:33,940
+Tempos de tempo em Python apenas significam o poder de.
+
+273
+00:11:34,780 --> 00:11:37,510
+Ento, isso  aumentado para o exp.
+
+274
+00:11:37,510 --> 00:11:40,771
+Por exemplo, dois para os trs so oito e assim por diante.
+
+275
+00:11:40,771 --> 00:11:43,200
+Sintaxe muito bacana l em Python.
+
+276
+00:11:43,200 --> 00:11:44,033
+Eu no acho que
+
+277
+00:11:44,033 --> 00:11:45,650
+ns encontramos isso, s queria mencionar isso.
+
+278
+00:11:45,650 --> 00:11:47,400
+Vamos at um TypeError.
+
+279
+00:11:48,330 --> 00:11:49,770
+O TypeError  bastante comum.
+
+280
+00:11:49,770 --> 00:11:52,550
+Um TypeError pode acontecer quando voc faz algo assim.
+
+281
+00:11:52,550 --> 00:11:54,740
+Na primeira linha, estamos adicionando 5 + 5, o
+
+282
+00:11:54,740 --> 00:11:55,720
+que nos d 10.
+
+283
+00:11:55,720 --> 00:11:57,150
+Isso  o que esperamos.
+
+284
+00:11:57,150 --> 00:11:59,430
+A segunda linha que estamos adicionando 'oi' +
+
+285
+00:11:59,430 --> 00:12:01,710
+'ha' e est nos dando 'hiha' como voc
+
+286
+00:12:01,710 --> 00:12:03,860
+esperaria porque  conectar e adicionar as strings juntas.
+
+287
+00:12:03,860 --> 00:12:05,650
+Ento estamos fazendo algo que voc no deveria fazer.
+
+288
+00:12:05,650 --> 00:12:09,900
+Que  adicionar uma string e um nmero, um inteiro.
+
+289
+00:12:09,900 --> 00:12:12,430
+No faa isso, pois isso ser um TypeError.
+
+290
+00:12:12,430 --> 00:12:16,390
+Voc deu a funo +, que  uma funo.
+
+291
+00:12:17,660 --> 00:12:20,600
+Dois tipos que no suportam.
+
+292
+00:12:20,600 --> 00:12:22,316
+Ambas as coisas devem ser do
+
+293
+00:12:22,316 --> 00:12:24,460
+mesmo tipo e voc deu um int e
+
+294
+00:12:24,460 --> 00:12:27,390
+uma string e ele diz, tipos de operandos no suportados.
+
+295
+00:12:27,390 --> 00:12:32,120
+By the way, o smbolo +  realmente uma funo.
+
+296
+00:12:32,120 --> 00:12:34,960
+ uma funo dunder como len.
+
+297
+00:12:34,960 --> 00:12:38,760
+Vamos ver isso mais tarde, como voc pode us-lo.
+
+298
+00:12:39,640 --> 00:12:43,980
+O int e o objeto string tm a funo +
+
+299
+00:12:43,980 --> 00:12:47,090
+dunder definida e diz que voc no
+
+300
+00:12:47,090 --> 00:12:48,390
+pode adicion-los juntos.
+
+301
+00:12:48,390 --> 00:12:50,480
+Ento voc pega um TypeError.
+
+302
+00:12:50,480 --> 00:12:51,737
+Observe que voc
+
+303
+00:12:51,737 --> 00:12:54,840
+obtm o TypeError porque algum definiu
+
+304
+00:12:54,840 --> 00:12:59,830
+as classes int e str como aumentando esse erro de
+
+305
+00:12:59,830 --> 00:13:03,050
+tipo, quando voc passa em tipos diferentes.
+
+306
+00:13:03,050 --> 00:13:04,390
+No acontece apenas magicamente,
+
+307
+00:13:04,390 --> 00:13:06,260
+algum realmente escreveu o cdigo
+
+308
+00:13:06,260 --> 00:13:09,470
+para lhe dar este erro quando voc faz isso.
+
+309
+00:13:09,470 --> 00:13:11,060
+Ento lembre-se que no h
+
+310
+00:13:11,060 --> 00:13:12,380
+mgica aqui,  tudo programao.
+
+311
+00:13:12,380 --> 00:13:13,980
+Algum escreveu o cdigo que
+
+312
+00:13:13,980 --> 00:13:15,130
+gera esse erro.
+
+313
+00:13:16,650 --> 00:13:17,700
+Vamos para o ValueError.
+
+314
+00:13:17,700 --> 00:13:19,713
+ValueError tambm  muito comum.
+
+315
+00:13:19,713 --> 00:13:23,890
+Isso acontece quando voc atribui s funes de
+
+316
+00:13:24,880 --> 00:13:29,610
+rebatidas um valor do tipo correto, mas desculpe.
+
+317
+00:13:29,610 --> 00:13:32,370
+Um valor do tipo correto potencialmente,
+
+318
+00:13:32,370 --> 00:13:33,980
+mas valor incorreto.
+
+319
+00:13:34,900 --> 00:13:36,120
+Ento aqui est um exemplo.
+
+320
+00:13:36,120 --> 00:13:39,320
+Estamos transformando int em um int uma string que
+
+321
+00:13:39,320 --> 00:13:41,991
+normalmente  uma coisa boa para fazer, mas
+
+322
+00:13:41,991 --> 00:13:44,400
+a string no pode conter casas decimais.
+
+323
+00:13:44,400 --> 00:13:46,820
+Se isso acontecer, diz, eh voc deve realmente converter
+
+324
+00:13:46,820 --> 00:13:50,058
+isso em um float e isso  o que voc deve fazer.
+
+325
+00:13:50,058 --> 00:13:53,030
+Aqui estamos chamando a funo int com 20. 5 como uma string
+
+326
+00:13:53,030 --> 00:13:55,397
+e diz: ValueError: literal invlido para int
+
+327
+00:13:55,397 --> 00:13:58,820
+() com base 10: '20. 5 '.
+
+328
+00:13:58,820 --> 00:14:01,420
+20 5 no  algo que voc pode dar a funo int.
+
+329
+00:14:02,690 --> 00:14:06,890
+Normalmente, apenas as funes de rebatidas aumentaro um ValueError.
+
+330
+00:14:06,890 --> 00:14:08,910
+Se voc quiser aumentar ValueErrors, recomendo
+
+331
+00:14:08,910 --> 00:14:11,050
+que voc crie seus prprios erros.
+
+332
+00:14:11,050 --> 00:14:13,600
+Que ns vamos olhar mais tarde nesta seo.
+
+333
+00:14:14,670 --> 00:14:16,445
+Agora temos o ImportError.
+
+334
+00:14:16,445 --> 00:14:17,910
+Um ImportError tambm  muito
+
+335
+00:14:17,910 --> 00:14:20,450
+popular e  uma grande dor no rabo.
+
+336
+00:14:20,450 --> 00:14:22,360
+Aqui  quando isso acontece, voc
+
+337
+00:14:22,360 --> 00:14:27,360
+tem um blog de importao. App dentro. py, ento voc
+
+338
+00:14:27,430 --> 00:14:32,370
+tem blog. py. Diga isso no menu de importaes de aplicativos.
+
+339
+00:14:32,370 --> 00:14:35,420
+Vamos imaginar que voc queira rodar o menu dentro do
+
+340
+00:14:35,420 --> 00:14:38,500
+blog ou talvez o app tenha algum tipo de varivel
+
+341
+00:14:38,500 --> 00:14:40,770
+que voc queira importar ou algo assim.
+
+342
+00:14:40,770 --> 00:14:44,252
+O que est acontecendo aqui  que o aplicativo est importando o blog.
+
+343
+00:14:44,252 --> 00:14:48,300
+Blog est importando aplicativo e o que acontece quando voc importa?
+
+344
+00:14:48,300 --> 00:14:50,290
+Bem, voc vai at o valor
+
+345
+00:14:50,290 --> 00:14:52,469
+importado e o percorre rapidamente, define as
+
+346
+00:14:52,469 --> 00:14:54,840
+funes, executa uma importao e assim por diante.
+
+347
+00:14:55,970 --> 00:14:58,270
+Uma vez feito isso, voc pode voltar
+
+348
+00:14:58,270 --> 00:15:01,170
+ao arquivo original e continuar logo aps a importao.
+
+349
+00:15:01,170 --> 00:15:04,380
+O blog de importao, na verdade, executa o blog. py.
+
+350
+00:15:04,380 --> 00:15:05,320
+O que acontece quando voc executa o blog. py?
+
+351
+00:15:05,320 --> 00:15:09,630
+Bem, tem que ir para o aplicativo. py e execute isso.
+
+352
+00:15:09,630 --> 00:15:11,160
+A primeira linha l  import blog,
+
+353
+00:15:11,160 --> 00:15:13,240
+ento tem que voltar ao blog e importar o aplicativo
+
+354
+00:15:13,240 --> 00:15:15,170
+e depois voltar ao blog e assim por diante.
+
+355
+00:15:15,170 --> 00:15:18,500
+Este  um grande crculo e o que acontece
+
+356
+00:15:19,370 --> 00:15:20,710
+, sim, importaes circulares.
+
+357
+00:15:20,710 --> 00:15:21,780
+ assim que eles so chamados.
+
+358
+00:15:21,780 --> 00:15:24,080
+Importando um arquivo que importa o mesmo arquivo.
+
+359
+00:15:24,080 --> 00:15:25,640
+Voc receber uma importao circular.
+
+360
+00:15:25,640 --> 00:15:29,170
+Isso no precisa necessariamente acontecer entre dois arquivos.
+
+361
+00:15:29,170 --> 00:15:31,940
+Voc pode ter o arquivo a que importa o arquivo b
+
+362
+00:15:31,940 --> 00:15:34,380
+que importa o arquivo c, que importa o arquivo a.
+
+363
+00:15:35,240 --> 00:15:37,320
+Ento voc pode ter uma importao circular com
+
+364
+00:15:37,320 --> 00:15:39,320
+muitos arquivos e pode ser um pouco trabalhoso.
+
+365
+00:15:39,320 --> 00:15:41,490
+Apenas tome cuidado com suas importaes.
+
+366
+00:15:41,490 --> 00:15:43,770
+Voc receber um ImportError e ele dir
+
+367
+00:15:43,770 --> 00:15:46,780
+algo em torno das linhas de importao circular aqui.
+
+368
+00:15:46,780 --> 00:15:48,361
+Tenha cuidado, se voc receber um ImportError,
+
+369
+00:15:48,361 --> 00:15:49,990
+faa uma pergunta e o curso Q
+
+370
+00:15:49,990 --> 00:15:51,800
+&amp; A ter muito prazer em ajud-lo.
+
+371
+00:15:53,370 --> 00:15:55,470
+Finalmente, vamos dar uma olhada no DeprecationWarning.
+
+372
+00:15:56,370 --> 00:15:58,620
+DeprecationWarning  como diz l, um
+
+373
+00:15:58,620 --> 00:16:00,830
+aviso no  um erro.
+
+374
+00:16:00,830 --> 00:16:03,240
+No entanto, o Python trata da mesma maneira.
+
+375
+00:16:03,240 --> 00:16:07,020
+Se voc produzir um, se voc criar um.
+
+376
+00:16:07,020 --> 00:16:08,720
+Seu programa ainda
+
+377
+00:16:08,720 --> 00:16:10,430
+ir falhar, mas
+
+378
+00:16:10,430 --> 00:16:13,222
+significa que algo errado aconteceu aqui.
+
+379
+00:16:13,222 --> 00:16:17,220
+Essa coisa que voc tentou fazer est obsoleta.
+
+380
+00:16:17,220 --> 00:16:19,110
+O que significa depreciado?
+
+381
+00:16:19,110 --> 00:16:22,980
+Depreciado significa que no  mais a melhor maneira de
+
+382
+00:16:22,980 --> 00:16:24,770
+se fazer alguma coisa.
+
+383
+00:16:24,770 --> 00:16:26,840
+No h melhor maneira de fazer o
+
+384
+00:16:26,840 --> 00:16:28,470
+que voc est tentando fazer.
+
+385
+00:16:28,470 --> 00:16:29,820
+Vamos ver este cdigo de exemplo.
+
+386
+00:16:29,820 --> 00:16:32,550
+Temos classe de usurio e no topo temos banco de
+
+387
+00:16:32,550 --> 00:16:34,870
+dados de importao de banco de dados de formulrio.
+
+388
+00:16:34,870 --> 00:16:36,750
+A classe de usurio possui um construtor
+
+389
+00:16:37,770 --> 00:16:39,380
+e, em seguida, possui dois mtodos.
+
+390
+00:16:39,380 --> 00:16:41,670
+Um mtodo de registro que  um mtodo de
+
+391
+00:16:41,670 --> 00:16:43,990
+instncia que grava no banco de dados o nome
+
+392
+00:16:43,990 --> 00:16:45,670
+de usurio e a senha do usurio.
+
+393
+00:16:45,670 --> 00:16:48,373
+Em seguida, tambm gera um aviso de descontinuao.
+
+394
+00:16:48,373 --> 00:16:50,580
+Diz, UserRegister ainda funciona, mas
+
+395
+00:16:50,580 --> 00:16:51,540
+est obsoleto.
+
+396
+00:16:52,860 --> 00:16:55,780
+Ento ns temos um mtodo de classe que  chamado
+
+397
+00:16:55,780 --> 00:16:58,976
+register_user e que recebe um nome de usurio e senha e
+
+398
+00:16:58,976 --> 00:17:02,300
+grava no banco de dados o nome de usurio e senha
+
+399
+00:17:02,300 --> 00:17:04,230
+e retorna um objeto do tipo usurio.
+
+400
+00:17:04,230 --> 00:17:05,810
+Eu gosto deste segundo melhor.
+
+401
+00:17:05,810 --> 00:17:07,381
+ por isso que salvei este exemplo.
+
+402
+00:17:07,381 --> 00:17:09,430
+No entanto, foi apenas para mostrar a
+
+403
+00:17:09,430 --> 00:17:12,190
+voc que voc pode criar uma DeprecationWarning em qualquer
+
+404
+00:17:12,190 --> 00:17:13,380
+um dos seus mtodos.
+
+405
+00:17:13,380 --> 00:17:17,900
+Para dizer a quem quer que o use, isso no  mais o
+
+406
+00:17:17,900 --> 00:17:19,750
+jeito aceito de fazer as coisas.
+
+407
+00:17:22,550 --> 00:17:25,070
+Mas h um mas.
+
+408
+00:17:25,070 --> 00:17:27,600
+Muitas vezes voc no estar levantando nenhuma
+
+409
+00:17:27,600 --> 00:17:29,290
+dessas excees, exceto, possivelmente, a
+
+410
+00:17:29,290 --> 00:17:30,810
+DeprecationWarning, provavelmente nem essa.
+
+411
+00:17:30,810 --> 00:17:33,170
+Voc normalmente estar aumentando, NotImplementedError se
+
+412
+00:17:33,170 --> 00:17:35,170
+voc est trabalhando em alguma coisa.
+
+413
+00:17:36,250 --> 00:17:38,560
+Voc no vai levantar muitos desses.
+
+414
+00:17:38,560 --> 00:17:40,590
+Voc deve criar suas prprias excees,
+
+415
+00:17:40,590 --> 00:17:42,210
+com nomes ainda melhores.
+
+416
+00:17:43,890 --> 00:17:45,680
+Veremos exatamente o que isso significa
+
+417
+00:17:45,680 --> 00:17:47,430
+e qual  o melhor nome
+
+418
+00:17:47,430 --> 00:17:50,140
+e como voc pode criar suas prprias excees.
+
+419
+00:17:50,140 --> 00:17:51,810
+Vamos ver isso agora
+
+420
+00:17:51,810 --> 00:17:53,320
+no prximo vdeo.
+
+421
+00:17:53,320 --> 00:17:54,270
+Eu te vejo l.
+

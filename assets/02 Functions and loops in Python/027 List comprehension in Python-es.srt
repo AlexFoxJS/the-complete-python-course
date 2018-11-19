@@ -1,0 +1,1204 @@
+1
+00:00:00,550 --> 00:00:02,020
+Jos: Hola y bienvenido de nuevo.
+
+2
+00:00:02,020 --> 00:00:05,280
+En este video, estamos hablando de comprensin de listas.
+
+3
+00:00:05,280 --> 00:00:07,160
+La comprensin de listas es una
+
+4
+00:00:07,160 --> 00:00:09,380
+de las funciones ms divertidas y tiles
+
+5
+00:00:09,380 --> 00:00:12,200
+de Python y es esencial que lo sepa.
+
+6
+00:00:12,200 --> 00:00:15,670
+Es una forma Pythonic de construir una lista.
+
+7
+00:00:17,360 --> 00:00:20,010
+Aqu, digamos que tenemos una lista de nmeros.
+
+8
+00:00:22,370 --> 00:00:23,350
+Esto es, por
+
+9
+00:00:23,350 --> 00:00:26,400
+cierto, una forma en que puedes construir una lista de nmeros.
+
+10
+00:00:28,120 --> 00:00:30,170
+Esto le da una lista de cero a nueve.
+
+11
+00:00:30,170 --> 00:00:32,390
+Recuerde que si usamos la funcin de rango,
+
+12
+00:00:32,390 --> 00:00:34,760
+eso nos da algo que podemos iterar con
+
+13
+00:00:34,760 --> 00:00:37,880
+un bucle for pero en realidad no nos da una lista.
+
+14
+00:00:39,850 --> 00:00:44,850
+Entonces, qu pasa si quiero una nueva lista de nmeros, pero
+
+15
+00:00:44,870 --> 00:00:47,370
+donde se duplican los nmeros?
+
+16
+00:00:47,370 --> 00:00:50,780
+Entonces, cero, dos, cuatro, seis, ocho, etc.
+
+17
+00:00:51,710 --> 00:00:53,530
+Aqu hay una manera en que podramos hacerlo.
+
+18
+00:00:53,530 --> 00:00:57,360
+Los nmeros dobles equivalen a la lista vaca y
+
+19
+00:00:58,460 --> 00:01:02,330
+luego usaremos un ciclo for para num en nmeros.
+
+20
+00:01:02,330 --> 00:01:03,163
+Derecha?
+
+21
+00:01:03,163 --> 00:01:06,390
+Y luego diremos que los nmeros duplicados se aaden
+
+22
+00:01:06,390 --> 00:01:08,210
+a los puntos, miramos anexar
+
+23
+00:01:09,540 --> 00:01:12,680
+antes y vamos a agregar el nmero multiplicado por dos.
+
+24
+00:01:13,890 --> 00:01:16,800
+Y luego vamos a imprimir nmeros dobles.
+
+25
+00:01:18,050 --> 00:01:20,250
+Entonces, esto es algo que podramos hacer antes y
+
+26
+00:01:21,210 --> 00:01:22,550
+ahora tenemos cero, dos, cuatro,
+
+27
+00:01:22,550 --> 00:01:23,900
+seis y ocho, y as sucesivamente.
+
+28
+00:01:25,840 --> 00:01:29,460
+Pero es una forma bastante larga de hacer las cosas.
+
+29
+00:01:29,460 --> 00:01:31,870
+Tienes que obtener una lista vaca, luego
+
+30
+00:01:31,870 --> 00:01:33,810
+tienes que iterar sobre tu lista
+
+31
+00:01:33,810 --> 00:01:37,250
+inicial, luego debes agregar cada nmero a la lista de
+
+32
+00:01:37,250 --> 00:01:40,740
+nmeros duplicados, multiplicar por dos y luego, al final, imprimirlo.
+
+33
+00:01:40,740 --> 00:01:43,390
+Casi me qued sin aliento con solo decir eso.
+
+34
+00:01:43,390 --> 00:01:46,290
+Entonces, mejor manera, en Python, de hacer eso, es con
+
+35
+00:01:46,290 --> 00:01:47,810
+la comprensin de la lista.
+
+36
+00:01:49,710 --> 00:01:52,210
+En la lista de comprensin, nuestros nmeros
+
+37
+00:01:55,040 --> 00:01:59,440
+dobles podran ser N multiplicados por dos para N en nmeros.
+
+38
+00:02:02,313 --> 00:02:04,263
+Te dejar empapar eso por un momento.
+
+39
+00:02:07,060 --> 00:02:08,630
+Lo que estamos haciendo aqu
+
+40
+00:02:08,630 --> 00:02:11,550
+es que estamos diciendo, est bien, tenemos una lista
+
+41
+00:02:11,550 --> 00:02:15,040
+y en esta lista vamos a poner N dos veces y
+
+42
+00:02:18,090 --> 00:02:19,760
+aqu tenemos un ciclo for,
+
+43
+00:02:19,760 --> 00:02:22,420
+lo que significa que N es una variable.
+
+44
+00:02:22,420 --> 00:02:27,360
+Este N va a ser el primer elemento de la lista de nmeros.
+
+45
+00:02:27,360 --> 00:02:28,280
+Entonces eso es cero
+
+46
+00:02:29,300 --> 00:02:31,360
+y el valor que vamos a poner dentro de
+
+47
+00:02:31,360 --> 00:02:34,180
+esta nueva lista es N multiplicado por dos, entonces eso es cero.
+
+48
+00:02:34,180 --> 00:02:37,120
+Entonces N se convierte en uno porque ese es el segundo elemento
+
+49
+00:02:37,120 --> 00:02:38,480
+de los nmeros y vamos
+
+50
+00:02:38,480 --> 00:02:41,060
+a poner uno por dos dentro de esta nueva lista.
+
+51
+00:02:41,060 --> 00:02:44,170
+Entonces N se convierte en dos y vamos a poner dos veces dos, luego
+
+52
+00:02:44,170 --> 00:02:45,560
+N se convierte en tres y
+
+53
+00:02:45,560 --> 00:02:47,510
+vamos a poner tres veces dos, y as sucesivamente.
+
+54
+00:02:47,510 --> 00:02:49,810
+Este es el nmero o este es
+
+55
+00:02:49,810 --> 00:02:52,300
+el valor que estamos poniendo en nuestra nueva
+
+56
+00:02:52,300 --> 00:02:55,570
+lista y esta es la lista sobre la que estamos
+
+57
+00:02:55,570 --> 00:02:57,650
+iterando para extraer los valores iniciales.
+
+58
+00:02:59,750 --> 00:03:03,740
+Bueno, ahora s que esto se ve muy extrao y las primeras
+
+59
+00:03:03,740 --> 00:03:06,370
+veces que me encontr con la comprensin de
+
+60
+00:03:06,370 --> 00:03:09,120
+la lista, hace algunos aos, pens, esto es
+
+61
+00:03:09,120 --> 00:03:11,250
+raro, esto es raro, porque por
+
+62
+00:03:11,250 --> 00:03:14,180
+qu tienes un bucle for dentro de la lista?
+
+63
+00:03:14,180 --> 00:03:16,160
+No tiene ningn sentido, pero
+
+64
+00:03:16,160 --> 00:03:19,250
+es una mejor forma de construir una lista
+
+65
+00:03:19,250 --> 00:03:22,110
+de nmeros dobles que el otro mtodo.
+
+66
+00:03:22,110 --> 00:03:24,750
+Es un juego de una sola lnea, en primer lugar.
+
+67
+00:03:24,750 --> 00:03:28,470
+No es que reducir las lneas de cdigo sea el objetivo,
+
+68
+00:03:28,470 --> 00:03:30,640
+pero creo que es bastante fcil
+
+69
+00:03:30,640 --> 00:03:34,330
+de leer porque tienes de dnde obtienes tus nmeros y
+
+70
+00:03:34,330 --> 00:03:37,410
+lo que les ests haciendo para construir tu lista.
+
+71
+00:03:37,410 --> 00:03:39,900
+Todo est all, uno al lado
+
+72
+00:03:39,900 --> 00:03:43,359
+del otro, y creo que es bastante legible, sabes?
+
+73
+00:03:43,359 --> 00:03:45,810
+Las primeras veces que pens que no era
+
+74
+00:03:45,810 --> 00:03:47,310
+realmente legible, pens que era
+
+75
+00:03:47,310 --> 00:03:49,530
+bastante confuso pero a medida que ves
+
+76
+00:03:49,530 --> 00:03:52,880
+esto ms y ms, notas que es bastante fcil de ver.
+
+77
+00:03:54,500 --> 00:03:57,730
+Bien, veamos otra lista de comprensin.
+
+78
+00:03:57,730 --> 00:04:00,780
+Ahora vamos a construir cadenas dentro de la lista.
+
+79
+00:04:00,780 --> 00:04:03,810
+Primero vamos a poner nuestros corchetes.
+
+80
+00:04:03,810 --> 00:04:05,570
+Esto nos dice que tenemos una lista.
+
+81
+00:04:06,740 --> 00:04:10,370
+Vamos a decir lo que queremos dentro de nuestra lista.
+
+82
+00:04:10,370 --> 00:04:12,660
+Tengo aos y ahora vamos
+
+83
+00:04:14,840 --> 00:04:18,140
+a decir que la edad se duplic.
+
+84
+00:04:18,140 --> 00:04:20,580
+Una vez ms, lo que estamos haciendo aqu
+
+85
+00:04:20,580 --> 00:04:23,600
+es iterar sobre el doble, ay, lo siento, duplicar los nmeros!
+
+86
+00:04:25,310 --> 00:04:28,210
+Nmeros, vamos a iterar sobre nmeros duplicados.
+
+87
+00:04:28,210 --> 00:04:30,910
+La edad va a ser el primer nmero y lo
+
+88
+00:04:30,910 --> 00:04:32,190
+que vamos a poner dentro
+
+89
+00:04:32,190 --> 00:04:34,480
+de una nueva lista es este valor aqu.
+
+90
+00:04:34,480 --> 00:04:36,620
+Tengo cero aos.
+
+91
+00:04:36,620 --> 00:04:38,110
+Luego pasaremos al siguiente nmero
+
+92
+00:04:38,110 --> 00:04:39,450
+en nmeros dobles, eso
+
+93
+00:04:39,450 --> 00:04:42,030
+es dos y vamos a imprimir, tengo dos aos.
+
+94
+00:04:42,030 --> 00:04:43,210
+Oh, lo siento, no vamos a imprimir
+
+95
+00:04:43,210 --> 00:04:44,810
+nada, vamos a poner esto en una nueva lista.
+
+96
+00:04:44,810 --> 00:04:47,330
+Entonces podemos imprimir frases y
+
+97
+00:04:47,330 --> 00:04:51,240
+veremos que obtenemos una lista de cadenas.
+
+98
+00:04:51,240 --> 00:04:52,690
+Esto es lo que esperaramos.
+
+99
+00:04:56,960 --> 00:04:59,150
+Luego digo que tenemos una
+
+100
+00:05:00,410 --> 00:05:04,070
+lista de nombres de John, Rolf y Anne.
+
+101
+00:05:07,370 --> 00:05:12,060
+Ahora, estos tienen primeras letras maysculas.
+
+102
+00:05:12,060 --> 00:05:14,460
+A veces, por ejemplo, si desea preguntarle
+
+103
+00:05:14,460 --> 00:05:16,250
+al usuario, quin es su amigo?
+
+104
+00:05:16,250 --> 00:05:19,380
+Y teclean a John, son como John es mi amigo.
+
+105
+00:05:19,380 --> 00:05:22,300
+Sabr que John y John no son lo mismo porque
+
+106
+00:05:22,300 --> 00:05:25,400
+uno tiene una J mayscula, uno tiene una J minscula
+
+107
+00:05:25,400 --> 00:05:26,380
+Entonces que puedes hacer?
+
+108
+00:05:28,430 --> 00:05:31,310
+Puede convertirlos en cadenas en minsculas en
+
+109
+00:05:31,310 --> 00:05:33,910
+lugar de tener la letra mayscula.
+
+110
+00:05:33,910 --> 00:05:35,970
+Cmo lo haras t?
+
+111
+00:05:35,970 --> 00:05:39,960
+Ahora, usted sabe que debe iterar sobre esta lista, por
+
+112
+00:05:39,960 --> 00:05:43,470
+ejemplo, para el nombre en la lista de nombres.
+
+113
+00:05:43,470 --> 00:05:45,280
+Y sabes que quieres convertir la
+
+114
+00:05:45,280 --> 00:05:47,360
+cadena en una cadena en minscula.
+
+115
+00:05:49,030 --> 00:05:51,740
+Si no ha convertido las cadenas en cadenas en minsculas
+
+116
+00:05:51,740 --> 00:05:55,410
+antes, esta podra ser una buena oportunidad para ir y buscar en Google, cmo
+
+117
+00:05:55,410 --> 00:05:57,630
+convertir una cadena en una cadena en minscula.
+
+118
+00:05:57,630 --> 00:05:59,820
+Pausa el video, prubalo.
+
+119
+00:05:59,820 --> 00:06:01,510
+Cmo convertiras esta lista en
+
+120
+00:06:01,510 --> 00:06:03,780
+una lista de cadenas en minsculas?
+
+121
+00:06:09,300 --> 00:06:11,610
+La razn por la que te dije que simplemente
+
+122
+00:06:11,610 --> 00:06:13,590
+fueras a Google, a diferencia de lo que
+
+123
+00:06:13,590 --> 00:06:15,940
+acabo de decirte, es que, al hacer tu propia investigacin,
+
+124
+00:06:17,140 --> 00:06:18,890
+el concepto va a ser mucho mejor.
+
+125
+00:06:18,890 --> 00:06:19,990
+Por supuesto, este es
+
+126
+00:06:19,990 --> 00:06:21,530
+un curso, sabes que no voy
+
+127
+00:06:21,530 --> 00:06:23,030
+a ser como, ve y
+
+128
+00:06:23,030 --> 00:06:24,930
+busca eso y ve a Google y
+
+129
+00:06:24,930 --> 00:06:27,400
+luego busca Google, pero de vez en cuando, puedo
+
+130
+00:06:27,400 --> 00:06:30,910
+pedirte que busques algo en Google o investigar algo. por tu cuenta
+
+131
+00:06:30,910 --> 00:06:32,720
+Lo que vamos a hacer aqu es
+
+132
+00:06:32,720 --> 00:06:36,550
+que vamos a decir, para el nombre en la lista de nombres y lo que
+
+133
+00:06:36,550 --> 00:06:39,210
+vamos a poner es el nombre convertido en una letra minscula.
+
+134
+00:06:39,210 --> 00:06:41,250
+Entonces ese es el nombre. inferior.
+
+135
+00:06:42,170 --> 00:06:46,100
+Punto ms bajo, en un nombre, lo convierte en una minscula.
+
+136
+00:06:46,100 --> 00:06:47,890
+As que ese es John con una
+
+137
+00:06:49,810 --> 00:06:53,120
+J en minscula y luego podemos imprimirlo solo para que as me lo
+
+138
+00:06:54,920 --> 00:06:56,220
+creas, pero eso es todo.
+
+139
+00:06:56,220 --> 00:06:58,120
+John, Rolf y Anne.
+
+140
+00:06:58,120 --> 00:07:00,310
+Entonces, si le pides a un usuario que
+
+141
+00:07:00,310 --> 00:07:04,210
+escriba el nombre de un amigo y lo hayan escrito sin la J mayscula,
+
+142
+00:07:04,210 --> 00:07:05,490
+esta coincidencia an coincide.
+
+143
+00:07:06,420 --> 00:07:11,420
+Por supuesto, un amigo ingresa el nombre de su amigo
+
+144
+00:07:12,890 --> 00:07:16,070
+e imprime un amigo en minsculas.
+
+145
+00:07:16,070 --> 00:07:18,620
+Por cierto, no s si hemos, oh, he presionado para guardar
+
+146
+00:07:18,620 --> 00:07:20,320
+de nuevo, no s si hemos visto
+
+147
+00:07:20,320 --> 00:07:22,270
+esta sintaxis de nuevo, pero puedes verificar si
+
+148
+00:07:22,270 --> 00:07:26,150
+un valor especfico est dentro de una lista simplemente usando esto en la palabra clave .
+
+149
+00:07:26,150 --> 00:07:28,640
+Entonces, en este caso, si ingresaron a
+
+150
+00:07:28,640 --> 00:07:30,270
+John, imprimiremos true si John
+
+151
+00:07:30,270 --> 00:07:33,270
+est en esta lista de nombres en minscula.
+
+152
+00:07:33,270 --> 00:07:34,103
+Vamos a ejecutarlo
+
+153
+00:07:36,551 --> 00:07:38,501
+y, como pueden ver, se imprime verdadero.
+
+154
+00:07:40,060 --> 00:07:42,903
+Ahora, qu pasa si tu usuario hace lo contrario
+
+155
+00:07:42,903 --> 00:07:45,730
+de lo que esperas y lo escriben con una
+
+156
+00:07:45,730 --> 00:07:47,600
+J mayscula, entonces decimos falso, verdad?
+
+157
+00:07:47,600 --> 00:07:50,640
+Eso tiene sentido porque estos nombres ahora son minsculos.
+
+158
+00:07:50,640 --> 00:07:53,770
+Entonces, lo que normalmente haras cuando quisieras comparar cadenas,
+
+159
+00:07:53,770 --> 00:07:56,260
+es que las cambiaras a minsculas y,
+
+160
+00:07:56,260 --> 00:07:57,350
+por supuesto, tambin
+
+161
+00:07:57,350 --> 00:07:59,980
+convertiras las entradas del usuario a minsculas y
+
+162
+00:08:01,070 --> 00:08:03,160
+luego, sin importar lo que tecleen,
+
+163
+00:08:03,160 --> 00:08:05,170
+estars comparando manzanas con manzanas, a
+
+164
+00:08:05,170 --> 00:08:08,350
+diferencia de las manzanas con naranjas, incluso con una
+
+165
+00:08:08,350 --> 00:08:10,400
+N mayscula al final, todava se
+
+166
+00:08:10,400 --> 00:08:11,350
+hace realidad.
+
+167
+00:08:13,300 --> 00:08:15,940
+De todos modos, esto fue un desvo all.
+
+168
+00:08:15,940 --> 00:08:17,430
+Esto no est en el
+
+169
+00:08:17,430 --> 00:08:18,980
+guin, en realidad, lo tengo
+
+170
+00:08:18,980 --> 00:08:22,040
+para esta conferencia, as que por favor tengan paciencia conmigo
+
+171
+00:08:22,040 --> 00:08:23,870
+mientras los desvo del lenguaje Python.
+
+172
+00:08:23,870 --> 00:08:28,370
+Y ahora digamos que queremos hacer una condicin
+
+173
+00:08:28,370 --> 00:08:31,990
+con, una lista de comprensin con condicionales.
+
+174
+00:08:31,990 --> 00:08:34,500
+Tenemos nuestra lista de nmeros aqu.
+
+175
+00:08:34,500 --> 00:08:37,410
+Ahora vamos a construir
+
+176
+00:08:37,410 --> 00:08:40,930
+una lista de nmeros pares.
+
+177
+00:08:43,210 --> 00:08:46,030
+Solo el nmero par, as que lo llamaremos evens
+
+178
+00:08:46,900 --> 00:08:48,310
+y cmo haras eso?
+
+179
+00:08:50,040 --> 00:08:52,230
+Si lo desea, pause el video e investguelo,
+
+180
+00:08:52,230 --> 00:08:54,300
+pero esto es ms una pregunta retrica.
+
+181
+00:08:54,300 --> 00:08:57,510
+Entonces, si solo queremos nmeros pares, por supuesto, si
+
+182
+00:08:57,510 --> 00:09:00,710
+has pensado en esto, esto significa que eres bastante
+
+183
+00:09:00,710 --> 00:09:02,240
+descarado, esta es una
+
+184
+00:09:02,240 --> 00:09:04,019
+lista de nmeros pares porque
+
+185
+00:09:04,019 --> 00:09:06,490
+los nmeros duplicados son siempre iguales, por
+
+186
+00:09:07,660 --> 00:09:11,150
+supuesto, porque estamos doblando cada nmero, multiplicado por dos.
+
+187
+00:09:12,150 --> 00:09:14,370
+Pero, y si quisiera eliminar nmeros
+
+188
+00:09:14,370 --> 00:09:16,700
+impares de esta lista de nmeros?
+
+189
+00:09:18,790 --> 00:09:23,510
+Bueno, podemos hacer eso diciendo N para N en nmeros.
+
+190
+00:09:24,640 --> 00:09:27,040
+Esto nos dar exactamente la misma lista
+
+191
+00:09:27,040 --> 00:09:29,590
+que tenemos aqu, N para N en nmeros
+
+192
+00:09:29,590 --> 00:09:31,490
+no est haciendo nada para cambiar
+
+193
+00:09:31,490 --> 00:09:36,090
+el valor que estamos poniendo en la nueva lista, pero al final, podemos poner
+
+194
+00:09:36,090 --> 00:09:37,960
+un if statement, que est empezando
+
+195
+00:09:37,960 --> 00:09:40,640
+a hacer las cosas un poco ms confusas.
+
+196
+00:09:40,640 --> 00:09:43,050
+Cmo verificamos que un nmero sea par?
+
+197
+00:09:46,580 --> 00:09:47,900
+Lo adivinaste bien.
+
+198
+00:09:47,900 --> 00:09:52,700
+Si N dividido por dos o N mdulo dos es igual a cero.
+
+199
+00:09:52,700 --> 00:09:57,100
+Entonces, si esto es cierto, pondremos N en la lista.
+
+200
+00:09:57,100 --> 00:09:58,890
+Si esto es falso, no
+
+201
+00:09:58,890 --> 00:10:02,220
+vamos a poner N en nuestra nueva lista.
+
+202
+00:10:05,950 --> 00:10:06,783
+Ah tienes.
+
+203
+00:10:06,783 --> 00:10:08,630
+Ahora tenemos cero, dos, cuatro, seis y ocho.
+
+204
+00:10:09,690 --> 00:10:11,710
+Una forma bastante til
+
+205
+00:10:12,600 --> 00:10:16,520
+de construir nuevas listas basadas en algunos condicionales
+
+206
+00:10:16,520 --> 00:10:18,170
+y cambiar los valores.
+
+207
+00:10:18,170 --> 00:10:21,200
+Esto comienza a ser un poco ms confuso porque ahora
+
+208
+00:10:21,200 --> 00:10:23,670
+esta es una afirmacin un poco ms larga.
+
+209
+00:10:23,670 --> 00:10:27,600
+Tienes un ciclo for y un enunciado if en la misma lnea.
+
+210
+00:10:27,600 --> 00:10:30,210
+As que ten cuidado al construir listas de comprensin.
+
+211
+00:10:30,210 --> 00:10:33,010
+No quieres pasar de la cima.
+
+212
+00:10:33,010 --> 00:10:34,800
+Desea que sea legible y
+
+213
+00:10:34,800 --> 00:10:36,670
+creo que es bastante legible
+
+214
+00:10:36,670 --> 00:10:40,810
+debido al nombre, la variable se llama evens, por lo que probablemente
+
+215
+00:10:40,810 --> 00:10:43,440
+va a almacenar nmeros pares, pero est empezando
+
+216
+00:10:43,440 --> 00:10:46,250
+a ser un poco ilegible, incluso para m.
+
+217
+00:10:48,550 --> 00:10:50,640
+Digamos que tenemos dos listas.
+
+218
+00:10:50,640 --> 00:10:53,490
+Uno de mis amigos, y
+
+219
+00:10:53,490 --> 00:10:56,410
+ese ser Rolf, Anna y Charlie.
+
+220
+00:10:57,340 --> 00:11:00,460
+Y luego, uno de los invitados de
+
+221
+00:11:00,460 --> 00:11:02,380
+tu grupo y tienes
+
+222
+00:11:02,380 --> 00:11:05,460
+a Jos, Rolf, Ruth, Charlie y Michael.
+
+223
+00:11:05,460 --> 00:11:07,070
+Los cambios en mayscula
+
+224
+00:11:07,070 --> 00:11:09,160
+y minscula son intencionales, por cierto.
+
+225
+00:11:10,360 --> 00:11:14,490
+Entonces, cmo construiras una lista de los
+
+226
+00:11:14,490 --> 00:11:18,680
+amigos que tambin estn en tu grupo?
+
+227
+00:11:18,680 --> 00:11:21,610
+Probablemente sean Rolf y Charlie.
+
+228
+00:11:21,610 --> 00:11:22,930
+Cmo construiras esa lista?
+
+229
+00:11:22,930 --> 00:11:24,810
+Entonces, amigos actuales.
+
+230
+00:11:25,920 --> 00:11:28,220
+Ahora pausa el video y prubalo.
+
+231
+00:11:34,610 --> 00:11:35,700
+Espero que tengas eso.
+
+232
+00:11:35,700 --> 00:11:38,620
+Qu hacer, es decir el nombre para nombrar invitados.
+
+233
+00:11:39,650 --> 00:11:41,510
+Eso repetir a todos tus
+
+234
+00:11:41,510 --> 00:11:44,410
+invitados, a todos los que estn actualmente
+
+235
+00:11:44,410 --> 00:11:47,770
+en tu grupo, pero solo quieres eso si
+
+236
+00:11:48,810 --> 00:11:52,700
+el nombre, ese es el nombre del invitado, en amigos.
+
+237
+00:11:53,670 --> 00:11:56,490
+Observe cmo todos sus amigos son minsculos.
+
+238
+00:11:56,490 --> 00:11:59,490
+Entonces puedes hacer nombre. ms bajo, para asegurarse
+
+239
+00:11:59,490 --> 00:12:01,940
+de que est comparando manzanas con manzanas.
+
+240
+00:12:02,940 --> 00:12:05,150
+Eso convertir el nombre de Charlie en
+
+241
+00:12:05,150 --> 00:12:06,430
+una Charlie en minscula,
+
+242
+00:12:06,430 --> 00:12:08,730
+para poder hacer coincidir a tu amigo.
+
+243
+00:12:10,120 --> 00:12:12,010
+Ahora, si desea que los nombres terminen
+
+244
+00:12:12,010 --> 00:12:13,810
+con una R mayscula, una A mayscula,
+
+245
+00:12:13,810 --> 00:12:15,900
+C mayscula, que no lo hacen ahora.
+
+246
+00:12:16,820 --> 00:12:18,890
+Si imprimes esto, vers lo
+
+247
+00:12:18,890 --> 00:12:20,480
+que quiero decir, obtienes
+
+248
+00:12:22,420 --> 00:12:26,090
+a Rolf y Charlie y da la casualidad
+
+249
+00:12:26,090 --> 00:12:30,930
+de que tomas estos nombres aqu, Rolf y Charlie, pero si
+
+250
+00:12:30,930 --> 00:12:34,110
+Ruth estaba aqu y digamos Ruth, all.
+
+251
+00:12:34,110 --> 00:12:35,470
+Vamos a ejecutarlo.
+
+252
+00:12:35,470 --> 00:12:37,710
+Puedes ver que Ruth tiene una
+
+253
+00:12:37,710 --> 00:12:40,660
+R minscula porque ests tomando esto de Ruth aqu.
+
+254
+00:12:40,660 --> 00:12:42,940
+Si quieres asegurarte de que todos
+
+255
+00:12:42,940 --> 00:12:46,320
+estos nombres terminen con una primera letra mayscula, puedes
+
+256
+00:12:47,650 --> 00:12:50,140
+hacerlo, no capitalizar, y eso har que
+
+257
+00:12:50,140 --> 00:12:53,550
+la primera letra sea una letra mayscula en cualquier cadena.
+
+258
+00:12:53,550 --> 00:12:56,900
+Entonces esta es solo una buena informacin para ti.
+
+259
+00:12:58,580 --> 00:12:59,413
+Bueno?
+
+260
+00:13:01,930 --> 00:13:06,930
+Por supuesto, si esta Ruth tuviera una R mayscula, tendras un problema
+
+261
+00:13:07,670 --> 00:13:09,060
+porque esta Ruth
+
+262
+00:13:09,060 --> 00:13:11,780
+tiene una R minscula, esta Ruth
+
+263
+00:13:11,780 --> 00:13:13,520
+tiene una R. mayscula.
+
+264
+00:13:15,240 --> 00:13:17,210
+Si imprimimos amigos presentes aqu, Ruth ahora
+
+265
+00:13:17,210 --> 00:13:22,210
+est perdida porque estamos comprobando si el nombre. ms bajo, ese es el nombre del
+
+266
+00:13:22,740 --> 00:13:26,320
+invitado, esta Ruth, est en amigos, pero no es porque este
+
+267
+00:13:26,320 --> 00:13:28,700
+tiene una R en minscula, esta tiene
+
+268
+00:13:28,700 --> 00:13:30,100
+una R. en mayscula
+
+269
+00:13:31,150 --> 00:13:32,870
+Entonces, qu podras hacer?
+
+270
+00:13:38,340 --> 00:13:41,710
+La primera opcin sera crear una lista de comprensin
+
+271
+00:13:41,710 --> 00:13:44,760
+que convertira los nombres de tus amigos en minsculas.
+
+272
+00:13:46,430 --> 00:13:48,500
+Tal comprensin de la lista se
+
+273
+00:13:48,500 --> 00:13:50,779
+vera muy similar a la que tenemos
+
+274
+00:13:50,779 --> 00:13:53,210
+aqu, N ms baja para N en amigos.
+
+275
+00:13:56,480 --> 00:14:00,120
+Y ahora podras crear una variable, como amigos
+
+276
+00:14:00,120 --> 00:14:04,200
+inferiores, que no suena muy bien y podras compararla
+
+277
+00:14:04,200 --> 00:14:05,940
+con eso, nombrar ms
+
+278
+00:14:05,940 --> 00:14:08,140
+abajo en amigos inferiores.
+
+279
+00:14:09,190 --> 00:14:11,010
+Sin embargo, si no desea
+
+280
+00:14:11,010 --> 00:14:13,380
+crear una nueva variable, podra complicar an
+
+281
+00:14:13,380 --> 00:14:16,810
+ms su cdigo haciendo que esa lista se comprenda all.
+
+282
+00:14:16,810 --> 00:14:17,880
+No hagas eso.
+
+283
+00:14:18,840 --> 00:14:20,490
+No, de acuerdo?
+
+284
+00:14:20,490 --> 00:14:22,220
+Esto, mucho mejor.
+
+285
+00:14:22,220 --> 00:14:24,730
+Esto, muy ilegible.
+
+286
+00:14:24,730 --> 00:14:25,829
+No sabes lo que est pasando aqu.
+
+287
+00:14:25,829 --> 00:14:27,250
+Hay demasiados corchetes
+
+288
+00:14:27,250 --> 00:14:30,320
+y corchetes, corchetes normales, para bucles,
+
+289
+00:14:30,320 --> 00:14:32,950
+todo est sucediendo aqu.
+
+290
+00:14:32,950 --> 00:14:34,020
+Esto funciona, sin embargo.
+
+291
+00:14:35,220 --> 00:14:37,180
+Te da a tus tres amigos,
+
+292
+00:14:37,180 --> 00:14:39,930
+pero esta es una mejor manera de hacerlo.
+
+293
+00:14:43,040 --> 00:14:46,530
+De acuerdo, veamos el conjunto y la comprensin del diccionario, pero
+
+294
+00:14:46,530 --> 00:14:48,430
+este video es bastante largo, as
+
+295
+00:14:48,430 --> 00:14:50,410
+que hagmoslo en un prximo video.
+
+296
+00:14:50,410 --> 00:14:51,580
+En lugar de comprensin
+
+297
+00:14:51,580 --> 00:14:53,500
+de listas, vamos a ver la comprensin
+
+298
+00:14:53,500 --> 00:14:54,990
+de conjuntos y diccionarios, que
+
+299
+00:14:54,990 --> 00:14:59,120
+es ms o menos lo mismo, pero nos permite construir nuevos conjuntos y nuevos diccionarios.
+
+300
+00:14:59,120 --> 00:15:00,940
+Te ver en el prximo video.
+
+301
+00:15:00,940 --> 00:15:01,773
+Qudate conmigo.
+

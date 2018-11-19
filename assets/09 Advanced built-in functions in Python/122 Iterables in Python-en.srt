@@ -1,0 +1,588 @@
+1
+00:00:00,392 --> 00:00:01,503
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,503 --> 00:00:05,636
+In this video we're looking at iterables in Python.
+
+3
+00:00:05,636 --> 00:00:07,667
+In the last video we looked at iterators,
+
+4
+00:00:07,667 --> 00:00:10,584
+so what in the heck is an iterable?
+
+5
+00:00:11,624 --> 00:00:13,831
+Well, an iterable is an object
+
+6
+00:00:13,831 --> 00:00:18,132
+that has an __iter__() method, or an __iter__() method.
+
+7
+00:00:18,132 --> 00:00:20,965
+So something that looks like this.
+
+8
+00:00:25,420 --> 00:00:29,036
+Once you define this method in any object,
+
+9
+00:00:29,036 --> 00:00:31,301
+that is now an iterable.
+
+10
+00:00:31,301 --> 00:00:33,884
+So let's define something here.
+
+11
+00:00:34,862 --> 00:00:37,862
+Let's define a FirstHundredIterable.
+
+12
+00:00:39,661 --> 00:00:41,890
+This FirstHundredIterable just is going
+
+13
+00:00:41,890 --> 00:00:45,867
+to define this __iter__(), or __iter() method,
+
+14
+00:00:45,867 --> 00:00:49,754
+and this __iter__() method tells Python that you want
+
+15
+00:00:49,754 --> 00:00:53,186
+to be able to able to iterate over this iterable,
+
+16
+00:00:53,186 --> 00:00:55,620
+like in a for loop, or you wanna do some of it,
+
+17
+00:00:55,620 --> 00:00:58,073
+or you wanna turn it into a list.
+
+18
+00:00:58,073 --> 00:01:00,173
+What does it have to return?
+
+19
+00:01:00,173 --> 00:01:02,572
+It has to return an iterator.
+
+20
+00:01:02,572 --> 00:01:06,822
+So return FirstHundredGenerator().
+
+21
+00:01:09,653 --> 00:01:12,070
+Now you can do something like
+
+22
+00:01:13,045 --> 00:01:16,212
+print the sum of FirstHundredIterable,
+
+23
+00:01:18,139 --> 00:01:22,056
+and it will like it, and it will tell you 4950.
+
+24
+00:01:23,254 --> 00:01:25,587
+You can also iterate over it
+
+25
+00:01:28,971 --> 00:01:31,563
+using a for loop and it will be fine.
+
+26
+00:01:31,563 --> 00:01:34,979
+It will also give you all the numbers there.
+
+27
+00:01:34,979 --> 00:01:38,301
+So that's what makes a iterable.
+
+28
+00:01:38,301 --> 00:01:42,143
+Nothing magical, doesn't have to do anything contrived.
+
+29
+00:01:42,143 --> 00:01:45,059
+For Python, for it to become an iterable,
+
+30
+00:01:45,059 --> 00:01:48,394
+all you have to do is define this method,
+
+31
+00:01:48,394 --> 00:01:49,788
+and that method has to return something
+
+32
+00:01:49,788 --> 00:01:51,497
+that you can call __next__() on.
+
+33
+00:01:51,497 --> 00:01:54,505
+It has to return an iterator.
+
+34
+00:01:54,505 --> 00:01:56,167
+All generators are iterators,
+
+35
+00:01:56,167 --> 00:01:59,250
+so of course this can be a generator.
+
+36
+00:02:00,593 --> 00:02:04,176
+Now if you want to make this a bit simpler,
+
+37
+00:02:05,594 --> 00:02:07,011
+which you can do,
+
+38
+00:02:08,098 --> 00:02:10,805
+Instead of having a separate class returning
+
+39
+00:02:10,805 --> 00:02:14,414
+the FirstHundredIterator, you can ask yourself ...
+
+40
+00:02:14,414 --> 00:02:15,682
+There's this __iter__() method here
+
+41
+00:02:15,682 --> 00:02:18,804
+that's returning an object of this type.
+
+42
+00:02:18,804 --> 00:02:21,567
+What is FirstHundredGenerator()
+
+43
+00:02:21,567 --> 00:02:23,996
+in the context of this class?
+
+44
+00:02:23,996 --> 00:02:28,996
+This is a pretty vague question, but I would say it is self.
+
+45
+00:02:29,648 --> 00:02:31,725
+Self is always the current object,
+
+46
+00:02:31,725 --> 00:02:34,500
+and what you're doing here is you're returning an object,
+
+47
+00:02:34,500 --> 00:02:36,167
+so surely you can do
+
+48
+00:02:40,099 --> 00:02:40,932
+this.
+
+49
+00:02:42,079 --> 00:02:46,168
+Now you no longer need this FirstHundredIterable,
+
+50
+00:02:46,168 --> 00:02:51,168
+and you can just return FirstHundredGenerator() here,
+
+51
+00:02:51,342 --> 00:02:53,798
+and it will stay like it now.
+
+52
+00:02:53,798 --> 00:02:56,092
+Now your generator is a bit more confusing
+
+53
+00:02:56,092 --> 00:02:59,422
+because it's both an iterator and an iterable,
+
+54
+00:02:59,422 --> 00:03:01,490
+and that can be confusing in some cases,
+
+55
+00:03:01,490 --> 00:03:02,840
+but it can really be handy in others
+
+56
+00:03:02,840 --> 00:03:05,270
+because it's much shorter than having a separate class
+
+57
+00:03:05,270 --> 00:03:07,518
+to do that for you.
+
+58
+00:03:07,518 --> 00:03:10,916
+Again, the iterable returned an iterator
+
+59
+00:03:10,916 --> 00:03:12,944
+using this __iter__() method.
+
+60
+00:03:12,944 --> 00:03:15,517
+So you can do that from the iterator itself as well,
+
+61
+00:03:15,517 --> 00:03:19,231
+since self is always an iterator, because self is
+
+62
+00:03:19,231 --> 00:03:24,231
+the object that has this dunder __next__() method.
+
+63
+00:03:24,546 --> 00:03:26,626
+So I mentioned much earlier in the course something
+
+64
+00:03:26,626 --> 00:03:29,944
+about for loops and how we needed an object
+
+65
+00:03:29,944 --> 00:03:34,895
+that had dunder __len__() and dunder __getitem__() defined.
+
+66
+00:03:34,895 --> 00:03:36,559
+So what's that about?
+
+67
+00:03:36,559 --> 00:03:39,059
+Let's define another iterable,
+
+68
+00:03:41,466 --> 00:03:45,799
+and it's going to have a __len__(),
+
+69
+00:03:47,101 --> 00:03:52,101
+len(self.cars), and I'm going to initialise cars up here.
+
+70
+00:04:00,281 --> 00:04:02,139
+So let's say we've got self.cars is equal to this
+
+71
+00:04:02,139 --> 00:04:06,376
+two-element list then we define a dunder __len__() method,
+
+72
+00:04:06,376 --> 00:04:09,121
+which returns the length of the list, and we also define
+
+73
+00:04:09,121 --> 00:04:12,977
+a __getitem__() method
+
+74
+00:04:12,977 --> 00:04:15,732
+which takes in the index that we want to retrieve,
+
+75
+00:04:15,732 --> 00:04:18,232
+and just returns self.cars[i].
+
+76
+00:04:20,339 --> 00:04:23,838
+Earlier on the course, we looked at this and I said
+
+77
+00:04:23,838 --> 00:04:25,611
+that when you have an object that looks like this
+
+78
+00:04:25,611 --> 00:04:28,635
+that has the __len__() and the __getitem__() method,
+
+79
+00:04:28,635 --> 00:04:30,548
+you can use for loop on it.
+
+80
+00:04:30,548 --> 00:04:35,548
+And indeed, if we do for car in AnotherIterable(),
+
+81
+00:04:38,661 --> 00:04:43,422
+you'll see that this prints out the cars, Fiesta and Focus.
+
+82
+00:04:43,422 --> 00:04:45,244
+So is this an iterable too?
+
+83
+00:04:45,244 --> 00:04:47,226
+It doesn't have an __iter__() method.
+
+84
+00:04:47,226 --> 00:04:49,895
+It doesn't return any generator.
+
+85
+00:04:49,895 --> 00:04:52,054
+And the answer is yes.
+
+86
+00:04:52,054 --> 00:04:55,270
+In Python you can have your iterables defined either
+
+87
+00:04:55,270 --> 00:04:57,740
+with an __iter__() method that returns an iterable,
+
+88
+00:04:57,740 --> 00:05:00,951
+or you can have an object that has a length and a getitem.
+
+89
+00:05:00,951 --> 00:05:04,492
+Both of these are iterables and you can use for loops,
+
+90
+00:05:04,492 --> 00:05:07,227
+you can use __sum__(), you can use __len__() in them ...
+
+91
+00:05:07,227 --> 00:05:11,665
+Sorry, not __len__(), you can use __list__() in them.
+
+92
+00:05:11,665 --> 00:05:15,201
+So both of these things are iterables.
+
+93
+00:05:15,201 --> 00:05:16,804
+Now, okay?
+
+94
+00:05:16,804 --> 00:05:19,521
+And now we've learned a bit about iterables,
+
+95
+00:05:19,521 --> 00:05:22,141
+how they're different from iterators,
+
+96
+00:05:22,141 --> 00:05:26,543
+but they are normally together, hand-in-hand.
+
+97
+00:05:26,543 --> 00:05:30,029
+An iterator is used to get the next value,
+
+98
+00:05:30,029 --> 00:05:32,358
+and an iterable is used to go over all the values
+
+99
+00:05:32,358 --> 00:05:33,555
+of an iterator.
+
+100
+00:05:33,555 --> 00:05:36,219
+So an iterator sort of lets you go more step-by-step,
+
+101
+00:05:36,219 --> 00:05:39,010
+in case you want to do that, by calling __next__(),
+
+102
+00:05:39,010 --> 00:05:42,904
+and the iterable lets you go over all of the elements.
+
+103
+00:05:42,904 --> 00:05:44,636
+So that's it for this video.
+
+104
+00:05:44,636 --> 00:05:46,210
+If if doesn't make much sense and you're wondering,
+
+105
+00:05:46,210 --> 00:05:48,483
+"Well why the hell am I gonna need this?"
+
+106
+00:05:48,483 --> 00:05:49,420
+Don't worry.
+
+107
+00:05:49,420 --> 00:05:51,071
+In a few sections' time, you're gonna be like,
+
+108
+00:05:51,071 --> 00:05:53,584
+"Oh my God, this makes so much sense,"
+
+109
+00:05:53,584 --> 00:05:55,938
+as we learn about asynchronous Python.
+
+110
+00:05:55,938 --> 00:05:57,623
+Just giving you a few hints here.
+
+111
+00:05:57,623 --> 00:06:01,623
+And also, when you want to use or go over a list
+
+112
+00:06:02,950 --> 00:06:07,950
+that is a bit longer, you can use generators to do that.
+
+113
+00:06:08,065 --> 00:06:11,360
+Now let me also say, now that we're here,
+
+114
+00:06:11,360 --> 00:06:15,293
+that instead of having my_numbers =
+
+115
+00:06:15,293 --> 00:06:17,876
+[x for x in [1, 2, 3, 4, 5]]
+
+116
+00:06:19,935 --> 00:06:23,435
+for example, this is a list comprehension.
+
+117
+00:06:24,368 --> 00:06:29,368
+my_numbers_gen(), you can do a generator comprehension.
+
+118
+00:06:30,651 --> 00:06:33,885
+This instance is not very useful,
+
+119
+00:06:33,885 --> 00:06:36,838
+but this is now a generator object as well.
+
+120
+00:06:36,838 --> 00:06:40,245
+Which is just a shorthand for iterating over a sequence.
+
+121
+00:06:40,245 --> 00:06:43,321
+You can do next(my_numbers_gen).
+
+122
+00:06:43,321 --> 00:06:45,795
+You can print it out.
+
+123
+00:06:45,795 --> 00:06:48,449
+So generator comprehension, a pretty popular thing
+
+124
+00:06:48,449 --> 00:06:52,361
+to do as well, nor is the one printed out there.
+
+125
+00:06:52,361 --> 00:06:53,479
+So just wanted to mention that.
+
+126
+00:06:53,479 --> 00:06:55,361
+This is not the tuple comprehension;
+
+127
+00:06:55,361 --> 00:06:57,377
+this is a generator comprehension.
+
+128
+00:06:57,377 --> 00:07:00,748
+And we can use it to create a generator object on the fly,
+
+129
+00:07:00,748 --> 00:07:04,249
+lets us call __next__() in this syntax as well.
+
+130
+00:07:04,249 --> 00:07:06,640
+Again, all it does is go over this list
+
+131
+00:07:06,640 --> 00:07:10,268
+and yield each number as you call __next__().
+
+132
+00:07:10,268 --> 00:07:13,560
+So it doesn't copy the entire list, which this does.
+
+133
+00:07:13,560 --> 00:07:16,249
+This copies the list and give you another copy.
+
+134
+00:07:16,249 --> 00:07:18,444
+This let's you go over it one-by-one
+
+135
+00:07:18,444 --> 00:07:21,111
+without copying the entire list.
+
+136
+00:07:22,438 --> 00:07:23,959
+Of course this example is not very good.
+
+137
+00:07:23,959 --> 00:07:25,389
+You could just iterate over this list
+
+138
+00:07:25,389 --> 00:07:27,684
+since you've already got it there, but it can be useful
+
+139
+00:07:27,684 --> 00:07:29,827
+in other cases like when you're iterating
+
+140
+00:07:29,827 --> 00:07:32,069
+over another generator and you wanna
+
+141
+00:07:32,069 --> 00:07:35,165
+make some changes to it on the fly.
+
+142
+00:07:35,165 --> 00:07:37,682
+So it can be useful in come cases.
+
+143
+00:07:37,682 --> 00:07:39,977
+We will encounter more examples of this later on.
+
+144
+00:07:39,977 --> 00:07:41,686
+I just wanted to give you a bit of the syntax.
+
+145
+00:07:41,686 --> 00:07:42,876
+Anyway, that's it for this video.
+
+146
+00:07:42,876 --> 00:07:44,162
+Don't wanna keep you any longer.
+
+147
+00:07:44,162 --> 00:07:46,579
+I'll see you on the next one.
+

@@ -1,0 +1,316 @@
+1
+00:00:00,210 --> 00:00:01,430
+Narrador: Hola y
+
+2
+00:00:01,430 --> 00:00:04,940
+bienvenidos, revisemos nuestro proyecto de citas en este video.
+
+3
+00:00:06,400 --> 00:00:08,680
+En lugar de comenzar desde el analizador
+
+4
+00:00:08,680 --> 00:00:11,570
+de comillas, comencemos desde la parte superior del proyecto ahora.
+
+5
+00:00:11,570 --> 00:00:14,890
+Lo primero que hacemos es, adems de importar cosas,
+
+6
+00:00:14,890 --> 00:00:16,810
+obtener el contenido de la
+
+7
+00:00:16,810 --> 00:00:19,010
+pgina, este es todo el contenido
+
+8
+00:00:19,010 --> 00:00:20,150
+HTML de toda
+
+9
+00:00:22,150 --> 00:00:26,520
+la Pgina de cotizaciones. Luego le damos ese contenido a nuestro constructor
+
+10
+00:00:26,520 --> 00:00:28,870
+de QuotesPage, en su mtodo, as
+
+11
+00:00:30,140 --> 00:00:34,680
+que vamos a ir all, que luego Inicializa este objeto BeautifulSoup, usando
+
+12
+00:00:34,680 --> 00:00:36,240
+el analizador HTML para
+
+13
+00:00:36,240 --> 00:00:39,180
+que esto nos permita buscar dentro de esta pgina.
+
+14
+00:00:40,930 --> 00:00:45,460
+La propiedad de las cotizaciones de eso encuentra un
+
+15
+00:00:45,460 --> 00:00:47,740
+localizador que es este QuotePageLocators
+
+16
+00:00:48,700 --> 00:00:53,700
+dot Quote que es solo div dot quote, est bien.
+
+17
+00:00:55,400 --> 00:00:58,700
+Luego selecciona todas las instancias de ese selector
+
+18
+00:00:58,700 --> 00:01:02,700
+para que cada div que tenga una clase de presupuesto
+
+19
+00:01:02,700 --> 00:01:04,910
+sea seleccionado por este, y
+
+20
+00:01:04,910 --> 00:01:07,710
+si volvemos a Chrome podemos ver que
+
+21
+00:01:07,710 --> 00:01:10,000
+los divs que tienen una cita
+
+22
+00:01:10,900 --> 00:01:13,820
+de clase son todas las citas individuales.
+
+23
+00:01:16,480 --> 00:01:19,400
+Y va a devolver un QuoteParser dado
+
+24
+00:01:19,400 --> 00:01:21,920
+cada una de esas etiquetas para
+
+25
+00:01:22,940 --> 00:01:25,770
+e en las etiquetas que encontramos.
+
+26
+00:01:25,770 --> 00:01:27,660
+Recuerde que las etiquetas que
+
+27
+00:01:27,660 --> 00:01:31,300
+encontramos no son cadenas, son etiquetas BeautifulSoup, as que
+
+28
+00:01:32,200 --> 00:01:34,440
+si entramos en el analizador
+
+29
+00:01:34,440 --> 00:01:37,290
+de citas, esta ser una etiqueta BeautifulSoup
+
+30
+00:01:37,290 --> 00:01:39,080
+que es esa div.
+
+31
+00:01:40,620 --> 00:01:43,470
+En BeautifulSoup, todo es una etiqueta, por lo
+
+32
+00:01:43,470 --> 00:01:46,000
+que cuando carga la pgina HTML completa,
+
+33
+00:01:46,000 --> 00:01:47,720
+es una etiqueta en la
+
+34
+00:01:47,720 --> 00:01:50,040
+que puede buscar, es una etiqueta HTML.
+
+35
+00:01:50,040 --> 00:01:51,490
+Cuando carga uno de estos
+
+36
+00:01:51,490 --> 00:01:52,890
+padres cuando encuentra uno de
+
+37
+00:01:52,890 --> 00:01:54,510
+estos divs, eso es solo otra
+
+38
+00:01:54,510 --> 00:01:58,260
+etiqueta, en este caso, es una etiqueta div que tambin puede buscar.
+
+39
+00:01:58,260 --> 00:02:01,430
+Entonces, este analizador de citas tiene uno
+
+40
+00:02:02,490 --> 00:02:06,720
+de estos divs y en sus propiedades aqu estamos buscando
+
+41
+00:02:06,720 --> 00:02:10,300
+solo en este elemento principal y estamos buscando
+
+42
+00:02:10,300 --> 00:02:14,700
+el texto del punto span, el pequeo autor de puntos
+
+43
+00:02:14,700 --> 00:02:16,330
+y las diferentes etiquetas.
+
+44
+00:02:17,340 --> 00:02:20,680
+Adems, este analizador de cotizaciones tambin tiene un mtodo
+
+45
+00:02:20,680 --> 00:02:22,850
+repr que nos permite imprimirlo muy
+
+46
+00:02:22,850 --> 00:02:24,730
+bien, pero por supuesto podemos
+
+47
+00:02:24,730 --> 00:02:27,080
+optar por imprimir propiedades especficas si elegimos.
+
+48
+00:02:29,720 --> 00:02:32,200
+As que, afortunadamente, esto tiene
+
+49
+00:02:32,200 --> 00:02:34,080
+sentido, la forma en
+
+50
+00:02:34,080 --> 00:02:37,340
+que se estructura esta aplicacin es
+
+51
+00:02:37,340 --> 00:02:41,040
+separar las preocupaciones, separar los localizadores de
+
+52
+00:02:41,040 --> 00:02:45,750
+su lgica y separar la pgina de sus componentes.
+
+53
+00:02:45,750 --> 00:02:48,280
+En este caso, estamos separando la pgina
+
+54
+00:02:48,280 --> 00:02:50,240
+de citas de una cita individual.
+
+55
+00:02:50,240 --> 00:02:52,530
+Aunque ambos son similares, no me gusta
+
+56
+00:02:52,530 --> 00:02:54,550
+llamar una cita a una pgina
+
+57
+00:02:54,550 --> 00:02:57,980
+porque realmente es un componente dentro de una pgina.
+
+58
+00:02:57,980 --> 00:03:00,840
+Si separa sus rascadores de esta
+
+59
+00:03:00,840 --> 00:03:02,960
+manera, estoy seguro de que
+
+60
+00:03:02,960 --> 00:03:07,360
+podr hacer lo que quiera con su proyecto de raspado.
+
+61
+00:03:07,360 --> 00:03:08,660
+Simplemente porque hacer esto los
+
+62
+00:03:08,660 --> 00:03:09,830
+har mucho ms sencillos
+
+63
+00:03:09,830 --> 00:03:12,690
+de trabajar y tan pronto como quiera agregar una nueva pgina,
+
+64
+00:03:12,690 --> 00:03:14,934
+todo lo que tiene que hacer es agregar un
+
+65
+00:03:14,934 --> 00:03:17,270
+nuevo archivo aqu y un nuevo conjunto de localizadores.
+
+66
+00:03:17,270 --> 00:03:19,230
+Si sus localizadores cambian para cualquier pgina,
+
+67
+00:03:19,230 --> 00:03:21,080
+solo tiene que ir all y
+
+68
+00:03:21,080 --> 00:03:24,070
+modificarlos, y si desea agregar un nuevo componente del que
+
+69
+00:03:24,070 --> 00:03:26,280
+desea obtener datos de una pgina, solo
+
+70
+00:03:26,280 --> 00:03:27,940
+tiene que tener un nuevo analizador.
+
+71
+00:03:29,660 --> 00:03:31,630
+Ahora vamos a construir otro proyecto tambin
+
+72
+00:03:31,630 --> 00:03:34,400
+en esta seccin, mirando los libros raspados y ese
+
+73
+00:03:34,400 --> 00:03:38,010
+va a ser un proyecto ms grande con un poco ms de
+
+74
+00:03:38,010 --> 00:03:41,440
+tipo de registro y cambio de pginas y cosas as, va
+
+75
+00:03:41,440 --> 00:03:43,080
+a ser un poco ms
+
+76
+00:03:43,080 --> 00:03:46,350
+largo, as que don No te preocupes demasiado si no todo
+
+77
+00:03:46,350 --> 00:03:47,960
+est claro, vamos a hacer
+
+78
+00:03:47,960 --> 00:03:51,770
+esto de nuevo y vamos a hacer ms en el proyecto de libros.
+
+79
+00:03:51,770 --> 00:03:53,720
+As que te ver en el prximo video.
+

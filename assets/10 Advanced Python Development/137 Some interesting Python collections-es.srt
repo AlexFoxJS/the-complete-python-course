@@ -1,0 +1,2172 @@
+1
+00:00:00,080 --> 00:00:01,150
+Jos: Hola y bienvenido de nuevo.
+
+2
+00:00:01,150 --> 00:00:02,850
+En este video, quera contarte
+
+3
+00:00:02,850 --> 00:00:04,930
+un poco sobre algunas interesantes colecciones
+
+4
+00:00:04,930 --> 00:00:07,090
+de Python que vienen integradas con
+
+5
+00:00:07,090 --> 00:00:10,010
+el lenguaje que puedes usar para algunas cosas diferentes.
+
+6
+00:00:10,010 --> 00:00:11,470
+Entonces, el objetivo principal de
+
+7
+00:00:11,470 --> 00:00:13,690
+este video es hacerte consciente de que estas
+
+8
+00:00:14,590 --> 00:00:17,140
+cosas existen porque una vez que sabes que existen, ms
+
+9
+00:00:17,140 --> 00:00:19,620
+adelante, puedes encontrar una situacin en la que usar
+
+10
+00:00:19,620 --> 00:00:21,000
+una de ellas podra ser til.
+
+11
+00:00:21,000 --> 00:00:22,860
+De nuevo con la analoga de
+
+12
+00:00:22,860 --> 00:00:24,230
+las herramientas y el
+
+13
+00:00:24,230 --> 00:00:27,850
+proyecto de construccin, les estoy dando algunas herramientas ms poco ortodoxas
+
+14
+00:00:27,850 --> 00:00:29,660
+que, sin embargo, podran ser tiles.
+
+15
+00:00:30,710 --> 00:00:32,360
+Normalmente, lo que sucede en una
+
+16
+00:00:32,360 --> 00:00:33,850
+de las situaciones en las que
+
+17
+00:00:33,850 --> 00:00:35,590
+podramos hacer con una de estas herramientas,
+
+18
+00:00:35,590 --> 00:00:37,850
+pero no las conocemos, es que tenemos que trabajar
+
+19
+00:00:37,850 --> 00:00:40,010
+muy duro para construir una que funcione bien.
+
+20
+00:00:41,150 --> 00:00:44,340
+En lugar de hacer eso, puedes usar uno de estos.
+
+21
+00:00:44,340 --> 00:00:46,730
+Empecemos con el primero.
+
+22
+00:00:46,730 --> 00:00:48,730
+El primero va a ser un contador.
+
+23
+00:00:48,730 --> 00:00:52,770
+Un mostrador, como puedes imaginar, nos permite contar cosas.
+
+24
+00:00:52,770 --> 00:00:55,870
+Entonces puede darle un mapeo iterable o un mapeo, como un
+
+25
+00:00:55,870 --> 00:00:57,140
+diccionario, y lo convertira
+
+26
+00:00:57,140 --> 00:00:58,760
+en un contador de elementos
+
+27
+00:00:58,760 --> 00:01:01,330
+para que pueda contar cuntos hay con bastante facilidad.
+
+28
+00:01:02,260 --> 00:01:05,760
+Una vez ms, cmo lo hace es de colecciones, contador de
+
+29
+00:01:06,840 --> 00:01:09,190
+importacin y todo lo que vamos a
+
+30
+00:01:09,190 --> 00:01:11,650
+ver en este video proviene del mdulo Colecciones.
+
+31
+00:01:11,650 --> 00:01:13,330
+Estas son algunas colecciones bastante tiles.
+
+32
+00:01:13,330 --> 00:01:15,130
+No dude en consultar la documentacin de Python si
+
+33
+00:01:15,130 --> 00:01:16,460
+desea obtener ms informacin acerca de
+
+34
+00:01:16,460 --> 00:01:17,730
+estos u otros que estn all.
+
+35
+00:01:18,760 --> 00:01:21,110
+Y lo que vamos a hacer es
+
+36
+00:01:21,110 --> 00:01:22,480
+decir algo como device_temperatures
+
+37
+00:01:23,560 --> 00:01:28,560
+es 13. 5, 14. 0, 14. 0, 14. 5, 14. 5, 14. 5, 14. 5, 15. 0 y 16. 0.
+
+38
+00:01:32,240 --> 00:01:33,880
+Imaginemos que tenemos algn tipo de
+
+39
+00:01:33,880 --> 00:01:35,430
+termmetro que ha estado haciendo algunas
+
+40
+00:01:35,430 --> 00:01:37,260
+lecturas y queremos saber cul es la
+
+41
+00:01:37,260 --> 00:01:39,180
+temperatura ms comn de nuestro sistema.
+
+42
+00:01:40,730 --> 00:01:44,190
+Podramos hacer algo realmente artificial en
+
+43
+00:01:44,190 --> 00:01:46,790
+donde lo recorramos. Hacemos un
+
+44
+00:01:46,790 --> 00:01:50,300
+seguimiento de los que ya hemos visto,
+
+45
+00:01:50,300 --> 00:01:54,050
+aumentamos uno cada vez que lo vemos.
+
+46
+00:01:56,600 --> 00:01:59,130
+Eso solo me da un dolor de cabeza solo de pensarlo.
+
+47
+00:01:59,130 --> 00:02:03,490
+As que, en cambio, podemos hacer la temperatura, el contador va a ser
+
+48
+00:02:03,490 --> 00:02:06,350
+un contador de las temperaturas del dispositivo y luego
+
+49
+00:02:06,350 --> 00:02:10,650
+podemos imprimir el contador de temperatura 14. 0.
+
+50
+00:02:10,650 --> 00:02:12,750
+Por lo tanto, acceda a l como si fuera un diccionario.
+
+51
+00:02:12,750 --> 00:02:16,470
+Solo tiene que acceder a la clave de la que desea obtener el conteo
+
+52
+00:02:16,470 --> 00:02:18,390
+y puede ver que le da dos.
+
+53
+00:02:19,400 --> 00:02:23,260
+Y si vas por 14. 5, te da tres.
+
+54
+00:02:24,537 --> 00:02:26,210
+Contador bastante simple.
+
+55
+00:02:26,210 --> 00:02:28,540
+Tambin puede darle un diccionario
+
+56
+00:02:28,540 --> 00:02:32,460
+y tambin lo convertir en un contador de cosas.
+
+57
+00:02:32,460 --> 00:02:35,684
+Entonces, por ejemplo, podra tener un
+
+58
+00:02:35,684 --> 00:02:40,510
+contador de saludos, cuntas veces se ha dicho algo.
+
+59
+00:02:40,510 --> 00:02:43,130
+Digamos hola se ha dicho cinco veces,
+
+60
+00:02:43,130 --> 00:02:45,690
+se ha dicho tres veces, y luego
+
+61
+00:02:45,690 --> 00:02:48,030
+se puede acceder a una en
+
+62
+00:02:48,030 --> 00:02:52,130
+particular y simplemente te dir una y otra vez cuntos has hecho.
+
+63
+00:02:53,780 --> 00:02:55,360
+As que aqu, de nuevo, obtienes los tres.
+
+64
+00:02:55,360 --> 00:02:57,374
+Este no es tan til.
+
+65
+00:02:57,374 --> 00:03:00,330
+La documentacin oficial de Python usa este ejemplo.
+
+66
+00:03:00,330 --> 00:03:03,330
+Todava no estoy 100% seguro de por qu haras esto.
+
+67
+00:03:03,330 --> 00:03:06,210
+Despus de todo, tienes los conteos aqu.
+
+68
+00:03:06,210 --> 00:03:09,250
+No necesita envolverlos en un mostrador para nada, pero puedo
+
+69
+00:03:09,250 --> 00:03:11,130
+ver la utilidad de una lista.
+
+70
+00:03:11,130 --> 00:03:11,963
+Entonces quin sabe?
+
+71
+00:03:11,963 --> 00:03:13,890
+Tal vez encuentre la situacin
+
+72
+00:03:13,890 --> 00:03:17,610
+en la que hacer esto sea til ms adelante, pero
+
+73
+00:03:17,610 --> 00:03:21,670
+an no he podido utilizar un contramapeo para nada profesionalmente, pero
+
+74
+00:03:21,670 --> 00:03:24,100
+lo he usado y puede ser bastante til.
+
+75
+00:03:26,440 --> 00:03:27,370
+Ese es el contador.
+
+76
+00:03:27,370 --> 00:03:28,320
+Muy simple.
+
+77
+00:03:28,320 --> 00:03:30,530
+De nuevo, si desea obtener ms informacin sobre los
+
+78
+00:03:30,530 --> 00:03:32,910
+contadores, no dude en consultar la documentacin oficial de Python.
+
+79
+00:03:32,910 --> 00:03:36,450
+Estar en la lectura adicional de esta seccin, as que
+
+80
+00:03:36,450 --> 00:03:38,000
+sintete libre de verificarlo.
+
+81
+00:03:38,880 --> 00:03:41,910
+Ahora, el cdigo para este video estar disponible por
+
+82
+00:03:41,910 --> 00:03:44,010
+completo, pero voy a simplemente eliminarlo y
+
+83
+00:03:44,010 --> 00:03:46,200
+pasar a la siguiente coleccin aqu solo
+
+84
+00:03:46,200 --> 00:03:48,940
+para mantener las cosas un poco ms simples, pero
+
+85
+00:03:48,940 --> 00:03:51,450
+el cdigo tendr cada contador, lo siento, no
+
+86
+00:03:51,450 --> 00:03:54,890
+cada contador , tendr cada coleccin en la misma pgina.
+
+87
+00:03:56,390 --> 00:03:58,560
+As que pasemos al dict predeterminado.
+
+88
+00:03:59,600 --> 00:04:03,620
+Como sabemos, cuando tenemos un dict, como este,
+
+89
+00:04:03,620 --> 00:04:07,180
+hola, lo configuraremos cinco veces, por ejemplo,
+
+90
+00:04:07,180 --> 00:04:11,650
+e imprimiremos mi dict hola, sabemos lo que suceder
+
+91
+00:04:11,650 --> 00:04:12,910
+cuando lo hagamos.
+
+92
+00:04:12,910 --> 00:04:14,720
+Nos va a dar un error, y
+
+93
+00:04:14,720 --> 00:04:17,530
+de hecho, como puede ver aqu, recibimos un error clave en
+
+94
+00:04:17,530 --> 00:04:18,780
+hola porque no existe.
+
+95
+00:04:19,880 --> 00:04:23,270
+La dict predeterminada nunca genera un error clave.
+
+96
+00:04:24,690 --> 00:04:25,523
+Guay.
+
+97
+00:04:25,523 --> 00:04:27,190
+Entonces eso no es todo.
+
+98
+00:04:27,190 --> 00:04:30,610
+En cambio, devuelve el valor devuelto por la funcin especificada
+
+99
+00:04:30,610 --> 00:04:32,850
+cuando se cre una instancia del objeto.
+
+100
+00:04:32,850 --> 00:04:34,910
+Whew, eso fue un bocado.
+
+101
+00:04:34,910 --> 00:04:37,060
+Vamos a hacer un poco de cdigo.
+
+102
+00:04:37,060 --> 00:04:39,570
+De las colecciones, importar dict predeterminado y lo
+
+103
+00:04:39,570 --> 00:04:41,700
+que vamos a hacer es tener una
+
+104
+00:04:41,700 --> 00:04:45,020
+lista de compaeros de trabajo y dnde estudiaron, as que aqu
+
+105
+00:04:45,020 --> 00:04:48,000
+tenemos una lista de tuplas donde el primer elemento de
+
+106
+00:04:48,000 --> 00:04:50,120
+la tupla es el nombre de el
+
+107
+00:04:50,120 --> 00:04:53,070
+compaero de trabajo y el segundo es donde estudiaron.
+
+108
+00:04:53,070 --> 00:04:55,060
+Entonces, puedes ver que Rolf fue al MIT, Jen
+
+109
+00:04:55,060 --> 00:04:57,450
+fue a Oxford, Rolf luego fue a Cambridge para hacer una
+
+110
+00:04:57,450 --> 00:04:59,650
+maestra y luego Charlie fue a Manchester al final.
+
+111
+00:04:59,650 --> 00:05:01,930
+Ahora, digamos que queramos crear un diccionario
+
+112
+00:05:01,930 --> 00:05:05,440
+que correlacione los nombres con el lugar donde han estado.
+
+113
+00:05:05,440 --> 00:05:06,790
+Algo como esto.
+
+114
+00:05:06,790 --> 00:05:10,730
+Rolf se fue, oh, lo siento, se olvid
+
+115
+00:05:10,730 --> 00:05:15,730
+de los dos puntos, fui a MIT y Cambridge y luego
+
+116
+00:05:18,980 --> 00:05:23,770
+Jen fue a Oxford y luego Charlie fue a Manchester.
+
+117
+00:05:23,770 --> 00:05:25,134
+Manchester.
+
+118
+00:05:25,134 --> 00:05:26,290
+Manchester!
+
+119
+00:05:26,290 --> 00:05:28,030
+Ah, ah vamos.
+
+120
+00:05:28,030 --> 00:05:30,030
+Imagina que quisimos hacer este diccionario,
+
+121
+00:05:30,030 --> 00:05:31,680
+pero solo tenemos esta informacin.
+
+122
+00:05:33,057 --> 00:05:36,910
+Entonces, una opcin sera revisar cada elemento y
+
+123
+00:05:36,910 --> 00:05:38,802
+ponerlos en un diccionario.
+
+124
+00:05:38,802 --> 00:05:41,700
+Algo ms o menos que se parece a esto.
+
+125
+00:05:41,700 --> 00:05:43,910
+Creamos nuestro diccionario, alma mater,
+
+126
+00:05:43,910 --> 00:05:46,620
+que solo significa lugares en los
+
+127
+00:05:46,620 --> 00:05:49,620
+que han estudiado, y luego iteramos sobre
+
+128
+00:05:49,620 --> 00:05:52,410
+nuestra lista de compaeros de trabajo all.
+
+129
+00:05:53,381 --> 00:05:55,660
+El compaero de trabajo ahora es una tupla.
+
+130
+00:05:55,660 --> 00:05:58,080
+Zero es Rolf y uno es MIT.
+
+131
+00:05:58,990 --> 00:06:03,990
+Entonces, diramos que alma mater, compaero de trabajo cero es
+
+132
+00:06:05,880 --> 00:06:10,880
+una lista vaca, en primer lugar, y alma mater, compaero
+
+133
+00:06:11,040 --> 00:06:14,800
+de trabajo, punto cero, compaero de trabajo, uno.
+
+134
+00:06:14,800 --> 00:06:17,100
+Entonces, uno de los compaeros de trabajo
+
+135
+00:06:17,100 --> 00:06:20,130
+es MIT y lo que estamos haciendo es acceder al
+
+136
+00:06:20,130 --> 00:06:24,390
+valor Rolf de nuestro diccionario que acaba de ser inicializado, esa es la palabra,
+
+137
+00:06:24,390 --> 00:06:26,260
+se ha inicializado como una lista
+
+138
+00:06:26,260 --> 00:06:28,220
+vaca y vamos a agregar a
+
+139
+00:06:28,220 --> 00:06:30,750
+esa lista vaca los lugares donde ha estado
+
+140
+00:06:30,750 --> 00:06:35,250
+Ahora, esto funciona bien siempre y cuando solo aparezcan una vez.
+
+141
+00:06:35,250 --> 00:06:37,890
+La primera vez que aparecen, en este caso, Rolf, lo inicializamos
+
+142
+00:06:37,890 --> 00:06:41,270
+en una lista vaca y luego ponemos MIT en l y luego hacemos lo
+
+143
+00:06:41,270 --> 00:06:42,210
+mismo con Jen.
+
+144
+00:06:42,210 --> 00:06:45,600
+La iniciamos en una lista vaca y ponemos a Oxford, pero
+
+145
+00:06:45,600 --> 00:06:48,580
+luego volvemos a Rolf y lo que hacemos es
+
+146
+00:06:48,580 --> 00:06:50,700
+volver a ponerlo en una lista vaca.
+
+147
+00:06:50,700 --> 00:06:54,280
+As que eliminamos MIT y luego anexamos Cambridge.
+
+148
+00:06:54,280 --> 00:06:55,620
+Entonces no pudimos hacer esto.
+
+149
+00:06:55,620 --> 00:06:58,050
+Lo que tendramos que hacer es decir
+
+150
+00:06:58,050 --> 00:07:02,100
+algo como si el compaero de trabajo no est en alma mater,
+
+151
+00:07:03,273 --> 00:07:08,273
+lo siento no en alma mater, establezca el valor en la lista vaca y si
+
+152
+00:07:10,570 --> 00:07:12,310
+ya estn en alma mater,
+
+153
+00:07:12,310 --> 00:07:13,940
+significa que ya lo hemos
+
+154
+00:07:13,940 --> 00:07:15,400
+hecho antes, podemos agregar
+
+155
+00:07:15,400 --> 00:07:17,500
+a la lista que ya hemos inicializado antes.
+
+156
+00:07:18,600 --> 00:07:21,890
+No es la forma ms simple de trabajar con cdigo.
+
+157
+00:07:21,890 --> 00:07:23,610
+Por supuesto que podemos simplificarlo
+
+158
+00:07:23,610 --> 00:07:26,470
+al desestructurar la tupla aqu y solo
+
+159
+00:07:26,470 --> 00:07:30,670
+decir compaero de trabajo, compaero de trabajo, compaero de trabajo, lugar.
+
+160
+00:07:30,670 --> 00:07:34,770
+Nos ahorra el acceso a los ndices por separado.
+
+161
+00:07:34,770 --> 00:07:36,110
+Podramos hacer esto.
+
+162
+00:07:36,110 --> 00:07:39,530
+Por supuesto, este editor elimina los corchetes de cierre para
+
+163
+00:07:39,530 --> 00:07:41,760
+usted, que no es una gran caracterstica.
+
+164
+00:07:42,710 --> 00:07:44,610
+Entonces podramos hacer esto un poco mejor.
+
+165
+00:07:44,610 --> 00:07:46,740
+An no brillante
+
+166
+00:07:46,740 --> 00:07:48,860
+Y como puede ver, lo que
+
+167
+00:07:48,860 --> 00:07:51,360
+estamos haciendo aqu tambin es, una vez
+
+168
+00:07:52,310 --> 00:07:55,060
+ms, algo muy comn de hacer, que es
+
+169
+00:07:55,060 --> 00:07:57,627
+agregar cosas a un diccionario si an no
+
+170
+00:07:57,627 --> 00:07:59,650
+existen y tratarlas como si existieran.
+
+171
+00:08:00,970 --> 00:08:03,250
+Entonces, lo que estamos haciendo es que cuando no
+
+172
+00:08:03,250 --> 00:08:07,390
+tenemos un elemento en un diccionario, vamos a establecer un valor predeterminado para l y, despus
+
+173
+00:08:07,390 --> 00:08:08,700
+de eso, vamos a tratarlo
+
+174
+00:08:08,700 --> 00:08:10,401
+como si ya estuviera all, por ejemplo,
+
+175
+00:08:10,401 --> 00:08:11,610
+anexando a la lista.
+
+176
+00:08:13,100 --> 00:08:17,070
+Naturalmente, el dict predeterminado est aqu para salvarnos.
+
+177
+00:08:17,070 --> 00:08:19,470
+Podemos hacer la lista de Dict por defecto.
+
+178
+00:08:20,530 --> 00:08:25,320
+Lista, recuerda, es un tipo cuando tienes algo como esto que es
+
+179
+00:08:25,320 --> 00:08:28,980
+de tipo lista y, por lo tanto, porque es
+
+180
+00:08:28,980 --> 00:08:30,900
+un tipo, es una clase.
+
+181
+00:08:30,900 --> 00:08:32,370
+Clases y tipos, lo mismo.
+
+182
+00:08:32,370 --> 00:08:35,860
+Todas las cosas en Python son clases y objetos, as
+
+183
+00:08:35,860 --> 00:08:38,450
+que este es un nombre de clase.
+
+184
+00:08:39,290 --> 00:08:41,859
+Por lo tanto, es una funcin tambin.
+
+185
+00:08:41,859 --> 00:08:45,530
+Recuerde, podemos llamar a nuestro constructor de usuario.
+
+186
+00:08:45,530 --> 00:08:47,230
+Cuando inicializamos un nuevo
+
+187
+00:08:47,230 --> 00:08:49,690
+usuario, es esencialmente una llamada de funcin.
+
+188
+00:08:49,690 --> 00:08:53,150
+List tambin es una llamada de funcin y dije
+
+189
+00:08:53,150 --> 00:08:56,380
+antes que el dict predeterminado toma una funcin.
+
+190
+00:08:56,380 --> 00:08:58,030
+Esta es la funcin que
+
+191
+00:08:58,030 --> 00:09:00,960
+lleva a cabo, y lo que sucede es
+
+192
+00:09:00,960 --> 00:09:03,620
+que cuando intentamos acceder a algo que no
+
+193
+00:09:04,910 --> 00:09:08,470
+existe, como Rolf, nos da el resultado de esta funcin.
+
+194
+00:09:08,470 --> 00:09:10,070
+Entonces nos da una nueva lista vaca.
+
+195
+00:09:10,070 --> 00:09:10,960
+Eso es lo que hace esta funcin.
+
+196
+00:09:10,960 --> 00:09:12,952
+Te da una nueva lista.
+
+197
+00:09:12,952 --> 00:09:16,170
+Entonces te da una nueva lista y luego puedes agregarla.
+
+198
+00:09:17,440 --> 00:09:18,820
+Hace exactamente lo mismo que
+
+199
+00:09:18,820 --> 00:09:21,270
+antes, solo ahora tenemos un poco menos repetitivo.
+
+200
+00:09:22,590 --> 00:09:25,380
+Entonces podemos hacer algo como imprimir compaero
+
+201
+00:09:25,380 --> 00:09:28,750
+de trabajo, no, lo siento, alma mater, Rolf.
+
+202
+00:09:28,750 --> 00:09:30,040
+Eso debera imprimir dos cosas.
+
+203
+00:09:30,040 --> 00:09:31,770
+Imprimir alma maters Anne y
+
+204
+00:09:31,770 --> 00:09:33,720
+eso deberan imprimir cero cosas.
+
+205
+00:09:33,720 --> 00:09:35,090
+Vamos a ejecutarlo.
+
+206
+00:09:35,090 --> 00:09:38,120
+Como puede ver, obtenemos MIT y Cambridge para Rolf
+
+207
+00:09:38,120 --> 00:09:41,290
+y para Anne, que no existan, no la tenamos
+
+208
+00:09:41,290 --> 00:09:43,840
+en nuestra lista aqu, simplemente imprimimos una lista
+
+209
+00:09:43,840 --> 00:09:47,200
+vaca porque ese es el valor predeterminado para cualquier cosa.
+
+210
+00:09:50,260 --> 00:09:53,150
+Ahora bien, si desea generar un
+
+211
+00:09:53,150 --> 00:09:55,701
+error o no imprimir ninguno cuando
+
+212
+00:09:55,701 --> 00:09:58,480
+intenta acceder a algo que no
+
+213
+00:09:58,480 --> 00:10:03,480
+existe, siempre puede hacer almacenes, fbrica predeterminada es igual a ninguno.
+
+214
+00:10:06,640 --> 00:10:08,460
+Y observe cmo, entonces, obtiene un
+
+215
+00:10:08,460 --> 00:10:10,730
+error clave porque ahora ha eliminado la
+
+216
+00:10:10,730 --> 00:10:13,410
+fbrica predeterminada, que es esta lista y Anne
+
+217
+00:10:13,410 --> 00:10:15,309
+no existe, pero Rolf s, por
+
+218
+00:10:15,309 --> 00:10:19,680
+lo que todava obtiene la fbrica predeterminada trabajando en este cdigo aqu .
+
+219
+00:10:19,680 --> 00:10:22,390
+Simplemente no lo haces funcionar despus de esta lnea.
+
+220
+00:10:22,390 --> 00:10:24,190
+As que es un buen bocado aqu,
+
+221
+00:10:24,190 --> 00:10:25,850
+en caso de que quiera eliminar la
+
+222
+00:10:25,850 --> 00:10:28,350
+fbrica predeterminada y no solo devolver listas vacas para todos.
+
+223
+00:10:31,982 --> 00:10:35,750
+Y del mismo modo, tambin puede, por supuesto, hacer
+
+224
+00:10:35,750 --> 00:10:40,740
+alma maters dot factory por defecto ahora es int, por ejemplo.
+
+225
+00:10:40,740 --> 00:10:42,322
+Luego, cada vez que
+
+226
+00:10:42,322 --> 00:10:45,730
+intentes agregar, te dar un entero vaco, que es
+
+227
+00:10:45,730 --> 00:10:48,130
+cero, el valor cero, y fallar
+
+228
+00:10:48,130 --> 00:10:50,980
+pero puedes hacer cosas como hacer algo
+
+229
+00:10:50,980 --> 00:10:53,930
+distinto con un int, con el nmero cero.
+
+230
+00:10:53,930 --> 00:10:56,120
+Puede cambiar la fbrica predeterminada, es todo lo que
+
+231
+00:10:56,120 --> 00:10:59,820
+trato de decir, de la lista al diccionario o tupla o lo que quiera.
+
+232
+00:11:01,960 --> 00:11:05,550
+De acuerdo, djame darte otro ejemplo.
+
+233
+00:11:05,550 --> 00:11:07,650
+As que voy a eliminar todo esto
+
+234
+00:11:08,520 --> 00:11:12,120
+aqu y digamos que tengo mi compaa, que se llama Teclado y
+
+235
+00:11:12,120 --> 00:11:14,730
+si no lo sabes, es una pena para ti.
+
+236
+00:11:14,730 --> 00:11:16,800
+Luego tenemos a nuestros compaeros
+
+237
+00:11:16,800 --> 00:11:20,630
+de trabajo, que, digamos, son Jen, Li, Charlie y Rhys.
+
+238
+00:11:20,630 --> 00:11:23,891
+Algunos de estos son compaeros de trabajo reales de Teclado.
+
+239
+00:11:23,891 --> 00:11:26,290
+Otros compaeros de trabajo, esos son
+
+240
+00:11:26,290 --> 00:11:30,170
+compaeros de trabajo que no trabajan en Teclado, vamos a
+
+241
+00:11:30,170 --> 00:11:35,170
+decir que son, por ejemplo, estas tuplas de Rolf y Apple Inc, tipo
+
+242
+00:11:35,340 --> 00:11:37,850
+con suerte y Anna estar trabajando en Google.
+
+243
+00:11:37,850 --> 00:11:41,850
+Como puede ver, estos dos tienen diferentes estructuras.
+
+244
+00:11:41,850 --> 00:11:45,230
+Para mis compaeros de trabajo, ya s dnde trabajan.
+
+245
+00:11:45,230 --> 00:11:47,140
+Solo tengo una lista simple.
+
+246
+00:11:47,140 --> 00:11:48,950
+Potencialmente, una tupla podra ser mejor.
+
+247
+00:11:48,950 --> 00:11:50,200
+No importa
+
+248
+00:11:50,200 --> 00:11:53,150
+Para mis otros compaeros de trabajo, tengo una lista de tuplas,
+
+249
+00:11:53,150 --> 00:11:55,800
+donde defino el nombre y tambin el lugar donde trabajan.
+
+250
+00:11:56,890 --> 00:12:01,890
+Entonces, qu hacer es definir un lugar como compaas de compaeros de
+
+251
+00:12:02,090 --> 00:12:04,470
+trabajo, y esto va a contener
+
+252
+00:12:04,470 --> 00:12:07,120
+algo que va a ser as.
+
+253
+00:12:07,120 --> 00:12:12,120
+Jen trabaja en Teclado, Rolf trabaja en Apple Inc. y dems.
+
+254
+00:12:15,230 --> 00:12:17,910
+Entonces una asignacin de nombres al lugar donde trabajan.
+
+255
+00:12:19,650 --> 00:12:20,760
+Como hacer esto?
+
+256
+00:12:20,760 --> 00:12:24,100
+dict predeterminado, lambda, mi compaa.
+
+257
+00:12:24,100 --> 00:12:27,100
+Mi empresa es valor de Teclado, esta es una funcin lambda
+
+258
+00:12:27,100 --> 00:12:28,460
+que no toma ningn argumento.
+
+259
+00:12:28,460 --> 00:12:30,470
+No hay x antes del colon o
+
+260
+00:12:30,470 --> 00:12:32,750
+ningn nombre de parmetro antes de los dos puntos.
+
+261
+00:12:32,750 --> 00:12:33,950
+No toma ningn argumento
+
+262
+00:12:33,950 --> 00:12:35,870
+Siempre devuelve mi compaa
+
+263
+00:12:36,840 --> 00:12:39,240
+Por qu no podemos simplemente establecer mi empresa all?
+
+264
+00:12:39,240 --> 00:12:42,210
+Porque el dict predeterminado toma una funcin.
+
+265
+00:12:42,210 --> 00:12:45,160
+Entonces tenemos que establecer una funcin que ser llamada
+
+266
+00:12:45,160 --> 00:12:47,940
+cuando accedamos a la clave que no existe.
+
+267
+00:12:47,940 --> 00:12:52,000
+Entonces vamos a hacer por persona, compaa en otros compaeros de trabajo.
+
+268
+00:12:52,000 --> 00:12:54,230
+Vamos a decir que las compaas de compaeros de
+
+269
+00:12:54,230 --> 00:12:57,120
+trabajo, la persona igual a la compaa y eso es todo.
+
+270
+00:12:58,940 --> 00:13:00,820
+Oh, no, no ese.
+
+271
+00:13:01,660 --> 00:13:02,493
+Ah.
+
+272
+00:13:04,390 --> 00:13:09,390
+Ahora, podemos hacer compaas de compaeros de trabajo, compaeros de trabajo cero.
+
+273
+00:13:09,940 --> 00:13:13,360
+Recuerde, este va a ser Jen, nuestro compaero de
+
+274
+00:13:14,320 --> 00:13:16,220
+trabajo de Teclado y tambin
+
+275
+00:13:16,220 --> 00:13:21,220
+podemos imprimir compaas de compaeros de trabajo de otros compaeros de trabajo, cero, cero.
+
+276
+00:13:21,250 --> 00:13:22,630
+Entonces este va a ser Rolf.
+
+277
+00:13:22,630 --> 00:13:23,740
+Para simplificar las
+
+278
+00:13:23,740 --> 00:13:26,120
+cosas, voy a escribir Rolf aqu.
+
+279
+00:13:26,120 --> 00:13:27,330
+Ahora, podemos ejecutar esto.
+
+280
+00:13:28,383 --> 00:13:32,193
+Y como pueden ver, conseguimos Teclado para
+
+281
+00:13:32,193 --> 00:13:35,980
+Jen y conseguimos Apple Inc para Rolf.
+
+282
+00:13:35,980 --> 00:13:39,800
+Rolf y Anna estn realmente en este diccionario, cuando
+
+283
+00:13:39,800 --> 00:13:41,630
+terminemos el bucle for.
+
+284
+00:13:41,630 --> 00:13:45,360
+Jen, Li, Charlie y Rhys no estn en el diccionario, pero
+
+285
+00:13:45,360 --> 00:13:48,240
+cada vez que accedemos a ellos, obtenemos el valor
+
+286
+00:13:48,240 --> 00:13:50,440
+devuelto por esta funcin, que es Teclado.
+
+287
+00:13:51,410 --> 00:13:54,010
+As que este es un ejemplo un poco
+
+288
+00:13:54,010 --> 00:13:56,790
+ms artificial, tal vez no muy til, pero no
+
+289
+00:13:56,790 --> 00:13:59,800
+obstante, as es como se usa un diccionario predeterminado.
+
+290
+00:13:59,800 --> 00:14:01,950
+Quera darte este ejemplo lambda aqu
+
+291
+00:14:01,950 --> 00:14:03,920
+en caso de que quieras un
+
+292
+00:14:03,920 --> 00:14:07,210
+valor predeterminado que no sea inicializado por una funcin.
+
+293
+00:14:07,210 --> 00:14:09,870
+Entonces, recuerda que puedes usar una funcin lambda aqu.
+
+294
+00:14:09,870 --> 00:14:10,703
+Esta bien.
+
+295
+00:14:10,703 --> 00:14:11,970
+Puede usar funciones lambda en
+
+296
+00:14:11,970 --> 00:14:13,720
+cualquier lugar, donde puede usar funciones normales.
+
+297
+00:14:15,480 --> 00:14:18,120
+Entonces, lo que hemos hecho aqu es crear un mapeo
+
+298
+00:14:18,120 --> 00:14:21,150
+de los otros compaeros de trabajo y luego tambin podemos acceder
+
+299
+00:14:21,150 --> 00:14:22,700
+a l para nuestros propios compaeros
+
+300
+00:14:22,700 --> 00:14:24,700
+de trabajo porque ya sabemos dnde trabajan.
+
+301
+00:14:26,660 --> 00:14:31,660
+De acuerdo, eso es todo por esta coleccin, el dict predeterminado.
+
+302
+00:14:32,170 --> 00:14:34,170
+Vamos a pasar a Dict ordenado.
+
+303
+00:14:34,170 --> 00:14:35,410
+Hagamoslo.
+
+304
+00:14:39,890 --> 00:14:42,860
+El Dict Ordenado en realidad es un poco
+
+305
+00:14:42,860 --> 00:14:47,040
+extrao porque tiene las letras maysculas, as que solo recuerda eso.
+
+306
+00:14:47,040 --> 00:14:48,630
+Recuerde las letras maysculas.
+
+307
+00:14:48,630 --> 00:14:50,909
+Dictados ordenados, no tan tiles.
+
+308
+00:14:50,909 --> 00:14:53,931
+Vamos a verlos ms rpido,
+
+309
+00:14:53,931 --> 00:14:58,270
+solo porque se irn pronto, creo.
+
+310
+00:15:00,010 --> 00:15:04,030
+Entonces, como puede ver, solo estamos accediendo a las teclas normales como
+
+311
+00:15:04,030 --> 00:15:05,710
+si fuera un diccionario normal.
+
+312
+00:15:05,710 --> 00:15:10,710
+Estamos estableciendo los valores en esas teclas a seis, 12, tres.
+
+313
+00:15:10,810 --> 00:15:12,990
+Entonces podemos imprimirlos.
+
+314
+00:15:12,990 --> 00:15:15,460
+Y lo que vers aqu es un Dict
+
+315
+00:15:15,460 --> 00:15:19,020
+ordenado, donde las teclas aqu son Rolf, luego Jos, luego Jen y
+
+316
+00:15:19,020 --> 00:15:21,040
+los valores son seis, 12 y tres.
+
+317
+00:15:21,040 --> 00:15:23,350
+Importante es que estn en el
+
+318
+00:15:23,350 --> 00:15:25,450
+orden en que fueron insertados.
+
+319
+00:15:25,450 --> 00:15:27,480
+No significa que estn ordenados alfabticamente o
+
+320
+00:15:27,480 --> 00:15:28,770
+algo por el estilo.
+
+321
+00:15:28,770 --> 00:15:31,520
+Solo significa que estn ordenados de la forma en que fueron insertados.
+
+322
+00:15:31,520 --> 00:15:33,460
+Entonces Rolf fue el primero que agregamos.
+
+323
+00:15:33,460 --> 00:15:35,660
+Rolf siempre ser el primero all.
+
+324
+00:15:37,170 --> 00:15:42,110
+Tambin puedes hacer o punto move to end, Rolf y eso va
+
+325
+00:15:44,520 --> 00:15:45,760
+a mover a
+
+326
+00:15:45,760 --> 00:15:48,330
+Rolf al final de este diccionario.
+
+327
+00:15:48,330 --> 00:15:50,039
+Como pueden ver, Jos ahora es el
+
+328
+00:15:50,039 --> 00:15:52,310
+primero, Jen es el segundo, Rolf ahora est al final.
+
+329
+00:15:52,310 --> 00:15:54,470
+Tambin puede hacer o punto moverse para comenzar.
+
+330
+00:15:55,570 --> 00:15:57,030
+Disculpa, me equivoque.
+
+331
+00:15:57,030 --> 00:15:57,970
+Ojal fuera ese el caso.
+
+332
+00:15:57,970 --> 00:16:02,270
+Mover al final, Jos, pero ahora el ltimo es falso.
+
+333
+00:16:02,270 --> 00:16:03,560
+Y en lugar de ser
+
+334
+00:16:03,560 --> 00:16:05,030
+el ltimo, va a pasar al
+
+335
+00:16:05,030 --> 00:16:07,720
+otro extremo, que es el comienzo, pero voy a mover a
+
+336
+00:16:07,720 --> 00:16:09,620
+Jen, por supuesto, porque Jos ya es el primero.
+
+337
+00:16:11,570 --> 00:16:13,350
+Ahora, puedes ver que Jen es la primera,
+
+338
+00:16:13,350 --> 00:16:15,500
+Jos est en el medio y Rolf est al final.
+
+339
+00:16:16,770 --> 00:16:18,770
+Otra cosa que puede hacer
+
+340
+00:16:19,930 --> 00:16:23,710
+es sacar elementos y esto le dar un nuevo diccionario
+
+341
+00:16:23,710 --> 00:16:27,480
+donde se ha eliminado el ltimo elemento, se ha eliminado.
+
+342
+00:16:27,480 --> 00:16:30,970
+As que pop, trmino de programacin bastante popular.
+
+343
+00:16:30,970 --> 00:16:32,070
+Simplemente elimina un elemento
+
+344
+00:16:32,070 --> 00:16:33,930
+y normalmente elimina elementos del final.
+
+345
+00:16:33,930 --> 00:16:35,980
+Entonces eso es lo que vemos aqu.
+
+346
+00:16:35,980 --> 00:16:38,430
+Hemos salido del ltimo artculo en el diccionario.
+
+347
+00:16:39,890 --> 00:16:44,030
+Por lo tanto, no creo que Ordered Dict vaya a desaparecer realmente, ser
+
+348
+00:16:44,030 --> 00:16:47,110
+eliminado de Python, pero ahora no es tan til
+
+349
+00:16:47,110 --> 00:16:51,090
+porque a partir de Python 3. 7, los diccionarios mismos conservarn
+
+350
+00:16:51,090 --> 00:16:54,476
+el orden en que se insertan, por lo
+
+351
+00:16:54,476 --> 00:16:58,426
+que ser un poco menos til, el Dict ordenado.
+
+352
+00:16:58,426 --> 00:17:00,940
+Todava es til para mantener estas funciones, mover para finalizar y
+
+353
+00:17:00,940 --> 00:17:03,360
+mover para iniciar y mostrar elementos y cosas por el estilo,
+
+354
+00:17:03,360 --> 00:17:05,460
+lo que no est en los diccionarios normales, pero el
+
+355
+00:17:05,460 --> 00:17:07,380
+hecho de que estn ordenados ahora va a ser
+
+356
+00:17:07,380 --> 00:17:10,460
+menos importante porque en Python 3 . 7, como dije,
+
+357
+00:17:10,460 --> 00:17:13,900
+los diccionarios normales comenzarn a mantener el orden.
+
+358
+00:17:15,360 --> 00:17:17,420
+De acuerdo, pasemos a la siguiente coleccin y
+
+359
+00:17:17,420 --> 00:17:18,620
+esa es la tupla nombrada.
+
+360
+00:17:18,620 --> 00:17:19,540
+Tengo que amar esto.
+
+361
+00:17:19,540 --> 00:17:20,610
+Nombramiento de tupla
+
+362
+00:17:20,610 --> 00:17:22,460
+Amo a la tupla nombrada.
+
+363
+00:17:22,460 --> 00:17:25,300
+Y la tupla nombrada es otro objeto que
+
+364
+00:17:25,300 --> 00:17:30,300
+podemos usar como una tupla, pero cada uno de los elementos tiene un nombre
+
+365
+00:17:31,040 --> 00:17:33,940
+y, adems, la tupla misma tambin tiene un nombre.
+
+366
+00:17:35,230 --> 00:17:36,840
+Por lo tanto, mejora las tuplas haciendo
+
+367
+00:17:36,840 --> 00:17:38,080
+las cosas un poco ms explcitas.
+
+368
+00:17:38,080 --> 00:17:40,210
+Veamos un ejemplo aqu.
+
+369
+00:17:40,210 --> 00:17:44,570
+Una cuenta de cheques que tiene 850. 90 dlares en eso.
+
+370
+00:17:44,570 --> 00:17:48,350
+Podemos imprimir la cuenta cero y podemos imprimir la cuenta uno, pero
+
+371
+00:17:48,350 --> 00:17:50,310
+no est tan claro qu son,
+
+372
+00:17:50,310 --> 00:17:52,350
+a menos que est viendo una tupla.
+
+373
+00:17:53,580 --> 00:17:56,580
+Si la cuenta se leyera desde una
+
+374
+00:17:56,580 --> 00:17:59,160
+base de datos y el cdigo
+
+375
+00:17:59,160 --> 00:18:03,360
+estuviera un poco desordenado, no sabra necesariamente qu cuenta es
+
+376
+00:18:03,360 --> 00:18:07,110
+cero, que es, por supuesto, el nombre, y usted
+
+377
+00:18:07,110 --> 00:18:09,000
+no sabra necesariamente qu cuenta
+
+378
+00:18:09,000 --> 00:18:11,240
+es, que es, por supuesto, el equilibrio.
+
+379
+00:18:11,240 --> 00:18:13,890
+Quizs creas que esta es la cantidad de sobregiro.
+
+380
+00:18:15,240 --> 00:18:18,420
+Quizs pienses que esto es una especie de etiqueta para la cuenta.
+
+381
+00:18:18,420 --> 00:18:19,253
+No lo s.
+
+382
+00:18:19,253 --> 00:18:21,050
+Podras pensar cualquier cosa porque no es muy
+
+383
+00:18:21,050 --> 00:18:21,910
+claro lo que son.
+
+384
+00:18:22,780 --> 00:18:26,110
+Si quera mucha ms claridad, podra crear una clase para su
+
+385
+00:18:26,110 --> 00:18:28,790
+cuenta y tener una propiedad llamada nombre, que era
+
+386
+00:18:28,790 --> 00:18:30,460
+de verificacin, y una propiedad
+
+387
+00:18:30,460 --> 00:18:32,230
+llamada saldo, que es el saldo.
+
+388
+00:18:32,230 --> 00:18:35,150
+O puede usar una tupla nombrada.
+
+389
+00:18:35,150 --> 00:18:37,870
+As que vamos a definir una nueva tupla nombrada.
+
+390
+00:18:38,760 --> 00:18:40,820
+Observe cmo estoy usando capital A aqu.
+
+391
+00:18:40,820 --> 00:18:44,140
+Esta va a ser una nueva tupla nombrada.
+
+392
+00:18:45,220 --> 00:18:49,210
+El primer parmetro es el nombre de la tupla
+
+393
+00:18:49,210 --> 00:18:53,950
+y tiene que ser el mismo que la definicin aqu, cuenta.
+
+394
+00:18:53,950 --> 00:18:55,620
+Eso es por la forma en que funciona Python.
+
+395
+00:18:55,620 --> 00:19:00,410
+No puede ver el nombre de la variable primero.
+
+396
+00:19:00,410 --> 00:19:05,410
+Entonces este nombre debe ser lo que quieres que sea tu tipo.
+
+397
+00:19:06,670 --> 00:19:11,670
+Luego, en una lista, vamos a definir el nombre y el equilibrio.
+
+398
+00:19:13,100 --> 00:19:15,480
+Entonces estos son los dos campos en la tupla.
+
+399
+00:19:15,480 --> 00:19:17,430
+El primero es verificar y el segundo
+
+400
+00:19:17,430 --> 00:19:18,750
+es el saldo all.
+
+401
+00:19:19,870 --> 00:19:24,150
+Entonces podemos hacer algo como la cuenta es la verificacin
+
+402
+00:19:24,150 --> 00:19:27,860
+de cuenta y 1850. 90, como puede ver,
+
+403
+00:19:27,860 --> 00:19:31,236
+ahora hemos utilizado esta instancia de tupla
+
+404
+00:19:31,236 --> 00:19:35,920
+nombrada para crear una nueva instancia de esta cuenta de tipo.
+
+405
+00:19:35,920 --> 00:19:38,840
+Es esencialmente lo mismo que una tupla, excepto que ahora podemos imprimir
+
+406
+00:19:38,840 --> 00:19:41,040
+el nombre del punto de la cuenta, por ejemplo,
+
+407
+00:19:41,040 --> 00:19:42,910
+si podemos usar los nombres de los campos.
+
+408
+00:19:45,950 --> 00:19:50,060
+De hecho, tambin podemos imprimir la cuenta en s,
+
+409
+00:19:50,060 --> 00:19:52,970
+si queremos y tiene una buena representacin.
+
+410
+00:19:52,970 --> 00:19:55,460
+Un buen mtodo dunder-repper aqu.
+
+411
+00:19:55,460 --> 00:19:58,410
+Me gusta pensar que es muy parecido a definir una
+
+412
+00:19:58,410 --> 00:20:01,520
+clase, donde la cuenta es el nombre de la clase o
+
+413
+00:20:01,520 --> 00:20:03,540
+el tipo, pero no es lo mismo.
+
+414
+00:20:03,540 --> 00:20:05,410
+La tupla nombrada sigue siendo una tupla, despus de todo.
+
+415
+00:20:05,410 --> 00:20:07,040
+No tiene ningn mtodo personalizado
+
+416
+00:20:07,040 --> 00:20:10,820
+que pueda definir en una clase, por lo que es una
+
+417
+00:20:10,820 --> 00:20:12,507
+tupla ms agradable que le
+
+418
+00:20:12,507 --> 00:20:16,330
+permite ser un poco ms explcito con lo que significan las cosas.
+
+419
+00:20:16,330 --> 00:20:17,230
+Esa es la palabra.
+
+420
+00:20:18,210 --> 00:20:23,210
+Todava puede hacer cosas como el saldo de la coma del nombre es cuenta.
+
+421
+00:20:24,050 --> 00:20:24,930
+Tuple desestructuracin.
+
+422
+00:20:24,930 --> 00:20:27,340
+Todava puedes hacer la desestructuracin de tuplas.
+
+423
+00:20:27,340 --> 00:20:31,640
+Cuando define la cuenta, puede tener, por supuesto, argumentos nombrados
+
+424
+00:20:32,630 --> 00:20:35,980
+aqu, como puede hacerlo en cualquier funcin.
+
+425
+00:20:35,980 --> 00:20:39,160
+Puede usar argumentos posicionales como la comprobacin aqu o puede
+
+426
+00:20:39,160 --> 00:20:41,160
+usar argumentos con nombre como aqu.
+
+427
+00:20:41,160 --> 00:20:44,150
+Esto hace las cosas mucho ms agradables para que seas
+
+428
+00:20:44,150 --> 00:20:47,020
+explcito en lo que significa cuando creas una cuenta nueva.
+
+429
+00:20:48,200 --> 00:20:51,470
+Dada una tupla como esta
+
+430
+00:20:51,470 --> 00:20:56,470
+cuenta aqu, puede tener una cuenta llamada tuple
+
+431
+00:20:57,400 --> 00:21:02,400
+que es el punto de subrayado de la cuenta.
+
+432
+00:21:02,690 --> 00:21:06,770
+Entonces, este es el tipo, punto de
+
+433
+00:21:06,770 --> 00:21:11,700
+subrayado hacer tomas en una tupla y asociar cada
+
+434
+00:21:11,700 --> 00:21:15,040
+elemento aqu con el campo respectivo.
+
+435
+00:21:15,040 --> 00:21:16,150
+Esto es particularmente til
+
+436
+00:21:16,150 --> 00:21:18,140
+para cuando ests usando la funcin de mapa.
+
+437
+00:21:18,140 --> 00:21:19,579
+De lo contrario, puedes,
+
+438
+00:21:19,579 --> 00:21:23,420
+por supuesto, hacer esto y aquello y eso es lo mismo.
+
+439
+00:21:24,900 --> 00:21:28,710
+Tambin puede activar una cuenta llamada tupla.
+
+440
+00:21:28,710 --> 00:21:29,940
+Puedes hacer un asdicto
+
+441
+00:21:31,520 --> 00:21:34,170
+Imprimmoslo para que veas qu es eso.
+
+442
+00:21:35,880 --> 00:21:38,130
+Puede imprimirlo como un diccionario ordenado, donde
+
+443
+00:21:38,130 --> 00:21:39,980
+guarda las rdenes de campo.
+
+444
+00:21:39,980 --> 00:21:41,640
+El nombre va primero, el equilibrio va segundo.
+
+445
+00:21:41,640 --> 00:21:42,970
+Puedes obtenerlo como un diccionario.
+
+446
+00:21:42,970 --> 00:21:46,540
+Puede, por supuesto, acceder a l como un diccionario.
+
+447
+00:21:46,540 --> 00:21:48,750
+Puede usar esta notacin de corchetes y
+
+448
+00:21:48,750 --> 00:21:52,160
+eso le da el nmero, 1850. 9.
+
+449
+00:21:52,160 --> 00:21:53,380
+Entonces es una cosa bastante til.
+
+450
+00:21:53,380 --> 00:21:54,660
+Cuando maneja datos y
+
+451
+00:21:54,660 --> 00:21:57,480
+no garantiza la creacin de clases para el elemento de
+
+452
+00:21:57,480 --> 00:21:59,190
+datos con el que est trabajando,
+
+453
+00:21:59,190 --> 00:22:01,490
+por ejemplo, cuando lee desde una base de
+
+454
+00:22:01,490 --> 00:22:03,710
+datos, est leyendo desde un archivo csv, llamado
+
+455
+00:22:03,710 --> 00:22:06,410
+tuple is una gran eleccin y es realmente flexible
+
+456
+00:22:06,410 --> 00:22:08,390
+y simplemente hace las cosas ms explcitas
+
+457
+00:22:08,390 --> 00:22:10,930
+y ms claras con lo que est pasando.
+
+458
+00:22:10,930 --> 00:22:13,250
+Entonces, definitivamente algo para mantener en su arsenal.
+
+459
+00:22:13,250 --> 00:22:16,420
+Creo que es algo muy bueno de usar.
+
+460
+00:22:16,420 --> 00:22:17,960
+As que definitivamente recordarlo.
+
+461
+00:22:17,960 --> 00:22:20,880
+Tambin el tipo que hizo esto, Raymond Hettinger, es
+
+462
+00:22:22,751 --> 00:22:23,870
+un tipo genial.
+
+463
+00:22:23,870 --> 00:22:25,400
+l hace un montn de buenas
+
+464
+00:22:25,400 --> 00:22:28,840
+charlas de Python, por lo que lo que ha hecho aqu es til.
+
+465
+00:22:29,680 --> 00:22:31,540
+Pasemos a nuestra ltima coleccin,
+
+466
+00:22:31,540 --> 00:22:35,830
+s que ya te estoy aburriendo, que es el deque.
+
+467
+00:22:35,830 --> 00:22:40,330
+La deque representa la cola de doble final.
+
+468
+00:22:40,330 --> 00:22:43,270
+As que por favor mira la presentacin sobre colas, si an
+
+469
+00:22:43,270 --> 00:22:44,310
+no lo has hecho.
+
+470
+00:22:44,310 --> 00:22:47,020
+Es solo el video anterior a este y una
+
+471
+00:22:47,020 --> 00:22:49,730
+cola de doble final es como una cola, pero
+
+472
+00:22:49,730 --> 00:22:51,820
+podemos empujar elementos desde el inicio o
+
+473
+00:22:51,820 --> 00:22:54,350
+desde su final y tambin podemos eliminar elementos
+
+474
+00:22:54,350 --> 00:22:55,910
+del inicio o del final.
+
+475
+00:22:55,910 --> 00:22:57,860
+Es muy eficiente, funciona muy bien
+
+476
+00:22:58,720 --> 00:23:01,040
+y es esencialmente como una lista, pero puedes
+
+477
+00:23:01,040 --> 00:23:03,920
+anexar o anteponer, comenzar y terminar y puedes abrir
+
+478
+00:23:03,920 --> 00:23:05,900
+desde el principio o desde el final.
+
+479
+00:23:05,900 --> 00:23:07,880
+Lo ms importante acerca de la dequeue
+
+480
+00:23:07,880 --> 00:23:10,520
+y la razn principal por la que lo usamos
+
+481
+00:23:10,520 --> 00:23:13,470
+a veces en lugar de una lista, es debido a
+
+482
+00:23:13,470 --> 00:23:17,080
+su eficiencia, en primer lugar, en segundo lugar, porque es seguro para subprocesos.
+
+483
+00:23:17,080 --> 00:23:20,100
+Entonces puedes usar dequeues cuando trabajas con hilos.
+
+484
+00:23:20,100 --> 00:23:22,350
+Vamos a ver los hilos muy pronto.
+
+485
+00:23:22,350 --> 00:23:24,490
+S que an no los hemos visto, pero,
+
+486
+00:23:24,490 --> 00:23:26,370
+en esencia, una dequeue es realmente til
+
+487
+00:23:26,370 --> 00:23:27,700
+cuando se trata de hilos
+
+488
+00:23:27,700 --> 00:23:29,980
+porque todas sus operaciones son seguras para hilos.
+
+489
+00:23:31,100 --> 00:23:32,770
+Entonces, cuando miramos el desarrollo asincrnico,
+
+490
+00:23:32,770 --> 00:23:35,180
+vamos a ver un poco ms el dequeue.
+
+491
+00:23:35,180 --> 00:23:36,240
+Por ahora, solo recurdalo.
+
+492
+00:23:36,240 --> 00:23:38,810
+Es como una lista en la que haces operaciones que
+
+493
+00:23:38,810 --> 00:23:40,450
+se parecen mucho a una lista.
+
+494
+00:23:40,450 --> 00:23:43,880
+As que, por ejemplo, los amigos pueden ser
+
+495
+00:23:44,730 --> 00:23:49,730
+un dequeue donde se encuentran, digamos, Rolf, Charlie, Jen y Anna y
+
+496
+00:23:52,020 --> 00:23:55,570
+luego puedes hacer cosas como agregar amigos, Jos.
+
+497
+00:23:55,570 --> 00:23:57,230
+Lo que est sucediendo en
+
+498
+00:23:57,230 --> 00:24:00,420
+el constructor de dequeue es que lo ests pasando iterable
+
+499
+00:24:00,420 --> 00:24:04,390
+y uno a uno, se los agrega a s mismo, entonces esta tupla
+
+500
+00:24:04,390 --> 00:24:06,930
+aqu se convierte en los objetos de dequeue
+
+501
+00:24:06,930 --> 00:24:08,530
+o los elementos de la dequeue.
+
+502
+00:24:08,530 --> 00:24:10,520
+A continuacin, puede agregarlo.
+
+503
+00:24:10,520 --> 00:24:15,520
+Puede hacer que los amigos agreguen un punto a la izquierda, Anthony, por ejemplo,
+
+504
+00:24:16,900 --> 00:24:20,040
+y que Jos aparecer al final de la lista,
+
+505
+00:24:20,040 --> 00:24:20,970
+ms bien dequeue.
+
+506
+00:24:20,970 --> 00:24:23,470
+Anthony aparecera al inicio de la secuencia y tambin
+
+507
+00:24:23,470 --> 00:24:26,110
+puede hacer que los amigos aparezcan en forma de punto.
+
+508
+00:24:26,110 --> 00:24:28,020
+Eso elimina un elemento del final
+
+509
+00:24:28,020 --> 00:24:31,410
+o puede hacer que los amigos salgan a la izquierda.
+
+510
+00:24:32,360 --> 00:24:35,503
+Lo siento, agregar a la izquierda es con mayscula L, mi mal.
+
+511
+00:24:35,503 --> 00:24:37,710
+Puede hacer amigos con punto y coma, amigos con punto y coma a
+
+512
+00:24:37,710 --> 00:24:39,200
+la izquierda, que eliminan un elemento del final.
+
+513
+00:24:39,200 --> 00:24:40,880
+Este lo quita desde el principio.
+
+514
+00:24:40,880 --> 00:24:44,020
+Entonces estas son algunas cosas que puedes hacer, solo para mostrarte.
+
+515
+00:24:44,020 --> 00:24:46,670
+Puede imprimir amigos y puede imprimir amigos aqu.
+
+516
+00:24:50,110 --> 00:24:51,810
+Y luego vers que obtienes la
+
+517
+00:24:51,810 --> 00:24:53,383
+secuencia aqu con todos los elementos
+
+518
+00:24:53,383 --> 00:24:55,600
+y luego has abierto una en cada extremo.
+
+519
+00:24:56,640 --> 00:24:58,450
+Para obtener ms informacin sobre dequeues
+
+520
+00:24:58,450 --> 00:25:01,210
+y un ejemplo completo de todo lo que puede
+
+521
+00:25:01,210 --> 00:25:03,060
+hacer, consulte la documentacin oficial de Python.
+
+522
+00:25:03,060 --> 00:25:06,760
+Est vinculado en esta conferencia como un recurso.
+
+523
+00:25:06,760 --> 00:25:09,710
+Echa un vistazo si ests interesado.
+
+524
+00:25:09,710 --> 00:25:11,850
+Si no, cuando pasamos al desarrollo asincrnico,
+
+525
+00:25:11,850 --> 00:25:13,470
+vamos a usarlo un poco
+
+526
+00:25:13,470 --> 00:25:16,910
+ms y entenders por qu lo usamos en lugar de una lista.
+
+527
+00:25:16,910 --> 00:25:18,070
+Entonces, eso es todo por este video.
+
+528
+00:25:18,070 --> 00:25:20,340
+Espero no haberte aburrido demasiado con estas colecciones.
+
+529
+00:25:20,340 --> 00:25:22,150
+Simplemente creo que son herramientas
+
+530
+00:25:22,150 --> 00:25:24,560
+realmente tiles para tener en mente y,
+
+531
+00:25:24,560 --> 00:25:27,460
+en algn momento, es posible que las necesites.
+
+532
+00:25:27,460 --> 00:25:29,820
+Entonces, siempre es una buena idea recordar que
+
+533
+00:25:29,820 --> 00:25:32,100
+existen cuando los necesitas, solo s, ah,
+
+534
+00:25:32,100 --> 00:25:34,250
+ya sabes, creo que algo as existi.
+
+535
+00:25:34,250 --> 00:25:36,220
+Djame echarle un vistazo a la documentacin
+
+536
+00:25:36,220 --> 00:25:39,570
+oficial de Python y ver si puedo encontrarla y luego podrs encontrarla.
+
+537
+00:25:39,570 --> 00:25:42,180
+Si no sabes que existe, vas a tener problemas.
+
+538
+00:25:42,180 --> 00:25:43,600
+Intentars recrear tu propia cola
+
+539
+00:25:43,600 --> 00:25:45,720
+de doble final en lugar de usar
+
+540
+00:25:45,720 --> 00:25:47,190
+la que ya est provista
+
+541
+00:25:47,190 --> 00:25:50,770
+y que funciona y se prueba y est validada de que todo funciona.
+
+542
+00:25:50,770 --> 00:25:51,930
+Entonces eso es todo por este video.
+
+543
+00:25:51,930 --> 00:25:54,550
+Gracias por mirar y nos vemos en el prximo.
+

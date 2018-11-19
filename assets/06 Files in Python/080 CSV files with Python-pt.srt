@@ -1,0 +1,892 @@
+1
+00:00:00,270 --> 00:00:01,530
+Instrutor: Ol, e bem vindo de volta.
+
+2
+00:00:01,530 --> 00:00:04,990
+Neste vdeo, estamos vendo arquivos CSV.
+
+3
+00:00:04,990 --> 00:00:06,790
+s vezes, precisamos armazenar dados
+
+4
+00:00:06,790 --> 00:00:09,370
+mais complexos em um arquivo, em vez
+
+5
+00:00:09,370 --> 00:00:11,670
+de apenas strings nicas, como vimos.
+
+6
+00:00:11,670 --> 00:00:13,930
+E um arquivo CSV  o jeito certo de fazer isso.
+
+7
+00:00:13,930 --> 00:00:16,100
+Quando voc precisa armazenar dados um
+
+8
+00:00:16,100 --> 00:00:19,550
+pouco mais complexos, mas talvez no necessariamente muito complexos. Ainda estamos armazenando uma coisa por linha, na
+
+9
+00:00:19,550 --> 00:00:21,530
+Em vez de armazenar uma verdade, mas agora a coisa
+
+10
+00:00:21,530 --> 00:00:24,120
+coisa por linha, agora. tem vrgulas l. E ento o que
+
+11
+00:00:24,120 --> 00:00:27,690
+vamos fazer  dividir a linha pela vrgula, e isso
+
+12
+00:00:27,690 --> 00:00:29,320
+nos dar vrios dados.
+
+13
+00:00:29,320 --> 00:00:31,663
+Ento aqui, por exemplo, temos um nome, uma idade, uma
+
+14
+00:00:31,663 --> 00:00:33,340
+universidade e um grau que algum est fazendo.
+
+15
+00:00:34,350 --> 00:00:38,170
+Isso nos d informaes sobre uma nica pessoa.
+
+16
+00:00:38,170 --> 00:00:41,190
+A primeira linha nos diz os cabealhos dos dados, de modo que, quando
+
+17
+00:00:41,190 --> 00:00:43,590
+olhamos para o arquivo, podemos dizer o que isso significa.
+
+18
+00:00:44,570 --> 00:00:48,440
+A primeira coluna  o nome.
+
+19
+00:00:48,440 --> 00:00:52,120
+O segundo  a idade.
+
+20
+00:00:52,120 --> 00:00:53,940
+O terceiro  a universidade.
+
+21
+00:00:53,940 --> 00:00:55,270
+O ltimo  o grau.
+
+22
+00:00:55,270 --> 00:00:56,600
+Ento, o que vamos fazer
+
+23
+00:00:56,600 --> 00:00:58,200
+ escrever um programa que leia
+
+24
+00:00:58,200 --> 00:00:59,660
+essas trs linhas, no a primeira.
+
+25
+00:00:59,660 --> 00:01:01,358
+E vai imprimir as informaes
+
+26
+00:01:01,358 --> 00:01:04,480
+sobre essa pessoa de uma maneira um pouco mais agradvel.
+
+27
+00:01:04,480 --> 00:01:06,540
+Apenas para experimentar ler arquivos CSV.
+
+28
+00:01:06,540 --> 00:01:09,090
+Vamos at o CSV e vamos
+
+29
+00:01:09,090 --> 00:01:11,940
+ler o ponto py, um arquivo que
+
+30
+00:01:14,040 --> 00:01:16,810
+acabei de criar, e vamos comear.
+
+31
+00:01:16,810 --> 00:01:18,580
+A primeira coisa a fazer
+
+32
+00:01:18,580 --> 00:01:20,700
+, claro, ler as linhas no arquivo.
+
+33
+00:01:20,700 --> 00:01:22,560
+Tenho certeza que voc pode fazer isso.
+
+34
+00:01:22,560 --> 00:01:24,610
+Espero que voc tenha isso.
+
+35
+00:01:24,610 --> 00:01:25,900
+O que fazer 
+
+36
+00:01:29,790 --> 00:01:30,870
+abrir o CSV e
+
+37
+00:01:30,870 --> 00:01:34,480
+vamos ao ponto de dados t-x-t no modo de leitura, e ento podemos
+
+38
+00:01:34,480 --> 00:01:37,440
+ver as linhas, e isso vai ser readlines de arquivo.
+
+39
+00:01:37,440 --> 00:01:39,510
+E ento podemos fechar o arquivo.
+
+40
+00:01:39,510 --> 00:01:41,650
+Agora ns temos todas as linhas.
+
+41
+00:01:43,590 --> 00:01:45,140
+Isso  da linha nmero
+
+42
+00:01:46,350 --> 00:01:48,380
+um, dois, trs e quatro, incluindo os
+
+43
+00:01:48,380 --> 00:01:51,880
+novos caracteres de linha no final e todos os conectores na linha.
+
+44
+00:01:51,880 --> 00:01:54,020
+Agora o que vamos fazer  ignorar a primeira linha.
+
+45
+00:01:54,020 --> 00:01:55,770
+Ento, o que dizer linhas  igual a linhas de um clon.
+
+46
+00:01:56,860 --> 00:02:00,790
+Se voc se lembra de quando olhamos para as
+
+47
+00:02:02,660 --> 00:02:07,660
+listas, isso  chamado de cortar uma lista, e nos permite essencialmente
+
+48
+00:02:09,230 --> 00:02:11,830
+obter apenas uma parte da lista.
+
+49
+00:02:11,830 --> 00:02:15,320
+Ns vamos mudar esta varivel de linha para agora
+
+50
+00:02:15,320 --> 00:02:17,970
+ser o que A varivel de linha
+
+51
+00:02:17,970 --> 00:02:21,150
+era, mas apenas do ndice um em diante.
+
+52
+00:02:21,150 --> 00:02:24,070
+Ento, vamos obter o ndice um em diante.
+
+53
+00:02:24,070 --> 00:02:27,020
+Isso  um, dois e trs aqui.
+
+54
+00:02:27,020 --> 00:02:30,260
+Ns vamos ignorar a primeira linha.
+
+55
+00:02:30,260 --> 00:02:32,670
+ claro que tambm queremos remover qualquer espao
+
+56
+00:02:32,670 --> 00:02:34,520
+em branco, como novos caracteres de
+
+57
+00:02:36,240 --> 00:02:38,840
+linha, para que possamos colocar isso dentro de uma
+
+58
+00:02:38,840 --> 00:02:40,980
+compreenso de lista que diz linha de
+
+59
+00:02:40,980 --> 00:02:43,810
+linha de pontos para a linha em que, na fatia.
+
+60
+00:02:43,810 --> 00:02:46,900
+A razo pela qual eu fao isso aqui, em vez de
+
+61
+00:02:47,940 --> 00:02:49,290
+aqui em cima,  que
+
+62
+00:02:50,170 --> 00:02:52,020
+estamos apenas descascando as linhas que
+
+63
+00:02:52,020 --> 00:02:54,300
+queremos despir, e no a primeira linha, porque
+
+64
+00:02:54,300 --> 00:02:56,570
+na verdade no nos importamos com isso.
+
+65
+00:02:56,570 --> 00:02:58,010
+Agora que temos essas linhas,
+
+66
+00:02:58,010 --> 00:02:59,160
+podemos iterar sobre elas.
+
+67
+00:03:00,940 --> 00:03:02,710
+E podemos dizer que a
+
+68
+00:03:02,710 --> 00:03:04,470
+pessoa que vamos analisar 
+
+69
+00:03:07,200 --> 00:03:09,340
+toda a linha, mas queremos obter
+
+70
+00:03:09,340 --> 00:03:11,800
+os dados nela, separados por vrgulas.
+
+71
+00:03:11,800 --> 00:03:13,990
+Ento, o que fazemos?
+
+72
+00:03:13,990 --> 00:03:16,470
+Bem, como fizemos no ltimo vdeo, vamos dividir a
+
+73
+00:03:16,470 --> 00:03:17,320
+linha pela vrgula.
+
+74
+00:03:19,014 --> 00:03:22,020
+Ento, vamos dizer que dados da pessoa so iguais 
+
+75
+00:03:22,020 --> 00:03:24,010
+diviso de pontos de linha na vrgula.
+
+76
+00:03:24,010 --> 00:03:26,010
+Isso vai nos
+
+77
+00:03:26,010 --> 00:03:29,500
+dar uma lista de vrios elementos.
+
+78
+00:03:29,500 --> 00:03:31,320
+O primeiro vai ser o rolf.
+
+79
+00:03:31,320 --> 00:03:32,920
+O segundo vai ser 25.
+
+80
+00:03:32,920 --> 00:03:34,120
+O terceiro vai ser o MIT.
+
+81
+00:03:34,120 --> 00:03:35,710
+E o quarto vai ser cincia da computao.
+
+82
+00:03:35,710 --> 00:03:37,670
+Ento a lista vai ter quatro elementos.
+
+83
+00:03:37,670 --> 00:03:39,590
+Para facilitar o trabalho
+
+84
+00:03:39,590 --> 00:03:41,910
+com este programa, vou criar
+
+85
+00:03:43,520 --> 00:03:45,340
+a varivel por elemento.
+
+86
+00:03:45,340 --> 00:03:47,130
+No  algo que voc tem que fazer,
+
+87
+00:03:47,130 --> 00:03:48,580
+mas eu gosto de fazer isso.
+
+88
+00:03:48,580 --> 00:03:50,130
+Ento, name  igual a zero.
+
+89
+00:03:50,130 --> 00:03:52,120
+Idade  igual a um dado de pessoa.
+
+90
+00:03:52,120 --> 00:03:56,890
+Universidade  igual a dados da pessoa dois.
+
+91
+00:03:56,890 --> 00:03:59,820
+E o grau  dados de pessoas trs.
+
+92
+00:03:59,820 --> 00:04:04,820
+Agora,  claro, voc obter um erro de ndice se seu
+
+93
+00:04:05,150 --> 00:04:08,610
+arquivo no tiver o formato correto, mas isso
+
+94
+00:04:10,160 --> 00:04:12,580
+ um problema em qualquer caso.
+
+95
+00:04:12,580 --> 00:04:15,230
+Sempre que voc estiver interagindo com arquivos ou com bancos
+
+96
+00:04:15,230 --> 00:04:19,010
+de dados ou qualquer outra coisa, seu programa estar razoavelmente acoplado aos dados com
+
+97
+00:04:19,880 --> 00:04:21,350
+os quais voc est interagindo, para
+
+98
+00:04:21,350 --> 00:04:23,210
+que voc saiba que  um problema
+
+99
+00:04:23,210 --> 00:04:25,670
+com o qual temos que lidar se isso acontecer.
+
+100
+00:04:25,670 --> 00:04:27,880
+Agora que temos o nome, a
+
+101
+00:04:27,880 --> 00:04:31,500
+idade, a universidade e o diploma, podemos imprimir uma linha
+
+102
+00:04:31,500 --> 00:04:33,280
+dizendo, essa pessoa tem 25
+
+103
+00:04:33,280 --> 00:04:36,470
+anos e est estudando cincia da computao no MIT.
+
+104
+00:04:36,470 --> 00:04:40,070
+Ento podemos imprimir algo como
+
+105
+00:04:40,070 --> 00:04:41,690
+nome 
+
+106
+00:04:43,220 --> 00:04:44,470
+idade, estudar
+
+107
+00:04:48,130 --> 00:04:49,060
+grau
+
+108
+00:04:50,920 --> 00:04:52,990
+na universidade.
+
+109
+00:04:54,720 --> 00:04:58,590
+L.
+
+110
+00:04:58,590 --> 00:04:59,960
+Agora o problema quando fazemos
+
+111
+00:05:02,610 --> 00:05:03,443
+isso, vamos rodar
+
+112
+00:05:06,450 --> 00:05:09,090
+o arquivo,  que ele no parece to fantstico.
+
+113
+00:05:09,090 --> 00:05:10,340
+Voc sabe que no h letras maisculas.
+
+114
+00:05:12,120 --> 00:05:14,080
+No h capitais em qualquer lugar.
+
+115
+00:05:14,080 --> 00:05:16,010
+Vamos tornar isso um pouco melhor.
+
+116
+00:05:16,010 --> 00:05:17,990
+E a maneira como vamos fazer isso
+
+117
+00:05:17,990 --> 00:05:19,660
+ usar alguns mtodos internos da
+
+118
+00:05:19,660 --> 00:05:20,990
+classe de strings que nos
+
+119
+00:05:20,990 --> 00:05:24,080
+permitem adicionar letras maisculas, e assim por diante, em vrios lugares.
+
+120
+00:05:24,080 --> 00:05:26,830
+Para o nome, vamos usar o ttulo do ponto.
+
+121
+00:05:26,830 --> 00:05:29,360
+E isso s se
+
+122
+00:05:30,400 --> 00:05:32,900
+transforma em ttulo, ento
+
+123
+00:05:34,610 --> 00:05:38,690
+a primeira letra de cada palavra ser maiscula.
+
+124
+00:05:38,690 --> 00:05:41,670
+Para o grau, vamos usar
+
+125
+00:05:41,670 --> 00:05:43,420
+capitalizar porque isso
+
+126
+00:05:44,450 --> 00:05:48,300
+transforma a primeira letra apenas em maisculas.
+
+127
+00:05:50,700 --> 00:05:54,810
+E para a universidade, vamos usar o ttulo tambm,
+
+128
+00:05:54,810 --> 00:05:57,540
+pois isso transforma a primeira letra
+
+129
+00:05:57,540 --> 00:05:59,730
+de cada palavra em maiscula.
+
+130
+00:05:59,730 --> 00:06:02,440
+Ok, vamos rodar o arquivo novamente.
+
+131
+00:06:02,440 --> 00:06:04,250
+E agora podemos ver que parece um pouco melhor.
+
+132
+00:06:05,620 --> 00:06:07,170
+Ns temos Rolf, que tem 25
+
+133
+00:06:08,113 --> 00:06:09,860
+anos, estudando cincia da computao no MIT.
+
+134
+00:06:09,860 --> 00:06:11,670
+Isso no parece to fantstico, mas
+
+135
+00:06:11,670 --> 00:06:14,020
+acho que isso  um problema de dados.
+
+136
+00:06:14,020 --> 00:06:16,260
+No h como sabermos que a
+
+137
+00:06:16,260 --> 00:06:17,630
+universidade  um acrnimo,
+
+138
+00:06:17,630 --> 00:06:19,280
+ento, nesse caso, acho
+
+139
+00:06:19,280 --> 00:06:24,280
+que os dados deveriam estar todos em maisculas, se quisssemos que fosse assim.
+
+140
+00:06:24,600 --> 00:06:26,620
+Eu acho que  um pequeno problema colateral.
+
+141
+00:06:26,620 --> 00:06:29,200
+No precisamos nos preocupar muito com isso.
+
+142
+00:06:30,110 --> 00:06:31,820
+ claro que, em vez de aplicar
+
+143
+00:06:31,820 --> 00:06:34,050
+o cdigo Python aqui, eu disse a voc como
+
+144
+00:06:34,050 --> 00:06:36,680
+eu realmente no gosto disso, colocando cdigo Python dentro da string.
+
+145
+00:06:36,680 --> 00:06:39,270
+Parece um pouco feio.
+
+146
+00:06:39,270 --> 00:06:41,120
+Acho que devemos colocar
+
+147
+00:06:41,120 --> 00:06:42,750
+essas funes title e
+
+148
+00:06:42,750 --> 00:06:45,230
+capitalize nos locais apropriados aqui.
+
+149
+00:06:45,230 --> 00:06:48,271
+Dessa forma, torna-se um pouco mais
+
+150
+00:06:48,271 --> 00:06:51,450
+agradvel, um pouco mais fcil de ler.
+
+151
+00:06:52,560 --> 00:06:53,760
+Claro, isso nos permite
+
+152
+00:06:53,760 --> 00:06:54,810
+ler o arquivo CSV,
+
+153
+00:06:57,550 --> 00:06:59,990
+extrair os dados dele e, em seguida, potencialmente imprimi-lo.
+
+154
+00:06:59,990 --> 00:07:02,690
+Ns poderamos multiplicar as coisas.
+
+155
+00:07:02,690 --> 00:07:04,030
+Ns poderamos calcular novos dados.
+
+156
+00:07:04,030 --> 00:07:05,000
+Ns poderamos analis-lo.
+
+157
+00:07:05,000 --> 00:07:07,060
+O que voc quer fazer com o cdigo Python.
+
+158
+00:07:07,060 --> 00:07:07,893
+Se voc
+
+159
+00:07:07,893 --> 00:07:10,670
+quisesse escrever no arquivo,  exatamente o mesmo
+
+160
+00:07:10,670 --> 00:07:13,210
+que escrever qualquer outro arquivo, exceto que voc
+
+161
+00:07:13,210 --> 00:07:15,540
+estaria escrevendo uma grande corda com vrias
+
+162
+00:07:15,540 --> 00:07:18,060
+coisas separadas por vrgulas, como se voc
+
+163
+00:07:18,060 --> 00:07:20,510
+pudesse escrever rolf, 25, MIT, cincia da computao.
+
+164
+00:07:20,510 --> 00:07:23,860
+Se voc escrever isso no
+
+165
+00:07:26,278 --> 00:07:29,790
+arquivo,  tudo que voc precisa.
+
+166
+00:07:29,790 --> 00:07:32,120
+Isso vai imitar exatamente o
+
+167
+00:07:32,120 --> 00:07:33,290
+que temos aqui.
+
+168
+00:07:33,290 --> 00:07:35,250
+Portanto, escrever um CSV significa simplesmente
+
+169
+00:07:35,250 --> 00:07:36,670
+unir os valores constituintes
+
+170
+00:07:36,670 --> 00:07:38,835
+que voc deseja escrever com uma vrgula.
+
+171
+00:07:38,835 --> 00:07:40,990
+E isso  bem direto.
+
+172
+00:07:40,990 --> 00:07:42,750
+E pelo jeito apenas para o
+
+173
+00:07:43,590 --> 00:07:45,730
+contexto, a maneira que voc faz isso,
+
+174
+00:07:45,730 --> 00:07:47,380
+aqui est um exemplo de valor
+
+175
+00:07:47,380 --> 00:07:49,080
+csv,  voc comma dot join
+
+176
+00:07:49,080 --> 00:07:51,880
+e aqui voc coloca uma lista de valores que
+
+177
+00:07:51,880 --> 00:07:54,950
+voc deseja unir como rolf, w5, MIT, cincia da computao.
+
+178
+00:07:55,810 --> 00:07:57,620
+E  assim que
+
+179
+00:07:57,620 --> 00:08:02,620
+voc entraria em uma lista de valores em um CSV.
+
+180
+00:08:05,720 --> 00:08:08,260
+Aqui embaixo, veja.
+
+181
+00:08:08,260 --> 00:08:10,320
+Isso  o que isso imprime.
+
+182
+00:08:12,250 --> 00:08:13,750
+Eu s queria dar-lhe esta informao
+
+183
+00:08:13,750 --> 00:08:15,540
+apenas no caso de voc querer armazenar
+
+184
+00:08:15,540 --> 00:08:16,620
+alguns valores em um
+
+185
+00:08:16,620 --> 00:08:18,500
+arquivo CSV usando a string de sintaxe.
+
+186
+00:08:18,500 --> 00:08:21,166
+A juno de pontos ir unir todos os elementos desta
+
+187
+00:08:21,166 --> 00:08:23,930
+lista usando este caractere como o caractere de juno.
+
+188
+00:08:23,930 --> 00:08:26,150
+Se voc quiser usar
+
+189
+00:08:26,150 --> 00:08:31,150
+dois pontos, voc pode fazer isso,  claro.
+
+190
+00:08:31,640 --> 00:08:33,980
+Ento sua corda seria apenas assim.
+
+191
+00:08:33,980 --> 00:08:35,230
+Pareceria com os
+
+192
+00:08:35,230 --> 00:08:37,914
+vrios valores constituintes, mas unidos por dois pontos.
+
+193
+00:08:37,914 --> 00:08:38,950
+Voc pode usar qualquer
+
+194
+00:08:38,950 --> 00:08:41,030
+caractere que desejar, desde que no seja um
+
+195
+00:08:41,030 --> 00:08:42,600
+caractere que aparea nos dados.
+
+196
+00:08:42,600 --> 00:08:43,880
+Por exemplo, se voc
+
+197
+00:08:43,880 --> 00:08:46,250
+usar o espao para se juntar a ele,
+
+198
+00:08:46,250 --> 00:08:47,980
+voc ter um problema porque um
+
+199
+00:08:47,980 --> 00:08:49,270
+de seus valores tem
+
+200
+00:08:49,270 --> 00:08:51,350
+um espao e, claro, voc ter vrios
+
+201
+00:08:51,350 --> 00:08:55,210
+valores, voc ter cinco valores em vez de quatro quando empurra vem para empurrar.
+
+202
+00:08:55,210 --> 00:08:56,700
+Vejo.
+
+203
+00:08:56,700 --> 00:09:00,160
+Agora voc tem um espao aqui, espao aqui, espao aqui e um
+
+204
+00:09:00,160 --> 00:09:00,993
+espao aqui, mesmo
+
+205
+00:09:00,993 --> 00:09:02,240
+que seja um valor nico.
+
+206
+00:09:02,240 --> 00:09:04,430
+ por isso que voc precisa usar um
+
+207
+00:09:04,430 --> 00:09:06,980
+valor aqui que no aparecer em nenhuma das strings.
+
+208
+00:09:06,980 --> 00:09:08,820
+Uma vrgula  normalmente uma boa escolha,
+
+209
+00:09:08,820 --> 00:09:12,060
+ento  um dois pontos, ento  um smbolo de hash.
+
+210
+00:09:12,060 --> 00:09:14,670
+Essas coisas normalmente no aparecem.
+
+211
+00:09:14,670 --> 00:09:16,020
+Quando voc est lendo os
+
+212
+00:09:16,020 --> 00:09:17,980
+dados, em vez de dividir pela vrgula, voc
+
+213
+00:09:17,980 --> 00:09:19,770
+pode simplesmente dividir pelo smbolo de hash,
+
+214
+00:09:19,770 --> 00:09:21,150
+e essa  a mesma coisa.
+
+215
+00:09:21,150 --> 00:09:23,800
+Ele deixa de ser um arquivo CSV.
+
+216
+00:09:23,800 --> 00:09:24,960
+Agora, em vez de um arquivo de valores
+
+217
+00:09:24,960 --> 00:09:26,540
+separados por vrgula, agora  um arquivo de valor separado por hash.
+
+218
+00:09:26,540 --> 00:09:28,920
+No importa.
+
+219
+00:09:28,920 --> 00:09:30,950
+O mesmo tipo de coisa.
+
+220
+00:09:30,950 --> 00:09:31,783
+Ok, isso  tudo que eu queria dizer neste vdeo.
+
+221
+00:09:31,783 --> 00:09:32,780
+Obrigado por assistir, e vejo vocs no prximo.
+
+222
+00:09:34,000 --> 00:09:36,670
+&nbsp;
+
+223
+00:09:36,670 --> 00:09:39,080
+&nbsp;
+

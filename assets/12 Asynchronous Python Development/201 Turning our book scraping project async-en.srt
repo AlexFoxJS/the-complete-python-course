@@ -1,0 +1,944 @@
+1
+00:00:00,100 --> 00:00:01,510
+<v Instructor>Hi and welcome back.</v>
+
+2
+00:00:01,510 --> 00:00:03,130
+I'm really excited to guide you
+
+3
+00:00:03,130 --> 00:00:07,030
+through turning our scraper into an async scraper.
+
+4
+00:00:08,670 --> 00:00:10,340
+We're gonna see a few things that
+
+5
+00:00:10,340 --> 00:00:13,040
+may be a little bit surprising throughout this video
+
+6
+00:00:13,040 --> 00:00:15,070
+but generally, you're gonna see
+
+7
+00:00:15,070 --> 00:00:16,750
+massive performance improvements
+
+8
+00:00:16,750 --> 00:00:18,570
+from doing this.
+
+9
+00:00:18,570 --> 00:00:21,300
+We're gonna start with re-implementing
+
+10
+00:00:21,300 --> 00:00:24,110
+our functions in order to make them async.
+
+11
+00:00:24,110 --> 00:00:26,920
+So, we're gonna have our fetch page
+
+12
+00:00:26,920 --> 00:00:29,240
+and our get multiple pages in here.
+
+13
+00:00:29,240 --> 00:00:30,580
+I'm going to go to the async request
+
+14
+00:00:30,580 --> 00:00:32,270
+and just copy them because they're gonna
+
+15
+00:00:32,270 --> 00:00:33,900
+be exactly the same, that's the reason
+
+16
+00:00:33,900 --> 00:00:36,630
+why we've covered these two functions
+
+17
+00:00:36,630 --> 00:00:39,640
+is in order to allow you to reuse them
+
+18
+00:00:39,640 --> 00:00:41,370
+throughout any project.
+
+19
+00:00:41,370 --> 00:00:42,980
+Of course, we've got a few imports missing
+
+20
+00:00:42,980 --> 00:00:44,930
+so let's make sure to import them.
+
+21
+00:00:46,290 --> 00:00:49,800
+We no longer need requests, so we can get rid of that.
+
+22
+00:00:49,800 --> 00:00:51,350
+We can import asyncio, aiohttp,
+
+23
+00:00:54,288 --> 00:00:57,120
+async_timeout and time.
+
+24
+00:00:57,120 --> 00:00:58,400
+Time is just for the timing,
+
+25
+00:00:58,400 --> 00:01:00,250
+we can remove it later on if we want.
+
+26
+00:01:01,110 --> 00:01:03,650
+Notice how we've got this requests page here
+
+27
+00:01:03,650 --> 00:01:07,230
+so actually, we do have this separate requests
+
+28
+00:01:07,230 --> 00:01:09,600
+in there just to get the number of pages
+
+29
+00:01:09,600 --> 00:01:11,070
+that we're gonna request.
+
+30
+00:01:11,070 --> 00:01:13,250
+Remember we started at one
+
+31
+00:01:13,250 --> 00:01:15,620
+and we got up till page count.
+
+32
+00:01:15,620 --> 00:01:17,760
+So actually I revert what I said earlier,
+
+33
+00:01:17,760 --> 00:01:21,140
+we still need import requests.
+
+34
+00:01:21,140 --> 00:01:22,260
+And that's totally fine,
+
+35
+00:01:22,260 --> 00:01:25,150
+you can have synchronous code surrounded
+
+36
+00:01:25,150 --> 00:01:28,010
+or joined by asynchronous code side by side,
+
+37
+00:01:28,010 --> 00:01:29,347
+that's totally fine.
+
+38
+00:01:29,347 --> 00:01:30,930
+I just forgot we were doing this
+
+39
+00:01:30,930 --> 00:01:33,970
+to get the number of pages, this is okay.
+
+40
+00:01:33,970 --> 00:01:37,040
+You could potentially turn this into an asynchronous request
+
+41
+00:01:37,040 --> 00:01:40,490
+but because it's a single request that we're doing first,
+
+42
+00:01:40,490 --> 00:01:42,570
+in order to get the count,
+
+43
+00:01:42,570 --> 00:01:44,810
+it doesn't make sense to treat this asynchronously,
+
+44
+00:01:44,810 --> 00:01:46,300
+after all it's just one request,
+
+45
+00:01:46,300 --> 00:01:47,770
+you have to wait for it to finish
+
+46
+00:01:47,770 --> 00:01:49,520
+before you can get the data.
+
+47
+00:01:49,520 --> 00:01:51,107
+So there's no benefit from running
+
+48
+00:01:51,107 --> 00:01:54,290
+one thing simultaneously as itself.
+
+49
+00:01:55,600 --> 00:01:56,960
+So this is gonna still be synchronous,
+
+50
+00:01:56,960 --> 00:01:58,460
+that's okay.
+
+51
+00:01:58,460 --> 00:02:00,660
+And then we're gonna have our two functions here
+
+52
+00:02:00,660 --> 00:02:04,000
+in order to fetch the page and get multiple pages
+
+53
+00:02:04,000 --> 00:02:07,670
+and then we can call them down in our loop.
+
+54
+00:02:07,670 --> 00:02:10,290
+Notice how our loop is iterating
+
+55
+00:02:10,290 --> 00:02:13,055
+over the page count and then it's gonna get
+
+56
+00:02:13,055 --> 00:02:16,090
+each URL using requests.
+
+57
+00:02:16,090 --> 00:02:18,570
+We no longer want to do this.
+
+58
+00:02:18,570 --> 00:02:21,520
+We no longer want to iterate over the range
+
+59
+00:02:21,520 --> 00:02:24,320
+and get each page, now what we want to do
+
+60
+00:02:24,320 --> 00:02:28,240
+is get all the URLs and pass them into our multiple,
+
+61
+00:02:28,240 --> 00:02:29,940
+get multiple pages function.
+
+62
+00:02:29,940 --> 00:02:32,250
+So what to do is to copy this
+
+63
+00:02:34,560 --> 00:02:36,310
+and put it in a list comprehension.
+
+64
+00:02:42,970 --> 00:02:44,240
+Like so
+
+65
+00:02:44,240 --> 00:02:45,290
+and you can call them
+
+66
+00:02:46,843 --> 00:02:47,950
+URLs for example.
+
+67
+00:02:47,950 --> 00:02:49,600
+Again all we're doing here, and by the way I'm gonna
+
+68
+00:02:49,600 --> 00:02:51,640
+close the side bar just for your benefit there
+
+69
+00:02:51,640 --> 00:02:53,550
+so we have a bit more room.
+
+70
+00:02:53,550 --> 00:02:56,310
+What we're doing here is just putting this
+
+71
+00:02:56,310 --> 00:02:59,060
+inside the list comprehension between the range
+
+72
+00:02:59,060 --> 00:03:00,480
+of one and the count.
+
+73
+00:03:01,370 --> 00:03:03,080
+Exactly the same as we were doing here
+
+74
+00:03:03,080 --> 00:03:06,220
+but except we're no longer iterating over it,
+
+75
+00:03:06,220 --> 00:03:07,670
+we're just creating the URLs.
+
+76
+00:03:09,730 --> 00:03:11,200
+Then we're gonna start a timer,
+
+77
+00:03:11,200 --> 00:03:14,140
+just to check out how long it takes.
+
+78
+00:03:14,140 --> 00:03:16,650
+I wanna do pages equal
+
+79
+00:03:16,650 --> 00:03:19,840
+loop dot run until complete,
+
+80
+00:03:21,170 --> 00:03:25,170
+get multiple pages with the loop that we create
+
+81
+00:03:25,170 --> 00:03:27,200
+and all our URLs.
+
+82
+00:03:29,490 --> 00:03:30,890
+We're gonna create the loop at the top,
+
+83
+00:03:30,890 --> 00:03:33,510
+that's just sort of the normal thing to do,
+
+84
+00:03:33,510 --> 00:03:35,720
+to create the loop at the top.
+
+85
+00:03:35,720 --> 00:03:39,630
+We're gonna say loop is asyncio dot get event loop.
+
+86
+00:03:39,630 --> 00:03:41,520
+That's all, now we can use this loop
+
+87
+00:03:41,520 --> 00:03:43,750
+to run things until they're complete, okay?
+
+88
+00:03:46,590 --> 00:03:48,840
+Then at the end, we can print that it took
+
+89
+00:03:48,840 --> 00:03:49,900
+some amount of time.
+
+90
+00:03:49,900 --> 00:03:50,733
+Print.
+
+91
+00:03:52,360 --> 00:03:56,870
+Total page requests took time dot time minus start.
+
+92
+00:03:57,780 --> 00:03:58,613
+Okay?
+
+93
+00:03:59,940 --> 00:04:02,150
+Now these pages,
+
+94
+00:04:02,150 --> 00:04:04,480
+what is the value of them?
+
+95
+00:04:04,480 --> 00:04:07,270
+Because the loop has ran this thing here
+
+96
+00:04:07,270 --> 00:04:09,602
+until it completed but this thing here
+
+97
+00:04:09,602 --> 00:04:13,710
+returned an await of the grouped tasks.
+
+98
+00:04:13,710 --> 00:04:15,440
+So what is the result?
+
+99
+00:04:16,560 --> 00:04:18,430
+Well fortunately, this works
+
+100
+00:04:18,430 --> 00:04:20,870
+exactly as you would hope.
+
+101
+00:04:20,870 --> 00:04:23,920
+These grouped tasks, which is this gather thing
+
+102
+00:04:23,920 --> 00:04:26,490
+then gets returned as individual
+
+103
+00:04:26,490 --> 00:04:30,690
+elements in a list of the results
+
+104
+00:04:30,690 --> 00:04:33,240
+of all the tasks that were ran.
+
+105
+00:04:33,240 --> 00:04:36,580
+Notice how each task returns the response dot status?
+
+106
+00:04:37,810 --> 00:04:40,110
+So in this return grouped task,
+
+107
+00:04:40,110 --> 00:04:44,160
+what we're gonna get is a list of statuses
+
+108
+00:04:44,160 --> 00:04:46,720
+for each page that returned.
+
+109
+00:04:46,720 --> 00:04:48,190
+Okay they could be in order,
+
+110
+00:04:48,190 --> 00:04:49,630
+they could not be in order depending
+
+111
+00:04:49,630 --> 00:04:52,350
+on how long each one took, okay?
+
+112
+00:04:52,350 --> 00:04:54,990
+So instead of returning the response status,
+
+113
+00:04:54,990 --> 00:04:57,940
+we're gonna return the response text.
+
+114
+00:04:57,940 --> 00:05:02,140
+That's just the HTML contents of the page
+
+115
+00:05:02,140 --> 00:05:05,420
+but because this can take a while to download,
+
+116
+00:05:05,420 --> 00:05:08,770
+aiohttp actually, let's just await it,
+
+117
+00:05:08,770 --> 00:05:12,060
+so that we can suspend before we start downloading
+
+118
+00:05:12,060 --> 00:05:14,720
+and resume once download has completed.
+
+119
+00:05:14,720 --> 00:05:16,120
+So really great stuff there.
+
+120
+00:05:17,180 --> 00:05:19,090
+Now that we are awaiting the response text,
+
+121
+00:05:19,090 --> 00:05:22,110
+these pages here are actually going to be
+
+122
+00:05:22,110 --> 00:05:25,400
+a list of all the pages that we've downloaded
+
+123
+00:05:25,400 --> 00:05:26,870
+using our tasks.
+
+124
+00:05:27,860 --> 00:05:30,060
+So what we can do then,
+
+125
+00:05:30,060 --> 00:05:32,750
+is say for page content in pages
+
+126
+00:05:34,010 --> 00:05:36,992
+and here is where we're gonna create our all books page
+
+127
+00:05:36,992 --> 00:05:39,860
+and extend our books list so we're gonna
+
+128
+00:05:39,860 --> 00:05:40,730
+copy that there.
+
+129
+00:05:42,910 --> 00:05:43,870
+And that's it.
+
+130
+00:05:43,870 --> 00:05:45,730
+This is all we need in order
+
+131
+00:05:45,730 --> 00:05:48,560
+to make this code asynchronous.
+
+132
+00:05:49,770 --> 00:05:52,120
+Okay, so let's
+
+133
+00:05:52,120 --> 00:05:54,500
+cut that off and run this
+
+134
+00:05:54,500 --> 00:05:56,090
+and see what happens.
+
+135
+00:05:56,090 --> 00:05:57,840
+Bringing back this side bar here,
+
+136
+00:05:59,520 --> 00:06:01,720
+we're gonna right click the menu and run it.
+
+137
+00:06:04,820 --> 00:06:07,470
+And you can see what's happening here,
+
+138
+00:06:07,470 --> 00:06:09,380
+it is not so fast.
+
+139
+00:06:11,510 --> 00:06:14,560
+It is in fact pretty slow, what's going on?
+
+140
+00:06:14,560 --> 00:06:16,100
+Google was so much faster.
+
+141
+00:06:16,100 --> 00:06:20,340
+And you can see that, they didn't all run at the same time
+
+142
+00:06:20,340 --> 00:06:22,930
+you know there's one here that took point 23 seconds
+
+143
+00:06:22,930 --> 00:06:26,860
+and then there's one here that says it took eight seconds.
+
+144
+00:06:26,860 --> 00:06:28,530
+And you know the first thing I saw this when
+
+145
+00:06:28,530 --> 00:06:30,330
+I was preparing the notes for this course,
+
+146
+00:06:30,330 --> 00:06:31,370
+it actually took me a wee while
+
+147
+00:06:31,370 --> 00:06:33,370
+to realise what was happening, I thought
+
+148
+00:06:34,310 --> 00:06:36,560
+why is one of them taking point two seconds
+
+149
+00:06:36,560 --> 00:06:38,730
+and the other one is taking eight seconds?
+
+150
+00:06:38,730 --> 00:06:42,730
+I thought, are we maybe running these not asynchronously
+
+151
+00:06:42,730 --> 00:06:44,200
+are we doing something wrong?
+
+152
+00:06:44,200 --> 00:06:45,320
+But as we've seen we've just
+
+153
+00:06:45,320 --> 00:06:47,140
+literally copied what we did earlier
+
+154
+00:06:47,140 --> 00:06:48,600
+that did work for Google.
+
+155
+00:06:49,460 --> 00:06:54,350
+So this is the reason why we copy and pasted this code
+
+156
+00:06:54,350 --> 00:06:57,250
+just to make sure that it was all correct,
+
+157
+00:06:57,250 --> 00:06:59,030
+sometimes it can be a bit difficult
+
+158
+00:06:59,030 --> 00:07:00,930
+to debug and find out the issue
+
+159
+00:07:00,930 --> 00:07:03,403
+with asynchronous code just because you know,
+
+160
+00:07:03,403 --> 00:07:07,510
+you're suspending you're resuming many times
+
+161
+00:07:07,510 --> 00:07:09,110
+throughout various functions, especially
+
+162
+00:07:09,110 --> 00:07:11,350
+if you have something like 50 functions like we do here,
+
+163
+00:07:11,350 --> 00:07:13,590
+all suspending and resuming it can be difficult to debug
+
+164
+00:07:13,590 --> 00:07:15,090
+if you use PyCharm's debugger.
+
+165
+00:07:17,010 --> 00:07:18,760
+So it's easier to start simple,
+
+166
+00:07:18,760 --> 00:07:20,450
+start small like we did earlier on
+
+167
+00:07:20,450 --> 00:07:22,080
+in our async request file
+
+168
+00:07:22,080 --> 00:07:24,200
+and then try it out with a larger thing
+
+169
+00:07:24,200 --> 00:07:26,580
+and the problem here is just that
+
+170
+00:07:26,580 --> 00:07:29,300
+the books dot to scrape server
+
+171
+00:07:29,300 --> 00:07:32,970
+doesn't allow us to do all these requests at the same time.
+
+172
+00:07:32,970 --> 00:07:35,500
+It just does them one by one
+
+173
+00:07:35,500 --> 00:07:37,900
+and they return one by one and because we've sent him
+
+174
+00:07:37,900 --> 00:07:41,177
+50 at the same time, the first one is gonna be quick
+
+175
+00:07:41,177 --> 00:07:43,750
+but then it's doing the first one
+
+176
+00:07:43,750 --> 00:07:45,580
+and when that's done, it's doing the second one
+
+177
+00:07:45,580 --> 00:07:48,010
+and so forth, so by the time it's getting to the end,
+
+178
+00:07:48,010 --> 00:07:50,710
+what you're essentially looking at is the sum
+
+179
+00:07:50,710 --> 00:07:52,680
+of all the requests you've done.
+
+180
+00:07:52,680 --> 00:07:55,780
+Each one takes around point 23 seconds
+
+181
+00:07:55,780 --> 00:07:57,340
+so the first one take point 23,
+
+182
+00:07:57,340 --> 00:08:01,700
+the second one takes point four, point six, point eight
+
+183
+00:08:01,700 --> 00:08:03,980
+so forth, so just gets added each time.
+
+184
+00:08:03,980 --> 00:08:07,160
+You can see that it's returning them one by one.
+
+185
+00:08:07,160 --> 00:08:08,590
+So this is a problem with the thing
+
+186
+00:08:08,590 --> 00:08:10,310
+we're scraping, not with our code
+
+187
+00:08:10,310 --> 00:08:12,540
+which is a good thing.
+
+188
+00:08:12,540 --> 00:08:14,140
+If you were to scrape a page
+
+189
+00:08:14,140 --> 00:08:17,374
+that isn't a test page, something like
+
+190
+00:08:17,374 --> 00:08:20,360
+Craigslist or GumTree,
+
+191
+00:08:20,360 --> 00:08:24,300
+or John Lewis or some big reseller like that,
+
+192
+00:08:24,300 --> 00:08:26,270
+some big department store,
+
+193
+00:08:26,270 --> 00:08:27,630
+you'll see that these will all
+
+194
+00:08:27,630 --> 00:08:30,250
+come back at the same time, okay?
+
+195
+00:08:30,250 --> 00:08:31,720
+And if we changed this
+
+196
+00:08:33,610 --> 00:08:37,183
+to google.com again, just to go back to what we know
+
+197
+00:08:37,183 --> 00:08:38,920
+and run this again,
+
+198
+00:08:40,410 --> 00:08:41,930
+you can see that you know it's instant,
+
+199
+00:08:41,930 --> 00:08:43,780
+they are all running at the same time
+
+200
+00:08:43,780 --> 00:08:45,920
+it's just that the other one, the other page
+
+201
+00:08:45,920 --> 00:08:48,370
+doesn't let us get them all at the same time.
+
+202
+00:08:48,370 --> 00:08:50,810
+So we're gonna stop this, remember to stop your programmes
+
+203
+00:08:50,810 --> 00:08:52,270
+when you're running in PyCharm,
+
+204
+00:08:52,270 --> 00:08:54,130
+it can be something you forget.
+
+205
+00:08:56,070 --> 00:08:57,840
+So if we
+
+206
+00:08:57,840 --> 00:09:02,840
+were able to run our book dot toscrape.com asynchronously,
+
+207
+00:09:05,010 --> 00:09:08,670
+you'd expect it to take around point three seconds,
+
+208
+00:09:08,670 --> 00:09:10,930
+point four seconds in total.
+
+209
+00:09:10,930 --> 00:09:13,910
+But because it doesn't, it takes much longer.
+
+210
+00:09:14,810 --> 00:09:16,130
+Okay that's just a limitation of what
+
+211
+00:09:16,130 --> 00:09:18,930
+we're scraping, not of our code.
+
+212
+00:09:20,120 --> 00:09:21,600
+I'm assuming that when you're building your own
+
+213
+00:09:21,600 --> 00:09:23,600
+scraping projects, you're not going to be using
+
+214
+00:09:23,600 --> 00:09:26,040
+this test scraper, this test website,
+
+215
+00:09:26,040 --> 00:09:27,400
+you're going to be using a proper website
+
+216
+00:09:27,400 --> 00:09:30,880
+and that's almost definitely going to work just fine.
+
+217
+00:09:30,880 --> 00:09:32,700
+I've tried it with a bunch of other websites,
+
+218
+00:09:32,700 --> 00:09:34,990
+and they all seem to work okay.
+
+219
+00:09:34,990 --> 00:09:36,290
+So that's it for this video.
+
+220
+00:09:36,290 --> 00:09:37,700
+This is all you need to turn this
+
+221
+00:09:37,700 --> 00:09:39,580
+into an asynchronous scraper.
+
+222
+00:09:39,580 --> 00:09:42,090
+Remember the majority of our code,
+
+223
+00:09:42,090 --> 00:09:45,190
+creating the all books page you know and going through
+
+224
+00:09:45,190 --> 00:09:48,520
+and parsing and stuff like that, that's instant.
+
+225
+00:09:48,520 --> 00:09:50,840
+There's no waiting involved here, that's just Python
+
+226
+00:09:50,840 --> 00:09:53,530
+doing work, there's no waiting for somebody else
+
+227
+00:09:53,530 --> 00:09:55,230
+to give us things.
+
+228
+00:09:55,230 --> 00:09:56,550
+The only waits are happening
+
+229
+00:09:56,550 --> 00:09:58,680
+when we make the web requests and that's what
+
+230
+00:09:58,680 --> 00:10:00,200
+we're running asynchronously,
+
+231
+00:10:00,200 --> 00:10:02,985
+the rest of our code is running synchronously because
+
+232
+00:10:02,985 --> 00:10:06,840
+it doesn't need to run asynchronously it's really quick,
+
+233
+00:10:06,840 --> 00:10:08,500
+there's really no waiting time.
+
+234
+00:10:08,500 --> 00:10:10,350
+The performance here is not an issue.
+
+235
+00:10:11,490 --> 00:10:12,900
+So that's it for this video again,
+
+236
+00:10:12,900 --> 00:10:15,550
+thanks for watching and I'll see you on the next one.
+

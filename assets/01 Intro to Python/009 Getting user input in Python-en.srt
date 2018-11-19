@@ -1,0 +1,1140 @@
+1
+00:00:00,320 --> 00:00:01,776
+<v Jose>Hi, there.</v>
+
+2
+00:00:01,776 --> 00:00:02,609
+Welcome back.
+
+3
+00:00:02,609 --> 00:00:04,370
+In this video, we're going to look at actually
+
+4
+00:00:04,370 --> 00:00:07,690
+getting things from the user, as opposed to just
+
+5
+00:00:07,690 --> 00:00:08,690
+telling them things.
+
+6
+00:00:09,680 --> 00:00:13,113
+We're going to get the user's name, and we're going
+
+7
+00:00:13,113 --> 00:00:15,130
+to greet them using their name,
+
+8
+00:00:15,130 --> 00:00:17,040
+and we're also going to get their age,
+
+9
+00:00:17,895 --> 00:00:20,222
+and we're going to tell them for how many months
+
+10
+00:00:20,222 --> 00:00:21,810
+they have lived.
+
+11
+00:00:21,810 --> 00:00:24,090
+Now, in the past we've looked at numbers,
+
+12
+00:00:24,090 --> 00:00:25,820
+both integers and floats.
+
+13
+00:00:25,820 --> 00:00:27,780
+We've also looked at printing, and that's going
+
+14
+00:00:27,780 --> 00:00:29,000
+to be useful.
+
+15
+00:00:29,000 --> 00:00:31,653
+We've looked at strings, and we've looked
+
+16
+00:00:31,653 --> 00:00:32,940
+at string formatting.
+
+17
+00:00:32,940 --> 00:00:35,400
+We're going to make use of everything we've learned so far
+
+18
+00:00:35,400 --> 00:00:36,233
+in this video.
+
+19
+00:00:38,521 --> 00:00:41,440
+Now, it's easy enough to have your own name
+
+20
+00:00:41,440 --> 00:00:44,310
+in a variable because you know that already.
+
+21
+00:00:44,310 --> 00:00:46,710
+You know that before the programme starts running.
+
+22
+00:00:47,610 --> 00:00:51,270
+However, if you want to have the user's name,
+
+23
+00:00:52,200 --> 00:00:54,580
+that's not so easy because you don't know it,
+
+24
+00:00:54,580 --> 00:00:57,500
+and you probably don't want the user to go into your code
+
+25
+00:00:57,500 --> 00:01:00,410
+and change it, put like, "my name here, okay,
+
+26
+00:01:00,410 --> 00:01:02,250
+"now I can say hello to myself."
+
+27
+00:01:03,383 --> 00:01:04,685
+Okay, that's not great.
+
+28
+00:01:04,685 --> 00:01:07,410
+So how are we going to ask the user for their name?
+
+29
+00:01:08,540 --> 00:01:10,590
+Well, easy enough.
+
+30
+00:01:10,590 --> 00:01:13,380
+We're going to use the input.
+
+31
+00:01:13,380 --> 00:01:16,190
+And this is a function, like print is.
+
+32
+00:01:16,190 --> 00:01:19,610
+And the way input works ... by the way, I said
+
+33
+00:01:19,610 --> 00:01:23,100
+the word function there, and I sort of sneakily
+
+34
+00:01:23,100 --> 00:01:24,490
+squeezed that in there.
+
+35
+00:01:24,490 --> 00:01:26,000
+We've not talked about functions yet.
+
+36
+00:01:26,000 --> 00:01:27,390
+We will.
+
+37
+00:01:27,390 --> 00:01:30,400
+But we know this is a function because of two things.
+
+38
+00:01:30,400 --> 00:01:34,470
+It has brackets at the end, and it does something.
+
+39
+00:01:34,470 --> 00:01:37,910
+The print function prints something out to the screen.
+
+40
+00:01:37,910 --> 00:01:41,190
+The input function actually also prints something
+
+41
+00:01:41,190 --> 00:01:45,080
+out to the screen, but then it lets the user
+
+42
+00:01:45,080 --> 00:01:47,030
+type something back.
+
+43
+00:01:47,030 --> 00:01:49,540
+So functions do things.
+
+44
+00:01:49,540 --> 00:01:51,690
+It's sort of like functions in maths,
+
+45
+00:01:51,690 --> 00:01:54,400
+if you did functions in your maths classes
+
+46
+00:01:54,400 --> 00:01:56,520
+where you give them some value, they do something,
+
+47
+00:01:56,520 --> 00:01:58,420
+and then they give you something back.
+
+48
+00:01:58,420 --> 00:01:59,470
+Fairly similar.
+
+49
+00:01:59,470 --> 00:02:02,347
+We're going to learn a lot more about functions
+
+50
+00:02:02,347 --> 00:02:03,420
+in this course, so don't worry.
+
+51
+00:02:03,420 --> 00:02:04,810
+If it's not clear what they are just yet,
+
+52
+00:02:04,810 --> 00:02:06,950
+I will explain much more in depth.
+
+53
+00:02:07,820 --> 00:02:10,871
+The input function, going back ...
+
+54
+00:02:10,871 --> 00:02:11,704
+I went a bit off topic there.
+
+55
+00:02:11,704 --> 00:02:14,200
+The input function takes in something you want
+
+56
+00:02:14,200 --> 00:02:16,160
+to tell the user, or something you want
+
+57
+00:02:16,160 --> 00:02:19,610
+to give the user, so that they know they have to type.
+
+58
+00:02:20,900 --> 00:02:23,080
+We're going to type "enter your name"
+
+59
+00:02:23,080 --> 00:02:24,480
+and then a space at the end.
+
+60
+00:02:25,735 --> 00:02:27,100
+The space at the end is not necessary,
+
+61
+00:02:27,100 --> 00:02:29,980
+but I just want to say it because you'll see
+
+62
+00:02:29,980 --> 00:02:31,380
+in a moment why it's useful.
+
+63
+00:02:32,340 --> 00:02:35,080
+Now, we're going to print this out to the user,
+
+64
+00:02:36,050 --> 00:02:38,990
+then we're going to wait until the user
+
+65
+00:02:38,990 --> 00:02:42,320
+types something back and they press "enter."
+
+66
+00:02:42,320 --> 00:02:43,860
+And as soon as they press "enter," whatever
+
+67
+00:02:43,860 --> 00:02:47,300
+they've typed is going to be given
+
+68
+00:02:47,300 --> 00:02:49,590
+to the your_name variable.
+
+69
+00:02:50,917 --> 00:02:54,551
+Then, we're going to print a greeting.
+
+70
+00:02:54,551 --> 00:02:58,360
+We're going to say "hello" to them.
+
+71
+00:02:58,360 --> 00:02:59,870
+How would you do that?
+
+72
+00:03:00,770 --> 00:03:04,130
+Assume your_name has the user's name in it.
+
+73
+00:03:04,130 --> 00:03:07,250
+What would you print here that would say "hello" to them?
+
+74
+00:03:11,470 --> 00:03:14,300
+Again, I'm not just waiting and thinking.
+
+75
+00:03:14,300 --> 00:03:17,450
+I'm waiting for you to pause the video and write your code.
+
+76
+00:03:18,400 --> 00:03:20,730
+There are a few options, as we saw in the last video.
+
+77
+00:03:20,730 --> 00:03:23,400
+We could type "hello" plus your_name.
+
+78
+00:03:24,910 --> 00:03:27,260
+We could type this, this would be totally fine,
+
+79
+00:03:28,297 --> 00:03:31,440
+but of course, I did say try to use f strings
+
+80
+00:03:31,440 --> 00:03:32,400
+where possible.
+
+81
+00:03:34,150 --> 00:03:36,320
+So this would be what I'd recommend,
+
+82
+00:03:37,324 --> 00:03:40,550
+f'Hello, (your_name), and that's going to replace
+
+83
+00:03:40,550 --> 00:03:43,410
+the value of your_name into this string,
+
+84
+00:03:43,410 --> 00:03:45,760
+and it's going to actually say "hello" to them.
+
+85
+00:03:46,848 --> 00:03:48,680
+Okay, let's run it and see what happens.
+
+86
+00:03:48,680 --> 00:03:50,740
+As you can see, we get "enter your name,"
+
+87
+00:03:50,740 --> 00:03:53,240
+and then we get a nice space there.
+
+88
+00:03:53,240 --> 00:03:57,660
+That's nice because that means that we have the ability
+
+89
+00:03:57,660 --> 00:04:02,150
+to have some space in between their name and the prompt,
+
+90
+00:04:04,480 --> 00:04:07,450
+and then we can type "Jose," and as you can see,
+
+91
+00:04:07,450 --> 00:04:09,410
+we get "Hello, Jose" there.
+
+92
+00:04:11,670 --> 00:04:12,503
+Awesome.
+
+93
+00:04:12,503 --> 00:04:15,500
+Now we've learned how to get user input.
+
+94
+00:04:15,500 --> 00:04:17,060
+We've learned how to ask them a question,
+
+95
+00:04:17,060 --> 00:04:19,030
+or in this case, present them with a prompt,
+
+96
+00:04:19,030 --> 00:04:21,210
+and get them to type a value back.
+
+97
+00:04:22,440 --> 00:04:24,800
+The next thing we're going to do is calculate
+
+98
+00:04:24,800 --> 00:04:27,760
+the number of months that a user has lived for.
+
+99
+00:04:28,970 --> 00:04:31,610
+We're going to ask them for their age, for example,
+
+100
+00:04:31,610 --> 00:04:34,440
+30 years old, and then we're going to tell them,
+
+101
+00:04:34,440 --> 00:04:38,490
+"You have lived for 340 months."
+
+102
+00:04:38,490 --> 00:04:39,870
+Is that correct?
+
+103
+00:04:39,870 --> 00:04:41,130
+420 months.
+
+104
+00:04:41,130 --> 00:04:41,970
+420 months?
+
+105
+00:04:41,970 --> 00:04:42,803
+I don't know.
+
+106
+00:04:42,803 --> 00:04:45,050
+We're going to get Python to do it for us anyway.
+
+107
+00:04:45,050 --> 00:04:48,210
+So the age is going to be an input where we're going
+
+108
+00:04:48,210 --> 00:04:51,610
+to ask them to "Enter your age," and then we're going
+
+109
+00:04:51,610 --> 00:04:56,610
+to print "you have lived for," and then we're going
+
+110
+00:04:56,910 --> 00:04:59,180
+to print something there, "months."
+
+111
+00:05:01,240 --> 00:05:05,080
+What do we think is going to go inside these brackets?
+
+112
+00:05:10,670 --> 00:05:13,530
+Hopefully, you got it right, but I wouldn't expect you to.
+
+113
+00:05:13,530 --> 00:05:15,390
+Age times 12.
+
+114
+00:05:15,390 --> 00:05:18,290
+We can put essentially anything we want in these brackets,
+
+115
+00:05:18,290 --> 00:05:21,579
+and I say that ... you can't see my face,
+
+116
+00:05:21,579 --> 00:05:23,510
+but I'm sort of squirming when I say that.
+
+117
+00:05:23,510 --> 00:05:25,710
+You can put things inside these brackets
+
+118
+00:05:25,710 --> 00:05:27,210
+other than variables.
+
+119
+00:05:28,082 --> 00:05:29,730
+For example, you can put age times 12.
+
+120
+00:05:29,730 --> 00:05:32,510
+And there are a lot more things you can put in there,
+
+121
+00:05:32,510 --> 00:05:35,619
+but obviously your string is going to get longer
+
+122
+00:05:35,619 --> 00:05:36,940
+and more complex as you do that.
+
+123
+00:05:38,520 --> 00:05:41,270
+Okay, shall we run this and see what happens?
+
+124
+00:05:42,520 --> 00:05:43,855
+"Enter your name."
+
+125
+00:05:43,855 --> 00:05:45,980
+Well, this is the first input statement up here.
+
+126
+00:05:45,980 --> 00:05:48,450
+I'm going to type in "Jose," and it says, "Hello, Jose,"
+
+127
+00:05:48,450 --> 00:05:51,670
+and then we're going to enter our age, which I said "30,"
+
+128
+00:05:51,670 --> 00:05:54,170
+and what do you think is going to get printed out?
+
+129
+00:06:00,810 --> 00:06:02,700
+Not what we were expecting.
+
+130
+00:06:04,000 --> 00:06:08,410
+30303030303030, and believe me that there's 12 30's
+
+131
+00:06:08,410 --> 00:06:09,243
+that we've got there.
+
+132
+00:06:09,243 --> 00:06:11,700
+You can count them if you want.
+
+133
+00:06:11,700 --> 00:06:14,930
+But what's happening is that everything that's returned
+
+134
+00:06:14,930 --> 00:06:18,570
+by the input function is a string.
+
+135
+00:06:19,660 --> 00:06:21,520
+What is age times 12?
+
+136
+00:06:22,370 --> 00:06:27,370
+That is age plus age plus age plus age, 12 times.
+
+137
+00:06:28,870 --> 00:06:32,010
+Remember what we said about string concatenation?
+
+138
+00:06:32,010 --> 00:06:34,800
+Adding strings together just joins them,
+
+139
+00:06:34,800 --> 00:06:37,410
+one after another, so that's what we've done here.
+
+140
+00:06:37,410 --> 00:06:40,170
+We've got 12 ages, and that's 12 30's.
+
+141
+00:06:40,170 --> 00:06:43,920
+We've not actually multiplied the number itself.
+
+142
+00:06:44,760 --> 00:06:46,860
+This ties back to what I said earlier on,
+
+143
+00:06:46,860 --> 00:06:49,310
+that strings mean nothing to the computer.
+
+144
+00:06:49,310 --> 00:06:51,290
+They only mean things to us.
+
+145
+00:06:51,290 --> 00:06:56,290
+So for us, the string 30 just means the value 30,
+
+146
+00:06:56,340 --> 00:06:59,020
+but for the computer, the string 30 means
+
+147
+00:06:59,020 --> 00:07:01,750
+the digits three and zero, and that's it.
+
+148
+00:07:01,750 --> 00:07:03,980
+It could be, as far as the computer's concerned,
+
+149
+00:07:03,980 --> 00:07:08,000
+it could be a and b, and it wouldn't know what they mean.
+
+150
+00:07:08,000 --> 00:07:10,130
+So what we have to do is tell the computer
+
+151
+00:07:10,130 --> 00:07:11,350
+that it means something.
+
+152
+00:07:11,350 --> 00:07:14,440
+We have to tell the computer that the age is a number.
+
+153
+00:07:16,424 --> 00:07:20,130
+So once again, we're going to do age equals input,
+
+154
+00:07:20,130 --> 00:07:25,130
+"enter your age," and then we're going to do age,
+
+155
+00:07:25,410 --> 00:07:27,940
+num is going to be int of age.
+
+156
+00:07:27,940 --> 00:07:30,680
+This is a new function I'm just introducing now.
+
+157
+00:07:30,680 --> 00:07:35,680
+Int turns whatever is inside the brackets into an integer.
+
+158
+00:07:37,290 --> 00:07:40,470
+So if we type 30 in here, this will turn it into
+
+159
+00:07:40,470 --> 00:07:43,300
+the number 30 as opposed to the string 30,
+
+160
+00:07:44,480 --> 00:07:46,530
+and then we can copy this and do age_num.
+
+161
+00:07:50,090 --> 00:07:51,980
+By the way, I just copied, and I actually feel
+
+162
+00:07:51,980 --> 00:07:53,760
+quite bad about doing that.
+
+163
+00:07:53,760 --> 00:07:56,592
+Try to not copy if you can avoid it.
+
+164
+00:07:56,592 --> 00:07:58,810
+Typing things out is going to really help
+
+165
+00:07:58,810 --> 00:08:01,050
+your memory and your learning.
+
+166
+00:08:01,050 --> 00:08:02,240
+So try to not copy.
+
+167
+00:08:02,240 --> 00:08:03,400
+I'll try to not do that again either,
+
+168
+00:08:03,400 --> 00:08:05,050
+but I also want to save you time.
+
+169
+00:08:06,320 --> 00:08:08,620
+Okay, let's run this and see what happens now.
+
+170
+00:08:10,850 --> 00:08:13,500
+The first one, we know, prints 30 12 times,
+
+171
+00:08:13,500 --> 00:08:18,370
+but the second one prints out the 360 months.
+
+172
+00:08:19,690 --> 00:08:24,690
+And that would make sense because three time 12 is 36.
+
+173
+00:08:25,200 --> 00:08:26,550
+My maths is not very good.
+
+174
+00:08:26,550 --> 00:08:28,310
+I've been programming for too long.
+
+175
+00:08:29,930 --> 00:08:32,790
+Now, we can make this a bit cleaner.
+
+176
+00:08:32,790 --> 00:08:35,980
+Instead of having an age_num variable
+
+177
+00:08:35,980 --> 00:08:39,650
+and multiplying that by 12, we can use this input
+
+178
+00:08:39,650 --> 00:08:42,670
+and turn that into a number before we assign it to age.
+
+179
+00:08:43,780 --> 00:08:44,680
+So we can do this.
+
+180
+00:08:44,680 --> 00:08:48,620
+Age is int of input, "enter your age."
+
+181
+00:08:49,640 --> 00:08:51,910
+Now why would we do this?
+
+182
+00:08:51,910 --> 00:08:54,080
+It's important to ask yourself this question,
+
+183
+00:08:54,080 --> 00:08:55,910
+and it's not just because we can.
+
+184
+00:08:57,640 --> 00:09:01,490
+When would you ever want the age of a person
+
+185
+00:09:01,490 --> 00:09:02,750
+to be a string?
+
+186
+00:09:05,180 --> 00:09:07,580
+And if you can't think of a good answer to that,
+
+187
+00:09:08,430 --> 00:09:11,210
+like "to print it out," yeah, okay, you can print
+
+188
+00:09:11,210 --> 00:09:12,530
+the string out, but you can also print
+
+189
+00:09:12,530 --> 00:09:13,890
+the number out, so it really doesn't make
+
+190
+00:09:13,890 --> 00:09:14,940
+much of a difference.
+
+191
+00:09:16,400 --> 00:09:20,510
+If you can't think of a good answer to having something
+
+192
+00:09:20,510 --> 00:09:24,280
+as a specific type, in this case a string,
+
+193
+00:09:24,280 --> 00:09:28,420
+then it may make sense to never store it as that type,
+
+194
+00:09:28,420 --> 00:09:30,730
+and in this case, we will never have access
+
+195
+00:09:30,730 --> 00:09:34,020
+to the string itself because what's going to happen
+
+196
+00:09:34,020 --> 00:09:36,320
+is we're going to calculate this input,
+
+197
+00:09:36,320 --> 00:09:37,870
+we're going to get the string.
+
+198
+00:09:37,870 --> 00:09:40,890
+Immediately we're surrounded by this integer
+
+199
+00:09:40,890 --> 00:09:43,560
+which is going to turn it into an integer,
+
+200
+00:09:43,560 --> 00:09:45,170
+and that's going to assign it to age,
+
+201
+00:09:45,170 --> 00:09:47,640
+and we're never going to access the string.
+
+202
+00:09:47,640 --> 00:09:49,440
+We're just going to have the number.
+
+203
+00:09:50,370 --> 00:09:52,550
+Because we don't need the string for anything,
+
+204
+00:09:52,550 --> 00:09:54,510
+it doesn't make sense to pollute our code
+
+205
+00:09:54,510 --> 00:09:57,980
+with extra constructs there that don't make sense.
+
+206
+00:10:00,090 --> 00:10:00,960
+And once again,
+
+207
+00:10:06,240 --> 00:10:07,073
+we can do that.
+
+208
+00:10:07,073 --> 00:10:09,340
+"You have lived for" age times 12 months.
+
+209
+00:10:10,470 --> 00:10:12,790
+I would run this, but again, it's going to work.
+
+210
+00:10:12,790 --> 00:10:13,623
+Trust me.
+
+211
+00:10:17,009 --> 00:10:21,150
+Now, a better option than doing age times 12 in there
+
+212
+00:10:21,150 --> 00:10:25,150
+would be to create a separate variable to store the months.
+
+213
+00:10:25,150 --> 00:10:30,140
+Now this is just me being slightly pedantic.
+
+214
+00:10:30,140 --> 00:10:34,800
+I don't like having Python code inside a string.
+
+215
+00:10:34,800 --> 00:10:35,890
+To me, it feels unnatural.
+
+216
+00:10:35,890 --> 00:10:39,060
+It feels like this is unnecessarily complicated.
+
+217
+00:10:39,060 --> 00:10:42,190
+So what I would do, if I was writing this properly,
+
+218
+00:10:42,190 --> 00:10:46,640
+would be to "enter your age," and then to have
+
+219
+00:10:46,640 --> 00:10:48,930
+a months variable that is age times 12,
+
+220
+00:10:48,930 --> 00:10:53,370
+and then I would print "you have lived for" months months.
+
+221
+00:10:57,701 --> 00:10:58,560
+I think this is clearer.
+
+222
+00:10:58,560 --> 00:11:01,748
+It's quite obvious we are replacing a variable
+
+223
+00:11:01,748 --> 00:11:04,580
+called months, which presumably contains the count of months
+
+224
+00:11:04,580 --> 00:11:08,470
+into our string which says "you have lived for" x months.
+
+225
+00:11:08,470 --> 00:11:11,440
+And we don't have age times 12, which we then have
+
+226
+00:11:11,440 --> 00:11:14,170
+to look into and say, "Okay, that must mean months,
+
+227
+00:11:14,170 --> 00:11:16,610
+"because age must be the number of years."
+
+228
+00:11:16,610 --> 00:11:19,230
+If we have months as the thing we're replacing,
+
+229
+00:11:19,230 --> 00:11:21,180
+that's a bit clearer that this means
+
+230
+00:11:21,180 --> 00:11:24,060
+we're telling them for how many months they've lived.
+
+231
+00:11:25,770 --> 00:11:28,500
+Now, we're reaching the end of the video.
+
+232
+00:11:28,500 --> 00:11:30,490
+Thank you for bearing with me.
+
+233
+00:11:30,490 --> 00:11:32,050
+I know this can be sort of repetitive,
+
+234
+00:11:32,050 --> 00:11:34,535
+looking at the same thing over and over,
+
+235
+00:11:34,535 --> 00:11:35,670
+but hopefully you've learned something,
+
+236
+00:11:37,133 --> 00:11:38,870
+and hopefully I'm instilling in your some sense
+
+237
+00:11:38,870 --> 00:11:41,860
+of how to go about thinking about these things.
+
+238
+00:11:43,600 --> 00:11:45,200
+Now I have a small exercise for you.
+
+239
+00:11:46,540 --> 00:11:49,980
+This small exercise is to calculate the number of seconds
+
+240
+00:11:51,150 --> 00:11:55,570
+instead of months, okay?
+
+241
+00:11:55,570 --> 00:11:57,650
+Go ahead and try this out.
+
+242
+00:11:57,650 --> 00:12:00,850
+Presume you've been writing this code alongside me,
+
+243
+00:12:00,850 --> 00:12:05,850
+so now you can modify this code here into a programme
+
+244
+00:12:06,310 --> 00:12:08,660
+that calculates the number of seconds lived
+
+245
+00:12:08,660 --> 00:12:11,080
+instead of the number of months lived.
+
+246
+00:12:11,080 --> 00:12:13,250
+Go ahead and pause the video, and try this out,
+
+247
+00:12:13,250 --> 00:12:15,600
+and then we'll come back and I'll write this code
+
+248
+00:12:15,600 --> 00:12:17,650
+as well so you can see how I would do it.
+
+249
+00:12:19,615 --> 00:12:21,698
+See you in just a moment.
+
+250
+00:12:24,260 --> 00:12:26,435
+Okay, hopefully you got that.
+
+251
+00:12:26,435 --> 00:12:29,200
+What I would do is once again int of input,
+
+252
+00:12:33,151 --> 00:12:37,870
+and then I would say seconds is age times 365,
+
+253
+00:12:37,870 --> 00:12:40,510
+would give us the number of days.
+
+254
+00:12:41,380 --> 00:12:45,850
+24 would give us the number of hours in the number of days.
+
+255
+00:12:45,850 --> 00:12:47,390
+60 would give us the the minutes.
+
+256
+00:12:47,390 --> 00:12:49,400
+60 would give us the seconds.
+
+257
+00:12:49,400 --> 00:12:51,300
+And then I would print that.
+
+258
+00:12:57,380 --> 00:12:58,890
+Let's run it and see what happens.
+
+259
+00:12:58,890 --> 00:13:00,940
+We have to go through the entire programme.
+
+260
+00:13:03,525 --> 00:13:05,440
+And there, there.
+
+261
+00:13:07,400 --> 00:13:11,930
+And at the end we get 946,000,080 seconds.
+
+262
+00:13:13,650 --> 00:13:16,880
+We can verify that that's correct, but Python
+
+263
+00:13:16,880 --> 00:13:21,250
+can do maths, so as long as our formula is correct,
+
+264
+00:13:21,250 --> 00:13:22,880
+the output should be correct.
+
+265
+00:13:24,520 --> 00:13:25,353
+There you go.
+
+266
+00:13:25,353 --> 00:13:27,950
+You've written your first more complex app
+
+267
+00:13:27,950 --> 00:13:30,210
+that makes use of a bunch of things,
+
+268
+00:13:30,210 --> 00:13:31,390
+many more than you may think.
+
+269
+00:13:31,390 --> 00:13:35,520
+And this is actually starting to get a bit more exciting.
+
+270
+00:13:35,520 --> 00:13:36,990
+We're interacting with users,
+
+271
+00:13:36,990 --> 00:13:39,070
+we can get values from them or we can give them
+
+272
+00:13:39,070 --> 00:13:40,720
+values back.
+
+273
+00:13:40,720 --> 00:13:42,730
+We're converting things to numbers,
+
+274
+00:13:42,730 --> 00:13:45,630
+so that means we can do maths on the things users give us.
+
+275
+00:13:46,750 --> 00:13:50,380
+And we've been able to perform mathematical operations,
+
+276
+00:13:50,380 --> 00:13:52,350
+and then we've also been able to print things out
+
+277
+00:13:52,350 --> 00:13:55,400
+back to the user, and indeed do it nicely
+
+278
+00:13:55,400 --> 00:13:58,940
+with formatting our strings using f strings.
+
+279
+00:13:58,940 --> 00:14:00,470
+We've learned quite a lot of stuff already.
+
+280
+00:14:00,470 --> 00:14:02,400
+Hopefully, you're feeling quite proud,
+
+281
+00:14:02,400 --> 00:14:04,120
+and hopefully you're feeling good
+
+282
+00:14:04,120 --> 00:14:06,180
+about completing this small exercise.
+
+283
+00:14:07,470 --> 00:14:09,920
+Now we're ready to move on to the next video,
+
+284
+00:14:09,920 --> 00:14:11,770
+so I'm really excited to take you there,
+
+285
+00:14:11,770 --> 00:14:13,670
+and I'll see you in the very next one.
+

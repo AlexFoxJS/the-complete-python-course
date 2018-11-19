@@ -1,0 +1,1388 @@
+1
+00:00:01,040 --> 00:00:03,060
+<v Jose>Hi there, and welcome back.</v>
+
+2
+00:00:03,060 --> 00:00:05,660
+In this video, we're going to look at Booleans.
+
+3
+00:00:06,870 --> 00:00:09,140
+A Boolean is a specific type of data,
+
+4
+00:00:09,140 --> 00:00:12,270
+just like numbers and strings, and the name comes
+
+5
+00:00:12,270 --> 00:00:14,150
+from the person who invented it,
+
+6
+00:00:14,150 --> 00:00:17,220
+a guy called George Boole, who was a mathematician.
+
+7
+00:00:18,350 --> 00:00:23,350
+A Boolean is a value that represents two possible states.
+
+8
+00:00:25,310 --> 00:00:27,520
+Frequently, those are true and false,
+
+9
+00:00:27,520 --> 00:00:29,630
+but they can also be things like yes or no,
+
+10
+00:00:29,630 --> 00:00:32,860
+one and zero, and things like that.
+
+11
+00:00:32,860 --> 00:00:37,650
+In Python, Booleans can be true, or they can be false.
+
+12
+00:00:37,650 --> 00:00:40,020
+And we use them of course to make decisions.
+
+13
+00:00:40,860 --> 00:00:44,140
+For example, we can ask if something is true,
+
+14
+00:00:44,140 --> 00:00:47,030
+then we're gonna do this, and if this is false,
+
+15
+00:00:47,030 --> 00:00:48,450
+then we're gonna do that, and so on.
+
+16
+00:00:48,450 --> 00:00:52,270
+It allows our programmes to do things depending on something.
+
+17
+00:00:54,450 --> 00:00:57,540
+So, we're gonna start by defining a couple of variables
+
+18
+00:00:57,540 --> 00:01:02,350
+that represent these true and false values.
+
+19
+00:01:02,350 --> 00:01:04,650
+I'm gonna call the variable truthy,
+
+20
+00:01:05,550 --> 00:01:10,550
+because its value is one that will be true.
+
+21
+00:01:11,250 --> 00:01:14,600
+And indeed, this value here is the definition
+
+22
+00:01:14,600 --> 00:01:18,100
+of true in Python, True with a capital T.
+
+23
+00:01:18,100 --> 00:01:21,340
+As you can see, it goes blue, because Python recognises it
+
+24
+00:01:21,340 --> 00:01:24,680
+as a keyword, and this is one of these
+
+25
+00:01:24,680 --> 00:01:27,070
+that you shouldn't name your variables after.
+
+26
+00:01:27,070 --> 00:01:29,520
+So don't name your variables True with a capital T.
+
+27
+00:01:29,520 --> 00:01:31,990
+That's a recipe for disaster.
+
+28
+00:01:31,990 --> 00:01:34,110
+But the variable is called truthy
+
+29
+00:01:34,110 --> 00:01:36,560
+because it represents a value that is true.
+
+30
+00:01:38,460 --> 00:01:41,400
+Similarly, we could create a variable called falsy
+
+31
+00:01:41,400 --> 00:01:43,800
+and make it False, again, with a capital F.
+
+32
+00:01:45,010 --> 00:01:47,100
+Remember the names of the variables are,
+
+33
+00:01:47,100 --> 00:01:48,340
+don't matter at all.
+
+34
+00:01:48,340 --> 00:01:51,030
+They are just names for these values.
+
+35
+00:01:51,970 --> 00:01:54,000
+And so you could name them whatever you want.
+
+36
+00:01:55,530 --> 00:01:59,540
+But the concept of truthy and falsy values is important,
+
+37
+00:01:59,540 --> 00:02:01,820
+as we'll come to see later on.
+
+38
+00:02:03,670 --> 00:02:05,960
+Instead of only using true and false,
+
+39
+00:02:05,960 --> 00:02:10,070
+we can also calculate whether something is true or false.
+
+40
+00:02:10,070 --> 00:02:12,670
+For example, let's say we have a variable called age,
+
+41
+00:02:12,670 --> 00:02:13,900
+and that's equal to 20.
+
+42
+00:02:15,220 --> 00:02:19,760
+We can calculate whether the age is over and equal to 18.
+
+43
+00:02:19,760 --> 00:02:22,090
+For example, let's create another variable,
+
+44
+00:02:22,090 --> 00:02:24,591
+called it is_over_age, and we're gonna make it
+
+45
+00:02:24,591 --> 00:02:27,680
+equal to age &gt;= 18.
+
+46
+00:02:29,430 --> 00:02:32,690
+Now, again, this single equals side is key
+
+47
+00:02:32,690 --> 00:02:37,000
+in this expression, because whatever is behind it,
+
+48
+00:02:37,000 --> 00:02:40,180
+whatever is to the right, is going to get calculated first
+
+49
+00:02:41,140 --> 00:02:43,870
+and then is_over_age is going to be assigned to that.
+
+50
+00:02:45,810 --> 00:02:48,890
+And now what this is going to do is it's going
+
+51
+00:02:48,890 --> 00:02:52,900
+to compare age and 18, and it's going to tell us
+
+52
+00:02:52,900 --> 00:02:56,150
+whether age is greater than or equal to 18.
+
+53
+00:02:56,150 --> 00:02:58,870
+Now, what do you think is going to be the result
+
+54
+00:02:58,870 --> 00:03:00,950
+of this, or rather, what do you think the value
+
+55
+00:03:00,950 --> 00:03:04,130
+is going to be for this is_over_age variable?
+
+56
+00:03:07,160 --> 00:03:08,430
+I'm sure you got it right.
+
+57
+00:03:08,430 --> 00:03:11,740
+Of course, age is greater than or equal to 18,
+
+58
+00:03:11,740 --> 00:03:14,780
+so this is a true expression.
+
+59
+00:03:14,780 --> 00:03:19,780
+Indeed, when this runs, it gets replaced by the value True.
+
+60
+00:03:22,080 --> 00:03:26,120
+And we can check that by quickly printing it out
+
+61
+00:03:26,120 --> 00:03:27,890
+and running our code.
+
+62
+00:03:27,890 --> 00:03:29,410
+As you can see down here on the right,
+
+63
+00:03:29,410 --> 00:03:32,240
+it's difficult to see, but True is printed out.
+
+64
+00:03:34,430 --> 00:03:37,105
+Of course, we could do is_under_age,
+
+65
+00:03:37,105 --> 00:03:39,520
+and that could be equal to age &lt; 18.
+
+66
+00:03:41,250 --> 00:03:44,620
+Notice how I'm not using less than or equal to 18 here,
+
+67
+00:03:45,560 --> 00:03:49,990
+because if the age was exactly 18, this would be true,
+
+68
+00:03:51,600 --> 00:03:54,380
+and this would be true, too, which wouldn't make sense.
+
+69
+00:03:54,380 --> 00:03:57,040
+How can you be overage and underage at the same time?
+
+70
+00:03:57,910 --> 00:04:01,620
+So of course underage people are those who are 17 and under;
+
+71
+00:04:01,620 --> 00:04:03,630
+that is, less than 18.
+
+72
+00:04:03,630 --> 00:04:07,340
+You could also write this as &lt;= 17,
+
+73
+00:04:07,340 --> 00:04:09,960
+but I think that maybe reads a bit less nicely.
+
+74
+00:04:09,960 --> 00:04:11,710
+It's up to you what you want to do.
+
+75
+00:04:14,180 --> 00:04:17,130
+We can also check whether they are 20 years old,
+
+76
+00:04:17,130 --> 00:04:21,090
+and we can do that by checking age is what?
+
+77
+00:04:21,090 --> 00:04:23,610
+What do you think we'll be able to do here?
+
+78
+00:04:26,230 --> 00:04:30,440
+A suggestion could be to check whether it is
+
+79
+00:04:30,440 --> 00:04:34,460
+both greater than or equal to 20 and less than 21,
+
+80
+00:04:34,460 --> 00:04:37,010
+but that would be a slightly contrived way of calculating
+
+81
+00:04:37,010 --> 00:04:39,070
+whether it is exactly equal to 20.
+
+82
+00:04:40,150 --> 00:04:45,150
+So instead what we'll do is check whether it is equal to 20.
+
+83
+00:04:45,260 --> 00:04:48,180
+Notice how we've got a single equals sign here.
+
+84
+00:04:48,180 --> 00:04:51,280
+That means that this is going to get calculated,
+
+85
+00:04:51,280 --> 00:04:53,330
+and this will be assigned to it,
+
+86
+00:04:53,330 --> 00:04:55,380
+and we've got a double equal sign here,
+
+87
+00:04:55,380 --> 00:04:58,220
+which is used for Boolean comparison.
+
+88
+00:04:58,220 --> 00:05:01,760
+It's going to give us true is these two things are the same,
+
+89
+00:05:01,760 --> 00:05:04,160
+and it's going to give us false if they are not.
+
+90
+00:05:05,880 --> 00:05:10,880
+Of course, other symbols are &lt;= and also &gt;.
+
+91
+00:05:11,870 --> 00:05:15,690
+So, you can also use these symbols whenever you want.
+
+92
+00:05:18,210 --> 00:05:21,490
+Now, instead of comparing age and 18,
+
+93
+00:05:21,490 --> 00:05:24,610
+we could compare age and another variable.
+
+94
+00:05:24,610 --> 00:05:27,730
+It doesn't have to be a variable compared with a number.
+
+95
+00:05:27,730 --> 00:05:29,720
+It can be a variable compared with another variable,
+
+96
+00:05:29,720 --> 00:05:32,210
+or two numbers compared, or two strings compared.
+
+97
+00:05:32,210 --> 00:05:33,200
+It can be anything you want.
+
+98
+00:05:33,200 --> 00:05:36,200
+Anything can go between these symbols here,
+
+99
+00:05:36,200 --> 00:05:38,340
+but of course what the output will be
+
+100
+00:05:38,340 --> 00:05:40,070
+depends on what you compare.
+
+101
+00:05:41,670 --> 00:05:43,340
+Let's have a couple more variables.
+
+102
+00:05:43,340 --> 00:05:47,200
+My_number, which is gonna be five, and a user_number,
+
+103
+00:05:47,200 --> 00:05:51,290
+which is going to be the input of the user.
+
+104
+00:05:51,290 --> 00:05:52,190
+Enter a number.
+
+105
+00:05:55,880 --> 00:05:57,980
+Now, let's check whether the number
+
+106
+00:05:57,980 --> 00:06:01,120
+that the user enters is equal to my_number.
+
+107
+00:06:04,890 --> 00:06:07,710
+Now, we know exactly how we do that by using
+
+108
+00:06:07,710 --> 00:06:10,470
+the double equal sign, so let's check
+
+109
+00:06:10,470 --> 00:06:13,790
+my_number is exactly equal to user_number.
+
+110
+00:06:15,140 --> 00:06:18,790
+What do you think will get printed out when we do this?
+
+111
+00:06:18,790 --> 00:06:19,740
+Let's run the code.
+
+112
+00:06:21,490 --> 00:06:23,280
+Now we get asked to enter a number,
+
+113
+00:06:23,280 --> 00:06:26,440
+and I'm gonna enter four.
+
+114
+00:06:27,950 --> 00:06:30,640
+What do you think will be output when we do this?
+
+115
+00:06:34,710 --> 00:06:36,340
+I presume you got that right.
+
+116
+00:06:36,340 --> 00:06:38,460
+False seems a reasonable thing to print out.
+
+117
+00:06:38,460 --> 00:06:43,460
+I mean, four is not equal to five, so 5==4 should be false,
+
+118
+00:06:43,710 --> 00:06:44,970
+because they are not the same.
+
+119
+00:06:44,970 --> 00:06:47,450
+Let's run it again, and this time enter five.
+
+120
+00:06:50,090 --> 00:06:52,300
+But we also get False.
+
+121
+00:06:54,145 --> 00:06:55,790
+But of course you know why that is.
+
+122
+00:06:55,790 --> 00:06:59,190
+False because this user_number here is a string,
+
+123
+00:06:59,190 --> 00:07:01,780
+and it has to be a number in order for it
+
+124
+00:07:01,780 --> 00:07:03,950
+to be able to be compared with five.
+
+125
+00:07:03,950 --> 00:07:06,450
+Otherwise, you're comparing apples and oranges.
+
+126
+00:07:06,450 --> 00:07:09,110
+Numbers and strings, don't compare the two,
+
+127
+00:07:09,110 --> 00:07:11,520
+because they're never gonna be equal to one another,
+
+128
+00:07:11,520 --> 00:07:14,270
+even if you think they should be,
+
+129
+00:07:14,270 --> 00:07:17,160
+because they represent the same thing.
+
+130
+00:07:17,160 --> 00:07:19,560
+A string and a number, completely different things.
+
+131
+00:07:19,560 --> 00:07:21,780
+You must convert them to the same type
+
+132
+00:07:21,780 --> 00:07:23,980
+in order to be able to compare them.
+
+133
+00:07:23,980 --> 00:07:25,650
+Now notice how here, we've put the int,
+
+134
+00:07:25,650 --> 00:07:28,640
+and inside the brackets, we've put this function here.
+
+135
+00:07:28,640 --> 00:07:30,620
+Totally fine to do that in Python.
+
+136
+00:07:30,620 --> 00:07:32,910
+All that happens is whatever's inside the brackets
+
+137
+00:07:32,910 --> 00:07:34,580
+is gonna run first.
+
+138
+00:07:34,580 --> 00:07:36,880
+So the first thing that runs is this string.
+
+139
+00:07:36,880 --> 00:07:39,070
+Nothing to do there; it's just a string.
+
+140
+00:07:40,010 --> 00:07:43,550
+Then this runs, because it's inside these brackets,
+
+141
+00:07:43,550 --> 00:07:44,540
+and then this runs,
+
+142
+00:07:44,540 --> 00:07:47,340
+because it's the last thing that's outside the brackets.
+
+143
+00:07:48,490 --> 00:07:50,090
+At the end, user_number should be equal
+
+144
+00:07:50,090 --> 00:07:52,570
+to the number five, if that's what we enter.
+
+145
+00:07:52,570 --> 00:07:55,310
+So let's run this and type that,
+
+146
+00:07:55,310 --> 00:07:57,260
+and now we get True printed out.
+
+147
+00:07:57,260 --> 00:07:58,990
+So these two are the same.
+
+148
+00:08:00,060 --> 00:08:01,940
+And I'd also like to introduce how to check
+
+149
+00:08:01,940 --> 00:08:03,350
+that they are not the same.
+
+150
+00:08:04,500 --> 00:08:05,520
+We can do that really easily.
+
+151
+00:08:05,520 --> 00:08:08,920
+Instead of ==, I'm gonna use !=.
+
+152
+00:08:11,629 --> 00:08:13,800
+And so that's gonna give us the opposite
+
+153
+00:08:13,800 --> 00:08:15,200
+of what this will give us.
+
+154
+00:08:15,200 --> 00:08:18,210
+If this gives us true, this should give us false.
+
+155
+00:08:20,300 --> 00:08:21,133
+Let's run that.
+
+156
+00:08:21,133 --> 00:08:23,040
+I'm gonna type five in again, and now you can see
+
+157
+00:08:23,040 --> 00:08:25,970
+we get True, and then we get False, because this is true.
+
+158
+00:08:25,970 --> 00:08:26,900
+They are the same.
+
+159
+00:08:26,900 --> 00:08:27,990
+This is false.
+
+160
+00:08:27,990 --> 00:08:31,170
+Five is not equal to five is not true,
+
+161
+00:08:31,170 --> 00:08:32,320
+because they are equal.
+
+162
+00:08:34,140 --> 00:08:34,973
+Okay.
+
+163
+00:08:36,300 --> 00:08:40,440
+Now, I'd also like to talk to you about combining Booleans.
+
+164
+00:08:42,070 --> 00:08:44,200
+For example, imagine you wanna check whether someone
+
+165
+00:08:44,200 --> 00:08:46,730
+is over 18 and less than 65.
+
+166
+00:08:46,730 --> 00:08:49,800
+That's a common thing to do in population censuses.
+
+167
+00:08:49,800 --> 00:08:50,680
+Censuses?
+
+168
+00:08:50,680 --> 00:08:51,970
+Censi.
+
+169
+00:08:51,970 --> 00:08:55,050
+I don't know, in the census, you normally would,
+
+170
+00:08:55,050 --> 00:08:57,170
+for example, check for something like that.
+
+171
+00:08:57,170 --> 00:08:58,070
+Easy to do that.
+
+172
+00:08:58,070 --> 00:09:03,070
+You do age &gt;= 18, and you just type and.
+
+173
+00:09:03,270 --> 00:09:04,700
+Python is so awesome.
+
+174
+00:09:05,770 --> 00:09:07,300
+And age &lt; 65.
+
+175
+00:09:07,300 --> 00:09:09,620
+So you've got these two Booleans here,
+
+176
+00:09:10,872 --> 00:09:12,890
+and the and just joins them together.
+
+177
+00:09:12,890 --> 00:09:16,050
+So you get this, and you get that,
+
+178
+00:09:16,050 --> 00:09:19,810
+and of course, is this is true, they are over 18
+
+179
+00:09:19,810 --> 00:09:23,410
+and they are less than 65, if both are true,
+
+180
+00:09:23,410 --> 00:09:26,090
+the end result is true as well.
+
+181
+00:09:26,090 --> 00:09:28,440
+So let's create a few variables.
+
+182
+00:09:28,440 --> 00:09:30,840
+True and True.
+
+183
+00:09:30,840 --> 00:09:34,280
+If both things are true beside the and,
+
+184
+00:09:34,280 --> 00:09:35,960
+the yes will equal to True.
+
+185
+00:09:38,200 --> 00:09:40,610
+And of course if True and False,
+
+186
+00:09:41,950 --> 00:09:44,450
+then no will equal to False,
+
+187
+00:09:44,450 --> 00:09:47,600
+because this one is true, but this one is not.
+
+188
+00:09:47,600 --> 00:09:50,670
+In our example of over 18 and under 65,
+
+189
+00:09:50,670 --> 00:09:53,990
+this would be that they are not under 65,
+
+190
+00:09:53,990 --> 00:09:55,310
+so therefore, it's probably
+
+191
+00:09:55,310 --> 00:09:57,570
+not within that age range that we want.
+
+192
+00:09:57,570 --> 00:10:00,760
+True and false is always gonna give us false.
+
+193
+00:10:01,700 --> 00:10:02,533
+Okay.
+
+194
+00:10:04,270 --> 00:10:06,690
+Once again, we can check that that's correct
+
+195
+00:10:06,690 --> 00:10:09,780
+by running that and entering five, of course
+
+196
+00:10:09,780 --> 00:10:12,180
+because we've still got our Enter a number here,
+
+197
+00:10:13,060 --> 00:10:16,540
+and then notice how we get false as the third thing in there
+
+198
+00:10:16,540 --> 00:10:19,470
+because true and false is always false.
+
+199
+00:10:21,670 --> 00:10:25,650
+Then we've also got or instead of and.
+
+200
+00:10:25,650 --> 00:10:29,940
+Or is used to and this is a slightly weird way
+
+201
+00:10:29,940 --> 00:10:32,690
+of going about it, and I'm actually gonna write that down,
+
+202
+00:10:32,690 --> 00:10:36,440
+just so you've got some text to hang onto when I say this.
+
+203
+00:10:36,440 --> 00:10:41,440
+And I'm gonna say or is used to get the second value
+
+204
+00:10:42,240 --> 00:10:44,240
+if the first one is false.
+
+205
+00:10:45,660 --> 00:10:50,660
+If the first one is true, it gets the first value, okay?
+
+206
+00:10:51,000 --> 00:10:53,100
+Now, this is gonna, this sounds a bit weird,
+
+207
+00:10:53,100 --> 00:10:55,474
+but let's ask it a question.
+
+208
+00:10:55,474 --> 00:10:58,680
+Which_one_is_it = True or False.
+
+209
+00:11:00,020 --> 00:11:03,460
+What value will be given to this variable?
+
+210
+00:11:03,460 --> 00:11:07,630
+Remember, or is used to get the second value,
+
+211
+00:11:07,630 --> 00:11:12,510
+that's this one, if the first one is false.
+
+212
+00:11:13,430 --> 00:11:14,620
+But this one is true.
+
+213
+00:11:14,620 --> 00:11:18,090
+If the first one is true, it gets the first value.
+
+214
+00:11:18,090 --> 00:11:20,100
+So which one of these two is it gonna be,
+
+215
+00:11:20,100 --> 00:11:22,380
+the first one or the second one?
+
+216
+00:11:25,870 --> 00:11:26,960
+I hope you got that.
+
+217
+00:11:26,960 --> 00:11:29,310
+Because the first value is True,
+
+218
+00:11:29,310 --> 00:11:32,210
+the or is going to give us the first value.
+
+219
+00:11:32,210 --> 00:11:33,400
+So which one is it?
+
+220
+00:11:33,400 --> 00:11:34,670
+It's going to be True.
+
+221
+00:11:35,590 --> 00:11:37,820
+Feel free by the way to pause this video as we go along
+
+222
+00:11:37,820 --> 00:11:39,990
+and print things out and play around with things.
+
+223
+00:11:39,990 --> 00:11:41,760
+That really is the best way to programme.
+
+224
+00:11:41,760 --> 00:11:44,280
+I'm not gonna stop and waste your time doing that.
+
+225
+00:11:44,280 --> 00:11:46,500
+Of course we wanna be quick.
+
+226
+00:11:46,500 --> 00:11:48,610
+But nonetheless, the reason why I'm asking you
+
+227
+00:11:48,610 --> 00:11:50,810
+to write this code alongside me is not just so
+
+228
+00:11:50,810 --> 00:11:53,710
+you're copying it but also so you can play around with it.
+
+229
+00:11:57,070 --> 00:11:58,620
+Similarly, what about this one?
+
+230
+00:11:59,530 --> 00:12:01,150
+False or True.
+
+231
+00:12:01,150 --> 00:12:02,870
+Which one will it be?
+
+232
+00:12:04,500 --> 00:12:06,790
+Second_one will be assigned what value?
+
+233
+00:12:09,550 --> 00:12:12,180
+Again, going by this statement,
+
+234
+00:12:12,180 --> 00:12:14,340
+the or is used to get the second value
+
+235
+00:12:14,340 --> 00:12:16,020
+if the first one is false.
+
+236
+00:12:16,020 --> 00:12:17,670
+The first one here is false,
+
+237
+00:12:17,670 --> 00:12:20,760
+so we get the second one true.
+
+238
+00:12:20,760 --> 00:12:24,720
+Second, the variable second_one is going to be True.
+
+239
+00:12:28,000 --> 00:12:31,480
+And of course for the first_one, we'll do something
+
+240
+00:12:31,480 --> 00:12:35,700
+that will always give us the first value, True or True.
+
+241
+00:12:36,750 --> 00:12:38,440
+No matter whether we would get the first
+
+242
+00:12:38,440 --> 00:12:40,440
+or the second value in this case,
+
+243
+00:12:40,440 --> 00:12:42,760
+we would always have True assigned to this one
+
+244
+00:12:42,760 --> 00:12:44,760
+because there's only that to pick from.
+
+245
+00:12:45,710 --> 00:12:48,250
+But of course you know that this here is going to be
+
+246
+00:12:48,250 --> 00:12:51,390
+completely ignored because the first value is True.
+
+247
+00:12:51,390 --> 00:12:52,940
+So we're always gonna get that.
+
+248
+00:12:54,160 --> 00:12:59,160
+Indeed, if you did have a complex mathematical expression
+
+249
+00:13:00,380 --> 00:13:02,550
+here, which you can do, by the way,
+
+250
+00:13:03,430 --> 00:13:06,160
+this would not be calculated at all.
+
+251
+00:13:06,160 --> 00:13:10,410
+Python ignores everything because the first one is true.
+
+252
+00:13:10,410 --> 00:13:12,650
+So why should it calculate anything,
+
+253
+00:13:12,650 --> 00:13:15,470
+if you're always gonna get the first value?
+
+254
+00:13:17,910 --> 00:13:19,690
+And of course, we've got False or False,
+
+255
+00:13:19,690 --> 00:13:21,750
+and that's gonna give you neither of them,
+
+256
+00:13:21,750 --> 00:13:24,710
+or indeed, the second one, False.
+
+257
+00:13:24,710 --> 00:13:27,730
+It's not going to be True, but because the first value
+
+258
+00:13:27,730 --> 00:13:29,100
+is not true, it's gonna give you
+
+259
+00:13:29,100 --> 00:13:30,980
+the second value, which is False.
+
+260
+00:13:31,820 --> 00:13:32,653
+Okay.
+
+261
+00:13:34,050 --> 00:13:39,050
+And so the or is a really interesting construct here,
+
+262
+00:13:40,100 --> 00:13:42,100
+a really interesting comparison, and we're gonna be using it
+
+263
+00:13:42,100 --> 00:13:44,750
+a lot more towards the end of the course
+
+264
+00:13:44,750 --> 00:13:49,650
+as you discover some really useful ways of using that.
+
+265
+00:13:50,800 --> 00:13:55,800
+Now, let's create another variable which I'm gonna call
+
+266
+00:13:55,800 --> 00:14:00,320
+not False, and this is another construct that we can use
+
+267
+00:14:00,320 --> 00:14:03,330
+for comparing and changing Booleans.
+
+268
+00:14:03,330 --> 00:14:06,710
+You can probably guess what not False is going to do.
+
+269
+00:14:08,530 --> 00:14:12,200
+It's going to give you whatever is not False, which is true.
+
+270
+00:14:12,200 --> 00:14:14,600
+So this is going to be True.
+
+271
+00:14:15,680 --> 00:14:19,070
+And another_no variable is going to be not True,
+
+272
+00:14:19,070 --> 00:14:21,990
+which of course is going to give you False.
+
+273
+00:14:21,990 --> 00:14:25,820
+So, not is going to invert whatever it is that's behind it.
+
+274
+00:14:26,730 --> 00:14:29,160
+So not False is going to give you the opposite of False;
+
+275
+00:14:29,160 --> 00:14:31,900
+not True is going to give you the opposite of True.
+
+276
+00:14:34,791 --> 00:14:37,507
+And of course, all of this, all of these or's
+
+277
+00:14:37,507 --> 00:14:40,250
+and and's and not's can be used with variables as well.
+
+278
+00:14:40,250 --> 00:14:41,860
+You don't have to use them with True and False
+
+279
+00:14:41,860 --> 00:14:44,580
+or with numbers or anything like that.
+
+280
+00:14:44,580 --> 00:14:45,930
+And we can have two variables.
+
+281
+00:14:45,930 --> 00:14:48,600
+Is_programmer is True, and is_learning is False.
+
+282
+00:14:50,370 --> 00:14:52,570
+Not really true, we are learning here.
+
+283
+00:14:52,570 --> 00:14:57,570
+And the awesome is gonna be when we are both a programmer
+
+284
+00:14:59,490 --> 00:15:02,030
+and we are learning, is_programmer and is_learning.
+
+285
+00:15:05,500 --> 00:15:07,550
+Okay, so, again, just another example
+
+286
+00:15:07,550 --> 00:15:08,880
+of using the and here.
+
+287
+00:15:08,880 --> 00:15:10,590
+We've got is_programmer, which is True,
+
+288
+00:15:10,590 --> 00:15:12,210
+and is_learning, which is False.
+
+289
+00:15:12,210 --> 00:15:13,850
+So awesome is gonna be,
+
+290
+00:15:16,460 --> 00:15:19,610
+you got it, it is gonna be False, because the and
+
+291
+00:15:19,610 --> 00:15:22,570
+is gonna give us whether both are true or not.
+
+292
+00:15:22,570 --> 00:15:25,940
+If either or both are false, it's gonna give us false.
+
+293
+00:15:26,820 --> 00:15:29,390
+So, we are gonna be slightly less_awesome
+
+294
+00:15:29,390 --> 00:15:33,570
+and say is_programmer and not is_learning.
+
+295
+00:15:35,010 --> 00:15:37,240
+If you're not learning, you're slightly less awesome
+
+296
+00:15:37,240 --> 00:15:38,510
+than if you are learning.
+
+297
+00:15:38,510 --> 00:15:40,500
+Of course, thank you for taking this course.
+
+298
+00:15:40,500 --> 00:15:43,300
+And also, as a programmer, you're always gonna
+
+299
+00:15:43,300 --> 00:15:45,880
+have to be learning so that you can continue to develop
+
+300
+00:15:45,880 --> 00:15:48,780
+your skills and continue to learn about software.
+
+301
+00:15:48,780 --> 00:15:51,690
+Software is growing and changing really rapidly,
+
+302
+00:15:51,690 --> 00:15:52,750
+so if you're not learning,
+
+303
+00:15:52,750 --> 00:15:55,150
+you're gonna be slightly less awesome over time.
+
+304
+00:15:56,280 --> 00:15:59,160
+And of course is_programmer and not is_learning
+
+305
+00:15:59,160 --> 00:16:02,370
+is going to be true, because not is_learning
+
+306
+00:16:02,370 --> 00:16:05,330
+is going to evaluate to True,
+
+307
+00:16:05,330 --> 00:16:06,980
+seeing how is_learning is False.
+
+308
+00:16:06,980 --> 00:16:09,640
+Not False is gonna give us True,
+
+309
+00:16:09,640 --> 00:16:12,140
+so that's True, and True.
+
+310
+00:16:12,140 --> 00:16:16,760
+The end result is True, okay?
+
+311
+00:16:16,760 --> 00:16:19,060
+Finally, a slightly more contrived example,
+
+312
+00:16:19,060 --> 00:16:21,270
+we're gonna add whether is_designer,
+
+313
+00:16:21,270 --> 00:16:22,820
+and we're gonna say it's False,
+
+314
+00:16:23,700 --> 00:16:28,360
+and we're gonna say that great_guys are those who
+
+315
+00:16:28,360 --> 00:16:33,050
+are either programmers or designers and who are learning.
+
+316
+00:16:33,910 --> 00:16:37,920
+So, the way to do that is to have the three statements.
+
+317
+00:16:37,920 --> 00:16:39,840
+Now, I've put some brackets in here to give you
+
+318
+00:16:39,840 --> 00:16:44,840
+a hint as to how you might go about grouping
+
+319
+00:16:44,920 --> 00:16:48,290
+these Booleans using brackets, just like maths.
+
+320
+00:16:48,290 --> 00:16:50,190
+You can use brackets to group things.
+
+321
+00:16:51,630 --> 00:16:55,740
+So try and create this expression where they must be
+
+322
+00:16:55,740 --> 00:17:00,420
+either programmer or designer and learning.
+
+323
+00:17:01,850 --> 00:17:03,760
+So they have to be either programmer or designer,
+
+324
+00:17:03,760 --> 00:17:05,650
+and they have to be learning.
+
+325
+00:17:05,650 --> 00:17:08,280
+How would you develop that Boolean?
+
+326
+00:17:10,000 --> 00:17:12,780
+Again, good moment to pause the video and give it a go.
+
+327
+00:17:16,260 --> 00:17:18,440
+The way I would do it is the first thing we wanna do
+
+328
+00:17:18,440 --> 00:17:20,440
+is check whether they're a programmer or a designer.
+
+329
+00:17:20,440 --> 00:17:22,350
+So I would put that inside brackets
+
+330
+00:17:22,350 --> 00:17:24,480
+and say is_programmer or is_designer.
+
+331
+00:17:25,870 --> 00:17:28,130
+Now, this is going to run first,
+
+332
+00:17:28,130 --> 00:17:31,470
+and it's going to give us True if either of them is true,
+
+333
+00:17:32,640 --> 00:17:36,630
+and is_learning, and this is going to be the second part
+
+334
+00:17:36,630 --> 00:17:39,230
+outside of the brackets so that it runs
+
+335
+00:17:39,230 --> 00:17:41,640
+after we have evaluated this here.
+
+336
+00:17:43,460 --> 00:17:44,510
+Okay.
+
+337
+00:17:44,510 --> 00:17:46,940
+Now we've got true and false,
+
+338
+00:17:46,940 --> 00:17:51,120
+so great_guy is sadly going to be False,
+
+339
+00:17:51,120 --> 00:17:53,440
+because we are not learning at the moment.
+
+340
+00:17:53,440 --> 00:17:55,780
+Of course, we can change that and make ourselves awesome.
+
+341
+00:17:55,780 --> 00:17:56,950
+So, let's do it.
+
+342
+00:18:00,300 --> 00:18:04,790
+Now we can print(great_guy) and we should get True out.
+
+343
+00:18:06,160 --> 00:18:08,900
+And indeed, down there at the bottom, we get True,
+
+344
+00:18:08,900 --> 00:18:10,640
+because we are great.
+
+345
+00:18:10,640 --> 00:18:12,320
+So let's move onto the very next video,
+
+346
+00:18:12,320 --> 00:18:14,540
+and we're gonna learn a bit more about Python.
+
+347
+00:18:14,540 --> 00:18:15,490
+I'll see you there.
+

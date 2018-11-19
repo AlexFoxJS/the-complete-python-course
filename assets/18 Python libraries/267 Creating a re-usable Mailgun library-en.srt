@@ -1,0 +1,668 @@
+1
+00:00:00,140 --> 00:00:01,370
+<v ->Hi, welcome back.</v>
+
+2
+00:00:01,370 --> 00:00:03,010
+In this video, I'm going to show you
+
+3
+00:00:03,010 --> 00:00:06,331
+how you can re-use your Mailgun sending code
+
+4
+00:00:06,331 --> 00:00:10,180
+just by putting it inside a library file
+
+5
+00:00:10,180 --> 00:00:12,083
+and calling it from your other code.
+
+6
+00:00:12,930 --> 00:00:16,810
+So this is just a re-factoring of this code here.
+
+7
+00:00:16,810 --> 00:00:17,643
+I had to make it up at night,
+
+8
+00:00:17,643 --> 00:00:19,360
+but nonetheless, I thought I should show you
+
+9
+00:00:19,360 --> 00:00:22,070
+how I do this normally in my other projects.
+
+10
+00:00:22,070 --> 00:00:23,680
+It's really straightforward.
+
+11
+00:00:23,680 --> 00:00:27,070
+What we do is in your project, you'll want to have
+
+12
+00:00:27,070 --> 00:00:30,500
+a new Python package that you're gonna call libs.
+
+13
+00:00:30,500 --> 00:00:32,927
+And normally, you'll have a package like this one
+
+14
+00:00:32,927 --> 00:00:35,402
+in most projects as long as you're using
+
+15
+00:00:35,402 --> 00:00:37,420
+other external services.
+
+16
+00:00:37,420 --> 00:00:40,420
+In this case, we're using the external service Mailgun.
+
+17
+00:00:40,420 --> 00:00:42,929
+Mailgun gives us an API that we can interact with
+
+18
+00:00:42,929 --> 00:00:47,929
+but there is a small issue of sorts
+
+19
+00:00:49,094 --> 00:00:53,910
+that here we're not really, in terms of our code,
+
+20
+00:00:53,910 --> 00:00:57,970
+we're not really interacting with Mailgun directly.
+
+21
+00:00:57,970 --> 00:01:01,673
+When you read this code, it's a bit too raw.
+
+22
+00:01:01,673 --> 00:01:03,560
+You can see that what you're doing is
+
+23
+00:01:03,560 --> 00:01:05,360
+you're making a request to some API
+
+24
+00:01:05,360 --> 00:01:07,610
+and then something's happening and so forth.
+
+25
+00:01:07,610 --> 00:01:11,290
+And unless you know exactly what this API is doing,
+
+26
+00:01:11,290 --> 00:01:13,150
+it may not be immediately obvious
+
+27
+00:01:13,150 --> 00:01:15,040
+that this is sending an email.
+
+28
+00:01:15,040 --> 00:01:16,940
+Of course, you now know what this code does
+
+29
+00:01:16,940 --> 00:01:19,500
+and if you see a post request to something
+
+30
+00:01:19,500 --> 00:01:21,099
+called Mailgun, you know what Mailgun is,
+
+31
+00:01:21,099 --> 00:01:23,770
+and you see a from, to, subject, and text,
+
+32
+00:01:23,770 --> 00:01:26,560
+you can probably guess this is sending an email.
+
+33
+00:01:26,560 --> 00:01:30,150
+But what I need to say is that this code here
+
+34
+00:01:30,150 --> 00:01:34,870
+isn't what you'd read as send an email.
+
+35
+00:01:34,870 --> 00:01:38,173
+You'd read this as make a post request to someplace.
+
+36
+00:01:39,260 --> 00:01:41,400
+So it's always a good idea to put this code
+
+37
+00:01:41,400 --> 00:01:43,239
+inside a function and call that function
+
+38
+00:01:43,239 --> 00:01:46,908
+send an email and that way when you read
+
+39
+00:01:46,908 --> 00:01:51,120
+in some other part of your programme, send email,
+
+40
+00:01:51,120 --> 00:01:53,198
+you'll know that that function is sending an email
+
+41
+00:01:53,198 --> 00:01:54,950
+and you won't have to worry about
+
+42
+00:01:54,950 --> 00:01:57,110
+whether it's sending a post request or a get request
+
+43
+00:01:57,110 --> 00:01:58,790
+to some place.
+
+44
+00:01:58,790 --> 00:02:00,600
+So with that said, we'll go into our libs folder,
+
+45
+00:02:00,600 --> 00:02:02,020
+create a new Python file.
+
+46
+00:02:02,020 --> 00:02:04,320
+I'm gonna call this Mailgun dot py,
+
+47
+00:02:04,320 --> 00:02:07,362
+because this is gonna contain our Mailgun library.
+
+48
+00:02:07,362 --> 00:02:10,850
+This is going to be a Python file
+
+49
+00:02:10,850 --> 00:02:15,410
+that is going to encapsulate that sending of a request.
+
+50
+00:02:15,410 --> 00:02:16,700
+And it's going to encapsulate it
+
+51
+00:02:16,700 --> 00:02:19,470
+and call it in a bit nicer way.
+
+52
+00:02:19,470 --> 00:02:22,010
+So we're going to import requests in here.
+
+53
+00:02:22,010 --> 00:02:24,480
+Then we're gonna have our class Mailgun
+
+54
+00:02:24,480 --> 00:02:28,240
+and this class Mailgun is going to have a few properties,
+
+55
+00:02:28,240 --> 00:02:32,620
+an API URL, API key, and also a from name and from email.
+
+56
+00:02:32,620 --> 00:02:34,320
+So we're gonna paste those in here.
+
+57
+00:02:34,320 --> 00:02:36,380
+Now the assumption for this class is
+
+58
+00:02:36,380 --> 00:02:38,270
+that these are all static properties,
+
+59
+00:02:38,270 --> 00:02:40,260
+they're never going to change
+
+60
+00:02:40,260 --> 00:02:44,620
+and so we can just set and hardcode the values in here.
+
+61
+00:02:44,620 --> 00:02:46,140
+This may not be true for your project.
+
+62
+00:02:46,140 --> 00:02:48,030
+Maybe you'll want to be sending emails
+
+63
+00:02:48,030 --> 00:02:50,147
+from different people and in that case,
+
+64
+00:02:50,147 --> 00:02:52,610
+you'll wanna re-structure this slightly.
+
+65
+00:02:52,610 --> 00:02:55,100
+I'll show you how in just a moment.
+
+66
+00:02:55,100 --> 00:02:59,430
+Then, we're going to have a class method in here
+
+67
+00:02:59,430 --> 00:03:01,720
+that I'm gonna call send email.
+
+68
+00:03:01,720 --> 00:03:04,160
+And this is going to get three arguments:
+
+69
+00:03:04,160 --> 00:03:07,030
+the emails that you wanna send an email to,
+
+70
+00:03:07,030 --> 00:03:08,990
+the subject, and the content.
+
+71
+00:03:08,990 --> 00:03:09,960
+Now, okay?
+
+72
+00:03:09,960 --> 00:03:10,900
+And then what we're gonna do is,
+
+73
+00:03:10,900 --> 00:03:13,458
+we're gonna copy this requests.post
+
+74
+00:03:13,458 --> 00:03:16,660
+and instead of Mailgun API URL,
+
+75
+00:03:16,660 --> 00:03:19,530
+we're gonna do cls.Mailgun API URL.
+
+76
+00:03:19,530 --> 00:03:20,850
+Instead of Mailgun API Key,
+
+77
+00:03:20,850 --> 00:03:23,460
+we're gonna do cls.Mailgun API Key.
+
+78
+00:03:23,460 --> 00:03:26,110
+And instead of to emails as a constant,
+
+79
+00:03:26,110 --> 00:03:30,460
+we're gonna do to emails, the parameter.
+
+80
+00:03:30,460 --> 00:03:32,710
+Subject is also going to be the parameter.
+
+81
+00:03:32,710 --> 00:03:34,910
+Content is also going to be the parameter.
+
+82
+00:03:34,910 --> 00:03:36,500
+And of course, from name and from email
+
+83
+00:03:36,500 --> 00:03:38,623
+should also be inside CLS.
+
+84
+00:03:41,200 --> 00:03:42,530
+That's it.
+
+85
+00:03:42,530 --> 00:03:43,730
+We're gonna remove this comment here.
+
+86
+00:03:43,730 --> 00:03:45,930
+Let's assume we already know what that does.
+
+87
+00:03:47,210 --> 00:03:49,250
+And really, that's everything you need.
+
+88
+00:03:49,250 --> 00:03:53,390
+You put in here your API URL and your API Key
+
+89
+00:03:53,390 --> 00:03:56,130
+and you can hardcode your name and your email
+
+90
+00:03:56,130 --> 00:03:57,630
+that you're sending from.
+
+91
+00:03:57,630 --> 00:03:59,270
+If you don't want to hardcode them
+
+92
+00:03:59,270 --> 00:04:00,930
+because your application requires
+
+93
+00:04:00,930 --> 00:04:02,830
+sending from different places,
+
+94
+00:04:02,830 --> 00:04:04,930
+just add them as arguments here.
+
+95
+00:04:04,930 --> 00:04:08,170
+From name, from email.
+
+96
+00:04:08,170 --> 00:04:10,270
+And if you want, you could even make these
+
+97
+00:04:11,600 --> 00:04:14,040
+constant variables by default.
+
+98
+00:04:14,040 --> 00:04:15,963
+Make sure to use the right thing here.
+
+99
+00:04:19,560 --> 00:04:23,440
+But because my applications normally have a single email
+
+100
+00:04:23,440 --> 00:04:26,460
+that is sending the emails, I normally don't do this,
+
+101
+00:04:26,460 --> 00:04:29,490
+but you could do it and then just replace them here as well.
+
+102
+00:04:29,490 --> 00:04:33,163
+And that would be a way of making this a bit more flexible.
+
+103
+00:04:34,570 --> 00:04:35,530
+That's it.
+
+104
+00:04:35,530 --> 00:04:40,390
+You have your Mailgun class that can send emails.
+
+105
+00:04:40,390 --> 00:04:42,410
+Now when you wanna send an email anywhere
+
+106
+00:04:42,410 --> 00:04:44,750
+within your application, all you have to do is say
+
+107
+00:04:44,750 --> 00:04:49,170
+Mailgun dot send email and give it the email subject
+
+108
+00:04:49,170 --> 00:04:50,600
+and content.
+
+109
+00:04:50,600 --> 00:04:53,360
+So we're gonna create a new file inside the project
+
+110
+00:04:53,360 --> 00:04:58,360
+and I'm gonna call that using Mailgun lib dot py.
+
+111
+00:04:58,720 --> 00:05:01,620
+And this is gonna do just from libs Mailgun,
+
+112
+00:05:01,620 --> 00:05:02,993
+import Mailgun class.
+
+113
+00:05:03,840 --> 00:05:06,450
+And then we're gonna do Mailgun send email
+
+114
+00:05:06,450 --> 00:05:11,160
+and this is gonna go to test@gmail.com.
+
+115
+00:05:11,160 --> 00:05:15,360
+The subject is going to be something like test email.
+
+116
+00:05:15,360 --> 00:05:18,710
+And the content is going to be "This is a test email."
+
+117
+00:05:18,710 --> 00:05:20,210
+It could be anything you want.
+
+118
+00:05:21,800 --> 00:05:22,910
+That's it.
+
+119
+00:05:22,910 --> 00:05:24,280
+You can now send emails.
+
+120
+00:05:24,280 --> 00:05:25,716
+What's this say?
+
+121
+00:05:25,716 --> 00:05:28,820
+Oh, of course, I've put the list in there.
+
+122
+00:05:28,820 --> 00:05:30,890
+We don't wanna put the list there.
+
+123
+00:05:30,890 --> 00:05:33,810
+This is the emails that this email is going to.
+
+124
+00:05:33,810 --> 00:05:36,870
+In this case, it's just a single guy or woman.
+
+125
+00:05:36,870 --> 00:05:39,100
+And if this is the title or the subject,
+
+126
+00:05:39,100 --> 00:05:40,730
+and this is the content.
+
+127
+00:05:40,730 --> 00:05:42,690
+If you want to call this a bit nicer,
+
+128
+00:05:42,690 --> 00:05:46,110
+you can say to emails is that.
+
+129
+00:05:46,110 --> 00:05:48,283
+You can then say subject is that.
+
+130
+00:05:48,283 --> 00:05:51,970
+And you can then say content is that.
+
+131
+00:05:51,970 --> 00:05:54,260
+So that's just calling it a bit nicer.
+
+132
+00:05:54,260 --> 00:05:56,760
+It's up to you what you do, of course.
+
+133
+00:05:56,760 --> 00:05:59,050
+Normally, I think I would do it this way
+
+134
+00:05:59,050 --> 00:06:00,350
+just because it's pretty clear
+
+135
+00:06:00,350 --> 00:06:03,040
+that the email is gonna go to this email.
+
+136
+00:06:03,040 --> 00:06:05,610
+And then you may wanna put subject and content here
+
+137
+00:06:05,610 --> 00:06:07,530
+just to make sure that nobody gets confused.
+
+138
+00:06:07,530 --> 00:06:09,000
+Maybe they think this is the content,
+
+139
+00:06:09,000 --> 00:06:10,590
+this is the subject.
+
+140
+00:06:10,590 --> 00:06:12,580
+If you call them with named arguments,
+
+141
+00:06:12,580 --> 00:06:13,740
+that's just a little bit clearer,
+
+142
+00:06:13,740 --> 00:06:15,440
+maybe a bit nicer way of doing it.
+
+143
+00:06:17,200 --> 00:06:19,260
+Whenever you want to send an email from your application,
+
+144
+00:06:19,260 --> 00:06:22,770
+all you have to do is call your Mailgun library
+
+145
+00:06:22,770 --> 00:06:25,430
+send email function, or method, sorry,
+
+146
+00:06:25,430 --> 00:06:26,460
+and that'll send an email.
+
+147
+00:06:26,460 --> 00:06:28,130
+So this is a bit of a nicer way
+
+148
+00:06:28,130 --> 00:06:29,880
+of structuring your email sending
+
+149
+00:06:29,880 --> 00:06:32,370
+and this is actually what I use very often,
+
+150
+00:06:32,370 --> 00:06:35,053
+a library just like this one in many other projects.
+
+151
+00:06:35,960 --> 00:06:37,870
+There is an issue with security
+
+152
+00:06:37,870 --> 00:06:40,540
+if you put your API key inside your code.
+
+153
+00:06:40,540 --> 00:06:42,820
+You don't want to put your API key inside your code
+
+154
+00:06:42,820 --> 00:06:45,370
+if you're gonna share that code with other people,
+
+155
+00:06:45,370 --> 00:06:48,500
+but that is a bit more of an advanced concept,
+
+156
+00:06:48,500 --> 00:06:49,650
+how you're gonna secure your code
+
+157
+00:06:49,650 --> 00:06:51,680
+if you're gonna share with people and so forth.
+
+158
+00:06:51,680 --> 00:06:53,990
+Not something we're gonna cover in this course.
+
+159
+00:06:53,990 --> 00:06:56,300
+But there are ways of doing that.
+
+160
+00:06:56,300 --> 00:06:57,520
+It's just a little bit more advanced
+
+161
+00:06:57,520 --> 00:06:59,620
+and you have to worry about sharing your code
+
+162
+00:06:59,620 --> 00:07:00,760
+with other people first
+
+163
+00:07:00,760 --> 00:07:03,230
+before you start worrying about security.
+
+164
+00:07:03,230 --> 00:07:04,250
+That's it for this video.
+
+165
+00:07:04,250 --> 00:07:06,470
+I hope you've enjoyed structuring this application
+
+166
+00:07:06,470 --> 00:07:07,870
+in a bit of a nicer way,
+
+167
+00:07:07,870 --> 00:07:09,620
+and I'll see you on the next video.
+

@@ -1,0 +1,328 @@
+1
+00:00:00,470 --> 00:00:02,070
+<v Instructor>Hi and welcome back,</v>
+
+2
+00:00:02,070 --> 00:00:03,320
+in the last video, I said we were going
+
+3
+00:00:03,320 --> 00:00:04,430
+to look at the pages,
+
+4
+00:00:04,430 --> 00:00:05,970
+but I actually think it makes more sense
+
+5
+00:00:05,970 --> 00:00:08,410
+to look at the quote parser first.
+
+6
+00:00:08,410 --> 00:00:10,130
+So what I've done is I've opened here
+
+7
+00:00:10,130 --> 00:00:12,980
+the quote parser and what we're going to do,
+
+8
+00:00:12,980 --> 00:00:17,980
+is first of all, import our quote locators.
+
+9
+00:00:17,980 --> 00:00:21,150
+And then we're going to create class QuoteParser,
+
+10
+00:00:21,150 --> 00:00:23,830
+and this class is going to be used to,
+
+11
+00:00:23,830 --> 00:00:28,830
+given one of the specific quote divs,
+
+12
+00:00:29,460 --> 00:00:32,680
+find out the data about the quote.
+
+13
+00:00:34,060 --> 00:00:36,840
+Quote content, author, and tags.
+
+14
+00:00:38,040 --> 00:00:40,820
+Now, this is going to make use of a new thing,
+
+15
+00:00:40,820 --> 00:00:42,810
+in Beautiful Soup that we've not looked at before,
+
+16
+00:00:42,810 --> 00:00:44,910
+but nonetheless, that's the purpose of this project,
+
+17
+00:00:44,910 --> 00:00:49,230
+to introduce things, and that is that,
+
+18
+00:00:49,230 --> 00:00:51,230
+what we're gonna receive here in the init method,
+
+19
+00:00:51,230 --> 00:00:55,180
+a parent, and then we're gonna say self.parent equal parent.
+
+20
+00:00:56,600 --> 00:01:00,550
+Just to explain why I'm calling this parameter parent, here.
+
+21
+00:01:02,320 --> 00:01:07,320
+Going back to Chrome, what we're going to give
+
+22
+00:01:07,370 --> 00:01:11,790
+our quote parser is this div tag.
+
+23
+00:01:13,500 --> 00:01:15,300
+So that's going to be our first quote parser.
+
+24
+00:01:15,300 --> 00:01:17,760
+We're gonna give it this div tag.
+
+25
+00:01:17,760 --> 00:01:19,140
+And our second quote parser,
+
+26
+00:01:19,140 --> 00:01:20,350
+we're gonna give it this div tag.
+
+27
+00:01:20,350 --> 00:01:23,100
+And the third quote parser, we'll give it this div tag.
+
+28
+00:01:24,350 --> 00:01:26,050
+Previously with Beautiful Soup,
+
+29
+00:01:26,050 --> 00:01:30,380
+we looked at loading using Beautiful Soup the entire page.
+
+30
+00:01:30,380 --> 00:01:31,900
+And then we were able to search
+
+31
+00:01:31,900 --> 00:01:34,840
+on the entire page using Beautiful Soup.
+
+32
+00:01:34,840 --> 00:01:38,750
+But actually, when you find one element with Beautiful Soup
+
+33
+00:01:38,750 --> 00:01:41,640
+such as say, you find this div using Beautiful Soup,
+
+34
+00:01:42,810 --> 00:01:45,640
+you can then search only in that element.
+
+35
+00:01:46,600 --> 00:01:48,910
+So what we're going to do is, our quotes page
+
+36
+00:01:48,910 --> 00:01:53,400
+is going to find these elements and is going to give
+
+37
+00:01:53,400 --> 00:01:55,880
+each element to a quote parser object,
+
+38
+00:01:56,730 --> 00:02:00,720
+and they are going to use that element to find the children.
+
+39
+00:02:00,720 --> 00:02:03,457
+In this case, the children of this element will be
+
+40
+00:02:03,457 --> 00:02:07,440
+the quote contents, the author, and the tags.
+
+41
+00:02:09,360 --> 00:02:13,900
+Let's go back to PyCharm and quickly write these
+
+42
+00:02:15,610 --> 00:02:19,610
+property methods here.
+
+43
+00:02:19,610 --> 00:02:23,010
+The quote content is going to return,
+
+44
+00:02:23,010 --> 00:02:25,420
+well, it's going to get a locator that's going to be
+
+45
+00:02:25,420 --> 00:02:29,640
+quotelocators.content and it's going to return
+
+46
+00:02:29,640 --> 00:02:34,640
+self.parent select one, locator.string.
+
+47
+00:02:35,720 --> 00:02:39,940
+Notice how self.parent is going to be that div tag,
+
+48
+00:02:39,940 --> 00:02:42,799
+that encloses the quote, but Beautiful Soup allows us
+
+49
+00:02:42,799 --> 00:02:47,750
+to select and search for within the parent.
+
+50
+00:02:47,750 --> 00:02:50,770
+It doesn't have to be only on the page itself,
+
+51
+00:02:50,770 --> 00:02:52,420
+it can be on any of the elements.
+
+52
+00:02:54,380 --> 00:02:58,500
+Okay, then for the author,
+
+53
+00:02:59,670 --> 00:03:02,150
+it's going to be fairly similar.
+
+54
+00:03:02,150 --> 00:03:05,810
+The locator in this case is going to be the author locator,
+
+55
+00:03:05,810 --> 00:03:09,240
+and then it's going to return self.parent, select one,
+
+56
+00:03:09,240 --> 00:03:12,730
+locator.string, so very similar.
+
+57
+00:03:12,730 --> 00:03:14,270
+And finally, the tags.
+
+58
+00:03:15,340 --> 00:03:19,690
+Tags, the locator's going to be quotelocators.tags
+
+59
+00:03:21,580 --> 00:03:25,940
+and it's going to return self.parent.select(locator).
+
+60
+00:03:27,630 --> 00:03:30,339
+Again, this is going to select all the individual
+
+61
+00:03:30,339 --> 00:03:34,260
+tag items that are available.
+
+62
+00:03:34,260 --> 00:03:38,220
+If you wanted, you could extract the text of each element
+
+63
+00:03:38,220 --> 00:03:42,710
+by doing e.string for e and this.
+
+64
+00:03:43,570 --> 00:03:46,960
+So this would be definitely an option as well, okay?
+
+65
+00:03:48,530 --> 00:03:51,900
+Now, this doesn't make a lot of sense until we have
+
+66
+00:03:51,900 --> 00:03:55,110
+sort of joined our programme together and it all
+
+67
+00:03:55,110 --> 00:03:57,410
+starts to make a bit more sense, believe me.
+
+68
+00:03:57,410 --> 00:04:02,410
+I'm also going to add here a rapr method that is going to
+
+69
+00:04:02,570 --> 00:04:07,570
+return this quote, self.content by self.author, okay?
+
+70
+00:04:12,580 --> 00:04:14,730
+This is just so that when we run our application
+
+71
+00:04:14,730 --> 00:04:17,570
+we can print these quote parser objects out,
+
+72
+00:04:17,570 --> 00:04:19,220
+and it may make a bit more sense.
+
+73
+00:04:20,910 --> 00:04:25,710
+So far, what we will receive is a Beautiful Soup tag
+
+74
+00:04:25,710 --> 00:04:28,650
+that is the div that contains this quote.
+
+75
+00:04:28,650 --> 00:04:32,150
+Within that div, there will only be one locator
+
+76
+00:04:32,150 --> 00:04:35,180
+for the content, one for the author, and one for the tags.
+
+77
+00:04:35,180 --> 00:04:37,000
+So we're not going to be able to get mixed up between
+
+78
+00:04:37,000 --> 00:04:40,730
+different quotes at this level okay?
+
+79
+00:04:40,730 --> 00:04:43,160
+Now, let's go over to the quotes page
+
+80
+00:04:43,160 --> 00:04:46,810
+and we can begin sort of joining the programme together
+
+81
+00:04:46,810 --> 00:04:48,640
+and it'll start to make a bit more sense.
+
+82
+00:04:48,640 --> 00:04:50,440
+I'll see you in the very next video.
+

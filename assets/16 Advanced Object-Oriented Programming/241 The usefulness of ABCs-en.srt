@@ -1,0 +1,312 @@
+1
+00:00:00,450 --> 00:00:01,620
+<v Instructor>Hi, welcome back.</v>
+
+2
+00:00:01,620 --> 00:00:04,170
+In this video, we're going to briefly talk a bit more
+
+3
+00:00:04,170 --> 00:00:07,330
+about ABCs and why it can be useful
+
+4
+00:00:07,330 --> 00:00:11,070
+to have this functionality num_legs
+
+5
+00:00:11,070 --> 00:00:13,200
+defined in another class
+
+6
+00:00:13,200 --> 00:00:16,510
+that isn't either of your child classes.
+
+7
+00:00:17,800 --> 00:00:20,340
+The main reason why you'd like this--
+
+8
+00:00:20,340 --> 00:00:21,630
+Well there are two reasons.
+
+9
+00:00:21,630 --> 00:00:24,270
+The first one is that when you read your code
+
+10
+00:00:24,270 --> 00:00:25,270
+and you see okay,
+
+11
+00:00:25,270 --> 00:00:27,900
+dog is an animal, monkey's an animal,
+
+12
+00:00:27,900 --> 00:00:31,350
+you'll know without reading all of the contents
+
+13
+00:00:31,350 --> 00:00:34,220
+that they will have implemented num_legs.
+
+14
+00:00:34,220 --> 00:00:35,053
+So you'll know that.
+
+15
+00:00:35,053 --> 00:00:36,940
+Otherwise you won't be able to use them.
+
+16
+00:00:39,100 --> 00:00:42,940
+Unless of course these are then subclassed by other things
+
+17
+00:00:42,940 --> 00:00:44,590
+which implements the method.
+
+18
+00:00:44,590 --> 00:00:46,990
+But generally you'll know that
+
+19
+00:00:46,990 --> 00:00:48,890
+they must have implemented the method
+
+20
+00:00:48,890 --> 00:00:50,940
+in order for you to be able to instantiate them,
+
+21
+00:00:50,940 --> 00:00:52,710
+create objects.
+
+22
+00:00:52,710 --> 00:00:55,940
+The other thing that's really useful is that
+
+23
+00:00:55,940 --> 00:00:57,910
+if you have a list of animals,
+
+24
+00:00:58,800 --> 00:01:01,550
+for example a dog which is Rolf
+
+25
+00:01:01,550 --> 00:01:04,580
+and a monkey which is Bob,
+
+26
+00:01:05,800 --> 00:01:06,770
+you can
+
+27
+00:01:09,030 --> 00:01:11,010
+do a.numb_legs.
+
+28
+00:01:14,785 --> 00:01:15,618
+See this?
+
+29
+00:01:16,950 --> 00:01:19,290
+This is quite a magical thing.
+
+30
+00:01:19,290 --> 00:01:21,760
+And it may not seem it just now.
+
+31
+00:01:21,760 --> 00:01:22,610
+But what you've got here
+
+32
+00:01:22,610 --> 00:01:25,730
+are two completely different objects in this list.
+
+33
+00:01:25,730 --> 00:01:28,540
+But because you know they're animals,
+
+34
+00:01:28,540 --> 00:01:31,950
+you can call a.num_legs on all of them.
+
+35
+00:01:33,820 --> 00:01:35,840
+Okay, so let's run this again.
+
+36
+00:01:35,840 --> 00:01:37,170
+Now you can see we get four and two
+
+37
+00:01:37,170 --> 00:01:38,490
+which is as you'd expect.
+
+38
+00:01:38,490 --> 00:01:41,480
+After all, all that's happening in the background is
+
+39
+00:01:41,480 --> 00:01:45,030
+you know, A is this dog called the num_legs methods.
+
+40
+00:01:45,030 --> 00:01:45,890
+You call this thing here,
+
+41
+00:01:45,890 --> 00:01:47,620
+so nothing magical is going on.
+
+42
+00:01:47,620 --> 00:01:49,270
+A is this monkey,
+
+43
+00:01:49,270 --> 00:01:52,140
+so you call the num_legs method on that.
+
+44
+00:01:52,140 --> 00:01:53,250
+Nothing magical,
+
+45
+00:01:53,250 --> 00:01:54,750
+but none the less the fact that you know
+
+46
+00:01:54,750 --> 00:01:58,560
+that these are animals means that you can do this.
+
+47
+00:01:59,870 --> 00:02:01,070
+Furthermore,
+
+48
+00:02:02,250 --> 00:02:04,290
+you can print whether
+
+49
+00:02:04,290 --> 00:02:08,070
+A is an instance of animal,
+
+50
+00:02:10,570 --> 00:02:12,220
+you should not forget the commas,
+
+51
+00:02:13,380 --> 00:02:15,770
+and you get true every time.
+
+52
+00:02:15,770 --> 00:02:19,510
+This is the same for all inheritance in Python,
+
+53
+00:02:19,510 --> 00:02:21,900
+you know, A is an instance of animal,
+
+54
+00:02:21,900 --> 00:02:25,020
+but it has also been extended by the subclass.
+
+55
+00:02:25,020 --> 00:02:27,540
+So Python says yes, this is an animal
+
+56
+00:02:27,540 --> 00:02:31,530
+in that it has all the methods and the properties
+
+57
+00:02:31,530 --> 00:02:32,800
+of the animal,
+
+58
+00:02:32,800 --> 00:02:35,100
+but it can also have methods and properties
+
+59
+00:02:35,100 --> 00:02:39,060
+of whatever it is that the class they find as well.
+
+60
+00:02:40,720 --> 00:02:42,770
+The usefulness of this is for you to say
+
+61
+00:02:42,770 --> 00:02:44,520
+okay, these are animals,
+
+62
+00:02:44,520 --> 00:02:47,780
+therefore I can call animal methods on all of them
+
+63
+00:02:47,780 --> 00:02:51,180
+and I don't care whether they are more specific,
+
+64
+00:02:51,180 --> 00:02:54,020
+whether they are dogs or monkeys or cats.
+
+65
+00:02:54,020 --> 00:02:54,853
+Because they're animals,
+
+66
+00:02:54,853 --> 00:02:56,330
+you can call the methods in them,
+
+67
+00:02:56,330 --> 00:02:59,790
+and because you define this num_legs method on the animal,
+
+68
+00:02:59,790 --> 00:03:01,380
+you know that all the subclasses
+
+69
+00:03:01,380 --> 00:03:03,270
+must have implemented that as well
+
+70
+00:03:03,270 --> 00:03:04,870
+so it's safe for you to call it.
+
+71
+00:03:07,090 --> 00:03:08,890
+Now let's go back in the next video
+
+72
+00:03:08,890 --> 00:03:11,130
+to our users and our admins
+
+73
+00:03:11,130 --> 00:03:12,460
+and make a little bit more sense
+
+74
+00:03:12,460 --> 00:03:14,510
+on where this can be useful.
+
+75
+00:03:14,510 --> 00:03:15,530
+As part of that,
+
+76
+00:03:15,530 --> 00:03:16,740
+we're also going to be talking about
+
+77
+00:03:16,740 --> 00:03:18,810
+what an interface is.
+
+78
+00:03:18,810 --> 00:03:19,760
+I'll see you there.
+

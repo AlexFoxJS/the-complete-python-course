@@ -1,0 +1,660 @@
+1
+00:00:00,000 --> 00:00:01,050
+Jos: Bienvenido de nuevo.
+
+2
+00:00:01,050 --> 00:00:05,010
+En este video estamos hablando de los Filsofos del comedor.
+
+3
+00:00:05,010 --> 00:00:08,230
+The Dining Philosophers es un problema comn
+
+4
+00:00:08,230 --> 00:00:09,370
+en informtica.
+
+5
+00:00:09,370 --> 00:00:11,810
+Es un ejemplo o una ilustracin de
+
+6
+00:00:11,810 --> 00:00:14,090
+algo muy comn en las computadoras.
+
+7
+00:00:15,890 --> 00:00:18,250
+As que aqu tenemos a cinco filsofos
+
+8
+00:00:18,250 --> 00:00:20,770
+sentados alrededor de una mesa para comer.
+
+9
+00:00:21,750 --> 00:00:25,080
+Hay una bifurcacin entre cada par de filsofos.
+
+10
+00:00:25,080 --> 00:00:27,380
+As que tenemos cinco tenedores, cinco
+
+11
+00:00:28,560 --> 00:00:32,250
+filsofos y cada filsofo tiene hambre interminable y comida interminable.
+
+12
+00:00:32,250 --> 00:00:34,240
+Entonces, digamos que hay mucha comida en
+
+13
+00:00:34,240 --> 00:00:35,830
+la mesa y estn extremadamente hambrientos.
+
+14
+00:00:35,830 --> 00:00:39,370
+Pero para comenzar a comer, un filsofo debe
+
+15
+00:00:39,370 --> 00:00:42,210
+tener dos tenedores; uno para cada mano
+
+16
+00:00:43,230 --> 00:00:45,260
+Como puede ver, no hay
+
+17
+00:00:45,260 --> 00:00:46,610
+suficientes tenedores para todos.
+
+18
+00:00:47,570 --> 00:00:50,340
+Entonces, cmo abordaran los filsofos su problema
+
+19
+00:00:50,340 --> 00:00:53,150
+sin hablar el uno con el otro?
+
+20
+00:00:53,150 --> 00:00:54,760
+Bueno, obviamente hay un
+
+21
+00:00:54,760 --> 00:00:58,380
+problema que es si cada uno de ellos
+
+22
+00:00:59,270 --> 00:01:00,520
+recoge un tenedor.
+
+23
+00:01:01,370 --> 00:01:03,560
+Si cada uno recoge su tenedor izquierdo, por
+
+24
+00:01:03,560 --> 00:01:05,210
+ejemplo, o en este caso su
+
+25
+00:01:07,660 --> 00:01:09,780
+bifurcacin correcta, entonces van a esperar, luego tomarn
+
+26
+00:01:09,780 --> 00:01:11,620
+el tenedor correcto y esperarn, y comern,
+
+27
+00:01:11,620 --> 00:01:13,010
+colocarn el tenedor derecho hacia
+
+28
+00:01:13,010 --> 00:01:14,910
+abajo. coloque el tenedor izquierdo hacia abajo
+
+29
+00:01:14,910 --> 00:01:16,060
+y luego comience nuevamente.
+
+30
+00:01:16,060 --> 00:01:19,260
+Pero si todos levantan el tenedor derecho y luego
+
+31
+00:01:20,230 --> 00:01:22,040
+esperan a que el tenedor
+
+32
+00:01:22,040 --> 00:01:24,090
+izquierdo est disponible, podran esperar
+
+33
+00:01:24,090 --> 00:01:26,120
+mucho tiempo porque cada filsofo
+
+34
+00:01:26,120 --> 00:01:28,250
+tambin est esperando que el otro
+
+35
+00:01:28,250 --> 00:01:29,440
+tenedor est disponible.
+
+36
+00:01:29,440 --> 00:01:32,090
+Ninguno de ellos suelta su tenedor, as que
+
+37
+00:01:32,090 --> 00:01:34,100
+todos terminarn muriendo de hambre esperando
+
+38
+00:01:34,100 --> 00:01:36,450
+que el otro tenedor est disponible.
+
+39
+00:01:37,750 --> 00:01:41,810
+Entonces, si la solucin implica esperar que el tenedor
+
+40
+00:01:41,810 --> 00:01:45,340
+est disponible, podran morir de hambre y no
+
+41
+00:01:45,340 --> 00:01:46,640
+queremos eso.
+
+42
+00:01:48,750 --> 00:01:51,780
+El problema es que si todos los filsofos toman
+
+43
+00:01:51,780 --> 00:01:53,720
+el tenedor al mismo tiempo, nadie
+
+44
+00:01:53,720 --> 00:01:55,600
+puede recoger el otro tenedor,
+
+45
+00:01:56,650 --> 00:01:58,450
+as que siguen esperando indefinidamente
+
+46
+00:01:58,450 --> 00:02:00,380
+y terminan muriendo de hambre.
+
+47
+00:02:00,380 --> 00:02:02,920
+De manera similar, si alguno de los filsofos
+
+48
+00:02:02,920 --> 00:02:05,130
+se las arregla para comenzar a comer,
+
+49
+00:02:05,130 --> 00:02:09,050
+de alguna manera, tomando dos tenedores, nunca dejarn de comer y los
+
+50
+00:02:10,098 --> 00:02:12,250
+otros filsofos estarn para siempre sin dos
+
+51
+00:02:12,250 --> 00:02:14,440
+tenedores y ahora tienen que compartir dos
+
+52
+00:02:14,440 --> 00:02:17,190
+tenedores entre cuatro filsofos, eso es incluso peor.
+
+53
+00:02:18,180 --> 00:02:20,580
+Lo siento, tres tenedores entre cuatro filsofos.
+
+54
+00:02:20,580 --> 00:02:23,020
+Entonces, qu puedes hacer para resolver este problema?
+
+55
+00:02:23,870 --> 00:02:25,300
+Hay muchas formas de resolver
+
+56
+00:02:25,300 --> 00:02:27,740
+el problema, que normalmente se tratan en cursos de
+
+57
+00:02:27,740 --> 00:02:30,170
+simultaneidad, en ciencias de la computacin, ya sabes, etc.
+
+58
+00:02:30,170 --> 00:02:32,490
+No voy a entrar en demasiada profundidad.
+
+59
+00:02:32,490 --> 00:02:35,080
+Pero normalmente la forma ms sencilla y ms
+
+60
+00:02:35,080 --> 00:02:37,620
+sencilla, que es cmo lo hace Python,
+
+61
+00:02:37,620 --> 00:02:40,720
+es tener un camarero en la mesa, como este.
+
+62
+00:02:41,990 --> 00:02:45,270
+Entonces, qu puede pasar ahora ?, o la forma
+
+63
+00:02:45,270 --> 00:02:48,650
+en que podramos reestructurar nuestro algoritmo es decir que un
+
+64
+00:02:48,650 --> 00:02:51,260
+filsofo puede solicitar dos tenedores al camarero
+
+65
+00:02:52,560 --> 00:02:55,560
+y el camarero se los dar si estn disponibles.
+
+66
+00:02:55,560 --> 00:02:57,180
+Y luego, cuando un filsofo
+
+67
+00:02:57,180 --> 00:03:00,810
+tiene dos tenedores, van a comer durante un tiempo fijo y despus
+
+68
+00:03:00,810 --> 00:03:02,210
+de que van a devolverle
+
+69
+00:03:02,210 --> 00:03:04,490
+las bifurcaciones al camarero y el camarero
+
+70
+00:03:04,490 --> 00:03:06,750
+puede drselo a otros filsofos y dems.
+
+71
+00:03:06,750 --> 00:03:08,840
+As que algo como esto
+
+72
+00:03:08,840 --> 00:03:11,560
+podra suceder, un filsofo podra pedir dos
+
+73
+00:03:12,440 --> 00:03:15,150
+tenedores y luego el camarero estar como,
+
+74
+00:03:15,150 --> 00:03:16,500
+"seguro", tomar dos
+
+75
+00:03:17,560 --> 00:03:20,380
+tenedores sobre la mesa y drselos al filsofo.
+
+76
+00:03:20,380 --> 00:03:22,550
+Ahora este filsofo tiene dos tenedores y
+
+77
+00:03:22,550 --> 00:03:25,300
+todos los dems filsofos no estn haciendo nada.
+
+78
+00:03:25,300 --> 00:03:27,940
+Luego, pasa el tiempo, tal vez,
+
+79
+00:03:27,940 --> 00:03:30,470
+10 minutos, y luego el
+
+80
+00:03:30,470 --> 00:03:32,920
+camarero se llevar las horquillas.
+
+81
+00:03:32,920 --> 00:03:34,610
+"Devulvemelos", y tomar las
+
+82
+00:03:34,610 --> 00:03:37,150
+horquillas y las pondr sobre la mesa.
+
+83
+00:03:39,340 --> 00:03:42,600
+Ahora un filsofo no ha muerto de hambre, lo cual es bueno.
+
+84
+00:03:42,600 --> 00:03:44,930
+Los otros cuatro, sin embargo, no tuvieron tanta suerte.
+
+85
+00:03:45,890 --> 00:03:48,090
+En cambio, lo que podra suceder
+
+86
+00:03:48,090 --> 00:03:51,480
+es algo como esto: podramos conseguir que todos los
+
+87
+00:03:51,480 --> 00:03:55,140
+filsofos pidan sus tenedores, ms o menos al mismo tiempo.
+
+88
+00:03:55,140 --> 00:03:59,350
+Recuerde, nada puede suceder realmente simultneamente.
+
+89
+00:03:59,350 --> 00:04:01,040
+Al menos, no en Python.
+
+90
+00:04:01,040 --> 00:04:01,873
+Bueno?
+
+91
+00:04:01,873 --> 00:04:04,130
+Debido a que hay una cantidad limitada de
+
+92
+00:04:04,130 --> 00:04:05,440
+horquillas, en Python, digamos.
+
+93
+00:04:06,650 --> 00:04:10,120
+Entonces, todas estas personas piden sus tenedores
+
+94
+00:04:10,120 --> 00:04:11,710
+ms o menos
+
+95
+00:04:11,710 --> 00:04:16,030
+al mismo tiempo, pero hay alguien que pregunta primero.
+
+96
+00:04:16,030 --> 00:04:18,050
+Entonces esa persona, digamos nmero uno,
+
+97
+00:04:19,210 --> 00:04:21,220
+es la primera persona en esa
+
+98
+00:04:21,220 --> 00:04:23,520
+lista que ve en la parte inferior derecha.
+
+99
+00:04:23,520 --> 00:04:25,640
+La siguiente persona en pedir tenedores fue el nmero dos,
+
+100
+00:04:25,640 --> 00:04:27,210
+luego tres, luego cuatro y luego cinco.
+
+101
+00:04:27,210 --> 00:04:29,910
+Entonces, digamos que lo piden en orden.
+
+102
+00:04:29,910 --> 00:04:32,170
+Entonces, qu sucede entonces es que el mesero
+
+103
+00:04:32,170 --> 00:04:33,670
+primero consigue dos tenedores y
+
+104
+00:04:34,750 --> 00:04:35,890
+se los entrega al
+
+105
+00:04:35,890 --> 00:04:39,550
+nmero uno, el nmero uno ahora est en una lista diferente, digamos.
+
+106
+00:04:40,400 --> 00:04:42,210
+Ahora est en una zona de espera diferente.
+
+107
+00:04:42,210 --> 00:04:44,520
+En una zona de espera para comer, digamos.
+
+108
+00:04:45,450 --> 00:04:47,760
+Entonces todava tenemos horquillas disponibles,
+
+109
+00:04:47,760 --> 00:04:50,540
+por lo que el camarero tomara
+
+110
+00:04:50,540 --> 00:04:55,540
+dos tenedores y eliminara dos de la lista de espera por horquillas.
+
+111
+00:04:55,810 --> 00:04:57,820
+Dles los tenedores y pngalos
+
+112
+00:04:57,820 --> 00:05:00,370
+en la lista de, por ejemplo, comer.
+
+113
+00:05:00,370 --> 00:05:03,190
+As que ahora tenemos uno y dos estn comiendo.
+
+114
+00:05:03,190 --> 00:05:05,800
+Tres, cuatro y cinco estn esperando.
+
+115
+00:05:06,990 --> 00:05:10,120
+Luego, el nmero uno termina de comer despus de un tiempo.
+
+116
+00:05:10,120 --> 00:05:12,280
+Entonces el camarero se lleva las tenedores.
+
+117
+00:05:12,280 --> 00:05:15,080
+El nmero uno desaparece de la lista de
+
+118
+00:05:15,080 --> 00:05:16,580
+comidas, los tenedores vuelven a
+
+119
+00:05:16,580 --> 00:05:20,590
+la mesa, el nmero uno va ahora al final de la cola.
+
+120
+00:05:20,590 --> 00:05:22,780
+Tres, cuatro, cinco y luego uno.
+
+121
+00:05:22,780 --> 00:05:25,770
+De manera similar, despus de un tiempo el nmero dos termina
+
+122
+00:05:25,770 --> 00:05:28,650
+de comer, desaparece de all y vuelve a la otra lista.
+
+123
+00:05:28,650 --> 00:05:30,620
+Ahora, si tuviramos que repetir este proceso,
+
+124
+00:05:30,620 --> 00:05:33,570
+la siguiente persona en obtener los tenedores sera el nmero
+
+125
+00:05:33,570 --> 00:05:36,010
+tres y luego el nmero cuatro, luego el nmero
+
+126
+00:05:36,010 --> 00:05:37,780
+cinco, y luego comenzaremos de nuevo.
+
+127
+00:05:37,780 --> 00:05:41,810
+Entonces, como pueden ver, esto permite a cada filsofo comer.
+
+128
+00:05:41,810 --> 00:05:45,700
+No todos a la vez, pero todos finalmente comen.
+
+129
+00:05:48,280 --> 00:05:49,590
+Entonces, lo que est sucediendo
+
+130
+00:05:49,590 --> 00:05:51,900
+aqu es que tenemos una cantidad limitada de recursos.
+
+131
+00:05:51,900 --> 00:05:53,740
+En este caso, se bifurca.
+
+132
+00:05:53,740 --> 00:05:56,090
+Y con estos recursos podemos, como
+
+133
+00:05:56,090 --> 00:05:58,990
+mximo, ejecutar dos cosas al mismo tiempo, dos
+
+134
+00:06:00,070 --> 00:06:03,540
+filsofos, porque dos filsofos toman cuatro tenedores, de modo
+
+135
+00:06:03,540 --> 00:06:06,270
+que solo queda un tenedor y ese
+
+136
+00:06:06,270 --> 00:06:09,240
+filsofo no puede comer con un solo tenedor.
+
+137
+00:06:09,240 --> 00:06:12,160
+Por lo tanto, no importa cunto tiempo y tanto pensemos, la simple
+
+138
+00:06:13,800 --> 00:06:15,570
+verdad es que no hay manera de
+
+139
+00:06:15,570 --> 00:06:18,130
+que podamos tener a tres filsofos comiendo a la vez.
+
+140
+00:06:19,688 --> 00:06:21,810
+Pero lo que podemos hacer es engaar a
+
+141
+00:06:21,810 --> 00:06:25,110
+la mente para que piense que todos estn comiendo al mismo tiempo.
+
+142
+00:06:25,110 --> 00:06:28,300
+Si en lugar de darles a cada uno
+
+143
+00:06:28,300 --> 00:06:30,070
+de ellos cinco minutos antes
+
+144
+00:06:30,070 --> 00:06:33,010
+de soltar sus tenedores, les damos, digamos, cinco
+
+145
+00:06:33,010 --> 00:06:35,450
+segundos o 50 milisegundos, alguien que
+
+146
+00:06:35,450 --> 00:06:37,590
+mira puede no ser capaz de
+
+147
+00:06:37,590 --> 00:06:40,660
+decir que no estn comiendo al mismo tiempo.
+
+148
+00:06:40,660 --> 00:06:41,660
+Muy parecido a una pelcula.
+
+149
+00:06:41,660 --> 00:06:44,330
+Solo un conjunto de imgenes fijas, una tras otra.
+
+150
+00:06:44,330 --> 00:06:47,400
+Si el paso de las horquillas ocurre con la suficiente rapidez,
+
+151
+00:06:47,400 --> 00:06:49,540
+no podremos notar que no est sucediendo todo
+
+152
+00:06:49,540 --> 00:06:50,540
+de una vez.
+
+153
+00:06:51,490 --> 00:06:54,670
+Entonces, si cada filsofo come durante un milisegundo,
+
+154
+00:06:54,670 --> 00:06:57,220
+un observador considerar que todos estn comiendo
+
+155
+00:06:57,220 --> 00:07:00,730
+al mismo tiempo, mientras que realmente no lo estn.
+
+156
+00:07:01,620 --> 00:07:05,850
+As que recuerda, incluso si no podemos verlo, eso no significa
+
+157
+00:07:05,850 --> 00:07:09,090
+que est sucediendo todo una vez, de acuerdo?
+
+158
+00:07:09,090 --> 00:07:11,480
+Y en Python esto es particularmente importante
+
+159
+00:07:11,480 --> 00:07:15,030
+porque Python no puede ejecutar varias cosas al mismo tiempo.
+
+160
+00:07:15,030 --> 00:07:18,110
+Vamos a investigar esto ms pronto.
+
+161
+00:07:19,520 --> 00:07:22,970
+Entonces, ahora que conocemos el problema de los Filsofos
+
+162
+00:07:22,970 --> 00:07:25,940
+del comedor, estamos listos para seguir adelante y
+
+163
+00:07:25,940 --> 00:07:29,380
+comenzar a ver cmo suceden las cosas en Python.
+
+164
+00:07:29,380 --> 00:07:30,630
+Dicho esto, te
+
+165
+00:07:30,630 --> 00:07:32,330
+ver en el siguiente video.
+

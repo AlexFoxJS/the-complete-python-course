@@ -1,0 +1,800 @@
+1
+00:00:00,380 --> 00:00:01,750
+Jose: Ol e bem vindo de volta.
+
+2
+00:00:01,750 --> 00:00:05,030
+Neste vdeo estamos falando de valores de retorno.
+
+3
+00:00:05,030 --> 00:00:07,730
+Ento deixe-me falar sobre isso que funes podem fazer,
+
+4
+00:00:07,730 --> 00:00:09,450
+o que  extremamente til.
+
+5
+00:00:10,490 --> 00:00:13,820
+Retornar valores pode ser um pouco confuso no comeo.
+
+6
+00:00:13,820 --> 00:00:15,660
+Ento, vamos codificar juntos e depois brincar
+
+7
+00:00:15,660 --> 00:00:16,840
+com seu cdigo para
+
+8
+00:00:16,840 --> 00:00:18,560
+ver o que suas alteraes fazem.
+
+9
+00:00:18,560 --> 00:00:20,180
+Isso vai ajudar voc a entender melhor
+
+10
+00:00:20,180 --> 00:00:21,670
+as coisas  medida que avanamos.
+
+11
+00:00:21,670 --> 00:00:25,860
+Vamos desenvolver duas funes, que calculam cinco mais cinco.
+
+12
+00:00:25,860 --> 00:00:27,450
+Ns vamos comear simples.
+
+13
+00:00:27,450 --> 00:00:29,410
+Uma dessas funes retornar o valor.
+
+14
+00:00:29,410 --> 00:00:31,410
+O outro vai imprimir o valor.
+
+15
+00:00:31,410 --> 00:00:34,010
+Ok, ento eu vou definir uma funo chamada
+
+16
+00:00:34,890 --> 00:00:37,580
+i_return e isso vai retornar cinco mais cinco.
+
+17
+00:00:39,070 --> 00:00:40,070
+Ok e ento
+
+18
+00:00:40,070 --> 00:00:41,620
+eu vou definir outra funo
+
+19
+00:00:43,270 --> 00:00:45,680
+chamada i_print e que vai imprimir cinco mais cinco.
+
+20
+00:00:46,640 --> 00:00:47,473
+OK?
+
+21
+00:00:49,200 --> 00:00:52,120
+Agora, algumas coisas.
+
+22
+00:00:52,120 --> 00:00:56,480
+Se voc chamar i_return e executar este cdigo,
+
+23
+00:00:58,350 --> 00:01:00,910
+ver que nada sai.
+
+24
+00:01:00,910 --> 00:01:03,040
+E se voc chamar i_print e chamar esse cdigo, voc
+
+25
+00:01:03,040 --> 00:01:04,170
+sabe o que vai acontecer.
+
+26
+00:01:04,170 --> 00:01:07,010
+Voc sabe que os tempos 10 vo sair.
+
+27
+00:01:07,010 --> 00:01:08,450
+Voc tem o seu 10 l.
+
+28
+00:01:08,450 --> 00:01:12,130
+Ento, a impresso est se comportando como voc esperaria.
+
+29
+00:01:12,130 --> 00:01:14,820
+Quando voc liga, imprime as coisas.
+
+30
+00:01:14,820 --> 00:01:16,720
+Ento, o que o retorno faz?
+
+31
+00:01:16,720 --> 00:01:19,950
+Obviamente, no est imprimindo nada para o nosso console aqui.
+
+32
+00:01:19,950 --> 00:01:22,320
+Para nossa interface de texto.
+
+33
+00:01:23,270 --> 00:01:24,880
+Mas est fazendo alguma coisa.
+
+34
+00:01:24,880 --> 00:01:27,080
+Ento, vamos continuar e criar duas variveis.
+
+35
+00:01:27,990 --> 00:01:29,610
+A primeira varivel que vou chamar
+
+36
+00:01:29,610 --> 00:01:31,240
+de resultado e vai ser i_return.
+
+37
+00:01:32,950 --> 00:01:36,780
+Observe como aqui estamos chamando a funo i_return
+
+38
+00:01:36,780 --> 00:01:39,630
+e qualquer valor que nos der
+
+39
+00:01:39,630 --> 00:01:42,310
+vai ser atribudo ao resultado.
+
+40
+00:01:42,310 --> 00:01:44,960
+E da mesma forma, vou criar outra
+
+41
+00:01:44,960 --> 00:01:47,260
+varivel e vou cham-la de i_print.
+
+42
+00:01:47,260 --> 00:01:49,310
+Aqui estamos chamando a funo i_print, qualquer
+
+43
+00:01:49,310 --> 00:01:50,970
+que seja o valor que nos
+
+44
+00:01:50,970 --> 00:01:52,510
+der, vamos atribuir a outra.
+
+45
+00:02:03,230 --> 00:02:05,230
+Ento, o que voc acha que vamos ver?
+
+46
+00:02:06,100 --> 00:02:07,270
+E voc pode responder a
+
+47
+00:02:07,270 --> 00:02:08,880
+essa pergunta apenas escrevendo este cdigo e executando-o.
+
+48
+00:02:08,880 --> 00:02:10,930
+Essa  a melhor maneira de fazer isso.
+
+49
+00:02:14,650 --> 00:02:18,140
+O que vamos ver , o resultado  10.
+
+50
+00:02:18,140 --> 00:02:19,680
+Outro no  nenhum.
+
+51
+00:02:20,559 --> 00:02:21,970
+Aqui, olhe para isto.
+
+52
+00:02:23,930 --> 00:02:26,770
+O resultado  10, isso  bom.
+
+53
+00:02:26,770 --> 00:02:28,890
+E outro no  nenhum.
+
+54
+00:02:28,890 --> 00:02:29,900
+O que isso significa?
+
+55
+00:02:31,170 --> 00:02:35,630
+Bem, retornar um valor faz exatamente isso.
+
+56
+00:02:35,630 --> 00:02:38,390
+D um valor de volta ao chamador.
+
+57
+00:02:38,390 --> 00:02:40,480
+Ento, aqui ns chamamos a funo,
+
+58
+00:02:40,480 --> 00:02:41,640
+ela percorre a
+
+59
+00:02:41,640 --> 00:02:43,950
+funo, neste caso, h apenas uma linha.
+
+60
+00:02:43,950 --> 00:02:46,820
+E ento, qualquer valor retornado, agora
+
+61
+00:02:46,820 --> 00:02:48,640
+substitui a funo.
+
+62
+00:02:48,640 --> 00:02:51,300
+Ento agora isso  10.
+
+63
+00:02:51,300 --> 00:02:52,950
+Esta funo  agora 10.
+
+64
+00:02:53,800 --> 00:02:55,240
+Ento o resultado  igual
+
+65
+00:02:56,570 --> 00:02:58,730
+a 10, i_print, no entanto, no retorna nada.
+
+66
+00:02:59,920 --> 00:03:01,420
+Apenas imprime cinco mais
+
+67
+00:03:01,420 --> 00:03:03,410
+cinco, que vimos aqui  direita.
+
+68
+00:03:04,370 --> 00:03:09,150
+Ento, ns imprimimos 10, mas ns realmente no retornamos nada.
+
+69
+00:03:09,150 --> 00:03:12,640
+Ento i_print no retorna nenhum.
+
+70
+00:03:12,640 --> 00:03:15,410
+O padro para qualquer funo fazer
+
+71
+00:03:15,410 --> 00:03:17,800
+no Python  retornar nenhum.
+
+72
+00:03:17,800 --> 00:03:19,830
+E nenhum  um valor especial em
+
+73
+00:03:19,830 --> 00:03:21,390
+Python,  tambm uma palavra-chave.
+
+74
+00:03:21,390 --> 00:03:24,210
+Isso significa apenas nada ou vazio ou vazio.
+
+75
+00:03:24,210 --> 00:03:26,550
+Voc sabe, nada foi retornado.
+
+76
+00:03:26,550 --> 00:03:28,200
+No devolver algo.
+
+77
+00:03:28,200 --> 00:03:30,640
+Desculpe, meu mal, esquea o fracasso.
+
+78
+00:03:30,640 --> 00:03:33,180
+Nenhum no  um fracasso.
+
+79
+00:03:33,180 --> 00:03:35,480
+Significa apenas vazio.
+
+80
+00:03:35,480 --> 00:03:37,960
+ um valor perfeitamente bom.
+
+81
+00:03:42,640 --> 00:03:45,330
+Outro no  nenhum, o que significa apenas que
+
+82
+00:03:45,330 --> 00:03:47,030
+a funo no retornou nada.
+
+83
+00:03:47,030 --> 00:03:49,320
+E tudo bem.
+
+84
+00:03:49,320 --> 00:03:52,190
+Fazer isso  totalmente bom para no retornar nada,
+
+85
+00:03:52,190 --> 00:03:55,110
+se voc no quer que sua funo retorne algo.
+
+86
+00:03:56,130 --> 00:03:58,750
+Se voc quer que sua funo
+
+87
+00:03:58,750 --> 00:04:02,140
+imprima algo, ento voc pode simplesmente chamar.
+
+88
+00:04:02,140 --> 00:04:04,780
+Voc no precisa atribu-lo a uma varivel.
+
+89
+00:04:04,780 --> 00:04:06,770
+Porque isso seria uma varivel desperdiada, uma
+
+90
+00:04:06,770 --> 00:04:08,940
+vez que no est realmente retornando nada.
+
+91
+00:04:08,940 --> 00:04:10,690
+Mas voc ainda pode chamar
+
+92
+00:04:11,640 --> 00:04:13,840
+a funo e imprimir seu valor.
+
+93
+00:04:17,350 --> 00:04:20,002
+Vamos voltar para l.
+
+94
+00:04:20,002 --> 00:04:22,580
+Agora, vamos definir outra funo
+
+95
+00:04:23,840 --> 00:04:27,640
+e usar uma varivel e depois retorn-la.
+
+96
+00:04:33,475 --> 00:04:36,770
+Ento temos mais cinco e cinco, so 10.
+
+97
+00:04:36,770 --> 00:04:37,603
+Eu no sei por que
+
+98
+00:04:37,603 --> 00:04:39,560
+estou dizendo isso, tenho certeza que voc pode adicionar at agora.
+
+99
+00:04:39,560 --> 00:04:41,450
+Especialmente cinco mais cinco.
+
+100
+00:04:41,450 --> 00:04:43,447
+Ento agora vamos imprimir cinco mais cinco.
+
+101
+00:04:43,447 --> 00:04:46,670
+Ns vamos imprimir 10 e ns vamos retornar 10.
+
+102
+00:04:47,790 --> 00:04:50,160
+Agora, essa funo faz as duas coisas.
+
+103
+00:04:51,640 --> 00:04:53,920
+O resultado so cinco e podemos, em
+
+104
+00:04:53,920 --> 00:04:56,260
+um segundo, imprimir o resultado, se quisssemos.
+
+105
+00:04:56,260 --> 00:04:59,130
+Ento agora vamos ver 10 impressas algumas vezes.
+
+106
+00:05:00,060 --> 00:05:01,910
+Ns vemos 10 e depois
+
+107
+00:05:01,910 --> 00:05:05,070
+vemos outros 10 porque ns o imprimimos aqui, depois
+
+108
+00:05:05,070 --> 00:05:07,020
+retornamos, depois voltamos para c.
+
+109
+00:05:07,020 --> 00:05:10,150
+Resultado  agora 10 e ns imprimimos isto.
+
+110
+00:05:10,150 --> 00:05:10,983
+Muito legal.
+
+111
+00:05:12,020 --> 00:05:14,838
+Assim, muitos alunos esto inicialmente bastante
+
+112
+00:05:14,838 --> 00:05:18,520
+confusos porque imprimir um valor diz ao usurio.
+
+113
+00:05:18,520 --> 00:05:20,590
+Ele mostra em uma interface de texto.
+
+114
+00:05:21,530 --> 00:05:24,210
+Mas a funo realmente retorna nenhum.
+
+115
+00:05:24,210 --> 00:05:26,420
+Todas as funes do Python retornam nenhuma, a
+
+116
+00:05:26,420 --> 00:05:28,880
+menos que voc pea que faa o contrrio.
+
+117
+00:05:30,160 --> 00:05:31,170
+Ento, quando voltamos, a
+
+118
+00:05:31,170 --> 00:05:33,780
+funo envia de volta o valor para o chamador.
+
+119
+00:05:34,640 --> 00:05:36,210
+OK?
+
+120
+00:05:36,210 --> 00:05:37,810
+Ento, coisa importante: quando voc
+
+121
+00:05:38,830 --> 00:05:42,230
+alcana um retorno dentro de uma funo, esse  o
+
+122
+00:05:42,230 --> 00:05:43,930
+fim da funo, ok?
+
+123
+00:05:43,930 --> 00:05:46,430
+A funo pra de funcionar se
+
+124
+00:05:46,430 --> 00:05:50,490
+voc tiver um retorno e depois imprimir algo aqui, ol.
+
+125
+00:05:50,490 --> 00:05:51,780
+Isso no vai funcionar.
+
+126
+00:05:53,630 --> 00:05:56,740
+Voc pode ver que o ol nunca  impresso aqui.
+
+127
+00:05:56,740 --> 00:06:01,460
+Porque a funo terminou antes de atingir o ol.
+
+128
+00:06:01,460 --> 00:06:04,590
+Assim que voc retorna, esse controle  dado de
+
+129
+00:06:04,590 --> 00:06:06,850
+volta  parte principal do programa.
+
+130
+00:06:06,850 --> 00:06:10,590
+Os 10 agora esto substituindo os cinco, e o resultado agora 
+
+131
+00:06:10,590 --> 00:06:12,340
+10, e ento continuamos imprimindo aqui.
+
+132
+00:06:13,670 --> 00:06:14,503
+OK?
+
+133
+00:06:16,560 --> 00:06:19,400
+Alm disso, a varivel de adio
+
+134
+00:06:19,400 --> 00:06:24,400
+que foi criada dentro dessa funo no  mais vlida
+
+135
+00:06:24,770 --> 00:06:27,010
+aps a funo ter retornado.
+
+136
+00:06:28,010 --> 00:06:30,100
+Ento, se imprimirmos aqui, veremos
+
+137
+00:06:31,810 --> 00:06:33,660
+que recebemos um erro, porque
+
+138
+00:06:34,570 --> 00:06:36,070
+a varivel de adio
+
+139
+00:06:36,070 --> 00:06:37,990
+foi criada dentro da funo.
+
+140
+00:06:37,990 --> 00:06:40,200
+No vive fora da funo.
+
+141
+00:06:40,200 --> 00:06:41,820
+Assim que a funo
+
+142
+00:06:41,820 --> 00:06:45,000
+termina, essa varivel  devolvida ao Python e
+
+143
+00:06:45,000 --> 00:06:47,920
+ reciclada e devolvida ao computador em
+
+144
+00:06:47,920 --> 00:06:49,000
+algum momento.
+
+145
+00:06:49,000 --> 00:06:51,360
+E no  mais vlido aqui.
+
+146
+00:06:51,360 --> 00:06:53,370
+Essa  uma parte importante do Python,
+
+147
+00:06:53,370 --> 00:06:54,690
+uma parte importante da programao.
+
+148
+00:06:54,690 --> 00:06:56,350
+E  chamado de escopo.
+
+149
+00:06:56,350 --> 00:06:58,400
+Esse  o conceito de escopo.
+
+150
+00:06:58,400 --> 00:07:01,390
+E esta varivel  dito ter um escopo de funo.
+
+151
+00:07:01,390 --> 00:07:03,410
+S est vivo dentro desta funo.
+
+152
+00:07:07,300 --> 00:07:08,770
+Essa  uma distino
+
+153
+00:07:08,770 --> 00:07:12,760
+importante entre retornar a adio de variveis, que no 
+
+154
+00:07:12,760 --> 00:07:14,010
+o que fazemos.
+
+155
+00:07:14,970 --> 00:07:17,220
+O que fazemos  retornar o valor da varivel.
+
+156
+00:07:18,740 --> 00:07:20,080
+Essa  uma distino importante.
+
+157
+00:07:20,080 --> 00:07:25,080
+Essa varivel  apenas um nome para esses cinco mais cinco.
+
+158
+00:07:26,160 --> 00:07:30,060
+Quando voltamos, estamos dizendo: "Ok, aqui vai voc, 10. "Ns no dizemos" Aqui voc
+
+159
+00:07:30,060 --> 00:07:32,220
+vai, alm disso. "Adio
+
+160
+00:07:32,220 --> 00:07:34,830
+ apenas um nome.
+
+161
+00:07:34,830 --> 00:07:38,020
+Ento, retornamos 10 e a adio se perde.
+
+162
+00:07:38,020 --> 00:07:39,290
+Agora isso  10.
+
+163
+00:07:39,290 --> 00:07:41,400
+Isto no  adio, isto  10.
+
+164
+00:07:41,400 --> 00:07:44,360
+O resultado  agora 10.
+
+165
+00:07:44,360 --> 00:07:46,640
+Isso  importante, ele se tornar cada vez mais importante
+
+166
+00:07:46,640 --> 00:07:49,410
+ medida que voc aprende mais sobre python e como voc se desenvolve.
+
+167
+00:07:49,410 --> 00:07:52,650
+Estou realmente tentando estabelecer fundaes adequadas para voc.
+
+168
+00:07:52,650 --> 00:07:54,870
+Ao contrrio de mentir para voc e dizer: "Ei, sim,
+
+169
+00:07:54,870 --> 00:07:57,920
+basta retornar a varivel, qualquer que seja. "O fato de
+
+170
+00:07:57,920 --> 00:07:59,010
+retornarmos o
+
+171
+00:07:59,010 --> 00:08:00,920
+valor da varivel  importante.
+
+172
+00:08:02,150 --> 00:08:04,700
+Ento, porque uma varivel foi criada dentro da
+
+173
+00:08:04,700 --> 00:08:06,480
+funo, ela no existe fora dela.
+
+174
+00:08:07,860 --> 00:08:12,500
+E este  o caso de muitos blocos.
+
+175
+00:08:12,500 --> 00:08:15,240
+E lembre-se que o bloco  o que est por baixo do clon.
+
+176
+00:08:15,240 --> 00:08:17,135
+Ns temos um bloco aqui.
+
+177
+00:08:17,135 --> 00:08:21,530
+Em alguns blocos, voc ver que a varivel permanece viva aps
+
+178
+00:08:21,530 --> 00:08:23,290
+o final do bloco,
+
+179
+00:08:23,290 --> 00:08:27,060
+mas  uma m idia usar uma varivel fora
+
+180
+00:08:27,060 --> 00:08:29,540
+do bloco em que foi declarada.
+
+181
+00:08:29,540 --> 00:08:32,980
+Ok, geralmente tentando manter suas variveis apenas
+
+182
+00:08:32,980 --> 00:08:36,480
+usadas e definidas dentro do mesmo bloco.
+
+183
+00:08:36,480 --> 00:08:39,580
+A menos que o bloco seja um bloco interno.
+
+184
+00:08:39,580 --> 00:08:42,180
+Ento, se voc tiver uma declarao if
+
+185
+00:08:43,580 --> 00:08:46,540
+aqui, voc pode usar a adio aqui, tudo bem.
+
+186
+00:08:46,540 --> 00:08:49,470
+Porque este bloco est dentro do bloco
+
+187
+00:08:49,470 --> 00:08:51,620
+em que a varivel foi definida.
+
+188
+00:08:51,620 --> 00:08:54,790
+Ok, de qualquer forma, h uma razo pela qual estou dizendo isso.
+
+189
+00:08:54,790 --> 00:08:57,160
+Como voc vai descobrir muito em breve.
+
+190
+00:08:58,350 --> 00:08:59,440
+Mas  isso para este vdeo.
+
+191
+00:08:59,440 --> 00:09:02,088
+Eu no quero mais te confundir.
+
+192
+00:09:02,088 --> 00:09:05,780
+O que aprendemos foram valores de retorno de funes e
+
+193
+00:09:05,780 --> 00:09:08,010
+como impresso e retorno so diferentes.
+
+194
+00:09:08,010 --> 00:09:10,240
+E como o retorno nos permite,
+
+195
+00:09:10,240 --> 00:09:12,110
+ento, essencialmente substituir a funo
+
+196
+00:09:12,110 --> 00:09:14,480
+pelo valor que foi retornado.
+
+197
+00:09:14,480 --> 00:09:16,650
+E ento podemos fazer coisas como atribu-las
+
+198
+00:09:16,650 --> 00:09:18,160
+a variveis e coisas assim.
+
+199
+00:09:18,160 --> 00:09:19,430
+Ento  isso para este
+
+200
+00:09:19,430 --> 00:09:21,060
+vdeo, e eu vejo voc no prximo.
+

@@ -1,0 +1,612 @@
+1
+00:00:00,120 --> 00:00:01,390
+Jos: Hola, bienvenido de nuevo.
+
+2
+00:00:01,390 --> 00:00:05,340
+En este video, vamos a mostrar todas las pelculas o permitir
+
+3
+00:00:05,340 --> 00:00:06,920
+que el usuario vea
+
+4
+00:00:06,920 --> 00:00:08,560
+las pelculas que ya ingresamos.
+
+5
+00:00:08,560 --> 00:00:11,120
+En el ltimo video, agregamos la funcionalidad para
+
+6
+00:00:11,120 --> 00:00:13,590
+permitir a los usuarios agregar nuevas pelculas,
+
+7
+00:00:13,590 --> 00:00:15,530
+as que vamos a verificar esa.
+
+8
+00:00:15,530 --> 00:00:17,270
+Entonces, vamos a abordar este
+
+9
+00:00:17,270 --> 00:00:19,090
+aqu, mostrar todas sus pelculas.
+
+10
+00:00:20,500 --> 00:00:22,070
+Entonces, tenemos nuestro men, en
+
+11
+00:00:22,070 --> 00:00:24,470
+el cual, mientras el usuario no escriba
+
+12
+00:00:24,470 --> 00:00:26,340
+Q, vamos a ejecutar estas sentencias
+
+13
+00:00:26,340 --> 00:00:27,610
+if, y si escriben
+
+14
+00:00:27,610 --> 00:00:29,960
+L, vamos a ejecutar esta funcin show_movies.
+
+15
+00:00:29,960 --> 00:00:32,690
+Eso probablemente debera ir a travs de
+
+16
+00:00:32,690 --> 00:00:34,850
+cada diccionario de pelculas en nuestra
+
+17
+00:00:34,850 --> 00:00:36,710
+lista, e imprimirlo muy bien.
+
+18
+00:00:36,710 --> 00:00:39,120
+Entonces, vamos a implementar eso.
+
+19
+00:00:39,120 --> 00:00:42,060
+Ahora, la funcin del men, la primera funcin que
+
+20
+00:00:42,060 --> 00:00:44,170
+utiliz, era la funcin add_movie, por
+
+21
+00:00:44,170 --> 00:00:47,180
+lo tanto, eso se define directamente debajo de ella.
+
+22
+00:00:47,180 --> 00:00:50,260
+La siguiente funcin que utiliza, es la funcin
+
+23
+00:00:50,260 --> 00:00:54,120
+show_movies, entonces, eso debera ir directamente debajo de add_movie.
+
+24
+00:00:54,120 --> 00:00:56,040
+Como puede ver, vamos a definir
+
+25
+00:00:56,040 --> 00:00:58,640
+las funciones en el orden en que se usan,
+
+26
+00:00:58,640 --> 00:01:01,050
+y esto me parece excelente para la legibilidad.
+
+27
+00:01:02,700 --> 00:01:03,620
+Entonces,
+
+28
+00:01:03,620 --> 00:01:06,330
+hagamos eso, show_movies, as.
+
+29
+00:01:07,920 --> 00:01:09,030
+Entonces, qu queremos
+
+30
+00:01:09,030 --> 00:01:11,640
+hacer para mostrar algunos detalles de cada pelcula?
+
+31
+00:01:11,640 --> 00:01:15,230
+Bien, vamos a tener que repasar cada pelcula en nuestra
+
+32
+00:01:15,230 --> 00:01:17,610
+lista, e imprimir sus detalles muy bien.
+
+33
+00:01:17,610 --> 00:01:18,680
+Estoy seguro de que
+
+34
+00:01:18,680 --> 00:01:20,610
+puedes hacerlo, as que si an no lo
+
+35
+00:01:20,610 --> 00:01:22,260
+has hecho, pausa el video y prubalo.
+
+36
+00:01:25,800 --> 00:01:29,930
+De acuerdo, ahora para pelculas en pelculas,
+
+37
+00:01:29,930 --> 00:01:32,520
+vamos a imprimir algunas cosas.
+
+38
+00:01:32,520 --> 00:01:33,570
+Por lo tanto, vamos
+
+39
+00:01:36,290 --> 00:01:39,760
+a imprimir el nombre va a ser el nombre de la pelcula.
+
+40
+00:01:42,250 --> 00:01:45,590
+Tenga en cuenta que estoy usando comillas dobles
+
+41
+00:01:45,590 --> 00:01:47,210
+aqu, porque tenemos una
+
+42
+00:01:47,210 --> 00:01:51,560
+comilla simple dentro de este uso del diccionario, este bastidor silencioso
+
+43
+00:01:51,560 --> 00:01:52,800
+en notacin, as
+
+44
+00:01:52,800 --> 00:01:56,110
+que tendremos que usar comillas dobles en el exterior.
+
+45
+00:02:13,732 --> 00:02:14,680
+Ah lo tenemos.
+
+46
+00:02:14,680 --> 00:02:18,340
+Ahora, estamos imprimiendo el nombre, el director y el ao de
+
+47
+00:02:18,340 --> 00:02:20,530
+lanzamiento de cada una de nuestras pelculas.
+
+48
+00:02:20,530 --> 00:02:23,740
+Eso significa que ya no necesitamos la lnea 67,
+
+49
+00:02:23,740 --> 00:02:25,420
+imprimir pelculas, porque podremos verificar
+
+50
+00:02:25,420 --> 00:02:26,920
+que las pelculas que
+
+51
+00:02:26,920 --> 00:02:29,410
+estamos agregando estn all directamente en nuestro men.
+
+52
+00:02:30,620 --> 00:02:33,030
+Ahora, vamos a escribir, haga clic en
+
+53
+00:02:33,030 --> 00:02:34,620
+nuestra aplicacin, y vuelva a
+
+54
+00:02:34,620 --> 00:02:36,870
+ejecutarla, y ahora deberamos poder agregar una
+
+55
+00:02:37,870 --> 00:02:40,040
+nueva pelcula, y esa ser The Matrix.
+
+56
+00:02:40,040 --> 00:02:44,060
+Los directores son, esos son los aos 1994, y ahora
+
+57
+00:02:44,060 --> 00:02:48,010
+deberamos ser capaces de escribir L, para ver nuestras pelculas.
+
+58
+00:02:48,010 --> 00:02:50,360
+Como puede ver, tenemos el nombre es The
+
+59
+00:02:50,360 --> 00:02:53,940
+Matrix, el director es Wachowskis, y el ao de lanzamiento es 1994.
+
+60
+00:02:54,840 --> 00:02:56,780
+Luego tecleamos Q para salir.
+
+61
+00:02:58,320 --> 00:03:02,860
+Puede hacer clic aqu para acoplar u ocultar lo que
+
+62
+00:03:02,860 --> 00:03:05,530
+est all, la consola, de modo
+
+63
+00:03:05,530 --> 00:03:07,780
+que solo aparezca cuando vuelva
+
+64
+00:03:07,780 --> 00:03:09,130
+a ejecutar la aplicacin.
+
+65
+00:03:10,900 --> 00:03:12,760
+Ahora, algo que he notado
+
+66
+00:03:12,760 --> 00:03:16,550
+antes, es que el espacio entre nuestras diversas entradas no
+
+67
+00:03:16,550 --> 00:03:19,390
+fue grande, as que lo que voy a
+
+68
+00:03:19,390 --> 00:03:23,100
+hacer es agregar una barra invertida N aqu, al comienzo
+
+69
+00:03:23,950 --> 00:03:25,740
+de esta cadena, y barra
+
+70
+00:03:25,740 --> 00:03:27,800
+invertida N es un carcter
+
+71
+00:03:27,800 --> 00:03:30,630
+especial que significa agregar una nueva lnea.
+
+72
+00:03:30,630 --> 00:03:34,070
+Entonces ahora, cuando ejecutamos nuestra aplicacin. De nuevo, veremos que,
+
+73
+00:03:34,070 --> 00:03:35,980
+si agregamos una nueva pelcula,
+
+74
+00:03:35,980 --> 00:03:40,290
+y escribimos The Matrix, Wachowskis, 1994, la siguiente lnea es,
+
+75
+00:03:40,290 --> 00:03:43,570
+tiene un espacio antes, as que eso es
+
+76
+00:03:43,570 --> 00:03:45,130
+un poco ms agradable.
+
+77
+00:03:45,130 --> 00:03:46,950
+De acuerdo, entonces puedes detener la aplicacin.
+
+78
+00:03:46,950 --> 00:03:48,760
+Tenga en cuenta que cuando detiene
+
+79
+00:03:48,760 --> 00:03:50,830
+la aplicacin manualmente, se produce un error,
+
+80
+00:03:50,830 --> 00:03:52,070
+pero eso est totalmente
+
+81
+00:03:52,070 --> 00:03:54,100
+bien, eso significa que usted, ms o
+
+82
+00:03:55,300 --> 00:03:58,910
+menos, ha interrumpido la aplicacin, mientras la aplicacin estaba esperando alguna entrada del teclado.
+
+83
+00:04:00,180 --> 00:04:02,030
+No nos importa eso.
+
+84
+00:04:02,030 --> 00:04:05,030
+De acuerdo, ahora que hemos agregado esta funcionalidad
+
+85
+00:04:05,030 --> 00:04:08,530
+de show_movies, hay algo ms, que me gustara que hagamos,
+
+86
+00:04:09,460 --> 00:04:11,850
+que es que nos damos cuenta de
+
+87
+00:04:11,850 --> 00:04:15,650
+que esto, estas tres lneas aqu, hacen algo muy particular.
+
+88
+00:04:15,650 --> 00:04:20,040
+Muestran los detalles de la pelcula en un formato imprimible.
+
+89
+00:04:21,450 --> 00:04:25,290
+Entonces, es una posibilidad para nosotros extraer
+
+90
+00:04:25,290 --> 00:04:27,390
+esto en una funcin.
+
+91
+00:04:27,390 --> 00:04:29,170
+Casi siempre es una buena
+
+92
+00:04:29,170 --> 00:04:31,300
+idea mirar su aplicacin y ver
+
+93
+00:04:31,300 --> 00:04:34,980
+qu partes de la funcionalidad son independientes y pueden extraerse
+
+94
+00:04:34,980 --> 00:04:37,030
+en una funcin para hacer que
+
+95
+00:04:37,030 --> 00:04:38,940
+su programa sea ms legible.
+
+96
+00:04:39,920 --> 00:04:40,990
+Entonces, qu vamos
+
+97
+00:04:40,990 --> 00:04:42,790
+a hacer, vamos a definir
+
+98
+00:04:44,016 --> 00:04:46,770
+una nueva funcin show_movie_details, y eso tomar
+
+99
+00:04:46,770 --> 00:04:49,290
+una pelcula de parmetros, y luego
+
+100
+00:04:49,290 --> 00:04:51,300
+lo que har dentro de
+
+101
+00:04:51,300 --> 00:04:53,710
+ella, es que har todo esto.
+
+102
+00:04:53,710 --> 00:04:54,860
+Imprimir el nombre, el director
+
+103
+00:04:54,860 --> 00:04:56,850
+y el ao de lanzamiento de esta pelcula.
+
+104
+00:04:56,850 --> 00:04:58,660
+Ahora, dentro de show_movies, podemos
+
+105
+00:04:58,660 --> 00:05:00,070
+llamar a esa funcin
+
+106
+00:05:00,070 --> 00:05:03,520
+en lugar de tener estas tres instrucciones de impresin.
+
+107
+00:05:07,640 --> 00:05:10,810
+De acuerdo, ahora para cada variable de pelcula dentro
+
+108
+00:05:10,810 --> 00:05:12,550
+de la lista de pelculas,
+
+109
+00:05:12,550 --> 00:05:16,330
+vamos a pasar eso, el valor de esa variable de pelcula,
+
+110
+00:05:16,330 --> 00:05:19,720
+el diccionario, y hacer que sea igual a esta variable
+
+111
+00:05:19,720 --> 00:05:21,610
+de pelcula definida en esta funcin.
+
+112
+00:05:21,610 --> 00:05:24,800
+Sin embargo, recuerde el concepto de alcance.
+
+113
+00:05:24,800 --> 00:05:27,510
+Esta variable de pelcula aqu, solo
+
+114
+00:05:27,510 --> 00:05:31,740
+existe dentro de este bucle, y dentro de esta funcin.
+
+115
+00:05:31,740 --> 00:05:34,440
+Entonces, esta pelcula y esta
+
+116
+00:05:34,440 --> 00:05:37,960
+variable de pelcula son todas variables juntas.
+
+117
+00:05:37,960 --> 00:05:40,490
+Es solo el valor, el
+
+118
+00:05:40,490 --> 00:05:44,080
+diccionario, que estamos teletransportando desde esta funcin
+
+119
+00:05:44,080 --> 00:05:46,050
+a este parmetro.
+
+120
+00:05:46,050 --> 00:05:47,700
+Entonces, el valor de la
+
+121
+00:05:47,700 --> 00:05:50,010
+variable ahora se asigna a esta
+
+122
+00:05:50,010 --> 00:05:51,920
+pelcula, aunque tengan el mismo
+
+123
+00:05:51,920 --> 00:05:53,220
+nombre, son variables diferentes
+
+124
+00:05:53,220 --> 00:05:56,100
+porque esta solo est activa en esta funcin.
+
+125
+00:05:57,260 --> 00:05:59,750
+De acuerdo, eso es algo realmente importante,
+
+126
+00:05:59,750 --> 00:06:01,890
+y con frecuencia usaremos el mismo
+
+127
+00:06:01,890 --> 00:06:04,520
+nombre para las cosas, simplemente porque tiene sentido.
+
+128
+00:06:04,520 --> 00:06:06,170
+Despus de todo, lo que
+
+129
+00:06:06,170 --> 00:06:08,710
+estamos haciendo es mostrar cosas sobre una pelcula.
+
+130
+00:06:08,710 --> 00:06:10,200
+Tiene sentido para nuestra variable,
+
+131
+00:06:10,200 --> 00:06:11,749
+y esta funcin se llama pelcula.
+
+132
+00:06:11,749 --> 00:06:14,340
+Pero, tambin tiene sentido que se llame pelcula
+
+133
+00:06:14,340 --> 00:06:17,610
+aqu, y eso est bien, debido al concepto de alcance.
+
+134
+00:06:18,690 --> 00:06:20,530
+Con el tiempo, te sentirs menos confundido
+
+135
+00:06:20,530 --> 00:06:22,600
+con cosas como estas, si te sientes confundido.
+
+136
+00:06:22,600 --> 00:06:24,500
+Si no ests confundido por eso, increble.
+
+137
+00:06:25,530 --> 00:06:27,770
+De acuerdo, ahora tenemos nuestra nueva funcin,
+
+138
+00:06:27,770 --> 00:06:29,280
+que se llama, y creo
+
+139
+00:06:29,280 --> 00:06:30,990
+que esto se ve mucho
+
+140
+00:06:30,990 --> 00:06:33,950
+mejor, porque nuestro programa ahora es mucho ms limpio.
+
+141
+00:06:33,950 --> 00:06:36,580
+En Python, una vez que haya
+
+142
+00:06:36,580 --> 00:06:38,940
+terminado con una funcin, siempre
+
+143
+00:06:38,940 --> 00:06:42,880
+puede colapsarla, presionando este pequeo icono a la izquierda.
+
+144
+00:06:42,880 --> 00:06:46,470
+Eso solo har que tu programa sea ms agradable de leer.
+
+145
+00:06:46,470 --> 00:06:48,570
+Por supuesto, recuerda que siempre puedes destrabar
+
+146
+00:06:48,570 --> 00:06:51,150
+presionando el signo ms, si alguna vez quieres verlo.
+
+147
+00:06:52,100 --> 00:06:55,920
+De acuerdo, ahora lo ltimo que tenemos que hacer es encontrar nuestra pelcula.
+
+148
+00:06:55,920 --> 00:06:57,350
+Hagamos eso en el siguiente
+
+149
+00:06:57,350 --> 00:07:00,420
+video, pero primero, por supuesto, vamos a ver este aqu.
+
+150
+00:07:00,420 --> 00:07:02,540
+Hemos permitido que los usuarios muestren
+
+151
+00:07:02,540 --> 00:07:05,060
+todas las pelculas, solo nos queda una
+
+152
+00:07:05,060 --> 00:07:07,890
+tarea antes de que hayamos terminado con este proyecto.
+
+153
+00:07:07,890 --> 00:07:09,690
+Te ver en el prximo video.
+

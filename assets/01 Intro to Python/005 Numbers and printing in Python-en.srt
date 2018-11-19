@@ -1,0 +1,1052 @@
+1
+00:00:00,360 --> 00:00:01,730
+<v Narrator>Hi, welcome back.</v>
+
+2
+00:00:01,730 --> 00:00:03,527
+In this video we're going to talk about numbers
+
+3
+00:00:03,527 --> 00:00:06,100
+and about printing in Python.
+
+4
+00:00:07,690 --> 00:00:10,580
+Now I hope you're all set up with Rebel It
+
+5
+00:00:10,580 --> 00:00:13,800
+and what you'll have is your unique URL,
+
+6
+00:00:13,800 --> 00:00:16,690
+your unique name here that you can share.
+
+7
+00:00:16,690 --> 00:00:19,970
+If you encounter any problems throughout any of the videos,
+
+8
+00:00:19,970 --> 00:00:21,700
+just share your code with me.
+
+9
+00:00:22,560 --> 00:00:25,220
+In order to make things easier, I'd recommend you create
+
+10
+00:00:25,220 --> 00:00:29,260
+a new session for every video.
+
+11
+00:00:29,260 --> 00:00:30,630
+I will be doing the same thing,
+
+12
+00:00:30,630 --> 00:00:33,040
+and I will be sharing all the code that we write
+
+13
+00:00:33,040 --> 00:00:35,670
+throughout these videos with you on every lecture.
+
+14
+00:00:35,670 --> 00:00:37,570
+So you can see that this lecture here has a
+
+15
+00:00:37,570 --> 00:00:41,260
+resource attached to it, and that is the code
+
+16
+00:00:41,260 --> 00:00:43,540
+that I have written for this lecture already prepared
+
+17
+00:00:43,540 --> 00:00:45,260
+for you to look at at the end,
+
+18
+00:00:45,260 --> 00:00:46,940
+once you've gone through the video.
+
+19
+00:00:47,900 --> 00:00:49,030
+So, let's begin.
+
+20
+00:00:50,940 --> 00:00:53,850
+The most important thing about programming,
+
+21
+00:00:53,850 --> 00:00:56,800
+and really one of the most basic building blocks
+
+22
+00:00:56,800 --> 00:00:58,820
+is the concept of a variable.
+
+23
+00:00:58,820 --> 00:01:01,050
+You've probably seen variables in maths,
+
+24
+00:01:01,050 --> 00:01:04,160
+and they normally mean a name for a value.
+
+25
+00:01:05,270 --> 00:01:08,460
+You can give a value a name and then refer to that name
+
+26
+00:01:08,460 --> 00:01:12,010
+over and over as you work with your programme.
+
+27
+00:01:12,010 --> 00:01:15,600
+For example, let's create a variable called A
+
+28
+00:01:15,600 --> 00:01:17,120
+and give it the value one.
+
+29
+00:01:18,410 --> 00:01:20,850
+What we've done here is we've gotten the value
+
+30
+00:01:20,850 --> 00:01:22,800
+that's at the right of the equal sign
+
+31
+00:01:22,800 --> 00:01:25,600
+and we've put it inside this box
+
+32
+00:01:25,600 --> 00:01:27,820
+and we've given it the name A.
+
+33
+00:01:27,820 --> 00:01:32,050
+Whenever we talk about A, really that means one.
+
+34
+00:01:33,420 --> 00:01:36,830
+Similarly, we can do B equals two and C equals three,
+
+35
+00:01:36,830 --> 00:01:37,663
+and so on.
+
+36
+00:01:37,663 --> 00:01:39,630
+So we can create as many variable as we want,
+
+37
+00:01:40,570 --> 00:01:44,100
+and they can have any name that we want.
+
+38
+00:01:44,100 --> 00:01:46,900
+For example, we can have a variable called my sum,
+
+39
+00:01:48,080 --> 00:01:49,980
+and this can be A plus B for example,
+
+40
+00:01:52,143 --> 00:01:53,810
+and we can have another sum,
+
+41
+00:01:53,810 --> 00:01:56,550
+and that can be five plus 10 for example.
+
+42
+00:01:56,550 --> 00:01:58,980
+So as you can see, whatever is on the right side
+
+43
+00:01:58,980 --> 00:02:01,930
+of this equal sign is going to get calculated
+
+44
+00:02:01,930 --> 00:02:04,870
+and that's going to get put into the variable on the left.
+
+45
+00:02:05,790 --> 00:02:08,750
+Here we're adding one plus two, so this is gonna be three.
+
+46
+00:02:08,750 --> 00:02:09,900
+This one's gonna be 15.
+
+47
+00:02:11,170 --> 00:02:14,160
+The names of the variables can be anything you like
+
+48
+00:02:14,160 --> 00:02:16,591
+except for a few reserved keywords
+
+49
+00:02:16,591 --> 00:02:19,690
+and a few of the names that you will want to avoid.
+
+50
+00:02:19,690 --> 00:02:22,880
+We're going to go over the names that you'll want to avoid
+
+51
+00:02:22,880 --> 00:02:26,060
+and the reserved keywords throughout the entire course.
+
+52
+00:02:26,060 --> 00:02:28,917
+So don't worry too much about that, for now just know
+
+53
+00:02:28,917 --> 00:02:31,880
+you can give them any name you want,
+
+54
+00:02:31,880 --> 00:02:35,560
+and it can contain letters, numbers, and underscores.
+
+55
+00:02:36,780 --> 00:02:41,330
+No other symbols, and also it cannot start with a number.
+
+56
+00:02:42,810 --> 00:02:45,250
+I'm just going to write it here as a small comment,
+
+57
+00:02:45,250 --> 00:02:48,580
+letters, numbers, and underscores.
+
+58
+00:02:49,620 --> 00:02:53,410
+Cannot start with a number, okay?
+
+59
+00:02:53,410 --> 00:02:55,730
+That's because when I shared the code with you,
+
+60
+00:02:55,730 --> 00:02:58,470
+you'll be able to then read these comments
+
+61
+00:02:58,470 --> 00:03:00,970
+and remind yourself of what happened in the video.
+
+62
+00:03:02,500 --> 00:03:05,560
+But this doesn't execute, it doesn't do anything for now.
+
+63
+00:03:06,920 --> 00:03:09,080
+So we've created a few variables.
+
+64
+00:03:09,080 --> 00:03:12,420
+And as you can see we've given them a special name,
+
+65
+00:03:12,420 --> 00:03:16,030
+which is my sum, this one has the name another sum,
+
+66
+00:03:16,030 --> 00:03:18,110
+and these ones have A, B, and C.
+
+67
+00:03:18,110 --> 00:03:19,570
+The names can be anything we want,
+
+68
+00:03:19,570 --> 00:03:22,180
+but frequently when we create compound names,
+
+69
+00:03:22,180 --> 00:03:25,620
+i.e. names that are made up of two words,
+
+70
+00:03:25,620 --> 00:03:29,460
+in Python we place an underscore between the words
+
+71
+00:03:29,460 --> 00:03:32,330
+and the letters will all be lower case.
+
+72
+00:03:33,240 --> 00:03:34,910
+This is not a requirement,
+
+73
+00:03:34,910 --> 00:03:37,750
+as I said you can name your variables whatever you want,
+
+74
+00:03:37,750 --> 00:03:39,610
+but this is just convention.
+
+75
+00:03:39,610 --> 00:03:42,350
+This is what we normally do when programming in Python.
+
+76
+00:03:42,350 --> 00:03:45,030
+Other programming languages have other conventions,
+
+77
+00:03:45,030 --> 00:03:47,430
+and they name their variables in different ways.
+
+78
+00:03:49,220 --> 00:03:54,220
+In addition, we normally have spaces between the constructs,
+
+79
+00:03:54,850 --> 00:03:58,090
+I'm sorry between the operands, like here and there.
+
+80
+00:03:58,090 --> 00:04:00,830
+And that's also a convention, and also not something
+
+81
+00:04:00,830 --> 00:04:01,910
+that you have to do.
+
+82
+00:04:03,750 --> 00:04:07,730
+Let's take a look at something a bit more complicated.
+
+83
+00:04:09,690 --> 00:04:12,610
+For example, this expression here.
+
+84
+00:04:12,610 --> 00:04:15,850
+One plus three times four divided by two minus two.
+
+85
+00:04:17,170 --> 00:04:19,930
+What do we think is going to be the output of this?
+
+86
+00:04:20,930 --> 00:04:23,000
+And when I ask a question like that,
+
+87
+00:04:23,000 --> 00:04:24,840
+obviously I know that I'm being recorded,
+
+88
+00:04:24,840 --> 00:04:28,110
+I know you're not listening to me live and you cannot reply,
+
+89
+00:04:28,110 --> 00:04:30,680
+but what you can do is you can pause the video
+
+90
+00:04:30,680 --> 00:04:32,980
+and give it a bit of thought.
+
+91
+00:04:32,980 --> 00:04:35,140
+That way, by doing this interaction you're going to learn
+
+92
+00:04:35,140 --> 00:04:38,730
+a lot quicker than if it's just me blabbering on toward you.
+
+93
+00:04:42,290 --> 00:04:45,500
+The normal maths rules apply in Python,
+
+94
+00:04:45,500 --> 00:04:48,150
+as they do in most programming languages.
+
+95
+00:04:48,150 --> 00:04:51,540
+So the multiplication and division are going to run first,
+
+96
+00:04:51,540 --> 00:04:54,670
+and then the plus and minus are going to run after.
+
+97
+00:04:54,670 --> 00:04:57,230
+And left to right is the order of preference,
+
+98
+00:04:57,230 --> 00:04:59,740
+so this is going to run first, three times four.
+
+99
+00:04:59,740 --> 00:05:01,210
+That's going to give us 12.
+
+100
+00:05:01,210 --> 00:05:03,050
+Then we're going to divide 12 by two,
+
+101
+00:05:03,050 --> 00:05:06,870
+that's going to give us six, one plus six is seven,
+
+102
+00:05:06,870 --> 00:05:07,950
+minus two is five.
+
+103
+00:05:08,970 --> 00:05:11,690
+So maths operators, this variable here
+
+104
+00:05:11,690 --> 00:05:14,380
+has the value five inside it.
+
+105
+00:05:14,380 --> 00:05:19,380
+However, if we run our code, we see that nothing appears.
+
+106
+00:05:20,080 --> 00:05:22,380
+If we want to look at the value of the
+
+107
+00:05:22,380 --> 00:05:26,410
+maths operators variable, we'll have to print it out.
+
+108
+00:05:26,410 --> 00:05:29,800
+That's the next thing we're going to learn in this video.
+
+109
+00:05:29,800 --> 00:05:33,560
+In order to print something out, we'll just type print.
+
+110
+00:05:33,560 --> 00:05:37,010
+Notice how it turns blue because Rebel It knows
+
+111
+00:05:37,010 --> 00:05:38,960
+that this is a special thing in Python.
+
+112
+00:05:40,430 --> 00:05:42,434
+Then inside the brackets,
+
+113
+00:05:42,434 --> 00:05:47,410
+we're going to type our maths operators variable, okay?
+
+114
+00:05:47,410 --> 00:05:50,576
+So it's print, open bracket, whatever it is
+
+115
+00:05:50,576 --> 00:05:53,290
+that we want to print, and then a closing bracket.
+
+116
+00:05:53,290 --> 00:05:57,340
+Now when we run this again, we see that five point oh
+
+117
+00:05:57,340 --> 00:05:58,420
+has been printed out.
+
+118
+00:05:59,420 --> 00:06:01,890
+Not five, five point oh.
+
+119
+00:06:03,080 --> 00:06:07,190
+And that's because of floating point numbers.
+
+120
+00:06:07,190 --> 00:06:08,740
+A floating point number is just a number
+
+121
+00:06:08,740 --> 00:06:12,190
+with a decimal point, and normally well of course
+
+122
+00:06:12,190 --> 00:06:14,730
+floating point numbers have more precision
+
+123
+00:06:14,730 --> 00:06:16,450
+than whole numbers.
+
+124
+00:06:17,640 --> 00:06:22,320
+For example, you can do something like 12 divided by five,
+
+125
+00:06:22,320 --> 00:06:25,130
+and this will be two point four.
+
+126
+00:06:27,250 --> 00:06:29,410
+This is a floating point number.
+
+127
+00:06:29,410 --> 00:06:32,347
+So you need floating point numbers if you want to have
+
+128
+00:06:32,347 --> 00:06:35,460
+the appropriate precision when you're doing maths.
+
+129
+00:06:36,620 --> 00:06:39,920
+And in Python, as soon as you do a division operator,
+
+130
+00:06:39,920 --> 00:06:41,830
+Python starts treating everything
+
+131
+00:06:41,830 --> 00:06:45,807
+as a floating point number so that you have that
+
+132
+00:06:45,807 --> 00:06:50,807
+full power of the precision, okay?
+
+133
+00:06:50,810 --> 00:06:53,470
+So we can do a float division, for example another variable
+
+134
+00:06:53,470 --> 00:06:56,690
+that is 12 divided by three, and then we can print it out,
+
+135
+00:06:56,690 --> 00:06:58,850
+and what do you think this result
+
+136
+00:06:58,850 --> 00:06:59,900
+is going to be printed out?
+
+137
+00:06:59,900 --> 00:07:01,510
+What do we think that's gonna be?
+
+138
+00:07:03,540 --> 00:07:07,250
+Hopefully you got it, the result is four point oh.
+
+139
+00:07:07,250 --> 00:07:10,130
+Even though 12 divided by three is four,
+
+140
+00:07:11,340 --> 00:07:13,320
+because there is this division sign there,
+
+141
+00:07:13,320 --> 00:07:16,430
+Python treats everything as floating point numbers,
+
+142
+00:07:16,430 --> 00:07:19,490
+and the result is also a floating point number
+
+143
+00:07:19,490 --> 00:07:20,640
+which is four point oh.
+
+144
+00:07:22,620 --> 00:07:24,450
+However, sometimes we want to end up
+
+145
+00:07:24,450 --> 00:07:26,320
+with a whole number instead.
+
+146
+00:07:26,320 --> 00:07:28,710
+We want to lose the decimal because it doesn't mean
+
+147
+00:07:28,710 --> 00:07:30,450
+anything to us, and we want to end up
+
+148
+00:07:30,450 --> 00:07:33,839
+with a whole number instead of a floating point number.
+
+149
+00:07:33,839 --> 00:07:37,410
+And by the way, whole numbers are called integers as well,
+
+150
+00:07:37,410 --> 00:07:40,140
+so I'll be using that name indistinctively.
+
+151
+00:07:41,360 --> 00:07:43,440 line:15% 
+So if we want to do an integer division,
+
+152
+00:07:43,440 --> 00:07:46,590 line:15% 
+all we have to do is use two of these division signs.
+
+153
+00:07:51,070 --> 00:07:52,050 line:15% 
+And then when we print this out,
+
+154
+00:07:52,050 --> 00:07:55,040
+we see that four gets printed out.
+
+155
+00:07:55,040 --> 00:07:57,780
+I know that this text is small, apologies about that.
+
+156
+00:07:59,530 --> 00:08:02,010 line:15% 
+So as you can see, when we did double division sign,
+
+157
+00:08:02,010 --> 00:08:02,929 line:15% 
+Python saw, okay, we want to do integer division,
+
+158
+00:08:02,929 --> 00:08:07,710
+let's not treat things as floating point numbers,
+
+159
+00:08:07,710 --> 00:08:09,160
+let's treat them as integers.
+
+160
+00:08:10,740 --> 00:08:15,740 line:15% 
+However, when we do something like 12,
+
+161
+00:08:16,220 --> 00:08:20,990 line:15% 
+an integer divide by five, which should be two point four,
+
+162
+00:08:20,990 --> 00:08:22,840 line:15% 
+what do you think we're going to get?
+
+163
+00:08:24,540 --> 00:08:27,440 line:15% 
+What do you think the output of this print statement
+
+164
+00:08:27,440 --> 00:08:30,390 line:15% 
+will be now that we know this is going to be an integer,
+
+165
+00:08:30,390 --> 00:08:33,560 line:15% 
+a whole number and not a floating point number?
+
+166
+00:08:35,570 --> 00:08:38,350 line:15% 
+The rules of rounding tell us that anything under
+
+167
+00:08:38,350 --> 00:08:41,240 line:15% 
+two point five would get rounded down to two,
+
+168
+00:08:41,240 --> 00:08:45,630 line:15% 
+and anything over two point five get rounded up to three.
+
+169
+00:08:45,630 --> 00:08:47,680 line:15% 
+However the rounding rules do not apply
+
+170
+00:08:47,680 --> 00:08:50,060 line:15% 
+when we do integer division, okay?
+
+171
+00:08:50,060 --> 00:08:53,330 line:15% 
+So everything, no matter if it was two point nine,
+
+172
+00:08:53,330 --> 00:08:56,140 line:15% 
+everything gets rounded down to two, or rather,
+
+173
+00:08:56,140 --> 00:09:00,210 line:15% 
+everything after the decimal point just gets lost.
+
+174
+00:09:00,210 --> 00:09:02,790 line:15% 
+So something to remember with integer division.
+
+175
+00:09:04,670 --> 00:09:09,670 line:15% 
+Now, five goes into 12 two times, and the remainder is two.
+
+176
+00:09:14,473 --> 00:09:17,100 line:15% 
+So, getting the reminder of a division
+
+177
+00:09:17,100 --> 00:09:19,792 line:15% 
+is such a popular operation in Python
+
+178
+00:09:19,792 --> 00:09:23,250 line:15% 
+that Python gives us a way to get the remainder
+
+179
+00:09:24,260 --> 00:09:25,890 line:15% 
+using a single command.
+
+180
+00:09:27,480 --> 00:09:30,750 line:15% 
+And the way to do that is by using this modular operator.
+
+181
+00:09:31,590 --> 00:09:34,520 line:15% 
+Modular operator gives us the remainder of performing
+
+182
+00:09:34,520 --> 00:09:35,353 line:15% 
+this division.
+
+183
+00:09:35,353 --> 00:09:38,260 line:15% 
+12 divided by five is two, remainder two,
+
+184
+00:09:38,260 --> 00:09:39,650 line:15% 
+so two remainder two.
+
+185
+00:09:40,800 --> 00:09:42,740 line:15% 
+So what this is going to do, is it's going to give us
+
+186
+00:09:42,740 --> 00:09:44,040 line:15% 
+the remainder two.
+
+187
+00:09:45,120 --> 00:09:48,950 line:15% 
+If we did six modular five, it would give us one,
+
+188
+00:09:48,950 --> 00:09:51,639 line:15% 
+because that's the remainder of the division
+
+189
+00:09:51,639 --> 00:09:52,990 line:15% 
+six divided by five, okay?
+
+190
+00:09:57,280 --> 00:09:59,250 line:15% 
+If we wanted to print that out, we could do that
+
+191
+00:09:59,250 --> 00:10:01,160
+and we would get the value two.
+
+192
+00:10:03,790 --> 00:10:06,130 line:15% 
+So why is getting the remainder of a division
+
+193
+00:10:06,130 --> 00:10:07,320 line:15% 
+such a popular thing?
+
+194
+00:10:09,250 --> 00:10:11,900 line:15% 
+When do you ever need the remainder of anything?
+
+195
+00:10:12,970 --> 00:10:15,900 line:15% 
+Well, think about the following divisions
+
+196
+00:10:15,900 --> 00:10:17,390 line:15% 
+and what the remainder is.
+
+197
+00:10:17,390 --> 00:10:19,510 line:15% 
+What's the remainder of 10 divided by two?
+
+198
+00:10:21,000 --> 00:10:23,270 line:15% 
+Hopefully the answer to that was zero.
+
+199
+00:10:23,270 --> 00:10:26,990 line:15% 
+14 divided by two, also zero.
+
+200
+00:10:26,990 --> 00:10:29,950 line:15% 
+Six divided by two, also zero.
+
+201
+00:10:29,950 --> 00:10:34,950 line:15% 
+340 divided by two, also zero.
+
+202
+00:10:35,080 --> 00:10:38,010 line:15% 
+So the remainder of these divisions is all zero.
+
+203
+00:10:39,100 --> 00:10:41,780 line:15% 
+What about something like 11 divided by two?
+
+204
+00:10:44,000 --> 00:10:47,470 line:15% 
+Well, two goes into 11 five times, the remainder is one.
+
+205
+00:10:48,680 --> 00:10:52,680 line:15% 
+27 divided by two, two goes into 27 13 times,
+
+206
+00:10:56,550 --> 00:10:58,430 line:15% 
+and the remainder is also one.
+
+207
+00:10:58,430 --> 00:11:00,610 line:15% 
+So the remainder for these two is one.
+
+208
+00:11:00,610 --> 00:11:02,170 line:15% 
+Similarly for three divided by two
+
+209
+00:11:02,170 --> 00:11:03,870 line:15% 
+the remainder is also one.
+
+210
+00:11:03,870 --> 00:11:07,250 line:15% 
+So the pattern here is not that random numbers
+
+211
+00:11:07,250 --> 00:11:11,340 line:15% 
+have random remainders, but rather that even numbers,
+
+212
+00:11:11,340 --> 00:11:13,840 line:15% 
+when divided by two the remainder is zero.
+
+213
+00:11:13,840 --> 00:11:16,970 line:15% 
+For odd numbers, when divided by two the remainder
+
+214
+00:11:16,970 --> 00:11:17,810 line:15% 
+is always a one.
+
+215
+00:11:18,710 --> 00:11:20,490 line:15% 
+So the remainder is such a popular operation
+
+216
+00:11:20,490 --> 00:11:24,270 line:15% 
+because it lets us see whether a number is odd or even.
+
+217
+00:11:25,180 --> 00:11:27,550 line:15% 
+For example, given a variable 37,
+
+218
+00:11:30,040 --> 00:11:35,040 line:15% 
+we can calculate the remainder by doing X and modular two.
+
+219
+00:11:36,680 --> 00:11:40,523 line:15% 
+And then we can print it out, and what do we think
+
+220
+00:11:40,523 --> 00:11:41,873 line:15% 
+this remainder is gonna be?
+
+221
+00:11:42,970 --> 00:11:46,520 line:15% 
+Hopefully you say one, and because this is an odd number.
+
+222
+00:11:48,040 --> 00:11:50,260
+As you can see down here, one gets printed out,
+
+223
+00:11:50,260 --> 00:11:52,920
+because X is indeed an odd number.
+
+224
+00:11:53,890 --> 00:11:54,830
+And now you may ask yourself
+
+225
+00:11:54,830 --> 00:11:57,270
+why do we care whether a number is odd or even?
+
+226
+00:11:58,610 --> 00:12:01,310
+Well, we're going to learn about that
+
+227
+00:12:01,310 --> 00:12:02,410
+throughout the course.
+
+228
+00:12:03,740 --> 00:12:05,900
+But, we do care.
+
+229
+00:12:05,900 --> 00:12:10,900
+For example, imagine that we wanted to have the number one
+
+230
+00:12:11,890 --> 00:12:13,470
+with this colour background,
+
+231
+00:12:13,470 --> 00:12:15,590
+number two with a slightly darker background,
+
+232
+00:12:15,590 --> 00:12:17,890
+three light background, four dark background,
+
+233
+00:12:17,890 --> 00:12:20,120
+five light background, six dark background.
+
+234
+00:12:20,120 --> 00:12:21,630
+Alternating backgrounds.
+
+235
+00:12:21,630 --> 00:12:23,030
+How do you think we do that?
+
+236
+00:12:24,510 --> 00:12:26,430
+Well, hopefully you guessed it.
+
+237
+00:12:27,490 --> 00:12:30,570
+For every odd number, we would give it a light background,
+
+238
+00:12:30,570 --> 00:12:33,370
+for every even number we give it an odd background.
+
+239
+00:12:33,370 --> 00:12:35,110
+We need to know whether numbers are odd or even
+
+240
+00:12:35,110 --> 00:12:36,110
+in order to do that.
+
+241
+00:12:36,960 --> 00:12:39,980
+And the examples are really everywhere.
+
+242
+00:12:39,980 --> 00:12:43,810
+As soon as you start programming more seriously
+
+243
+00:12:43,810 --> 00:12:46,890
+you'll see that this module operator really comes into play
+
+244
+00:12:46,890 --> 00:12:48,460
+more often than you'd imagine.
+
+245
+00:12:49,400 --> 00:12:50,810
+And throughout the rest of the course,
+
+246
+00:12:50,810 --> 00:12:53,300
+we'll look at more examples of this as well.
+
+247
+00:12:54,370 --> 00:12:55,203
+That's it for this video,
+
+248
+00:12:55,203 --> 00:12:57,410
+I appreciate it's been a slightly long one,
+
+249
+00:12:57,410 --> 00:12:59,280
+but we've learned a bunch of things about
+
+250
+00:12:59,280 --> 00:13:01,610
+the most important building block on Python,
+
+251
+00:13:01,610 --> 00:13:03,010
+which is the variable,
+
+252
+00:13:03,010 --> 00:13:06,560
+and about printing which is also essential.
+
+253
+00:13:06,560 --> 00:13:09,480
+We've also looked at how to write some comments
+
+254
+00:13:09,480 --> 00:13:13,440
+and things that won't run, and that's either this way
+
+255
+00:13:13,440 --> 00:13:16,990
+with the three double quote symbols
+
+256
+00:13:16,990 --> 00:13:18,520
+at the start and three at the end,
+
+257
+00:13:18,520 --> 00:13:21,570
+or by using the hash symbol.
+
+258
+00:13:21,570 --> 00:13:25,500
+Anything after the hash is a comment, and also won't run.
+
+259
+00:13:25,500 --> 00:13:27,072
+It's just there for you to look at,
+
+260
+00:13:27,072 --> 00:13:28,900
+not for the computer to look at.
+
+261
+00:13:30,170 --> 00:13:31,750
+Okay, so that's everything for this video,
+
+262
+00:13:31,750 --> 00:13:33,010
+hopefully you enjoyed it,
+
+263
+00:13:33,010 --> 00:13:34,910
+and I'll see you in the very next one.
+

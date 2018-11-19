@@ -1,0 +1,536 @@
+1
+00:00:00,211 --> 00:00:02,241
+<v Jose>Hi there and welcome back.</v>
+
+2
+00:00:02,241 --> 00:00:06,309
+In this video we are going to talk about Binary Search.
+
+3
+00:00:06,309 --> 00:00:09,115
+Let's start by looking at the list that we had
+
+4
+00:00:09,115 --> 00:00:11,367
+in the last video.
+
+5
+00:00:11,367 --> 00:00:13,239
+Here, we've got a bunch of numbers,
+
+6
+00:00:13,239 --> 00:00:16,617
+and like you know, if we want to find a specific number
+
+7
+00:00:16,617 --> 00:00:19,415
+like 90 which is there near the end,
+
+8
+00:00:19,415 --> 00:00:21,431
+we have to sort of start at the beginning,
+
+9
+00:00:21,431 --> 00:00:25,884
+and go through each number until we get to 90.
+
+10
+00:00:25,884 --> 00:00:30,498
+However, there are ways to be more efficient about
+
+11
+00:00:30,498 --> 00:00:33,606
+searching for a specific number.
+
+12
+00:00:33,606 --> 00:00:36,274
+If we sort the list first,
+
+13
+00:00:36,274 --> 00:00:38,966
+which there are various ways of sorting,
+
+14
+00:00:38,966 --> 00:00:41,032
+some of them are faster than others,
+
+15
+00:00:41,032 --> 00:00:45,028
+and I'll teach you how to sort a list later on.
+
+16
+00:00:45,028 --> 00:00:48,864
+But, if you sort the list now it's much easier
+
+17
+00:00:48,864 --> 00:00:50,031
+to find stuff.
+
+18
+00:00:52,251 --> 00:00:55,012
+Just in the same way that if you have a dictionary,
+
+19
+00:00:55,012 --> 00:00:58,690
+you don't start at A and end at Zed.
+
+20
+00:00:58,690 --> 00:01:02,462
+For example, if you're looking for xylophone,
+
+21
+00:01:02,462 --> 00:01:05,777
+you'd start near the end cause you'd know
+
+22
+00:01:05,777 --> 00:01:08,385
+that it's ordered alphabetically.
+
+23
+00:01:08,385 --> 00:01:10,923
+When your lists and your collections are ordered
+
+24
+00:01:10,923 --> 00:01:14,607
+it becomes a lot easier to find things.
+
+25
+00:01:14,607 --> 00:01:17,104
+However, important to say, just because the list
+
+26
+00:01:17,104 --> 00:01:20,104
+is ordered doesn't mean that automatically
+
+27
+00:01:20,104 --> 00:01:22,260
+your searches are going to be more efficient,
+
+28
+00:01:22,260 --> 00:01:25,246
+or the complexity of them is going to be less.
+
+29
+00:01:25,246 --> 00:01:28,079
+Finding sequentially is still O-N.
+
+30
+00:01:29,060 --> 00:01:32,192
+If you want to find 90, you still have to start
+
+31
+00:01:32,192 --> 00:01:34,474
+at the beginning and go through each element,
+
+32
+00:01:34,474 --> 00:01:36,676
+if you're finding sequentially.
+
+33
+00:01:36,676 --> 00:01:40,176
+So, let's instead find in a different way.
+
+34
+00:01:41,311 --> 00:01:43,482
+Let's explore a different way of searching and
+
+35
+00:01:43,482 --> 00:01:46,899
+finding an element that isn't sequential.
+
+36
+00:01:47,940 --> 00:01:51,324
+Remember one important aspect about lists
+
+37
+00:01:51,324 --> 00:01:54,207
+is that you can access any one element,
+
+38
+00:01:54,207 --> 00:01:56,389
+it doesn't have to be the first element.
+
+39
+00:01:56,389 --> 00:01:58,411
+So you can access the last element or
+
+40
+00:01:58,411 --> 00:02:01,507
+an element in the middle if you want.
+
+41
+00:02:01,507 --> 00:02:06,278
+So let's look for 90 with a slightly different algorithm.
+
+42
+00:02:06,278 --> 00:02:08,534
+Instead of starting in the first element,
+
+43
+00:02:08,534 --> 00:02:11,605
+we're going to start in the middle element.
+
+44
+00:02:11,605 --> 00:02:14,499
+The middle element in this list is 38,
+
+45
+00:02:14,499 --> 00:02:17,268
+that is index number 10.
+
+46
+00:02:17,268 --> 00:02:19,325
+So in this algorithm what we're going to do is
+
+47
+00:02:19,325 --> 00:02:21,845
+we're going to ask the question,
+
+48
+00:02:21,845 --> 00:02:24,614
+"is 90 greater than 38?"
+
+49
+00:02:24,614 --> 00:02:27,266
+So again we're looking for 90 and we're just asking
+
+50
+00:02:27,266 --> 00:02:30,802
+ourselves "is 90 greater than 38?"
+
+51
+00:02:30,802 --> 00:02:33,971
+The answer is yes, so we're going to discard all
+
+52
+00:02:33,971 --> 00:02:37,623
+lower values, all the values that are lower or
+
+53
+00:02:37,623 --> 00:02:39,793
+equal to 38 we're going to discard.
+
+54
+00:02:39,793 --> 00:02:41,893
+We're only going to keep the values that are
+
+55
+00:02:41,893 --> 00:02:43,226
+greater than 38.
+
+56
+00:02:44,699 --> 00:02:45,625
+Why?
+
+57
+00:02:45,625 --> 00:02:47,635
+Because we know that the list is ordered,
+
+58
+00:02:47,635 --> 00:02:52,234
+so any value that is to the left is going to be less
+
+59
+00:02:52,234 --> 00:02:53,567
+than the value we're looking for,
+
+60
+00:02:53,567 --> 00:02:55,251
+so we don't have to worry about them,
+
+61
+00:02:55,251 --> 00:02:58,170
+we don't even have to search.
+
+62
+00:02:58,170 --> 00:03:00,864
+Let's grey them out to signal that we've forgotten
+
+63
+00:03:00,864 --> 00:03:02,569
+about those values.
+
+64
+00:03:02,569 --> 00:03:05,784
+We've eliminated them, we're not going to search there.
+
+65
+00:03:05,784 --> 00:03:09,027
+Then we're going to move over
+
+66
+00:03:09,027 --> 00:03:10,548
+to the next middle
+
+67
+00:03:10,548 --> 00:03:12,399
+element of what's left.
+
+68
+00:03:12,399 --> 00:03:14,671
+Notice that integer division doesn't round up,
+
+69
+00:03:14,671 --> 00:03:17,145
+so here we end up with four elements on the left
+
+70
+00:03:17,145 --> 00:03:19,728
+and five elements on the right,
+
+71
+00:03:20,792 --> 00:03:23,345
+which is a slight problem in this case,
+
+72
+00:03:23,345 --> 00:03:25,317
+it's going to make things a bit slower for us,
+
+73
+00:03:25,317 --> 00:03:28,292
+but nonetheless we end up on 59.
+
+74
+00:03:28,292 --> 00:03:29,889
+So again we ask the same question,
+
+75
+00:03:29,889 --> 00:03:32,146
+"is 90 greater than 59?"
+
+76
+00:03:32,146 --> 00:03:37,146
+The answer is yes so we discard again all lower values.
+
+77
+00:03:37,543 --> 00:03:40,754
+59 and down we can discard because we know that
+
+78
+00:03:40,754 --> 00:03:42,921
+90 is not in any of those.
+
+79
+00:03:44,098 --> 00:03:47,523
+Again we look for 90 by moving to the next
+
+80
+00:03:47,523 --> 00:03:50,009
+middle element of what's left.
+
+81
+00:03:50,009 --> 00:03:53,099
+Now we're at seven-one-seven.
+
+82
+00:03:53,099 --> 00:03:55,716
+Again you ask yourself the same question,
+
+83
+00:03:55,716 --> 00:03:58,568
+"is 90 greater than seven-one-seven?"
+
+84
+00:03:58,568 --> 00:04:01,621
+The answer this time is no, it's less than seven-one-seven,
+
+85
+00:04:01,621 --> 00:04:05,003
+so we're going to discard all of the right values
+
+86
+00:04:05,003 --> 00:04:06,008
+all of the higher values,
+
+87
+00:04:06,008 --> 00:04:07,946
+we're going to discard them.
+
+88
+00:04:07,946 --> 00:04:10,921
+Notice now how we've got two values left,
+
+89
+00:04:10,921 --> 00:04:13,671
+and the next jump takes us to 90.
+
+90
+00:04:15,526 --> 00:04:18,726
+Because, once again, we don't round up
+
+91
+00:04:18,726 --> 00:04:23,301
+so two divided by two is one so that brings us
+
+92
+00:04:23,301 --> 00:04:24,884
+to this index here,
+
+93
+00:04:25,735 --> 00:04:29,061
+and we ask ourselves the question again,
+
+94
+00:04:29,061 --> 00:04:30,728
+"is 90 equal to 90?"
+
+95
+00:04:31,652 --> 00:04:35,001
+And, we say yes, so we found it.
+
+96
+00:04:35,001 --> 00:04:38,918
+Now we found 90 and it only took us four jumps.
+
+97
+00:04:40,206 --> 00:04:41,893
+If we had done this sequentially,
+
+98
+00:04:41,893 --> 00:04:44,476
+it would have take us 17 jumps.
+
+99
+00:04:45,889 --> 00:04:48,972
+So, I think that this is much faster,
+
+100
+00:04:49,927 --> 00:04:53,629
+and it just so happens that the log two of 21,
+
+101
+00:04:53,629 --> 00:04:55,585
+which is the number of elements in this list,
+
+102
+00:04:55,585 --> 00:04:57,752
+is equal to four point 39.
+
+103
+00:04:58,897 --> 00:05:02,222
+Which means, that this type of search we've done,
+
+104
+00:05:02,222 --> 00:05:05,699
+which is called a binary search is actually
+
+105
+00:05:05,699 --> 00:05:07,032
+oh of log two n.
+
+106
+00:05:07,922 --> 00:05:10,339
+Which means up to five jumps.
+
+107
+00:05:11,644 --> 00:05:13,179
+Here we took four jumps,
+
+108
+00:05:13,179 --> 00:05:14,767
+if we had been looking for 95,
+
+109
+00:05:14,767 --> 00:05:17,997
+it would have taken us five jumps.
+
+110
+00:05:17,997 --> 00:05:22,543
+Now, what we've looked at here is a binary search.
+
+111
+00:05:22,543 --> 00:05:25,623
+A binary search works by, at every jump,
+
+112
+00:05:25,623 --> 00:05:29,683
+making a decision that leaves you one of two choices.
+
+113
+00:05:29,683 --> 00:05:31,433
+Go right, or go left.
+
+114
+00:05:33,456 --> 00:05:35,206
+Go right, or go left.
+
+115
+00:05:37,303 --> 00:05:40,390
+This binary search means that,
+
+116
+00:05:40,390 --> 00:05:43,160
+at every jump you're getting rid of half
+
+117
+00:05:43,160 --> 00:05:46,704
+or approximately half of the elements remaining.
+
+118
+00:05:46,704 --> 00:05:51,213
+Which is why this is a logarithmic complexity.
+
+119
+00:05:51,213 --> 00:05:54,403
+The complexity is oh of log two n,
+
+120
+00:05:54,403 --> 00:05:56,903
+which is much better than O-N.
+
+121
+00:05:58,058 --> 00:06:02,984
+Indeed, it is an inverse exponential in complexity,
+
+122
+00:06:02,984 --> 00:06:04,734
+which is much faster.
+
+123
+00:06:05,981 --> 00:06:09,534
+This kind of search is one of many various search
+
+124
+00:06:09,534 --> 00:06:11,618
+algorithms that I encourage you to look into
+
+125
+00:06:11,618 --> 00:06:13,427
+if you are interested.
+
+126
+00:06:13,427 --> 00:06:16,713
+If not, just know that there are ways of improving on
+
+127
+00:06:16,713 --> 00:06:18,238
+existing algorithms.
+
+128
+00:06:18,238 --> 00:06:22,723
+Sequential search can improved on by binary search,
+
+129
+00:06:22,723 --> 00:06:26,473
+and as such, this performance type subject of
+
+130
+00:06:27,399 --> 00:06:30,482
+computing is a pretty important area.
+
+131
+00:06:31,539 --> 00:06:33,450
+Now, in the next few videos we're going to look
+
+132
+00:06:33,450 --> 00:06:37,278
+at how we can perform binary search on a slightly
+
+133
+00:06:37,278 --> 00:06:40,699
+different structure that isn't a list.
+
+134
+00:06:40,699 --> 00:06:43,282
+I'll see you on the next video.
+

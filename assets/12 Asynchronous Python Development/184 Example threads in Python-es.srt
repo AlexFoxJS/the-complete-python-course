@@ -1,0 +1,1084 @@
+1
+00:00:00,140 --> 00:00:01,510
+Jos: Hola, y bienvenido!
+
+2
+00:00:01,510 --> 00:00:02,620
+En este video vamos
+
+3
+00:00:02,620 --> 00:00:07,240
+a ver un par de cdigos de ejemplo de lo que cubrimos en el ltimo.
+
+4
+00:00:07,240 --> 00:00:08,860
+As que cre un nuevo
+
+5
+00:00:08,860 --> 00:00:10,660
+proyecto en Python, lo llam concurrencia.
+
+6
+00:00:10,660 --> 00:00:12,810
+Y vamos a crear un nuevo
+
+7
+00:00:12,810 --> 00:00:17,120
+archivo aqu, un nuevo archivo de Python al que voy a llamar hilos.
+
+8
+00:00:17,120 --> 00:00:18,920
+De acuerdo, por cierto, este
+
+9
+00:00:18,920 --> 00:00:22,200
+cdigo est disponible vinculado al comienzo de la seccin
+
+10
+00:00:22,200 --> 00:00:25,070
+que est en el GitHub para este curso.
+
+11
+00:00:26,320 --> 00:00:28,770
+Entonces, digamos que tiene un cdigo
+
+12
+00:00:28,770 --> 00:00:31,810
+que desea ejecutar, como vimos anteriormente, que le
+
+13
+00:00:31,810 --> 00:00:33,760
+pide al usuario algo y
+
+14
+00:00:33,760 --> 00:00:36,560
+luego otro cdigo hace un clculo complejo.
+
+15
+00:00:37,690 --> 00:00:39,540
+Bien, vamos a tener dos
+
+16
+00:00:40,670 --> 00:00:42,000
+funciones: la funcin ask_user,
+
+17
+00:00:43,320 --> 00:00:46,680
+esto va a obtener algo de entrada del usuario,
+
+18
+00:00:48,610 --> 00:00:51,090
+y luego va a construir este saludo
+
+19
+00:00:54,370 --> 00:00:56,170
+y finalmente va a imprimirlo.
+
+20
+00:00:58,330 --> 00:01:00,430
+Esto es lo que hace esta funcin.
+
+21
+00:01:00,430 --> 00:01:05,190
+Y como saben, esta funcin aqu va a esperar a que
+
+22
+00:01:05,190 --> 00:01:07,220
+el usuario escriba algo.
+
+23
+00:01:08,200 --> 00:01:09,033
+Ya sabes, est bien?
+
+24
+00:01:09,033 --> 00:01:11,630
+Estas funciones aqu, o estas declaraciones
+
+25
+00:01:11,630 --> 00:01:14,350
+aqu, no van a esperar nada.
+
+26
+00:01:14,350 --> 00:01:18,000
+Diramos que se trata de una operacin de bloqueo, una
+
+27
+00:01:18,000 --> 00:01:20,940
+operacin en la que el hilo est bloqueado,
+
+28
+00:01:20,940 --> 00:01:22,690
+esperando que ocurra algo.
+
+29
+00:01:24,040 --> 00:01:27,400
+Entonces, estas operaciones son las que hacen que su cdigo enhebrado sea lento.
+
+30
+00:01:27,400 --> 00:01:28,980
+De acuerdo, no te preocupes
+
+31
+00:01:28,980 --> 00:01:31,440
+demasiado, vamos a explorar este concepto cada vez ms
+
+32
+00:01:31,440 --> 00:01:32,590
+en los prximos videos.
+
+33
+00:01:34,080 --> 00:01:35,290
+Entonces tambin tendr
+
+34
+00:01:35,290 --> 00:01:37,230
+una funcin de clculo compleja.
+
+35
+00:01:38,660 --> 00:01:41,100
+Eso va a hacer algo as como imprimir
+
+36
+00:01:41,100 --> 00:01:43,330
+comenz a calcular, y luego va a
+
+37
+00:01:44,450 --> 00:01:46,430
+hacer algo que lleva un tiempo.
+
+38
+00:01:46,430 --> 00:01:49,000
+Simplemente va a hacer algo bastante tonto,
+
+39
+00:01:49,000 --> 00:01:54,000
+x a la potencia de dos para x en el rango de 20 millones.
+
+40
+00:01:55,740 --> 00:01:56,810
+De acuerdo, veinte millones?
+
+41
+00:01:57,900 --> 00:01:59,350
+S, 20 millones lo harn.
+
+42
+00:01:59,350 --> 00:02:01,190
+Entonces esto tomar unos seis o
+
+43
+00:02:01,190 --> 00:02:02,590
+siete segundos en mi mquina.
+
+44
+00:02:02,590 --> 00:02:04,620
+Podra tomar ms o menos tiempo en
+
+45
+00:02:04,620 --> 00:02:06,710
+su mquina, simplemente ajuste el nmero en consecuencia.
+
+46
+00:02:07,780 --> 00:02:11,970
+De acuerdo, entonces va a hacer eso y eso es todo.
+
+47
+00:02:11,970 --> 00:02:13,890
+Luego haremos ask_user primero
+
+48
+00:02:15,270 --> 00:02:17,670
+y luego haremos nuestro clculo complejo.
+
+49
+00:02:18,780 --> 00:02:21,540
+Ahora, por supuesto, no sabremos cunto tiempo tomarn
+
+50
+00:02:21,540 --> 00:02:23,610
+a menos que comencemos a cronometrarlos.
+
+51
+00:02:23,610 --> 00:02:26,920
+Entonces, vamos a importar tiempo en la parte superior
+
+52
+00:02:26,920 --> 00:02:30,850
+y todo lo que voy a hacer es, cada funcin, cronometrarlo.
+
+53
+00:02:30,850 --> 00:02:32,780
+As que vamos a hacer start = time. time
+
+54
+00:02:34,658 --> 00:02:39,658
+() y al final vamos a imprimir ask_user.
+
+55
+00:02:39,699 --> 00:02:44,699
+ask_user time. tiempo menos inicio.
+
+56
+00:02:46,920 --> 00:02:50,790
+De acuerdo, lo mismo para el clculo complejo.
+
+57
+00:02:58,660 --> 00:03:03,090
+Ahora, tambin voy a hacer esto para todo el programa,
+
+58
+00:03:03,090 --> 00:03:07,600
+as que voy a rastrear cunto dur todo el programa.
+
+59
+00:03:18,160 --> 00:03:19,550
+As, est bien?
+
+60
+00:03:20,880 --> 00:03:23,280
+Nuevamente, todo lo que est sucediendo aqu
+
+61
+00:03:23,280 --> 00:03:25,780
+es antes que nada, comenzamos un temporizador, luego
+
+62
+00:03:25,780 --> 00:03:27,470
+lanzamos la funcin ask_user que
+
+63
+00:03:27,470 --> 00:03:29,640
+inicia un temporizador dentro de esa funcin,
+
+64
+00:03:29,640 --> 00:03:33,120
+le pide al usuario alguna entrada, espera a que el usuario
+
+65
+00:03:33,120 --> 00:03:35,380
+escriba, construye una nueva cadena e imprime
+
+66
+00:03:35,380 --> 00:03:37,550
+y luego imprimir la hora de finalizacin.
+
+67
+00:03:38,810 --> 00:03:41,730
+Luego, lanzar la compleja funcin de clculo, que
+
+68
+00:03:41,730 --> 00:03:43,200
+iniciar un temporizador, imprimir
+
+69
+00:03:43,200 --> 00:03:45,170
+que comenz a calcular, revisar
+
+70
+00:03:45,170 --> 00:03:46,670
+esta lista de comprensin,
+
+71
+00:03:46,670 --> 00:03:49,780
+que es bastante masiva, y cuando termine, se
+
+72
+00:03:49,780 --> 00:03:51,120
+va a imprimir.
+
+73
+00:03:51,120 --> 00:03:53,750
+Ahora el clculo complejo tom una cierta cantidad de tiempo.
+
+74
+00:03:53,750 --> 00:03:55,700
+Y luego, al final, vamos a
+
+75
+00:03:55,700 --> 00:03:58,650
+imprimir que el nico hilo tom algo de tiempo.
+
+76
+00:03:58,650 --> 00:04:01,240
+Sabes por todo el desarrollo de Python que hemos
+
+77
+00:04:01,240 --> 00:04:02,630
+estado haciendo hasta aqu, que
+
+78
+00:04:02,630 --> 00:04:04,630
+esto se ejecutar de arriba a abajo.
+
+79
+00:04:04,630 --> 00:04:06,120
+Sabes, esto se ejecutar primero,
+
+80
+00:04:06,120 --> 00:04:08,490
+luego este, nuestra ejecucin va a saltar hasta
+
+81
+00:04:08,490 --> 00:04:10,900
+aqu, luego aqu, luego aqu, luego retroceder, y
+
+82
+00:04:10,900 --> 00:04:12,990
+luego ir aqu y as sucesivamente.
+
+83
+00:04:12,990 --> 00:04:15,650
+Este es un hilo nico.
+
+84
+00:04:15,650 --> 00:04:18,570
+Este es nuestro tiempo de ejecucin normal de Python.
+
+85
+00:04:18,570 --> 00:04:20,660
+Deberamos escribir nuestro cdigo y se ejecuta
+
+86
+00:04:20,660 --> 00:04:22,320
+de arriba abajo porque el hilo
+
+87
+00:04:22,320 --> 00:04:24,100
+es esta lnea de ejecucin que
+
+88
+00:04:24,100 --> 00:04:27,920
+le hemos dado al ncleo de la CPU para que se ejecute.
+
+89
+00:04:27,920 --> 00:04:31,810
+Entonces, si ejecutamos este archivo, si ejecutamos hilos, lo primero que va a
+
+90
+00:04:31,810 --> 00:04:32,643
+hacer es preguntarme
+
+91
+00:04:32,643 --> 00:04:34,770
+mi nombre, voy a escribirlo, oh, y
+
+92
+00:04:36,300 --> 00:04:38,410
+creo que puse unos pocos aqu, no
+
+93
+00:04:38,410 --> 00:04:39,540
+tom Tiempo suficiente.
+
+94
+00:04:39,540 --> 00:04:41,040
+Y observe cmo el complejo clculo
+
+95
+00:04:41,040 --> 00:04:43,140
+tom un punto de seis segundos, quiero tomarlo, quiero
+
+96
+00:04:43,140 --> 00:04:45,740
+que tome seis segundos, as que voy a ejecutarlo de nuevo.
+
+97
+00:04:47,600 --> 00:04:50,380
+Entonces, ese es mi nombre y me llev un
+
+98
+00:04:50,380 --> 00:04:54,120
+punto y seis segundos ejecutar la funcin ask_user y comenz a calcular.
+
+99
+00:04:54,120 --> 00:04:58,380
+Tom alrededor de 6. 4 segundos para ejecutar el clculo complejo.
+
+100
+00:04:58,380 --> 00:05:01,560
+Y en total, agrega estos dos juntos esencialmente, ms un poco
+
+101
+00:05:01,560 --> 00:05:03,390
+de tiempo, no mucho, pero una
+
+102
+00:05:03,390 --> 00:05:07,200
+pequea cantidad, el solo hilo tom 8. 14.
+
+103
+00:05:08,550 --> 00:05:12,280
+Esta pequea cantidad de extra que se necesita es porque, ya
+
+104
+00:05:12,280 --> 00:05:15,310
+sabes, tiene que saltar de aqu hasta la funcin,
+
+105
+00:05:15,310 --> 00:05:18,100
+y eso lleva un par de nanosegundos.
+
+106
+00:05:18,100 --> 00:05:20,740
+Entonces no ser una adicin exacta.
+
+107
+00:05:20,740 --> 00:05:24,520
+Pero sabes, en general es secuencial.
+
+108
+00:05:24,520 --> 00:05:27,460
+Primero ejecutamos esto, luego ejecutamos esto, y el total
+
+109
+00:05:27,460 --> 00:05:30,160
+es ms o menos la suma de ambos.
+
+110
+00:05:31,790 --> 00:05:32,623
+Ahora bien.
+
+111
+00:05:33,640 --> 00:05:35,140
+Ahora, lo que vamos a hacer
+
+112
+00:05:35,140 --> 00:05:36,740
+es, voy a colapsar estas funciones.
+
+113
+00:05:36,740 --> 00:05:38,850
+Esto no los elimina, simplemente oculta los cdigos en ellos, por lo
+
+114
+00:05:38,850 --> 00:05:40,150
+que es un poco ms fcil de ver.
+
+115
+00:05:40,150 --> 00:05:42,630
+Todava estn haciendo lo mismo, est bien.
+
+116
+00:05:42,630 --> 00:05:44,130
+Y lo que vamos
+
+117
+00:05:44,130 --> 00:05:47,380
+a hacer entonces es, desde el hilo de importacin Threading.
+
+118
+00:05:48,470 --> 00:05:50,650
+As que vamos a importar la clase de
+
+119
+00:05:50,650 --> 00:05:51,880
+subproceso del mdulo de subprocesamiento.
+
+120
+00:05:51,880 --> 00:05:53,280
+El mdulo de subprocesamiento viene con
+
+121
+00:05:53,280 --> 00:05:54,800
+Python, no tiene que instalar nada.
+
+122
+00:05:54,800 --> 00:05:57,080
+Esto nos da acceso a los hilos.
+
+123
+00:05:57,940 --> 00:05:59,460
+Cada vez que creamos un hilo,
+
+124
+00:05:59,460 --> 00:06:01,080
+eso va a ir al sistema
+
+125
+00:06:01,080 --> 00:06:02,650
+operativo y va a pedirle al
+
+126
+00:06:02,650 --> 00:06:05,610
+sistema operativo que nos d un nuevo hilo y el sistema
+
+127
+00:06:05,610 --> 00:06:07,750
+operativo va a ser as, est bien, nuevo
+
+128
+00:06:07,750 --> 00:06:09,550
+hilo, puedes ejecutar lo que quieras en eso.
+
+129
+00:06:10,750 --> 00:06:12,240
+Y lo que vamos
+
+130
+00:06:12,240 --> 00:06:17,240
+a ejecutar es que vamos a decir que el hilo uno es el hilo
+
+131
+00:06:17,850 --> 00:06:22,420
+y el objetivo va a ser nuestro complejo clculo Tenga en cuenta que
+
+132
+00:06:22,420 --> 00:06:24,960
+el objetivo es la funcin de clculo
+
+133
+00:06:24,960 --> 00:06:27,410
+complejo no el resultado de ello.
+
+134
+00:06:27,410 --> 00:06:29,100
+Entonces, no vamos a ejecutar
+
+135
+00:06:29,100 --> 00:06:31,060
+la funcin aqu, solo la pasaremos
+
+136
+00:06:31,060 --> 00:06:33,560
+al hilo y cuando le pidamos al
+
+137
+00:06:33,560 --> 00:06:34,720
+hilo que comience,
+
+138
+00:06:34,720 --> 00:06:39,220
+lo que har es comenzar un nuevo hilo ejecutando solo este complejo clculo.
+
+139
+00:06:39,220 --> 00:06:40,800
+Y el segundo hilo ser
+
+140
+00:06:40,800 --> 00:06:43,670
+un nuevo hilo donde el objetivo es la funcin ask_user.
+
+141
+00:06:44,560 --> 00:06:48,000
+Ahora bien, ahora tenemos tres hilos: un hilo principal, que
+
+142
+00:06:48,000 --> 00:06:49,490
+es responsable de ejecutar
+
+143
+00:06:49,490 --> 00:06:51,480
+la aplicacin, un hilo que es
+
+144
+00:06:51,480 --> 00:06:52,430
+responsable de ejecutar
+
+145
+00:06:52,430 --> 00:06:54,330
+el clculo complejo, y otro hilo
+
+146
+00:06:54,330 --> 00:06:55,730
+que es responsable de
+
+147
+00:06:55,730 --> 00:06:57,310
+ejecutar la funcin ask_user.
+
+148
+00:06:57,310 --> 00:06:59,400
+As que vamos a ejecutar estos dos al mismo tiempo y
+
+149
+00:06:59,400 --> 00:07:00,710
+vamos a ver qu pasa, de acuerdo?
+
+150
+00:07:00,710 --> 00:07:05,040
+Lo resuelto es hacer tiempo. tiempo, mida la hora
+
+151
+00:07:05,040 --> 00:07:10,040
+de inicio, hilo. empezar, lo siento thread1. start (), thread2. comienzo().
+
+152
+00:07:13,090 --> 00:07:14,700
+Ahora estos hilos han comenzado y
+
+153
+00:07:16,110 --> 00:07:19,180
+se estn ejecutando al mismo tiempo que nuestro hilo principal.
+
+154
+00:07:19,180 --> 00:07:21,930
+Bueno, ahora tenemos tres hilos ejecutndose al mismo tiempo.
+
+155
+00:07:21,930 --> 00:07:23,160
+Cuando comenzamos esto, la
+
+156
+00:07:23,160 --> 00:07:25,140
+funcin de clculo complejo se est ejecutando.
+
+157
+00:07:25,140 --> 00:07:28,240
+Cuando comenzamos esto, se est ejecutando la funcin ask_user.
+
+158
+00:07:28,240 --> 00:07:30,650
+Y tambin, nuestro hilo principal que es responsable
+
+159
+00:07:30,650 --> 00:07:33,330
+de ejecutar este cdigo, tambin se est ejecutando.
+
+160
+00:07:33,330 --> 00:07:36,010
+Entonces tenemos que decirle a nuestro hilo principal que
+
+161
+00:07:36,010 --> 00:07:38,190
+espere a que terminen estos dos hilos.
+
+162
+00:07:38,190 --> 00:07:43,190
+La forma en que hacemos eso: thread1. join () y thread2. unirse().
+
+163
+00:07:46,630 --> 00:07:49,070
+Esto le dice a nuestro hilo principal que espere
+
+164
+00:07:49,070 --> 00:07:52,580
+a que termine el hilo uno y espera a que termine el segundo hilo.
+
+165
+00:07:52,580 --> 00:07:54,960
+De nuevo, estos son lo que
+
+166
+00:07:54,960 --> 00:07:57,330
+llamaramos operaciones de bloqueo porque estn
+
+167
+00:07:57,330 --> 00:08:00,520
+haciendo que este hilo espere hasta que algo suceda.
+
+168
+00:08:00,520 --> 00:08:01,840
+Pero en este caso queremos hacer
+
+169
+00:08:01,840 --> 00:08:04,000
+eso porque queremos esperar hasta que los hilos terminen antes
+
+170
+00:08:04,000 --> 00:08:06,340
+de que podamos calcular el tiempo de finalizacin del hilo.
+
+171
+00:08:06,340 --> 00:08:10,340
+Entonces, vamos a decir que el tiempo total de dos
+
+172
+00:08:11,190 --> 00:08:14,470
+hilos es el tiempo. tiempo menos inicio.
+
+173
+00:08:15,950 --> 00:08:16,783
+Ahora ok.
+
+174
+00:08:18,360 --> 00:08:19,310
+Esto esta bien.
+
+175
+00:08:19,310 --> 00:08:20,700
+No te preocupes por esa cosa amarilla.
+
+176
+00:08:20,700 --> 00:08:23,460
+Vamos a ejecutar esto de nuevo y ver qu pasa.
+
+177
+00:08:23,460 --> 00:08:25,560
+Qu crees que va a pasar?
+
+178
+00:08:27,030 --> 00:08:29,380
+Pinselo antes de continuar.
+
+179
+00:08:31,480 --> 00:08:33,730
+Pregntame por mi nombre, tard un par de segundos
+
+180
+00:08:33,730 --> 00:08:35,470
+en hacer eso y comienza a calcular,
+
+181
+00:08:36,690 --> 00:08:37,523
+y al final
+
+182
+00:08:37,523 --> 00:08:39,640
+tomar ms o menos la misma cantidad que antes,
+
+183
+00:08:39,640 --> 00:08:41,440
+ocho segundos, luego vuelve a preguntar por
+
+184
+00:08:41,440 --> 00:08:43,820
+mi nombre, me tom un poco ms tiempo ahora, solo
+
+185
+00:08:44,740 --> 00:08:49,240
+para escribir, pero observe cmo en total, tom 6. 45 segundos en lugar
+
+186
+00:08:49,240 --> 00:08:52,130
+de 8. 36 segundos.
+
+187
+00:08:53,040 --> 00:08:54,680
+Pero el clculo complejo tom
+
+188
+00:08:54,680 --> 00:08:56,730
+esencialmente la misma cantidad de tiempo.
+
+189
+00:08:58,070 --> 00:08:59,770
+El ask_user tard
+
+190
+00:09:01,130 --> 00:09:05,020
+an ms, pero est bien porque, en total,
+
+191
+00:09:05,020 --> 00:09:09,120
+tomamos la funcin ms larga y eso se
+
+192
+00:09:09,120 --> 00:09:11,670
+debe a que la funcin
+
+193
+00:09:11,670 --> 00:09:15,070
+ask_user no hizo nada excepto esperar, de acuerdo?
+
+194
+00:09:16,560 --> 00:09:19,860
+La diferencia entre estas dos veces es la
+
+195
+00:09:19,860 --> 00:09:23,880
+cantidad de CPU que necesita la funcin ask_user y
+
+196
+00:09:23,880 --> 00:09:27,650
+cunto tiempo nos llev cambiar entre los hilos en
+
+197
+00:09:27,650 --> 00:09:31,380
+la CPU, en el procesador de su curso.
+
+198
+00:09:32,460 --> 00:09:34,020
+Como puede ver, no mucho.
+
+199
+00:09:34,020 --> 00:09:36,980
+En total, el tiempo de dos subprocesos tom ms o
+
+200
+00:09:36,980 --> 00:09:39,180
+menos la misma cantidad de tiempo que
+
+201
+00:09:39,180 --> 00:09:40,560
+su clculo complejo porque su
+
+202
+00:09:40,560 --> 00:09:43,380
+funcin ask_user realmente no necesitaba la CPU para nada.
+
+203
+00:09:43,380 --> 00:09:45,380
+Simplemente cre una nueva cadena, eso es todo.
+
+204
+00:09:47,020 --> 00:09:48,010
+As que espero que esto
+
+205
+00:09:48,010 --> 00:09:49,580
+tenga sentido, para esto son los hilos.
+
+206
+00:09:51,130 --> 00:09:53,210
+Es para reducir el tiempo de espera.
+
+207
+00:09:53,210 --> 00:09:56,930
+Cuando tiene una operacin de bloqueo como esta entrada, que
+
+208
+00:09:56,930 --> 00:10:00,360
+est esperando, lo que hace que su programa espere
+
+209
+00:10:00,360 --> 00:10:02,970
+algo, es un buen uso para un hilo.
+
+210
+00:10:02,970 --> 00:10:05,620
+Si tiene una funcin como este clculo complejo,
+
+211
+00:10:06,820 --> 00:10:09,730
+usar un hilo no es una gran idea.
+
+212
+00:10:09,730 --> 00:10:13,210
+Y aqu hay un ltimo ejemplo para ti.
+
+213
+00:10:13,210 --> 00:10:15,270
+Ya sabes, cdigo enhebrado,
+
+214
+00:10:15,270 --> 00:10:18,500
+no voy a usar la funcin ask_user.
+
+215
+00:10:20,010 --> 00:10:22,160
+Voy a usar la funcin de clculo complejo nuevamente.
+
+216
+00:10:22,160 --> 00:10:23,780
+Entonces ahora tendremos dos
+
+217
+00:10:23,780 --> 00:10:25,950
+hilos, ambos ejecutando el clculo complejo.
+
+218
+00:10:25,950 --> 00:10:27,810
+Separa las instancias, pero
+
+219
+00:10:27,810 --> 00:10:29,510
+ambos calcularn lo mismo.
+
+220
+00:10:30,520 --> 00:10:32,630
+De acuerdo, corramos esto de nuevo.
+
+221
+00:10:32,630 --> 00:10:33,960
+Me preguntar primero mi nombre
+
+222
+00:10:33,960 --> 00:10:36,330
+porque ese es el cdigo de un nico subproceso
+
+223
+00:10:36,330 --> 00:10:38,540
+y ahora veamos qu ocurre con nuestro clculo.
+
+224
+00:10:38,540 --> 00:10:41,350
+Recuerde, solo se puede ejecutar un hilo a la vez, de acuerdo?
+
+225
+00:10:41,350 --> 00:10:42,930
+Por lo tanto, no puede ejecutar ambos
+
+226
+00:10:42,930 --> 00:10:44,770
+al mismo tiempo, pero comenzamos a calcular dos
+
+227
+00:10:44,770 --> 00:10:46,590
+veces porque se trata de dos funciones que
+
+228
+00:10:46,590 --> 00:10:48,660
+se estn ejecutando, cada una en un subproceso.
+
+229
+00:10:48,660 --> 00:10:50,210
+Y ahora veamos qu pasa.
+
+230
+00:10:53,160 --> 00:10:54,710
+Observe cmo le est tomando un tiempo.
+
+231
+00:10:55,630 --> 00:10:57,370
+Ah tienes.
+
+232
+00:10:57,370 --> 00:10:59,180
+Los clculos complejos ahora tardaron
+
+233
+00:10:59,180 --> 00:11:02,030
+el doble de tiempo en ejecutarse porque no pueden
+
+234
+00:11:02,030 --> 00:11:05,190
+ejecutarse al mismo tiempo, por lo que el sistema
+
+235
+00:11:05,190 --> 00:11:07,780
+operativo estuvo dando un poco de tiempo a
+
+236
+00:11:07,780 --> 00:11:09,380
+uno, luego lo extrajo y
+
+237
+00:11:09,380 --> 00:11:10,640
+le dio un poco
+
+238
+00:11:10,640 --> 00:11:12,070
+de tiempo al otro
+
+239
+00:11:12,070 --> 00:11:14,140
+, luego tirando de l y
+
+240
+00:11:14,140 --> 00:11:15,820
+volviendo al primero, luego yendo
+
+241
+00:11:15,820 --> 00:11:17,900
+al segundo y as sucesivamente, cambiando
+
+242
+00:11:17,900 --> 00:11:21,300
+entre los dos, pero todos necesitaron todo ese tiempo en
+
+243
+00:11:21,300 --> 00:11:23,070
+la CPU para calcular las cosas.
+
+244
+00:11:23,070 --> 00:11:26,010
+Entonces, en total, lo que hizo fue extender el tiempo
+
+245
+00:11:26,010 --> 00:11:27,540
+que cada uno estaba ejecutando.
+
+246
+00:11:27,540 --> 00:11:31,890
+Y en cierto modo intercalaste uno con el otro continuamente y al
+
+247
+00:11:31,890 --> 00:11:34,490
+final te llev el doble de tiempo.
+
+248
+00:11:35,910 --> 00:11:39,710
+Si hubiera ejecutado estas secuencias de forma secuencial sin hilos, en realidad
+
+249
+00:11:39,710 --> 00:11:41,570
+sera ms rpido porque no tendra
+
+250
+00:11:41,570 --> 00:11:43,660
+que lidiar con la eliminacin de
+
+251
+00:11:43,660 --> 00:11:46,070
+un hilo y la colocacin de otro.
+
+252
+00:11:46,070 --> 00:11:49,460
+Entonces, si est haciendo cosas que requieren la CPU
+
+253
+00:11:49,460 --> 00:11:51,980
+todo el tiempo, no use hilos.
+
+254
+00:11:51,980 --> 00:11:54,150
+No tiene sentido en Python.
+
+255
+00:11:54,150 --> 00:11:56,950
+Hay otras formas de hacer cosas similares,
+
+256
+00:11:56,950 --> 00:11:59,540
+como aprenderemos, eso podra ser mejor.
+
+257
+00:12:00,890 --> 00:12:03,410
+Ahora volveremos a nuestra funcin ask_user aqu,
+
+258
+00:12:03,410 --> 00:12:06,080
+nuevamente este cdigo est disponible en GitHub,
+
+259
+00:12:06,080 --> 00:12:07,930
+por favor descrguelo, juegue con
+
+260
+00:12:07,930 --> 00:12:10,590
+l, ejectelo para que usted, ya sabe,
+
+261
+00:12:10,590 --> 00:12:11,750
+haga algunos cambios, piense.
+
+262
+00:12:11,750 --> 00:12:14,840
+Estas cosas son complicadas, de acuerdo?
+
+263
+00:12:14,840 --> 00:12:17,830
+Hay una razn por la que no hay muchos cursos
+
+264
+00:12:17,830 --> 00:12:20,920
+en esto porque es difcil y espero que ustedes vengan
+
+265
+00:12:20,920 --> 00:12:22,350
+al curso de preguntas y
+
+266
+00:12:22,350 --> 00:12:25,400
+respuestas y hagan preguntas y, ya saben, estoy aqu para
+
+267
+00:12:25,400 --> 00:12:27,110
+ayudarlo si algo no est claro.
+
+268
+00:12:28,190 --> 00:12:31,160
+Entonces, por favor, usa ese recurso.
+
+269
+00:12:31,160 --> 00:12:34,240
+Quiero que abandones este curso sabiendo sobre esto.
+
+270
+00:12:35,500 --> 00:12:37,190
+As que eso es todo por este video,
+
+271
+00:12:37,190 --> 00:12:39,440
+gracias por acompaarme en este y nos vemos en el prximo.
+

@@ -1,0 +1,784 @@
+1
+00:00:00,220 --> 00:00:01,400
+Jos: Hola bienvenido.
+
+2
+00:00:01,400 --> 00:00:04,310
+En esta conferencia, estamos hablando de filtro.
+
+3
+00:00:04,310 --> 00:00:05,600
+Ahora que tenemos nuestros
+
+4
+00:00:05,600 --> 00:00:07,700
+generadores, iteradores e iterables fuera del
+
+5
+00:00:07,700 --> 00:00:10,180
+camino, podemos comenzar con algunas divertidas funciones integradas.
+
+6
+00:00:11,140 --> 00:00:13,120
+La funcin de filtro es una funcin
+
+7
+00:00:13,120 --> 00:00:16,220
+incorporada en Python a la que puede llamar desde cualquier archivo
+
+8
+00:00:16,220 --> 00:00:18,120
+o programa, eso es lo que significa
+
+9
+00:00:18,120 --> 00:00:19,820
+"incorporado" y requiere dos argumentos.
+
+10
+00:00:21,020 --> 00:00:22,640
+El primer argumento para la
+
+11
+00:00:22,640 --> 00:00:23,620
+funcin de filtro
+
+12
+00:00:24,710 --> 00:00:26,900
+es otra funcin y tambin toma un iterable.
+
+13
+00:00:26,900 --> 00:00:28,500
+As que es algo
+
+14
+00:00:30,360 --> 00:00:31,860
+as, encontremos una lista
+
+15
+00:00:31,860 --> 00:00:36,590
+de amigos como Rolf, Jos, Randy, Anna y Mary y s que
+
+16
+00:00:36,590 --> 00:00:37,940
+me he perdido una.
+
+17
+00:00:39,870 --> 00:00:41,000
+Y ahora vamos a
+
+18
+00:00:41,000 --> 00:00:43,730
+usar la funcin de filtro para que solo obtengamos los
+
+19
+00:00:43,730 --> 00:00:45,480
+amigos que comienzan con la letra R.
+
+20
+00:00:47,710 --> 00:00:50,590
+Entonces, comience con R, va
+
+21
+00:00:50,590 --> 00:00:54,304
+a ser filtro, esta es la funcin,
+
+22
+00:00:54,304 --> 00:00:56,610
+ahora toma una funcin
+
+23
+00:00:59,300 --> 00:01:04,300
+primer argumento, arg 1, funcin que devuelve verdadero o falso.
+
+24
+00:01:07,310 --> 00:01:09,510
+Entonces, el primer argumento para esta funcin
+
+25
+00:01:09,510 --> 00:01:12,160
+de filtro tiene que ser otra funcin que devuelva
+
+26
+00:01:13,090 --> 00:01:15,290
+verdadero o falso segn lo que queremos filtrar.
+
+27
+00:01:15,290 --> 00:01:18,270
+As que djame definir una funcin aqu.
+
+28
+00:01:19,120 --> 00:01:20,760
+Comienza con R.
+
+29
+00:01:23,170 --> 00:01:26,500
+Regreso amigo inicio punto con R.
+
+30
+00:01:28,180 --> 00:01:31,190
+El punto de amigo comienza con R va a
+
+31
+00:01:31,190 --> 00:01:34,590
+ser cierto si este argumento aqu comienza con una R,
+
+32
+00:01:34,590 --> 00:01:36,440
+ser falso si no lo es.
+
+33
+00:01:37,910 --> 00:01:40,870
+Entonces, el primer argumento para la funcin de filtro
+
+34
+00:01:40,870 --> 00:01:42,230
+debe ser que esto
+
+35
+00:01:43,474 --> 00:01:45,240
+comience con la funcin R
+
+36
+00:01:46,520 --> 00:01:49,310
+y el segundo argumento tenga que ser iterable,
+
+37
+00:01:49,310 --> 00:01:52,170
+sabemos lo que son, entonces, los amigos son iterables
+
+38
+00:01:52,170 --> 00:01:54,270
+porque podemos iterar sobre l, es
+
+39
+00:01:55,130 --> 00:01:58,380
+una lista y eso es esto, as es como se
+
+40
+00:01:58,380 --> 00:02:01,280
+ve la funcin de filtro y lo que hace
+
+41
+00:02:01,280 --> 00:02:04,760
+es solo mantener los elementos para los que esto devuelve verdadero.
+
+42
+00:02:05,890 --> 00:02:08,160
+Por lo tanto, la primera vez
+
+43
+00:02:08,160 --> 00:02:11,990
+que se ejecuta la funcin de filtro, te dar Rolf,
+
+44
+00:02:11,990 --> 00:02:14,420
+Rolf se dirigir a los amigos,
+
+45
+00:02:14,420 --> 00:02:16,990
+el amigo empezar con R y ser
+
+46
+00:02:16,990 --> 00:02:20,200
+verdad, Rolf se quedar con la funcin de filtro.
+
+47
+00:02:20,200 --> 00:02:22,770
+Luego ir de nuevo, y esta vez con Jos, Jos
+
+48
+00:02:22,770 --> 00:02:24,910
+comienza con R es falso, por lo que
+
+49
+00:02:24,910 --> 00:02:26,810
+el filtro lo eliminar e ignorar, y
+
+50
+00:02:27,950 --> 00:02:29,550
+as sucesivamente para cada amigo aqu.
+
+51
+00:02:30,720 --> 00:02:32,800
+Lo interesante es que el filtro
+
+52
+00:02:32,800 --> 00:02:34,680
+realmente devuelve un generador para
+
+53
+00:02:34,680 --> 00:02:36,080
+que sea un poco
+
+54
+00:02:36,080 --> 00:02:37,500
+ms eficiente, en lugar
+
+55
+00:02:37,500 --> 00:02:40,010
+de copiar tu lista solo con los
+
+56
+00:02:40,010 --> 00:02:44,816
+elementos que deseas conservar, tienes que llamar al siguiente, comenzar con el elemento
+
+57
+00:02:44,816 --> 00:02:48,940
+R para que tengas el prximo disponible elemento que es este
+
+58
+00:02:48,940 --> 00:02:50,890
+caso va a ser Rolf.
+
+59
+00:02:51,880 --> 00:02:55,220
+Y si lo haces de nuevo, y de nuevo,
+
+60
+00:02:56,170 --> 00:02:57,210
+obtendrs a Randy
+
+61
+00:02:58,837 --> 00:03:03,230
+y finalmente obtendrs esta excepcin de iteracin de detencin de la que
+
+62
+00:03:03,230 --> 00:03:04,480
+hablamos antes, es
+
+63
+00:03:04,480 --> 00:03:07,080
+lo que seala el final de una
+
+64
+00:03:07,080 --> 00:03:08,490
+secuencia o un generador
+
+65
+00:03:08,490 --> 00:03:11,730
+o un iterador cuando alcanzas el al final, de acuerdo?
+
+66
+00:03:11,730 --> 00:03:13,390
+Cuando haces un ciclo for, lo
+
+67
+00:03:13,390 --> 00:03:15,000
+que el ciclo for est haciendo
+
+68
+00:03:15,000 --> 00:03:17,760
+en segundo plano es simplemente llamar a continuacin y tan
+
+69
+00:03:17,760 --> 00:03:19,640
+pronto como alcances esta iteracin de detencin,
+
+70
+00:03:19,640 --> 00:03:21,120
+el ciclo for se detiene
+
+71
+00:03:21,120 --> 00:03:23,120
+y no te da este error porque
+
+72
+00:03:23,120 --> 00:03:25,380
+se ha diseado la iteracin stop. para significar
+
+73
+00:03:25,380 --> 00:03:28,050
+eso y el bucle for es una construccin que
+
+74
+00:03:28,050 --> 00:03:31,780
+utiliza detener iteracin para saber cundo se ha llegado al final, de acuerdo?
+
+75
+00:03:31,780 --> 00:03:35,930
+Ahora, por supuesto, si haces una lista de comenzar con R, entonces te dar
+
+76
+00:03:35,930 --> 00:03:37,600
+una lista de todos los elementos
+
+77
+00:03:37,600 --> 00:03:38,960
+en el generador, va a
+
+78
+00:03:38,960 --> 00:03:41,540
+pasar por cada elemento y lo va a poner
+
+79
+00:03:41,540 --> 00:03:43,110
+en una nueva lista.
+
+80
+00:03:43,110 --> 00:03:44,810
+Ahora, si lo haces de nuevo,
+
+81
+00:03:44,810 --> 00:03:46,260
+qu crees que va a pasar?
+
+82
+00:03:48,390 --> 00:03:50,600
+Bueno, obtendrs una lista vaca, el objeto
+
+83
+00:03:50,600 --> 00:03:54,940
+de la lista aqu no aumenta la iteracin de detencin, pero ve que la
+
+84
+00:03:54,940 --> 00:03:57,070
+iteracin de detencin se eleva y simplemente
+
+85
+00:03:57,070 --> 00:03:58,410
+no te da nada,
+
+86
+00:03:58,410 --> 00:04:00,239
+simplemente te da una lista vaca
+
+87
+00:04:00,239 --> 00:04:02,530
+porque el generador ya se ha utilizado
+
+88
+00:04:02,530 --> 00:04:04,810
+y recuerda que ha llegado al final,
+
+89
+00:04:04,810 --> 00:04:07,000
+por lo que no puede proporcionarle nada ms.
+
+90
+00:04:08,150 --> 00:04:11,050
+Es por eso que explico generadores, iteradores
+
+91
+00:04:11,050 --> 00:04:15,500
+e iterables antes de entrar en esta funcin de filtro, de acuerdo?
+
+92
+00:04:15,500 --> 00:04:17,850
+Ahora, por supuesto, en lugar de definir una funcin
+
+93
+00:04:17,850 --> 00:04:18,840
+aqu que toma un
+
+94
+00:04:18,840 --> 00:04:20,590
+parmetro y los retornos del parmetro comienzan
+
+95
+00:04:20,590 --> 00:04:22,400
+con R, podramos simplemente usar un lamda.
+
+96
+00:04:27,310 --> 00:04:29,620
+Esta funcin lamda es exactamente la misma
+
+97
+00:04:29,620 --> 00:04:32,040
+cosa, as que toma un parmetro y
+
+98
+00:04:32,040 --> 00:04:35,300
+despus de los dos puntos definimos qu devuelve y
+
+99
+00:04:35,300 --> 00:04:38,820
+lo que devuelve es x punto comienza con R as
+
+100
+00:04:38,820 --> 00:04:40,650
+que esto es verdadero o
+
+101
+00:04:40,650 --> 00:04:43,200
+falso dependiendo de si x comienza con R.
+
+102
+00:04:44,230 --> 00:04:46,170
+Si te hace sentir mejor, puedes llamar
+
+103
+00:04:46,170 --> 00:04:48,640
+al parmetro amigo y de esa manera tal
+
+104
+00:04:48,640 --> 00:04:49,980
+vez est un poco ms
+
+105
+00:04:49,980 --> 00:04:51,710
+claro que tal vez esta funcin
+
+106
+00:04:51,710 --> 00:04:53,120
+funcione con estos amigos aqu,
+
+107
+00:04:53,120 --> 00:04:55,380
+entonces ya no necesitas esa funcin all.
+
+108
+00:04:56,750 --> 00:04:58,140
+Y tampoco necesitamos este comentario ya
+
+109
+00:04:58,140 --> 00:04:59,660
+que sabemos lo que significa ahora.
+
+110
+00:05:01,260 --> 00:05:03,780
+Esta funcin de filtro aqu
+
+111
+00:05:03,780 --> 00:05:05,060
+es idntica a
+
+112
+00:05:06,930 --> 00:05:09,820
+esta expresin de generador aqu, esta
+
+113
+00:05:09,820 --> 00:05:12,490
+comprensin de generador que dice, F
+
+114
+00:05:12,490 --> 00:05:17,490
+para F en amigos, si F punto comienza con R.
+
+115
+00:05:17,690 --> 00:05:19,970
+Entonces estos dos son idnticos, est bien?
+
+116
+00:05:20,970 --> 00:05:23,680
+Aqu tenemos una expresin de generador, una comprensin
+
+117
+00:05:23,680 --> 00:05:26,280
+de generador que coloca a cada amigo
+
+118
+00:05:26,280 --> 00:05:30,560
+en un generador nuevo, pero solo si F comienza con R, por
+
+119
+00:05:30,560 --> 00:05:33,260
+lo que estos dos son iguales, de acuerdo?
+
+120
+00:05:34,870 --> 00:05:36,760
+Cul es ms rpido?
+
+121
+00:05:36,760 --> 00:05:38,220
+Cul se comporta mejor?
+
+122
+00:05:39,330 --> 00:05:41,890
+Esta, la comprensin del generador funciona mejor
+
+123
+00:05:41,890 --> 00:05:43,690
+en este caso, al menos.
+
+124
+00:05:43,690 --> 00:05:45,030
+Y la razn es
+
+125
+00:05:45,030 --> 00:05:48,310
+que tienes que crear esta funcin lamda en este filtro
+
+126
+00:05:48,310 --> 00:05:50,110
+y no tienes que crear
+
+127
+00:05:50,110 --> 00:05:52,600
+una funcin lamda en la expresin del generador.
+
+128
+00:05:54,365 --> 00:05:55,900
+Si ya tiene su funcin definida
+
+129
+00:05:55,900 --> 00:05:57,250
+en otra parte de su
+
+130
+00:05:57,250 --> 00:05:59,390
+programa, la funcin de filtro puede funcionar mejor
+
+131
+00:05:59,390 --> 00:06:00,480
+y, en algunos casos,
+
+132
+00:06:00,480 --> 00:06:03,350
+creo que la funcin de filtro puede ser ms legible, aunque
+
+133
+00:06:03,350 --> 00:06:04,420
+en muchos otros casos,
+
+134
+00:06:04,420 --> 00:06:06,570
+creo que la comprensin de la lista es ms legible.
+
+135
+00:06:07,670 --> 00:06:09,050
+As que depende de
+
+136
+00:06:09,050 --> 00:06:11,740
+ti cul uses, normalmente hago las comprensiones,
+
+137
+00:06:11,740 --> 00:06:13,810
+tambin es un poco ms Pythonic.
+
+138
+00:06:13,810 --> 00:06:15,780
+Y, por cierto, solo para
+
+139
+00:06:15,780 --> 00:06:18,290
+completar lo que est pasando, estos
+
+140
+00:06:18,290 --> 00:06:21,090
+dos filtros y esta comprensin del generador
+
+141
+00:06:21,090 --> 00:06:23,332
+son idnticos a esta otra
+
+142
+00:06:23,332 --> 00:06:25,510
+funcin que voy a definir.
+
+143
+00:06:27,520 --> 00:06:29,220
+Es otra funcin de
+
+144
+00:06:29,220 --> 00:06:30,260
+filtro, muy similar
+
+145
+00:06:30,260 --> 00:06:32,757
+a esta que toma una funcin
+
+146
+00:06:32,757 --> 00:06:36,487
+e iterable y va a iterar sobre la iterable,
+
+147
+00:06:36,487 --> 00:06:39,140
+va a verificar si la funcin
+
+148
+00:06:39,140 --> 00:06:41,800
+devuelve verdadero o no y va a
+
+149
+00:06:42,690 --> 00:06:45,050
+ceder I al final si la
+
+150
+00:06:45,050 --> 00:06:46,410
+funcin es verdad.
+
+151
+00:06:46,410 --> 00:06:50,620
+Entonces, imaginemos que llamamos a mi filtro personalizado aqu.
+
+152
+00:06:52,680 --> 00:06:55,117
+Amigo de Lamda comienza con R es
+
+153
+00:06:55,117 --> 00:06:57,938
+esta funcin, la iterable es nuestra lista de amigos.
+
+154
+00:06:57,938 --> 00:07:00,670
+Nos iteramos sobre el iterable, obtenemos el primer elemento
+
+155
+00:07:00,670 --> 00:07:01,503
+que es Rolf.
+
+156
+00:07:02,700 --> 00:07:06,510
+Si func I eso es, amigo comienza con R es
+
+157
+00:07:06,510 --> 00:07:08,820
+cierto, que es, entonces vamos a
+
+158
+00:07:08,820 --> 00:07:10,980
+ceder yo, eso es Rolf.
+
+159
+00:07:12,370 --> 00:07:14,880
+Cuando llamemos a continuacin en esta funcin, conseguiremos a
+
+160
+00:07:14,880 --> 00:07:16,520
+Rolf y luego nos detendremos justo
+
+161
+00:07:16,520 --> 00:07:18,250
+despus de la lnea nueve.
+
+162
+00:07:19,290 --> 00:07:20,710
+Cuando llamemos al prximo
+
+163
+00:07:20,710 --> 00:07:23,162
+de nuevo, volveremos a la cima, eso
+
+164
+00:07:23,162 --> 00:07:25,690
+es, vamos a ir, ese es Jos, por
+
+165
+00:07:25,690 --> 00:07:26,850
+cierto, el hilo
+
+166
+00:07:26,850 --> 00:07:29,540
+Jos, vamos a verificar si la funcin coincide,
+
+167
+00:07:29,540 --> 00:07:32,950
+va a ser falso, as que No vamos a ceder
+
+168
+00:07:32,950 --> 00:07:35,850
+nada, no nos detenemos, pasamos al siguiente elemento del
+
+169
+00:07:36,720 --> 00:07:39,200
+ciclo, comprobamos si Randy comienza con R
+
+170
+00:07:39,200 --> 00:07:42,780
+y lo es, as es, entonces cedemos a Randy y nos detenemos.
+
+171
+00:07:43,950 --> 00:07:46,290
+La prxima vez que llamemos a continuacin, vamos
+
+172
+00:07:46,290 --> 00:07:49,510
+aqu y es Anna, es falso, as que no cedemos, continuamos,
+
+173
+00:07:49,510 --> 00:07:52,001
+soy Mara, es falso, as que no cedemos,
+
+174
+00:07:52,001 --> 00:07:54,820
+continuamos, llegamos al final, eso es detener la iteracin
+
+175
+00:07:54,820 --> 00:07:57,550
+para que lleguemos al final del objeto del generador
+
+176
+00:07:57,550 --> 00:08:00,110
+y esa es otra iteracin de detencin que
+
+177
+00:08:00,110 --> 00:08:02,080
+nos dice que hemos llegado al final.
+
+178
+00:08:03,080 --> 00:08:05,090
+As que espero que esto tenga
+
+179
+00:08:05,090 --> 00:08:07,690
+sentido, est empezando a ser un poco ms,
+
+180
+00:08:07,690 --> 00:08:10,680
+ms en lo que Python se trata, esta gestin
+
+181
+00:08:10,680 --> 00:08:12,980
+de datos y envo de datos de
+
+182
+00:08:12,980 --> 00:08:14,150
+un lugar a otro
+
+183
+00:08:14,150 --> 00:08:15,620
+y el rendimiento es extremadamente
+
+184
+00:08:15,620 --> 00:08:18,600
+poderoso porque te permite detener y generar los valores
+
+185
+00:08:18,600 --> 00:08:20,910
+uno por uno sin tener que almacenarlos
+
+186
+00:08:20,910 --> 00:08:22,710
+todos en la memoria al mismo tiempo.
+
+187
+00:08:24,560 --> 00:08:25,690
+De todos modos, eso
+
+188
+00:08:25,690 --> 00:08:28,170
+es todo por este video, solo quera mostrarte esta funcin
+
+189
+00:08:28,170 --> 00:08:29,630
+de filtro y cmo se usa.
+
+190
+00:08:29,630 --> 00:08:30,960
+La funcin de filtro tambin
+
+191
+00:08:30,960 --> 00:08:32,380
+est presente en muchos otros
+
+192
+00:08:32,380 --> 00:08:34,320
+lenguajes de programacin, por lo que la
+
+193
+00:08:34,320 --> 00:08:36,600
+ver en todas partes a medida que desarrolle sus
+
+194
+00:08:36,600 --> 00:08:38,740
+habilidades de programacin y contine su viaje de programacin.
+
+195
+00:08:38,740 --> 00:08:40,603
+Y as, s, eso es todo y
+
+196
+00:08:40,603 --> 00:08:42,400
+te ver en el prximo video.
+

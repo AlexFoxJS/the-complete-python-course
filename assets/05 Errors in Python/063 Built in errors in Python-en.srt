@@ -1,0 +1,1684 @@
+1
+00:00:00,440 --> 00:00:01,510
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,510 --> 00:00:05,550
+In this video, we're going to talk about errors in Python.
+
+3
+00:00:05,550 --> 00:00:07,610
+We're going to talk about quite a few of them.
+
+4
+00:00:07,610 --> 00:00:09,010
+I just want to tell you something
+
+5
+00:00:09,010 --> 00:00:10,360
+about these built-in errors.
+
+6
+00:00:10,360 --> 00:00:11,960
+The errors that come with Python,
+
+7
+00:00:11,960 --> 00:00:13,810
+so that when they appear in your programmes
+
+8
+00:00:13,810 --> 00:00:16,430
+you'll know exactly what they mean.
+
+9
+00:00:16,430 --> 00:00:18,780
+You won't have to waste time trying to find out
+
+10
+00:00:18,780 --> 00:00:21,880
+what they are and how they happened.
+
+11
+00:00:22,870 --> 00:00:25,050
+We're going to take about a few errors.
+
+12
+00:00:25,050 --> 00:00:28,610
+We're going to talk about the IndexError and what it means.
+
+13
+00:00:28,610 --> 00:00:31,260
+A KeyError and NameError.
+
+14
+00:00:32,227 --> 00:00:34,817
+These types of error happen when you access something
+
+15
+00:00:34,817 --> 00:00:38,280
+that didn't make sense or in the wrong way.
+
+16
+00:00:38,280 --> 00:00:39,820
+We're going to look at AttributeError,
+
+17
+00:00:39,820 --> 00:00:41,890
+which is fairly related.
+
+18
+00:00:41,890 --> 00:00:43,670
+Then we'll look at NotImplementedError.
+
+19
+00:00:43,670 --> 00:00:46,970
+This is an error that you can use, it can be really handy.
+
+20
+00:00:46,970 --> 00:00:49,930
+We're going to look at RuntimeError or the generic error.
+
+21
+00:00:49,930 --> 00:00:52,190
+then we're going to look at also, SyntaxError.
+
+22
+00:00:52,190 --> 00:00:55,280
+This happens when you mess up writing Python code,
+
+23
+00:00:55,280 --> 00:00:57,610
+you don't write proper Python.
+
+24
+00:00:57,610 --> 00:01:00,710
+We're going to look at IndentationError and TabError.
+
+25
+00:01:00,710 --> 00:01:05,710
+These happen when it doesn't mess up with the spaces
+
+26
+00:01:05,920 --> 00:01:08,890
+or tabs, or when you mix them together.
+
+27
+00:01:08,890 --> 00:01:11,290
+We're going to look at TypeError and ValueError.
+
+28
+00:01:12,740 --> 00:01:15,610
+These happen when you give the wrong values or
+
+29
+00:01:15,610 --> 00:01:19,350
+values of the wrong type to some built-in functions.
+
+30
+00:01:19,350 --> 00:01:22,115
+Then we're going to look at ImportError
+
+31
+00:01:22,115 --> 00:01:23,130
+and when that happens.
+
+32
+00:01:23,130 --> 00:01:24,730
+We're also going to briefly talk about
+
+33
+00:01:24,730 --> 00:01:27,440
+DeprecationWarning and how you can use that.
+
+34
+00:01:28,900 --> 00:01:31,350
+So the IndexError, the IndexError happens
+
+35
+00:01:31,350 --> 00:01:33,137
+when you do something like this.
+
+36
+00:01:33,137 --> 00:01:35,650
+The first three lines by the way are just the Python
+
+37
+00:01:35,650 --> 00:01:37,780
+introduction type thing when you run
+
+38
+00:01:37,780 --> 00:01:39,320
+Python on your console.
+
+39
+00:01:39,320 --> 00:01:42,660
+I'll teach you how to do that in a couple sections time.
+
+40
+00:01:42,660 --> 00:01:46,180
+Basically we've defined friends as Rolf and Anne.
+
+41
+00:01:46,180 --> 00:01:47,940
+Then we've accessed friends[2],
+
+42
+00:01:47,940 --> 00:01:50,410
+but of course friends[2] doesn't exist
+
+43
+00:01:50,410 --> 00:01:53,720
+because friends only has two things, zero and one.
+
+44
+00:01:53,720 --> 00:01:56,610
+When you access friends[2], that's an IndexError
+
+45
+00:01:56,610 --> 00:01:59,480
+because you accessed an Index that didn't exist.
+
+46
+00:01:59,480 --> 00:02:01,720
+In this case it tells you that the list index
+
+47
+00:02:01,720 --> 00:02:02,770
+was out of range.
+
+48
+00:02:02,770 --> 00:02:04,260
+You're trying to access two,
+
+49
+00:02:04,260 --> 00:02:06,620
+but you only go up to one.
+
+50
+00:02:06,620 --> 00:02:08,730
+This is a type of IndexError.
+
+51
+00:02:08,730 --> 00:02:11,930
+Notice how the Traceback tells you where the file,
+
+52
+00:02:13,404 --> 00:02:16,010
+the line and module or function that you ran it in.
+
+53
+00:02:16,010 --> 00:02:19,230
+In this case, because I'm running Python
+
+54
+00:02:19,230 --> 00:02:20,500
+in interpreter mode.
+
+55
+00:02:20,500 --> 00:02:23,420
+That means you're just running Python interactively.
+
+56
+00:02:24,830 --> 00:02:26,750
+It executes as soon as you type,
+
+57
+00:02:26,750 --> 00:02:30,010
+so the file is just the thing I'm typing.
+
+58
+00:02:30,010 --> 00:02:31,300
+That's what this file is called.
+
+59
+00:02:31,300 --> 00:02:33,450
+The line is number one because,
+
+60
+00:02:33,450 --> 00:02:36,350
+again every line is number one in interpretive mode.
+
+61
+00:02:36,350 --> 00:02:38,730
+The module is just the module I'm running,
+
+62
+00:02:38,730 --> 00:02:41,200
+and that just means when it says in &lt;module&gt;,
+
+63
+00:02:41,200 --> 00:02:44,390
+that just means you are running the line directly.
+
+64
+00:02:44,390 --> 00:02:46,340
+You're not going through any functions.
+
+65
+00:02:47,790 --> 00:02:50,980
+So there's IndexError, happens when you access an index
+
+66
+00:02:50,980 --> 00:02:52,420
+that didn't exist or run an index
+
+67
+00:02:52,420 --> 00:02:53,970
+that is otherwise is incorrect.
+
+68
+00:02:55,490 --> 00:02:58,300
+Then we've got KeyError and this is fairly similar
+
+69
+00:02:58,300 --> 00:03:00,100
+to the one we saw earlier.
+
+70
+00:03:00,100 --> 00:03:03,090
+But now we have the proper code, movie name,
+
+71
+00:03:03,090 --> 00:03:06,750
+movie director and movie release.
+
+72
+00:03:06,750 --> 00:03:08,870
+However, it should be year.
+
+73
+00:03:09,800 --> 00:03:11,540
+Remember in our milestone_1,
+
+74
+00:03:11,540 --> 00:03:13,520
+we used the year key.
+
+75
+00:03:13,520 --> 00:03:15,350
+Let's assume that we've used the year key
+
+76
+00:03:15,350 --> 00:03:17,170
+for this bit of code at well.
+
+77
+00:03:17,170 --> 00:03:20,320
+What we'll get then is this nice Traceback.
+
+78
+00:03:20,320 --> 00:03:23,200
+What we've got now is KeyError
+
+79
+00:03:23,200 --> 00:03:26,810
+and the description of this KeyError is pretty terrible.
+
+80
+00:03:26,810 --> 00:03:27,980
+I don't like this description
+
+81
+00:03:27,980 --> 00:03:31,240
+because it just says that the key that you misused.
+
+82
+00:03:31,240 --> 00:03:34,921
+So it says, KeyError: 'release'.
+
+83
+00:03:34,921 --> 00:03:37,490
+Not terribly helpful, but now you know
+
+84
+00:03:37,490 --> 00:03:39,300
+that you've used the release key at some point
+
+85
+00:03:39,300 --> 00:03:40,530
+where you shouldn't have.
+
+86
+00:03:40,530 --> 00:03:42,570
+Then if the Traceback is good,
+
+87
+00:03:42,570 --> 00:03:45,390
+it'll give you which line that error happened.
+
+88
+00:03:45,390 --> 00:03:47,950
+You've used it here in movie release
+
+89
+00:03:47,950 --> 00:03:51,200
+and then again it says this line was inside
+
+90
+00:03:51,200 --> 00:03:52,809
+show_movie_details.
+
+91
+00:03:52,809 --> 00:03:55,840
+Show_movie_details was executed as show_movie_details
+
+92
+00:03:55,840 --> 00:03:57,800
+with movie inside it and that happened
+
+93
+00:03:57,800 --> 00:03:59,490
+inside show_movies.
+
+94
+00:03:59,490 --> 00:04:01,630
+That was executed inside the menu
+
+95
+00:04:01,630 --> 00:04:03,060
+and the menu was executed inside
+
+96
+00:04:03,060 --> 00:04:06,330
+the &lt;module&gt; or the file that you executed.
+
+97
+00:04:06,330 --> 00:04:08,520
+Notice how all of these are inside a file
+
+98
+00:04:08,520 --> 00:04:12,220
+called app.py because that's what our file
+
+99
+00:04:12,220 --> 00:04:13,520
+was called in milestone_1.
+
+100
+00:04:14,730 --> 00:04:17,960
+So the KeyError happens when you use a key incorrectly,
+
+101
+00:04:17,960 --> 00:04:19,880
+or otherwise the key doesn't exist,
+
+102
+00:04:19,880 --> 00:04:22,090
+but movie is a dictionary.
+
+103
+00:04:23,491 --> 00:04:25,490
+We've got movie being a dictionary
+
+104
+00:04:25,490 --> 00:04:29,290
+and then we accessed the incorrect key.
+
+105
+00:04:29,290 --> 00:04:31,560
+If movie was a list, like from the last video,
+
+106
+00:04:31,560 --> 00:04:33,480
+we would get a different type of error.
+
+107
+00:04:34,680 --> 00:04:35,940
+We also have NameError.
+
+108
+00:04:37,331 --> 00:04:39,910
+The NameError happens as we saw earlier,
+
+109
+00:04:39,910 --> 00:04:41,040
+in the last video,
+
+110
+00:04:41,040 --> 00:04:43,770
+when the variable is not defined.
+
+111
+00:04:43,770 --> 00:04:46,630
+So here, I'm just launched Python and I said print(hello).
+
+112
+00:04:46,630 --> 00:04:49,810
+The variable hello, but of course hello is not defined,
+
+113
+00:04:49,810 --> 00:04:54,080
+so I get a NameError that says name 'hello is not defined.
+
+114
+00:04:54,960 --> 00:04:57,690
+Of course, print of the string 'hello'
+
+115
+00:04:57,690 --> 00:04:59,430
+would still work because the sting 'hello'
+
+116
+00:04:59,430 --> 00:05:02,935
+is just a set of characters and numbers, or symbols.
+
+117
+00:05:02,935 --> 00:05:05,820
+Python doesn't evaluate it to a variable at all,
+
+118
+00:05:05,820 --> 00:05:07,200
+so that would work.
+
+119
+00:05:07,200 --> 00:05:09,540
+But printing the variable 'hello' doesn't work.
+
+120
+00:05:09,540 --> 00:05:12,118
+This is actually a really common error for my students,
+
+121
+00:05:12,118 --> 00:05:14,910
+where they forget to, or you guys forget
+
+122
+00:05:14,910 --> 00:05:17,860
+to put the quotation marks around the string.
+
+123
+00:05:17,860 --> 00:05:19,310
+Happens to everybody.
+
+124
+00:05:19,310 --> 00:05:21,470
+Just remember if you get a NameError for something
+
+125
+00:05:21,470 --> 00:05:23,880
+that it's gonna print, just check whether
+
+126
+00:05:23,880 --> 00:05:25,860
+it needs quotation marks around it.
+
+127
+00:05:25,860 --> 00:05:26,940
+That's a fairly popular thing,
+
+128
+00:05:26,940 --> 00:05:28,290
+so just keep your eyes out.
+
+129
+00:05:29,610 --> 00:05:31,520
+Let's also look at AttributeError.
+
+130
+00:05:31,520 --> 00:05:33,630
+AttributeError is pretty popular when you're starting
+
+131
+00:05:33,630 --> 00:05:35,050
+to deal with objects.
+
+132
+00:05:36,240 --> 00:05:38,710
+In this code here, we've gone my friends list
+
+133
+00:05:38,710 --> 00:05:42,090
+which has three strings: Roth, Jose and Charlie.
+
+134
+00:05:42,090 --> 00:05:45,110
+Then we've got some friends that are nearby: Roth and Anna.
+
+135
+00:05:46,260 --> 00:05:47,410
+Notice these two are lists
+
+136
+00:05:47,410 --> 00:05:49,760
+and then I'm doing friends.intersection
+
+137
+00:05:49,760 --> 00:05:51,260
+of friends_nearby.
+
+138
+00:05:51,260 --> 00:05:53,440
+Intersection is something we can do with sets,
+
+139
+00:05:53,440 --> 00:05:55,410
+if you recall, we looked at this earlier
+
+140
+00:05:55,410 --> 00:05:56,690
+on in the course.
+
+141
+00:05:56,690 --> 00:05:58,970
+Is not something you can do with lists.
+
+142
+00:05:58,970 --> 00:06:01,120
+Then you get an AttributeError.
+
+143
+00:06:01,120 --> 00:06:04,863
+The 'list' object as no attribute 'intersection'.
+
+144
+00:06:04,863 --> 00:06:06,361
+You can't do intersection
+
+145
+00:06:06,361 --> 00:06:08,560
+because the list doesn't know what it is.
+
+146
+00:06:08,560 --> 00:06:10,350
+So this is a nicer error message.
+
+147
+00:06:10,350 --> 00:06:13,030
+It tells you what object you tried to use,
+
+148
+00:06:13,030 --> 00:06:14,910
+in this case a list object.
+
+149
+00:06:14,910 --> 00:06:17,620
+And it tells you what you tried to do that you cannot do,
+
+150
+00:06:17,620 --> 00:06:20,530
+in this case, use the intersection attribute.
+
+151
+00:06:24,123 --> 00:06:26,440
+This is a pretty nice error when you get it, you say, okay,
+
+152
+00:06:26,440 --> 00:06:28,690
+I messed up, I used the wrong thing in there.
+
+153
+00:06:30,070 --> 00:06:33,450
+We've got NotImplementedError and this is an error
+
+154
+00:06:33,450 --> 00:06:35,170
+that you won't be seeing very often,
+
+155
+00:06:35,170 --> 00:06:37,370
+but it's an error that you can actually use.
+
+156
+00:06:38,730 --> 00:06:40,920
+Here's how you can use it.
+
+157
+00:06:40,920 --> 00:06:44,005
+We've got a class that has an init method, a constructor.
+
+158
+00:06:44,005 --> 00:06:45,750
+And it takes a username and a password
+
+159
+00:06:45,750 --> 00:06:46,970
+and then it sets them.
+
+160
+00:06:46,970 --> 00:06:48,590
+Then it's got a login method.
+
+161
+00:06:49,530 --> 00:06:51,770
+But we've not worked on the login method yet,
+
+162
+00:06:51,770 --> 00:06:53,070
+so it doesn't work yet.
+
+163
+00:06:53,940 --> 00:06:57,480
+Instead of returning none or doing nothing,
+
+164
+00:06:57,480 --> 00:07:01,253
+we can instead raise a NotImplementedError.
+
+165
+00:07:01,253 --> 00:07:03,380
+This is the syntax for raising an error.
+
+166
+00:07:03,380 --> 00:07:04,760
+We're going to look at this in more detail
+
+167
+00:07:04,760 --> 00:07:06,980
+in the next couple of videos.
+
+168
+00:07:06,980 --> 00:07:09,330
+Then inside the brackets you can put a small description
+
+169
+00:07:09,330 --> 00:07:10,680
+saying something like, This feature
+
+170
+00:07:10,680 --> 00:07:12,820
+has not been implemented yet.
+
+171
+00:07:12,820 --> 00:07:15,310
+What's gonna happen is when somebody calls this method,
+
+172
+00:07:15,310 --> 00:07:17,200
+they're gonna get an error
+
+173
+00:07:17,200 --> 00:07:19,440
+and it's gonna say NotImplementedError,
+
+174
+00:07:19,440 --> 00:07:21,510
+This feature has not been implemented yet.
+
+175
+00:07:21,510 --> 00:07:24,920
+Then it's gonna say when you called user.login.
+
+176
+00:07:26,110 --> 00:07:27,131
+It's a pretty nice error to raise
+
+177
+00:07:27,131 --> 00:07:29,150
+when you've not yet gotten around
+
+178
+00:07:29,150 --> 00:07:30,750
+to implement something.
+
+179
+00:07:32,740 --> 00:07:35,880
+A RuntimeError, RuntimeError is a pretty generic error.
+
+180
+00:07:37,340 --> 00:07:39,850
+It's not terribly clear when it happens.
+
+181
+00:07:39,850 --> 00:07:41,470
+I've seen it a couple of times,
+
+182
+00:07:42,450 --> 00:07:44,570
+but it's not an error you'll be seeing
+
+183
+00:07:44,570 --> 00:07:46,200
+very often at all.
+
+184
+00:07:46,200 --> 00:07:48,240
+This is, essentially, a base error.
+
+185
+00:07:48,240 --> 00:07:52,670
+A base class and other errors inherit from this one.
+
+186
+00:07:52,670 --> 00:07:56,580
+Other errors like std this one to be RuntimeErrors.
+
+187
+00:07:56,580 --> 00:07:58,140
+A RuntimeError is just an error that happens
+
+188
+00:07:58,140 --> 00:07:59,640
+when you're running your programme.
+
+189
+00:07:59,640 --> 00:08:00,940
+That's basically anything.
+
+190
+00:08:02,150 --> 00:08:03,692
+We've got SyntaxError.
+
+191
+00:08:03,692 --> 00:08:06,570
+SyntaxError is when we mess up on Python.
+
+192
+00:08:07,480 --> 00:08:08,890
+Here we've got somebody messing up
+
+193
+00:08:08,890 --> 00:08:10,590
+in defining their class User.
+
+194
+00:08:10,590 --> 00:08:14,370
+Can you see, can you spot the missing thing?
+
+195
+00:08:14,370 --> 00:08:19,370
+For me, this is like big blank, where something should be.
+
+196
+00:08:19,660 --> 00:08:23,410
+But of course for you, it may not be so obvious for now.
+
+197
+00:08:23,410 --> 00:08:25,500
+As you get more familiar with Python,
+
+198
+00:08:25,500 --> 00:08:26,970
+as you programme more and you encounter
+
+199
+00:08:26,970 --> 00:08:28,240
+more of these errors.
+
+200
+00:08:28,240 --> 00:08:31,220
+This is going to start becoming a bigger and bigger
+
+201
+00:08:31,220 --> 00:08:32,670
+and bigger missing thing.
+
+202
+00:08:33,580 --> 00:08:35,680
+Which is the colon.
+
+203
+00:08:35,680 --> 00:08:37,860
+The colon's missing at the end of the class.
+
+204
+00:08:37,860 --> 00:08:40,710
+This is illegal syntax because you've got class User
+
+205
+00:08:40,710 --> 00:08:42,630
+and then it expects a colon afterwards.
+
+206
+00:08:42,630 --> 00:08:46,240
+So you'll get a SyntaxError, saying illegal syntax.
+
+207
+00:08:47,810 --> 00:08:50,410
+Then we've got IndentationError, fairly related.
+
+208
+00:08:50,410 --> 00:08:53,270
+Also a problem with syntax in Python.
+
+209
+00:08:53,270 --> 00:08:56,330
+The error could arise from something like this.
+
+210
+00:08:56,330 --> 00:08:58,530
+You defined the function add_two(x, y),
+
+211
+00:08:58,530 --> 00:09:01,350
+you put a colon after and remember the block
+
+212
+00:09:01,350 --> 00:09:02,990
+of the function has to be indented.
+
+213
+00:09:02,990 --> 00:09:05,200
+Has to have at least two spaces in front,
+
+214
+00:09:05,200 --> 00:09:07,490
+preferably four spaces.
+
+215
+00:09:07,490 --> 00:09:10,735
+This return x + y doesn't have any spaces in front.
+
+216
+00:09:10,735 --> 00:09:12,610
+So you'd get an IndentationError
+
+217
+00:09:12,610 --> 00:09:15,090
+and it would say something like indentation block
+
+218
+00:09:16,180 --> 00:09:18,010
+expected after function to finish,
+
+219
+00:09:18,010 --> 00:09:19,950
+or something like that.
+
+220
+00:09:19,950 --> 00:09:22,900
+Basically you can do this if you want.
+
+221
+00:09:22,900 --> 00:09:25,180
+You can indent and put pass
+
+222
+00:09:25,180 --> 00:09:28,280
+and that just means this function does nothing.
+
+223
+00:09:28,280 --> 00:09:30,319
+Then you can put the return x + y at the bottom.
+
+224
+00:09:30,319 --> 00:09:33,920
+Of course this would also be an error,
+
+225
+00:09:33,920 --> 00:09:35,720
+do you know which error it would be?
+
+226
+00:09:37,920 --> 00:09:40,330
+I hope you got that, it would be a NameError
+
+227
+00:09:40,330 --> 00:09:42,920
+because of course x and y would not be defined.
+
+228
+00:09:42,920 --> 00:09:45,010
+They are only defined within the function.
+
+229
+00:09:45,010 --> 00:09:47,200
+Remember the concept of scope,
+
+230
+00:09:47,200 --> 00:09:49,170
+they do not live outside the function.
+
+231
+00:09:49,170 --> 00:09:50,900
+So as soon as the function ends,
+
+232
+00:09:50,900 --> 00:09:52,440
+x and y no longer exist.
+
+233
+00:09:52,440 --> 00:09:55,400
+You are using them here outside the function,
+
+234
+00:09:55,400 --> 00:09:59,280
+because the function body is only the indented block.
+
+235
+00:09:59,280 --> 00:10:00,330
+This would give you a NameError,
+
+236
+00:10:00,330 --> 00:10:01,740
+you're trying to use x and y,
+
+237
+00:10:01,740 --> 00:10:03,340
+two things that are not defined.
+
+238
+00:10:05,134 --> 00:10:06,443
+Then we've got a TabError.
+
+239
+00:10:06,443 --> 00:10:08,680
+A TabError is a pretty frequent error
+
+240
+00:10:08,680 --> 00:10:10,530
+when you switch between editors.
+
+241
+00:10:10,530 --> 00:10:12,890
+So just be careful when you're switching between editors,
+
+242
+00:10:12,890 --> 00:10:15,140
+that this doesn't happen.
+
+243
+00:10:15,140 --> 00:10:18,100
+Here we've got a add_two function
+
+244
+00:10:18,100 --> 00:10:20,460
+and then the indented body
+
+245
+00:10:20,460 --> 00:10:22,090
+has been indented with four spaces.
+
+246
+00:10:22,090 --> 00:10:25,810
+That's what that little square bracket means.
+
+247
+00:10:25,810 --> 00:10:28,910
+The square bracket on the bottom of the line.
+
+248
+00:10:28,910 --> 00:10:31,960
+Space, space, space, space, return x + y.
+
+249
+00:10:31,960 --> 00:10:33,130
+So there's four spaces there,
+
+250
+00:10:33,130 --> 00:10:37,310
+totally legitimate Python syntax there.
+
+251
+00:10:37,310 --> 00:10:38,800
+You can indent using four spaces,
+
+252
+00:10:38,800 --> 00:10:41,500
+but then notice how the pow function has been defined
+
+253
+00:10:41,500 --> 00:10:43,800
+using a tab character at the start
+
+254
+00:10:43,800 --> 00:10:45,230
+instead of four spaces.
+
+255
+00:10:45,230 --> 00:10:46,740
+Python doesn't really like it when you mix
+
+256
+00:10:46,740 --> 00:10:48,700
+and match indentation types.
+
+257
+00:10:50,090 --> 00:10:52,660
+I'm actually not sure if this would work,
+
+258
+00:10:52,660 --> 00:10:57,170
+but certainly within a function, do not mix and match types.
+
+259
+00:10:57,170 --> 00:10:59,780
+Try to not mix and match indentation types at all,
+
+260
+00:10:59,780 --> 00:11:01,310
+in any of your programmes.
+
+261
+00:11:01,310 --> 00:11:04,260
+Decide now whether you want to use tabs or spaces
+
+262
+00:11:04,260 --> 00:11:05,410
+and stick to that.
+
+263
+00:11:05,410 --> 00:11:07,330
+At least within a project.
+
+264
+00:11:08,990 --> 00:11:10,970
+So again, these are spaces.
+
+265
+00:11:10,970 --> 00:11:13,160
+These are tabs, don't mix them.
+
+266
+00:11:15,860 --> 00:11:17,540
+By the way, let's go back to this
+
+267
+00:11:17,540 --> 00:11:19,130
+and I will quickly just mention
+
+268
+00:11:19,130 --> 00:11:22,350
+the pow function, what it does.
+
+269
+00:11:22,350 --> 00:11:24,730
+Because I don't think we've encountered this syntax before.
+
+270
+00:11:24,730 --> 00:11:27,340
+We've got two arguments, n and esp
+
+271
+00:11:28,254 --> 00:11:31,460
+and it is returning n time times exp.
+
+272
+00:11:31,460 --> 00:11:33,940
+Times times in Python just means to the power of.
+
+273
+00:11:34,780 --> 00:11:37,510
+So that's n raised to the exp.
+
+274
+00:11:37,510 --> 00:11:40,771
+For example, two to the three is eight and so forth.
+
+275
+00:11:40,771 --> 00:11:43,200
+Pretty nifty syntax there in Python.
+
+276
+00:11:43,200 --> 00:11:44,033
+I don't think we've encountered that,
+
+277
+00:11:44,033 --> 00:11:45,650
+just wanted to mention it.
+
+278
+00:11:45,650 --> 00:11:47,400
+Let's go over to a TypeError.
+
+279
+00:11:48,330 --> 00:11:49,770
+The TypeError is pretty common.
+
+280
+00:11:49,770 --> 00:11:52,550
+A TypeError can happen when you do something like this.
+
+281
+00:11:52,550 --> 00:11:54,740
+In the first line we're adding 5 + 5,
+
+282
+00:11:54,740 --> 00:11:55,720
+that gives us 10.
+
+283
+00:11:55,720 --> 00:11:57,150
+That's what we would expect.
+
+284
+00:11:57,150 --> 00:11:59,430
+The second line we're adding 'hi' + 'ha'
+
+285
+00:11:59,430 --> 00:12:01,710
+and it's giving us 'hiha' as you would expect
+
+286
+00:12:01,710 --> 00:12:03,860
+because it's connect and add the strings together.
+
+287
+00:12:03,860 --> 00:12:05,650
+Then we're doing something that you should not do.
+
+288
+00:12:05,650 --> 00:12:09,900
+Which is add a string and a number, an integer.
+
+289
+00:12:09,900 --> 00:12:12,430
+Do not do that, for that will be a TypeError.
+
+290
+00:12:12,430 --> 00:12:16,390
+You've given the + function, which is a function.
+
+291
+00:12:17,660 --> 00:12:20,600
+Two types that it does not support.
+
+292
+00:12:20,600 --> 00:12:22,316
+Both of these things should be the same type
+
+293
+00:12:22,316 --> 00:12:24,460
+and you've given it an int and a string
+
+294
+00:12:24,460 --> 00:12:27,390
+and it says, unsupported operand type(s).
+
+295
+00:12:27,390 --> 00:12:32,120
+By the way, the + symbol is actually a function.
+
+296
+00:12:32,120 --> 00:12:34,960
+It's a dunder function like len.
+
+297
+00:12:34,960 --> 00:12:38,760
+We will look into that later on, at how you can use it.
+
+298
+00:12:39,640 --> 00:12:43,980
+The int and the string object have the + dunder
+
+299
+00:12:43,980 --> 00:12:47,090
+function defined and it says that you cannot
+
+300
+00:12:47,090 --> 00:12:48,390
+add them two together.
+
+301
+00:12:48,390 --> 00:12:50,480
+Then you get a TypeError.
+
+302
+00:12:50,480 --> 00:12:51,737
+Notice that you get the TypeError
+
+303
+00:12:51,737 --> 00:12:54,840
+because somebody defined the int
+
+304
+00:12:54,840 --> 00:12:59,830
+and str classes as raising this type error,
+
+305
+00:12:59,830 --> 00:13:03,050
+when you pass in different types.
+
+306
+00:13:03,050 --> 00:13:04,390
+It doesn't just happen magically,
+
+307
+00:13:04,390 --> 00:13:06,260
+somebody has actually written the code
+
+308
+00:13:06,260 --> 00:13:09,470
+to give you this error when you do this.
+
+309
+00:13:09,470 --> 00:13:11,060
+So just remember there's no magic here,
+
+310
+00:13:11,060 --> 00:13:12,380
+it's all programming.
+
+311
+00:13:12,380 --> 00:13:13,980
+Somebody has written the code
+
+312
+00:13:13,980 --> 00:13:15,130
+that raises this error.
+
+313
+00:13:16,650 --> 00:13:17,700
+Let's move onto ValueError.
+
+314
+00:13:17,700 --> 00:13:19,713
+ValueError is also very common.
+
+315
+00:13:19,713 --> 00:13:23,890
+It happens when you give batting functions
+
+316
+00:13:24,880 --> 00:13:29,610
+a value of the correct type, but, sorry.
+
+317
+00:13:29,610 --> 00:13:32,370
+A value of the correct type potentially,
+
+318
+00:13:32,370 --> 00:13:33,980
+but incorrect value.
+
+319
+00:13:34,900 --> 00:13:36,120
+So here's an example.
+
+320
+00:13:36,120 --> 00:13:39,320
+We are turning int to an int a string which is normally
+
+321
+00:13:39,320 --> 00:13:41,991
+a fine thing to do, but the string cannot
+
+322
+00:13:41,991 --> 00:13:44,400
+contain decimal places.
+
+323
+00:13:44,400 --> 00:13:46,820
+If it does, it says, eh you should really convert
+
+324
+00:13:46,820 --> 00:13:50,058
+this into a float and that's what you should do.
+
+325
+00:13:50,058 --> 00:13:53,030
+Here we're calling the int function with 20.5
+
+326
+00:13:53,030 --> 00:13:55,397
+as a string and it says, ValueError:
+
+327
+00:13:55,397 --> 00:13:58,820
+invalid literal for int() with base 10: '20.5'.
+
+328
+00:13:58,820 --> 00:14:01,420
+20.5 is not something you can give the int function.
+
+329
+00:14:02,690 --> 00:14:06,890
+Normally, only batting functions will raise a ValueError.
+
+330
+00:14:06,890 --> 00:14:08,910
+If you want to raise ValueErrors,
+
+331
+00:14:08,910 --> 00:14:11,050
+I recommend that you create your own errors.
+
+332
+00:14:11,050 --> 00:14:13,600
+Which we're gonna look at later on in this section.
+
+333
+00:14:14,670 --> 00:14:16,445
+Now we've got ImportError.
+
+334
+00:14:16,445 --> 00:14:17,910
+An ImportError is also really popular
+
+335
+00:14:17,910 --> 00:14:20,450
+and is a big pain in the ass.
+
+336
+00:14:20,450 --> 00:14:22,360
+Here's when it happens,
+
+337
+00:14:22,360 --> 00:14:27,360
+you've got an import blog. Inside app.py,
+
+338
+00:14:27,430 --> 00:14:32,370
+then you've blog.py. Say that from app imports menu.
+
+339
+00:14:32,370 --> 00:14:35,420
+Let's imagine you want to run the menu inside blog
+
+340
+00:14:35,420 --> 00:14:38,500
+or maybe app has some sort of variable
+
+341
+00:14:38,500 --> 00:14:40,770
+you want to import or something.
+
+342
+00:14:40,770 --> 00:14:44,252
+What's happening here is that app is importing blog.
+
+343
+00:14:44,252 --> 00:14:48,300
+Blog is importing app and what happens when you import?
+
+344
+00:14:48,300 --> 00:14:50,290
+Well you go over to the value imported
+
+345
+00:14:50,290 --> 00:14:52,469
+and you run through it quickly, define the functions,
+
+346
+00:14:52,469 --> 00:14:54,840
+execute an import and so forth.
+
+347
+00:14:55,970 --> 00:14:58,270
+Once that's done you can go back to the original file
+
+348
+00:14:58,270 --> 00:15:01,170
+and you continue from right after the import.
+
+349
+00:15:01,170 --> 00:15:04,380
+Importing blog actually runs blog.py.
+
+350
+00:15:04,380 --> 00:15:05,320
+What happens when you run blog.py?
+
+351
+00:15:05,320 --> 00:15:09,630
+Well it has to go over to app.py and run that.
+
+352
+00:15:09,630 --> 00:15:11,160
+The first line there is import blog,
+
+353
+00:15:11,160 --> 00:15:13,240
+so it has to go back to blog and import app
+
+354
+00:15:13,240 --> 00:15:15,170
+and then it goes back to blog and so forth.
+
+355
+00:15:15,170 --> 00:15:18,500
+This is a big ass circle and what happens is,
+
+356
+00:15:19,370 --> 00:15:20,710
+yeah circular imports.
+
+357
+00:15:20,710 --> 00:15:21,780
+This is what they're called.
+
+358
+00:15:21,780 --> 00:15:24,080
+Importing one file which imports the same file.
+
+359
+00:15:24,080 --> 00:15:25,640
+You will get a circular import.
+
+360
+00:15:25,640 --> 00:15:29,170
+This doesn't necessarily have to happen between two files.
+
+361
+00:15:29,170 --> 00:15:31,940
+You can have file a that imports file b
+
+362
+00:15:31,940 --> 00:15:34,380
+that imports file c, that imports file a.
+
+363
+00:15:35,240 --> 00:15:37,320
+So you can have a circular import with many files
+
+364
+00:15:37,320 --> 00:15:39,320
+and it can be a bit of a hassle.
+
+365
+00:15:39,320 --> 00:15:41,490
+Just be careful with your imports.
+
+366
+00:15:41,490 --> 00:15:43,770
+You'll get an ImportError and it will say something
+
+367
+00:15:43,770 --> 00:15:46,780
+around the lines of circular import here.
+
+368
+00:15:46,780 --> 00:15:48,361
+Be careful, if you get an ImportError ask a question
+
+369
+00:15:48,361 --> 00:15:49,990
+and the course Q&amp;A
+
+370
+00:15:49,990 --> 00:15:51,800
+will be very happy to help you out.
+
+371
+00:15:53,370 --> 00:15:55,470
+Finally, let's look at DeprecationWarning.
+
+372
+00:15:56,370 --> 00:15:58,620
+DeprecationWarning is as it says there,
+
+373
+00:15:58,620 --> 00:16:00,830
+a warning not an error.
+
+374
+00:16:00,830 --> 00:16:03,240
+However, Python treats it the same way.
+
+375
+00:16:03,240 --> 00:16:07,020
+If you produce one, if you raise one.
+
+376
+00:16:07,020 --> 00:16:08,720
+Your programme will still crash,
+
+377
+00:16:08,720 --> 00:16:10,430
+but it's meant to mean
+
+378
+00:16:10,430 --> 00:16:13,222
+hey something wrong happened here.
+
+379
+00:16:13,222 --> 00:16:17,220
+This thing that you tried to do is deprecated.
+
+380
+00:16:17,220 --> 00:16:19,110
+What does deprecated mean?
+
+381
+00:16:19,110 --> 00:16:22,980
+Deprecated means that it is no longer the best way
+
+382
+00:16:22,980 --> 00:16:24,770
+of doing something.
+
+383
+00:16:24,770 --> 00:16:26,840
+There is no a better way of doing whatever
+
+384
+00:16:26,840 --> 00:16:28,470
+it is you're trying to do.
+
+385
+00:16:28,470 --> 00:16:29,820
+Let's look at this example code.
+
+386
+00:16:29,820 --> 00:16:32,550
+We've got user class and at the top
+
+387
+00:16:32,550 --> 00:16:34,870
+we got form database import Database.
+
+388
+00:16:34,870 --> 00:16:36,750
+The user class has a constructor
+
+389
+00:16:37,770 --> 00:16:39,380
+and then it has two methods.
+
+390
+00:16:39,380 --> 00:16:41,670
+A register method which is an instance method
+
+391
+00:16:41,670 --> 00:16:43,990
+that writes to the database the username
+
+392
+00:16:43,990 --> 00:16:45,670
+and password of the user.
+
+393
+00:16:45,670 --> 00:16:48,373
+Then it also raises a DeprecationWarning.
+
+394
+00:16:48,373 --> 00:16:50,580
+It says, UserRegister still works,
+
+395
+00:16:50,580 --> 00:16:51,540
+but is deprecated.
+
+396
+00:16:52,860 --> 00:16:55,780
+Then we've got a class method that is called
+
+397
+00:16:55,780 --> 00:16:58,976
+register_user and that takes in a username and password
+
+398
+00:16:58,976 --> 00:17:02,300
+and writes to the database the username and password
+
+399
+00:17:02,300 --> 00:17:04,230
+and returns an object of type user.
+
+400
+00:17:04,230 --> 00:17:05,810
+I like this second one better.
+
+401
+00:17:05,810 --> 00:17:07,381
+That's why I saved this example.
+
+402
+00:17:07,381 --> 00:17:09,430
+Nonetheless, it was just to show you
+
+403
+00:17:09,430 --> 00:17:12,190
+that you can raise a DeprecationWarning
+
+404
+00:17:12,190 --> 00:17:13,380
+in any of your methods.
+
+405
+00:17:13,380 --> 00:17:17,900
+To tell whomever uses it that, hey this is no longer
+
+406
+00:17:17,900 --> 00:17:19,750
+the accepted way of doing things.
+
+407
+00:17:22,550 --> 00:17:25,070
+But, there is a but.
+
+408
+00:17:25,070 --> 00:17:27,600
+Often you won't be raising any of these exceptions
+
+409
+00:17:27,600 --> 00:17:29,290
+except possibly the DeprecationWarning,
+
+410
+00:17:29,290 --> 00:17:30,810
+probably not even that one.
+
+411
+00:17:30,810 --> 00:17:33,170
+You'll normally be raising, NotImplementedError
+
+412
+00:17:33,170 --> 00:17:35,170
+if you are sort of working on something.
+
+413
+00:17:36,250 --> 00:17:38,560
+You won't be raising many of these.
+
+414
+00:17:38,560 --> 00:17:40,590
+You should create your own exceptions,
+
+415
+00:17:40,590 --> 00:17:42,210
+with even better names.
+
+416
+00:17:43,890 --> 00:17:45,680
+We will look at exactly what that means
+
+417
+00:17:45,680 --> 00:17:47,430
+and what a better name is
+
+418
+00:17:47,430 --> 00:17:50,140
+and how you can create your own exceptions.
+
+419
+00:17:50,140 --> 00:17:51,810
+Let's look at that right now
+
+420
+00:17:51,810 --> 00:17:53,320
+in the very next video.
+
+421
+00:17:53,320 --> 00:17:54,270
+I'll see you there.
+

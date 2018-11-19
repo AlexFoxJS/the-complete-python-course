@@ -1,0 +1,876 @@
+1
+00:00:00,450 --> 00:00:01,590
+Jose: Ol e bem vindo de volta.
+
+2
+00:00:01,590 --> 00:00:06,030
+Neste vdeo vamos falar sobre setters de propriedade.
+
+3
+00:00:06,030 --> 00:00:09,460
+Vamos criar um novo arquivo que eu chamarei
+
+4
+00:00:10,640 --> 00:00:13,880
+de Flight, e aqui vou definir apenas
+
+5
+00:00:13,880 --> 00:00:17,720
+uma classe simples que ser um objeto de vo.
+
+6
+00:00:18,560 --> 00:00:19,670
+Caso voc no
+
+7
+00:00:19,670 --> 00:00:23,660
+saiba, vos so normalmente algo que se parece com isso.
+
+8
+00:00:23,660 --> 00:00:26,120
+Vai por exemplo de Glasgow
+
+9
+00:00:26,120 --> 00:00:27,790
+a Londres Heathrow.
+
+10
+00:00:28,700 --> 00:00:30,710
+Este poderia ser um
+
+11
+00:00:31,630 --> 00:00:35,380
+voo, e neste vo voc tem um segmento.
+
+12
+00:00:35,380 --> 00:00:38,890
+Um segmento  essencialmente voc entrar em um
+
+13
+00:00:38,890 --> 00:00:41,670
+avio e aterrissar em outro lugar.
+
+14
+00:00:41,670 --> 00:00:44,210
+Se voc est indo de Glasgow para Toronto,
+
+15
+00:00:44,210 --> 00:00:46,910
+voc vai parar em Londres Heathrow no meio.
+
+16
+00:00:48,830 --> 00:00:50,400
+Ento voc vai ter algo
+
+17
+00:00:50,400 --> 00:00:52,590
+assim, de Glasgow para Londres Heathrow para Toronto.
+
+18
+00:00:54,450 --> 00:00:56,870
+Ento, esses so dois segmentos.
+
+19
+00:00:57,740 --> 00:01:00,780
+E a coisa toda  conhecida como uma
+
+20
+00:01:00,780 --> 00:01:05,510
+perna de voo, ento a perna de vo nesse caso tem dois segmentos.
+
+21
+00:01:05,510 --> 00:01:07,400
+Glasgow para Londres Heathrow
+
+22
+00:01:07,400 --> 00:01:09,530
+e Londres Heathrow para Toronto.
+
+23
+00:01:10,970 --> 00:01:12,480
+Apenas um pouco de informao
+
+24
+00:01:12,480 --> 00:01:14,350
+de fundo, estou meio que ficando um
+
+25
+00:01:16,320 --> 00:01:19,090
+pouco desiludido com os animais e com o exemplo do
+
+26
+00:01:19,090 --> 00:01:21,170
+amigo, ento agora que voc sabe um
+
+27
+00:01:21,170 --> 00:01:24,790
+pouco mais sobre o Python, eu gostaria de lhe dar alguns exemplos mais
+
+28
+00:01:24,790 --> 00:01:26,760
+interessantes de coisas que voc pode fazer.
+
+29
+00:01:26,760 --> 00:01:29,220
+Ento vamos criar essa classe de vo.
+
+30
+00:01:29,220 --> 00:01:32,000
+Eu no vou repr, definir
+
+31
+00:01:32,000 --> 00:01:34,060
+um mtodo init e
+
+32
+00:01:34,060 --> 00:01:36,960
+vamos obter uma lista de segmentos.
+
+33
+00:01:37,820 --> 00:01:42,500
+Ento, isso vai ser uma lista de segmentos.
+
+34
+00:01:42,500 --> 00:01:45,430
+Ok, podemos importar isso,  claro, e apenas import-lo,
+
+35
+00:01:47,210 --> 00:01:49,660
+em Python voc pode pressionar Alt + Enter,
+
+36
+00:01:49,660 --> 00:01:53,310
+se voc estiver no Mac, ou eu acho que  Control +
+
+37
+00:01:53,310 --> 00:01:55,550
+Enter se voc estiver no Windows para
+
+38
+00:01:55,550 --> 00:01:57,720
+obter isso, o tipo sugestes, e ento
+
+39
+00:01:57,720 --> 00:02:01,270
+ns vamos apenas dizer auto. segmentos  igual
+
+40
+00:02:01,270 --> 00:02:02,410
+a segmentos.
+
+41
+00:02:03,270 --> 00:02:06,820
+Aqui embaixo vamos definir o segmento de classe,
+
+42
+00:02:06,820 --> 00:02:09,730
+que vai ter uma partida e
+
+43
+00:02:09,730 --> 00:02:10,800
+um destino.
+
+44
+00:02:19,310 --> 00:02:21,230
+Ok, classe bem simples l.
+
+45
+00:02:21,230 --> 00:02:24,190
+Tudo o que acontece  que tem uma
+
+46
+00:02:24,190 --> 00:02:27,640
+partida, por exemplo, GLA, se eu posso digitar, e
+
+47
+00:02:28,570 --> 00:02:31,730
+um destino, digamos London Heathrow, de modo que
+
+48
+00:02:31,730 --> 00:02:35,560
+apenas fique armazenado nesse objeto de segmento, e ns vamos
+
+49
+00:02:35,560 --> 00:02:38,520
+obter uma lista de segmentos passados para o
+
+50
+00:02:38,520 --> 00:02:40,690
+nosso construtor de voo.
+
+51
+00:02:41,730 --> 00:02:45,850
+Ento, vamos ter algo como uma propriedade,
+
+52
+00:02:45,850 --> 00:02:49,620
+que ser um ponto de partida.
+
+53
+00:02:51,380 --> 00:02:54,440
+Ento, onde  que este voo comea?
+
+54
+00:02:54,440 --> 00:02:56,580
+Isso comea no primeiro aeroporto
+
+55
+00:02:56,580 --> 00:02:59,830
+do primeiro segmento, e  a que
+
+56
+00:02:59,830 --> 00:03:01,720
+esse voo vai comear.
+
+57
+00:03:01,720 --> 00:03:06,720
+Ento, ns vamos voltar. segmentos [0]. sada.
+
+58
+00:03:08,310 --> 00:03:10,200
+Ok, e vai retornar uma string.
+
+59
+00:03:12,380 --> 00:03:14,540
+Ento este  o ponto de partida.
+
+60
+00:03:15,440 --> 00:03:20,440
+Agora, se quisssemos substituir o ponto de partida, digamos, fazer o
+
+61
+00:03:21,860 --> 00:03:24,890
+vo partir de Edimburgo em vez
+
+62
+00:03:24,890 --> 00:03:26,580
+de Glasgow, no h
+
+63
+00:03:27,810 --> 00:03:30,480
+maneira fcil de fazer isso, ento
+
+64
+00:03:30,480 --> 00:03:34,660
+vou aqui escrever um cdigo para fazer isso.
+
+65
+00:03:34,660 --> 00:03:39,660
+Ok, eu vou dizer que meu vo  um objeto de vo l, que
+
+66
+00:03:39,820 --> 00:03:42,470
+tem, digamos, um nico segmento que vai
+
+67
+00:03:42,470 --> 00:03:44,690
+de Glasgow a Londres Heathrow, ok,
+
+68
+00:03:44,690 --> 00:03:47,420
+agora temos um objeto de vo que
+
+69
+00:03:47,420 --> 00:03:49,010
+tem uma lista de
+
+70
+00:03:49,010 --> 00:03:51,310
+segmentos, mas apenas tem um segmento
+
+71
+00:03:51,310 --> 00:03:55,170
+l, e o segmento vai de Glasgow para Londres, em Heathrow.
+
+72
+00:03:56,290 --> 00:03:58,950
+Se voc imprimir o ponto de partida do
+
+73
+00:03:58,950 --> 00:04:00,260
+voo, observe como 
+
+74
+00:04:00,260 --> 00:04:03,290
+uma propriedade, para que voc no precise dos suportes do
+
+75
+00:04:03,290 --> 00:04:06,690
+mtodo, voc ter Glasgow ou GLA para o aeroporto de Glasgow.
+
+76
+00:04:07,610 --> 00:04:11,310
+Se voc quiser fazer o vo partir de
+
+77
+00:04:11,310 --> 00:04:13,493
+Edimburgo, voc teria que fazer
+
+78
+00:04:13,493 --> 00:04:17,800
+algo como voar. segmentos [0]. partida igual Edimburgo.
+
+79
+00:04:20,460 --> 00:04:22,440
+No  muito simples.
+
+80
+00:04:22,440 --> 00:04:27,440
+Eu preferiria voar. ponto de partida igual a Edimburgo.
+
+81
+00:04:30,210 --> 00:04:33,680
+Mas  claro que sabemos que o ponto de
+
+82
+00:04:33,680 --> 00:04:37,152
+partida  um mtodo, ento, isso pode ser feito?
+
+83
+00:04:37,152 --> 00:04:38,710
+Voc pode fazer isso?
+
+84
+00:04:39,770 --> 00:04:41,180
+A resposta  no, a
+
+85
+00:04:41,180 --> 00:04:43,530
+propsito, voc no pode fazer isso agora, mas
+
+86
+00:04:43,530 --> 00:04:46,700
+ claro que o Python sabe que voc pode querer
+
+87
+00:04:47,590 --> 00:04:50,980
+fazer isso, e ele fornece outro decorador que voc pode usar.
+
+88
+00:04:50,980 --> 00:04:54,780
+O decorador  realmente uma coisa mgica agora,
+
+89
+00:04:54,780 --> 00:04:58,340
+porque o decorador ser chamado de ponto_de_partida.
+
+90
+00:04:59,670 --> 00:05:02,330
+Ento agora usamos @departure_point que  o
+
+91
+00:05:02,330 --> 00:05:05,980
+nome da nossa propriedade,. setter, e ento, podemos chamar
+
+92
+00:05:07,440 --> 00:05:12,440
+o nosso mtodo da mesma coisa, se voc quiser, ou voc pode chamar
+
+93
+00:05:14,120 --> 00:05:16,470
+de outra coisa, e  claro
+
+94
+00:05:18,315 --> 00:05:22,140
+que precisa do valor que voc vai passar, que 
+
+95
+00:05:23,860 --> 00:05:27,080
+o EDI l embaixo, e ento tudo o que
+
+96
+00:05:27,080 --> 00:05:32,080
+temos a dizer  auto. segmentos [0]. partida
+
+97
+00:05:32,400 --> 00:05:35,610
+igual EDI, ok?
+
+98
+00:05:37,360 --> 00:05:39,540
+Uma maneira ainda melhor de fazer
+
+99
+00:05:39,540 --> 00:05:42,710
+as coisas, apenas por causa de, desculpe, a partida
+
+100
+00:05:43,920 --> 00:05:45,900
+deve ser igual a val,
+
+101
+00:05:45,900 --> 00:05:47,390
+ claro, no EDI.
+
+102
+00:05:47,390 --> 00:05:49,950
+Uma maneira ainda melhor de fazer as coisas  o seguinte.
+
+103
+00:05:49,950 --> 00:05:53,850
+Normalmente, os segmentos so voos especficos, eles tm cdigos
+
+104
+00:05:53,850 --> 00:05:55,710
+de voo especficos, nmeros
+
+105
+00:05:55,710 --> 00:05:58,350
+especficos associados a eles, ento voc
+
+106
+00:05:58,350 --> 00:06:00,360
+no pode simplesmente dizer que
+
+107
+00:06:00,360 --> 00:06:02,970
+este voo vai partir de Edimburgo.
+
+108
+00:06:02,970 --> 00:06:05,340
+Mas o que voc pode fazer
+
+109
+00:06:05,340 --> 00:06:07,940
+ colocar um segmento diferente, se quiser.
+
+110
+00:06:07,940 --> 00:06:10,540
+Ento eu iria reescrever isso, ento ao invs
+
+111
+00:06:11,750 --> 00:06:13,650
+de fazer isso, apenas em um
+
+112
+00:06:13,650 --> 00:06:15,770
+ambiente profissional onde seus segmentos no podem
+
+113
+00:06:15,770 --> 00:06:17,660
+mudar porque eles tm cdigos de
+
+114
+00:06:17,660 --> 00:06:19,430
+voo especficos associados a eles, eu
+
+115
+00:06:19,430 --> 00:06:24,430
+diria que o destino  auto. segmentos [0]. destino e, em
+
+116
+00:06:24,670 --> 00:06:29,590
+seguida, eu diria auto. segmentos [0]  um novo segmento,
+
+117
+00:06:29,590 --> 00:06:31,340
+onde a partida 
+
+118
+00:06:31,340 --> 00:06:33,730
+val e o destino  dest,
+
+119
+00:06:33,730 --> 00:06:35,760
+essa coisa que calculamos aqui.
+
+120
+00:06:35,760 --> 00:06:38,690
+Potencialmente aqui voc tambm pode, voc sabe,
+
+121
+00:06:38,690 --> 00:06:41,890
+descobrir qual ser o cdigo de vo, encontr-lo
+
+122
+00:06:41,890 --> 00:06:45,120
+em um banco de dados ou em algum
+
+123
+00:06:45,120 --> 00:06:47,550
+outro lugar, e voc sabe, decida-o l.
+
+124
+00:06:48,560 --> 00:06:49,660
+A nica razo pela
+
+125
+00:06:49,660 --> 00:06:50,800
+qual estou fazendo isso
+
+126
+00:06:50,800 --> 00:06:53,070
+ para mostrar novamente o que voc poderia fazer
+
+127
+00:06:53,070 --> 00:06:55,060
+se no fosse capaz de alterar os segmentos.
+
+128
+00:06:55,060 --> 00:06:56,660
+Voc poderia simplesmente criar um
+
+129
+00:06:56,660 --> 00:06:58,660
+novo, substituir segmentos [0] por isso,
+
+130
+00:06:58,660 --> 00:06:59,610
+isso seria timo.
+
+131
+00:07:01,170 --> 00:07:02,420
+OK?
+
+132
+00:07:02,420 --> 00:07:03,790
+Agora voc pode fazer isso.
+
+133
+00:07:05,130 --> 00:07:09,260
+Ento voc pode excluir o vo. segmentos [0]. partida igual EDI, e
+
+134
+00:07:09,260 --> 00:07:11,790
+agora dizer vo. ponto de partida igual EDI.
+
+135
+00:07:13,110 --> 00:07:16,220
+E se voc imprimir o vo. ponto de partida que
+
+136
+00:07:16,220 --> 00:07:20,690
+voc ver quando fizermos o flight. py, oh, sim, desculpe, meu ruim,
+
+137
+00:07:23,912 --> 00:07:28,000
+com a digitao, voc tem que definir essa classe antes
+
+138
+00:07:28,000 --> 00:07:31,670
+da outra, da mesma forma que o Python v
+
+139
+00:07:31,670 --> 00:07:34,250
+as classes, ela avalia esse mtodo
+
+140
+00:07:34,250 --> 00:07:37,420
+digitando, antes de ter importado a classe, ento
+
+141
+00:07:37,420 --> 00:07:39,180
+voc tem que definir
+
+142
+00:07:39,180 --> 00:07:41,040
+isso l, e ento voc
+
+143
+00:07:41,040 --> 00:07:44,380
+pode ver que voc pode obter Glasgow e Edimburgo.
+
+144
+00:07:44,380 --> 00:07:48,100
+Em minhas anotaes eu realmente no tenho a digitao definida nos
+
+145
+00:07:48,100 --> 00:07:49,050
+mtodos,  por
+
+146
+00:07:49,050 --> 00:07:51,470
+isso que eu no percebi isso antes.
+
+147
+00:07:52,720 --> 00:07:54,090
+Ento, como voc
+
+148
+00:07:54,090 --> 00:07:58,750
+pode ver, isso ajuda a identificar como alterar o ponto de partida.
+
+149
+00:07:58,750 --> 00:08:00,450
+Agora voc nem precisa saber
+
+150
+00:08:00,450 --> 00:08:02,400
+quando est usando o objeto de
+
+151
+00:08:02,400 --> 00:08:05,030
+vo que isso  uma propriedade ou no.
+
+152
+00:08:05,030 --> 00:08:08,150
+Ento, se este  um mtodo decorado com @property, ou
+
+153
+00:08:08,150 --> 00:08:10,230
+se  uma propriedade real do voo.
+
+154
+00:08:10,230 --> 00:08:13,050
+Isso permite que voc os configure e consiga.
+
+155
+00:08:15,350 --> 00:08:17,500
+Apenas por completude
+
+156
+00:08:19,290 --> 00:08:23,621
+tambm, vou definir um mtodo repr.
+
+157
+00:08:23,621 --> 00:08:26,340
+Para mostrar a voc como eu
+
+158
+00:08:26,340 --> 00:08:28,480
+faria isso, esse mtodo repr
+
+159
+00:08:29,430 --> 00:08:31,010
+tem que retornar
+
+160
+00:08:31,870 --> 00:08:36,870
+algo, string no formato de Glasgow, London Heathrow, Toronto, por exemplo.
+
+161
+00:08:39,280 --> 00:08:40,720
+Ento, como voc vai fazer isso?
+
+162
+00:08:40,720 --> 00:08:44,980
+Como voc criaria uma string que tenha esse
+
+163
+00:08:44,980 --> 00:08:47,210
+formato, conhecendo os segmentos?
+
+164
+00:08:47,210 --> 00:08:49,520
+Eu encorajo voc a dar isto, a propsito.
+
+165
+00:08:49,520 --> 00:08:51,770
+Pause o vdeo e tente, se puder.
+
+166
+00:08:55,050 --> 00:08:56,350
+Espero que voc tenha tentado isso.
+
+167
+00:08:56,350 --> 00:08:58,090
+O que eu faria 
+
+168
+00:08:58,090 --> 00:09:00,470
+dizer, obter uma lista das paradas.
+
+169
+00:09:00,470 --> 00:09:02,630
+Ento a primeira parada do seu
+
+170
+00:09:02,630 --> 00:09:05,290
+vo, ou melhor, onde comea  Glasgow.
+
+171
+00:09:05,290 --> 00:09:08,610
+A segunda parada  o final do primeiro segmento, ento
+
+172
+00:09:08,610 --> 00:09:10,510
+voc tem o incio do primeiro
+
+173
+00:09:10,510 --> 00:09:12,380
+segmento, o final do primeiro segmento.
+
+174
+00:09:12,380 --> 00:09:15,060
+Ento voc tem o fim do segundo segmento, e ento se
+
+175
+00:09:15,060 --> 00:09:16,540
+ele estivesse indo para outro lugar,
+
+176
+00:09:16,540 --> 00:09:19,240
+voc teria o fim do terceiro segmento, e assim por diante.
+
+177
+00:09:20,080 --> 00:09:22,040
+Ento, as paradas inicialmente
+
+178
+00:09:23,420 --> 00:09:26,110
+so auto. segmentos [0]. partida
+
+179
+00:09:27,150 --> 00:09:30,210
+e auto. segmento [0]. destino, estas
+
+180
+00:09:30,210 --> 00:09:32,710
+so as duas paradas iniciais que
+
+181
+00:09:32,710 --> 00:09:34,150
+voc sabe que
+
+182
+00:09:34,150 --> 00:09:36,020
+sempre ter, voc sempre
+
+183
+00:09:36,020 --> 00:09:37,550
+ter segmentos [0]. partida e
+
+184
+00:09:37,550 --> 00:09:39,360
+segmentos [0]. destino.
+
+185
+00:09:40,680 --> 00:09:45,680
+Ento eu diria para seg em si mesmo. segmentos [1] em diante,
+
+186
+00:09:47,480 --> 00:09:48,980
+pra. acrescentar (seg. destino).
+
+187
+00:09:51,510 --> 00:09:52,440
+Simples o suficiente.
+
+188
+00:09:52,440 --> 00:09:55,650
+Voc comea ento no primeiro segmento, em vez do
+
+189
+00:09:55,650 --> 00:09:56,930
+segmento nmero um.
+
+190
+00:09:56,930 --> 00:09:59,290
+O segundo segmento, se houver algum,
+
+191
+00:09:59,290 --> 00:10:03,523
+e depois voc adiciona o destino s suas paradas e,
+
+192
+00:10:03,523 --> 00:10:05,000
+no final, pode retornar. junte-se (pra).
+
+193
+00:10:06,840 --> 00:10:07,673
+No tenho certeza se j vimos isso antes.
+
+194
+00:10:10,050 --> 00:10:11,410
+Tudo isso permite
+
+195
+00:10:11,410 --> 00:10:14,040
+que voc faa juno de cada
+
+196
+00:10:14,040 --> 00:10:17,810
+um dos elementos da lista de paradas com esta string.
+
+197
+00:10:17,810 --> 00:10:20,270
+Ento, essencialmente, colocar a primeira parada no
+
+198
+00:10:20,270 --> 00:10:22,250
+incio da string, a segunda parada
+
+199
+00:10:22,250 --> 00:10:23,730
+depois da string, e depois
+
+200
+00:10:23,730 --> 00:10:26,620
+colocar outra string depois, e colocar a terceira parada,
+
+201
+00:10:26,620 --> 00:10:27,990
+e assim por diante.
+
+202
+00:10:27,990 --> 00:10:30,262
+Ento, essencialmente, criando uma string que se parece com isso.
+
+203
+00:10:30,262 --> 00:10:32,960
+Agora podemos apenas imprimir o voo em vez
+
+204
+00:10:32,960 --> 00:10:35,160
+de imprimir o ponto de partida.
+
+205
+00:10:35,160 --> 00:10:37,030
+Podemos execut-lo novamente, e podemos
+
+206
+00:10:37,030 --> 00:10:38,580
+ver que agora fomos
+
+207
+00:10:38,580 --> 00:10:40,170
+de Glasgow para Londres
+
+208
+00:10:40,170 --> 00:10:41,830
+Heathrow, para Edimburgo para Londres
+
+209
+00:10:41,830 --> 00:10:43,870
+Heathrow, e aqui ns aprendemos sobre
+
+210
+00:10:43,870 --> 00:10:46,410
+algumas coisas como o setter, e tambm
+
+211
+00:10:46,410 --> 00:10:48,250
+como usar o setter em
+
+212
+00:10:51,159 --> 00:10:54,700
+uma propriedade, e temos mais prtica em definir alguns exemplos
+
+213
+00:10:54,700 --> 00:10:56,410
+reais e reais de cdigo.
+
+214
+00:10:56,410 --> 00:11:00,180
+ isso para este vdeo.
+
+215
+00:11:01,110 --> 00:11:01,943
+Eu queria mostrar
+
+216
+00:11:01,943 --> 00:11:03,549
+como usar o setter em uma propriedade.
+
+217
+00:11:03,549 --> 00:11:05,120
+Ento, obrigado por se juntar a mim, e
+
+218
+00:11:05,120 --> 00:11:06,458
+eu vou ver voc no prximo.
+
+219
+00:11:06,458 --> 00:11:08,108
+&nbsp;
+

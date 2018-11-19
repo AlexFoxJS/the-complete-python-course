@@ -1,0 +1,240 @@
+1
+00:00:00,290 --> 00:00:01,380
+Instructor: Hola, bienvenido de nuevo.
+
+2
+00:00:01,380 --> 00:00:05,130
+En este video estamos hablando de ordenar y limitar.
+
+3
+00:00:05,130 --> 00:00:06,820
+Estas son dos cosas que puede
+
+4
+00:00:06,820 --> 00:00:10,180
+hacer con Sequel que pueden ser bastante tiles en varios escenarios.
+
+5
+00:00:10,180 --> 00:00:12,660
+Tengamos aqu esta tabla de compras
+
+6
+00:00:12,660 --> 00:00:15,520
+que tiene tres columnas y cuatro filas.
+
+7
+00:00:15,520 --> 00:00:18,150
+Observe cmo hay una identificacin, una cantidad, el dinero
+
+8
+00:00:18,150 --> 00:00:19,830
+que se pag por esta compra
+
+9
+00:00:19,830 --> 00:00:23,580
+y tambin una fecha que es una marca de tiempo de Unix.
+
+10
+00:00:23,580 --> 00:00:25,930
+Podramos hacer algo como esto: seleccionar
+
+11
+00:00:25,930 --> 00:00:28,060
+la estrella de las compras,
+
+12
+00:00:28,060 --> 00:00:30,380
+y ahora en lugar de dnde,
+
+13
+00:00:30,380 --> 00:00:35,380
+o de hecho, as como dnde, podemos usar la orden por cantidad.
+
+14
+00:00:35,490 --> 00:00:38,400
+Esto va a ordenar en
+
+15
+00:00:38,400 --> 00:00:40,800
+forma ascendente, dndonos algo
+
+16
+00:00:40,800 --> 00:00:45,800
+como esto: 9. 99 en la parte superior, seguido por 14. 99, 15. 99 y 150.
+
+17
+00:00:47,210 --> 00:00:51,440
+Por supuesto, podramos ordenar por cantidad descendiendo en
+
+18
+00:00:51,440 --> 00:00:55,820
+lugar de simplemente poner DESC al final para descender.
+
+19
+00:00:55,820 --> 00:00:59,630
+Y eso nos da 150 en la parte superior bajando a 9. 99, y si por
+
+20
+00:00:59,630 --> 00:01:01,630
+alguna razn quisiera hacerlo
+
+21
+00:01:01,630 --> 00:01:03,670
+explcito, que deseaba ascender,
+
+22
+00:01:03,670 --> 00:01:07,160
+puede usar ASC en lugar de DESC.
+
+23
+00:01:07,160 --> 00:01:08,550
+Ascender es lo predeterminado, por lo
+
+24
+00:01:08,550 --> 00:01:10,480
+que no tiene que incluirlo en Sequel Light,
+
+25
+00:01:10,480 --> 00:01:12,450
+pero es posible que otros sistemas de bases
+
+26
+00:01:12,450 --> 00:01:13,410
+de datos sean diferentes.
+
+27
+00:01:15,410 --> 00:01:17,750
+Puede ordenar por cantidad descendente, que es
+
+28
+00:01:17,750 --> 00:01:19,980
+la ms grande en la parte superior,
+
+29
+00:01:19,980 --> 00:01:23,220
+y limitar una, y eso le dar solo la fila
+
+30
+00:01:23,220 --> 00:01:25,500
+ms alta de su base de datos.
+
+31
+00:01:25,500 --> 00:01:28,230
+Esa es la compra ms cara que haya hecho cualquier persona
+
+32
+00:01:28,230 --> 00:01:31,190
+y, potencialmente, podra hacer cosas como notificar al usuario que realiz esta
+
+33
+00:01:31,190 --> 00:01:33,070
+compra y decirles que gan un cupn
+
+34
+00:01:33,070 --> 00:01:34,670
+o algo por lo que gasta
+
+35
+00:01:34,670 --> 00:01:36,570
+la mayor cantidad de dinero en su tienda.
+
+36
+00:01:36,570 --> 00:01:39,599
+No lo s, pero ya ves, ves el trato all.
+
+37
+00:01:39,599 --> 00:01:42,320
+Puedes obtener la mayor parte de algo, y de hecho
+
+38
+00:01:42,320 --> 00:01:43,630
+en lugar de limitar uno,
+
+39
+00:01:43,630 --> 00:01:45,130
+puedes limitar dos, o limitar
+
+40
+00:01:45,130 --> 00:01:47,540
+tres, si quieres obtener los tres primeros de algo.
+
+41
+00:01:48,560 --> 00:01:51,020
+Entonces estos dos, ordenar por y
+
+42
+00:01:51,020 --> 00:01:55,220
+limitar, son bastante tiles de usar, y puedes usarlos juntos.
+
+43
+00:01:55,220 --> 00:01:57,770
+Si quisieras poner una clusula where,
+
+44
+00:01:57,770 --> 00:02:00,640
+ira antes de la orden por clusula.
+
+45
+00:02:01,590 --> 00:02:03,730
+Entonces tambin puedes poner eso ah.
+
+46
+00:02:03,730 --> 00:02:06,590
+Una vez ms, este curso no pretende ser
+
+47
+00:02:06,590 --> 00:02:08,120
+un tutorial detallado de Sequel.
+
+48
+00:02:08,120 --> 00:02:09,570
+Solo quera guiarte lo suficiente
+
+49
+00:02:09,570 --> 00:02:12,140
+para que puedas interactuar con las tablas y
+
+50
+00:02:12,140 --> 00:02:13,790
+almacenar y recuperar algunos datos.
+
+51
+00:02:14,840 --> 00:02:16,810
+Si quieres aprender mucho ms sobre Sequel,
+
+52
+00:02:16,810 --> 00:02:19,840
+te animo a que vengas a investigar, a leer en
+
+53
+00:02:19,840 --> 00:02:21,300
+lnea, a implementar tus propios
+
+54
+00:02:21,300 --> 00:02:22,940
+proyectos que los usen y
+
+55
+00:02:22,940 --> 00:02:24,280
+a aprender a travs
+
+56
+00:02:24,280 --> 00:02:25,890
+de eso, y por supuesto
+
+57
+00:02:25,890 --> 00:02:28,414
+tambin puedes tomar otros cursos si estn tan inclinadas.
+
+58
+00:02:28,414 --> 00:02:29,610
+Pero eso es todo por este video.
+
+59
+00:02:29,610 --> 00:02:32,890
+Solo quera guiarte por ordenar y limitar, y te
+
+60
+00:02:32,890 --> 00:02:34,540
+ver en el prximo.
+

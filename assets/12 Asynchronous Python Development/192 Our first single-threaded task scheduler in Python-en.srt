@@ -1,0 +1,520 @@
+1
+00:00:00,200 --> 00:00:01,460
+<v ->Hi, welcome back.</v>
+
+2
+00:00:01,460 --> 00:00:03,180
+In this video, we're going to be constructing
+
+3
+00:00:03,180 --> 00:00:06,620
+our first task scheduler using generators
+
+4
+00:00:06,620 --> 00:00:08,370
+instead of threads.
+
+5
+00:00:09,250 --> 00:00:11,910
+Previously, we created a bunch of threads
+
+6
+00:00:11,910 --> 00:00:13,560
+and we started them,
+
+7
+00:00:13,560 --> 00:00:16,290
+and there was a task scheduler in the background,
+
+8
+00:00:16,290 --> 00:00:17,550
+the operating system,
+
+9
+00:00:17,550 --> 00:00:19,350
+bringing in threads to a core
+
+10
+00:00:19,350 --> 00:00:21,590
+and removing them from the core.
+
+11
+00:00:21,590 --> 00:00:23,200
+Now we're gonna do the same thing,
+
+12
+00:00:23,200 --> 00:00:26,090
+but using a generator instead.
+
+13
+00:00:26,090 --> 00:00:28,080
+By the way, the code I'm about to show you here
+
+14
+00:00:28,080 --> 00:00:33,080
+is partially taken from another talk by David Beasley,
+
+15
+00:00:33,670 --> 00:00:35,410
+which is a fantastic guy.
+
+16
+00:00:35,410 --> 00:00:37,940
+I'm gonna link you to couple of his talks afterwords.
+
+17
+00:00:37,940 --> 00:00:40,560
+But I wanted to show you again, in my own words,
+
+18
+00:00:40,560 --> 00:00:42,710
+how to do this just to help you understand.
+
+19
+00:00:43,690 --> 00:00:47,180
+So threads are not performing so well in Python,
+
+20
+00:00:47,180 --> 00:00:50,890
+with the communication overhead and the GIL issues,
+
+21
+00:00:50,890 --> 00:00:53,320
+but using generators is another way of achieving
+
+22
+00:00:53,320 --> 00:00:57,440
+multitasking and doing multiple things at once in Python.
+
+23
+00:00:57,440 --> 00:01:01,100
+But again, remember multitasking is doing things
+
+24
+00:01:01,100 --> 00:01:03,150
+that look like they are happening at the same time,
+
+25
+00:01:03,150 --> 00:01:04,350
+but they are really not.
+
+26
+00:01:05,560 --> 00:01:09,050
+Parallelism is about doing things actually at the same time,
+
+27
+00:01:09,050 --> 00:01:11,950
+and in Python we cannot do parallelism
+
+28
+00:01:11,950 --> 00:01:15,550
+because of the GIL unless we launch multiple processes.
+
+29
+00:01:16,720 --> 00:01:18,640
+So here we've got our countdown,
+
+30
+00:01:18,640 --> 00:01:20,540
+and what we're gonna do
+
+31
+00:01:20,540 --> 00:01:23,340
+is we're going to create a set of tasks.
+
+32
+00:01:32,170 --> 00:01:35,650
+So here we've created three tasks that are all similar,
+
+33
+00:01:35,650 --> 00:01:38,280
+they're all this generator.
+
+34
+00:01:38,280 --> 00:01:40,060
+A countdown from ten, a countdown from five,
+
+35
+00:01:40,060 --> 00:01:41,530
+and a countdown from 20.
+
+36
+00:01:42,650 --> 00:01:46,586
+But now, we can start providing them slices,
+
+37
+00:01:46,586 --> 00:01:49,010
+instead of on a core,
+
+38
+00:01:49,010 --> 00:01:51,710
+we can start providing them slices on the main thread.
+
+39
+00:01:52,850 --> 00:01:57,760
+So while tasks, this just means while it is not empty,
+
+40
+00:01:57,760 --> 00:02:01,880
+we are going to do the task is tasks zero,
+
+41
+00:02:01,880 --> 00:02:03,510
+that's the first task in here.
+
+42
+00:02:04,620 --> 00:02:07,540
+We're gonna remove the task from the list
+
+43
+00:02:08,450 --> 00:02:13,190
+and then we're gonna try to do x is next of the task,
+
+44
+00:02:13,190 --> 00:02:15,230
+we're gonna print x,
+
+45
+00:02:15,230 --> 00:02:18,330
+and then we're going to append the task again.
+
+46
+00:02:19,210 --> 00:02:22,870
+Okay, so all that we're doing here is we're gonna
+
+47
+00:02:22,870 --> 00:02:25,990
+get the first task in our list,
+
+48
+00:02:25,990 --> 00:02:27,720
+we're gonna remove it from the list.
+
+49
+00:02:27,720 --> 00:02:30,520
+Our list is gonna end up as these two tasks.
+
+50
+00:02:30,520 --> 00:02:31,980
+We're going to get a new variable x,
+
+51
+00:02:31,980 --> 00:02:34,250
+which is gonna be the next of the tasks,
+
+52
+00:02:34,250 --> 00:02:36,130
+or in this case, ten for the first one.
+
+53
+00:02:36,130 --> 00:02:37,640
+We're gonna print it out,
+
+54
+00:02:37,640 --> 00:02:39,320
+and then we're gonna append it
+
+55
+00:02:39,320 --> 00:02:42,050
+over to the end of our list again.
+
+56
+00:02:44,730 --> 00:02:47,370
+If we encounter an "except" on stop iteration,
+
+57
+00:02:47,370 --> 00:02:49,050
+remember this is what gets raised
+
+58
+00:02:49,050 --> 00:02:51,450
+when we run out of values of a generator,
+
+59
+00:02:52,740 --> 00:02:57,380
+then we're just going to print "task finished,"
+
+60
+00:02:57,380 --> 00:02:58,310
+and that's it.
+
+61
+00:02:58,310 --> 00:02:59,570
+When we print "task finished,"
+
+62
+00:02:59,570 --> 00:03:01,410
+because we try to get the next value
+
+63
+00:03:01,410 --> 00:03:02,760
+of something but it fails,
+
+64
+00:03:02,760 --> 00:03:06,019
+we are not going to append it back to the task.
+
+65
+00:03:06,019 --> 00:03:07,940
+When we try to get the next,
+
+66
+00:03:07,940 --> 00:03:09,440
+and that gives us stop iteration,
+
+67
+00:03:09,440 --> 00:03:11,590
+we will not run either of these two.
+
+68
+00:03:14,640 --> 00:03:16,660
+All right, let's run this file.
+
+69
+00:03:18,730 --> 00:03:19,870
+And as you can see,
+
+70
+00:03:20,780 --> 00:03:22,520
+we start at the top with ten, five, and 20,
+
+71
+00:03:22,520 --> 00:03:24,650
+and they go down one by one
+
+72
+00:03:24,650 --> 00:03:27,860
+until you see task finished, that's the five,
+
+73
+00:03:27,860 --> 00:03:30,050
+then you see task finished, that's for the ten,
+
+74
+00:03:30,050 --> 00:03:32,830
+and then the 20 sort of takes up all the time in the CPU,
+
+75
+00:03:32,830 --> 00:03:35,060
+or in this case, in the main thread
+
+76
+00:03:35,060 --> 00:03:37,060
+and eventually finishes as well.
+
+77
+00:03:38,290 --> 00:03:41,140
+Whereas these tasks are all quite simple,
+
+78
+00:03:41,140 --> 00:03:43,000
+they don't really do much.
+
+79
+00:03:43,000 --> 00:03:47,070
+But this is an example of
+
+80
+00:03:48,010 --> 00:03:51,810
+multitasking in Python without using threads.
+
+81
+00:03:51,810 --> 00:03:53,740
+You've got a task doing something,
+
+82
+00:03:53,740 --> 00:03:54,900
+another task doing something else,
+
+83
+00:03:54,900 --> 00:03:56,750
+another task doing something entirely separate,
+
+84
+00:03:56,750 --> 00:03:58,560
+and they are collaborating doing
+
+85
+00:03:58,560 --> 00:04:02,040
+collaborative multitasking in order to complete
+
+86
+00:04:02,040 --> 00:04:03,730
+the things all at the same time.
+
+87
+00:04:05,700 --> 00:04:07,630
+You can see how we can use yield
+
+88
+00:04:08,590 --> 00:04:13,590
+in any circumstance to suspend a task temporarily
+
+89
+00:04:13,730 --> 00:04:16,420
+and then bring it back at some point in the future.
+
+90
+00:04:16,420 --> 00:04:18,870
+So for example if you asked for user input,
+
+91
+00:04:18,870 --> 00:04:20,920
+you could then yield and run your
+
+92
+00:04:20,920 --> 00:04:23,040
+complex mathematical operation.
+
+93
+00:04:23,040 --> 00:04:23,940
+When the user applies,
+
+94
+00:04:23,940 --> 00:04:25,560
+you could yield your mathematical operation
+
+95
+00:04:25,560 --> 00:04:28,410
+and go back to your user input and deal with that.
+
+96
+00:04:28,410 --> 00:04:32,940
+Going back to the example in the lecture a few videos ago.
+
+97
+00:04:32,940 --> 00:04:34,970
+So these yields, all you have to do is
+
+98
+00:04:34,970 --> 00:04:36,720
+put them in the right place
+
+99
+00:04:36,720 --> 00:04:39,590
+and then you could potentially avoid blocking operations,
+
+100
+00:04:39,590 --> 00:04:42,190
+you could avoid points in time where your Python code
+
+101
+00:04:42,190 --> 00:04:43,820
+is just waiting to do things.
+
+102
+00:04:46,120 --> 00:04:48,810
+Of course, if you've got a task that doesn't yield,
+
+103
+00:04:48,810 --> 00:04:50,520
+then you have a problem because that one
+
+104
+00:04:50,520 --> 00:04:52,950
+is just gonna clog the CPU,
+
+105
+00:04:52,950 --> 00:04:55,440
+and if you have a task that yields
+
+106
+00:04:55,440 --> 00:04:59,110
+but it takes a very long time between one yield and another,
+
+107
+00:04:59,110 --> 00:05:01,490
+that task is gonna take up a lot of time
+
+108
+00:05:01,490 --> 00:05:03,680
+and the other task is not gonna have enough time.
+
+109
+00:05:04,740 --> 00:05:06,980
+If that's the case,
+
+110
+00:05:06,980 --> 00:05:09,880
+if you have a task that takes a long time to run
+
+111
+00:05:09,880 --> 00:05:12,830
+while the others take a very small amount of time to run,
+
+112
+00:05:12,830 --> 00:05:15,810
+you could offload the work to a separate thread
+
+113
+00:05:15,810 --> 00:05:17,850
+or to a separate process using,
+
+114
+00:05:17,850 --> 00:05:19,730
+as we've seen already, the thread pool executor,
+
+115
+00:05:19,730 --> 00:05:21,180
+or the process pool executor.
+
+116
+00:05:24,675 --> 00:05:26,350
+And actually, calling next on a function
+
+117
+00:05:26,350 --> 00:05:28,720
+and going back to a suspended function
+
+118
+00:05:28,720 --> 00:05:33,300
+is cheaper than changing from one thread to another.
+
+119
+00:05:33,300 --> 00:05:35,720
+Python has been developed so this is really cheap,
+
+120
+00:05:35,720 --> 00:05:36,870
+really easy to do.
+
+121
+00:05:36,870 --> 00:05:39,520
+So it can be really fast to use these generators
+
+122
+00:05:39,520 --> 00:05:41,820
+instead of threads if that's what you need.
+
+123
+00:05:43,620 --> 00:05:44,453
+Now in the next video,
+
+124
+00:05:44,453 --> 00:05:46,830
+we're going to look at some more of this,
+
+125
+00:05:46,830 --> 00:05:48,510
+and the purpose of the next few videos
+
+126
+00:05:48,510 --> 00:05:51,470
+is to build up your knowledge of how
+
+127
+00:05:51,470 --> 00:05:53,780
+this asynchronous development works
+
+128
+00:05:53,780 --> 00:05:56,900
+up until we arrive at modern Python
+
+129
+00:05:56,900 --> 00:06:00,910
+and how modern Python does asynchronous development.
+
+130
+00:06:00,910 --> 00:06:03,300
+Okay, I'll see you on the next video.
+

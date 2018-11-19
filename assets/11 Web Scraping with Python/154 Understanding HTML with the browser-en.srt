@@ -1,0 +1,564 @@
+1
+00:00:00,120 --> 00:00:01,500
+<v Jose>Hi, and welcome back.</v>
+
+2
+00:00:01,500 --> 00:00:04,730
+In this video, we're talking about how to see the HTML
+
+3
+00:00:04,730 --> 00:00:08,530
+using your browser so that you'll know how to scrape it,
+
+4
+00:00:08,530 --> 00:00:11,380
+and how to parse it, and how to understand it.
+
+5
+00:00:11,380 --> 00:00:15,600
+What I've got here is this website books.toscrape.com.
+
+6
+00:00:17,640 --> 00:00:20,010
+Which is a website that was specifically designed
+
+7
+00:00:20,010 --> 00:00:22,240
+for practising scraping.
+
+8
+00:00:22,240 --> 00:00:26,820
+Scraping is the act of loading a page using Python,
+
+9
+00:00:26,820 --> 00:00:30,670
+or another programming language and extracting data from it.
+
+10
+00:00:31,660 --> 00:00:34,210
+So this page was designed for scraping,
+
+11
+00:00:34,210 --> 00:00:36,300
+which means you're free to use it for scraping,
+
+12
+00:00:36,300 --> 00:00:39,380
+practise it, give it a go and see what happens.
+
+13
+00:00:40,460 --> 00:00:43,040
+Now before you even think of
+
+14
+00:00:43,040 --> 00:00:46,850
+downloading the page using Python, you have to understand
+
+15
+00:00:46,850 --> 00:00:49,150
+what's going on in a browser.
+
+16
+00:00:49,150 --> 00:00:51,040
+Because what's going on in Python is very similar
+
+17
+00:00:51,040 --> 00:00:52,590
+to what goes on in the browser.
+
+18
+00:00:53,440 --> 00:00:55,640
+So whenever your browser loads a page,
+
+19
+00:00:55,640 --> 00:00:59,120
+such as if you go to books.toscrape.com,
+
+20
+00:00:59,120 --> 00:01:01,420
+it's actually downloading the page.
+
+21
+00:01:01,420 --> 00:01:04,920
+It's asking the place where the page is hosted,
+
+22
+00:01:04,920 --> 00:01:07,020
+where the page lives.
+
+23
+00:01:07,020 --> 00:01:09,780
+Then it's asking to download the data in it.
+
+24
+00:01:09,780 --> 00:01:11,610
+It doesn't store the page in your downloads
+
+25
+00:01:11,610 --> 00:01:12,770
+or anything like that.
+
+26
+00:01:12,770 --> 00:01:15,420
+But the page is downloaded so the browser can use it.
+
+27
+00:01:16,446 --> 00:01:19,640
+And we can also get Python to download a page
+
+28
+00:01:19,640 --> 00:01:22,890
+and that gives Python the ability to look at the code,
+
+29
+00:01:22,890 --> 00:01:25,400
+and look at the HTML, look at the page content,
+
+30
+00:01:25,400 --> 00:01:26,410
+to see what's there.
+
+31
+00:01:27,350 --> 00:01:29,440
+We can load an HTML page with Python
+
+32
+00:01:29,440 --> 00:01:32,140
+and that will give us the HTML as a string.
+
+33
+00:01:32,140 --> 00:01:35,420
+And then we can parse it and we can extract data from it.
+
+34
+00:01:35,420 --> 00:01:38,240
+The act of doing all of that, from downloading the page,
+
+35
+00:01:38,240 --> 00:01:40,470
+to extracting data, is called scraping.
+
+36
+00:01:41,670 --> 00:01:44,210
+So when you load the page using your browser,
+
+37
+00:01:44,210 --> 00:01:46,750
+I recommend using Google Chrome for this, by the way.
+
+38
+00:01:46,750 --> 00:01:49,510
+If you don't have Google Chrome I advise using Chrome.
+
+39
+00:01:49,510 --> 00:01:52,900
+It's the best browser for web development generally.
+
+40
+00:01:53,910 --> 00:01:57,830
+You can select or find what you want to extract.
+
+41
+00:01:57,830 --> 00:02:00,810
+So imagine you wanted to use Python to get the price,
+
+42
+00:02:02,120 --> 00:02:04,960
+then what you would do is you would right click,
+
+43
+00:02:04,960 --> 00:02:06,910
+and you would press inspect.
+
+44
+00:02:08,950 --> 00:02:11,960
+What you then get is this side window.
+
+45
+00:02:11,960 --> 00:02:13,350
+It could be at the bottom,
+
+46
+00:02:13,350 --> 00:02:16,550
+or it could be in an entirely separate window.
+
+47
+00:02:16,550 --> 00:02:19,380
+But you get something that looks a lot like this
+
+48
+00:02:19,380 --> 00:02:22,780
+and what you've got here on the left is,
+
+49
+00:02:22,780 --> 00:02:26,210
+I'm going to just make it a bit bigger for you guys to see.
+
+50
+00:02:26,210 --> 00:02:29,800
+What you've got here on the left, this is the right,
+
+51
+00:02:29,800 --> 00:02:31,610
+this is the left, and here you've got
+
+52
+00:02:31,610 --> 00:02:34,060
+some extra things at the bottom.
+
+53
+00:02:34,060 --> 00:02:36,890
+What you've got here is the HTML of the page.
+
+54
+00:02:36,890 --> 00:02:39,530
+This is the entirety of the page content.
+
+55
+00:02:40,640 --> 00:02:43,280
+As you can see it starts up here with HTML
+
+56
+00:02:45,140 --> 00:02:47,540
+and then you've got the head tag,
+
+57
+00:02:47,540 --> 00:02:50,750
+you've got the body tag, that has the main set of content.
+
+58
+00:02:51,620 --> 00:02:54,430
+You've got a header, which is a HTML tag
+
+59
+00:02:54,430 --> 00:02:57,130
+for sort of the top of the page,
+
+60
+00:02:57,130 --> 00:03:00,350
+and then you've got a lot of different nested components.
+
+61
+00:03:00,350 --> 00:03:03,920
+You've got a div, which is just a block of content.
+
+62
+00:03:03,920 --> 00:03:06,820
+That div has another block of content
+
+63
+00:03:06,820 --> 00:03:10,120
+and that has some sort of list.
+
+64
+00:03:10,120 --> 00:03:12,860
+UL stands for unordered list.
+
+65
+00:03:12,860 --> 00:03:16,440
+And that's this up here, this breadcrumbs,
+
+66
+00:03:16,440 --> 00:03:19,130
+that's the page you're currently at.
+
+67
+00:03:19,130 --> 00:03:21,730
+You've then got another div, on the inside.
+
+68
+00:03:21,730 --> 00:03:23,280
+You've got sort of a bunch of other things.
+
+69
+00:03:23,280 --> 00:03:24,560
+You can use Google Chrome here
+
+70
+00:03:24,560 --> 00:03:27,220
+to very easily see what each element is.
+
+71
+00:03:27,220 --> 00:03:30,150
+For example, this aside here is the sort of
+
+72
+00:03:30,150 --> 00:03:32,210
+left hand bit that has the navigation,
+
+73
+00:03:32,210 --> 00:03:34,800
+different types of books you can look at,
+
+74
+00:03:34,800 --> 00:03:35,950
+and then you've got this one here
+
+75
+00:03:35,950 --> 00:03:38,950
+that is the rest of the page.
+
+76
+00:03:38,950 --> 00:03:41,080
+So if you could only see this,
+
+77
+00:03:42,010 --> 00:03:44,100
+and you wanted to get the price,
+
+78
+00:03:44,100 --> 00:03:45,650
+You would sort of hover over here
+
+79
+00:03:45,650 --> 00:03:48,620
+and find out this blue section.
+
+80
+00:03:48,620 --> 00:03:50,840
+This is where, what you're interested in
+
+81
+00:03:50,840 --> 00:03:52,750
+is inside this section.
+
+82
+00:03:52,750 --> 00:03:56,070
+Then you would sort of go in and you would find this div.
+
+83
+00:03:56,070 --> 00:03:57,390
+You'd then see this UL,
+
+84
+00:03:57,390 --> 00:04:00,810
+but what you're interested in is not in here.
+
+85
+00:04:00,810 --> 00:04:04,230
+So you'd look at this div, the price is inside this div
+
+86
+00:04:04,230 --> 00:04:06,190
+because it's inside the blue area.
+
+87
+00:04:07,300 --> 00:04:09,040
+Then you'd look at this side,
+
+88
+00:04:09,040 --> 00:04:12,230
+the blue thing doesn't include the price,
+
+89
+00:04:12,230 --> 00:04:14,300
+so it's probably not inside here.
+
+90
+00:04:14,300 --> 00:04:17,000
+Then you'd find this div, and this div
+
+91
+00:04:17,000 --> 00:04:20,560
+does contain the price, so then you could go into it
+
+92
+00:04:20,560 --> 00:04:23,530
+by opening it up and sort of navigate that way
+
+93
+00:04:23,530 --> 00:04:26,600
+until you find the section that you're interested in.
+
+94
+00:04:26,600 --> 00:04:29,830
+So you'd find the section, then you'd find this div,
+
+95
+00:04:29,830 --> 00:04:33,460
+then that, then this list item, this article,
+
+96
+00:04:33,460 --> 00:04:35,500
+and then you've got there the price eventually.
+
+97
+00:04:35,500 --> 00:04:37,410
+And then you can find it.
+
+98
+00:04:37,410 --> 00:04:40,610
+So what we found here is essentially
+
+99
+00:04:40,610 --> 00:04:44,093
+the hierarchy of elements that end up containing
+
+100
+00:04:44,093 --> 00:04:46,800
+the thing that we're interested in.
+
+101
+00:04:46,800 --> 00:04:51,800
+So as you can see, we've got the P that contains the price
+
+102
+00:04:52,150 --> 00:04:54,370
+and that's inside a div, which is inside an article
+
+103
+00:04:54,370 --> 00:04:55,670
+and so forth.
+
+104
+00:04:55,670 --> 00:04:57,420
+So this is going to be really important
+
+105
+00:04:57,420 --> 00:04:58,730
+for you to be able to understand
+
+106
+00:04:58,730 --> 00:05:00,380
+the HTML when you download it.
+
+107
+00:05:02,200 --> 00:05:04,930
+The interesting thing is also that you can see
+
+108
+00:05:04,930 --> 00:05:07,400
+that there are a lot of similar elements.
+
+109
+00:05:07,400 --> 00:05:10,460
+And that's one for each book in the page.
+
+110
+00:05:10,460 --> 00:05:12,810
+You can see that as I hover over these,
+
+111
+00:05:12,810 --> 00:05:14,590
+different books get selected.
+
+112
+00:05:15,480 --> 00:05:17,510
+And each of these elements is one book.
+
+113
+00:05:17,510 --> 00:05:19,100
+So if you wanted to load the price of
+
+114
+00:05:19,100 --> 00:05:20,930
+all elements on the site,
+
+115
+00:05:20,930 --> 00:05:23,070
+once you've managed to download the HTML,
+
+116
+00:05:23,070 --> 00:05:25,240
+which we will look at soon,
+
+117
+00:05:25,240 --> 00:05:28,880
+all you have to do is find each LI element
+
+118
+00:05:28,880 --> 00:05:32,352
+with these classes here and that's going to give you
+
+119
+00:05:32,352 --> 00:05:33,950
+all the books.
+
+120
+00:05:33,950 --> 00:05:36,790
+Well, it will give you at tag objects
+
+121
+00:05:36,790 --> 00:05:39,720
+in Beautiful Soup for each of the books.
+
+122
+00:05:39,720 --> 00:05:41,460
+Then, for each of the books you could
+
+123
+00:05:41,460 --> 00:05:43,010
+pass it to the class that we created
+
+124
+00:05:43,010 --> 00:05:46,080
+and parse the price out, and the name and so forth.
+
+125
+00:05:46,080 --> 00:05:48,553
+So you could then start working with these books
+
+126
+00:05:48,553 --> 00:05:51,320
+in Python as opposed to in HTML.
+
+127
+00:05:53,990 --> 00:05:58,680
+Okay, now when you want to get the data out
+
+128
+00:05:58,680 --> 00:06:00,220
+and use it from within Python,
+
+129
+00:06:00,220 --> 00:06:03,460
+it's not enough to load it in your browser.
+
+130
+00:06:03,460 --> 00:06:06,500
+Of course you have to get Python to do it.
+
+131
+00:06:06,500 --> 00:06:08,550
+And in order to do that, we're going to instal
+
+132
+00:06:08,550 --> 00:06:11,090
+another library called requests
+
+133
+00:06:11,090 --> 00:06:13,580
+that is used to essentially request
+
+134
+00:06:13,580 --> 00:06:16,650
+some data from a page and download it.
+
+135
+00:06:16,650 --> 00:06:19,520
+So that you can then use it, or look at it,
+
+136
+00:06:19,520 --> 00:06:21,810
+or print it out, or anything you want.
+
+137
+00:06:21,810 --> 00:06:24,440
+So that library will be used to get the page contents,
+
+138
+00:06:24,440 --> 00:06:28,580
+this HTML, and then we will use Beautiful Soup
+
+139
+00:06:28,580 --> 00:06:31,410
+to understand that and extract the data.
+
+140
+00:06:31,410 --> 00:06:33,410
+Lets look at that in the very next video.
+
+141
+00:06:33,410 --> 00:06:34,510
+So I'll see you there.
+

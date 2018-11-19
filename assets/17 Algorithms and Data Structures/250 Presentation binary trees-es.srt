@@ -1,0 +1,500 @@
+1
+00:00:00,170 --> 00:00:01,680
+Instructor: Hola y bienvenido de nuevo.
+
+2
+00:00:01,680 --> 00:00:03,040
+En este video, vamos
+
+3
+00:00:03,040 --> 00:00:04,717
+a hablar sobre rboles binarios.
+
+4
+00:00:04,717 --> 00:00:07,970
+Un rbol binario, como una lista o un
+
+5
+00:00:07,970 --> 00:00:09,780
+conjunto, es otra estructura de
+
+6
+00:00:09,780 --> 00:00:13,022
+datos que podemos usar para guardar algunos valores.
+
+7
+00:00:13,022 --> 00:00:17,720
+Sin embargo, est estructurado de forma un poco diferente de una lista.
+
+8
+00:00:17,720 --> 00:00:18,997
+Echemos un vistazo.
+
+9
+00:00:18,997 --> 00:00:20,750
+En el ltimo video,
+
+10
+00:00:20,750 --> 00:00:22,220
+miramos la bsqueda
+
+11
+00:00:22,220 --> 00:00:24,717
+binaria, donde comenzamos en el
+
+12
+00:00:24,717 --> 00:00:29,000
+medio de nuestra lista, y luego construimos un algoritmo
+
+13
+00:00:29,000 --> 00:00:30,892
+que nos permita buscar.
+
+14
+00:00:30,892 --> 00:00:35,070
+Si tomas los valores que se obtienen con este algoritmo, en
+
+15
+00:00:35,070 --> 00:00:37,620
+realidad terminas con un rbol binario.
+
+16
+00:00:37,620 --> 00:00:38,930
+Echemos un vistazo.
+
+17
+00:00:38,930 --> 00:00:40,690
+Si comienza en el medio
+
+18
+00:00:40,690 --> 00:00:42,312
+de esta lista y toma
+
+19
+00:00:42,312 --> 00:00:47,312
+el primer valor, hagamos que ese valor sea el punto de partida de nuestro rbol.
+
+20
+00:00:47,470 --> 00:00:48,820
+As que lo moveremos hacia abajo.
+
+21
+00:00:49,780 --> 00:00:52,007
+Y este va a ser el punto de partida.
+
+22
+00:00:52,007 --> 00:00:53,700
+En la bsqueda
+
+23
+00:00:53,700 --> 00:00:56,720
+binaria, descartamos la mitad de estos
+
+24
+00:00:56,720 --> 00:01:01,146
+valores y pasamos al centro del segmento restante.
+
+25
+00:01:01,146 --> 00:01:04,910
+Vamos a hacer, sin descartar ningn valor, vamos a
+
+26
+00:01:04,910 --> 00:01:07,281
+hacer eso para ambos segmentos.
+
+27
+00:01:07,281 --> 00:01:09,770
+As que nos moveremos a la
+
+28
+00:01:09,770 --> 00:01:11,770
+mitad de los segmentos restantes.
+
+29
+00:01:11,770 --> 00:01:13,650
+As que vamos a comenzar en el medio
+
+30
+00:01:13,650 --> 00:01:16,207
+de cada segmento aqu, lo que nos lleva a siete y 59.
+
+31
+00:01:16,207 --> 00:01:18,780
+Y tomaremos esos dos valores,
+
+32
+00:01:18,780 --> 00:01:22,889
+y los haremos aparecer debajo de 38.
+
+33
+00:01:22,889 --> 00:01:26,529
+Entonces este rbol est empezando a construirse.
+
+34
+00:01:26,529 --> 00:01:31,230
+38 tiene, ms o menos, lo que decimos dos nios, siete y 59.
+
+35
+00:01:31,230 --> 00:01:32,890
+Siete est a la
+
+36
+00:01:32,890 --> 00:01:34,751
+izquierda, 59 a la derecha.
+
+37
+00:01:34,751 --> 00:01:36,510
+Si hacemos esto de
+
+38
+00:01:36,510 --> 00:01:38,777
+nuevo, ahora vamos a terminar
+
+39
+00:01:38,777 --> 00:01:40,820
+con cuatro valores, porque vamos
+
+40
+00:01:40,820 --> 00:01:45,820
+a pasar al centro de los segmentos restantes en cada caso.
+
+41
+00:01:45,850 --> 00:01:46,683
+Y una
+
+42
+00:01:46,683 --> 00:01:47,970
+vez ms, vamos a
+
+43
+00:01:47,970 --> 00:01:51,000
+bajar estos valores y convertirlos en hijos del anterior.
+
+44
+00:01:51,000 --> 00:01:52,800
+Entonces, ahora siete tienen dos hijos,
+
+45
+00:01:52,800 --> 00:01:54,043
+59 tienen dos hijos.
+
+46
+00:01:56,050 --> 00:01:57,690
+Una vez ms, vamos a
+
+47
+00:01:57,690 --> 00:02:01,470
+repetir, y obtendremos el medio punto de los segmentos restantes.
+
+48
+00:02:01,470 --> 00:02:03,213
+Ahora terminamos con ocho valores.
+
+49
+00:02:03,213 --> 00:02:05,567
+Y los movemos hacia abajo aqu.
+
+50
+00:02:05,567 --> 00:02:09,150
+Y, por ltimo, no quedan muchos, no quedan
+
+51
+00:02:09,150 --> 00:02:10,690
+16 valores, por lo
+
+52
+00:02:10,690 --> 00:02:14,834
+que vamos a pasar a los pocos valores restantes, y
+
+53
+00:02:14,834 --> 00:02:18,453
+vamos a moverlos hacia abajo como un grupo.
+
+54
+00:02:21,020 --> 00:02:22,351
+Entonces, como pueden ver,
+
+55
+00:02:22,351 --> 00:02:25,100
+terminamos con algo que parece un rbol.
+
+56
+00:02:25,100 --> 00:02:27,593
+Si agregamos las ramas, se vuelve un poco ms claro.
+
+57
+00:02:27,593 --> 00:02:32,593
+Tenemos elementos que tienen hijos debajo de ellos.
+
+58
+00:02:33,490 --> 00:02:35,890
+Y luego un nio tambin puede tener
+
+59
+00:02:35,890 --> 00:02:37,539
+hijos, puede tener dos hijos
+
+60
+00:02:37,539 --> 00:02:39,230
+o puede tener un hijo.
+
+61
+00:02:39,230 --> 00:02:40,300
+Y lo que
+
+62
+00:02:40,300 --> 00:02:44,040
+sucede es que cada nodo tiene un elemento u otro nodo que
+
+63
+00:02:44,040 --> 00:02:47,501
+es ms pequeo que a la izquierda y un elemento que
+
+64
+00:02:47,501 --> 00:02:49,898
+es ms grande que a la derecha.
+
+65
+00:02:49,898 --> 00:02:52,340
+Tomando el ejemplo de 38, tiene el nodo
+
+66
+00:02:52,340 --> 00:02:55,847
+siete a la izquierda, que es ms pequeo que 38, y
+
+67
+00:02:55,847 --> 00:03:00,162
+tiene el nodo 59 a la derecha, que es ms grande que 38.
+
+68
+00:03:00,162 --> 00:03:05,162
+Entonces, con esta estructura, podemos realizar fcilmente
+
+69
+00:03:05,950 --> 00:03:07,830
+una bsqueda binaria.
+
+70
+00:03:07,830 --> 00:03:11,760
+Entonces el rbol binario se usa para realizar bsquedas binarias.
+
+71
+00:03:11,760 --> 00:03:13,830
+Busquemos el elemento 90.
+
+72
+00:03:13,830 --> 00:03:17,550
+90, puedes ver, est ah abajo a la derecha.
+
+73
+00:03:17,550 --> 00:03:21,320
+Para realizar una bsqueda binaria, ahora todo lo que tenemos que hacer es
+
+74
+00:03:21,320 --> 00:03:23,608
+comenzar en la parte superior del rbol y
+
+75
+00:03:23,608 --> 00:03:27,346
+luego decidir si queremos ir hacia la izquierda o hacia la derecha.
+
+76
+00:03:27,346 --> 00:03:31,183
+Como 90 es ms grande que 38, vamos
+
+77
+00:03:31,183 --> 00:03:32,646
+a la derecha.
+
+78
+00:03:32,646 --> 00:03:37,646
+Entonces, porque 90 es ms grande que 59, vamos a ir a la derecha.
+
+79
+00:03:38,980 --> 00:03:43,461
+Y ahora, 90 es ms pequeo que 717, as que vamos a la izquierda.
+
+80
+00:03:43,461 --> 00:03:47,730
+Y eso es todo, lo encontramos.
+
+81
+00:03:47,730 --> 00:03:49,919
+Entonces es lo mismo que realizar una bsqueda binaria.
+
+82
+00:03:49,919 --> 00:03:52,630
+El rbol binario est estructurado de esta manera
+
+83
+00:03:52,630 --> 00:03:54,370
+para que podamos buscar fcilmente
+
+84
+00:03:54,370 --> 00:03:57,340
+y terminamos con elementos ms pequeos a la izquierda,
+
+85
+00:03:57,340 --> 00:03:58,730
+elementos ms grandes a
+
+86
+00:03:58,730 --> 00:04:01,470
+la derecha, y simplemente tenemos que pasar por cada uno.
+
+87
+00:04:01,470 --> 00:04:04,390
+Por supuesto, el rbol binario debe ordenarse de esta manera
+
+88
+00:04:04,390 --> 00:04:05,460
+para que funcione.
+
+89
+00:04:05,460 --> 00:04:07,560
+Vamos a ver cmo crear rboles
+
+90
+00:04:07,560 --> 00:04:09,769
+binarios como este en los prximos videos.
+
+91
+00:04:09,769 --> 00:04:14,642
+Entonces, una vez ms, el rbol binario es simplemente, bueno, puedes
+
+92
+00:04:14,642 --> 00:04:17,770
+pensarlo como una representacin de la lista
+
+93
+00:04:17,770 --> 00:04:21,630
+ordenada despus de realizar una bsqueda binaria en ella.
+
+94
+00:04:21,630 --> 00:04:24,050
+Si toma la lista, y si toma el rbol
+
+95
+00:04:24,050 --> 00:04:26,290
+binario de izquierda a derecha, observe cmo el
+
+96
+00:04:26,290 --> 00:04:29,460
+valor ms a la izquierda en este rbol, el de la
+
+97
+00:04:29,460 --> 00:04:31,712
+izquierda es el nmero uno, y el siguiente
+
+98
+00:04:31,712 --> 00:04:35,400
+valor a la derecha es el nmero tres, el siguiente es el nmero
+
+99
+00:04:35,400 --> 00:04:37,920
+cuatro, el siguiente es el nmero cinco y el
+
+100
+00:04:37,920 --> 00:04:39,730
+siguiente nmero siete, y as sucesivamente.
+
+101
+00:04:39,730 --> 00:04:41,710
+Entonces, si tomas todo el
+
+102
+00:04:41,710 --> 00:04:43,170
+rbol, y lo pones
+
+103
+00:04:43,170 --> 00:04:46,290
+de izquierda a derecha, cuando termines es, una
+
+104
+00:04:46,290 --> 00:04:48,333
+vez ms, tu lista ordenada.
+
+105
+00:04:50,440 --> 00:04:55,400
+Entonces este es un conocimiento bastante interesante.
+
+106
+00:04:55,400 --> 00:04:57,980
+Puede que no te encuentres usando rboles
+
+107
+00:04:57,980 --> 00:05:01,470
+binarios todo el tiempo en tus carreras de desarrollo de
+
+108
+00:05:01,470 --> 00:05:03,651
+software, pero no obstante, estn en
+
+109
+00:05:03,651 --> 00:05:05,510
+todas partes cuando haces software.
+
+110
+00:05:05,510 --> 00:05:07,340
+Los obtienes en bases de
+
+111
+00:05:07,340 --> 00:05:09,360
+datos, los tienes cuando necesitas buscar
+
+112
+00:05:09,360 --> 00:05:11,598
+a travs de una gran lista.
+
+113
+00:05:11,598 --> 00:05:14,923
+Entonces, es interesante saber sobre estos rboles binarios.
+
+114
+00:05:16,440 --> 00:05:17,273
+En los
+
+115
+00:05:17,273 --> 00:05:18,850
+prximos videos, aprenderemos cmo
+
+116
+00:05:18,850 --> 00:05:23,010
+construir rboles binarios, cmo buscar en un rbol binario en cdigo,
+
+117
+00:05:23,010 --> 00:05:23,853
+y as sucesivamente.
+
+118
+00:05:25,010 --> 00:05:29,288
+Entonces, con suerte, qu rbol binario tiene sentido.
+
+119
+00:05:29,288 --> 00:05:34,000
+Es solo una estructura que tiene ramas con las ramas ms
+
+120
+00:05:34,000 --> 00:05:36,120
+grandes a la derecha, ramas
+
+121
+00:05:36,120 --> 00:05:38,270
+ms pequeas a la izquierda,
+
+122
+00:05:38,270 --> 00:05:41,200
+y luego nos permite producir, para implementar
+
+123
+00:05:41,200 --> 00:05:44,100
+muy fcilmente un algoritmo de bsqueda binario.
+
+124
+00:05:44,100 --> 00:05:46,430
+Y eso es todo por este video, y
+
+125
+00:05:46,430 --> 00:05:48,080
+nos vemos en el prximo.
+

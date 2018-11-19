@@ -1,0 +1,1164 @@
+1
+00:00:00,090 --> 00:00:01,260
+Jose: Ol e bem vindo de volta.
+
+2
+00:00:01,260 --> 00:00:05,050
+Vamos fazer nosso primeiro pedido com o aiohttp.
+
+3
+00:00:05,960 --> 00:00:09,400
+Aqui neste projeto eu estou indo s para criar
+
+4
+00:00:09,400 --> 00:00:13,050
+um novo arquivo apenas para testar o aiohttp e vai
+
+5
+00:00:13,050 --> 00:00:15,290
+ser chamado async_request. py.
+
+6
+00:00:15,290 --> 00:00:18,240
+A propsito, o cdigo para isso est ligado em uma
+
+7
+00:00:18,240 --> 00:00:21,553
+palestra e est disponvel, talvez em uma configurao um pouco diferente,
+
+8
+00:00:21,553 --> 00:00:24,350
+mas mesmo assim haver uma pasta de amostras para voc
+
+9
+00:00:24,350 --> 00:00:26,340
+olhar para esses cdigos que vamos escrever
+
+10
+00:00:26,340 --> 00:00:28,300
+sobre essas palestras e depois,  claro,
+
+11
+00:00:28,300 --> 00:00:30,260
+No final, quando transformamos a coisa inteira
+
+12
+00:00:30,260 --> 00:00:31,660
+em um scrapper assncrono, o
+
+13
+00:00:31,660 --> 00:00:33,410
+cdigo completo tambm est disponvel.
+
+14
+00:00:34,880 --> 00:00:37,795
+Ento, para fazer nossa primeira solicitao
+
+15
+00:00:37,795 --> 00:00:40,300
+na web, a primeira coisa
+
+16
+00:00:40,300 --> 00:00:43,560
+que precisamos fazer , obviamente, instalar o aiohttp.
+
+17
+00:00:43,560 --> 00:00:45,860
+Agora, em breve, vamos ver
+
+18
+00:00:46,900 --> 00:00:49,960
+como lidar com as dependncias nos projetos
+
+19
+00:00:49,960 --> 00:00:52,950
+Python um pouco melhor, mas por
+
+20
+00:00:52,950 --> 00:00:56,680
+enquanto continuaremos instalando as coisas diretamente no PyCharm
+
+21
+00:00:56,680 --> 00:01:00,470
+fazendo, voc sabe, passando para o nosso projeto,
+
+22
+00:01:00,470 --> 00:01:03,930
+Project Interpreter, e l com mais instalando aiohttp.
+
+23
+00:01:06,000 --> 00:01:08,250
+A verso atual que estou usando  3. 0 5
+
+24
+00:01:09,260 --> 00:01:11,180
+talvez seja diferente quando voc estiver
+
+25
+00:01:11,180 --> 00:01:14,311
+usando, mas no se preocupe, se houver alguma alterao, faremos
+
+26
+00:01:14,311 --> 00:01:17,294
+um novo registro com uma nova verso e em breve.
+
+27
+00:01:17,294 --> 00:01:20,940
+Ento, se voc instalar isso e perceber que as coisas no funcionam
+
+28
+00:01:20,940 --> 00:01:22,440
+do jeito que esperamos, basta
+
+29
+00:01:22,440 --> 00:01:24,230
+dizer no curso Q e A
+
+30
+00:01:24,230 --> 00:01:26,230
+e vamos regravar o mais rpido possvel.
+
+31
+00:01:26,230 --> 00:01:28,250
+Ok, basta instalar este pacote e isso
+
+32
+00:01:28,250 --> 00:01:29,957
+ tudo o que precisamos instalar.
+
+33
+00:01:29,957 --> 00:01:33,090
+E assim, quando instalado, voc pode fechar essa
+
+34
+00:01:35,200 --> 00:01:36,980
+janela e comear a us-la.
+
+35
+00:01:38,360 --> 00:01:39,960
+Ento  isso, feito.
+
+36
+00:01:39,960 --> 00:01:44,860
+Podemos pressionar OK e agora podemos importar o aiohttp.
+
+37
+00:01:46,230 --> 00:01:50,760
+Ento, vamos primeiro comear a buscar uma nica pgina.
+
+38
+00:01:50,760 --> 00:01:53,250
+A primeira coisa que precisamos fazer  criar
+
+39
+00:01:53,250 --> 00:01:54,890
+a co-rotina e isso 
+
+40
+00:01:54,890 --> 00:01:58,030
+como um gerador que pode suspender e retomar sua execuo
+
+41
+00:01:58,030 --> 00:01:59,880
+a qualquer momento usando o wait.
+
+42
+00:01:59,880 --> 00:02:02,880
+Ento, vamos fazer a defync_fage assncrona.
+
+43
+00:02:04,179 --> 00:02:05,190
+E o que vamos passar
+
+44
+00:02:05,190 --> 00:02:06,990
+por essa funo  o URL que queremos buscar.
+
+45
+00:02:08,270 --> 00:02:10,190
+Agora, a prxima coisa que
+
+46
+00:02:10,190 --> 00:02:15,000
+fazemos  dizer ao aiohttp para criar uma sesso de cliente.
+
+47
+00:02:15,000 --> 00:02:17,670
+Uma sesso do cliente basicamente cria um monte de
+
+48
+00:02:17,670 --> 00:02:20,560
+conexes e as coloca em um pool, praticamente como um
+
+49
+00:02:20,560 --> 00:02:22,270
+pool de threads, exceto que 
+
+50
+00:02:22,270 --> 00:02:25,040
+um pool de conexo, para que possamos reutiliz-las sem
+
+51
+00:02:25,040 --> 00:02:27,710
+ter que criar novas conexes a cada vez.
+
+52
+00:02:27,710 --> 00:02:30,290
+Ento, o que vamos fazer  um pouco mais de sintaxe.
+
+53
+00:02:30,290 --> 00:02:34,940
+async_with aiohttp. ClientSession como sesso.
+
+54
+00:02:38,796 --> 00:02:41,050
+Tudo o que est acontecendo aqui 
+
+55
+00:02:41,050 --> 00:02:43,565
+que estamos fazendo um gerenciador de contexto normal,
+
+56
+00:02:43,565 --> 00:02:45,800
+estamos criando esta nova ClientSession, que 
+
+57
+00:02:45,800 --> 00:02:49,320
+um pool de conexo e tambm um armazenamento de cookies.
+
+58
+00:02:49,320 --> 00:02:51,880
+Ns vamos falar mais sobre isso em breve.
+
+59
+00:02:52,870 --> 00:02:57,325
+Estamos chamando-o de sesso, mas como  assncrono, o que acontece
+
+60
+00:02:57,325 --> 00:03:00,332
+em um gerenciador de contexto assncrono 
+
+61
+00:03:00,332 --> 00:03:04,380
+que ele pode ter rendimento l dentro ou nos mtodos
+
+62
+00:03:04,380 --> 00:03:06,530
+de sada ou em ambos.
+
+63
+00:03:06,530 --> 00:03:08,830
+Ento, essencialmente,  apenas uma maneira de
+
+64
+00:03:08,830 --> 00:03:12,220
+potencialmente suspender a execuo do gerenciador de contexto quando ele
+
+65
+00:03:12,220 --> 00:03:14,590
+ iniciado ou suspenso quando ele termina
+
+66
+00:03:14,590 --> 00:03:15,510
+e o retome.
+
+67
+00:03:15,510 --> 00:03:20,510
+Apenas adiciona como um novo ponto onde pode suspender e retomar apenas no caso de voc
+
+68
+00:03:21,240 --> 00:03:22,530
+querer fazer algo que
+
+69
+00:03:22,530 --> 00:03:25,420
+era pesado dentro do gerenciador de contexto, permite suspender
+
+70
+00:03:25,420 --> 00:03:27,200
+e retomar no incio ou no
+
+71
+00:03:27,200 --> 00:03:28,980
+final do gerenciador de contexto.
+
+72
+00:03:28,980 --> 00:03:32,210
+Essa  a nica diferena com o gerenciador de contexto normal e
+
+73
+00:03:32,210 --> 00:03:33,710
+o gerenciador de contexto assncrono.
+
+74
+00:03:35,270 --> 00:03:39,740
+Para obter mais informaes sobre isso, em vez de inserir
+
+75
+00:03:43,220 --> 00:03:47,300
+e sair, os novos mtodos so aenter e aexit.
+
+76
+00:03:49,480 --> 00:03:51,530
+Ok, no vamos aprofundar muito sobre a
+
+77
+00:03:51,530 --> 00:03:53,680
+criao de seus prprios gerenciadores de contexto
+
+78
+00:03:53,680 --> 00:03:56,370
+assncronos, agora que se voc quer criar um gerenciador
+
+79
+00:03:56,370 --> 00:04:01,095
+assncrono bem, voc pode esperar ou render dentro dele, e voc tem que usar o
+
+80
+00:04:01,095 --> 00:04:03,300
+aenter e aexit em vez disso de
+
+81
+00:04:03,300 --> 00:04:04,600
+entrar e sair.
+
+82
+00:04:05,570 --> 00:04:07,730
+Agora isso apenas um pouco de lado l.
+
+83
+00:04:07,730 --> 00:04:11,100
+Isso vamos fazer assncrono com a sesso. get e vamos
+
+84
+00:04:11,100 --> 00:04:14,040
+obter o URL como resposta.
+
+85
+00:04:14,040 --> 00:04:16,900
+E ento ns vamos retornar a resposta. cdigo de status.
+
+86
+00:04:18,450 --> 00:04:20,920
+Essa pode ser nossa primeira tarefa.
+
+87
+00:04:20,920 --> 00:04:24,876
+Esta  uma rotina central, que antes de mais nada cria
+
+88
+00:04:24,876 --> 00:04:28,790
+uma sesso, ento meio que recebe a URL que passamos.
+
+89
+00:04:28,790 --> 00:04:31,377
+Isso solicita ao servidor o contedo, chama
+
+90
+00:04:31,377 --> 00:04:35,540
+uma resposta e retorna a resposta. status.
+
+91
+00:04:35,540 --> 00:04:37,450
+Mas  claro antes de responder, antes de
+
+92
+00:04:37,450 --> 00:04:38,990
+retornar a resposta. status,
+
+93
+00:04:38,990 --> 00:04:43,990
+ele pode ser suspenso aqui ou aqui,
+
+94
+00:04:44,390 --> 00:04:47,350
+quando iniciar ou quando terminar.
+
+95
+00:04:47,350 --> 00:04:49,598
+Ento, quando podemos, por exemplo, obter
+
+96
+00:04:49,598 --> 00:04:53,620
+a URL ou enviar a solicitao para o servidor e,
+
+97
+00:04:53,620 --> 00:04:56,950
+em seguida, suspender enquanto esperamos que os dados voltem.
+
+98
+00:04:56,950 --> 00:05:00,010
+Quando os dados voltarem, estaremos na sada, desculpe, no
+
+99
+00:05:00,010 --> 00:05:03,189
+final da seo de entrada do gerador e podemos
+
+100
+00:05:03,189 --> 00:05:05,130
+continuar a execuo e, em seguida,
+
+101
+00:05:05,130 --> 00:05:06,590
+podemos obter esse status.
+
+102
+00:05:06,590 --> 00:05:10,340
+E isso no  assncrono, isso  apenas um retorno normal.
+
+103
+00:05:10,340 --> 00:05:12,350
+Ento a funo terminaria a.
+
+104
+00:05:13,743 --> 00:05:15,850
+Agora, o nico propsito do
+
+105
+00:05:15,850 --> 00:05:19,410
+assncrono e dessas funes assncronas  potencialmente suspender a
+
+106
+00:05:19,410 --> 00:05:22,800
+execuo a qualquer momento e retomar a execuo.
+
+107
+00:05:22,800 --> 00:05:24,680
+Colocar essas coisas nos lugares corretos
+
+108
+00:05:24,680 --> 00:05:27,620
+significa que podemos suspender a execuo quando estamos esperando e
+
+109
+00:05:27,620 --> 00:05:31,010
+podemos retomar a execuo, uma vez que queremos parar de esperar.
+
+110
+00:05:34,230 --> 00:05:36,679
+Agora devemos ter um agendador
+
+111
+00:05:36,679 --> 00:05:41,679
+de tarefas que far o. enviar ou o prximo.
+
+112
+00:05:41,740 --> 00:05:45,850
+Lembre-se disto, apenas produza, rendimento de dentro daqui que
+
+113
+00:05:45,850 --> 00:05:48,830
+so esperas que so rendimento de, ento
+
+114
+00:05:48,830 --> 00:05:52,090
+precisamos de algo que vai fazer isto
+
+115
+00:05:52,090 --> 00:05:53,950
+enviar ou isto a seguir.
+
+116
+00:05:53,950 --> 00:05:57,850
+E agora, a partir do Python 3. 4, creio eu, temos isso,
+
+117
+00:05:57,850 --> 00:05:59,780
+que  a biblioteca assyncio.
+
+118
+00:06:01,020 --> 00:06:02,630
+Se voc assistiu quela conversa, o que
+
+119
+00:06:02,630 --> 00:06:05,560
+eu espero que voc tenha feito, voc ter visto asyncio mencionado algumas vezes.
+
+120
+00:06:05,560 --> 00:06:07,990
+A biblioteca assyncio vem construda em
+
+121
+00:06:07,990 --> 00:06:11,320
+Python e  muito pequena, bem, no 
+
+122
+00:06:11,320 --> 00:06:13,910
+to pequena assim, mas  relativamente
+
+123
+00:06:13,910 --> 00:06:16,520
+pequena as coisas que temos que
+
+124
+00:06:16,520 --> 00:06:20,570
+saber e nos permite agendar e gerenciar essas co-rotinas, essas tarefas.
+
+125
+00:06:20,570 --> 00:06:22,560
+ muito fcil de usar, pelo
+
+126
+00:06:22,560 --> 00:06:25,080
+menos do jeito que vamos fazer agora.
+
+127
+00:06:25,080 --> 00:06:27,798
+H um pouco mais para usar
+
+128
+00:06:27,798 --> 00:06:31,107
+do que o que ns cobrimos, mas
+
+129
+00:06:31,107 --> 00:06:35,150
+para us-lo, de certa forma  bastante direto.
+
+130
+00:06:35,150 --> 00:06:37,675
+Tudo o que fazemos  obter um
+
+131
+00:06:37,675 --> 00:06:41,060
+event_loop e depois fazemos loop. run_until_complete (fetch_page) por
+
+132
+00:06:42,830 --> 00:06:45,730
+exemplo, google. com.
+
+133
+00:06:48,750 --> 00:06:53,730
+Quando voc chama fetch_page, no recebe a resposta. status.
+
+134
+00:06:53,730 --> 00:06:55,870
+J sabemos disso pelo que vimos anteriormente.
+
+135
+00:06:55,870 --> 00:06:57,690
+Quando voc chama fetch_page, o que
+
+136
+00:06:57,690 --> 00:06:59,140
+obtm  um objeto co-rotineiro.
+
+137
+00:07:00,086 --> 00:07:03,240
+Ento, isso no est realmente dando a resposta, apesar
+
+138
+00:07:03,240 --> 00:07:04,770
+de estarmos chamando a funo.
+
+139
+00:07:04,770 --> 00:07:06,680
+Tudo o que isso est fazendo
+
+140
+00:07:06,680 --> 00:07:11,680
+ criar a co-rotina em segundo plano que voc pode enviar ou ao lado.
+
+141
+00:07:11,900 --> 00:07:14,210
+Quando voc faz isso, ele passa
+
+142
+00:07:14,210 --> 00:07:16,420
+por cada currculo e resposta.
+
+143
+00:07:16,420 --> 00:07:18,460
+Ento o que este run_until_complete est
+
+144
+00:07:18,460 --> 00:07:20,610
+fazendo  que ele est usando
+
+145
+00:07:20,610 --> 00:07:23,700
+esse event_loop para retomar continuamente essa funo at que
+
+146
+00:07:23,700 --> 00:07:24,700
+esteja completa.
+
+147
+00:07:27,907 --> 00:07:29,670
+Assim, podemos executar isso, podemos clicar com
+
+148
+00:07:29,670 --> 00:07:31,920
+o boto direito do mouse no pedido assncrono e execut-lo.
+
+149
+00:07:31,920 --> 00:07:34,340
+E  claro que no imprimimos
+
+150
+00:07:34,340 --> 00:07:39,340
+nada, mas podemos imprimir a resposta. status aqui e voc
+
+151
+00:07:40,070 --> 00:07:42,320
+ver que algo volta.
+
+152
+00:07:43,490 --> 00:07:45,560
+Sim, 200, o que significa que est tudo bem.
+
+153
+00:07:45,560 --> 00:07:47,937
+Como voc pode ver, isso funcionou.
+
+154
+00:07:47,937 --> 00:07:51,940
+Portanto, esta  a maneira mais simples de obtermos um event_loop
+
+155
+00:07:51,940 --> 00:07:56,300
+e executar uma tarefa, e uma tarefa  apenas uma funo
+
+156
+00:07:56,300 --> 00:07:57,810
+assncrona que foi definida.
+
+157
+00:07:57,810 --> 00:07:59,620
+Tudo o que precisamos  pegar o event_loop
+
+158
+00:07:59,620 --> 00:08:01,180
+e execut-lo at que esteja completo.
+
+159
+00:08:03,670 --> 00:08:06,080
+Se voc quisesse fazer mais solicitaes
+
+160
+00:08:06,080 --> 00:08:07,780
+assncronas, faramos isso agora tambm.
+
+161
+00:08:07,780 --> 00:08:10,620
+O que vamos fazer primeiro  o tempo de importao,
+
+162
+00:08:10,620 --> 00:08:13,530
+para que possamos parar de medir quanto tempo isso leva.
+
+163
+00:08:13,530 --> 00:08:16,770
+Ento antes de fazermos qualquer uma das sesses ou algo assim, vamos fazer
+
+164
+00:08:16,770 --> 00:08:19,090
+o page_start  a hora. Tempo.
+
+165
+00:08:20,370 --> 00:08:25,370
+E antes de retornarmos, vamos imprimir que
+
+166
+00:08:27,870 --> 00:08:32,170
+a pgina demorou. hora menos page_start.
+
+167
+00:08:33,800 --> 00:08:38,020
+Eu chamo de estado, que deveria comear por a.
+
+168
+00:08:39,140 --> 00:08:43,220
+Ok, se ns rodarmos isso de novo, voc ver que ele diz que
+
+169
+00:08:43,220 --> 00:08:45,420
+a pgina levou 0. 17 segundos.
+
+170
+00:08:45,420 --> 00:08:46,840
+Ento foi bem rpido.
+
+171
+00:08:46,840 --> 00:08:48,920
+O programa como um todo demorou um
+
+172
+00:08:48,920 --> 00:08:51,653
+pouco mais, mas isso porque envolve a criao do
+
+173
+00:08:51,653 --> 00:08:55,640
+event_loop e o incio de novas tarefas, o agendamento e assim por diante.
+
+174
+00:08:55,640 --> 00:08:59,604
+Mas a solicitao de pgina em si s levou 0. 17 segundos.
+
+175
+00:08:59,604 --> 00:09:03,560
+Se voc arredondar isso usando a biblioteca de solicitaes, como
+
+176
+00:09:03,560 --> 00:09:06,460
+fizemos anteriormente, levaria mais ou menos a
+
+177
+00:09:06,460 --> 00:09:07,960
+mesma quantidade de tempo.
+
+178
+00:09:07,960 --> 00:09:10,080
+Ok, no haveria diferena, s
+
+179
+00:09:10,080 --> 00:09:12,138
+porque tudo o que estamos
+
+180
+00:09:12,138 --> 00:09:14,816
+fazendo aqui est executando uma nica solicitao.
+
+181
+00:09:14,816 --> 00:09:18,800
+Se voc quiser executar vrias solicitaes, poderemos fazer
+
+182
+00:09:18,800 --> 00:09:20,830
+isso com muita facilidade.
+
+183
+00:09:20,830 --> 00:09:22,388
+Ns vamos dizer algo como tarefas
+
+184
+00:09:22,388 --> 00:09:24,650
+, e agora vamos fazer uma compreenso da
+
+185
+00:09:24,650 --> 00:09:28,340
+lista, onde vamos buscar_page off google. com para i
+
+186
+00:09:28,340 --> 00:09:31,250
+na faixa de 50, digamos.
+
+187
+00:09:32,720 --> 00:09:35,826
+Ok, agora temos 50 objetos co-rotineiros
+
+188
+00:09:35,826 --> 00:09:37,680
+que precisam ser executados.
+
+189
+00:09:38,820 --> 00:09:40,410
+Ento, como vamos fazer isso?
+
+190
+00:09:40,410 --> 00:09:44,170
+Bem, vamos dizer loop. execute todas essas tarefas
+
+191
+00:09:44,170 --> 00:09:46,151
+at que elas sejam concludas.
+
+192
+00:09:46,151 --> 00:09:49,470
+Mas s podemos passar uma nica
+
+193
+00:09:49,470 --> 00:09:51,816
+tarefa para a funo run_until_complete.
+
+194
+00:09:51,816 --> 00:09:56,610
+Ento, o asyncio vem com uma funo bastante til que nos permite reunir
+
+195
+00:09:56,610 --> 00:10:00,220
+vrias tarefas e execut-las como uma nica tarefa, para que
+
+196
+00:10:00,220 --> 00:10:02,440
+seja um pouco mais fcil de
+
+197
+00:10:02,440 --> 00:10:04,570
+fazer isso e tudo o que
+
+198
+00:10:04,570 --> 00:10:07,650
+h  assncrono. reunir.
+
+199
+00:10:07,650 --> 00:10:11,680
+E vamos passar todas as tarefas como argumentos.
+
+200
+00:10:11,680 --> 00:10:16,680
+Portanto, sero tarefas (0), tarefas (1), tarefas (2), tarefas (3) e
+
+201
+00:10:17,520 --> 00:10:19,590
+assim por diante at 50.
+
+202
+00:10:19,590 --> 00:10:22,661
+Ou, como voc j sabe, podemos usar
+
+203
+00:10:22,661 --> 00:10:26,180
+o argumento de desempacotamento para realizar tarefas de estrela.
+
+204
+00:10:27,290 --> 00:10:31,240
+Ok, agora como parte disso eu tambm vou marcar isso.
+
+205
+00:10:31,240 --> 00:10:34,940
+Ento, eu vou dizer que o comeo  o tempo. O tempo e
+
+206
+00:10:34,940 --> 00:10:39,850
+o fim vo ser tudo. tempo menos incio.
+
+207
+00:10:41,050 --> 00:10:46,000
+Observe como estou medindo apenas o loop_run_until_complete.
+
+208
+00:10:46,000 --> 00:10:48,280
+Eu no estou medindo a criao das
+
+209
+00:10:48,280 --> 00:10:50,108
+tarefas, porque isso  praticamente instantneo.
+
+210
+00:10:50,108 --> 00:10:53,889
+Nenhuma solicitao est realmente acontecendo nesta linha.
+
+211
+00:10:53,889 --> 00:10:56,560
+Apenas as principais rotinas foram criadas.
+
+212
+00:10:56,560 --> 00:10:58,410
+Ento quando paramos de
+
+213
+00:10:58,410 --> 00:11:01,310
+execut-los, isso faz o. manda para a primeira
+
+214
+00:11:01,310 --> 00:11:03,530
+tarefa e corre at o asyncio.
+
+215
+00:11:03,530 --> 00:11:06,254
+Ento isso suspende e isto move para o segundo
+
+216
+00:11:06,254 --> 00:11:08,500
+e move at l, ento isto suspende
+
+217
+00:11:08,500 --> 00:11:09,900
+e move para o terceiro.
+
+218
+00:11:09,900 --> 00:11:13,536
+Ento, primeiro de tudo, todas as 50 tarefas terminaro aqui.
+
+219
+00:11:13,536 --> 00:11:15,997
+Ento, um por um, eles sero transferidos para c.
+
+220
+00:11:15,997 --> 00:11:19,370
+E ento, um por um, eles retornaro.
+
+221
+00:11:19,370 --> 00:11:22,940
+Mas  claro, eles podem levar quantidades diferentes de tempo.
+
+222
+00:11:22,940 --> 00:11:27,500
+Ento, um pedido para o google. com pode levar 0. 5 segundos se
+
+223
+00:11:27,500 --> 00:11:28,750
+for muito lento.
+
+224
+00:11:28,750 --> 00:11:30,712
+Outro pode levar 0. 1 segundo
+
+225
+00:11:30,712 --> 00:11:32,550
+Ento, assim que voc comear
+
+226
+00:11:32,550 --> 00:11:37,550
+a fazer isso e s retomar a execuo quando estiver pronto para faz-lo,
+
+227
+00:11:37,590 --> 00:11:40,040
+ver que todas essas tarefas no
+
+228
+00:11:40,040 --> 00:11:41,970
+sero concludas na mesma ordem.
+
+229
+00:11:41,970 --> 00:11:44,150
+E tudo bem, ento vamos apertar o play.
+
+230
+00:11:45,670 --> 00:11:47,943
+E como voc pode ver, isso foi extremamente rpido.
+
+231
+00:11:47,943 --> 00:11:52,943
+Ns temos algumas tarefas que demoraram 0. 32 segundos, e quando eles terminam mais
+
+232
+00:11:53,250 --> 00:11:56,291
+ou menos em ordem, podemos ver que na parte
+
+233
+00:11:56,291 --> 00:12:00,168
+inferior alguns deles levaram 0. 46 segundos e
+
+234
+00:12:00,168 --> 00:12:04,473
+no total demorou 0. 48 segundos.
+
+235
+00:12:04,473 --> 00:12:07,150
+No a adio de todas essas coisas,
+
+236
+00:12:07,150 --> 00:12:10,580
+mas sim a mais longa mais alguns milissegundos apenas para
+
+237
+00:12:10,580 --> 00:12:12,750
+configurar o loop de eventos e
+
+238
+00:12:12,750 --> 00:12:15,923
+fazer o agendamento das tarefas e assim por diante.
+
+239
+00:12:15,923 --> 00:12:18,920
+Isso  incrvel, porque agora, em vez
+
+240
+00:12:18,920 --> 00:12:21,810
+de esperar que cada pgina termine antes
+
+241
+00:12:21,810 --> 00:12:24,010
+de obter a prxima, basicamente
+
+242
+00:12:24,010 --> 00:12:26,670
+enviaremos as 50 solicitaes para o
+
+243
+00:12:26,670 --> 00:12:30,050
+Google e esperamos at que elas voltem.
+
+244
+00:12:31,870 --> 00:12:33,570
+E, claro, isso vai
+
+245
+00:12:33,570 --> 00:12:38,550
+depender se o Google pode lidar com 50 solicitaes ao mesmo tempo.
+
+246
+00:12:38,550 --> 00:12:42,800
+O Google  uma empresa grande, tem muitos servidores e
+
+247
+00:12:42,800 --> 00:12:45,910
+pode atender a 50 solicitaes ao mesmo tempo.
+
+248
+00:12:45,910 --> 00:12:48,430
+Outros sites no sero capazes de lidar com 50 solicitaes
+
+249
+00:12:48,430 --> 00:12:49,550
+ao mesmo tempo e,
+
+250
+00:12:49,550 --> 00:12:51,160
+se voc fizer isso, voc poder quebr-las.
+
+251
+00:12:51,160 --> 00:12:52,500
+Voc pode realmente quebrar
+
+252
+00:12:52,500 --> 00:12:57,500
+o site ou eles podem dizer, no, voc no pode fazer 50 pedidos de cada vez.
+
+253
+00:12:57,670 --> 00:13:00,530
+Eu vou ser muito lento em responder
+
+254
+00:13:00,530 --> 00:13:04,780
+a voc, a fim de impedir que voc quebre seu servidor.
+
+255
+00:13:04,780 --> 00:13:07,150
+Ento, isso  um par de coisas que voc precisa ter cuidado.
+
+256
+00:13:07,150 --> 00:13:10,003
+Mas, como voc pode ver no Google, 
+
+257
+00:13:10,003 --> 00:13:13,961
+tudo o que voc precisa para obter 50 pginas de forma assncrona.
+
+258
+00:13:13,961 --> 00:13:16,202
+Ento, novamente, o que fizemos
+
+259
+00:13:16,202 --> 00:13:21,202
+foi criar nossa tarefa e usar o aiohttp, que suporta as declaraes
+
+260
+00:13:22,156 --> 00:13:26,110
+async_with, criamos a nossa sesso e, em seguida, usamos
+
+261
+00:13:26,110 --> 00:13:29,900
+o que nos d um pool de conexo para
+
+262
+00:13:29,900 --> 00:13:31,690
+obter cada URL que passamos.
+
+263
+00:13:31,690 --> 00:13:34,610
+E no final ns retornamos uma resposta. cdigo de status, 
+
+264
+00:13:34,610 --> 00:13:37,518
+s pegar algo de volta de l.
+
+265
+00:13:37,518 --> 00:13:39,470
+E ento, para execut-los,
+
+266
+00:13:39,470 --> 00:13:42,997
+temos um event_loop da estrutura assncrona.
+
+267
+00:13:42,997 --> 00:13:47,584
+Criamos todas as nossas tarefas, que so apenas essas funes e,
+
+268
+00:13:47,584 --> 00:13:50,460
+em seguida, executamos todas elas at concluir
+
+269
+00:13:50,460 --> 00:13:52,740
+usando o assncrono. reunir.
+
+270
+00:13:52,740 --> 00:13:54,910
+E reunir recolhe todas as nossas
+
+271
+00:13:54,910 --> 00:13:58,900
+tarefas e permite que elas sejam executadas como uma neste run_until_complete.
+
+272
+00:13:58,900 --> 00:14:01,440
+Caso contrrio, voc teria que executar run_until_complete uma vez
+
+273
+00:14:01,440 --> 00:14:04,520
+para cada tarefa, o que seria um pouco mais tedioso.
+
+274
+00:14:04,520 --> 00:14:06,882
+Ento assncio. reunir, muito bom para isso.
+
+275
+00:14:06,882 --> 00:14:10,050
+Agora  isso para este vdeo.
+
+276
+00:14:10,050 --> 00:14:13,090
+Eu s queria mostrar como fazer
+
+277
+00:14:13,090 --> 00:14:14,976
+essas solicitaes assncronas.
+
+278
+00:14:14,976 --> 00:14:18,870
+Sinta-se  vontade para comparar isso com seu cdigo sncrono.
+
+279
+00:14:18,870 --> 00:14:20,820
+Se voc abrir. py a propsito, voc
+
+280
+00:14:20,820 --> 00:14:22,660
+pode ver que este  um cdigo sncrono.
+
+281
+00:14:22,660 --> 00:14:25,100
+Ento, se voc substituir isso por um google. com e colocar um
+
+282
+00:14:25,100 --> 00:14:27,480
+par de funes de temporizao aqui, voc
+
+283
+00:14:27,480 --> 00:14:28,900
+ver quanto tempo demora.
+
+284
+00:14:28,900 --> 00:14:33,329
+So cerca de 10 segundos, enquanto isso foi cerca de 0. 5 segundos.
+
+285
+00:14:33,329 --> 00:14:35,530
+Ento agora o que vamos fazer  tornar
+
+286
+00:14:35,530 --> 00:14:36,850
+isso um pouco mais eficiente.
+
+287
+00:14:36,850 --> 00:14:39,650
+Obtenha algumas funes aqui para lidar com a
+
+288
+00:14:39,650 --> 00:14:42,340
+obteno de vrias pginas de forma mais eficiente
+
+289
+00:14:42,340 --> 00:14:44,980
+e, em seguida, passaremos a transformar nosso
+
+290
+00:14:44,980 --> 00:14:46,850
+raspador em um arranho assncrono.
+
+291
+00:14:46,850 --> 00:14:48,430
+Eu vou te ver no prximo vdeo.
+

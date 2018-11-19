@@ -1,0 +1,480 @@
+1
+00:00:00,000 --> 00:00:01,251
+[Jose]-Hi and welcome back.
+
+2
+00:00:01,251 --> 00:00:04,465
+In this video we are talking about the map function.
+
+3
+00:00:04,465 --> 00:00:07,596
+In the last video we briefly mentioned when you would use
+
+4
+00:00:07,596 --> 00:00:12,179
+filter, or when would you use generator comprehensions.
+
+5
+00:00:13,171 --> 00:00:16,197
+And so I wanted to just quickly say, "that you'll use filter
+
+6
+00:00:16,197 --> 00:00:19,946
+"when you are programming with people, who haven't been
+
+7
+00:00:19,946 --> 00:00:22,349
+"programming in Python for very long."
+
+8
+00:00:22,349 --> 00:00:24,718
+For example, programmers from other programming languages,
+
+9
+00:00:24,718 --> 00:00:27,099
+or just when your project involves
+
+10
+00:00:27,099 --> 00:00:29,713
+multiple programming languages.
+
+11
+00:00:29,713 --> 00:00:31,129
+Python is one of the few programming languages
+
+12
+00:00:31,129 --> 00:00:32,818
+that has syntax like this.
+
+13
+00:00:32,818 --> 00:00:34,777
+So if you are working with many programming languages,
+
+14
+00:00:34,777 --> 00:00:36,864
+maybe make sense to use the filter function,
+
+15
+00:00:36,864 --> 00:00:40,709
+and that way, keep everything consistent.
+
+16
+00:00:40,709 --> 00:00:41,542
+Use the filter function
+
+17
+00:00:41,542 --> 00:00:45,067
+throughout all the languages you use.
+
+18
+00:00:45,067 --> 00:00:46,780
+Also, you'll use the filter function
+
+19
+00:00:46,780 --> 00:00:48,744
+if you have a function already defined,
+
+20
+00:00:48,744 --> 00:00:51,017
+and you don't have to create one.
+
+21
+00:00:51,017 --> 00:00:53,392
+That way it can be a bit faster.
+
+22
+00:00:53,392 --> 00:00:56,822
+Finally, there is also something to say for this variable
+
+23
+00:00:56,822 --> 00:00:59,829
+that we are creating here in this comprehension.
+
+24
+00:00:59,829 --> 00:01:02,371
+This variable is pretty pointless, so there is something
+
+25
+00:01:02,371 --> 00:01:05,938
+to be said for not creating this variable here.
+
+26
+00:01:05,938 --> 00:01:07,411
+It's up to you which one you go for,
+
+27
+00:01:07,411 --> 00:01:10,160
+but the main way of deciding, I would say,
+
+28
+00:01:10,160 --> 00:01:11,561
+is whether your programming
+
+29
+00:01:11,561 --> 00:01:13,418
+with other people who like filter function,
+
+30
+00:01:13,418 --> 00:01:15,275
+instead of comprehensions.
+
+31
+00:01:15,275 --> 00:01:16,805
+If you're only programming with Python developers
+
+32
+00:01:16,805 --> 00:01:18,950
+use comprehensions, and if they don't like it
+
+33
+00:01:18,950 --> 00:01:23,117
+get them to like it, for it will generally be better.
+
+34
+00:01:23,117 --> 00:01:24,426
+Okay, that's enough of that.
+
+35
+00:01:24,426 --> 00:01:27,049
+Let's talk about the map function.
+
+36
+00:01:27,049 --> 00:01:29,008
+The map function is used to take an iterable,
+
+37
+00:01:29,008 --> 00:01:31,672
+and output an new iterable, where each element
+
+38
+00:01:31,672 --> 00:01:35,238
+has been modified according to some function.
+
+39
+00:01:35,238 --> 00:01:38,673
+Let's take for example, this map here.
+
+40
+00:01:38,673 --> 00:01:43,155
+Friends_lower is going to map(lambda x: x.lower,
+
+41
+00:01:43,155 --> 00:01:44,155
+of friends).
+
+42
+00:01:46,536 --> 00:01:49,619
+Again, very similar to the filter function.
+
+43
+00:01:49,619 --> 00:01:51,517
+It also takes a function of the start
+
+44
+00:01:51,517 --> 00:01:53,813
+that returns something and takes something
+
+45
+00:01:53,813 --> 00:01:56,229
+as a barometer, and what it takes is each
+
+46
+00:01:56,229 --> 00:01:59,484
+of the elements of this iterable here.
+
+47
+00:01:59,484 --> 00:02:01,974
+So the first one is Rolph and returns Rolph
+
+48
+00:02:01,974 --> 00:02:04,756
+all in lower case letters.
+
+49
+00:02:04,756 --> 00:02:06,789
+Then it takes Jose and returns in all
+
+50
+00:02:06,789 --> 00:02:09,126
+in lower case letters and so forth.
+
+51
+00:02:09,126 --> 00:02:11,684
+But it produces a generator.
+
+52
+00:02:11,684 --> 00:02:13,749
+So the first time you call "next", you get Rolph,
+
+53
+00:02:13,749 --> 00:02:15,483
+with all lower case.
+
+54
+00:02:15,483 --> 00:02:16,650
+Let's do that.
+
+55
+00:02:22,859 --> 00:02:24,710
+And as you can see, you get Rolph,
+
+56
+00:02:24,710 --> 00:02:26,952
+all in lower case there.
+
+57
+00:02:26,952 --> 00:02:31,728
+This is very identical to this list comprehension here.
+
+58
+00:02:31,728 --> 00:02:35,351
+Friend lower for friend in friends,
+
+59
+00:02:35,351 --> 00:02:37,689
+and it's of course identical,
+
+60
+00:02:37,689 --> 00:02:41,522
+to this friends_lower generator comprehension,
+
+61
+00:02:44,696 --> 00:02:46,075
+like so.
+
+62
+00:02:46,075 --> 00:02:48,255
+Which one should you use?
+
+63
+00:02:48,255 --> 00:02:51,196
+This one, the generator comprehension,
+
+64
+00:02:51,196 --> 00:02:53,069
+unless you need them all to be in a list,
+
+65
+00:02:53,069 --> 00:02:56,253
+then you can do this list comprehension.
+
+66
+00:02:56,253 --> 00:02:57,964
+When should you use map?
+
+67
+00:02:57,964 --> 00:03:00,268
+Again, like I said earlier, when the people
+
+68
+00:03:00,268 --> 00:03:01,364
+in your team, the people you are working with,
+
+69
+00:03:01,364 --> 00:03:04,648
+are accustomed to using map, that's very popular
+
+70
+00:03:04,648 --> 00:03:06,337
+in other programming languages,
+
+71
+00:03:06,337 --> 00:03:08,585
+or when you're working with other programming languages
+
+72
+00:03:08,585 --> 00:03:09,591
+at the same time, and you want to keep
+
+73
+00:03:09,591 --> 00:03:12,215
+everything consistent, or when you think its gonna
+
+74
+00:03:12,215 --> 00:03:14,812
+be more readable because some of the functions
+
+75
+00:03:14,812 --> 00:03:17,856
+you've got defined earlier on you can use without
+
+76
+00:03:17,856 --> 00:03:21,520
+having to create the new lambda function.
+
+77
+00:03:21,520 --> 00:03:23,620
+So here's an example of another point in time,
+
+78
+00:03:23,620 --> 00:03:26,905
+where you may use map instead of filter.
+
+79
+00:03:26,905 --> 00:03:30,406
+Let's say we've got a class User: that defines
+
+80
+00:03:30,406 --> 00:03:33,102
+and init method, and including a username
+
+81
+00:03:33,102 --> 00:03:34,185
+and password.
+
+82
+00:03:39,825 --> 00:03:42,783
+And then it's got a classmethod
+
+83
+00:03:42,783 --> 00:03:44,366
+that is from _dict.
+
+84
+00:03:46,724 --> 00:03:48,655
+So given a dictionary of data, it's going
+
+85
+00:03:48,655 --> 00:03:50,655
+to return a user object.
+
+86
+00:03:52,043 --> 00:03:55,793
+So it's going to return cls of data username,
+
+87
+00:03:56,947 --> 00:04:00,096
+and data password, for example.
+
+88
+00:04:00,096 --> 00:04:00,929
+Okay.
+
+89
+00:04:02,479 --> 00:04:06,542
+Now you've got this defined here in the user class,
+
+90
+00:04:06,542 --> 00:04:10,999
+and given that you have a list of users like this one,
+
+91
+00:04:10,999 --> 00:04:13,200
+I'm going to copy them from my notes, just so
+
+92
+00:04:13,200 --> 00:04:16,025
+I don't bore you typing them out.
+
+93
+00:04:16,025 --> 00:04:19,755
+You've got Rolf and tecladoisawesome,
+
+94
+00:04:19,755 --> 00:04:22,447
+and youaretoo is the password.
+
+95
+00:04:22,447 --> 00:04:25,168
+Given that you have this from_dict function here,
+
+96
+00:04:25,168 --> 00:04:28,498
+and you wanted to create a list of user objects
+
+97
+00:04:28,498 --> 00:04:30,920
+from these dictionaries, you could do
+
+98
+00:04:30,920 --> 00:04:32,587
+something like this.
+
+99
+00:04:34,878 --> 00:04:39,878
+And that is User.from_dict(user) for,
+
+100
+00:04:40,153 --> 00:04:42,576
+sorry this should be users list, by the way,
+
+101
+00:04:42,576 --> 00:04:45,243
+my apologies, for user in users,
+
+102
+00:04:47,024 --> 00:04:49,022
+and that will be fine.
+
+103
+00:04:49,022 --> 00:04:53,522
+But I actually feel that a map could be more readable.
+
+104
+00:04:59,174 --> 00:05:02,429
+It's also a bit shorter, but that's beside the point.
+
+105
+00:05:02,429 --> 00:05:04,917
+I just think this is more readable here,
+
+106
+00:05:04,917 --> 00:05:07,066
+because you know that you're calling this from.dict
+
+107
+00:05:07,066 --> 00:05:10,134
+function for each element in this iterable.
+
+108
+00:05:10,134 --> 00:05:11,937
+Whereas the list comprehension, you sort
+
+109
+00:05:11,937 --> 00:05:14,074
+of have to read it, and you have to create this
+
+110
+00:05:14,074 --> 00:05:16,606
+new variable that is only used for iteration
+
+111
+00:05:16,606 --> 00:05:18,819
+and nothing else, and you're actually calling this
+
+112
+00:05:18,819 --> 00:05:20,655
+function here, I don't know, I just feel like
+
+113
+00:05:20,655 --> 00:05:23,719
+the map in this case is a bit more readable.
+
+114
+00:05:23,719 --> 00:05:26,004
+So, keep that in mind, if you feel that way too,
+
+115
+00:05:26,004 --> 00:05:28,042
+that sometimes map can be a better choice
+
+116
+00:05:28,042 --> 00:05:30,419
+than list comprehension.
+
+117
+00:05:30,419 --> 00:05:33,005
+And that's just an example there.
+
+118
+00:05:33,005 --> 00:05:35,065
+So that's it for this video, hope you've learned
+
+119
+00:05:35,065 --> 00:05:37,569
+something about the map function,
+
+120
+00:05:37,569 --> 00:05:39,774
+and I'll see you on the next video.
+

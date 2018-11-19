@@ -1,0 +1,352 @@
+1
+00:00:00,120 --> 00:00:01,430
+Instructor: Hola y bienvenido de nuevo.
+
+2
+00:00:01,430 --> 00:00:03,800
+En este video vamos a crear nuestra pgina de citas y
+
+3
+00:00:03,800 --> 00:00:05,810
+creo que todo va a tener sentido, y va
+
+4
+00:00:05,810 --> 00:00:08,810
+a hacer clic, una vez que terminemos de crear esto y escribamos un par
+
+5
+00:00:08,810 --> 00:00:11,990
+de lneas de cdigo en nuestra aplicacin. py.
+
+6
+00:00:11,990 --> 00:00:13,810
+Lo que voy a hacer
+
+7
+00:00:13,810 --> 00:00:16,360
+en las pginas de citas es importar BeautifulSoup.
+
+8
+00:00:16,360 --> 00:00:19,010
+Observe cmo no hice eso en la pgina de
+
+9
+00:00:19,010 --> 00:00:20,640
+citas porque no era necesario.
+
+10
+00:00:20,640 --> 00:00:25,320
+Luego, voy a importar nuestro localizador de pginas de cotizaciones,
+
+11
+00:00:27,018 --> 00:00:31,690
+y tambin voy a importar nuestro analizador de cotizaciones.
+
+12
+00:00:32,720 --> 00:00:34,910
+Luego, al crear una pgina de citas,
+
+13
+00:00:34,910 --> 00:00:36,950
+vamos a definir un mtodo innato,
+
+14
+00:00:36,950 --> 00:00:40,490
+y este tendr en cuenta el contenido de la pgina, por
+
+15
+00:00:40,490 --> 00:00:44,080
+lo que es el html completo de la pgina completa.
+
+16
+00:00:44,080 --> 00:00:47,300
+Y vamos a cargar eso usando solicitudes, en un momento.
+
+17
+00:00:48,170 --> 00:00:50,650
+Ahora esto, ya lo sabemos y amamos.
+
+18
+00:00:50,650 --> 00:00:52,130
+Hemos hecho esto en el pasado.
+
+19
+00:00:52,130 --> 00:00:56,630
+Vamos a decir que s. sopa es BeautifulSoup de pgina, le
+
+20
+00:00:56,630 --> 00:00:58,320
+estoy dando un analizador html.
+
+21
+00:01:00,800 --> 00:01:02,870
+Luego, vamos a definir una propiedad
+
+22
+00:01:02,870 --> 00:01:04,000
+aqu, que son
+
+23
+00:01:04,900 --> 00:01:06,400
+las comillas, y lo que
+
+24
+00:01:06,400 --> 00:01:08,190
+va a hacer es capturar Los va a encontrar a todos, as
+
+25
+00:01:08,190 --> 00:01:10,960
+el localizador, que es QuotesPageLocators. CITA, entonces que lo har por cuenta propia. sopa. seleccione con ese localizador, y
+
+26
+00:01:12,840 --> 00:01:15,697
+va a hacerlo. Quote_tags. finalmente lo que va a hacer es, devolver un analizador
+
+27
+00:01:15,697 --> 00:01:16,780
+de comillas para cada
+
+28
+00:01:17,860 --> 00:01:19,780
+elemento en las etiquetas de cotizacin.
+
+29
+00:01:19,780 --> 00:01:24,780
+OK, espero que esto comience a
+
+30
+00:01:25,660 --> 00:01:27,370
+tener un poco ms de sentido.
+
+31
+00:01:27,370 --> 00:01:31,310
+Lo que hacemos es encontrar cada uno de los divs
+
+32
+00:01:33,030 --> 00:01:35,640
+que estamos buscando, y cada uno de
+
+33
+00:01:36,845 --> 00:01:39,110
+los divs, pasamos cada uno a
+
+34
+00:01:39,110 --> 00:01:40,940
+un objeto analizador de comillas.
+
+35
+00:01:40,940 --> 00:01:45,810
+Ese analizador de citas puede usar ese emparejamiento para encontrar nios dentro de l, por
+
+36
+00:01:45,810 --> 00:01:47,080
+lo que aqu lo
+
+37
+00:01:48,010 --> 00:01:49,850
+est haciendo a s mismo. parent, que es el
+
+38
+00:01:49,850 --> 00:01:53,380
+div, dot selecciona uno de los localizadores de contenido.
+
+39
+00:01:54,430 --> 00:01:58,870
+Por lo tanto, encontrar el localizador de contenido dentro de este elemento primario
+
+40
+00:01:58,870 --> 00:02:01,080
+y no dentro de otro elemento primario.
+
+41
+00:02:01,080 --> 00:02:04,350
+Del mismo modo para el autor, y de manera similar para las etiquetas.
+
+42
+00:02:04,350 --> 00:02:07,050
+As que ahora esta pgina tiene esta
+
+43
+00:02:07,050 --> 00:02:09,420
+propiedad de comillas, y lo que
+
+44
+00:02:09,420 --> 00:02:13,060
+devuelve es un grupo de objetos del tipo de analizador
+
+45
+00:02:13,060 --> 00:02:15,960
+de comillas, desde el cual podemos acceder al
+
+46
+00:02:17,210 --> 00:02:21,650
+nombre del autor, el contenido de la cita y las etiquetas.
+
+47
+00:02:21,650 --> 00:02:24,950
+Entonces, si vamos a nuestra aplicacin. ahora, vers que esto
+
+48
+00:02:24,950 --> 00:02:28,390
+comienza a tener ms sentido.
+
+49
+00:02:28,390 --> 00:02:31,880
+Voy a importar solicitudes, y desde la pgina de citas voy a importar QuotesPage, ese!
+
+50
+00:02:31,880 --> 00:02:32,950
+la pgina de citas. Ahora, lo primero que
+
+51
+00:02:34,200 --> 00:02:36,870
+hay que hacer, por supuesto,
+
+52
+00:02:36,870 --> 00:02:40,660
+es obtener el contenido de la pgina, lo que debemos hacer usando las solicitudes.
+
+53
+00:02:40,660 --> 00:02:43,000
+As que solicite obtener, http: // citas. raspar. com. contenido.
+
+54
+00:02:43,000 --> 00:02:47,860
+Esto va a obtener la pgina y esto me va a dar
+
+55
+00:02:50,108 --> 00:02:51,980
+el contenido de la pgina.
+
+56
+00:02:53,120 --> 00:02:54,270
+Ahora, todo este contenido, todo lo
+
+57
+00:02:54,270 --> 00:02:56,310
+que hemos cargado, lo damos a nuestro objeto de pgina de citas.
+
+58
+00:02:56,310 --> 00:02:58,660
+Esto ahora se analiza usando BeautifulSoup,
+
+59
+00:02:58,660 --> 00:03:03,660
+porque el constructor
+
+60
+00:03:04,860 --> 00:03:07,030
+aqu, el mtodo init, lo hace.
+
+61
+00:03:07,030 --> 00:03:09,940
+Obtiene el BeautifulSoup y analiza toda la pgina.
+
+62
+00:03:11,020 --> 00:03:14,040
+Volviendo a la aplicacin. py, podemos hacer for_quote
+
+63
+00:03:15,140 --> 00:03:17,680
+en la pgina. citas, impresin, cita.
+
+64
+00:03:19,110 --> 00:03:21,950
+Cuando imprimimos una cita, eso va a
+
+65
+00:03:21,950 --> 00:03:25,060
+ir, bueno, antes que nada la pgina. quotes nos va a proporcionar objetos del analizador de
+
+66
+00:03:25,060 --> 00:03:25,893
+comillas, y
+
+67
+00:03:25,893 --> 00:03:30,350
+cada objeto del analizador de comillas tiene un mtodo repr que se llamar
+
+68
+00:03:30,350 --> 00:03:32,130
+cuando lo imprimamos.
+
+69
+00:03:32,130 --> 00:03:36,950
+Entonces, cuando imprimimos, revisaremos cada cita entre
+
+70
+00:03:39,640 --> 00:03:41,230
+las citas y la lista
+
+71
+00:03:41,230 --> 00:03:44,270
+que recibimos, y se imprimir.
+
+72
+00:03:44,270 --> 00:03:46,070
+Hagamos clic derecho. py, ejectalo,
+
+73
+00:03:46,990 --> 00:03:50,010
+y ah lo tienes.
+
+74
+00:03:50,010 --> 00:03:53,040
+Obtenemos nuestros objetos de cita as.
+
+75
+00:03:53,040 --> 00:03:56,800
+Si solo desea imprimir el nombre, lo siento, el contenido del
+
+76
+00:03:56,800 --> 00:03:59,700
+punto, no el nombre, el contenido de la cita,
+
+77
+00:03:59,700 --> 00:04:01,000
+puede hacerlo, y luego
+
+78
+00:04:01,000 --> 00:04:03,440
+simplemente obtiene el contenido
+
+79
+00:04:04,340 --> 00:04:06,040
+de la cita aqu.
+
+80
+00:04:06,040 --> 00:04:08,670
+Espero que esto tenga un poco ms de sentido.
+
+81
+00:04:09,860 --> 00:04:12,220
+Repasemos nuevamente en el prximo video.
+
+82
+00:04:14,200 --> 00:04:16,390
+Te ver all.
+
+83
+00:04:16,390 --> 00:04:18,120
+&nbsp;
+
+84
+00:04:18,120 --> 00:04:19,400
+&nbsp;
+
+85
+00:04:19,400 --> 00:04:22,160
+&nbsp;
+
+86
+00:04:24,180 --> 00:04:26,540
+&nbsp;
+
+87
+00:04:26,540 --> 00:04:29,010
+&nbsp;
+
+88
+00:04:29,010 --> 00:04:29,960
+&nbsp;
+

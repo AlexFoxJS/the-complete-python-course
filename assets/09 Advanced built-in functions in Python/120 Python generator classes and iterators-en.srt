@@ -1,0 +1,700 @@
+1
+00:00:00,000 --> 00:00:01,400
+<v Instructor>Hi, and welcome back.</v>
+
+2
+00:00:01,400 --> 00:00:02,770
+In this video we're talking about
+
+3
+00:00:02,770 --> 00:00:05,450
+generator classes and iterators.
+
+4
+00:00:06,960 --> 00:00:09,830
+Here I'm gonna show you a class which implements
+
+5
+00:00:09,830 --> 00:00:13,446
+the 100 number generator we did in the last video.
+
+6
+00:00:13,446 --> 00:00:17,170
+So I'm gonna call it FirstHundredGenerator.
+
+7
+00:00:18,513 --> 00:00:22,340
+Like so, and then we're going to define an init method.
+
+8
+00:00:23,610 --> 00:00:26,450
+Which is just going to start the number off as zero,
+
+9
+00:00:27,547 --> 00:00:30,378
+and then we're going to define a next
+
+10
+00:00:30,378 --> 00:00:32,770
+underscore, underscore, next method.
+
+11
+00:00:32,770 --> 00:00:36,030
+When you define a next method in a class,
+
+12
+00:00:36,030 --> 00:00:41,030
+any object you can then call next of my object, like so.
+
+13
+00:00:41,320 --> 00:00:43,260
+So this is again, a dunder method that allows
+
+14
+00:00:43,260 --> 00:00:45,380
+you to call next on it.
+
+15
+00:00:45,380 --> 00:00:47,320
+It also tells Python something pretty important.
+
+16
+00:00:47,320 --> 00:00:49,800
+We're going to look at that in just a moment.
+
+17
+00:00:49,800 --> 00:00:53,270
+So, if we wanted to generate 100 numbers,
+
+18
+00:00:54,610 --> 00:00:58,770
+all that we have to do is get self.number,
+
+19
+00:00:58,770 --> 00:01:02,110
+return it, and increment it by one.
+
+20
+00:01:02,110 --> 00:01:04,880
+So, if self.number is less than 100,
+
+21
+00:01:04,880 --> 00:01:06,930
+we're not gonna use the yield keyword here,
+
+22
+00:01:06,930 --> 00:01:09,880
+by the way, because you don't need to in a class generator.
+
+23
+00:01:11,120 --> 00:01:14,280
+Sorry, in one of these things. (laughs)
+
+24
+00:01:14,280 --> 00:01:16,970
+I'm just going to not say anything that could
+
+25
+00:01:16,970 --> 00:01:19,100
+potentially be misconstrued as wrong.
+
+26
+00:01:20,237 --> 00:01:22,910
+Just so I don't confuse you.
+
+27
+00:01:22,910 --> 00:01:25,540
+What to do is, if the number is less than 100,
+
+28
+00:01:25,540 --> 00:01:27,110
+we put that in a variable,
+
+29
+00:01:28,010 --> 00:01:31,980
+then we increment the number by one,
+
+30
+00:01:33,150 --> 00:01:35,640
+and then we return the current number,
+
+31
+00:01:35,640 --> 00:01:37,410
+which was the previous value,
+
+32
+00:01:37,410 --> 00:01:38,520
+so that's zero.
+
+33
+00:01:38,520 --> 00:01:42,010
+We increment self.number by one, we return zero.
+
+34
+00:01:42,010 --> 00:01:42,843
+Okay.
+
+35
+00:01:44,340 --> 00:01:46,130
+Now important
+
+36
+00:01:46,130 --> 00:01:47,980
+on class
+
+37
+00:01:47,980 --> 00:01:49,220
+we have to,
+
+38
+00:01:50,200 --> 00:01:53,800
+if we want to stop returning numbers, like so,
+
+39
+00:01:53,800 --> 00:01:57,560
+we're not using a loop here to stop us when we reach 100.
+
+40
+00:01:57,560 --> 00:02:00,950
+So, when we reach 100 we have to raise
+
+41
+00:02:00,950 --> 00:02:04,400
+a special error which is called Stop Iteration.
+
+42
+00:02:04,400 --> 00:02:06,720
+Stop Iteration error tells Python
+
+43
+00:02:06,720 --> 00:02:10,130
+that we've reached the end of this generator.
+
+44
+00:02:11,540 --> 00:02:15,610
+I'm saying generator and I'm flinching slightly, um here.
+
+45
+00:02:15,610 --> 00:02:19,690
+Because this is essentially a generator in that,
+
+46
+00:02:19,690 --> 00:02:21,020
+you start at zero,
+
+47
+00:02:22,500 --> 00:02:27,080
+then you decide whether you want to return a new number,
+
+48
+00:02:28,620 --> 00:02:31,060
+you get that number, and then you return it,
+
+49
+00:02:31,060 --> 00:02:33,070
+and then the programme stops.
+
+50
+00:02:33,070 --> 00:02:37,080
+But your object remains, and it remembers self.number.
+
+51
+00:02:37,080 --> 00:02:41,120
+So, if we have my gen, and that's our first hundred
+
+52
+00:02:41,120 --> 00:02:42,610
+generator there.
+
+53
+00:02:42,610 --> 00:02:45,477
+My gen.number
+
+54
+00:02:45,477 --> 00:02:47,590
+is of course zero at the start.
+
+55
+00:02:48,450 --> 00:02:49,283
+Right?
+
+56
+00:02:50,559 --> 00:02:52,230
+Let's show you that.
+
+57
+00:02:52,230 --> 00:02:54,760
+My gen the number zero at the start.
+
+58
+00:02:54,760 --> 00:02:58,430
+If you do my gen.next
+
+59
+00:02:58,430 --> 00:02:59,650
+like so,
+
+60
+00:02:59,650 --> 00:03:02,120
+and then print my gen.number again,
+
+61
+00:03:04,260 --> 00:03:05,190
+you get one.
+
+62
+00:03:05,190 --> 00:03:06,220
+That makes sense right?
+
+63
+00:03:06,220 --> 00:03:09,010
+Because the next method here is checking
+
+64
+00:03:09,010 --> 00:03:10,240
+if the number is less than 100,
+
+65
+00:03:10,240 --> 00:03:11,640
+then incrementing it by one.
+
+66
+00:03:13,530 --> 00:03:15,150
+So these all make sense.
+
+67
+00:03:15,150 --> 00:03:17,810
+Now, in order to make it behave like a generator,
+
+68
+00:03:18,880 --> 00:03:22,410
+we just say next of my gen,
+
+69
+00:03:22,410 --> 00:03:23,243
+like so.
+
+70
+00:03:24,270 --> 00:03:27,120
+Then we can run this again, and the same thing comes out.
+
+71
+00:03:28,560 --> 00:03:30,770
+Of course, next of my gen is actually
+
+72
+00:03:30,770 --> 00:03:35,740
+returning the number that it had before we incremented it.
+
+73
+00:03:35,740 --> 00:03:38,980
+So instead of printing my gen.number here,
+
+74
+00:03:40,060 --> 00:03:43,150
+we can just print next of my gen,
+
+75
+00:03:43,150 --> 00:03:45,630
+and here we can also print next of my gen,
+
+76
+00:03:45,630 --> 00:03:47,660
+and we'll get the same output, zero and one.
+
+77
+00:03:47,660 --> 00:03:49,970
+The first time we call next, we get the current value,
+
+78
+00:03:49,970 --> 00:03:53,740
+which is zero, but we've incremented self.number by one.
+
+79
+00:03:53,740 --> 00:03:55,340
+The next time we call next,
+
+80
+00:03:55,340 --> 00:03:57,830
+we again, increments of that number by one,
+
+81
+00:03:57,830 --> 00:04:00,500
+but we'd return the previous value, which is one.
+
+82
+00:04:01,470 --> 00:04:03,730
+So now this is behaving exactly like a generator,
+
+83
+00:04:03,730 --> 00:04:06,100
+and indeed, this is a generator.
+
+84
+00:04:06,100 --> 00:04:09,320
+It's not storing all of the values up to 100 in a list.
+
+85
+00:04:09,320 --> 00:04:10,990
+It's giving you them one by one.
+
+86
+00:04:10,990 --> 00:04:14,520
+It's generating them as you call the next function.
+
+87
+00:04:15,390 --> 00:04:16,870
+Sorry, the next method.
+
+88
+00:04:16,870 --> 00:04:19,820
+By the way, dunder next is new in Python three.
+
+89
+00:04:19,820 --> 00:04:21,070
+So if you're using Python two,
+
+90
+00:04:21,070 --> 00:04:24,410
+you'll have to define next without the underscore.
+
+91
+00:04:24,410 --> 00:04:25,690
+That's only for Python two.
+
+92
+00:04:25,690 --> 00:04:28,760
+If you're using Python three use dunder next.
+
+93
+00:04:30,142 --> 00:04:30,975
+Okay,
+
+94
+00:04:31,820 --> 00:04:35,620
+All objects that have this dunder next method
+
+95
+00:04:35,620 --> 00:04:37,240
+are called iterators.
+
+96
+00:04:39,030 --> 00:04:41,740
+All generators, like this one, are iterators,
+
+97
+00:04:41,740 --> 00:04:43,500
+but not the other way around.
+
+98
+00:04:43,500 --> 00:04:46,941
+So you can have iterators that don't generate numbers.
+
+99
+00:04:46,941 --> 00:04:50,180
+For example, if you modifying your first number generator
+
+100
+00:04:50,180 --> 00:04:53,860
+to return part of a list like,
+
+101
+00:04:53,860 --> 00:04:57,490
+first hundred iterator, not generator,
+
+102
+00:04:57,490 --> 00:05:00,300
+you can have an init method here,
+
+103
+00:05:00,300 --> 00:05:02,470
+that says self.numbers is,
+
+104
+00:05:04,450 --> 00:05:06,090
+one, two, three, four, five.
+
+105
+00:05:06,090 --> 00:05:08,000
+Obviously it's not, not first hundred,
+
+106
+00:05:08,000 --> 00:05:11,450
+that's first five iterator, self I is zero.
+
+107
+00:05:13,240 --> 00:05:15,160
+So that's the index which you're gonna start returning.
+
+108
+00:05:15,160 --> 00:05:16,900
+Zero, and the numbers that we're returning
+
+109
+00:05:16,900 --> 00:05:18,470
+are from one to five.
+
+110
+00:05:18,470 --> 00:05:23,110
+Then again the next method here is just going to say
+
+111
+00:05:23,110 --> 00:05:26,610
+if I is less than len of self.numbers,
+
+112
+00:05:28,160 --> 00:05:30,080
+return self.numbers I.
+
+113
+00:05:31,970 --> 00:05:32,803
+Right?
+
+114
+00:05:32,803 --> 00:05:35,490
+Else raise stop iteration.
+
+115
+00:05:35,490 --> 00:05:37,890
+Sorry, you can't see that that well,
+
+116
+00:05:37,890 --> 00:05:38,723
+but there we go.
+
+117
+00:05:40,190 --> 00:05:42,770
+So all we're doing here is, we're not generating anything.
+
+118
+00:05:42,770 --> 00:05:44,960
+We're saying if I is less than,
+
+119
+00:05:44,960 --> 00:05:48,700
+by the way we have to, of course we have to do this,
+
+120
+00:05:48,700 --> 00:05:50,140
+I plus equal one,
+
+121
+00:05:51,180 --> 00:05:52,850
+and return current.
+
+122
+00:05:52,850 --> 00:05:54,730
+We have to increment one,
+
+123
+00:05:54,730 --> 00:05:56,930
+and we have to increment I by one of course.
+
+124
+00:05:58,090 --> 00:06:00,590
+Again, we're not generating new numbers.
+
+125
+00:06:01,540 --> 00:06:04,270
+We're keeping track of I, the index we're currently at,
+
+126
+00:06:04,270 --> 00:06:06,830
+you have to do that some how in order for,
+
+127
+00:06:06,830 --> 00:06:08,780
+this should be self.I by the way.
+
+128
+00:06:08,780 --> 00:06:11,820
+You can tell that I've not actually prepared this example,
+
+129
+00:06:11,820 --> 00:06:13,230
+but I just wanted to show you quickly that
+
+130
+00:06:13,230 --> 00:06:15,590
+not all generators, not all iterators,
+
+131
+00:06:15,590 --> 00:06:16,880
+have to be generators.
+
+132
+00:06:16,880 --> 00:06:19,050
+In this case, you're not generating the numbers,
+
+133
+00:06:19,050 --> 00:06:21,085
+you're returning them from a list.
+
+134
+00:06:21,085 --> 00:06:23,600
+So, just a quick example there.
+
+135
+00:06:23,600 --> 00:06:26,340
+You'll have this in the sample code for the section,
+
+136
+00:06:26,340 --> 00:06:28,190
+if I can remember to add it in.
+
+137
+00:06:28,190 --> 00:06:33,190
+So, that, here, what we do when we define the next method,
+
+138
+00:06:33,560 --> 00:06:35,040
+is we define an iterator,
+
+139
+00:06:35,040 --> 00:06:38,260
+something that you can go over one by one,
+
+140
+00:06:38,260 --> 00:06:40,938
+by calling the next function.
+
+141
+00:06:40,938 --> 00:06:44,000
+It doesn't necessarily have to generate all it's numbers,
+
+142
+00:06:44,000 --> 00:06:46,890
+but it can, but again, it can also return them from a list,
+
+143
+00:06:46,890 --> 00:06:48,540
+or from a sent, or anywhere else.
+
+144
+00:06:49,980 --> 00:06:52,620
+So, in Python it's important.
+
+145
+00:06:52,620 --> 00:06:56,160
+Iterators are those objects
+
+146
+00:06:56,160 --> 00:06:59,110
+that have a dunder next method.
+
+147
+00:06:59,110 --> 00:07:01,530
+You can call next on them.
+
+148
+00:07:01,530 --> 00:07:04,400
+We have ourselves an iterator,
+
+149
+00:07:04,400 --> 00:07:05,750
+but
+
+150
+00:07:05,750 --> 00:07:07,630
+we cannot do for I
+
+151
+00:07:07,630 --> 00:07:09,020
+in my gen,
+
+152
+00:07:09,960 --> 00:07:11,440
+in my gen.
+
+153
+00:07:14,720 --> 00:07:15,670
+You cannot do this.
+
+154
+00:07:15,670 --> 00:07:17,220
+Let me tell you that right now.
+
+155
+00:07:18,460 --> 00:07:22,070
+If we run this you get an error that says,
+
+156
+00:07:22,070 --> 00:07:24,800
+first 100 generator object is not iterable,
+
+157
+00:07:25,750 --> 00:07:29,930
+but I just said it's an iterator, and it is an iterator.
+
+158
+00:07:29,930 --> 00:07:31,760
+What an iterator means is you can call
+
+159
+00:07:31,760 --> 00:07:33,280
+the next function on it,
+
+160
+00:07:33,280 --> 00:07:35,550
+and it will give you the next value.
+
+161
+00:07:35,550 --> 00:07:39,600
+But an iterator and an iterable are different things.
+
+162
+00:07:39,600 --> 00:07:41,600
+You can iterate over an iterable,
+
+163
+00:07:42,840 --> 00:07:45,820
+and the iterator is used to get the next value
+
+164
+00:07:45,820 --> 00:07:47,870
+from a sequence or from generated values.
+
+165
+00:07:49,020 --> 00:07:52,160
+So what we've got ourselves here is an iterator
+
+166
+00:07:52,160 --> 00:07:54,430
+not an iterable.
+
+167
+00:07:54,430 --> 00:07:56,200
+We're gonna learn in the next video
+
+168
+00:07:56,200 --> 00:07:57,760
+how to create an iterable,
+
+169
+00:07:57,760 --> 00:07:59,470
+so that we can loop over it,
+
+170
+00:07:59,470 --> 00:08:02,490
+or indeed do things like sum of my gen,
+
+171
+00:08:02,490 --> 00:08:05,800
+or you know, whatever it is that you want to do.
+
+172
+00:08:05,800 --> 00:08:07,230
+List of my gen.
+
+173
+00:08:07,230 --> 00:08:11,600
+These things here need an iterable not an iterator.
+
+174
+00:08:11,600 --> 00:08:13,820
+So let's do that in the very next video.
+
+175
+00:08:13,820 --> 00:08:14,770
+I'll see you there.
+

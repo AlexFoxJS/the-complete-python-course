@@ -1,0 +1,500 @@
+1
+00:00:00,110 --> 00:00:01,330
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,330 --> 00:00:02,940
+In this video we're going to look at
+
+3
+00:00:02,940 --> 00:00:04,950
+how to do multiple things at once,
+
+4
+00:00:04,950 --> 00:00:06,336
+or sort of at once,
+
+5
+00:00:06,336 --> 00:00:11,150
+without using either threads or processes.
+
+6
+00:00:11,150 --> 00:00:12,720
+As you can see, I've created a file here
+
+7
+00:00:12,720 --> 00:00:14,050
+called generators.py,
+
+8
+00:00:14,920 --> 00:00:15,900
+so that should give you a hint
+
+9
+00:00:15,900 --> 00:00:16,810
+as to what we're going to try
+
+10
+00:00:16,810 --> 00:00:20,170
+to do with this file.
+
+11
+00:00:20,170 --> 00:00:22,090
+We've looked at generators before;
+
+12
+00:00:22,090 --> 00:00:25,240
+let me create an example of a generator.
+
+13
+00:00:25,240 --> 00:00:27,490
+This one is going to be called countdown.
+
+14
+00:00:27,490 --> 00:00:28,360
+So we're going to take a number
+
+15
+00:00:28,360 --> 00:00:30,910
+that we're going to start counting down from.
+
+16
+00:00:30,910 --> 00:00:34,270
+I'm going to say while n is greater than zero,
+
+17
+00:00:35,900 --> 00:00:37,690
+and we're gonna yield n,
+
+18
+00:00:37,690 --> 00:00:40,590
+remember that gives the value back to the core
+
+19
+00:00:40,590 --> 00:00:43,130
+and we're going to subtract one from it.
+
+20
+00:00:43,130 --> 00:00:45,100
+So, if we have a countdown
+
+21
+00:00:45,100 --> 00:00:48,000
+like c equals countdown that starts from 10,
+
+22
+00:00:49,310 --> 00:00:53,270
+we can then do something like, print, next, of c.
+
+23
+00:00:53,270 --> 00:00:55,890
+This is sort of nothing new here.
+
+24
+00:00:55,890 --> 00:00:57,110
+What this is doing is
+
+25
+00:00:57,110 --> 00:00:59,340
+we're creating a new generator
+
+26
+00:00:59,340 --> 00:01:01,080
+and as soon as we call next,
+
+27
+00:01:01,080 --> 00:01:02,530
+it starts running the generator
+
+28
+00:01:02,530 --> 00:01:05,230
+and it goes up to the yield
+
+29
+00:01:05,230 --> 00:01:08,440
+and it gives back the value that we yielded.
+
+30
+00:01:08,440 --> 00:01:11,680
+So in this case it's gonna give back 10,
+
+31
+00:01:11,680 --> 00:01:15,393
+and then when we print next again,
+
+32
+00:01:15,393 --> 00:01:17,352
+it's going to continue running
+
+33
+00:01:17,352 --> 00:01:20,530
+all the way back to the next yield.
+
+34
+00:01:20,530 --> 00:01:22,400
+So instead of going for 10,
+
+35
+00:01:22,400 --> 00:01:24,830
+it would start with n as 10,
+
+36
+00:01:24,830 --> 00:01:26,320
+you subtract one from it
+
+37
+00:01:26,320 --> 00:01:27,570
+and then it will repeat the loop
+
+38
+00:01:27,570 --> 00:01:30,170
+and it would yield again n again which would be nine.
+
+39
+00:01:31,170 --> 00:01:33,210
+So as soon as you arrive at the yield,
+
+40
+00:01:34,110 --> 00:01:37,560
+the correct word here is the function is suspended.
+
+41
+00:01:37,560 --> 00:01:39,240
+So when you arrive at a yield,
+
+42
+00:01:39,240 --> 00:01:41,470
+you get the value that was yielded
+
+43
+00:01:41,470 --> 00:01:42,990
+and the function is suspended,
+
+44
+00:01:44,660 --> 00:01:47,030
+there and then when you call next again,
+
+45
+00:01:47,030 --> 00:01:48,760
+the function resumes.
+
+46
+00:01:48,760 --> 00:01:50,520
+So very similar to a thread, really,
+
+47
+00:01:50,520 --> 00:01:51,353
+if you think about it,
+
+48
+00:01:51,353 --> 00:01:53,170
+'cause the thread can at any point
+
+49
+00:01:53,170 --> 00:01:56,770
+be suspended or removed from a core
+
+50
+00:01:56,770 --> 00:01:58,010
+and then it can be brought back
+
+51
+00:01:58,010 --> 00:01:59,930
+and it continues running where it's left off.
+
+52
+00:01:59,930 --> 00:02:01,210
+So the generator actually behaves
+
+53
+00:02:01,210 --> 00:02:02,450
+fairly similar to a thread
+
+54
+00:02:02,450 --> 00:02:04,620
+in that when you arrive at a yield
+
+55
+00:02:04,620 --> 00:02:07,010
+you're removing it from the core, if you wish,
+
+56
+00:02:07,010 --> 00:02:07,900
+then when you press next,
+
+57
+00:02:07,900 --> 00:02:08,970
+you're sort of bringing it back
+
+58
+00:02:08,970 --> 00:02:10,220
+and it continues running.
+
+59
+00:02:11,350 --> 00:02:12,760
+So let's run this file.
+
+60
+00:02:12,760 --> 00:02:15,090
+I'm going to right-click generators.py and run it,
+
+61
+00:02:15,090 --> 00:02:17,730
+and as you can see we get 10 and nine,
+
+62
+00:02:17,730 --> 00:02:19,320
+which is what you sort of expect,
+
+63
+00:02:19,320 --> 00:02:21,750
+the first next gives you the 10,
+
+64
+00:02:21,750 --> 00:02:23,310
+then when you go next again,
+
+65
+00:02:23,310 --> 00:02:24,910
+it continues running up to the next yield
+
+66
+00:02:24,910 --> 00:02:26,010
+and it gives you nine.
+
+67
+00:02:26,910 --> 00:02:28,510
+So this is all good.
+
+68
+00:02:28,510 --> 00:02:29,780
+What if we had,
+
+69
+00:02:30,647 --> 00:02:32,715
+c1 which is a countdown from 10
+
+70
+00:02:32,715 --> 00:02:35,800
+and c2 which is a countdown say from 20?
+
+71
+00:02:37,530 --> 00:02:38,980
+Yeah?
+
+72
+00:02:38,980 --> 00:02:41,580
+Now you have two tasks,
+
+73
+00:02:41,580 --> 00:02:43,720
+a countdown that starts counting down from 10,
+
+74
+00:02:43,720 --> 00:02:45,940
+and one that starts counting down from 20.
+
+75
+00:02:45,940 --> 00:02:48,140
+What you could do is this.
+
+76
+00:02:54,320 --> 00:02:56,920
+So here you're printing the next value of c1,
+
+77
+00:02:56,920 --> 00:02:59,240
+goes up to the yield and gives you 10.
+
+78
+00:02:59,240 --> 00:03:00,780
+Then you're printing the next value of c2,
+
+79
+00:03:00,780 --> 00:03:03,440
+which goes down to the yield and gives you 20.
+
+80
+00:03:03,440 --> 00:03:04,950
+Then you could do this again,
+
+81
+00:03:04,950 --> 00:03:07,200
+which resumes c1,
+
+82
+00:03:07,200 --> 00:03:09,610
+subtracts minus one from n,
+
+83
+00:03:09,610 --> 00:03:12,930
+goes and repeats the loop, and now gives you nine.
+
+84
+00:03:12,930 --> 00:03:14,350
+That suspends and then you move
+
+85
+00:03:14,350 --> 00:03:15,370
+over to the next line,
+
+86
+00:03:15,370 --> 00:03:17,680
+which gives you the next of c2.
+
+87
+00:03:17,680 --> 00:03:19,013
+So that, instead of being 20,
+
+88
+00:03:19,013 --> 00:03:21,410
+now you subtract one and you can repeat
+
+89
+00:03:21,410 --> 00:03:23,500
+and you now yield 19.
+
+90
+00:03:23,500 --> 00:03:24,333
+Let's run this.
+
+91
+00:03:26,100 --> 00:03:27,980
+You can see that this is what's happening.
+
+92
+00:03:27,980 --> 00:03:30,010
+You are running one task,
+
+93
+00:03:30,010 --> 00:03:31,300
+then you are suspending it,
+
+94
+00:03:31,300 --> 00:03:32,660
+and you're running another,
+
+95
+00:03:32,660 --> 00:03:33,590
+and then you're suspending that
+
+96
+00:03:33,590 --> 00:03:35,110
+and you're going back to the first one.
+
+97
+00:03:35,110 --> 00:03:35,943
+You're suspending that
+
+98
+00:03:35,943 --> 00:03:37,930
+and going back to the other one.
+
+99
+00:03:37,930 --> 00:03:39,250
+This is essentially
+
+100
+00:03:39,250 --> 00:03:43,490
+some very slow multi-threading
+
+101
+00:03:43,490 --> 00:03:45,160
+but, without using threads.
+
+102
+00:03:45,160 --> 00:03:46,440
+Notice there's no import of threads
+
+103
+00:03:46,440 --> 00:03:48,090
+or anything here.
+
+104
+00:03:48,090 --> 00:03:50,530
+What you've got is two tasks
+
+105
+00:03:50,530 --> 00:03:54,000
+yielding control of the main thread to one another.
+
+106
+00:03:54,000 --> 00:03:57,530
+Think of it as passing the baton in these races.
+
+107
+00:03:59,100 --> 00:04:00,850
+So if we can do this really quickly,
+
+108
+00:04:00,850 --> 00:04:04,730
+if we can do c1 and then c2 really, really quickly,
+
+109
+00:04:04,730 --> 00:04:06,550
+it may look as though
+
+110
+00:04:06,550 --> 00:04:09,080
+they are running at the same time.
+
+111
+00:04:09,080 --> 00:04:11,030
+This is essentially the purpose with threads, remember?
+
+112
+00:04:11,030 --> 00:04:13,550
+You cannot run two threads at once in Python,
+
+113
+00:04:13,550 --> 00:04:17,740
+but you can slice their time on the CPU
+
+114
+00:04:17,740 --> 00:04:19,740
+quickly enough that it looks like they're running
+
+115
+00:04:19,740 --> 00:04:20,700
+at the same time.
+
+116
+00:04:22,200 --> 00:04:24,510
+So this looks a bit like a hack,
+
+117
+00:04:24,510 --> 00:04:27,170
+like something that shouldn't really work,
+
+118
+00:04:27,170 --> 00:04:30,890
+but actually, asynchronous development in Python
+
+119
+00:04:30,890 --> 00:04:34,560
+is built around this generator.
+
+120
+00:04:34,560 --> 00:04:36,220
+Not this generator specifically,
+
+121
+00:04:36,220 --> 00:04:38,290
+but generators as a whole.
+
+122
+00:04:38,290 --> 00:04:39,900
+So let's look in the next video
+
+123
+00:04:39,900 --> 00:04:43,680
+at how we can build our first tasks scheduler
+
+124
+00:04:43,680 --> 00:04:46,620
+using generators instead of threads.
+
+125
+00:04:46,620 --> 00:04:47,800
+I'll see you there.
+

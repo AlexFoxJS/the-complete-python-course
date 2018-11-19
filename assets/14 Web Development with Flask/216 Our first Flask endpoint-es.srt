@@ -1,0 +1,712 @@
+1
+00:00:00,230 --> 00:00:01,680
+Jos: Hola y bienvenido de nuevo.
+
+2
+00:00:02,545 --> 00:00:03,378
+En este
+
+3
+00:00:03,378 --> 00:00:06,040
+video, implementaremos nuestra primera aplicacin Flask.
+
+4
+00:00:06,040 --> 00:00:08,300
+No va a ser una aplicacin muy
+
+5
+00:00:08,300 --> 00:00:09,470
+grande, pero nos dar
+
+6
+00:00:09,470 --> 00:00:11,330
+una idea de cmo funciona Flask.
+
+7
+00:00:12,370 --> 00:00:15,620
+Ahora que hemos importado la clase Flask
+
+8
+00:00:15,620 --> 00:00:20,180
+aqu desde el mdulo Flask, estamos listos para comenzar.
+
+9
+00:00:20,180 --> 00:00:21,370
+Lo primero que tenemos
+
+10
+00:00:21,370 --> 00:00:24,420
+que hacer es usar esa clase para crear nuestra aplicacin
+
+11
+00:00:25,290 --> 00:00:28,730
+Flask y cada aplicacin Flask debe tener un nombre nico.
+
+12
+00:00:30,030 --> 00:00:33,580
+Podemos hacer algo como aplicacin igual a
+
+13
+00:00:33,580 --> 00:00:35,850
+Flask y luego dunder nombre.
+
+14
+00:00:36,750 --> 00:00:38,580
+La razn por la que uso
+
+15
+00:00:38,580 --> 00:00:40,670
+el nombre dunder aqu es porque siempre
+
+16
+00:00:40,670 --> 00:00:43,210
+va a ser nico para una aplicacin, usted sabe
+
+17
+00:00:43,210 --> 00:00:47,050
+que el archivo que ejecuta tiene un nombre de principal y todos los
+
+18
+00:00:47,050 --> 00:00:49,060
+otros archivos tendrn diferentes nombres, por lo
+
+19
+00:00:49,060 --> 00:00:51,440
+que no hay posibilidad de nosotros creando otra
+
+20
+00:00:51,440 --> 00:00:54,610
+aplicacin Flask con el mismo nombre en toda nuestra aplicacin por error.
+
+21
+00:00:54,610 --> 00:00:56,120
+En este proyecto, solo vamos
+
+22
+00:00:56,120 --> 00:01:00,220
+a crear una sola aplicacin Flask pero, ya sabes, esto es importante, de todos
+
+23
+00:01:00,220 --> 00:01:02,430
+modos, asegrate de tener un nombre nico all.
+
+24
+00:01:02,430 --> 00:01:05,580
+Adems, cuando vea registros y cosas as, puede
+
+25
+00:01:05,580 --> 00:01:09,050
+ver el nombre de la aplicacin Flask y puede
+
+26
+00:01:09,050 --> 00:01:11,340
+ser til saber que este es
+
+27
+00:01:11,340 --> 00:01:13,020
+el archivo principal que ejecut.
+
+28
+00:01:14,260 --> 00:01:15,580
+Lo siguiente que
+
+29
+00:01:15,580 --> 00:01:20,450
+queremos hacer es definir la primera URL de nuestra aplicacin.
+
+30
+00:01:20,450 --> 00:01:23,260
+Recuerde que esta va a ser una aplicacin web,
+
+31
+00:01:23,260 --> 00:01:26,190
+lo que significa que los usuarios van a acceder
+
+32
+00:01:26,190 --> 00:01:28,250
+a esta aplicacin usando sus navegadores
+
+33
+00:01:28,250 --> 00:01:30,030
+como Google Chrome o Internet Explorer.
+
+34
+00:01:30,030 --> 00:01:31,810
+Entonces, lo primero que tenemos que
+
+35
+00:01:31,810 --> 00:01:35,450
+hacer es decir, sabes lo que sucede cuando alguien llega a nuestra pgina?
+
+36
+00:01:35,450 --> 00:01:38,020
+Qu sucede cuando alguien le dice
+
+37
+00:01:38,020 --> 00:01:41,760
+al navegador que nos enve una solicitud de datos?
+
+38
+00:01:41,760 --> 00:01:42,593
+qu hacemos?
+
+39
+00:01:43,870 --> 00:01:46,339
+Entonces, lo primero que hacemos es usar un
+
+40
+00:01:46,339 --> 00:01:48,760
+decorador para decir ruta de punto de aplicacin
+
+41
+00:01:48,760 --> 00:01:52,080
+y luego vamos a dar una barra hacia adelante all.
+
+42
+00:01:52,080 --> 00:01:54,050
+La barra inclinada en cualquier pgina
+
+43
+00:01:54,050 --> 00:01:57,449
+siempre es la pgina principal, vamos a ver esto en
+
+44
+00:01:57,449 --> 00:01:58,630
+accin en un momento.
+
+45
+00:01:58,630 --> 00:02:01,520
+Entonces vamos a hacer, def home por
+
+46
+00:02:01,520 --> 00:02:04,390
+ejemplo definiendo una funcin, y como saben,
+
+47
+00:02:04,390 --> 00:02:08,330
+este decorador aqu va a actuar sobre esta funcin aqu.
+
+48
+00:02:08,330 --> 00:02:11,020
+Entonces, el nombre de la funcin realmente no importa, todo
+
+49
+00:02:11,020 --> 00:02:12,400
+lo que importa es que
+
+50
+00:02:12,400 --> 00:02:14,540
+tenemos el decorador correcto en la parte superior.
+
+51
+00:02:15,470 --> 00:02:17,830
+Esta funcin se ejecutar cuando
+
+52
+00:02:17,830 --> 00:02:20,390
+el usuario visite esta ruta.
+
+53
+00:02:21,840 --> 00:02:26,450
+Y por ahora, va a regresar hola mundo, de acuerdo?
+
+54
+00:02:27,450 --> 00:02:30,840
+Entonces, qu pasar cuando un usuario visite nuestra pgina de
+
+55
+00:02:30,840 --> 00:02:32,990
+inicio? Se las va a recibir
+
+56
+00:02:32,990 --> 00:02:34,680
+con las palabras hola mundo.
+
+57
+00:02:35,530 --> 00:02:37,360
+La conexin es la siguiente,
+
+58
+00:02:37,360 --> 00:02:40,520
+el navegador, el usuario va a escribir nuestro sitio
+
+59
+00:02:40,520 --> 00:02:42,970
+web en su navegador y el navegador
+
+60
+00:02:42,970 --> 00:02:46,160
+va a enviarnos una solicitud, va a decir "oye,
+
+61
+00:02:46,160 --> 00:02:48,000
+quiero la pgina de inicio".
+
+62
+00:02:48,000 --> 00:02:50,510
+Luego, vamos a ejecutar esta funcin de inicio y
+
+63
+00:02:50,510 --> 00:02:52,550
+Flask se encargar, ya sea que se
+
+64
+00:02:52,550 --> 00:02:54,540
+comunique con el navegador y enve informacin
+
+65
+00:02:54,540 --> 00:02:56,200
+a travs de Internet, y as
+
+66
+00:02:56,200 --> 00:02:59,090
+sucesivamente, y al final esta funcin va a regresar hola
+
+67
+00:02:59,090 --> 00:03:01,130
+mundo y eso es lo que vamos
+
+68
+00:03:01,130 --> 00:03:04,280
+a enviar al navegador como datos para mostrar en la pgina web.
+
+69
+00:03:04,280 --> 00:03:06,670
+Entonces, el navegador mostrar al usuario
+
+70
+00:03:06,670 --> 00:03:08,370
+las palabras hola mundo.
+
+71
+00:03:09,640 --> 00:03:11,820
+Finalmente, debemos ejecutar nuestra aplicacin
+
+72
+00:03:11,820 --> 00:03:14,130
+para iniciar el servidor que
+
+73
+00:03:14,130 --> 00:03:16,400
+permite a Flask recibir conexiones.
+
+74
+00:03:16,400 --> 00:03:17,480
+La forma en que
+
+75
+00:03:17,480 --> 00:03:21,420
+vamos a hacer eso es, por supuesto, si el nombre es principal, de modo
+
+76
+00:03:21,420 --> 00:03:23,950
+que solo lo ejecutemos cuando realmente queremos ejecutarlo en
+
+77
+00:03:23,950 --> 00:03:25,870
+lugar de cuando lo importamos, lo que
+
+78
+00:03:25,870 --> 00:03:28,850
+nuevamente no vamos a hacer en esta seccin pero, sin embargo,
+
+79
+00:03:28,850 --> 00:03:30,010
+es algo que quizs
+
+80
+00:03:30,010 --> 00:03:31,680
+quieras hacer en el futuro.
+
+81
+00:03:31,680 --> 00:03:34,580
+Todo lo que hacemos es disculpas por eso,
+
+82
+00:03:34,580 --> 00:03:37,540
+por cierto, app dot run, debug es verdadero.
+
+83
+00:03:38,890 --> 00:03:40,470
+Esto comienza a ejecutar nuestra
+
+84
+00:03:41,380 --> 00:03:44,280
+aplicacin y podemos darle esta bandera de depuracin que generalmente
+
+85
+00:03:44,280 --> 00:03:45,940
+est aqu solo para fines
+
+86
+00:03:45,940 --> 00:03:48,720
+de desarrollo, pero solo significa que obtendremos algunos errores
+
+87
+00:03:48,720 --> 00:03:50,470
+ms, perdn por algunas ms si
+
+88
+00:03:50,470 --> 00:03:52,980
+ocurre un error, as que un par de
+
+89
+00:03:52,980 --> 00:03:55,200
+ms bits de informacin si algo sale mal.
+
+90
+00:03:55,200 --> 00:03:57,630
+No prevemos que algo vaya mal con
+
+91
+00:03:57,630 --> 00:04:00,300
+esta aplicacin, pero, sin embargo, siempre es bueno
+
+92
+00:04:00,300 --> 00:04:02,320
+tener aqu cuando se est desarrollando.
+
+93
+00:04:02,320 --> 00:04:04,180
+Una vez que lo comparta con sus
+
+94
+00:04:04,180 --> 00:04:05,680
+usuarios, es posible que desee desactivarlo.
+
+95
+00:04:06,790 --> 00:04:08,440
+De acuerdo, eso es todo.
+
+96
+00:04:08,440 --> 00:04:11,749
+Este es nuestro primer punto final de Flask,
+
+97
+00:04:11,749 --> 00:04:15,010
+ahora podemos hacer clic derecho en la aplicacin
+
+98
+00:04:15,960 --> 00:04:17,930
+dot py y ejecutarlo, y
+
+99
+00:04:17,930 --> 00:04:20,690
+como puede ver, obtenemos algo de Flask.
+
+100
+00:04:20,690 --> 00:04:23,610
+Entendemos que se est ejecutando, obtenemos la URL en la
+
+101
+00:04:23,610 --> 00:04:25,630
+que se est ejecutando la direccin y,
+
+102
+00:04:26,470 --> 00:04:28,480
+luego, sacas informacin de depuracin aqu porque
+
+103
+00:04:28,480 --> 00:04:30,130
+hemos usado la depuracin como verdadera.
+
+104
+00:04:32,110 --> 00:04:33,360
+Aqu, la
+
+105
+00:04:34,410 --> 00:04:38,080
+direccin de la aplicacin.
+
+106
+00:04:38,080 --> 00:04:41,116
+Cuando enviamos una solicitud a esta aplicacin va a interactuar
+
+107
+00:04:41,116 --> 00:04:43,830
+con esta aplicacin de Flask, lo que estaba en
+
+108
+00:04:43,830 --> 00:04:44,980
+la solicitud con esta
+
+109
+00:04:44,980 --> 00:04:47,120
+direccin va a interactuar con esta aplicacin
+
+110
+00:04:47,120 --> 00:04:48,500
+de Flask y la
+
+111
+00:04:48,500 --> 00:04:51,110
+aplicacin de Flask puede elegir devolver cierta informacin.
+
+112
+00:04:51,110 --> 00:04:54,530
+Pasemos a Chrome y accedamos a esta URL.
+
+113
+00:04:55,740 --> 00:04:57,910
+He accedido a la URL aqu con
+
+114
+00:04:57,910 --> 00:05:00,690
+Chrome y, como pueden ver, recibimos las palabras, hola mundo.
+
+115
+00:05:00,690 --> 00:05:02,200
+S que son un
+
+116
+00:05:02,200 --> 00:05:04,600
+poco pequeas all, vamos a ver
+
+117
+00:05:04,600 --> 00:05:09,380
+cmo podemos disear las cosas mucho ms adelante, pero esto es lo que
+
+118
+00:05:10,660 --> 00:05:14,330
+ha devuelto la aplicacin, as que volviendo a PyCharm puedes
+
+119
+00:05:14,330 --> 00:05:17,140
+ver que, tenemos ms informacin ahora. estos registros.
+
+120
+00:05:17,140 --> 00:05:20,300
+Obtuvimos eso en esta fecha, se hizo una solicitud a
+
+121
+00:05:20,300 --> 00:05:23,680
+la pgina de inicio, este es el protocolo utilizado para
+
+122
+00:05:23,680 --> 00:05:26,800
+realizar la solicitud, es solo una versin de usted
+
+123
+00:05:26,800 --> 00:05:29,990
+sabe la forma en que los navegadores se comunican con
+
+124
+00:05:29,990 --> 00:05:32,890
+los servidores, HTTP 1. 1.
+
+125
+00:05:32,890 --> 00:05:35,730
+Puede ver que esta es una solicitud de obtencin y
+
+126
+00:05:35,730 --> 00:05:38,810
+todo lo que significa es un tipo particular de solicitud, existen
+
+127
+00:05:38,810 --> 00:05:39,650
+varios tipos, vamos
+
+128
+00:05:39,650 --> 00:05:40,870
+a explorar otros tipos
+
+129
+00:05:40,870 --> 00:05:41,980
+en toda la seccin.
+
+130
+00:05:41,980 --> 00:05:44,320
+Una solicitud de obtencin, que es lo que enva
+
+131
+00:05:44,320 --> 00:05:47,230
+un navegador cuando accede a la pgina, simplemente le pide al
+
+132
+00:05:47,230 --> 00:05:49,090
+servidor que enve cierta informacin, no le
+
+133
+00:05:49,090 --> 00:05:50,430
+pide al servidor que usted
+
+134
+00:05:50,430 --> 00:05:53,890
+sepa hacer cambios o agregar cosas a una base de datos, cosas por el estilo.
+
+135
+00:05:53,890 --> 00:05:56,510
+Y hay otros tipos de solicitudes para eso.
+
+136
+00:05:57,400 --> 00:05:59,320
+Y luego tambin vemos que el
+
+137
+00:05:59,320 --> 00:06:01,990
+cdigo que devolvi el servidor es 200, lo que
+
+138
+00:06:01,990 --> 00:06:05,150
+significa que est bien, significa que todo est bien, que
+
+139
+00:06:05,150 --> 00:06:06,940
+no hubo errores o sucedi algo
+
+140
+00:06:06,940 --> 00:06:07,890
+que fue incorrecto.
+
+141
+00:06:09,530 --> 00:06:11,740
+Este registro aqu, si puedes ver
+
+142
+00:06:11,740 --> 00:06:13,690
+eso, significa que todo est bien.
+
+143
+00:06:13,690 --> 00:06:16,090
+A veces puede ver ms de un registro,
+
+144
+00:06:16,960 --> 00:06:19,550
+y eso se debe a que algunos navegadores hacen
+
+145
+00:06:19,550 --> 00:06:21,931
+varias solicitudes para una sola pgina, como Safari
+
+146
+00:06:21,931 --> 00:06:24,140
+puede hacerlo a veces, no se preocupe.
+
+147
+00:06:24,140 --> 00:06:26,812
+Si puede ver estos registros, incluso si ve un par
+
+148
+00:06:26,812 --> 00:06:28,240
+de ellos, esto es bueno.
+
+149
+00:06:28,240 --> 00:06:29,820
+Esto significa que su servidor se
+
+150
+00:06:29,820 --> 00:06:31,900
+est ejecutando y hemos creado nuestro primer punto final.
+
+151
+00:06:32,830 --> 00:06:35,050
+Esto aqu se conoce como una
+
+152
+00:06:35,050 --> 00:06:38,010
+ruta o un punto final y esencialmente significan
+
+153
+00:06:38,010 --> 00:06:41,610
+lo mismo y aqu est el, esencialmente la direccin de
+
+154
+00:06:41,610 --> 00:06:42,530
+la ruta.
+
+155
+00:06:43,790 --> 00:06:46,430
+Una sola barra inclinada, si volvemos
+
+156
+00:06:46,430 --> 00:06:49,230
+a Chrome simplemente no significa nada.
+
+157
+00:06:49,230 --> 00:06:51,150
+Pero podemos acceder a
+
+158
+00:06:51,150 --> 00:06:54,390
+otras pginas haciendo, como probablemente haya visto
+
+159
+00:06:54,390 --> 00:06:58,408
+en otros sitios, algo as como publicaciones, o algo as.
+
+160
+00:06:58,408 --> 00:07:00,810
+As que pueden ver que tenemos algunas URL de
+
+161
+00:07:00,810 --> 00:07:02,370
+prueba aqu a las que he
+
+162
+00:07:02,370 --> 00:07:03,850
+estado accediendo porque lo que vamos
+
+163
+00:07:03,850 --> 00:07:06,590
+a crear en esta seccin es una aplicacin de blog,
+
+164
+00:07:06,590 --> 00:07:08,720
+as que vamos a ver varias publicaciones diferentes.
+
+165
+00:07:08,720 --> 00:07:11,160
+Si accede a la URL aqu con una sola
+
+166
+00:07:11,160 --> 00:07:13,500
+barra hacia adelante al final, simplemente lo llevar a
+
+167
+00:07:13,500 --> 00:07:14,860
+la misma pgina en la
+
+168
+00:07:14,860 --> 00:07:15,870
+que ya se encuentra.
+
+169
+00:07:16,790 --> 00:07:17,810
+Y luego, volviendo a
+
+170
+00:07:17,810 --> 00:07:20,300
+PyCharm, podemos ver que hay otro registro que apareci aqu.
+
+171
+00:07:20,300 --> 00:07:21,950
+Todo lo que quera decir
+
+172
+00:07:21,950 --> 00:07:24,040
+aqu es que la barra inclinada es
+
+173
+00:07:24,040 --> 00:07:26,990
+la pgina principal, pero podemos agregar rutas para otras cosas.
+
+174
+00:07:28,060 --> 00:07:29,450
+De todos modos, eso es todo por este video.
+
+175
+00:07:29,450 --> 00:07:31,460
+Quera mostrarte cmo hacer esto
+
+176
+00:07:31,460 --> 00:07:32,740
+y te ver
+
+177
+00:07:32,740 --> 00:07:35,890
+en el siguiente donde veremos un Frasco ms complejo.
+
+178
+00:07:35,890 --> 00:07:36,840
+Te ver all.
+

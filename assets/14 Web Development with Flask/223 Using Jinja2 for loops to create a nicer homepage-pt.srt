@@ -1,0 +1,632 @@
+1
+00:00:00,210 --> 00:00:01,740
+Instrutor: Ol, seja bem vindo de volta.
+
+2
+00:00:01,740 --> 00:00:03,900
+Neste vdeo eu quis mostrar a voc como criar uma boa
+
+3
+00:00:03,900 --> 00:00:05,600
+homepage para o seu blog, para que voc
+
+4
+00:00:05,600 --> 00:00:07,610
+no tenha apenas "Ol, mundo! "quando voc
+
+5
+00:00:07,610 --> 00:00:08,720
+chega aqui.
+
+6
+00:00:09,740 --> 00:00:12,200
+Mostraremos seu blog e tambm uma
+
+7
+00:00:12,200 --> 00:00:14,940
+lista das postagens que esto disponveis no
+
+8
+00:00:14,940 --> 00:00:17,400
+seu blog agora para as pessoas lerem.
+
+9
+00:00:17,400 --> 00:00:18,780
+Vamos fazer isso.
+
+10
+00:00:18,780 --> 00:00:21,740
+Voltando ao PyCharm, vamos parar nosso aplicativo
+
+11
+00:00:21,740 --> 00:00:22,710
+e fechar.
+
+12
+00:00:23,630 --> 00:00:25,690
+E ento, em vez de retornar "Ol, mundo! "aqui,
+
+13
+00:00:25,690 --> 00:00:29,140
+vamos retornar render_template.
+
+14
+00:00:29,140 --> 00:00:32,624
+E o que vamos render  em casa. jinja2.
+
+15
+00:00:32,624 --> 00:00:36,240
+E para esta casa. jinja2 vamos passar as mensagens que
+
+16
+00:00:36,240 --> 00:00:39,590
+temos atualmente disponveis em nosso banco de dados na memria
+
+17
+00:00:39,590 --> 00:00:40,900
+que  este dicionrio.
+
+18
+00:00:40,900 --> 00:00:43,000
+Ento, vamos dizer posts posts iguais.
+
+19
+00:00:44,020 --> 00:00:46,890
+Agora temos esse modelo que ter acesso a
+
+20
+00:00:46,890 --> 00:00:49,760
+todas as nossas postagens, para que possamos cri-lo
+
+21
+00:00:51,700 --> 00:00:55,620
+e, em seguida, fazer com que ele faa o que quisermos.
+
+22
+00:00:55,620 --> 00:00:56,920
+Ento, o primeiro
+
+23
+00:00:56,920 --> 00:01:01,920
+que vamos fazer, estende a base. jinja2 e, em seguida, o contedo do bloco.
+
+24
+00:01:04,760 --> 00:01:06,780
+Certifique-se de no deixar espaos no
+
+25
+00:01:06,780 --> 00:01:09,330
+bloco de terminais e voc sabe soletrar essas
+
+26
+00:01:09,330 --> 00:01:11,090
+coisas corretamente usando letras minsculas.
+
+27
+00:01:11,090 --> 00:01:12,970
+Ento podemos aqui colocar o
+
+28
+00:01:12,970 --> 00:01:15,560
+que queremos que nossa homepage seja.
+
+29
+00:01:15,560 --> 00:01:17,750
+Isso, a propsito,  algo que eu realmente
+
+30
+00:01:17,750 --> 00:01:20,460
+amo sobre o fluxo de trabalho de desenvolvimento com o Flask.
+
+31
+00:01:20,460 --> 00:01:23,910
+Voc define sua rota, o que seu usurio pode acessar e,
+
+32
+00:01:23,910 --> 00:01:27,100
+em seguida, com uma funo simples que apenas renderiza um
+
+33
+00:01:27,100 --> 00:01:28,890
+modelo e fornece algumas informaes, voc
+
+34
+00:01:28,890 --> 00:01:31,360
+pode criar um modelo que mostre ao usurio
+
+35
+00:01:31,360 --> 00:01:32,580
+exatamente o que deseja.
+
+36
+00:01:33,630 --> 00:01:37,700
+Ento, neste caso, vamos dizer bem-vindo ao seu blog,
+
+37
+00:01:39,680 --> 00:01:42,410
+e ento vamos fazer postagens h2,
+
+38
+00:01:44,340 --> 00:01:47,660
+e agora vamos colocar em uma lista desordenada.
+
+39
+00:01:47,660 --> 00:01:51,870
+Uma lista no ordenada em HTML  apenas uma lista de marcadores.
+
+40
+00:01:51,870 --> 00:01:56,870
+E aqui ns vamos colocar uma tag li para o nosso primeiro post.
+
+41
+00:01:57,500 --> 00:02:01,640
+Ento, vamos dizer que a tag li  um item da lista,
+
+42
+00:02:01,640 --> 00:02:05,010
+a tag a  uma tag ncora, um link.
+
+43
+00:02:05,010 --> 00:02:08,940
+O href  o URL para o qual esse link vai
+
+44
+00:02:08,940 --> 00:02:09,920
+ou o terminal.
+
+45
+00:02:10,800 --> 00:02:13,100
+Ento barra postar, barra zero.
+
+46
+00:02:14,040 --> 00:02:18,850
+Ento aqui ns vamos digitar o Post 1, por exemplo.
+
+47
+00:02:18,850 --> 00:02:21,640
+Ento vamos fechar a tag a, feche a tag li.
+
+48
+00:02:24,140 --> 00:02:26,400
+Quando os usurios acessam nossa
+
+49
+00:02:26,400 --> 00:02:31,350
+pgina inicial agora, eles vero esse ttulo grande, um ttulo um
+
+50
+00:02:31,350 --> 00:02:33,090
+pouco menor e alguns
+
+51
+00:02:33,090 --> 00:02:35,970
+pontos com um elemento nos marcadores,
+
+52
+00:02:35,970 --> 00:02:40,060
+que  um link para o primeiro post existente.
+
+53
+00:02:40,060 --> 00:02:42,450
+Vamos executar nosso aplicativo e
+
+54
+00:02:42,450 --> 00:02:45,330
+depois voltar para aqui e atualiz-lo.
+
+55
+00:02:47,995 --> 00:02:50,560
+Ope, eu escrevi errado isso, eu no percebi
+
+56
+00:02:50,560 --> 00:02:51,990
+isso, podemos mudar o nome.
+
+57
+00:02:51,990 --> 00:02:54,740
+Homa jinja2, em casa. jinja2, l vamos ns.
+
+58
+00:02:54,740 --> 00:02:56,640
+Lembre-se de parar seu aplicativo, reinicie-o.
+
+59
+00:02:58,300 --> 00:03:01,220
+L voc tem isso, que foi levemente anticlimtico, eu
+
+60
+00:03:01,220 --> 00:03:02,400
+no vi isso.
+
+61
+00:03:02,400 --> 00:03:05,900
+Bem-vindo ao seu blog e, em seguida, Posts, fonte ligeiramente menor,
+
+62
+00:03:05,900 --> 00:03:07,890
+ento voc tem seu primeiro post aqui.
+
+63
+00:03:07,890 --> 00:03:10,190
+Voc clica nele, vai para o seu post.
+
+64
+00:03:11,320 --> 00:03:12,190
+Coisas boas.
+
+65
+00:03:12,190 --> 00:03:15,750
+Exceto que, se formos e adicionarmos um novo
+
+66
+00:03:21,030 --> 00:03:26,010
+post, e voc sabe, voltamos para a pgina inicial, no est l.
+
+67
+00:03:26,010 --> 00:03:27,940
+Claro, no deveria estar l. Podemos parar o aplicativo
+
+68
+00:03:27,940 --> 00:03:28,930
+Nossa homepage. pelo caminho. Nossa homepage est apenas exibindo esta lista aqui.
+
+69
+00:03:28,930 --> 00:03:30,680
+Esta lista no depende
+
+70
+00:03:30,680 --> 00:03:33,550
+de nossas postagens,  apenas um HTML
+
+71
+00:03:33,550 --> 00:03:36,880
+esttico, ns no contamos, voc sabe, tem um
+
+72
+00:03:36,880 --> 00:03:40,353
+desses para cada post ou qualquer coisa assim.
+
+73
+00:03:40,353 --> 00:03:43,030
+Ento, vamos faz-lo.
+
+74
+00:03:43,030 --> 00:03:44,600
+Em jinja2 voc tambm
+
+75
+00:03:44,600 --> 00:03:45,640
+tem forloops, e
+
+76
+00:03:46,950 --> 00:03:49,980
+eles parecem extremamente semelhantes, basicamente, a loops de Python.
+
+77
+00:03:49,980 --> 00:03:53,900
+Mas no jinja voc tem que comear com esses sinais de porcentagem, ento voc pode dizer por
+
+78
+00:03:53,900 --> 00:03:55,180
+post id, postar em posts. Unid.
+
+79
+00:03:56,240 --> 00:04:00,920
+Isso  nos iterar sobre um dicionrio, e ento
+
+80
+00:04:01,850 --> 00:04:06,440
+no final do forloop
+
+81
+00:04:06,440 --> 00:04:09,500
+voc tem que digitar esse fim.
+
+82
+00:04:10,440 --> 00:04:12,010
+Normalmente, em Python, voc teria
+
+83
+00:04:12,010 --> 00:04:14,010
+dois pontos e, em seguida, teria um
+
+84
+00:04:14,010 --> 00:04:16,110
+recuo e, no final do bloco recuado,
+
+85
+00:04:17,020 --> 00:04:19,510
+o Python saberia que chegou ao fim do forloop.
+
+86
+00:04:19,510 --> 00:04:21,260
+Mas jinja no sabe disso, porque
+
+87
+00:04:21,260 --> 00:04:23,710
+o HTML no se importa com o recuo.
+
+88
+00:04:23,710 --> 00:04:25,020
+Ento  por isso
+
+89
+00:04:25,020 --> 00:04:27,380
+que voc tem esse forloop, e  final.
+
+90
+00:04:27,380 --> 00:04:29,200
+O que quer que esteja dentro daqui no precisa ser
+
+91
+00:04:29,200 --> 00:04:30,410
+recuado, mas eu apenas gosto disso melhor.
+
+92
+00:04:30,410 --> 00:04:33,210
+Vamos repetir uma vez para cada post. Unid.
+
+93
+00:04:34,080 --> 00:04:37,470
+Lembre-se de quando voc publica um item, obtm o ID
+
+94
+00:04:37,470 --> 00:04:42,370
+do post e o contedo do post.
+
+95
+00:04:42,370 --> 00:04:45,610
+Ento, aqui, em vez desta href, podemos
+
+96
+00:04:45,610 --> 00:04:47,430
+fazer algo um pouco
+
+97
+00:04:47,430 --> 00:04:49,430
+mais complicado, que  URL_for.
+
+98
+00:04:50,370 --> 00:04:52,580
+Voc pode usar o URL do Flask para gerar um
+
+99
+00:04:52,580 --> 00:04:54,040
+link, a pgina do post passando.
+
+100
+00:04:56,182 --> 00:04:59,850
+O parmetro post id que ele precisa, e 
+
+101
+00:05:00,938 --> 00:05:03,120
+claro, o valor desse post id
+
+102
+00:05:03,120 --> 00:05:05,810
+ o id dentro do nosso dicionrio.
+
+103
+00:05:06,840 --> 00:05:09,160
+Em vez de post1, podemos ter o ttulo do post l.
+
+104
+00:05:09,160 --> 00:05:11,240
+Ento, isso parece um pouco
+
+105
+00:05:12,410 --> 00:05:17,410
+feio, mas tudo o que est acontecendo aqui  que temos esse
+
+106
+00:05:21,300 --> 00:05:23,540
+href, que  o URL
+
+107
+00:05:23,540 --> 00:05:26,740
+ao qual estamos vinculando, e  isso.
+
+108
+00:05:26,740 --> 00:05:29,170
+Isso em jinja2 vai ser substitudo pelo
+
+109
+00:05:29,170 --> 00:05:31,840
+URL que nos leva a essa funo.
+
+110
+00:05:31,840 --> 00:05:35,610
+E isso leva um post id, que estamos
+
+111
+00:05:35,610 --> 00:05:37,470
+recebendo da nossa iterao.
+
+112
+00:05:37,470 --> 00:05:39,530
+Dentro da tag a que comea
+
+113
+00:05:39,530 --> 00:05:41,480
+aqui e termina aqui, temos o
+
+114
+00:05:42,740 --> 00:05:46,070
+ttulo da postagem como algo que o modelo jinja substituir.
+
+115
+00:05:46,070 --> 00:05:48,890
+Ento, vamos ver para cada postagem, um link para ela
+
+116
+00:05:48,890 --> 00:05:51,090
+e o ttulo da postagem sendo vinculado.
+
+117
+00:05:52,100 --> 00:05:53,630
+Vamos comear o nosso
+
+118
+00:05:53,630 --> 00:05:57,160
+aplicativo novamente e passar para o Chrome, vamos atualizar.
+
+119
+00:05:58,180 --> 00:06:00,060
+Agora voc pode ver que o primeiro post 
+
+120
+00:06:00,060 --> 00:06:03,670
+chamado Hello, world, porque esse  o ttulo do nosso primeiro post em nosso banco de dados.
+
+121
+00:06:03,670 --> 00:06:06,840
+Se formos criar um novo post, vamos at aquela
+
+122
+00:06:06,840 --> 00:06:09,840
+pgina, ento podemos deletar esse material e voltar
+
+123
+00:06:12,760 --> 00:06:14,560
+para a pgina inicial, e
+
+124
+00:06:22,490 --> 00:06:25,280
+agora voc tem outro item em sua lista.
+
+125
+00:06:25,280 --> 00:06:27,210
+ claro que, se voc parar e iniciar
+
+126
+00:06:27,210 --> 00:06:30,690
+o aplicativo novamente, isso desaparecer, pois esse  um banco de dados na memria.
+
+127
+00:06:32,130 --> 00:06:34,480
+Ele no persiste entre execues,
+
+128
+00:06:34,480 --> 00:06:38,690
+mas se voc fez as sees anteriores deste curso,
+
+129
+00:06:38,690 --> 00:06:41,990
+voc sabe como substituir isso por um
+
+130
+00:06:41,990 --> 00:06:44,590
+banco de dados SQL I, por exemplo.
+
+131
+00:06:44,590 --> 00:06:46,580
+Ento, pode ser assim to simples.
+
+132
+00:06:46,580 --> 00:06:49,750
+Em vez de recuperar e salvar coisas neste
+
+133
+00:06:49,750 --> 00:06:52,580
+dicionrio, voc poderia recuper-las e salv-las de
+
+134
+00:06:52,580 --> 00:06:56,280
+um banco de dados SQL I, e agora voc tem
+
+135
+00:06:56,280 --> 00:06:58,950
+uma plataforma de blog bastante estvel l.
+
+136
+00:06:58,950 --> 00:07:00,160
+E, claro, existem inmeros sites para se desenvolver.
+
+137
+00:07:00,160 --> 00:07:02,840
+Alguns que j existem, alguns que no existem j.
+
+138
+00:07:03,786 --> 00:07:08,090
+Use sua imaginao e sinta-se  vontade
+
+139
+00:07:08,090 --> 00:07:11,470
+para desenvolver o que quiser.
+
+140
+00:07:11,470 --> 00:07:13,400
+ claro que h muito mais a aprender sobre o Flask e sobre
+
+141
+00:07:13,400 --> 00:07:14,440
+o desenvolvimento da web como um todo.
+
+142
+00:07:15,320 --> 00:07:18,320
+Como estilizar suas pginas um pouco melhor, como usar
+
+143
+00:07:18,320 --> 00:07:20,740
+JavaScript para incluir interaes do usurio em pginas.
+
+144
+00:07:20,740 --> 00:07:23,220
+H mais coisas para aprender sobre o
+
+145
+00:07:23,220 --> 00:07:26,610
+Flask, como fazer login de usurios e como lembr-los quando
+
+146
+00:07:26,610 --> 00:07:28,590
+eles voltarem, e assim por diante.
+
+147
+00:07:28,590 --> 00:07:30,180
+Este curso no tem
+
+148
+00:07:30,180 --> 00:07:33,650
+como objetivo dar uma explicao detalhada sobre o Flask, mas
+
+149
+00:07:33,650 --> 00:07:36,790
+ um assunto pelo qual me sinto realmente apaixonada.
+
+150
+00:07:36,790 --> 00:07:38,550
+E eu acho que realmente  uma tima
+
+151
+00:07:38,550 --> 00:07:40,140
+coisa saber no mundo da tecnologia atual.
+
+152
+00:07:40,140 --> 00:07:43,150
+Sites esto em toda parte, e se voc est interessado
+
+153
+00:07:43,150 --> 00:07:45,660
+em aprender sobre desenvolvimento web, ento  um
+
+154
+00:07:45,660 --> 00:07:47,020
+timo lugar para comear.
+
+155
+00:07:47,020 --> 00:07:50,330
+Espero que isso seja interessante, e eu
+
+156
+00:07:50,330 --> 00:07:53,130
+vou te ver no prximo vdeo.
+
+157
+00:07:54,120 --> 00:07:55,520
+&nbsp;
+
+158
+00:07:55,520 --> 00:07:57,270
+&nbsp;
+

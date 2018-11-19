@@ -1,0 +1,248 @@
+1
+00:00:00,140 --> 00:00:01,430
+Jos: Hola y bienvenido de nuevo.
+
+2
+00:00:01,430 --> 00:00:03,320
+En este video, solo quera contarte
+
+3
+00:00:03,320 --> 00:00:06,360
+un poco sobre el concurrente. mdulo de futuros y
+
+4
+00:00:06,360 --> 00:00:10,110
+cmo puede hacer que nuestro cdigo sea un poco ms agradable.
+
+5
+00:00:10,110 --> 00:00:12,393
+Aqu tenemos un cdigo que crea
+
+6
+00:00:12,393 --> 00:00:14,520
+subprocesos, los inicia y luego
+
+7
+00:00:14,520 --> 00:00:16,240
+espera a que finalicen.
+
+8
+00:00:17,250 --> 00:00:22,150
+Lo que puedes hacer, en cambio, es crear un
+
+9
+00:00:22,150 --> 00:00:26,750
+montn de hilos sin objetivo, luego darles un objetivo,
+
+10
+00:00:26,750 --> 00:00:28,590
+iniciarlos y unirlos.
+
+11
+00:00:30,040 --> 00:00:32,100
+Y entonces, la razn para
+
+12
+00:00:32,100 --> 00:00:36,140
+esto es que, si creara un grupo de hilos sin
+
+13
+00:00:38,780 --> 00:00:41,700
+objetivo, entonces puede elegir qu hilo va a
+
+14
+00:00:41,700 --> 00:00:43,090
+tomar qu trabajo despus.
+
+15
+00:00:43,090 --> 00:00:44,470
+Y realmente no importa
+
+16
+00:00:44,470 --> 00:00:47,260
+cul es, pero esencialmente terminas como una coleccin
+
+17
+00:00:47,260 --> 00:00:52,040
+de hilos a los que puedes enviar una tarea y obtener un resultado.
+
+18
+00:00:53,630 --> 00:00:55,970
+El motivo y la razn para hacerlo, y voy
+
+19
+00:00:55,970 --> 00:00:57,700
+a eliminar ese cdigo, es simplemente hacer
+
+20
+00:00:57,700 --> 00:00:59,650
+que su cdigo sea un poco ms agradable.
+
+21
+00:00:59,650 --> 00:01:02,582
+Entonces, en lugar de importar hilo de
+
+22
+00:01:02,582 --> 00:01:06,430
+threading, vamos a hacer from_concurrent. futuros
+
+23
+00:01:06,430 --> 00:01:08,850
+importacin ThreadPoolExecutor.
+
+24
+00:01:09,720 --> 00:01:12,540
+ThreadPoolExecutor crear un conjunto de hilos que
+
+25
+00:01:12,540 --> 00:01:15,280
+son solo un conjunto de hilos sin
+
+26
+00:01:16,240 --> 00:01:20,930
+destino y nos permitir usar ese conjunto para ejecutar trabajos o, en
+
+27
+00:01:20,930 --> 00:01:22,430
+este caso, nuestras funciones.
+
+28
+00:01:25,070 --> 00:01:30,070
+Entonces, con ThreadPoolExecutor y max_workers son dos como grupo, todo lo que estamos diciendo
+
+29
+00:01:32,046 --> 00:01:34,760
+aqu es crear dos hilos en este conjunto
+
+30
+00:01:34,760 --> 00:01:37,340
+de hilos, en esta coleccin de hilos.
+
+31
+00:01:37,340 --> 00:01:40,650
+Entonces podemos ver el grupo. submit (complex_calculation),
+
+32
+00:01:44,470 --> 00:01:45,580
+grupo. enviar (ask_user).
+
+33
+00:01:48,590 --> 00:01:49,937
+Y eso es.
+
+34
+00:01:49,937 --> 00:01:52,020
+Nuestro cdigo se ha simplificado ligeramente ahora.
+
+35
+00:01:52,020 --> 00:01:53,900
+Nuevamente, esto crea un grupo
+
+36
+00:01:53,900 --> 00:01:57,366
+de hilos, una coleccin de hilos y luego podemos enviarle
+
+37
+00:01:57,366 --> 00:02:00,540
+una tarea, y como lo hemos usado con esta
+
+38
+00:02:00,540 --> 00:02:04,680
+declaracin, todo lo que hace es esperar a que el grupo termine.
+
+39
+00:02:04,680 --> 00:02:09,540
+Eso esencialmente significa que no tenemos que llamar al grupo. apagar.
+
+40
+00:02:11,360 --> 00:02:14,922
+Piscina. el cierre normalmente esperar a que
+
+41
+00:02:14,922 --> 00:02:17,929
+estas cosas finalicen y esta es nuevamente una operacin de bloqueo.
+
+42
+00:02:17,929 --> 00:02:21,720
+Pero si usa el, no tiene que usar el grupo. cierre, por lo que hace que
+
+43
+00:02:21,720 --> 00:02:23,220
+su cdigo sea un poco
+
+44
+00:02:23,220 --> 00:02:25,550
+ms agradable usando este administrador de contexto aqu.
+
+45
+00:02:25,550 --> 00:02:27,290
+ThreadPoolExecutor y en
+
+46
+00:02:27,290 --> 00:02:29,900
+general el concurrente. El mdulo de futuros es
+
+47
+00:02:29,900 --> 00:02:33,737
+muy popular ya medida que comienzas a avanzar en tu viaje a Python,
+
+48
+00:02:33,737 --> 00:02:36,050
+y por ejemplo vas a conferencias o escuchas
+
+49
+00:02:36,050 --> 00:02:38,210
+conversaciones en YouTube o cosas por el estilo,
+
+50
+00:02:38,210 --> 00:02:40,200
+vers el concurrente. mdulo de futuros
+
+51
+00:02:40,200 --> 00:02:42,039
+mencionado de vez en cuando.
+
+52
+00:02:42,039 --> 00:02:44,460
+ThreadPoolExecutor es una cosa muy popular solo
+
+53
+00:02:44,460 --> 00:02:47,031
+por tener un montn de hilos esperando
+
+54
+00:02:47,031 --> 00:02:48,890
+y luego puedes pedirles que
+
+55
+00:02:48,890 --> 00:02:51,460
+hagan algo y obtener un resultado, pedirles
+
+56
+00:02:51,460 --> 00:02:53,250
+que hagan algo, obtener un
+
+57
+00:02:53,250 --> 00:02:56,770
+resultado, sin tener que estar siempre creando nuevos hilos .
+
+58
+00:02:56,770 --> 00:02:58,640
+Y es por eso que tendras un grupo
+
+59
+00:02:58,640 --> 00:03:01,716
+de subprocesos all, para evitar la creacin de un nuevo hilo todo el tiempo.
+
+60
+00:03:01,716 --> 00:03:04,090
+De acuerdo, eso es todo por este video.
+
+61
+00:03:04,090 --> 00:03:06,350
+Solo quera mostrarle este ThreadPoolExecutor y lo
+
+62
+00:03:06,350 --> 00:03:07,800
+ver en el prximo.
+

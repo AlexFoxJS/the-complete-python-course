@@ -1,0 +1,428 @@
+1
+00:00:00,170 --> 00:00:01,970
+Instrutor: Ol e bem vindo de volta.
+
+2
+00:00:01,970 --> 00:00:05,850
+Anteriormente, vimos como fazer o desempacotamento de argumentos.
+
+3
+00:00:05,850 --> 00:00:07,610
+Ns trabalhamos nisso na seo 10.
+
+4
+00:00:08,680 --> 00:00:10,950
+Por exemplo, poderamos ter algo
+
+5
+00:00:10,950 --> 00:00:15,460
+assim, adicionar toda a funo, que leva em quatro argumentos.
+
+6
+00:00:15,460 --> 00:00:18,800
+a1 a4 e, em seguida, retorna
+
+7
+00:00:18,800 --> 00:00:21,190
+a1, a2, a3 mais a4.
+
+8
+00:00:22,110 --> 00:00:24,380
+Podemos chamar essa funo, 
+
+9
+00:00:24,380 --> 00:00:29,030
+claro, com vrios valores e,  claro, falei e
+
+10
+00:00:29,030 --> 00:00:30,840
+escrevi cdigo, ento escrevi
+
+11
+00:00:30,840 --> 00:00:32,180
+retornos l.
+
+12
+00:00:32,180 --> 00:00:33,150
+No  o que eu quero.
+
+13
+00:00:33,150 --> 00:00:35,960
+Podemos chamar isso com quatro valores e execut-lo,
+
+14
+00:00:35,960 --> 00:00:38,020
+o que nos d 16.
+
+15
+00:00:38,020 --> 00:00:42,020
+Ou, se tivermos os valores em algum outro
+
+16
+00:00:44,340 --> 00:00:46,980
+lugar, como esta tupla aqui, poderamos
+
+17
+00:00:46,980 --> 00:00:50,240
+passar cada um dos valores da tupla
+
+18
+00:00:50,240 --> 00:00:52,230
+como um argumento separado.
+
+19
+00:00:52,230 --> 00:00:53,510
+Ns olhamos isso mais cedo.
+
+20
+00:00:53,510 --> 00:00:58,390
+A maneira como faramos isso seria fazendo * vols, assim.
+
+21
+00:00:59,350 --> 00:01:00,870
+E como voc pode ver, temos 16 novamente.
+
+22
+00:01:00,870 --> 00:01:04,020
+Tudo isso fez,  descompactado o itervel,
+
+23
+00:01:05,390 --> 00:01:09,280
+em mltiplos argumentos e passou cada um deles
+
+24
+00:01:09,280 --> 00:01:11,870
+como um argumento posicional separado.
+
+25
+00:01:13,440 --> 00:01:17,960
+Da mesma forma, poderamos ter um dicionrio de
+
+26
+00:01:17,960 --> 00:01:21,583
+valores em que temos a1, aqui
+
+27
+00:01:21,583 --> 00:01:23,950
+est um, a2, h
+
+28
+00:01:23,950 --> 00:01:25,740
+trs, a3, h
+
+29
+00:01:27,240 --> 00:01:29,940
+cinco e a4 so sete.
+
+30
+00:01:29,940 --> 00:01:33,150
+E se quisssemos passar cada valor para
+
+31
+00:01:33,150 --> 00:01:35,600
+o parmetro correspondente, percebendo que
+
+32
+00:01:35,600 --> 00:01:40,600
+a1 tem o mesmo nome que o parmetro aqui, poderamos
+
+33
+00:01:41,180 --> 00:01:44,260
+fazer o dobro de asterisco vols.
+
+34
+00:01:46,270 --> 00:01:48,710
+E ento, novamente, temos 16, mas
+
+35
+00:01:48,710 --> 00:01:52,240
+agora, cada argumento foi passado como um argumento nomeado.
+
+36
+00:01:52,240 --> 00:01:54,240
+Essencialmente, fazendo isso.
+
+37
+00:01:58,890 --> 00:02:02,290
+E ento a2  chamado vols a2 e assim por diante.
+
+38
+00:02:03,370 --> 00:02:05,030
+ok?
+
+39
+00:02:05,030 --> 00:02:07,230
+Ento, analisamos como podemos passar nmeros
+
+40
+00:02:08,990 --> 00:02:11,840
+arbitrrios de argumentos ou argumentos nomeados, mas no
+
+41
+00:02:11,840 --> 00:02:15,110
+analisamos como podemos fazer com que nossa funo aceite
+
+42
+00:02:15,110 --> 00:02:17,380
+um nmero arbitrrio de argumentos e,
+
+43
+00:02:17,380 --> 00:02:18,640
+na verdade, 
+
+44
+00:02:18,640 --> 00:02:21,580
+realmente simples, porque  exatamente o mesmo. sintaxe.
+
+45
+00:02:22,650 --> 00:02:26,660
+Se voc faz star args, agora o que voc
+
+46
+00:02:26,660 --> 00:02:29,370
+recebe  um itervel de argumentos.
+
+47
+00:02:29,370 --> 00:02:30,420
+Vamos imprimi-los.
+
+48
+00:02:38,600 --> 00:02:41,520
+Como voc pode ver, agora podemos passar qualquer nmero de argumentos.
+
+49
+00:02:41,520 --> 00:02:42,840
+Isto no  uma tupla
+
+50
+00:02:42,840 --> 00:02:45,420
+ou qualquer coisa, so apenas argumentos que estamos passando para
+
+51
+00:02:45,420 --> 00:02:47,990
+uma funo, e a funo os aceitar de bom grado,
+
+52
+00:02:47,990 --> 00:02:49,880
+e ento os imprimir como uma tupla.
+
+53
+00:02:50,800 --> 00:02:52,860
+Mas quando ns passamos isto, isto no era uma tupla.
+
+54
+00:02:52,860 --> 00:02:54,560
+Estes so todos argumentos separados.
+
+55
+00:02:55,640 --> 00:02:59,250
+Ento podemos usar star args, para aceitar qualquer nmero de
+
+56
+00:03:00,102 --> 00:03:02,530
+argumentos e ento podemos, por exemplo, adicionar
+
+57
+00:03:02,530 --> 00:03:05,140
+todos juntos, como return sum of args, e
+
+58
+00:03:06,308 --> 00:03:07,600
+podemos imprimir isso e
+
+59
+00:03:12,840 --> 00:03:15,380
+como voc pode ver, tudo bem, ok?
+
+60
+00:03:15,380 --> 00:03:19,150
+Esses args so uma tupla de todos os argumentos que
+
+61
+00:03:19,150 --> 00:03:21,130
+passamos e que no possuem nomes.
+
+62
+00:03:21,130 --> 00:03:22,400
+Se quisermos ter certeza
+
+63
+00:03:22,400 --> 00:03:24,700
+de que a funo pode aceitar argumentos
+
+64
+00:03:24,700 --> 00:03:26,200
+nomeados, voc provavelmente j
+
+65
+00:03:27,290 --> 00:03:31,320
+adivinhou, tudo que voc precisa fazer  dobrar asterisco e, em seguida,
+
+66
+00:03:31,320 --> 00:03:32,910
+o nome da varivel.
+
+67
+00:03:32,910 --> 00:03:36,150
+ uma conveno comum ter asterisk args e double
+
+68
+00:03:36,150 --> 00:03:38,550
+asterisk kwargs no Python, mas isso pode
+
+69
+00:03:38,550 --> 00:03:40,350
+ser o que voc quiser.
+
+70
+00:03:41,550 --> 00:03:45,830
+E ento podemos fazer algo como k, v em kwargs. Unid.
+
+71
+00:03:45,830 --> 00:03:50,480
+Isto diz-lhe que o kwargs  um dicionrio quando entra.
+
+72
+00:03:50,480 --> 00:03:52,030
+Ns podemos fazer algo
+
+73
+00:03:55,395 --> 00:03:57,610
+como imprimir, pois k temos v.
+
+74
+00:03:59,270 --> 00:04:01,810
+E ento poderamos fazer pretty_print,
+
+75
+00:04:01,810 --> 00:04:06,200
+algo como nome de usurio  jose123, o
+
+76
+00:04:06,200 --> 00:04:09,710
+nvel de acesso  admin, digamos.
+
+77
+00:04:12,510 --> 00:04:13,760
+E ento podemos executar
+
+78
+00:04:15,440 --> 00:04:17,320
+isso, e o que recebemos , por
+
+79
+00:04:17,320 --> 00:04:18,990
+nome de usurio, temos jose123, para
+
+80
+00:04:18,990 --> 00:04:20,640
+o nvel de acesso, temos admin.
+
+81
+00:04:20,640 --> 00:04:24,270
+Estes foram condensados em um dicionrio e passados
+
+82
+00:04:24,270 --> 00:04:25,780
+como argumentos de palavras-chave.
+
+83
+00:04:26,700 --> 00:04:28,160
+Claro, outra opo
+
+84
+00:04:28,160 --> 00:04:30,520
+seria o que vimos
+
+85
+00:04:30,520 --> 00:04:34,080
+anteriormente, que  passar no prprio dicionrio.
+
+86
+00:04:34,080 --> 00:04:39,080
+Nesse caso, algo como nome de usurio  jose123,
+
+87
+00:04:39,330 --> 00:04:42,430
+o nvel de acesso  admin.
+
+88
+00:04:44,240 --> 00:04:47,080
+Se executarmos isso, no entanto, no sabemos que
+
+89
+00:04:47,080 --> 00:04:49,480
+so argumentos de palavras-chave, mas sabemos
+
+90
+00:04:49,480 --> 00:04:51,070
+como transformar um dicionrio
+
+91
+00:04:51,070 --> 00:04:52,340
+em argumentos de
+
+92
+00:04:54,190 --> 00:04:56,920
+palavras-chave, o que  fazendo o asterisco duplo.
+
+93
+00:04:56,920 --> 00:05:00,210
+Ns corremos isso, e ns temos exatamente a mesma coisa.
+
+94
+00:05:01,340 --> 00:05:02,173
+ok?
+
+95
+00:05:02,173 --> 00:05:04,740
+Portanto, com asteriscos nicos, podemos aceitar
+
+96
+00:05:04,740 --> 00:05:06,620
+qualquer nmero de argumentos posicionais.
+
+97
+00:05:06,620 --> 00:05:08,770
+Com kartgs de asterisco duplo, podemos
+
+98
+00:05:08,770 --> 00:05:10,660
+aceitar qualquer nmero de argumentos nomeados.
+
+99
+00:05:10,660 --> 00:05:12,170
+Esses so os nicos dois
+
+100
+00:05:12,170 --> 00:05:14,000
+tipos de argumentos que existem no Python.
+
+101
+00:05:14,000 --> 00:05:17,940
+Ento,  assim que nosso decorador vai trabalhar
+
+102
+00:05:17,940 --> 00:05:19,120
+no prximo vdeo.
+
+103
+00:05:19,120 --> 00:05:20,940
+Ns vamos fazer nosso decorador
+
+104
+00:05:20,940 --> 00:05:23,470
+aceitar qualquer nmero de argumentos de qualquer tipo
+
+105
+00:05:23,470 --> 00:05:24,750
+e isso vai fazer
+
+106
+00:05:24,750 --> 00:05:26,800
+nosso decorador genrico para qualquer funo.
+
+107
+00:05:26,800 --> 00:05:28,600
+Vejo voc no prximo vdeo.
+

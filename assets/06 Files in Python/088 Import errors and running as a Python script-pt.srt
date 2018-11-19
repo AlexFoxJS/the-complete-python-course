@@ -1,0 +1,428 @@
+1
+00:00:00,200 --> 00:00:01,600
+Jos: Ol, bem vindo de volta.
+
+2
+00:00:01,600 --> 00:00:03,440
+Neste vdeo, vamos ver: o que
+
+3
+00:00:03,440 --> 00:00:06,930
+ um erro de importao e tambm como voc pode executar algum
+
+4
+00:00:06,930 --> 00:00:10,520
+cdigo em um arquivo, somente quando o arquivo  executado como um
+
+5
+00:00:10,520 --> 00:00:12,150
+script e no como um mdulo.
+
+6
+00:00:12,150 --> 00:00:13,710
+ muito direto.
+
+7
+00:00:13,710 --> 00:00:16,880
+Os erros de importao, no entanto, no so to fceis.
+
+8
+00:00:16,880 --> 00:00:18,990
+Vamos dar uma olhada em um erro de importao.
+
+9
+00:00:20,090 --> 00:00:23,650
+Temos o aplicativo de importao de operaes de arquivos,
+
+10
+00:00:23,650 --> 00:00:25,970
+as operaes de arquivo importadas, e
+
+11
+00:00:25,970 --> 00:00:27,670
+no estamos importando nada.
+
+12
+00:00:28,760 --> 00:00:31,960
+Vamos fazer encontrar operaes de arquivos de importao.
+
+13
+00:00:40,470 --> 00:00:43,330
+Ento, vamos fazer isso, vamos pedir para entrar nas operaes
+
+14
+00:00:43,330 --> 00:00:45,050
+de arquivos e importar algo especfico.
+
+15
+00:00:47,573 --> 00:00:51,290
+Vamos executar o aplicativo. py, vamos ver o que acontece.
+
+16
+00:00:53,260 --> 00:00:56,800
+Agora, recebemos um erro de importao porque o que est acontecendo  que
+
+17
+00:00:56,800 --> 00:01:00,410
+o aplicativo est importando utilitrios. comum. file_operations, isso est
+
+18
+00:01:02,330 --> 00:01:04,440
+importando utils. encontrar e
+
+19
+00:01:05,930 --> 00:01:09,540
+agora utils. find est importando utils. comum. file_operations
+
+20
+00:01:09,540 --> 00:01:13,660
+que j est nos mdulos importados.
+
+21
+00:01:13,660 --> 00:01:18,140
+E o Python sabe disso, ele mantm um dicionrio global de mdulos
+
+22
+00:01:18,140 --> 00:01:20,710
+que j foram importados, e enquanto tentamos
+
+23
+00:01:20,710 --> 00:01:23,200
+acessar algo nele, ele diz, oh
+
+24
+00:01:24,410 --> 00:01:28,180
+wait, na verdade, quando eu tento ir para este mdulo
+
+25
+00:01:28,180 --> 00:01:31,080
+para extrair essa funo aqui , Eu no
+
+26
+00:01:31,080 --> 00:01:33,840
+posso fazer isso porque quando eu corro,
+
+27
+00:01:33,840 --> 00:01:37,580
+me pede para voltar aqui, ento isso no funciona.
+
+28
+00:01:39,850 --> 00:01:42,370
+Observe, no entanto, que se voc pedir para
+
+29
+00:01:42,370 --> 00:01:45,530
+no importar uma coisa especfica, mas apenas para executar o
+
+30
+00:01:45,530 --> 00:01:50,530
+mdulo, como se voc importasse utils. comum. file_operations, est tudo bem
+
+31
+00:01:52,680 --> 00:01:55,340
+com isso porque ele v que
+
+32
+00:01:55,340 --> 00:01:57,640
+j importou este mdulo, portanto,
+
+33
+00:01:57,640 --> 00:01:59,360
+nada para fazer.
+
+34
+00:01:59,360 --> 00:02:01,540
+Apenas ignora, porque j
+
+35
+00:02:01,540 --> 00:02:03,800
+foi importado no passado, assim.
+
+36
+00:02:06,450 --> 00:02:09,670
+Ento isso  uma coisa muito importante para saber.
+
+37
+00:02:09,670 --> 00:02:12,090
+Se o seu mdulo j foi importado,
+
+38
+00:02:12,090 --> 00:02:14,310
+voc pode import-lo novamente da mesma
+
+39
+00:02:14,310 --> 00:02:15,840
+maneira, mas se o
+
+40
+00:02:15,840 --> 00:02:18,340
+seu mdulo j for importado, e voc
+
+41
+00:02:18,340 --> 00:02:22,610
+quiser acessar algo especfico nele, o Python ir ento examinar esse mdulo
+
+42
+00:02:23,500 --> 00:02:26,680
+novamente, e ele vai dar voc  um erro
+
+43
+00:02:26,680 --> 00:02:28,150
+porque vai e volta.
+
+44
+00:02:28,150 --> 00:02:30,550
+Isso  chamado de importao circular, no  uma
+
+45
+00:02:30,550 --> 00:02:32,200
+coisa to boa para se fazer.
+
+46
+00:02:34,110 --> 00:02:37,480
+Agora, em alguns casos, um tpico completamente separado, voc
+
+47
+00:02:37,480 --> 00:02:40,190
+vai querer que algum cdigo seja executado,
+
+48
+00:02:40,190 --> 00:02:42,600
+por exemplo, vamos para a funo find.
+
+49
+00:02:42,600 --> 00:02:45,590
+Voc vai querer que algum cdigo seja executado somente quando voc
+
+50
+00:02:45,590 --> 00:02:47,520
+executar o find. py.
+
+51
+00:02:47,520 --> 00:02:50,800
+Ento, se voc executar encontrar. py, voc quer que algum cdigo
+
+52
+00:02:52,020 --> 00:02:53,410
+rode, e voc pode fazer isso.
+
+53
+00:02:53,410 --> 00:02:55,040
+A propsito, vou deletar essa
+
+54
+00:02:55,040 --> 00:02:57,570
+importao porque funciona, mas  uma importao circular,
+
+55
+00:02:57,570 --> 00:02:59,310
+e eu no gosto disso.
+
+56
+00:02:59,310 --> 00:03:01,590
+Ento, se ns formos correr, encontre. py, digamos que
+
+57
+00:03:01,590 --> 00:03:04,360
+queremos testar nossa funo de descoberta.
+
+58
+00:03:04,360 --> 00:03:09,360
+Ento, ns diramos, encontrar Rin, Jos e Jen, e
+
+59
+00:03:11,460 --> 00:03:15,870
+o que estamos procurando  lambda x, 
+
+60
+00:03:20,500 --> 00:03:21,360
+isso.
+
+61
+00:03:21,360 --> 00:03:24,590
+Ns vamos apenas retornar x, e o esperado , Jose.
+
+62
+00:03:25,890 --> 00:03:29,090
+Ento, o que vai acontecer  que esta lista se
+
+63
+00:03:29,090 --> 00:03:33,010
+torna o itervel lambda x retorna x, que retorna todos os elementos
+
+64
+00:03:33,010 --> 00:03:34,130
+conforme os passamos,
+
+65
+00:03:34,130 --> 00:03:36,580
+e Jos  o valor que estamos procurando.
+
+66
+00:03:36,580 --> 00:03:39,380
+Ento, para o itervel, vai sobre cada elemento.
+
+67
+00:03:39,380 --> 00:03:42,470
+Eu me torno Rolf, ento ele se torna Jose, ento
+
+68
+00:03:42,470 --> 00:03:44,860
+torna-se Jen, ns executamos a funo finder, que
+
+69
+00:03:44,860 --> 00:03:48,330
+nos d o valor que  Rolf, Jose ou Jen, e ns
+
+70
+00:03:48,330 --> 00:03:50,410
+verificamos que  igual ao valor esperado,
+
+71
+00:03:50,410 --> 00:03:51,860
+que neste caso  Jose.
+
+72
+00:03:51,860 --> 00:03:53,730
+Eu voltaria se fosse verdade.
+
+73
+00:03:53,730 --> 00:03:57,060
+Ento, se ns executarmos o achado. arquivo py, temos Jos
+
+74
+00:03:57,060 --> 00:03:59,180
+fora, o que  bom.
+
+75
+00:04:00,110 --> 00:04:04,130
+Mas observe como encontrar. py  importado por operaes de arquivo.
+
+76
+00:04:04,130 --> 00:04:06,170
+As operaes de arquivo so importadas pelo aplicativo.
+
+77
+00:04:06,170 --> 00:04:10,820
+Ento, se ns rodamos o app, ns tambm pegamos o Jose, porque
+
+78
+00:04:10,820 --> 00:04:14,560
+o find foi executado pela importao e ele rodou
+
+79
+00:04:14,560 --> 00:04:15,393
+esse cdigo.
+
+80
+00:04:15,393 --> 00:04:16,420
+Ns no queremos isso.
+
+81
+00:04:16,420 --> 00:04:18,820
+Porque isso  apenas para testar o mdulo.
+
+82
+00:04:18,820 --> 00:04:21,760
+Queremos apenas executar este cdigo se clicarmos fisicamente com
+
+83
+00:04:21,760 --> 00:04:24,610
+o boto direito do mouse no mdulo e execut-lo.
+
+84
+00:04:24,610 --> 00:04:26,670
+Se ns corremos como um script.
+
+85
+00:04:26,670 --> 00:04:28,380
+E podemos fazer isso com uma declarao f.
+
+86
+00:04:28,380 --> 00:04:30,350
+Claro, o que vai estar na nossa declarao?
+
+87
+00:04:30,350 --> 00:04:32,470
+Queremos verificar se o nome  principal.
+
+88
+00:04:33,520 --> 00:04:35,070
+V e implemente voc mesmo.
+
+89
+00:04:37,580 --> 00:04:42,580
+Tenho certeza que voc tem que se o nome  principal, execute isso.
+
+90
+00:04:45,700 --> 00:04:46,940
+Coisas bem diretas.
+
+91
+00:04:46,940 --> 00:04:48,600
+Claro, voc tem que perceber que isso 
+
+92
+00:04:48,600 --> 00:04:49,780
+algo que voc pode fazer.
+
+93
+00:04:49,780 --> 00:04:51,470
+Afinal, estas so apenas uma varivel.
+
+94
+00:04:51,470 --> 00:04:54,290
+Isso  apenas uma varivel, e isso  apenas uma string.
+
+95
+00:04:54,290 --> 00:04:55,790
+Assim, voc pode verificar se eles
+
+96
+00:04:55,790 --> 00:04:57,640
+so iguais e executar algo, se eles forem.
+
+97
+00:04:57,640 --> 00:05:00,630
+Agora quando voc corre encontrar. py, voc pega Jose.
+
+98
+00:05:00,630 --> 00:05:05,120
+Quando voc executa o aplicativo. py, voc no faz porque no foi executado
+
+99
+00:05:05,120 --> 00:05:06,090
+como um script.
+
+100
+00:05:06,090 --> 00:05:07,570
+O nome no era principal.
+
+101
+00:05:07,570 --> 00:05:10,160
+O nome foi utils. encontrar.
+
+102
+00:05:11,820 --> 00:05:13,350
+ isso para este vdeo.
+
+103
+00:05:13,350 --> 00:05:15,780
+Eu queria apenas mostrar-lhe um pouco mais sobre a
+
+104
+00:05:15,780 --> 00:05:18,420
+importao, como voc pode executar algo apenas quando voc o
+
+105
+00:05:18,420 --> 00:05:20,450
+executa como um script, e tambm como voc
+
+106
+00:05:20,450 --> 00:05:23,710
+pode causar erros de importao e, claro, que deve evitar erros de importao.
+
+107
+00:05:23,710 --> 00:05:26,410
+Obrigado por assistir, e vejo vocs no prximo.
+

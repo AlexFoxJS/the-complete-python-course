@@ -1,0 +1,384 @@
+1
+00:00:00,624 --> 00:00:01,491
+Jos: Ol, e bem vindo de volta.
+
+2
+00:00:01,491 --> 00:00:02,933
+Neste vdeo, vamos comear
+
+3
+00:00:02,933 --> 00:00:05,581
+com o nosso projeto de escaneamento de livros.
+
+4
+00:00:05,581 --> 00:00:07,356
+Vai ser configurado de forma muito
+
+5
+00:00:07,356 --> 00:00:09,359
+semelhante ao nosso projeto de coleta
+
+6
+00:00:09,359 --> 00:00:11,894
+de cotaes, apenas para que voc entenda como
+
+7
+00:00:11,894 --> 00:00:14,364
+eu recomendo a configurao dos projetos de raspagem.
+
+8
+00:00:14,364 --> 00:00:17,526
+Ento, mais uma vez vamos criar nossos arquivos.
+
+9
+00:00:17,526 --> 00:00:22,097
+Ns temos o app. py e para este aplicativo de projeto. py vai ser uma
+
+10
+00:00:22,097 --> 00:00:24,897
+espcie de tipo de arquivo de teste
+
+11
+00:00:24,897 --> 00:00:26,584
+onde vamos executar alguns
+
+12
+00:00:26,584 --> 00:00:29,943
+dos comandos escritos em nossos outros arquivos.
+
+13
+00:00:29,943 --> 00:00:32,378
+Ento, vamos ter alguns pacotes do Python.
+
+14
+00:00:32,378 --> 00:00:34,031
+Os localizadores sero um deles
+
+15
+00:00:34,031 --> 00:00:34,864
+e  nessa
+
+16
+00:00:34,864 --> 00:00:37,051
+com a qual vamos trabalhar neste vdeo.
+
+17
+00:00:37,051 --> 00:00:38,776
+Ns tambm teremos pginas,
+
+18
+00:00:38,776 --> 00:00:40,667
+ claro, para as
+
+19
+00:00:40,667 --> 00:00:42,500
+diferentes pginas que teremos
+
+20
+00:00:44,424 --> 00:00:47,679
+e analisadores que so para sees especficas da
+
+21
+00:00:47,679 --> 00:00:50,131
+pgina da qual queremos extrair dados.
+
+22
+00:00:50,131 --> 00:00:51,865
+Ento, pginas e analisadores so bem parecidos.
+
+23
+00:00:51,865 --> 00:00:54,750
+Pense nisso como um tipo de contineres e
+
+24
+00:00:54,750 --> 00:00:57,984
+componentes, se voc j fez algum desenvolvimento de componentes.
+
+25
+00:00:57,984 --> 00:01:01,029
+Ou, como voc sabe, pginas inteiras que
+
+26
+00:01:01,029 --> 00:01:03,963
+interagem com analisadores para extrair informaes.
+
+27
+00:01:03,963 --> 00:01:07,691
+Nos localizadores, vamos adicionar dois arquivos por enquanto.
+
+28
+00:01:07,691 --> 00:01:10,318
+A pgina de livros antigos, que ser
+
+29
+00:01:10,318 --> 00:01:13,693
+aquela pgina que j vimos, e tambm adicionaremos localizadores
+
+30
+00:01:13,693 --> 00:01:17,276
+de livros, localizadores de livros. OK?
+
+31
+00:01:24,048 --> 00:01:26,347
+Dentro dos localizadores de livros,
+
+32
+00:01:26,347 --> 00:01:28,309
+vamos criar uma BookLocators
+
+33
+00:01:28,309 --> 00:01:31,172
+de classe: E, aqui, vamos colocar
+
+34
+00:01:31,172 --> 00:01:33,599
+os localizadores que criamos anteriormente
+
+35
+00:01:33,599 --> 00:01:35,089
+que mostrei no
+
+36
+00:01:35,089 --> 00:01:36,356
+vdeo anterior nessa apresentao.
+
+37
+00:01:36,356 --> 00:01:39,302
+Ns vamos ter um NAME_LOCATOR e
+
+38
+00:01:39,302 --> 00:01:43,385
+isso vai ser artigo. product_pod h3 a 'E, vamos pressionar
+
+39
+00:01:44,408 --> 00:01:46,838
+o comando d ou controlar d se
+
+40
+00:01:46,838 --> 00:01:48,038
+voc estiver no Windows.
+
+41
+00:01:48,038 --> 00:01:49,448
+Apenas duplique isso
+
+42
+00:01:49,448 --> 00:01:51,814
+e vamos nomear este Link_Locator.
+
+43
+00:01:51,814 --> 00:01:53,974
+Observe como esses dois so os mesmos por enquanto?
+
+44
+00:01:53,974 --> 00:01:55,866
+Mas, eu estou mantendo-os como um
+
+45
+00:01:55,866 --> 00:01:59,098
+localizador separado apenas no caso do site decidir mudar mais tarde.
+
+46
+00:01:59,098 --> 00:02:00,298
+Isso vai tornar
+
+47
+00:02:00,298 --> 00:02:02,371
+meu programa um pouco mais resiliente.
+
+48
+00:02:02,371 --> 00:02:04,156
+Ento, teremos um PRICE_LOCATOR
+
+49
+00:02:04,156 --> 00:02:07,279
+que ser usado para obter a tag p
+
+50
+00:02:07,279 --> 00:02:08,995
+que contm o preo.
+
+51
+00:02:08,995 --> 00:02:12,662
+Ento, novamente artigo. product_pod p. price_color ' interessante
+
+52
+00:02:14,313 --> 00:02:17,734
+que tenha essa classe aqui na cor dos preos.
+
+53
+00:02:17,734 --> 00:02:21,494
+Isso porque o preo do item tem uma cor, e
+
+54
+00:02:21,494 --> 00:02:23,336
+ isso que o site
+
+55
+00:02:23,336 --> 00:02:26,395
+decidiu usar em termos do nome da classe
+
+56
+00:02:26,395 --> 00:02:28,748
+e, dependendo do site, pode ser diferente.
+
+57
+00:02:28,748 --> 00:02:30,125
+Finalmente, temos um RATING_LOCATOR,
+
+58
+00:02:30,125 --> 00:02:34,042
+que novamente, artigo. product_pod p. star-rating 'Se voc cometer
+
+59
+00:02:35,380 --> 00:02:36,840
+erros de digitao, voc
+
+60
+00:02:36,840 --> 00:02:38,777
+receber alguns erros mais tarde.
+
+61
+00:02:38,777 --> 00:02:40,726
+Ento, apenas certifique-se de que estes esto corretos.
+
+62
+00:02:40,726 --> 00:02:43,057
+Todos eles tm um artigo. produtos. pod para
+
+63
+00:02:43,057 --> 00:02:48,057
+iniciar porque o livro inteiro est includo nesta tag de artigo.
+
+64
+00:02:48,502 --> 00:02:50,529
+E, ento, estamos procurando um h3
+
+65
+00:02:50,529 --> 00:02:53,220
+dentro desse artigo em qualquer lugar dentro dele.
+
+66
+00:02:53,220 --> 00:02:56,394
+E, ento, um que deveria estar dentro desse h3.
+
+67
+00:02:56,394 --> 00:02:59,465
+Da mesma forma aqui e mesmo com estes.
+
+68
+00:02:59,465 --> 00:03:03,183
+Agora vamos aos nossos localizadores de pginas.
+
+69
+00:03:03,183 --> 00:03:06,850
+Ns vamos ter classe AllBooksPageLocators: E, aqui vamos ter
+
+70
+00:03:08,540 --> 00:03:10,809
+apenas uma coisa por agora.
+
+71
+00:03:10,809 --> 00:03:12,930
+Ns vamos adicionar mais tarde.
+
+72
+00:03:12,930 --> 00:03:16,558
+E isso nos permitir encontrar todos os livros.
+
+73
+00:03:16,558 --> 00:03:20,618
+Ento, o localizador que colocamos aqui deve ser capaz de encontrar
+
+74
+00:03:20,618 --> 00:03:23,618
+cada item da lista que contm um livro.
+
+75
+00:03:24,587 --> 00:03:27,177
+O contedo desse item da lista, vamos
+
+76
+00:03:27,177 --> 00:03:30,500
+passar para o analisador de livros que vai
+
+77
+00:03:30,500 --> 00:03:33,343
+usar esses localizadores para localizar informaes exatas.
+
+78
+00:03:33,343 --> 00:03:34,208
+Ento, aqui ns
+
+79
+00:03:34,208 --> 00:03:37,458
+vamos para o div. seo page_inner li. col-xs-6 'Se voc
+
+80
+00:03:43,177 --> 00:03:45,341
+quiser ser mais explcito e
+
+81
+00:03:45,341 --> 00:03:50,168
+quiser adicionar todas as classes dentro desta tag li, pode fazer isso
+
+82
+00:03:50,168 --> 00:03:53,751
+apenas fazendo. col-sm-4. col-md-3. col-lg-3 '.
+
+83
+00:03:57,615 --> 00:03:59,540
+Ento, vou deixar assim.
+
+84
+00:03:59,540 --> 00:04:01,805
+Sinta-se  vontade para pular essas aulas,
+
+85
+00:04:01,805 --> 00:04:03,490
+ou talvez apenas inclua uma delas.
+
+86
+00:04:03,490 --> 00:04:05,119
+Mas eu recomendo incluir pelo menos uma aula.
+
+87
+00:04:05,119 --> 00:04:06,708
+Apenas no caso de haver outros
+
+88
+00:04:06,708 --> 00:04:08,710
+itens de lista em outro lugar na pgina.
+
+89
+00:04:08,710 --> 00:04:10,557
+Bem, em outras partes desta
+
+90
+00:04:10,557 --> 00:04:12,690
+seo, as pessoas podem ficar confusas.
+
+91
+00:04:12,690 --> 00:04:14,241
+Ento, certifique-se de incluir
+
+92
+00:04:14,241 --> 00:04:17,375
+pelo menos uma das classes apenas para ter certeza.
+
+93
+00:04:17,375 --> 00:04:19,354
+Agora, com esses localizadores, estamos prontos
+
+94
+00:04:19,354 --> 00:04:21,539
+agora para passar para o prximo vdeo.
+
+95
+00:04:21,539 --> 00:04:24,650
+Ns vamos us-los para extrair informaes.
+
+96
+00:04:24,650 --> 00:04:25,841
+Eu te vejo l.
+

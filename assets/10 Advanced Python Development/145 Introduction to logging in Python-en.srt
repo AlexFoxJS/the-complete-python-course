@@ -1,0 +1,840 @@
+1
+00:00:00,000 --> 00:00:00,877
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:00,877 --> 00:00:05,040
+In this video let's talk about Python logging.
+
+3
+00:00:05,040 --> 00:00:08,080
+In the simplest terms the logging module is used
+
+4
+00:00:08,080 --> 00:00:10,040
+to print things out.
+
+5
+00:00:10,040 --> 00:00:12,616
+Very much like the print function that you've used before
+
+6
+00:00:12,616 --> 00:00:14,980
+but the logging module's a bit more powerful.
+
+7
+00:00:14,980 --> 00:00:17,300
+It can be used to print things out to a console
+
+8
+00:00:17,300 --> 00:00:22,300
+or to a file, and essentially it's used to print out logs.
+
+9
+00:00:22,850 --> 00:00:25,447
+I don't know if we've mentioned logs before but a log
+
+10
+00:00:25,447 --> 00:00:30,447
+is essentially everything that happened in your application.
+
+11
+00:00:32,020 --> 00:00:35,107
+For example you could have a log of your day which you
+
+12
+00:00:35,107 --> 00:00:37,530
+write down in some sort of notebook,
+
+13
+00:00:37,530 --> 00:00:39,680
+everything that happened in your day.
+
+14
+00:00:39,680 --> 00:00:42,019
+You could have a log of a holiday in which you write down
+
+15
+00:00:42,019 --> 00:00:44,176
+everything that happened during your holiday.
+
+16
+00:00:44,176 --> 00:00:48,260
+And you can have a log of your app which you write down
+
+17
+00:00:48,260 --> 00:00:51,620
+everything that happened during your app's run time.
+
+18
+00:00:51,620 --> 00:00:56,049
+For example whether an error happened, a critical problem,
+
+19
+00:00:56,049 --> 00:01:00,130
+some information about some method that's running.
+
+20
+00:01:00,130 --> 00:01:03,613
+Basically anything and these logs are used for developers
+
+21
+00:01:03,613 --> 00:01:08,200
+to look into to understand how the applications are running.
+
+22
+00:01:08,200 --> 00:01:10,530
+Of course if you have a very small app,
+
+23
+00:01:10,530 --> 00:01:11,970
+this maybe not so useful.
+
+24
+00:01:11,970 --> 00:01:15,750
+As your app starts growing decent logging in there
+
+25
+00:01:15,750 --> 00:01:17,050
+is going to be very handy.
+
+26
+00:01:17,970 --> 00:01:20,830
+The good thing about the logging module is,
+
+27
+00:01:20,830 --> 00:01:23,400
+one of the good things about the logging module,
+
+28
+00:01:23,400 --> 00:01:26,310
+is that it has various levels of logging.
+
+29
+00:01:26,310 --> 00:01:29,920
+And you can sort of enable levels and disable others.
+
+30
+00:01:29,920 --> 00:01:33,050
+So for example as you are developing you may want to use
+
+31
+00:01:33,050 --> 00:01:36,850
+the logger to output informative messages about what's
+
+32
+00:01:36,850 --> 00:01:38,930
+happening in your application.
+
+33
+00:01:38,930 --> 00:01:41,620
+Once you deploy your application, you share it
+
+34
+00:01:41,620 --> 00:01:44,670
+with your users and it's running and you've got a lot
+
+35
+00:01:44,670 --> 00:01:46,640
+of people using it, maybe you don't want
+
+36
+00:01:46,640 --> 00:01:49,814
+informative messages, you only want messages that are
+
+37
+00:01:49,814 --> 00:01:51,600
+related to errors.
+
+38
+00:01:52,470 --> 00:01:54,040
+So with a logging module you can do that.
+
+39
+00:01:54,040 --> 00:01:56,291
+If you've got print statements everywhere you cannot
+
+40
+00:01:56,291 --> 00:01:58,330
+enable some and disable others.
+
+41
+00:01:58,330 --> 00:02:00,130
+So the logging module, pretty cool.
+
+42
+00:02:00,130 --> 00:02:03,370
+We can import logging and the first thing we have to do
+
+43
+00:02:03,370 --> 00:02:05,660
+is we have to get a new logger.
+
+44
+00:02:05,660 --> 00:02:07,560
+So we're gonna create a variable logger and there's gonna be
+
+45
+00:02:07,560 --> 00:02:11,240
+logging.getLogger and then we have to give it the name
+
+46
+00:02:11,240 --> 00:02:12,370
+of the logger we want.
+
+47
+00:02:12,370 --> 00:02:14,120
+So we're gonna call it test logger.
+
+48
+00:02:15,300 --> 00:02:18,430
+The good thing about this is that it's meant to be used
+
+49
+00:02:18,430 --> 00:02:20,870
+across multiple files.
+
+50
+00:02:20,870 --> 00:02:24,150
+So if you have a logger called test logger,
+
+51
+00:02:24,150 --> 00:02:27,090
+and you call this from a different file entirely,
+
+52
+00:02:27,090 --> 00:02:30,410
+it's actually going to give you the same object.
+
+53
+00:02:30,410 --> 00:02:32,540
+And that's good because you can configure loggers
+
+54
+00:02:32,540 --> 00:02:34,570
+to print things out differently.
+
+55
+00:02:34,570 --> 00:02:37,160
+You can configure loggers to export to a file
+
+56
+00:02:37,160 --> 00:02:40,870
+or to the console so it's quite nice that you can do this.
+
+57
+00:02:40,870 --> 00:02:44,240
+So that when you get the same logger from a different file
+
+58
+00:02:44,240 --> 00:02:46,360
+it will be configured the same way.
+
+59
+00:02:46,360 --> 00:02:48,850
+We're gonna look at configuring them in a moment.
+
+60
+00:02:48,850 --> 00:02:51,390
+Then it's very simple when you wanna print things out,
+
+61
+00:02:51,390 --> 00:02:55,260
+all you do is say logger.info for example and
+
+62
+00:02:56,500 --> 00:02:59,490
+this will not show up.
+
+63
+00:02:59,490 --> 00:03:02,580
+Or you can do something logger.warning and This will.
+
+64
+00:03:03,590 --> 00:03:04,590
+Then you can run it.
+
+65
+00:03:06,220 --> 00:03:11,220
+And as you can see you get warning: test_logger:This will
+
+66
+00:03:13,410 --> 00:03:16,660
+Your informative message did not show up because
+
+67
+00:03:16,660 --> 00:03:20,170
+my default all loggers are configured so that they only
+
+68
+00:03:20,170 --> 00:03:23,130
+show messages warning and above.
+
+69
+00:03:23,130 --> 00:03:25,090
+So here are the levels that you've got.
+
+70
+00:03:26,290 --> 00:03:28,750
+You've got debug, that's the lowest level.
+
+71
+00:03:28,750 --> 00:03:31,740
+You've got info, that's the level above.
+
+72
+00:03:31,740 --> 00:03:34,740
+And these two don't show up by default on new loggers.
+
+73
+00:03:34,740 --> 00:03:38,039
+You have to say I want these in order for them to show.
+
+74
+00:03:38,039 --> 00:03:41,200
+The next one up is warning, this ones do show.
+
+75
+00:03:41,200 --> 00:03:44,650
+As you can see the warning messages show up.
+
+76
+00:03:44,650 --> 00:03:47,814
+Then you've got error and then you've got critical.
+
+77
+00:03:47,814 --> 00:03:50,420
+Critical is the most critical one, of course
+
+78
+00:03:50,420 --> 00:03:52,830
+as the sort of most important.
+
+79
+00:03:52,830 --> 00:03:55,030
+Debug is meant to only to be used
+
+80
+00:03:55,030 --> 00:03:57,110
+while you are developing the application.
+
+81
+00:03:58,720 --> 00:04:01,830
+So again use the debug level if you are developing
+
+82
+00:04:01,830 --> 00:04:04,587
+or debugging and basically things you don't want users,
+
+83
+00:04:04,587 --> 00:04:08,800
+well none of these are for users, but basically
+
+84
+00:04:08,800 --> 00:04:11,600
+things that you only wanna see while you are developing
+
+85
+00:04:11,600 --> 00:04:14,940
+not while your application's is running for your users.
+
+86
+00:04:15,803 --> 00:04:18,760
+And of course if your program's about to crash because
+
+87
+00:04:18,760 --> 00:04:21,670
+you found some critical exception or something,
+
+88
+00:04:21,670 --> 00:04:23,640
+you can use logger.critical.
+
+89
+00:04:24,590 --> 00:04:28,085
+The way you configure your logger is that just before
+
+90
+00:04:28,085 --> 00:04:32,390
+you create it, you must say logging.basicConfig
+
+91
+00:04:33,440 --> 00:04:38,440
+and in here you can say level=logging.debug
+
+92
+00:04:40,570 --> 00:04:42,070
+in upper case here.
+
+93
+00:04:42,070 --> 00:04:45,240
+Or .info if that's the minimum one you want to show.
+
+94
+00:04:45,240 --> 00:04:49,300
+.debug if debug is the minimum level you want to show.
+
+95
+00:04:49,300 --> 00:04:53,090
+However this doesn't quite work in repl.it.
+
+96
+00:04:53,090 --> 00:04:55,510
+So let's go over the Python to give this a go.
+
+97
+00:04:56,500 --> 00:04:58,830
+I moved over to Python now I've just copied the code.
+
+98
+00:04:58,830 --> 00:05:02,620
+So again we have import logging, logging.basicConfig
+
+99
+00:05:02,620 --> 00:05:06,300
+where the level that we're gonna show is at least debug.
+
+100
+00:05:06,300 --> 00:05:10,190
+Then we've created a logger by calling logging.getLogger.
+
+101
+00:05:10,190 --> 00:05:12,630
+And then we've printed out two messages, one that says
+
+102
+00:05:12,630 --> 00:05:15,610
+this will not show up and one that says this will.
+
+103
+00:05:15,610 --> 00:05:16,700
+So let's run the app.
+
+104
+00:05:18,240 --> 00:05:20,170
+And you can see that we get now
+
+105
+00:05:20,170 --> 00:05:21,970
+the info message there as well.
+
+106
+00:05:21,970 --> 00:05:25,210
+I think this is because the test logger here
+
+107
+00:05:26,370 --> 00:05:29,850
+actually inherits from what's called the root logger
+
+108
+00:05:29,850 --> 00:05:33,630
+and I think that repl it has configured their root logger
+
+109
+00:05:33,630 --> 00:05:36,900
+so that debug and info messages do not show up.
+
+110
+00:05:36,900 --> 00:05:39,400
+So that's why that may not work in repl for you
+
+111
+00:05:39,400 --> 00:05:41,110
+but it would most definitely work in Python
+
+112
+00:05:41,110 --> 00:05:42,920
+since you have control of everything.
+
+113
+00:05:42,920 --> 00:05:45,036
+Repl is after all running the Python
+
+114
+00:05:45,036 --> 00:05:49,040
+in their own environment so they also have some of their own
+
+115
+00:05:49,040 --> 00:05:50,490
+configurations there as well.
+
+116
+00:05:53,405 --> 00:05:57,840
+Now you can configure the output to show a bit more info
+
+117
+00:05:57,840 --> 00:06:00,630
+rather than just the level and the logger
+
+118
+00:06:00,630 --> 00:06:02,690
+that printed things out.
+
+119
+00:06:02,690 --> 00:06:06,350
+In basicConfig you can have something like format
+
+120
+00:06:06,350 --> 00:06:09,810
+and then in a string you can put whatever it is
+
+121
+00:06:09,810 --> 00:06:13,260
+that you wanna format your log messages as.
+
+122
+00:06:13,260 --> 00:06:16,760
+For example (asctime)s.
+
+123
+00:06:16,760 --> 00:06:19,040
+This is the way old school Python syntax
+
+124
+00:06:19,040 --> 00:06:23,220
+for string formatting and it's going to use the asctime
+
+125
+00:06:23,220 --> 00:06:27,180
+variable that will be available when this gets used.
+
+126
+00:06:27,180 --> 00:06:29,620
+The s means turn it with string.
+
+127
+00:06:29,620 --> 00:06:32,900
+So (asctime)s for example %(levelname)s
+
+128
+00:06:36,854 --> 00:06:41,580
+and then %(message)s.
+
+129
+00:06:42,650 --> 00:06:46,029
+So this thing here is going to look pretty similar
+
+130
+00:06:46,029 --> 00:06:51,029
+to our existing message but asctime is actually going
+
+131
+00:06:51,140 --> 00:06:55,990
+to print out the time at which the log was printed out.
+
+132
+00:06:55,990 --> 00:06:59,260
+Instead of the level, sorry the levelname is gonna
+
+133
+00:06:59,260 --> 00:07:01,310
+be printed out here so what we're now going to print out
+
+134
+00:07:01,310 --> 00:07:03,710
+is the name of the logger.
+
+135
+00:07:03,710 --> 00:07:07,250
+If we run the app, you'll see that now we get the time
+
+136
+00:07:07,250 --> 00:07:09,090
+in which we printed out,
+
+137
+00:07:09,090 --> 00:07:11,980
+the level info and then the message.
+
+138
+00:07:11,980 --> 00:07:14,390
+I think this is slightly nicer 'cause now if you have
+
+139
+00:07:14,390 --> 00:07:17,560
+a larger app and you've got a logs sort of appearing,
+
+140
+00:07:17,560 --> 00:07:20,980
+you'll be able to tell when each log happened.
+
+141
+00:07:20,980 --> 00:07:23,660
+Then if you're looking back you'll be able to see sort of
+
+142
+00:07:23,660 --> 00:07:25,593
+yeah I logged this message at this point in time
+
+143
+00:07:25,593 --> 00:07:28,370
+and then I logged this message and then an error happened.
+
+144
+00:07:28,370 --> 00:07:31,658
+So you can then sort of reconstruct from these logs
+
+145
+00:07:31,658 --> 00:07:33,550
+what happened in your application.
+
+146
+00:07:36,510 --> 00:07:40,900
+If you wanna configure your logger for maximum readability,
+
+147
+00:07:40,900 --> 00:07:43,140
+I've got an example that I think is pretty good.
+
+148
+00:07:43,140 --> 00:07:46,710
+It's taken from stack overflow but I think it's good.
+
+149
+00:07:46,710 --> 00:07:49,200
+I pasted it in here just for you.
+
+150
+00:07:50,160 --> 00:07:53,094
+And then what it does this here prints out the time
+
+151
+00:07:53,094 --> 00:07:54,710
+as you know.
+
+152
+00:07:54,710 --> 00:07:58,835
+This print out the level but the level name is actually
+
+153
+00:07:58,835 --> 00:08:02,630
+formatted as eight spaces.
+
+154
+00:08:02,630 --> 00:08:05,630
+So for example you have down here info that takes up four
+
+155
+00:08:05,630 --> 00:08:10,630
+spaces while the -8s is going to add four spaces after it.
+
+156
+00:08:11,010 --> 00:08:14,010
+That way all of your levels are going to take up
+
+157
+00:08:14,010 --> 00:08:16,110
+the same amount of room and your log messages are going to
+
+158
+00:08:16,110 --> 00:08:19,890
+appear sort of one beside the other.
+
+159
+00:08:19,890 --> 00:08:22,780
+Then inside square brackets, these are just good old
+
+160
+00:08:22,780 --> 00:08:24,090
+normal square brackets.
+
+161
+00:08:24,090 --> 00:08:26,360
+We're gonna print out the file name in which the log
+
+162
+00:08:26,360 --> 00:08:30,220
+was printed out and the line number as a number.
+
+163
+00:08:30,220 --> 00:08:31,880
+That's what the d means.
+
+164
+00:08:31,880 --> 00:08:33,690
+And then we're gonna print out the message finally.
+
+165
+00:08:33,690 --> 00:08:35,450
+So let's run this again and now you'll see that this is
+
+166
+00:08:35,450 --> 00:08:38,320
+quite readable and also quite useful.
+
+167
+00:08:38,320 --> 00:08:41,000
+You're getting the time and what type of message it is.
+
+168
+00:08:41,000 --> 00:08:43,450
+You're also getting where the message was logged
+
+169
+00:08:43,450 --> 00:08:44,830
+and this is fantastic.
+
+170
+00:08:44,830 --> 00:08:46,640
+This is really why logging is brilliant 'cause
+
+171
+00:08:46,640 --> 00:08:49,550
+you can see exactly where things happened.
+
+172
+00:08:49,550 --> 00:08:50,870
+And finally you can see your message there
+
+173
+00:08:50,870 --> 00:08:53,150
+and notice how it's quite readable.
+
+174
+00:08:53,150 --> 00:08:54,695
+So I like this example here, feel free to use this
+
+175
+00:08:54,695 --> 00:08:58,780
+in your logging of course as you choose.
+
+176
+00:08:58,780 --> 00:09:02,880
+Now I give you some other examples of debug message,
+
+177
+00:09:02,880 --> 00:09:04,760
+this is debug message.
+
+178
+00:09:05,960 --> 00:09:08,999
+And you can do of course logger.critical,
+
+179
+00:09:08,999 --> 00:09:12,350
+critical error occurred.
+
+180
+00:09:13,420 --> 00:09:15,710
+You can log these out and as you can see they'll
+
+181
+00:09:15,710 --> 00:09:20,370
+all appear and they all take up eight spaces
+
+182
+00:09:20,370 --> 00:09:22,330
+because critical is the longest one that takes up
+
+183
+00:09:22,330 --> 00:09:23,660
+eight characters.
+
+184
+00:09:23,660 --> 00:09:25,060
+And so this is pretty handy.
+
+185
+00:09:27,620 --> 00:09:31,600
+Now you can also log to a file instead of to the console.
+
+186
+00:09:31,600 --> 00:09:33,250
+We're going to look at how to do that
+
+187
+00:09:33,250 --> 00:09:36,181
+in the very next video, I'll just quickly show you.
+
+188
+00:09:36,181 --> 00:09:39,450
+And yeah this is how you do logs in Python.
+
+189
+00:09:39,450 --> 00:09:44,450
+You'll see many, many large Python apps using this exactly.
+
+190
+00:09:44,750 --> 00:09:47,620
+This logger and it's really that simple.
+
+191
+00:09:47,620 --> 00:09:50,180
+You just get a logger, you call it whatever you want,
+
+192
+00:09:50,180 --> 00:09:53,440
+and normally it's related to your app or sort of
+
+193
+00:09:53,440 --> 00:09:56,250
+to the part of your app that you're working with
+
+194
+00:09:56,250 --> 00:09:57,930
+and then you can logout messages.
+
+195
+00:09:57,930 --> 00:10:00,770
+You normally see a lot of these messages being logged
+
+196
+00:10:00,770 --> 00:10:04,421
+because then you can choose to only show error and critical
+
+197
+00:10:04,421 --> 00:10:06,581
+in some cases.
+
+198
+00:10:06,581 --> 00:10:09,840
+All the way down from debug when you are working.
+
+199
+00:10:09,840 --> 00:10:11,920
+So it's really quite nice, it's very flexible.
+
+200
+00:10:11,920 --> 00:10:14,010
+Definitely recommend doing this.
+
+201
+00:10:14,010 --> 00:10:17,250
+Do keep using print when you wanna communicate
+
+202
+00:10:17,250 --> 00:10:18,300
+with your users.
+
+203
+00:10:18,300 --> 00:10:20,750
+Don't use logs to communicate with your users.
+
+204
+00:10:20,750 --> 00:10:23,520
+They'll be very confused so do keep using print
+
+205
+00:10:23,520 --> 00:10:25,150
+if you wanna talk to your users.
+
+206
+00:10:25,150 --> 00:10:26,940
+The log should be something completely separate and
+
+207
+00:10:26,940 --> 00:10:29,520
+they should normally go to a file or something like that.
+
+208
+00:10:29,520 --> 00:10:31,835
+We're gonna look at how to do that in just a moment.
+
+209
+00:10:31,835 --> 00:10:33,710
+So that's it for this video.
+
+210
+00:10:33,710 --> 00:10:35,410
+I'll see you in the very next one.
+

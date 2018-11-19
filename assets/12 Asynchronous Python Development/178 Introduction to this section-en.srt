@@ -1,0 +1,100 @@
+1
+00:00:00,530 --> 00:00:02,880
+<v ->Welcome to this section.</v>
+
+2
+00:00:02,880 --> 00:00:04,420
+In this section we're going to look
+
+3
+00:00:04,420 --> 00:00:07,770
+at one of the most complicated topics in Python.
+
+4
+00:00:07,770 --> 00:00:12,300
+So complicated in fact that I have not seen another course
+
+5
+00:00:12,300 --> 00:00:13,940
+that covers this topic.
+
+6
+00:00:14,930 --> 00:00:17,760
+The topic is asynchronous development with Python
+
+7
+00:00:18,730 --> 00:00:21,950
+and that means doing multiple things at once essentially.
+
+8
+00:00:23,710 --> 00:00:27,230
+I'll let you know that you cannot run two things at once
+
+9
+00:00:27,230 --> 00:00:30,110
+in Python, but throughout this section we're going to look
+
+10
+00:00:30,110 --> 00:00:33,370
+at how you can pretend like you do
+
+11
+00:00:33,370 --> 00:00:36,320
+and how that can speed up your programmes.
+
+12
+00:00:36,320 --> 00:00:39,140
+Asynchronous development, as I said, is a complicated topic,
+
+13
+00:00:39,140 --> 00:00:40,380
+so throughout this section,
+
+14
+00:00:40,380 --> 00:00:42,450
+I'm also going to be referring you to a number
+
+15
+00:00:42,450 --> 00:00:44,780
+of other videos and other sources
+
+16
+00:00:44,780 --> 00:00:47,540
+from some of Python's developers themselves
+
+17
+00:00:47,540 --> 00:00:50,440
+who have worked on making Python a language
+
+18
+00:00:50,440 --> 00:00:52,390
+that supports asynchronous development.
+
+19
+00:00:53,420 --> 00:00:55,610
+Again, bare with me.
+
+20
+00:00:55,610 --> 00:00:58,130
+If you have any questions throughout the entire section,
+
+21
+00:00:58,130 --> 00:01:00,450
+ask away in the course Q and A,
+
+22
+00:01:00,450 --> 00:01:01,880
+and if anything confuses you,
+
+23
+00:01:01,880 --> 00:01:03,800
+ask away in the course Q and A,
+
+24
+00:01:03,800 --> 00:01:05,620
+and we will be glad to help you out.
+
+25
+00:01:06,490 --> 00:01:08,040
+I'll see you on the next video.
+

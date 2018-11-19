@@ -1,0 +1,1052 @@
+1
+00:00:00,360 --> 00:00:01,730
+Narrador: Ol, bem vindo de volta.
+
+2
+00:00:01,730 --> 00:00:03,527
+Neste vdeo vamos falar sobre
+
+3
+00:00:03,527 --> 00:00:06,100
+nmeros e sobre impresso em Python.
+
+4
+00:00:07,690 --> 00:00:10,580
+Agora, espero que voc esteja preparado para o Rebel
+
+5
+00:00:10,580 --> 00:00:13,800
+It e o que voc ter  seu URL exclusivo,
+
+6
+00:00:13,800 --> 00:00:16,690
+seu nome exclusivo aqui que voc pode compartilhar.
+
+7
+00:00:16,690 --> 00:00:19,970
+Se voc encontrar algum problema em qualquer um dos vdeos,
+
+8
+00:00:19,970 --> 00:00:21,700
+basta compartilhar seu cdigo comigo.
+
+9
+00:00:22,560 --> 00:00:25,220
+Para facilitar as coisas, recomendo que
+
+10
+00:00:25,220 --> 00:00:29,260
+voc crie uma nova sesso para cada vdeo.
+
+11
+00:00:29,260 --> 00:00:30,630
+Eu estarei fazendo a mesma
+
+12
+00:00:30,630 --> 00:00:33,040
+coisa, e estarei compartilhando todo o cdigo que ns
+
+13
+00:00:33,040 --> 00:00:35,670
+escrevemos ao longo destes vdeos com voc em todas as palestras.
+
+14
+00:00:35,670 --> 00:00:37,570
+Ento voc pode ver que esta palestra
+
+15
+00:00:37,570 --> 00:00:41,260
+aqui tem um recurso anexado a ela, e esse  o cdigo que
+
+16
+00:00:41,260 --> 00:00:43,540
+eu escrevi para esta palestra j preparada para
+
+17
+00:00:43,540 --> 00:00:45,260
+voc olhar no final, uma vez
+
+18
+00:00:45,260 --> 00:00:46,940
+que voc tenha passado pelo vdeo.
+
+19
+00:00:47,900 --> 00:00:49,030
+Ento vamos comear.
+
+20
+00:00:50,940 --> 00:00:53,850
+A coisa mais importante sobre programao e
+
+21
+00:00:53,850 --> 00:00:56,800
+realmente um dos blocos bsicos mais bsicos
+
+22
+00:00:56,800 --> 00:00:58,820
+ o conceito de uma varivel.
+
+23
+00:00:58,820 --> 00:01:01,050
+Voc provavelmente j viu variveis em matemtica
+
+24
+00:01:01,050 --> 00:01:04,160
+e normalmente elas significam um nome para um valor.
+
+25
+00:01:05,270 --> 00:01:08,460
+Voc pode atribuir um nome a um valor e, em
+
+26
+00:01:08,460 --> 00:01:12,010
+seguida, referir-se a esse nome vrias vezes ao trabalhar com seu programa.
+
+27
+00:01:12,010 --> 00:01:15,600
+Por exemplo, vamos criar uma varivel chamada A e dar a
+
+28
+00:01:15,600 --> 00:01:17,120
+ela o valor um.
+
+29
+00:01:18,410 --> 00:01:20,850
+O que fizemos aqui  que obtivemos
+
+30
+00:01:20,850 --> 00:01:22,800
+o valor que est  direita
+
+31
+00:01:22,800 --> 00:01:25,600
+do sinal de igual e colocamos dentro da
+
+32
+00:01:25,600 --> 00:01:27,820
+caixa e damos o nome A.
+
+33
+00:01:27,820 --> 00:01:32,050
+Sempre que falamos de A, realmente isso significa um.
+
+34
+00:01:33,420 --> 00:01:36,830
+Da mesma forma, podemos fazer B  igual a dois e C  igual a trs,
+
+35
+00:01:36,830 --> 00:01:37,663
+e assim por diante.
+
+36
+00:01:37,663 --> 00:01:39,630
+Assim, podemos criar quantas variveis
+
+37
+00:01:40,570 --> 00:01:44,100
+quisermos e elas podem ter qualquer nome que quisermos.
+
+38
+00:01:44,100 --> 00:01:46,900
+Por exemplo, podemos ter uma varivel chamada minha soma, e
+
+39
+00:01:48,080 --> 00:01:49,980
+isso pode ser A mais B por
+
+40
+00:01:52,143 --> 00:01:53,810
+exemplo, e podemos ter outra soma,
+
+41
+00:01:53,810 --> 00:01:56,550
+e isso pode ser cinco mais 10 por exemplo.
+
+42
+00:01:56,550 --> 00:01:58,980
+Ento, como voc pode ver, o que
+
+43
+00:01:58,980 --> 00:02:01,930
+estiver no lado direito desse sinal de igual ser
+
+44
+00:02:01,930 --> 00:02:04,870
+calculado e isso ser colocado na varivel  esquerda.
+
+45
+00:02:05,790 --> 00:02:08,750
+Aqui estamos adicionando um mais dois, ento isso vai ser trs.
+
+46
+00:02:08,750 --> 00:02:09,900
+Este vai ser 15.
+
+47
+00:02:11,170 --> 00:02:14,160
+Os nomes das variveis podem ser o que
+
+48
+00:02:14,160 --> 00:02:16,591
+voc quiser, exceto algumas palavras-chave reservadas
+
+49
+00:02:16,591 --> 00:02:19,690
+e alguns dos nomes que voc deseja evitar.
+
+50
+00:02:19,690 --> 00:02:22,880
+Vamos examinar os nomes que voc deseja evitar
+
+51
+00:02:22,880 --> 00:02:26,060
+e as palavras-chave reservadas em todo o curso.
+
+52
+00:02:26,060 --> 00:02:28,917
+Portanto, no se preocupe muito com isso, pois agora
+
+53
+00:02:28,917 --> 00:02:31,880
+ s saber que voc pode dar a eles
+
+54
+00:02:31,880 --> 00:02:35,560
+qualquer nome que quiser e pode conter letras, nmeros e sublinhados.
+
+55
+00:02:36,780 --> 00:02:41,330
+Nenhum outro smbolo, e tambm no pode comear com um nmero.
+
+56
+00:02:42,810 --> 00:02:45,250
+Vou apenas escrev-lo aqui como
+
+57
+00:02:45,250 --> 00:02:48,580
+um pequeno comentrio, letras, nmeros e sublinhados.
+
+58
+00:02:49,620 --> 00:02:53,410
+No  possvel comear com um nmero, ok?
+
+59
+00:02:53,410 --> 00:02:55,730
+Isso porque, quando compartilhei o cdigo
+
+60
+00:02:55,730 --> 00:02:58,470
+com voc, voc poder ler esses comentrios
+
+61
+00:02:58,470 --> 00:03:00,970
+e relembrar o que aconteceu no vdeo.
+
+62
+00:03:02,500 --> 00:03:05,560
+Mas isso no  executado, no faz nada por enquanto.
+
+63
+00:03:06,920 --> 00:03:09,080
+Ento criamos algumas variveis.
+
+64
+00:03:09,080 --> 00:03:12,420
+E como voc pode ver, ns demos a eles um nome
+
+65
+00:03:12,420 --> 00:03:16,030
+especial, que  minha soma, esse tem o nome outra soma, e
+
+66
+00:03:16,030 --> 00:03:18,110
+esses tm A, B e C.
+
+67
+00:03:18,110 --> 00:03:19,570
+Os nomes podem ser
+
+68
+00:03:19,570 --> 00:03:22,180
+o que quisermos, mas freqentemente quando criamos
+
+69
+00:03:22,180 --> 00:03:25,620
+nomes compostos, i. e. nomes que so
+
+70
+00:03:25,620 --> 00:03:29,460
+compostos de duas palavras, em Python colocamos um sublinhado entre
+
+71
+00:03:29,460 --> 00:03:32,330
+as palavras e as letras sero minsculas.
+
+72
+00:03:33,240 --> 00:03:34,910
+Isso no  um requisito, como
+
+73
+00:03:34,910 --> 00:03:37,750
+eu disse, voc pode nomear suas variveis como quiser,
+
+74
+00:03:37,750 --> 00:03:39,610
+mas isso  apenas uma conveno.
+
+75
+00:03:39,610 --> 00:03:42,350
+Isso  o que normalmente fazemos quando programamos em Python.
+
+76
+00:03:42,350 --> 00:03:45,030
+Outras linguagens de programao possuem outras convenes
+
+77
+00:03:45,030 --> 00:03:47,430
+e nomeiam suas variveis de maneiras diferentes.
+
+78
+00:03:49,220 --> 00:03:54,220
+Alm disso, normalmente temos espaos entre as construes, sinto muito
+
+79
+00:03:54,850 --> 00:03:58,090
+entre os operandos, como aqui e ali.
+
+80
+00:03:58,090 --> 00:04:00,830
+E isso tambm  uma conveno, e tambm no  algo
+
+81
+00:04:00,830 --> 00:04:01,910
+que voc tem que fazer.
+
+82
+00:04:03,750 --> 00:04:07,730
+Vamos dar uma olhada em algo um pouco mais complicado.
+
+83
+00:04:09,690 --> 00:04:12,610
+Por exemplo, esta expresso aqui.
+
+84
+00:04:12,610 --> 00:04:15,850
+Um mais trs vezes quatro dividido por dois menos dois.
+
+85
+00:04:17,170 --> 00:04:19,930
+O que achamos que ser a sada disso?
+
+86
+00:04:20,930 --> 00:04:23,000
+E quando eu fao uma pergunta como essa,
+
+87
+00:04:23,000 --> 00:04:24,840
+obviamente eu sei que estou sendo gravada,
+
+88
+00:04:24,840 --> 00:04:28,110
+sei que voc no est me ouvindo ao vivo e voc no
+
+89
+00:04:28,110 --> 00:04:30,680
+pode responder, mas o que voc pode fazer  pausar
+
+90
+00:04:30,680 --> 00:04:32,980
+o vdeo e dar um pouco de pensamento.
+
+91
+00:04:32,980 --> 00:04:35,140
+Dessa forma, ao fazer essa interao, voc vai
+
+92
+00:04:35,140 --> 00:04:38,730
+aprender muito mais rpido do que se eu estivesse tagarelando para voc.
+
+93
+00:04:42,290 --> 00:04:45,500
+As regras matemticas normais aplicam-se ao Python, como
+
+94
+00:04:45,500 --> 00:04:48,150
+na maioria das linguagens de programao.
+
+95
+00:04:48,150 --> 00:04:51,540
+Portanto, a multiplicao e a diviso sero executadas primeiro e, em
+
+96
+00:04:51,540 --> 00:04:54,670
+seguida, o sinal de mais e de menos ser executado depois.
+
+97
+00:04:54,670 --> 00:04:57,230
+E da esquerda para a direita est a ordem de
+
+98
+00:04:57,230 --> 00:04:59,740
+preferncia, ento isso ser executado primeiro, trs vezes quatro.
+
+99
+00:04:59,740 --> 00:05:01,210
+Isso vai nos dar 12.
+
+100
+00:05:01,210 --> 00:05:03,050
+Ento vamos dividir 12 por
+
+101
+00:05:03,050 --> 00:05:06,870
+dois, isso nos dar seis, um mais seis  sete, menos
+
+102
+00:05:06,870 --> 00:05:07,950
+dois so cinco.
+
+103
+00:05:08,970 --> 00:05:11,690
+Ento, matemticos operadores, essa varivel aqui
+
+104
+00:05:11,690 --> 00:05:14,380
+tem o valor cinco dentro dela.
+
+105
+00:05:14,380 --> 00:05:19,380
+No entanto, se executarmos o nosso cdigo, vemos que nada aparece.
+
+106
+00:05:20,080 --> 00:05:22,380
+Se quisermos olhar para o
+
+107
+00:05:22,380 --> 00:05:26,410
+valor da varivel de operadores matemticos, teremos que imprimi-lo.
+
+108
+00:05:26,410 --> 00:05:29,800
+Essa  a prxima coisa que vamos aprender neste vdeo.
+
+109
+00:05:29,800 --> 00:05:33,560
+Para imprimir algo, apenas digitamos print.
+
+110
+00:05:33,560 --> 00:05:37,010
+Observe como ele fica azul porque Rebel sabe que isso
+
+111
+00:05:37,010 --> 00:05:38,960
+ uma coisa especial em Python.
+
+112
+00:05:40,430 --> 00:05:42,434
+Ento dentro dos colchetes,
+
+113
+00:05:42,434 --> 00:05:47,410
+vamos digitar nossa varivel de operadores de matemtica, ok?
+
+114
+00:05:47,410 --> 00:05:50,576
+Ento,  imprimir, abrir o colchete, o que quer que seja
+
+115
+00:05:50,576 --> 00:05:53,290
+que queremos imprimir e, em seguida, um colchete de fechamento.
+
+116
+00:05:53,290 --> 00:05:57,340
+Agora, quando corremos isso de novo, vemos que cinco
+
+117
+00:05:57,340 --> 00:05:58,420
+pontos foram impressos.
+
+118
+00:05:59,420 --> 00:06:01,890
+No cinco, cinco ponto oh.
+
+119
+00:06:03,080 --> 00:06:07,190
+E isso  por causa dos nmeros de ponto flutuante.
+
+120
+00:06:07,190 --> 00:06:08,740
+Um nmero de ponto flutuante
+
+121
+00:06:08,740 --> 00:06:12,190
+ apenas um nmero com um ponto decimal e, normalmente,  claro
+
+122
+00:06:12,190 --> 00:06:14,730
+que os nmeros de ponto flutuante tm mais preciso
+
+123
+00:06:14,730 --> 00:06:16,450
+do que os nmeros inteiros.
+
+124
+00:06:17,640 --> 00:06:22,320
+Por exemplo, voc pode fazer algo como 12 dividido por cinco,
+
+125
+00:06:22,320 --> 00:06:25,130
+e isso ser dois pontos quatro.
+
+126
+00:06:27,250 --> 00:06:29,410
+Este  um nmero de ponto flutuante.
+
+127
+00:06:29,410 --> 00:06:32,347
+Ento voc precisa de nmeros de ponto flutuante se
+
+128
+00:06:32,347 --> 00:06:35,460
+quiser ter a preciso apropriada quando estiver fazendo matemtica.
+
+129
+00:06:36,620 --> 00:06:39,920
+E em Python, assim que voc faz
+
+130
+00:06:39,920 --> 00:06:41,830
+um operador de diviso,
+
+131
+00:06:41,830 --> 00:06:45,807
+o Python comea a tratar tudo como um nmero
+
+132
+00:06:45,807 --> 00:06:50,807
+de ponto flutuante para que voc tenha toda a preciso, ok?
+
+133
+00:06:50,810 --> 00:06:53,470
+Ento, podemos fazer uma diviso de flutuao, por exemplo,
+
+134
+00:06:53,470 --> 00:06:56,690
+outra varivel que  12 dividida por trs, e ento podemos
+
+135
+00:06:56,690 --> 00:06:58,850
+imprimi-la, e o que voc acha que
+
+136
+00:06:58,850 --> 00:06:59,900
+esse resultado ser impresso?
+
+137
+00:06:59,900 --> 00:07:01,510
+O que achamos que vai ser?
+
+138
+00:07:03,540 --> 00:07:07,250
+Espero que voc entendi, o resultado  de quatro pontos oh.
+
+139
+00:07:07,250 --> 00:07:10,130
+Mesmo que 12 dividido por trs seja quatro, porque
+
+140
+00:07:11,340 --> 00:07:13,320
+h esse sinal de diviso l,
+
+141
+00:07:13,320 --> 00:07:16,430
+o Python trata tudo como nmeros de ponto flutuante, e
+
+142
+00:07:16,430 --> 00:07:19,490
+o resultado tambm  um nmero de ponto flutuante que
+
+143
+00:07:19,490 --> 00:07:20,640
+ de quatro pontos.
+
+144
+00:07:22,620 --> 00:07:24,450
+No entanto, s vezes queremos
+
+145
+00:07:24,450 --> 00:07:26,320
+acabar com um nmero inteiro.
+
+146
+00:07:26,320 --> 00:07:28,710
+Queremos perder o decimal porque isso no significa
+
+147
+00:07:28,710 --> 00:07:30,450
+nada para ns, e queremos acabar
+
+148
+00:07:30,450 --> 00:07:33,839
+com um nmero inteiro em vez de um nmero de ponto flutuante.
+
+149
+00:07:33,839 --> 00:07:37,410
+E a propsito, nmeros inteiros tambm so chamados inteiros,
+
+150
+00:07:37,410 --> 00:07:40,140
+ento eu usarei esse nome indistintamente.
+
+151
+00:07:41,360 --> 00:07:43,440
+Ento, se queremos fazer uma diviso inteira, tudo
+
+152
+00:07:43,440 --> 00:07:46,590
+o que precisamos fazer  usar dois desses sinais de diviso.
+
+153
+00:07:51,070 --> 00:07:52,050
+E quando
+
+154
+00:07:52,050 --> 00:07:55,040
+imprimimos, vemos que quatro so impressos.
+
+155
+00:07:55,040 --> 00:07:57,780
+Eu sei que este texto  pequeno, desculpas por isso.
+
+156
+00:07:59,530 --> 00:08:02,010
+Ento, como voc pode ver, quando fizemos sinal de diviso
+
+157
+00:08:02,010 --> 00:08:02,929
+dupla, o Python viu,
+
+158
+00:08:02,929 --> 00:08:07,710
+ok, queremos fazer a diviso de nmeros inteiros, no vamos tratar as coisas como nmeros de ponto flutuante,
+
+159
+00:08:07,710 --> 00:08:09,160
+vamos trat-los como nmeros inteiros.
+
+160
+00:08:10,740 --> 00:08:15,740
+No entanto, quando fazemos algo como 12, um inteiro dividido por
+
+161
+00:08:16,220 --> 00:08:20,990
+cinco, que deve ser dois pontos quatro, o que voc
+
+162
+00:08:20,990 --> 00:08:22,840
+acha que vamos conseguir?
+
+163
+00:08:24,540 --> 00:08:27,440
+O que voc acha que a sada desta declarao de
+
+164
+00:08:27,440 --> 00:08:30,390
+impresso ser agora que sabemos que isso ser um nmero
+
+165
+00:08:30,390 --> 00:08:33,560
+inteiro, um nmero inteiro e no um nmero de ponto flutuante?
+
+166
+00:08:35,570 --> 00:08:38,350
+As regras de arredondamento nos dizem que qualquer
+
+167
+00:08:38,350 --> 00:08:41,240
+coisa abaixo de dois pontos cinco seria arredondada para
+
+168
+00:08:41,240 --> 00:08:45,630
+dois, e qualquer coisa acima de dois pontos cinco seria arredondada para trs.
+
+169
+00:08:45,630 --> 00:08:47,680
+No entanto, as regras de arredondamento
+
+170
+00:08:47,680 --> 00:08:50,060
+no se aplicam quando fazemos diviso inteira, ok?
+
+171
+00:08:50,060 --> 00:08:53,330
+Ento, tudo, no importa se foi dois pontos
+
+172
+00:08:53,330 --> 00:08:56,140
+nove, tudo  arredondado para baixo, ou
+
+173
+00:08:56,140 --> 00:09:00,210
+melhor, tudo depois do ponto decimal s se perde.
+
+174
+00:09:00,210 --> 00:09:02,790
+Ento, algo para lembrar com a diviso inteira.
+
+175
+00:09:04,670 --> 00:09:09,670
+Agora, cinco vo para 12 duas vezes e o restante  dois.
+
+176
+00:09:14,473 --> 00:09:17,100
+Ento, pegar o lembrete de uma diviso
+
+177
+00:09:17,100 --> 00:09:19,792
+ uma operao to popular no Python que
+
+178
+00:09:19,792 --> 00:09:23,250
+o Python nos d uma maneira de obter o restante
+
+179
+00:09:24,260 --> 00:09:25,890
+usando um nico comando.
+
+180
+00:09:27,480 --> 00:09:30,750
+E a maneira de fazer isso  usando esse operador modular.
+
+181
+00:09:31,590 --> 00:09:34,520
+O operador modular nos d o restante da execuo
+
+182
+00:09:34,520 --> 00:09:35,353
+dessa diviso.
+
+183
+00:09:35,353 --> 00:09:38,260
+12 dividido por cinco  dois, restante dois,
+
+184
+00:09:38,260 --> 00:09:39,650
+ento dois restantes dois.
+
+185
+00:09:40,800 --> 00:09:42,740
+Ento, o que isso vai fazer 
+
+186
+00:09:42,740 --> 00:09:44,040
+nos dar os dois restantes.
+
+187
+00:09:45,120 --> 00:09:48,950
+Se fizssemos seis mdulos modulares, isso nos daria um, porque
+
+188
+00:09:48,950 --> 00:09:51,639
+esse  o restante da diviso seis
+
+189
+00:09:51,639 --> 00:09:52,990
+dividido por cinco, ok?
+
+190
+00:09:57,280 --> 00:09:59,250
+Se quisssemos imprimir isso, poderamos fazer
+
+191
+00:09:59,250 --> 00:10:01,160
+isso e obteramos o valor dois.
+
+192
+00:10:03,790 --> 00:10:06,130
+Ento, por que o restante de uma
+
+193
+00:10:06,130 --> 00:10:07,320
+diviso  to popular?
+
+194
+00:10:09,250 --> 00:10:11,900
+Quando voc precisa do restante de alguma coisa?
+
+195
+00:10:12,970 --> 00:10:15,900
+Bem, pense sobre as seguintes divises e o
+
+196
+00:10:15,900 --> 00:10:17,390
+que  o restante.
+
+197
+00:10:17,390 --> 00:10:19,510
+Qual o resto de 10 dividido por dois?
+
+198
+00:10:21,000 --> 00:10:23,270
+Espero que a resposta para isso tenha sido zero.
+
+199
+00:10:23,270 --> 00:10:26,990
+14 dividido por dois, tambm zero.
+
+200
+00:10:26,990 --> 00:10:29,950
+Seis dividido por dois, tambm zero.
+
+201
+00:10:29,950 --> 00:10:34,950
+340 dividido por dois, tambm zero.
+
+202
+00:10:35,080 --> 00:10:38,010
+Ento, o restante dessas divises  todo zero.
+
+203
+00:10:39,100 --> 00:10:41,780
+Que tal algo como 11 dividido por dois?
+
+204
+00:10:44,000 --> 00:10:47,470
+Bem, dois entram em 11 cinco vezes, o restante  um.
+
+205
+00:10:48,680 --> 00:10:52,680
+27 dividido por dois, dois vai para 27 13 vezes
+
+206
+00:10:56,550 --> 00:10:58,430
+eo restante  tambm um.
+
+207
+00:10:58,430 --> 00:11:00,610
+Ento, o restante para esses dois  um.
+
+208
+00:11:00,610 --> 00:11:02,170
+Da mesma forma, para trs dividido
+
+209
+00:11:02,170 --> 00:11:03,870
+por dois, o restante  tambm um.
+
+210
+00:11:03,870 --> 00:11:07,250
+Portanto, o padro aqui no  que os nmeros
+
+211
+00:11:07,250 --> 00:11:11,340
+aleatrios tenham restos aleatrios, mas sim que os nmeros pares, quando
+
+212
+00:11:11,340 --> 00:11:13,840
+divididos por dois, o restante  zero.
+
+213
+00:11:13,840 --> 00:11:16,970
+Para nmeros mpares, quando dividido por dois, o restante
+
+214
+00:11:16,970 --> 00:11:17,810
+ sempre um.
+
+215
+00:11:18,710 --> 00:11:20,490
+Portanto, o restante  uma operao
+
+216
+00:11:20,490 --> 00:11:24,270
+to popular porque nos permite ver se um nmero  mpar ou par.
+
+217
+00:11:25,180 --> 00:11:27,550
+Por exemplo, dada uma varivel
+
+218
+00:11:30,040 --> 00:11:35,040
+37, podemos calcular o restante fazendo X e modular dois.
+
+219
+00:11:36,680 --> 00:11:40,523
+E depois podemos imprimir, e o que achamos que esse
+
+220
+00:11:40,523 --> 00:11:41,873
+resto vai ser?
+
+221
+00:11:42,970 --> 00:11:46,520
+Espero que voc diga um, e porque este  um nmero mpar.
+
+222
+00:11:48,040 --> 00:11:50,260
+Como voc pode ver aqui embaixo, um 
+
+223
+00:11:50,260 --> 00:11:52,920
+impresso, porque X  de fato um nmero mpar.
+
+224
+00:11:53,890 --> 00:11:54,830
+E agora voc pode se
+
+225
+00:11:54,830 --> 00:11:57,270
+perguntar por que nos importamos se um nmero  mpar ou par?
+
+226
+00:11:58,610 --> 00:12:01,310
+Bem, vamos aprender sobre isso durante
+
+227
+00:12:01,310 --> 00:12:02,410
+o curso.
+
+228
+00:12:03,740 --> 00:12:05,900
+Mas nos importamos.
+
+229
+00:12:05,900 --> 00:12:10,900
+Por exemplo, imagine que quisssemos ter o nmero um com essa cor de fundo, nmero
+
+230
+00:12:11,890 --> 00:12:13,470
+dois com um fundo um
+
+231
+00:12:13,470 --> 00:12:15,590
+pouco mais escuro, trs com fundo
+
+232
+00:12:15,590 --> 00:12:17,890
+claro, quatro com fundo escuro, cinco com
+
+233
+00:12:17,890 --> 00:12:20,120
+fundo claro e seis com fundo escuro.
+
+234
+00:12:20,120 --> 00:12:21,630
+Planos de fundo alternados.
+
+235
+00:12:21,630 --> 00:12:23,030
+Como voc acha que fazemos isso?
+
+236
+00:12:24,510 --> 00:12:26,430
+Bem, espero que voc tenha adivinhado.
+
+237
+00:12:27,490 --> 00:12:30,570
+Para cada nmero mpar, damos a ele um segundo plano claro, para
+
+238
+00:12:30,570 --> 00:12:33,370
+cada nmero par que dermos a ele um fundo estranho.
+
+239
+00:12:33,370 --> 00:12:35,110
+Precisamos saber se os nmeros so mpares ou
+
+240
+00:12:35,110 --> 00:12:36,110
+at mesmo para fazer isso.
+
+241
+00:12:36,960 --> 00:12:39,980
+E os exemplos esto realmente em todos os lugares.
+
+242
+00:12:39,980 --> 00:12:43,810
+Assim que voc comear a programar mais seriamente, ver que este
+
+243
+00:12:43,810 --> 00:12:46,890
+operador de mdulo realmente entra em jogo com mais
+
+244
+00:12:46,890 --> 00:12:48,460
+freqncia do que voc imagina.
+
+245
+00:12:49,400 --> 00:12:50,810
+E durante o restante
+
+246
+00:12:50,810 --> 00:12:53,300
+do curso, veremos mais exemplos disso tambm.
+
+247
+00:12:54,370 --> 00:12:55,203
+ isso para
+
+248
+00:12:55,203 --> 00:12:57,410
+este vdeo, eu aprecio que tenha sido
+
+249
+00:12:57,410 --> 00:12:59,280
+um pouco longo, mas ns aprendemos
+
+250
+00:12:59,280 --> 00:13:01,610
+um monte de coisas sobre o bloco de
+
+251
+00:13:01,610 --> 00:13:03,010
+construo mais importante no Python,
+
+252
+00:13:03,010 --> 00:13:06,560
+que  a varivel, e sobre a impresso, que tambm  essencial.
+
+253
+00:13:06,560 --> 00:13:09,480
+Tambm analisamos como escrever alguns comentrios e
+
+254
+00:13:09,480 --> 00:13:13,440
+coisas que no sero executadas, e  assim com
+
+255
+00:13:13,440 --> 00:13:16,990
+os trs smbolos de aspas duplas no incio
+
+256
+00:13:16,990 --> 00:13:18,520
+e trs no
+
+257
+00:13:18,520 --> 00:13:21,570
+final, ou usando o smbolo de hash.
+
+258
+00:13:21,570 --> 00:13:25,500
+Qualquer coisa depois do hash  um comentrio, e tambm no ser executado.
+
+259
+00:13:25,500 --> 00:13:27,072
+ s para voc olhar,
+
+260
+00:13:27,072 --> 00:13:28,900
+no para o computador olhar.
+
+261
+00:13:30,170 --> 00:13:31,750
+Ok, ento  tudo para este
+
+262
+00:13:31,750 --> 00:13:33,010
+vdeo, espero que voc tenha
+
+263
+00:13:33,010 --> 00:13:34,910
+gostado, e eu vou te ver no prximo.
+

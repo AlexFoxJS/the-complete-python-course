@@ -1,0 +1,744 @@
+1
+00:00:00,140 --> 00:00:01,380
+Jos: Ol, e bem vindo de volta.
+
+2
+00:00:01,380 --> 00:00:03,270
+Neste vdeo, vamos olhar para
+
+3
+00:00:03,270 --> 00:00:07,323
+o percurso de rvores binrias: como voc pode passar por elementos.
+
+4
+00:00:08,850 --> 00:00:11,960
+Portanto, existem trs tipos de travessia em rvores binrias.
+
+5
+00:00:11,960 --> 00:00:15,930
+Ns temos algo chamado inorder traversal, onde a primeira coisa que voc faz
+
+6
+00:00:15,930 --> 00:00:18,690
+ ir para a esquerda, ento voc verifica o
+
+7
+00:00:18,690 --> 00:00:20,820
+n, e ento voc vai para a direita.
+
+8
+00:00:20,820 --> 00:00:24,150
+Ns vamos olhar exatamente o que isso significa em um momento.
+
+9
+00:00:24,150 --> 00:00:26,260
+Voc tem uma passagem de pr-encomenda, onde voc verifica
+
+10
+00:00:26,260 --> 00:00:27,520
+primeiro o n, depois vai para
+
+11
+00:00:27,520 --> 00:00:29,300
+a esquerda e ento vai para a direita.
+
+12
+00:00:29,300 --> 00:00:31,950
+E finalmente, voc tem um percurso de ps-ordem, onde voc vai
+
+13
+00:00:31,950 --> 00:00:33,710
+para a esquerda primeiro, depois para a
+
+14
+00:00:33,710 --> 00:00:35,520
+direita, e ento voc verifica o n.
+
+15
+00:00:35,520 --> 00:00:38,040
+Ento, o que isso tudo significa?
+
+16
+00:00:38,040 --> 00:00:40,320
+Bem, vamos dar uma olhada em alguns exemplos.
+
+17
+00:00:40,320 --> 00:00:42,680
+Ns temos trs rvores idnticas aqui.
+
+18
+00:00:42,680 --> 00:00:45,140
+Vamos naveg-los em ordem,
+
+19
+00:00:45,140 --> 00:00:48,350
+pr-encomenda e ps-encomenda e ver
+
+20
+00:00:48,350 --> 00:00:50,313
+o que criamos.
+
+21
+00:00:52,260 --> 00:00:55,800
+Na travessia em ordem, a primeira coisa que fazemos 
+
+22
+00:00:55,800 --> 00:00:57,810
+estarmos no topo da rvore, ento
+
+23
+00:00:57,810 --> 00:00:59,080
+nestes exemplos ns sempre
+
+24
+00:00:59,080 --> 00:01:02,220
+comeamos no topo da rvore, e o que voc
+
+25
+00:01:02,220 --> 00:01:05,360
+faz primeiro  ir para a esquerda, porque 
+
+26
+00:01:05,360 --> 00:01:08,170
+isso que entra na travessia. significa.
+
+27
+00:01:08,170 --> 00:01:10,410
+Quando voc chega em um n, a primeira
+
+28
+00:01:10,410 --> 00:01:11,840
+coisa que voc faz 
+
+29
+00:01:11,840 --> 00:01:14,400
+ir para a esquerda e ir para o n esquerdo.
+
+30
+00:01:14,400 --> 00:01:17,963
+Ento, a primeira coisa que fazemos  ir para o n da esquerda.
+
+31
+00:01:18,900 --> 00:01:21,980
+Agora estamos no n nove.
+
+32
+00:01:21,980 --> 00:01:23,160
+Estamos no novo n,
+
+33
+00:01:23,160 --> 00:01:27,247
+ento mais uma vez aplicamos a ordem e vamos para a esquerda.
+
+34
+00:01:27,247 --> 00:01:29,373
+Observe que ele no tem um n  esquerda,
+
+35
+00:01:30,330 --> 00:01:32,113
+ento no  algo que possamos fazer.
+
+36
+00:01:33,180 --> 00:01:35,150
+Como no temos um
+
+37
+00:01:35,150 --> 00:01:40,150
+n  esquerda aqui, vamos ao n nove, verificamos o
+
+38
+00:01:40,640 --> 00:01:43,220
+n e vamos, digamos, imprimi-lo.
+
+39
+00:01:43,220 --> 00:01:45,673
+Ento, isso imprime o n nove, e
+
+40
+00:01:46,800 --> 00:01:50,120
+agora verificamos o n, ento vamos para a direita
+
+41
+00:01:50,120 --> 00:01:51,973
+e passamos para o 13.
+
+42
+00:01:53,330 --> 00:01:57,380
+Ento vamos para a esquerda: no tem um.
+
+43
+00:01:57,380 --> 00:01:58,270
+Ns verificamos o n.
+
+44
+00:01:58,270 --> 00:02:00,797
+Ns imprimimos 13 para fora, e ento
+
+45
+00:02:00,797 --> 00:02:02,240
+vamos para a direita,
+
+46
+00:02:02,240 --> 00:02:05,930
+e ele no tem um, e agora que terminamos indo para
+
+47
+00:02:05,930 --> 00:02:08,700
+a esquerda, imprimindo, e ento indo direto para
+
+48
+00:02:08,700 --> 00:02:10,663
+o n 13, voltamos para o
+
+49
+00:02:12,150 --> 00:02:15,210
+nmero nove, e ento ns Volte para 14 porque
+
+50
+00:02:15,210 --> 00:02:17,210
+tambm terminamos no nmero 9.
+
+51
+00:02:18,730 --> 00:02:21,520
+Ento, novamente, o que aconteceu aqui  que comeamos s 14.
+
+52
+00:02:21,520 --> 00:02:23,210
+Ns fomos para a esquerda.
+
+53
+00:02:23,210 --> 00:02:24,490
+Ns aparecemos s 9.
+
+54
+00:02:24,490 --> 00:02:25,730
+Ns fomos para a esquerda.
+
+55
+00:02:25,730 --> 00:02:26,640
+Depois imprimimos 9
+
+56
+00:02:26,640 --> 00:02:27,930
+e depois fomos para
+
+57
+00:02:27,930 --> 00:02:29,700
+a direita e acabamos s 13.
+
+58
+00:02:29,700 --> 00:02:31,250
+Ns fomos  esquerda: no tinha um.
+
+59
+00:02:31,250 --> 00:02:32,150
+Ns imprimimos.
+
+60
+00:02:32,150 --> 00:02:34,120
+Ento fomos direto: no tinha um.
+
+61
+00:02:34,120 --> 00:02:36,810
+Voltamos para 9, de volta para quatorze.
+
+62
+00:02:36,810 --> 00:02:38,300
+Ento, agora vamos imprimir 14,
+
+63
+00:02:38,300 --> 00:02:41,303
+j que j passamos por todos os seus ns 
+
+64
+00:02:42,630 --> 00:02:45,130
+esquerda, e ento vamos para a direita em 14.
+
+65
+00:02:45,130 --> 00:02:46,690
+Ns terminamos aos 22 anos.
+
+66
+00:02:46,690 --> 00:02:48,830
+Vai para a esquerda: no tem um.
+
+67
+00:02:48,830 --> 00:02:50,911
+Ento, vamos imprimir, e depois vamos dar
+
+68
+00:02:50,911 --> 00:02:52,703
+certo e depois vamos para a
+
+69
+00:02:52,703 --> 00:02:53,797
+esquerda: no tem um.
+
+70
+00:02:55,311 --> 00:02:56,703
+Ento, vamos imprimir,
+
+71
+00:02:56,703 --> 00:02:59,670
+e depois vamos dar certo e pronto.
+
+72
+00:02:59,670 --> 00:03:03,573
+Ns terminamos a travessia inorder desta rvore.
+
+73
+00:03:04,650 --> 00:03:06,210
+Para cada n, a primeira
+
+74
+00:03:06,210 --> 00:03:09,483
+coisa que voc faz  ir para o n esquerdo.
+
+75
+00:03:10,490 --> 00:03:15,093
+Ento voc vai acabar no n que est mais  esquerda da sua rvore.
+
+76
+00:03:16,030 --> 00:03:17,703
+Em seguida, voc imprimir esse n,
+
+77
+00:03:17,703 --> 00:03:19,920
+e voc ir para o n direito e
+
+78
+00:03:19,920 --> 00:03:21,823
+assim por diante para cada pai.
+
+79
+00:03:23,530 --> 00:03:27,750
+Observe que voc acaba aqui com a lista ordenada, porque voc comeou
+
+80
+00:03:27,750 --> 00:03:30,770
+no n mais  esquerda e voc fez
+
+81
+00:03:30,770 --> 00:03:32,770
+o seu caminho para a direita.
+
+82
+00:03:35,120 --> 00:03:38,120
+Ento  isso que inorder traversal .
+
+83
+00:03:38,120 --> 00:03:40,220
+Olhando para a pr-encomenda, a primeira coisa que
+
+84
+00:03:40,220 --> 00:03:42,180
+voc faz  verificar o n e,
+
+85
+00:03:42,180 --> 00:03:43,290
+nesse caso, vamos dizer
+
+86
+00:03:43,290 --> 00:03:45,610
+que verificar o n  equivalente a imprimi-lo.
+
+87
+00:03:45,610 --> 00:03:46,460
+Ento, a
+
+88
+00:03:46,460 --> 00:03:48,210
+primeira coisa que voc faz
+
+89
+00:03:48,210 --> 00:03:50,390
+, a partir dos 14 anos, imprimi-lo.
+
+90
+00:03:50,390 --> 00:03:52,030
+Ento voc iria para a esquerda e agora
+
+91
+00:03:52,030 --> 00:03:53,330
+voc est em um novo n.
+
+92
+00:03:53,330 --> 00:03:56,090
+Ento, mais uma vez voc imprime e depois vai para
+
+93
+00:03:56,090 --> 00:03:57,120
+a esquerda, mas no
+
+94
+00:03:57,120 --> 00:03:57,953
+tem um.
+
+95
+00:03:57,953 --> 00:03:59,160
+Ento voc vai para a direita.
+
+96
+00:03:59,160 --> 00:04:00,100
+Ento voc est
+
+97
+00:04:00,100 --> 00:04:01,370
+no novo n e imprime.
+
+98
+00:04:01,370 --> 00:04:02,203
+Ento voc vai para a
+
+99
+00:04:02,203 --> 00:04:03,036
+esquerda e vai para a
+
+100
+00:04:03,036 --> 00:04:04,110
+direita, mas tambm no tem.
+
+101
+00:04:04,110 --> 00:04:06,790
+Ento voc acaba, novamente, aos 14 anos.
+
+102
+00:04:06,790 --> 00:04:08,140
+Ento voc vai dar
+
+103
+00:04:09,270 --> 00:04:11,320
+certo e imprimir 22 fora.
+
+104
+00:04:11,320 --> 00:04:13,050
+Ento voc vai para a esquerda: no tem um.
+
+105
+00:04:13,050 --> 00:04:14,060
+Ento voc vai dar certo.
+
+106
+00:04:14,060 --> 00:04:15,700
+Voc vai acabar com 34,
+
+107
+00:04:15,700 --> 00:04:17,223
+e voc vai imprimir isso.
+
+108
+00:04:18,610 --> 00:04:21,360
+Este  o percurso de pr-encomenda.
+
+109
+00:04:21,360 --> 00:04:23,670
+Antes de ir para outro n,
+
+110
+00:04:23,670 --> 00:04:25,070
+ns imprimimos o n.
+
+111
+00:04:25,070 --> 00:04:26,381
+Ento ns vamos para
+
+112
+00:04:26,381 --> 00:04:28,740
+a esquerda, ento vamos para a direita.
+
+113
+00:04:28,740 --> 00:04:30,380
+Observe que o que voc acaba
+
+114
+00:04:30,380 --> 00:04:32,580
+aqui  algo que parece um pouco aleatrio.
+
+115
+00:04:33,630 --> 00:04:34,463
+Ns vamos
+
+116
+00:04:34,463 --> 00:04:37,373
+olhar exatamente para o que isto  til
+
+117
+00:04:38,630 --> 00:04:41,880
+em alguns momentos, e finalmente, a travessia de ps-ordem.
+
+118
+00:04:41,880 --> 00:04:43,237
+A primeira coisa que voc faz
+
+119
+00:04:43,237 --> 00:04:44,750
+ ir para a esquerda e depois
+
+120
+00:04:44,750 --> 00:04:46,590
+para a direita e depois verificar o n.
+
+121
+00:04:46,590 --> 00:04:47,863
+ento vamos para a esquerda.
+
+122
+00:04:48,800 --> 00:04:50,200
+Ns somos s nove, ento
+
+123
+00:04:50,200 --> 00:04:51,240
+vamos para a esquerda,
+
+124
+00:04:51,240 --> 00:04:52,230
+mas no tem um.
+
+125
+00:04:52,230 --> 00:04:53,640
+Ns vamos para a direita.
+
+126
+00:04:53,640 --> 00:04:54,800
+Ns terminamos aos 13 anos.
+
+127
+00:04:54,800 --> 00:04:55,690
+Agora estamos com 13 anos,
+
+128
+00:04:55,690 --> 00:04:56,720
+ento vamos para a esquerda.
+
+129
+00:04:56,720 --> 00:04:57,553
+No tem um.
+
+130
+00:04:57,553 --> 00:04:58,386
+Ns vamos para a direita.
+
+131
+00:04:58,386 --> 00:04:59,219
+No tem um.
+
+132
+00:04:59,219 --> 00:05:00,840
+Ns imprimimos.
+
+133
+00:05:00,840 --> 00:05:02,040
+Estamos de volta s nove.
+
+134
+00:05:02,040 --> 00:05:03,460
+Ns j corremos bem,
+
+135
+00:05:03,460 --> 00:05:05,220
+ento agora ns o imprimimos.
+
+136
+00:05:05,220 --> 00:05:06,340
+Estamos de volta s 14, ento
+
+137
+00:05:06,340 --> 00:05:07,253
+vamos para a direita.
+
+138
+00:05:08,190 --> 00:05:09,270
+Agora estamos com 22,
+
+139
+00:05:09,270 --> 00:05:10,420
+ento vamos para a esquerda.
+
+140
+00:05:10,420 --> 00:05:11,610
+Ento vamos para a
+
+141
+00:05:11,610 --> 00:05:13,200
+direita e terminamos aos 34 anos.
+
+142
+00:05:13,200 --> 00:05:14,033
+Ns vamos para a
+
+143
+00:05:14,033 --> 00:05:15,140
+esquerda, ento vamos para a direita.
+
+144
+00:05:15,140 --> 00:05:16,020
+No tem
+
+145
+00:05:16,020 --> 00:05:17,840
+nenhum, ento ns imprimimos.
+
+146
+00:05:17,840 --> 00:05:19,230
+Estamos de volta aos 22 anos.
+
+147
+00:05:19,230 --> 00:05:20,280
+Ns imprimimos.
+
+148
+00:05:20,280 --> 00:05:21,490
+Estamos de volta aos 14 anos.
+
+149
+00:05:21,490 --> 00:05:22,323
+Ns imprimimos.
+
+150
+00:05:23,780 --> 00:05:27,630
+Espero que isso no seja terrivelmente confuso.
+
+151
+00:05:27,630 --> 00:05:29,600
+Tudo o que estamos fazendo aqui
+
+152
+00:05:29,600 --> 00:05:32,680
+ mudar se primeiro vamos a um n diferente
+
+153
+00:05:32,680 --> 00:05:34,703
+ou se imprimimos as coisas primeiro.
+
+154
+00:05:36,740 --> 00:05:38,840
+Vamos ver alguns exemplos no
+
+155
+00:05:38,840 --> 00:05:40,690
+cdigo em alguns instantes.
+
+156
+00:05:40,690 --> 00:05:43,950
+Portanto, o caminho de entrada  til
+
+157
+00:05:43,950 --> 00:05:47,960
+para obter uma lista ordenada de uma rvore binria.
+
+158
+00:05:47,960 --> 00:05:50,610
+Muitas vezes, tambm  til para imprimir a rvore,
+
+159
+00:05:50,610 --> 00:05:51,830
+se voc quiser mostr-la
+
+160
+00:05:51,830 --> 00:05:53,450
+aos seus usurios, talvez queira
+
+161
+00:05:53,450 --> 00:05:56,140
+exibi-la de uma forma ordenada, como uma lista ordenada.
+
+162
+00:05:56,140 --> 00:05:58,263
+Voc pode fazer isso com a travessia inorder.
+
+163
+00:05:59,910 --> 00:06:01,870
+A passagem antecipada  realmente til
+
+164
+00:06:01,870 --> 00:06:05,163
+para salvar a rvore para que possa ser reconstruda mais tarde.
+
+165
+00:06:06,610 --> 00:06:08,060
+Isso pode ser um
+
+166
+00:06:08,060 --> 00:06:11,400
+pouco abstrato, porque ainda no analisamos a criao de
+
+167
+00:06:11,400 --> 00:06:13,760
+rvores, mas faremos isso em breve.
+
+168
+00:06:13,760 --> 00:06:17,110
+Ento o que acontece aqui  que voc acaba
+
+169
+00:06:17,110 --> 00:06:20,170
+com uma lista que essencialmente representa sua rvore.
+
+170
+00:06:20,170 --> 00:06:21,950
+O primeiro elemento da lista
+
+171
+00:06:21,950 --> 00:06:25,633
+tambm  o elemento mais importante da sua rvore.
+
+172
+00:06:26,470 --> 00:06:30,650
+Ento voc tem o lado esquerdo da rvore, nove e 13, e
+
+173
+00:06:30,650 --> 00:06:34,500
+ento voc tem o lado direito da rvore, 22 e 34.
+
+174
+00:06:34,500 --> 00:06:35,870
+Vamos olhar para a
+
+175
+00:06:35,870 --> 00:06:39,313
+pr-encomenda e como podemos us-la para reconstruir uma rvore no
+
+176
+00:06:40,920 --> 00:06:43,640
+cdigo em breve e, finalmente, a travessia da
+
+177
+00:06:43,640 --> 00:06:46,170
+encomenda  til para eliminar a rvore.
+
+178
+00:06:46,170 --> 00:06:49,410
+Vamos falar brevemente sobre a excluso de ns,
+
+179
+00:06:49,410 --> 00:06:53,473
+mas  um conceito mais complicado em rvores binrias.
+
+180
+00:06:54,610 --> 00:06:57,420
+No se preocupe muito se no estiver totalmente claro para
+
+181
+00:06:57,420 --> 00:06:58,720
+que servem e como voc
+
+182
+00:06:58,720 --> 00:06:59,680
+os implementa, e
+
+183
+00:06:59,680 --> 00:07:00,700
+como voc os utiliza.
+
+184
+00:07:00,700 --> 00:07:02,290
+Ns vamos olhar algumas amostras de cdigo,
+
+185
+00:07:02,290 --> 00:07:03,290
+como eu tenho dito.
+
+186
+00:07:04,280 --> 00:07:07,053
+Com isso dito, vejo vocs no prximo vdeo.
+

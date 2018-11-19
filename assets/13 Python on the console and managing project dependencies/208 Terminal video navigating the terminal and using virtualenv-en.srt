@@ -1,0 +1,800 @@
+1
+00:00:00,170 --> 00:00:01,440
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,440 --> 00:00:02,840
+In this video, I wanted to show you
+
+3
+00:00:02,840 --> 00:00:05,170
+a couple of commands that you can run
+
+4
+00:00:05,170 --> 00:00:08,500
+in order to navigate your computer using the terminal.
+
+5
+00:00:08,500 --> 00:00:09,750
+These can be quite handy.
+
+6
+00:00:10,790 --> 00:00:12,000
+The commands I'm going to show you
+
+7
+00:00:12,000 --> 00:00:15,420
+are only going to work on macOS10 and on Linux,
+
+8
+00:00:15,420 --> 00:00:18,710
+but I'm going to give you the windows equivalents as well.
+
+9
+00:00:20,230 --> 00:00:22,740
+So when you are on
+
+10
+00:00:22,740 --> 00:00:24,600
+macOS10 or Linux,
+
+11
+00:00:24,600 --> 00:00:27,580
+you can type P-W-D
+
+12
+00:00:27,580 --> 00:00:30,930
+and that tells your the folder you're currently in.
+
+13
+00:00:31,800 --> 00:00:34,720
+So in my case I am in /users/jslvtr.
+
+14
+00:00:36,240 --> 00:00:40,100
+On windows, this will be dir for directory.
+
+15
+00:00:42,200 --> 00:00:44,630
+If you want to move to a different folder,
+
+16
+00:00:44,630 --> 00:00:48,410
+you can do cd for change directory,
+
+17
+00:00:48,410 --> 00:00:51,450
+and then you can type whatever folder you want.
+
+18
+00:00:51,450 --> 00:00:55,390
+So for example, if you wanted to go to your desktop,
+
+19
+00:00:55,390 --> 00:00:57,740
+you could type desktop.
+
+20
+00:00:57,740 --> 00:01:00,740
+Notice how now I am in my desktop here
+
+21
+00:01:00,740 --> 00:01:05,010
+and if I type pwd, I am now moved to my desktop.
+
+22
+00:01:05,900 --> 00:01:10,740
+On windows, this will be chdir for change directory.
+
+23
+00:01:13,730 --> 00:01:17,180
+Now of course the desktop folder that we've just moved into,
+
+24
+00:01:18,060 --> 00:01:22,370
+is inside users/jsslvtr.
+
+25
+00:01:22,370 --> 00:01:25,500
+Otherwise, it would tell us folder not found.
+
+26
+00:01:25,500 --> 00:01:27,090
+For example I'm now in my desktop.
+
+27
+00:01:27,090 --> 00:01:30,080
+If I try to do cd, into an asdf folder,
+
+28
+00:01:30,080 --> 00:01:32,430
+it says no such file or directory.
+
+29
+00:01:32,430 --> 00:01:33,740
+So you have to make sure that the folder
+
+30
+00:01:33,740 --> 00:01:35,980
+you want to move into is inside
+
+31
+00:01:35,980 --> 00:01:37,530
+the folder you're currently in.
+
+32
+00:01:38,430 --> 00:01:42,900
+However you can also choose to move to a particular folder
+
+33
+00:01:42,900 --> 00:01:45,730
+even if it's not inside where you currently are.
+
+34
+00:01:45,730 --> 00:01:48,920
+In order to do that, you have to tell your computer
+
+35
+00:01:48,920 --> 00:01:51,470
+the absolute path to that folder,
+
+36
+00:01:51,470 --> 00:01:53,550
+starting at the very root.
+
+37
+00:01:54,570 --> 00:01:58,370
+In windows, you would do change directory of C,
+
+38
+00:01:58,370 --> 00:02:01,170
+going to C:\users\something
+
+39
+00:02:02,599 --> 00:02:07,210
+or C:\data\whatever
+
+40
+00:02:07,210 --> 00:02:10,830
+and in OS10 and Linux you do cd /
+
+41
+00:02:11,800 --> 00:02:14,970
+which means the root of your computer
+
+42
+00:02:14,970 --> 00:02:16,220
+and then you could do something like,
+
+43
+00:02:16,220 --> 00:02:19,600
+/Library/Python/ and so forth.
+
+44
+00:02:19,600 --> 00:02:23,590
+Then you can change directly into this folder.
+
+45
+00:02:23,590 --> 00:02:24,750
+This is where I am now.
+
+46
+00:02:26,550 --> 00:02:28,220
+As a small aside, if you want to go back
+
+47
+00:02:28,220 --> 00:02:32,158
+to the previous folder, you can just type cd -.
+
+48
+00:02:32,158 --> 00:02:34,330
+And this, I don't think works on windows,
+
+49
+00:02:34,330 --> 00:02:38,000
+it just works on macOS10 and on Linux.
+
+50
+00:02:38,000 --> 00:02:40,090
+If you want to look at what currently is
+
+51
+00:02:40,090 --> 00:02:42,950
+in one of your folders, all you have to do
+
+52
+00:02:42,950 --> 00:02:46,050
+is type the ls command.
+
+53
+00:02:46,050 --> 00:02:49,900
+On Windows, this will also be the dir command.
+
+54
+00:02:51,291 --> 00:02:52,560
+OK.
+
+55
+00:02:52,560 --> 00:02:56,070
+So let's go over to one of the
+
+56
+00:02:56,070 --> 00:02:58,270
+scraping books project for example,
+
+57
+00:02:59,650 --> 00:03:03,010
+that we created earlier on in the course.
+
+58
+00:03:03,010 --> 00:03:05,020
+Then we can type the ls command and we can see
+
+59
+00:03:05,020 --> 00:03:07,020
+that we've got a few things here.
+
+60
+00:03:08,110 --> 00:03:09,590
+Some of these things are newer,
+
+61
+00:03:09,590 --> 00:03:11,430
+you may not have seen them yet because they are part of
+
+62
+00:03:11,430 --> 00:03:14,150
+the asynchronous development section.
+
+63
+00:03:14,150 --> 00:03:16,760
+The project here has been modified slightly,
+
+64
+00:03:16,760 --> 00:03:19,050
+but don't worry, all is good,
+
+65
+00:03:19,050 --> 00:03:21,920
+what we've covered in the course has not changed.
+
+66
+00:03:21,920 --> 00:03:23,820
+This is just some new stuff I've added.
+
+67
+00:03:23,820 --> 00:03:25,320
+And you can see that we've got here
+
+68
+00:03:25,320 --> 00:03:28,930
+app.py, we've got this async_request.py,
+
+69
+00:03:28,930 --> 00:03:31,910
+menu.py and so forth.
+
+70
+00:03:31,910 --> 00:03:33,910
+There's even some folders you may not have seen before.
+
+71
+00:03:33,910 --> 00:03:35,640
+Like this __pycache__ folder.
+
+72
+00:03:37,130 --> 00:03:39,420
+That is fine, you don't have to worry about the pycache,
+
+73
+00:03:39,420 --> 00:03:40,820
+it's jus a Python thing.
+
+74
+00:03:42,090 --> 00:03:46,270
+Now, if we wanted to run this project here,
+
+75
+00:03:46,270 --> 00:03:47,760
+we could do that by,
+
+76
+00:03:47,760 --> 00:03:49,688
+in my case I'm going to type python3.6
+
+77
+00:03:49,688 --> 00:03:52,250
+because I remember when we started this project
+
+78
+00:03:52,250 --> 00:03:56,130
+I was using Python 3.6, python3.6 menu.py
+
+79
+00:03:57,570 --> 00:03:59,170
+and then our application starts running
+
+80
+00:03:59,170 --> 00:04:01,680
+and you know, we've got some extra logging
+
+81
+00:04:01,680 --> 00:04:03,270
+that we added later on.
+
+82
+00:04:03,270 --> 00:04:05,940
+I know that you've maybe not seen this,
+
+83
+00:04:05,940 --> 00:04:07,390
+but nonetheless our programme starts working
+
+84
+00:04:07,390 --> 00:04:10,400 line:15% 
+and then you'll see the menu up here
+
+85
+00:04:10,400 --> 00:04:11,450 line:15% 
+and you can interact with it.
+
+86
+00:04:11,450 --> 00:04:13,670 line:15% 
+This is, just your programme running
+
+87
+00:04:13,670 --> 00:04:15,580 line:15% 
+as if it was running inside Python,
+
+88
+00:04:15,580 --> 00:04:17,530 line:15% 
+now it's running inside this text console
+
+89
+00:04:17,530 --> 00:04:18,580 line:15% 
+that you've got here.
+
+90
+00:04:20,350 --> 00:04:22,570 line:15% 
+However, we had to run Python 3.6
+
+91
+00:04:23,510 --> 00:04:27,400 line:15% 
+in order to run this project.
+
+92
+00:04:27,400 --> 00:04:29,410 line:15% 
+If we wanted to create a virtual environment
+
+93
+00:04:29,410 --> 00:04:30,910 line:15% 
+for this project so it was separate
+
+94
+00:04:30,910 --> 00:04:33,090 line:15% 
+from the system installation of Python 3.6,
+
+95
+00:04:34,219 --> 00:04:35,413 line:15% 
+we can do that.
+
+96
+00:04:35,413 --> 00:04:39,900 line:15% 
+All we have to do is a virtualenv venv --python=python,
+
+97
+00:04:39,900 --> 00:04:42,750 line:15% 
+I'm gonna use python3.7 for this virtual environment.
+
+98
+00:04:44,170 --> 00:04:46,960 line:15% 
+This is going to create a brand new virtual environment
+
+99
+00:04:48,610 --> 00:04:50,940 line:15% 
+and now when we type ls, we can see that there is
+
+100
+00:04:50,940 --> 00:04:54,370 line:15% 
+a virtual environment folder that wasn't here before.
+
+101
+00:04:54,370 --> 00:04:56,870 line:15% 
+This is the Python installation
+
+102
+00:04:56,870 --> 00:04:58,880 line:15% 
+that we have copied into here.
+
+103
+00:04:59,917 --> 00:05:04,917 line:15% 
+It doesn't have any of the libraries that it had before.
+
+104
+00:05:05,120 --> 00:05:06,320 line:15% 
+So if we activate,
+
+105
+00:05:07,770 --> 00:05:09,765 line:15% 
+by doing this remember to do,
+
+106
+00:05:09,765 --> 00:05:12,090 line:15% 
+(clears throat) apologies
+
+107
+00:05:12,090 --> 00:05:17,090 line:15% 
+\venv\scripts\activate.bat on windows,
+
+108
+00:05:17,283 --> 00:05:19,360 line:15% 
+don't do that on mac, but do that on Windows.
+
+109
+00:05:19,360 --> 00:05:23,480 line:15% 
+So if we activate and we try to run our menu,
+
+110
+00:05:23,480 --> 00:05:27,210 line:15% 
+now it says no module named whatever it is that we needed.
+
+111
+00:05:28,560 --> 00:05:31,380 line:15% 
+And again, this had changed slightly since the last time
+
+112
+00:05:31,380 --> 00:05:34,880 line:15% 
+that we saw this project, but nonetheless
+
+113
+00:05:34,880 --> 00:05:36,730 line:15% 
+Beautiful Soup would also be another one
+
+114
+00:05:36,730 --> 00:05:38,450 line:15% 
+that wouldn't be found.
+
+115
+00:05:38,450 --> 00:05:41,080 line:15% 
+If so, all you have to do is pip instal
+
+116
+00:05:42,740 --> 00:05:45,380 line:15% 
+and you know, instal everything that it asks you
+
+117
+00:05:45,380 --> 00:05:46,570 line:15% 
+ask it asks you it.
+
+118
+00:05:47,550 --> 00:05:49,050 line:15% 
+We can then repeat, and by the way,
+
+119
+00:05:49,050 --> 00:05:50,810 line:15% 
+I am cycling through all commands by pressing
+
+120
+00:05:50,810 --> 00:05:53,020 line:15% 
+the up arrow in my console.
+
+121
+00:05:53,020 --> 00:05:55,820 line:15% 
+Now it says "requests couldn't be found" so we can
+
+122
+00:05:55,820 --> 00:05:57,720 line:15% 
+instal requests
+
+123
+00:05:58,750 --> 00:06:00,710 line:15% 
+we can also instal Beautiful Soup 4
+
+124
+00:06:01,950 --> 00:06:03,180 line:15% 
+and I think that's it.
+
+125
+00:06:04,840 --> 00:06:06,670
+There you have it, now the programme is running.
+
+126
+00:06:06,670 --> 00:06:08,010
+We've installed all the libraries
+
+127
+00:06:08,010 --> 00:06:09,810
+in our virtual environment that we needed,
+
+128
+00:06:09,810 --> 00:06:11,900
+and our programme is now working.
+
+129
+00:06:12,800 --> 00:06:15,200 line:15% 
+So that's what we need in order to make it work.
+
+130
+00:06:18,350 --> 00:06:20,970 line:15% 
+Now, if you type pip freeze,
+
+131
+00:06:20,970 --> 00:06:23,840 line:15% 
+this is going to give you the libraries that are installed
+
+132
+00:06:23,840 --> 00:06:27,810 line:15% 
+currently, in your version of Python that you're using.
+
+133
+00:06:27,810 --> 00:06:29,020 line:15% 
+The version of Python we're using
+
+134
+00:06:29,020 --> 00:06:31,000 line:15% 
+is the one in our virtual environment.
+
+135
+00:06:31,000 --> 00:06:33,210 line:15% 
+So this gives us the libraries installed
+
+136
+00:06:33,210 --> 00:06:34,750 line:15% 
+in our virtual environment.
+
+137
+00:06:34,750 --> 00:06:38,100 line:15% 
+Notice how they're in the format of aiohdp==3.0.5.
+
+138
+00:06:40,220 --> 00:06:44,610 line:15% 
+So we've got version 3.0.5 of this library.
+
+139
+00:06:44,610 --> 00:06:48,910 line:15% 
+We've got version 2.18.4 of requests and so forth.
+
+140
+00:06:50,130 --> 00:06:53,380 line:15% 
+And it's fairly frequent, when using virtual environments,
+
+141
+00:06:53,380 --> 00:06:56,169 line:15% 
+to actually save these into a file.
+
+142
+00:06:56,169 --> 00:06:58,970 line:15% 
+And just so you don't forget, that these are the versions
+
+143
+00:06:58,970 --> 00:07:01,050 line:15% 
+you've got installed in this virtual environment.
+
+144
+00:07:01,050 --> 00:07:03,640 line:15% 
+When you give this programme to someone else,
+
+145
+00:07:03,640 --> 00:07:06,290 line:15% 
+they can then go and instal the exact same versions.
+
+146
+00:07:07,460 --> 00:07:12,010 line:15% 
+So we can create a new file and put this content in it.
+
+147
+00:07:12,010 --> 00:07:13,470 line:15% 
+You can do that in Python,
+
+148
+00:07:13,470 --> 00:07:15,870 line:15% 
+or you can do that in any other editor.
+
+149
+00:07:17,160 --> 00:07:20,600 line:15% 
+Or if you want, if you're using macOS10 or Linux,
+
+150
+00:07:20,600 --> 00:07:25,060 line:15% 
+you can do pip freeze into requirements.txt.
+
+151
+00:07:26,500 --> 00:07:28,170 line:15% 
+All this does is it says,
+
+152
+00:07:28,170 --> 00:07:31,720 line:15% 
+all the output of pipfreeze, instead of printing it out,
+
+153
+00:07:31,720 --> 00:07:35,430 line:15% 
+dump it into this new file called requirements.txt.
+
+154
+00:07:36,490 --> 00:07:39,660 line:15% 
+OK, now if you were to open requirements.txt,
+
+155
+00:07:39,660 --> 00:07:42,170 line:15% 
+you'd see that it contains all of this stuff.
+
+156
+00:07:43,058 --> 00:07:46,470 line:15% 
+OK, in macOS10 and Linux,
+
+157
+00:07:46,470 --> 00:07:48,620 line:15% 
+you can do the cat command
+
+158
+00:07:48,620 --> 00:07:51,670 line:15% 
+in order to see the contents of a file.
+
+159
+00:07:51,670 --> 00:07:54,460 line:15% 
+So as you can see, when I do cat requirements.txt
+
+160
+00:07:54,460 --> 00:07:56,560 line:15% 
+you can see the contents of the file here.
+
+161
+00:07:58,760 --> 00:08:02,020 line:15% 
+Now, why is this useful,
+
+162
+00:08:02,020 --> 00:08:04,930 line:15% 
+if now I'm going to go and to pip instal?
+
+163
+00:08:04,930 --> 00:08:06,200 line:15% 
+If you share this with someone else,
+
+164
+00:08:06,200 --> 00:08:09,050 line:15% 
+they're gonna have to go and do pip instal aiohttp,
+
+165
+00:08:10,680 --> 00:08:13,810 line:15% 
+I mean do they do this, do they do ==3.0.5
+
+166
+00:08:13,810 --> 00:08:16,230 line:15% 
+in order to instal this specific version?
+
+167
+00:08:16,230 --> 00:08:17,410 line:15% 
+Yeah.
+
+168
+00:08:17,410 --> 00:08:19,230 line:15% 
+This is what you do in order to instal
+
+169
+00:08:19,230 --> 00:08:22,650 line:15% 
+version 3.0.5 of this library.
+
+170
+00:08:22,650 --> 00:08:27,650 line:15% 
+But if you share with them, this requrements.txt file
+
+171
+00:08:28,060 --> 00:08:31,650 line:15% 
+they can actually do -r requirements.txt.
+
+172
+00:08:31,650 --> 00:08:35,490 line:15% 
+So pip instal -r requirements.txt
+
+173
+00:08:35,490 --> 00:08:37,260 line:15% 
+and then they're going to go through and instal
+
+174
+00:08:37,260 --> 00:08:40,060 line:15% 
+all of these libraries, these specific versions of them.
+
+175
+00:08:41,060 --> 00:08:42,400 line:15% 
+So as you can see, this can be really good
+
+176
+00:08:42,400 --> 00:08:45,430 line:15% 
+to share everything you need for a project
+
+177
+00:08:45,430 --> 00:08:47,410 line:15% 
+with someone else.
+
+178
+00:08:47,410 --> 00:08:49,470 line:15% 
+For example, if you're working with someone else,
+
+179
+00:08:49,470 --> 00:08:52,690 line:15% 
+or if you want to participate in some sort of team,
+
+180
+00:08:52,690 --> 00:08:55,960 line:15% 
+you're probably gonna want a requirements.txt file
+
+181
+00:08:55,960 --> 00:08:57,890 line:15% 
+so that you can share it with one another,
+
+182
+00:08:57,890 --> 00:08:59,180 line:15% 
+and make sure that you're all using
+
+183
+00:08:59,180 --> 00:09:01,500 line:15% 
+the same versions of libraries.
+
+184
+00:09:01,500 --> 00:09:03,830 line:15% 
+If one person on the team is using a specific version
+
+185
+00:09:03,830 --> 00:09:05,780 line:15% 
+and someone else is using a different version,
+
+186
+00:09:05,780 --> 00:09:07,720 line:15% 
+you may actually encounter some inconsistencies
+
+187
+00:09:07,720 --> 00:09:10,010 line:15% 
+in some things that may work differently.
+
+188
+00:09:10,010 --> 00:09:11,540 line:15% 
+So make sure to not do that,
+
+189
+00:09:11,540 --> 00:09:15,300 line:15% 
+and by having requirements.txt file is a great first step
+
+190
+00:09:15,300 --> 00:09:17,950 line:15% 
+towards making sure that you're all on the same page.
+
+191
+00:09:19,430 --> 00:09:23,020 line:15% 
+So that is how you would instal everything
+
+192
+00:09:23,020 --> 00:09:24,900 line:15% 
+from my requirements.txt file,
+
+193
+00:09:24,900 --> 00:09:28,050 line:15% 
+and as you can see, it's all pretty straightforward.
+
+194
+00:09:28,050 --> 00:09:30,540
+Over the next few videos, we're going to look at something
+
+195
+00:09:30,540 --> 00:09:34,930
+even more important when working with these projects.
+
+196
+00:09:34,930 --> 00:09:37,230
+And also, this new thing that we're going to look at
+
+197
+00:09:37,230 --> 00:09:40,150
+in these next few videos, is actually the recommended way
+
+198
+00:09:40,150 --> 00:09:42,840
+of managing projects and dependencies in Python,
+
+199
+00:09:42,840 --> 00:09:44,270
+as of Python 3.7.
+
+200
+00:09:45,670 --> 00:09:48,220
+So stay with me and I'll see you on the next video.
+

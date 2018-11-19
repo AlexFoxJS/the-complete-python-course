@@ -1,0 +1,228 @@
+1
+00:00:00,208 --> 00:00:01,797
+<v Jose>Hi there and welcome back.</v>
+
+2
+00:00:01,797 --> 00:00:02,963
+In this video we're looking at how to
+
+3
+00:00:02,963 --> 00:00:05,504
+get data out of multiple pages.
+
+4
+00:00:05,504 --> 00:00:07,351
+So the most important thing is for us
+
+5
+00:00:07,351 --> 00:00:10,127
+to look at what the different pages looks like
+
+6
+00:00:10,127 --> 00:00:12,652
+and how we can go to them.
+
+7
+00:00:12,652 --> 00:00:15,438
+Any patterns you can recognise from doing this
+
+8
+00:00:15,438 --> 00:00:18,590
+are going to help you so much in your programming.
+
+9
+00:00:18,590 --> 00:00:21,563
+As you can see, the url right now of this page
+
+10
+00:00:21,563 --> 00:00:24,063
+is books dot toscrape dot com.
+
+11
+00:00:26,320 --> 00:00:29,730
+If we go down to the bottom and we go to the next page,
+
+12
+00:00:29,730 --> 00:00:32,265
+which by the way, there are 50 of them.
+
+13
+00:00:32,265 --> 00:00:35,104
+This is gonna be an important number later on.
+
+14
+00:00:35,104 --> 00:00:38,264
+You can see that the url changes.
+
+15
+00:00:38,264 --> 00:00:43,141
+And it changes to slash catalogue slash page dash two.
+
+16
+00:00:43,141 --> 00:00:46,141
+But before it was not page dash one.
+
+17
+00:00:47,186 --> 00:00:49,350
+So we can see that we've gone to page dash two
+
+18
+00:00:49,350 --> 00:00:50,979
+and if we go over to the next page,
+
+19
+00:00:50,979 --> 00:00:53,364
+it'll be page dash three and so forth.
+
+20
+00:00:53,364 --> 00:00:56,938
+So what happens if we go to the first page?
+
+21
+00:00:56,938 --> 00:00:58,754
+This is the same page that we were seeing
+
+22
+00:00:58,754 --> 00:01:00,360
+earlier on at the start.
+
+23
+00:01:00,360 --> 00:01:05,330
+But now it has slash catalogue slash page dash one dot html.
+
+24
+00:01:05,330 --> 00:01:08,580
+That means that the home page is either
+
+25
+00:01:10,421 --> 00:01:14,737
+the catalogue slash page one, or it can be just
+
+26
+00:01:14,737 --> 00:01:17,171
+books dot toscrape dot com.
+
+27
+00:01:17,171 --> 00:01:19,555
+Because all the pages can be accessed at
+
+28
+00:01:19,555 --> 00:01:21,637
+slash catalogue slash page dash one
+
+29
+00:01:21,637 --> 00:01:23,862
+this could be helpful for us in extracting
+
+30
+00:01:23,862 --> 00:01:25,612
+all the data we need.
+
+31
+00:01:26,477 --> 00:01:30,044
+Now okay, the next thing is if you want to go
+
+32
+00:01:30,044 --> 00:01:31,847
+to the next page, all you have to do
+
+33
+00:01:31,847 --> 00:01:33,751
+is request a different url.
+
+34
+00:01:33,751 --> 00:01:35,442
+You don't have to click the button.
+
+35
+00:01:35,442 --> 00:01:36,943
+You don't have to make Python click buttons
+
+36
+00:01:36,943 --> 00:01:37,938
+or anything like that.
+
+37
+00:01:37,938 --> 00:01:40,265
+Not that that would work, you can't do that
+
+38
+00:01:40,265 --> 00:01:42,130
+with the knowledge we've got.
+
+39
+00:01:42,130 --> 00:01:45,096
+But you can request a different url entirely.
+
+40
+00:01:45,096 --> 00:01:47,245
+So if you want to get data from 50 pages,
+
+41
+00:01:47,245 --> 00:01:50,336
+which is what we've got, you just have to do
+
+42
+00:01:50,336 --> 00:01:54,014
+a for loop 50 times and each time get all the books
+
+43
+00:01:54,014 --> 00:01:57,339
+out of the page and put them into a list.
+
+44
+00:01:57,339 --> 00:01:59,289
+And at the end you'll end up with a big list
+
+45
+00:01:59,289 --> 00:02:00,907
+of all your books.
+
+46
+00:02:00,907 --> 00:02:04,146
+I'd recommend you try this out now
+
+47
+00:02:04,146 --> 00:02:07,847
+and then we're going to implement this a bit better
+
+48
+00:02:07,847 --> 00:02:12,597
+and we're also going to look at how to extract the 50
+
+49
+00:02:12,597 --> 00:02:16,258
+from this place here so that if the number of pages changes,
+
+50
+00:02:16,258 --> 00:02:18,768
+you're only going to get or you're going to get
+
+51
+00:02:18,768 --> 00:02:23,440
+all of the pages or less pages if there are fewer pages.
+
+52
+00:02:23,440 --> 00:02:25,302
+Okay, that's it for this video.
+
+53
+00:02:25,302 --> 00:02:26,926
+Go and try to implement this.
+
+54
+00:02:26,926 --> 00:02:30,179
+Get the 50 pages by calling this url
+
+55
+00:02:30,179 --> 00:02:32,889
+instead of the url we've got right now
+
+56
+00:02:32,889 --> 00:02:35,511
+and then we'll go and implement this ourselves.
+
+57
+00:02:35,511 --> 00:02:37,678
+See you on the next video.
+

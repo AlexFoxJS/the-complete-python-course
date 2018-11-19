@@ -1,0 +1,1756 @@
+1
+00:00:00,080 --> 00:00:01,620
+Jos: Hola, y bienvenido de nuevo.
+
+2
+00:00:01,620 --> 00:00:04,100
+En esta conferencia, hablamos de
+
+3
+00:00:04,100 --> 00:00:05,710
+entender HTML con BeautifulSoup.
+
+4
+00:00:06,820 --> 00:00:09,210
+Ahora que entendemos la estructura de
+
+5
+00:00:09,210 --> 00:00:11,820
+HTML, podemos decirle a Python cmo entenderlo
+
+6
+00:00:11,820 --> 00:00:14,820
+tambin y cmo extraer algunos datos de l.
+
+7
+00:00:14,820 --> 00:00:16,770
+Debido a que el HTML es
+
+8
+00:00:16,770 --> 00:00:18,858
+muy estructurado, siempre con sus etiquetas de
+
+9
+00:00:18,858 --> 00:00:22,004
+apertura y cierre, es bastante sencillo obtener datos de l.
+
+10
+00:00:22,004 --> 00:00:25,360
+Y como complemento, como parte de esta conferencia,
+
+11
+00:00:25,360 --> 00:00:28,285
+tambin vamos a instalar nuestra primera biblioteca.
+
+12
+00:00:28,285 --> 00:00:31,210
+Debido a que Python no incluye ninguna
+
+13
+00:00:31,210 --> 00:00:35,020
+funcionalidad para comprender HTML, debemos instalar una biblioteca desde
+
+14
+00:00:35,020 --> 00:00:37,610
+el exterior para poder hacerlo.
+
+15
+00:00:37,610 --> 00:00:39,410
+Hay muchas bibliotecas de Python.
+
+16
+00:00:39,410 --> 00:00:41,770
+Es una de las fortalezas de Python, en realidad.
+
+17
+00:00:41,770 --> 00:00:43,750
+Para hacer todo tipo de cosas.
+
+18
+00:00:43,750 --> 00:00:45,677
+Y entender HTML es uno de estos.
+
+19
+00:00:45,677 --> 00:00:47,620
+Hay otras bibliotecas para cosas
+
+20
+00:00:47,620 --> 00:00:50,147
+como hacer desarrollo web, ciencia de datos,
+
+21
+00:00:50,147 --> 00:00:54,070
+mostrar Windows en su monitor y cosas por el estilo.
+
+22
+00:00:54,070 --> 00:00:57,460
+Hay muchas bibliotecas, y vamos a instalar una.
+
+23
+00:00:57,460 --> 00:00:59,880
+Para instalar su biblioteca,
+
+24
+00:00:59,880 --> 00:01:04,880
+tenemos que ir a PyCharm y encontrar sus preferencias.
+
+25
+00:01:06,230 --> 00:01:09,779
+En Mac, est bajo la edicin de la comunidad PyCharm, preferencias, y creo en
+
+26
+00:01:09,779 --> 00:01:11,320
+Windows est bajo el archivo y
+
+27
+00:01:11,320 --> 00:01:13,640
+est en algn lugar abajo en la parte inferior.
+
+28
+00:01:13,640 --> 00:01:15,671
+Entonces, si seleccionas tus
+
+29
+00:01:15,671 --> 00:01:18,230
+preferencias, sers saludado con esta
+
+30
+00:01:18,230 --> 00:01:21,550
+ventana que ya habrs visto.
+
+31
+00:01:21,550 --> 00:01:23,370
+Y aqu, hay una seccin
+
+32
+00:01:23,370 --> 00:01:25,400
+que es particularmente importante para instalar
+
+33
+00:01:25,400 --> 00:01:27,280
+bibliotecas, y este es su proyecto.
+
+34
+00:01:27,280 --> 00:01:29,811
+En su proyecto, puede elegir su
+
+35
+00:01:29,811 --> 00:01:34,811
+intrprete de proyecto, y aqu ver la versin actual de Python
+
+36
+00:01:35,170 --> 00:01:36,540
+que est ejecutando.
+
+37
+00:01:36,540 --> 00:01:39,706
+Entonces como pueden ver, estoy ejecutando 3. 6. 0, porque no
+
+38
+00:01:39,706 --> 00:01:41,309
+hay muchas diferencias entre
+
+39
+00:01:41,309 --> 00:01:43,936
+3. 6. 0 y 3. 6. 4, que es la versin actual.
+
+40
+00:01:43,936 --> 00:01:47,300
+Pero si ests usando 3. 7 o algo as,
+
+41
+00:01:47,300 --> 00:01:48,540
+lo vers aqu.
+
+42
+00:01:49,470 --> 00:01:51,390
+Luego, aqu abajo, ver todas las bibliotecas
+
+43
+00:01:51,390 --> 00:01:52,410
+que tiene instaladas.
+
+44
+00:01:52,410 --> 00:01:53,910
+Es posible que esto est vaco
+
+45
+00:01:53,910 --> 00:01:56,020
+porque acabas de comenzar tu viaje de Python
+
+46
+00:01:56,020 --> 00:01:57,800
+y no tienes muchas cosas instaladas, y
+
+47
+00:01:57,800 --> 00:01:58,808
+eso est bien.
+
+48
+00:01:58,808 --> 00:02:01,688
+Ahora hay otras maneras de instalar bibliotecas que
+
+49
+00:02:01,688 --> 00:02:03,700
+no sean a travs de PyCharm,
+
+50
+00:02:03,700 --> 00:02:07,670
+y vamos a aprender a usar esas otras formas, pero no
+
+51
+00:02:07,670 --> 00:02:08,540
+en este video.
+
+52
+00:02:08,540 --> 00:02:10,350
+Vamos a mantenerlo simple por ahora, y
+
+53
+00:02:10,350 --> 00:02:11,890
+en esta seccin, nos limitaremos a
+
+54
+00:02:11,890 --> 00:02:12,940
+instalar cosas aqu.
+
+55
+00:02:12,940 --> 00:02:14,713
+Solo presiona el cono ms,
+
+56
+00:02:14,713 --> 00:02:16,745
+y aqu puedes ver, todas estas
+
+57
+00:02:16,745 --> 00:02:18,922
+cosas son bibliotecas de Python que puedes
+
+58
+00:02:18,922 --> 00:02:23,310
+instalar, pero Python no hace ningn tipo de desinfeccin, por lo que estas
+
+59
+00:02:23,310 --> 00:02:25,643
+bibliotecas, realmente no sabes lo que hacen.
+
+60
+00:02:25,643 --> 00:02:27,080
+Te recomiendo que no
+
+61
+00:02:27,080 --> 00:02:29,760
+vayas a instalar bibliotecas aleatorias desde aqu.
+
+62
+00:02:29,760 --> 00:02:31,230
+Asegrate de saber lo que
+
+63
+00:02:31,230 --> 00:02:34,180
+quieres antes de pasar por esto e instalar cualquier cosa.
+
+64
+00:02:34,180 --> 00:02:38,060
+Y lo que queremos es una biblioteca llamada beautifulsoup4.
+
+65
+00:02:39,570 --> 00:02:40,761
+Es este aqu.
+
+66
+00:02:40,761 --> 00:02:43,090
+Observe cmo hay dos
+
+67
+00:02:43,090 --> 00:02:46,590
+en este momento, beautifulsoup4-slurp y beautifulsoup4.
+
+68
+00:02:47,590 --> 00:02:50,060
+Queremos instalar beautifulsoup4.
+
+69
+00:02:50,060 --> 00:02:51,260
+Bueno.
+
+70
+00:02:51,260 --> 00:02:53,000
+Hay otros, como
+
+71
+00:02:53,000 --> 00:02:55,570
+BeautifulSoup y muchos otros.
+
+72
+00:02:55,570 --> 00:02:57,570
+Asegrate de elegir beautifulsoup4.
+
+73
+00:02:58,610 --> 00:03:00,270
+Este de aqu es la versin tres.
+
+74
+00:03:00,270 --> 00:03:01,630
+No quiere ir por
+
+75
+00:03:01,630 --> 00:03:05,050
+eso, quiere ir al nmero cuatro, est bien, y luego instalarlo.
+
+76
+00:03:05,050 --> 00:03:06,440
+Como ya lo tengo instalado, mi
+
+77
+00:03:06,440 --> 00:03:08,420
+biblioteca es azul, como puede ver, as que
+
+78
+00:03:08,420 --> 00:03:09,970
+no necesito instalarla de nuevo, pero todo
+
+79
+00:03:09,970 --> 00:03:11,220
+lo que tiene que hacer
+
+80
+00:03:11,220 --> 00:03:13,870
+es seleccionarla, y presionar instalar, y todo debera estar bien. .
+
+81
+00:03:13,870 --> 00:03:15,870
+No necesitas hacer nada ms.
+
+82
+00:03:15,870 --> 00:03:16,780
+Una vez hecho
+
+83
+00:03:16,780 --> 00:03:17,920
+esto, debera ver que
+
+84
+00:03:17,920 --> 00:03:20,360
+BeautifulSoup aparece aqu como lo hizo para m, y
+
+85
+00:03:20,360 --> 00:03:22,420
+eso significa que est listo para usarlo.
+
+86
+00:03:22,420 --> 00:03:24,909
+Presione aplicar, y luego est bien.
+
+87
+00:03:24,909 --> 00:03:27,400
+Una vez que hayas hecho eso,
+
+88
+00:03:27,400 --> 00:03:29,610
+podemos seguir adelante y ver nuestro
+
+89
+00:03:29,610 --> 00:03:32,730
+primer ejemplo de comprensin de HTML utilizando BeautifulSoup.
+
+90
+00:03:32,730 --> 00:03:35,250
+Y tambin veremos exactamente qu hace BeautifulSoup
+
+91
+00:03:35,250 --> 00:03:36,780
+y por qu lo queremos.
+
+92
+00:03:36,780 --> 00:03:38,670
+As que creemos un nuevo archivo
+
+93
+00:03:38,670 --> 00:03:41,420
+de Python, y puede nombrarlo, por ejemplo, simple_HTML.
+
+94
+00:03:43,100 --> 00:03:45,620
+El simple_HTML es porque en este primer ejemplo,
+
+95
+00:03:46,677 --> 00:03:48,940
+vamos a ver un HTML razonablemente simple
+
+96
+00:03:48,940 --> 00:03:51,810
+que podemos entender con BeautifulSoup, y luego en el
+
+97
+00:03:51,810 --> 00:03:53,229
+siguiente ejemplo vamos a
+
+98
+00:03:53,229 --> 00:03:55,480
+ver algo un poco ms complicado.
+
+99
+00:03:55,480 --> 00:03:58,430
+Entonces, qu hace BeautifulSoup?
+
+100
+00:03:58,430 --> 00:04:01,130
+Bueno, voy a crear una variable aqu, que
+
+101
+00:04:01,130 --> 00:04:02,540
+es mi HTML simple,
+
+102
+00:04:02,540 --> 00:04:03,840
+y lo estoy basando aqu.
+
+103
+00:04:05,160 --> 00:04:07,884
+Y mira cmo el HTML est estructurado en sus etiquetas.
+
+104
+00:04:07,884 --> 00:04:11,850
+Puede ver la etiqueta HTML y la etiqueta de cierre
+
+105
+00:04:11,850 --> 00:04:13,060
+HTML, y dentro
+
+106
+00:04:13,060 --> 00:04:15,610
+de esta etiqueta, tiene dos hijos, esencialmente.
+
+107
+00:04:15,610 --> 00:04:18,950
+La etiqueta de la cabeza y la etiqueta del cuerpo.
+
+108
+00:04:18,950 --> 00:04:21,500
+La etiqueta del cuerpo contiene un grupo
+
+109
+00:04:21,500 --> 00:04:24,300
+de nios, como h1, esta p, esta p
+
+110
+00:04:24,300 --> 00:04:25,801
+aqu, esta ul aqu.
+
+111
+00:04:25,801 --> 00:04:29,623
+El ul contiene un grupo de nios, que son estos lis.
+
+112
+00:04:29,623 --> 00:04:33,524
+Ul, dicho sea de paso, significa lista desordenada.
+
+113
+00:04:33,524 --> 00:04:36,200
+Li representa el elemento de la lista.
+
+114
+00:04:36,200 --> 00:04:38,640
+Ya hemos visto h1 para el encabezado
+
+115
+00:04:38,640 --> 00:04:40,570
+uno yp para el prrafo.
+
+116
+00:04:40,570 --> 00:04:41,890
+Tambin observe cmo uno
+
+117
+00:04:41,890 --> 00:04:44,920
+de estos prrafos tiene una clase, clase de subttulos.
+
+118
+00:04:44,920 --> 00:04:46,906
+Lo que BeautifulSoup puede
+
+119
+00:04:46,906 --> 00:04:50,680
+hacer es comprender esta estructura, y puede
+
+120
+00:04:50,680 --> 00:04:52,330
+determinar que head
+
+121
+00:04:52,330 --> 00:04:55,110
+es hija de HTML, y
+
+122
+00:04:55,110 --> 00:04:58,260
+puede determinar que hay dos prrafos.
+
+123
+00:04:58,260 --> 00:05:01,370
+Puede ver los atributos de diferentes elementos, como este
+
+124
+00:05:01,370 --> 00:05:03,050
+subttulo, y tambin puede hacer
+
+125
+00:05:03,050 --> 00:05:04,760
+cosas como buscar, para que
+
+126
+00:05:04,760 --> 00:05:06,590
+pueda decir que estoy buscando un
+
+127
+00:05:06,590 --> 00:05:08,440
+elemento que tenga subttulos de clase,
+
+128
+00:05:08,440 --> 00:05:10,870
+y le dar esta etiqueta p aqu.
+
+129
+00:05:11,720 --> 00:05:13,607
+As que BeautifulSoup se usa
+
+130
+00:05:13,607 --> 00:05:17,202
+para comprender y buscar a travs del cdigo HTML.
+
+131
+00:05:17,202 --> 00:05:20,400
+Por cierto, solo para completar, HTML es
+
+132
+00:05:20,400 --> 00:05:23,709
+muy similar a otro lenguaje llamado XML.
+
+133
+00:05:23,709 --> 00:05:25,610
+Se ven, esencialmente, idnticos,
+
+134
+00:05:25,610 --> 00:05:27,490
+que algunas diferencias menores.
+
+135
+00:05:27,490 --> 00:05:30,460
+As que BeautifulSoup tambin se puede utilizar para entender XML,
+
+136
+00:05:30,460 --> 00:05:32,970
+ya que no vamos a ver eso en este
+
+137
+00:05:32,970 --> 00:05:35,000
+video o, de hecho, en este curso.
+
+138
+00:05:35,000 --> 00:05:36,530
+Entonces, ahora que tenemos
+
+139
+00:05:36,530 --> 00:05:38,150
+nuestra variable, debemos asegurarnos
+
+140
+00:05:38,150 --> 00:05:41,180
+de incluir BeautifulSoup en nuestro archivo para importarlo.
+
+141
+00:05:41,180 --> 00:05:43,238
+Y las importaciones en Python deberan, en general, ir
+
+142
+00:05:43,238 --> 00:05:44,520
+en la parte superior del archivo.
+
+143
+00:05:44,520 --> 00:05:49,080
+As que vamos a hacer desde la importacin de bs4 BeautifulSoup.
+
+144
+00:05:50,250 --> 00:05:53,150
+Te das cuenta de que no estamos usando beautifulsoup4 en ningn lugar?
+
+145
+00:05:53,150 --> 00:05:55,770
+Solo estamos usando bs4.
+
+146
+00:05:55,770 --> 00:05:58,460
+Eso es porque la biblioteca BeautifulSoup se ha codificado,
+
+147
+00:05:58,460 --> 00:06:01,650
+se ha programado para que la importacin ocurra de esta manera.
+
+148
+00:06:01,650 --> 00:06:03,130
+Otras bibliotecas son ligeramente diferentes.
+
+149
+00:06:03,130 --> 00:06:03,963
+En otras
+
+150
+00:06:03,963 --> 00:06:05,050
+bibliotecas, puede
+
+151
+00:06:05,050 --> 00:06:08,165
+hacer algo como desde beautifulsoup4 importar algo,
+
+152
+00:06:08,165 --> 00:06:10,721
+pero en el caso de
+
+153
+00:06:10,721 --> 00:06:15,250
+beautifulsoup4, esto es incorrecto, debe hacerlo desde bs4 importando BeautifulSoup.
+
+154
+00:06:15,250 --> 00:06:16,170
+As es como est codificado.
+
+155
+00:06:16,170 --> 00:06:18,692
+Esto no significa nada especfico.
+
+156
+00:06:18,692 --> 00:06:22,330
+Y luego vamos a darle este HTML
+
+157
+00:06:22,330 --> 00:06:24,750
+a BeautifulSoup para su anlisis.
+
+158
+00:06:24,750 --> 00:06:26,870
+El anlisis es solo un trmino
+
+159
+00:06:26,870 --> 00:06:30,144
+de programacin para entender algo que tiene una estructura.
+
+160
+00:06:30,144 --> 00:06:32,500
+As que voy a crear una
+
+161
+00:06:32,500 --> 00:06:34,510
+variable llamada simple_soup para nuestro
+
+162
+00:06:34,510 --> 00:06:37,296
+HTML simple, y va a ser BeautifulSoup,
+
+163
+00:06:37,296 --> 00:06:40,640
+y esta es una clase, as que crearemos un
+
+164
+00:06:40,640 --> 00:06:42,170
+nuevo objeto de esta
+
+165
+00:06:42,170 --> 00:06:45,802
+clase, vamos a crear un nuevo objeto, y los argumentos
+
+166
+00:06:45,802 --> 00:06:49,280
+tienen que ser el HTML que desea analizar, y
+
+167
+00:06:49,280 --> 00:06:54,000
+como segundo argumento, debe darle una cadena de qu tipo de documento es,
+
+168
+00:06:54,000 --> 00:06:58,110
+y este es un documento HTML, por lo que debemos darle
+
+169
+00:06:58,110 --> 00:06:59,450
+la cadena html. analizador
+
+170
+00:07:01,000 --> 00:07:03,116
+De esa forma, eso le dice
+
+171
+00:07:03,116 --> 00:07:06,970
+a BeautifulSoup que use el analizador html para comprender este documento.
+
+172
+00:07:06,970 --> 00:07:08,277
+Y luego puede entender.
+
+173
+00:07:08,277 --> 00:07:13,220
+Ahora, BeautifulSoup puede revisar este documento y comprenderlo completamente, por
+
+174
+00:07:13,220 --> 00:07:15,469
+lo que podemos hacer cosas
+
+175
+00:07:15,469 --> 00:07:18,630
+como print simple_soup. encuentra h1.
+
+176
+00:07:20,874 --> 00:07:24,532
+Fjate que todo lo que hacemos es acceder a este objeto de
+
+177
+00:07:24,532 --> 00:07:26,156
+sopa, a este simple objeto
+
+178
+00:07:26,156 --> 00:07:28,920
+de sopa, y acceder al mtodo de bsqueda dentro
+
+179
+00:07:28,920 --> 00:07:32,090
+de l y darle lo que queremos encontrar como argumento.
+
+180
+00:07:32,090 --> 00:07:33,730
+En este caso, lo que queremos
+
+181
+00:07:33,730 --> 00:07:35,136
+encontrar es este ttulo uno.
+
+182
+00:07:35,136 --> 00:07:38,022
+Como solo hay un encabezado uno en la
+
+183
+00:07:38,022 --> 00:07:39,972
+pgina, esto nos dar ese elemento.
+
+184
+00:07:39,972 --> 00:07:42,780
+Entonces, lo que voy a hacer es seguir adelante y ejecutar esto.
+
+185
+00:07:42,780 --> 00:07:47,780
+Y puedes ver cmo nos da la etiqueta que encontramos.
+
+186
+00:07:47,850 --> 00:07:50,630
+H1, este es el ttulo y cierra h1.
+
+187
+00:07:52,290 --> 00:07:54,580
+Si desea encontrar el contenido de la
+
+188
+00:07:54,580 --> 00:07:55,830
+etiqueta, a diferencia de
+
+189
+00:07:55,830 --> 00:07:58,240
+la etiqueta completa, por lo que solo
+
+190
+00:07:58,240 --> 00:08:00,185
+se trata de un ttulo, puede
+
+191
+00:08:00,185 --> 00:08:02,400
+hacerlo haciendo simple_soup. encuentra h1, esta
+
+192
+00:08:02,400 --> 00:08:04,900
+es la etiqueta que quieres encontrar,
+
+193
+00:08:04,900 --> 00:08:07,780
+y luego puedes hacerlo. cuerda.
+
+194
+00:08:09,200 --> 00:08:11,470
+Y luego te da esto es un ttulo.
+
+195
+00:08:12,820 --> 00:08:17,820
+Observe cmo nuestra etiqueta h1 es este simple_soup. encuentra h1, y ese es
+
+196
+00:08:19,022 --> 00:08:22,750
+un objeto que tiene esta propiedad aqu, cadena,
+
+197
+00:08:22,750 --> 00:08:24,840
+a la que puedes acceder.
+
+198
+00:08:24,840 --> 00:08:26,200
+No hay magia pasando aqu.
+
+199
+00:08:26,200 --> 00:08:28,328
+Todo esto exactamente lo que hemos visto
+
+200
+00:08:28,328 --> 00:08:32,110
+hasta ahora en Python, estamos instanciando nuevos objetos de tipo tag, en este
+
+201
+00:08:32,110 --> 00:08:34,020
+caso, y luego estamos accediendo a una
+
+202
+00:08:34,020 --> 00:08:35,230
+propiedad de esa etiqueta.
+
+203
+00:08:37,210 --> 00:08:39,940
+Si quisiramos extraer esta funcionalidad en
+
+204
+00:08:39,940 --> 00:08:43,080
+una funcin, podramos hacerlo, por supuesto.
+
+205
+00:08:43,080 --> 00:08:45,540
+Ope, elimin demasiadas cosas all.
+
+206
+00:08:45,540 --> 00:08:47,150
+O ms bien muchas cosas.
+
+207
+00:08:47,150 --> 00:08:49,700
+Podramos decir algo como find_title, y
+
+208
+00:08:51,070 --> 00:08:53,720
+esto podra darnos este contenido aqu.
+
+209
+00:08:54,660 --> 00:08:57,340
+Pep ocho me pide que ponga dos lneas en blanco
+
+210
+00:08:57,340 --> 00:08:59,365
+antes de una definicin de funcin, y
+
+211
+00:08:59,365 --> 00:09:00,768
+luego podemos, por supuesto, encontrar
+
+212
+00:09:00,768 --> 00:09:01,601
+el ttulo aqu.
+
+213
+00:09:01,601 --> 00:09:02,908
+No necesitamos imprimir, porque eso
+
+214
+00:09:02,908 --> 00:09:03,741
+ya est imprimiendo.
+
+215
+00:09:03,741 --> 00:09:04,880
+Cuando ejecutamos eso, obtenemos que
+
+216
+00:09:04,880 --> 00:09:05,990
+este es un azulejo.
+
+217
+00:09:08,640 --> 00:09:10,050
+Bueno.
+
+218
+00:09:10,050 --> 00:09:11,320
+Ahora, otra cosa que
+
+219
+00:09:11,320 --> 00:09:14,990
+podemos hacer es, por ejemplo, encontrar las diferentes cosas en una lista.
+
+220
+00:09:14,990 --> 00:09:16,440
+Hagmoslo ahora.
+
+221
+00:09:16,440 --> 00:09:19,475
+Vamos a hacer def find_list_items,
+
+222
+00:09:19,475 --> 00:09:23,510
+y esta funcin va a imprimir Rolf,
+
+223
+00:09:23,510 --> 00:09:25,450
+Charlie, Jen y Jose.
+
+224
+00:09:25,450 --> 00:09:28,861
+As que ir a buscar estos elementos de la lista.
+
+225
+00:09:28,861 --> 00:09:33,168
+BeautifulSoup los va a devolver como una lista de etiquetas, porque hay
+
+226
+00:09:33,168 --> 00:09:36,320
+muchas de ellas, y luego vamos a obtener los
+
+227
+00:09:36,320 --> 00:09:39,000
+contenidos de las cadenas de cada una.
+
+228
+00:09:39,000 --> 00:09:40,130
+Bueno.
+
+229
+00:09:40,130 --> 00:09:41,458
+Entonces, lo que vamos a
+
+230
+00:09:41,458 --> 00:09:44,708
+hacer es decir list_items = simple_soup. encuentra todos.
+
+231
+00:09:47,300 --> 00:09:49,480
+Y esto nos dar todas las
+
+232
+00:09:49,480 --> 00:09:50,450
+etiquetas, si hay
+
+233
+00:09:50,450 --> 00:09:52,870
+muchas, find solo te dar una.
+
+234
+00:09:52,870 --> 00:09:56,260
+As que vamos a encontrar todo, y luego li.
+
+235
+00:09:56,260 --> 00:09:57,346
+Y lo que va
+
+236
+00:09:57,346 --> 00:10:01,170
+a hacer, es que nos dar estos elementos de la lista que encontramos.
+
+237
+00:10:01,170 --> 00:10:02,182
+Vamos a imprimirlos,
+
+238
+00:10:02,182 --> 00:10:05,320
+solo para que veas exactamente lo que est sucediendo, y
+
+239
+00:10:05,320 --> 00:10:07,935
+tambin voy a llamar a la funcin aqu.
+
+240
+00:10:07,935 --> 00:10:12,935
+Y ahora observe cmo BeautifulSoup nos da una lista de etiquetas, y
+
+241
+00:10:13,020 --> 00:10:15,022
+cada etiqueta es el nombre
+
+242
+00:10:15,022 --> 00:10:18,080
+de lista, e incluye dentro de ella, Rolf.
+
+243
+00:10:18,080 --> 00:10:22,040
+Ahora ya sabes cmo extraer la cadena para cada uno de estos
+
+244
+00:10:22,040 --> 00:10:23,520
+elementos de la lista.
+
+245
+00:10:23,520 --> 00:10:25,600
+Puede usar una lista de comprensin, por ejemplo,
+
+246
+00:10:25,600 --> 00:10:26,870
+para crear una nueva lista
+
+247
+00:10:26,870 --> 00:10:29,204
+de los contenidos de cadena de cada etiqueta.
+
+248
+00:10:29,204 --> 00:10:30,910
+Puedes ir y hacer eso ahora mismo.
+
+249
+00:10:35,090 --> 00:10:36,610
+Estoy seguro de que has logrado.
+
+250
+00:10:36,610 --> 00:10:40,860
+Todo lo que tienes que hacer es decir list_contents is e. cadena, por ejemplo,
+
+251
+00:10:40,860 --> 00:10:44,150
+para e en list_items.
+
+252
+00:10:44,150 --> 00:10:46,870
+E es la variable que estamos creando para revisar cada
+
+253
+00:10:46,870 --> 00:10:49,580
+elemento en list_items, y estamos accediendo a la propiedad de
+
+254
+00:10:49,580 --> 00:10:52,150
+cadena de eso, y poner eso en una nueva lista,
+
+255
+00:10:52,150 --> 00:10:53,825
+que es el contenido de la lista.
+
+256
+00:10:53,825 --> 00:10:56,371
+Ahora, si imprimimos los contenidos de
+
+257
+00:10:56,371 --> 00:10:59,890
+la lista, puede ver que obtenemos una lista de
+
+258
+00:10:59,890 --> 00:11:02,565
+los contenidos, Rolf, Charlie, Jen y Jose.
+
+259
+00:11:02,565 --> 00:11:04,450
+Bueno.
+
+260
+00:11:05,410 --> 00:11:07,790
+Veamos ahora algo un poco ms complicado.
+
+261
+00:11:07,790 --> 00:11:09,310
+Veamos este prrafo.
+
+262
+00:11:09,310 --> 00:11:11,283
+Encontremos el prrafo.
+
+263
+00:11:11,283 --> 00:11:13,070
+Observe cmo hay dos prrafos,
+
+264
+00:11:13,070 --> 00:11:14,180
+por lo que
+
+265
+00:11:14,180 --> 00:11:15,550
+para poder encontrarlo, vamos
+
+266
+00:11:15,550 --> 00:11:18,430
+a tener que darle a BeautifulSoup cierta informacin adems
+
+267
+00:11:18,430 --> 00:11:20,079
+de que estamos buscando un prrafo.
+
+268
+00:11:20,079 --> 00:11:23,660
+Entonces, qu vamos a hacer, vamos a decirle a
+
+269
+00:11:23,660 --> 00:11:25,402
+BeautifulSoup que estamos buscando
+
+270
+00:11:25,402 --> 00:11:28,420
+un prrafo que tenga una clase de subttulos.
+
+271
+00:11:28,420 --> 00:11:31,820
+As que estamos buscando este, no este.
+
+272
+00:11:31,820 --> 00:11:33,400
+Vamos a hacerlo.
+
+273
+00:11:33,400 --> 00:11:35,503
+Vamos a definir una nueva funcin, una vez ms.
+
+274
+00:11:35,503 --> 00:11:36,670
+Find_subtitle.
+
+275
+00:11:39,530 --> 00:11:44,483
+Y lo que vamos a hacer es simplemente encontrar el prrafo, que
+
+276
+00:11:44,483 --> 00:11:47,508
+va a ser simple_soup. encuentre y ahora
+
+277
+00:11:47,508 --> 00:11:51,650
+vamos a darle la etiqueta p que estamos
+
+278
+00:11:51,650 --> 00:11:52,830
+buscando, y
+
+279
+00:11:52,830 --> 00:11:56,360
+luego observe cmo el segundo argumento es
+
+280
+00:11:56,360 --> 00:11:57,463
+un diccionario attrs.
+
+281
+00:11:57,463 --> 00:12:02,463
+Este diccionario attrs son los atributos de la etiqueta
+
+282
+00:12:03,250 --> 00:12:04,870
+que estamos buscando.
+
+283
+00:12:04,870 --> 00:12:06,310
+Entonces, si estamos buscando algo
+
+284
+00:12:06,310 --> 00:12:07,600
+que tenga una clase,
+
+285
+00:12:07,600 --> 00:12:09,220
+le daremos un diccionario que
+
+286
+00:12:09,220 --> 00:12:10,790
+represente lo que estamos buscando.
+
+287
+00:12:10,790 --> 00:12:14,330
+Entonces, en este caso, la clase ser subttulo.
+
+288
+00:12:16,360 --> 00:12:20,200
+De acuerdo, entonces podemos imprimir el prrafo. cadena y debera darnos,
+
+289
+00:12:20,200 --> 00:12:21,350
+una vez
+
+290
+00:12:21,350 --> 00:12:23,022
+que hemos ejecutado
+
+291
+00:12:23,022 --> 00:12:26,980
+la funcin tambin, por supuesto, nuestro subttulo all.
+
+292
+00:12:28,531 --> 00:12:29,364
+Y ah lo tienes.
+
+293
+00:12:29,364 --> 00:12:31,270
+Y as es como puede
+
+294
+00:12:31,270 --> 00:12:33,760
+encontrar algo que tenga un atributo para
+
+295
+00:12:33,760 --> 00:12:35,680
+poder profundizar en una entidad
+
+296
+00:12:35,680 --> 00:12:38,270
+especfica en lugar de una etiqueta ms general.
+
+297
+00:12:38,270 --> 00:12:41,400
+Si tienes muchas etiquetas p en tu
+
+298
+00:12:41,400 --> 00:12:44,300
+cdigo, en tu cdigo HTML, querrs poder
+
+299
+00:12:44,300 --> 00:12:47,210
+restringirlas usando algn otro atributo, en este
+
+300
+00:12:47,210 --> 00:12:49,710
+caso estamos usando la clase.
+
+301
+00:12:49,710 --> 00:12:51,750
+Tenga en cuenta que este HTML es
+
+302
+00:12:51,750 --> 00:12:54,340
+bastante simple, por lo que debemos asegurarnos de aprender
+
+303
+00:12:54,340 --> 00:12:55,950
+un poco ms sobre BeautifulSoup si
+
+304
+00:12:55,950 --> 00:12:57,679
+vamos a hacer algo ms complicado.
+
+305
+00:12:57,679 --> 00:12:59,970
+Hablando de algo ms complicado,
+
+306
+00:12:59,970 --> 00:13:01,969
+ahora encontremos el otro prrafo.
+
+307
+00:13:01,969 --> 00:13:04,691
+Observe cmo BeautifulSoup no puede hacer
+
+308
+00:13:04,691 --> 00:13:08,810
+encontrar el prrafo donde la clase no es un subttulo.
+
+309
+00:13:08,810 --> 00:13:12,530
+Pero lo que podemos hacer es encontrar todos los
+
+310
+00:13:12,530 --> 00:13:16,450
+prrafos y luego eliminar el que tiene esta clase.
+
+311
+00:13:16,450 --> 00:13:17,668
+As que hagmoslo.
+
+312
+00:13:17,668 --> 00:13:22,588
+Qu hacer es decir find_other_paragraph, por
+
+313
+00:13:22,588 --> 00:13:23,587
+ejemplo.
+
+314
+00:13:23,587 --> 00:13:27,600
+Y luego vamos a ver todos los prrafos, ya
+
+315
+00:13:27,600 --> 00:13:28,530
+sabes cmo
+
+316
+00:13:28,530 --> 00:13:31,630
+hacer esto simple_soup. find_all p.
+
+317
+00:13:31,630 --> 00:13:33,670
+Esto nos dar todos los prrafos de la
+
+318
+00:13:33,670 --> 00:13:37,037
+misma manera que hacer esto aqu nos dio todos los elementos de la lista.
+
+319
+00:13:37,037 --> 00:13:39,773
+Y luego vamos a hacer other_paragraph
+
+320
+00:13:39,773 --> 00:13:44,773
+is p for p en los prrafos si el subttulo no
+
+321
+00:13:49,080 --> 00:13:54,080
+est en p. attrs. obtener clase.
+
+322
+00:13:57,798 --> 00:13:59,700
+Y vamos a ver lo que esto
+
+323
+00:13:59,700 --> 00:14:02,150
+nos da, y arreglarlo en solo un momento.
+
+324
+00:14:02,150 --> 00:14:04,770
+Y luego vamos a imprimir el
+
+325
+00:14:04,770 --> 00:14:06,810
+otro prrafo cero. cuerda.
+
+326
+00:14:06,810 --> 00:14:08,400
+Entonces, Que esta pasando aqu?
+
+327
+00:14:08,400 --> 00:14:10,240
+Esto no va a funcionar, por cierto.
+
+328
+00:14:10,240 --> 00:14:12,030
+Pero lo arreglaremos en solo un momento.
+
+329
+00:14:12,030 --> 00:14:13,568
+Estamos encontrando todos los
+
+330
+00:14:13,568 --> 00:14:17,150
+prrafos, luego vamos a poner el prrafo en su
+
+331
+00:14:17,150 --> 00:14:21,050
+totalidad dentro de esta lista, que iteramos sobre los prrafos
+
+332
+00:14:21,050 --> 00:14:23,150
+que encontramos, pero solo vamos
+
+333
+00:14:23,150 --> 00:14:25,270
+a hacer eso si la
+
+334
+00:14:25,270 --> 00:14:26,860
+cadena de subttulos no
+
+335
+00:14:28,196 --> 00:14:30,936
+est en los atributos del prrafo .
+
+336
+00:14:30,936 --> 00:14:35,754
+Y este punto llegar aqu es una forma diferente de hacer esto.
+
+337
+00:14:35,754 --> 00:14:40,754
+Entonces p. attrs, los atributos de p, es un
+
+338
+00:14:41,321 --> 00:14:44,102
+diccionario, como vimos cuando tratamos de acceder aqu.
+
+339
+00:14:44,102 --> 00:14:47,410
+A BeautifulSoup le gustan estos atributos como un diccionario.
+
+340
+00:14:47,410 --> 00:14:48,560
+Entonces, los atributos son
+
+341
+00:14:48,560 --> 00:14:51,840
+un diccionario, y podemos acceder a ellos usando la notacin
+
+342
+00:14:51,840 --> 00:14:54,060
+de corchetes, o usando el mtodo get.
+
+343
+00:14:55,040 --> 00:14:56,750
+El mtodo get tiene un beneficio,
+
+344
+00:14:56,750 --> 00:14:58,480
+que es que no genera un
+
+345
+00:14:58,480 --> 00:15:00,582
+error clave si no puede encontrarlo.
+
+346
+00:15:00,582 --> 00:15:02,830
+En cambio, no devuelve ninguno.
+
+347
+00:15:02,830 --> 00:15:04,730
+Entonces eso es un beneficio del mtodo get.
+
+348
+00:15:05,660 --> 00:15:06,930
+Sin embargo, no va a funcionar.
+
+349
+00:15:06,930 --> 00:15:08,420
+Vamos a ejecutarlo y descubrirlo.
+
+350
+00:15:12,040 --> 00:15:12,873
+Y como pueden
+
+351
+00:15:12,873 --> 00:15:13,990
+ver, obtenemos un error aqu.
+
+352
+00:15:15,188 --> 00:15:17,880
+Y el error es razonable, pero tal vez
+
+353
+00:15:17,880 --> 00:15:20,500
+no tan obvio si no sabes exactamente lo
+
+354
+00:15:20,500 --> 00:15:23,436
+que est pasando en esta lista de comprensin.
+
+355
+00:15:23,436 --> 00:15:27,980
+Entonces dice error tipo, argumento de tipo NoneType
+
+356
+00:15:27,980 --> 00:15:29,961
+no es iterable.
+
+357
+00:15:29,961 --> 00:15:31,178
+Bueno.
+
+358
+00:15:31,178 --> 00:15:33,618
+Entonces, qu est pasando exactamente?
+
+359
+00:15:33,618 --> 00:15:36,967
+Evidentemente, tenemos algo que no es ninguno.
+
+360
+00:15:36,967 --> 00:15:39,400
+Y nos dice que ninguno no es iterable,
+
+361
+00:15:39,400 --> 00:15:41,510
+lo que probablemente podamos aceptar, porque no
+
+362
+00:15:41,510 --> 00:15:43,855
+es una lista o secuencia, ni nada por
+
+363
+00:15:43,855 --> 00:15:44,700
+el estilo.
+
+364
+00:15:44,700 --> 00:15:47,160
+Y est diciendo que ests tratando de iterar sobre eso.
+
+365
+00:15:47,160 --> 00:15:48,853
+Qu estamos tratando de iterar?
+
+366
+00:15:48,853 --> 00:15:50,820
+No estamos iterando sobre nada?
+
+367
+00:15:50,820 --> 00:15:52,420
+Entonces hay dos opciones.
+
+368
+00:15:52,420 --> 00:15:54,190
+Los prrafos podran ser ninguno, y
+
+369
+00:15:54,190 --> 00:15:55,040
+luego te dice
+
+370
+00:15:55,040 --> 00:15:58,324
+que no puedes repetir los prrafos porque no es ninguno.
+
+371
+00:15:58,324 --> 00:16:02,490
+As que vamos a sacar prrafos y ver si ese es el problema.
+
+372
+00:16:02,490 --> 00:16:03,440
+Vamos a ejecutarlo de nuevo.
+
+373
+00:16:05,620 --> 00:16:07,230
+Puede ver que hemos impreso
+
+374
+00:16:07,230 --> 00:16:09,435
+los prrafos, y encontramos ambos prrafos aqu.
+
+375
+00:16:09,435 --> 00:16:11,182
+Entonces este no es el problema.
+
+376
+00:16:11,182 --> 00:16:13,701
+Cuando hacemos p en prrafos, Python
+
+377
+00:16:13,701 --> 00:16:15,940
+estar bien con eso, porque
+
+378
+00:16:15,940 --> 00:16:17,800
+estamos iterando sobre prrafos, prrafos
+
+379
+00:16:17,800 --> 00:16:19,370
+es una lista, as
+
+380
+00:16:19,370 --> 00:16:20,669
+que est bien.
+
+381
+00:16:20,669 --> 00:16:24,870
+La nica otra instancia en la que estamos usando est aqu,
+
+382
+00:16:24,870 --> 00:16:26,660
+p. attrs. obtener.
+
+383
+00:16:26,660 --> 00:16:30,019
+Y acabo de decir que el mtodo get
+
+384
+00:16:30,019 --> 00:16:34,692
+devuelve ninguno si no puede encontrar esto en el diccionario, esta clase.
+
+385
+00:16:34,692 --> 00:16:38,830
+Entonces tenemos dos prrafos.
+
+386
+00:16:38,830 --> 00:16:41,090
+Uno de ellos tiene la
+
+387
+00:16:41,090 --> 00:16:43,020
+clase, el otro no.
+
+388
+00:16:43,020 --> 00:16:45,049
+Entonces para este
+
+389
+00:16:45,049 --> 00:16:50,049
+prrafo, p. attrs. obtener clase va a ser ninguno.
+
+390
+00:16:50,296 --> 00:16:54,458
+Y luego estamos verificando el subttulo no en ninguno, y lo que
+
+391
+00:16:54,458 --> 00:16:56,430
+est haciendo en el fondo,
+
+392
+00:16:56,430 --> 00:16:57,560
+esto es revisar
+
+393
+00:16:57,560 --> 00:17:00,790
+cada elemento, y comparar los subttulos con cada elemento,
+
+394
+00:17:00,790 --> 00:17:02,870
+y decir si existe o no.
+
+395
+00:17:02,870 --> 00:17:05,084
+As que aqu tambin estamos haciendo
+
+396
+00:17:05,084 --> 00:17:10,084
+iteracin, solo que est un poco ms ofuscado por la sintaxis de Python.
+
+397
+00:17:10,740 --> 00:17:12,150
+Pero est haciendo iteraciones, y est
+
+398
+00:17:12,150 --> 00:17:15,550
+diciendo que, oye, p. attrs. obtener una clase no te
+
+399
+00:17:15,550 --> 00:17:16,770
+da ninguna, y luego ests
+
+400
+00:17:16,770 --> 00:17:18,660
+comprobando si hay algo en ella, pero no
+
+401
+00:17:18,660 --> 00:17:20,540
+puedes verificar si algo no est en ninguna,
+
+402
+00:17:20,540 --> 00:17:21,877
+porque eso no tiene ningn sentido.
+
+403
+00:17:21,877 --> 00:17:23,281
+Afortunadamente, el mtodo
+
+404
+00:17:23,281 --> 00:17:26,030
+get nos permite hacer algo que
+
+405
+00:17:26,030 --> 00:17:27,647
+es bastante til.
+
+406
+00:17:27,647 --> 00:17:29,417
+En lugar de
+
+407
+00:17:29,417 --> 00:17:31,240
+devolver ninguno, que es
+
+408
+00:17:31,240 --> 00:17:33,069
+el valor predeterminado, que
+
+409
+00:17:33,069 --> 00:17:36,170
+es, esencialmente, esto, podemos devolver algo
+
+410
+00:17:36,170 --> 00:17:38,930
+ms si no podemos encontrarlo.
+
+411
+00:17:38,930 --> 00:17:39,763
+Entonces, lo que
+
+412
+00:17:39,763 --> 00:17:41,907
+vamos a hacer es devolver una
+
+413
+00:17:41,907 --> 00:17:44,410
+lista vaca si no podemos encontrar la clase
+
+414
+00:17:44,410 --> 00:17:45,550
+en este diccionario.
+
+415
+00:17:46,480 --> 00:17:48,480
+De esa forma, vamos a verificar que el
+
+416
+00:17:48,480 --> 00:17:51,093
+subttulo no est en una lista vaca, sino en ninguno.
+
+417
+00:17:51,093 --> 00:17:53,369
+Vamos a ejecutar esto de nuevo.
+
+418
+00:17:53,369 --> 00:17:57,249
+Ahora puedes ver cmo lo encontramos.
+
+419
+00:17:57,249 --> 00:17:58,590
+Bueno.
+
+420
+00:17:58,590 --> 00:18:00,820
+Por lo tanto, es importante que comprenda exactamente lo
+
+421
+00:18:00,820 --> 00:18:02,010
+que est sucediendo en su
+
+422
+00:18:02,010 --> 00:18:03,680
+cdigo para que pueda depurar sus errores.
+
+423
+00:18:03,680 --> 00:18:05,722
+Pero si no lo hace, contine con la depuracin.
+
+424
+00:18:05,722 --> 00:18:07,560
+Sabemos cmo depurar ahora.
+
+425
+00:18:07,560 --> 00:18:09,820
+Ponga algunas declaraciones impresas tambin es una buena manera.
+
+426
+00:18:09,820 --> 00:18:13,140
+O, de hecho, use el mdulo de registro que hemos
+
+427
+00:18:13,140 --> 00:18:14,216
+aprendido para verificarlo.
+
+428
+00:18:14,216 --> 00:18:18,261
+Ahora hemos analizado algunos anlisis HTML simples en este video.
+
+429
+00:18:18,261 --> 00:18:22,720
+Hemos analizado elementos individuales, como h1.
+
+430
+00:18:22,720 --> 00:18:24,392
+Hemos analizado varios elementos, como la lista.
+
+431
+00:18:24,392 --> 00:18:27,170
+Hemos analizado un elemento especfico, utilizando los
+
+432
+00:18:27,170 --> 00:18:30,080
+atributos, buscando con este diccionario de atributos,
+
+433
+00:18:30,080 --> 00:18:31,780
+y tambin hemos buscado
+
+434
+00:18:31,780 --> 00:18:34,790
+encontrar todos los elementos y luego eliminar algunos
+
+435
+00:18:34,790 --> 00:18:36,830
+utilizando esta p. attrs.
+
+436
+00:18:37,945 --> 00:18:39,900
+Bueno.
+
+437
+00:18:39,900 --> 00:18:41,330
+En el siguiente video, vamos a
+
+438
+00:18:41,330 --> 00:18:43,390
+ver algo un poco ms complejo, as que qudate
+
+439
+00:18:43,390 --> 00:18:44,540
+conmigo, y te ver all.
+

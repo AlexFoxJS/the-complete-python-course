@@ -1,0 +1,1088 @@
+1
+00:00:00,170 --> 00:00:01,360
+<v Narrator>Hi and welcome back.</v>
+
+2
+00:00:01,360 --> 00:00:03,210
+In this video, we're going to be analysing
+
+3
+00:00:03,210 --> 00:00:06,430
+some regex expressions and having a look
+
+4
+00:00:06,430 --> 00:00:08,130
+at a few more examples.
+
+5
+00:00:08,130 --> 00:00:11,750
+If you can go to this website here regexer dot com,
+
+6
+00:00:12,727 --> 00:00:13,560
+at least I think that's how you say it,
+
+7
+00:00:13,560 --> 00:00:14,960
+could be totally wrong there.
+
+8
+00:00:14,960 --> 00:00:19,880
+This is going to allow us to run some regex,
+
+9
+00:00:19,880 --> 00:00:23,130
+try it out and see how it works, a bit better.
+
+10
+00:00:24,370 --> 00:00:25,990
+So if this looks slightly different,
+
+11
+00:00:25,990 --> 00:00:28,080
+don't worry, it sort of changes over time.
+
+12
+00:00:28,080 --> 00:00:30,760
+It looks a bit different than the last time I used it.
+
+13
+00:00:30,760 --> 00:00:34,370
+And what we're gonna do is how we look at what is here?
+
+14
+00:00:34,370 --> 00:00:36,420
+So I'm gonna close that there.
+
+15
+00:00:36,420 --> 00:00:39,300
+And if you wanna keep it open, you can do that.
+
+16
+00:00:39,300 --> 00:00:41,830
+By all means, you just click on this button here.
+
+17
+00:00:41,830 --> 00:00:44,110
+You've got a few menu icons here.
+
+18
+00:00:44,110 --> 00:00:46,280
+We're gonna look at them just a bit later.
+
+19
+00:00:47,210 --> 00:00:48,280
+But essentially what it says is,
+
+20
+00:00:48,280 --> 00:00:50,740
+"regexer is an online tool to learn build
+
+21
+00:00:50,740 --> 00:00:52,920
+"and test regular expressions."
+
+22
+00:00:52,920 --> 00:00:55,190
+So it's a pretty useful thing.
+
+23
+00:00:55,190 --> 00:00:58,590
+Then we have two main things.
+
+24
+00:00:58,590 --> 00:01:01,940
+We have some text and we have an expression.
+
+25
+00:01:02,940 --> 00:01:06,490
+Don't worry about the things here,
+
+26
+00:01:06,490 --> 00:01:09,990
+the slash, slash g, and stuff like that.
+
+27
+00:01:09,990 --> 00:01:13,200
+We will learn about those later on.
+
+28
+00:01:13,200 --> 00:01:14,980
+So do not worry about them.
+
+29
+00:01:16,010 --> 00:01:18,550
+We're gonna be typing our regular expressions
+
+30
+00:01:18,550 --> 00:01:20,652
+within the brackets.
+
+31
+00:01:20,652 --> 00:01:21,485
+You cannot type anywhere else.
+
+32
+00:01:21,485 --> 00:01:23,150
+So it's gonna be within these slashes, sorry.
+
+33
+00:01:23,150 --> 00:01:25,380
+And here we're gonna type our regular expressions.
+
+34
+00:01:25,380 --> 00:01:27,110
+And in here we're gonna type the text,
+
+35
+00:01:27,110 --> 00:01:28,960
+against which they're going to match.
+
+36
+00:01:31,230 --> 00:01:33,962
+So, for example, let's say we are looking
+
+37
+00:01:33,962 --> 00:01:38,910
+at this pattern that is charlie.
+
+38
+00:01:38,910 --> 00:01:43,291
+And we want to find out what regular expression
+
+39
+00:01:43,291 --> 00:01:46,380
+matches this text, this word here.
+
+40
+00:01:48,220 --> 00:01:49,260
+So we could do that.
+
+41
+00:01:50,190 --> 00:01:51,790
+The first regular expression that matches
+
+42
+00:01:51,790 --> 00:01:54,490
+a text is charlie.
+
+43
+00:01:55,890 --> 00:01:58,780
+So if you put the entire word, charlie, in there,
+
+44
+00:01:58,780 --> 00:02:02,790
+this shows you as a blue box, that these two match.
+
+45
+00:02:04,410 --> 00:02:06,010
+Down here in the tools section,
+
+46
+00:02:06,010 --> 00:02:10,269
+it tells you exactly why it's matching.
+
+47
+00:02:10,269 --> 00:02:11,220
+So you've got the character c,
+
+48
+00:02:11,220 --> 00:02:13,130
+which matches the character c.
+
+49
+00:02:13,130 --> 00:02:16,770
+Character h, which matches the character h, and so forth.
+
+50
+00:02:16,770 --> 00:02:19,500
+Because you've got all these characters in this order,
+
+51
+00:02:19,500 --> 00:02:21,730
+that matches exactly this word.
+
+52
+00:02:24,410 --> 00:02:26,350
+But of course, this is too simple.
+
+53
+00:02:26,350 --> 00:02:28,740
+So we can do something else.
+
+54
+00:02:28,740 --> 00:02:31,620
+Notice that if you type the character c in here
+
+55
+00:02:31,620 --> 00:02:33,410
+you match only the c.
+
+56
+00:02:35,150 --> 00:02:38,230
+If you only type the character h you're matching only the h.
+
+57
+00:02:38,230 --> 00:02:41,870
+You've essentially found, using this expression here
+
+58
+00:02:41,870 --> 00:02:46,000
+some text, some pattern, within this text.
+
+59
+00:02:46,000 --> 00:02:47,600
+In this case, the pattern you are looking for
+
+60
+00:02:47,600 --> 00:02:51,440
+is the letter h and you have been able to find it.
+
+61
+00:02:51,440 --> 00:02:54,240
+If you type p, notice how you don't
+
+62
+00:02:54,240 --> 00:02:57,100
+get any blue boxes here because the p
+
+63
+00:02:57,100 --> 00:02:59,980
+does not match any word or any letter in here.
+
+64
+00:03:03,290 --> 00:03:05,860
+So the next thing we could do is we could
+
+65
+00:03:05,860 --> 00:03:08,590
+type in one of our already known regular
+
+66
+00:03:08,590 --> 00:03:10,780
+expressions, the dot.
+
+67
+00:03:11,700 --> 00:03:13,650
+Notice that as soon as you type the dot
+
+68
+00:03:14,490 --> 00:03:18,030
+you get a lot of individual little boxes,
+
+69
+00:03:18,030 --> 00:03:19,690
+one for each letter.
+
+70
+00:03:19,690 --> 00:03:22,140
+That's because the dot matches any character
+
+71
+00:03:22,140 --> 00:03:25,050
+except the new line or the line break.
+
+72
+00:03:26,220 --> 00:03:30,140
+So what you've got is the dot matches the c.
+
+73
+00:03:30,140 --> 00:03:31,630
+The dot matches the h.
+
+74
+00:03:31,630 --> 00:03:33,490
+The dot matches the a.
+
+75
+00:03:33,490 --> 00:03:36,070
+But it doesn't match the word, because
+
+76
+00:03:36,070 --> 00:03:38,580
+the dot only matches one character.
+
+77
+00:03:39,590 --> 00:03:42,010
+If you wanted to match many characters,
+
+78
+00:03:42,010 --> 00:03:45,120
+you would use, for example, the star.
+
+79
+00:03:45,120 --> 00:03:47,348
+So you've got the dot star, which means
+
+80
+00:03:47,348 --> 00:03:52,130
+any of or zero or more of the dot.
+
+81
+00:03:52,130 --> 00:03:55,330
+And now notice how you get the box around the entire word.
+
+82
+00:03:57,090 --> 00:03:58,450
+So what we've done here is we have
+
+83
+00:03:58,450 --> 00:04:02,200
+now defined our regular expression pattern,
+
+84
+00:04:02,200 --> 00:04:04,520
+which says that we want to match,
+
+85
+00:04:04,520 --> 00:04:09,520
+in our text, anything any any amount of it.
+
+86
+00:04:10,310 --> 00:04:12,260
+So it matches all our text.
+
+87
+00:04:12,260 --> 00:04:15,110
+And indeed, if we add more text,
+
+88
+00:04:16,520 --> 00:04:17,920
+notice how it keeps matching.
+
+89
+00:04:17,920 --> 00:04:21,350
+It matches everything because the dot matches everything.
+
+90
+00:04:21,350 --> 00:04:23,470
+As soon as we put a new line in there,
+
+91
+00:04:26,570 --> 00:04:28,530
+the new content is not matched.
+
+92
+00:04:28,530 --> 00:04:33,110
+Because the new line character is not matched by the dot.
+
+93
+00:04:33,110 --> 00:04:36,800
+So the dot is going to match from the start,
+
+94
+00:04:36,800 --> 00:04:39,420
+as much as possible, until it reaches
+
+95
+00:04:39,420 --> 00:04:41,180
+a character that it cannot match.
+
+96
+00:04:41,180 --> 00:04:44,020
+And then it's going to signal the end of this pattern.
+
+97
+00:04:46,890 --> 00:04:51,550
+The next thing we can match is some characters.
+
+98
+00:04:51,550 --> 00:04:55,010
+So, for example, once again bring the example of charlie.
+
+99
+00:04:56,709 --> 00:04:59,370
+Notice how, as soon as we type charlie in here,
+
+100
+00:04:59,370 --> 00:05:01,490
+we get charlie matching.
+
+101
+00:05:01,490 --> 00:05:02,860
+Nothing else matches of course,
+
+102
+00:05:02,860 --> 00:05:05,820
+because this is the only instance of charlie we've got.
+
+103
+00:05:10,700 --> 00:05:14,780
+We can do, for example, a, b, or c.
+
+104
+00:05:16,800 --> 00:05:20,410
+So this is in square brackets, we've got a, b, c.
+
+105
+00:05:20,410 --> 00:05:22,360
+And what this is doing is it's matching
+
+106
+00:05:22,360 --> 00:05:25,380
+any of the characters inside the brackets.
+
+107
+00:05:25,380 --> 00:05:28,450
+So as you can see, the character set here
+
+108
+00:05:28,450 --> 00:05:31,320
+says it should match any character in the set.
+
+109
+00:05:31,320 --> 00:05:36,320
+So you've got c matching, you've got a matching there.
+
+110
+00:05:37,647 --> 00:05:39,747
+If we add a b here, the b matches as well.
+
+111
+00:05:40,630 --> 00:05:42,260
+So this is a range.
+
+112
+00:05:42,260 --> 00:05:45,980
+Of course, now that we're matching a, b, or c,
+
+113
+00:05:46,940 --> 00:05:49,600
+we can do, for example, a plus.
+
+114
+00:05:49,600 --> 00:05:54,130
+And that is going to match one or more of this set.
+
+115
+00:05:55,130 --> 00:05:58,880
+So if you have b, b, b, b, you are now matching
+
+116
+00:05:58,880 --> 00:06:01,770
+all of the b's as opposed to each one individually.
+
+117
+00:06:01,770 --> 00:06:03,420
+Notice that when I move the plus,
+
+118
+00:06:04,492 --> 00:06:05,440
+they now match, but they match individually
+
+119
+00:06:05,440 --> 00:06:06,870
+as opposed to all together.
+
+120
+00:06:06,870 --> 00:06:09,290
+When you add the plus, they match all together,
+
+121
+00:06:09,290 --> 00:06:10,620
+as a single thing.
+
+122
+00:06:14,360 --> 00:06:16,253
+Instead of a, b, c, we can select
+
+123
+00:06:16,253 --> 00:06:18,760
+all of the letters from a to c.
+
+124
+00:06:21,810 --> 00:06:24,503
+And notice how now, you match on all the letters
+
+125
+00:06:24,503 --> 00:06:26,670
+except the capital letters.
+
+126
+00:06:26,670 --> 00:06:29,010
+I'm going to delete these b's there.
+
+127
+00:06:29,010 --> 00:06:30,550
+You match all the letters.
+
+128
+00:06:30,550 --> 00:06:32,260
+You don't match the spaces.
+
+129
+00:06:32,260 --> 00:06:34,190
+You don't match the capital letters.
+
+130
+00:06:34,190 --> 00:06:36,810
+Notice how the letters all match individually.
+
+131
+00:06:37,710 --> 00:06:40,450
+If you add a to z plus, or a to zed plus,
+
+132
+00:06:40,450 --> 00:06:42,670
+depending on where you're from,
+
+133
+00:06:42,670 --> 00:06:46,400
+now you see the words start matching on their own.
+
+134
+00:06:46,400 --> 00:06:48,310
+Or at least the parts of the words here
+
+135
+00:06:48,310 --> 00:06:50,310
+start matching on their own.
+
+136
+00:06:50,310 --> 00:06:51,670
+So that's pretty cool.
+
+137
+00:06:51,670 --> 00:06:55,692
+Because now, if we were to run this regular expression
+
+138
+00:06:55,692 --> 00:07:00,440
+using Python, we could extract each word in our text,
+
+139
+00:07:00,440 --> 00:07:01,470
+which is quite nice.
+
+140
+00:07:03,590 --> 00:07:07,320
+If you wanted to match the capital letters as well,
+
+141
+00:07:07,320 --> 00:07:12,050
+you can do that, by just using a capital a there.
+
+142
+00:07:12,050 --> 00:07:13,430
+Now you're matching the capital letters as well
+
+143
+00:07:13,430 --> 00:07:15,280
+and you're matching the whole words.
+
+144
+00:07:15,280 --> 00:07:17,710
+What this is doing is this is a range.
+
+145
+00:07:17,710 --> 00:07:19,450
+So you're matching letters that go from
+
+146
+00:07:19,450 --> 00:07:21,560
+the capital a to lower case zed.
+
+147
+00:07:22,675 --> 00:07:23,560
+Notice how, down here it tells you
+
+148
+00:07:23,560 --> 00:07:26,867
+that these character codes are from 65 to 122.
+
+149
+00:07:26,867 --> 00:07:30,040
+So these are ascii character codes.
+
+150
+00:07:30,040 --> 00:07:31,410
+It just means that you're matching
+
+151
+00:07:31,410 --> 00:07:33,410
+all the letters in that range.
+
+152
+00:07:33,410 --> 00:07:37,360
+So that's a to z, right to zed in lower case.
+
+153
+00:07:37,360 --> 00:07:39,270
+And also a to zed in upper case.
+
+154
+00:07:40,750 --> 00:07:45,750
+So here's another example, if you type Jose,
+
+155
+00:07:46,580 --> 00:07:50,490
+a to zed plus, matches the entire word.
+
+156
+00:07:50,490 --> 00:07:54,220
+A to zed alone matches each character individually.
+
+157
+00:07:55,060 --> 00:07:58,690
+And if you put a dot in the middle,
+
+158
+00:07:58,690 --> 00:08:02,470
+you're matching J-O and S-E, but you're
+
+159
+00:08:02,470 --> 00:08:03,930
+not matching the dot.
+
+160
+00:08:07,080 --> 00:08:11,280
+Of course, if you then put the dot in here,
+
+161
+00:08:11,280 --> 00:08:14,177
+the back slash dot, now you are matching
+
+162
+00:08:14,177 --> 00:08:19,177
+anything in that range, or this dot, any number of that.
+
+163
+00:08:21,040 --> 00:08:22,610
+So, remember the square brackets
+
+164
+00:08:22,610 --> 00:08:24,320
+are a character set, so you're matching
+
+165
+00:08:24,320 --> 00:08:27,170
+any character inside the square brackets.
+
+166
+00:08:27,170 --> 00:08:28,810
+This is a range of characters that matches
+
+167
+00:08:28,810 --> 00:08:32,240
+a, b, c, d, e, f, g, blah, blah, blah, blah, up to zed.
+
+168
+00:08:32,240 --> 00:08:34,380
+And this much is the dot.
+
+169
+00:08:34,380 --> 00:08:36,820
+And you're matching any number of them.
+
+170
+00:08:36,820 --> 00:08:40,100
+If you put the dot in here, without the back slash,
+
+171
+00:08:40,100 --> 00:08:42,030
+you're matching anything.
+
+172
+00:08:42,030 --> 00:08:45,840
+So you no longer need these things.
+
+173
+00:08:51,580 --> 00:08:52,910
+Let's do that.
+
+174
+00:08:56,450 --> 00:08:58,300
+Let's look again at the emails.
+
+175
+00:08:58,300 --> 00:09:02,120
+Let's look at, for example jose@tecladocode.com.
+
+176
+00:09:02,120 --> 00:09:07,120
+Notice how a to zed back slash dot plus
+
+177
+00:09:07,200 --> 00:09:10,010
+matches the Jose because that is four
+
+178
+00:09:10,010 --> 00:09:11,930
+characters in this range.
+
+179
+00:09:11,930 --> 00:09:13,640
+And it matches tecladocode.com
+
+180
+00:09:13,640 --> 00:09:16,100
+because it's again, any characters in this range.
+
+181
+00:09:16,100 --> 00:09:18,530
+But it does not match the at symbol.
+
+182
+00:09:20,616 --> 00:09:22,110
+So, of course we could fix it.
+
+183
+00:09:22,110 --> 00:09:26,780
+We could say a to zed, plus and then the at symbol.
+
+184
+00:09:28,160 --> 00:09:31,980
+Because now we've got any character in here
+
+185
+00:09:31,980 --> 00:09:33,130
+a to zed or the dot.
+
+186
+00:09:35,290 --> 00:09:37,350
+Any number of those and then an at symbol.
+
+187
+00:09:37,350 --> 00:09:40,830
+But notice how now we're only matching Jose at
+
+188
+00:09:40,830 --> 00:09:43,660
+because that's the only thing that matches this.
+
+189
+00:09:43,660 --> 00:09:46,920
+If we put an at symbol here, now it matches the entire thing
+
+190
+00:09:48,715 --> 00:09:50,510
+because a to zed and the dot matches this,
+
+191
+00:09:50,510 --> 00:09:53,140
+the new at symbol has to match too.
+
+192
+00:09:55,070 --> 00:09:56,770
+So what can we do instead of that?
+
+193
+00:09:58,494 --> 00:10:03,494
+Well, we can add some more ranges here, a to zed plus.
+
+194
+00:10:03,820 --> 00:10:07,970
+And now we're matching Jose@tecaldocode
+
+195
+00:10:09,270 --> 00:10:13,050
+because we've got our first letter range here,
+
+196
+00:10:13,050 --> 00:10:15,310
+the plus, which says more than one,
+
+197
+00:10:17,084 --> 00:10:19,430
+the at symbol which matches exactly this at symbol.
+
+198
+00:10:19,430 --> 00:10:21,680
+And then we've got another range with a plus,
+
+199
+00:10:22,630 --> 00:10:23,830
+that matches another number of characters here,
+
+200
+00:10:23,830 --> 00:10:25,940
+but then we don't match this dot.
+
+201
+00:10:27,144 --> 00:10:28,080
+If we wanted to match the dot,
+
+202
+00:10:28,080 --> 00:10:30,510
+we would have to add the dot in there
+
+203
+00:10:30,510 --> 00:10:32,010
+and now it matches everything.
+
+204
+00:10:35,566 --> 00:10:38,290
+Now, if we wanted to only match
+
+205
+00:10:38,290 --> 00:10:41,320
+some of these TLDs, like for example,
+
+206
+00:10:41,320 --> 00:10:45,310
+dot com or dot net, we could do that,
+
+207
+00:10:45,310 --> 00:10:46,990
+but then we will have to restructure
+
+208
+00:10:46,990 --> 00:10:49,510
+our regular expressions, slightly.
+
+209
+00:10:49,510 --> 00:10:52,350
+Instead of doing that, we could do this.
+
+210
+00:10:53,360 --> 00:10:55,610
+Now the dot is outside this range,
+
+211
+00:10:55,610 --> 00:10:57,380
+so it's only included once.
+
+212
+00:10:58,230 --> 00:11:00,450
+And as soon as we reach that, we stopped
+
+213
+00:11:00,450 --> 00:11:04,030
+because this dot is outside the range.
+
+214
+00:11:04,030 --> 00:11:08,020
+So again, what we're matching, is a to zed or any dots,
+
+215
+00:11:08,020 --> 00:11:09,290
+any number of times.
+
+216
+00:11:09,290 --> 00:11:10,123
+And that's Jose.
+
+217
+00:11:11,200 --> 00:11:14,060
+We've got the at symbol, which matches the at symbol.
+
+218
+00:11:14,060 --> 00:11:15,990
+A to zed plus which matches any number
+
+219
+00:11:17,143 --> 00:11:19,011
+of letters at tecladocode.
+
+220
+00:11:19,011 --> 00:11:21,280
+And then we've got the dot which matches the dot.
+
+221
+00:11:21,280 --> 00:11:22,929
+Now we have to decide how to match the dot com.
+
+222
+00:11:22,929 --> 00:11:25,639
+So we can do, we can put a com.
+
+223
+00:11:25,639 --> 00:11:30,639
+And that will match of course, because we've got com there.
+
+224
+00:11:31,772 --> 00:11:36,380
+Or we can do, for example, com slash or pipe me.
+
+225
+00:11:39,444 --> 00:11:42,450
+So then it'll match dot com but it will also match dot me.
+
+226
+00:11:42,450 --> 00:11:44,420
+But it won't match dot net for example.
+
+227
+00:11:44,420 --> 00:11:47,700
+Notice how now nothing matches in this pattern.
+
+228
+00:11:47,700 --> 00:11:50,750
+This pattern does not match this at all.
+
+229
+00:11:51,780 --> 00:11:54,540
+As soon as we change it to me, though, it does match.
+
+230
+00:11:54,540 --> 00:11:57,990
+Because now Jose is here, at symbol's there,
+
+231
+00:11:57,990 --> 00:12:01,790
+tecladocode is there, the dot is there, and the me is here.
+
+232
+00:12:01,790 --> 00:12:04,730
+So what the pipe means is either of these two.
+
+233
+00:12:06,160 --> 00:12:07,330
+And what the bracket means, it just
+
+234
+00:12:07,330 --> 00:12:10,560
+allows you to capture things and combine them together.
+
+235
+00:12:15,419 --> 00:12:17,970
+So there's a lot more to regular expressions than this.
+
+236
+00:12:17,970 --> 00:12:20,580
+There are ways to match numbers.
+
+237
+00:12:20,580 --> 00:12:22,500
+There's ways to match addresses.
+
+238
+00:12:22,500 --> 00:12:25,407
+And these are very long and complicated regular expressions.
+
+239
+00:12:25,407 --> 00:12:28,050
+And I encourage you to play around
+
+240
+00:12:28,050 --> 00:12:31,210
+with this website, try a few things out.
+
+241
+00:12:31,210 --> 00:12:33,250
+And also, if you look at the menu, you've
+
+242
+00:12:33,250 --> 00:12:34,630
+got here a reference.
+
+243
+00:12:35,867 --> 00:12:37,060
+This can tell you a bit more about
+
+244
+00:12:37,060 --> 00:12:38,490
+the different things that you can
+
+245
+00:12:38,490 --> 00:12:40,520
+use in regular expressions.
+
+246
+00:12:40,520 --> 00:12:42,120
+And also, there's a cheat sheet that tells you
+
+247
+00:12:42,120 --> 00:12:44,980
+a bit more information about regular expressions.
+
+248
+00:12:44,980 --> 00:12:47,260
+Regular expressions will take a few hours
+
+249
+00:12:47,260 --> 00:12:49,010
+to cover comprehensively.
+
+250
+00:12:49,010 --> 00:12:51,950
+So it's not something that I think we wanna get into.
+
+251
+00:12:51,950 --> 00:12:53,870
+But of course, if you have any questions
+
+252
+00:12:53,870 --> 00:12:55,800
+or if you wanna match any specific patterns
+
+253
+00:12:55,800 --> 00:12:57,670
+and you don't know how, by all means
+
+254
+00:12:57,670 --> 00:12:59,940
+go ahead and ask, in the course q and a
+
+255
+00:12:59,940 --> 00:13:00,860
+or in the Slack channel.
+
+256
+00:13:00,860 --> 00:13:03,410
+And I'll be more than happy to help you.
+
+257
+00:13:03,410 --> 00:13:05,350
+As we progress through the course,
+
+258
+00:13:05,350 --> 00:13:08,140
+we're going to be using some more regular expressions.
+
+259
+00:13:08,140 --> 00:13:11,030
+And when we do that, we will look into them.
+
+260
+00:13:11,030 --> 00:13:13,260
+I just don't want to turn this into
+
+261
+00:13:13,260 --> 00:13:16,510
+a course for you to learn all about regular expressions.
+
+262
+00:13:16,510 --> 00:13:18,130
+Because I think that can be quite boring
+
+263
+00:13:18,130 --> 00:13:20,290
+for some people who just wanna continue
+
+264
+00:13:20,290 --> 00:13:21,960
+and do some programming.
+
+265
+00:13:21,960 --> 00:13:24,166
+Again, any questions, please come and ask me.
+
+266
+00:13:24,166 --> 00:13:26,010
+I'll be more than happy to help.
+
+267
+00:13:26,010 --> 00:13:27,400
+But other than that, let's move on.
+
+268
+00:13:27,400 --> 00:13:29,450
+We've understood a bit of what regular
+
+269
+00:13:29,450 --> 00:13:30,550
+expressions are about.
+
+270
+00:13:30,550 --> 00:13:32,470
+We can now start using them and really
+
+271
+00:13:32,470 --> 00:13:34,070
+understand them when we do that.
+
+272
+00:13:34,998 --> 00:13:36,180
+I'll see you in the next video.
+

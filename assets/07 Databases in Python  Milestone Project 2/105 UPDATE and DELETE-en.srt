@@ -1,0 +1,196 @@
+1
+00:00:00,027 --> 00:00:01,464
+<v Instructor>Hi, welcome back.</v>
+
+2
+00:00:01,464 --> 00:00:04,110
+In this video, we're looking at update and delete.
+
+3
+00:00:04,110 --> 00:00:05,595
+I wanted to talk about this briefly
+
+4
+00:00:05,595 --> 00:00:07,465
+before going into filtering
+
+5
+00:00:07,465 --> 00:00:11,019
+just so you know why filtering is so important.
+
+6
+00:00:11,019 --> 00:00:14,600
+Let's say we've got this table here of our people,
+
+7
+00:00:14,600 --> 00:00:17,633
+and we want to do an update.
+
+8
+00:00:17,633 --> 00:00:20,413
+This is a good old normal update statement.
+
+9
+00:00:20,413 --> 00:00:23,368
+We do update and the table name that we want to update,
+
+10
+00:00:23,368 --> 00:00:26,352
+and then we say set and we give the column
+
+11
+00:00:26,352 --> 00:00:28,272
+and the value we want to end up with.
+
+12
+00:00:28,272 --> 00:00:31,216
+So here we're going to essentially update the people table,
+
+13
+00:00:31,216 --> 00:00:34,883
+setting the name column to be equal to Jose.
+
+14
+00:00:36,284 --> 00:00:39,101
+I hope you realise what this is going to do,
+
+15
+00:00:39,101 --> 00:00:40,961
+but if you don't, that's totally okay.
+
+16
+00:00:40,961 --> 00:00:44,651
+We're not telling it to update any given row.
+
+17
+00:00:44,651 --> 00:00:47,036
+We've just said update the whole table
+
+18
+00:00:47,036 --> 00:00:49,041
+and set the name column to Jose.
+
+19
+00:00:49,041 --> 00:00:52,103
+So, of course, it's going to do just that.
+
+20
+00:00:52,103 --> 00:00:54,311
+Notice how in our results,
+
+21
+00:00:54,311 --> 00:00:57,144
+all the rows now have a name Jose.
+
+22
+00:00:59,156 --> 00:01:01,321
+It's a good name, but you probably don't want to change
+
+23
+00:01:01,321 --> 00:01:03,506
+all your customers or all your people in your table
+
+24
+00:01:03,506 --> 00:01:05,006
+to have this name.
+
+25
+00:01:05,892 --> 00:01:10,124
+It would get a bit boring, so this is not a good thing.
+
+26
+00:01:10,124 --> 00:01:12,780
+What we've done here is we've said update the people table
+
+27
+00:01:12,780 --> 00:01:14,435
+and set the name to something,
+
+28
+00:01:14,435 --> 00:01:15,633
+but, of course, we've not told it
+
+29
+00:01:15,633 --> 00:01:18,083
+what we want to update specifically
+
+30
+00:01:18,083 --> 00:01:20,887
+so it's just gone and done everything.
+
+31
+00:01:20,887 --> 00:01:24,423
+Here's another example: delete from people.
+
+32
+00:01:24,423 --> 00:01:27,484
+This is a delete statement, allows us to delete a row,
+
+33
+00:01:27,484 --> 00:01:29,359
+or multiple rows in this case,
+
+34
+00:01:29,359 --> 00:01:34,109
+and again we've not told it what to delete so, of course,
+
+35
+00:01:34,955 --> 00:01:37,474
+it's all going to go,
+
+36
+00:01:37,474 --> 00:01:40,106
+and we'll end up with an empty table.
+
+37
+00:01:40,106 --> 00:01:42,410
+This is why we need filtering.
+
+38
+00:01:42,410 --> 00:01:45,152
+We need to be able to say delete from people
+
+39
+00:01:45,152 --> 00:01:47,674
+but only these specific rows.
+
+40
+00:01:47,674 --> 00:01:51,185
+Otherwise, we'll end up with everything deleted,
+
+41
+00:01:51,185 --> 00:01:54,572
+and, trust me, you don't want to do this.
+
+42
+00:01:54,572 --> 00:01:58,397
+This happens a lot, it happens to everyone eventually,
+
+43
+00:01:58,397 --> 00:02:01,877
+that you forget to put in a filtering statement in there,
+
+44
+00:02:01,877 --> 00:02:03,643
+and it is a dangerous thing to do,
+
+45
+00:02:03,643 --> 00:02:05,077
+so you don't want to do this.
+
+46
+00:02:05,077 --> 00:02:06,728
+Let's look in the very next video
+
+47
+00:02:06,728 --> 00:02:08,749
+at how to use filtering to make sure
+
+48
+00:02:08,749 --> 00:02:10,494
+that this problem doesn't happen.
+
+49
+00:02:10,494 --> 00:02:12,077
+I'll see you there.
+

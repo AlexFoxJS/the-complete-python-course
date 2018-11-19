@@ -1,0 +1,420 @@
+1
+00:00:00,290 --> 00:00:01,680
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,680 --> 00:00:02,530
+Finally in this section,
+
+3
+00:00:02,530 --> 00:00:05,640
+I also wanted to tell you about the enumerate function.
+
+4
+00:00:05,640 --> 00:00:07,810
+It's a function that a lot of beginner developers
+
+5
+00:00:07,810 --> 00:00:10,020
+don't know about until eventually
+
+6
+00:00:10,020 --> 00:00:12,890
+they find this instance where, you know,
+
+7
+00:00:12,890 --> 00:00:14,250
+it could be quite useful.
+
+8
+00:00:14,250 --> 00:00:16,710
+Then they go and ask a question somewhere on the internet,
+
+9
+00:00:16,710 --> 00:00:18,450
+and somebody comes back who's saying, oh, of course.
+
+10
+00:00:18,450 --> 00:00:20,250
+Use the enumerate function, you know?
+
+11
+00:00:20,250 --> 00:00:22,390
+It does exactly what you need.
+
+12
+00:00:22,390 --> 00:00:24,410
+So here's an example of where
+
+13
+00:00:24,410 --> 00:00:27,040
+you might want to use the enumerate function.
+
+14
+00:00:27,040 --> 00:00:29,700
+Let's say you've got a list of your top best friends,
+
+15
+00:00:29,700 --> 00:00:31,040
+and I am the first one.
+
+16
+00:00:32,640 --> 00:00:34,140
+And you've got these two here.
+
+17
+00:00:35,290 --> 00:00:38,050
+You could print your top three friends, of course,
+
+18
+00:00:38,050 --> 00:00:43,050
+as usual, saying my top one friend is top_friends, zero.
+
+19
+00:00:47,850 --> 00:00:52,000
+And you could copy this, and I made a mistake here.
+
+20
+00:00:54,680 --> 00:00:55,750
+There.
+
+21
+00:00:55,750 --> 00:00:58,800
+Of course, you'll have to change this for one and two.
+
+22
+00:00:58,800 --> 00:01:01,360
+And this for two and three.
+
+23
+00:01:01,360 --> 00:01:02,310
+You could run this.
+
+24
+00:01:04,703 --> 00:01:08,500
+I forgot these closing things.
+
+25
+00:01:08,500 --> 00:01:09,333
+You could run these,
+
+26
+00:01:09,333 --> 00:01:11,660
+and you'd get that your top one friend is Jose,
+
+27
+00:01:11,660 --> 00:01:13,380
+which is a good friend to have.
+
+28
+00:01:14,380 --> 00:01:15,590
+A bit boring, of course.
+
+29
+00:01:15,590 --> 00:01:16,460
+We know about loops.
+
+30
+00:01:16,460 --> 00:01:18,010
+We can use loops, right?
+
+31
+00:01:18,010 --> 00:01:20,140
+So, let's use loops.
+
+32
+00:01:20,140 --> 00:01:23,340
+Let's say for I in range three.
+
+33
+00:01:24,400 --> 00:01:26,210
+And then we'll say print.
+
+34
+00:01:26,210 --> 00:01:31,210
+My top, I plus one friend is top_friends, I.
+
+35
+00:01:33,580 --> 00:01:35,610
+Didn't forget anything this time.
+
+36
+00:01:35,610 --> 00:01:37,130
+This is another way, potentially,
+
+37
+00:01:37,130 --> 00:01:39,590
+of getting your top friends,
+
+38
+00:01:39,590 --> 00:01:41,300
+and getting the number in there.
+
+39
+00:01:42,210 --> 00:01:44,260
+We can run this, puts out the same thing.
+
+40
+00:01:45,180 --> 00:01:47,390
+However, when you have to do this,
+
+41
+00:01:47,390 --> 00:01:49,500
+when you want to iterate over something,
+
+42
+00:01:49,500 --> 00:01:52,210
+and you need to access the index,
+
+43
+00:01:52,210 --> 00:01:54,290
+like here you need to access the index
+
+44
+00:01:54,290 --> 00:01:57,470
+so that you know where in the loop you are,
+
+45
+00:01:58,640 --> 00:02:00,520
+then the enumerate function comes in handy.
+
+46
+00:02:00,520 --> 00:02:02,050
+Of course, if you didn't need the index,
+
+47
+00:02:02,050 --> 00:02:03,910
+and you just wanted to list your top three friends,
+
+48
+00:02:03,910 --> 00:02:06,140
+let's say Jose's one of my top friends.
+
+49
+00:02:06,140 --> 00:02:09,180
+You could say for friend in top_friends.
+
+50
+00:02:09,180 --> 00:02:14,180
+And say, friend is one of my top friends.
+
+51
+00:02:15,710 --> 00:02:16,543
+This is totally fine.
+
+52
+00:02:16,543 --> 00:02:17,720
+You don't need the index for anything.
+
+53
+00:02:17,720 --> 00:02:19,740
+Don't need the enumerate function for anything.
+
+54
+00:02:19,740 --> 00:02:21,580
+But, we don't wanna do this right now.
+
+55
+00:02:21,580 --> 00:02:23,800
+We wanna say my top X friend.
+
+56
+00:02:23,800 --> 00:02:25,270
+And for that, you need the index.
+
+57
+00:02:25,270 --> 00:02:27,740
+You need how many times you've gone through the loop.
+
+58
+00:02:27,740 --> 00:02:29,510
+So that you know whether it's top one,
+
+59
+00:02:29,510 --> 00:02:30,610
+top two, or top three.
+
+60
+00:02:31,450 --> 00:02:36,450
+In that case, you can do for I comma friend in enumerate,
+
+61
+00:02:37,000 --> 00:02:38,130
+top_friends.
+
+62
+00:02:39,280 --> 00:02:42,997
+Again, this is pretty similar to the key and value
+
+63
+00:02:42,997 --> 00:02:46,660
+triple de-structuring of the dictionary items
+
+64
+00:02:46,660 --> 00:02:48,890
+that we saw earlier on in the course
+
+65
+00:02:48,890 --> 00:02:50,090
+does the same thing.
+
+66
+00:02:50,090 --> 00:02:52,150
+Only now instead of top_friends I,
+
+67
+00:02:52,150 --> 00:02:53,880
+you can do friend.
+
+68
+00:02:53,880 --> 00:02:55,440
+And that reads a bit nicer,
+
+69
+00:02:55,440 --> 00:02:57,310
+and it's generally just more Pythonic.
+
+70
+00:02:57,310 --> 00:02:59,160
+It's a better piece of code here.
+
+71
+00:02:59,160 --> 00:03:01,010
+Whenever you need to iterate over a loop,
+
+72
+00:03:01,010 --> 00:03:02,930
+and you need access to the index,
+
+73
+00:03:02,930 --> 00:03:04,000
+use the enumerate function.
+
+74
+00:03:04,000 --> 00:03:05,350
+That's what it's there for.
+
+75
+00:03:06,300 --> 00:03:07,290
+Okay.
+
+76
+00:03:07,290 --> 00:03:09,830
+The enumerate function gives you a generator.
+
+77
+00:03:10,680 --> 00:03:12,430
+So these things, as you can see,
+
+78
+00:03:12,430 --> 00:03:13,810
+are all intertwined.
+
+79
+00:03:13,810 --> 00:03:17,380
+So if you had a friend generator,
+
+80
+00:03:17,380 --> 00:03:20,520
+friend_g is enumerate of top_friends.
+
+81
+00:03:20,520 --> 00:03:23,000
+You can also print next of friend_g.
+
+82
+00:03:23,000 --> 00:03:25,500
+And that's gonna give you a tupple, tuple.
+
+83
+00:03:26,949 --> 00:03:28,910
+I need to make a T shirt that says,
+
+84
+00:03:28,910 --> 00:03:30,570
+is it tupple or tuple?
+
+85
+00:03:30,570 --> 00:03:32,311
+That would be a funny one.
+
+86
+00:03:32,311 --> 00:03:35,290
+So as you can see, the first tuple
+
+87
+00:03:35,290 --> 00:03:38,370
+that gets returned here is the zero comma Jose.
+
+88
+00:03:38,370 --> 00:03:39,750
+And that's what's happening here in the four loop.
+
+89
+00:03:39,750 --> 00:03:42,710
+It's just getting the next element out of each thing,
+
+90
+00:03:42,710 --> 00:03:45,334
+and it's de-structuring them, as you know you can do.
+
+91
+00:03:45,334 --> 00:03:49,090
+K V equals next of friend.
+
+92
+00:03:49,090 --> 00:03:51,400
+Then you can print K, and you can print V,
+
+93
+00:03:51,400 --> 00:03:53,550
+and that's just gonna put zero into K,
+
+94
+00:03:53,550 --> 00:03:57,190
+Jose into V, and these stand for key and value, by the way.
+
+95
+00:03:57,190 --> 00:03:58,790
+They're not just random letters.
+
+96
+00:03:59,780 --> 00:04:01,930
+Tuple de-structuring is something you can do.
+
+97
+00:04:01,930 --> 00:04:02,900
+We've mentioned this before.
+
+98
+00:04:02,900 --> 00:04:05,000
+That's why I'm just going over it quickly.
+
+99
+00:04:06,000 --> 00:04:07,960
+And that's how the enumerate function works.
+
+100
+00:04:07,960 --> 00:04:10,210
+So it allows you to get the index,
+
+101
+00:04:10,210 --> 00:04:12,670
+as well as the value, when you go over a list.
+
+102
+00:04:12,670 --> 00:04:14,740
+It can be handy in some situations.
+
+103
+00:04:15,760 --> 00:04:16,740
+Aright, that's it for this video.
+
+104
+00:04:16,740 --> 00:04:17,573
+Thanks for watching,
+
+105
+00:04:17,573 --> 00:04:19,080
+and I'll see you on the next one.
+

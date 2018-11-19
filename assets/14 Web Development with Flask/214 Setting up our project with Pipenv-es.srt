@@ -1,0 +1,512 @@
+1
+00:00:00,130 --> 00:00:01,250
+Jos: Hola y bienvenido de nuevo.
+
+2
+00:00:01,250 --> 00:00:04,650
+En este video, vamos a configurar nuestro proyecto que
+
+3
+00:00:04,650 --> 00:00:07,190
+vamos a crear en esta seccin.
+
+4
+00:00:07,190 --> 00:00:11,230
+He creado una carpeta aqu en mis documentos y lo
+
+5
+00:00:11,230 --> 00:00:12,390
+nico que necesita
+
+6
+00:00:12,390 --> 00:00:14,690
+es crear una carpeta para su
+
+7
+00:00:14,690 --> 00:00:17,400
+proyecto, luego recuerde dnde est la carpeta
+
+8
+00:00:17,400 --> 00:00:20,720
+para que pueda encontrarla en su terminal.
+
+9
+00:00:20,720 --> 00:00:23,370
+Una vez que haya creado una carpeta
+
+10
+00:00:23,370 --> 00:00:24,970
+para su proyecto, entremos
+
+11
+00:00:24,970 --> 00:00:28,230
+en la terminal y creemos nuestro entorno usando Pipenv.
+
+12
+00:00:29,150 --> 00:00:31,790
+De acuerdo, una vez que ests
+
+13
+00:00:31,790 --> 00:00:34,540
+en tu terminal, vamos a este directorio.
+
+14
+00:00:34,540 --> 00:00:38,720
+Recuerde en los sistemas Unix como Mac OS X y
+
+15
+00:00:38,720 --> 00:00:43,090
+Linux, vamos a hacer un CD y luego encontrar la carpeta.
+
+16
+00:00:43,090 --> 00:00:44,740
+En Windows, vas a hacer
+
+17
+00:00:45,710 --> 00:00:48,380
+chdir y luego encontrars la carpeta como C:
+
+18
+00:00:48,380 --> 00:00:51,150
+\ donde sea que est la carpeta.
+
+19
+00:00:51,150 --> 00:00:54,780
+Aqu la carpeta est en mis documentos / teclado-projects
+
+20
+00:00:54,780 --> 00:00:56,250
+/ your-first-flask-app / as
+
+21
+00:00:56,250 --> 00:00:57,680
+que vamos a cd
+
+22
+00:00:58,840 --> 00:01:03,750
+en eso y luego vamos a usar pipenv para instalar Flask.
+
+23
+00:01:04,760 --> 00:01:07,790
+Flask es la biblioteca que vamos a utilizar en esta seccin
+
+24
+00:01:07,790 --> 00:01:09,150
+para crear nuestro sitio web.
+
+25
+00:01:09,150 --> 00:01:10,550
+Es una biblioteca realmente liviana.
+
+26
+00:01:10,550 --> 00:01:12,880
+Aprenderemos mucho sobre cmo
+
+27
+00:01:12,880 --> 00:01:14,890
+funciona en esta seccin.
+
+28
+00:01:14,890 --> 00:01:17,260
+Una vez que haga pipenv instal Flask,
+
+29
+00:01:17,260 --> 00:01:20,030
+asegrese de que est creando un entorno virtual
+
+30
+00:01:20,030 --> 00:01:22,530
+utilizando la versin correcta de Python, en este
+
+31
+00:01:22,530 --> 00:01:24,260
+caso Python 3. 7.
+
+32
+00:01:24,260 --> 00:01:25,270
+S que no puedes ver
+
+33
+00:01:25,270 --> 00:01:27,700
+eso muy bien, pero la versin 3. 7 all.
+
+34
+00:01:27,700 --> 00:01:30,210
+3. 6 est bien, 3. 5.
+
+35
+00:01:30,210 --> 00:01:32,020
+Simplemente no pasa de 3
+
+36
+00:01:33,640 --> 00:01:36,930
+solo por la sintaxis que vamos a usar.
+
+37
+00:01:36,930 --> 00:01:38,420
+Una vez que
+
+38
+00:01:38,420 --> 00:01:41,790
+est instalado, tambin tendr un entorno virtual creado.
+
+39
+00:01:41,790 --> 00:01:43,000
+Ya lo sabes.
+
+40
+00:01:43,000 --> 00:01:45,610
+Pipenv crea un entorno virtual para ti.
+
+41
+00:01:46,980 --> 00:01:48,370
+Recordar este entorno
+
+42
+00:01:48,370 --> 00:01:49,690
+virtual va a
+
+43
+00:01:49,690 --> 00:01:52,390
+ser muy importante porque tendremos que drselo
+
+44
+00:01:52,390 --> 00:01:56,750
+a PyCharm para que PyCharm use la versin de Python correcta.
+
+45
+00:01:56,750 --> 00:01:59,060
+Bueno, ahora que hemos creado esto,
+
+46
+00:01:59,060 --> 00:02:03,290
+tenemos, si hacemos ls o dir en Windows, tenemos un
+
+47
+00:02:03,290 --> 00:02:06,490
+Pipfile y ese Pipfile. bloquear.
+
+48
+00:02:06,490 --> 00:02:07,323
+Estn bajo el Pipfile.
+
+49
+00:02:07,323 --> 00:02:10,160
+Nos da qu bibliotecas estamos instalando.
+
+50
+00:02:10,160 --> 00:02:12,530
+Pipfile. bloqueo nos da un poco
+
+51
+00:02:12,530 --> 00:02:14,550
+de seguridad y tambin instala las versiones correctas.
+
+52
+00:02:15,520 --> 00:02:17,350
+Si compartimos ambos con otras
+
+53
+00:02:17,350 --> 00:02:20,350
+personas, entonces podrn instalar exactamente las mismas versiones
+
+54
+00:02:20,350 --> 00:02:22,600
+que instalamos cuando configuramos el proyecto.
+
+55
+00:02:23,850 --> 00:02:25,050
+Ahora que lo
+
+56
+00:02:25,050 --> 00:02:28,460
+tenemos, recuerde nuevamente la ubicacin de este entorno virtual, y
+
+57
+00:02:28,460 --> 00:02:31,350
+vayamos a PyCharm para crear nuestro nuevo proyecto.
+
+58
+00:02:32,500 --> 00:02:35,130
+Una vez que haya abierto PyCharm, ver una ventana como esta.
+
+59
+00:02:35,130 --> 00:02:37,230
+Simplemente crea un nuevo proyecto y
+
+60
+00:02:37,230 --> 00:02:40,820
+aqu asegrate de seleccionar la ubicacin de tu proyecto.
+
+61
+00:02:40,820 --> 00:02:45,760
+Entonces, en mi caso, esto est en mis documentos /
+
+62
+00:02:48,250 --> 00:02:49,930
+teclado-projects / your-first-flask-app.
+
+63
+00:02:51,120 --> 00:02:52,790
+Asegrese de seleccionar esta
+
+64
+00:02:53,820 --> 00:02:55,720
+carpeta y luego en
+
+65
+00:02:55,720 --> 00:02:58,780
+el intrprete, vamos a buscar el entorno
+
+66
+00:02:58,780 --> 00:03:01,570
+virtual que Pipenv cre para nosotros.
+
+67
+00:03:01,570 --> 00:03:03,100
+Tenga en cuenta que cuando
+
+68
+00:03:03,100 --> 00:03:04,500
+abro esto aqu, obtengo muchos
+
+69
+00:03:04,500 --> 00:03:06,000
+entornos virtuales en diferentes lugares.
+
+70
+00:03:07,200 --> 00:03:10,310
+Vamos a tener que ir y agregar un entorno virtual local
+
+71
+00:03:11,570 --> 00:03:14,120
+y luego encontrar el entorno virtual que tenamos antes
+
+72
+00:03:14,120 --> 00:03:16,550
+para volver a la terminal, en mi caso
+
+73
+00:03:16,550 --> 00:03:21,550
+esto se encuentra en / users / jslvtr. local y as sucesivamente.
+
+74
+00:03:21,860 --> 00:03:24,330
+Entonces PyCharm te permite copiar esto y luego
+
+75
+00:03:25,470 --> 00:03:27,520
+simplemente ponerlo aqu en la ruta.
+
+76
+00:03:28,440 --> 00:03:30,090
+Este es el entorno virtual.
+
+77
+00:03:30,090 --> 00:03:32,340
+Luego lo abrirs, buscars
+
+78
+00:03:32,340 --> 00:03:34,140
+la carpeta bin
+
+79
+00:03:34,140 --> 00:03:36,410
+y encontrars Python.
+
+80
+00:03:36,410 --> 00:03:39,590
+Bien, asegrate de seleccionar python dentro de la carpeta bin
+
+81
+00:03:39,590 --> 00:03:42,550
+y luego presiona OK y ahora PyCharm sabe que esta
+
+82
+00:03:42,550 --> 00:03:44,910
+es la versin de Python que deseas usar.
+
+83
+00:03:44,910 --> 00:03:48,580
+Te va a permitir usar Python 3. 7 sintaxis
+
+84
+00:03:48,580 --> 00:03:50,870
+Va a utilizar los paquetes que
+
+85
+00:03:50,870 --> 00:03:54,810
+estn instalados en este intrprete y no en el sistema Python.
+
+86
+00:03:54,810 --> 00:03:56,980
+Luego podemos presionar Crear y nos preguntar
+
+87
+00:03:56,980 --> 00:04:00,230
+si queremos crear un proyecto a partir de las fuentes existentes.
+
+88
+00:04:00,230 --> 00:04:02,740
+Eso es porque tenemos el Pipfile y el Pipfile. asegrate ya y vamos
+
+89
+00:04:02,740 --> 00:04:05,140
+a decir que s y luego vamos
+
+90
+00:04:06,880 --> 00:04:09,480
+a obtener nuestro nuevo proyecto que ya
+
+91
+00:04:09,480 --> 00:04:11,460
+tiene nuestros dos archivos all.
+
+92
+00:04:13,030 --> 00:04:15,580
+Siempre que quiera instalar nuevas bibliotecas,
+
+93
+00:04:15,580 --> 00:04:18,100
+ahora no debe pasar o puede
+
+94
+00:04:18,100 --> 00:04:19,850
+revisar la configuracin de
+
+95
+00:04:21,210 --> 00:04:23,660
+PyCharm aqu, aqu, pero le recomiendo
+
+96
+00:04:23,660 --> 00:04:27,200
+que vaya a travs de la configuracin de Pipenv
+
+97
+00:04:27,200 --> 00:04:28,410
+usando la terminal.
+
+98
+00:04:28,410 --> 00:04:30,140
+Eso es porque va a
+
+99
+00:04:30,140 --> 00:04:32,080
+instalar algo directamente en el entorno
+
+100
+00:04:32,080 --> 00:04:34,770
+virtual, pero no va a actualizar su Pipfile.
+
+101
+00:04:34,770 --> 00:04:36,770
+Entonces, si quieres instalar ms
+
+102
+00:04:36,770 --> 00:04:38,490
+cosas, puedes pasar por
+
+103
+00:04:38,490 --> 00:04:41,410
+PyCharm, pero probablemente quieras pasar por la terminal.
+
+104
+00:04:41,410 --> 00:04:44,590
+Simplemente instale pipenv lo que sea que necesite.
+
+105
+00:04:44,590 --> 00:04:46,430
+Para este proyecto, no vamos a necesitar
+
+106
+00:04:46,430 --> 00:04:50,030
+nada ms, as que Flask es lo nico que necesitamos y lo tenemos ahora.
+
+107
+00:04:50,030 --> 00:04:54,600
+Si crea un nuevo archivo de Python y lo llama aplicacin. py, deberas poder
+
+108
+00:04:54,600 --> 00:04:58,270
+hacer desde el frasco de flask_import.
+
+109
+00:04:58,270 --> 00:05:00,970
+De acuerdo, si esto no te da ningn error,
+
+110
+00:05:00,970 --> 00:05:02,540
+entonces ests listo para ir.
+
+111
+00:05:02,540 --> 00:05:04,170
+Si esto le da algn
+
+112
+00:05:04,170 --> 00:05:06,810
+error, simplemente verifique su configuracin, verifique su Pipfile, asegrese
+
+113
+00:05:06,810 --> 00:05:08,630
+de que todo est configurado correctamente.
+
+114
+00:05:08,630 --> 00:05:10,200
+Es posible que algo
+
+115
+00:05:10,200 --> 00:05:11,990
+no se haya instalado correctamente,
+
+116
+00:05:11,990 --> 00:05:15,120
+en cuyo caso su Pipfile no mostrar Flask,
+
+117
+00:05:15,120 --> 00:05:17,190
+o es posible que no
+
+118
+00:05:17,190 --> 00:05:20,060
+est utilizando el entorno virtual correcto, en
+
+119
+00:05:20,060 --> 00:05:22,260
+cuyo caso usted quiere regresar y
+
+120
+00:05:22,260 --> 00:05:25,480
+asegurarse de seleccionar el correcto entorno virtual aqu
+
+121
+00:05:25,480 --> 00:05:28,970
+o agregue un entorno virtual local y encuentre el correcto.
+
+122
+00:05:28,970 --> 00:05:31,840
+De acuerdo, asegrate de que Flask est aqu y
+
+123
+00:05:31,840 --> 00:05:33,340
+luego puedes importar Flask.
+
+124
+00:05:34,250 --> 00:05:35,390
+Una vez que
+
+125
+00:05:35,390 --> 00:05:36,710
+todo est listo, puede
+
+126
+00:05:36,710 --> 00:05:38,230
+continuar en el siguiente
+
+127
+00:05:38,230 --> 00:05:40,870
+video donde implementaremos nuestra primera aplicacin web.
+
+128
+00:05:40,870 --> 00:05:41,820
+Te ver all.
+

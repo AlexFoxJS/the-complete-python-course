@@ -1,0 +1,1236 @@
+1
+00:00:00,140 --> 00:00:01,240
+Jos: Hola, y bienvenido!
+
+2
+00:00:01,240 --> 00:00:02,410
+En este video, estamos
+
+3
+00:00:02,410 --> 00:00:03,960
+hablando de resubir errores y
+
+4
+00:00:03,960 --> 00:00:05,520
+el bloque de xito.
+
+5
+00:00:06,430 --> 00:00:09,150
+Como puede ver, he escrito algn cdigo aqu.
+
+6
+00:00:09,150 --> 00:00:10,360
+Eso es solo porque
+
+7
+00:00:10,360 --> 00:00:12,730
+no quera aburrirlo, escribiendo todo este cdigo,
+
+8
+00:00:12,730 --> 00:00:14,850
+especialmente porque es solo cdigo de ejemplo.
+
+9
+00:00:16,030 --> 00:00:18,160
+Este cdigo tambin est disponible en
+
+10
+00:00:18,160 --> 00:00:20,960
+la conferencia de cdigos en GitHub, y esa
+
+11
+00:00:20,960 --> 00:00:24,140
+conferencia se encuentra al comienzo de esta seccin.
+
+12
+00:00:24,140 --> 00:00:26,260
+Por lo tanto, si todava no ha descargado
+
+13
+00:00:26,260 --> 00:00:28,330
+o ha visto el cdigo de esta seccin,
+
+14
+00:00:28,330 --> 00:00:30,610
+puede ir a la primera conferencia de la
+
+15
+00:00:30,610 --> 00:00:33,030
+seccin y acceder al enlace de GitHub que se
+
+16
+00:00:33,030 --> 00:00:35,000
+encuentra all y puede ver este cdigo.
+
+17
+00:00:35,000 --> 00:00:38,160
+El recurso que est adjunto a esta
+
+18
+00:00:38,160 --> 00:00:39,840
+conferencia contiene una explicacin
+
+19
+00:00:39,840 --> 00:00:44,230
+para algn cdigo de muestra razonablemente relacionado tambin, pero no
+
+20
+00:00:44,230 --> 00:00:46,090
+es exactamente lo mismo.
+
+21
+00:00:46,090 --> 00:00:48,620
+Solo porque el recurso adjunto a
+
+22
+00:00:48,620 --> 00:00:49,700
+esta conferencia tiene
+
+23
+00:00:49,700 --> 00:00:52,310
+algunas explicaciones y usa algn pseudo-cdigo
+
+24
+00:00:52,310 --> 00:00:53,940
+para explicar algunos conceptos.
+
+25
+00:00:53,940 --> 00:00:55,810
+El cdigo que estoy viendo aqu en mi
+
+26
+00:00:55,810 --> 00:00:57,380
+pantalla, el cdigo que est viendo en
+
+27
+00:00:57,380 --> 00:00:58,600
+su pantalla, est en el GitHub.
+
+28
+00:00:58,600 --> 00:01:00,670
+Por lo tanto, sintase libre de descargarlo y echar un
+
+29
+00:01:00,670 --> 00:01:01,503
+vistazo si lo desea.
+
+30
+00:01:02,406 --> 00:01:03,350
+Ahora, lo que
+
+31
+00:01:03,350 --> 00:01:05,880
+tenemos es una clase de usuario, nada nuevo
+
+32
+00:01:05,880 --> 00:01:08,540
+aqu, tiene un mtodo init que toma un
+
+33
+00:01:08,540 --> 00:01:10,090
+nombre y nuestro "compromiso" de
+
+34
+00:01:10,090 --> 00:01:11,860
+propiedad, nuestra "participacin" variable, y
+
+35
+00:01:11,860 --> 00:01:14,090
+luego establece el nombre para ser "nombre".
+
+36
+00:01:14,090 --> 00:01:15,520
+y las "mtricas de
+
+37
+00:01:15,520 --> 00:01:17,940
+compromiso" para ser la propiedad de "compromiso" all.
+
+38
+00:01:17,940 --> 00:01:20,040
+Luego tambin hay una funcin de envoltura de
+
+39
+00:01:20,040 --> 00:01:21,700
+dunder que devuelve el nombre del
+
+40
+00:01:21,700 --> 00:01:23,330
+usuario en una cadena muy formateada.
+
+41
+00:01:24,860 --> 00:01:26,780
+Esta clase de usuario va a
+
+42
+00:01:26,780 --> 00:01:28,994
+ser utilizada por esta funcin "get_user_score", que
+
+43
+00:01:28,994 --> 00:01:30,644
+toma el parmetro "usuario".
+
+44
+00:01:31,490 --> 00:01:34,500
+Esto intentar devolver lo que la funcin
+
+45
+00:01:34,500 --> 00:01:36,860
+"perform_calculation" nos brinde, con las
+
+46
+00:01:36,860 --> 00:01:38,100
+mtricas de participacin
+
+47
+00:01:38,100 --> 00:01:40,170
+del usuario pasado, y
+
+48
+00:01:40,170 --> 00:01:42,040
+si falla, imprimir "Se
+
+49
+00:01:42,040 --> 00:01:44,910
+proporcionaron valores incorrectos" con un KeyError.
+
+50
+00:01:45,968 --> 00:01:48,281
+"Perform_calculation" toma las "engagement_metrics" del
+
+51
+00:01:48,281 --> 00:01:51,500
+usuario como un parmetro, all como un argumento,
+
+52
+00:01:51,500 --> 00:01:53,030
+y devuelve la propiedad
+
+53
+00:01:53,030 --> 00:01:55,070
+"clicks" de esas "mtricas", se
+
+54
+00:01:55,070 --> 00:01:57,790
+multiplica por cinco y los "hits"
+
+55
+00:01:57,790 --> 00:01:59,700
+se multiplican por dos.
+
+56
+00:01:59,700 --> 00:02:01,780
+Por lo tanto, imagine que este
+
+57
+00:02:01,780 --> 00:02:03,290
+es un usuario que
+
+58
+00:02:03,290 --> 00:02:06,270
+est visitando un sitio web y queremos calcular su
+
+59
+00:02:06,270 --> 00:02:09,150
+puntaje para ver cun comprometidos estn con nuestra marca.
+
+60
+00:02:10,060 --> 00:02:11,660
+Si los "clics" multiplicados por
+
+61
+00:02:11,660 --> 00:02:12,960
+cinco y las "mtricas",
+
+62
+00:02:12,960 --> 00:02:14,720
+los "aciertos" multiplicados por dos nos
+
+63
+00:02:14,720 --> 00:02:15,970
+dan un valor particular,
+
+64
+00:02:15,970 --> 00:02:17,130
+diremos, ya sabes, esta
+
+65
+00:02:17,130 --> 00:02:18,680
+persona est muy comprometida.
+
+66
+00:02:20,290 --> 00:02:21,320
+Tambin tenemos aqu
+
+67
+00:02:21,320 --> 00:02:22,314
+otra funcin llamada
+
+68
+00:02:22,314 --> 00:02:24,760
+"send_engagement_notification", que les enviar un correo electrnico
+
+69
+00:02:24,760 --> 00:02:27,080
+que diga "Gracias por estar tan comprometidos
+
+70
+00:02:27,080 --> 00:02:29,130
+con nuestra marca, aqu hay un
+
+71
+00:02:29,130 --> 00:02:30,650
+cdigo de cupn para
+
+72
+00:02:30,650 --> 00:02:33,580
+descargar o algo as". "Por supuesto, esto en realidad no
+
+73
+00:02:33,580 --> 00:02:35,290
+enva ningn mensaje de correo electrnico en
+
+74
+00:02:35,290 --> 00:02:37,170
+este momento, pero podramos hacerlo, y veremos el
+
+75
+00:02:37,170 --> 00:02:38,360
+envo de correos electrnicos ms
+
+76
+00:02:38,360 --> 00:02:39,510
+adelante en el curso.
+
+77
+00:02:41,400 --> 00:02:42,870
+Luego, en la parte inferior,
+
+78
+00:02:42,870 --> 00:02:45,680
+estamos creando un usuario, Rolf es el nombre, y estas
+
+79
+00:02:45,680 --> 00:02:47,220
+son las mtricas de participacin.
+
+80
+00:02:47,220 --> 00:02:49,980
+Ha completado 61 clics y 100 visitas.
+
+81
+00:02:50,960 --> 00:02:52,510
+Y luego vamos a llamar
+
+82
+00:02:52,510 --> 00:02:55,070
+a la funcin "get_user_score" aqu para mi usuario.
+
+83
+00:02:55,070 --> 00:02:57,160
+As que este es el cdigo
+
+84
+00:02:57,160 --> 00:02:58,630
+de muestra que tenemos,
+
+85
+00:02:58,630 --> 00:03:00,960
+no demasiado cdigo, espero, bastante comprensible, espero.
+
+86
+00:03:03,450 --> 00:03:05,360
+A veces puede ser til
+
+87
+00:03:05,360 --> 00:03:06,290
+hacer algo
+
+88
+00:03:06,290 --> 00:03:09,110
+con una excepcin, manejarlo, como hacemos aqu.
+
+89
+00:03:09,110 --> 00:03:12,380
+Pero tambin puede ser til no silenciarlo.
+
+90
+00:03:12,380 --> 00:03:15,260
+Es decir, sigue dejando que brote y finalmente
+
+91
+00:03:15,260 --> 00:03:17,110
+bloquee tu programa para que
+
+92
+00:03:17,110 --> 00:03:19,430
+sepas que has hecho algo mal
+
+93
+00:03:19,430 --> 00:03:20,340
+en algn momento.
+
+94
+00:03:22,470 --> 00:03:24,260
+Por ejemplo, la excepcin aqu,
+
+95
+00:03:24,260 --> 00:03:26,290
+"KeyError" est atrapada, y si nos
+
+96
+00:03:26,290 --> 00:03:27,960
+equivocamos y creamos a nuestros
+
+97
+00:03:27,960 --> 00:03:30,610
+usuarios con una "tecla de clic" en
+
+98
+00:03:30,610 --> 00:03:33,750
+lugar de "clics", esto va a fallar con un
+
+99
+00:03:33,750 --> 00:03:35,460
+KeyError porque "clics" ganaron "
+
+100
+00:03:35,460 --> 00:03:37,520
+t sea una clave de nuestro
+
+101
+00:03:37,520 --> 00:03:40,390
+diccionario de "mtricas" que se encuentra aqu.
+
+102
+00:03:42,050 --> 00:03:43,670
+Entonces, ejecutemos user_score.
+
+103
+00:03:43,670 --> 00:03:46,230
+Recuerde, haga clic derecho y ejectelo.
+
+104
+00:03:46,230 --> 00:03:48,300
+Y ver que obtenemos: "Valores incorrectos
+
+105
+00:03:48,300 --> 00:03:49,500
+proporcionados a nuestra funcin
+
+106
+00:03:49,500 --> 00:03:50,950
+de clculo. "Y lo
+
+107
+00:03:51,888 --> 00:03:53,570
+conseguimos porque, por supuesto,
+
+108
+00:03:53,570 --> 00:03:55,450
+se gener KeyError y luego
+
+109
+00:03:55,450 --> 00:03:56,650
+lo imprimimos y
+
+110
+00:03:56,650 --> 00:03:58,480
+no sucedi nada ms.
+
+111
+00:03:58,480 --> 00:04:02,010
+Si no estamos prestando atencin, podemos perder eso.
+
+112
+00:04:02,010 --> 00:04:03,300
+Seamos sinceros, si-- esta es
+
+113
+00:04:03,300 --> 00:04:04,920
+la nica lnea de salida en
+
+114
+00:04:04,920 --> 00:04:06,690
+nuestro programa en este momento, pero si
+
+115
+00:04:06,690 --> 00:04:08,350
+este es un programa largo, puede
+
+116
+00:04:08,350 --> 00:04:10,120
+haber muchas lneas de salida y es
+
+117
+00:04:10,120 --> 00:04:11,370
+posible que se pierda esa
+
+118
+00:04:12,210 --> 00:04:13,730
+entre todas las dems.
+
+119
+00:04:13,730 --> 00:04:15,230
+Entonces, lo mejor
+
+120
+00:04:15,230 --> 00:04:17,780
+que puede hacer, al menos mientras
+
+121
+00:04:17,780 --> 00:04:21,730
+se desarrolla, es permitir que los errores continen burbujeando
+
+122
+00:04:21,730 --> 00:04:23,610
+y bloqueen su programa.
+
+123
+00:04:23,610 --> 00:04:25,170
+Cuando va a entregar su
+
+124
+00:04:25,170 --> 00:04:26,140
+programa a sus
+
+125
+00:04:26,140 --> 00:04:27,140
+usuarios, asegrese de
+
+126
+00:04:27,140 --> 00:04:29,350
+que su programa no se bloquee demasiado fcilmente.
+
+127
+00:04:29,350 --> 00:04:32,230
+Y eso puede significar atrapar el error en
+
+128
+00:04:32,230 --> 00:04:35,320
+alguna parte, o no permitir que siga burbujeando.
+
+129
+00:04:35,320 --> 00:04:37,060
+La forma en que lo permitimos brotar
+
+130
+00:04:37,060 --> 00:04:39,140
+es simplemente escribir "subir". "Y eso tiene
+
+131
+00:04:40,050 --> 00:04:42,810
+que estar dentro del bloque" excepto ".
+
+132
+00:04:42,810 --> 00:04:45,950
+Entonces, dentro del bloque "except", podemos "subir", y lo
+
+133
+00:04:45,950 --> 00:04:46,930
+que eso hace
+
+134
+00:04:46,930 --> 00:04:49,240
+es que resubiera el error que
+
+135
+00:04:49,240 --> 00:04:52,090
+nos meti en este bloque en primer lugar.
+
+136
+00:04:52,090 --> 00:04:54,190
+Entonces, si presionamos play
+
+137
+00:04:54,190 --> 00:04:56,520
+nuevamente, vern que ahora tenemos
+
+138
+00:04:56,520 --> 00:04:59,630
+nuestro traceback luego de obtener nuestra impresin.
+
+139
+00:04:59,630 --> 00:05:02,700
+El rastreo ahora dice KeyError: 'clics' y
+
+140
+00:05:02,700 --> 00:05:04,740
+que se us aqu, en
+
+141
+00:05:04,740 --> 00:05:08,050
+"mtricas", "clics", multiplico por cinco, y as sucesivamente.
+
+142
+00:05:08,050 --> 00:05:09,300
+Esto estaba dentro
+
+143
+00:05:09,300 --> 00:05:10,600
+de la funcin "perform_calculation",
+
+144
+00:05:10,600 --> 00:05:12,490
+como puedes ver aqu, y
+
+145
+00:05:12,490 --> 00:05:14,080
+aqu se invoc como
+
+146
+00:05:14,080 --> 00:05:15,560
+puedes ver en esta lnea.
+
+147
+00:05:16,420 --> 00:05:18,590
+Esto estaba dentro de la funcin
+
+148
+00:05:18,590 --> 00:05:20,400
+"get_user_score", como puede ver aqu,
+
+149
+00:05:20,400 --> 00:05:21,810
+y se llam aqu,
+
+150
+00:05:21,810 --> 00:05:24,620
+que est aqu abajo, lnea 27, y eso
+
+151
+00:05:24,620 --> 00:05:26,520
+est en su mdulo, que
+
+152
+00:05:26,520 --> 00:05:28,470
+es el archivo que est ejecutando.
+
+153
+00:05:29,500 --> 00:05:31,670
+Entonces es el archivo que ests ejecutando.
+
+154
+00:05:31,670 --> 00:05:33,930
+Bueno, esto es, de nuevo, el seguimiento de la
+
+155
+00:05:33,930 --> 00:05:35,830
+pila, necesitas ser bueno para comprender y seguir
+
+156
+00:05:35,830 --> 00:05:36,760
+el rastro de la
+
+157
+00:05:36,760 --> 00:05:38,360
+pila, esa es una habilidad realmente importante.
+
+158
+00:05:39,810 --> 00:05:41,700
+Por lo tanto, la palabra clave
+
+159
+00:05:41,700 --> 00:05:45,060
+"subir" aqu debe ir dentro del bloque except, de lo
+
+160
+00:05:45,060 --> 00:05:47,670
+contrario no puede usar raise por s mismo.
+
+161
+00:05:47,670 --> 00:05:50,420
+Tienes que darle el error que quieres plantear.
+
+162
+00:05:50,420 --> 00:05:51,630
+Pero eso es solo si
+
+163
+00:05:51,630 --> 00:05:53,000
+lo usa fuera del bloque excepto.
+
+164
+00:05:53,000 --> 00:05:55,190
+Si lo usa dentro del bloque excepto, puede
+
+165
+00:05:55,190 --> 00:05:56,420
+simplemente escribir "subir" y
+
+166
+00:05:56,420 --> 00:05:57,970
+volver a publicar el error
+
+167
+00:05:57,970 --> 00:05:59,820
+que lo trajo aqu en primer lugar.
+
+168
+00:06:02,460 --> 00:06:04,550
+De acuerdo, ahora digamos
+
+169
+00:06:04,550 --> 00:06:07,180
+que queremos enviar una notificacin
+
+170
+00:06:07,180 --> 00:06:09,469
+de compromiso a este usuario,
+
+171
+00:06:09,469 --> 00:06:10,770
+si tenemos algunos
+
+172
+00:06:10,770 --> 00:06:13,720
+lmites de clics o algo as.
+
+173
+00:06:13,720 --> 00:06:18,230
+Digamos que si el puntaje del usuario es ms
+
+174
+00:06:18,230 --> 00:06:19,260
+de 500,
+
+175
+00:06:19,260 --> 00:06:21,310
+queremos enviarles una notificacin.
+
+176
+00:06:23,200 --> 00:06:25,900
+Solo queremos enviar la notificacin y, por
+
+177
+00:06:26,780 --> 00:06:28,010
+cierto, voy a
+
+178
+00:06:28,010 --> 00:06:29,670
+eliminar esta cuestin de
+
+179
+00:06:30,600 --> 00:06:33,460
+aumento aqu por ahora, solo queremos enviar
+
+180
+00:06:33,460 --> 00:06:36,180
+la notificacin si no generamos un error,
+
+181
+00:06:36,180 --> 00:06:37,120
+por supuesto.
+
+182
+00:06:37,120 --> 00:06:38,940
+Solo queremos enviar la notificacin
+
+183
+00:06:38,940 --> 00:06:40,930
+si el clculo del rendimiento tuvo
+
+184
+00:06:40,930 --> 00:06:42,990
+xito y obtuvimos un puntaje correcto.
+
+185
+00:06:44,560 --> 00:06:45,710
+Entonces, cmo podemos hacer eso?
+
+186
+00:06:47,430 --> 00:06:50,000
+Bueno, hemos visto el bloque "finalmente".
+
+187
+00:06:50,000 --> 00:06:52,030
+Podemos decir "send_engagement_notification" a
+
+188
+00:06:52,030 --> 00:06:53,250
+"usuario", pero
+
+189
+00:06:55,260 --> 00:06:57,800
+el bloque "finally" se ejecuta
+
+190
+00:06:57,800 --> 00:06:58,990
+sin importar qu.
+
+191
+00:06:59,910 --> 00:07:01,810
+El "try" se ejecutar, el
+
+192
+00:07:01,810 --> 00:07:04,210
+"except" puede o no ejecutarse, y
+
+193
+00:07:04,210 --> 00:07:05,970
+el "finally" se ejecutar.
+
+194
+00:07:05,970 --> 00:07:08,200
+Por lo tanto, "finalmente" siempre se ejecutar
+
+195
+00:07:08,200 --> 00:07:10,910
+despus del intento, excepto bloque, pase lo que pase,
+
+196
+00:07:10,910 --> 00:07:13,170
+a menos que, por supuesto, resubes la
+
+197
+00:07:13,170 --> 00:07:14,500
+excepcin y tu programa falle.
+
+198
+00:07:14,500 --> 00:07:16,850
+Si haces eso, el "finalmente" tampoco se ejecutar.
+
+199
+00:07:18,680 --> 00:07:20,300
+Pero, supongamos que no
+
+200
+00:07:20,300 --> 00:07:22,300
+queremos volver a publicar la excepcin,
+
+201
+00:07:22,300 --> 00:07:25,271
+pero queremos que se enve la notificacin de
+
+202
+00:07:25,271 --> 00:07:28,070
+compromiso si nuestro usuario tiene la puntuacin correcta.
+
+203
+00:07:29,690 --> 00:07:32,050
+Bueno, podemos usar un "else", en realidad.
+
+204
+00:07:33,410 --> 00:07:36,980
+Y eso es algo bastante extrao de usar aqu, porque
+
+205
+00:07:37,860 --> 00:07:39,930
+lo que significa es que vamos
+
+206
+00:07:39,930 --> 00:07:40,780
+a tratar
+
+207
+00:07:40,780 --> 00:07:42,840
+de ejecutar esto aqu, y si
+
+208
+00:07:44,280 --> 00:07:47,080
+no hay ningn error, entonces vamos a ir
+
+209
+00:07:47,080 --> 00:07:49,090
+al "else". "Entonces este"
+
+210
+00:07:49,090 --> 00:07:51,400
+otro "solo se ejecutar si no
+
+211
+00:07:51,400 --> 00:07:53,300
+ocurre un error, a diferencia
+
+212
+00:07:53,300 --> 00:07:57,010
+del" finalmente ", que se ejecuta todo el tiempo.
+
+213
+00:07:57,010 --> 00:07:57,843
+Por supuesto, nos
+
+214
+00:07:57,843 --> 00:07:58,970
+est diciendo que este
+
+215
+00:07:58,970 --> 00:08:00,960
+cdigo es inalcanzable, porque si este cdigo tiene
+
+216
+00:08:00,960 --> 00:08:02,110
+xito, estamos volviendo, lo que
+
+217
+00:08:02,110 --> 00:08:03,750
+significa que estamos saliendo de la funcin,
+
+218
+00:08:03,750 --> 00:08:05,300
+por lo que nunca se ejecutar.
+
+219
+00:08:05,300 --> 00:08:06,880
+O tendremos este error, en cuyo
+
+220
+00:08:06,880 --> 00:08:08,560
+caso esto no se ejecutar, o
+
+221
+00:08:08,560 --> 00:08:10,100
+tendremos este retorno, en cuyo
+
+222
+00:08:10,100 --> 00:08:11,580
+caso esto no se ejecutar.
+
+223
+00:08:11,580 --> 00:08:14,200
+Entonces solo tenemos que eliminar el retorno all.
+
+224
+00:08:15,170 --> 00:08:17,320
+Y si quisiramos realizar un clculo aqu y
+
+225
+00:08:17,320 --> 00:08:18,670
+simplemente devolver ese valor, entonces
+
+226
+00:08:19,510 --> 00:08:20,650
+deberamos hacer eso y
+
+227
+00:08:20,650 --> 00:08:22,280
+no deberamos usar esta construccin.
+
+228
+00:08:22,280 --> 00:08:24,620
+En cambio, esto debera ir aqu.
+
+229
+00:08:26,180 --> 00:08:27,013
+Derecha.
+
+230
+00:08:28,660 --> 00:08:30,600
+Por lo tanto, esta funcin debera
+
+231
+00:08:30,600 --> 00:08:32,710
+ser renombrada a algo ms que "get_user_score,"
+
+232
+00:08:32,710 --> 00:08:34,280
+si queremos que haga esto.
+
+233
+00:08:35,180 --> 00:08:36,013
+Bueno.
+
+234
+00:08:36,013 --> 00:08:37,430
+Tal vez debera
+
+235
+00:08:39,131 --> 00:08:40,881
+ser "email_engaged_users" o
+
+236
+00:08:43,960 --> 00:08:44,793
+"_user"
+
+237
+00:08:45,790 --> 00:08:46,790
+algo as.
+
+238
+00:08:48,360 --> 00:08:50,140
+De acuerdo, solo quera mostrarte este
+
+239
+00:08:50,140 --> 00:08:51,750
+constructo porque no es algo
+
+240
+00:08:51,750 --> 00:08:53,980
+popular y muchos desarrolladores de Python no
+
+241
+00:08:53,980 --> 00:08:55,570
+lo saben, y de hecho
+
+242
+00:08:55,570 --> 00:08:59,320
+si vas a Internet y miras tutoriales para probar, excepto en Python,
+
+243
+00:08:59,320 --> 00:09:01,180
+te garantizo que casi ninguno de
+
+244
+00:09:01,180 --> 00:09:03,060
+ellos mencionar esto "else". "Y no es
+
+245
+00:09:03,060 --> 00:09:04,810
+as de usado, pero es
+
+246
+00:09:04,810 --> 00:09:06,990
+interesante saberlo solo en caso de que
+
+247
+00:09:06,990 --> 00:09:08,800
+quiera ejecutar algo solo si no
+
+248
+00:09:08,800 --> 00:09:10,630
+ocurre un error, como enviar una
+
+249
+00:09:10,630 --> 00:09:12,240
+notificacin por correo electrnico.
+
+250
+00:09:13,120 --> 00:09:15,370
+Lo usaremos ms adelante en el curso.
+
+251
+00:09:16,750 --> 00:09:18,780
+As que eso es todo
+
+252
+00:09:18,780 --> 00:09:21,430
+por este video, hemos visto el bloque
+
+253
+00:09:21,430 --> 00:09:22,320
+de xito,
+
+254
+00:09:22,320 --> 00:09:24,900
+este es aqu, porque esto sucede cuando
+
+255
+00:09:24,900 --> 00:09:26,890
+tenemos xito en nuestra prueba excepto.
+
+256
+00:09:26,890 --> 00:09:29,000
+Y tambin hemos analizado la posibilidad de
+
+257
+00:09:29,000 --> 00:09:29,833
+volver a plantear
+
+258
+00:09:29,833 --> 00:09:33,170
+excepciones, lo cual es muy simple, solo agregue un "aumento" dentro
+
+259
+00:09:33,170 --> 00:09:34,980
+del bloque "excepto", y si nuestra
+
+260
+00:09:34,980 --> 00:09:36,700
+excepcin sucede, la volveremos a plantear.
+
+261
+00:09:38,060 --> 00:09:40,550
+Entonces, por cierto, cambi los "clics",
+
+262
+00:09:40,550 --> 00:09:42,560
+el "clic" a "clics", as
+
+263
+00:09:42,560 --> 00:09:45,120
+que ahora deberamos poder ejecutar esto.
+
+264
+00:09:45,120 --> 00:09:47,190
+Y, por supuesto, tambin he cambiado el nombre
+
+265
+00:09:47,190 --> 00:09:48,284
+de la funcin, as
+
+266
+00:09:48,284 --> 00:09:50,040
+que asegurmonos de llamar a la funcin correcta.
+
+267
+00:09:50,040 --> 00:09:51,850
+Deberamos poder ejecutarlo Oh, este
+
+268
+00:09:51,850 --> 00:09:52,683
+y. aqu. Lo siento, puedo cambiarlo.
+
+269
+00:09:52,683 --> 00:09:53,789
+Ahora vemos que
+
+270
+00:09:53,789 --> 00:09:55,970
+la notificacin fue enviada al usuario
+
+271
+00:09:57,280 --> 00:09:59,410
+Rolf, porque realizamos el clculo,
+
+272
+00:09:59,410 --> 00:10:01,040
+y luego enviamos la
+
+273
+00:10:02,360 --> 00:10:04,840
+notificacin de compromiso y si queramos,
+
+274
+00:10:04,840 --> 00:10:06,610
+por supuesto, verificar que
+
+275
+00:10:06,610 --> 00:10:08,110
+el puntaje del usuario
+
+276
+00:10:08,110 --> 00:10:11,050
+sea correcto, podramos hacer algo como el usuario. puntaje es eso, y luego,
+
+277
+00:10:11,050 --> 00:10:13,030
+si el usuario. puntaje es mayor a 500,
+
+278
+00:10:13,030 --> 00:10:15,440
+enve la notificacin.
+
+279
+00:10:15,440 --> 00:10:19,470
+Ahora, hemos dicho ese usuario. puntaje aqu es igual
+
+280
+00:10:19,470 --> 00:10:20,740
+a algo,
+
+281
+00:10:21,670 --> 00:10:24,000
+pero usuario. puntaje no fue definido
+
+282
+00:10:24,000 --> 00:10:25,050
+en el mtodo init.
+
+283
+00:10:25,050 --> 00:10:26,960
+Esta es una mala prctica.
+
+284
+00:10:26,960 --> 00:10:28,000
+En general, debe definir
+
+285
+00:10:28,000 --> 00:10:29,210
+todas las propiedades en el
+
+286
+00:10:29,210 --> 00:10:31,600
+mtodo init, solo para que sepa lo que existe.
+
+287
+00:10:31,600 --> 00:10:32,860
+Entonces puede definir el puntaje como cero
+
+288
+00:10:32,860 --> 00:10:34,620
+aqu, y luego esto no crea una nueva propiedad.
+
+289
+00:10:36,160 --> 00:10:39,160
+Aunque puedes, no es aconsejable.
+
+290
+00:10:39,160 --> 00:10:41,290
+Y ahora esto solo lo
+
+291
+00:10:41,290 --> 00:10:44,340
+est actualizando, lo cual es mejor.
+
+292
+00:10:44,340 --> 00:10:45,940
+Ahora podemos ver que se envi una
+
+293
+00:10:45,940 --> 00:10:46,773
+notificacin al usuario Rolf,
+
+294
+00:10:48,480 --> 00:10:50,320
+porque su puntaje es mayor a 500.
+
+295
+00:10:50,320 --> 00:10:51,430
+De hecho, 61 veces
+
+296
+00:10:51,430 --> 00:10:53,400
+cinco, ms 100 veces dos es 502.
+
+297
+00:10:53,400 --> 00:10:57,140
+Creo.
+
+298
+00:10:57,140 --> 00:10:59,380
+Estoy bastante seguro.
+
+299
+00:10:59,380 --> 00:11:00,213
+No digamos que es cualquier
+
+300
+00:11:01,080 --> 00:11:01,913
+nmero, es mayor que 500.
+
+301
+00:11:02,850 --> 00:11:05,730
+Eso es lo que s, as que es por eso que
+
+302
+00:11:05,730 --> 00:11:07,110
+estamos enviando una notificacin all.
+
+303
+00:11:07,110 --> 00:11:08,880
+De todos modos, eso
+
+304
+00:11:08,880 --> 00:11:12,570
+es todo por este video, no te retendr ms.
+
+305
+00:11:12,570 --> 00:11:13,770
+Este fue un intento, excepto, de lo contrario,
+
+306
+00:11:13,770 --> 00:11:14,730
+y cmo resubir las excepciones tambin.
+
+307
+00:11:14,730 --> 00:11:17,220
+Te ver en el prximo.
+
+308
+00:11:17,220 --> 00:11:19,800
+&nbsp;
+
+309
+00:11:19,800 --> 00:11:21,250
+&nbsp;
+

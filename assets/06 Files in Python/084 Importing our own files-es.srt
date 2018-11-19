@@ -1,0 +1,1064 @@
+1
+00:00:00,000 --> 00:00:01,730
+Instructor: Hola, y bienvenido.
+
+2
+00:00:01,730 --> 00:00:05,470
+En este video, estamos tratando de importar nuestros propios archivos.
+
+3
+00:00:05,470 --> 00:00:07,030
+Importar solo significa permitir que
+
+4
+00:00:07,030 --> 00:00:09,200
+un archivo en el que estamos
+
+5
+00:00:09,200 --> 00:00:12,186
+trabajando utilice el cdigo definido en algn otro archivo.
+
+6
+00:00:12,186 --> 00:00:15,200
+Y lo hicimos con el mdulo JSON en el
+
+7
+00:00:15,200 --> 00:00:16,410
+ltimo video y eso
+
+8
+00:00:16,410 --> 00:00:20,040
+solo significaba que podamos usar el cdigo en ese mdulo.
+
+9
+00:00:20,040 --> 00:00:21,740
+Ahora es el momento de importar
+
+10
+00:00:21,740 --> 00:00:23,560
+el cdigo que nosotros mismos hemos escrito.
+
+11
+00:00:24,420 --> 00:00:26,350
+De esa forma, podremos dividir
+
+12
+00:00:26,350 --> 00:00:27,810
+nuestros programas en varios
+
+13
+00:00:27,810 --> 00:00:29,850
+archivos, y eso ayudar, por supuesto,
+
+14
+00:00:29,850 --> 00:00:32,310
+porque nuestro programa tendr una mejor organizacin,
+
+15
+00:00:32,310 --> 00:00:35,230
+y cuando se trata de cambiarlo y mejorarlo,
+
+16
+00:00:35,230 --> 00:00:36,920
+ser un poco ms fcil.
+
+17
+00:00:36,920 --> 00:00:38,940
+Comencemos creando un nuevo archivo dentro
+
+18
+00:00:38,940 --> 00:00:40,260
+de nuestro proyecto de
+
+19
+00:00:40,260 --> 00:00:42,400
+Python, despus del nuevo proyecto de
+
+20
+00:00:42,400 --> 00:00:43,710
+Python aqu y voy
+
+21
+00:00:44,740 --> 00:00:46,330
+a llamarlo Operaciones de archivo.
+
+22
+00:00:46,330 --> 00:00:48,210
+As que ese es el archivo de las operaciones de subrayado.
+
+23
+00:00:48,210 --> 00:00:50,320
+Recuerde, no ponga espacios en los nombres de
+
+24
+00:00:50,320 --> 00:00:51,500
+los archivos, esa es
+
+25
+00:00:51,500 --> 00:00:53,250
+una receta para el desastre en casi
+
+26
+00:00:53,250 --> 00:00:55,678
+cualquier computadora, pero especialmente cuando se trabaja con Python.
+
+27
+00:00:55,678 --> 00:00:56,980
+Ahora, dentro de este archivo,
+
+28
+00:00:56,980 --> 00:00:58,730
+vamos a escribir un par de funciones.
+
+29
+00:00:58,730 --> 00:01:01,280
+Uno, para guardar un poco de contenido con el archivo,
+
+30
+00:01:01,280 --> 00:01:03,830
+y el otro para leer parte del contenido de un archivo.
+
+31
+00:01:04,670 --> 00:01:06,070
+Por lo tanto, guardar en el archivo.
+
+32
+00:01:06,070 --> 00:01:07,470
+El contenido que queremos escribir va
+
+33
+00:01:07,470 --> 00:01:08,490
+a ser el primer parmetro
+
+34
+00:01:08,490 --> 00:01:10,540
+y el nombre del archivo va a ser el
+
+35
+00:01:10,540 --> 00:01:13,320
+segundo parmetro, y todo lo que har es usar un administrador de
+
+36
+00:01:13,320 --> 00:01:15,560
+contexto para abrir el archivo y luego escribir el contenido.
+
+37
+00:01:16,720 --> 00:01:19,120
+Y luego Read File va a ser bastante similar.
+
+38
+00:01:19,120 --> 00:01:21,040
+Tomar el nombre del archivo
+
+39
+00:01:21,040 --> 00:01:24,350
+y usar un administrador de contexto para abrir el
+
+40
+00:01:24,350 --> 00:01:27,380
+archivo y leer los contenidos completamente como una sola
+
+41
+00:01:27,380 --> 00:01:28,240
+cadena y devolverlos.
+
+42
+00:01:29,110 --> 00:01:30,610
+Ahora, creo que puedes implementar
+
+43
+00:01:30,610 --> 00:01:32,170
+esto, sabiendo lo que ya sabes.
+
+44
+00:01:32,170 --> 00:01:34,330
+Si tiene que mirar el cdigo de
+
+45
+00:01:34,330 --> 00:01:37,140
+la seccin, asegrese de no mirar el proyecto de
+
+46
+00:01:37,140 --> 00:01:38,700
+importacin que tambin est disponible
+
+47
+00:01:38,700 --> 00:01:41,140
+en GitHub, pero mire el otro archivo que
+
+48
+00:01:41,140 --> 00:01:43,140
+ya hemos escrito y luego implemente estas
+
+49
+00:01:43,140 --> 00:01:44,710
+funciones usando lo que ya sabe.
+
+50
+00:01:44,710 --> 00:01:45,830
+No copie y
+
+51
+00:01:45,830 --> 00:01:47,060
+pegue cdigo, solo escrbalo.
+
+52
+00:01:47,060 --> 00:01:48,620
+Y una vez que hayas
+
+53
+00:01:48,620 --> 00:01:50,870
+hecho eso, regresa al video y continuaremos.
+
+54
+00:01:55,250 --> 00:01:56,530
+Espero que hayas logrado.
+
+55
+00:01:56,530 --> 00:01:58,866
+Todo lo que tenemos que hacer es usar
+
+56
+00:01:58,866 --> 00:02:00,680
+un administrador de contexto para abrir
+
+57
+00:02:01,610 --> 00:02:03,630
+el nombre del archivo en modo de escritura.
+
+58
+00:02:03,630 --> 00:02:04,740
+Entonces lo que
+
+59
+00:02:04,740 --> 00:02:08,140
+vamos a hacer es decir archivo dot write, contenido.
+
+60
+00:02:08,140 --> 00:02:10,540
+Oh, lo siento, por supuesto que necesitas como
+
+61
+00:02:11,540 --> 00:02:13,220
+archivo para poder tener una variable.
+
+62
+00:02:13,220 --> 00:02:14,710
+Esto es opcional por cierto,
+
+63
+00:02:14,710 --> 00:02:16,650
+pero luego no tiene nada apuntando a
+
+64
+00:02:16,650 --> 00:02:18,160
+lo que haya abierto y
+
+65
+00:02:18,160 --> 00:02:19,570
+luego no puede escribir si
+
+66
+00:02:19,570 --> 00:02:22,020
+no tiene una variable que apunte a abrir.
+
+67
+00:02:22,920 --> 00:02:24,310
+Luego, por supuesto, para el saludo
+
+68
+00:02:24,310 --> 00:02:26,140
+que vamos a hacer abrir el nombre del archivo,
+
+69
+00:02:26,140 --> 00:02:27,640
+pero esta vez en modo de lectura.
+
+70
+00:02:28,710 --> 00:02:31,580
+Lo que vamos a hacer es leer el punto del archivo.
+
+71
+00:02:31,580 --> 00:02:33,541
+Observe cmo esto no nos
+
+72
+00:02:33,541 --> 00:02:35,980
+dar las lneas ni nada de eso,
+
+73
+00:02:35,980 --> 00:02:38,690
+pero esta va a ser una cadena
+
+74
+00:02:38,690 --> 00:02:41,180
+larga que podra contener cosas como esta.
+
+75
+00:02:44,050 --> 00:02:45,290
+Ver?
+
+76
+00:02:45,290 --> 00:02:48,380
+Ahora, si queramos lneas despus de
+
+77
+00:02:48,380 --> 00:02:49,900
+eso, podemos dividirnos
+
+78
+00:02:49,900 --> 00:02:52,170
+en la divisin de
+
+79
+00:02:52,170 --> 00:02:54,070
+barra y punto.
+
+80
+00:02:54,070 --> 00:02:57,620
+Back slash n nos va a dar algo como esto.
+
+81
+00:02:57,620 --> 00:03:01,240
+Rolf, Charlie, y dems.
+
+82
+00:03:01,240 --> 00:03:02,840
+Entonces, esto nos dar una cadena larga.
+
+83
+00:03:02,840 --> 00:03:05,380
+Entonces podemos dividirlo en lneas si queremos.
+
+84
+00:03:05,380 --> 00:03:07,890
+Si su archivo es extremadamente largo, puede tener
+
+85
+00:03:07,890 --> 00:03:09,530
+algunos problemas con la lectura
+
+86
+00:03:09,530 --> 00:03:11,520
+de todo el archivo a la vez.
+
+87
+00:03:11,520 --> 00:03:14,675
+Pero, olvidemos este problema por ahora.
+
+88
+00:03:14,675 --> 00:03:17,220
+Hay algunas cosas relativamente simples, escribir en un
+
+89
+00:03:17,220 --> 00:03:18,660
+archivo y leer de l,
+
+90
+00:03:18,660 --> 00:03:19,890
+ya lo hemos hecho.
+
+91
+00:03:19,890 --> 00:03:21,280
+Pero va a ser
+
+92
+00:03:21,280 --> 00:03:23,730
+til como ejemplo para buscar importar cualquier ventaja.
+
+93
+00:03:23,730 --> 00:03:27,680
+Esta es esencialmente nuestra primera biblioteca.
+
+94
+00:03:28,720 --> 00:03:31,830
+En esta biblioteca, vamos a importar estos dos archivos,
+
+95
+00:03:31,830 --> 00:03:32,880
+estas dos funciones,
+
+96
+00:03:32,880 --> 00:03:34,340
+y ahora vamos a
+
+97
+00:03:34,340 --> 00:03:36,640
+guardar fcilmente cosas en un archivo y
+
+98
+00:03:36,640 --> 00:03:39,600
+leerlas desde un archivo sin tener que preocuparnos por abrirlas.
+
+99
+00:03:39,600 --> 00:03:41,870
+Vamos a crear un nuevo archivo en nuestro proyecto de
+
+100
+00:03:41,870 --> 00:03:43,140
+importacin llamado app dot UI.
+
+101
+00:03:44,510 --> 00:03:47,360
+Y ahora, vamos a importar las cosas de
+
+102
+00:03:47,360 --> 00:03:48,900
+las operaciones de archivos.
+
+103
+00:03:50,490 --> 00:03:52,130
+Hay dos formas en que podemos hacer eso.
+
+104
+00:03:52,130 --> 00:03:54,730
+El primero es que podemos importar operaciones de archivos.
+
+105
+00:03:55,770 --> 00:03:59,430
+Y luego podemos hacer operaciones de archivos dot save
+
+106
+00:04:00,420 --> 00:04:04,730
+en file lo que queremos decir, Rolf y data dot txt,
+
+107
+00:04:04,730 --> 00:04:05,563
+por ejemplo.
+
+108
+00:04:06,400 --> 00:04:10,990
+Podemos hacer esto, llamar al mdulo de operaciones de archivo.
+
+109
+00:04:10,990 --> 00:04:14,050
+Cada vez que importas algo, por
+
+110
+00:04:15,150 --> 00:04:19,280
+cierto, lo que ests importando ahora se llama mdulo.
+
+111
+00:04:19,280 --> 00:04:22,250
+Y se ejecuta en modo mdulo, que
+
+112
+00:04:22,250 --> 00:04:26,140
+es esencialmente lo mismo que ejecutarlo en modo normal o
+
+113
+00:04:26,140 --> 00:04:27,820
+en modo script, pero
+
+114
+00:04:27,820 --> 00:04:30,620
+hay algunas diferencias menores que vamos a
+
+115
+00:04:30,620 --> 00:04:32,130
+ver en un momento.
+
+116
+00:04:32,130 --> 00:04:35,000
+Entonces, cada vez que importas algo, ese mismo mdulo, cada vez que
+
+117
+00:04:35,000 --> 00:04:36,370
+ejecutas algo, como si ejecutas la
+
+118
+00:04:36,370 --> 00:04:37,920
+interfaz de usuario de la aplicacin de
+
+119
+00:04:37,920 --> 00:04:39,810
+punto, eso se llama una secuencia de comandos.
+
+120
+00:04:39,810 --> 00:04:41,731
+Normalmente, normalmente tendr un script, es la
+
+121
+00:04:41,731 --> 00:04:42,650
+interfaz de usuario
+
+122
+00:04:42,650 --> 00:04:44,000
+de la aplicacin y un
+
+123
+00:04:44,000 --> 00:04:46,710
+grupo de mdulos, y eso es todo lo dems que importa.
+
+124
+00:04:46,710 --> 00:04:48,030
+Las operaciones de archivo es
+
+125
+00:04:48,030 --> 00:04:50,780
+un mdulo y luego estamos accediendo dentro de l con
+
+126
+00:04:50,780 --> 00:04:52,750
+un punto, la funcin guardar en archivo.
+
+127
+00:04:52,750 --> 00:04:55,280
+Y a eso le dimos los dos argumentos que necesita.
+
+128
+00:04:55,280 --> 00:04:57,160
+El contenido que queremos
+
+129
+00:04:57,160 --> 00:04:59,560
+guardar y el nombre del archivo.
+
+130
+00:04:59,560 --> 00:05:02,680
+Hagamos clic derecho en la IU de punto de la aplicacin y ejectelo.
+
+131
+00:05:02,680 --> 00:05:03,950
+Observe cmo no
+
+132
+00:05:03,950 --> 00:05:07,040
+sucede nada, pero se crea datos dot txt
+
+133
+00:05:07,040 --> 00:05:08,500
+y Rolf est en l.
+
+134
+00:05:08,500 --> 00:05:10,800
+Este archivo tambin se ha cerrado porque
+
+135
+00:05:10,800 --> 00:05:13,590
+la funcin de guardar el archivo en las operaciones
+
+136
+00:05:13,590 --> 00:05:15,160
+de archivo tiene este administrador
+
+137
+00:05:15,160 --> 00:05:17,660
+de contexto que cierra un archivo al final.
+
+138
+00:05:17,660 --> 00:05:19,040
+Entonces esto es genial.
+
+139
+00:05:19,040 --> 00:05:21,720
+Quiero decir, en una sola lnea ahora,
+
+140
+00:05:21,720 --> 00:05:23,610
+porque tenemos nuestra biblioteca aqu,
+
+141
+00:05:23,610 --> 00:05:26,200
+estamos abriendo, guardando y cerrando el archivo
+
+142
+00:05:26,200 --> 00:05:29,070
+sin tener que preocuparnos de hacerlo manualmente.
+
+143
+00:05:30,660 --> 00:05:31,493
+La otra
+
+144
+00:05:31,493 --> 00:05:33,370
+opcin, dije que haba dos
+
+145
+00:05:33,370 --> 00:05:38,370
+opciones para importar, es hacer desde las operaciones de archivo importar guardar en archivo.
+
+146
+00:05:38,540 --> 00:05:41,260
+Y luego, guardar en el archivo es lo que
+
+147
+00:05:41,260 --> 00:05:43,880
+se convierte en lo que est disponible a nivel
+
+148
+00:05:43,880 --> 00:05:46,320
+mundial en este script y simplemente puede ejecutar eso.
+
+149
+00:05:46,320 --> 00:05:48,090
+Guardar en archivo directamente.
+
+150
+00:05:48,090 --> 00:05:49,840
+Por supuesto, esto no es tan
+
+151
+00:05:49,840 --> 00:05:51,870
+bueno, si est importando desde muchos lugares
+
+152
+00:05:51,870 --> 00:05:54,000
+y dos cosas tienen el mismo nombre.
+
+153
+00:05:54,000 --> 00:05:55,130
+Puede suceder, entonces,
+
+154
+00:05:55,130 --> 00:05:57,180
+por supuesto, Python estara muy
+
+155
+00:05:57,180 --> 00:05:59,130
+confundido y solo podras
+
+156
+00:05:59,130 --> 00:06:01,600
+usar el ltimo que importaste.
+
+157
+00:06:01,600 --> 00:06:03,730
+Entonces, si tiene cosas con mltiples, mltiples
+
+158
+00:06:03,730 --> 00:06:05,210
+cosas con el mismo nombre,
+
+159
+00:06:05,210 --> 00:06:07,820
+use las primeras, importe las operaciones del archivo.
+
+160
+00:06:07,820 --> 00:06:09,770
+Si solo tiene un par de
+
+161
+00:06:09,770 --> 00:06:11,150
+cosas que desea importar
+
+162
+00:06:11,150 --> 00:06:13,610
+y usar, sintase libre de importarlas as.
+
+163
+00:06:13,610 --> 00:06:14,790
+Al final del da, depende
+
+164
+00:06:14,790 --> 00:06:16,840
+de ti hacer lo que sientas que sea ms legible.
+
+165
+00:06:18,070 --> 00:06:20,850
+Ahora, tambin podemos tener una coma despus e
+
+166
+00:06:20,850 --> 00:06:22,800
+importar el derecho al archivo, o
+
+167
+00:06:22,800 --> 00:06:24,440
+leer el archivo, lo siento.
+
+168
+00:06:24,440 --> 00:06:26,380
+Guardar en archivo o derecho a archivo, lo mismo.
+
+169
+00:06:26,380 --> 00:06:29,170
+Lea el archivo, y luego podemos imprimir
+
+170
+00:06:29,170 --> 00:06:31,690
+el archivo ledo de datos dot txt.
+
+171
+00:06:31,690 --> 00:06:33,420
+Corramos eso otra vez, y ahora
+
+172
+00:06:33,420 --> 00:06:36,200
+tenemos a Rolf impreso abajo en la parte inferior.
+
+173
+00:06:36,200 --> 00:06:38,400
+Y porque hemos guardado Rolf en data dot
+
+174
+00:06:38,400 --> 00:06:40,450
+txt, y luego lo hemos ledo e impreso.
+
+175
+00:06:40,450 --> 00:06:42,740
+Observe cmo se abre y se cierra el archivo,
+
+176
+00:06:42,740 --> 00:06:45,070
+y se abre y luego se cierra en cada funcin.
+
+177
+00:06:47,600 --> 00:06:49,060
+Ahora en una aplicacin ms
+
+178
+00:06:49,060 --> 00:06:51,970
+grande comenzaremos a separar nuestros archivos en carpetas para que
+
+179
+00:06:51,970 --> 00:06:53,720
+las cosas estn ms organizadas y
+
+180
+00:06:53,720 --> 00:06:55,860
+sea ms fcil encontrar lo que necesitamos.
+
+181
+00:06:55,860 --> 00:06:57,410
+Si todos sus archivos de
+
+182
+00:06:57,410 --> 00:06:59,490
+Python, potencialmente muchos cientos de ellos,
+
+183
+00:06:59,490 --> 00:07:02,410
+estaran en la misma carpeta de proyecto de importacin,
+
+184
+00:07:02,410 --> 00:07:04,030
+tendra muchos problemas para encontrar
+
+185
+00:07:04,030 --> 00:07:05,800
+las cosas que desea y
+
+186
+00:07:05,800 --> 00:07:07,850
+se volvera muy complicado muy rpidamente.
+
+187
+00:07:08,960 --> 00:07:12,210
+Entonces, en cambio, normalmente crearas un nuevo directorio.
+
+188
+00:07:13,130 --> 00:07:16,470
+Voy a llamarlo algo as como utils para utilidades.
+
+189
+00:07:16,470 --> 00:07:19,590
+Las operaciones de archivos sern parte de tales utilidades.
+
+190
+00:07:20,840 --> 00:07:23,600
+Arrastramos las operaciones de archivo a utils, y si
+
+191
+00:07:23,600 --> 00:07:26,290
+te piden que busques referencias, asegrate de que
+
+192
+00:07:26,290 --> 00:07:28,060
+no lo verifiques porque eso va
+
+193
+00:07:28,060 --> 00:07:29,780
+a desbaratar por completo el
+
+194
+00:07:29,780 --> 00:07:32,030
+punto que estoy a punto de mostrarte.
+
+195
+00:07:32,030 --> 00:07:33,340
+As que no busques
+
+196
+00:07:33,340 --> 00:07:34,550
+referencias, y presiona ok.
+
+197
+00:07:35,720 --> 00:07:37,790
+Ahora, vemos un par de cosas.
+
+198
+00:07:37,790 --> 00:07:40,220
+Las operaciones de archivo se han movido a utils,
+
+199
+00:07:40,220 --> 00:07:42,460
+y las lneas rojas han aparecido en todas partes.
+
+200
+00:07:42,460 --> 00:07:45,230
+Por supuesto, esto es ahora una referencia sin resolver.
+
+201
+00:07:45,230 --> 00:07:47,670
+No sabe qu operaciones de archivo es porque ya
+
+202
+00:07:47,670 --> 00:07:50,300
+no est en el mismo directorio que la IU de
+
+203
+00:07:50,300 --> 00:07:51,340
+punto de la aplicacin.
+
+204
+00:07:52,350 --> 00:07:54,950
+De hecho, incluso llegar a decir que no
+
+205
+00:07:54,950 --> 00:07:58,250
+est en el mismo proyecto de importacin de directorios, que
+
+206
+00:07:58,250 --> 00:08:01,400
+es el directorio de nivel superior de nuestro proyecto.
+
+207
+00:08:01,400 --> 00:08:03,150
+Entonces, solo puede hacer esto
+
+208
+00:08:03,150 --> 00:08:05,580
+desde operaciones de archivos importar algo.
+
+209
+00:08:05,580 --> 00:08:08,360
+Si las operaciones de archivo es un mdulo
+
+210
+00:08:08,360 --> 00:08:11,360
+disponible en el nivel superior de su proyecto.
+
+211
+00:08:12,370 --> 00:08:13,900
+Bueno.
+
+212
+00:08:13,900 --> 00:08:15,920
+Porque ahora es utilidades internas,
+
+213
+00:08:15,920 --> 00:08:17,370
+no podemos hacer esto.
+
+214
+00:08:17,370 --> 00:08:19,187
+Entonces, qu podemos hacer?
+
+215
+00:08:19,187 --> 00:08:23,410
+Bueno, podemos ejecutar el archivo, en primer lugar, para ver que obtenemos
+
+216
+00:08:23,410 --> 00:08:25,720
+un error de mdulo no encontrado.
+
+217
+00:08:25,720 --> 00:08:27,440
+Solo quera mostrarle que esto es
+
+218
+00:08:27,440 --> 00:08:30,030
+lo que obtiene si importa algo que no existe.
+
+219
+00:08:30,030 --> 00:08:32,461
+Y debemos hacer dos cosas.
+
+220
+00:08:32,461 --> 00:08:37,461
+Antes que nada, debemos darle a Python la ruta completa para importar
+
+221
+00:08:38,060 --> 00:08:40,700
+comenzando desde la carpeta de nivel superior.
+
+222
+00:08:40,700 --> 00:08:44,570
+Entonces la ruta completa es utils y utilidades
+
+223
+00:08:44,570 --> 00:08:46,720
+internas tenemos operaciones de archivos.
+
+224
+00:08:46,720 --> 00:08:49,650
+Entonces, utils y utils internos y
+
+225
+00:08:49,650 --> 00:08:52,630
+decimos dot con operaciones de archivos.
+
+226
+00:08:53,830 --> 00:08:54,850
+Ah lo tenemos.
+
+227
+00:08:54,850 --> 00:08:57,910
+Ahora tenemos utilidades dentro de las operaciones de
+
+228
+00:08:57,910 --> 00:09:00,330
+archivos y podemos importar estas dos cosas.
+
+229
+00:09:00,330 --> 00:09:01,600
+Ahora funciona.
+
+230
+00:09:02,858 --> 00:09:04,478
+Sin embargo, frecuentemente es
+
+231
+00:09:04,478 --> 00:09:06,940
+una buena idea decirle a
+
+232
+00:09:06,940 --> 00:09:09,110
+Python que el paquete utils,
+
+233
+00:09:09,110 --> 00:09:13,610
+el directorio utils aqu es en realidad un paquete Python.
+
+234
+00:09:13,610 --> 00:09:16,100
+Y no estoy seguro, en realidad no estoy seguro
+
+235
+00:09:16,100 --> 00:09:16,933
+si esto ha
+
+236
+00:09:16,933 --> 00:09:19,750
+cambiado recientemente en Python, pero sola ser que tendras que
+
+237
+00:09:19,750 --> 00:09:21,620
+decirle a Python que este es
+
+238
+00:09:22,530 --> 00:09:24,770
+un paquete de Python antes de que puedas
+
+239
+00:09:24,770 --> 00:09:27,020
+importar cosas de l y tal vez ya
+
+240
+00:09:27,020 --> 00:09:29,100
+no sea necesario, pero no obstante ,
+
+241
+00:09:29,100 --> 00:09:31,810
+para cumplir con las versiones anteriores de Python, siempre
+
+242
+00:09:31,810 --> 00:09:33,940
+es una buena idea decirle a Python
+
+243
+00:09:33,940 --> 00:09:35,296
+que esta carpeta, este directorio,
+
+244
+00:09:35,296 --> 00:09:38,150
+es un paquete de Python y es una carpeta donde
+
+245
+00:09:38,150 --> 00:09:40,810
+viven los archivos de Python y donde desea importar.
+
+246
+00:09:40,810 --> 00:09:42,340
+La forma de hacerlo
+
+247
+00:09:42,340 --> 00:09:44,140
+es hacer clic derecho y
+
+248
+00:09:44,140 --> 00:09:45,090
+crear un nuevo
+
+249
+00:09:45,090 --> 00:09:50,090
+archivo de Python y se debe llamar subrayado subrayar en l subrayar subrayar punto PUI.
+
+250
+00:09:50,130 --> 00:09:51,890
+Eso es dos guiones bajos al inicio, dos
+
+251
+00:09:51,890 --> 00:09:54,180
+guiones bajos en la interfaz de usuario del punto final.
+
+252
+00:09:55,080 --> 00:09:55,913
+Puede cerrar ese
+
+253
+00:09:55,913 --> 00:09:57,870
+archivo porque no necesitamos escribir nada en
+
+254
+00:09:57,870 --> 00:09:59,940
+l, pero esto es exactamente lo que debe
+
+255
+00:09:59,940 --> 00:10:02,380
+hacer para cumplir con las versiones anteriores de Python.
+
+256
+00:10:03,380 --> 00:10:04,213
+Bueno.
+
+257
+00:10:06,130 --> 00:10:11,110
+Entonces ahora este directorio aqu se llama paquete.
+
+258
+00:10:11,110 --> 00:10:13,920
+Para que Python sepa que puede importar cosas desde
+
+259
+00:10:13,920 --> 00:10:16,510
+all al menos en versiones anteriores, est bien.
+
+260
+00:10:16,510 --> 00:10:19,110
+Y as es como le da la
+
+261
+00:10:19,110 --> 00:10:23,550
+ruta completa a Python para que sepa dnde buscar su archivo.
+
+262
+00:10:25,250 --> 00:10:26,200
+Entonces eso es todo por este video.
+
+263
+00:10:26,200 --> 00:10:28,300
+Hemos analizado la importacin de nuestros propios archivos.
+
+264
+00:10:28,300 --> 00:10:29,980
+Vamos a ver las importaciones
+
+265
+00:10:29,980 --> 00:10:31,440
+relativas en el siguiente video.
+
+266
+00:10:31,440 --> 00:10:32,390
+Te ver all.
+

@@ -1,0 +1,244 @@
+1
+00:00:00,000 --> 00:00:03,000
+Hi and welcome back! In this video we're going to talk about
+
+2
+00:00:03,000 --> 00:00:06,000
+how to get the length of a list.
+
+3
+00:00:06,000 --> 00:00:09,000
+In the last video we briefly saw how to get the
+
+4
+00:00:09,000 --> 00:00:12,000
+total sum of different elements in a list.
+
+5
+00:00:12,000 --> 00:00:15,000
+For example, if we have a list called
+
+6
+00:00:15,000 --> 00:00:18,000
+"grades", and this has the elements
+
+7
+00:00:18,000 --> 00:00:21,000
+[95, 50, 75, and 100].
+
+8
+00:00:21,000 --> 00:00:24,000
+We saw that we could
+
+9
+00:00:24,000 --> 00:00:27,000
+do sum(), and then inside the
+
+10
+00:00:27,000 --> 00:00:30,000
+brackets of sum, we could put the grades list
+
+11
+00:00:30,000 --> 00:00:33,000
+and we say something like
+
+12
+00:00:33,000 --> 00:00:36,000
+total is that, and then we can print the total out
+
+13
+00:00:36,000 --> 00:00:39,000
+and this would
+
+14
+00:00:39,000 --> 00:00:42,000
+calculate the total sum of each element here.
+
+15
+00:00:42,000 --> 00:00:45,000
+So it would give us 95 + 50
+
+16
+00:00:45,000 --> 00:00:48,000
++ 75 + 100. I was about to add them all up in my head
+
+17
+00:00:48,000 --> 00:00:50,000
+but then I realised I can't do that!
+
+18
+00:00:50,000 --> 00:00:53,000
+So if we run this, we can see we get
+
+19
+00:00:53,000 --> 00:00:56,000
+320 there on the side.
+
+20
+00:00:56,000 --> 00:00:59,000
+Now, as you can see
+
+21
+00:00:59,000 --> 00:01:02,000
+this list has 4 elements, right?
+
+22
+00:01:02,000 --> 00:01:05,000
+It has 95, 50, 75, and 100.
+
+23
+00:01:05,000 --> 00:01:08,000
+There are 4 distinct elements
+
+24
+00:01:08,000 --> 00:01:11,000
+in this list. So if we wanted
+
+25
+00:01:11,000 --> 00:01:14,000
+to know how many elements there are,
+
+26
+00:01:14,000 --> 00:01:17,000
+we can do that by
+
+27
+00:01:17,000 --> 00:01:20,000
+calculating the length of the list.
+
+28
+00:01:20,000 --> 00:01:23,000
+So, we could do something like, say
+
+29
+00:01:23,000 --> 00:01:26,000
+length is equal to len
+
+30
+00:01:26,000 --> 00:01:29,000
+of grades. So, just like
+
+31
+00:01:29,000 --> 00:01:32,000
+sum gives us the total addition of all elements,
+
+32
+00:01:32,000 --> 00:01:35,000
+len gives us the total count
+
+33
+00:01:35,000 --> 00:01:38,000
+of elements—how many elements there are.
+
+34
+00:01:38,000 --> 00:01:41,000
+So then we can print length, and you'll see that we
+
+35
+00:01:41,000 --> 00:01:44,000
+get 320 and then 4 here on the side.
+
+36
+00:01:44,000 --> 00:01:47,000
+These two things here,
+
+37
+00:01:47,000 --> 00:01:50,000
+we're going to look at them in much more details over the rest of the
+
+38
+00:01:50,000 --> 00:01:53,000
+course, but they are very useful—and indeed you
+
+39
+00:01:53,000 --> 00:01:56,000
+may need this one for the next exercise.
+
+40
+00:01:56,000 --> 00:01:59,000
+There are more things that we can do other than
+
+41
+00:01:59,000 --> 00:02:02,000
+sum() and len(), and again, we will learn
+
+42
+00:02:02,000 --> 00:02:05,000
+about the other things you can do with lists and other collections
+
+43
+00:02:05,000 --> 00:02:06,800
+later on in the course.
+
+44
+00:02:06,800 --> 00:02:09,800
+And by the way, this len() and this sum()
+
+45
+00:02:09,800 --> 00:02:12,800
+work on lists, but they also work on tuples
+
+46
+00:02:12,800 --> 00:02:15,800
+so if we make our grades list
+
+47
+00:02:15,800 --> 00:02:18,800
+we make it a tuple, this'll still
+
+48
+00:02:18,800 --> 00:02:20,800
+work fine.
+
+49
+00:02:20,800 --> 00:02:23,800
+And the len() also works in dictionaries
+
+50
+00:02:23,800 --> 00:02:26,800
+and sets. So you can also get how many
+
+51
+00:02:26,800 --> 00:02:29,800
+elements there are in a dictionary or a set.
+
+52
+00:02:29,800 --> 00:02:32,800
+Generally, I'd advise you play around
+
+53
+00:02:32,800 --> 00:02:35,800
+with these things and give it a go—see where they work, where they don't
+
+54
+00:02:35,800 --> 00:02:38,800
+work—because that's a really good way of sort of
+
+55
+00:02:38,800 --> 00:02:41,800
+getting accustomed and getting to grips with everything that
+
+56
+00:02:41,800 --> 00:02:44,800
+there is to do in programming; by playing around with it
+
+57
+00:02:44,800 --> 00:02:47,800
+and giving it a go. Nonetheless, we've got a coding exercise
+
+58
+00:02:47,800 --> 00:02:50,800
+coming up next, so please
+
+59
+00:02:50,800 --> 00:02:53,800
+tackle that one—you're going to need to use the len()
+
+60
+00:02:53,800 --> 00:02:56,800
+keyword in it, so give it a go and then come back
+
+61
+00:02:56,800 --> 00:02:59,800
+and we will continue. I'll see you soon!
+

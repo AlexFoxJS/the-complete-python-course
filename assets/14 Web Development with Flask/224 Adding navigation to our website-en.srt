@@ -1,0 +1,448 @@
+1
+00:00:00,180 --> 00:00:01,620
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,620 --> 00:00:04,290
+Something that really bugs me about our application
+
+3
+00:00:04,290 --> 00:00:07,030
+is that once you're in a post,
+
+4
+00:00:07,030 --> 00:00:08,720
+you can't go back to the homepage
+
+5
+00:00:08,720 --> 00:00:10,920
+unless you press the back button.
+
+6
+00:00:10,920 --> 00:00:14,820
+Similarly, you can't really easily create a new post
+
+7
+00:00:14,820 --> 00:00:18,690
+unless you type the URL yourself, /post/create.
+
+8
+00:00:19,740 --> 00:00:20,573
+And even when you're here,
+
+9
+00:00:20,573 --> 00:00:22,980
+you can't go back to the homepage either.
+
+10
+00:00:22,980 --> 00:00:24,050
+So it's always a good idea
+
+11
+00:00:24,050 --> 00:00:26,760
+to add some proper navigation to your pages
+
+12
+00:00:26,760 --> 00:00:28,490
+just so your users and yourself
+
+13
+00:00:28,490 --> 00:00:30,710
+can go through them a bit easier.
+
+14
+00:00:30,710 --> 00:00:33,270
+Let's go over to PyCharm and do this just now.
+
+15
+00:00:34,730 --> 00:00:37,840
+I'm gonna stop the app first of all and minimise that.
+
+16
+00:00:37,840 --> 00:00:39,690
+And in order to add the links,
+
+17
+00:00:39,690 --> 00:00:43,320
+all we have to do is think about where we wanna put them.
+
+18
+00:00:44,760 --> 00:00:47,250
+Personally, I think that every page
+
+19
+00:00:47,250 --> 00:00:49,270
+should have a link to the homepage
+
+20
+00:00:49,270 --> 00:00:50,950
+so I'm gonna add the link to the homepage
+
+21
+00:00:50,950 --> 00:00:52,430
+inside base on HTML.
+
+22
+00:00:53,770 --> 00:00:56,440
+This block content will be replaced
+
+23
+00:00:56,440 --> 00:00:59,420
+by the child content every page.
+
+24
+00:00:59,420 --> 00:01:01,070
+So if you put something in here,
+
+25
+00:01:01,070 --> 00:01:03,750
+it won't be present in any of the pages.
+
+26
+00:01:03,750 --> 00:01:07,030
+Just because when you have home.jinja2 for example,
+
+27
+00:01:07,030 --> 00:01:09,050
+this is going to replace this.
+
+28
+00:01:09,050 --> 00:01:11,171
+It's not going to add to it.
+
+29
+00:01:11,171 --> 00:01:12,820
+So if you wanna put something in every page,
+
+30
+00:01:12,820 --> 00:01:14,770
+put it outside of the block of content.
+
+31
+00:01:15,860 --> 00:01:19,970
+What we're gonna do here is add a URL to the homepage.
+
+32
+00:01:19,970 --> 00:01:21,560
+And I think you can do this.
+
+33
+00:01:21,560 --> 00:01:24,970
+Add a new anchor tag, add the href,
+
+34
+00:01:24,970 --> 00:01:28,930
+and make it point to the url_for of the homepage.
+
+35
+00:01:28,930 --> 00:01:29,763
+Try that out.
+
+36
+00:01:29,763 --> 00:01:31,220
+Pause the video and give it a go.
+
+37
+00:01:35,500 --> 00:01:36,730
+I'm sure you managed.
+
+38
+00:01:36,730 --> 00:01:38,730
+All we have to do is create a new a tag,
+
+39
+00:01:38,730 --> 00:01:43,730
+give it an href, url_for, and the homepage in here.
+
+40
+00:01:46,860 --> 00:01:50,580
+Then close the tag and type in home for example.
+
+41
+00:01:51,990 --> 00:01:55,460
+Notice how the href needs these quotation marks around it
+
+42
+00:01:55,460 --> 00:01:57,040
+because the href contents
+
+43
+00:01:57,040 --> 00:01:59,560
+have to be inside quotation marks for HTML.
+
+44
+00:02:00,720 --> 00:02:03,900
+This here will be replaced by the URL
+
+45
+00:02:03,900 --> 00:02:07,720
+or the endpoint of your home function, this one.
+
+46
+00:02:09,020 --> 00:02:10,510
+If we run the app now
+
+47
+00:02:10,510 --> 00:02:12,990
+and we go back to Chrome and we refresh,
+
+48
+00:02:12,990 --> 00:02:15,760
+we can see that we've lost the blog post first of all,
+
+49
+00:02:15,760 --> 00:02:17,770
+but we have this home there.
+
+50
+00:02:17,770 --> 00:02:20,700
+If we go into a specific post, that home is still there.
+
+51
+00:02:22,190 --> 00:02:23,710
+Something that isn't there though
+
+52
+00:02:23,710 --> 00:02:25,870
+is the ability to create a new post.
+
+53
+00:02:26,840 --> 00:02:28,430
+I think that creating a new post
+
+54
+00:02:28,430 --> 00:02:30,130
+should only be in the homepage.
+
+55
+00:02:30,130 --> 00:02:32,010
+So let's stop our app, minimise that,
+
+56
+00:02:32,010 --> 00:02:33,870
+and go over to the homepage
+
+57
+00:02:33,870 --> 00:02:36,980
+and down below, add another link.
+
+58
+00:02:36,980 --> 00:02:39,340
+Once again, I think you can do this.
+
+59
+00:02:43,980 --> 00:02:45,150
+Hopefully you got that.
+
+60
+00:02:45,150 --> 00:02:46,390
+In order to create a new post,
+
+61
+00:02:46,390 --> 00:02:48,930
+all we have to do is again the same.
+
+62
+00:02:48,930 --> 00:02:51,630
+So create an a tag which is an anchor tag
+
+63
+00:02:51,630 --> 00:02:53,340
+and an href, type url_for,
+
+64
+00:02:54,510 --> 00:02:57,070
+and then here the name of the function
+
+65
+00:02:57,070 --> 00:03:02,070
+that will give you your create.jinja2,
+
+66
+00:03:02,450 --> 00:03:04,700
+that's the create function so let's go there.
+
+67
+00:03:05,920 --> 00:03:07,300
+It doesn't need any arguments.
+
+68
+00:03:07,300 --> 00:03:09,580
+Any arguments could go here after a comma,
+
+69
+00:03:09,580 --> 00:03:11,680
+but it doesn't need any because it doesn't
+
+70
+00:03:12,890 --> 00:03:14,520
+take any parameters.
+
+71
+00:03:15,940 --> 00:03:17,420
+That's it.
+
+72
+00:03:17,420 --> 00:03:21,140
+Tried something too many times and then type create post,
+
+73
+00:03:21,140 --> 00:03:22,850
+create new post for example,
+
+74
+00:03:22,850 --> 00:03:24,560
+close the a tag and that's it.
+
+75
+00:03:25,660 --> 00:03:27,500
+Again, we can run our app,
+
+76
+00:03:27,500 --> 00:03:29,910
+go over here, refresh,
+
+77
+00:03:29,910 --> 00:03:33,020
+and now we can see this create new post thing there.
+
+78
+00:03:33,020 --> 00:03:35,380
+We've got a bit of a nicer navigation there
+
+79
+00:03:35,380 --> 00:03:36,270
+that we can navigate our page
+
+80
+00:03:36,270 --> 00:03:39,150
+without having to type out the URLs ourselves.
+
+81
+00:03:41,290 --> 00:03:44,780
+I want you to realise these are just building blocks.
+
+82
+00:03:44,780 --> 00:03:46,180
+You've got your links.
+
+83
+00:03:46,180 --> 00:03:48,530
+You've got your p tags, your lists,
+
+84
+00:03:48,530 --> 00:03:50,080
+and a few things in Flask
+
+85
+00:03:50,080 --> 00:03:54,110
+like url_for, redirects, render templates,
+
+86
+00:03:54,110 --> 00:03:56,530
+the ability to show information,
+
+87
+00:03:56,530 --> 00:03:58,760
+and there are countless things you can do
+
+88
+00:03:58,760 --> 00:04:00,630
+with this knowledge already.
+
+89
+00:04:00,630 --> 00:04:03,680
+Granted, the website could look a bit nicer.
+
+90
+00:04:03,680 --> 00:04:06,120
+You wanna look at CSS for that.
+
+91
+00:04:06,120 --> 00:04:07,490
+This is not the course for that
+
+92
+00:04:07,490 --> 00:04:09,700
+because this is not a web course.
+
+93
+00:04:09,700 --> 00:04:12,640
+But if you want to look at CSS for styling the page,
+
+94
+00:04:12,640 --> 00:04:13,580
+make it look a bit nicer,
+
+95
+00:04:13,580 --> 00:04:16,360
+add some colour, add different font sizes,
+
+96
+00:04:16,360 --> 00:04:19,610
+maybe not put everything just on the left of the page,
+
+97
+00:04:19,610 --> 00:04:21,020
+maybe put things centred in the middle
+
+98
+00:04:21,020 --> 00:04:22,520
+or something like that,
+
+99
+00:04:22,520 --> 00:04:23,370
+you can learn about that
+
+100
+00:04:23,370 --> 00:04:25,930
+and it's actually fairly straightforward
+
+101
+00:04:25,930 --> 00:04:29,680
+to do some simple but nice looking websites.
+
+102
+00:04:29,680 --> 00:04:33,040
+And now with Python, you can do a lot of stuff.
+
+103
+00:04:33,040 --> 00:04:35,680
+You know Python pretty well by now.
+
+104
+00:04:35,680 --> 00:04:37,850
+You can store things in a database
+
+105
+00:04:37,850 --> 00:04:39,910
+and do countless other things
+
+106
+00:04:39,910 --> 00:04:42,170
+in terms of giving the user information
+
+107
+00:04:42,170 --> 00:04:43,340
+and calculating things.
+
+108
+00:04:44,270 --> 00:04:47,104
+Hopefully this opens new doors for you
+
+109
+00:04:47,104 --> 00:04:49,900
+in terms of communicating with your users.
+
+110
+00:04:49,900 --> 00:04:51,600
+I hope you've enjoyed this section
+
+111
+00:04:51,600 --> 00:04:54,750
+and I'm glad to guide you through Flask development.
+
+112
+00:04:54,750 --> 00:04:56,300
+I'll see you in the next video.
+

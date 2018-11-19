@@ -1,0 +1,280 @@
+1
+00:00:00,324 --> 00:00:01,695
+Jos: Ol, e bem vindo de volta.
+
+2
+00:00:01,695 --> 00:00:05,847
+Neste vdeo, vamos criar nossa pgina de livros.
+
+3
+00:00:05,847 --> 00:00:08,678
+Ento, vamos at a nossa pasta Pginas
+
+4
+00:00:08,678 --> 00:00:13,287
+e criar um novo arquivo Python, que eu chamarei de all_books_page.
+
+5
+00:00:13,287 --> 00:00:17,662
+Esta pgina ser apenas uma classe chamada AllBooksPage.
+
+6
+00:00:17,662 --> 00:00:19,782
+Voc pode cham-lo de pgina de catlogo, se
+
+7
+00:00:19,782 --> 00:00:21,819
+voc preferir, voc sabe, qualquer nome  vlido,
+
+8
+00:00:21,819 --> 00:00:25,343
+este  apenas o nome que eu estou indo, mas voc pode alter-lo.
+
+9
+00:00:25,343 --> 00:00:29,790
+Agora, essa classe vai absorver todo o contedo HTML
+
+10
+00:00:29,790 --> 00:00:32,692
+e vai analis-lo com o BeautifulSoup.
+
+11
+00:00:32,692 --> 00:00:34,658
+Ento, no mtodo init,
+
+12
+00:00:34,658 --> 00:00:38,326
+vamos dizer "eu". soup = BeautifulSoup
+
+13
+00:00:38,326 --> 00:00:40,743
+do contedo da pgina
+
+14
+00:00:42,572 --> 00:00:44,849
+usando o HTML Parser.
+
+15
+00:00:44,849 --> 00:00:47,746
+ claro que precisaremos de contedo de
+
+16
+00:00:47,746 --> 00:00:48,913
+pgina como argumento
+
+17
+00:00:50,145 --> 00:00:51,260
+e, portanto, 
+
+18
+00:00:51,260 --> 00:00:54,820
+um parmetro e, claro, precisaremos importar o BeautifulSoup.
+
+19
+00:00:54,820 --> 00:00:56,513
+Ok, certifique-se de ter o BeautifulSoup
+
+20
+00:00:56,513 --> 00:00:58,347
+instalado, caso ainda no tenha feito isso.
+
+21
+00:00:58,347 --> 00:00:59,180
+Embora, se voc
+
+22
+00:00:59,180 --> 00:01:02,219
+tem acompanhado os ltimos vdeos, voc deve estar bem.
+
+23
+00:01:02,219 --> 00:01:05,901
+Agora, uma vez que fazemos isso, uma vez que criamos
+
+24
+00:01:05,901 --> 00:01:09,172
+um novo objeto do tipo AllBooksPage, e damos a
+
+25
+00:01:09,172 --> 00:01:12,645
+ele o contedo HTML, isso imediatamente usar o BeautifulSoup
+
+26
+00:01:12,645 --> 00:01:15,967
+para criar essa varivel ou propriedade de sopa.
+
+27
+00:01:15,967 --> 00:01:19,928
+Ento podemos usar essa propriedade de sopa dentro de qualquer um dos
+
+28
+00:01:19,928 --> 00:01:22,345
+mtodos para fazer coisas como encontrar coisas.
+
+29
+00:01:23,571 --> 00:01:27,223
+Ento, eu vou criar uma propriedade chamada livros que
+
+30
+00:01:27,223 --> 00:01:28,973
+vai encontrar todos os
+
+31
+00:01:30,906 --> 00:01:32,239
+livros usando o
+
+32
+00:01:35,053 --> 00:01:37,166
+nosso localizador, ento observe como
+
+33
+00:01:37,166 --> 00:01:40,916
+estamos nos comportando. sopa. selecione e no auto. sopa. select_one O
+
+34
+00:01:42,133 --> 00:01:45,682
+select vai selecionar todas as instncias deste localizador
+
+35
+00:01:45,682 --> 00:01:49,517
+que ele pode encontrar, e novamente, este localizador ser
+
+36
+00:01:49,517 --> 00:01:53,941
+toda essa coisa, e existem muitas tags li na pgina.
+
+37
+00:01:53,941 --> 00:01:56,688
+Um para cada livro, ento isso nos
+
+38
+00:01:56,688 --> 00:02:00,937
+dar uma tag BeautifulSoup para cada tag li na pgina.
+
+39
+00:02:00,937 --> 00:02:03,692
+Claro que temos que importar nossos
+
+40
+00:02:03,692 --> 00:02:08,068
+localizadores, portanto, de localizadores. all_books_page import AllBooksPageLocators e esta 
+
+41
+00:02:08,068 --> 00:02:09,944
+uma conveno a propsito em
+
+42
+00:02:09,944 --> 00:02:12,209
+Python, no tenho certeza se mencionei
+
+43
+00:02:12,209 --> 00:02:16,899
+isso antes, mas suas importaes de seus arquivos locais devem vir sob
+
+44
+00:02:16,899 --> 00:02:18,794
+importaes de outras coisas.
+
+45
+00:02:18,794 --> 00:02:21,469
+Ento, se voc est importando coisas de outros projetos
+
+46
+00:02:21,469 --> 00:02:23,935
+que voc no criou, elas vo no topo,
+
+47
+00:02:23,935 --> 00:02:26,368
+suas importaes vo diretamente abaixo delas e voc
+
+48
+00:02:26,368 --> 00:02:27,563
+pode colocar seu cdigo.
+
+49
+00:02:27,563 --> 00:02:30,641
+E todas as importaes sempre esto no topo.
+
+50
+00:02:30,641 --> 00:02:33,544
+Agora, isso nos dar as tags do
+
+51
+00:02:33,544 --> 00:02:34,838
+BeautifulSoup, mas no
+
+52
+00:02:34,838 --> 00:02:38,583
+queremos as tags do BeautifulSoup, queremos usar nosso analisador,
+
+53
+00:02:38,583 --> 00:02:43,168
+que ainda no criamos para encontrar algumas informaes especficas a partir daqui.
+
+54
+00:02:43,168 --> 00:02:44,850
+Ento, o que eu
+
+55
+00:02:44,850 --> 00:02:47,139
+vou fazer  passar um BookParser
+
+56
+00:02:47,139 --> 00:02:48,306
+para e nisto.
+
+57
+00:02:49,618 --> 00:02:51,084
+OK?
+
+58
+00:02:51,084 --> 00:02:54,419
+Tudo o que isso vai fazer , novamente,
+
+59
+00:02:54,419 --> 00:02:56,415
+iterar sobre todas as
+
+60
+00:02:56,415 --> 00:02:59,232
+tags que encontrarmos e criar um
+
+61
+00:02:59,232 --> 00:03:01,738
+objeto BookParser usando essa tag BeautifulSoup
+
+62
+00:03:01,738 --> 00:03:04,858
+passando como um argumento para essa construo.
+
+63
+00:03:04,858 --> 00:03:07,526
+Ento,  claro, temos que criar
+
+64
+00:03:07,526 --> 00:03:10,478
+o BookParser, mas j fizemos algo muito
+
+65
+00:03:10,478 --> 00:03:12,403
+parecido com isso em um
+
+66
+00:03:12,403 --> 00:03:16,078
+vdeo anterior, no incio desta seo, onde criamos uma
+
+67
+00:03:16,078 --> 00:03:18,565
+classe BookParser simples, ento vamos realmente
+
+68
+00:03:18,565 --> 00:03:22,702
+praticamente reutilizamos isso, vamos ao prximo vdeo e ver o
+
+69
+00:03:22,702 --> 00:03:26,832
+que podemos reutilizar do que fizemos em alguns vdeos atrs.
+
+70
+00:03:26,832 --> 00:03:27,790
+Eu te vejo l.
+

@@ -1,0 +1,449 @@
+1
+00:00:00,079 --> 00:00:01,286
+<v Jose>Hi and Welcome back.</v>
+
+2
+00:00:01,286 --> 00:00:05,335
+In this video, we're going to get data out of multiple pages
+
+3
+00:00:05,335 --> 00:00:06,952
+and that's going to be really simple,
+
+4
+00:00:06,952 --> 00:00:10,712
+because each page has, essentially, the same content,
+
+5
+00:00:10,712 --> 00:00:12,118
+and all we have to do is,
+
+6
+00:00:12,118 --> 00:00:15,311
+instead of getting a list of book parsers,
+
+7
+00:00:15,311 --> 00:00:16,623
+which is from one page,
+
+8
+00:00:16,623 --> 00:00:19,119
+we're going to get the book parsers from each page
+
+9
+00:00:19,119 --> 00:00:21,989
+and then we're gonna join them all into a single list.
+
+10
+00:00:21,989 --> 00:00:23,882
+And that's going to give us a list of all the books
+
+11
+00:00:23,882 --> 00:00:24,965
+in each page.
+
+12
+00:00:26,560 --> 00:00:28,164
+So, what we're going to do is,
+
+13
+00:00:28,164 --> 00:00:31,948
+instead of saying books = page.books
+
+14
+00:00:31,948 --> 00:00:35,142
+what we're going to do is, we're going to start by
+
+15
+00:00:35,142 --> 00:00:37,559
+going over each of the pages.
+
+16
+00:00:38,578 --> 00:00:42,108
+So instead of going over this page here,
+
+17
+00:00:42,108 --> 00:00:47,108
+we are going to do:
+for page_num in range(50)
+
+18
+00:00:48,760 --> 00:00:50,991
+There are 50 pages.
+
+19
+00:00:50,991 --> 00:00:54,324
+We're going to say the URL is this here,
+
+20
+00:00:58,746 --> 00:00:59,579
+but also
+
+21
+00:01:01,019 --> 00:01:06,019
+catalogue/page-(page_num+1).html
+
+22
+00:01:11,108 --> 00:01:14,104
+and, of course, this has to be an f string in there.
+
+23
+00:01:14,104 --> 00:01:16,675
+What this is going to do now is construct the URL
+
+24
+00:01:16,675 --> 00:01:18,931
+of the page we want,
+
+25
+00:01:18,931 --> 00:01:20,264
+starting at one.
+
+26
+00:01:21,590 --> 00:01:25,463
+Remember, the range function starts at zero, goes 0 to 49
+
+27
+00:01:25,463 --> 00:01:27,629
+Our pages go from 1 to 50,
+
+28
+00:01:27,629 --> 00:01:31,899
+so we have to add one to the page_num that we've got.
+
+29
+00:01:31,899 --> 00:01:34,964
+And then all we do is get the URL.
+
+30
+00:01:34,964 --> 00:01:39,964
+page_content = requests.get(url).content
+
+31
+00:01:40,038 --> 00:01:44,886
+And of course, construct the page with the page_content.
+
+32
+00:01:44,886 --> 00:01:49,886
+And then we are going to make sure to put them into our list
+
+33
+00:01:50,313 --> 00:01:53,146
+So that's going to be books.extend
+
+34
+00:01:55,971 --> 00:01:58,208
+(page.books)
+
+35
+00:01:58,208 --> 00:01:59,703
+Like that.
+
+36
+00:01:59,703 --> 00:02:02,786
+Now, because we've got page one here,
+
+37
+00:02:04,576 --> 00:02:07,659
+we can start, of course, at page two.
+
+38
+00:02:08,779 --> 00:02:10,854
+So our range can go from 1 to 50,
+
+39
+00:02:10,854 --> 00:02:13,864
+which is going to be 48 numbers.
+
+40
+00:02:13,864 --> 00:02:16,755
+So, page two is gonna be the first page we're gonna
+
+41
+00:02:16,755 --> 00:02:18,918
+get in this section.
+
+42
+00:02:18,918 --> 00:02:20,159
+And we're going to start with page one,
+
+43
+00:02:20,159 --> 00:02:21,169
+which is actually this one.
+
+44
+00:02:21,169 --> 00:02:25,429
+Remember how the page one and the page that has nothing,
+
+45
+00:02:25,429 --> 00:02:28,752
+in terms of the catalogue and page number, is also page one.
+
+46
+00:02:28,752 --> 00:02:30,781
+So, this is page one here.
+
+47
+00:02:30,781 --> 00:02:33,451
+And then what we do is we get the book's pages,
+
+48
+00:02:33,451 --> 00:02:36,981
+then we go over the rest of the pages and extend that list
+
+49
+00:02:36,981 --> 00:02:40,898
+by the page.books that we have just downloaded.
+
+50
+00:02:42,656 --> 00:02:46,931
+OK? So, by the time this file finishes running,
+
+51
+00:02:46,931 --> 00:02:50,843
+books will contain the information of all the pages.
+
+52
+00:02:50,843 --> 00:02:52,817
+Now, notice that is something important, though,
+
+53
+00:02:52,817 --> 00:02:55,734
+which is that the 50 is hard coded.
+
+54
+00:02:57,229 --> 00:02:58,414
+And sometimes you won't want that.
+
+55
+00:02:58,414 --> 00:02:59,784
+Sometimes, you'll want to make sure
+
+56
+00:02:59,784 --> 00:03:03,232
+that you get the page count from the page itself,
+
+57
+00:03:03,232 --> 00:03:04,788
+so that you don't go wrong.
+
+58
+00:03:04,788 --> 00:03:07,203
+For example, if they add more books to the collection,
+
+59
+00:03:07,203 --> 00:03:10,616
+the page number, the base count, might increase.
+
+60
+00:03:10,616 --> 00:03:12,497
+Let's try this out though, first of all,
+
+61
+00:03:12,497 --> 00:03:16,674
+by running our menu and see whether anything changes.
+
+62
+00:03:16,674 --> 00:03:19,623
+Let's press play in the menu
+
+63
+00:03:19,623 --> 00:03:21,573
+Notice how this takes a while now.
+
+64
+00:03:21,573 --> 00:03:24,128
+It takes a while because it's having to go through
+
+65
+00:03:24,128 --> 00:03:27,108
+all of the pages and downloading each of them.
+
+66
+00:03:27,108 --> 00:03:29,503
+So, it takes a while.
+
+67
+00:03:29,503 --> 00:03:31,430
+Then we can do B.
+
+68
+00:03:31,430 --> 00:03:33,323
+And now we get all the books.
+
+69
+00:03:33,323 --> 00:03:36,701
+Notice how, now, all the books we get are five-star books
+
+70
+00:03:36,701 --> 00:03:39,789
+whereas before we got a few five-stars, a few four-stars.
+
+71
+00:03:39,789 --> 00:03:41,682
+That's because now we have more books
+
+72
+00:03:41,682 --> 00:03:46,153
+and therefore, there are a larger number of five-star books.
+
+73
+00:03:46,153 --> 00:03:48,838
+Similarly, if we get just the cheapest books,
+
+74
+00:03:48,838 --> 00:03:51,914
+there'll be books that are lower price,
+
+75
+00:03:51,914 --> 00:03:54,225
+in this case we've got a 10 pound one
+
+76
+00:03:54,225 --> 00:03:56,941
+here, that is five-stars.
+
+77
+00:03:56,941 --> 00:03:59,651
+And we've got a few other 10 pounders here.
+
+78
+00:03:59,651 --> 00:04:01,648
+So as you can see, it doesn't even go over 10
+
+79
+00:04:01,648 --> 00:04:03,935
+because there are so many books now,
+
+80
+00:04:03,935 --> 00:04:06,675
+that it doesn't go over that,
+
+81
+00:04:06,675 --> 00:04:08,753
+when you only get the 10 cheapest ones.
+
+82
+00:04:08,753 --> 00:04:11,069
+And if you went next and next,
+
+83
+00:04:11,069 --> 00:04:13,229
+you would be here for a long time.
+
+84
+00:04:13,229 --> 00:04:15,923
+The "A Light in the Attic" book's still the first book.
+
+85
+00:04:15,923 --> 00:04:19,789
+But, now there are many more books in the collection.
+
+86
+00:04:19,789 --> 00:04:21,612
+Of course, there are more things you can tell your users,
+
+87
+00:04:21,612 --> 00:04:23,911
+like how many books there are in the collection,
+
+88
+00:04:23,911 --> 00:04:26,708
+you can tell them which ones are in stock or not,
+
+89
+00:04:26,708 --> 00:04:29,065
+although you'd have to look at another property
+
+90
+00:04:29,065 --> 00:04:31,004
+in the book parser in order to do that.
+
+91
+00:04:31,004 --> 00:04:34,258
+So there's quite a lot of stuff you can do there.
+
+92
+00:04:34,258 --> 00:04:38,086
+One other area of improvement would be,
+
+93
+00:04:38,086 --> 00:04:40,799
+other than the 50 being hard coded,
+
+94
+00:04:40,799 --> 00:04:41,716
+would be to
+
+95
+00:04:42,724 --> 00:04:44,224
+get all these URLs
+
+96
+00:04:45,368 --> 00:04:46,564
+at the same time,
+
+97
+00:04:46,564 --> 00:04:48,782
+or more or less at the same time,
+
+98
+00:04:48,782 --> 00:04:52,776
+and doing, essentially, parallel downloading.
+
+99
+00:04:52,776 --> 00:04:54,296
+Downloading the things simultaneously.
+
+100
+00:04:54,296 --> 00:04:56,270
+This is something that Python can do
+
+101
+00:04:56,270 --> 00:04:58,569
+and we may look at that later on in the course.
+
+102
+00:04:58,569 --> 00:05:02,307
+But, for now, we'll settle for downloading one at a time
+
+103
+00:05:02,307 --> 00:05:03,608
+and when it's finished downloading,
+
+104
+00:05:03,608 --> 00:05:04,966
+moving on to the next one.
+
+105
+00:05:04,966 --> 00:05:08,844
+Later on, we can look into doing them at the same time.
+
+106
+00:05:08,844 --> 00:05:12,838
+Okay, so that's it for requesting a larger number of pages,
+
+107
+00:05:12,838 --> 00:05:14,149
+which you can see is very simple.
+
+108
+00:05:14,149 --> 00:05:17,354
+Let's go and, not hard code the page count.
+
+109
+00:05:17,354 --> 00:05:19,676
+So, we're going to get the 50 from the page,
+
+110
+00:05:19,676 --> 00:05:23,205
+as opposed to putting the number here.
+
+111
+00:05:23,205 --> 00:05:24,924
+Let's go and do that in the next video.
+
+112
+00:05:24,924 --> 00:05:26,468
+I'll see you there.
+

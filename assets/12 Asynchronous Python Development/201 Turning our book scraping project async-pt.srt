@@ -1,0 +1,944 @@
+1
+00:00:00,100 --> 00:00:01,510
+Instrutor: Ol e bem vindo de volta.
+
+2
+00:00:01,510 --> 00:00:03,130
+Estou muito animado para
+
+3
+00:00:03,130 --> 00:00:07,030
+gui-lo ao transformar nosso raspador em um raspador assncrono.
+
+4
+00:00:08,670 --> 00:00:10,340
+Vamos ver algumas coisas
+
+5
+00:00:10,340 --> 00:00:13,040
+que podem ser um pouco surpreendentes ao
+
+6
+00:00:13,040 --> 00:00:15,070
+longo deste vdeo, mas, em
+
+7
+00:00:15,070 --> 00:00:16,750
+geral, voc ver grandes
+
+8
+00:00:16,750 --> 00:00:18,570
+melhorias de desempenho ao fazer isso.
+
+9
+00:00:18,570 --> 00:00:21,300
+Vamos comear com a reimplementao
+
+10
+00:00:21,300 --> 00:00:24,110
+de nossas funes para torn-las assncronas.
+
+11
+00:00:24,110 --> 00:00:26,920
+Ento, teremos nossa pgina de busca
+
+12
+00:00:26,920 --> 00:00:29,240
+e receberemos vrias pginas aqui.
+
+13
+00:00:29,240 --> 00:00:30,580
+Eu vou para o
+
+14
+00:00:30,580 --> 00:00:32,270
+pedido assncrono e apenas os
+
+15
+00:00:32,270 --> 00:00:33,900
+copio porque eles sero exatamente
+
+16
+00:00:33,900 --> 00:00:36,630
+os mesmos, essa  a razo pela qual
+
+17
+00:00:36,630 --> 00:00:39,640
+ns cobrimos essas duas funes para permitir que voc
+
+18
+00:00:39,640 --> 00:00:41,370
+as reutilize em qualquer projeto.
+
+19
+00:00:41,370 --> 00:00:42,980
+Claro, temos algumas importaes
+
+20
+00:00:42,980 --> 00:00:44,930
+faltando, ento vamos import-las.
+
+21
+00:00:46,290 --> 00:00:49,800
+Ns no precisamos mais de pedidos, para que possamos nos livrar disso.
+
+22
+00:00:49,800 --> 00:00:51,350
+Podemos importar
+
+23
+00:00:54,288 --> 00:00:57,120
+asyncio, aiohttp, async_timeout e time.
+
+24
+00:00:57,120 --> 00:00:58,400
+O tempo  apenas para
+
+25
+00:00:58,400 --> 00:01:00,250
+o tempo, podemos remov-lo mais tarde, se quisermos.
+
+26
+00:01:01,110 --> 00:01:03,650
+Observe como temos essa pgina de
+
+27
+00:01:03,650 --> 00:01:07,230
+solicitaes aqui, ento, na verdade, temos solicitaes separadas
+
+28
+00:01:07,230 --> 00:01:09,600
+para obter o nmero de
+
+29
+00:01:09,600 --> 00:01:11,070
+pginas que vamos solicitar.
+
+30
+00:01:11,070 --> 00:01:13,250
+Lembre-se que comeamos em um e
+
+31
+00:01:13,250 --> 00:01:15,620
+nos levantamos at a contagem de pginas.
+
+32
+00:01:15,620 --> 00:01:17,760
+Ento, na verdade, eu reverti o
+
+33
+00:01:17,760 --> 00:01:21,140
+que disse antes, ainda precisamos de solicitaes de importao.
+
+34
+00:01:21,140 --> 00:01:22,260
+E isso 
+
+35
+00:01:22,260 --> 00:01:25,150
+totalmente bom, voc pode ter um cdigo sncrono cercado
+
+36
+00:01:25,150 --> 00:01:28,010
+ou unido por um cdigo assncrono lado a lado,
+
+37
+00:01:28,010 --> 00:01:29,347
+isso  totalmente bom.
+
+38
+00:01:29,347 --> 00:01:30,930
+Eu esqueci que estvamos fazendo
+
+39
+00:01:30,930 --> 00:01:33,970
+isso para obter o nmero de pginas, tudo bem.
+
+40
+00:01:33,970 --> 00:01:37,040
+Voc poderia transform-lo em uma solicitao assncrona, mas como
+
+41
+00:01:37,040 --> 00:01:40,490
+ uma solicitao nica que estamos fazendo primeiro, para obter
+
+42
+00:01:40,490 --> 00:01:42,570
+a contagem, no faz sentido tratar
+
+43
+00:01:42,570 --> 00:01:44,810
+isso de forma assncrona, afinal de
+
+44
+00:01:44,810 --> 00:01:46,300
+contas,  apenas uma
+
+45
+00:01:46,300 --> 00:01:47,770
+solicitao. aguarde que termine
+
+46
+00:01:47,770 --> 00:01:49,520
+antes de obter os dados.
+
+47
+00:01:49,520 --> 00:01:51,107
+Portanto, no h benefcio
+
+48
+00:01:51,107 --> 00:01:54,290
+de executar uma coisa simultaneamente como ela mesma.
+
+49
+00:01:55,600 --> 00:01:56,960
+Ento, isso ainda
+
+50
+00:01:56,960 --> 00:01:58,460
+ser sncrono, tudo bem.
+
+51
+00:01:58,460 --> 00:02:00,660
+E ento ns vamos ter nossas
+
+52
+00:02:00,660 --> 00:02:04,000
+duas funes aqui, a fim de buscar a pgina e
+
+53
+00:02:04,000 --> 00:02:07,670
+obter vrias pginas e, em seguida, podemos cham-los no nosso loop.
+
+54
+00:02:07,670 --> 00:02:10,290
+Observe como nosso loop est interagindo
+
+55
+00:02:10,290 --> 00:02:13,055
+com a contagem de pginas e,
+
+56
+00:02:13,055 --> 00:02:16,090
+em seguida, obteremos cada URL usando solicitaes.
+
+57
+00:02:16,090 --> 00:02:18,570
+Ns no queremos mais fazer isso.
+
+58
+00:02:18,570 --> 00:02:21,520
+Ns no queremos mais iterar sobre o intervalo
+
+59
+00:02:21,520 --> 00:02:24,320
+e obter cada pgina, agora o que queremos
+
+60
+00:02:24,320 --> 00:02:28,240
+fazer  obter todas as URLs e pass-las para a nossa
+
+61
+00:02:28,240 --> 00:02:29,940
+funo mltipla, obter vrias pginas.
+
+62
+00:02:29,940 --> 00:02:32,250
+Ento, o que fazer  copiar isso e
+
+63
+00:02:34,560 --> 00:02:36,310
+coloc-lo em uma lista de compreenso.
+
+64
+00:02:42,970 --> 00:02:44,240
+Como assim e voc
+
+65
+00:02:44,240 --> 00:02:45,290
+pode cham-los de
+
+66
+00:02:46,843 --> 00:02:47,950
+URLs, por exemplo.
+
+67
+00:02:47,950 --> 00:02:49,600
+Mais uma vez, tudo o que estamos fazendo aqui,
+
+68
+00:02:49,600 --> 00:02:51,640
+e a propsito, vou fechar a barra lateral apenas para o
+
+69
+00:02:51,640 --> 00:02:53,550
+seu benefcio l, ento temos um pouco mais de espao.
+
+70
+00:02:53,550 --> 00:02:56,310
+O que estamos fazendo aqui  apenas colocar isso
+
+71
+00:02:56,310 --> 00:02:59,060
+dentro da compreenso da lista entre o intervalo de
+
+72
+00:02:59,060 --> 00:03:00,480
+um e a contagem.
+
+73
+00:03:01,370 --> 00:03:03,080
+Exatamente o mesmo que estvamos fazendo
+
+74
+00:03:03,080 --> 00:03:06,220
+aqui, mas, exceto que no estamos mais interagindo sobre isso,
+
+75
+00:03:06,220 --> 00:03:07,670
+estamos apenas criando as URLs.
+
+76
+00:03:09,730 --> 00:03:11,200
+Ento vamos comear um
+
+77
+00:03:11,200 --> 00:03:14,140
+temporizador, s para verificar quanto tempo demora.
+
+78
+00:03:14,140 --> 00:03:16,650
+Eu quero fazer pginas iguais
+
+79
+00:03:16,650 --> 00:03:19,840
+ponto de loop executado at concluir, obter
+
+80
+00:03:21,170 --> 00:03:25,170
+vrias pginas com o loop que criamos e
+
+81
+00:03:25,170 --> 00:03:27,200
+todas as nossas URLs.
+
+82
+00:03:29,490 --> 00:03:30,890
+Ns vamos criar o
+
+83
+00:03:30,890 --> 00:03:33,510
+loop no topo, isso  algo normal,
+
+84
+00:03:33,510 --> 00:03:35,720
+criar o loop no topo.
+
+85
+00:03:35,720 --> 00:03:39,630
+Ns vamos dizer que o loop  um ponto assncrono.
+
+86
+00:03:39,630 --> 00:03:41,520
+Isso  tudo, agora podemos usar esse loop
+
+87
+00:03:41,520 --> 00:03:43,750
+para executar as coisas at que estejam completas, ok?
+
+88
+00:03:46,590 --> 00:03:48,840
+Ento, no final, podemos imprimir que
+
+89
+00:03:48,840 --> 00:03:49,900
+levou algum tempo.
+
+90
+00:03:49,900 --> 00:03:50,733
+Impresso.
+
+91
+00:03:52,360 --> 00:03:56,870
+O total de solicitaes de pginas demorou o tempo do ponto menos o incio.
+
+92
+00:03:57,780 --> 00:03:58,613
+OK?
+
+93
+00:03:59,940 --> 00:04:02,150
+Agora estas pginas, qual
+
+94
+00:04:02,150 --> 00:04:04,480
+ o valor delas?
+
+95
+00:04:04,480 --> 00:04:07,270
+Porque o loop correu essa coisa aqui
+
+96
+00:04:07,270 --> 00:04:09,602
+at que ela foi concluda, mas
+
+97
+00:04:09,602 --> 00:04:13,710
+essa coisa aqui retornou uma espera das tarefas agrupadas.
+
+98
+00:04:13,710 --> 00:04:15,440
+Ento, qual  o resultado?
+
+99
+00:04:16,560 --> 00:04:18,430
+Felizmente, isso funciona
+
+100
+00:04:18,430 --> 00:04:20,870
+exatamente como voc esperaria.
+
+101
+00:04:20,870 --> 00:04:23,920
+Essas tarefas agrupadas, que  essa
+
+102
+00:04:23,920 --> 00:04:26,490
+coisa de coleta, so retornadas
+
+103
+00:04:26,490 --> 00:04:30,690
+como elementos individuais em uma lista dos resultados de
+
+104
+00:04:30,690 --> 00:04:33,240
+todas as tarefas que foram executadas.
+
+105
+00:04:33,240 --> 00:04:36,580
+Observe como cada tarefa retorna o status do ponto de resposta?
+
+106
+00:04:37,810 --> 00:04:40,110
+Ento, nessa tarefa agrupada de
+
+107
+00:04:40,110 --> 00:04:44,160
+retorno, o que vamos obter  uma lista de
+
+108
+00:04:44,160 --> 00:04:46,720
+status para cada pgina retornada.
+
+109
+00:04:46,720 --> 00:04:48,190
+Tudo bem que eles poderiam estar
+
+110
+00:04:48,190 --> 00:04:49,630
+em ordem, eles no poderiam estar
+
+111
+00:04:49,630 --> 00:04:52,350
+em ordem, dependendo de quanto tempo cada um levou, ok?
+
+112
+00:04:52,350 --> 00:04:54,990
+Ento, ao invs de retornar o status da
+
+113
+00:04:54,990 --> 00:04:57,940
+resposta, ns vamos retornar o texto da resposta.
+
+114
+00:04:57,940 --> 00:05:02,140
+Isso  apenas o contedo HTML da pgina, mas como
+
+115
+00:05:02,140 --> 00:05:05,420
+isso pode demorar um pouco para ser baixado,
+
+116
+00:05:05,420 --> 00:05:08,770
+aiohttp na verdade, vamos aguardar, para que possamos
+
+117
+00:05:08,770 --> 00:05:12,060
+suspender antes de comearmos o download e retomar
+
+118
+00:05:12,060 --> 00:05:14,720
+assim que o download for concludo.
+
+119
+00:05:14,720 --> 00:05:16,120
+Coisas realmente timas l.
+
+120
+00:05:17,180 --> 00:05:19,090
+Agora que estamos aguardando o
+
+121
+00:05:19,090 --> 00:05:22,110
+texto de resposta, estas pginas sero, na
+
+122
+00:05:22,110 --> 00:05:25,400
+verdade, uma lista de todas as pginas que
+
+123
+00:05:25,400 --> 00:05:26,870
+baixamos usando nossas tarefas.
+
+124
+00:05:27,860 --> 00:05:30,060
+Ento, o que podemos fazer ento, 
+
+125
+00:05:30,060 --> 00:05:32,750
+dizer, para o contedo da pgina em pginas e
+
+126
+00:05:34,010 --> 00:05:36,992
+aqui  onde ns vamos criar nossa pgina de todos
+
+127
+00:05:36,992 --> 00:05:39,860
+os livros e estender nossa lista de livros, ento vamos
+
+128
+00:05:39,860 --> 00:05:40,730
+copiar isso l.
+
+129
+00:05:42,910 --> 00:05:43,870
+E  isso.
+
+130
+00:05:43,870 --> 00:05:45,730
+Isso  tudo o
+
+131
+00:05:45,730 --> 00:05:48,560
+que precisamos para tornar esse cdigo assncrono.
+
+132
+00:05:49,770 --> 00:05:52,120
+Ok, ento vamos cortar isso
+
+133
+00:05:52,120 --> 00:05:54,500
+e rodar isso e ver
+
+134
+00:05:54,500 --> 00:05:56,090
+o que acontece.
+
+135
+00:05:56,090 --> 00:05:57,840
+Trazendo de volta essa barra lateral aqui, vamos
+
+136
+00:05:59,520 --> 00:06:01,720
+clicar com o boto direito no menu e execut-lo.
+
+137
+00:06:04,820 --> 00:06:07,470
+E voc pode ver o que est acontecendo
+
+138
+00:06:07,470 --> 00:06:09,380
+aqui, no  to rpido.
+
+139
+00:06:11,510 --> 00:06:14,560
+Na verdade,  bem lento, o que est acontecendo?
+
+140
+00:06:14,560 --> 00:06:16,100
+O Google foi muito mais rpido.
+
+141
+00:06:16,100 --> 00:06:20,340
+E voc pode ver que, eles no correram todos ao mesmo tempo que
+
+142
+00:06:20,340 --> 00:06:22,930
+voc sabe que h um aqui que levou
+
+143
+00:06:22,930 --> 00:06:26,860
+23 segundos e ento h um aqui que diz que levou oito segundos.
+
+144
+00:06:26,860 --> 00:06:28,530
+E voc sabe a primeira coisa que
+
+145
+00:06:28,530 --> 00:06:30,330
+eu vi quando eu estava preparando as notas
+
+146
+00:06:30,330 --> 00:06:31,370
+para este curso, na
+
+147
+00:06:31,370 --> 00:06:33,370
+verdade me levou um pouquinho enquanto percebia o que
+
+148
+00:06:34,310 --> 00:06:36,560
+estava acontecendo, eu pensei por que um deles est levando
+
+149
+00:06:36,560 --> 00:06:38,730
+dois segundos e o outro est levando oito segundos?
+
+150
+00:06:38,730 --> 00:06:42,730
+Eu pensei, estamos talvez executando estes no de forma assncrona
+
+151
+00:06:42,730 --> 00:06:44,200
+estamos fazendo algo errado?
+
+152
+00:06:44,200 --> 00:06:45,320
+Mas, como vimos, copiamos
+
+153
+00:06:45,320 --> 00:06:47,140
+literalmente o que fizemos anteriormente que
+
+154
+00:06:47,140 --> 00:06:48,600
+funcionou para o Google.
+
+155
+00:06:49,460 --> 00:06:54,350
+Portanto, esta  a razo pela qual copiamos e colamos este cdigo apenas para ter certeza
+
+156
+00:06:54,350 --> 00:06:57,250
+de que estava tudo correto, s vezes pode ser
+
+157
+00:06:57,250 --> 00:06:59,030
+um pouco difcil de depurar e
+
+158
+00:06:59,030 --> 00:07:00,930
+descobrir o problema com o cdigo
+
+159
+00:07:00,930 --> 00:07:03,403
+assncrono s porque voc sabe, voc est suspendendo
+
+160
+00:07:03,403 --> 00:07:07,510
+voc  retomado muitas vezes atravs de vrias funes, especialmente se voc tem
+
+161
+00:07:07,510 --> 00:07:09,110
+algo como 50 funes como
+
+162
+00:07:09,110 --> 00:07:11,350
+ns fazemos aqui, todas as suspenses e
+
+163
+00:07:11,350 --> 00:07:13,590
+continuaes podem ser difceis de depurar se
+
+164
+00:07:13,590 --> 00:07:15,090
+voc usar o depurador do PyCharm.
+
+165
+00:07:17,010 --> 00:07:18,760
+Ento  mais fcil comear
+
+166
+00:07:18,760 --> 00:07:20,450
+do jeito mais simples, comear
+
+167
+00:07:20,450 --> 00:07:22,080
+pequeno como fizemos anteriormente em
+
+168
+00:07:22,080 --> 00:07:24,200
+nosso arquivo de solicitao assncrona e ento
+
+169
+00:07:24,200 --> 00:07:26,580
+experiment-lo com uma coisa maior e o
+
+170
+00:07:26,580 --> 00:07:29,300
+problema aqui  que os livros pontilham para raspar
+
+171
+00:07:29,300 --> 00:07:32,970
+o servidor no nos permite fazer tudo isso pedidos ao mesmo tempo.
+
+172
+00:07:32,970 --> 00:07:35,500
+Ele apenas os faz um por um e eles
+
+173
+00:07:35,500 --> 00:07:37,900
+retornam um por um e porque ns enviamos
+
+174
+00:07:37,900 --> 00:07:41,177
+a ele 50 ao mesmo tempo, o primeiro vai ser rpido,
+
+175
+00:07:41,177 --> 00:07:43,750
+mas ento ele est fazendo o primeiro e quando
+
+176
+00:07:43,750 --> 00:07:45,580
+terminar, ele est fazendo o segundo.
+
+177
+00:07:45,580 --> 00:07:48,010
+e assim por diante, ento quando chega ao
+
+178
+00:07:48,010 --> 00:07:50,710
+fim, o que voc est olhando  a soma
+
+179
+00:07:50,710 --> 00:07:52,680
+de todas as solicitaes que voc fez.
+
+180
+00:07:52,680 --> 00:07:55,780
+Cada um leva em torno de 23 segundos de modo
+
+181
+00:07:55,780 --> 00:07:57,340
+que o primeiro toma o
+
+182
+00:07:57,340 --> 00:08:01,700
+ponto 23, o segundo toma o ponto quatro, o ponto seis, o ponto oito,
+
+183
+00:08:01,700 --> 00:08:03,980
+ento s  adicionado a cada vez.
+
+184
+00:08:03,980 --> 00:08:07,160
+Voc pode ver que eles esto retornando um por um.
+
+185
+00:08:07,160 --> 00:08:08,590
+Ento, isso  um problema com
+
+186
+00:08:08,590 --> 00:08:10,310
+a coisa que estamos raspando, no com
+
+187
+00:08:10,310 --> 00:08:12,540
+nosso cdigo, o que  uma coisa boa.
+
+188
+00:08:12,540 --> 00:08:14,140
+Se voc fosse raspar
+
+189
+00:08:14,140 --> 00:08:17,374
+uma pgina que no  uma pgina de
+
+190
+00:08:17,374 --> 00:08:20,360
+teste, algo como Craigslist ou GumTree, ou
+
+191
+00:08:20,360 --> 00:08:24,300
+John Lewis ou algum grande revendedor como esse, uma grande
+
+192
+00:08:24,300 --> 00:08:26,270
+loja de departamentos, voc ver
+
+193
+00:08:26,270 --> 00:08:27,630
+que tudo isso
+
+194
+00:08:27,630 --> 00:08:30,250
+vai voltar ao mesmo tempo. , OK?
+
+195
+00:08:30,250 --> 00:08:31,720
+E se ns mudamos
+
+196
+00:08:33,610 --> 00:08:37,183
+isso para o google. com novamente, apenas para voltar ao que
+
+197
+00:08:37,183 --> 00:08:38,920
+sabemos e executar isso de novo, voc
+
+198
+00:08:40,410 --> 00:08:41,930
+pode ver que voc sabe que
+
+199
+00:08:41,930 --> 00:08:43,780
+ instantneo, todos eles esto rodando ao
+
+200
+00:08:43,780 --> 00:08:45,920
+mesmo tempo,  apenas que o outro, a
+
+201
+00:08:45,920 --> 00:08:48,370
+outra pgina no nos deixa peg-los Tudo ao mesmo tempo.
+
+202
+00:08:48,370 --> 00:08:50,810
+Ento vamos parar com isso, lembre-se de parar seus
+
+203
+00:08:50,810 --> 00:08:52,270
+programas quando estiver rodando no
+
+204
+00:08:52,270 --> 00:08:54,130
+PyCharm, pode ser algo que voc esquea.
+
+205
+00:08:56,070 --> 00:08:57,840
+Ento, se ns pudssemos
+
+206
+00:08:57,840 --> 00:09:02,840
+rodar nosso livro dot toscrape. de forma assncrona, voc
+
+207
+00:09:05,010 --> 00:09:08,670
+esperaria que levasse cerca de trs segundos,
+
+208
+00:09:08,670 --> 00:09:10,930
+quatro segundos no total.
+
+209
+00:09:10,930 --> 00:09:13,910
+Mas porque no, leva muito mais tempo.
+
+210
+00:09:14,810 --> 00:09:16,130
+Ok, isso  apenas
+
+211
+00:09:16,130 --> 00:09:18,930
+uma limitao do que estamos raspando, no do nosso cdigo.
+
+212
+00:09:20,120 --> 00:09:21,600
+Eu estou supondo que quando
+
+213
+00:09:21,600 --> 00:09:23,600
+voc est construindo seus prprios projetos de
+
+214
+00:09:23,600 --> 00:09:26,040
+raspagem, voc no vai estar usando este raspador de
+
+215
+00:09:26,040 --> 00:09:27,400
+teste, este site de teste,
+
+216
+00:09:27,400 --> 00:09:30,880
+voc estar usando um site adequado e isso vai funcionar muito bem .
+
+217
+00:09:30,880 --> 00:09:32,700
+Eu tentei com um monte de
+
+218
+00:09:32,700 --> 00:09:34,990
+outros sites, e todos eles parecem funcionar bem.
+
+219
+00:09:34,990 --> 00:09:36,290
+Ento  isso para este vdeo.
+
+220
+00:09:36,290 --> 00:09:37,700
+Isso  tudo o que voc
+
+221
+00:09:37,700 --> 00:09:39,580
+precisa para transformar isso em um raspador assncrono.
+
+222
+00:09:39,580 --> 00:09:42,090
+Lembre-se da maioria do nosso cdigo, criando
+
+223
+00:09:42,090 --> 00:09:45,190
+a pgina de todos os livros que voc
+
+224
+00:09:45,190 --> 00:09:48,520
+conhece, analisando e analisando coisas assim, isso  instantneo.
+
+225
+00:09:48,520 --> 00:09:50,840
+No h espera envolvida aqui, isso 
+
+226
+00:09:50,840 --> 00:09:53,530
+apenas Python fazendo trabalho, no h como esperar
+
+227
+00:09:53,530 --> 00:09:55,230
+que algum nos d coisas.
+
+228
+00:09:55,230 --> 00:09:56,550
+As nicas esperas esto acontecendo
+
+229
+00:09:56,550 --> 00:09:58,680
+quando fazemos as solicitaes da web e
+
+230
+00:09:58,680 --> 00:10:00,200
+ isso que estamos executando
+
+231
+00:10:00,200 --> 00:10:02,985
+de forma assncrona, o resto do cdigo est sendo executado
+
+232
+00:10:02,985 --> 00:10:06,840
+de forma sncrona porque no precisa ser executado de forma assncrona,  realmente
+
+233
+00:10:06,840 --> 00:10:08,500
+rpido, no h tempo de espera.
+
+234
+00:10:08,500 --> 00:10:10,350
+O desempenho aqui no  um problema.
+
+235
+00:10:11,490 --> 00:10:12,900
+Ento  isso para este vdeo
+
+236
+00:10:12,900 --> 00:10:15,550
+novamente, obrigado por assistir e eu vou te ver no prximo.
+

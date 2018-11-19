@@ -1,0 +1,432 @@
+1
+00:00:00,400 --> 00:00:01,570
+Instructor: Hola y bienvenido de nuevo.
+
+2
+00:00:01,570 --> 00:00:04,790
+En este video, quera contarte acerca de la divisin de listas.
+
+3
+00:00:06,600 --> 00:00:08,460
+Vamos a tener una lista de
+
+4
+00:00:08,460 --> 00:00:10,620
+mis amigos, que son solo cadenas.
+
+5
+00:00:10,620 --> 00:00:13,110
+Y digamos que quera hacer amigos, desde
+
+6
+00:00:13,110 --> 00:00:15,110
+las dos hasta las cuatro.
+
+7
+00:00:15,110 --> 00:00:19,040
+Recuerde, esto es cero, uno, dos, tres y cuatro.
+
+8
+00:00:19,040 --> 00:00:22,720
+Entonces, dos hasta cuatro deberan ser Anna a Mary.
+
+9
+00:00:22,720 --> 00:00:26,320
+Pero normalmente en Python, el ltimo no est incluido, as que dos
+
+10
+00:00:26,320 --> 00:00:28,730
+hasta cuatro son en realidad Anna y Charlie.
+
+11
+00:00:29,660 --> 00:00:33,710
+La forma en que hacemos eso, es en lugar de
+
+12
+00:00:33,710 --> 00:00:37,740
+tener acceso a amigos dos y luego agregarlo a amigos
+
+13
+00:00:37,740 --> 00:00:38,990
+tres, que sera
+
+14
+00:00:39,850 --> 00:00:44,300
+una opcin, podemos hacer esto, amigos de dos a cuatro.
+
+15
+00:00:44,300 --> 00:00:46,950
+Cuatro no est incluido, por lo que nos da dos y tres.
+
+16
+00:00:48,640 --> 00:00:49,910
+Bueno?
+
+17
+00:00:49,910 --> 00:00:54,800
+List slicing es realmente til en muchos escenarios, porque es
+
+18
+00:00:54,800 --> 00:00:57,950
+una forma de construir una nueva lista.
+
+19
+00:00:59,230 --> 00:01:01,350
+Es una forma muy pitonica en eso.
+
+20
+00:01:02,840 --> 00:01:05,040
+Ahora el primer nmero aqu, como
+
+21
+00:01:05,040 --> 00:01:08,070
+saben, es el ndice inicial de la porcin.
+
+22
+00:01:08,070 --> 00:01:11,250
+Eso es dos, y cuatro es el ndice final de la porcin,
+
+23
+00:01:11,250 --> 00:01:12,100
+eso es cuatro.
+
+24
+00:01:13,710 --> 00:01:15,590
+Pero tambin podemos usar nmeros negativos, lo
+
+25
+00:01:15,590 --> 00:01:18,070
+que significa que comenzamos a contar desde el final.
+
+26
+00:01:18,070 --> 00:01:18,920
+Por ejemplo,
+
+27
+00:01:19,760 --> 00:01:21,860
+djame imprimir, amigos menos uno.
+
+28
+00:01:21,860 --> 00:01:24,570
+Siempre puede hacer esto en cualquier momento, siempre que
+
+29
+00:01:24,570 --> 00:01:27,170
+quiera obtener el ltimo elemento de una lista.
+
+30
+00:01:28,030 --> 00:01:29,250
+Mira, esa fue Mary.
+
+31
+00:01:29,250 --> 00:01:30,950
+Amigos menos uno es
+
+32
+00:01:30,950 --> 00:01:33,890
+Mara, porque comienza a contar al final.
+
+33
+00:01:33,890 --> 00:01:35,190
+Ahora, lo normal sera
+
+34
+00:01:35,190 --> 00:01:37,500
+decir que esto es menos cero, verdad?
+
+35
+00:01:37,500 --> 00:01:39,100
+Porque si Rolf es cero,
+
+36
+00:01:39,100 --> 00:01:40,240
+y ese es el
+
+37
+00:01:40,240 --> 00:01:43,260
+primer elemento, seguramente el ltimo elemento debera ser menos cero.
+
+38
+00:01:43,260 --> 00:01:45,610
+Pero, por supuesto, menos cero no es
+
+39
+00:01:45,610 --> 00:01:49,260
+un nmero, por lo que la siguiente mejor opcin es menos uno.
+
+40
+00:01:49,260 --> 00:01:51,650
+Entonces, menos uno le da el ltimo elemento,
+
+41
+00:01:51,650 --> 00:01:53,440
+uno le da el segundo elemento.
+
+42
+00:01:55,470 --> 00:01:59,020
+Entonces puedes hacer menos uno hasta menos tres, por ejemplo.
+
+43
+00:02:01,780 --> 00:02:05,080
+Pero lamentablemente, esto no es realmente algo que puedas hacer.
+
+44
+00:02:05,080 --> 00:02:06,600
+Podras pensar que menos uno
+
+45
+00:02:06,600 --> 00:02:09,830
+menos menos tres de alguna manera te dara esta lista inversa aqu.
+
+46
+00:02:09,830 --> 00:02:11,760
+Y Mary y Charlie, verdad?
+
+47
+00:02:11,760 --> 00:02:14,740
+Menos tres siendo Anna, y no ser incluida.
+
+48
+00:02:15,640 --> 00:02:17,390
+Pero a Python no le gusta
+
+49
+00:02:17,390 --> 00:02:19,700
+eso, as que estos tienen que ser revertidos.
+
+50
+00:02:19,700 --> 00:02:23,570
+Entonces siempre tienes que ir de izquierda a derecha en tu lista.
+
+51
+00:02:23,570 --> 00:02:26,950
+Menos tres siendo Anna, menos uno siendo Mary.
+
+52
+00:02:28,070 --> 00:02:29,910
+Est bien, y de nuevo obtienes a
+
+53
+00:02:29,910 --> 00:02:32,780
+Anna y Charlie, porque el ltimo ndice aqu no est incluido.
+
+54
+00:02:33,910 --> 00:02:35,760
+As que obtienes menos tres y menos dos.
+
+55
+00:02:37,480 --> 00:02:39,910
+Si quisiramos tener nuestros ltimos tres amigos, que
+
+56
+00:02:39,910 --> 00:02:42,100
+es una operacin muy popular, solo los
+
+57
+00:02:42,100 --> 00:02:43,150
+ltimos tres, o
+
+58
+00:02:43,150 --> 00:02:45,110
+tal vez los dos primeros o
+
+59
+00:02:45,110 --> 00:02:48,260
+algo as, puedes imprimir amigos, y luego menos tres, lo
+
+60
+00:02:48,260 --> 00:02:51,070
+que te dara a Anna, dos puntos , y
+
+61
+00:02:51,960 --> 00:02:53,570
+eso es todo, nada ms.
+
+62
+00:02:53,570 --> 00:02:55,780
+Y eso dice menos tres hasta e incluso
+
+63
+00:02:55,780 --> 00:02:57,030
+el final de la lista.
+
+64
+00:02:57,870 --> 00:03:00,040
+Entonces eso te da a Anna, Charlie y Mary.
+
+65
+00:03:00,040 --> 00:03:01,410
+Cosas realmente tiles.
+
+66
+00:03:01,410 --> 00:03:04,120
+Pero particularmente til es cuando desea obtener, por
+
+67
+00:03:04,120 --> 00:03:05,960
+ejemplo, sus dos mejores amigos.
+
+68
+00:03:06,840 --> 00:03:08,500
+Bueno, puedes hacer eso.
+
+69
+00:03:08,500 --> 00:03:12,620
+Comenzando en cero, hasta el ndice nmero dos, sin incluir.
+
+70
+00:03:12,620 --> 00:03:14,540
+Entonces eso te da cero y uno.
+
+71
+00:03:14,540 --> 00:03:16,580
+Y de nuevo obtienes a Rolf y Jos.
+
+72
+00:03:19,610 --> 00:03:21,690
+Tambin puedes hacer, amigos
+
+73
+00:03:23,490 --> 00:03:25,370
+menos dos, como tal.
+
+74
+00:03:25,370 --> 00:03:26,870
+Entonces, qu te va a dar?
+
+75
+00:03:30,560 --> 00:03:31,790
+Espero que hayas acertado.
+
+76
+00:03:31,790 --> 00:03:34,170
+Va a comenzar en cero, ese es Rolf.
+
+77
+00:03:34,170 --> 00:03:36,890
+Y subir hasta el ndice menos dos, que
+
+78
+00:03:36,890 --> 00:03:38,060
+es Charlie, recuerda,
+
+79
+00:03:38,060 --> 00:03:40,600
+menos uno es Mary, menos dos es Charlie.
+
+80
+00:03:40,600 --> 00:03:41,910
+Esto no va a ser
+
+81
+00:03:41,910 --> 00:03:43,660
+incluido, as que te dar estos tres.
+
+82
+00:03:45,080 --> 00:03:45,930
+Y ah tienes.
+
+83
+00:03:47,480 --> 00:03:51,060
+Esta puede ser una manera bastante confusa de pensar sobre
+
+84
+00:03:51,060 --> 00:03:53,620
+las cosas, pero puede ser realmente til.
+
+85
+00:03:53,620 --> 00:03:56,480
+Por ejemplo, imagina que estamos interactuando con
+
+86
+00:03:58,870 --> 00:04:03,150
+una lista, como una tabla, y lo primero en la tabla
+
+87
+00:04:03,150 --> 00:04:05,500
+sern los nombres de las columnas,
+
+88
+00:04:05,500 --> 00:04:08,980
+y todo lo dems en la tabla sern datos.
+
+89
+00:04:08,980 --> 00:04:11,020
+Tal vez querremos obtener todos los
+
+90
+00:04:11,020 --> 00:04:13,210
+datos excluyendo los nombres de las tablas.
+
+91
+00:04:13,210 --> 00:04:18,040
+Entonces podemos hacer, mi tabla uno, dos puntos.
+
+92
+00:04:18,040 --> 00:04:21,830
+Eso nos da un ndice de uno en adelante, hasta el final.
+
+93
+00:04:21,830 --> 00:04:24,930
+Presumiblemente, el ndice cero sera los encabezados de la tabla.
+
+94
+00:04:26,010 --> 00:04:27,440
+Y uso ese ejemplo, no
+
+95
+00:04:27,440 --> 00:04:28,940
+porque quiera confundirlo hablando de
+
+96
+00:04:28,940 --> 00:04:30,510
+tablas de repente, sino porque
+
+97
+00:04:30,510 --> 00:04:32,590
+en realidad vamos a usar ese ejemplo
+
+98
+00:04:32,590 --> 00:04:34,120
+ms adelante en el curso.
+
+99
+00:04:34,120 --> 00:04:37,740
+As que esta es la razn por la que se introduce la divisin de lista aqu.
+
+100
+00:04:37,740 --> 00:04:40,030
+Solo quiero que sepan, esto es algo que
+
+101
+00:04:40,030 --> 00:04:41,660
+pueden hacer, y lo usaremos
+
+102
+00:04:41,660 --> 00:04:44,330
+ms adelante, y podremos actualizar nuestra memoria en l.
+
+103
+00:04:44,330 --> 00:04:45,710
+De todos modos, eso es todo por este video.
+
+104
+00:04:45,710 --> 00:04:49,290
+Forma pre-pitonica de construir nuevas listas
+
+105
+00:04:49,290 --> 00:04:50,870
+Y recuerde que puede usar
+
+106
+00:04:50,870 --> 00:04:54,420
+esto siempre que quiera una parte de una lista o algo as.
+
+107
+00:04:54,420 --> 00:04:55,590
+De todos modos, eso es todo por este video.
+
+108
+00:04:55,590 --> 00:04:57,040
+Te ver en el prximo.
+

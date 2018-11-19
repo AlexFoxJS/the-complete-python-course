@@ -1,0 +1,360 @@
+1
+00:00:00,120 --> 00:00:01,330
+Jos: Ol, e bem vindo de volta.
+
+2
+00:00:01,330 --> 00:00:04,670
+Eu queria dizer a voc neste vdeo como logar um
+
+3
+00:00:04,670 --> 00:00:05,800
+arquivo e tambm
+
+4
+00:00:05,800 --> 00:00:07,980
+algumas coisas sobre a estrutura desses registradores.
+
+5
+00:00:08,850 --> 00:00:11,730
+Para logar em um arquivo,  realmente simples.
+
+6
+00:00:11,730 --> 00:00:14,490
+Tudo que voc precisa fazer 
+
+7
+00:00:15,330 --> 00:00:18,640
+neste basicConfig aqui, adicione outro argumento chamado filename.
+
+8
+00:00:18,640 --> 00:00:22,840
+E isso pode ser, por exemplo, logs. txt, muito simples.
+
+9
+00:00:22,840 --> 00:00:26,350
+Voc faz isso, voc executa seu aplicativo e, em seguida, voc v logs. txt at aqui,
+
+10
+00:00:26,350 --> 00:00:28,700
+e contm seus logs.
+
+11
+00:00:28,700 --> 00:00:30,730
+Ento, quando voc est logando em seu
+
+12
+00:00:30,730 --> 00:00:33,930
+aplicativo, definitivamente recomendado para logar em um arquivo separado, de
+
+13
+00:00:33,930 --> 00:00:36,560
+modo que, o principal  para que seus usurios
+
+14
+00:00:36,560 --> 00:00:40,180
+no consigam ver seus logs, e tambm para que voc mantenha seus
+
+15
+00:00:40,180 --> 00:00:43,430
+logs em ordem que voc ento, pode revis-las mais tarde.
+
+16
+00:00:43,430 --> 00:00:45,110
+Isso  particularmente importante quando estamos
+
+17
+00:00:45,110 --> 00:00:47,280
+desenvolvendo aplicativos da Web e coisas semelhantes que
+
+18
+00:00:47,280 --> 00:00:50,400
+esto em execuo por um longo perodo de tempo, e voc
+
+19
+00:00:50,400 --> 00:00:52,510
+precisa dos logs para poder rastrear os problemas.
+
+20
+00:00:52,510 --> 00:00:54,610
+Ns vamos olhar para o desenvolvimento de aplicaes web
+
+21
+00:00:54,610 --> 00:00:57,560
+em uma seo posterior, ento  por isso que estou mencionando isso agora.
+
+22
+00:00:58,410 --> 00:01:00,680
+A prxima coisa que eu queria dizer
+
+23
+00:01:00,680 --> 00:01:03,120
+, rapidinho, como esses madeireiros esto estruturados.
+
+24
+00:01:03,120 --> 00:01:05,750
+Aqui temos algo chamado test_logger.
+
+25
+00:01:05,750 --> 00:01:08,740
+Mas normalmente voc chamaria isso de __name__.
+
+26
+00:01:10,770 --> 00:01:14,320
+Isso  apenas para que cada mdulo tenha seu prprio
+
+27
+00:01:14,320 --> 00:01:17,570
+logger separado, e voc tem um pouco mais de
+
+28
+00:01:17,570 --> 00:01:20,020
+flexibilidade com a forma como os loggers operam.
+
+29
+00:01:20,020 --> 00:01:25,020
+No entanto, tambm  muito popular para voc chamar seu registrador de algo como,
+
+30
+00:01:25,270 --> 00:01:28,100
+por exemplo, digamos que esse aplicativo fez algo
+
+31
+00:01:28,100 --> 00:01:30,380
+como manipulao de livros ou algo assim.
+
+32
+00:01:30,380 --> 00:01:33,310
+Voc chama esses livros de registradores, por exemplo.
+
+33
+00:01:33,310 --> 00:01:35,590
+E ento  bastante popular que
+
+34
+00:01:35,590 --> 00:01:38,750
+quando voc entra em uma parte diferente do
+
+35
+00:01:38,750 --> 00:01:42,050
+seu aplicativo, voc vai ter outro logger e
+
+36
+00:01:42,050 --> 00:01:44,770
+cham-lo como livros. banco de dados, por exemplo.
+
+37
+00:01:44,770 --> 00:01:46,970
+Digamos que voc esteja no arquivo de banco de dados aqui e esteja
+
+38
+00:01:46,970 --> 00:01:49,500
+em um novo arquivo chamado banco de dados. py ou algo assim,
+
+39
+00:01:49,500 --> 00:01:51,540
+e voc quer obter um logger diferente
+
+40
+00:01:51,540 --> 00:01:53,940
+para logs relacionados a um banco de dados.
+
+41
+00:01:55,120 --> 00:02:00,120
+Quando voc faz livros. banco de dados, este  realmente um
+
+42
+00:02:01,120 --> 00:02:05,690
+logger filho, assim voc comea outro logger, que  um logger filho de livros.
+
+43
+00:02:05,690 --> 00:02:08,630
+Qualquer configurao que voc tenha no logger de livros ser herdada
+
+44
+00:02:08,630 --> 00:02:10,919
+pelo criador de logs de banco de dados,
+
+45
+00:02:10,919 --> 00:02:12,730
+no pelos livros. registrador de banco de dados.
+
+46
+00:02:12,730 --> 00:02:15,440
+Por isso,  normal estruturar esses registradores como esse e,
+
+47
+00:02:15,440 --> 00:02:18,220
+s vezes, voc acaba com alguns nomes de registradores bastante longos.
+
+48
+00:02:18,220 --> 00:02:19,910
+Tudo bem.
+
+49
+00:02:19,910 --> 00:02:22,860
+Mas, novamente, tambm  muito popular cham-los como __name__ e, em
+
+50
+00:02:24,130 --> 00:02:26,160
+seguida, eles so chamados aps o mdulo
+
+51
+00:02:26,160 --> 00:02:28,340
+em que esto atualmente operando ou, na verdade,
+
+52
+00:02:28,340 --> 00:02:30,250
+o caminho de importao, como voc sabe.
+
+53
+00:02:31,140 --> 00:02:34,570
+Ento, ou muito popular, e eu vou apenas mencionar rapidamente
+
+54
+00:02:34,570 --> 00:02:38,260
+que h mais em madeireiros do que eu cobri, e h
+
+55
+00:02:38,260 --> 00:02:40,590
+coisas como manipuladores e coisas assim que
+
+56
+00:02:40,590 --> 00:02:43,150
+voc pode olhar, mas para ser honesto, isso
+
+57
+00:02:43,150 --> 00:02:47,060
+ muito para o aplicativos que estaremos construindo e, na verdade, para
+
+58
+00:02:47,060 --> 00:02:48,960
+aplicativos mais avanados e, na verdade,
+
+59
+00:02:48,960 --> 00:02:50,800
+para aplicativos profissionais tambm.
+
+60
+00:02:50,800 --> 00:02:52,870
+Voc tem algumas funcionalidades mais avanadas,
+
+61
+00:02:52,870 --> 00:02:54,940
+mas eu no usei isso com freqncia.
+
+62
+00:02:56,480 --> 00:02:58,950
+Mais uma coisa que eu vou dizer agora tambm, se
+
+63
+00:02:58,950 --> 00:03:00,590
+voc quiser formar o tempo de uma
+
+64
+00:03:00,590 --> 00:03:02,180
+maneira particular, voc pode fazer isso.
+
+65
+00:03:02,180 --> 00:03:07,180
+Voc pode fazer datefmt = e aqui, voc pode inserir formatos
+
+66
+00:03:07,230 --> 00:03:11,410
+como voc faria com o mtodo string time format,
+
+67
+00:03:11,410 --> 00:03:15,690
+strftime, para que voc possa fazer o trao D, trao
+
+68
+00:03:15,690 --> 00:03:19,080
+M, trao Y,% H,% M,% S, por exemplo.
+
+69
+00:03:19,980 --> 00:03:22,300
+E ento isso seria formatado de forma ligeiramente diferente.
+
+70
+00:03:22,300 --> 00:03:24,840
+Se olharmos para os logs agora, voc
+
+71
+00:03:24,840 --> 00:03:28,600
+pode ver que esses antigos tm a data completa, incluindo
+
+72
+00:03:28,600 --> 00:03:31,870
+os milissegundos, e esses so um pouco mais razoveis.
+
+73
+00:03:31,870 --> 00:03:34,530
+Observe tambm que, quando voc executa seu aplicativo
+
+74
+00:03:34,530 --> 00:03:37,310
+vrias vezes, os logs no so perdidos e, portanto,
+
+75
+00:03:37,310 --> 00:03:40,780
+os logs so anexados, e esse tambm  um recurso muito
+
+76
+00:03:40,780 --> 00:03:42,840
+bom, caso a sua aplicao falhe
+
+77
+00:03:42,840 --> 00:03:45,230
+ou algo assim, e reinicia automaticamente como faremos
+
+78
+00:03:45,230 --> 00:03:47,370
+no futuro, seus logs no vo se
+
+79
+00:03:47,370 --> 00:03:48,730
+perder por causa disso.
+
+80
+00:03:48,730 --> 00:03:50,680
+No entanto,  claro, o arquivo pode ficar
+
+81
+00:03:50,680 --> 00:03:53,480
+muito grande, ento  algo que voc deve levar em considerao.
+
+82
+00:03:54,350 --> 00:03:55,700
+Tudo bem,  isso para este vdeo.
+
+83
+00:03:55,700 --> 00:03:58,000
+Agora voc pode usar o log em seus aplicativos.
+
+84
+00:03:58,000 --> 00:04:01,480
+E honestamente, voc no precisa de mais nada.
+
+85
+00:04:01,480 --> 00:04:04,690
+ medida que voc aprende mais sobre Python e trabalha
+
+86
+00:04:04,690 --> 00:04:07,700
+com outras pessoas, pode encontrar situaes em que usa
+
+87
+00:04:07,700 --> 00:04:10,040
+algum outro recurso do mdulo de registro.
+
+88
+00:04:10,040 --> 00:04:12,350
+Mas honestamente, eu no tive essa situao ainda.
+
+89
+00:04:13,280 --> 00:04:14,630
+Ento  isso para este
+
+90
+00:04:14,630 --> 00:04:16,280
+vdeo, e eu vejo voc no prximo.
+

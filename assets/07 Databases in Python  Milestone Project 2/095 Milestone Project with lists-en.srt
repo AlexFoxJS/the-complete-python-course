@@ -1,0 +1,1548 @@
+1
+00:00:00,420 --> 00:00:01,940
+<v Instructor>Hi and welcome back.</v>
+
+2
+00:00:01,940 --> 00:00:03,610
+In this video, we're going to be implementing
+
+3
+00:00:03,610 --> 00:00:05,450
+our Milestone Project two
+
+4
+00:00:05,450 --> 00:00:09,770
+using our in-memory database, which is a Python list.
+
+5
+00:00:09,770 --> 00:00:11,640
+I really hope you did give it a go
+
+6
+00:00:11,640 --> 00:00:13,040
+following the project brief
+
+7
+00:00:13,040 --> 00:00:15,570
+and you tried to implement this project on your own,
+
+8
+00:00:15,570 --> 00:00:18,370
+and hopefully you succeeded and made it work.
+
+9
+00:00:18,370 --> 00:00:20,290
+You can always ask questions in the course Q and A.
+
+10
+00:00:20,290 --> 00:00:21,870
+If you need help with anything specific
+
+11
+00:00:21,870 --> 00:00:22,940
+before moving on.
+
+12
+00:00:24,010 --> 00:00:25,680
+But now that you're here, let's go and
+
+13
+00:00:25,680 --> 00:00:28,030
+implement this project using lists
+
+14
+00:00:28,030 --> 00:00:29,930
+as our in-memory database.
+
+15
+00:00:31,440 --> 00:00:33,240
+Of course, the first thing we'll do
+
+16
+00:00:33,240 --> 00:00:36,050
+is define the user interface so that the user can
+
+17
+00:00:36,050 --> 00:00:39,030
+interact with our programme and then we can add functionality
+
+18
+00:00:39,030 --> 00:00:39,900
+little by little.
+
+19
+00:00:42,100 --> 00:00:43,880
+The first thing we've got is we ask the user
+
+20
+00:00:43,880 --> 00:00:45,680
+to enter their choice
+
+21
+00:00:45,680 --> 00:00:47,120
+as A, L, R,
+
+22
+00:00:47,120 --> 00:00:48,630
+D or Q.
+
+23
+00:00:48,630 --> 00:00:51,290
+If they enter Q, we're not going to go into this loop
+
+24
+00:00:51,290 --> 00:00:54,640
+so in here we have to deal with four options.
+
+25
+00:00:55,500 --> 00:00:56,960
+If the user input
+
+26
+00:00:56,960 --> 00:00:57,793
+is A,
+
+27
+00:00:59,690 --> 00:01:01,710
+if the user input is L,
+
+28
+00:01:03,550 --> 00:01:06,020
+if the user input is R,
+
+29
+00:01:07,410 --> 00:01:09,600
+and if the user input
+
+30
+00:01:09,600 --> 00:01:10,470
+is D.
+
+31
+00:01:12,120 --> 00:01:14,020
+And if it's none of them, we can print
+
+32
+00:01:14,880 --> 00:01:17,670
+unknown command, please try again.
+
+33
+00:01:19,590 --> 00:01:20,550
+Okay.
+
+34
+00:01:20,550 --> 00:01:22,970
+Now of course, in order to go back to the top of the loop
+
+35
+00:01:22,970 --> 00:01:24,660
+with a different user input,
+
+36
+00:01:24,660 --> 00:01:28,100
+we must reset the user input to something else.
+
+37
+00:01:28,100 --> 00:01:31,120
+For that, we're going to ask the user again,
+
+38
+00:01:31,120 --> 00:01:34,820
+but make sure that that's not inside the else or anywhere,
+
+39
+00:01:34,820 --> 00:01:36,620
+just here within the loop
+
+40
+00:01:36,620 --> 00:01:38,430
+outside of any of these statements.
+
+41
+00:01:41,120 --> 00:01:44,410
+We also, I also gave you a few hints of what you could call
+
+42
+00:01:44,410 --> 00:01:48,380
+your functions, so I'm just going to use those names here.
+
+43
+00:01:48,380 --> 00:01:51,140
+So I'm going to call Prompt Add Book
+
+44
+00:01:51,140 --> 00:01:54,730
+the function that doesn't exist yet when they type A.
+
+45
+00:01:54,730 --> 00:01:57,900
+We're gonna call List Books when they type L.
+
+46
+00:01:57,900 --> 00:02:01,110
+Prompt Read Book when they type R.
+
+47
+00:02:01,110 --> 00:02:04,500
+And Prompt Delete Book when they type D.
+
+48
+00:02:04,500 --> 00:02:07,380
+The reason why these functions have Prompt in front of them
+
+49
+00:02:07,380 --> 00:02:10,170
+is because these functions aren't just going to do things,
+
+50
+00:02:10,170 --> 00:02:12,530
+they're also going to ask the user for something
+
+51
+00:02:12,530 --> 00:02:14,630
+and that's just my way of telling myself, you know,
+
+52
+00:02:14,630 --> 00:02:16,280
+these functions aren't going to ask the user.
+
+53
+00:02:16,280 --> 00:02:18,960
+They have to ask the user for some information in order to
+
+54
+00:02:18,960 --> 00:02:20,500
+do what they want to do.
+
+55
+00:02:20,500 --> 00:02:22,240
+If you want to add a book, you have to ask the user
+
+56
+00:02:22,240 --> 00:02:23,300
+for the name and author.
+
+57
+00:02:23,300 --> 00:02:25,270
+If you want to read a book, you have to ask the user
+
+58
+00:02:25,270 --> 00:02:27,550
+at least for the name, and if you want to delete a book,
+
+59
+00:02:27,550 --> 00:02:29,700
+you also have to ask at least for the name.
+
+60
+00:02:31,690 --> 00:02:35,260
+Okay, so let's go ahead and implement our functions.
+
+61
+00:02:36,270 --> 00:02:38,640
+Python styling suggests we leave two blank lines
+
+62
+00:02:38,640 --> 00:02:41,110
+between two functions, so we're gonna do just that.
+
+63
+00:02:41,110 --> 00:02:45,830
+And then we're going to define our Prompt Add Book function.
+
+64
+00:02:45,830 --> 00:02:47,270
+What this is going to do is ask the user
+
+65
+00:02:47,270 --> 00:02:48,580
+for name and author.
+
+66
+00:02:48,580 --> 00:02:49,440
+So name,
+
+67
+00:02:53,797 --> 00:02:54,630
+and the author
+
+68
+00:02:58,480 --> 00:03:00,150
+and then all it's going to do
+
+69
+00:03:00,150 --> 00:03:03,920
+is ask the database to save this book.
+
+70
+00:03:03,920 --> 00:03:06,740
+Notice how it's not going to interact with the books list
+
+71
+00:03:06,740 --> 00:03:09,730
+directly, but it's going to ask the database
+
+72
+00:03:09,730 --> 00:03:11,870
+to save the book to the list.
+
+73
+00:03:12,860 --> 00:03:15,720
+So what to do here is say Database dot add book,
+
+74
+00:03:16,560 --> 00:03:17,990
+name and author.
+
+75
+00:03:19,450 --> 00:03:22,030
+And when we call this, we pass the value of name,
+
+76
+00:03:22,030 --> 00:03:24,750
+it's string, and the value of author, another string,
+
+77
+00:03:24,750 --> 00:03:29,080
+to our add book function and this is now going to use
+
+78
+00:03:29,080 --> 00:03:32,040
+this global variable to append
+
+79
+00:03:32,040 --> 00:03:34,960
+this dictionary which represents our book.
+
+80
+00:03:34,960 --> 00:03:38,200
+It has a name, an author and a red status
+
+81
+00:03:38,200 --> 00:03:40,310
+which starts off as false.
+
+82
+00:03:40,310 --> 00:03:42,660
+We're going to be able to change this later on.
+
+83
+00:03:44,490 --> 00:03:45,323
+Okay.
+
+84
+00:03:46,560 --> 00:03:49,460
+Now we can delete our first comment, for we've already
+
+85
+00:03:49,460 --> 00:03:50,710
+accomplished it.
+
+86
+00:03:50,710 --> 00:03:54,720
+Once again, leaving two lines, we can say list books.
+
+87
+00:03:55,770 --> 00:03:58,640
+And the list books is just going to ask the database
+
+88
+00:03:58,640 --> 00:03:59,540
+for all the books,
+
+89
+00:04:03,940 --> 00:04:06,850
+and it's going to print them off one by one.
+
+90
+00:04:06,850 --> 00:04:09,810
+So for book in books,
+
+91
+00:04:11,190 --> 00:04:12,990
+we're gonna print some
+
+92
+00:04:12,990 --> 00:04:14,590
+representation of the book.
+
+93
+00:04:14,590 --> 00:04:15,950
+We can do that later.
+
+94
+00:04:15,950 --> 00:04:17,710
+For right now, we're just going to print the dictionary
+
+95
+00:04:17,710 --> 00:04:18,690
+that will come back.
+
+96
+00:04:18,690 --> 00:04:20,650
+Remember, we're storing dictionaries,
+
+97
+00:04:20,650 --> 00:04:22,630
+dictionaries are gonna come back.
+
+98
+00:04:22,630 --> 00:04:25,130
+The get all books function does not exist,
+
+99
+00:04:25,130 --> 00:04:27,330
+so we're going to create it in the database.
+
+100
+00:04:32,660 --> 00:04:35,140
+And what should this function do?
+
+101
+00:04:35,140 --> 00:04:37,380
+Well, in order to get all the books, all it has to do is
+
+102
+00:04:37,380 --> 00:04:40,720
+return this list here that will contain all our books,
+
+103
+00:04:40,720 --> 00:04:43,100
+so just return books will do.
+
+104
+00:04:44,250 --> 00:04:48,100
+When we step up this programme and work with files,
+
+105
+00:04:48,100 --> 00:04:50,140
+this is going to get more complicated, of course.
+
+106
+00:04:50,140 --> 00:04:52,590
+It's going to have to actually open a file
+
+107
+00:04:52,590 --> 00:04:55,240
+and read the contents, and certainly when we move on to
+
+108
+00:04:55,240 --> 00:04:57,340
+the databases, we're going to get even more complicated
+
+109
+00:04:57,340 --> 00:04:59,430
+as we will have to connect to the database
+
+110
+00:04:59,430 --> 00:05:00,870
+and retrieve the data.
+
+111
+00:05:00,870 --> 00:05:02,860
+But for now, because we're using a simple
+
+112
+00:05:02,860 --> 00:05:05,770
+in-memory database, we can just return the books there.
+
+113
+00:05:08,667 --> 00:05:11,120
+Now we can delete our list books
+
+114
+00:05:11,120 --> 00:05:13,550
+command there since we've already implemented it.
+
+115
+00:05:14,570 --> 00:05:17,650
+Let's move on to Prompt Read Book,
+
+116
+00:05:17,650 --> 00:05:19,840
+and this has to ask for the book name
+
+117
+00:05:19,840 --> 00:05:23,340
+and then go to the database and change it to read.
+
+118
+00:05:23,340 --> 00:05:24,530
+So name,
+
+119
+00:05:30,690 --> 00:05:33,030
+enter the name of the book you just finished reading,
+
+120
+00:05:33,030 --> 00:05:34,940
+and then all we want to do is say
+
+121
+00:05:34,940 --> 00:05:38,730
+database mark book as read with that name.
+
+122
+00:05:39,930 --> 00:05:41,590
+Of course, this function does not exist,
+
+123
+00:05:41,590 --> 00:05:44,680
+so we have to go over to our database, dot P Y
+
+124
+00:05:44,680 --> 00:05:46,220
+and define that
+
+125
+00:05:46,220 --> 00:05:47,870
+mark book as read,
+
+126
+00:05:48,970 --> 00:05:51,250
+and it is given a name.
+
+127
+00:05:51,250 --> 00:05:53,750
+This parameter here will receive the string
+
+128
+00:05:53,750 --> 00:05:55,450
+that the user entered, and that should be
+
+129
+00:05:55,450 --> 00:05:57,270
+the name of the book.
+
+130
+00:05:57,270 --> 00:05:59,680
+So how would we mark a book as read,
+
+131
+00:05:59,680 --> 00:06:01,680
+knowing that we have a list of books?
+
+132
+00:06:06,970 --> 00:06:08,280
+If you didn't try this before,
+
+133
+00:06:08,280 --> 00:06:10,400
+then I hope you tried the video for a moment
+
+134
+00:06:10,400 --> 00:06:11,730
+and gave it a go.
+
+135
+00:06:11,730 --> 00:06:16,140
+All to do is just iterate over the books and if the book
+
+136
+00:06:16,140 --> 00:06:20,540
+was read, if book is equal to the name that we gave it,
+
+137
+00:06:21,800 --> 00:06:23,290
+then say book
+
+138
+00:06:24,780 --> 00:06:26,540
+read is now true.
+
+139
+00:06:29,760 --> 00:06:32,380
+Okay, that's it, you just go over the books
+
+140
+00:06:32,380 --> 00:06:33,420
+and for each book,
+
+141
+00:06:33,420 --> 00:06:36,170
+modify it if the name matches.
+
+142
+00:06:36,170 --> 00:06:38,870
+Of course, this does suggest that if two books have the
+
+143
+00:06:38,870 --> 00:06:43,063
+same name, they're both going to be changed over to be read,
+
+144
+00:06:43,063 --> 00:06:46,290
+but you know, we can deal with that problem later on.
+
+145
+00:06:46,290 --> 00:06:48,010
+If you want, of course, you can change this
+
+146
+00:06:48,010 --> 00:06:50,470
+to take two arguments, the name and the author
+
+147
+00:06:50,470 --> 00:06:54,180
+and that gives you a bit more granularity in what you do.
+
+148
+00:06:57,160 --> 00:07:00,170
+Finally, we're going to delete this comment here and define
+
+149
+00:07:00,170 --> 00:07:01,680
+the prompt delete book.
+
+150
+00:07:04,580 --> 00:07:06,580
+Once again, this is going to take a name
+
+151
+00:07:13,500 --> 00:07:16,550
+and it's going to do a database dot delete book
+
+152
+00:07:16,550 --> 00:07:18,070
+with that name.
+
+153
+00:07:18,070 --> 00:07:20,930
+Naturally, that also doesn't exist so once again, we go to
+
+154
+00:07:20,930 --> 00:07:23,780
+our database and we define that function.
+
+155
+00:07:27,410 --> 00:07:29,090
+So how may we do that?
+
+156
+00:07:29,090 --> 00:07:32,190
+This is the slightly more interesting thing.
+
+157
+00:07:33,220 --> 00:07:37,060
+There are a few ways in which we could delete a book.
+
+158
+00:07:37,060 --> 00:07:39,860
+Pause the video and give it a go if you haven't already.
+
+159
+00:07:44,310 --> 00:07:47,020
+One way that my students frequently come up with
+
+160
+00:07:47,020 --> 00:07:52,020
+removing a book is by going over to the list documentation
+
+161
+00:07:52,420 --> 00:07:54,500
+and see whether lists have any way of
+
+162
+00:07:54,500 --> 00:07:55,900
+removing elements from them.
+
+163
+00:07:57,130 --> 00:07:58,990
+And normally we end up with this.
+
+164
+00:07:58,990 --> 00:08:00,770
+Go through each book,
+
+165
+00:08:00,770 --> 00:08:03,310
+if the name matches what we want to delete
+
+166
+00:08:04,490 --> 00:08:07,990
+then do books dot remove book,
+
+167
+00:08:07,990 --> 00:08:12,990
+because the list objects have this dot remove method in them
+
+168
+00:08:13,530 --> 00:08:16,570
+and they take one of the objects in the list
+
+169
+00:08:16,570 --> 00:08:19,520
+and allows you to remove the object entirely from the list.
+
+170
+00:08:20,560 --> 00:08:22,480
+So this would certainly work.
+
+171
+00:08:24,350 --> 00:08:28,010
+However, it is generally considered bad practise
+
+172
+00:08:28,010 --> 00:08:30,340
+to modify a list
+
+173
+00:08:30,340 --> 00:08:32,380
+while you iterate over it.
+
+174
+00:08:33,400 --> 00:08:36,030
+That's because as you go from one element to the next,
+
+175
+00:08:36,030 --> 00:08:37,570
+elements are disappearing,
+
+176
+00:08:37,570 --> 00:08:39,520
+Python can get a little bit confused,
+
+177
+00:08:39,520 --> 00:08:42,920
+so generally not a good idea to remove elements from a list
+
+178
+00:08:42,920 --> 00:08:44,220
+while you iterate over it.
+
+179
+00:08:45,390 --> 00:08:47,120
+However this is a way that you could do it,
+
+180
+00:08:47,120 --> 00:08:49,670
+and it would work in the majority of circumstances.
+
+181
+00:08:50,820 --> 00:08:52,280
+Instead, I would
+
+182
+00:08:53,920 --> 00:08:54,780
+do this.
+
+183
+00:08:56,110 --> 00:08:59,570
+The first thing we want to do is say books is equal to,
+
+184
+00:08:59,570 --> 00:09:01,890
+no that's our variable up there,
+
+185
+00:09:01,890 --> 00:09:03,820
+and now we're going to use a list comprehension with a
+
+186
+00:09:03,820 --> 00:09:04,790
+conditional.
+
+187
+00:09:06,254 --> 00:09:08,770
+A list comprehension with a conditional is going to go
+
+188
+00:09:08,770 --> 00:09:13,160
+adding each book over to this new list if the book's name
+
+189
+00:09:13,160 --> 00:09:16,250
+is not equal to the name we got on our argument.
+
+190
+00:09:16,250 --> 00:09:19,330
+Add each book to a new list
+
+191
+00:09:19,330 --> 00:09:20,450
+if book name
+
+192
+00:09:21,640 --> 00:09:24,280
+is not equal to the name argument that we got here,
+
+193
+00:09:24,280 --> 00:09:26,170
+the name parameter, sorry.
+
+194
+00:09:26,170 --> 00:09:28,300
+Once again, I'd encourage you to pause the video
+
+195
+00:09:28,300 --> 00:09:31,350
+and give this list comprehension a go just for practise,
+
+196
+00:09:31,350 --> 00:09:33,560
+make sure that you've not forgotten how to implement
+
+197
+00:09:33,560 --> 00:09:34,910
+list comprehensions.
+
+198
+00:09:34,910 --> 00:09:36,970
+And if you have, then continue watching
+
+199
+00:09:36,970 --> 00:09:38,270
+and we shall implement it.
+
+200
+00:09:43,110 --> 00:09:45,620
+Okay, I hope you got that, but if you didn't,
+
+201
+00:09:45,620 --> 00:09:47,180
+that's totally fine.
+
+202
+00:09:47,180 --> 00:09:49,110
+All we want to do is create a variable
+
+203
+00:09:51,148 --> 00:09:52,590
+for book in books
+
+204
+00:09:52,590 --> 00:09:55,110
+and then we only want to put it inside the list,
+
+205
+00:09:55,110 --> 00:09:58,270
+remember this is the value we're putting in our new list
+
+206
+00:09:58,270 --> 00:09:59,500
+if the book name
+
+207
+00:10:00,840 --> 00:10:02,440
+is not equal to the name argument.
+
+208
+00:10:02,440 --> 00:10:04,240
+I'm gonna delete this comment now from there
+
+209
+00:10:04,240 --> 00:10:05,920
+since we don't need it any longer.
+
+210
+00:10:06,820 --> 00:10:08,410
+So this is going to put the book
+
+211
+00:10:08,410 --> 00:10:09,880
+element into a new list
+
+212
+00:10:10,920 --> 00:10:13,830
+for book in books, which is our list
+
+213
+00:10:13,830 --> 00:10:17,840
+if the book's name is not equal to the parameter.
+
+214
+00:10:17,840 --> 00:10:21,380
+But of course, Python doesn't quite like this and
+
+215
+00:10:21,380 --> 00:10:25,020
+there's a really good reason why I'm getting a red line
+
+216
+00:10:25,020 --> 00:10:27,130
+and this is something that you should
+
+217
+00:10:27,130 --> 00:10:29,230
+preempt against and you should understand.
+
+218
+00:10:30,350 --> 00:10:32,360
+The reason why it's giving me a red line is because
+
+219
+00:10:32,360 --> 00:10:33,710
+of the concept of scope.
+
+220
+00:10:33,710 --> 00:10:35,990
+Once again, I did mention that scope would appear
+
+221
+00:10:35,990 --> 00:10:37,750
+throughout the course a number of times
+
+222
+00:10:37,750 --> 00:10:40,980
+and this is an important scenario for understanding scope.
+
+223
+00:10:41,950 --> 00:10:44,930
+What we've got now is we have a global variable
+
+224
+00:10:44,930 --> 00:10:45,980
+called books,
+
+225
+00:10:47,410 --> 00:10:50,910
+however, Python has also created a local variable
+
+226
+00:10:50,910 --> 00:10:51,840
+to this function.
+
+227
+00:10:51,840 --> 00:10:56,170
+This variable, books, only exists within this function here,
+
+228
+00:10:56,170 --> 00:10:57,800
+and it is not the same variable
+
+229
+00:10:57,800 --> 00:10:59,670
+as the global variable, books.
+
+230
+00:11:02,150 --> 00:11:04,650
+So now it thinks that we are setting this variable,
+
+231
+00:11:04,650 --> 00:11:06,900
+we're creating this new variable, books,
+
+232
+00:11:06,900 --> 00:11:08,900
+but we are also using it
+
+233
+00:11:08,900 --> 00:11:12,200
+in the statement that creates it, and this is obviously
+
+234
+00:11:12,200 --> 00:11:16,090
+nonsensical because this variable doesn't exist yet,
+
+235
+00:11:16,090 --> 00:11:18,270
+since it's being created in that same line.
+
+236
+00:11:19,210 --> 00:11:20,840
+What we have to do is tell Python
+
+237
+00:11:20,840 --> 00:11:22,850
+that we don't want to create a new variable,
+
+238
+00:11:22,850 --> 00:11:25,510
+we want to use the global variable books.
+
+239
+00:11:27,030 --> 00:11:30,880
+Another option would be to rename this variable, books new.
+
+240
+00:11:30,880 --> 00:11:32,470
+It's that and then it doesn't complain anymore
+
+241
+00:11:32,470 --> 00:11:34,830
+because it realises that this variable
+
+242
+00:11:34,830 --> 00:11:37,460
+we're using must already exist,
+
+243
+00:11:37,460 --> 00:11:39,960
+so instead of looking in the local scope,
+
+244
+00:11:39,960 --> 00:11:42,010
+it looks in the global scope.
+
+245
+00:11:42,010 --> 00:11:43,410
+However, we don't want to do that
+
+246
+00:11:43,410 --> 00:11:46,400
+because we want to change this variable
+
+247
+00:11:46,400 --> 00:11:48,320
+and in order to do so, we must tell Python
+
+248
+00:11:48,320 --> 00:11:51,260
+that we are looking to use a global variable
+
+249
+00:11:51,260 --> 00:11:53,030
+and that's really straightforward.
+
+250
+00:11:53,030 --> 00:11:55,480
+We just do global books.
+
+251
+00:11:55,480 --> 00:11:58,300
+What this does essentially is say books
+
+252
+00:11:58,300 --> 00:12:01,830
+and the local scope is equal to books in the outer scope.
+
+253
+00:12:01,830 --> 00:12:03,290
+Makes them the same,
+
+254
+00:12:03,290 --> 00:12:05,800
+and then we can use it as normal.
+
+255
+00:12:05,800 --> 00:12:08,650
+Now it knows that when we use this variable,
+
+256
+00:12:08,650 --> 00:12:12,310
+we refer to the outer variable and similarly here
+
+257
+00:12:12,310 --> 00:12:14,610
+we're also referring to the outer variable.
+
+258
+00:12:14,610 --> 00:12:16,660
+So we're not looking to create a variable
+
+259
+00:12:16,660 --> 00:12:17,920
+in the local scope.
+
+260
+00:12:20,290 --> 00:12:21,123
+Okay.
+
+261
+00:12:22,150 --> 00:12:24,510
+That's it for deleting books, so we can go back to our
+
+262
+00:12:24,510 --> 00:12:27,800
+app dot P Y and delete our last comment.
+
+263
+00:12:27,800 --> 00:12:31,140
+And now we have our application completed.
+
+264
+00:12:31,140 --> 00:12:32,880
+Of course, I went through this quite quickly.
+
+265
+00:12:32,880 --> 00:12:34,230
+I'd expect you to take
+
+266
+00:12:34,230 --> 00:12:37,970
+substantially longer the first time that you develop this
+
+267
+00:12:37,970 --> 00:12:41,630
+as per the brief, but if you've gotten this far with me,
+
+268
+00:12:41,630 --> 00:12:43,930
+now you'll hopefully understand what's involved
+
+269
+00:12:43,930 --> 00:12:45,440
+in making this app.
+
+270
+00:12:46,320 --> 00:12:49,300
+We just have to get the data from the user,
+
+271
+00:12:50,270 --> 00:12:52,220
+create dictionaries for the books
+
+272
+00:12:53,220 --> 00:12:55,100
+and then store them in a list.
+
+273
+00:12:55,100 --> 00:12:57,730
+Each of the other operations is just going to go through
+
+274
+00:12:57,730 --> 00:12:59,240
+our books and change them,
+
+275
+00:12:59,240 --> 00:13:00,800
+go through our books and delete them
+
+276
+00:13:00,800 --> 00:13:02,610
+or just let the user rate them.
+
+277
+00:13:05,620 --> 00:13:07,600
+Now I'm just going to make a small improvement in the
+
+278
+00:13:07,600 --> 00:13:09,340
+list books function.
+
+279
+00:13:09,340 --> 00:13:11,680
+I'm going to print something a bit nicer.
+
+280
+00:13:11,680 --> 00:13:12,730
+So I'm going to print
+
+281
+00:13:14,560 --> 00:13:16,500
+the book's name.
+
+282
+00:13:16,500 --> 00:13:17,600
+Now, of course,
+
+283
+00:13:17,600 --> 00:13:20,770
+when you use the single quote inside a dictionary,
+
+284
+00:13:20,770 --> 00:13:22,600
+and you've got single quotes outside in your,
+
+285
+00:13:22,600 --> 00:13:24,670
+in your F string, it doesn't like that so I'm going to use
+
+286
+00:13:24,670 --> 00:13:26,900
+double quotes on the outside
+
+287
+00:13:26,900 --> 00:13:30,270
+and just for the Python's benefit,
+
+288
+00:13:33,810 --> 00:13:36,140
+I'm going to say book name by book author
+
+289
+00:13:37,290 --> 00:13:39,170
+and read is gonna be
+
+290
+00:13:40,050 --> 00:13:41,500
+book read.
+
+291
+00:13:43,560 --> 00:13:45,430
+So this is gonna be something like
+
+292
+00:13:46,290 --> 00:13:49,150
+fluent Python by the author
+
+293
+00:13:49,150 --> 00:13:50,820
+read false
+
+294
+00:13:50,820 --> 00:13:51,930
+or true.
+
+295
+00:13:51,930 --> 00:13:54,170
+In my case, it's false, I haven't read it yet.
+
+296
+00:13:55,500 --> 00:13:58,430
+Okay, the author is, by the way, is Luciano Romaldo,
+
+297
+00:13:58,430 --> 00:14:00,250
+I think that's how you say his name, it's a good book.
+
+298
+00:14:00,250 --> 00:14:01,200
+You should read it.
+
+299
+00:14:02,490 --> 00:14:04,820
+So now we've got the name and the author
+
+300
+00:14:05,880 --> 00:14:07,520
+and read is either true or false.
+
+301
+00:14:07,520 --> 00:14:09,410
+If we want to make that a bit nicer,
+
+302
+00:14:09,410 --> 00:14:12,640
+we can say something like read is yes.
+
+303
+00:14:12,640 --> 00:14:13,840
+If book read,
+
+304
+00:14:15,030 --> 00:14:15,863
+else
+
+305
+00:14:16,800 --> 00:14:18,170
+no.
+
+306
+00:14:18,170 --> 00:14:20,730
+This is a ternary statement in Python,
+
+307
+00:14:20,730 --> 00:14:23,020
+it just means use this value
+
+308
+00:14:23,020 --> 00:14:24,380
+if this is true,
+
+309
+00:14:24,380 --> 00:14:27,940
+otherwise use this value here for assigning to the variable.
+
+310
+00:14:27,940 --> 00:14:31,200
+So if book read is true, it's going to say yes.
+
+311
+00:14:31,200 --> 00:14:34,830
+If book read is false, it's going to say no.
+
+312
+00:14:34,830 --> 00:14:38,450
+And remember, this is essentially the same as this,
+
+313
+00:14:38,450 --> 00:14:41,240
+book read is true, you can remove the is true
+
+314
+00:14:41,240 --> 00:14:44,090
+as we looked at in the very first session of this course.
+
+315
+00:14:45,280 --> 00:14:48,710
+Now instead of book read, we can just use read,
+
+316
+00:14:48,710 --> 00:14:50,960
+since that's the variable we've created here.
+
+317
+00:14:52,460 --> 00:14:56,130
+Okay, let's go and run our app and see what happens.
+
+318
+00:14:58,440 --> 00:14:59,310
+Nothing.
+
+319
+00:14:59,310 --> 00:15:02,030
+Of course, we've not ran the Menu function.
+
+320
+00:15:02,030 --> 00:15:03,900
+So let's go over, down to the very bottom
+
+321
+00:15:03,900 --> 00:15:05,570
+and run the Menu function.
+
+322
+00:15:05,570 --> 00:15:07,230
+And now we see our input.
+
+323
+00:15:07,230 --> 00:15:09,540
+I'm just going to extend this a little bit.
+
+324
+00:15:09,540 --> 00:15:13,540
+We can add a new book, let's say for example,
+
+325
+00:15:13,540 --> 00:15:15,390
+Clean Code, this is a good book as well,
+
+326
+00:15:15,390 --> 00:15:16,580
+you can also read it.
+
+327
+00:15:16,580 --> 00:15:18,964
+It's by Robert C. Martin,
+
+328
+00:15:18,964 --> 00:15:19,797
+Martin,
+
+329
+00:15:21,260 --> 00:15:23,190
+and that's it, we've added it.
+
+330
+00:15:23,190 --> 00:15:27,440
+Now we can press L to see them and we get Clean Code
+
+331
+00:15:27,440 --> 00:15:29,750
+by Robert C. Martin read, no.
+
+332
+00:15:30,840 --> 00:15:34,410
+We can add another one, let's say for example,
+
+333
+00:15:35,720 --> 00:15:37,490
+Test Driven Development
+
+334
+00:15:38,440 --> 00:15:41,820
+by Kent Beck, also a good book.
+
+335
+00:15:41,820 --> 00:15:44,600
+Now we can list them and we can see that
+
+336
+00:15:44,600 --> 00:15:47,630
+we've not read either Clean Code or Test Driven Development
+
+337
+00:15:47,630 --> 00:15:48,830
+but we want to.
+
+338
+00:15:48,830 --> 00:15:50,530
+So let's go ahead and read Clean Code first.
+
+339
+00:15:50,530 --> 00:15:54,990
+So we type R, and by the way, add a space after your choice,
+
+340
+00:15:54,990 --> 00:15:56,360
+that's just poor planning on my part.
+
+341
+00:15:56,360 --> 00:15:58,060
+It just looks awful.
+
+342
+00:15:58,060 --> 00:15:59,820
+Enter the name of the book you just finished reading,
+
+343
+00:15:59,820 --> 00:16:01,780
+let's say Clean Code.
+
+344
+00:16:01,780 --> 00:16:03,950
+Now we can list the books again and we see
+
+345
+00:16:03,950 --> 00:16:05,500
+that Clean Code says yes.
+
+346
+00:16:06,940 --> 00:16:10,390
+Of course, when we quit and we start again,
+
+347
+00:16:12,800 --> 00:16:15,330
+we don't have any books because we've stored them
+
+348
+00:16:15,330 --> 00:16:17,500
+in an in-memory database.
+
+349
+00:16:17,500 --> 00:16:20,050
+That is a database that lives in-memory in the memory of
+
+350
+00:16:20,050 --> 00:16:23,770
+our computer which is volatile and is only available
+
+351
+00:16:23,770 --> 00:16:25,760
+for as long as the app is running.
+
+352
+00:16:25,760 --> 00:16:28,950
+As soon as we stop running, that database gets erased
+
+353
+00:16:28,950 --> 00:16:31,120
+by Python to save memory.
+
+354
+00:16:32,220 --> 00:16:34,980
+We don't want this, so what we want to do
+
+355
+00:16:34,980 --> 00:16:36,610
+is go ahead
+
+356
+00:16:36,610 --> 00:16:39,020
+and use a file instead.
+
+357
+00:16:40,210 --> 00:16:42,370
+And now, you understand why
+
+358
+00:16:43,460 --> 00:16:46,100
+I have tried to decouple our database
+
+359
+00:16:47,010 --> 00:16:49,040
+from our app.
+
+360
+00:16:49,040 --> 00:16:50,280
+Now,
+
+361
+00:16:50,280 --> 00:16:52,420
+nearly all the changes
+
+362
+00:16:52,420 --> 00:16:53,900
+are going to be
+
+363
+00:16:53,900 --> 00:16:57,720
+in the database file for us to swap over to files
+
+364
+00:16:57,720 --> 00:16:59,760
+instead of in-memory database.
+
+365
+00:17:00,670 --> 00:17:01,600
+Here's an example.
+
+366
+00:17:03,210 --> 00:17:05,980
+Books is now not going to be a list any longer.
+
+367
+00:17:05,980 --> 00:17:08,020
+It's going to be a file name,
+
+368
+00:17:08,020 --> 00:17:10,390
+for example books dot T X D.
+
+369
+00:17:11,340 --> 00:17:14,090
+Add book is going to open the file
+
+370
+00:17:14,090 --> 00:17:16,400
+and it's going to append a book to it.
+
+371
+00:17:17,600 --> 00:17:19,770
+Get all books is going to read the file
+
+372
+00:17:19,770 --> 00:17:22,210
+and return all the books in it.
+
+373
+00:17:22,210 --> 00:17:25,520
+Mark books as read is going to read all the books,
+
+374
+00:17:25,520 --> 00:17:26,620
+and it's going to change one
+
+375
+00:17:26,620 --> 00:17:28,940
+and it's going to rewrite them to the file.
+
+376
+00:17:28,940 --> 00:17:31,580
+And delete book is going to read all the books,
+
+377
+00:17:31,580 --> 00:17:32,690
+it's going to delete one,
+
+378
+00:17:32,690 --> 00:17:34,910
+and then it's going to rewrite it to the file.
+
+379
+00:17:36,320 --> 00:17:39,800
+You can store the books in CSV format or in JSON format,
+
+380
+00:17:39,800 --> 00:17:41,210
+it's up to you.
+
+381
+00:17:41,210 --> 00:17:42,600
+Of course, if you store them in JSON,
+
+382
+00:17:42,600 --> 00:17:44,530
+it's slightly easier to work with since we've already
+
+383
+00:17:44,530 --> 00:17:46,070
+worked with dictionaries here,
+
+384
+00:17:46,070 --> 00:17:47,770
+but if you store them in CSV,
+
+385
+00:17:47,770 --> 00:17:50,010
+it's not much more difficult either.
+
+386
+00:17:50,010 --> 00:17:52,930
+In the next video, we're going to go over changing this
+
+387
+00:17:52,930 --> 00:17:55,700
+to use CSVs, so I'll see you there.
+

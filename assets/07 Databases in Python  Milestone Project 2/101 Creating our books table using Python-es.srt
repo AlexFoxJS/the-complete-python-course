@@ -1,0 +1,352 @@
+1
+00:00:00,052 --> 00:00:01,221
+Jos: Hola, y bienvenido de nuevo.
+
+2
+00:00:01,221 --> 00:00:03,528
+En este video estamos viendo alguna jerga de la
+
+3
+00:00:03,528 --> 00:00:05,085
+base de datos que necesitars saber.
+
+4
+00:00:05,085 --> 00:00:07,945
+Comenzando con, qu es un cursor?
+
+5
+00:00:07,945 --> 00:00:11,144
+Tambin vamos a ver, qu es commit?
+
+6
+00:00:11,144 --> 00:00:13,776
+Y finalmente, solo un par de palabras
+
+7
+00:00:13,776 --> 00:00:17,970
+sobre cmo vamos a escribir SQL y luego pasaremos al siguiente video.
+
+8
+00:00:17,970 --> 00:00:22,543
+Cursores, todas las operaciones en SQLite estn hechas por cursores,
+
+9
+00:00:22,543 --> 00:00:26,421
+y no por el objeto de conexin en s.
+
+10
+00:00:26,421 --> 00:00:27,904
+Hay dos razones para eso.
+
+11
+00:00:27,904 --> 00:00:32,009
+La primera razn es que si tenemos una nica
+
+12
+00:00:32,009 --> 00:00:35,892
+conexin, solo podemos realizar una operacin a la vez.
+
+13
+00:00:35,892 --> 00:00:38,490
+Si tenemos muchos cursores podemos usar cada cursor
+
+14
+00:00:38,490 --> 00:00:41,777
+para leer algunos datos y uno para escribir algunos datos.
+
+15
+00:00:41,777 --> 00:00:45,716
+Recuerde que estamos limitados a una operacin de escritura a
+
+16
+00:00:45,716 --> 00:00:49,966
+la vez, pero mltiples cursores pueden leer datos al mismo tiempo.
+
+17
+00:00:49,966 --> 00:00:52,717
+El cursor tambin tiene un significado especfico y hay
+
+18
+00:00:52,717 --> 00:00:55,242
+una razn por la que se llama cursor,
+
+19
+00:00:55,242 --> 00:00:58,159
+es decir, cuando leemos algunos datos, digamos que tenemos
+
+20
+00:00:59,291 --> 00:01:01,434
+esta tabla aqu y le pedimos al
+
+21
+00:01:01,434 --> 00:01:04,176
+cursor que busque algunos datos y saque algunos datos
+
+22
+00:01:04,176 --> 00:01:06,020
+de la base de datos.
+
+23
+00:01:06,020 --> 00:01:09,451
+El cursor comienza all, en la parte
+
+24
+00:01:09,451 --> 00:01:12,496
+superior, justo antes de nuestra primera fila.
+
+25
+00:01:12,496 --> 00:01:15,169
+Cuando le decimos al cursor que se mueva a la
+
+26
+00:01:15,169 --> 00:01:17,602
+siguiente lnea, nos dar la primera lnea y el
+
+27
+00:01:17,602 --> 00:01:19,722
+cursor se mover a la segunda fila.
+
+28
+00:01:19,722 --> 00:01:24,359
+Observe que este cursor es como apuntar a un lugar, por eso se
+
+29
+00:01:24,359 --> 00:01:25,379
+llama cursor porque
+
+30
+00:01:25,379 --> 00:01:27,725
+los cursores se usan para sealar cosas
+
+31
+00:01:27,725 --> 00:01:28,877
+y este cursor
+
+32
+00:01:28,877 --> 00:01:31,782
+apunta a su ubicacin actual en la tabla.
+
+33
+00:01:31,782 --> 00:01:35,413
+Cuando leemos la primera fila, pasa a la segunda fila.
+
+34
+00:01:35,413 --> 00:01:38,655
+Ahora, cuando le pedimos al cursor que lea una
+
+35
+00:01:38,655 --> 00:01:41,964
+fila, leer una fila despus de la que est ahora.
+
+36
+00:01:41,964 --> 00:01:44,027
+As que pasar a la tercera
+
+37
+00:01:44,027 --> 00:01:46,358
+fila y nos dara la segunda fila.
+
+38
+00:01:46,358 --> 00:01:47,191
+Etctera.
+
+39
+00:01:47,191 --> 00:01:50,827
+Y esta es realmente la razn principal por la que se llama
+
+40
+00:01:50,827 --> 00:01:53,001
+cursor, porque cada vez que pides una
+
+41
+00:01:53,001 --> 00:01:56,584
+nueva fila se mover hacia abajo y no podrs volver a subir.
+
+42
+00:01:56,584 --> 00:01:58,387
+Entonces, el cursor sigue apuntando hacia
+
+43
+00:01:58,387 --> 00:02:01,637
+abajo y bajando a medida que lo pides para filas.
+
+44
+00:02:02,867 --> 00:02:05,700
+De acuerdo, entonces vamos a encontrar
+
+45
+00:02:05,700 --> 00:02:08,582
+algunas funcionalidades interesantes para hacer con
+
+46
+00:02:08,582 --> 00:02:10,999
+esta forma de operar pronto.
+
+47
+00:02:12,023 --> 00:02:14,384
+El siguiente, el compromiso.
+
+48
+00:02:14,384 --> 00:02:18,981
+Confirmar solo significa, guardar el resultado en el disco.
+
+49
+00:02:18,981 --> 00:02:21,847
+Y eso es porque mantenemos un montn de datos en la
+
+50
+00:02:21,847 --> 00:02:23,278
+memoria hasta que nos comprometemos.
+
+51
+00:02:23,278 --> 00:02:25,322
+Por ejemplo, digamos que queremos insertar algunos
+
+52
+00:02:25,322 --> 00:02:27,065
+datos en nuestra base de datos,
+
+53
+00:02:27,065 --> 00:02:28,899
+le decimos a SQLite que lo
+
+54
+00:02:28,899 --> 00:02:30,744
+inserte, en realidad no se inserta.
+
+55
+00:02:30,744 --> 00:02:35,744
+Se guarda en la memoria hasta que decimos, cometer todo esto.
+
+56
+00:02:35,796 --> 00:02:39,378
+Eso nos permite, por ejemplo, si tratamos de
+
+57
+00:02:39,378 --> 00:02:42,189
+insertar algunos datos, y resulta estar daado
+
+58
+00:02:42,189 --> 00:02:45,767
+o algo as, podemos retroceder y no guardar
+
+59
+00:02:45,767 --> 00:02:47,446
+nada en el disco.
+
+60
+00:02:47,446 --> 00:02:50,142
+Tambin nos permite escribir varias cosas juntas.
+
+61
+00:02:50,142 --> 00:02:53,508
+Por ejemplo, podemos eliminar un usuario e insertar un
+
+62
+00:02:53,508 --> 00:02:56,972
+nuevo usuario y luego confirmarlo, lo que en realidad procede
+
+63
+00:02:56,972 --> 00:03:00,950
+a eliminar los datos del disco e insertar los nuevos datos.
+
+64
+00:03:00,950 --> 00:03:05,319
+Digamos, por ejemplo, que queremos crear una nueva compra para un
+
+65
+00:03:05,319 --> 00:03:08,641
+usuario y luego, como resultado de eso, queremos
+
+66
+00:03:08,641 --> 00:03:10,747
+actualizar su tarjeta de crdito.
+
+67
+00:03:10,747 --> 00:03:13,410
+Pero si uno falla, no queremos hacer el otro.
+
+68
+00:03:13,410 --> 00:03:17,155
+Podemos tratar de agregar la compra y si
+
+69
+00:03:17,155 --> 00:03:22,155
+eso falla, retrocederemos y no procederemos con la tarjeta de crdito.
+
+70
+00:03:22,237 --> 00:03:24,610
+Entonces, este compromiso nos permite, cuando estamos
+
+71
+00:03:24,610 --> 00:03:26,290
+en un estado en el
+
+72
+00:03:26,290 --> 00:03:27,956
+que queremos guardar cosas en
+
+73
+00:03:27,956 --> 00:03:30,976
+un disco, realmente guardarlas y no antes.
+
+74
+00:03:30,976 --> 00:03:32,169
+Entonces nos da un
+
+75
+00:03:32,169 --> 00:03:35,186
+poco de libertad y tambin nos da velocidad extra.
+
+76
+00:03:35,186 --> 00:03:36,769
+Mantener un montn de cosas en
+
+77
+00:03:36,769 --> 00:03:38,539
+la memoria y luego escribirlas por
+
+78
+00:03:38,539 --> 00:03:40,997
+completo es ms rpido que escribirlas una por una.
+
+79
+00:03:40,997 --> 00:03:44,402
+Solo por las limitaciones sobre cmo funcionan los
+
+80
+00:03:44,402 --> 00:03:47,069
+discos duros donde se almacenan los datos.
+
+81
+00:03:48,239 --> 00:03:51,335
+Ahora voy a escribir SQL, voy a redirigirlo
+
+82
+00:03:51,335 --> 00:03:52,375
+al prximo video.
+
+83
+00:03:52,375 --> 00:03:54,266
+SQL es similar al ingls, por
+
+84
+00:03:54,266 --> 00:03:56,231
+lo que las consultas sern bastante legibles
+
+85
+00:03:56,231 --> 00:03:58,172
+y haremos cosas como seleccionar datos,
+
+86
+00:03:58,172 --> 00:04:00,156
+insertar datos y cosas por el estilo.
+
+87
+00:04:00,156 --> 00:04:02,676
+Pero vamos a hacer eso en el prximo video.
+
+88
+00:04:02,676 --> 00:04:04,593
+As que te ver all.
+

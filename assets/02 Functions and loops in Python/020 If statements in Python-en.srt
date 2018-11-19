@@ -1,0 +1,1268 @@
+1
+00:00:00,270 --> 00:00:01,103
+<v Instructor>Hi there.</v>
+
+2
+00:00:01,103 --> 00:00:03,120
+Welcome back to the course.
+
+3
+00:00:03,120 --> 00:00:06,210
+In this video we're going to look at if statements.
+
+4
+00:00:06,210 --> 00:00:08,680
+The if statement is a key construct
+
+5
+00:00:08,680 --> 00:00:10,280
+in any programming language
+
+6
+00:00:10,280 --> 00:00:13,480
+because it allows us to make decisions.
+
+7
+00:00:13,480 --> 00:00:15,690
+For example, think of a game.
+
+8
+00:00:15,690 --> 00:00:18,460
+If the user presses the up arrow,
+
+9
+00:00:18,460 --> 00:00:20,350
+you want the character to move forwards.
+
+10
+00:00:20,350 --> 00:00:21,830
+If they press the down arrow,
+
+11
+00:00:21,830 --> 00:00:23,940
+you want them to move backwards.
+
+12
+00:00:23,940 --> 00:00:28,350
+The only way to do that is by allowing your programme
+
+13
+00:00:28,350 --> 00:00:30,160
+to make the decision of,
+
+14
+00:00:30,160 --> 00:00:33,340
+should you move forwards, or should you move backwards.
+
+15
+00:00:33,340 --> 00:00:34,360
+And the way to do that in programming
+
+16
+00:00:34,360 --> 00:00:35,560
+is with an if statement.
+
+17
+00:00:36,710 --> 00:00:37,970
+Let's dive right into the code
+
+18
+00:00:37,970 --> 00:00:41,020
+as that'll explain it even better than I can.
+
+19
+00:00:41,020 --> 00:00:43,170
+Let's define a variable called programmer
+
+20
+00:00:43,170 --> 00:00:44,660
+and make it equal to true.
+
+21
+00:00:44,660 --> 00:00:46,900
+Remember, true is a key word in Python
+
+22
+00:00:46,900 --> 00:00:49,040
+that means, well, true.
+
+23
+00:00:49,040 --> 00:00:50,140
+It means yes.
+
+24
+00:00:50,140 --> 00:00:52,190
+It means that something is true
+
+25
+00:00:52,190 --> 00:00:54,350
+or that should happen or is valid.
+
+26
+00:00:55,870 --> 00:01:00,170
+Now we can say if programmer is true
+
+27
+00:01:00,170 --> 00:01:02,120
+and notice how the is is blue
+
+28
+00:01:02,120 --> 00:01:04,380
+because that's a Python keyword as well.
+
+29
+00:01:05,530 --> 00:01:07,930
+And then there's a colon at the end.
+
+30
+00:01:07,930 --> 00:01:09,040
+Then we can do something like
+
+31
+00:01:09,040 --> 00:01:12,120
+print you are awesome,
+
+32
+00:01:13,240 --> 00:01:14,870
+and if you're not a programmer yet,
+
+33
+00:01:14,870 --> 00:01:16,610
+you are on your way to becoming one,
+
+34
+00:01:16,610 --> 00:01:18,360
+so you will be awesome pretty soon.
+
+35
+00:01:19,310 --> 00:01:21,810
+Now, a couple of things here that you have to notice is,
+
+36
+00:01:21,810 --> 00:01:24,870
+of course, you've got the if keyword at the start,
+
+37
+00:01:24,870 --> 00:01:28,320
+then you've got a Boolean comparison.
+
+38
+00:01:28,320 --> 00:01:31,920
+In this case you've got this programmer is true.
+
+39
+00:01:31,920 --> 00:01:34,950
+Now, because programmer is true,
+
+40
+00:01:34,950 --> 00:01:39,420
+true is true, is always going to evaluate to true.
+
+41
+00:01:39,420 --> 00:01:41,710
+So when this thing here evaluates to true,
+
+42
+00:01:41,710 --> 00:01:45,190
+we're going to run whatever is underneath this colon.
+
+43
+00:01:46,090 --> 00:01:47,460
+So that's gonna be this print.
+
+44
+00:01:47,460 --> 00:01:49,600
+Notice also, very important,
+
+45
+00:01:49,600 --> 00:01:52,400
+that the print has a number of spaces in front.
+
+46
+00:01:52,400 --> 00:01:54,060
+Here, it's got four spaces,
+
+47
+00:01:54,060 --> 00:01:57,130
+and it doesn't matter how many spaces it's got.
+
+48
+00:01:57,130 --> 00:02:01,070
+Normally you either put two spaces or four spaces.
+
+49
+00:02:01,070 --> 00:02:05,020
+You cannot put zero spaces because if you put zero spaces,
+
+50
+00:02:05,020 --> 00:02:09,350
+Python doesn't know that it belongs to this if statement.
+
+51
+00:02:09,350 --> 00:02:11,630
+It just thinks it's a new line of code
+
+52
+00:02:11,630 --> 00:02:13,760
+that is unrelated to the if.
+
+53
+00:02:13,760 --> 00:02:15,600
+So normally you'd put four spaces,
+
+54
+00:02:15,600 --> 00:02:16,580
+I think I've put four there,
+
+55
+00:02:16,580 --> 00:02:18,190
+One, two, three, four, five,
+
+56
+00:02:18,190 --> 00:02:19,450
+ah, I can't count.
+
+57
+00:02:19,450 --> 00:02:21,130
+Normally you'd put four spaces
+
+58
+00:02:21,130 --> 00:02:22,900
+and now what this means is
+
+59
+00:02:22,900 --> 00:02:25,950
+if this thing evaluates to true,
+
+60
+00:02:25,950 --> 00:02:28,150
+then you run whatever is under the colon
+
+61
+00:02:29,560 --> 00:02:33,740
+for as many lines as are indented,
+
+62
+00:02:34,840 --> 00:02:35,850
+and then, eventually,
+
+63
+00:02:35,850 --> 00:02:37,850
+when you want to continue running something
+
+64
+00:02:37,850 --> 00:02:39,620
+that is unrelated to that if statement,
+
+65
+00:02:39,620 --> 00:02:41,890
+for example, a new if statement
+
+66
+00:02:41,890 --> 00:02:46,760
+or something else where we are outside the if,
+
+67
+00:02:46,760 --> 00:02:49,760
+then notice how this line is no longer indented.
+
+68
+00:02:49,760 --> 00:02:52,540
+Now, indentation just means the spaces at the front.
+
+69
+00:02:52,540 --> 00:02:54,460
+Notice how this line is not indented,
+
+70
+00:02:54,460 --> 00:02:56,490
+which means it's unrelated to the if.
+
+71
+00:02:58,210 --> 00:03:00,450
+Anyway, let's leave it as you are awesome.
+
+72
+00:03:02,690 --> 00:03:05,590
+Okay, then we can have another one like,
+
+73
+00:03:05,590 --> 00:03:08,890
+is programmer, and then that's gonna be false,
+
+74
+00:03:08,890 --> 00:03:12,080
+and if is programmer is true,
+
+75
+00:03:12,080 --> 00:03:14,190
+we're going to print you are awesome.
+
+76
+00:03:16,100 --> 00:03:18,840
+Now, we know this is not going to print,
+
+77
+00:03:18,840 --> 00:03:22,320
+because false is true is not correct.
+
+78
+00:03:22,320 --> 00:03:25,330
+False is not true, so this shouldn't run.
+
+79
+00:03:25,330 --> 00:03:26,580
+If we run this programme now,
+
+80
+00:03:26,580 --> 00:03:29,540
+we should see you are awesome printed out once
+
+81
+00:03:29,540 --> 00:03:31,800
+and then nothing printed out the second time.
+
+82
+00:03:31,800 --> 00:03:32,633
+Let's go for it.
+
+83
+00:03:34,210 --> 00:03:35,810
+Okay, that's what we see.
+
+84
+00:03:35,810 --> 00:03:37,450
+You are awesome comes out first,
+
+85
+00:03:37,450 --> 00:03:39,590
+that's this line number four,
+
+86
+00:03:39,590 --> 00:03:42,140
+and then you are awesome doesn't come out second time
+
+87
+00:03:42,140 --> 00:03:43,760
+because false is not true.
+
+88
+00:03:44,710 --> 00:03:47,640
+Of course, you can change this to is not true
+
+89
+00:03:47,640 --> 00:03:48,610
+and then run it
+
+90
+00:03:48,610 --> 00:03:50,510
+and now you'd see you are awesome printed out twice.
+
+91
+00:03:50,510 --> 00:03:53,860
+However, non-programmers are not so awesome
+
+92
+00:03:53,860 --> 00:03:55,360
+so we wanna do something else.
+
+93
+00:03:56,550 --> 00:03:58,070
+How may we do that?
+
+94
+00:03:58,070 --> 00:03:59,990
+Well, Python is pretty English-like,
+
+95
+00:03:59,990 --> 00:04:02,950
+so just use the else keyword,
+
+96
+00:04:02,950 --> 00:04:04,670
+and then it lets you do this,
+
+97
+00:04:04,670 --> 00:04:07,040
+and if that doesn't work, you can do something else.
+
+98
+00:04:07,040 --> 00:04:09,930
+And again, that's just the else keyword and a colon,
+
+99
+00:04:09,930 --> 00:04:12,200
+and then more indentation down here
+
+100
+00:04:12,200 --> 00:04:13,860
+for this block is now going to belong
+
+101
+00:04:13,860 --> 00:04:16,170
+to the else statement,
+
+102
+00:04:16,170 --> 00:04:18,670
+And you can print something if that didn't happen.
+
+103
+00:04:19,810 --> 00:04:21,590
+Learn some programming.
+
+104
+00:04:23,330 --> 00:04:26,080
+Okay, I think this reads quite nicely
+
+105
+00:04:26,080 --> 00:04:27,250
+at least it reads nicely to me,
+
+106
+00:04:27,250 --> 00:04:29,660
+hopefully that's the case for you too.
+
+107
+00:04:29,660 --> 00:04:31,810
+The indented block here is going to run
+
+108
+00:04:31,810 --> 00:04:34,800
+if this condition evaluates to true
+
+109
+00:04:36,400 --> 00:04:38,220
+And if you have an else statement,
+
+110
+00:04:38,220 --> 00:04:41,200
+which isn't necessary, it's completely optional,
+
+111
+00:04:41,200 --> 00:04:45,040
+this thing here is going to run if this didn't run, okay?
+
+112
+00:04:45,040 --> 00:04:46,750
+Sorry, if this didn't run.
+
+113
+00:04:46,750 --> 00:04:50,030
+So if this is false, then the else will run.
+
+114
+00:04:50,030 --> 00:04:52,980
+If this is true, then this will run.
+
+115
+00:04:52,980 --> 00:04:54,320
+So it's a pretty nifty way
+
+116
+00:04:54,320 --> 00:04:56,790
+of handling flow in your programmes.
+
+117
+00:04:58,470 --> 00:05:00,390
+Notice, of course, that the indentation
+
+118
+00:05:00,390 --> 00:05:02,000
+has to be correct.
+
+119
+00:05:02,000 --> 00:05:04,590
+This else is related to the if,
+
+120
+00:05:04,590 --> 00:05:07,500
+but it doesn't belong inside the if.
+
+121
+00:05:07,500 --> 00:05:10,640
+So they are of the same indentation level,
+
+122
+00:05:10,640 --> 00:05:13,560
+and the blocks that run are more indented
+
+123
+00:05:13,560 --> 00:05:16,410
+to show that they belong under this colon
+
+124
+00:05:16,410 --> 00:05:18,660
+inside this block and similarly here
+
+125
+00:05:18,660 --> 00:05:20,150
+they're indented to show that they belong
+
+126
+00:05:20,150 --> 00:05:23,260
+under this colon inside this block.
+
+127
+00:05:23,260 --> 00:05:24,750
+Now, as soon as you want to run
+
+128
+00:05:24,750 --> 00:05:27,130
+something that is unrelated to the else,
+
+129
+00:05:27,130 --> 00:05:30,180
+just unindent it, remove the spaces in front,
+
+130
+00:05:30,180 --> 00:05:31,280
+and you're good to go.
+
+131
+00:05:32,420 --> 00:05:33,730
+Okay?
+
+132
+00:05:33,730 --> 00:05:37,440
+Of course, you can check whether something is false
+
+133
+00:05:37,440 --> 00:05:39,700
+instead of is true, and that's totally fine.
+
+134
+00:05:39,700 --> 00:05:42,880
+You can print learn some programming,
+
+135
+00:05:42,880 --> 00:05:45,460
+and of course, you can then do an else
+
+136
+00:05:45,460 --> 00:05:47,530
+and you can print you are awesome.
+
+137
+00:05:47,530 --> 00:05:51,170
+So this is exactly what we did here except it's reversed.
+
+138
+00:05:51,170 --> 00:05:54,340
+Now, we have an if checking whether is programmer is false
+
+139
+00:05:54,340 --> 00:05:56,491
+and we're saying learn some programming
+
+140
+00:05:56,491 --> 00:05:58,450
+and if is programmer wasn't false,
+
+141
+00:05:58,450 --> 00:06:01,010
+that means it was true then we printed you are awesome,
+
+142
+00:06:01,010 --> 00:06:02,610
+because programmers are awesome.
+
+143
+00:06:04,020 --> 00:06:05,580
+Okay?
+
+144
+00:06:05,580 --> 00:06:06,670
+Now, a couple more things you can do,
+
+145
+00:06:06,670 --> 00:06:08,920
+and I'm just gonna show you a few bits of syntax
+
+146
+00:06:08,920 --> 00:06:11,840
+just so you're aware of the sort of things you can do.
+
+147
+00:06:11,840 --> 00:06:15,550
+You can check whether is programmer is not true,
+
+148
+00:06:16,600 --> 00:06:18,900
+which is just a contrived way of checking
+
+149
+00:06:18,900 --> 00:06:23,430
+whether it's false or anything other than true.
+
+150
+00:06:23,430 --> 00:06:26,490
+You can print learn some programming
+
+151
+00:06:28,470 --> 00:06:31,880
+and, of course, we can also do multiple checks in one
+
+152
+00:06:31,880 --> 00:06:35,900
+by using and if is programmer not true
+
+153
+00:06:35,900 --> 00:06:40,100
+and is programmer is not five for example.
+
+154
+00:06:40,100 --> 00:06:41,890
+That wouldn't make any sense but, you know,
+
+155
+00:06:41,890 --> 00:06:44,570
+you can join Boolean checks here
+
+156
+00:06:44,570 --> 00:06:48,380
+with and and with or, as we saw in other videos.
+
+157
+00:06:48,380 --> 00:06:49,470
+And that's totally fine.
+
+158
+00:06:49,470 --> 00:06:51,700
+So whatever this thing here,
+
+159
+00:06:51,700 --> 00:06:54,110
+up until the colon evaluates to,
+
+160
+00:06:54,110 --> 00:06:55,940
+whether it's true or false,
+
+161
+00:06:55,940 --> 00:06:58,390
+then this thing here is going to run if it's true.
+
+162
+00:06:58,390 --> 00:07:00,790
+The else is going to run if it was false.
+
+163
+00:07:02,950 --> 00:07:06,350
+Now, let's define two variables,
+
+164
+00:07:06,350 --> 00:07:07,900
+is programmer which is false,
+
+165
+00:07:07,900 --> 00:07:10,750
+and is awesome which is true.
+
+166
+00:07:11,780 --> 00:07:13,230
+Now, I'm just gonna press enter a few times
+
+167
+00:07:13,230 --> 00:07:14,900
+so this appears a bit more centred on your screen
+
+168
+00:07:14,900 --> 00:07:18,360
+I think that's gonna be a nicer reading experience for you.
+
+169
+00:07:18,360 --> 00:07:21,070
+Now, if is programmer,
+
+170
+00:07:22,450 --> 00:07:25,240
+we're going to print you are the best.
+
+171
+00:07:26,530 --> 00:07:28,440
+So this is a new bit of syntax here
+
+172
+00:07:29,460 --> 00:07:32,640
+and what this essentially means is
+
+173
+00:07:32,640 --> 00:07:35,330
+if is programmer is true.
+
+174
+00:07:35,330 --> 00:07:37,320
+Only the is true is optional
+
+175
+00:07:37,320 --> 00:07:40,070
+because this also reads quite nicely in English.
+
+176
+00:07:40,070 --> 00:07:42,640
+If is programmer, then you're gonna do something.
+
+177
+00:07:44,130 --> 00:07:46,270
+You could also say if is programmer is true,
+
+178
+00:07:46,270 --> 00:07:50,020
+but both read well in English.
+
+179
+00:07:50,020 --> 00:07:52,010
+So in Python allows us,
+
+180
+00:07:53,155 --> 00:07:56,870
+under the assumption that this thing is gonna read nicely
+
+181
+00:07:56,870 --> 00:07:59,980
+to skip the is true and this also runs.
+
+182
+00:07:59,980 --> 00:08:01,600
+So if we run this here,
+
+183
+00:08:01,600 --> 00:08:03,250
+we should see you are the best.
+
+184
+00:08:03,250 --> 00:08:04,840
+Actually we won't see it because it's false.
+
+185
+00:08:04,840 --> 00:08:07,960
+Apologies, if we change this to true, we'll see it.
+
+186
+00:08:09,890 --> 00:08:11,160
+And here you can see you are the best
+
+187
+00:08:11,160 --> 00:08:12,380
+printed out there.
+
+188
+00:08:12,380 --> 00:08:13,850
+So, awesome.
+
+189
+00:08:15,140 --> 00:08:19,260
+Now, what if we want to print you are the best
+
+190
+00:08:19,260 --> 00:08:20,960
+if they're a programmer,
+
+191
+00:08:20,960 --> 00:08:23,930
+but we want to print that you're maybe not the best
+
+192
+00:08:23,930 --> 00:08:26,710
+but you're still awesome if they're awesome.
+
+193
+00:08:26,710 --> 00:08:29,390
+And if they're neither a programmer nor awesome,
+
+194
+00:08:29,390 --> 00:08:32,220
+we want to print something else like, be awesome.
+
+195
+00:08:33,390 --> 00:08:35,660
+Well, we can do this in a couple of ways.
+
+196
+00:08:35,660 --> 00:08:38,110
+We can say if is programmer print that,
+
+197
+00:08:38,110 --> 00:08:39,300
+if is awesome,
+
+198
+00:08:40,820 --> 00:08:45,820
+print you are not the best, but still awesome.
+
+199
+00:08:48,624 --> 00:08:53,624
+And of course if not is programmer or is awesome,
+
+200
+00:08:57,400 --> 00:08:59,860
+print be awesome.
+
+201
+00:08:59,860 --> 00:09:02,040
+So this is something we could do,
+
+202
+00:09:02,040 --> 00:09:04,990
+you know, it could work.
+
+203
+00:09:04,990 --> 00:09:07,040
+If they're a programmer, we're gonna print you are the best.
+
+204
+00:09:07,040 --> 00:09:07,873
+If they are awesome,
+
+205
+00:09:07,873 --> 00:09:09,590
+we're gonna print you are not the best,
+
+206
+00:09:09,590 --> 00:09:10,980
+but you're still awesome.
+
+207
+00:09:10,980 --> 00:09:11,813
+And here we're using
+
+208
+00:09:11,813 --> 00:09:15,220
+one of these compound Boolean expressions,
+
+209
+00:09:15,220 --> 00:09:18,090
+is programmer or is awesome is gonna give us
+
+210
+00:09:18,090 --> 00:09:19,660
+this one if it's true,
+
+211
+00:09:19,660 --> 00:09:22,040
+or this one if the first one was false,
+
+212
+00:09:22,040 --> 00:09:23,530
+remember that.
+
+213
+00:09:23,530 --> 00:09:25,780
+And so here it's gonna give us true,
+
+214
+00:09:27,130 --> 00:09:30,150
+and if not then we're gonna print be awesome.
+
+215
+00:09:30,150 --> 00:09:32,730
+So if neither of these is true,
+
+216
+00:09:32,730 --> 00:09:34,430
+we're gonna print be awesome.
+
+217
+00:09:35,440 --> 00:09:38,470
+However, what happens if we make them all true?
+
+218
+00:09:39,830 --> 00:09:41,150
+We're gonna print you are the best,
+
+219
+00:09:41,150 --> 00:09:43,690
+because is programmer will be true.
+
+220
+00:09:43,690 --> 00:09:44,523
+Then we're gonna print
+
+221
+00:09:44,523 --> 00:09:46,112
+you are not the best, but you're still awesome.
+
+222
+00:09:46,112 --> 00:09:47,420
+That doesn't make much sense
+
+223
+00:09:47,420 --> 00:09:49,670
+because we've just told them they are the best.
+
+224
+00:09:49,670 --> 00:09:51,240
+And then we're not gonna print be awesome.
+
+225
+00:09:51,240 --> 00:09:53,620
+So that's good, because they're already awesome,
+
+226
+00:09:53,620 --> 00:09:54,630
+since it's here.
+
+227
+00:09:54,630 --> 00:09:58,230
+Let's run this and I'll show you exactly what that means.
+
+228
+00:09:58,230 --> 00:10:00,260
+See now we're printing both of these.
+
+229
+00:10:00,260 --> 00:10:02,980
+You are the best, and then you are not the best.
+
+230
+00:10:02,980 --> 00:10:05,420
+Not a good experience for our users.
+
+231
+00:10:06,380 --> 00:10:11,200
+So, what we can do is we can make these two related,
+
+232
+00:10:11,200 --> 00:10:14,050
+so that if this one runs,
+
+233
+00:10:15,320 --> 00:10:16,810
+this one won't run.
+
+234
+00:10:18,330 --> 00:10:20,860
+And similarly, this one will only run
+
+235
+00:10:20,860 --> 00:10:22,220
+if this one doesn't.
+
+236
+00:10:23,469 --> 00:10:27,100
+And the way we do that is we say elif instead of if.
+
+237
+00:10:28,210 --> 00:10:30,840
+Now, if this one does happen to run,
+
+238
+00:10:31,680 --> 00:10:32,730
+this one's just gonna get skipped
+
+239
+00:10:32,730 --> 00:10:35,040
+and it's gonna be ignored completely.
+
+240
+00:10:35,040 --> 00:10:37,070
+However, if this one is false,
+
+241
+00:10:37,070 --> 00:10:39,260
+then we're gonna jump over to the next elif
+
+242
+00:10:39,260 --> 00:10:40,820
+and we're gonna check that.
+
+243
+00:10:40,820 --> 00:10:44,280
+And if we had more elifs here, which you can do,
+
+244
+00:10:44,280 --> 00:10:46,900
+then it would jump to this one if this one didn't run,
+
+245
+00:10:46,900 --> 00:10:48,360
+and then to the next one if that one didn't run
+
+246
+00:10:48,360 --> 00:10:49,310
+and so forth.
+
+247
+00:10:49,310 --> 00:10:53,750
+So it's only ever going to run one of these statements.
+
+248
+00:10:53,750 --> 00:10:55,640
+Either this one, or this one.
+
+249
+00:10:56,820 --> 00:10:59,570
+And of course, if they're a programmer,
+
+250
+00:10:59,570 --> 00:11:01,040
+we print you are the best.
+
+251
+00:11:01,040 --> 00:11:02,980
+If they're not a programmer but they are awesome
+
+252
+00:11:02,980 --> 00:11:05,580
+we print you are not the best, but you're awesome,
+
+253
+00:11:05,580 --> 00:11:07,970
+and if neither of these happened,
+
+254
+00:11:07,970 --> 00:11:10,760
+if they weren't a programmer and they weren't awesome,
+
+255
+00:11:10,760 --> 00:11:13,070
+then we can just do else here.
+
+256
+00:11:14,100 --> 00:11:18,550
+Because this only runs when none of the above ran.
+
+257
+00:11:19,470 --> 00:11:20,920
+Okay, so now we can run this.
+
+258
+00:11:22,210 --> 00:11:23,730
+We can see that we say you are the best,
+
+259
+00:11:23,730 --> 00:11:26,020
+because is programmer is true,
+
+260
+00:11:26,020 --> 00:11:28,480
+if we make this false, now it'll say
+
+261
+00:11:28,480 --> 00:11:30,710
+you are not the best, but you're still awesome.
+
+262
+00:11:30,710 --> 00:11:32,730
+And if we make both false,
+
+263
+00:11:32,730 --> 00:11:35,130
+we'll see that we say be awesome.
+
+264
+00:11:37,190 --> 00:11:38,970
+Okay, you can be awesome,
+
+265
+00:11:38,970 --> 00:11:41,020
+and you are on your way to being awesome.
+
+266
+00:11:42,150 --> 00:11:44,230
+Okay, so as a recap, here's a few things we can do,
+
+267
+00:11:44,230 --> 00:11:45,560
+and I'm just going to write them as comments
+
+268
+00:11:45,560 --> 00:11:47,010
+for your benefit, of course,
+
+269
+00:11:47,010 --> 00:11:48,160
+feel free to look at this code
+
+270
+00:11:48,160 --> 00:11:50,660
+in the resources section of this lecture.
+
+271
+00:11:50,660 --> 00:11:54,020
+If you press into the curriculum button at the top left,
+
+272
+00:11:54,020 --> 00:11:55,290
+and then you can see that this has
+
+273
+00:11:55,290 --> 00:11:57,990
+a resource link attached to it, and this is the code.
+
+274
+00:12:01,000 --> 00:12:03,450
+You can say if is programmer is true,
+
+275
+00:12:03,450 --> 00:12:05,800
+and that's gonna run whatever's under the colon
+
+276
+00:12:06,709 --> 00:12:08,120
+as long as this is true.
+
+277
+00:12:08,120 --> 00:12:09,930
+So if is programmer is true,
+
+278
+00:12:09,930 --> 00:12:12,270
+then whatever is under the colon is going to run.
+
+279
+00:12:12,270 --> 00:12:14,570
+And this can be shortened to if is programmer.
+
+280
+00:12:16,640 --> 00:12:20,560
+Similarly, we can say if is programmer is false,
+
+281
+00:12:20,560 --> 00:12:23,080
+or if not is programmer.
+
+282
+00:12:24,320 --> 00:12:25,820
+These two mean the same thing.
+
+283
+00:12:27,610 --> 00:12:29,180
+We can have else,
+
+284
+00:12:29,180 --> 00:12:31,820
+which means that if this one doesn't run,
+
+285
+00:12:31,820 --> 00:12:32,850
+this one will run.
+
+286
+00:12:34,120 --> 00:12:39,120
+And we can have elif is awesome, for example,
+
+287
+00:12:39,180 --> 00:12:41,290
+which means that
+
+288
+00:12:43,240 --> 00:12:45,130
+if this one doesn't run,
+
+289
+00:12:45,130 --> 00:12:46,850
+then we'll evaluate this one,
+
+290
+00:12:47,970 --> 00:12:49,390
+and if this one doesn't run,
+
+291
+00:12:49,390 --> 00:12:51,140
+then we'll run this one.
+
+292
+00:12:51,140 --> 00:12:51,973
+Okay?
+
+293
+00:12:51,973 --> 00:12:54,810
+That allows us to chain together these if statements
+
+294
+00:12:54,810 --> 00:12:56,820
+so that we'll only ever run one of them.
+
+295
+00:12:58,430 --> 00:12:59,540
+Okay, so that's it for this video.
+
+296
+00:12:59,540 --> 00:13:00,610
+It's getting a bit longer,
+
+297
+00:13:00,610 --> 00:13:02,630
+I just wanted to introduce you to this concept
+
+298
+00:13:02,630 --> 00:13:04,050
+of if statements,
+
+299
+00:13:04,050 --> 00:13:06,990
+because it allows us to essentially
+
+300
+00:13:06,990 --> 00:13:10,310
+redirect our programming to different flows,
+
+301
+00:13:10,310 --> 00:13:12,260
+do something or do something else
+
+302
+00:13:12,260 --> 00:13:13,890
+and it's gonna allow us to do things like
+
+303
+00:13:13,890 --> 00:13:16,210
+if the up arrow is pressed, then go forward,
+
+304
+00:13:16,210 --> 00:13:18,800
+elif down arrow is pressed, then go downwards,
+
+305
+00:13:18,800 --> 00:13:21,500
+elif left arrow is pressed, then go left,
+
+306
+00:13:21,500 --> 00:13:23,680
+elif right arrow is pressed, then go right,
+
+307
+00:13:23,680 --> 00:13:25,120
+and so forth.
+
+308
+00:13:25,120 --> 00:13:26,160
+So these if statements
+
+309
+00:13:26,160 --> 00:13:28,970
+are really a foundational block of programming,
+
+310
+00:13:28,970 --> 00:13:30,680
+and it's really important to know about them
+
+311
+00:13:30,680 --> 00:13:32,420
+and how to use them.
+
+312
+00:13:32,420 --> 00:13:36,900
+And this was just an overview of how you can go about them,
+
+313
+00:13:36,900 --> 00:13:38,510
+and of course, we're gonna be talking a lot more
+
+314
+00:13:38,510 --> 00:13:41,132
+about these things as the course progresses,
+
+315
+00:13:41,132 --> 00:13:44,070
+as we build some of the projects in the course.
+
+316
+00:13:44,070 --> 00:13:47,120
+Okay, so with that said, I'll see you in the next video
+
+317
+00:13:47,120 --> 00:13:47,970
+so meet me there.
+

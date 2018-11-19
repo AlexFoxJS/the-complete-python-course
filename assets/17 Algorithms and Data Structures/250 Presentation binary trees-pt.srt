@@ -1,0 +1,500 @@
+1
+00:00:00,170 --> 00:00:01,680
+Instrutor: Ol e bem vindo de volta.
+
+2
+00:00:01,680 --> 00:00:03,040
+Neste vdeo, vamos
+
+3
+00:00:03,040 --> 00:00:04,717
+falar sobre rvores binrias.
+
+4
+00:00:04,717 --> 00:00:07,970
+Uma rvore binria, como uma lista ou um
+
+5
+00:00:07,970 --> 00:00:09,780
+conjunto,  outra estrutura de
+
+6
+00:00:09,780 --> 00:00:13,022
+dados que podemos usar para manter alguns valores.
+
+7
+00:00:13,022 --> 00:00:17,720
+No entanto,  estruturado de forma um pouco diferente de uma lista.
+
+8
+00:00:17,720 --> 00:00:18,997
+Vamos dar uma olhada.
+
+9
+00:00:18,997 --> 00:00:20,750
+No ltimo vdeo, analisamos
+
+10
+00:00:20,750 --> 00:00:22,220
+a pesquisa binria,
+
+11
+00:00:22,220 --> 00:00:24,717
+na qual comeamos no meio
+
+12
+00:00:24,717 --> 00:00:29,000
+da nossa lista, e depois construmos um algoritmo que
+
+13
+00:00:29,000 --> 00:00:30,892
+nos permitia pesquisar.
+
+14
+00:00:30,892 --> 00:00:35,070
+Se voc pegar os valores que esse algoritmo cria,
+
+15
+00:00:35,070 --> 00:00:37,620
+voc acaba com uma rvore binria.
+
+16
+00:00:37,620 --> 00:00:38,930
+Vamos dar uma olhada.
+
+17
+00:00:38,930 --> 00:00:40,690
+Se voc comear no meio
+
+18
+00:00:40,690 --> 00:00:42,312
+desta lista, e voc pegar
+
+19
+00:00:42,312 --> 00:00:47,312
+o primeiro valor, vamos fazer desse valor o ponto de partida da nossa rvore.
+
+20
+00:00:47,470 --> 00:00:48,820
+Ento, vamos apenas descer.
+
+21
+00:00:49,780 --> 00:00:52,007
+E este ser o ponto de partida.
+
+22
+00:00:52,007 --> 00:00:53,700
+Na pesquisa binria,
+
+23
+00:00:53,700 --> 00:00:56,720
+descartamos metade desses valores e
+
+24
+00:00:56,720 --> 00:01:01,146
+passamos para o meio do segmento restante.
+
+25
+00:01:01,146 --> 00:01:04,910
+Ns vamos fazer, sem descartar quaisquer valores, vamos fazer
+
+26
+00:01:04,910 --> 00:01:07,281
+isso para ambos os segmentos.
+
+27
+00:01:07,281 --> 00:01:09,770
+Ento, vamos passar para o
+
+28
+00:01:09,770 --> 00:01:11,770
+meio dos segmentos restantes.
+
+29
+00:01:11,770 --> 00:01:13,650
+Ento, vamos comear no meio de cada
+
+30
+00:01:13,650 --> 00:01:16,207
+segmento aqui, o que nos leva a sete e 59.
+
+31
+00:01:16,207 --> 00:01:18,780
+E ns vamos pegar esses dois
+
+32
+00:01:18,780 --> 00:01:22,889
+valores, e ns vamos faz-los aparecer embaixo de 38.
+
+33
+00:01:22,889 --> 00:01:26,529
+Ento esta rvore est agora comeando a ser construda.
+
+34
+00:01:26,529 --> 00:01:31,230
+38 tem, mais ou menos, o que dizemos dois filhos, sete e 59.
+
+35
+00:01:31,230 --> 00:01:32,890
+Sete est  esquerda,
+
+36
+00:01:32,890 --> 00:01:34,751
+59 est  direita.
+
+37
+00:01:34,751 --> 00:01:36,510
+Se fizermos isso
+
+38
+00:01:36,510 --> 00:01:38,777
+novamente, agora vamos acabar com
+
+39
+00:01:38,777 --> 00:01:40,820
+quatro valores, porque vamos
+
+40
+00:01:40,820 --> 00:01:45,820
+passar para o meio dos segmentos restantes em cada caso.
+
+41
+00:01:45,850 --> 00:01:46,683
+E mais
+
+42
+00:01:46,683 --> 00:01:47,970
+uma vez, vamos mover
+
+43
+00:01:47,970 --> 00:01:51,000
+esses valores para baixo e torn-los filhos do anterior.
+
+44
+00:01:51,000 --> 00:01:52,800
+Ento agora sete tem dois filhos,
+
+45
+00:01:52,800 --> 00:01:54,043
+59 tem dois filhos.
+
+46
+00:01:56,050 --> 00:01:57,690
+Mais uma vez, vamos
+
+47
+00:01:57,690 --> 00:02:01,470
+repetir e obter o meio ponto dos restantes segmentos.
+
+48
+00:02:01,470 --> 00:02:03,213
+Agora acabamos com oito valores.
+
+49
+00:02:03,213 --> 00:02:05,567
+E ns os movemos para c.
+
+50
+00:02:05,567 --> 00:02:09,150
+E finalmente, no restam muitos, no restam
+
+51
+00:02:09,150 --> 00:02:10,690
+16 valores, ento
+
+52
+00:02:10,690 --> 00:02:14,834
+vamos passar para os poucos valores restantes e
+
+53
+00:02:14,834 --> 00:02:18,453
+vamos mov-los para baixo como um grupo.
+
+54
+00:02:21,020 --> 00:02:22,351
+Ento, como voc pode
+
+55
+00:02:22,351 --> 00:02:25,100
+ver, acabamos com algo que parece uma rvore.
+
+56
+00:02:25,100 --> 00:02:27,593
+Se adicionarmos os ramos, torna-se um pouco mais claro.
+
+57
+00:02:27,593 --> 00:02:32,593
+Temos elementos que tm filhos abaixo deles.
+
+58
+00:02:33,490 --> 00:02:35,890
+E ento uma criana pode ter filhos
+
+59
+00:02:35,890 --> 00:02:37,539
+tambm, pode ter dois filhos,
+
+60
+00:02:37,539 --> 00:02:39,230
+ou pode ter um filho.
+
+61
+00:02:39,230 --> 00:02:40,300
+E o que
+
+62
+00:02:40,300 --> 00:02:44,040
+acontece  que cada n tem um elemento, ou outro
+
+63
+00:02:44,040 --> 00:02:47,501
+n que  menor que  esquerda, e um
+
+64
+00:02:47,501 --> 00:02:49,898
+elemento que  maior que  direita.
+
+65
+00:02:49,898 --> 00:02:52,340
+Tomando o exemplo de 38, ele tem
+
+66
+00:02:52,340 --> 00:02:55,847
+o n sete  esquerda, que  menor que 38,
+
+67
+00:02:55,847 --> 00:03:00,162
+e tem o n 59  direita, que  maior que 38.
+
+68
+00:03:00,162 --> 00:03:05,162
+Assim, com essa estrutura, podemos realizar facilmente
+
+69
+00:03:05,950 --> 00:03:07,830
+uma pesquisa binria.
+
+70
+00:03:07,830 --> 00:03:11,760
+Portanto, a rvore binria  usada para realizar pesquisas binrias.
+
+71
+00:03:11,760 --> 00:03:13,830
+Vamos procurar o elemento 90.
+
+72
+00:03:13,830 --> 00:03:17,550
+90, voc pode ver, est l  direita.
+
+73
+00:03:17,550 --> 00:03:21,320
+Para realizar uma pesquisa binria, agora tudo o que precisamos fazer
+
+74
+00:03:21,320 --> 00:03:23,608
+ comear no topo da rvore e
+
+75
+00:03:23,608 --> 00:03:27,346
+decidir se queremos ir para a esquerda ou para a direita.
+
+76
+00:03:27,346 --> 00:03:31,183
+Porque 90  maior que 38, ns vamos
+
+77
+00:03:31,183 --> 00:03:32,646
+para a direita.
+
+78
+00:03:32,646 --> 00:03:37,646
+Ento, porque 90  maior que 59, ns iremos para a direita.
+
+79
+00:03:38,980 --> 00:03:43,461
+E agora, 90  menor que 717, ento vamos para a esquerda.
+
+80
+00:03:43,461 --> 00:03:47,730
+E  isso, ns encontramos.
+
+81
+00:03:47,730 --> 00:03:49,919
+Ento,  o mesmo que executar uma pesquisa binria.
+
+82
+00:03:49,919 --> 00:03:52,630
+A rvore binria  estruturada desta forma para
+
+83
+00:03:52,630 --> 00:03:54,370
+que possamos procurar facilmente e
+
+84
+00:03:54,370 --> 00:03:57,340
+acabamos com elementos menores  esquerda, elementos maiores
+
+85
+00:03:57,340 --> 00:03:58,730
+ direita, e temos
+
+86
+00:03:58,730 --> 00:04:01,470
+apenas que passar por cada um deles.
+
+87
+00:04:01,470 --> 00:04:04,390
+Naturalmente, a rvore binria deve ser ordenada desta maneira
+
+88
+00:04:04,390 --> 00:04:05,460
+para que funcione.
+
+89
+00:04:05,460 --> 00:04:07,560
+Vamos ver como criar rvores
+
+90
+00:04:07,560 --> 00:04:09,769
+binrias como estas nos prximos vdeos.
+
+91
+00:04:09,769 --> 00:04:14,642
+Ento, mais uma vez, a rvore binria  apenas, bem, voc
+
+92
+00:04:14,642 --> 00:04:17,770
+pode pensar nela como uma representao da
+
+93
+00:04:17,770 --> 00:04:21,630
+lista ordenada depois de executar uma pesquisa binria nela.
+
+94
+00:04:21,630 --> 00:04:24,050
+Se voc pegar a lista, e pegar a
+
+95
+00:04:24,050 --> 00:04:26,290
+rvore binria da esquerda para a direita, observe
+
+96
+00:04:26,290 --> 00:04:29,460
+como o valor mais  esquerda nessa rvore, o da esquerda
+
+97
+00:04:29,460 --> 00:04:31,712
+ o nmero um, e o prximo valor
+
+98
+00:04:31,712 --> 00:04:35,400
+ direita  o nmero trs, o prximo  o nmero quatro, o
+
+99
+00:04:35,400 --> 00:04:37,920
+prximo  o nmero cinco e o prximo nmero
+
+100
+00:04:37,920 --> 00:04:39,730
+sete, e assim por diante.
+
+101
+00:04:39,730 --> 00:04:41,710
+Ento, se voc pegar toda
+
+102
+00:04:41,710 --> 00:04:43,170
+a rvore, e coloc-la
+
+103
+00:04:43,170 --> 00:04:46,290
+da esquerda para a direita, quando acabar, mais
+
+104
+00:04:46,290 --> 00:04:48,333
+uma vez, ser sua lista ordenada.
+
+105
+00:04:50,440 --> 00:04:55,400
+Portanto, este  um conhecimento bastante interessante.
+
+106
+00:04:55,400 --> 00:04:57,980
+Voc pode no se encontrar usando rvores binrias
+
+107
+00:04:57,980 --> 00:05:01,470
+com frequncia em suas carreiras de desenvolvimento de software, mas,
+
+108
+00:05:01,470 --> 00:05:03,651
+no entanto, elas esto em toda
+
+109
+00:05:03,651 --> 00:05:05,510
+parte quando voc faz um software.
+
+110
+00:05:05,510 --> 00:05:07,340
+Voc obt-los em bases de
+
+111
+00:05:07,340 --> 00:05:09,360
+dados, voc tem quando voc precisa
+
+112
+00:05:09,360 --> 00:05:11,598
+pesquisar atravs de uma lista grande.
+
+113
+00:05:11,598 --> 00:05:14,923
+E  interessante saber sobre essas rvores binrias.
+
+114
+00:05:16,440 --> 00:05:17,273
+Nos prximos
+
+115
+00:05:17,273 --> 00:05:18,850
+vdeos, aprenderemos sobre como
+
+116
+00:05:18,850 --> 00:05:23,010
+construir rvores binrias, como pesquisar em uma rvore binria no cdigo e
+
+117
+00:05:23,010 --> 00:05:23,853
+assim por diante.
+
+118
+00:05:25,010 --> 00:05:29,288
+Ento, esperanosamente, o que  uma rvore binria faz sentido.
+
+119
+00:05:29,288 --> 00:05:34,000
+ apenas uma estrutura que tem ramificaes com os ramos
+
+120
+00:05:34,000 --> 00:05:36,120
+maiores  direita, ramificaes
+
+121
+00:05:36,120 --> 00:05:38,270
+menores  esquerda e,
+
+122
+00:05:38,270 --> 00:05:41,200
+em seguida, permite-nos produzir, para implementar
+
+123
+00:05:41,200 --> 00:05:44,100
+facilmente um algoritmo de pesquisa binria.
+
+124
+00:05:44,100 --> 00:05:46,430
+E  isso para este vdeo, e
+
+125
+00:05:46,430 --> 00:05:48,080
+eu vejo voc no prximo.
+

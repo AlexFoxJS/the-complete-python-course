@@ -1,0 +1,1000 @@
+1
+00:00:00,320 --> 00:00:01,750
+Narrador: Ol, bem vindo de volta.
+
+2
+00:00:01,750 --> 00:00:04,450
+Neste vdeo, vamos falar sobre loops for
+
+3
+00:00:04,450 --> 00:00:06,120
+e a funo range.
+
+4
+00:00:06,120 --> 00:00:07,740
+Acabamos de procurar por loops Y,
+
+5
+00:00:07,740 --> 00:00:10,650
+e o loop for nos permite fazer algumas coisas semelhantes,
+
+6
+00:00:10,650 --> 00:00:12,700
+mas tambm nos d um poder extra.
+
+7
+00:00:14,630 --> 00:00:17,540
+Ento, o que o loop for faz?
+
+8
+00:00:17,540 --> 00:00:20,260
+Isso nos permite repassar cada elemento
+
+9
+00:00:20,260 --> 00:00:22,470
+de uma srie de elementos.
+
+10
+00:00:22,470 --> 00:00:25,430
+Por exemplo, cada elemento de uma lista.
+
+11
+00:00:25,430 --> 00:00:27,660
+Vamos comear com uma lista de nmeros primos.
+
+12
+00:00:28,920 --> 00:00:30,590
+E digamos que eu queira imprimir
+
+13
+00:00:30,590 --> 00:00:33,070
+que dois  um nmero primo, trs  um nmero
+
+14
+00:00:33,070 --> 00:00:35,700
+primo, cinco  um nmero primo e assim por diante.
+
+15
+00:00:35,700 --> 00:00:39,620
+A maneira mais fcil,  claro, de fazer apenas dois  um nmero primo.
+
+16
+00:00:40,680 --> 00:00:42,340
+E ento v para trs.
+
+17
+00:00:44,170 --> 00:00:45,003
+E assim por diante.
+
+18
+00:00:45,970 --> 00:00:48,210
+Isso  chato, no vamos fazer isso.
+
+19
+00:00:49,480 --> 00:00:53,340
+A outra opo seria usar um loop for.
+
+20
+00:00:53,340 --> 00:00:56,760
+E um loop for nos permite passar por cima de cada elemento.
+
+21
+00:00:56,760 --> 00:00:59,600
+Ento, vamos dizer para primos e primos, e
+
+22
+00:01:01,140 --> 00:01:05,250
+o que isso faz  criar uma nova varivel chamada prime.
+
+23
+00:01:06,440 --> 00:01:11,280
+Prime ser o nmero dois na primeira vez que o loop for executado e,
+
+24
+00:01:11,280 --> 00:01:14,310
+quando o loop terminar, voltar ao incio, o primo
+
+25
+00:01:14,310 --> 00:01:17,520
+agora se tornar trs e, em seguida, ele far novamente
+
+26
+00:01:17,520 --> 00:01:20,160
+e se tornar cinco, e assim por diante.
+
+27
+00:01:20,160 --> 00:01:23,770
+Observe que para e em palavras-chave no Python, elas precisam estar
+
+28
+00:01:23,770 --> 00:01:26,160
+l, e os primos,  claro, 
+
+29
+00:01:26,160 --> 00:01:28,040
+a lista que queremos passar.
+
+30
+00:01:29,080 --> 00:01:31,930
+Depois, h dois pontos e tudo depois do clon
+
+31
+00:01:31,930 --> 00:01:35,680
+tem quatro espaos  frente, pelo menos, pelo menos dois espaos,
+
+32
+00:01:35,680 --> 00:01:38,900
+e  recuado mais de modo que pertena ao loop.
+
+33
+00:01:38,900 --> 00:01:41,460
+O que quer que escrevamos aqui ser o
+
+34
+00:01:41,460 --> 00:01:45,720
+corpo do nosso loop e podemos imprimir primo  um nmero primo.
+
+35
+00:01:49,320 --> 00:01:53,220
+Agora, isso ser executado uma vez com o principal sendo dois, porque
+
+36
+00:01:53,220 --> 00:01:54,900
+esse  o primeiro valor.
+
+37
+00:01:54,900 --> 00:01:58,530
+Ento quando ele for executado, chegaremos ao fim do bloco, ento
+
+38
+00:01:58,530 --> 00:02:01,350
+voltaremos ao topo e o prime ser trs.
+
+39
+00:02:01,350 --> 00:02:03,100
+Ento voltaremos ao topo e o primo ser
+
+40
+00:02:03,100 --> 00:02:04,260
+cinco e assim por diante.
+
+41
+00:02:04,260 --> 00:02:06,250
+Vamos rodar isso e ver o que acontece.
+
+42
+00:02:08,490 --> 00:02:10,620
+Observe que ns imprimimos dois  um nmero
+
+43
+00:02:10,620 --> 00:02:13,190
+primo, trs, cinco, sete, 11 so todos os nmeros primos.
+
+44
+00:02:15,470 --> 00:02:17,960
+No so apenas listas que podemos
+
+45
+00:02:17,960 --> 00:02:21,031
+repetir, poderamos, por exemplo, ter um conjunto
+
+46
+00:02:21,031 --> 00:02:24,380
+de idades em uma tupla ou tupla.
+
+47
+00:02:24,380 --> 00:02:27,340
+Mas no vou confundir muito com isso.
+
+48
+00:02:27,340 --> 00:02:30,540
+Ento podemos dizer por idade em idades de criana.
+
+49
+00:02:30,540 --> 00:02:32,870
+E mais uma vez, a sintaxe
+
+50
+00:02:32,870 --> 00:02:34,960
+ exatamente a mesma, ns temos
+
+51
+00:02:34,960 --> 00:02:37,760
+nossa sequncia aqui, listas e tuplas so ambos
+
+52
+00:02:38,690 --> 00:02:43,400
+tipos de sequncias, e ento podemos dizer para nossa varivel em nossa sequncia.
+
+53
+00:02:43,400 --> 00:02:45,800
+E nesse caso a varivel vai se chamar
+
+54
+00:02:45,800 --> 00:02:48,260
+age, ento podemos usar isso dentro do bloco.
+
+55
+00:02:48,260 --> 00:02:51,140
+Lembre-se do clon no final, define o incio de um bloco.
+
+56
+00:02:51,140 --> 00:02:56,140
+E ns podemos ver que eu tenho uma criana de idade.
+
+57
+00:02:58,760 --> 00:03:01,060
+Ns provavelmente deveramos ter um ano l tambm.
+
+58
+00:03:02,174 --> 00:03:03,660
+Isso no  verdade para mim, eu
+
+59
+00:03:03,660 --> 00:03:06,660
+no tenho filhos, mas mesmo assim voc pode ver que isso mostra que eu tenho
+
+60
+00:03:06,660 --> 00:03:08,810
+uma criana de trs anos, uma criana de sete anos e
+
+61
+00:03:08,810 --> 00:03:09,910
+uma criana de 12 anos.
+
+62
+00:03:11,710 --> 00:03:15,660
+Eu disse h pouco que esses dois so exemplos de sequncia,
+
+63
+00:03:15,660 --> 00:03:18,670
+e isso  verdade, mas o mais importante,
+
+64
+00:03:18,670 --> 00:03:22,130
+esses dois so o que o Python chama de iterveis.
+
+65
+00:03:23,470 --> 00:03:27,390
+Um itervel  algo em que voc pode usar um loop for.
+
+66
+00:03:27,390 --> 00:03:30,590
+Ento, qualquer coisa que seja itervel, voc pode usar um loop for com.
+
+67
+00:03:30,590 --> 00:03:32,740
+Aprenderemos muito mais sobre iterables e o
+
+68
+00:03:32,740 --> 00:03:35,750
+que os iterables realmente so mais tarde no curso,
+
+69
+00:03:35,750 --> 00:03:37,810
+ento no se preocupe muito em
+
+70
+00:03:37,810 --> 00:03:39,570
+entend-los, apenas saiba que 
+
+71
+00:03:39,570 --> 00:03:41,511
+claro que essas coisas que tm
+
+72
+00:03:41,511 --> 00:03:45,120
+muitos valores separados por vrgulas so mais provveis porque eles so seqncias.
+
+73
+00:03:48,030 --> 00:03:50,390
+Vamos agora falar sobre a funo range.
+
+74
+00:03:50,390 --> 00:03:53,230
+Em vez de iterar em uma lista pr-existente,
+
+75
+00:03:53,230 --> 00:03:55,550
+podemos usar a funo de intervalo para
+
+76
+00:03:55,550 --> 00:03:57,870
+iterar em um intervalo especfico de nmeros.
+
+77
+00:03:57,870 --> 00:04:02,870
+Ento, para o intervalo 20, podemos imprimir por exemplo.
+
+78
+00:04:05,140 --> 00:04:08,900
+O que a faixa 20 faz  essencialmente nos d uma
+
+79
+00:04:08,900 --> 00:04:11,300
+lista que vai de zero at 19,
+
+80
+00:04:11,300 --> 00:04:13,720
+ento tem 20 valores no total.
+
+81
+00:04:13,720 --> 00:04:16,730
+Novamente, eu seria zero na primeira vez que
+
+82
+00:04:16,730 --> 00:04:19,560
+o loop fosse executado, ento seria um, ento
+
+83
+00:04:19,560 --> 00:04:24,560
+seriam dois, e assim por diante, porque isso  zero, um, dois, at 19.
+
+84
+00:04:26,620 --> 00:04:27,590
+Vamos imprimir.
+
+85
+00:04:29,950 --> 00:04:31,690
+E voc pode ver que
+
+86
+00:04:31,690 --> 00:04:34,550
+chegamos do zero at 19, 20 no est includo.
+
+87
+00:04:36,410 --> 00:04:40,890
+Mas a funo range no produz uma lista.
+
+88
+00:04:40,890 --> 00:04:43,570
+Vamos falar sobre exatamente qual  a funo
+
+89
+00:04:43,570 --> 00:04:46,130
+range, ela  chamada de gerador em Python.
+
+90
+00:04:46,130 --> 00:04:47,750
+Ns vamos falar sobre isso mais tarde
+
+91
+00:04:47,750 --> 00:04:49,620
+no curso, e eu continuo dizendo mais tarde.
+
+92
+00:04:49,620 --> 00:04:52,150
+Eu quero introduzir conceitos naturalmente, ento
+
+93
+00:04:52,150 --> 00:04:55,480
+eu no quero adicionar muita complexidade de repente.
+
+94
+00:04:55,480 --> 00:05:00,480
+Mas observe que quando imprimimos o intervalo de 10, no
+
+95
+00:05:01,100 --> 00:05:03,250
+vamos imprimir uma lista.
+
+96
+00:05:05,010 --> 00:05:07,190
+Ns vamos imprimir essa coisa que diz
+
+97
+00:05:07,190 --> 00:05:09,100
+que vai de zero a dez.
+
+98
+00:05:10,330 --> 00:05:13,250
+Isso porque a funo range no nos d uma
+
+99
+00:05:13,250 --> 00:05:16,310
+lista, nos d algo a mais que tambm podemos iterar,
+
+100
+00:05:16,310 --> 00:05:19,860
+podemos tambm usar um loop for, mas no  exatamente uma lista.
+
+101
+00:05:21,030 --> 00:05:22,700
+Ns vamos aprender muito mais sobre isso mais
+
+102
+00:05:22,700 --> 00:05:24,300
+tarde, ento no se preocupe com isso,
+
+103
+00:05:24,300 --> 00:05:25,670
+eu s queria dizer a voc.
+
+104
+00:05:25,670 --> 00:05:27,230
+E no caso de voc decidir investigar
+
+105
+00:05:27,230 --> 00:05:30,040
+qual  a funo de faixa, no  uma lista, o que ?
+
+106
+00:05:30,040 --> 00:05:32,170
+Vamos investigar e voc definitivamente
+
+107
+00:05:32,170 --> 00:05:33,720
+entender tudo sobre isso.
+
+108
+00:05:34,670 --> 00:05:36,630
+s vezes, voc tambm precisa ser
+
+109
+00:05:36,630 --> 00:05:38,460
+capaz de iterar nos dicionrios.
+
+110
+00:05:38,460 --> 00:05:41,900
+No  muito comum, mas pode ser realmente til.
+
+111
+00:05:41,900 --> 00:05:45,810
+Por exemplo, digamos que temos um dicionrio dos meus amigos e as datas em
+
+112
+00:05:46,660 --> 00:05:48,890
+que voc viu seus amigos pela ltima vez.
+
+113
+00:05:48,890 --> 00:05:52,290
+Ento, digamos que voc tenha visto Jos pela ltima vez
+
+114
+00:05:52,290 --> 00:05:57,290
+h seis dias, Rolf 12 dias atrs, e Anne, digamos tambm seis dias atrs.
+
+115
+00:05:59,550 --> 00:06:03,070
+Voc pode iterar em um dicionrio fazendo isso.
+
+116
+00:06:08,420 --> 00:06:11,430
+O que voc acha que a varivel de nome vai conter
+
+117
+00:06:11,430 --> 00:06:13,480
+toda vez que voc passar pelo dicionrio?
+
+118
+00:06:15,373 --> 00:06:17,220
+Bem, eu tenho certeza que
+
+119
+00:06:17,220 --> 00:06:19,950
+voc pode adivinhar apenas o nome da varivel,
+
+120
+00:06:19,950 --> 00:06:21,990
+mas essa varivel, como voc percorre
+
+121
+00:06:21,990 --> 00:06:23,810
+o dicionrio, vai conter a chave.
+
+122
+00:06:23,810 --> 00:06:26,360
+Vai ser o Jos a primeira vez
+
+123
+00:06:26,360 --> 00:06:27,770
+que passa, Rolf na
+
+124
+00:06:27,770 --> 00:06:30,300
+segunda vez e Anne na terceira vez.
+
+125
+00:06:30,300 --> 00:06:34,120
+Ento voc poderia dizer, pela ltima vez vi o nome,
+
+126
+00:06:35,250 --> 00:06:38,740
+mas voc no tem os dias, X dias atrs.
+
+127
+00:06:40,830 --> 00:06:45,460
+Ns podemos, claro, rodar isso, e voc ver que ns vimos pela ltima vez
+
+128
+00:06:45,460 --> 00:06:48,197
+Jose X dias atrs, Rolf X dias atrs
+
+129
+00:06:48,197 --> 00:06:49,710
+e Anne X dias atrs.
+
+130
+00:06:51,270 --> 00:06:55,970
+Agora, sabemos como obter o valor de um dicionrio quando
+
+131
+00:06:55,970 --> 00:06:57,510
+conhecemos a chave.
+
+132
+00:06:57,510 --> 00:06:59,280
+Sugesto,  algo
+
+133
+00:06:59,280 --> 00:07:04,280
+assim, meus amigos Jos nos dar o seis, o valor.
+
+134
+00:07:06,040 --> 00:07:10,490
+Ento, como voc substituiria X por esse valor?
+
+135
+00:07:14,590 --> 00:07:16,690
+Tenho certeza que voc tem isso, uma maneira
+
+136
+00:07:16,690 --> 00:07:20,050
+fcil de fazer isso  dizendo o nome do meu amigo, assim.
+
+137
+00:07:23,500 --> 00:07:25,150
+Aqui vamos ns.
+
+138
+00:07:25,150 --> 00:07:26,380
+Agora podemos executar isso.
+
+139
+00:07:28,550 --> 00:07:31,320
+E diz que pela ltima vez digo Jos seis dias atrs, eu vi
+
+140
+00:07:31,320 --> 00:07:33,020
+Rolf pela ltima vez h 12 dias, e
+
+141
+00:07:33,020 --> 00:07:34,700
+vi pela ltima vez Anne seis dias atrs.
+
+142
+00:07:36,200 --> 00:07:39,360
+No entanto, existe uma maneira ainda mais fcil.
+
+143
+00:07:39,360 --> 00:07:44,360
+E isso  fazendo por nome, vrgula, dias em
+
+144
+00:07:44,620 --> 00:07:47,100
+meus amigos itens ponto.
+
+145
+00:07:47,100 --> 00:07:49,140
+Isso  uma novidade no Python
+
+146
+00:07:49,140 --> 00:07:51,520
+Three, e agora voc pode fazer por nome
+
+147
+00:07:51,520 --> 00:07:55,760
+com vrgula em meus amigos ou itens, e isso permitir que voc use
+
+148
+00:07:55,760 --> 00:07:56,890
+a varivel days l.
+
+149
+00:07:56,890 --> 00:08:00,680
+Nome vai ser isso, dias vai ser isso.
+
+150
+00:08:03,050 --> 00:08:05,250
+Ento, o que  essa coisa de ponto?
+
+151
+00:08:06,250 --> 00:08:09,570
+Bem, felizmente podemos apenas imprimi-lo e dar uma
+
+152
+00:08:09,570 --> 00:08:11,530
+olhada, ver o que .
+
+153
+00:08:11,530 --> 00:08:15,210
+Ento, vamos imprimir meus amigos e ver itens.
+
+154
+00:08:17,920 --> 00:08:20,960
+Voc pode ver que  uma coisa de itens dit.
+
+155
+00:08:21,970 --> 00:08:23,270
+Ns no sabemos o que 
+
+156
+00:08:23,270 --> 00:08:25,600
+isso, mas no se preocupe muito com os itens do dict.
+
+157
+00:08:25,600 --> 00:08:28,528
+Isso  chamado de visualizao em Python
+
+158
+00:08:28,528 --> 00:08:30,900
+e no  importante no momento.
+
+159
+00:08:30,900 --> 00:08:32,597
+Ns vamos entender mais sobre isso mais tarde.
+
+160
+00:08:32,597 --> 00:08:35,370
+Mas o que  importante  a lista que est dentro dela.
+
+161
+00:08:36,290 --> 00:08:40,160
+Esta lista aqui  realmente o que os itens de ponto do a voc.
+
+162
+00:08:41,530 --> 00:08:44,840
+Ento, por que isso  importante?
+
+163
+00:08:44,840 --> 00:08:49,580
+Bem, vamos copiar isso e vou col-lo aqui.
+
+164
+00:08:52,000 --> 00:08:55,250
+E, em seguida, observe como podemos interagir diretamente com essa lista
+
+165
+00:08:55,250 --> 00:08:57,260
+como se fossem meus amigos ou itens. Eu vou explicar
+
+166
+00:08:57,260 --> 00:09:02,200
+Ento, para os dias de nome, desculpe. isso de uma maneira um pouco diferente. Para T, nesse caso, agora T ser um
+
+167
+00:09:03,270 --> 00:09:05,950
+desses elementos, a tupla.
+
+168
+00:09:05,950 --> 00:09:10,950
+Ento vai ser isso, e ento vai ser isso.
+
+169
+00:09:12,860 --> 00:09:15,950
+ medida que iteramos na lista.
+
+170
+00:09:15,950 --> 00:09:18,380
+Se imprimirmos T, voc ver exatamente o que quero dizer.
+
+171
+00:09:18,380 --> 00:09:20,980
+Observe que uma tupla  impressa e, em seguida,
+
+172
+00:09:20,980 --> 00:09:23,330
+outra tupla e, em seguida, outra tupla, porque
+
+173
+00:09:25,730 --> 00:09:27,700
+nossa lista tem trs tuplas aqui.
+
+174
+00:09:27,700 --> 00:09:30,020
+O que podemos fazer em Python  que podemos dizer
+
+175
+00:09:30,020 --> 00:09:32,790
+que N V por exemplo como duas variveis iguais a T.
+
+176
+00:09:35,760 --> 00:09:39,120
+Ento N ser o primeiro valor
+
+177
+00:09:39,120 --> 00:09:44,120
+da tupla, e V ser o segundo valor da
+
+178
+00:09:46,870 --> 00:09:50,270
+tupla porque T  uma tupla.
+
+179
+00:09:50,270 --> 00:09:53,220
+O Python percebe que o que voc est tentando fazer
+
+180
+00:09:53,220 --> 00:09:54,810
+aqui  uma coisa bem bizarra.
+
+181
+00:09:55,970 --> 00:09:58,360
+E diz que tudo bem, N
+
+182
+00:09:58,360 --> 00:10:00,650
+e V combinam com a estrutura
+
+183
+00:10:00,650 --> 00:10:05,310
+desta tupla aqui, ento vamos supor que voc queira desestruturar a tupla
+
+184
+00:10:05,310 --> 00:10:08,360
+e colocar o nome aqui e o valor aqui.
+
+185
+00:10:08,360 --> 00:10:11,610
+Observe que, em vez de N v-virgula, voc pode
+
+186
+00:10:11,610 --> 00:10:15,220
+transformar isso em uma tupla se isso ajudar voc a
+
+187
+00:10:17,290 --> 00:10:19,090
+entender um pouco mais facilmente.
+
+188
+00:10:19,090 --> 00:10:21,440
+Esta tupla aqui  igual a
+
+189
+00:10:21,440 --> 00:10:23,320
+esta tupla aqui, e as
+
+190
+00:10:23,320 --> 00:10:27,180
+variveis so criadas, e voc pode us-las, imprimir N, imprimir V.
+
+191
+00:10:27,180 --> 00:10:30,730
+Vamos correr isso, e observe como agora voc consegue Jose e
+
+192
+00:10:31,860 --> 00:10:34,320
+seis, Rolf e 12, e Anne e seis.
+
+193
+00:10:34,320 --> 00:10:37,650
+Isso aqui  chamado de desestruturao da tupla.
+
+194
+00:10:37,650 --> 00:10:42,050
+ uma coisa muito popular de se fazer em Python, ele permite que voc obtenha
+
+195
+00:10:42,050 --> 00:10:44,450
+uma tupla e a extraia em mltiplas variveis
+
+196
+00:10:44,450 --> 00:10:46,130
+para que voc possa us-las.
+
+197
+00:10:46,130 --> 00:10:49,680
+Mas  claro que um dos casos mais usados  quando voc desfaz
+
+198
+00:10:49,680 --> 00:10:52,570
+isso completamente, e voc simplesmente o coloca no loop for.
+
+199
+00:10:52,570 --> 00:10:56,410
+Isso funciona da mesma maneira e  de
+
+200
+00:10:56,410 --> 00:11:00,570
+fato o que fizemos aqui com nome e dias.
+
+201
+00:11:02,400 --> 00:11:04,940
+Eu s queria mostrar-lhe como isso funciona, ns fomos
+
+202
+00:11:04,940 --> 00:11:08,280
+um pouco fora da pista aqui, o vdeo no foi feito para
+
+203
+00:11:08,280 --> 00:11:10,210
+cobrir isso, mas eu queria dar-lhe uma
+
+204
+00:11:10,210 --> 00:11:12,820
+rpida informao sobre como exatamente os itens funcionam.
+
+205
+00:11:12,820 --> 00:11:14,610
+E alguns extras tambm,
+
+206
+00:11:14,610 --> 00:11:18,662
+se voc quiser verificar se tem um amigo
+
+207
+00:11:18,662 --> 00:11:22,060
+em particular, pode faz-lo facilmente em Python.
+
+208
+00:11:22,060 --> 00:11:23,840
+Voc poderia dizer se o nome igual a
+
+209
+00:11:23,840 --> 00:11:26,707
+Rolf, voc pode imprimir eu sei Rolf, e no vamos imprimir isso.
+
+210
+00:11:26,707 --> 00:11:31,707
+Agora, para nome e dias e os itens que vo
+
+211
+00:11:33,560 --> 00:11:38,560
+te dar o nome da pessoa e os dias desde
+
+212
+00:11:40,840 --> 00:11:44,070
+a ltima vez que voc os viu.
+
+213
+00:11:44,070 --> 00:11:46,140
+E ento ns adicionamos uma breve declarao
+
+214
+00:11:46,140 --> 00:11:47,930
+se diz que se o nome
+
+215
+00:11:47,930 --> 00:11:49,830
+ Rolf, voc vai imprimir algo, ok?
+
+216
+00:11:49,830 --> 00:11:51,080
+Ento,  claro, agora
+
+217
+00:11:51,080 --> 00:11:54,020
+podemos rodar isso e vai imprimir Eu conheo Rolf.
+
+218
+00:11:55,220 --> 00:11:57,070
+Ns pensamos que isso poderia acontecer.
+
+219
+00:11:57,070 --> 00:11:59,160
+Agora podemos estender ainda mais dizendo algo assim.
+
+220
+00:12:00,000 --> 00:12:01,760
+Quem eu conheo?
+
+221
+00:12:03,520 --> 00:12:08,040
+Vai ser a Anne e depois vamos verificar se a
+
+222
+00:12:09,270 --> 00:12:11,500
+Anne est nos nossos amigos.
+
+223
+00:12:11,500 --> 00:12:15,050
+A maneira de fazer isso  se, quem eu conheo
+
+224
+00:12:15,050 --> 00:12:17,880
+em meus amigos, imprimir, eu tambm conheo Anne.
+
+225
+00:12:17,880 --> 00:12:22,880
+Isso em palavras-chave significa apenas,  um valento em comparao, neste
+
+226
+00:12:25,230 --> 00:12:28,290
+caso, porque  uma declarao if, e
+
+227
+00:12:29,760 --> 00:12:33,800
+isso nos permitir verificar se esta varivel aqui, Anne,
+
+228
+00:12:33,800 --> 00:12:35,780
+est em meus amigos.
+
+229
+00:12:35,780 --> 00:12:37,580
+E estas so apenas as chaves.
+
+230
+00:12:37,580 --> 00:12:42,110
+Ento  o Jose, o Rolf ou a Anne, e isso vai voltar a ser verdade,
+
+231
+00:12:42,110 --> 00:12:44,440
+ento quando ns rodamos isso, ns tambm devemos
+
+232
+00:12:45,450 --> 00:12:47,893
+ver que eu sei conhecer a Anne l embaixo.
+
+233
+00:12:47,893 --> 00:12:52,582
+E a palavra-chave in pode ser usada para dicionrios, tuplas ou listas, ou
+
+234
+00:12:52,582 --> 00:12:53,560
+mesmo qualquer itervel.
+
+235
+00:12:54,600 --> 00:12:57,500
+Portanto, quaisquer listas, tuplas, dicionrios que sejam
+
+236
+00:12:57,500 --> 00:13:00,430
+iterveis e tambm encontraremos outros iterveis posteriormente,
+
+237
+00:13:00,430 --> 00:13:03,040
+voc poder usar a palavra-chave in neles.
+
+238
+00:13:03,040 --> 00:13:05,770
+Por enquanto, vou reverter isso para imprimir o
+
+239
+00:13:05,770 --> 00:13:07,950
+texto bom que estvamos imprimindo antes.
+
+240
+00:13:09,960 --> 00:13:12,640
+A ltima vez que vi o
+
+241
+00:13:12,640 --> 00:13:16,130
+nome foi dias atrs, s porque vou
+
+242
+00:13:16,130 --> 00:13:21,130
+compartilhar esse cdigo com voc e queremos que isso seja correto.
+
+243
+00:13:21,810 --> 00:13:24,830
+Ento,  isso para este vdeo, eu queria mostrar como
+
+244
+00:13:24,830 --> 00:13:26,710
+usar o loop for e a
+
+245
+00:13:26,710 --> 00:13:28,664
+funo range, e depois tambm investigamos os
+
+246
+00:13:28,664 --> 00:13:31,700
+dicionrios e o mtodo items, bem como a palavra-chave in.
+
+247
+00:13:31,700 --> 00:13:33,670
+Ento, muitas coisas que abordamos neste vdeo,
+
+248
+00:13:33,670 --> 00:13:37,300
+espero que voc no esteja muito entediado, e eu vou ver voc no prximo.
+
+249
+00:13:37,300 --> 00:13:39,120
+&nbsp;
+
+250
+00:13:39,120 --> 00:13:42,120
+&nbsp;
+

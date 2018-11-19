@@ -1,0 +1,780 @@
+1
+00:00:01,029 --> 00:00:02,217
+<v ->[Jose Salvatierra] Hi, welcome back</v>
+
+2
+00:00:02,217 --> 00:00:05,248
+In this video we're gonna continue with our student class
+
+3
+00:00:05,248 --> 00:00:09,248
+and we're going to look at the average function.
+
+4
+00:00:10,751 --> 00:00:12,659
+In the last video we discovered that
+
+5
+00:00:12,659 --> 00:00:16,742
+when we call a class that creates a blank object,
+
+6
+00:00:17,659 --> 00:00:20,790
+and that gets passed to the dunder init method as self,
+
+7
+00:00:20,790 --> 00:00:24,614
+and then, we can modify that by creating new variables
+
+8
+00:00:24,614 --> 00:00:26,697
+inside that blank object.
+
+9
+00:00:28,080 --> 00:00:32,747
+That's how this things here end up with a name property.
+
+10
+00:00:33,807 --> 00:00:35,594
+I just said property,
+
+11
+00:00:35,594 --> 00:00:38,568
+and let's start calling things by what they are.
+
+12
+00:00:38,568 --> 00:00:41,043
+When we define a variable inside an object,
+
+13
+00:00:41,043 --> 00:00:44,334
+that's no longer a variable, now it's called a property.
+
+14
+00:00:44,334 --> 00:00:46,251
+Property of the object.
+
+15
+00:00:47,127 --> 00:00:49,689
+Similarly, when we define a function like this,
+
+16
+00:00:49,689 --> 00:00:52,439
+average function, inside a class,
+
+17
+00:00:53,320 --> 00:00:55,231
+that's no longer called a function,
+
+18
+00:00:55,231 --> 00:00:57,183
+that is now called a method.
+
+19
+00:00:57,183 --> 00:01:00,063
+Same thing, just a different name, in order for,
+
+20
+00:01:00,063 --> 00:01:01,145
+when you're talking about programming
+
+21
+00:01:01,145 --> 00:01:03,213
+to be able to quickly differentiate between
+
+22
+00:01:03,213 --> 00:01:05,980
+what you're talking about
+
+23
+00:01:05,980 --> 00:01:10,176
+So, student one and student two know that they are students,
+
+24
+00:01:10,176 --> 00:01:12,855
+they are OfType Student, because that's the way
+
+25
+00:01:12,855 --> 00:01:17,205
+that this was created when we called the class.
+
+26
+00:01:17,205 --> 00:01:19,237
+Therefore, because they're OfType Student,
+
+27
+00:01:19,237 --> 00:01:22,975
+they know they have this average function inside of them.
+
+28
+00:01:22,975 --> 00:01:27,558
+Now, we can call student_one.average()
+
+29
+00:01:28,904 --> 00:01:30,730
+we're calling the average function
+
+30
+00:01:30,730 --> 00:01:33,647
+which is inside of our student_one.
+
+31
+00:01:35,528 --> 00:01:38,905
+Now, you can see that there's a self parameter here
+
+32
+00:01:38,905 --> 00:01:41,786
+which we are clearly not fulfilling.
+
+33
+00:01:41,786 --> 00:01:44,587
+So, what do you think is going to happen
+
+34
+00:01:44,587 --> 00:01:46,504
+when we print this out.
+
+35
+00:01:47,450 --> 00:01:48,533
+Let's run it!
+
+36
+00:01:49,523 --> 00:01:53,190
+Hm, we get a value, and a valid one in that.
+
+37
+00:01:54,135 --> 00:01:55,468
+So, why is that?
+
+38
+00:01:56,348 --> 00:01:59,041
+Well, Python is pretty smart, and,
+
+39
+00:01:59,041 --> 00:02:04,041
+when you use an object to call a function of the class,
+
+40
+00:02:04,444 --> 00:02:07,084
+it automatically populates self
+
+41
+00:02:07,084 --> 00:02:11,026
+as the object that called that function.
+
+42
+00:02:11,026 --> 00:02:12,186
+Okay, let me give you another example
+
+43
+00:02:12,186 --> 00:02:15,212
+that you may understand a bit more easily.
+
+44
+00:02:15,212 --> 00:02:18,255
+Let's call the function, sorry, the method here
+
+45
+00:02:18,255 --> 00:02:19,329
+in the class.
+
+46
+00:02:19,329 --> 00:02:21,721
+The way that you sort of expect to do them,
+
+47
+00:02:21,721 --> 00:02:23,896
+is by saying Student, which is the class,
+
+48
+00:02:23,896 --> 00:02:28,003
+dot, to access something inside of it, average.
+
+49
+00:02:28,003 --> 00:02:30,831
+Right? We got the class, we access something inside of it,
+
+50
+00:02:30,831 --> 00:02:33,980
+and what we'll be accessing is the average function.
+
+51
+00:02:33,980 --> 00:02:37,487
+However, if we do this and we run it,
+
+52
+00:02:37,487 --> 00:02:41,656
+now we see that it says, something not very readable,
+
+53
+00:02:41,656 --> 00:02:44,052
+average, the average function is missing
+
+54
+00:02:44,052 --> 00:02:47,135
+one required argument, which is self.
+
+55
+00:02:48,994 --> 00:02:52,577
+So Python obviously cannot tell what object
+
+56
+00:02:53,675 --> 00:02:56,028
+you want to get the average of,
+
+57
+00:02:56,028 --> 00:02:57,902
+because you've not called it with an object,
+
+58
+00:02:57,902 --> 00:02:59,075
+you've called it with the class
+
+59
+00:02:59,075 --> 00:03:02,002
+which is the definition of an object.
+
+60
+00:03:02,002 --> 00:03:05,413
+So what to do is to pass in a particular object,
+
+61
+00:03:05,413 --> 00:03:09,334
+not my_student, that's a dictionary. student_one.
+
+62
+00:03:09,334 --> 00:03:12,458
+Now, when you call this, student_one will be self
+
+63
+00:03:12,458 --> 00:03:14,599
+as normal in Python functions,
+
+64
+00:03:14,599 --> 00:03:16,631
+and you will return that.
+
+65
+00:03:16,631 --> 00:03:18,565
+So we can once again run it and now you can see
+
+66
+00:03:18,565 --> 00:03:20,648
+we get the correct value.
+
+67
+00:03:22,171 --> 00:03:23,988
+When you do student_one.average,
+
+68
+00:03:23,988 --> 00:03:26,217
+Python in the background is doing this.
+
+69
+00:03:26,217 --> 00:03:28,899
+So there's no magic going on whatsoever,
+
+70
+00:03:28,899 --> 00:03:30,232
+is just that in order to save you
+
+71
+00:03:30,232 --> 00:03:32,056
+from typing a bunch of stuff,
+
+72
+00:03:32,056 --> 00:03:34,092
+you can just call it on the student.
+
+73
+00:03:34,092 --> 00:03:36,570
+And that also sort of makes sense,
+
+74
+00:03:36,570 --> 00:03:38,601
+'cause now you're getting the average of student_one,
+
+75
+00:03:38,601 --> 00:03:41,451
+you don't have to like, include the student class in there.
+
+76
+00:03:41,451 --> 00:03:43,775
+Self gets automatically populated for you
+
+77
+00:03:43,775 --> 00:03:45,680
+when you call any method,
+
+78
+00:03:45,680 --> 00:03:47,915
+remember that's saying function within a class,
+
+79
+00:03:47,915 --> 00:03:50,498
+with the student as the caller.
+
+80
+00:03:51,490 --> 00:03:53,564
+And the student here is the caller,
+
+81
+00:03:53,564 --> 00:03:56,734
+because that's the way we're calling this function from.
+
+82
+00:03:56,734 --> 00:03:59,234
+Okay? that's what it's called.
+
+83
+00:04:00,228 --> 00:04:05,110
+Okay, let's think about this average method again,
+
+84
+00:04:05,110 --> 00:04:08,582
+we've got student_one being passed as self,
+
+85
+00:04:08,582 --> 00:04:10,086
+and we must remember now,
+
+86
+00:04:10,086 --> 00:04:12,118
+that student_one was this object
+
+87
+00:04:12,118 --> 00:04:13,716
+that was created emptily here,
+
+88
+00:04:13,716 --> 00:04:15,633
+also called self, but that's just a side-effect
+
+89
+00:04:15,633 --> 00:04:18,217
+of the naming conventions in Python.
+
+90
+00:04:18,217 --> 00:04:20,329
+Student_one is the self thing here,
+
+91
+00:04:20,329 --> 00:04:24,075
+and we know it has a name and it also has a grades.
+
+92
+00:04:24,075 --> 00:04:27,365
+So when we access student_one.grades,
+
+93
+00:04:27,365 --> 00:04:30,460
+that is what we passed initially up here.
+
+94
+00:04:30,460 --> 00:04:34,033
+And here we're also accessing student_one.grades,
+
+95
+00:04:34,033 --> 00:04:36,601
+however, in order to make this a bit more generic,
+
+96
+00:04:36,601 --> 00:04:41,268
+we're not using average only on student_one but on self.
+
+97
+00:04:42,309 --> 00:04:44,399
+Because we defined self.grades,
+
+98
+00:04:44,399 --> 00:04:47,322
+we know that we have self.grades available
+
+99
+00:04:47,322 --> 00:04:49,469
+to use in the average function.
+
+100
+00:04:49,469 --> 00:04:51,785
+So we can use self.grades and self.grades,
+
+101
+00:04:51,785 --> 00:04:54,914
+and it depends on which student object we call it on,
+
+102
+00:04:54,914 --> 00:04:56,901
+that is gonna use either this grades
+
+103
+00:04:56,901 --> 00:04:58,648
+if we call it with student one,
+
+104
+00:04:58,648 --> 00:05:02,145
+or this grades if we call it with student two.
+
+105
+00:05:02,145 --> 00:05:07,145
+We can rewrite this function entirely by the way, down here,
+
+106
+00:05:08,208 --> 00:05:10,625
+by making it accept a student
+
+107
+00:05:11,682 --> 00:05:14,719
+and it's gonna return the sum of student.grades
+
+108
+00:05:14,719 --> 00:05:17,969
+and the length of student.grades, okay?
+
+109
+00:05:19,623 --> 00:05:22,456
+We gonna print student_one.grades,
+
+110
+00:05:25,105 --> 00:05:27,921
+and then we gonna call the average function
+
+111
+00:05:27,921 --> 00:05:29,838
+called off student_one.
+
+112
+00:05:32,561 --> 00:05:33,394
+The first thing we're gonna do
+
+113
+00:05:33,394 --> 00:05:35,513
+is print out the student's grades,
+
+114
+00:05:35,513 --> 00:05:39,013
+which we know should be 70, 80, 90 and 99.
+
+115
+00:05:40,347 --> 00:05:42,562
+And indeed, then we get them here.
+
+116
+00:05:42,562 --> 00:05:43,740
+Then we define this function
+
+117
+00:05:43,740 --> 00:05:46,416
+that takes in a student object,
+
+118
+00:05:46,416 --> 00:05:48,442
+returns the sum of it's grades property,
+
+119
+00:05:48,442 --> 00:05:50,972
+the one we just printed up here, and the length,
+
+120
+00:05:50,972 --> 00:05:53,309
+and then divides one by another.
+
+121
+00:05:53,309 --> 00:05:56,888
+Then we call that function with our student_one object,
+
+122
+00:05:56,888 --> 00:05:58,971
+passed in as an argument.
+
+123
+00:06:00,835 --> 00:06:01,918
+So, student_one--
+
+124
+00:06:01,918 --> 00:06:05,586
+This is student_one, this is student_one, student_one.grades
+
+125
+00:06:05,586 --> 00:06:07,798
+is the same thing we just printed up here.
+
+126
+00:06:07,798 --> 00:06:11,006
+And student_one.grades is the same thing we printed up here.
+
+127
+00:06:11,006 --> 00:06:14,011
+And then that is how the average gets calculated.
+
+128
+00:06:14,011 --> 00:06:18,072
+Again, just to recap, when you call student_one.average,
+
+129
+00:06:18,072 --> 00:06:20,620
+what's happening in the background
+
+130
+00:06:20,620 --> 00:06:24,694
+is (student.average(student_one))
+
+131
+00:06:24,694 --> 00:06:27,694
+student_one is being passed as self,
+
+132
+00:06:28,630 --> 00:06:31,146
+same function we just defined, only the argument,
+
+133
+00:06:31,146 --> 00:06:33,141
+sorry, the parameter is called self.
+
+134
+00:06:33,141 --> 00:06:37,371
+Again, you could call this student, if you want it.
+
+135
+00:06:37,371 --> 00:06:39,613
+But it is not common to do that.
+
+136
+00:06:39,613 --> 00:06:41,440
+Normally, in methods,
+
+137
+00:06:41,440 --> 00:06:43,526
+the first parameter it's always called self,
+
+138
+00:06:43,526 --> 00:06:47,354
+because it refers to the object you're currently modifying,
+
+139
+00:06:47,354 --> 00:06:48,937
+or acting on, okay?
+
+140
+00:06:49,871 --> 00:06:51,813
+And that's how that works.
+
+141
+00:06:51,813 --> 00:06:53,952
+That's how the methods work.
+
+142
+00:06:53,952 --> 00:06:55,007
+And now we're able
+
+143
+00:06:55,007 --> 00:06:58,910
+to both define the data that we're acting on,
+
+144
+00:06:58,910 --> 00:07:03,055
+and the action we're performing in the same structure.
+
+145
+00:07:03,055 --> 00:07:05,127
+Now it's a class instead of a dictionary,
+
+146
+00:07:05,127 --> 00:07:06,672
+but essentially is the same thing,
+
+147
+00:07:06,672 --> 00:07:08,984
+it allows us to store some data
+
+148
+00:07:08,984 --> 00:07:11,131
+and now it extends that functionality
+
+149
+00:07:11,131 --> 00:07:13,851
+by allowing us to store some functions
+
+150
+00:07:13,851 --> 00:07:16,830
+that act on that data, as well.
+
+151
+00:07:16,830 --> 00:07:18,289
+Now, of course,
+
+152
+00:07:18,289 --> 00:07:20,851
+the average function could receive some extra arguments,
+
+153
+00:07:20,851 --> 00:07:24,428
+some extra parameters, if you wanted.
+
+154
+00:07:24,428 --> 00:07:27,274
+Just as the dunder in its method does.
+
+155
+00:07:27,274 --> 00:07:31,314
+So you could pass in some name as well, if you wanted,
+
+156
+00:07:31,314 --> 00:07:35,271
+and then, student_one.average now would just get something,
+
+157
+00:07:35,271 --> 00:07:38,141
+a friend, some argument there, as well.
+
+158
+00:07:38,141 --> 00:07:43,141
+That would be the second argument, the second parameter.
+
+159
+00:07:43,207 --> 00:07:47,799
+Okay? So self is populated first by the current object,
+
+160
+00:07:47,799 --> 00:07:50,281
+any other parameters get populated after,
+
+161
+00:07:50,281 --> 00:07:53,409
+from whatever it is inside this brackets.
+
+162
+00:07:53,409 --> 00:07:56,693
+Anyway, I think I've gone on and on about this enough,
+
+163
+00:07:56,693 --> 00:07:59,335
+hopefully is more or less clear,
+
+164
+00:07:59,335 --> 00:08:02,156
+that a student class is just something
+
+165
+00:08:02,156 --> 00:08:07,139
+that allows us to define what properties are in a student,
+
+166
+00:08:07,139 --> 00:08:11,654
+and also what actions a student can do on it's own data,
+
+167
+00:08:11,654 --> 00:08:14,495
+or indeed, if we so desired, in other data,
+
+168
+00:08:14,495 --> 00:08:17,158
+by passing in some arguments.
+
+169
+00:08:17,158 --> 00:08:19,107
+So that's what a class is, and that's what an object is.
+
+170
+00:08:19,107 --> 00:08:21,195
+And we need to store some data,
+
+171
+00:08:21,195 --> 00:08:23,687
+and store some actions that relate to it.
+
+172
+00:08:23,687 --> 00:08:26,313
+That allows to encapsulate and hold
+
+173
+00:08:26,313 --> 00:08:29,898
+all relevant functionality in the same structure,
+
+174
+00:08:29,898 --> 00:08:33,206
+as opposed to having it split over two separate structures,
+
+175
+00:08:33,206 --> 00:08:35,505
+like we did up here.
+
+176
+00:08:35,505 --> 00:08:37,221
+So that's it for this video, hopefully that's clear.
+
+177
+00:08:37,221 --> 00:08:38,902
+And all the upcoming sections
+
+178
+00:08:38,902 --> 00:08:40,587
+will be using this more and more,
+
+179
+00:08:40,587 --> 00:08:42,000
+and as you programme more and more,
+
+180
+00:08:42,000 --> 00:08:43,890
+it's gonna sort of become second nature,
+
+181
+00:08:43,890 --> 00:08:45,288
+and you're gonna start understanding this
+
+182
+00:08:45,288 --> 00:08:46,641
+a bit more thoroughly,
+
+183
+00:08:46,641 --> 00:08:49,555
+and I'm sure it will get better and better.
+
+184
+00:08:49,555 --> 00:08:50,993
+If you are confused,
+
+185
+00:08:50,993 --> 00:08:52,565
+please ask a question in the course's Q&amp;A,
+
+186
+00:08:52,565 --> 00:08:54,237
+I will be happy to help you.
+
+187
+00:08:54,237 --> 00:08:58,127
+But it normally takes a few months to fully click,
+
+188
+00:08:58,127 --> 00:09:01,969
+so, of course I'm gonna try to get that to click earlier,
+
+189
+00:09:01,969 --> 00:09:04,688
+by providing with good explanations.
+
+190
+00:09:04,688 --> 00:09:09,569
+But, if you are just mildly uncomfortable with all this,
+
+191
+00:09:09,569 --> 00:09:11,213
+that's fine.
+
+192
+00:09:11,213 --> 00:09:13,689
+Just keep going, keep programming,
+
+193
+00:09:13,689 --> 00:09:16,167
+keep writing code and it's gonna all settle down
+
+194
+00:09:16,167 --> 00:09:20,183
+in your subconscious as you move along.
+
+195
+00:09:20,183 --> 00:09:23,123
+So that's it for this video, I'll see you on the next one.
+

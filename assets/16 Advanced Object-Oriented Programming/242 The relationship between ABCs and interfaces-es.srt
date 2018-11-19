@@ -1,0 +1,468 @@
+1
+00:00:00,200 --> 00:00:01,550
+Jos: Hola bienvenido.
+
+2
+00:00:01,550 --> 00:00:05,460
+En este video, quera mover esa clase abstracta a
+
+3
+00:00:05,460 --> 00:00:08,750
+nuestro otro cdigo solo para darle otro ejemplo
+
+4
+00:00:08,750 --> 00:00:10,860
+de dnde puede ser til.
+
+5
+00:00:12,020 --> 00:00:15,610
+Pasando a nuestro salvable. Recuerde que tiene este mtodo
+
+6
+00:00:15,610 --> 00:00:20,420
+de guardar que llama a a. mtodo dict pero la
+
+7
+00:00:20,420 --> 00:00:24,210
+clase guardable no tiene ese mtodo definido.
+
+8
+00:00:25,240 --> 00:00:30,240
+Sin embargo, depende de una subclase como admin para implementar
+
+9
+00:00:30,370 --> 00:00:32,730
+el to. mtodo dict
+
+10
+00:00:34,340 --> 00:00:37,470
+Depender de la subclase para implementar el to. El mtodo dict est
+
+11
+00:00:37,470 --> 00:00:42,470
+bien, pero es an mejor si puede forzar a la subclase
+
+12
+00:00:42,670 --> 00:00:44,500
+a implementar el mtodo.
+
+13
+00:00:44,500 --> 00:00:48,870
+Y ahora que tiene ABC y mtodos abstractos, puede.
+
+14
+00:00:48,870 --> 00:00:53,470
+Entonces, continuemos e implementemos esto usando un ABC.
+
+15
+00:00:53,470 --> 00:00:55,820
+Entonces, desde abc_import, ABCMeta, y abstractmethod
+
+16
+00:00:58,650 --> 00:01:02,780
+y ahora podemos definir el to. mtodo dict utilizando este
+
+17
+00:01:02,780 --> 00:01:06,150
+mtodo abstracto, podemos decir. dict y luego simplemente
+
+18
+00:01:08,170 --> 00:01:11,450
+pasarlo lo que significa que no hace nada.
+
+19
+00:01:11,450 --> 00:01:14,830
+Ahora esto es feliz porque dice: "Est bien, puedo ver que"
+
+20
+00:01:14,830 --> 00:01:16,860
+hay un. mtodo dict definido. "Pero en
+
+21
+00:01:17,740 --> 00:01:20,230
+realidad no hace nada en esta clase.
+
+22
+00:01:20,230 --> 00:01:23,570
+Solo hace cosas en el to. dict.
+
+23
+00:01:23,570 --> 00:01:25,900
+El propsito general del mtodo abstracto
+
+24
+00:01:25,900 --> 00:01:30,540
+es forzar a la subclase a implementar el mtodo que necesita.
+
+25
+00:01:32,650 --> 00:01:36,450
+Una vez ms, el hecho de que tengamos esta clase salvable
+
+26
+00:01:36,450 --> 00:01:39,930
+ahora significa que el administrador es una instancia de salvable.
+
+27
+00:01:41,100 --> 00:01:43,370
+Y eso puede ser bastante bueno
+
+28
+00:01:43,370 --> 00:01:45,740
+si quieres una lista de cosas guardables.
+
+29
+00:01:45,740 --> 00:01:47,930
+A continuacin, puede llamar guardar en cada uno de
+
+30
+00:01:47,930 --> 00:01:49,940
+ellos incluso si no son todos objetos administrativos.
+
+31
+00:01:51,120 --> 00:01:53,270
+Si cortamos el guardado desde aqu, y
+
+32
+00:01:54,390 --> 00:01:57,160
+lo ponemos en usuario. py, ahora el
+
+33
+00:02:03,860 --> 00:02:08,860
+usuario se puede guardar y el administrador tambin se puede guardar
+
+34
+00:02:09,260 --> 00:02:11,610
+porque es una subclase de usuario.
+
+35
+00:02:11,610 --> 00:02:15,280
+Entonces, de nuevo, el administrador tiene una. dict.
+
+36
+00:02:15,280 --> 00:02:19,370
+Entonces cuando decimos un objeto de administrador. guardar, llamar a
+
+37
+00:02:19,370 --> 00:02:21,980
+los administradores. dict.
+
+38
+00:02:21,980 --> 00:02:24,650
+Si tenemos algn objeto de usuario y llamamos guardar, llamaremos al
+
+39
+00:02:25,990 --> 00:02:28,750
+usuario para que lo haga. dict, que no existe,
+
+40
+00:02:28,750 --> 00:02:30,100
+entonces tenemos que implementarlo.
+
+41
+00:02:34,360 --> 00:02:35,580
+As que solo as.
+
+42
+00:02:40,310 --> 00:02:43,740
+Ahora el usuario tiene un a. dict, el administrador tiene un. dict que
+
+43
+00:02:43,740 --> 00:02:47,611
+lo anula y ambos se pueden guardar
+
+44
+00:02:47,611 --> 00:02:50,260
+utilizando la clase guardable.
+
+45
+00:02:51,920 --> 00:02:56,000
+A partir de ahora, puede hacer referencia a guardables como una interfaz.
+
+46
+00:02:56,000 --> 00:03:00,700
+Por cierto, lo siento, me olvid de definir esta metaclase all.
+
+47
+00:03:00,700 --> 00:03:01,720
+Esto es importante, por
+
+48
+00:03:01,720 --> 00:03:03,690
+supuesto, de lo contrario no tiene mucho sentido.
+
+49
+00:03:03,690 --> 00:03:06,240
+Python no podr entender lo que est pasando.
+
+50
+00:03:07,240 --> 00:03:11,740
+As que guardable aqu hay una sper clase porque es una
+
+51
+00:03:11,740 --> 00:03:15,650
+clase abstracta, puedes ver que es una clase aqu.
+
+52
+00:03:15,650 --> 00:03:17,450
+En muchos otros lenguajes de
+
+53
+00:03:17,450 --> 00:03:19,780
+programacin, esto se conocera como una
+
+54
+00:03:20,880 --> 00:03:23,830
+interfaz porque define la funcionalidad que debera estar
+
+55
+00:03:23,830 --> 00:03:25,340
+en una subclase.
+
+56
+00:03:25,340 --> 00:03:27,460
+Eso es lo que es una interfaz.
+
+57
+00:03:27,460 --> 00:03:31,180
+Una interfaz no es una clase que puede instanciar.
+
+58
+00:03:31,180 --> 00:03:33,100
+Es una cosa en la programacin
+
+59
+00:03:33,100 --> 00:03:36,040
+que define lo que debe hacer una subclase.
+
+60
+00:03:36,940 --> 00:03:40,190
+Entonces, en esos trminos, y para adherirse a esa
+
+61
+00:03:40,190 --> 00:03:45,190
+definicin, esta es una interfaz, pero debido a que tiene este mtodo de
+
+62
+00:03:45,210 --> 00:03:49,080
+guardar que realmente est implementado, no podemos decir que esta
+
+63
+00:03:49,080 --> 00:03:51,600
+es una interfaz en el sentido tradicional.
+
+64
+00:03:52,610 --> 00:03:56,800
+Sin embargo, me gustan mucho estas comillas para unir a Python.
+
+65
+00:03:56,800 --> 00:03:59,290
+Me gustan porque puede definirlos como interfaces.
+
+66
+00:03:59,290 --> 00:04:03,310
+Solo di que las subclases deben implementar el to. mtodo dict
+
+67
+00:04:03,310 --> 00:04:06,410
+Y tambin puede agregar alguna funcionalidad que se
+
+68
+00:04:06,410 --> 00:04:10,120
+comparte entre las subclases, como este mtodo de guardar.
+
+69
+00:04:10,120 --> 00:04:13,670
+En Java, por ejemplo, puede definir interfaces como algo
+
+70
+00:04:13,670 --> 00:04:17,310
+que est separado de las clases, cosas completamente diferentes.
+
+71
+00:04:17,310 --> 00:04:20,430
+Entonces puedes definir en Java cosas como estas.
+
+72
+00:04:20,430 --> 00:04:22,760
+La subclase debe implementar este mtodo.
+
+73
+00:04:22,760 --> 00:04:25,190
+Pero en Java no se puede definir o al
+
+74
+00:04:25,190 --> 00:04:28,090
+menos no se poda cuando hice Java hace mucho tiempo.
+
+75
+00:04:28,090 --> 00:04:30,860
+No se pudo definir el mtodo de guardar.
+
+76
+00:04:30,860 --> 00:04:33,470
+No podra decir que la subclase
+
+77
+00:04:33,470 --> 00:04:36,170
+tambin podr hacer esto e implementarlo.
+
+78
+00:04:37,140 --> 00:04:41,400
+Tan til en Python que estas interfaces pueden tener ambas definiciones
+
+79
+00:04:41,400 --> 00:04:43,820
+de lo que la subclase debe
+
+80
+00:04:43,820 --> 00:04:47,160
+poder hacer, implementar y tambin proporcionar alguna funcionalidad
+
+81
+00:04:47,160 --> 00:04:49,710
+que se compartir entre las subclases.
+
+82
+00:04:51,090 --> 00:04:54,440
+Y esto es lo que es una interfaz en Python.
+
+83
+00:04:54,440 --> 00:04:55,710
+Es lo ms cerca que vas a llegar.
+
+84
+00:04:55,710 --> 00:05:00,570
+No tiene interfaces definidas como en otros idiomas, como
+
+85
+00:05:00,570 --> 00:05:05,570
+en Java, pero tiene mtodos abstractos y ABC que le
+
+86
+00:05:05,880 --> 00:05:07,760
+permiten forzar subclases para
+
+87
+00:05:07,760 --> 00:05:09,530
+implementar cosas particulares.
+
+88
+00:05:09,530 --> 00:05:11,980
+Y luego, por supuesto, si
+
+89
+00:05:11,980 --> 00:05:16,330
+entramos en la aplicacin y usted tiene algunos usuarios.
+
+90
+00:05:21,410 --> 00:05:26,210
+Tendrs que importar un usuario por supuesto.
+
+91
+00:05:26,210 --> 00:05:31,210
+Entonces, naturalmente, puede tener una lista de usuarios
+
+92
+00:05:32,640 --> 00:05:37,640
+y luego guardarlos todos de esa manera.
+
+93
+00:05:40,310 --> 00:05:44,400
+Esto est perfectamente bien porque cada usuario es una
+
+94
+00:05:44,400 --> 00:05:47,500
+subclase o implementa la interfaz guardable.
+
+95
+00:05:47,500 --> 00:05:49,420
+Debido a que todos implementan la interfaz,
+
+96
+00:05:49,420 --> 00:05:52,370
+usted sabe que todos van a tener el mtodo de guardar all.
+
+97
+00:05:53,610 --> 00:05:56,580
+Si no est seguro de cundo va a usar esto,
+
+98
+00:05:56,580 --> 00:06:00,690
+no se preocupe, el propsito de que le ensee sobre estos conceptos avanzados en
+
+99
+00:06:00,690 --> 00:06:03,650
+la programacin orientada a objetos no es para que obtenga
+
+100
+00:06:03,650 --> 00:06:07,000
+inmediatamente algunas ideas sobre qu hacer con ellos. pero a medida
+
+101
+00:06:07,980 --> 00:06:11,000
+que desarrolles ms, tal vez cuando consigas un trabajo haciendo
+
+102
+00:06:11,000 --> 00:06:14,090
+el desarrollo de Python o tal vez si ya tienes
+
+103
+00:06:14,090 --> 00:06:16,670
+un trabajo y trabajas ms y ms con Python,
+
+104
+00:06:16,670 --> 00:06:18,620
+te encuentres en una situacin en la
+
+105
+00:06:18,620 --> 00:06:20,660
+que esto sea lo mejor para usar.
+
+106
+00:06:20,660 --> 00:06:21,760
+Y saberlo
+
+107
+00:06:21,760 --> 00:06:24,830
+le permitir disear programas mucho mejor.
+
+108
+00:06:24,830 --> 00:06:27,750
+Por supuesto, prubelo, prubelo, escriba el cdigo, descargue el
+
+109
+00:06:27,750 --> 00:06:30,440
+cdigo que he puesto a disposicin en esta
+
+110
+00:06:30,440 --> 00:06:33,330
+seccin y juegue con l para que pueda internalizarlo.
+
+111
+00:06:33,330 --> 00:06:35,820
+De lo contrario, dentro de unos meses, habr olvidado
+
+112
+00:06:35,820 --> 00:06:38,370
+que esto existe y, si encuentra una situacin en
+
+113
+00:06:38,370 --> 00:06:40,520
+la que lo necesitar, no lo recordar.
+
+114
+00:06:40,520 --> 00:06:43,620
+As que asegrese de jugar con eso y probarlo y nos
+
+115
+00:06:43,620 --> 00:06:44,950
+vemos en el siguiente video.
+
+116
+00:06:44,950 --> 00:06:47,280
+Vamos a hablar de otra cosa.
+
+117
+00:06:47,280 --> 00:06:48,230
+Te ver all.
+

@@ -1,0 +1,688 @@
+1
+00:00:00,140 --> 00:00:01,450
+Instrutor: Ol e bem vindo de volta.
+
+2
+00:00:01,450 --> 00:00:04,610
+Neste vdeo, no usaremos ambientes virtuais, mas
+
+3
+00:00:04,610 --> 00:00:07,630
+usaremos algo que se construa sobre eles
+
+4
+00:00:07,630 --> 00:00:10,390
+para facilitar um pouco o trabalho
+
+5
+00:00:10,390 --> 00:00:12,510
+com esses projetos e dependncias.
+
+6
+00:00:14,500 --> 00:00:16,840
+Digite pipenv.
+
+7
+00:00:16,840 --> 00:00:21,080
+Pipenv, escrito assim,  uma nova biblioteca que agora se
+
+8
+00:00:21,080 --> 00:00:23,200
+tornou o padro para gerenciar
+
+9
+00:00:23,200 --> 00:00:25,720
+projetos e dependncias em Python.
+
+10
+00:00:26,770 --> 00:00:31,770
+Virtualnv foi o padro at talvez um ano atrs ou assim.
+
+11
+00:00:32,210 --> 00:00:34,180
+Mas agora pipenv assumiu apenas porque
+
+12
+00:00:34,180 --> 00:00:37,440
+ um pouco melhor e mais leve para trabalhar.
+
+13
+00:00:38,400 --> 00:00:40,400
+A primeira coisa que temos que
+
+14
+00:00:40,400 --> 00:00:43,120
+fazer  excluir o ambiente virtual que j
+
+15
+00:00:43,120 --> 00:00:45,560
+criamos se formos usar o pipenv.
+
+16
+00:00:46,430 --> 00:00:48,330
+Para excluir um
+
+17
+00:00:48,330 --> 00:00:53,330
+ambiente virtual, pare de us-lo digitando "desativar".
+
+18
+00:00:53,770 --> 00:00:57,240
+Se voc digitar desativar, quando tiver ativado,
+
+19
+00:00:57,240 --> 00:00:58,980
+sair do ambiente virtual.
+
+20
+00:00:58,980 --> 00:01:01,220
+Eu vou te mostrar exatamente o que quero dizer.
+
+21
+00:01:01,220 --> 00:01:04,730
+Vou ativar / venv / bin /
+
+22
+00:01:04,730 --> 00:01:08,960
+activate, ou desculpe, venv / bin / activate
+
+23
+00:01:08,960 --> 00:01:10,590
+e depois desativ-lo.
+
+24
+00:01:10,590 --> 00:01:14,190
+Como voc pode ver, o venv dentro dos colchetes desaparece e
+
+25
+00:01:14,190 --> 00:01:16,450
+estamos de volta ao nosso Python normal.
+
+26
+00:01:17,320 --> 00:01:21,630
+Voc pode verificar novamente, digitando qual Python e voc pode ver que no
+
+27
+00:01:21,630 --> 00:01:24,497
+estamos mais usando o ambiente virtual do Python aqui,
+
+28
+00:01:24,497 --> 00:01:26,610
+voc est usando o sistema Python.
+
+29
+00:01:28,280 --> 00:01:31,760
+Ok, ento vamos remover a pasta virtualnv
+
+30
+00:01:31,760 --> 00:01:35,760
+que criamos, ento faremos rm -rf venv.
+
+31
+00:01:36,680 --> 00:01:39,560
+Eu no tenho certeza do comando do Windows, ento vou
+
+32
+00:01:39,560 --> 00:01:41,970
+me certificar de que ele aparea aqui na palestra.
+
+33
+00:01:41,970 --> 00:01:44,400
+Mas o que isto faz,  apagar
+
+34
+00:01:44,400 --> 00:01:47,580
+a pasta que criamos chamada venv, ento apenas digite isso.
+
+35
+00:01:48,911 --> 00:01:52,400
+Quando voc digitar ls novamente, ver que a pasta
+
+36
+00:01:52,400 --> 00:01:56,450
+venv acabou, ela no existe mais porque a removemos agora.
+
+37
+00:01:56,450 --> 00:02:00,200
+Este comando remove  o que faz, remove coisas.
+
+38
+00:02:01,470 --> 00:02:05,100
+Ento, a prxima coisa que voc deve fazer  se certificar de usar o pip,
+
+39
+00:02:05,100 --> 00:02:10,100
+e certifique-se de usar o pip 3. 6 ou 3. 7 para instalar pipenv.
+
+40
+00:02:11,720 --> 00:02:14,180
+Eu j tenho instalado, mas se voc no
+
+41
+00:02:14,180 --> 00:02:17,010
+tem instalado e voc tem algum tipo de erro,
+
+42
+00:02:17,010 --> 00:02:21,250
+voc pode ter que fazer o pip3. 7 pip de atualizao do trao do trao.
+
+43
+00:02:22,240 --> 00:02:26,820
+Isso, e apenas permite pip atualizar-se para a
+
+44
+00:02:26,820 --> 00:02:28,890
+verso mais recente.
+
+45
+00:02:28,890 --> 00:02:32,200
+E ento voc poder fazer o pip3. 7 instale o pipenv novamente.
+
+46
+00:02:33,440 --> 00:02:35,870
+Uma vez que voc tenha o pipenv
+
+47
+00:02:35,870 --> 00:02:40,280
+instalado, tudo o que voc precisa fazer  digitar pipenv, e ento voc
+
+48
+00:02:41,270 --> 00:02:43,790
+pega todos os comandos e exemplos de
+
+49
+00:02:43,790 --> 00:02:45,560
+uso que voc pode precisar.
+
+50
+00:02:47,020 --> 00:02:51,110
+O mais importante  o instal, ok?
+
+51
+00:02:52,679 --> 00:02:57,030
+Se voc tem requisitos. arquivo txt j
+
+52
+00:02:58,110 --> 00:03:03,110
+criado, em seguida, digitando pipenv instal vai
+
+53
+00:03:03,830 --> 00:03:07,540
+usar esses requisitos. txt e vai instalar
+
+54
+00:03:07,540 --> 00:03:12,000
+todos os pacotes nesse requisito. txt no novo ambiente.
+
+55
+00:03:15,010 --> 00:03:17,330
+Observe a primeira coisa que isso
+
+56
+00:03:17,330 --> 00:03:20,270
+faz, ele cria um virtualnv para o projeto
+
+57
+00:03:20,270 --> 00:03:24,110
+e, em seguida, ele percorre e instala vrias coisas e cria
+
+58
+00:03:24,110 --> 00:03:27,780
+um pipfile, criando um pipfile. Bloqueio, vamos explicar o
+
+59
+00:03:27,780 --> 00:03:30,460
+que so daqui a pouco.
+
+60
+00:03:30,460 --> 00:03:35,430
+E no final, voc tem sua configurao completa.
+
+61
+00:03:35,430 --> 00:03:37,680
+Se voc digitar ls, voc pode ver que h mais algumas
+
+62
+00:03:37,680 --> 00:03:41,490
+coisas agora, voc tem um pipfile e voc tem pipfile. lock Vamos abrir o
+
+63
+00:03:43,150 --> 00:03:46,040
+pipfile para ver o que est nele.
+
+64
+00:03:46,040 --> 00:03:49,600
+Ento eu vou fazer o cat pipfile para ver
+
+65
+00:03:49,600 --> 00:03:52,950
+o contedo do pipfile, ento estes aqui so o
+
+66
+00:03:52,950 --> 00:03:54,250
+contedo do pipfile.
+
+67
+00:03:55,470 --> 00:03:59,380
+Voc tem um URL de origem,  de onde voc est
+
+68
+00:03:59,380 --> 00:04:00,620
+baixando seus pacotes.
+
+69
+00:04:01,500 --> 00:04:04,628
+Verify_ssl, se voc quer ter certeza de que os certificados
+
+70
+00:04:04,628 --> 00:04:06,890
+que voc est usando para ssl esto corretos.
+
+71
+00:04:06,890 --> 00:04:10,090
+O nome de onde voc est fazendo o download,  uma fonte.
+
+72
+00:04:10,090 --> 00:04:11,680
+E a parte importante aqui
+
+73
+00:04:11,680 --> 00:04:13,530
+so os pacotes que voc instalou.
+
+74
+00:04:13,530 --> 00:04:15,500
+E observe como eles esto vindo diretamente
+
+75
+00:04:15,500 --> 00:04:17,240
+das minhas necessidades. arquivo txt.
+
+76
+00:04:18,120 --> 00:04:20,200
+Ento, tudo isso  bom.
+
+77
+00:04:22,100 --> 00:04:27,100
+O pipfile. o bloqueio  muito mais longo.
+
+78
+00:04:30,010 --> 00:04:32,680
+Como voc pode ver,  bastante longo e
+
+79
+00:04:32,680 --> 00:04:33,980
+tem muita coisa nele.
+
+80
+00:04:35,260 --> 00:04:36,900
+Eu digitei o comando aqui, ento
+
+81
+00:04:36,900 --> 00:04:40,550
+tudo isso  o meu pipfile. bloqueio.
+
+82
+00:04:41,970 --> 00:04:45,500
+E o que  isso,  um monte de hashes.
+
+83
+00:04:45,500 --> 00:04:50,230
+E esses hashes so a verso e alguns dos
+
+84
+00:04:50,230 --> 00:04:52,050
+contedos das bibliotecas
+
+85
+00:04:52,050 --> 00:04:55,470
+que instalamos e codificamos para isso.
+
+86
+00:04:55,470 --> 00:04:57,560
+Ento, essencialmente, toda a
+
+87
+00:04:57,560 --> 00:05:00,130
+biblioteca foi convertida nesse nmero.
+
+88
+00:05:00,130 --> 00:05:03,340
+Se a biblioteca mudar, o nmero ser alterado.
+
+89
+00:05:04,370 --> 00:05:06,620
+Ento, qual  o ponto de ter esses nmeros?
+
+90
+00:05:06,620 --> 00:05:11,620
+Bem, esse nmero  uma representao da biblioteca, como se
+
+91
+00:05:11,730 --> 00:05:14,850
+a biblioteca mudasse, o nmero mudasse.
+
+92
+00:05:14,850 --> 00:05:17,150
+Ento, digamos que algum hackeie o local
+
+93
+00:05:17,150 --> 00:05:20,120
+do qual voc est instalando suas bibliotecas e, em seguida,
+
+94
+00:05:20,120 --> 00:05:22,910
+altere a biblioteca sem alterar o nmero da verso.
+
+95
+00:05:23,870 --> 00:05:27,839
+Voc poderia instalar a biblioteca hackeada por
+
+96
+00:05:27,839 --> 00:05:31,410
+acidente, porque no teria como saber.
+
+97
+00:05:31,410 --> 00:05:34,920
+Mas se toda a biblioteca for convertida em um nmero, e
+
+98
+00:05:34,920 --> 00:05:37,800
+este nmero for gerado a partir da biblioteca, de
+
+99
+00:05:37,800 --> 00:05:39,940
+modo que, se a biblioteca mudar, o
+
+100
+00:05:39,940 --> 00:05:42,940
+nmero tambm ir mudar, voc no ser capaz de
+
+101
+00:05:42,940 --> 00:05:45,490
+instalar uma biblioteca errada acidente, porque agora voc
+
+102
+00:05:45,490 --> 00:05:47,470
+est verificando contra este hash.
+
+103
+00:05:48,430 --> 00:05:51,710
+Realmente, a maneira como isso funciona  bastante complexa,
+
+104
+00:05:51,710 --> 00:05:54,240
+mas essa  a idia geral por
+
+105
+00:05:54,240 --> 00:05:57,570
+trs disso, de modo que se a biblioteca mudar,
+
+106
+00:05:57,570 --> 00:06:01,150
+com ou sem voc saber, voc no ter instalado
+
+107
+00:06:01,150 --> 00:06:05,190
+acidentalmente uma verso errada ou uma verso hackeada, essencialmente .
+
+108
+00:06:06,270 --> 00:06:08,420
+Ento esse  o propsito do pipfile. bloqueio.
+
+109
+00:06:09,430 --> 00:06:12,800
+Agora podemos remover nossos requisitos. txt, porque todo o
+
+110
+00:06:12,800 --> 00:06:15,900
+seu contedo est dentro do nosso pipfile.
+
+111
+00:06:15,900 --> 00:06:19,250
+Em vez de compartilhar um requisito. arquivo txt com pessoas,
+
+112
+00:06:19,250 --> 00:06:22,490
+agora voc pode compartilhar um arquivo pip e
+
+113
+00:06:22,490 --> 00:06:24,220
+o pipfile. trancar com as pessoas.
+
+114
+00:06:24,220 --> 00:06:29,220
+Se eles tiverem ambos e eles digitarem pipenv instal, o pipenv
+
+115
+00:06:29,360 --> 00:06:32,120
+ir obter o contedo do pipfile
+
+116
+00:06:32,120 --> 00:06:34,320
+e do pipfile. bloquear e certifique-se
+
+117
+00:06:34,320 --> 00:06:36,950
+de instalar tudo o que voc precisa.
+
+118
+00:06:38,920 --> 00:06:43,510
+Agora porque ns temos um pipfile. lock, na verdade no precisamos de
+
+119
+00:06:43,510 --> 00:06:47,210
+algumas coisas dentro do nosso pipfile, que so adicionadas l
+
+120
+00:06:47,210 --> 00:06:51,240
+em virtude de termos requisitos. arquivo txt.
+
+121
+00:06:52,900 --> 00:06:55,750
+Ento, se voc se lembrar dos requisitos. O arquivo txt tinha
+
+122
+00:06:55,750 --> 00:06:58,510
+os nmeros de verso de tudo que precisvamos.
+
+123
+00:06:58,510 --> 00:07:02,480
+Mas o pipfile. lock tambm tem os nmeros
+
+124
+00:07:02,480 --> 00:07:06,530
+de verso de tudo, e acrescentou segurana, que  esse nmero
+
+125
+00:07:06,530 --> 00:07:09,360
+que  gerado a partir da biblioteca.
+
+126
+00:07:09,360 --> 00:07:12,720
+Ento, agora, temos os nmeros de verso e
+
+127
+00:07:12,720 --> 00:07:16,140
+a segurana no pipfile. bloquear e no pipfile.
+
+128
+00:07:17,160 --> 00:07:19,750
+Ns no precisamos disso em dois lugares,
+
+129
+00:07:19,750 --> 00:07:23,470
+ento podemos dizer ao pipfile para instalar qualquer verso da biblioteca.
+
+130
+00:07:24,380 --> 00:07:26,640
+Ento, o pipenv ir certificar-se de
+
+131
+00:07:26,640 --> 00:07:29,110
+instalar aquele no pipfile. bloqueio.
+
+132
+00:07:30,000 --> 00:07:33,530
+Ento, vamos em frente e modificar nosso pipfile.
+
+133
+00:07:33,530 --> 00:07:38,500
+E vou fazer isso usando o comando vi.
+
+134
+00:07:38,500 --> 00:07:40,930
+Vou digitar o arquivo pip, isso no est disponvel
+
+135
+00:07:40,930 --> 00:07:42,220
+no Windows, voc pode querer
+
+136
+00:07:42,220 --> 00:07:44,820
+apenas abri-lo com um bloco de notas ou com PyCharm.
+
+137
+00:07:45,660 --> 00:07:48,860
+Mas isso vai me permitir modificar essa pasta aqui,
+
+138
+00:07:48,860 --> 00:07:51,760
+e tudo o que vou fazer  remover
+
+139
+00:07:52,855 --> 00:07:55,340
+os nmeros de verso e substitu-los por asteriscos.
+
+140
+00:07:59,250 --> 00:08:02,190
+Certifique-se de no esquecer as aspas em torno das coisas.
+
+141
+00:08:03,110 --> 00:08:05,460
+Isso pode ser uma coisa muito perigosa para esquecer.
+
+142
+00:08:10,930 --> 00:08:15,230
+Agora que temos tudo isso, usando qualquer verso, em oposio
+
+143
+00:08:15,230 --> 00:08:19,960
+a uma verso especfica, podemos salvar isso, foi o que
+
+144
+00:08:19,960 --> 00:08:20,850
+fiz l.
+
+145
+00:08:20,850 --> 00:08:23,810
+Eu no vou entrar em como o vi funciona
+
+146
+00:08:23,810 --> 00:08:27,590
+neste curso,  um contedo um pouco mais diferente, no 
+
+147
+00:08:27,590 --> 00:08:29,490
+realmente mais avanado,  um pouco
+
+148
+00:08:29,490 --> 00:08:32,540
+diferente, e no  realmente o lugar para isso.
+
+149
+00:08:32,540 --> 00:08:35,800
+Mas agora que voc modificou o arquivo, o que o pipfile est dizendo 
+
+150
+00:08:35,800 --> 00:08:38,790
+"estas so as bibliotecas que eu preciso. "O que
+
+151
+00:08:38,790 --> 00:08:41,010
+o pipfile. bloqueio est dizendo  "estas so
+
+152
+00:08:41,010 --> 00:08:43,200
+as verses que eu preciso. "Ento agora voc tem
+
+153
+00:08:43,200 --> 00:08:46,090
+esses dois arquivos aqui, o pipfile. lock tem muita informao e
+
+154
+00:08:46,090 --> 00:08:49,320
+exatamente o que voc quer baixar, e se no combinar exatamente,
+
+155
+00:08:49,320 --> 00:08:52,780
+voc vai ter um erro, e ele vai dizer, "hey, estamos tentando
+
+156
+00:08:52,780 --> 00:08:55,070
+instalar isso, mas no No combine com o
+
+157
+00:08:55,070 --> 00:08:56,870
+que achamos que deveria ser, esse
+
+158
+00:08:56,870 --> 00:08:59,830
+nmero, ento no vamos fazer isso. "E isso 
+
+159
+00:08:59,830 --> 00:09:01,150
+por segurana.
+
+160
+00:09:01,150 --> 00:09:02,490
+E o pipfile est dizendo, "estas so
+
+161
+00:09:02,490 --> 00:09:04,240
+as bibliotecas que voc precisa. "Ento, agora
+
+162
+00:09:05,240 --> 00:09:08,750
+ uma configurao melhor, uma configurao mais segura do
+
+163
+00:09:08,750 --> 00:09:13,060
+que apenas usar os requisitos. txt e  por isso que pipenv
+
+164
+00:09:13,060 --> 00:09:14,510
+agora se tornou o novo
+
+165
+00:09:14,510 --> 00:09:16,620
+padro em Python para gerenciamento de dependncias.
+
+166
+00:09:18,170 --> 00:09:22,170
+Depois de ter seu pipfile e seu pipfile. bloqueio criado, e voc
+
+167
+00:09:22,170 --> 00:09:25,750
+fez o seu pipenv instal, o que realmente
+
+168
+00:09:25,750 --> 00:09:28,401
+aconteceu em segundo plano, vimos que
+
+169
+00:09:28,401 --> 00:09:32,650
+anteriormente aqui,  que havia um ambiente virtual criado.
+
+170
+00:09:32,650 --> 00:09:34,410
+Vamos ver como 
+
+171
+00:09:34,410 --> 00:09:36,640
+esse ambiente virtual no prximo vdeo.
+
+172
+00:09:36,640 --> 00:09:37,590
+Eu te vejo l.
+

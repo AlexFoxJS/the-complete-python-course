@@ -1,0 +1,804 @@
+1
+00:00:00,300 --> 00:00:01,610
+Jos: Hola y bienvenido de nuevo.
+
+2
+00:00:01,610 --> 00:00:03,470
+En este video vamos
+
+3
+00:00:03,470 --> 00:00:06,240
+a hablar sobre procesos e hilos.
+
+4
+00:00:06,240 --> 00:00:08,530
+Los procesos y los hilos estn entrando
+
+5
+00:00:08,530 --> 00:00:12,570
+en temas cada vez ms complicados en informtica, as que utilice las preguntas
+
+6
+00:00:12,570 --> 00:00:16,010
+y respuestas del curso y tambin haga su propia investigacin para
+
+7
+00:00:16,010 --> 00:00:17,770
+encontrar otras formas de explicar las
+
+8
+00:00:17,770 --> 00:00:19,920
+cosas si algo no est claro.
+
+9
+00:00:21,410 --> 00:00:23,670
+Los procesos y los hilos son
+
+10
+00:00:23,670 --> 00:00:26,990
+dos partes esenciales de cmo funciona su computadora y
+
+11
+00:00:26,990 --> 00:00:29,100
+todas las computadoras tienen procesos e hilos.
+
+12
+00:00:31,350 --> 00:00:35,280
+Su computadora tiene una cantidad de ncleos dentro.
+
+13
+00:00:37,420 --> 00:00:40,260
+Un ncleo es solo una unidad dentro
+
+14
+00:00:40,260 --> 00:00:43,800
+de una computadora que puede realizar algunas operaciones matemticas.
+
+15
+00:00:44,900 --> 00:00:48,740
+Su computadora tiene un procesador, una CPU, como
+
+16
+00:00:48,740 --> 00:00:52,600
+por ejemplo un Intel i7 o un i5,
+
+17
+00:00:52,600 --> 00:00:55,360
+o un Intel Pentium, o un AMD.
+
+18
+00:00:56,240 --> 00:01:00,170
+Estas CPU, estos procesadores, tienen dentro de ellos
+
+19
+00:01:00,170 --> 00:01:03,610
+una cantidad de ncleos y cada ncleo
+
+20
+00:01:03,610 --> 00:01:06,570
+es razonablemente independiente aunque pueden comunicarse
+
+21
+00:01:06,570 --> 00:01:07,420
+entre s.
+
+22
+00:01:08,820 --> 00:01:11,800
+Cada ncleo que mencion anteriormente es una unidad que
+
+23
+00:01:11,800 --> 00:01:13,780
+puede realizar operaciones matemticas, y, por
+
+24
+00:01:13,780 --> 00:01:15,760
+cierto, eso es todo lo que
+
+25
+00:01:15,760 --> 00:01:18,170
+hacen las computadoras es realizar operaciones matemticas
+
+26
+00:01:18,170 --> 00:01:20,150
+y luego, cuando tienes suficientes de
+
+27
+00:01:20,150 --> 00:01:22,330
+ellas, pueden hacer cosas como imprimir
+
+28
+00:01:22,330 --> 00:01:25,280
+cosas en la pantalla y, saber, mostrar grficos, etc.
+
+29
+00:01:26,180 --> 00:01:28,780
+Entonces, cada ncleo puede ser responsable
+
+30
+00:01:28,780 --> 00:01:30,610
+de ejecutar esencialmente una cosa.
+
+31
+00:01:31,790 --> 00:01:33,620
+Volviendo al ejemplo de
+
+32
+00:01:33,620 --> 00:01:38,300
+nuestro filsofo, podras tener un filsofo en cada ncleo.
+
+33
+00:01:38,300 --> 00:01:40,460
+Entonces, cada ncleo esencialmente est ejecutando un
+
+34
+00:01:40,460 --> 00:01:42,390
+filsofo, lo que, segn nuestra analoga
+
+35
+00:01:42,390 --> 00:01:46,110
+anterior, es que un filsofo tiene los recursos que necesita para comer.
+
+36
+00:01:47,480 --> 00:01:49,460
+As que aqu tendran cuatro
+
+37
+00:01:49,460 --> 00:01:52,800
+filsofos, cada uno con dos tenedores, comiendo porque tienen
+
+38
+00:01:52,800 --> 00:01:54,710
+los tenedores necesarios para comer.
+
+39
+00:01:56,200 --> 00:01:57,540
+Bueno.
+
+40
+00:01:57,540 --> 00:02:00,300
+Ahora, por supuesto, de nuevo en nuestra
+
+41
+00:02:00,300 --> 00:02:03,570
+analoga anterior tambin tuvimos varios filsofos en espera
+
+42
+00:02:03,570 --> 00:02:05,680
+que estaban esperando para comer.
+
+43
+00:02:05,680 --> 00:02:08,510
+Y al computar, estos seran hilos de espera.
+
+44
+00:02:08,510 --> 00:02:11,510
+Estos son hilos, o cosas que queremos
+
+45
+00:02:11,510 --> 00:02:15,410
+hacer, que an no tienen los recursos para ejecutar.
+
+46
+00:02:15,410 --> 00:02:17,060
+En este caso, estos seran
+
+47
+00:02:17,060 --> 00:02:20,080
+filsofos esperando su bifurcacin, sus recursos, para estar disponibles.
+
+48
+00:02:22,300 --> 00:02:23,133
+Bueno.
+
+49
+00:02:24,870 --> 00:02:25,970
+As que un
+
+50
+00:02:27,770 --> 00:02:30,550
+hilo en la informtica, alejndose de los filsofos,
+
+51
+00:02:31,550 --> 00:02:35,900
+un hilo en la informtica es una lnea de ejecucin de cdigo.
+
+52
+00:02:35,900 --> 00:02:39,390
+Por ejemplo, su programa Python puede ejecutarse en un solo hilo.
+
+53
+00:02:40,350 --> 00:02:43,390
+O un juego puede ejecutarse en un solo hilo.
+
+54
+00:02:43,390 --> 00:02:44,960
+Ya sabes, cualquier cosa puede ejecutarse en
+
+55
+00:02:44,960 --> 00:02:47,330
+un solo hilo, es solo el cdigo en una aplicacin
+
+56
+00:02:47,330 --> 00:02:49,140
+que se ejecuta de arriba a abajo.
+
+57
+00:02:49,980 --> 00:02:51,550
+Eso puede ejecutarse en un
+
+58
+00:02:52,870 --> 00:02:54,950
+hilo y puede tener un hilo
+
+59
+00:02:54,950 --> 00:02:57,060
+ejecutndose en un ncleo a la vez.
+
+60
+00:02:57,990 --> 00:02:59,900
+Entonces, si tiene cuatro ncleos, puede
+
+61
+00:02:59,900 --> 00:03:03,510
+ejecutar cuatro hilos al mismo tiempo, uno en cada ncleo.
+
+62
+00:03:03,510 --> 00:03:04,343
+Bueno.
+
+63
+00:03:06,350 --> 00:03:08,820
+Ahora, la otra palabra dentro de esta presentacin
+
+64
+00:03:08,820 --> 00:03:11,120
+que queramos ver es el proceso de palabras.
+
+65
+00:03:12,340 --> 00:03:16,230
+Un proceso no es algo que se ejecuta.
+
+66
+00:03:16,230 --> 00:03:17,190
+Bueno?
+
+67
+00:03:17,190 --> 00:03:20,490
+Lo que se ejecuta en los ncleos son los hilos, pero un
+
+68
+00:03:20,490 --> 00:03:22,900
+proceso es una especie de envoltorio alrededor de l.
+
+69
+00:03:22,900 --> 00:03:25,820
+De modo que un proceso contiene al
+
+70
+00:03:25,820 --> 00:03:29,220
+menos un hilo, puede ser ms, ms algunos
+
+71
+00:03:29,220 --> 00:03:32,440
+recursos reservados por su computadora, su sistema operativo.
+
+72
+00:03:33,610 --> 00:03:38,610
+Por ejemplo, normalmente el proceso contendr un hilo ms el ncleo
+
+73
+00:03:39,220 --> 00:03:42,920
+en el que se est ejecutando el hilo,
+
+74
+00:03:42,920 --> 00:03:44,820
+y posiblemente otros recursos
+
+75
+00:03:44,820 --> 00:03:48,200
+que haya reservado como una conexin de red,
+
+76
+00:03:48,200 --> 00:03:51,140
+un disco duro, algunos punteros de archivo
+
+77
+00:03:51,140 --> 00:03:52,900
+o cualquier otra cosa.
+
+78
+00:03:52,900 --> 00:03:56,290
+Y, por supuesto, estos recursos cambian continuamente a medida
+
+79
+00:03:56,290 --> 00:03:58,450
+que cambian las necesidades del proceso.
+
+80
+00:03:58,450 --> 00:04:00,550
+Por ejemplo, el proceso puede reservar
+
+81
+00:04:00,550 --> 00:04:02,540
+la red durante unos segundos y
+
+82
+00:04:02,540 --> 00:04:05,490
+luego soltarla, soltarla, para que otro proceso pueda tenerla.
+
+83
+00:04:05,490 --> 00:04:07,670
+De forma similar, un proceso puede reservar un
+
+84
+00:04:07,670 --> 00:04:10,050
+ncleo para ejecutar un hilo en l durante un
+
+85
+00:04:10,050 --> 00:04:13,210
+perodo de tiempo y luego liberarlo para que otro proceso pueda tenerlo.
+
+86
+00:04:13,210 --> 00:04:15,390
+De acuerdo, entonces el hilo es lo que se
+
+87
+00:04:16,231 --> 00:04:18,670
+ejecuta y el proceso es el que administra todos los
+
+88
+00:04:18,670 --> 00:04:20,180
+recursos que necesita para ejecutarse.
+
+89
+00:04:21,340 --> 00:04:23,510
+Entonces esto va a ser importante en solo un momento.
+
+90
+00:04:25,150 --> 00:04:29,640
+Regresemos y tengamos nuestros ncleos aqu, cada uno ejecutando una tarea, y tenemos
+
+91
+00:04:30,500 --> 00:04:33,400
+nuestros hilos de espera, que estn esperando para ejecutarse.
+
+92
+00:04:35,080 --> 00:04:37,810
+Dos de los hilos en los ncleos
+
+93
+00:04:37,810 --> 00:04:40,010
+podran ser parte del mismo proceso.
+
+94
+00:04:41,010 --> 00:04:42,030
+Bueno?
+
+95
+00:04:42,030 --> 00:04:45,710
+As que aqu tendramos el proceso siendo los
+
+96
+00:04:45,710 --> 00:04:49,810
+dos ncleos ms los dos hilos, ms cualquier otro
+
+97
+00:04:49,810 --> 00:04:52,740
+recurso que esos hilos necesiten como una
+
+98
+00:04:52,740 --> 00:04:54,980
+red o lo que sea.
+
+99
+00:04:54,980 --> 00:04:59,510
+Del mismo modo, podra tener otros procesos con algunos
+
+100
+00:04:59,510 --> 00:05:03,750
+subprocesos en ejecucin y que tengan sus propios recursos.
+
+101
+00:05:03,750 --> 00:05:07,100
+En este caso, el proceso dos tiene un recurso, que es un ncleo,
+
+102
+00:05:07,100 --> 00:05:08,290
+y est ejecutando un hilo.
+
+103
+00:05:08,290 --> 00:05:09,780
+El proceso tres tambin tiene un
+
+104
+00:05:09,780 --> 00:05:12,360
+recurso que es un ncleo y est ejecutando un hilo.
+
+105
+00:05:12,360 --> 00:05:14,800
+Los hilos de espera podran ser parte
+
+106
+00:05:14,800 --> 00:05:16,500
+de uno de estos procesos
+
+107
+00:05:16,500 --> 00:05:17,810
+y simplemente estn esperando.
+
+108
+00:05:17,810 --> 00:05:19,630
+O podran ser parte de otros procesos
+
+109
+00:05:19,630 --> 00:05:21,880
+que en este momento no tienen ningn recurso.
+
+110
+00:05:23,020 --> 00:05:24,950
+De acuerdo, entonces el proceso es solo
+
+111
+00:05:24,950 --> 00:05:27,770
+la envoltura alrededor de los hilos y los recursos que necesitan.
+
+112
+00:05:29,150 --> 00:05:31,150
+Volviendo a nuestro ejemplo de
+
+113
+00:05:31,150 --> 00:05:34,020
+filsofo, donde tenemos aqu nuestros cinco filsofos, podramos
+
+114
+00:05:34,020 --> 00:05:37,280
+tener en un escenario imaginario una computadora que tiene
+
+115
+00:05:37,280 --> 00:05:39,840
+cinco ncleos y nuestro filsofo necesita dos
+
+116
+00:05:41,480 --> 00:05:44,500
+recursos para funcionar, por lo que podramos decir
+
+117
+00:05:44,500 --> 00:05:47,070
+que necesitan dos de los ncleos en
+
+118
+00:05:47,070 --> 00:05:47,960
+orden correr.
+
+119
+00:05:49,180 --> 00:05:51,010
+Volviendo al ejemplo, aqu tendramos,
+
+120
+00:05:51,010 --> 00:05:53,550
+una vez ms, dos filsofos en marcha.
+
+121
+00:05:53,550 --> 00:05:55,460
+Cada uno consume dos recursos y
+
+122
+00:05:55,460 --> 00:05:58,430
+un recurso sobrante que no se pueden usar porque
+
+123
+00:05:58,430 --> 00:06:00,360
+no tenemos nada que pueda ejecutarse
+
+124
+00:06:00,360 --> 00:06:01,600
+en un solo recurso.
+
+125
+00:06:03,050 --> 00:06:05,600
+En las computadoras esto normalmente no es el caso.
+
+126
+00:06:05,600 --> 00:06:08,710
+Casi todo puede ejecutarse en un solo ncleo, pero
+
+127
+00:06:08,710 --> 00:06:11,850
+algunas cosas se benefician al ejecutarse en mltiples ncleos.
+
+128
+00:06:11,850 --> 00:06:12,683
+Bueno?
+
+129
+00:06:16,140 --> 00:06:18,640
+Entonces en computacin tenemos los ncleos
+
+130
+00:06:18,640 --> 00:06:21,240
+y cada uno puede ejecutar un hilo.
+
+131
+00:06:21,240 --> 00:06:23,640
+As que alejndonos de la
+
+132
+00:06:23,640 --> 00:06:27,780
+analoga filsofica, comienza a romperse poco despus de esto.
+
+133
+00:06:27,780 --> 00:06:31,660
+As que cuando tienes tus dos ncleos ejecutando cada uno un hilo, el hilo
+
+134
+00:06:31,660 --> 00:06:34,110
+est representado aqu por una T por cierto, entonces
+
+135
+00:06:35,290 --> 00:06:36,420
+todo est bien.
+
+136
+00:06:36,420 --> 00:06:38,360
+Estos dos hilos pueden ejecutarse para siempre.
+
+137
+00:06:38,360 --> 00:06:40,630
+Entonces, si solo tiene estos dos hilos
+
+138
+00:06:40,630 --> 00:06:42,270
+y solo tiene dos ncleos,
+
+139
+00:06:42,270 --> 00:06:44,210
+puede ejecutar los dos hilos para siempre.
+
+140
+00:06:44,210 --> 00:06:48,060
+Nunca necesitan dejar de correr y est bien.
+
+141
+00:06:48,060 --> 00:06:51,340
+Un ejemplo podra ser que uno de estos subprocesos
+
+142
+00:06:51,340 --> 00:06:54,780
+controla lo que se muestra a su monitor, su pantalla
+
+143
+00:06:56,395 --> 00:06:59,450
+y otro controla el cursor, su mouse, que se
+
+144
+00:06:59,450 --> 00:07:00,880
+muestra en su pantalla
+
+145
+00:07:00,880 --> 00:07:04,070
+y el hecho de que puede moverse y dems.
+
+146
+00:07:04,070 --> 00:07:06,120
+Entonces, si tienes estos dos hilos, puedes ver
+
+147
+00:07:06,120 --> 00:07:08,130
+que tu mouse se mueve cuando lo mueves
+
+148
+00:07:08,130 --> 00:07:10,370
+y puedes ver cosas en tu monitor y
+
+149
+00:07:10,370 --> 00:07:11,210
+eso es bueno.
+
+150
+00:07:11,210 --> 00:07:14,060
+Ellos corrern para siempre.
+
+151
+00:07:14,060 --> 00:07:15,770
+Y, por supuesto, estos dos hilos
+
+152
+00:07:15,770 --> 00:07:17,380
+podran pertenecer a un proceso o
+
+153
+00:07:17,380 --> 00:07:19,100
+podran pertenecer a dos procesos por separado.
+
+154
+00:07:19,990 --> 00:07:20,823
+Bueno?
+
+155
+00:07:20,823 --> 00:07:22,830
+Pero no a tres porque cada proceso
+
+156
+00:07:22,830 --> 00:07:24,580
+debe contener al menos un hilo.
+
+157
+00:07:27,490 --> 00:07:30,180
+Ahora si agregamos hilos de espera, que
+
+158
+00:07:30,180 --> 00:07:32,810
+siempre habr algunos en su computadora.
+
+159
+00:07:32,810 --> 00:07:35,430
+Por ejemplo, algo para tratar con usted
+
+160
+00:07:35,430 --> 00:07:36,910
+escribiendo en su teclado.
+
+161
+00:07:38,120 --> 00:07:42,550
+Ahora debe decidir si desea ejecutar los dos hilos que estn actualmente en
+
+162
+00:07:42,550 --> 00:07:45,140
+los ncleos continuamente para que pueda ver
+
+163
+00:07:45,140 --> 00:07:46,470
+cosas en su pantalla
+
+164
+00:07:46,470 --> 00:07:48,430
+y pueda mover el mouse, entonces
+
+165
+00:07:48,430 --> 00:07:50,690
+su teclado nunca va a responder
+
+166
+00:07:50,690 --> 00:07:52,910
+porque un hilo que trata con
+
+167
+00:07:52,910 --> 00:07:56,100
+su el teclado est esperando y nunca se ejecutar.
+
+168
+00:07:56,100 --> 00:07:58,960
+Por lo tanto, debe comenzar a cortar el
+
+169
+00:07:58,960 --> 00:08:02,250
+tiempo, de lo contrario, los hilos de espera morirn de
+
+170
+00:08:03,230 --> 00:08:04,930
+hambre y no queremos eso.
+
+171
+00:08:04,930 --> 00:08:05,763
+Bueno.
+
+172
+00:08:06,610 --> 00:08:09,820
+As que corta el tiempo, saca un hilo
+
+173
+00:08:09,820 --> 00:08:11,990
+de un ncleo y pon otro.
+
+174
+00:08:13,150 --> 00:08:15,500
+Esto no es gratis, por cierto.
+
+175
+00:08:17,120 --> 00:08:20,930
+Requiere algunos recursos de su computadora para hacer
+
+176
+00:08:20,930 --> 00:08:24,710
+eso porque el sistema operativo tiene que guardar
+
+177
+00:08:24,710 --> 00:08:27,470
+el estado actual del hilo.
+
+178
+00:08:27,470 --> 00:08:30,640
+Recuerde, un hilo es solo una lnea de cdigo que se est
+
+179
+00:08:30,640 --> 00:08:34,090
+ejecutando, por lo que debe guardar dnde est el cdigo actualmente, de modo
+
+180
+00:08:34,090 --> 00:08:36,560
+que cuando lo vuelva a introducir en el ncleo
+
+181
+00:08:36,560 --> 00:08:39,660
+despus de que haya pasado por la cola, no tenga que comenzar
+
+182
+00:08:39,660 --> 00:08:41,100
+desde el principio de ese cdigo.
+
+183
+00:08:41,100 --> 00:08:42,770
+Comienza desde donde se qued, y
+
+184
+00:08:43,800 --> 00:08:44,830
+esto no es gratis.
+
+185
+00:08:44,830 --> 00:08:46,790
+El sistema operativo tiene que
+
+186
+00:08:46,790 --> 00:08:48,930
+guardar el estado, sacarlo del ncleo,
+
+187
+00:08:48,930 --> 00:08:52,030
+traer otro, y cuando eso termine eliminarlo del
+
+188
+00:08:52,030 --> 00:08:53,360
+ncleo, traer el
+
+189
+00:08:53,360 --> 00:08:55,420
+viejo, restablecer el estado a
+
+190
+00:08:55,420 --> 00:08:58,010
+lo que era antes y continuar corriendo
+
+191
+00:08:58,010 --> 00:08:59,430
+Entonces no es completamente gratis.
+
+192
+00:08:59,430 --> 00:09:01,610
+Hay algo de comunicacin, hay una sobrecarga en
+
+193
+00:09:01,610 --> 00:09:03,670
+el cambio de un hilo a otro.
+
+194
+00:09:04,860 --> 00:09:08,320
+Pero esto es un corte de tiempo y esto es
+
+195
+00:09:08,320 --> 00:09:10,270
+esencialmente la base de los procesos
+
+196
+00:09:10,270 --> 00:09:13,760
+y los hilos, y tambin de cmo funciona su computadora.
+
+197
+00:09:13,760 --> 00:09:16,090
+En la siguiente seccin, estoy realmente emocionado
+
+198
+00:09:16,090 --> 00:09:19,630
+de guiarte a travs de cmo funciona esto en Python.
+
+199
+00:09:19,630 --> 00:09:21,130
+Pasemos al siguiente video donde hablaremos
+
+200
+00:09:21,130 --> 00:09:22,500
+un poco ms sobre eso.
+
+201
+00:09:22,500 --> 00:09:23,890
+Te ver all.
+

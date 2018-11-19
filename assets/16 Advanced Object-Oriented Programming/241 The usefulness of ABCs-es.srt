@@ -1,0 +1,312 @@
+1
+00:00:00,450 --> 00:00:01,620
+Instructor: Hola, bienvenido de nuevo.
+
+2
+00:00:01,620 --> 00:00:04,170
+En este video, vamos a hablar
+
+3
+00:00:04,170 --> 00:00:07,330
+brevemente un poco ms sobre el ABC
+
+4
+00:00:07,330 --> 00:00:11,070
+y por qu puede ser til tener esta funcionalidad
+
+5
+00:00:11,070 --> 00:00:13,200
+num_legs definida en otra clase
+
+6
+00:00:13,200 --> 00:00:16,510
+que no sea ninguna de sus clases secundarias.
+
+7
+00:00:17,800 --> 00:00:20,340
+La razn principal por la que te gustara esto--
+
+8
+00:00:20,340 --> 00:00:21,630
+Bueno, hay dos razones.
+
+9
+00:00:21,630 --> 00:00:24,270
+La primera es que cuando lees tu
+
+10
+00:00:24,270 --> 00:00:25,270
+cdigo y ves
+
+11
+00:00:25,270 --> 00:00:27,900
+que est bien, el perro es un
+
+12
+00:00:27,900 --> 00:00:31,350
+animal, el mono es un animal, sabrs sin leer
+
+13
+00:00:31,350 --> 00:00:34,220
+todos los contenidos que habrn implementado num_legs.
+
+14
+00:00:34,220 --> 00:00:35,053
+Entonces lo sabrs.
+
+15
+00:00:35,053 --> 00:00:36,940
+De lo contrario, no podrs usarlos.
+
+16
+00:00:39,100 --> 00:00:42,940
+A menos, por supuesto, que estos sean subclasificados por otras
+
+17
+00:00:42,940 --> 00:00:44,590
+cosas que implementen el mtodo.
+
+18
+00:00:44,590 --> 00:00:46,990
+Pero, en general, sabr que
+
+19
+00:00:46,990 --> 00:00:48,890
+deben haber implementado el
+
+20
+00:00:48,890 --> 00:00:50,940
+mtodo para que pueda crear
+
+21
+00:00:50,940 --> 00:00:52,710
+instancias y crear objetos.
+
+22
+00:00:52,710 --> 00:00:55,940
+La otra cosa que es realmente til es
+
+23
+00:00:55,940 --> 00:00:57,910
+que si tienes una lista
+
+24
+00:00:58,800 --> 00:01:01,550
+de animales, por ejemplo, un perro que
+
+25
+00:01:01,550 --> 00:01:04,580
+es Rolf y un mono que es
+
+26
+00:01:05,800 --> 00:01:06,770
+Bob, puedes
+
+27
+00:01:09,030 --> 00:01:11,010
+hacer a. numb_legs.
+
+28
+00:01:14,785 --> 00:01:15,618
+Mira esto?
+
+29
+00:01:16,950 --> 00:01:19,290
+Esto es bastante mgico.
+
+30
+00:01:19,290 --> 00:01:21,760
+Y puede que no parezca justo ahora.
+
+31
+00:01:21,760 --> 00:01:22,610
+Pero lo que
+
+32
+00:01:22,610 --> 00:01:25,730
+tienes aqu son dos objetos completamente diferentes en esta lista.
+
+33
+00:01:25,730 --> 00:01:28,540
+Pero como sabes que son animales,
+
+34
+00:01:28,540 --> 00:01:31,950
+puedes llamar a. num_legs en todos ellos.
+
+35
+00:01:33,820 --> 00:01:35,840
+Est bien, as que corramos esto de nuevo.
+
+36
+00:01:35,840 --> 00:01:37,170
+Ahora puedes ver que tenemos cuatro y
+
+37
+00:01:37,170 --> 00:01:38,490
+dos, que es lo que esperas.
+
+38
+00:01:38,490 --> 00:01:41,480
+Despus de todo, todo lo que est sucediendo en el
+
+39
+00:01:41,480 --> 00:01:45,030
+fondo es tu sabes, A es este perro llamado los mtodos num_legs.
+
+40
+00:01:45,030 --> 00:01:45,890
+Usted llama a esto
+
+41
+00:01:45,890 --> 00:01:47,620
+aqu, as que nada mgico est sucediendo.
+
+42
+00:01:47,620 --> 00:01:49,270
+A es este mono,
+
+43
+00:01:49,270 --> 00:01:52,140
+entonces llamas al mtodo num_legs sobre eso.
+
+44
+00:01:52,140 --> 00:01:53,250
+Nada mgico, pero
+
+45
+00:01:53,250 --> 00:01:54,750
+sin embargo el hecho
+
+46
+00:01:54,750 --> 00:01:58,560
+de que sabes que estos son animales significa que puedes hacer esto.
+
+47
+00:01:59,870 --> 00:02:01,070
+Adems, puede
+
+48
+00:02:02,250 --> 00:02:04,290
+imprimir si A es
+
+49
+00:02:04,290 --> 00:02:08,070
+una instancia de animal, no debe
+
+50
+00:02:10,570 --> 00:02:12,220
+olvidar las comas,
+
+51
+00:02:13,380 --> 00:02:15,770
+y siempre se cumple.
+
+52
+00:02:15,770 --> 00:02:19,510
+Esto es lo mismo para toda la herencia en Python, ya
+
+53
+00:02:19,510 --> 00:02:21,900
+sabes, A es una instancia de animal,
+
+54
+00:02:21,900 --> 00:02:25,020
+pero tambin ha sido extendida por la subclase.
+
+55
+00:02:25,020 --> 00:02:27,540
+Entonces Python dice que s, que
+
+56
+00:02:27,540 --> 00:02:31,530
+es un animal porque tiene todos los mtodos y las
+
+57
+00:02:31,530 --> 00:02:32,800
+propiedades del animal,
+
+58
+00:02:32,800 --> 00:02:35,100
+pero tambin puede tener mtodos y
+
+59
+00:02:35,100 --> 00:02:39,060
+propiedades de lo que sea que la clase tambin encuentre.
+
+60
+00:02:40,720 --> 00:02:42,770
+La utilidad de esto es que
+
+61
+00:02:42,770 --> 00:02:44,520
+digas bien, estos son animales,
+
+62
+00:02:44,520 --> 00:02:47,780
+por lo tanto, puedo llamar a los mtodos de
+
+63
+00:02:47,780 --> 00:02:51,180
+animales en todos ellos y no me importa si son
+
+64
+00:02:51,180 --> 00:02:54,020
+ms especficos, ya sean perros, monos o gatos.
+
+65
+00:02:54,020 --> 00:02:54,853
+Debido a que
+
+66
+00:02:54,853 --> 00:02:56,330
+son animales, puede llamar a
+
+67
+00:02:56,330 --> 00:02:59,790
+los mtodos que contienen y, debido a que define este mtodo num_legs
+
+68
+00:02:59,790 --> 00:03:01,380
+en el animal, usted sabe que
+
+69
+00:03:01,380 --> 00:03:03,270
+todas las subclases tambin deben haberlo implementado
+
+70
+00:03:03,270 --> 00:03:04,870
+para que sea seguro llamarlo.
+
+71
+00:03:07,090 --> 00:03:08,890
+Ahora volvamos al siguiente video para
+
+72
+00:03:08,890 --> 00:03:11,130
+nuestros usuarios y nuestros administradores y tenga
+
+73
+00:03:11,130 --> 00:03:12,460
+un poco ms de
+
+74
+00:03:12,460 --> 00:03:14,510
+sentido sobre dnde puede ser til.
+
+75
+00:03:14,510 --> 00:03:15,530
+Como parte de
+
+76
+00:03:15,530 --> 00:03:16,740
+eso, tambin vamos a
+
+77
+00:03:16,740 --> 00:03:18,810
+hablar acerca de qu es una interfaz.
+
+78
+00:03:18,810 --> 00:03:19,760
+Te ver all.
+

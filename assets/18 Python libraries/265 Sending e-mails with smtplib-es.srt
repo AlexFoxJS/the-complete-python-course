@@ -1,0 +1,580 @@
+1
+00:00:00,240 --> 00:00:01,420
+Jos: Hola y bienvenido de nuevo.
+
+2
+00:00:01,420 --> 00:00:05,000
+En este video, vamos a ver cmo enviar correos electrnicos.
+
+3
+00:00:05,000 --> 00:00:08,240
+El envo de correos electrnicos con Python se puede hacer de mltiples maneras.
+
+4
+00:00:08,240 --> 00:00:11,050
+Sin embargo, la forma ms sencilla es enviar el correo
+
+5
+00:00:11,050 --> 00:00:13,230
+electrnico utilizando su cuenta de correo electrnico personal.
+
+6
+00:00:13,230 --> 00:00:15,360
+Por ejemplo, si tiene una cuenta de
+
+7
+00:00:15,360 --> 00:00:18,123
+Gmail, puede enviar correos electrnicos usando esa cuenta y Python.
+
+8
+00:00:19,030 --> 00:00:22,750
+Algo que quizs no sepa es que todos los correos van,
+
+9
+00:00:22,750 --> 00:00:26,280
+o la mayora de ellos pasa por algo llamado smtp.
+
+10
+00:00:26,280 --> 00:00:30,980
+Smtp es un protocolo, muy parecido a http is, utilizado
+
+11
+00:00:30,980 --> 00:00:33,720
+para comunicarse entre dos cosas diferentes.
+
+12
+00:00:33,720 --> 00:00:36,520
+En este caso, usaremos smtp para comunicarnos entre nuestro
+
+13
+00:00:36,520 --> 00:00:40,570
+cdigo Python y los servidores de gmail, y le diremos a los servidores
+
+14
+00:00:40,570 --> 00:00:43,530
+de gmail que inicien sesin usando nuestra cuenta de
+
+15
+00:00:43,530 --> 00:00:45,823
+gmail y que enven un correo electrnico.
+
+16
+00:00:47,320 --> 00:00:50,803
+As que vamos a crear un nuevo archivo de Python al
+
+17
+00:00:50,803 --> 00:00:54,261
+que voy a llamar email_smtplib. py, y comenzaremos
+
+18
+00:00:54,261 --> 00:00:56,590
+a enviar correos electrnicos.
+
+19
+00:00:56,590 --> 00:01:00,290
+En realidad, es muy sencillo cuando tienes todo el
+
+20
+00:01:00,290 --> 00:01:01,123
+cdigo junto.
+
+21
+00:01:01,123 --> 00:01:02,520
+Entonces, lo primero que vamos
+
+22
+00:01:02,520 --> 00:01:03,813
+a hacer es importar smtplib.
+
+23
+00:01:04,710 --> 00:01:08,859
+Smtplib viene con Python y se usa para hablar
+
+24
+00:01:08,859 --> 00:01:10,913
+con un servidor smtp.
+
+25
+00:01:11,770 --> 00:01:16,010
+Los servidores de Gmail son servidores smtp y puede comunicarse con
+
+26
+00:01:16,010 --> 00:01:20,033
+ellos directamente mediante el uso de esta biblioteca, est bien?
+
+27
+00:01:21,400 --> 00:01:24,940
+Entonces, lo que vamos a hacer
+
+28
+00:01:24,940 --> 00:01:29,080
+es comenzar conectando con el servidor smtp.
+
+29
+00:01:29,080 --> 00:01:32,518
+Lo que vamos a hacer es
+
+30
+00:01:32,518 --> 00:01:37,518
+que smtp_connector sea smtplib. SMTP, y aqu vamos a pasar un nombre de
+
+31
+00:01:38,430 --> 00:01:41,910
+host que ser smtp. gmail com para
+
+32
+00:01:41,910 --> 00:01:43,670
+los servidores de gmail.
+
+33
+00:01:43,670 --> 00:01:47,640
+Si est utilizando un servidor diferente, como Hotmail o Yahoo,
+
+34
+00:01:47,640 --> 00:01:51,471
+o cualquier otra cosa, asegrese de averiguar el servidor smtp
+
+35
+00:01:51,471 --> 00:01:55,930
+y tambin el nombre del puerto, que para gmail es 587.
+
+36
+00:01:55,930 --> 00:02:00,000
+De acuerdo, este es normalmente el puerto para servidores smtp, 587.
+
+37
+00:02:00,000 --> 00:02:03,140
+As que asegrese de averiguar cul es el nombre
+
+38
+00:02:03,140 --> 00:02:05,300
+de host y qu puerto es.
+
+39
+00:02:05,300 --> 00:02:10,010
+Entonces vamos a hacer smtp_connector. starttls, y esto solo comienza
+
+40
+00:02:10,010 --> 00:02:12,480
+una conexin segura a l.
+
+41
+00:02:12,480 --> 00:02:15,910
+En algunos casos, no se requerir que tls se conecte
+
+42
+00:02:15,910 --> 00:02:19,730
+a su servidor smtp, por lo que en esos casos no
+
+43
+00:02:19,730 --> 00:02:24,210
+tendr que hacer esto y luego smtp_connector. inicie sesin, y le daremos
+
+44
+00:02:24,210 --> 00:02:26,370
+nuestra cuenta de correo electrnico,
+
+45
+00:02:26,370 --> 00:02:29,992
+you @ gmail. com, y nuestra contrasea.
+
+46
+00:02:29,992 --> 00:02:31,990
+Por supuesto, no voy a escribir
+
+47
+00:02:31,990 --> 00:02:34,270
+mi correo electrnico y contrasea aqu.
+
+48
+00:02:34,270 --> 00:02:36,220
+Espero que lo entiendas, pero
+
+49
+00:02:36,220 --> 00:02:39,820
+no obstante, eso es todo lo que tienes que hacer.
+
+50
+00:02:39,820 --> 00:02:43,640
+Ahora es posible que cuando presione play, por ejemplo si
+
+51
+00:02:43,640 --> 00:02:45,590
+presionamos play en este momento,
+
+52
+00:02:47,170 --> 00:02:48,820
+por supuesto recibamos un error.
+
+53
+00:02:48,820 --> 00:02:51,930
+En este caso, nombre de usuario y contrasea no aceptados.
+
+54
+00:02:51,930 --> 00:02:55,260
+Si ingresas tu nombre de usuario, cuenta de correo electrnico
+
+55
+00:02:55,260 --> 00:02:59,520
+y tu contrasea correctamente, es posible que an recibas un error, y eso
+
+56
+00:02:59,520 --> 00:03:01,760
+suceder por supuesto si ests usando la
+
+57
+00:03:01,760 --> 00:03:03,513
+autenticacin de dos factores.
+
+58
+00:03:04,420 --> 00:03:06,560
+Si usa la autenticacin de dos factores,
+
+59
+00:03:06,560 --> 00:03:10,880
+deber obtener un tipo especial de contrasea que su proveedor le proporcionar, que normalmente es
+
+60
+00:03:10,880 --> 00:03:14,620
+una contrasea de la aplicacin, as que voy a agregar una cadena que
+
+61
+00:03:14,620 --> 00:03:16,630
+no se encuentra aqu en la parte
+
+62
+00:03:16,630 --> 00:03:19,270
+superior del archivo para decir eso, est bien? "Un SMTPAuthenticationError incluso cuando" su contrasea es
+
+63
+00:03:19,270 --> 00:03:20,790
+Entonces si lo logras correcta, es posible que
+
+64
+00:03:22,917 --> 00:03:25,999
+"tenga habilitada la autenticacin de 2 factores.
+
+65
+00:03:25,999 --> 00:03:27,027
+"Necesitars usar una Contrasea de
+
+66
+00:03:27,027 --> 00:03:29,427
+la aplicacin para iniciar sesin" en lugar de tu contrasea normal. "Ahora, particularmente en el caso de gmail,
+
+67
+00:03:29,427 --> 00:03:31,797
+hay algo ms, que si no tienes
+
+68
+00:03:31,797 --> 00:03:33,627
+habilitada la autenticacin
+
+69
+00:03:34,490 --> 00:03:36,650
+de dos factores, tendrs que permitir
+
+70
+00:03:36,650 --> 00:03:39,187
+el acceso de aplicaciones menos seguras en gmail.
+
+71
+00:03:39,187 --> 00:03:41,080
+Tu aplicacin aqu, que inicia
+
+72
+00:03:41,080 --> 00:03:45,194
+sesin con tu nombre de usuario y contrasea directamente, es lo
+
+73
+00:03:45,194 --> 00:03:48,040
+que gmail clasifica como una aplicacin menos segura.
+
+74
+00:03:48,040 --> 00:03:50,800
+Entonces, a travs de las preferencias de seguridad de Gmail,
+
+75
+00:03:50,800 --> 00:03:53,310
+puede habilitar aplicaciones menos seguras para que pueda probar
+
+76
+00:03:53,310 --> 00:03:55,530
+esto y, por supuesto, recuerde desactivar las aplicaciones
+
+77
+00:03:55,530 --> 00:03:59,410
+menos seguras una vez que termine de aprender a enviar nuestro correo electrnico, de acuerdo?
+
+78
+00:03:59,410 --> 00:04:02,540
+Si usa una contrasea de la aplicacin o
+
+79
+00:04:02,540 --> 00:04:05,883
+habilita aplicaciones menos seguras, y no tiene 2FA
+
+80
+00:04:06,870 --> 00:04:11,170
+habilitado, esto debera funcionar y no debera recibir ningn error.
+
+81
+00:04:11,170 --> 00:04:13,890
+Pero, por supuesto, an no tenemos un correo electrnico que enviemos.
+
+82
+00:04:13,890 --> 00:04:16,220
+No hemos escrito nada para enviar.
+
+83
+00:04:16,220 --> 00:04:19,140
+Entonces podemos hacer eso.
+
+84
+00:04:19,140 --> 00:04:21,810
+Usaremos el mdulo de correo electrnico que
+
+85
+00:04:21,810 --> 00:04:23,710
+est presente en Python 3.
+
+86
+00:04:23,710 --> 00:04:26,030
+Vamos a decir por correo electrnico. mensaje de importacin EmailMessage.
+
+87
+00:04:26,030 --> 00:04:26,863
+Esta clase de
+
+88
+00:04:26,863 --> 00:04:31,097
+EmailMessage es una forma de construir un
+
+89
+00:04:32,195 --> 00:04:35,590
+mensaje de correo electrnico muy fcilmente, as que lo que haremos es
+
+90
+00:04:35,590 --> 00:04:38,740
+crear un nuevo objeto de EmailMessage, y luego simplemente estableceremos que
+
+91
+00:04:38,740 --> 00:04:41,200
+el tema sea algo as como Probar correo electrnico.
+
+92
+00:04:41,200 --> 00:04:43,710
+El de ser tu correo electrnico, you @ gmail. com Y el, para ser quien
+
+93
+00:04:46,970 --> 00:04:49,230
+quiera enviar un correo electrnico a.
+
+94
+00:04:49,230 --> 00:04:54,230
+Este correo electrnico en realidad ir a alguien, as
+
+95
+00:04:58,440 --> 00:05:01,860
+que sintase libre de enviar ese correo electrnico a alguien que conozca.
+
+96
+00:05:01,860 --> 00:05:06,140
+Preferiblemente no me los enves.
+
+97
+00:05:06,140 --> 00:05:07,920
+Podra obtener bastantes correos electrnicos si
+
+98
+00:05:07,920 --> 00:05:09,470
+hacemos eso, pero puede enviarlos
+
+99
+00:05:09,470 --> 00:05:11,830
+a alguien ms, alguien ms @ gmail. com, de acuerdo?
+
+100
+00:05:11,830 --> 00:05:13,680
+Entonces vas a hacer un correo electrnico. set_content, y aqu puede escribir
+
+101
+00:05:13,680 --> 00:05:18,680
+algo de contenido de texto que contendr
+
+102
+00:05:18,960 --> 00:05:21,573
+el correo electrnico.
+
+103
+00:05:23,310 --> 00:05:26,310
+Lo que normalmente har en estos casos, cuando
+
+104
+00:05:26,310 --> 00:05:28,430
+quiera establecer el contenido de
+
+105
+00:05:28,430 --> 00:05:30,680
+un correo electrnico, si es contenido
+
+106
+00:05:30,680 --> 00:05:33,450
+simple, en algn momento crear algo llamado
+
+107
+00:05:33,450 --> 00:05:37,369
+email_content y usar una cadena de varias lneas para decir
+
+108
+00:05:37,369 --> 00:05:40,157
+algo como "Estimado seor / seora", le
+
+109
+00:05:41,570 --> 00:05:44,313
+envo un correo electrnico con Python.
+
+110
+00:05:44,313 --> 00:05:46,683
+"Espero que te guste.
+
+111
+00:05:47,537 --> 00:05:50,727
+"Saludos cordiales, yo. "Y luego puedes simplemente configurar el contenido del correo electrnico
+
+112
+00:05:50,727 --> 00:05:51,843
+de esa manera.
+
+113
+00:05:53,174 --> 00:05:55,587
+Ahora que tiene
+
+114
+00:05:56,480 --> 00:06:00,973
+su correo electrnico y tiene su conexin al servidor smtp, todo lo
+
+115
+00:06:02,410 --> 00:06:05,130
+que tiene que hacer es decir smtp_connector. send_message, y usted es el objeto
+
+116
+00:06:05,130 --> 00:06:08,450
+de correo electrnico que creamos aqu, y
+
+117
+00:06:08,450 --> 00:06:09,983
+que tiene
+
+118
+00:06:11,697 --> 00:06:15,663
+todos nuestros encabezados, asunto, y para, y el contenido,
+
+119
+00:06:15,663 --> 00:06:19,790
+y luego recuerda cerrar el conector smtp_ tambin.
+
+120
+00:06:19,790 --> 00:06:23,243
+Eso cierra la conexin a su cuenta,
+
+121
+00:06:23,243 --> 00:06:25,510
+y todo est bien.
+
+122
+00:06:25,510 --> 00:06:28,060
+Esto es todo lo que necesita para enviar un correo electrnico, usar
+
+123
+00:06:28,060 --> 00:06:29,313
+su cuenta personal y atender las
+
+124
+00:06:30,780 --> 00:06:32,777
+preocupaciones de seguridad de su proveedor de correo electrnico.
+
+125
+00:06:32,777 --> 00:06:36,060
+Por supuesto, para muchas aplicaciones, tan pronto como las liberes,
+
+126
+00:06:36,060 --> 00:06:39,290
+y las colocas, las das a tus usuarios para que
+
+127
+00:06:39,290 --> 00:06:42,170
+las usen, realmente no deseas enviar correos electrnicos con
+
+128
+00:06:42,170 --> 00:06:43,910
+tu cuenta personal, por lo tanto,
+
+129
+00:06:43,910 --> 00:06:48,350
+un tope mximo puede ser para crear otra cuenta de Gmail que sea para
+
+130
+00:06:49,202 --> 00:06:51,440
+su negocio, pero a Gmail realmente no
+
+131
+00:06:51,440 --> 00:06:54,410
+le gusta eso, entonces lo que normalmente hacemos, en
+
+132
+00:06:54,410 --> 00:06:58,910
+lugar de usar smtplib, que es una forma de enviar, ya sabe, algunos correos electrnicos.
+
+133
+00:06:58,910 --> 00:07:02,410
+Lo que hacemos normalmente, si queremos enviar muchos correos electrnicos, es
+
+134
+00:07:02,410 --> 00:07:05,253
+que usemos un servicio de envo de correo electrnico.
+
+135
+00:07:06,250 --> 00:07:08,070
+Hay un par de ellos
+
+136
+00:07:08,070 --> 00:07:11,330
+como Mailgun o SendGrid, y en este curso,
+
+137
+00:07:11,330 --> 00:07:15,080
+vamos a mirar a Mailgun para poder enviar correos electrnicos
+
+138
+00:07:15,080 --> 00:07:17,610
+a una mayor escala de usuarios.
+
+139
+00:07:17,610 --> 00:07:19,717
+Entonces, as es como puedes enviar
+
+140
+00:07:19,717 --> 00:07:22,793
+correos electrnicos con smtplib para enviar pequeas cantidades de
+
+141
+00:07:23,640 --> 00:07:25,575
+correos electrnicos, usando tu cuenta personal.
+
+142
+00:07:25,575 --> 00:07:28,080
+En el siguiente video, vamos a ver cmo usar Mailgun.
+
+143
+00:07:28,080 --> 00:07:29,700
+Te ver all.
+
+144
+00:07:29,700 --> 00:07:32,730
+&nbsp;
+
+145
+00:07:32,730 --> 00:07:33,680
+&nbsp;
+

@@ -1,0 +1,1016 @@
+1
+00:00:00,270 --> 00:00:01,976
+Jose: Ol pessoal, sejam bem
+
+2
+00:00:01,976 --> 00:00:05,728
+vindos e neste vdeo estamos falando de geradores em Python.
+
+3
+00:00:05,728 --> 00:00:07,126
+Estou muito animado
+
+4
+00:00:07,126 --> 00:00:09,975
+para esta seo porque vamos falar sobre
+
+5
+00:00:09,975 --> 00:00:12,713
+algumas coisas mais avanadas e geradores so
+
+6
+00:00:12,713 --> 00:00:14,675
+um desses tpicos em Python
+
+7
+00:00:14,675 --> 00:00:18,535
+que muitos cursos nem mencionam, mas so essenciais para o
+
+8
+00:00:18,535 --> 00:00:21,927
+desempenho e tambm porque o e -Desenvolvimento -sync
+
+9
+00:00:21,927 --> 00:00:22,959
+em Python, o
+
+10
+00:00:22,959 --> 00:00:24,121
+desenvolvimento e-synchronous que
+
+11
+00:00:24,121 --> 00:00:27,770
+vamos aprender mais tarde  construdo sobre esses geradores.
+
+12
+00:00:27,770 --> 00:00:29,215
+Quando voc entende os geradores,
+
+13
+00:00:29,215 --> 00:00:32,747
+muitas coisas no Python comeam a se tornar muito mais claras.
+
+14
+00:00:32,747 --> 00:00:34,943
+Ento, o que  um gerador?
+
+15
+00:00:34,943 --> 00:00:37,922
+Um gerador em Python  uma funo.
+
+16
+00:00:37,922 --> 00:00:39,259
+ uma funo especial.
+
+17
+00:00:39,259 --> 00:00:41,966
+Veja uma funo que lembra o estado em
+
+18
+00:00:41,966 --> 00:00:43,547
+que ela est entre as
+
+19
+00:00:43,547 --> 00:00:46,019
+execues, para que voc possa executar a
+
+20
+00:00:46,019 --> 00:00:48,197
+funo vrias vezes e ela se
+
+21
+00:00:48,197 --> 00:00:50,753
+lembrar da ltima vez que voc a executou.
+
+22
+00:00:50,753 --> 00:00:54,053
+Ento isso soa bem estranho, deixe-me explicar com um exemplo.
+
+23
+00:00:54,053 --> 00:00:56,493
+Imagine que voc queria criar uma
+
+24
+00:00:56,493 --> 00:00:57,967
+lista de 100 nmeros,
+
+25
+00:00:57,967 --> 00:01:02,285
+muito simples, voc deseja obter uma nova lista com nmeros de
+
+26
+00:01:02,285 --> 00:01:04,645
+zero a 99, no incluindo 100.
+
+27
+00:01:04,645 --> 00:01:06,775
+Ento voc poderia fazer uma funo como esta.
+
+28
+00:01:06,775 --> 00:01:10,671
+Obviamente, no usando intervalo e assim por diante, voc sabe alcance.
+
+29
+00:01:10,671 --> 00:01:14,863
+No vamos usar o intervalo, vamos construir uma lista do zero.
+
+30
+00:01:14,863 --> 00:01:16,771
+Como voc faria.
+
+31
+00:01:16,771 --> 00:01:20,706
+Uma boa maneira de fazer isso seria comear com uma lista vazia.
+
+32
+00:01:20,706 --> 00:01:24,751
+Digamos que chame nums e faa com que seja igual a uma lista vazia.
+
+33
+00:01:24,751 --> 00:01:28,324
+E tambm comece com um ndice igual a zero.
+
+34
+00:01:28,324 --> 00:01:31,441
+Ento, enquanto eu for menor que
+
+35
+00:01:31,441 --> 00:01:34,858
+100, digamos que ponto nums aponte i.
+
+36
+00:01:35,768 --> 00:01:38,951
+Ento voc vai acrescentar zero no comeo.
+
+37
+00:01:38,951 --> 00:01:41,945
+Ento voc vai incrementar i por um, que
+
+38
+00:01:41,945 --> 00:01:43,586
+vai se tornar um.
+
+39
+00:01:43,586 --> 00:01:46,288
+Voc vai anexar um, repetir, acrescentar dois,
+
+40
+00:01:46,288 --> 00:01:50,646
+depois trs e assim por diante, at chegar a 99.
+
+41
+00:01:50,646 --> 00:01:52,597
+E no final desta funo retornamos
+
+42
+00:01:52,597 --> 00:01:55,448
+nums, que  a sua lista de nmeros.
+
+43
+00:01:55,448 --> 00:02:00,448
+Se imprimirmos cem nmeros e rodarmos isso.
+
+44
+00:02:01,838 --> 00:02:03,519
+Podemos ver que
+
+45
+00:02:03,519 --> 00:02:06,769
+contm aqui nossa lista de cem nmeros.
+
+46
+00:02:07,824 --> 00:02:10,167
+Claro que poderamos usar a compreenso da lista para isso.
+
+47
+00:02:10,167 --> 00:02:11,551
+Poderamos usar a funo range,
+
+48
+00:02:11,551 --> 00:02:13,240
+mas por enquanto vamos supor que
+
+49
+00:02:13,240 --> 00:02:15,761
+esta  uma maneira legal de fazer isso, porque
+
+50
+00:02:15,761 --> 00:02:19,710
+o que eu estou realmente explicando  essencialmente como a funo range trabalha por dentro.
+
+51
+00:02:19,710 --> 00:02:20,932
+Ento, construmos uma lista,
+
+52
+00:02:20,932 --> 00:02:23,745
+preenchemos os primeiros cem nmeros e depois retornamos.
+
+53
+00:02:23,745 --> 00:02:26,846
+Agora temos cem nmeros em uma lista.
+
+54
+00:02:26,846 --> 00:02:31,846
+Esta lista inteira est na memria do seu computador armazenada como
+
+55
+00:02:32,587 --> 00:02:35,420
+este valor de retorno da funo.
+
+56
+00:02:36,261 --> 00:02:38,804
+Agora, centenas de nmeros no so
+
+57
+00:02:38,804 --> 00:02:41,040
+muito grandes,  uma pequena
+
+58
+00:02:41,040 --> 00:02:45,450
+quantidade de espao, mas digamos que queremos armazenar 10 milhes,
+
+59
+00:02:45,450 --> 00:02:48,189
+milhes so como uma centena de
+
+60
+00:02:48,189 --> 00:02:52,272
+nmeros, mas seria algo como um milho de nmeros.
+
+61
+00:02:53,296 --> 00:02:56,039
+Voc poderia gerar uma lista de um milho
+
+62
+00:02:56,039 --> 00:02:57,546
+de nmeros e armazen-lo
+
+63
+00:02:57,546 --> 00:02:59,936
+nesta varivel que vai para a memria
+
+64
+00:02:59,936 --> 00:03:02,762
+do seu computador e  presumivelmente uma quantidade
+
+65
+00:03:02,762 --> 00:03:05,003
+maior de memria, porque cada um
+
+66
+00:03:05,003 --> 00:03:08,873
+desses nmeros est ocupando uma pequena quantidade da memria do seu computador.
+
+67
+00:03:08,873 --> 00:03:13,337
+Se voc queria 10 milhes de nmeros, ento  maior e assim.
+
+68
+00:03:13,337 --> 00:03:16,845
+Agora, ter 10 milhes de nmeros no  um timo exemplo,
+
+69
+00:03:16,845 --> 00:03:20,146
+mas imagine que voc tenha uma lista muito longa de algo.
+
+70
+00:03:20,146 --> 00:03:22,000
+Por exemplo, eles costumam ser
+
+71
+00:03:22,000 --> 00:03:24,237
+usados no clculo de nmeros primos e
+
+72
+00:03:24,237 --> 00:03:25,849
+em big data e, por
+
+73
+00:03:25,849 --> 00:03:28,695
+vezes, talvez voc queira grandes listas de coisas.
+
+74
+00:03:28,695 --> 00:03:31,853
+Ento, um gerador  usado para contornar esse problema
+
+75
+00:03:31,853 --> 00:03:34,979
+porque a suposio  que voc no precisa de
+
+76
+00:03:34,979 --> 00:03:36,868
+100 nmeros de uma s vez.
+
+77
+00:03:36,868 --> 00:03:41,219
+O que voc precisa  de zero para que voc possa fazer algo com isso.
+
+78
+00:03:41,219 --> 00:03:42,933
+E ento um para que voc possa fazer algo com isso.
+
+79
+00:03:42,933 --> 00:03:45,855
+E ento dois para que voc possa fazer algo com isso.
+
+80
+00:03:45,855 --> 00:03:48,185
+Por exemplo, com esta centena de
+
+81
+00:03:48,185 --> 00:03:52,846
+nmeros, poderamos ento multiplic-los por dois e armazen-los em outra lista.
+
+82
+00:03:52,846 --> 00:03:54,014
+Como voc faria isso?
+
+83
+00:03:54,014 --> 00:03:57,097
+Voc faria algo como menos compreenso, x
+
+84
+00:03:57,097 --> 00:04:00,430
+vezes dois para x em cem nmeros.
+
+85
+00:04:02,186 --> 00:04:04,119
+O que voc est fazendo aqui 
+
+86
+00:04:04,119 --> 00:04:07,472
+usar essa lista para isolar e multiplicar cada nmero por dois.
+
+87
+00:04:07,472 --> 00:04:09,396
+Vamos pensar que essa multiplicao
+
+88
+00:04:09,396 --> 00:04:11,504
+por dois  uma operao que
+
+89
+00:04:11,504 --> 00:04:14,217
+queremos fazer nesses nmeros para calcular alguma coisa.
+
+90
+00:04:14,217 --> 00:04:16,218
+Outro exemplo seria, se voc tem
+
+91
+00:04:16,218 --> 00:04:19,096
+muitos usurios e quer calcular o envolvimento em torno
+
+92
+00:04:19,096 --> 00:04:21,026
+deles, ou o quo engajados eles
+
+93
+00:04:21,026 --> 00:04:22,924
+esto com seu sistema, ou algo assim.
+
+94
+00:04:22,924 --> 00:04:24,774
+Essencialmente, voc quer passar por cima
+
+95
+00:04:24,774 --> 00:04:26,857
+de cada elemento e realizar uma operao.
+
+96
+00:04:27,709 --> 00:04:31,214
+A coisa aqui  que voc no precisa de todos os elementos de uma s vez.
+
+97
+00:04:31,214 --> 00:04:33,730
+Voc precisa deles um por um.
+
+98
+00:04:33,730 --> 00:04:36,076
+Ento  para isso que os geradores so usados.
+
+99
+00:04:36,076 --> 00:04:38,718
+Em vez de ter toda a lista de elementos,
+
+100
+00:04:38,718 --> 00:04:40,692
+o que voc faz  que
+
+101
+00:04:40,692 --> 00:04:42,481
+o gerador lhe fornece o primeiro
+
+102
+00:04:42,481 --> 00:04:45,711
+elemento da lista, sem armazenar toda a lista na memria.
+
+103
+00:04:45,711 --> 00:04:47,120
+A prxima vez que voc
+
+104
+00:04:47,120 --> 00:04:49,639
+chamar o gerador, ele lembra o elemento que lhe
+
+105
+00:04:49,639 --> 00:04:52,154
+deu a ltima e sabe dar-lhe o segundo elemento.
+
+106
+00:04:52,154 --> 00:04:54,624
+Ento voc o executa novamente e lhe d o terceiro
+
+107
+00:04:54,624 --> 00:04:55,712
+elemento, e assim por diante.
+
+108
+00:04:55,712 --> 00:04:58,433
+Nunca armazena a lista na memria,
+
+109
+00:04:58,433 --> 00:05:02,664
+ela sempre lembra apenas o ltimo nmero que ela lhe
+
+110
+00:05:02,664 --> 00:05:05,925
+deu, ento ela pode lhe dar a prxima.
+
+111
+00:05:05,925 --> 00:05:07,522
+Voc tem que divertir a
+
+112
+00:05:07,522 --> 00:05:10,225
+funo toda vez que quiser um novo nmero, e
+
+113
+00:05:10,225 --> 00:05:12,899
+ por isso que ele  chamado de gerador,
+
+114
+00:05:12,899 --> 00:05:17,604
+porque gera nmeros, ou mesmo strings, ou usurios, ou o que quer que voc queira gerar.
+
+115
+00:05:17,604 --> 00:05:22,604
+Veja como voc faria isso, em vez de "nums". acrescentar (i) ", voc diz"
+
+116
+00:05:22,844 --> 00:05:27,532
+yield i ", pois i  o nmero que
+
+117
+00:05:27,532 --> 00:05:30,075
+queremos retornar, no precisamos mais
+
+118
+00:05:30,075 --> 00:05:33,157
+deste nums colchetes iguais, e tambm
+
+119
+00:05:33,157 --> 00:05:37,157
+no precisamos mais do segmento de retorno.
+
+120
+00:05:38,012 --> 00:05:42,095
+Ento agora essa funo aqui  chamada de funo geradora.
+
+121
+00:05:42,095 --> 00:05:46,423
+O rendimento  muito parecido com o retorno, mas o que
+
+122
+00:05:46,423 --> 00:05:51,024
+acontece  que eu lhe dou quando voc o chama, e ento
+
+123
+00:05:51,024 --> 00:05:54,778
+ele se lembra de que est aqui, est parado bem
+
+124
+00:05:54,778 --> 00:05:57,999
+antes da linha cinco. Logo aps a linha
+
+125
+00:05:57,999 --> 00:05:59,254
+quatro l no meio.
+
+126
+00:05:59,254 --> 00:06:02,052
+Da prxima vez que voc chamar a funo, ela
+
+127
+00:06:02,052 --> 00:06:04,187
+continuar, ento o que ela far 
+
+128
+00:06:04,187 --> 00:06:06,925
+incrementar i por um, ele executar novamente o loop
+
+129
+00:06:06,925 --> 00:06:09,664
+e gerar um, fornecer um e depois parar.
+
+130
+00:06:09,664 --> 00:06:11,105
+Da prxima vez que voc ligar,
+
+131
+00:06:11,105 --> 00:06:12,580
+ele continuar aumentando, eu compro um
+
+132
+00:06:12,580 --> 00:06:16,994
+e repito o loop e, em seguida, dou dois, e ento ele para, e assim por diante.
+
+133
+00:06:16,994 --> 00:06:18,994
+Eventualmente, quando voc ficar sem
+
+134
+00:06:18,994 --> 00:06:21,077
+nmeros, ele no render nenhum.
+
+135
+00:06:23,335 --> 00:06:26,418
+E ento voc sabe que est acabado.
+
+136
+00:06:27,571 --> 00:06:29,582
+Ento, como vamos fazer isso?
+
+137
+00:06:29,582 --> 00:06:33,499
+Vamos, em primeiro lugar, imprimir cem nmeros.
+
+138
+00:06:35,532 --> 00:06:37,700
+Observe como no nos d mais uma
+
+139
+00:06:37,700 --> 00:06:40,020
+lista, agora nos d um objeto gerador, que
+
+140
+00:06:40,020 --> 00:06:42,040
+ chamado de cem nmeros, da o
+
+141
+00:06:42,040 --> 00:06:43,451
+nome de nossa funo.
+
+142
+00:06:43,451 --> 00:06:47,800
+Tambm nos fornece o endereo de memria do nosso objeto.
+
+143
+00:06:47,800 --> 00:06:50,104
+Observe como definimos uma funo, mas a
+
+144
+00:06:50,104 --> 00:06:52,903
+impresso est nos dizendo que isso  um objeto,
+
+145
+00:06:52,903 --> 00:06:54,466
+porque o Python no fundo
+
+146
+00:06:54,466 --> 00:06:56,708
+percebe que voc usou yield, voc est
+
+147
+00:06:56,708 --> 00:07:00,257
+criando um gerador e os transforma em um objeto python.
+
+148
+00:07:00,257 --> 00:07:02,451
+Eu vou te dizer como fazer
+
+149
+00:07:02,451 --> 00:07:05,618
+esses objetos voc mesmo sem uma funo mais tarde.
+
+150
+00:07:08,476 --> 00:07:13,476
+Ento, vamos armazenar nosso gerador em uma varivel.
+
+151
+00:07:14,657 --> 00:07:16,456
+Ns vamos cham-lo de "g", que 
+
+152
+00:07:16,456 --> 00:07:19,060
+um nome bastante popular para um gerador em um programa pequeno.
+
+153
+00:07:19,060 --> 00:07:20,737
+Se voc tem muitos geradores, claro,
+
+154
+00:07:20,737 --> 00:07:23,488
+voc ter que ir para um nome mais descritivo.
+
+155
+00:07:23,488 --> 00:07:26,204
+Ento ns vamos imprimir o prximo
+
+156
+00:07:26,204 --> 00:07:28,504
+valor que o gerador nos daria.
+
+157
+00:07:28,504 --> 00:07:31,685
+Observe que quando voc inicializa um gerador, assim,
+
+158
+00:07:31,685 --> 00:07:34,864
+ele no executa a funo, ela comea no
+
+159
+00:07:34,864 --> 00:07:36,781
+topo sem executar nada.
+
+160
+00:07:37,677 --> 00:07:40,750
+Quando voc pede o prximo valor, ele vai
+
+161
+00:07:40,750 --> 00:07:42,490
+at o rendimento e lhe
+
+162
+00:07:42,490 --> 00:07:45,368
+dar qualquer valor que voc tenha gerado.
+
+163
+00:07:45,368 --> 00:07:47,238
+A maneira como voc pede o prximo
+
+164
+00:07:47,238 --> 00:07:51,661
+valor,  que voc no executa a funo novamente, mas diz o prximo de "g".
+
+165
+00:07:51,661 --> 00:07:55,514
+Ento, o prximo  uma funo incorporada que afeta os
+
+166
+00:07:55,514 --> 00:07:58,679
+geradores e diz a ela para aumentar o rendimento.
+
+167
+00:07:58,679 --> 00:08:03,679
+Ok, ento se ns executarmos isso, voc pode ver que agora ns
+
+168
+00:08:03,892 --> 00:08:07,820
+temos zero, porque esse  o primeiro nmero gerado.
+
+169
+00:08:07,820 --> 00:08:11,153
+Agora nosso gerador, "g", parou aqui
+
+170
+00:08:12,992 --> 00:08:15,557
+na linha 4. 5 entre 4
+
+171
+00:08:15,557 --> 00:08:20,557
+e 5, ento se pedirmos outro nmero, note que, claro, no final de
+
+172
+00:08:21,835 --> 00:08:24,255
+um programa o gerador  destrudo,
+
+173
+00:08:24,255 --> 00:08:27,129
+ento se rodarmos novamente este programa isso
+
+174
+00:08:27,129 --> 00:08:30,255
+seria zero novamente e isso seria um agora.
+
+175
+00:08:30,255 --> 00:08:32,940
+No se lembra das execues de programas,
+
+176
+00:08:32,940 --> 00:08:35,690
+simplesmente no  como o Python funciona.
+
+177
+00:08:36,646 --> 00:08:40,603
+Ento agora podemos pedir o primeiro nmero e
+
+178
+00:08:40,603 --> 00:08:42,823
+depois o prximo nmero.
+
+179
+00:08:42,823 --> 00:08:44,652
+Aps o primeiro nmero, ele ser
+
+180
+00:08:44,652 --> 00:08:46,084
+parado entre quatro e cinco.
+
+181
+00:08:46,084 --> 00:08:50,073
+Quando dizemos em seguida, continua at o prximo rendimento, o
+
+182
+00:08:50,073 --> 00:08:54,573
+que significa repetir este loop uma vez e nos d um.
+
+183
+00:08:56,076 --> 00:08:57,243
+OK.
+
+184
+00:08:58,171 --> 00:09:03,171
+Muito importante, a funo lembra onde parou.
+
+185
+00:09:04,709 --> 00:09:07,852
+Assim, a qualquer momento, voc pode interromper a execuo da
+
+186
+00:09:07,852 --> 00:09:11,510
+funo e, em seguida, pode ligar para a prxima para continuar.
+
+187
+00:09:11,510 --> 00:09:15,942
+Portanto, no  til apenas para gerar nmeros ou qualquer outra coisa, tambm
+
+188
+00:09:15,942 --> 00:09:19,000
+ til quando voc quer impedir que uma funo
+
+189
+00:09:19,000 --> 00:09:21,185
+seja executada temporariamente e, em seguida,
+
+190
+00:09:21,185 --> 00:09:22,901
+pode continuar a execut-la sempre
+
+191
+00:09:22,901 --> 00:09:24,734
+que quiser, chamando a prxima.
+
+192
+00:09:25,948 --> 00:09:28,217
+Ento talvez no seja algo
+
+193
+00:09:28,217 --> 00:09:31,724
+que faa muito sentido agora, mas lembre-se disso
+
+194
+00:09:31,724 --> 00:09:35,404
+quando precisarmos disso quando fizermos uma programao sincronizada.
+
+195
+00:09:35,404 --> 00:09:37,710
+Ento, e a funo range?
+
+196
+00:09:37,710 --> 00:09:39,824
+Eu disse anteriormente que isso
+
+197
+00:09:39,824 --> 00:09:44,626
+estava explicando essencialmente como a funo range funciona internamente, e isso 
+
+198
+00:09:44,626 --> 00:09:45,953
+verdade, mas a
+
+199
+00:09:45,953 --> 00:09:48,810
+funo range no lhe d um gerador diretamente.
+
+200
+00:09:48,810 --> 00:09:52,029
+Aqui, vamos fazer algo como
+
+201
+00:09:52,029 --> 00:09:55,541
+"meu objeto de intervalo", vai ser
+
+202
+00:09:55,541 --> 00:09:57,458
+o intervalo 10.
+
+203
+00:09:58,951 --> 00:10:02,517
+Isso se comporta muito como um gerador, mas se
+
+204
+00:10:02,517 --> 00:10:05,271
+voc chamar o prximo de "meu objeto
+
+205
+00:10:05,271 --> 00:10:08,188
+de intervalo", receber um erro e ver isso.
+
+206
+00:10:09,355 --> 00:10:13,253
+Isso porque o objeto range no  um gerador, mesmo que
+
+207
+00:10:13,253 --> 00:10:15,077
+ele se comporte dessa maneira,
+
+208
+00:10:15,077 --> 00:10:17,894
+no gere uma lista e, em seguida, permita
+
+209
+00:10:17,894 --> 00:10:22,557
+que voc faa iteraes sobre ele, ele se comporta dessa maneira de gerao
+
+210
+00:10:22,557 --> 00:10:24,307
+para ser mais eficiente.
+
+211
+00:10:25,696 --> 00:10:27,863
+"Meu objeto de alcance", no
+
+212
+00:10:29,150 --> 00:10:31,507
+entanto, voc pode lembrar que
+
+213
+00:10:31,507 --> 00:10:33,874
+ns o imprimimos muito mais
+
+214
+00:10:33,874 --> 00:10:38,874
+cedo no curso e recebemos um intervalo estranho de zero a dez.
+
+215
+00:10:39,460 --> 00:10:43,793
+Isso  apenas a funo "repr" sendo chamada, e como voc
+
+216
+00:10:44,657 --> 00:10:48,381
+pode ver se imprimimos o resultado "repr", tambm vemos
+
+217
+00:10:48,381 --> 00:10:50,958
+o intervalo de zero a dez.
+
+218
+00:10:50,958 --> 00:10:54,109
+Ento, "meu objeto de intervalo"  algo que
+
+219
+00:10:54,109 --> 00:10:56,165
+se comporta assim, vamos aprender em
+
+220
+00:10:56,165 --> 00:11:00,832
+alguns vdeos exatamente como podemos fazer uma iterao em um objeto para que
+
+221
+00:11:02,133 --> 00:11:05,321
+ele se comporte como um objeto de intervalo.
+
+222
+00:11:05,321 --> 00:11:09,671
+Ento, ns aprendemos sobre esses geradores, e mais uma coisa que
+
+223
+00:11:09,671 --> 00:11:12,056
+eu queria mencionar, sobre os geradores
+
+224
+00:11:12,056 --> 00:11:17,056
+ que a funo de lista pode transformar um gerador em uma lista.
+
+225
+00:11:17,475 --> 00:11:19,748
+Ento, podemos imprimir lista de "g".
+
+226
+00:11:19,748 --> 00:11:22,125
+Aqui mesmo o que chamamos de "next" e
+
+227
+00:11:22,125 --> 00:11:23,458
+"next" novamente, e depois "list".
+
+228
+00:11:24,423 --> 00:11:28,852
+Ento agora temos zero e um impresso para essas so as
+
+229
+00:11:28,852 --> 00:11:31,125
+duas coisas em nossas "prximas" funes,
+
+230
+00:11:31,125 --> 00:11:33,668
+e ento geramos uma lista do
+
+231
+00:11:33,668 --> 00:11:37,677
+gerador, mas essa lista de curso continua de onde paramos.
+
+232
+00:11:37,677 --> 00:11:40,122
+O prprio gerador lembra o que
+
+233
+00:11:40,122 --> 00:11:44,238
+era, ento a lista comea de dois, no de zero.
+
+234
+00:11:44,238 --> 00:11:46,893
+Ento,  realmente importante lembrar em
+
+235
+00:11:46,893 --> 00:11:48,832
+geradores, eles lembram onde estavam.
+
+236
+00:11:48,832 --> 00:11:53,832
+Ento, quando voc cria um,  basicamente a partir do momento em que voc comea a us-lo,
+
+237
+00:11:53,952 --> 00:11:55,645
+no momento em que voc comea
+
+238
+00:11:55,645 --> 00:11:58,169
+a chamar "prximo", ele se lembra de onde est,
+
+239
+00:11:58,169 --> 00:12:01,497
+e voc no pode voltar atrs. OK.
+
+240
+00:12:01,497 --> 00:12:03,225
+Agora, nos prximos vdeos,
+
+241
+00:12:03,225 --> 00:12:04,988
+vamos aprender mais sobre geradores.
+
+242
+00:12:04,988 --> 00:12:06,634
+Vamos aprender sobre classes de
+
+243
+00:12:06,634 --> 00:12:09,856
+gerao, como voc pode criar uma classe que se comporta
+
+244
+00:12:09,856 --> 00:12:13,238
+como um gerador, e tambm aprenderemos sobre iteradores e iterveis
+
+245
+00:12:13,238 --> 00:12:15,402
+no Python, e os objetivos do
+
+246
+00:12:15,402 --> 00:12:17,069
+intervalo so um exemplo disso.
+
+247
+00:12:18,160 --> 00:12:19,555
+Ento, vamos passar
+
+248
+00:12:19,555 --> 00:12:21,532
+para alguns exemplos de programao
+
+249
+00:12:21,532 --> 00:12:25,282
+funcional, como filter, map, any e all, e enumerar.
+
+250
+00:12:26,150 --> 00:12:27,635
+Ento, muito animado para
+
+251
+00:12:27,635 --> 00:12:30,574
+esta seo, estou confiante de que os geradores
+
+252
+00:12:30,574 --> 00:12:33,320
+sero algo que voc vai precisar no desenvolvimento
+
+253
+00:12:33,320 --> 00:12:36,482
+do Python, especialmente  medida que avanamos no curso.
+
+254
+00:12:36,482 --> 00:12:39,090
+Ento, com isso dito, vejo vocs no prximo vdeo.
+

@@ -1,0 +1,324 @@
+1
+00:00:00,270 --> 00:00:01,710 line:15% 
+<v ->Hi and welcome back.</v>
+
+2
+00:00:01,710 --> 00:00:03,990 line:15% 
+In this video we're looking at scraping
+
+3
+00:00:03,990 --> 00:00:06,640
+this quotes page that you see here
+
+4
+00:00:06,640 --> 00:00:09,220
+and we're going to do that before moving on to the books
+
+5
+00:00:09,220 --> 00:00:11,830
+just because this one's a little bit simpler.
+
+6
+00:00:11,830 --> 00:00:14,980
+And what I'm going to teach you over the next few videos
+
+7
+00:00:14,980 --> 00:00:18,530
+is how to structure your scraping applications
+
+8
+00:00:18,530 --> 00:00:20,880
+so that you can do anything you want with them.
+
+9
+00:00:21,850 --> 00:00:24,060
+In this section we're going to build two projects.
+
+10
+00:00:24,060 --> 00:00:25,720
+The quotes page scraper,
+
+11
+00:00:25,720 --> 00:00:27,980
+and then the books page scraper which is going to be
+
+12
+00:00:27,980 --> 00:00:30,530
+actually very similar, at least in structure.
+
+13
+00:00:31,670 --> 00:00:34,360
+Let's start by analysing this this quotes page.
+
+14
+00:00:35,630 --> 00:00:39,700
+The URL, by the way, is quotes.toscrape.com
+
+15
+00:00:39,700 --> 00:00:41,890
+so feel free to have a look yourself as well
+
+16
+00:00:41,890 --> 00:00:44,040
+if you want to sort of play around with it.
+
+17
+00:00:45,040 --> 00:00:46,890
+What we've got is, as you can see
+
+18
+00:00:46,890 --> 00:00:48,520
+a few different elements in the screen.
+
+19
+00:00:48,520 --> 00:00:51,080
+We've got some sort of title up here,
+
+20
+00:00:51,080 --> 00:00:54,500
+we've got a login page down here on the top right,
+
+21
+00:00:54,500 --> 00:00:55,860
+we've got top 10 tags,
+
+22
+00:00:55,860 --> 00:01:00,090
+so these things are presumably clickable so these are links.
+
+23
+00:01:00,090 --> 00:01:05,090
+Then you've got individual quotes in these rectangles here
+
+24
+00:01:05,140 --> 00:01:07,310
+these sort of cards.
+
+25
+00:01:07,310 --> 00:01:11,310
+Whenever you see something that looks structured like this,
+
+26
+00:01:11,310 --> 00:01:13,490
+you know it's going to be an easy scrape.
+
+27
+00:01:13,490 --> 00:01:15,680
+This page is designed for scraping so of course it's going
+
+28
+00:01:15,680 --> 00:01:19,640
+to be slightly simpler than other pages
+
+29
+00:01:19,640 --> 00:01:21,850
+you may see out in the wild.
+
+30
+00:01:21,850 --> 00:01:23,930
+But what we're going to learn in this section
+
+31
+00:01:23,930 --> 00:01:27,040
+is really going to help us scrape any page,
+
+32
+00:01:27,040 --> 00:01:29,790
+not just these simpler pages.
+
+33
+00:01:29,790 --> 00:01:32,600
+So what we've got here are a number of different cards.
+
+34
+00:01:32,600 --> 00:01:36,750
+And each card contains a quote as well as the author
+
+35
+00:01:36,750 --> 00:01:39,810
+and a bunch of tags here that we can scrape.
+
+36
+00:01:39,810 --> 00:01:41,900
+What we're going to do is we're going to create a programme
+
+37
+00:01:41,900 --> 00:01:45,730
+that will give us the quote contents and also the author.
+
+38
+00:01:46,700 --> 00:01:48,600
+That's it, pretty simple programme.
+
+39
+00:01:48,600 --> 00:01:51,510
+Again, what you learn will mean that you will be able to
+
+40
+00:01:51,510 --> 00:01:54,840
+extend that programme beyond that by any amount.
+
+41
+00:01:56,620 --> 00:01:59,780
+So let's start by inspecting the page source
+
+42
+00:01:59,780 --> 00:02:01,520
+just to know what it looks like.
+
+43
+00:02:02,820 --> 00:02:05,610
+As you can see here on the right, we have ourselves
+
+44
+00:02:05,610 --> 00:02:09,710
+the body of the HTML that contains all of the content.
+
+45
+00:02:09,710 --> 00:02:13,400
+Inside there we've got a div which has a class container.
+
+46
+00:02:13,400 --> 00:02:15,450
+That contains all of the content as well.
+
+47
+00:02:16,450 --> 00:02:20,270
+And then we have a row which is a header box,
+
+48
+00:02:20,270 --> 00:02:22,240
+and beside it we have another row,
+
+49
+00:02:22,240 --> 00:02:23,890
+which is the rest of the content.
+
+50
+00:02:25,830 --> 00:02:30,830
+Inside that row we have a number of, well two columns.
+
+51
+00:02:30,928 --> 00:02:32,800
+One that is col-nd-8,
+
+52
+00:02:34,003 --> 00:02:36,100
+and the other ne that is col-nd-4.
+
+53
+00:02:37,008 --> 00:02:40,680
+And it also has another class called tags-box.
+
+54
+00:02:40,680 --> 00:02:43,390
+So this is the tags, this is the quotes.
+
+55
+00:02:43,390 --> 00:02:47,090
+In the quotes we have a number of divs,
+
+56
+00:02:47,090 --> 00:02:52,090
+each div with a class quote that has one of the quotes.
+
+57
+00:02:52,200 --> 00:02:55,930
+So we know that each of these divs is going to be
+
+58
+00:02:55,930 --> 00:03:00,110
+exactly identical to all the others except in the content.
+
+59
+00:03:00,110 --> 00:03:03,960
+But inside one div, we have a span which has a class text,
+
+60
+00:03:03,960 --> 00:03:06,091
+and that contains the quote,
+
+61
+00:03:06,091 --> 00:03:11,091
+and another span which contains by and also a small tag
+
+62
+00:03:11,120 --> 00:03:12,980
+which contains the author,
+
+63
+00:03:12,980 --> 00:03:16,310
+also a link which contains the about page of that author.
+
+64
+00:03:18,012 --> 00:03:21,940
+Then it's got another div which contains the tags.
+
+65
+00:03:21,940 --> 00:03:25,426
+There's a few things in here, and amongst them is an a tag
+
+66
+00:03:25,426 --> 00:03:28,390
+and that has a class tag.
+
+67
+00:03:29,770 --> 00:03:34,280
+So inside that tag we have change, deep thoughts,
+
+68
+00:03:34,280 --> 00:03:36,300
+thinking, world, and so forth.
+
+69
+00:03:37,340 --> 00:03:39,480
+If you were to look at any other of these quotes,
+
+70
+00:03:39,480 --> 00:03:41,570
+you would see that it is essentially the same.
+
+71
+00:03:41,570 --> 00:03:44,140
+A span with class tags and that contains a quote.
+
+72
+00:03:44,140 --> 00:03:47,060
+Another span that contains a by and small tag which contains
+
+73
+00:03:47,060 --> 00:03:50,280
+the author, and then another div here with the tags.
+
+74
+00:03:50,280 --> 00:03:51,113
+And so forth.
+
+75
+00:03:52,020 --> 00:03:56,890
+So we know that as long as we manage to get these divs
+
+76
+00:03:56,890 --> 00:04:01,580
+and for each div get this data, we'll be able to extract
+
+77
+00:04:01,580 --> 00:04:04,140
+all of the data that we need from the page.
+
+78
+00:04:04,140 --> 00:04:05,720
+So we're going to do that in the very next video.
+
+79
+00:04:05,720 --> 00:04:09,440 line:15% 
+We're going to structure our new application in order to
+
+80
+00:04:09,440 --> 00:04:11,610 line:15% 
+be able to understand this page.
+
+81
+00:04:11,610 --> 00:04:13,330 line:15% 
+I'll see you in the very next video.
+

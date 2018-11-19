@@ -1,0 +1,300 @@
+1
+00:00:00,211 --> 00:00:01,718
+<v Instructor>Hi, welcome back.</v>
+
+2
+00:00:01,718 --> 00:00:05,005
+In this video, I wanted to tell you a bit about queues,
+
+3
+00:00:05,005 --> 00:00:06,995
+and I just wanted to do that before the next video
+
+4
+00:00:06,995 --> 00:00:08,981
+where we're going to be using one,
+
+5
+00:00:08,981 --> 00:00:10,814
+just so you have a bit of an idea
+
+6
+00:00:10,814 --> 00:00:13,698
+of what they're like and how you use them.
+
+7
+00:00:13,698 --> 00:00:16,335
+So, here's an example of what could be a queue.
+
+8
+00:00:16,335 --> 00:00:18,529
+Nice little animation there.
+
+9
+00:00:18,529 --> 00:00:21,429
+Here's a more realistic example of a queue.
+
+10
+00:00:21,429 --> 00:00:22,894
+Let's say you've got a queue of people
+
+11
+00:00:22,894 --> 00:00:24,679
+to get into some sort of building,
+
+12
+00:00:24,679 --> 00:00:26,675
+and, of course, people are going to
+
+13
+00:00:26,675 --> 00:00:28,833
+join the queue at the end,
+
+14
+00:00:28,833 --> 00:00:33,047
+and they're going to leave the queue from the start.
+
+15
+00:00:33,047 --> 00:00:34,677
+So, this is a queue.
+
+16
+00:00:34,677 --> 00:00:36,349
+You know how queues work already,
+
+17
+00:00:36,349 --> 00:00:38,977
+particularly if you are in the United Kingdom,
+
+18
+00:00:38,977 --> 00:00:40,927
+where we like to queue for everything,
+
+19
+00:00:40,927 --> 00:00:43,302
+and it's really the same thing in programming.
+
+20
+00:00:43,302 --> 00:00:46,285
+Let's say you've got this, this list here,
+
+21
+00:00:46,285 --> 00:00:50,898
+and you can add an element at the end of the list,
+
+22
+00:00:50,898 --> 00:00:53,937
+like so, we've added Jen to the end of the list,
+
+23
+00:00:53,937 --> 00:00:58,937
+and normally we do this in a list with the append method.
+
+24
+00:00:59,498 --> 00:01:03,395
+Now, what you didn't know is that there is a data structure,
+
+25
+00:01:03,395 --> 00:01:07,119
+like a list, in which you can also remove an element.
+
+26
+00:01:07,119 --> 00:01:11,036
+That would be, for this structure, the popleft.
+
+27
+00:01:12,081 --> 00:01:13,604
+The structure here that I'm talking about
+
+28
+00:01:13,604 --> 00:01:16,214
+is called a double-ended queue.
+
+29
+00:01:16,214 --> 00:01:17,738
+I'm gonna talk about that in a minute,
+
+30
+00:01:17,738 --> 00:01:19,384
+but for that double-ended queue,
+
+31
+00:01:19,384 --> 00:01:22,568
+the popleft will remove the left-most element,
+
+32
+00:01:22,568 --> 00:01:25,776
+append will do the same thing at the front of the list.
+
+33
+00:01:25,776 --> 00:01:27,350
+If you think "right-to-left" instead,
+
+34
+00:01:27,350 --> 00:01:29,902
+if you sort of turn it around, then the ends are opposed,
+
+35
+00:01:29,902 --> 00:01:32,138
+and you've got this list to begin with,
+
+36
+00:01:32,138 --> 00:01:35,695
+you can append something on the left, and, of course,
+
+37
+00:01:35,695 --> 00:01:38,221
+that will be called appendleft,
+
+38
+00:01:38,221 --> 00:01:40,294
+and you can remove something from the end,
+
+39
+00:01:40,294 --> 00:01:42,752
+and that's just called pop.
+
+40
+00:01:42,752 --> 00:01:44,960
+So, what you're seeing here is
+
+41
+00:01:44,960 --> 00:01:46,918
+that you can add elements from either end,
+
+42
+00:01:46,918 --> 00:01:49,536
+and you can remove elements from either end.
+
+43
+00:01:49,536 --> 00:01:52,169
+So, a queue where you can add or remove things
+
+44
+00:01:52,169 --> 00:01:55,086
+from either side is called a deque,
+
+45
+00:01:56,127 --> 00:01:58,968
+or actually, somebody said as, "deck,"
+
+46
+00:01:58,968 --> 00:02:00,744
+which I think is very weird,
+
+47
+00:02:00,744 --> 00:02:02,688
+or a double-ended queue.
+
+48
+00:02:02,688 --> 00:02:06,072
+So, it's a deque or a double-ended queue.
+
+49
+00:02:06,072 --> 00:02:07,989
+If you can only add elements from one side
+
+50
+00:02:07,989 --> 00:02:09,821
+and remove them from the other side,
+
+51
+00:02:09,821 --> 00:02:13,408
+like a normal queue, that's called a queue.
+
+52
+00:02:13,408 --> 00:02:16,048
+You'll have both of these in programming.
+
+53
+00:02:16,048 --> 00:02:19,440
+Python has something called a deque, a double-ended queue,
+
+54
+00:02:19,440 --> 00:02:21,408
+and it also has something called a queue,
+
+55
+00:02:21,408 --> 00:02:23,741
+and you can use those.
+
+56
+00:02:23,741 --> 00:02:26,024
+Something else that's very similar to queues
+
+57
+00:02:26,024 --> 00:02:28,295
+is this thing that we've got here,
+
+58
+00:02:28,295 --> 00:02:31,134
+and this thing is called a stack.
+
+59
+00:02:31,134 --> 00:02:34,180
+On a stack, you can remove things from the top,
+
+60
+00:02:34,180 --> 00:02:36,458
+and you can add them back on the top.
+
+61
+00:02:36,458 --> 00:02:40,409
+Notice how, in a queue, you can add things from one end
+
+62
+00:02:40,409 --> 00:02:44,421
+and remove them from the other, mimicking a real queue,
+
+63
+00:02:44,421 --> 00:02:48,895
+like when you queue to go to the pharmacy or something,
+
+64
+00:02:48,895 --> 00:02:53,536
+and in a stack, you add and you remove from the same end,
+
+65
+00:02:53,536 --> 00:02:57,612
+so that it's like a stack of cards or a stack of coins,
+
+66
+00:02:57,612 --> 00:03:00,013
+and these have different uses.
+
+67
+00:03:00,013 --> 00:03:01,520
+Throughout the next few videos,
+
+68
+00:03:01,520 --> 00:03:03,665
+we're gonna look at some uses of the queue.
+
+69
+00:03:03,665 --> 00:03:05,382
+We're not gonna look at uses of a stack.
+
+70
+00:03:05,382 --> 00:03:07,689
+I found that they're not all that useful
+
+71
+00:03:07,689 --> 00:03:09,014
+in day-to-day programming.
+
+72
+00:03:09,014 --> 00:03:11,682
+They can be useful in very limited scenarios,
+
+73
+00:03:11,682 --> 00:03:13,521
+so we're not gonna go into using stacks,
+
+74
+00:03:13,521 --> 00:03:16,457
+but we're gonna go into using queues in the very next video.
+
+75
+00:03:16,457 --> 00:03:18,374
+So, I'll see you there.
+

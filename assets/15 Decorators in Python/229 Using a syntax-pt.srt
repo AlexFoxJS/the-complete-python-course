@@ -1,0 +1,220 @@
+1
+00:00:00,140 --> 00:00:01,340
+Instrutor: Ol e bem vindo de volta.
+
+2
+00:00:01,340 --> 00:00:02,590
+Neste vdeo
+
+3
+00:00:02,590 --> 00:00:06,040
+estamos falando sobre o @syntax para decoradores.
+
+4
+00:00:06,040 --> 00:00:07,880
+Ns usamos alguns decoradores no
+
+5
+00:00:07,880 --> 00:00:09,970
+passado, como o @property decorator e
+
+6
+00:00:09,970 --> 00:00:12,850
+tambm o mtodo @class e o mtodo @static.
+
+7
+00:00:12,850 --> 00:00:14,900
+Agora vamos aprender como usar isso
+
+8
+00:00:14,900 --> 00:00:17,840
+para nossas prprias funes que criamos, nossos prprios decoradores.
+
+9
+00:00:19,692 --> 00:00:24,470
+Tudo o que precisamos fazer  realmente simples,  fazer isso.
+
+10
+00:00:29,110 --> 00:00:34,040
+Agora, no precisamos mais desta linha, porque essa funo,
+
+11
+00:00:34,040 --> 00:00:38,090
+quando definida, j est definida usando o decorador.
+
+12
+00:00:38,090 --> 00:00:41,950
+Ento, agora, minha funo no
+
+13
+00:00:41,950 --> 00:00:44,510
+existe mais como funo.
+
+14
+00:00:46,020 --> 00:00:48,610
+Ns podemos apenas executar minha funo aqui.
+
+15
+00:00:51,540 --> 00:00:54,300
+E voc receber a senha do painel de administrao e,
+
+16
+00:00:54,300 --> 00:00:56,050
+se alterar o nvel de acesso,
+
+17
+00:00:58,620 --> 00:00:59,453
+no obter nada.
+
+18
+00:01:00,540 --> 00:01:04,940
+No entanto, algo no to grande acontece, ou seja, se
+
+19
+00:01:04,940 --> 00:01:08,364
+voc imprimir minha funo. nome, isso deve
+
+20
+00:01:08,364 --> 00:01:11,450
+lhe dar o nome da funo.
+
+21
+00:01:11,450 --> 00:01:13,920
+O que voc acha que vai ser impresso?
+
+22
+00:01:16,870 --> 00:01:18,420
+Possivelmente no  o que voc esperaria.
+
+23
+00:01:20,130 --> 00:01:23,500
+Agora voc obtm secure_func impresso porque essa  a
+
+24
+00:01:23,500 --> 00:01:26,190
+funo que voc definiu que est realmente
+
+25
+00:01:26,190 --> 00:01:28,340
+substituindo my_function quando voc o executa
+
+26
+00:01:28,340 --> 00:01:29,840
+atravs deste decorador.
+
+27
+00:01:30,950 --> 00:01:35,950
+Alm disso, se voc tiver uma string de doc
+
+28
+00:01:36,740 --> 00:01:41,700
+aqui, por exemplo, nos permite recuperar a senha do
+
+29
+00:01:43,980 --> 00:01:48,980
+painel de administrao, voc pode imprimi-la imprimindo o documento dunder.
+
+30
+00:01:53,700 --> 00:01:56,350
+Agora voc pode ver que no recebe nada.
+
+31
+00:01:56,350 --> 00:01:59,590
+Voc no recebe nenhum porque, novamente,
+
+32
+00:01:59,590 --> 00:02:02,850
+my_function foi substitudo por este secure_func.
+
+33
+00:02:02,850 --> 00:02:07,270
+Se voc fosse adicionar algo aqui, hey, ento voc come hey
+
+34
+00:02:09,320 --> 00:02:12,400
+quando voc imprimir isso, como voc pode ver.
+
+35
+00:02:13,290 --> 00:02:15,080
+Ento no to bom.
+
+36
+00:02:16,270 --> 00:02:21,270
+Particularmente quando voc tem mltiplas funes, cada uma
+
+37
+00:02:21,410 --> 00:02:24,530
+sendo afetada por este decorador.
+
+38
+00:02:24,530 --> 00:02:26,830
+Tipo, se voc tem outra
+
+39
+00:02:26,830 --> 00:02:28,760
+funo aqui e no faz
+
+40
+00:02:28,760 --> 00:02:31,940
+nada, mas voc sabe, voc aplica o
+
+41
+00:02:33,830 --> 00:02:36,590
+decorador nela, ento voc pode imprimir
+
+42
+00:02:36,590 --> 00:02:41,410
+o nome my_function e voc pode imprimir outro nome e ambos
+
+43
+00:02:44,190 --> 00:02:46,960
+so chamados a mesma coisa , o
+
+44
+00:02:46,960 --> 00:02:50,460
+que, quero dizer,  verdade, ambos so essa
+
+45
+00:02:50,460 --> 00:02:53,850
+funo, mas o que eles esto fazendo  diferente.
+
+46
+00:02:53,850 --> 00:02:57,640
+Um deles est retornando o resultado de chamar my_function, o outro
+
+47
+00:02:58,660 --> 00:03:01,210
+est retornando o resultado de chamar outro.
+
+48
+00:03:01,210 --> 00:03:05,370
+Ento os dois com o mesmo nome no fazem sentido.
+
+49
+00:03:05,370 --> 00:03:06,900
+Eles so funes diferentes, por que
+
+50
+00:03:06,900 --> 00:03:08,650
+eles deveriam ter o mesmo nome?
+
+51
+00:03:09,650 --> 00:03:12,240
+Ento, isso  um pequeno problema com
+
+52
+00:03:12,240 --> 00:03:15,070
+os decoradores, mas h uma maneira de resolv-lo.
+
+53
+00:03:15,070 --> 00:03:19,058
+Vamos ver como podemos manter o nome da funo original e a string
+
+54
+00:03:19,058 --> 00:03:21,522
+doc ao usar um decorador no prximo vdeo.
+
+55
+00:03:21,522 --> 00:03:22,760
+Eu vejo voc l.
+

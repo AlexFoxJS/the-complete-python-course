@@ -1,0 +1,1016 @@
+1
+00:00:00,270 --> 00:00:01,976
+Jos: Hola chicos, bienvenidos
+
+2
+00:00:01,976 --> 00:00:05,728
+y en este video estamos hablando de generadores en Python.
+
+3
+00:00:05,728 --> 00:00:07,126
+Estoy muy entusiasmado con
+
+4
+00:00:07,126 --> 00:00:09,975
+esta seccin porque vamos a hablar sobre algunas
+
+5
+00:00:09,975 --> 00:00:12,713
+cosas ms avanzadas y los generadores son
+
+6
+00:00:12,713 --> 00:00:14,675
+uno de estos temas en
+
+7
+00:00:14,675 --> 00:00:18,535
+Python que muchos cursos ni siquiera mencionan, pero son esenciales para
+
+8
+00:00:18,535 --> 00:00:21,927
+el rendimiento y tambin porque la e -sync desarrollo
+
+9
+00:00:21,927 --> 00:00:22,959
+en Python, el
+
+10
+00:00:22,959 --> 00:00:24,121
+desarrollo e-synchronous que
+
+11
+00:00:24,121 --> 00:00:27,770
+vamos a aprender ms adelante se basa en estos generadores.
+
+12
+00:00:27,770 --> 00:00:29,215
+Cuando entiendes los generadores,
+
+13
+00:00:29,215 --> 00:00:32,747
+muchas cosas en Python empiezan a ser mucho ms claras.
+
+14
+00:00:32,747 --> 00:00:34,943
+Entonces, qu es un generador?
+
+15
+00:00:34,943 --> 00:00:37,922
+Un generador en Python es una funcin.
+
+16
+00:00:37,922 --> 00:00:39,259
+Es una funcin especial.
+
+17
+00:00:39,259 --> 00:00:41,966
+Vea una funcin que recuerda el estado en
+
+18
+00:00:41,966 --> 00:00:43,547
+que se encuentra entre las
+
+19
+00:00:43,547 --> 00:00:46,019
+ejecuciones, por lo que puede ejecutar la
+
+20
+00:00:46,019 --> 00:00:48,197
+funcin varias veces y recordar lo
+
+21
+00:00:48,197 --> 00:00:50,753
+que hizo la ltima vez que la ejecut.
+
+22
+00:00:50,753 --> 00:00:54,053
+Eso suena bastante extrao, djenme explicarlo con un ejemplo.
+
+23
+00:00:54,053 --> 00:00:56,493
+Imagine que desea construir una lista
+
+24
+00:00:56,493 --> 00:00:57,967
+de 100 nmeros,
+
+25
+00:00:57,967 --> 00:01:02,285
+muy simple, desea obtener una nueva lista con nmeros de
+
+26
+00:01:02,285 --> 00:01:04,645
+cero a 99, sin incluir 100.
+
+27
+00:01:04,645 --> 00:01:06,775
+Entonces podras hacer una funcin como esta.
+
+28
+00:01:06,775 --> 00:01:10,671
+Obviamente, no usando el rango y dems, ya conoce el alcance.
+
+29
+00:01:10,671 --> 00:01:14,863
+No usemos el rango, construyamos una lista desde cero.
+
+30
+00:01:14,863 --> 00:01:16,771
+Como lo harias.
+
+31
+00:01:16,771 --> 00:01:20,706
+Una buena forma de hacerlo sera comenzar con una lista vaca.
+
+32
+00:01:20,706 --> 00:01:24,751
+Digamos que lo llaman nums y que sea igual a una lista vaca.
+
+33
+00:01:24,751 --> 00:01:28,324
+Y tambin comience con un ndice igual a cero.
+
+34
+00:01:28,324 --> 00:01:31,441
+Entonces, mientras yo tenga menos de
+
+35
+00:01:31,441 --> 00:01:34,858
+100, diga nums dot append i.
+
+36
+00:01:35,768 --> 00:01:38,951
+As que vas a agregar cero al comienzo.
+
+37
+00:01:38,951 --> 00:01:41,945
+Luego vas a incrementar i por uno, lo
+
+38
+00:01:41,945 --> 00:01:43,586
+que lo convertir en uno.
+
+39
+00:01:43,586 --> 00:01:46,288
+Agregars uno, repetirs, agregars dos,
+
+40
+00:01:46,288 --> 00:01:50,646
+luego tres y as sucesivamente, hasta llegar a 99.
+
+41
+00:01:50,646 --> 00:01:52,597
+Y al final de esta funcin
+
+42
+00:01:52,597 --> 00:01:55,448
+devuelve nums, que es tu lista de nmeros.
+
+43
+00:01:55,448 --> 00:02:00,448
+Si imprimimos cien nmeros y ejecutamos eso.
+
+44
+00:02:01,838 --> 00:02:03,519
+Podemos ver que
+
+45
+00:02:03,519 --> 00:02:06,769
+contiene aqu nuestra lista de cien nmeros.
+
+46
+00:02:07,824 --> 00:02:10,167
+Por supuesto, podramos usar la comprensin de listas para esto.
+
+47
+00:02:10,167 --> 00:02:11,551
+Podramos usar la funcin de
+
+48
+00:02:11,551 --> 00:02:13,240
+rango, pero por ahora supongamos que
+
+49
+00:02:13,240 --> 00:02:15,761
+es una forma genial de hacerlo, porque lo que
+
+50
+00:02:15,761 --> 00:02:19,710
+realmente estoy explicando es esencialmente cmo funciona la funcin de rango en el interior.
+
+51
+00:02:19,710 --> 00:02:20,932
+Entonces, construimos una lista,
+
+52
+00:02:20,932 --> 00:02:23,745
+la llenamos con los primeros cien nmeros y luego volvemos.
+
+53
+00:02:23,745 --> 00:02:26,846
+Ahora tenemos cien nmeros en una lista.
+
+54
+00:02:26,846 --> 00:02:31,846
+Esta lista completa est en la memoria de su computadora almacenada como
+
+55
+00:02:32,587 --> 00:02:35,420
+este valor de retorno de la funcin.
+
+56
+00:02:36,261 --> 00:02:38,804
+Ahora, cien nmeros no es muy
+
+57
+00:02:38,804 --> 00:02:41,040
+grande, es una cantidad bastante
+
+58
+00:02:41,040 --> 00:02:45,450
+pequea de espacio, pero digamos que queramos almacenar 10 millones,
+
+59
+00:02:45,450 --> 00:02:48,189
+millones es como cien nmeros, pero
+
+60
+00:02:48,189 --> 00:02:52,272
+sera algo as como un milln de nmeros.
+
+61
+00:02:53,296 --> 00:02:56,039
+Generara una lista de un milln de nmeros
+
+62
+00:02:56,039 --> 00:02:57,546
+y la almacenara en esta
+
+63
+00:02:57,546 --> 00:02:59,936
+variable que se encuentra en la memoria
+
+64
+00:02:59,936 --> 00:03:02,762
+de su computadora y, presumiblemente, est ocupando una mayor
+
+65
+00:03:02,762 --> 00:03:05,003
+cantidad de memoria, porque cada uno de
+
+66
+00:03:05,003 --> 00:03:08,873
+estos nmeros ocupa una pequea cantidad de la memoria de su computadora.
+
+67
+00:03:08,873 --> 00:03:13,337
+Si queras 10 millones de nmeros, entonces es ms grande y ms.
+
+68
+00:03:13,337 --> 00:03:16,845
+Ahora tener 10 millones de nmeros no es un gran ejemplo,
+
+69
+00:03:16,845 --> 00:03:20,146
+pero imagina que tienes una lista muy larga de algo.
+
+70
+00:03:20,146 --> 00:03:22,000
+Por ejemplo, estos se usan a
+
+71
+00:03:22,000 --> 00:03:24,237
+menudo para calcular nmeros primos y en
+
+72
+00:03:24,237 --> 00:03:25,849
+big data y cosas as,
+
+73
+00:03:25,849 --> 00:03:28,695
+a veces puede querer listas grandes de cosas.
+
+74
+00:03:28,695 --> 00:03:31,853
+Por lo tanto, se utiliza un generador para eludir
+
+75
+00:03:31,853 --> 00:03:34,979
+este problema porque se supone que no necesita
+
+76
+00:03:34,979 --> 00:03:36,868
+100 nmeros a la vez.
+
+77
+00:03:36,868 --> 00:03:41,219
+Lo que necesita es cero para que pueda hacer algo con l.
+
+78
+00:03:41,219 --> 00:03:42,933
+Y luego uno para que puedas hacer algo con eso.
+
+79
+00:03:42,933 --> 00:03:45,855
+Y luego dos para que puedas hacer algo con eso.
+
+80
+00:03:45,855 --> 00:03:48,185
+Por ejemplo, con estos cien nmeros
+
+81
+00:03:48,185 --> 00:03:52,846
+podramos ir y multiplicarlos por dos y almacenarlos en otra lista.
+
+82
+00:03:52,846 --> 00:03:54,014
+Cmo lo haras t?
+
+83
+00:03:54,014 --> 00:03:57,097
+Hara algo as como menos comprensin, x
+
+84
+00:03:57,097 --> 00:04:00,430
+veces dos para x en cien nmeros.
+
+85
+00:04:02,186 --> 00:04:04,119
+Lo que ests haciendo aqu es
+
+86
+00:04:04,119 --> 00:04:07,472
+usar esta lista para aislarla y multiplicar cada nmero por dos.
+
+87
+00:04:07,472 --> 00:04:09,396
+Pensemos que esta multiplicacin por
+
+88
+00:04:09,396 --> 00:04:11,504
+dos es una operacin que queremos
+
+89
+00:04:11,504 --> 00:04:14,217
+hacer en estos nmeros para calcular algo.
+
+90
+00:04:14,217 --> 00:04:16,218
+Otro ejemplo sera, si tiene muchos
+
+91
+00:04:16,218 --> 00:04:19,096
+usuarios y desea calcular el compromiso a su
+
+92
+00:04:19,096 --> 00:04:21,026
+alrededor, o cun comprometidos estn con
+
+93
+00:04:21,026 --> 00:04:22,924
+su sistema, o algo as.
+
+94
+00:04:22,924 --> 00:04:24,774
+Bsicamente, desea revisar cada
+
+95
+00:04:24,774 --> 00:04:26,857
+elemento y realizar una operacin.
+
+96
+00:04:27,709 --> 00:04:31,214
+Lo que pasa aqu es que no necesitas todos los elementos a la vez.
+
+97
+00:04:31,214 --> 00:04:33,730
+Los necesitas uno por uno.
+
+98
+00:04:33,730 --> 00:04:36,076
+Entonces esto es para lo que se usan los generadores.
+
+99
+00:04:36,076 --> 00:04:38,718
+En lugar de tener toda la lista de elementos,
+
+100
+00:04:38,718 --> 00:04:40,692
+lo que hace, es que el generador
+
+101
+00:04:40,692 --> 00:04:42,481
+le proporciona el primer elemento de
+
+102
+00:04:42,481 --> 00:04:45,711
+la lista, sin almacenar toda la lista en la memoria.
+
+103
+00:04:45,711 --> 00:04:47,120
+La prxima vez que llame
+
+104
+00:04:47,120 --> 00:04:49,639
+al generador, recuerda el elemento que le dio la
+
+105
+00:04:49,639 --> 00:04:52,154
+ltima vez, y sabe darle el segundo elemento.
+
+106
+00:04:52,154 --> 00:04:54,624
+Luego lo ejecuta nuevamente y le da el tercer
+
+107
+00:04:54,624 --> 00:04:55,712
+elemento, y as sucesivamente.
+
+108
+00:04:55,712 --> 00:04:58,433
+Nunca almacena la lista en la
+
+109
+00:04:58,433 --> 00:05:02,664
+memoria, siempre solo recuerda el ltimo nmero que le dio,
+
+110
+00:05:02,664 --> 00:05:05,925
+por lo que puede darle la siguiente.
+
+111
+00:05:05,925 --> 00:05:07,522
+Tienes que divertir la funcin
+
+112
+00:05:07,522 --> 00:05:10,225
+cada vez que quieres un nuevo nmero, y
+
+113
+00:05:10,225 --> 00:05:12,899
+es por eso que se llama generador, ya
+
+114
+00:05:12,899 --> 00:05:17,604
+que genera nmeros, o incluso cadenas, o usuarios o lo que sea que quieras generar.
+
+115
+00:05:17,604 --> 00:05:22,604
+As es como lo haras, en lugar de "nums". append (i) ", dices" yield
+
+116
+00:05:22,844 --> 00:05:27,532
+i ", porque i es el nmero que queremos
+
+117
+00:05:27,532 --> 00:05:30,075
+devolver, ya no necesitamos este
+
+118
+00:05:30,075 --> 00:05:33,157
+nums del mismo corchete, y ya
+
+119
+00:05:33,157 --> 00:05:37,157
+no necesitamos el segmento de retorno.
+
+120
+00:05:38,012 --> 00:05:42,095
+Entonces ahora esta funcin aqu se llama funcin de generador.
+
+121
+00:05:42,095 --> 00:05:46,423
+El rendimiento es muy parecido al retorno, pero lo que
+
+122
+00:05:46,423 --> 00:05:51,024
+sucede es que te da i cuando lo llamas, y luego
+
+123
+00:05:51,024 --> 00:05:54,778
+recuerda que est aqu, se detiene justo antes de
+
+124
+00:05:54,778 --> 00:05:57,999
+la lnea cinco. Justo despus de la lnea cuatro
+
+125
+00:05:57,999 --> 00:05:59,254
+all en el medio.
+
+126
+00:05:59,254 --> 00:06:02,052
+La prxima vez que llame a la funcin, continuar,
+
+127
+00:06:02,052 --> 00:06:04,187
+entonces lo que har es incrementarla una
+
+128
+00:06:04,187 --> 00:06:06,925
+a una, volver a ejecutar el ciclo y ceder
+
+129
+00:06:06,925 --> 00:06:09,664
+uno, le dar uno y luego se detendr.
+
+130
+00:06:09,664 --> 00:06:11,105
+La prxima vez que lo
+
+131
+00:06:11,105 --> 00:06:12,580
+llame, continuar incrementando, compro uno
+
+132
+00:06:12,580 --> 00:06:16,994
+y repito el ciclo y luego le doy dos, y luego se detendr, y as sucesivamente.
+
+133
+00:06:16,994 --> 00:06:18,994
+Eventualmente cuando te quedes
+
+134
+00:06:18,994 --> 00:06:21,077
+sin nmeros, no dar ninguno.
+
+135
+00:06:23,335 --> 00:06:26,418
+Y luego sabes que est terminado.
+
+136
+00:06:27,571 --> 00:06:29,582
+Entonces, cmo vamos a hacer esto?
+
+137
+00:06:29,582 --> 00:06:33,499
+Primero, imprimamos cientos de nmeros.
+
+138
+00:06:35,532 --> 00:06:37,700
+Observe cmo ya no nos da una
+
+139
+00:06:37,700 --> 00:06:40,020
+lista, ahora nos da un objeto generador, que
+
+140
+00:06:40,020 --> 00:06:42,040
+se llama cien nmeros, por lo tanto,
+
+141
+00:06:42,040 --> 00:06:43,451
+el nombre de nuestra funcin.
+
+142
+00:06:43,451 --> 00:06:47,800
+Tambin nos da la direccin de memoria de nuestro objeto.
+
+143
+00:06:47,800 --> 00:06:50,104
+Observe cmo definimos una funcin, pero la
+
+144
+00:06:50,104 --> 00:06:52,903
+impresin nos dice que es un objeto, porque Python
+
+145
+00:06:52,903 --> 00:06:54,466
+en el fondo se da
+
+146
+00:06:54,466 --> 00:06:56,708
+cuenta de que ha utilizado el rendimiento,
+
+147
+00:06:56,708 --> 00:07:00,257
+est creando un generador y los convierte en un objeto python.
+
+148
+00:07:00,257 --> 00:07:02,451
+Te dir cmo hacer estos
+
+149
+00:07:02,451 --> 00:07:05,618
+objetos t mismo sin una funcin ms adelante.
+
+150
+00:07:08,476 --> 00:07:13,476
+Entonces, almacenemos nuestro generador en una variable.
+
+151
+00:07:14,657 --> 00:07:16,456
+Vamos a llamarlo "g", ese es un
+
+152
+00:07:16,456 --> 00:07:19,060
+nombre bastante popular para un generador en un programa pequeo.
+
+153
+00:07:19,060 --> 00:07:20,737
+Si tiene muchos generadores, por
+
+154
+00:07:20,737 --> 00:07:23,488
+supuesto, tendr que buscar un nombre ms descriptivo.
+
+155
+00:07:23,488 --> 00:07:26,204
+Luego, vamos a imprimir el siguiente
+
+156
+00:07:26,204 --> 00:07:28,504
+valor que el generador nos dara.
+
+157
+00:07:28,504 --> 00:07:31,685
+Tenga en cuenta que cuando inicializa un generador, como
+
+158
+00:07:31,685 --> 00:07:34,864
+ese, no ejecuta la funcin, comienza en la parte
+
+159
+00:07:34,864 --> 00:07:36,781
+superior sin ejecutar en absoluto.
+
+160
+00:07:37,677 --> 00:07:40,750
+Cuando le pidas el siguiente valor, se ejecutar
+
+161
+00:07:40,750 --> 00:07:42,490
+hasta el rendimiento y
+
+162
+00:07:42,490 --> 00:07:45,368
+te dar el valor que hayas obtenido.
+
+163
+00:07:45,368 --> 00:07:47,238
+La forma en que le pides el
+
+164
+00:07:47,238 --> 00:07:51,661
+siguiente valor, es que no ejecutas la funcin nuevamente, sino que dices a continuacin de "g".
+
+165
+00:07:51,661 --> 00:07:55,514
+Entonces, la siguiente es una funcin incorporada que afecta a
+
+166
+00:07:55,514 --> 00:07:58,679
+los generadores, y le dice que aumente el rendimiento.
+
+167
+00:07:58,679 --> 00:08:03,679
+Est bien, entonces si ejecutamos esto, puedes ver que obtenemos
+
+168
+00:08:03,892 --> 00:08:07,820
+cero, porque ese es el primer nmero dado.
+
+169
+00:08:07,820 --> 00:08:11,153
+Ahora nuestro generador, "g", se detuvo aqu en
+
+170
+00:08:12,992 --> 00:08:15,557
+la lnea 4. 5 entre 4 y
+
+171
+00:08:15,557 --> 00:08:20,557
+5, as que si le pedimos otro nmero, observe que, por supuesto, al final de
+
+172
+00:08:21,835 --> 00:08:24,255
+un programa el generador se destruye, por
+
+173
+00:08:24,255 --> 00:08:27,129
+lo que si ejecutamos este programa de nuevo,
+
+174
+00:08:27,129 --> 00:08:30,255
+este sera cero nuevamente y este sera uno ahora.
+
+175
+00:08:30,255 --> 00:08:32,940
+No lo recuerda en las ejecuciones de
+
+176
+00:08:32,940 --> 00:08:35,690
+programas, simplemente no es as como funciona Python.
+
+177
+00:08:36,646 --> 00:08:40,603
+Entonces ahora podemos pedir el primer nmero y
+
+178
+00:08:40,603 --> 00:08:42,823
+luego el siguiente nmero.
+
+179
+00:08:42,823 --> 00:08:44,652
+Despus del primer nmero, se detendr
+
+180
+00:08:44,652 --> 00:08:46,084
+entre cuatro y cinco.
+
+181
+00:08:46,084 --> 00:08:50,073
+Cuando decimos el prximo, contina hasta el prximo rendimiento, lo
+
+182
+00:08:50,073 --> 00:08:54,573
+que significa repetir este ciclo una vez y nos da uno.
+
+183
+00:08:56,076 --> 00:08:57,243
+Bueno.
+
+184
+00:08:58,171 --> 00:09:03,171
+Muy importante, la funcin recuerda dnde se detuvo.
+
+185
+00:09:04,709 --> 00:09:07,852
+Entonces, en cualquier punto, puede detener la ejecucin de
+
+186
+00:09:07,852 --> 00:09:11,510
+la funcin, y luego puede llamar a continuacin para continuar.
+
+187
+00:09:11,510 --> 00:09:15,942
+Por lo tanto, no es til solo para generar nmeros o lo
+
+188
+00:09:15,942 --> 00:09:19,000
+que sea, tambin es til cuando desea detener la
+
+189
+00:09:19,000 --> 00:09:21,185
+ejecucin temporal de una funcin, y
+
+190
+00:09:21,185 --> 00:09:22,901
+luego puede continuar ejecutndola cuando
+
+191
+00:09:22,901 --> 00:09:24,734
+lo desee llamando al siguiente.
+
+192
+00:09:25,948 --> 00:09:28,217
+Entonces tal vez no sea algo
+
+193
+00:09:28,217 --> 00:09:31,724
+que tenga demasiado sentido en este momento, pero recuerde
+
+194
+00:09:31,724 --> 00:09:35,404
+eso para cuando lo necesitemos cuando hagamos una programacin sincronizada.
+
+195
+00:09:35,404 --> 00:09:37,710
+Entonces, qu pasa con la funcin de rango?
+
+196
+00:09:37,710 --> 00:09:39,824
+Dije antes que esto explicaba esencialmente
+
+197
+00:09:39,824 --> 00:09:44,626
+cmo funciona la funcin de rango en el interior, y eso es cierto,
+
+198
+00:09:44,626 --> 00:09:45,953
+pero la funcin de
+
+199
+00:09:45,953 --> 00:09:48,810
+rango no le da un generador directamente.
+
+200
+00:09:48,810 --> 00:09:52,029
+Aqu, hagamos algo como "mi
+
+201
+00:09:52,029 --> 00:09:55,541
+objeto de rango", va a ser
+
+202
+00:09:55,541 --> 00:09:57,458
+el rango 10.
+
+203
+00:09:58,951 --> 00:10:02,517
+Esto se comporta muy parecido a un generador, pero
+
+204
+00:10:02,517 --> 00:10:05,271
+si llamas a continuacin de "mi objeto
+
+205
+00:10:05,271 --> 00:10:08,188
+de rango", obtienes un error y observa eso.
+
+206
+00:10:09,355 --> 00:10:13,253
+Esto se debe a que el objeto de rango no es
+
+207
+00:10:13,253 --> 00:10:15,077
+un generador, aunque se comporta
+
+208
+00:10:15,077 --> 00:10:17,894
+de esta manera, no genera una lista y
+
+209
+00:10:17,894 --> 00:10:22,557
+luego le permite iterar sobre ella, se comporta de esta manera de generacin
+
+210
+00:10:22,557 --> 00:10:24,307
+para ser ms eficiente.
+
+211
+00:10:25,696 --> 00:10:27,863
+"Mi objeto de rango", sin
+
+212
+00:10:29,150 --> 00:10:31,507
+embargo, puedes recordar que lo
+
+213
+00:10:31,507 --> 00:10:33,874
+imprimimos mucho antes en el
+
+214
+00:10:33,874 --> 00:10:38,874
+curso y recibimos un rango extrao de cero a diez.
+
+215
+00:10:39,460 --> 00:10:43,793
+Esa es solo la funcin "repr" que se llama, y como
+
+216
+00:10:44,657 --> 00:10:48,381
+puede ver si imprimimos el resultado "repr", tambin vemos
+
+217
+00:10:48,381 --> 00:10:50,958
+un rango de cero a diez.
+
+218
+00:10:50,958 --> 00:10:54,109
+Entonces, "mi objeto de rango" es algo que se
+
+219
+00:10:54,109 --> 00:10:56,165
+comporta muy parecido a esto, vamos
+
+220
+00:10:56,165 --> 00:11:00,832
+a aprender en un par de videos exactamente cmo podemos iterar sobre un objeto
+
+221
+00:11:02,133 --> 00:11:05,321
+para que se comporte como un objeto de rango.
+
+222
+00:11:05,321 --> 00:11:09,671
+Entonces, hemos aprendido sobre estos generadores, y una cosa ms que
+
+223
+00:11:09,671 --> 00:11:12,056
+quera mencionar en realidad, sobre los
+
+224
+00:11:12,056 --> 00:11:17,056
+generadores es que la funcin de lista puede convertir un generador en una lista.
+
+225
+00:11:17,475 --> 00:11:19,748
+Entonces podemos imprimir la lista de "g".
+
+226
+00:11:19,748 --> 00:11:22,125
+Aqu mismo lo que hemos llamado "siguiente", luego "siguiente"
+
+227
+00:11:22,125 --> 00:11:23,458
+de nuevo, y luego "lista".
+
+228
+00:11:24,423 --> 00:11:28,852
+Entonces ahora tenemos cero y uno impreso para esas son las dos
+
+229
+00:11:28,852 --> 00:11:31,125
+cosas en nuestras "prximas" funciones, y
+
+230
+00:11:31,125 --> 00:11:33,668
+luego hemos generado una lista del generador,
+
+231
+00:11:33,668 --> 00:11:37,677
+pero esa lista, por supuesto, contina desde donde la dejamos.
+
+232
+00:11:37,677 --> 00:11:40,122
+El generador en s recuerda lo
+
+233
+00:11:40,122 --> 00:11:44,238
+que era, entonces la lista comienza desde dos, no desde cero.
+
+234
+00:11:44,238 --> 00:11:46,893
+Entonces, es realmente importante recordar en los
+
+235
+00:11:46,893 --> 00:11:48,832
+generadores, ellos recuerdan dnde estaban.
+
+236
+00:11:48,832 --> 00:11:53,832
+Entonces, cuando creas uno, eso es bsicamente desde el momento en que comienzas a usarlo,
+
+237
+00:11:53,952 --> 00:11:55,645
+en el momento en que
+
+238
+00:11:55,645 --> 00:11:58,169
+comienzas a llamar "siguiente" en l, recuerda dnde
+
+239
+00:11:58,169 --> 00:12:01,497
+est y no puedes retroceder. Bueno.
+
+240
+00:12:01,497 --> 00:12:03,225
+Ahora, en los prximos
+
+241
+00:12:03,225 --> 00:12:04,988
+videos, aprenderemos ms sobre generadores.
+
+242
+00:12:04,988 --> 00:12:06,634
+Vamos a aprender sobre las
+
+243
+00:12:06,634 --> 00:12:09,856
+clases de generadores, cmo puede crear una clase que se
+
+244
+00:12:09,856 --> 00:12:13,238
+comporte como un generador, y tambin vamos a aprender acerca de
+
+245
+00:12:13,238 --> 00:12:15,402
+iteradores e iterables en Python, y los
+
+246
+00:12:15,402 --> 00:12:17,069
+objetivos de rango son un ejemplo.
+
+247
+00:12:18,160 --> 00:12:19,555
+Luego vamos a pasar
+
+248
+00:12:19,555 --> 00:12:21,532
+a algunos ejemplos de programacin
+
+249
+00:12:21,532 --> 00:12:25,282
+funcional, como filtro, mapa, cualquier y todo, y enumerar.
+
+250
+00:12:26,150 --> 00:12:27,635
+Entonces, muy entusiasmado con esta
+
+251
+00:12:27,635 --> 00:12:30,574
+seccin, confo en que los generadores van a ser
+
+252
+00:12:30,574 --> 00:12:33,320
+algo que vas a necesitar en tu desarrollo de
+
+253
+00:12:33,320 --> 00:12:36,482
+Python, particularmente a medida que avanzamos en el curso.
+
+254
+00:12:36,482 --> 00:12:39,090
+Entonces con eso dicho, nos vemos en el prximo video.
+

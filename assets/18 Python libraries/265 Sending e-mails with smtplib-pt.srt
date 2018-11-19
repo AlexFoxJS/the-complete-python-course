@@ -1,0 +1,580 @@
+1
+00:00:00,240 --> 00:00:01,420
+Jose: Ol e bem vindo de volta.
+
+2
+00:00:01,420 --> 00:00:05,000
+Neste vdeo, vamos analisar o envio de e-mails.
+
+3
+00:00:05,000 --> 00:00:08,240
+O envio de emails com o Python pode ser feito de vrias maneiras.
+
+4
+00:00:08,240 --> 00:00:11,050
+A maneira mais simples, porm,  que voc pode enviar
+
+5
+00:00:11,050 --> 00:00:13,230
+o e-mail usando sua conta de e-mail pessoal.
+
+6
+00:00:13,230 --> 00:00:15,360
+Por exemplo, se voc tiver uma conta do
+
+7
+00:00:15,360 --> 00:00:18,123
+Gmail, poder enviar e-mails usando essa conta e o Python.
+
+8
+00:00:19,030 --> 00:00:22,750
+Algo que voc pode no saber  que todos os e-mails
+
+9
+00:00:22,750 --> 00:00:26,280
+vo, ou a maioria deles passa por algo chamado smtp.
+
+10
+00:00:26,280 --> 00:00:30,980
+Smtp  um protocolo, muito parecido com http is, usado para
+
+11
+00:00:30,980 --> 00:00:33,720
+se comunicar entre duas coisas diferentes.
+
+12
+00:00:33,720 --> 00:00:36,520
+Nesse caso, vamos usar o smtp para nos comunicarmos
+
+13
+00:00:36,520 --> 00:00:40,570
+entre o nosso cdigo Python e os servidores do gmail, e vamos dizer
+
+14
+00:00:40,570 --> 00:00:43,530
+aos servidores do gmail para fazer o login usando nossa
+
+15
+00:00:43,530 --> 00:00:45,823
+conta do gmail e enviar um e-mail.
+
+16
+00:00:47,320 --> 00:00:50,803
+Ento vamos criar um novo arquivo Python que eu
+
+17
+00:00:50,803 --> 00:00:54,261
+vou chamar de email_smtplib. py, e vamos
+
+18
+00:00:54,261 --> 00:00:56,590
+comear a enviar e-mail.
+
+19
+00:00:56,590 --> 00:01:00,290
+ realmente muito simples quando voc tem todo o
+
+20
+00:01:00,290 --> 00:01:01,123
+cdigo juntos.
+
+21
+00:01:01,123 --> 00:01:02,520
+Ento a primeira coisa que vamos
+
+22
+00:01:02,520 --> 00:01:03,813
+fazer  importar o smtplib.
+
+23
+00:01:04,710 --> 00:01:08,859
+Smtplib vem com Python e  usado para conversar
+
+24
+00:01:08,859 --> 00:01:10,913
+com um servidor SMTP.
+
+25
+00:01:11,770 --> 00:01:16,010
+Os servidores do Gmail so servidores smtp e voc pode
+
+26
+00:01:16,010 --> 00:01:20,033
+se comunicar diretamente com eles usando essa biblioteca, ok?
+
+27
+00:01:21,400 --> 00:01:24,940
+Ento, o que vamos fazer
+
+28
+00:01:24,940 --> 00:01:29,080
+ comear ligando ao servidor smtp.
+
+29
+00:01:29,080 --> 00:01:32,518
+O que vamos fazer,  que vamos
+
+30
+00:01:32,518 --> 00:01:37,518
+fazer o smtp_connector  smtplib. SMTP, e aqui ns vamos passar em um nome de
+
+31
+00:01:38,430 --> 00:01:41,910
+host que vai ser smtp. gmail. com para
+
+32
+00:01:41,910 --> 00:01:43,670
+os servidores do Gmail.
+
+33
+00:01:43,670 --> 00:01:47,640
+Se voc estiver usando um servidor diferente, como o Hotmail ou
+
+34
+00:01:47,640 --> 00:01:51,471
+o Yahoo, ou qualquer outra coisa, certifique-se de descobrir o servidor
+
+35
+00:01:51,471 --> 00:01:55,930
+smtp e tambm o nome da porta, que para o gmail  587.
+
+36
+00:01:55,930 --> 00:02:00,000
+Ok, esta  normalmente a porta para servidores smtp, 587.
+
+37
+00:02:00,000 --> 00:02:03,140
+Portanto, certifique-se de descobrir qual  o nome do
+
+38
+00:02:03,140 --> 00:02:05,300
+host e qual  a porta.
+
+39
+00:02:05,300 --> 00:02:10,010
+Ento ns vamos fazer smtp_connector. starttls, e isso apenas inicia
+
+40
+00:02:10,010 --> 00:02:12,480
+uma conexo segura com ele.
+
+41
+00:02:12,480 --> 00:02:15,910
+Em alguns casos, os tls no precisaro se conectar
+
+42
+00:02:15,910 --> 00:02:19,730
+ao seu servidor smtp, portanto, nesses casos, voc no precisar
+
+43
+00:02:19,730 --> 00:02:24,210
+fazer isso e, em seguida, smtp_connector. login, e ns vamos dar-lhe
+
+44
+00:02:24,210 --> 00:02:26,370
+a nossa conta de e-mail,
+
+45
+00:02:26,370 --> 00:02:29,992
+voc @ gmail. com e nossa senha.
+
+46
+00:02:29,992 --> 00:02:31,990
+Claro, no vou digitar
+
+47
+00:02:31,990 --> 00:02:34,270
+meu e-mail e senha aqui.
+
+48
+00:02:34,270 --> 00:02:36,220
+Espero que voc entenda isso,
+
+49
+00:02:36,220 --> 00:02:39,820
+mas, no entanto,  tudo o que voc precisa fazer.
+
+50
+00:02:39,820 --> 00:02:43,640
+Agora  possvel que, quando voc aperta o play, por exemplo,
+
+51
+00:02:43,640 --> 00:02:45,590
+se pressionarmos o play agora, 
+
+52
+00:02:47,170 --> 00:02:48,820
+claro que teremos um erro.
+
+53
+00:02:48,820 --> 00:02:51,930
+Neste caso, nome de usurio e senha no so aceitos.
+
+54
+00:02:51,930 --> 00:02:55,260
+Se voc digitar seu nome de usurio, sua conta de
+
+55
+00:02:55,260 --> 00:02:59,520
+e-mail e sua senha corretamente, ainda poder receber um erro, e isso acontecer,
+
+56
+00:02:59,520 --> 00:03:01,760
+ claro, se voc estiver usando a
+
+57
+00:03:01,760 --> 00:03:03,513
+autenticao de dois fatores.
+
+58
+00:03:04,420 --> 00:03:06,560
+Se voc estiver usando a autenticao
+
+59
+00:03:06,560 --> 00:03:10,880
+de dois fatores, voc precisar obter um tipo especial de senha que o
+
+60
+00:03:10,880 --> 00:03:14,620
+seu provedor lhe dar, que  uma senha do aplicativo normalmente,
+
+61
+00:03:14,620 --> 00:03:16,630
+ento eu adicionarei uma senha que
+
+62
+00:03:16,630 --> 00:03:19,270
+no o topo do arquivo para dizer isso, ok? "Um SMTPAuthenticationError mesmo quando" a sua senha
+
+63
+00:03:19,270 --> 00:03:20,790
+Ento, se voc conseguir. est correta,  possvel
+
+64
+00:03:22,917 --> 00:03:25,999
+que "voc tenha autenticao de dois fatores ativada.
+
+65
+00:03:25,999 --> 00:03:27,027
+"Voc precisar usar uma senha
+
+66
+00:03:27,027 --> 00:03:29,427
+de aplicativo para fazer login" em vez de sua senha normal. "Agora, especialmente no caso do gmail, h
+
+67
+00:03:29,427 --> 00:03:31,797
+outra coisa: se voc no tiver dois
+
+68
+00:03:31,797 --> 00:03:33,627
+fatores de autenticao
+
+69
+00:03:34,490 --> 00:03:36,650
+habilitados, ter que permitir o acesso
+
+70
+00:03:36,650 --> 00:03:39,187
+de aplicativos menos seguros no Gmail.
+
+71
+00:03:39,187 --> 00:03:41,080
+Seu aplicativo aqui, que faz
+
+72
+00:03:41,080 --> 00:03:45,194
+login com seu nome de usurio e senha diretamente,  o que
+
+73
+00:03:45,194 --> 00:03:48,040
+o gmail classifica como um aplicativo menos seguro.
+
+74
+00:03:48,040 --> 00:03:50,800
+Assim, atravs das suas preferncias de segurana do Gmail,
+
+75
+00:03:50,800 --> 00:03:53,310
+voc pode ativar aplicativos menos seguros para que
+
+76
+00:03:53,310 --> 00:03:55,530
+voc possa test-lo e, claro, lembre-se de
+
+77
+00:03:55,530 --> 00:03:59,410
+desativar aplicativos menos seguros quando terminar de aprender a enviar nosso e-mail, ok?
+
+78
+00:03:59,410 --> 00:04:02,540
+Se voc usa uma senha de aplicativo ou
+
+79
+00:04:02,540 --> 00:04:05,883
+ativa aplicativos menos seguros e no tem 2FA
+
+80
+00:04:06,870 --> 00:04:11,170
+ativado, isso deve funcionar e voc no deve receber nenhum erro.
+
+81
+00:04:11,170 --> 00:04:13,890
+Mas  claro que no temos um email que estamos enviando ainda.
+
+82
+00:04:13,890 --> 00:04:16,220
+Ns no escrevemos nada para enviar.
+
+83
+00:04:16,220 --> 00:04:19,140
+Ento podemos fazer isso.
+
+84
+00:04:19,140 --> 00:04:21,810
+Ns vamos usar o mdulo de email que
+
+85
+00:04:21,810 --> 00:04:23,710
+est presente no Python 3.
+
+86
+00:04:23,710 --> 00:04:26,030
+Ns vamos dizer por e-mail. message import EmailMessage.
+
+87
+00:04:26,030 --> 00:04:26,863
+Essa classe
+
+88
+00:04:26,863 --> 00:04:31,097
+EmailMessage  uma maneira de construir
+
+89
+00:04:32,195 --> 00:04:35,590
+uma mensagem de email com muita facilidade, ento o que
+
+90
+00:04:35,590 --> 00:04:38,740
+faremos  criar um novo objeto EmailMessage e depois
+
+91
+00:04:38,740 --> 00:04:41,200
+definiremos o assunto para algo como Test email.
+
+92
+00:04:41,200 --> 00:04:43,710
+O para ser o seu email, voc @ gmail. com E a, para ser quem
+
+93
+00:04:46,970 --> 00:04:49,230
+voc quer enviar um email para.
+
+94
+00:04:49,230 --> 00:04:54,230
+Este e-mail vai realmente para algum, ento sinta-se
+
+95
+00:04:58,440 --> 00:05:01,860
+ vontade para enviar esse e-mail para algum que voc conhea.
+
+96
+00:05:01,860 --> 00:05:06,140
+De preferncia, no os envie para mim.
+
+97
+00:05:06,140 --> 00:05:07,920
+Eu poderia receber muitos e-mails se
+
+98
+00:05:07,920 --> 00:05:09,470
+fizermos isso, mas voc pode
+
+99
+00:05:09,470 --> 00:05:11,830
+envi-los para outra pessoa, someoneelse @ gmail. com, ok?
+
+100
+00:05:11,830 --> 00:05:13,680
+Ento voc vai e-mail. set_content, e aqui voc pode
+
+101
+00:05:13,680 --> 00:05:18,680
+digitar algum contedo de texto que
+
+102
+00:05:18,960 --> 00:05:21,573
+o e-mail conter.
+
+103
+00:05:23,310 --> 00:05:26,310
+O que voc normalmente faz nesses casos, quando
+
+104
+00:05:26,310 --> 00:05:28,430
+voc quer definir o contedo de
+
+105
+00:05:28,430 --> 00:05:30,680
+um email, se , voc sabe,
+
+106
+00:05:30,680 --> 00:05:33,450
+contedo simples, voc ir em algum ponto aqui,
+
+107
+00:05:33,450 --> 00:05:37,369
+criar algo chamado email_content e usar uma string multi line para
+
+108
+00:05:37,369 --> 00:05:40,157
+dizer algo como, "Dear Sir / Madam", estou
+
+109
+00:05:41,570 --> 00:05:44,313
+lhe enviando um e-mail com o Python.
+
+110
+00:05:44,313 --> 00:05:46,683
+"Espero que voc goste.
+
+111
+00:05:47,537 --> 00:05:50,727
+"Atenciosamente, eu. "E ento voc pode apenas definir o contedo do
+
+112
+00:05:50,727 --> 00:05:51,843
+email como esse.
+
+113
+00:05:53,174 --> 00:05:55,587
+Agora que voc
+
+114
+00:05:56,480 --> 00:06:00,973
+tem seu e-mail e voc tem sua conexo com o servidor SMTP,
+
+115
+00:06:02,410 --> 00:06:05,130
+tudo que voc precisa fazer  dizer smtp_connector. send_message, e voc  o objeto
+
+116
+00:06:05,130 --> 00:06:08,450
+de e-mail que criamos aqui, e que
+
+117
+00:06:08,450 --> 00:06:09,983
+tem todos
+
+118
+00:06:11,697 --> 00:06:15,663
+os cabealhos, assunto, de e para o contedo e,
+
+119
+00:06:15,663 --> 00:06:19,790
+em seguida, lembre-se de sair do smtp_connector tambm.
+
+120
+00:06:19,790 --> 00:06:23,243
+Isso fecha a conexo com sua conta
+
+121
+00:06:23,243 --> 00:06:25,510
+e tudo  bom.
+
+122
+00:06:25,510 --> 00:06:28,060
+Isso  tudo o que voc precisa para enviar um e-mail, usando
+
+123
+00:06:28,060 --> 00:06:29,313
+sua conta pessoal, alm de cuidar
+
+124
+00:06:30,780 --> 00:06:32,777
+das preocupaes de segurana do seu provedor de e-mail.
+
+125
+00:06:32,777 --> 00:06:36,060
+ claro que, para muitos aplicativos, assim que voc
+
+126
+00:06:36,060 --> 00:06:39,290
+os libera, e voc os coloca l fora, para
+
+127
+00:06:39,290 --> 00:06:42,170
+os usurios usarem, voc no quer realmente enviar
+
+128
+00:06:42,170 --> 00:06:43,910
+e-mails com sua conta pessoal.
+
+129
+00:06:43,910 --> 00:06:48,350
+pode ser criar outra conta do gmail que seja para o seu
+
+130
+00:06:49,202 --> 00:06:51,440
+negcio, mas o gmail no gosta
+
+131
+00:06:51,440 --> 00:06:54,410
+muito disso, ento o que normalmente fazemos, em
+
+132
+00:06:54,410 --> 00:06:58,910
+vez de usar o smtplib, que  uma forma de enviar alguns e-mails.
+
+133
+00:06:58,910 --> 00:07:02,410
+O que fazemos normalmente, se queremos enviar muitos e-mails,
+
+134
+00:07:02,410 --> 00:07:05,253
+ usar um servio de envio de e-mail.
+
+135
+00:07:06,250 --> 00:07:08,070
+H alguns deles, como
+
+136
+00:07:08,070 --> 00:07:11,330
+o Mailgun ou o SendGrid, e neste
+
+137
+00:07:11,330 --> 00:07:15,080
+curso, vamos examinar o Mailgun para enviar e-mails
+
+138
+00:07:15,080 --> 00:07:17,610
+a uma escala maior de usurios.
+
+139
+00:07:17,610 --> 00:07:19,717
+Ento,  assim que voc pode
+
+140
+00:07:19,717 --> 00:07:22,793
+enviar e-mail com smtplib para enviar pequenas quantidades de
+
+141
+00:07:23,640 --> 00:07:25,575
+e-mails, usando sua conta pessoal.
+
+142
+00:07:25,575 --> 00:07:28,080
+No prximo vdeo, vamos ver o uso do Mailgun.
+
+143
+00:07:28,080 --> 00:07:29,700
+Eu te vejo l.
+
+144
+00:07:29,700 --> 00:07:32,730
+&nbsp;
+
+145
+00:07:32,730 --> 00:07:33,680
+&nbsp;
+

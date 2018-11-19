@@ -1,0 +1,348 @@
+1
+00:00:00,383 --> 00:00:01,610
+Jos: Hola, y bienvenido de nuevo.
+
+2
+00:00:01,610 --> 00:00:02,810
+En este video, vamos
+
+3
+00:00:02,810 --> 00:00:05,000
+a usar un virtualenv con el pipenv.
+
+4
+00:00:06,070 --> 00:00:09,350
+En el ltimo video, vimos que cuando hicimos pipenv instal,
+
+5
+00:00:09,350 --> 00:00:12,500
+esto cre un entorno virtual para nuestro proyecto, pero no
+
+6
+00:00:12,500 --> 00:00:14,840
+hay una carpeta de entorno virtual dentro
+
+7
+00:00:14,840 --> 00:00:16,820
+de nuestro proyecto, solo hay un
+
+8
+00:00:16,820 --> 00:00:19,160
+Pipfile y un Pipfile. bloquear.
+
+9
+00:00:20,640 --> 00:00:23,070
+De hecho, la ubicacin virtualenv es
+
+10
+00:00:23,070 --> 00:00:25,040
+completamente diferente, es this
+
+11
+00:00:25,040 --> 00:00:29,478
+/ User / jslvtr /. local / share /
+
+12
+00:00:29,478 --> 00:00:34,478
+virtualenvs / scraping-books dash nmeros aleatorios y letras.
+
+13
+00:00:36,890 --> 00:00:38,230
+Ahora lo siento por eso.
+
+14
+00:00:38,230 --> 00:00:41,050
+As que Pipenv ha creado el
+
+15
+00:00:41,050 --> 00:00:44,610
+entorno virtual en un lugar completamente diferente,
+
+16
+00:00:44,610 --> 00:00:48,260
+que es una carpeta nica para este proyecto.
+
+17
+00:00:49,260 --> 00:00:54,260
+Siempre que use pipenv, puede ejecutar python y ejecutar el
+
+18
+00:00:57,870 --> 00:01:01,780
+intrprete de Python en ese entorno virtual, de
+
+19
+00:01:01,780 --> 00:01:05,090
+modo que cuando procese cualquier cosa mediante
+
+20
+00:01:05,090 --> 00:01:09,310
+pipenv run, usar un entorno virtual creado para usted,
+
+21
+00:01:09,310 --> 00:01:12,220
+no dentro de esta carpeta pero
+
+22
+00:01:12,220 --> 00:01:14,990
+en otro lugar, como en donde
+
+23
+00:01:14,990 --> 00:01:17,480
+se ejecutan sus programas.
+
+24
+00:01:17,480 --> 00:01:20,040
+Entonces, ya no es necesario que lo active y desactive,
+
+25
+00:01:20,040 --> 00:01:22,340
+todo lo que tiene que hacer es pedirle a
+
+26
+00:01:22,340 --> 00:01:24,540
+pipenv que ejecute lo que sea que quiera ejecutar.
+
+27
+00:01:25,480 --> 00:01:28,010
+Entonces, como pueden ver cuando escribimos pipenv run python, eso
+
+28
+00:01:28,010 --> 00:01:30,330
+fue directamente a Python 3. 7, que es
+
+29
+00:01:30,330 --> 00:01:33,290
+lo que usamos en nuestro entorno virtual
+
+30
+00:01:33,290 --> 00:01:35,420
+que fue creado por pipenv.
+
+31
+00:01:35,420 --> 00:01:38,300
+Si salimos aqu tecleando control d, y
+
+32
+00:01:38,300 --> 00:01:42,690
+escribimos pipenv run python menu. py, puedes ver que
+
+33
+00:01:42,690 --> 00:01:44,200
+todo funciona.
+
+34
+00:01:44,200 --> 00:01:47,460
+Todos los paquetes estn instalados en el entorno virtual, pero
+
+35
+00:01:47,460 --> 00:01:50,010
+el entorno virtual no est dentro de esta
+
+36
+00:01:50,010 --> 00:01:54,130
+carpeta, est en otro lugar, y eso es todo lo que funciona all.
+
+37
+00:01:55,730 --> 00:01:58,410
+Entonces, Pipenv realmente te ayuda a
+
+38
+00:01:58,410 --> 00:02:02,660
+limpiar tu entorno de desarrollo, ya no puedes tener la
+
+39
+00:02:02,660 --> 00:02:07,270
+vn, o ya no tendrs la vn dentro de esta carpeta
+
+40
+00:02:07,270 --> 00:02:10,770
+porque Pipenv dice que esta carpeta es para
+
+41
+00:02:10,770 --> 00:02:13,760
+tu cdigo y para tu proyecto, no
+
+42
+00:02:13,760 --> 00:02:16,820
+es para, ya sabes, tu instalacin de
+
+43
+00:02:16,820 --> 00:02:18,670
+Python, eso no tiene ningn sentido.
+
+44
+00:02:18,670 --> 00:02:21,060
+Entonces, mantienes tu Pipfile y tu Pipfile. asegure su proyecto
+
+45
+00:02:21,060 --> 00:02:23,690
+y si comparte este proyecto con otra
+
+46
+00:02:23,690 --> 00:02:25,600
+persona, tambin tendr un Pipfile
+
+47
+00:02:25,600 --> 00:02:27,680
+y Pipfile. lock, tambin
+
+48
+00:02:27,680 --> 00:02:30,050
+pueden escribir pipenv instal.
+
+49
+00:02:30,050 --> 00:02:32,270
+Obtendrn su propio entorno virtual creado
+
+50
+00:02:32,270 --> 00:02:36,040
+en otro lugar nico para ellos en sus propias computadoras
+
+51
+00:02:36,040 --> 00:02:39,400
+y no dentro de la carpeta del proyecto.
+
+52
+00:02:39,400 --> 00:02:41,140
+Por eso, cada vez que
+
+53
+00:02:41,140 --> 00:02:43,640
+creas un nuevo proyecto, ahora, en lugar de
+
+54
+00:02:43,640 --> 00:02:45,540
+crear un entorno virtual, simplemente utiliza
+
+55
+00:02:45,540 --> 00:02:48,400
+pipenv y ser fcil administrar todos tus proyectos.
+
+56
+00:02:48,400 --> 00:02:49,860
+Adems, no tienes
+
+57
+00:02:49,860 --> 00:02:52,160
+que recordar activar y desactivar.
+
+58
+00:02:52,160 --> 00:02:54,400
+Pipenv administrar sus entornos virtuales por usted,
+
+59
+00:02:54,400 --> 00:02:56,278
+cada vez que escriba pipenv
+
+60
+00:02:56,278 --> 00:02:59,040
+run, sabr cmo usar el entorno virtual correcto.
+
+61
+00:03:00,940 --> 00:03:03,330
+Sin embargo, hay una advertencia para eso.
+
+62
+00:03:03,330 --> 00:03:05,240
+Si mueve su proyecto, tenemos esta
+
+63
+00:03:05,240 --> 00:03:07,140
+carpeta de libros raspados, si
+
+64
+00:03:07,140 --> 00:03:10,140
+muevo esa carpeta a otra parte, pipenv ya no
+
+65
+00:03:10,140 --> 00:03:11,760
+podr encontrar el entorno virtual
+
+66
+00:03:11,760 --> 00:03:12,920
+correcto, por lo
+
+67
+00:03:12,920 --> 00:03:15,100
+que tendr que volver a crearlo.
+
+68
+00:03:15,100 --> 00:03:17,220
+Est bien, ese es el nico
+
+69
+00:03:17,220 --> 00:03:20,620
+problema con pipenv, si mueves el proyecto, tendrs que recrear
+
+70
+00:03:20,620 --> 00:03:23,810
+el entorno virtual, y eso se debe a la
+
+71
+00:03:23,810 --> 00:03:25,300
+forma en que crea
+
+72
+00:03:25,300 --> 00:03:29,610
+el entorno virtual, lo crea y dependiendo de dnde est tu proyecto
+
+73
+00:03:29,610 --> 00:03:31,100
+y si lo mueves,
+
+74
+00:03:31,100 --> 00:03:33,110
+pierde el conocimiento de dnde estaba.
+
+75
+00:03:34,690 --> 00:03:36,380
+Eso es todo por este
+
+76
+00:03:36,380 --> 00:03:40,693
+video, solo quera mostrarte cmo usar pipenv, y hay un poco ms
+
+77
+00:03:40,693 --> 00:03:42,890
+que puedes usar si escribes pipenv,
+
+78
+00:03:42,890 --> 00:03:44,850
+obtendrs algunos otros comandos como, y
+
+79
+00:03:44,850 --> 00:03:46,840
+sabrs cmo desinstalar las bibliotecas y
+
+80
+00:03:46,840 --> 00:03:47,790
+cosas asi.
+
+81
+00:03:47,790 --> 00:03:49,410
+Hay alguna investigacin que puedes
+
+82
+00:03:49,410 --> 00:03:53,330
+hacer si quieres entrar en cosas ms avanzadas de pipenv, pero no
+
+83
+00:03:53,330 --> 00:03:55,050
+te preocupes demasiado por eso.
+
+84
+00:03:55,050 --> 00:03:57,780
+Lo que necesita saber es cmo instalarlo,
+
+85
+00:03:57,780 --> 00:04:01,510
+cmo ejecutarlo, para simplificar la administracin de su proyecto.
+
+86
+00:04:01,510 --> 00:04:02,830
+De nuevo, eso es todo por
+
+87
+00:04:02,830 --> 00:04:04,480
+este video y nos vemos en el prximo.
+

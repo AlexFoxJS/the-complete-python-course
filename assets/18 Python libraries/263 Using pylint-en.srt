@@ -1,0 +1,1136 @@
+1
+00:00:00,200 --> 00:00:01,710
+<v Jose>Hi, and welcome back.</v>
+
+2
+00:00:01,710 --> 00:00:04,380
+In this video, we're going to look at Pylint
+
+3
+00:00:04,380 --> 00:00:06,860
+and what it is and how you can use it.
+
+4
+00:00:06,860 --> 00:00:07,900
+What I've done is I've created
+
+5
+00:00:07,900 --> 00:00:10,560
+a new project here in PyCharm,
+
+6
+00:00:10,560 --> 00:00:12,255
+and I'm going to show you some code
+
+7
+00:00:12,255 --> 00:00:15,170
+that Pylint would complain about.
+
+8
+00:00:15,170 --> 00:00:17,483
+I'm gonna create a file called app.py.
+
+9
+00:00:17,483 --> 00:00:21,320
+And then we're gonna do something like,
+
+10
+00:00:21,320 --> 00:00:26,320
+app is flask name,
+
+11
+00:00:29,110 --> 00:00:33,837
+if name equaled main, and app.run.
+
+12
+00:00:37,420 --> 00:00:39,430
+So, you can see that there are
+
+13
+00:00:39,430 --> 00:00:41,505
+a couple of mistakes in this code, I'm sure.
+
+14
+00:00:41,505 --> 00:00:44,080
+And first of all, we've got flask here,
+
+15
+00:00:44,080 --> 00:00:48,430
+but we haven't imported FLask at the top of the file.
+
+16
+00:00:48,430 --> 00:00:52,910
+And we also forgot to put our colon after the if statement.
+
+17
+00:00:52,910 --> 00:00:56,470
+So, this is not valid Python code, exactly.
+
+18
+00:00:56,470 --> 00:00:59,040
+But PyCharm realises that we probably wanted
+
+19
+00:00:59,040 --> 00:01:02,511
+to write Python code, because our file ends in .py.
+
+20
+00:01:02,511 --> 00:01:05,128
+And therefore, instead of just saying,
+
+21
+00:01:05,128 --> 00:01:08,100
+this is complete gibberish, it says
+
+22
+00:01:08,100 --> 00:01:10,530
+you may have made a couple of mistakes.
+
+23
+00:01:10,530 --> 00:01:12,960
+Of course, maybe we didn't make a couple of mistakes
+
+24
+00:01:12,960 --> 00:01:14,950
+and maybe this another programming language
+
+25
+00:01:14,950 --> 00:01:17,059
+that is very similar to Python, that isn't actually Python.
+
+26
+00:01:17,059 --> 00:01:20,550
+And this would be fine but under the assumption
+
+27
+00:01:20,550 --> 00:01:22,470
+that we are coding in Python,
+
+28
+00:01:22,470 --> 00:01:24,780
+this has a couple of problems in it.
+
+29
+00:01:24,780 --> 00:01:26,140
+Which is that we've forgotten to import
+
+30
+00:01:26,140 --> 00:01:30,150
+FLask, or rather, FLask is something that Python
+
+31
+00:01:30,150 --> 00:01:32,380
+doesn't know what it is, it could be a variable.
+
+32
+00:01:32,380 --> 00:01:34,870
+For example, you could of course define FLask here
+
+33
+00:01:34,870 --> 00:01:36,163
+to be something else.
+
+34
+00:01:37,000 --> 00:01:38,461
+And then it wouldn't complain about
+
+35
+00:01:38,461 --> 00:01:39,880
+FLask not existing.
+
+36
+00:01:39,880 --> 00:01:42,050
+It would complain about, you're calling
+
+37
+00:01:42,050 --> 00:01:44,470
+this using the brackets, but this is a string.
+
+38
+00:01:44,470 --> 00:01:46,570
+So, it doesn't know what you're doing.
+
+39
+00:01:46,570 --> 00:01:49,210
+And so, anyway, this is the current problem.
+
+40
+00:01:49,210 --> 00:01:51,130
+Is that, FLask is not defined.
+
+41
+00:01:51,130 --> 00:01:52,774
+That means we've either
+
+42
+00:01:52,774 --> 00:01:55,220
+forgotten to import it or we've forgotten to define it.
+
+43
+00:01:55,220 --> 00:01:56,490
+And also, there's a clear problem here,
+
+44
+00:01:56,490 --> 00:01:58,120
+which is we've forgotten a colon.
+
+45
+00:01:58,120 --> 00:02:01,093
+And Pycharm tells you, you've forgotten a colon here.
+
+46
+00:02:02,730 --> 00:02:07,730
+So, PyCharm has a way of somehow determining
+
+47
+00:02:07,900 --> 00:02:10,400
+that these two things here are problems.
+
+48
+00:02:10,400 --> 00:02:11,233
+Right.
+
+49
+00:02:11,233 --> 00:02:13,960
+And, this is a computer programme, it as such,
+
+50
+00:02:13,960 --> 00:02:17,500
+it must have some sort of other programme or some code
+
+51
+00:02:17,500 --> 00:02:20,150
+inside PyCharm that tells us
+
+52
+00:02:20,150 --> 00:02:23,321
+that these two things are problems.
+
+53
+00:02:23,321 --> 00:02:26,800
+And PyCharm has its own way of doing this,
+
+54
+00:02:26,800 --> 00:02:29,790
+but there are more standard ways doing this
+
+55
+00:02:29,790 --> 00:02:30,710
+outside of PyCharm.
+
+56
+00:02:30,710 --> 00:02:32,380
+There are ways of finding out
+
+57
+00:02:32,380 --> 00:02:35,720
+problems within a file outside of PyCharm.
+
+58
+00:02:35,720 --> 00:02:38,400
+And that's what a linter is for.
+
+59
+00:02:38,400 --> 00:02:40,930
+A linter essentially goes through your file
+
+60
+00:02:40,930 --> 00:02:42,890
+and applies a bunch of rules.
+
+61
+00:02:42,890 --> 00:02:46,340
+And if any of your lines failed that rule,
+
+62
+00:02:46,340 --> 00:02:48,397
+it says there's a problem here.
+
+63
+00:02:48,397 --> 00:02:50,900
+In this case, it would go through these files
+
+64
+00:02:50,900 --> 00:02:52,820
+and it would say Flask is not defined.
+
+65
+00:02:52,820 --> 00:02:54,830
+And then, it would go through this one and say
+
+66
+00:02:54,830 --> 00:02:56,980
+you're missing a semi-colon, a colon there.
+
+67
+00:02:57,870 --> 00:03:01,030
+So, lets go ahead into a terminal and
+
+68
+00:03:01,030 --> 00:03:04,000
+we're going to instal the most popular linter in Python.
+
+69
+00:03:04,000 --> 00:03:05,950
+And we're gonna run it through this file,
+
+70
+00:03:05,950 --> 00:03:07,920
+and we're gonna see what it says.
+
+71
+00:03:07,920 --> 00:03:10,143
+Let's open up a terminal just now.
+
+72
+00:03:11,180 --> 00:03:13,440
+We've got a terminal here, and the first thing we're
+
+73
+00:03:13,440 --> 00:03:17,969
+going to do is, we are going to navigate to the folder
+
+74
+00:03:17,969 --> 00:03:21,400
+that contains our file that we've just written.
+
+75
+00:03:21,400 --> 00:03:24,400
+So, if you remember, we are going to do c, d, and
+
+76
+00:03:24,400 --> 00:03:26,330
+then we're going to type out the path
+
+77
+00:03:26,330 --> 00:03:28,810
+that will take us to our folder.
+
+78
+00:03:28,810 --> 00:03:33,810
+So in my case, that's in Dropbox, teclado, courses,
+
+79
+00:03:34,110 --> 00:03:36,406
+complete Python course, section 18.
+
+80
+00:03:36,406 --> 00:03:37,740
+That's where we are now.
+
+81
+00:03:37,740 --> 00:03:40,603
+And then we're in video code Pylint, and end.
+
+82
+00:03:41,460 --> 00:03:44,570
+So this is the path to my project.
+
+83
+00:03:44,570 --> 00:03:47,140
+And notice how the project is called end,
+
+84
+00:03:47,140 --> 00:03:49,920
+that's just before we structure the code
+
+85
+00:03:49,920 --> 00:03:51,850
+for the course a bit better.
+
+86
+00:03:51,850 --> 00:03:56,333
+Then, if we type l, s, or dir, if you're in Windows.
+
+87
+00:03:57,330 --> 00:04:00,080
+You'll see that you've got app dot p, y, in here.
+
+88
+00:04:00,080 --> 00:04:04,261
+So, this is where our file exists in our disc.
+
+89
+00:04:04,261 --> 00:04:07,754
+You can of course, navigate to this path using
+
+90
+00:04:07,754 --> 00:04:10,970
+a visual or a graphical explorer,
+
+91
+00:04:10,970 --> 00:04:13,863
+like Windows Explorer, or Finder.
+
+92
+00:04:13,863 --> 00:04:15,970
+But in order to run the linter,
+
+93
+00:04:15,970 --> 00:04:17,170
+we're gonna need the terminal.
+
+94
+00:04:17,170 --> 00:04:19,040
+So, let's navigate using the terminal,
+
+95
+00:04:19,040 --> 00:04:21,043
+and then instal Pylint.
+
+96
+00:04:21,898 --> 00:04:24,190
+If you only have one version
+
+97
+00:04:24,190 --> 00:04:27,044
+of Python installed, i.e you've never installed Python
+
+98
+00:04:27,044 --> 00:04:30,730
+other than a single version, you're gonna do
+
+99
+00:04:30,730 --> 00:04:32,317
+pip instal Pylint.
+
+100
+00:04:33,226 --> 00:04:34,970
+If you have multiple versions
+
+101
+00:04:34,970 --> 00:04:37,410
+of Python installed, make sure to select
+
+102
+00:04:37,410 --> 00:04:38,940
+the right one with pip.
+
+103
+00:04:38,940 --> 00:04:41,140
+So, that may be either pip three,
+
+104
+00:04:41,140 --> 00:04:42,830
+if you have two version of Python installed.
+
+105
+00:04:42,830 --> 00:04:45,070
+One Python two and one Python three.
+
+106
+00:04:45,070 --> 00:04:47,804
+Or, it may even be pip three point six, if you have
+
+107
+00:04:47,804 --> 00:04:50,350
+multiple versions of Python three installed.
+
+108
+00:04:50,350 --> 00:04:52,440
+We've gone through this earlier on in the course.
+
+109
+00:04:52,440 --> 00:04:54,306
+So again, just a brief reminder here.
+
+110
+00:04:54,306 --> 00:04:56,913
+In my case, I'm going to instal Pylint using
+
+111
+00:04:56,913 --> 00:05:00,450
+Python three point six, because that's the
+
+112
+00:05:00,450 --> 00:05:03,110
+latest version of Python in which Pylint works.
+
+113
+00:05:03,110 --> 00:05:05,832
+At time of recording, Pylint did not work in
+
+114
+00:05:05,832 --> 00:05:07,950
+Python three point seven.
+
+115
+00:05:07,950 --> 00:05:09,849
+So just something to keep in mind.
+
+116
+00:05:09,849 --> 00:05:11,890
+It's possible that by the time you're watching this
+
+117
+00:05:11,890 --> 00:05:13,940
+it already does work.
+
+118
+00:05:13,940 --> 00:05:16,730
+So, we're gonna do pip three point six, instal Pylint.
+
+119
+00:05:16,730 --> 00:05:18,650
+And then my guess it that it's gonna tell me it's already
+
+120
+00:05:18,650 --> 00:05:21,270
+satisfied because, I've already got it installed.
+
+121
+00:05:21,270 --> 00:05:23,260
+But if you don't have it installed, it'll tell you.
+
+122
+00:05:23,260 --> 00:05:25,895
+And the progress would eventually instal it.
+
+123
+00:05:25,895 --> 00:05:28,280
+The next thing you want to do, is type out
+
+124
+00:05:28,280 --> 00:05:32,330
+which Pylint, and that, because when you instal Pylint
+
+125
+00:05:32,330 --> 00:05:35,900
+using pip, is actually going to put an executable programme
+
+126
+00:05:35,900 --> 00:05:37,297
+in your path.
+
+127
+00:05:37,297 --> 00:05:40,340
+So, you will be able to do which Pylint
+
+128
+00:05:40,340 --> 00:05:43,250
+and this Pylint here is the Pylint programme
+
+129
+00:05:43,250 --> 00:05:45,100
+that we can now run.
+
+130
+00:05:45,100 --> 00:05:47,560
+And if here you get, programme not found,
+
+131
+00:05:47,560 --> 00:05:50,500
+or you don't get anything, then make sure that Pylint has
+
+132
+00:05:50,500 --> 00:05:52,160
+been installed correctly.
+
+133
+00:05:52,160 --> 00:05:53,870
+And make sure that the
+
+134
+00:05:53,870 --> 00:05:58,870
+three point six slash bin Python folder is in your path.
+
+135
+00:05:59,390 --> 00:06:01,000
+Again, we looked at this earlier on in the course,
+
+136
+00:06:01,000 --> 00:06:03,040
+I believe it was section 13.
+
+137
+00:06:03,040 --> 00:06:03,930
+So just go back if you need
+
+138
+00:06:03,930 --> 00:06:06,300
+to remind yourself as to how this works.
+
+139
+00:06:06,300 --> 00:06:08,290
+But if you get something here when you type which
+
+140
+00:06:08,290 --> 00:06:11,387
+Pylint, which by the way I'm not sure it works on Windows.
+
+141
+00:06:11,387 --> 00:06:14,930
+But none the less, if this works, or if you can just
+
+142
+00:06:14,930 --> 00:06:17,146
+type Pylint, and you get something out.
+
+143
+00:06:17,146 --> 00:06:19,953
+That means Pylint is working, it's installed correctly.
+
+144
+00:06:19,953 --> 00:06:23,449
+And what you get out when you type Pylint, is just the help.
+
+145
+00:06:23,449 --> 00:06:26,370
+Sort of telling you how it works
+
+146
+00:06:26,370 --> 00:06:27,940
+and how you run it and so forth.
+
+147
+00:06:27,940 --> 00:06:30,800
+For the majority of your runs,
+
+148
+00:06:30,800 --> 00:06:32,550
+you won't need all of these options.
+
+149
+00:06:32,550 --> 00:06:34,570
+All you have to do is Pylint,
+
+150
+00:06:34,570 --> 00:06:36,070
+and then give it your app.
+
+151
+00:06:36,070 --> 00:06:37,670
+So in this case I'm gonna type Pylint,
+
+152
+00:06:37,670 --> 00:06:40,290
+space, at dot p, y.
+
+153
+00:06:40,290 --> 00:06:44,015
+And it tells me the problems that are in the file.
+
+154
+00:06:44,015 --> 00:06:46,440
+So here it says no config file found.
+
+155
+00:06:46,440 --> 00:06:48,231
+So it's using default configuration,
+
+156
+00:06:48,231 --> 00:06:53,231
+and then it's saying in line 3, there's invalid syntax.
+
+157
+00:06:53,430 --> 00:06:55,167
+Saying syntax error.
+
+158
+00:06:55,167 --> 00:06:57,229
+So what we can do is we can go ahead
+
+159
+00:06:57,229 --> 00:07:01,880
+and open up the line 3 and see what happens there.
+
+160
+00:07:01,880 --> 00:07:05,770
+And you'll notice that it says, line 3, syntax error.
+
+161
+00:07:05,770 --> 00:07:08,900
+The fact that you've seen a syntax error in line 3,
+
+162
+00:07:08,900 --> 00:07:11,930
+should prompt you immediately to look at line 3,
+
+163
+00:07:11,930 --> 00:07:14,577
+and sort of, use all your brain power determining
+
+164
+00:07:14,577 --> 00:07:17,100
+what could the problem be.
+
+165
+00:07:17,100 --> 00:07:20,140
+Because PyCharm tells us that there's a colon expected,
+
+166
+00:07:20,140 --> 00:07:21,530
+we don't have to use much brain power.
+
+167
+00:07:21,530 --> 00:07:23,070
+But if you were using a different editor
+
+168
+00:07:23,070 --> 00:07:25,350
+that maybe didn't tell you that, you just have to
+
+169
+00:07:25,350 --> 00:07:27,340
+look at it carefully and make sure you haven't missed
+
+170
+00:07:27,340 --> 00:07:29,950
+anything that PyCharm would consider essential.
+
+171
+00:07:29,950 --> 00:07:32,010
+In this case, it's a colon.
+
+172
+00:07:32,010 --> 00:07:33,780
+So we can add our colon there.
+
+173
+00:07:33,780 --> 00:07:37,923
+And then, go back to our terminal and run Pylint again.
+
+174
+00:07:39,056 --> 00:07:41,490
+And now, we get a few more errors.
+
+175
+00:07:41,490 --> 00:07:45,323
+Notice that Pylint runs through the Python file first.
+
+176
+00:07:45,323 --> 00:07:50,323
+And it analyses that if you don't have valid syntax,
+
+177
+00:07:50,720 --> 00:07:53,390
+like the missing semi-colon, Pylint can not process
+
+178
+00:07:53,390 --> 00:07:55,641
+the file and can't tell you what's wrong.
+
+179
+00:07:55,641 --> 00:07:59,280
+So it only tells you syntax error if there's an invalid
+
+180
+00:07:59,280 --> 00:08:02,930
+syntax, like proper, invalid Python code.
+
+181
+00:08:02,930 --> 00:08:06,160
+But if you have valid Python code that's just missing
+
+182
+00:08:06,160 --> 00:08:07,210
+a few things.
+
+183
+00:08:07,210 --> 00:08:08,710
+It will be able to do that.
+
+184
+00:08:08,710 --> 00:08:10,210
+And now, here you can see that it says
+
+185
+00:08:10,210 --> 00:08:11,650
+three different things.
+
+186
+00:08:11,650 --> 00:08:14,141
+It says that its missing a module docstring,
+
+187
+00:08:14,141 --> 00:08:16,640
+the constant name app doesn't conform
+
+188
+00:08:16,640 --> 00:08:18,840
+to the uppercase naming style,
+
+189
+00:08:18,840 --> 00:08:21,720
+and also undefined variable Flask.
+
+190
+00:08:21,720 --> 00:08:23,626
+So, we can fix those three things.
+
+191
+00:08:23,626 --> 00:08:26,630
+Let's go back and start with the first one.
+
+192
+00:08:26,630 --> 00:08:28,568
+The missing module docstring.
+
+193
+00:08:28,568 --> 00:08:31,160
+Every file in Python,
+
+194
+00:08:31,160 --> 00:08:34,188
+should allegedly, according to Pylint, have a small
+
+195
+00:08:34,188 --> 00:08:37,870
+comment at the top that uses triple quotation marks.
+
+196
+00:08:37,870 --> 00:08:40,657
+Explaining what this file is about.
+
+197
+00:08:40,657 --> 00:08:43,250
+So we can write a short comment here, explaining
+
+198
+00:08:43,250 --> 00:08:45,893
+what app dot p, y, does.
+
+199
+00:08:50,220 --> 00:08:51,053
+There we go.
+
+200
+00:08:51,053 --> 00:08:53,158
+That was a bit more difficult than it should.
+
+201
+00:08:53,158 --> 00:08:54,440
+And that's it.
+
+202
+00:08:54,440 --> 00:08:56,360
+Now if we go back to Pylint and
+
+203
+00:08:56,360 --> 00:08:59,751
+we run it again, you'll see that now we only get two things.
+
+204
+00:08:59,751 --> 00:09:03,641
+Previously, our code had a score of minus 13.
+
+205
+00:09:03,641 --> 00:09:05,810
+Now, it has a score of minus 10.
+
+206
+00:09:05,810 --> 00:09:06,960
+So we're getting better.
+
+207
+00:09:06,960 --> 00:09:08,620
+Not very good though.
+
+208
+00:09:08,620 --> 00:09:10,270
+Now, we've got a constant named app
+
+209
+00:09:10,270 --> 00:09:12,367
+doesn't conform to uppercase naming style,
+
+210
+00:09:12,367 --> 00:09:15,640
+and we've got undefined variable Flask.
+
+211
+00:09:15,640 --> 00:09:19,160
+The undefined variable Flask is substantially worse
+
+212
+00:09:19,160 --> 00:09:21,990
+thing to have, than a constant name app doesn't
+
+213
+00:09:21,990 --> 00:09:23,960
+conform to uppercase naming style.
+
+214
+00:09:23,960 --> 00:09:26,750
+As you can see this here is a style thing.
+
+215
+00:09:26,750 --> 00:09:30,110
+This here, is a proper error.
+
+216
+00:09:30,110 --> 00:09:31,572
+So, we are going to go back
+
+217
+00:09:31,572 --> 00:09:35,700
+and fix the missing variable Flask.
+
+218
+00:09:35,700 --> 00:09:38,700
+Underneath the docstring, we can put
+
+219
+00:09:38,700 --> 00:09:41,070
+from Flask, import Flask.
+
+220
+00:09:41,070 --> 00:09:42,410
+Make sure you have Flask installed
+
+221
+00:09:42,410 --> 00:09:44,620
+if you're gonna copy along with me.
+
+222
+00:09:44,620 --> 00:09:45,453
+But none the less,
+
+223
+00:09:45,453 --> 00:09:47,010
+as you can see there's import Flask.
+
+224
+00:09:47,010 --> 00:09:49,240
+Now we don't have an undefined variable.
+
+225
+00:09:49,240 --> 00:09:51,423
+We can go back to Pylint and run it again.
+
+226
+00:09:52,870 --> 00:09:54,870
+And now you can see that our code actually goes
+
+227
+00:09:54,870 --> 00:09:57,850
+in the positive, and we get seven point five out of 10.
+
+228
+00:09:57,850 --> 00:10:00,204
+This means that the code is going to run,
+
+229
+00:10:00,204 --> 00:10:03,410
+and it will as we've done in the past.
+
+230
+00:10:03,410 --> 00:10:05,760
+But it says constant named app doesn't conform to
+
+231
+00:10:05,760 --> 00:10:07,492
+uppercase naming style.
+
+232
+00:10:07,492 --> 00:10:11,290
+Now, this is a style thing so you don't have to do it.
+
+233
+00:10:11,290 --> 00:10:12,949
+The same way as you don't have to add
+
+234
+00:10:12,949 --> 00:10:15,165
+a docstring to your file.
+
+235
+00:10:15,165 --> 00:10:18,613
+But what this is saying is you're defining app,
+
+236
+00:10:19,720 --> 00:10:21,100
+and then you're never doing
+
+237
+00:10:21,100 --> 00:10:25,440
+at any point in the rest of the file, app equals something.
+
+238
+00:10:25,440 --> 00:10:29,260
+So, you're never doing app equal anything else.
+
+239
+00:10:29,260 --> 00:10:32,950
+That means that app is a constant.
+
+240
+00:10:32,950 --> 00:10:35,170
+A constant that never changes.
+
+241
+00:10:35,170 --> 00:10:39,464
+And in Python, constants are by default always named
+
+242
+00:10:39,464 --> 00:10:42,040
+using all uppercase letters.
+
+243
+00:10:42,040 --> 00:10:46,610
+So be something like this yeah,
+
+244
+00:10:46,610 --> 00:10:48,520
+then if we go back to Pylint,
+
+245
+00:10:48,520 --> 00:10:50,800
+we will get a 10 out of 10.
+
+246
+00:10:50,800 --> 00:10:54,370
+It says no problems, your code has been rated 10 out of 10.
+
+247
+00:10:54,370 --> 00:10:56,443
+Which is awesome, essentially.
+
+248
+00:10:58,010 --> 00:11:01,050
+In Flask, this is actually not a very common thing to do.
+
+249
+00:11:01,050 --> 00:11:05,766
+Normally, you would name your main app as app, in lowercase.
+
+250
+00:11:05,766 --> 00:11:08,750
+But, Pylint doesn't quite like that.
+
+251
+00:11:08,750 --> 00:11:12,960
+So, just wanted to say that the style is something
+
+252
+00:11:12,960 --> 00:11:15,227
+that varies depending on the language you're using
+
+253
+00:11:15,227 --> 00:11:17,771
+and the people you're working with and so forth.
+
+254
+00:11:17,771 --> 00:11:21,720
+And also, you can name your variable as an
+
+255
+00:11:21,720 --> 00:11:23,433
+all uppercase thing here,
+
+256
+00:11:23,433 --> 00:11:26,892
+but if you then potentially want to make changes.
+
+257
+00:11:26,892 --> 00:11:29,430
+The linter doesn't know that.
+
+258
+00:11:29,430 --> 00:11:30,970
+The linter doesn't know that in the future
+
+259
+00:11:30,970 --> 00:11:33,150
+you're gonna want to change this variable.
+
+260
+00:11:33,150 --> 00:11:34,800
+So, if you only have this code
+
+261
+00:11:34,800 --> 00:11:37,693
+it says, this is a constant, use all uppercase
+
+262
+00:11:37,693 --> 00:11:41,570
+if you then wanted in the future to make changes,
+
+263
+00:11:41,570 --> 00:11:46,488
+like say, app equals five, this would now be
+
+264
+00:11:46,488 --> 00:11:48,580
+sort of, invalid style.
+
+265
+00:11:48,580 --> 00:11:51,320
+You should have used lowercase letters.
+
+266
+00:11:51,320 --> 00:11:53,750
+So, the linter isn't all powerful and all seeing.
+
+267
+00:11:53,750 --> 00:11:56,100
+It just makes recommendations.
+
+268
+00:11:56,100 --> 00:11:59,180
+And often those recommendations are things you
+
+269
+00:11:59,180 --> 00:12:00,930
+should really listen to.
+
+270
+00:12:00,930 --> 00:12:02,630
+And, especially if those recommendations
+
+271
+00:12:02,630 --> 00:12:04,210
+are problems within your code
+
+272
+00:12:04,210 --> 00:12:06,510
+that you have to fix, otherwise it won't run.
+
+273
+00:12:06,510 --> 00:12:09,380
+But the style recommendations can sometimes be ignored,
+
+274
+00:12:09,380 --> 00:12:10,213
+if you prefer.
+
+275
+00:12:11,630 --> 00:12:15,894
+Okay, notice that a reminder, PyCharm has it's own linter.
+
+276
+00:12:15,894 --> 00:12:16,727
+So you don't have to
+
+277
+00:12:16,727 --> 00:12:18,730
+use Pylint if you are working with PyCharm.
+
+278
+00:12:18,730 --> 00:12:21,900
+But some people like using other IDEs that maybe
+
+279
+00:12:21,900 --> 00:12:26,900
+don't have such good error handling, as PyCharm does.
+
+280
+00:12:26,980 --> 00:12:29,580
+And in those cases, using Pylint can be very useful.
+
+281
+00:12:30,760 --> 00:12:31,730
+So, that's it for this video.
+
+282
+00:12:31,730 --> 00:12:33,730
+Just wanted to show you quickly how to use
+
+283
+00:12:33,730 --> 00:12:35,730
+a linter in Python.
+
+284
+00:12:35,730 --> 00:12:38,363
+Hope you enjoyed it, and I'll see you on the next one.
+

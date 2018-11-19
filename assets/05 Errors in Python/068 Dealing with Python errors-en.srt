@@ -1,0 +1,720 @@
+1
+00:00:00,147 --> 00:00:01,442
+<v Jose>Hi, welcome back.</v>
+
+2
+00:00:01,442 --> 00:00:04,870
+In this video we're talking about dealing with errors.
+
+3
+00:00:04,870 --> 00:00:08,193
+One of Python's core tenets is ask for forgiveness
+
+4
+00:00:08,193 --> 00:00:09,776
+not for permission.
+
+5
+00:00:10,671 --> 00:00:14,670
+Now, I know how well this works with friends and family,
+
+6
+00:00:14,670 --> 00:00:15,600
+not so well,
+
+7
+00:00:15,600 --> 00:00:18,203
+but it works fantastically in Python.
+
+8
+00:00:18,203 --> 00:00:20,476
+Let's have a look at this piece of code here.
+
+9
+00:00:20,476 --> 00:00:24,426
+We've got our car class and our garage class.
+
+10
+00:00:24,426 --> 00:00:27,733
+And previously we looked at how we can check that,
+
+11
+00:00:27,733 --> 00:00:30,483
+we make sure that the car is an instance of type car.
+
+12
+00:00:30,483 --> 00:00:33,502
+But let's imagine that we did not do that.
+
+13
+00:00:33,502 --> 00:00:36,088
+And instead we did something that's pretty normal
+
+14
+00:00:36,088 --> 00:00:38,427
+for the majority of programming languages
+
+15
+00:00:38,427 --> 00:00:40,960
+which is to just, you know, when you add a car
+
+16
+00:00:40,960 --> 00:00:42,030
+just add the car.
+
+17
+00:00:42,030 --> 00:00:44,176
+That's what the method does.
+
+18
+00:00:44,176 --> 00:00:46,447
+And then we would of course use them like so,
+
+19
+00:00:46,447 --> 00:00:50,947
+Ford equals a new garage and then Fiesta is a new car.
+
+20
+00:00:55,114 --> 00:00:58,697
+And then of course Ford dot add car Fiesta.
+
+21
+00:00:59,951 --> 00:01:03,868
+This is the normal usage for these two classes.
+
+22
+00:01:05,363 --> 00:01:08,549
+Now normally if we wanted to make sure that we're only
+
+23
+00:01:08,549 --> 00:01:11,091
+adding car objects to the garage we could,
+
+24
+00:01:11,091 --> 00:01:15,924
+of course, do this if isinstance car car then do this else
+
+25
+00:01:23,246 --> 00:01:26,996
+print, like you know, your car was not a car.
+
+26
+00:01:28,069 --> 00:01:30,614
+Your car was not a car.
+
+27
+00:01:30,614 --> 00:01:32,749
+Or you could potentially raise an error here.
+
+28
+00:01:32,749 --> 00:01:36,978
+And I'm sorry this should be Fiesta not car.
+
+29
+00:01:36,978 --> 00:01:39,932
+This is a pretty typical structure of coding a function
+
+30
+00:01:39,932 --> 00:01:43,404
+in this case the add car function.
+
+31
+00:01:43,404 --> 00:01:46,007
+And before you call the function you check whether
+
+32
+00:01:46,007 --> 00:01:48,249
+that's something you can do.
+
+33
+00:01:48,249 --> 00:01:49,698
+Can I call this function?
+
+34
+00:01:49,698 --> 00:01:50,554
+Yes.
+
+35
+00:01:50,554 --> 00:01:51,731
+Then call it.
+
+36
+00:01:51,731 --> 00:01:54,199
+And if not say an error happened.
+
+37
+00:01:54,199 --> 00:01:56,159
+This is really popular structure in a lot of
+
+38
+00:01:56,159 --> 00:02:00,694
+programming languages where you ask for permission first
+
+39
+00:02:00,694 --> 00:02:03,431
+and then instead of for forgiveness.
+
+40
+00:02:03,431 --> 00:02:05,690
+So here you're asking for permission to run the function
+
+41
+00:02:05,690 --> 00:02:07,692
+with the data you've got.
+
+42
+00:02:07,692 --> 00:02:11,892
+If you get it because this matches then you add the car.
+
+43
+00:02:11,892 --> 00:02:15,944
+Otherwise you say your car was not a car.
+
+44
+00:02:15,944 --> 00:02:20,227
+Python suggests that in many cases our code can be
+
+45
+00:02:20,227 --> 00:02:24,622
+more readable by asking for forgiveness instead.
+
+46
+00:02:24,622 --> 00:02:27,222
+So doing something like this instead of that
+
+47
+00:02:27,222 --> 00:02:29,109
+doing something like this.
+
+48
+00:02:29,109 --> 00:02:30,782
+Try to call function,
+
+49
+00:02:30,782 --> 00:02:33,664
+this is not real Python code by the way,
+
+50
+00:02:33,664 --> 00:02:35,664
+if failed, do something,
+
+51
+00:02:37,802 --> 00:02:39,158
+say that an error happened.
+
+52
+00:02:39,158 --> 00:02:41,567
+So you can see this is slightly more concise
+
+53
+00:02:41,567 --> 00:02:45,576
+because you don't have to check whether the function
+
+54
+00:02:45,576 --> 00:02:48,717
+is okay to be called or not.
+
+55
+00:02:48,717 --> 00:02:49,814
+Okay.
+
+56
+00:02:49,814 --> 00:02:53,459
+So circling back to raising exceptions we can go back
+
+57
+00:02:53,459 --> 00:02:56,042
+to adding our is instance here.
+
+58
+00:02:57,061 --> 00:03:01,561
+If not is instance car of car then raise a type error.
+
+59
+00:03:03,720 --> 00:03:06,643
+And I'm just going to copy this string back from my notes
+
+60
+00:03:06,643 --> 00:03:09,595
+so I don't bore you typing it.
+
+61
+00:03:09,595 --> 00:03:13,088
+And so okay, it's the same string as we had before.
+
+62
+00:03:13,088 --> 00:03:16,138
+So Python suggests that this is better
+
+63
+00:03:16,138 --> 00:03:21,138
+because now we only have to check whether the car is
+
+64
+00:03:21,304 --> 00:03:24,137
+appropriate once inside the method
+
+65
+00:03:25,001 --> 00:03:28,374
+and every where else we can just call it,
+
+66
+00:03:28,374 --> 00:03:31,624
+we can just do Ford dot add car Fiesta.
+
+67
+00:03:33,384 --> 00:03:35,607
+Of course an exception might happen,
+
+68
+00:03:35,607 --> 00:03:36,876
+an error might happen,
+
+69
+00:03:36,876 --> 00:03:39,419
+by the way error and exception pretty much the same thing.
+
+70
+00:03:39,419 --> 00:03:40,279
+Okay?
+
+71
+00:03:40,279 --> 00:03:43,136
+I just I started with Java a long time ago
+
+72
+00:03:43,136 --> 00:03:46,639
+and they're called exceptions there.
+
+73
+00:03:46,639 --> 00:03:49,595
+So an exception or an error might happen
+
+74
+00:03:49,595 --> 00:03:51,490
+when you call this method.
+
+75
+00:03:51,490 --> 00:03:53,784
+For example, if your car is not a car,
+
+76
+00:03:53,784 --> 00:03:57,141
+it's a string so what do we do?
+
+77
+00:03:57,141 --> 00:03:59,478
+Well, we're going to try to run the code.
+
+78
+00:03:59,478 --> 00:04:01,886
+We're going to try and that's try with a colon,
+
+79
+00:04:01,886 --> 00:04:05,139
+this must be indented because this is block.
+
+80
+00:04:05,139 --> 00:04:08,389
+And then we're going to have an except.
+
+81
+00:04:10,634 --> 00:04:12,791
+So we're going to try to run this block of code
+
+82
+00:04:12,791 --> 00:04:14,016
+and if anything happens,
+
+83
+00:04:14,016 --> 00:04:15,334
+an error happens,
+
+84
+00:04:15,334 --> 00:04:19,344
+an error gets raised by something inside this code
+
+85
+00:04:19,344 --> 00:04:22,454
+such as a type error we're going to say
+
+86
+00:04:22,454 --> 00:04:24,871
+print your car was not a car.
+
+87
+00:04:28,116 --> 00:04:29,681
+Okay.
+
+88
+00:04:29,681 --> 00:04:32,155
+Now what's going to happen is, again,
+
+89
+00:04:32,155 --> 00:04:34,384
+we're going to try to run this code
+
+90
+00:04:34,384 --> 00:04:36,966
+and then we're going to except and the only error
+
+91
+00:04:36,966 --> 00:04:40,667
+we're going to catch so if a type error happens
+
+92
+00:04:40,667 --> 00:04:42,107
+we're going to print this out.
+
+93
+00:04:42,107 --> 00:04:43,746
+If a different type of error happens
+
+94
+00:04:43,746 --> 00:04:47,329
+like a value error that will not be caught.
+
+95
+00:04:48,738 --> 00:04:51,621
+Let's see what happens when we run app dot P Y.
+
+96
+00:04:51,621 --> 00:04:55,358
+Remember, make sure to right click app dot P Y and run it.
+
+97
+00:04:55,358 --> 00:04:56,941
+Now we get nothing
+
+98
+00:04:56,941 --> 00:05:00,413
+because of course the car was a car object.
+
+99
+00:05:00,413 --> 00:05:04,580
+Let's try adding a a Fiesta here and run it again.
+
+100
+00:05:06,011 --> 00:05:10,511
+Now we get this message saying your car was not a car.
+
+101
+00:05:11,609 --> 00:05:12,622
+Cool?
+
+102
+00:05:12,622 --> 00:05:15,820
+What happens if instead of a type error here
+
+103
+00:05:15,820 --> 00:05:18,135
+we raise a value error?
+
+104
+00:05:18,135 --> 00:05:20,571
+Not the right error to raise, it should be a type error,
+
+105
+00:05:20,571 --> 00:05:24,789
+but just for example, now we get this trace back.
+
+106
+00:05:24,789 --> 00:05:27,182
+And that's because the only thing we caught
+
+107
+00:05:27,182 --> 00:05:29,437
+was a type error in our except.
+
+108
+00:05:29,437 --> 00:05:33,379
+What happens when that happens is that the error
+
+109
+00:05:33,379 --> 00:05:37,848
+stops being raised up to the next level continuously
+
+110
+00:05:37,848 --> 00:05:39,854
+and instead it just dies here.
+
+111
+00:05:39,854 --> 00:05:42,451
+And we get access to doing something
+
+112
+00:05:42,451 --> 00:05:44,451
+when that error happens.
+
+113
+00:05:45,557 --> 00:05:50,205
+It's really good to catch the errors on your user interface.
+
+114
+00:05:50,205 --> 00:05:52,734
+In this case this is our user interface, sort of.
+
+115
+00:05:52,734 --> 00:05:55,650
+It doesn't have much of an interface but
+
+116
+00:05:55,650 --> 00:05:59,052
+so that you should catch them so that users
+
+117
+00:05:59,052 --> 00:06:01,312
+don't ever see this.
+
+118
+00:06:01,312 --> 00:06:04,076
+You don't want your users to see errors.
+
+119
+00:06:04,076 --> 00:06:05,437
+However,
+
+120
+00:06:05,437 --> 00:06:08,156
+you should not necessarily catch them when you are
+
+121
+00:06:08,156 --> 00:06:10,674
+working on the code that users are not going to
+
+122
+00:06:10,674 --> 00:06:12,770
+interact with directly.
+
+123
+00:06:12,770 --> 00:06:15,711
+That way if an error does happen anywhere in your code
+
+124
+00:06:15,711 --> 00:06:16,877
+your program's going to crash
+
+125
+00:06:16,877 --> 00:06:19,820
+and that's good while you're writing code.
+
+126
+00:06:19,820 --> 00:06:22,245
+Once you share the programme with your users
+
+127
+00:06:22,245 --> 00:06:24,504
+you don't want errors to be appearing.
+
+128
+00:06:24,504 --> 00:06:27,337
+So you want to catch them like so.
+
+129
+00:06:28,779 --> 00:06:29,975
+Okay.
+
+130
+00:06:29,975 --> 00:06:31,103
+So there are two benefits,
+
+131
+00:06:31,103 --> 00:06:34,638
+one is that I think our code reads more nicely
+
+132
+00:06:34,638 --> 00:06:36,305
+we're going to do this,
+
+133
+00:06:36,305 --> 00:06:39,332
+oh, okay if an error happened we'll do accent.
+
+134
+00:06:39,332 --> 00:06:42,882
+We don't have to check whether we can run something
+
+135
+00:06:42,882 --> 00:06:47,025
+and the second thing is that our check is now here.
+
+136
+00:06:47,025 --> 00:06:49,562
+So for example if we wanted to add to cars before,
+
+137
+00:06:49,562 --> 00:06:51,474
+we would have to to have this if twice
+
+138
+00:06:51,474 --> 00:06:53,540
+before we add each car.
+
+139
+00:06:53,540 --> 00:06:56,220
+Now the if is in the add car function
+
+140
+00:06:56,220 --> 00:06:59,637
+and our code only needs this single line.
+
+141
+00:07:00,553 --> 00:07:04,386
+So again the syntax is this try except syntax.
+
+142
+00:07:05,269 --> 00:07:07,641
+We try to rework whatever it is in try block and
+
+143
+00:07:07,641 --> 00:07:10,581
+if an error happens we jump to the except block.
+
+144
+00:07:10,581 --> 00:07:13,140
+And we do so only for errors that match the one
+
+145
+00:07:13,140 --> 00:07:15,307
+in the block a type error.
+
+146
+00:07:16,226 --> 00:07:18,397
+We can catch multiple errors by just adding
+
+147
+00:07:18,397 --> 00:07:20,147
+another except block.
+
+148
+00:07:27,491 --> 00:07:28,659
+Like so.
+
+149
+00:07:28,659 --> 00:07:31,844
+Now, if there is a type error this would run
+
+150
+00:07:31,844 --> 00:07:34,763
+and if there is a value error that would run.
+
+151
+00:07:34,763 --> 00:07:37,034
+This is particularly useful when you have multiple
+
+152
+00:07:37,034 --> 00:07:39,409
+types of errors that could potentially be raised.
+
+153
+00:07:39,409 --> 00:07:43,911
+Of course here it's unlikely that that's going to happen.
+
+154
+00:07:43,911 --> 00:07:46,439
+Over the next few sections we're going to make use
+
+155
+00:07:46,439 --> 00:07:48,978
+of this try except syntax a lot.
+
+156
+00:07:48,978 --> 00:07:53,292
+So just something to keep in mind as we move forward.
+
+157
+00:07:53,292 --> 00:07:57,002
+Try and except also have a final counterpart
+
+158
+00:07:57,002 --> 00:07:59,002
+which is called finally.
+
+159
+00:08:01,289 --> 00:08:04,806
+The finally block runs every time.
+
+160
+00:08:04,806 --> 00:08:07,079
+So you're going to try to run this code here
+
+161
+00:08:07,079 --> 00:08:08,989
+if an error happens then you're going to run
+
+162
+00:08:08,989 --> 00:08:11,497
+whatever code is in the appropriate block for the error
+
+163
+00:08:11,497 --> 00:08:13,651
+and at the end you're always going to run
+
+164
+00:08:13,651 --> 00:08:18,388
+the finally block whether or not an error happened.
+
+165
+00:08:18,388 --> 00:08:19,719
+So here you could, for example,
+
+166
+00:08:19,719 --> 00:08:22,969
+print the garage now has len Ford cars.
+
+167
+00:08:28,487 --> 00:08:30,248
+For example.
+
+168
+00:08:30,248 --> 00:08:33,540
+So again except blocks may or may not run.
+
+169
+00:08:33,540 --> 00:08:35,207
+Finally always runs.
+
+170
+00:08:36,090 --> 00:08:38,172
+So again if we run this now
+
+171
+00:08:38,172 --> 00:08:39,813
+we get something weird happened
+
+172
+00:08:39,813 --> 00:08:42,118
+because we raised the value error up here
+
+173
+00:08:42,118 --> 00:08:45,111
+and then we print out the garage has now zero cars.
+
+174
+00:08:45,111 --> 00:08:47,349
+Notice how we don't see a stack trace because
+
+175
+00:08:47,349 --> 00:08:51,290
+the error has been silenced by the fact that we caught it.
+
+176
+00:08:51,290 --> 00:08:53,178
+So in the next video we're going to look at
+
+177
+00:08:53,178 --> 00:08:55,375
+how we can not silence it.
+
+178
+00:08:55,375 --> 00:08:56,990
+And that can also be quite useful
+
+179
+00:08:56,990 --> 00:08:58,686
+especially when you're developing.
+
+180
+00:08:58,686 --> 00:09:00,490
+See you on the next video.
+

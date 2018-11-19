@@ -1,0 +1,328 @@
+1
+00:00:00,370 --> 00:00:02,260 line:15% 
+Hi there, welcome back.
+
+2
+00:00:02,260 --> 00:00:04,950 line:15% 
+In this video we're going to talk about repl.it.
+
+3
+00:00:06,140 --> 00:00:09,500
+When you start a new coding course the instructor normally
+
+4
+00:00:09,500 --> 00:00:11,980
+asks you to instal a bunch of things.
+
+5
+00:00:11,980 --> 00:00:14,800
+For example I can ask you to instal Python,
+
+6
+00:00:14,800 --> 00:00:17,780
+I can ask you to instal somewhere to write your Python code
+
+7
+00:00:17,780 --> 00:00:20,780
+A popular example is popular example is PyCharm.
+
+8
+00:00:20,780 --> 00:00:23,700
+But normally there are problems that come from that
+
+9
+00:00:24,930 --> 00:00:27,570
+and now that we're learning the very basics of Python
+
+10
+00:00:27,570 --> 00:00:30,250
+and we're going to start at the very beginning
+
+11
+00:00:30,250 --> 00:00:32,100
+we don't need the power
+
+12
+00:00:32,100 --> 00:00:36,129
+that something so specific gives us.
+
+13
+00:00:36,129 --> 00:00:37,810
+So what we're going to do in this course
+
+14
+00:00:37,810 --> 00:00:40,750
+is we're going to start with a cloud coding environment
+
+15
+00:00:40,750 --> 00:00:44,830
+That's going to allow us to really quickly learn Python
+
+16
+00:00:44,830 --> 00:00:47,930
+And then as we transition over to building larger
+
+17
+00:00:47,930 --> 00:00:50,850
+and more complex apps, we will be downloading
+
+18
+00:00:50,850 --> 00:00:52,750
+and installing all those tools.
+
+19
+00:00:53,740 --> 00:00:55,800
+But to begin with we don't need that
+
+20
+00:00:55,800 --> 00:00:58,610
+because we're going to be learning about how Python works
+
+21
+00:00:58,610 --> 00:01:01,040
+and we can do that really easily and really well
+
+22
+00:01:01,040 --> 00:01:02,770
+in this cloud coding environment.
+
+23
+00:01:04,510 --> 00:01:06,490
+Through this video we're going to talk about why
+
+24
+00:01:06,490 --> 00:01:09,550
+I recommend using this and why I think you should use this.
+
+25
+00:01:09,550 --> 00:01:13,610
+Let's go over to repl.it on your browser,
+
+26
+00:01:13,610 --> 00:01:15,970
+and you'll be greeted with this web page.
+
+27
+00:01:15,970 --> 00:01:18,670
+And in it, you can search for a language
+
+28
+00:01:18,670 --> 00:01:20,420
+and we're going to select Python3.
+
+29
+00:01:21,646 --> 00:01:25,010
+Python3 here is Python 3.6 which is the latest
+
+30
+00:01:25,010 --> 00:01:27,060
+version of Python at the time of recording
+
+31
+00:01:27,060 --> 00:01:29,780
+although Python 3.7 is coming out soon.
+
+32
+00:01:29,780 --> 00:01:33,820
+So you can use all of the modern Python constructs
+
+33
+00:01:33,820 --> 00:01:37,530
+and we're going to learn about all of them in this course.
+
+34
+00:01:37,530 --> 00:01:41,280
+One of the key benefits of using repl.it
+
+35
+00:01:41,280 --> 00:01:44,673
+and the main reason why I recommend that you use it,
+
+36
+00:01:44,673 --> 00:01:49,673
+is because your code is always saved into a unique URL.
+
+37
+00:01:51,750 --> 00:01:54,610
+So at any point in time, you can share your code
+
+38
+00:01:54,610 --> 00:01:57,210
+with this link here and you can send it to me
+
+39
+00:01:57,210 --> 00:02:00,600
+if you have any questions or you want any feedback.
+
+40
+00:02:00,600 --> 00:02:01,880
+Or even if you have any problems
+
+41
+00:02:01,880 --> 00:02:03,880
+and you don't know what is causing them.
+
+42
+00:02:05,290 --> 00:02:08,600
+What you see here is your Python code on the left.
+
+43
+00:02:08,600 --> 00:02:10,740
+And the second button, the run button,
+
+44
+00:02:10,740 --> 00:02:13,040
+will execute your code and show you the output
+
+45
+00:02:13,040 --> 00:02:14,380
+here on the right.
+
+46
+00:02:15,780 --> 00:02:17,970
+That means that you can really easily
+
+47
+00:02:17,970 --> 00:02:21,150
+run your code and try it out as you go along
+
+48
+00:02:21,150 --> 00:02:24,060
+without having to download things and run them
+
+49
+00:02:24,060 --> 00:02:25,690
+in the console and so forth.
+
+50
+00:02:26,977 --> 00:02:28,170
+Okay?
+
+51
+00:02:28,170 --> 00:02:30,660
+So as we write our Python code, we're going to be running it
+
+52
+00:02:30,660 --> 00:02:34,540
+really frequently as that's really the best way to learn
+
+53
+00:02:34,540 --> 00:02:37,260
+is by trying things out, writing code,
+
+54
+00:02:37,260 --> 00:02:38,660
+playing around with it, changing it,
+
+55
+00:02:38,660 --> 00:02:41,240
+and seeing how the changes affect the outcome.
+
+56
+00:02:42,770 --> 00:02:45,900
+Throughout the entire course I'll be frequently asking you
+
+57
+00:02:45,900 --> 00:02:49,470
+to pause the video and try things out yourselves.
+
+58
+00:02:49,470 --> 00:02:53,060
+I would encourage you to pause the video when I ask you to,
+
+59
+00:02:53,060 --> 00:02:56,040
+and try to implement whatever code we're working with
+
+60
+00:02:56,040 --> 00:02:56,873
+at the time.
+
+61
+00:02:57,870 --> 00:03:00,760
+By trying things out and by programming yourself,
+
+62
+00:03:00,760 --> 00:03:03,560
+you're really going to expedite your learning massively.
+
+63
+00:03:04,800 --> 00:03:07,350
+In addition, I would always encourage you
+
+64
+00:03:07,350 --> 00:03:10,320
+to write code alongside the video.
+
+65
+00:03:10,320 --> 00:03:12,680
+Don't just watch the video
+
+66
+00:03:12,680 --> 00:03:14,940
+and say you're going to write the code later on
+
+67
+00:03:14,940 --> 00:03:16,670
+because we both know what's going to happen,
+
+68
+00:03:16,670 --> 00:03:19,070
+you'll watch it and then you won't write the code
+
+69
+00:03:19,070 --> 00:03:20,000
+and then you'll forget everything
+
+70
+00:03:20,000 --> 00:03:22,060
+and that's a waste of time for everybody.
+
+71
+00:03:22,060 --> 00:03:25,680
+So what to do is code alongside me
+
+72
+00:03:25,680 --> 00:03:27,530
+and when I ask you to pause the video
+
+73
+00:03:28,515 --> 00:03:30,690
+and do some exercise, do just that.
+
+74
+00:03:30,690 --> 00:03:33,070
+In addition, throughout the course I'll also have
+
+75
+00:03:33,070 --> 00:03:35,530
+dedicated exercises on Udemy
+
+76
+00:03:35,530 --> 00:03:38,660
+that you can complete and test your knowledge
+
+77
+00:03:38,660 --> 00:03:39,590
+that way as well.
+
+78
+00:03:40,740 --> 00:03:41,970
+So that's it for this video.
+
+79
+00:03:41,970 --> 00:03:44,240
+Hopefully you're all setup with repl.it.
+
+80
+00:03:44,240 --> 00:03:47,160
+In the next video we're going to start with Python.
+
+81
+00:03:47,160 --> 00:03:51,210
+We're going to look at variables and numbers.
+
+82
+00:03:51,210 --> 00:03:53,510 line:15% 
+So that's it and I'll see you on the next one.
+

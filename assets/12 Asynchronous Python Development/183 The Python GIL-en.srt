@@ -1,0 +1,828 @@
+1
+00:00:00,090 --> 00:00:01,510
+<v ->Hi and welcome back.</v>
+
+2
+00:00:01,510 --> 00:00:04,120
+In this video we're going to talk about a topic
+
+3
+00:00:04,120 --> 00:00:07,130
+that nobody talks about in online courses
+
+4
+00:00:07,130 --> 00:00:09,800
+so I hope you're excited about covering this one.
+
+5
+00:00:09,800 --> 00:00:12,380
+And that's the Python GIL.
+
+6
+00:00:12,380 --> 00:00:14,980
+The Global Interpreter Lock.
+
+7
+00:00:14,980 --> 00:00:16,610
+This is a pretty advanced topic
+
+8
+00:00:16,610 --> 00:00:20,090
+and we're not going to go into all the technical text,
+
+9
+00:00:20,955 --> 00:00:22,870
+but we re going to cover what it is,
+
+10
+00:00:22,870 --> 00:00:24,550
+why it's there,
+
+11
+00:00:24,550 --> 00:00:28,310
+and what it means for us.
+
+12
+00:00:30,240 --> 00:00:31,920
+So when you launch a Python app,
+
+13
+00:00:33,800 --> 00:00:36,500
+you actually get a new Python process.
+
+14
+00:00:36,500 --> 00:00:38,190
+We know now what a process is,
+
+15
+00:00:38,190 --> 00:00:43,190
+a process is at least one thread and some resources.
+
+16
+00:00:43,680 --> 00:00:46,610
+So the process can deal with going into a core,
+
+17
+00:00:46,610 --> 00:00:50,010
+coming out of the core, reserving some resources it needs,
+
+18
+00:00:50,010 --> 00:00:52,300
+like access to a file or something like that.
+
+19
+00:00:53,820 --> 00:00:57,930
+So you get one thread in Python, you get the main thread,
+
+20
+00:00:57,930 --> 00:01:00,620
+but you can make more threads if you want.
+
+21
+00:01:00,620 --> 00:01:03,330
+When you launch a Python app you get a thread that runs
+
+22
+00:01:03,330 --> 00:01:06,010
+through your Python code from top to bottom as we've seen,
+
+23
+00:01:06,010 --> 00:01:09,600
+but you can make more threads if you want.
+
+24
+00:01:09,600 --> 00:01:12,170
+We're gonna look at how you can do that.
+
+25
+00:01:12,170 --> 00:01:14,010
+But given that we know
+
+26
+00:01:14,010 --> 00:01:17,590
+only a single thread can run in a core at once,
+
+27
+00:01:17,590 --> 00:01:21,050
+why would you, what's the benefit of making more threads?
+
+28
+00:01:24,370 --> 00:01:26,740
+Well of course the benefit of making more threads
+
+29
+00:01:26,740 --> 00:01:29,310
+is so you can run one in each core.
+
+30
+00:01:29,310 --> 00:01:31,600
+If your computer has more than one core, you can get
+
+31
+00:01:31,600 --> 00:01:34,070
+Python to make two threads and run them in two cores
+
+32
+00:01:34,070 --> 00:01:35,470
+at the same time.
+
+33
+00:01:35,470 --> 00:01:37,270
+Not so fast.
+
+34
+00:01:38,530 --> 00:01:41,870
+Due to how Python has been implemented,
+
+35
+00:01:41,870 --> 00:01:46,110
+so the people who wrote Python, you cannot run two threads
+
+36
+00:01:46,110 --> 00:01:48,290
+in one process at the same time.
+
+37
+00:01:48,290 --> 00:01:51,560
+So if you have your Python process create another thread
+
+38
+00:01:52,420 --> 00:01:54,820
+the main thread and that other thread are not going to
+
+39
+00:01:54,820 --> 00:01:58,550
+be able to run at the same time, even if you have two cores.
+
+40
+00:01:58,550 --> 00:02:03,140
+And that's because each process in Python creates a key
+
+41
+00:02:03,140 --> 00:02:07,395
+resource, a critical resource, and when a thread is running
+
+42
+00:02:07,395 --> 00:02:11,060
+it must acquire that resource.
+
+43
+00:02:11,060 --> 00:02:14,010
+And every process creates only one of these.
+
+44
+00:02:14,010 --> 00:02:16,250
+Okay, think of it like a core, except it's not a core
+
+45
+00:02:16,250 --> 00:02:18,810
+it's just another type of resource.
+
+46
+00:02:18,810 --> 00:02:21,060
+The process creates this unique resource
+
+47
+00:02:21,900 --> 00:02:24,550
+and when a thread is running it must acquire it.
+
+48
+00:02:24,550 --> 00:02:27,210
+And Python is going to check that your thread has
+
+49
+00:02:27,210 --> 00:02:28,810
+that resource before it runs it.
+
+50
+00:02:29,810 --> 00:02:32,390
+Because there's only one of those resources,
+
+51
+00:02:32,390 --> 00:02:35,340
+you can only run one thread in that process at once.
+
+52
+00:02:37,150 --> 00:02:40,220
+So you may think, well why is this resource being created?
+
+53
+00:02:41,430 --> 00:02:42,300
+And that's a good question,
+
+54
+00:02:42,300 --> 00:02:45,140
+we're going to go into that in just a moment.
+
+55
+00:02:45,140 --> 00:02:49,260
+The resource in question here is called the GIL.
+
+56
+00:02:51,620 --> 00:02:53,850
+That's the resource that the process creates
+
+57
+00:02:53,850 --> 00:02:55,250
+and the threads must acquire.
+
+58
+00:02:55,250 --> 00:02:58,600
+The GIL is the Global Interpreter Lock.
+
+59
+00:02:58,600 --> 00:03:03,150
+And a lock is a specific type of resource in threaded code.
+
+60
+00:03:03,150 --> 00:03:04,770
+So this is what the process creates,
+
+61
+00:03:04,770 --> 00:03:06,910
+this Global Interpreter Lock.
+
+62
+00:03:06,910 --> 00:03:09,977
+A thread must acquire it then they can run,
+
+63
+00:03:09,977 --> 00:03:12,820
+and then they must release it for another thread to run.
+
+64
+00:03:12,820 --> 00:03:15,930
+So you cannot run two threads at the same time.
+
+65
+00:03:15,930 --> 00:03:20,270
+Okay, so what about multiple Pythons?
+
+66
+00:03:20,270 --> 00:03:22,690
+I'm sure you have run multiple Python apps before
+
+67
+00:03:22,690 --> 00:03:24,540
+and they ran side by side, right?
+
+68
+00:03:25,820 --> 00:03:29,270
+Well yes, we can launch multiple Python processes
+
+69
+00:03:29,270 --> 00:03:32,660
+like we saw and just by opening another Python app
+
+70
+00:03:32,660 --> 00:03:36,130
+and that's fine because each process creates it's own GIL,
+
+71
+00:03:36,130 --> 00:03:38,670
+Each process creates it's own thread.
+
+72
+00:03:38,670 --> 00:03:42,030
+But they cannot collaborate,
+
+73
+00:03:42,030 --> 00:03:44,900
+you cannot have collaboration between processes easily.
+
+74
+00:03:44,900 --> 00:03:48,700
+I mean there are ways to do it but it's not free,
+
+75
+00:03:48,700 --> 00:03:50,470
+it's quite expensive, it takes a lot of computing
+
+76
+00:03:50,470 --> 00:03:53,320
+power to communicate between two processes.
+
+77
+00:03:53,320 --> 00:03:56,050
+That's just how computers have been designed
+
+78
+00:03:56,050 --> 00:03:58,883
+so that you can have separate resources in each process
+
+79
+00:03:58,883 --> 00:04:02,560
+and they are completely separate entities essentially.
+
+80
+00:04:04,910 --> 00:04:06,430
+They cannot easily share data.
+
+81
+00:04:06,430 --> 00:04:10,060
+For example, if you have some variables in one process
+
+82
+00:04:10,060 --> 00:04:12,930
+you cannot send the values of them to another process
+
+83
+00:04:12,930 --> 00:04:16,060
+and receive responses back, it's not that easy.
+
+84
+00:04:16,060 --> 00:04:18,610
+Whereas it is quite easy when you're doing threads.
+
+85
+00:04:22,020 --> 00:04:26,165
+So what is the point of threads in Python then?
+
+86
+00:04:26,165 --> 00:04:28,580
+Python allows you to make threads.
+
+87
+00:04:28,580 --> 00:04:30,020
+What's the point of threads?
+
+88
+00:04:30,020 --> 00:04:34,120
+Sometimes when you go to conferences or you talk with people
+
+89
+00:04:34,120 --> 00:04:35,869
+people will tell you threads in Python,
+
+90
+00:04:35,869 --> 00:04:39,241
+they're crap, you shouldn't use them.
+
+91
+00:04:39,241 --> 00:04:42,410
+Because using threads is not free.
+
+92
+00:04:42,410 --> 00:04:44,140
+It takes some computing power to,
+
+93
+00:04:44,140 --> 00:04:46,870
+as I said in the last video, remove them from the cores
+
+94
+00:04:46,870 --> 00:04:49,500
+put them back in, so when you have threads you can actually
+
+95
+00:04:49,500 --> 00:04:52,940
+see your Python code become slightly slower.
+
+96
+00:04:52,940 --> 00:04:54,770
+So what is the point of threads?
+
+97
+00:04:54,770 --> 00:04:57,630
+If they can not run at the same time,
+
+98
+00:04:57,630 --> 00:05:00,180
+and also they can make your code slower.
+
+99
+00:05:01,670 --> 00:05:03,740
+Well, let's say you have a Python programme
+
+100
+00:05:03,740 --> 00:05:07,450
+that does two things, just these two.
+
+101
+00:05:07,450 --> 00:05:10,050
+One of the things it does is it does a complex
+
+102
+00:05:10,050 --> 00:05:13,350
+mathematical operation, something that takes a long time.
+
+103
+00:05:13,350 --> 00:05:17,190
+Let's say that thread, this operation takes a long time
+
+104
+00:05:17,190 --> 00:05:19,320
+because it's a complex calculation, your computer
+
+105
+00:05:19,320 --> 00:05:21,080
+has to do a lot of things in the CPU,
+
+106
+00:05:21,080 --> 00:05:23,810
+in your processor in order to arrive at a solution.
+
+107
+00:05:25,040 --> 00:05:27,720
+And it also does an entirely separate thing, this programme.
+
+108
+00:05:27,720 --> 00:05:29,410
+Which is it collaborates with a user.
+
+109
+00:05:29,410 --> 00:05:32,430
+It asks the user for some input, then it greets them or
+
+110
+00:05:32,430 --> 00:05:34,340
+it lets them pick something from a menu
+
+111
+00:05:34,340 --> 00:05:36,240
+or something like that.
+
+112
+00:05:36,240 --> 00:05:38,290
+This operation can take a long time
+
+113
+00:05:38,290 --> 00:05:40,660
+because the user can take a long time to type.
+
+114
+00:05:42,120 --> 00:05:43,120
+So you can see that there are
+
+115
+00:05:43,120 --> 00:05:46,360
+two different things going on here.
+
+116
+00:05:46,360 --> 00:05:47,193
+Number one,
+
+117
+00:05:47,193 --> 00:05:50,330
+your computer is being used to perform calculations
+
+118
+00:05:50,330 --> 00:05:53,420
+and number two, the computer is not being used
+
+119
+00:05:53,420 --> 00:05:56,600
+because it's just waiting for the user to type something.
+
+120
+00:05:56,600 --> 00:05:59,280
+But the whole operation of asking for the input
+
+121
+00:05:59,280 --> 00:06:01,160
+and greeting the user can take a long time
+
+122
+00:06:01,160 --> 00:06:02,230
+because of that wait.
+
+123
+00:06:03,860 --> 00:06:07,416
+So in a single thread you can do one of these two.
+
+124
+00:06:07,416 --> 00:06:09,930
+First do your mathematical calculation,
+
+125
+00:06:09,930 --> 00:06:11,050
+which is going to take a long time
+
+126
+00:06:11,050 --> 00:06:13,220
+because there's a lot of things to do
+
+127
+00:06:13,220 --> 00:06:15,390
+and then you can sort of interact with the user,
+
+128
+00:06:15,390 --> 00:06:17,500
+ask them for something and greet them back.
+
+129
+00:06:17,500 --> 00:06:20,350
+But notice how this one, there's also quite a wide rectangle
+
+130
+00:06:20,350 --> 00:06:23,200
+that was my way of signifying that this can take a while
+
+131
+00:06:23,200 --> 00:06:25,200
+because the user has to type,
+
+132
+00:06:25,200 --> 00:06:27,980
+and the user's typing normally takes a long time.
+
+133
+00:06:27,980 --> 00:06:29,780
+So this is one option, single threaded code,
+
+134
+00:06:29,780 --> 00:06:31,690
+or of course you can do the reverse.
+
+135
+00:06:31,690 --> 00:06:34,140
+You can ask the user for something first,
+
+136
+00:06:34,140 --> 00:06:36,630
+and then you can run your mathematical calculation after.
+
+137
+00:06:38,560 --> 00:06:40,996
+In either case, these threads end up taking
+
+138
+00:06:40,996 --> 00:06:43,121
+a reasonable amount of time.
+
+139
+00:06:43,121 --> 00:06:46,150
+This single thread ends up taking a reasonable amount
+
+140
+00:06:46,150 --> 00:06:47,870
+of time overall.
+
+141
+00:06:50,680 --> 00:06:54,190
+So we can instead do cooperative multitasking.
+
+142
+00:06:55,120 --> 00:06:57,910
+But you must remember, no matter what we do
+
+143
+00:06:57,910 --> 00:07:00,820
+we can only run one thing at a time.
+
+144
+00:07:01,660 --> 00:07:03,330
+So here's what cooperative multitasking
+
+145
+00:07:03,330 --> 00:07:05,430
+would look like in Python.
+
+146
+00:07:05,430 --> 00:07:08,560
+This is one of the exciting bits about Python, by the way.
+
+147
+00:07:08,560 --> 00:07:13,560
+First you would run some of the user code,
+
+148
+00:07:13,610 --> 00:07:16,030
+where you would ask the user for input.
+
+149
+00:07:16,030 --> 00:07:18,340
+And then you'd immediately release the GIL
+
+150
+00:07:19,854 --> 00:07:22,734
+and run your mathematical calculation.
+
+151
+00:07:22,734 --> 00:07:26,520
+Remember, when the user thread releases the GIL
+
+152
+00:07:26,520 --> 00:07:27,900
+another thread that is waiting
+
+153
+00:07:27,900 --> 00:07:29,680
+can then acquire it and use it.
+
+154
+00:07:31,150 --> 00:07:32,730
+And that thread is going to continue running
+
+155
+00:07:32,730 --> 00:07:34,780
+until they release the GIL.
+
+156
+00:07:35,840 --> 00:07:38,091
+So when the user responds,
+
+157
+00:07:38,091 --> 00:07:42,630
+this code is then going to have something in it to say hey,
+
+158
+00:07:42,630 --> 00:07:45,170
+if the user responds release the GIL.
+
+159
+00:07:45,170 --> 00:07:48,050
+So we release the GIL and we go back to the user
+
+160
+00:07:48,050 --> 00:07:50,750
+And here we can greet the user, which is really quick
+
+161
+00:07:50,750 --> 00:07:53,760
+because we're just constructing a string and printing it out
+
+162
+00:07:53,760 --> 00:07:56,180
+and then we can release the GIL immediately
+
+163
+00:07:56,180 --> 00:07:59,440
+and go back to running our mathematical calculation.
+
+164
+00:08:00,990 --> 00:08:05,430
+Notice how the yellow segment is smaller now in conjunction
+
+165
+00:08:06,546 --> 00:08:10,394
+because what we have removed,
+
+166
+00:08:10,394 --> 00:08:12,580
+all that bit there,
+
+167
+00:08:12,580 --> 00:08:16,600
+was our code waiting for the user to type.
+
+168
+00:08:16,600 --> 00:08:20,930
+And because of threads, we no longer need to do that.
+
+169
+00:08:21,840 --> 00:08:23,230
+Okay?
+
+170
+00:08:23,230 --> 00:08:28,230
+Because now our threads are only running
+
+171
+00:08:28,680 --> 00:08:31,870
+when there are things to do in the computer.
+
+172
+00:08:32,730 --> 00:08:35,890
+When the user is waiting, or we are waiting for the user
+
+173
+00:08:35,890 --> 00:08:40,210
+to type, or some data to come into a programme from some place
+
+174
+00:08:40,210 --> 00:08:42,540
+we don't have to be waiting.
+
+175
+00:08:42,540 --> 00:08:44,940
+We can be doing something else during that time.
+
+176
+00:08:45,840 --> 00:08:50,840
+Notice that this bottom set of rectangles would take
+
+177
+00:08:50,910 --> 00:08:55,140
+slightly longer than just the addition of the user
+
+178
+00:08:55,140 --> 00:08:56,570
+and the mathematical calculation
+
+179
+00:08:56,570 --> 00:08:59,580
+because of the threads communicating with one another,
+
+180
+00:08:59,580 --> 00:09:02,070
+GIL being released, GIL being acquired.,
+
+181
+00:09:02,070 --> 00:09:04,110
+and being put in the core and then removed from the core.
+
+182
+00:09:04,110 --> 00:09:06,480
+So there would be a little bit of overhead
+
+183
+00:09:06,480 --> 00:09:10,610
+but overall, it would take less time than the one above.
+
+184
+00:09:13,390 --> 00:09:16,460
+So going back to what the point of threads in Python is
+
+185
+00:09:17,710 --> 00:09:20,120
+is to reduce waiting time.
+
+186
+00:09:21,770 --> 00:09:23,820
+That's about it.
+
+187
+00:09:23,820 --> 00:09:26,200
+If all your threads are doing things in Python,
+
+188
+00:09:26,200 --> 00:09:30,470
+if all your threads are using your CPU, your processor,
+
+189
+00:09:30,470 --> 00:09:33,320
+multiple thread is not going to help you in Python.
+
+190
+00:09:33,320 --> 00:09:38,096
+Because Python doesn't do very well that
+
+191
+00:09:38,096 --> 00:09:40,530
+running things in parallel.
+
+192
+00:09:41,700 --> 00:09:44,720
+And the reason this works is because the OS is going to
+
+193
+00:09:44,720 --> 00:09:46,910
+give priority to threads that are doing things.
+
+194
+00:09:46,910 --> 00:09:49,570
+So in this case out mathematical calculation thread.
+
+195
+00:09:49,570 --> 00:09:52,740
+So if a thread is waiting, it's going to run less frequently
+
+196
+00:09:52,740 --> 00:09:55,450
+because the OS is going to realise there is a thread that
+
+197
+00:09:55,450 --> 00:09:58,580
+wants to use the CPU, and there's a thread that doesn't.
+
+198
+00:09:58,580 --> 00:10:01,460
+So it'd probably run the one that does a bit more often.
+
+199
+00:10:01,460 --> 00:10:04,230
+So that it gets way more time on the CPU.
+
+200
+00:10:05,980 --> 00:10:07,650
+Okay, that's it for this video.
+
+201
+00:10:07,650 --> 00:10:10,260
+I just wanted to tell you about the Python GIL
+
+202
+00:10:10,260 --> 00:10:12,770
+and now you know that you cannot run two threads
+
+203
+00:10:12,770 --> 00:10:16,690
+at the same time in Python under the same process.
+
+204
+00:10:16,690 --> 00:10:18,910
+But there are things you can do in order to
+
+205
+00:10:18,910 --> 00:10:21,930
+make your code more efficient with the use of threads
+
+206
+00:10:21,930 --> 00:10:24,140
+if your code involves waiting.
+
+207
+00:10:25,309 --> 00:10:28,250
+That's it for this video, I'll see you on the next one.
+

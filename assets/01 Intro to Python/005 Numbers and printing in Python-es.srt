@@ -1,0 +1,1052 @@
+1
+00:00:00,360 --> 00:00:01,730
+Narrador: Hola, bienvenido de nuevo.
+
+2
+00:00:01,730 --> 00:00:03,527
+En este video vamos a
+
+3
+00:00:03,527 --> 00:00:06,100
+hablar sobre nmeros y sobre impresin en Python.
+
+4
+00:00:07,690 --> 00:00:10,580
+Ahora espero que est todo configurado con Rebel
+
+5
+00:00:10,580 --> 00:00:13,800
+It y lo que tendr es su URL nica,
+
+6
+00:00:13,800 --> 00:00:16,690
+su nombre nico aqu que puede compartir.
+
+7
+00:00:16,690 --> 00:00:19,970
+Si encuentra algn problema en cualquiera de los videos,
+
+8
+00:00:19,970 --> 00:00:21,700
+simplemente comparta su cdigo conmigo.
+
+9
+00:00:22,560 --> 00:00:25,220
+Para facilitar las cosas, te recomiendo
+
+10
+00:00:25,220 --> 00:00:29,260
+que crees una nueva sesin para cada video.
+
+11
+00:00:29,260 --> 00:00:30,630
+Har lo mismo y
+
+12
+00:00:30,630 --> 00:00:33,040
+compartir todo el cdigo que escribimos a lo
+
+13
+00:00:33,040 --> 00:00:35,670
+largo de estos videos con usted en cada conferencia.
+
+14
+00:00:35,670 --> 00:00:37,570
+As que pueden ver que esta
+
+15
+00:00:37,570 --> 00:00:41,260
+conferencia tiene un recurso adjunto, y ese es el cdigo que he
+
+16
+00:00:41,260 --> 00:00:43,540
+escrito para esta conferencia, ya preparado para
+
+17
+00:00:43,540 --> 00:00:45,260
+que lo vean al final, una
+
+18
+00:00:45,260 --> 00:00:46,940
+vez que hayan examinado el video.
+
+19
+00:00:47,900 --> 00:00:49,030
+Vamos a empezar.
+
+20
+00:00:50,940 --> 00:00:53,850
+Lo ms importante acerca de la programacin, y
+
+21
+00:00:53,850 --> 00:00:56,800
+realmente uno de los componentes bsicos ms bsicos,
+
+22
+00:00:56,800 --> 00:00:58,820
+es el concepto de una variable.
+
+23
+00:00:58,820 --> 00:01:01,050
+Probablemente haya visto variables en matemticas,
+
+24
+00:01:01,050 --> 00:01:04,160
+y normalmente significan un nombre para un valor.
+
+25
+00:01:05,270 --> 00:01:08,460
+Puede darle un nombre a un valor y luego referirse
+
+26
+00:01:08,460 --> 00:01:12,010
+a ese nombre una y otra vez mientras trabaja con su programa.
+
+27
+00:01:12,010 --> 00:01:15,600
+Por ejemplo, creemos una variable llamada A y le
+
+28
+00:01:15,600 --> 00:01:17,120
+damos el valor uno.
+
+29
+00:01:18,410 --> 00:01:20,850
+Lo que hemos hecho aqu es que obtuvimos el
+
+30
+00:01:20,850 --> 00:01:22,800
+valor que est a la derecha del
+
+31
+00:01:22,800 --> 00:01:25,600
+signo de igualdad y lo hemos incluido en esta casilla
+
+32
+00:01:25,600 --> 00:01:27,820
+y le hemos dado el nombre A.
+
+33
+00:01:27,820 --> 00:01:32,050
+Cuando hablamos de A, realmente eso significa uno.
+
+34
+00:01:33,420 --> 00:01:36,830
+Del mismo modo, podemos hacer que B sea igual a dos y C sea igual a
+
+35
+00:01:36,830 --> 00:01:37,663
+tres, y as sucesivamente.
+
+36
+00:01:37,663 --> 00:01:39,630
+Entonces podemos crear tantas variables
+
+37
+00:01:40,570 --> 00:01:44,100
+como queramos, y pueden tener cualquier nombre que deseamos.
+
+38
+00:01:44,100 --> 00:01:46,900
+Por ejemplo, podemos tener una variable llamada my sum,
+
+39
+00:01:48,080 --> 00:01:49,980
+que puede ser A ms B,
+
+40
+00:01:52,143 --> 00:01:53,810
+por ejemplo, y podemos tener
+
+41
+00:01:53,810 --> 00:01:56,550
+otra suma, que puede ser cinco ms 10, por ejemplo.
+
+42
+00:01:56,550 --> 00:01:58,980
+Como puede ver, lo que est en
+
+43
+00:01:58,980 --> 00:02:01,930
+el lado derecho de este signo igual se calcular
+
+44
+00:02:01,930 --> 00:02:04,870
+y se colocar en la variable de la izquierda.
+
+45
+00:02:05,790 --> 00:02:08,750
+Aqu estamos agregando uno ms dos, as que esto ser tres.
+
+46
+00:02:08,750 --> 00:02:09,900
+Este va a ser 15.
+
+47
+00:02:11,170 --> 00:02:14,160
+Los nombres de las variables pueden ser lo que
+
+48
+00:02:14,160 --> 00:02:16,591
+quieras excepto por unas pocas palabras clave
+
+49
+00:02:16,591 --> 00:02:19,690
+reservadas y algunos de los nombres que desears evitar.
+
+50
+00:02:19,690 --> 00:02:22,880
+Vamos a repasar los nombres que desear evitar y las
+
+51
+00:02:22,880 --> 00:02:26,060
+palabras clave reservadas a lo largo de todo el curso.
+
+52
+00:02:26,060 --> 00:02:28,917
+As que no se preocupe demasiado por eso,
+
+53
+00:02:28,917 --> 00:02:31,880
+por ahora solo sepa que puede darles el
+
+54
+00:02:31,880 --> 00:02:35,560
+nombre que desee, y puede contener letras, nmeros y guiones bajos.
+
+55
+00:02:36,780 --> 00:02:41,330
+No hay otros smbolos, y tampoco puede comenzar con un nmero.
+
+56
+00:02:42,810 --> 00:02:45,250
+Voy a escribirlo aqu como
+
+57
+00:02:45,250 --> 00:02:48,580
+un pequeo comentario, letras, nmeros y guiones bajos.
+
+58
+00:02:49,620 --> 00:02:53,410
+No se puede comenzar con un nmero, de acuerdo?
+
+59
+00:02:53,410 --> 00:02:55,730
+Eso es porque cuando compart el
+
+60
+00:02:55,730 --> 00:02:58,470
+cdigo contigo, podrs leer estos comentarios y
+
+61
+00:02:58,470 --> 00:03:00,970
+recordar lo que sucedi en el video.
+
+62
+00:03:02,500 --> 00:03:05,560
+Pero esto no se ejecuta, no hace nada por el momento.
+
+63
+00:03:06,920 --> 00:03:09,080
+As que hemos creado algunas variables.
+
+64
+00:03:09,080 --> 00:03:12,420
+Y como pueden ver les hemos dado un nombre especial,
+
+65
+00:03:12,420 --> 00:03:16,030
+que es mi suma, esta tiene el nombre de otra suma,
+
+66
+00:03:16,030 --> 00:03:18,110
+y estos tienen A, B y C.
+
+67
+00:03:18,110 --> 00:03:19,570
+Los nombres pueden ser
+
+68
+00:03:19,570 --> 00:03:22,180
+lo que queramos, pero frecuentemente cuando creamos
+
+69
+00:03:22,180 --> 00:03:25,620
+nombres compuestos, i. mi. nombres que estn
+
+70
+00:03:25,620 --> 00:03:29,460
+formados por dos palabras, en Python colocamos un guin bajo
+
+71
+00:03:29,460 --> 00:03:32,330
+entre las palabras y las letras sern minsculas.
+
+72
+00:03:33,240 --> 00:03:34,910
+Esto no es un requisito,
+
+73
+00:03:34,910 --> 00:03:37,750
+como dije, puedes nombrar tus variables como quieras,
+
+74
+00:03:37,750 --> 00:03:39,610
+pero esto es solo una convencin.
+
+75
+00:03:39,610 --> 00:03:42,350
+Esto es lo que hacemos normalmente cuando programamos en Python.
+
+76
+00:03:42,350 --> 00:03:45,030
+Otros lenguajes de programacin tienen otras convenciones,
+
+77
+00:03:45,030 --> 00:03:47,430
+y nombran sus variables de diferentes maneras.
+
+78
+00:03:49,220 --> 00:03:54,220
+Adems, normalmente tenemos espacios entre las construcciones, lo siento entre
+
+79
+00:03:54,850 --> 00:03:58,090
+los operandos, como aqu y all.
+
+80
+00:03:58,090 --> 00:04:00,830
+Y eso tambin es una convencin, y tampoco algo
+
+81
+00:04:00,830 --> 00:04:01,910
+que tienes que hacer.
+
+82
+00:04:03,750 --> 00:04:07,730
+Echemos un vistazo a algo un poco ms complicado.
+
+83
+00:04:09,690 --> 00:04:12,610
+Por ejemplo, esta expresin aqu.
+
+84
+00:04:12,610 --> 00:04:15,850
+Uno ms tres veces cuatro dividido por dos menos dos.
+
+85
+00:04:17,170 --> 00:04:19,930
+Cul creemos que ser el resultado de esto?
+
+86
+00:04:20,930 --> 00:04:23,000
+Y cuando hago una pregunta como esa,
+
+87
+00:04:23,000 --> 00:04:24,840
+obviamente s que estoy siendo grabado,
+
+88
+00:04:24,840 --> 00:04:28,110
+s que no me ests escuchando en vivo y no puedes
+
+89
+00:04:28,110 --> 00:04:30,680
+responder, pero lo que puedes hacer es detener el
+
+90
+00:04:30,680 --> 00:04:32,980
+video y darle un poco de pensamiento.
+
+91
+00:04:32,980 --> 00:04:35,140
+De esa manera, al hacer esta interaccin vas
+
+92
+00:04:35,140 --> 00:04:38,730
+a aprender mucho ms rpido que si fuera solo yo parloteando hacia ti.
+
+93
+00:04:42,290 --> 00:04:45,500
+Las reglas matemticas normales se aplican en Python, como lo
+
+94
+00:04:45,500 --> 00:04:48,150
+hacen en la mayora de los lenguajes de programacin.
+
+95
+00:04:48,150 --> 00:04:51,540
+Entonces, la multiplicacin y la divisin se ejecutarn primero, y
+
+96
+00:04:51,540 --> 00:04:54,670
+luego el ms y el menos se ejecutarn despus.
+
+97
+00:04:54,670 --> 00:04:57,230
+Y de izquierda a derecha es el orden de preferencia,
+
+98
+00:04:57,230 --> 00:04:59,740
+por lo que esto se ejecutar primero, tres veces cuatro.
+
+99
+00:04:59,740 --> 00:05:01,210
+Eso nos va a dar 12.
+
+100
+00:05:01,210 --> 00:05:03,050
+Luego vamos a dividir 12
+
+101
+00:05:03,050 --> 00:05:06,870
+entre dos, eso nos dar seis, uno ms seis es siete,
+
+102
+00:05:06,870 --> 00:05:07,950
+menos dos es cinco.
+
+103
+00:05:08,970 --> 00:05:11,690
+Entonces, operadores matemticos, esta variable aqu
+
+104
+00:05:11,690 --> 00:05:14,380
+tiene el valor cinco dentro.
+
+105
+00:05:14,380 --> 00:05:19,380
+Sin embargo, si ejecutamos nuestro cdigo, vemos que no aparece nada.
+
+106
+00:05:20,080 --> 00:05:22,380
+Si queremos ver el valor
+
+107
+00:05:22,380 --> 00:05:26,410
+de la variable operadores matemticos, tendremos que imprimirlo.
+
+108
+00:05:26,410 --> 00:05:29,800
+Eso es lo siguiente que vamos a aprender en este video.
+
+109
+00:05:29,800 --> 00:05:33,560
+Para imprimir algo, simplemente escribiremos imprimir.
+
+110
+00:05:33,560 --> 00:05:37,010
+Observe cmo se vuelve azul porque Rebelde sabe que esto
+
+111
+00:05:37,010 --> 00:05:38,960
+es algo especial en Python.
+
+112
+00:05:40,430 --> 00:05:42,434
+Luego, dentro de los
+
+113
+00:05:42,434 --> 00:05:47,410
+corchetes, vamos a escribir la variable de operadores matemticos, de acuerdo?
+
+114
+00:05:47,410 --> 00:05:50,576
+Por lo tanto, es impresin, bracket abierto, lo que sea
+
+115
+00:05:50,576 --> 00:05:53,290
+que queremos imprimir, y luego un corchete de cierre.
+
+116
+00:05:53,290 --> 00:05:57,340
+Ahora cuando ejecutamos esto de nuevo, vemos que se han impreso
+
+117
+00:05:57,340 --> 00:05:58,420
+cinco puntos oh.
+
+118
+00:05:59,420 --> 00:06:01,890
+No cinco, cinco puntos oh.
+
+119
+00:06:03,080 --> 00:06:07,190
+Y eso es debido a los nmeros de coma flotante.
+
+120
+00:06:07,190 --> 00:06:08,740
+Un nmero de coma flotante
+
+121
+00:06:08,740 --> 00:06:12,190
+es solo un nmero con un punto decimal, y normalmente, por
+
+122
+00:06:12,190 --> 00:06:14,730
+supuesto, los nmeros de coma flotante tienen ms
+
+123
+00:06:14,730 --> 00:06:16,450
+precisin que los nmeros enteros.
+
+124
+00:06:17,640 --> 00:06:22,320
+Por ejemplo, puede hacer algo como 12 dividido por cinco,
+
+125
+00:06:22,320 --> 00:06:25,130
+y esto ser dos puntos cuatro.
+
+126
+00:06:27,250 --> 00:06:29,410
+Este es un nmero de coma flotante.
+
+127
+00:06:29,410 --> 00:06:32,347
+Por lo tanto, necesita nmeros en coma flotante si
+
+128
+00:06:32,347 --> 00:06:35,460
+desea tener la precisin adecuada cuando est haciendo matemticas.
+
+129
+00:06:36,620 --> 00:06:39,920
+Y en Python, tan pronto como haces un
+
+130
+00:06:39,920 --> 00:06:41,830
+operador de divisin, Python
+
+131
+00:06:41,830 --> 00:06:45,807
+comienza a tratar todo como un nmero de punto
+
+132
+00:06:45,807 --> 00:06:50,807
+flotante para que tengas todo el poder de la precisin, de acuerdo?
+
+133
+00:06:50,810 --> 00:06:53,470
+Entonces podemos hacer una divisin de flotacin, por ejemplo,
+
+134
+00:06:53,470 --> 00:06:56,690
+otra variable que es 12 dividida por tres, y luego podemos
+
+135
+00:06:56,690 --> 00:06:58,850
+imprimirla, y qu crees que se va
+
+136
+00:06:58,850 --> 00:06:59,900
+a imprimir este resultado?
+
+137
+00:06:59,900 --> 00:07:01,510
+Qu pensamos que va a ser?
+
+138
+00:07:03,540 --> 00:07:07,250
+Con suerte lo tienes, el resultado es cuatro puntos oh.
+
+139
+00:07:07,250 --> 00:07:10,130
+Aunque 12 dividido entre tres es cuatro, porque hay
+
+140
+00:07:11,340 --> 00:07:13,320
+este signo de divisin all, Python
+
+141
+00:07:13,320 --> 00:07:16,430
+trata todo como nmeros de coma flotante, y el
+
+142
+00:07:16,430 --> 00:07:19,490
+resultado es tambin un nmero de punto flotante que
+
+143
+00:07:19,490 --> 00:07:20,640
+es cuatro puntos oh.
+
+144
+00:07:22,620 --> 00:07:24,450
+Sin embargo, a veces queremos terminar
+
+145
+00:07:24,450 --> 00:07:26,320
+con un nmero entero en su lugar.
+
+146
+00:07:26,320 --> 00:07:28,710
+Queremos perder el decimal porque no significa nada
+
+147
+00:07:28,710 --> 00:07:30,450
+para nosotros, y queremos terminar con
+
+148
+00:07:30,450 --> 00:07:33,839
+un nmero entero en lugar de un nmero de punto flotante.
+
+149
+00:07:33,839 --> 00:07:37,410
+Y, por cierto, los nmeros enteros tambin se llaman enteros,
+
+150
+00:07:37,410 --> 00:07:40,140
+por lo que usar ese nombre indistintamente.
+
+151
+00:07:41,360 --> 00:07:43,440
+Entonces, si queremos hacer una divisin entera, todo
+
+152
+00:07:43,440 --> 00:07:46,590
+lo que tenemos que hacer es usar dos de estos signos de divisin.
+
+153
+00:07:51,070 --> 00:07:52,050
+Y luego
+
+154
+00:07:52,050 --> 00:07:55,040
+cuando imprimimos esto, vemos que se imprimen cuatro.
+
+155
+00:07:55,040 --> 00:07:57,780
+S que este texto es pequeo, me disculpo por eso.
+
+156
+00:07:59,530 --> 00:08:02,010
+Como puede ver, cuando hicimos el signo de
+
+157
+00:08:02,010 --> 00:08:02,929
+divisin doble, Python
+
+158
+00:08:02,929 --> 00:08:07,710
+vio, est bien, queremos hacer una divisin de enteros, no tratemos las cosas como nmeros flotantes,
+
+159
+00:08:07,710 --> 00:08:09,160
+vamos a tratarlos como enteros.
+
+160
+00:08:10,740 --> 00:08:15,740
+Sin embargo, cuando hacemos algo como 12, un entero dividido
+
+161
+00:08:16,220 --> 00:08:20,990
+por cinco, que debera ser dos puntos cuatro, qu crees
+
+162
+00:08:20,990 --> 00:08:22,840
+que vamos a obtener?
+
+163
+00:08:24,540 --> 00:08:27,440
+Cul cree que ser el resultado de esta declaracin de
+
+164
+00:08:27,440 --> 00:08:30,390
+impresin ahora que sabemos que va a ser un nmero
+
+165
+00:08:30,390 --> 00:08:33,560
+entero, un nmero entero y no un nmero de punto flotante?
+
+166
+00:08:35,570 --> 00:08:38,350
+Las reglas de redondeo nos dicen que cualquier cosa
+
+167
+00:08:38,350 --> 00:08:41,240
+que est por debajo del punto dos y cinco se
+
+168
+00:08:41,240 --> 00:08:45,630
+redondear a dos, y cualquier valor superior a dos punto cinco se redondear a tres.
+
+169
+00:08:45,630 --> 00:08:47,680
+Sin embargo, las reglas de redondeo no
+
+170
+00:08:47,680 --> 00:08:50,060
+se aplican cuando hacemos divisin de enteros, de acuerdo?
+
+171
+00:08:50,060 --> 00:08:53,330
+Entonces todo, no importa si era dos puntos nueve,
+
+172
+00:08:53,330 --> 00:08:56,140
+todo se redondea a dos, o mejor
+
+173
+00:08:56,140 --> 00:09:00,210
+dicho, todo despus de que el punto decimal simplemente se pierde.
+
+174
+00:09:00,210 --> 00:09:02,790
+As que algo para recordar con la divisin de enteros.
+
+175
+00:09:04,670 --> 00:09:09,670
+Ahora, cinco entran en 12 dos veces, y el resto son dos.
+
+176
+00:09:14,473 --> 00:09:17,100
+Entonces, obtener el recordatorio de una divisin
+
+177
+00:09:17,100 --> 00:09:19,792
+es una operacin tan popular en Python
+
+178
+00:09:19,792 --> 00:09:23,250
+que Python nos da una manera de obtener el
+
+179
+00:09:24,260 --> 00:09:25,890
+resto usando un solo comando.
+
+180
+00:09:27,480 --> 00:09:30,750
+Y la forma de hacerlo es mediante el uso de este operador modular.
+
+181
+00:09:31,590 --> 00:09:34,520
+El operador modular nos da el resto de realizar
+
+182
+00:09:34,520 --> 00:09:35,353
+esta divisin.
+
+183
+00:09:35,353 --> 00:09:38,260
+12 dividido por cinco es dos, resto dos,
+
+184
+00:09:38,260 --> 00:09:39,650
+entonces dos restantes dos.
+
+185
+00:09:40,800 --> 00:09:42,740
+Entonces, qu va a hacer esto? Nos
+
+186
+00:09:42,740 --> 00:09:44,040
+dar los dos restantes?
+
+187
+00:09:45,120 --> 00:09:48,950
+Si hiciramos seis modulares cinco, nos dara uno, porque ese es
+
+188
+00:09:48,950 --> 00:09:51,639
+el resto de la divisin seis dividido por
+
+189
+00:09:51,639 --> 00:09:52,990
+cinco, est bien?
+
+190
+00:09:57,280 --> 00:09:59,250
+Si quisiramos imprimir eso, podramos hacer
+
+191
+00:09:59,250 --> 00:10:01,160
+eso y obtendramos el valor dos.
+
+192
+00:10:03,790 --> 00:10:06,130
+Entonces, por qu hacer que el resto de una divisin
+
+193
+00:10:06,130 --> 00:10:07,320
+sea una cosa tan popular?
+
+194
+00:10:09,250 --> 00:10:11,900
+Cundo necesitas el resto de algo?
+
+195
+00:10:12,970 --> 00:10:15,900
+Bueno, piense en las siguientes divisiones y
+
+196
+00:10:15,900 --> 00:10:17,390
+lo que queda.
+
+197
+00:10:17,390 --> 00:10:19,510
+Cul es el resto de 10 dividido por dos?
+
+198
+00:10:21,000 --> 00:10:23,270
+Afortunadamente la respuesta a eso fue cero.
+
+199
+00:10:23,270 --> 00:10:26,990
+14 dividido por dos, tambin cero.
+
+200
+00:10:26,990 --> 00:10:29,950
+Seis dividido por dos, tambin cero.
+
+201
+00:10:29,950 --> 00:10:34,950
+340 dividido por dos, tambin cero.
+
+202
+00:10:35,080 --> 00:10:38,010
+Entonces el resto de estas divisiones es todo cero.
+
+203
+00:10:39,100 --> 00:10:41,780
+Qu tal algo como 11 dividido por dos?
+
+204
+00:10:44,000 --> 00:10:47,470
+Bueno, dos entran en 11 cinco veces, el resto es uno.
+
+205
+00:10:48,680 --> 00:10:52,680
+27 dividido por dos, dos pasa a 27 13 veces, y
+
+206
+00:10:56,550 --> 00:10:58,430
+el resto tambin es uno.
+
+207
+00:10:58,430 --> 00:11:00,610
+Entonces el resto de estos dos es uno.
+
+208
+00:11:00,610 --> 00:11:02,170
+De manera similar, para tres dividido
+
+209
+00:11:02,170 --> 00:11:03,870
+por dos, el resto tambin es uno.
+
+210
+00:11:03,870 --> 00:11:07,250
+Entonces, el patrn aqu no es que los nmeros
+
+211
+00:11:07,250 --> 00:11:11,340
+aleatorios tengan residuos aleatorios, sino que los nmeros pares, cuando estn
+
+212
+00:11:11,340 --> 00:11:13,840
+divididos por dos, el resto es cero.
+
+213
+00:11:13,840 --> 00:11:16,970
+Para nmeros impares, cuando se divide entre dos, el resto
+
+214
+00:11:16,970 --> 00:11:17,810
+siempre es uno.
+
+215
+00:11:18,710 --> 00:11:20,490
+El resto es una operacin tan
+
+216
+00:11:20,490 --> 00:11:24,270
+popular porque nos permite ver si un nmero es impar o par.
+
+217
+00:11:25,180 --> 00:11:27,550
+Por ejemplo, dada una variable
+
+218
+00:11:30,040 --> 00:11:35,040
+37, podemos calcular el resto haciendo X y dos modulares.
+
+219
+00:11:36,680 --> 00:11:40,523
+Y luego podemos imprimirlo, y qu pensamos que
+
+220
+00:11:40,523 --> 00:11:41,873
+ser el resto?
+
+221
+00:11:42,970 --> 00:11:46,520
+Esperemos que diga uno, y porque este es un nmero impar.
+
+222
+00:11:48,040 --> 00:11:50,260
+Como puede ver aqu, uno se imprime,
+
+223
+00:11:50,260 --> 00:11:52,920
+porque X es de hecho un nmero impar.
+
+224
+00:11:53,890 --> 00:11:54,830
+Y ahora puede preguntarse
+
+225
+00:11:54,830 --> 00:11:57,270
+por qu nos importa si un nmero es impar o par?
+
+226
+00:11:58,610 --> 00:12:01,310
+Bueno, vamos a aprender sobre eso a lo
+
+227
+00:12:01,310 --> 00:12:02,410
+largo del curso.
+
+228
+00:12:03,740 --> 00:12:05,900
+Pero, nos importa.
+
+229
+00:12:05,900 --> 00:12:10,900
+Por ejemplo, imagine que queramos tener el nmero uno con este fondo de
+
+230
+00:12:11,890 --> 00:12:13,470
+color, el nmero dos
+
+231
+00:12:13,470 --> 00:12:15,590
+con un fondo ligeramente ms oscuro,
+
+232
+00:12:15,590 --> 00:12:17,890
+tres fondos claros, cuatro fondos oscuros,
+
+233
+00:12:17,890 --> 00:12:20,120
+cinco fondos claros, seis fondos oscuros.
+
+234
+00:12:20,120 --> 00:12:21,630
+Fondos alternados.
+
+235
+00:12:21,630 --> 00:12:23,030
+Cmo crees que hacemos eso?
+
+236
+00:12:24,510 --> 00:12:26,430
+Bueno, con suerte lo adivinaste.
+
+237
+00:12:27,490 --> 00:12:30,570
+Para cada nmero impar, le daramos un fondo claro,
+
+238
+00:12:30,570 --> 00:12:33,370
+por cada nmero par le damos un fondo extrao.
+
+239
+00:12:33,370 --> 00:12:35,110
+Necesitamos saber si los nmeros son impares o
+
+240
+00:12:35,110 --> 00:12:36,110
+incluso para poder hacer eso.
+
+241
+00:12:36,960 --> 00:12:39,980
+Y los ejemplos estn realmente en todas partes.
+
+242
+00:12:39,980 --> 00:12:43,810
+Tan pronto como comiences a programar ms seriamente, vers que este
+
+243
+00:12:43,810 --> 00:12:46,890
+operador de mdulos realmente entra en juego con ms
+
+244
+00:12:46,890 --> 00:12:48,460
+frecuencia de lo que imaginas.
+
+245
+00:12:49,400 --> 00:12:50,810
+Y durante el resto
+
+246
+00:12:50,810 --> 00:12:53,300
+del curso, veremos ms ejemplos de esto tambin.
+
+247
+00:12:54,370 --> 00:12:55,203
+Eso es todo
+
+248
+00:12:55,203 --> 00:12:57,410
+por este video, aprecio que ha sido
+
+249
+00:12:57,410 --> 00:12:59,280
+un poco largo, pero hemos aprendido
+
+250
+00:12:59,280 --> 00:13:01,610
+muchas cosas sobre el componente ms importante
+
+251
+00:13:01,610 --> 00:13:03,010
+en Python, que es
+
+252
+00:13:03,010 --> 00:13:06,560
+la variable, y sobre la impresin, que tambin es esencial.
+
+253
+00:13:06,560 --> 00:13:09,480
+Tambin hemos analizado cmo escribir algunos comentarios
+
+254
+00:13:09,480 --> 00:13:13,440
+y cosas que no se ejecutarn, y eso es
+
+255
+00:13:13,440 --> 00:13:16,990
+as con los tres smbolos de comillas dobles al
+
+256
+00:13:16,990 --> 00:13:18,520
+principio y tres al
+
+257
+00:13:18,520 --> 00:13:21,570
+final, o usando el smbolo de hash.
+
+258
+00:13:21,570 --> 00:13:25,500
+Cualquier cosa despus del hash es un comentario, y tampoco se ejecutar.
+
+259
+00:13:25,500 --> 00:13:27,072
+Est ah para que lo mires,
+
+260
+00:13:27,072 --> 00:13:28,900
+no para que la computadora lo mire.
+
+261
+00:13:30,170 --> 00:13:31,750
+Bueno, eso es todo para este
+
+262
+00:13:31,750 --> 00:13:33,010
+video, espero que lo hayas
+
+263
+00:13:33,010 --> 00:13:34,910
+disfrutado, y te ver en el prximo.
+

@@ -1,0 +1,328 @@
+1
+00:00:00,470 --> 00:00:02,070
+Instructor: Hola y bienvenidos, en el
+
+2
+00:00:02,070 --> 00:00:03,320
+ltimo video, dije que bamos
+
+3
+00:00:03,320 --> 00:00:04,430
+a mirar las pginas,
+
+4
+00:00:04,430 --> 00:00:05,970
+pero de hecho creo que tiene
+
+5
+00:00:05,970 --> 00:00:08,410
+ms sentido mirar primero el analizador de citas.
+
+6
+00:00:08,410 --> 00:00:10,130
+Entonces, lo que hice
+
+7
+00:00:10,130 --> 00:00:12,980
+fue abrir el analizador de citas y
+
+8
+00:00:12,980 --> 00:00:17,980
+lo que vamos a hacer es, antes que nada, importar nuestros localizadores de cotizaciones.
+
+9
+00:00:17,980 --> 00:00:21,150
+Y luego vamos a crear la clase
+
+10
+00:00:21,150 --> 00:00:23,830
+QuoteParser, y esta clase se va
+
+11
+00:00:23,830 --> 00:00:28,830
+a usar para, dado uno de los divisores de divisa especficos,
+
+12
+00:00:29,460 --> 00:00:32,680
+averiguar los datos sobre la cita.
+
+13
+00:00:34,060 --> 00:00:36,840
+Citar contenido, autor y etiquetas.
+
+14
+00:00:38,040 --> 00:00:40,820
+Ahora, esto va a hacer uso de algo nuevo,
+
+15
+00:00:40,820 --> 00:00:42,810
+en Beautiful Soup, que no hemos visto
+
+16
+00:00:42,810 --> 00:00:44,910
+antes, pero no obstante, ese es el
+
+17
+00:00:44,910 --> 00:00:49,230
+propsito de este proyecto, presentar cosas, y eso es lo que vamos a recibir aqu
+
+18
+00:00:49,230 --> 00:00:51,230
+en el mtodo init, un padre, y
+
+19
+00:00:51,230 --> 00:00:55,180
+luego vamos a decir s mismo. padre parental igual.
+
+20
+00:00:56,600 --> 00:01:00,550
+Solo para explicar por qu estoy llamando a este parmetro principal, aqu.
+
+21
+00:01:02,320 --> 00:01:07,320
+Volviendo a Chrome, lo que le vamos a dar a
+
+22
+00:01:07,370 --> 00:01:11,790
+nuestro analizador de presupuestos es esta etiqueta div.
+
+23
+00:01:13,500 --> 00:01:15,300
+As que ese ser nuestro primer analizador de cotizaciones.
+
+24
+00:01:15,300 --> 00:01:17,760
+Le daremos esta etiqueta div.
+
+25
+00:01:17,760 --> 00:01:19,140
+Y nuestro segundo analizador de cotizaciones,
+
+26
+00:01:19,140 --> 00:01:20,350
+le daremos esta etiqueta div.
+
+27
+00:01:20,350 --> 00:01:23,100
+Y el tercer analizador de cotizaciones, le daremos esta etiqueta div.
+
+28
+00:01:24,350 --> 00:01:26,050
+Previamente con Beautiful Soup,
+
+29
+00:01:26,050 --> 00:01:30,380
+miramos cargar usando Beautiful Soup en toda la pgina.
+
+30
+00:01:30,380 --> 00:01:31,900
+Y luego pudimos buscar
+
+31
+00:01:31,900 --> 00:01:34,840
+en toda la pgina usando Beautiful Soup.
+
+32
+00:01:34,840 --> 00:01:38,750
+Pero en realidad, cuando encuentras un elemento con Beautiful Soup como,
+
+33
+00:01:38,750 --> 00:01:41,640
+por ejemplo, encuentras este div usando Beautiful Soup,
+
+34
+00:01:42,810 --> 00:01:45,640
+entonces puedes buscar solo en ese elemento.
+
+35
+00:01:46,600 --> 00:01:48,910
+Entonces, lo que vamos a hacer es
+
+36
+00:01:48,910 --> 00:01:53,400
+que nuestra pgina de citas encuentre estos elementos y va a asignarle cada
+
+37
+00:01:53,400 --> 00:01:55,880
+elemento a un objeto analizador de comillas,
+
+38
+00:01:56,730 --> 00:02:00,720
+y ellos van a usar ese elemento para encontrar los elementos secundarios.
+
+39
+00:02:00,720 --> 00:02:03,457
+En este caso, los hijos de este elemento
+
+40
+00:02:03,457 --> 00:02:07,440
+sern los contenidos de la cita, el autor y las etiquetas.
+
+41
+00:02:09,360 --> 00:02:13,900
+Volvamos a PyCharm y escribamos rpidamente
+
+42
+00:02:15,610 --> 00:02:19,610
+estos mtodos de propiedad aqu.
+
+43
+00:02:19,610 --> 00:02:23,010
+El contenido de la cita va a
+
+44
+00:02:23,010 --> 00:02:25,420
+regresar, bueno, obtendr un localizador
+
+45
+00:02:25,420 --> 00:02:29,640
+que se convertir en quotelocators. contenido y va a
+
+46
+00:02:29,640 --> 00:02:34,640
+regresar a s mismo. el padre selecciona uno, localizador. cuerda.
+
+47
+00:02:35,720 --> 00:02:39,940
+Observe cmo es el yo. el padre va a ser
+
+48
+00:02:39,940 --> 00:02:42,799
+esa etiqueta div, que incluye la cita,
+
+49
+00:02:42,799 --> 00:02:47,750
+pero Beautiful Soup nos permite seleccionar y buscar dentro del padre.
+
+50
+00:02:47,750 --> 00:02:50,770
+No tiene que estar solo en la pgina en s, puede
+
+51
+00:02:50,770 --> 00:02:52,420
+estar en cualquiera de los elementos.
+
+52
+00:02:54,380 --> 00:02:58,500
+De acuerdo, entonces para el autor, va
+
+53
+00:02:59,670 --> 00:03:02,150
+a ser bastante similar.
+
+54
+00:03:02,150 --> 00:03:05,810
+El localizador en este caso va a ser el localizador de autor, y
+
+55
+00:03:05,810 --> 00:03:09,240
+luego volver a ser uno mismo. padre, seleccione
+
+56
+00:03:09,240 --> 00:03:12,730
+uno, localizador. cadena, muy similar.
+
+57
+00:03:12,730 --> 00:03:14,270
+Y finalmente, las etiquetas.
+
+58
+00:03:15,340 --> 00:03:19,690
+Etiquetas, el localizador va a ser quotelocators. etiquetas y va a regresar
+
+59
+00:03:21,580 --> 00:03:25,940
+a s mismo. padre. seleccionar (localizador).
+
+60
+00:03:27,630 --> 00:03:30,339
+Nuevamente, esto seleccionar todos los
+
+61
+00:03:30,339 --> 00:03:34,260
+elementos de etiquetas individuales que estn disponibles.
+
+62
+00:03:34,260 --> 00:03:38,220
+Si quisiera, podra extraer el texto de
+
+63
+00:03:38,220 --> 00:03:42,710
+cada elemento haciendo e. cuerda para e y esto.
+
+64
+00:03:43,570 --> 00:03:46,960
+Entonces esta definitivamente sera una opcin tambin, est bien?
+
+65
+00:03:48,530 --> 00:03:51,900
+Ahora, esto no tiene mucho sentido hasta que
+
+66
+00:03:51,900 --> 00:03:55,110
+nos hayamos unido a nuestro programa y todo
+
+67
+00:03:55,110 --> 00:03:57,410
+empieza a tener ms sentido, cranme.
+
+68
+00:03:57,410 --> 00:04:02,410
+Tambin voy a agregar aqu un mtodo rapr que va a
+
+69
+00:04:02,570 --> 00:04:07,570
+devolver esta cita, self. contenido por s mismo. autor, est bien?
+
+70
+00:04:12,580 --> 00:04:14,730
+Esto es solo para que cuando ejecutemos
+
+71
+00:04:14,730 --> 00:04:17,570
+nuestra aplicacin podamos imprimir estos objetos del analizador de
+
+72
+00:04:17,570 --> 00:04:19,220
+cotizaciones, y pueda tener ms sentido.
+
+73
+00:04:20,910 --> 00:04:25,710
+Hasta el momento, lo que recibiremos es una etiqueta de sopa hermosa
+
+74
+00:04:25,710 --> 00:04:28,650
+que es el div que contiene esta cita.
+
+75
+00:04:28,650 --> 00:04:32,150
+Dentro de ese div, solo habr un localizador para el contenido,
+
+76
+00:04:32,150 --> 00:04:35,180
+uno para el autor y otro para las etiquetas.
+
+77
+00:04:35,180 --> 00:04:37,000
+Entonces no vamos a poder
+
+78
+00:04:37,000 --> 00:04:40,730
+mezclarnos entre diferentes citas en este nivel, est bien?
+
+79
+00:04:40,730 --> 00:04:43,160
+Ahora, pasemos a la pgina de
+
+80
+00:04:43,160 --> 00:04:46,810
+citas y podemos empezar a unirnos al programa y
+
+81
+00:04:46,810 --> 00:04:48,640
+comenzar a tener ms sentido.
+
+82
+00:04:48,640 --> 00:04:50,440
+Te ver en el prximo video.
+

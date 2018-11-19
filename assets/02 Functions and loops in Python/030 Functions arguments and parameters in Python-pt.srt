@@ -1,0 +1,1300 @@
+1
+00:00:00,160 --> 00:00:01,620
+Narrador: Ol e bem vindo de volta.
+
+2
+00:00:01,620 --> 00:00:02,740
+Neste vdeo,
+
+3
+00:00:02,740 --> 00:00:05,120
+vamos ver funes e argumentos.
+
+4
+00:00:06,130 --> 00:00:08,750
+J aprendemos um monte de Python.
+
+5
+00:00:08,750 --> 00:00:11,800
+De variveis e tipos de dados, a
+
+6
+00:00:11,800 --> 00:00:13,460
+loops, declaraes e dicionrios.
+
+7
+00:00:14,310 --> 00:00:17,000
+Funes so um conceito inteiramente novo, mas tenho
+
+8
+00:00:17,000 --> 00:00:19,750
+certeza de que voc vai entender isso rapidamente.
+
+9
+00:00:20,750 --> 00:00:22,930
+Em seus termos mais simples, uma
+
+10
+00:00:22,930 --> 00:00:26,530
+funo  um nome para um bloco de cdigo.
+
+11
+00:00:26,530 --> 00:00:30,240
+Qualquer pedao de cdigo que voc tenha, voc pode transform-lo em uma funo.
+
+12
+00:00:30,240 --> 00:00:31,440
+Vamos dar uma olhada em algum cdigo.
+
+13
+00:00:35,580 --> 00:00:38,960
+Ns temos uma linha definindo uma varivel.
+
+14
+00:00:38,960 --> 00:00:42,068
+E isso foi atribudo a essa entrada, que solicita
+
+15
+00:00:42,068 --> 00:00:44,040
+ao usurio seu nome e permite
+
+16
+00:00:44,040 --> 00:00:45,420
+que ele o insira.
+
+17
+00:00:45,420 --> 00:00:47,330
+E ento, qualquer que seja o tipo
+
+18
+00:00:47,330 --> 00:00:49,190
+de usurio que ser atribudo ao nome.
+
+19
+00:00:50,710 --> 00:00:52,450
+E ento podemos dizer: "Ol.
+
+20
+00:00:52,450 --> 00:00:54,340
+"Ol, nome. " uma
+
+21
+00:00:55,410 --> 00:00:56,850
+coisa bem bsica.
+
+22
+00:00:56,850 --> 00:00:59,500
+Ns fizemos isso antes, nada de novo aqui.
+
+23
+00:00:59,500 --> 00:01:02,620
+Vamos rodar e digitar nosso nome.
+
+24
+00:01:02,620 --> 00:01:04,700
+E diz: "Ol, Jos. "Podemos transformar
+
+25
+00:01:05,970 --> 00:01:08,920
+isso em uma funo.
+
+26
+00:01:10,470 --> 00:01:15,470
+Vamos fazer isso dizendo def, essa  uma palavra chave do Python.
+
+27
+00:01:16,180 --> 00:01:17,430
+Observe como fica azul.
+
+28
+00:01:18,510 --> 00:01:20,290
+Algo como cumprimentar, este
+
+29
+00:01:20,290 --> 00:01:22,300
+ser o nome da funo.
+
+30
+00:01:22,300 --> 00:01:25,370
+Abrir e fechar colchetes  importante.
+
+31
+00:01:25,370 --> 00:01:30,260
+Clon, porque isso significa o incio de um bloco de cdigo.
+
+32
+00:01:30,260 --> 00:01:32,590
+E observe como esse editor nos
+
+33
+00:01:32,590 --> 00:01:34,350
+d automaticamente quatro espaos.
+
+34
+00:01:34,350 --> 00:01:37,370
+Porque o cdigo que est abaixo do clon
+
+35
+00:01:37,370 --> 00:01:39,160
+sempre precisa ser recuado.
+
+36
+00:01:40,150 --> 00:01:41,330
+E aqui, vamos
+
+37
+00:01:41,330 --> 00:01:43,940
+colocar exatamente a mesma coisa que colocamos antes.
+
+38
+00:01:45,960 --> 00:01:46,860
+Nada de novo l.
+
+39
+00:01:47,730 --> 00:01:50,620
+Agora, sempre que executarmos essa funo, sempre
+
+40
+00:01:50,620 --> 00:01:52,660
+que executarmos essa funo, o
+
+41
+00:01:52,660 --> 00:01:57,040
+cdigo ser executado de cima para baixo como normal.
+
+42
+00:01:59,350 --> 00:02:02,880
+Ento, ok, o que isso significa ento?
+
+43
+00:02:02,880 --> 00:02:05,670
+Vamos transformar esses dois em comentrios.
+
+44
+00:02:08,870 --> 00:02:12,820
+Desculpe, meu mal, espao, muitos.
+
+45
+00:02:12,820 --> 00:02:17,500
+ isso, meu Deus,  difcil de digitar.
+
+46
+00:02:19,040 --> 00:02:22,500
+Ento ns temos nossa funo chamada greet.
+
+47
+00:02:22,500 --> 00:02:24,380
+E pede ao usurio o nome dele.
+
+48
+00:02:24,380 --> 00:02:26,580
+Ento, vamos rodar esse cdigo e ver o que acontece.
+
+49
+00:02:28,770 --> 00:02:31,440
+Nada aconteceu, no estamos  espera de nada.
+
+50
+00:02:31,440 --> 00:02:35,490
+Este cdigo no funciona, ok, ele faz alguma coisa, mas
+
+51
+00:02:35,490 --> 00:02:36,610
+na verdade no
+
+52
+00:02:36,610 --> 00:02:38,350
+pergunta ao usurio pelo
+
+53
+00:02:38,350 --> 00:02:40,000
+nome e no imprime nada.
+
+54
+00:02:40,000 --> 00:02:43,560
+Tudo o que fizemos aqui foi definir uma funo.
+
+55
+00:02:43,560 --> 00:02:45,710
+Uma funo, se voc j
+
+56
+00:02:45,710 --> 00:02:50,710
+as olhou em matemtica antes, uma funo  como uma caixa.
+
+57
+00:02:52,380 --> 00:02:54,640
+Voc d alguns valores e
+
+58
+00:02:54,640 --> 00:02:57,800
+d mais alguns valores, ou faz alguma coisa.
+
+59
+00:02:57,800 --> 00:03:00,510
+Neste caso, essa funo, quando executada, vai pedir
+
+60
+00:03:00,510 --> 00:03:01,650
+ao usurio o
+
+61
+00:03:01,650 --> 00:03:03,380
+nome e imprimir uma saudao.
+
+62
+00:03:03,380 --> 00:03:06,450
+Mas ns temos que executar a funo primeiro.
+
+63
+00:03:08,800 --> 00:03:12,260
+A maneira como executamos uma funo  digitar o nome
+
+64
+00:03:14,490 --> 00:03:18,230
+dela e, em seguida, digitamos os colchetes de abertura e fechamento.
+
+65
+00:03:21,090 --> 00:03:23,170
+Ento, novamente, antes de pressionarmos play,
+
+66
+00:03:23,170 --> 00:03:25,490
+temos a palavra-chave def, que  uma
+
+67
+00:03:25,490 --> 00:03:28,240
+palavra-chave do Python para definir uma nova funo.
+
+68
+00:03:28,240 --> 00:03:30,340
+Logo depois, temos o nome da funo
+
+69
+00:03:30,340 --> 00:03:32,540
+que pode incluir letras, nmeros e sublinhados,
+
+70
+00:03:32,540 --> 00:03:34,260
+mas, novamente, no podemos comear com
+
+71
+00:03:34,260 --> 00:03:36,410
+um nmero, como uma varivel do Python.
+
+72
+00:03:36,410 --> 00:03:39,220
+Ento voc ter seu par de colchetes.
+
+73
+00:03:39,220 --> 00:03:42,600
+Em vdeos posteriores, vamos colocar as coisas dentro dos colchetes, 
+
+74
+00:03:42,600 --> 00:03:45,580
+por isso que eles esto l, mas no neste vdeo.
+
+75
+00:03:45,580 --> 00:03:49,090
+E ento temos esse clon, o que significa o incio de
+
+76
+00:03:49,090 --> 00:03:50,580
+um blog e o que
+
+77
+00:03:50,580 --> 00:03:53,210
+quer que esteja abaixo do clon ser indentado.
+
+78
+00:03:53,210 --> 00:03:55,670
+E todas as linhas que so
+
+79
+00:03:55,670 --> 00:03:58,080
+recuadas faro parte dessa funo.
+
+80
+00:03:58,080 --> 00:04:00,190
+E quando voc executar a funo, todas as
+
+81
+00:04:00,190 --> 00:04:01,340
+linhas recuadas sero executadas.
+
+82
+00:04:04,060 --> 00:04:05,210
+Ok, vamos apertar o play.
+
+83
+00:04:06,100 --> 00:04:10,340
+E como voc pode ver, ns entramos com o seu nome e
+
+84
+00:04:10,340 --> 00:04:12,120
+depois com o seu nome.
+
+85
+00:04:14,480 --> 00:04:17,630
+Voc ver que isso  chamado de execuo da funo.
+
+86
+00:04:17,630 --> 00:04:19,220
+Mas freqentemente voc pode
+
+87
+00:04:19,220 --> 00:04:22,610
+v-lo chamado como executando a funo, ou mesmo, chamando
+
+88
+00:04:22,610 --> 00:04:25,690
+a funo, que  o mais popular de longe.
+
+89
+00:04:25,690 --> 00:04:27,050
+Sempre que voc executa a funo,
+
+90
+00:04:27,050 --> 00:04:29,230
+o que voc est fazendo  chamar a funo.
+
+91
+00:04:29,230 --> 00:04:31,616
+Porque voc est dizendo: "Ei, cumprimente. "E ento voc vai
+
+92
+00:04:31,616 --> 00:04:33,020
+executar a coisa que est
+
+93
+00:04:33,020 --> 00:04:35,050
+l, um trocadilho muito ruim, mas sim.
+
+94
+00:04:35,920 --> 00:04:37,580
+Voc est chamando e vai comear a correr.
+
+95
+00:04:37,580 --> 00:04:41,150
+E quando o tempo de execuo terminar, quando voc percorrer
+
+96
+00:04:41,150 --> 00:04:42,950
+todo o cdigo aqui e
+
+97
+00:04:42,950 --> 00:04:44,470
+chegar ao final da funo.
+
+98
+00:04:44,470 --> 00:04:46,480
+Observe como no h mais cdigo recuado
+
+99
+00:04:46,480 --> 00:04:48,570
+aqui, a prxima linha no  exibida.
+
+100
+00:04:48,570 --> 00:04:53,560
+Ento voc vai voltar para onde quer que v.
+
+101
+00:04:53,560 --> 00:04:58,490
+Ento, se ns imprimirmos uma linha antes de executarmos a funo, ento ns
+
+102
+00:04:58,490 --> 00:04:59,530
+rodamos a funo.
+
+103
+00:04:59,530 --> 00:05:00,850
+E depois imprimimos outra linha
+
+104
+00:05:00,850 --> 00:05:03,750
+depois de executarmos a funo, voc ver o que quero dizer.
+
+105
+00:05:03,750 --> 00:05:05,880
+Ns imprimimos antes da funo porque
+
+106
+00:05:06,870 --> 00:05:08,850
+esta  a primeira linha aqui.
+
+107
+00:05:08,850 --> 00:05:11,480
+Em seguida, executamos a funo greet, que
+
+108
+00:05:11,480 --> 00:05:14,700
+moveu nosso cdigo para a linha nmero cinco.
+
+109
+00:05:14,700 --> 00:05:16,700
+E ento nos pedem para entrar no nosso nome.
+
+110
+00:05:18,070 --> 00:05:20,310
+Ento ns imprimimos o nome.
+
+111
+00:05:20,310 --> 00:05:24,060
+E finalmente ns imprimimos, ol, depois da funo.
+
+112
+00:05:24,060 --> 00:05:27,850
+Ento, o fluxo foi, comeamos na linha nmero um, bl,
+
+113
+00:05:27,850 --> 00:05:28,683
+bl, bl.
+
+114
+00:05:28,683 --> 00:05:30,420
+Chegamos ao nmero quatro, definimos a funo.
+
+115
+00:05:30,420 --> 00:05:32,790
+Agora esta funo de saudao existe.
+
+116
+00:05:32,790 --> 00:05:36,200
+Mas ns no executamos isso, no entramos na funo em si.
+
+117
+00:05:36,200 --> 00:05:39,524
+Ento, essas duas linhas de cdigo so completamente ignoradas por enquanto.
+
+118
+00:05:39,524 --> 00:05:42,380
+Ento ns imprimimos antes da funo.
+
+119
+00:05:42,380 --> 00:05:44,450
+Em seguida, chegamos a essa saudao, que chama
+
+120
+00:05:44,450 --> 00:05:46,790
+a funo e pulamos para a linha nmero cinco.
+
+121
+00:05:47,720 --> 00:05:51,090
+Passamos por isso e depois imprimimos oi.
+
+122
+00:05:51,090 --> 00:05:53,270
+E depois voltamos para depois da
+
+123
+00:05:53,270 --> 00:05:54,950
+funo greet, linha 11.
+
+124
+00:05:54,950 --> 00:05:57,680
+Nada l, a linha 12 imprime oi.
+
+125
+00:05:57,680 --> 00:06:01,050
+ assim que esse fluxo de dados est indo.
+
+126
+00:06:01,050 --> 00:06:04,330
+Como nosso programa est pulando.
+
+127
+00:06:06,300 --> 00:06:10,060
+Chamando funes, especialmente se voc tem um monte
+
+128
+00:06:10,060 --> 00:06:14,400
+deles, estamos falando de milhares, pode retardar o seu programa.
+
+129
+00:06:14,400 --> 00:06:18,180
+Mas voc precisa ter muitas funes para isso acontecer.
+
+130
+00:06:18,180 --> 00:06:21,360
+Ento, no se preocupe com o desempenho
+
+131
+00:06:21,360 --> 00:06:24,340
+quando estiver definindo funes, tudo bem.
+
+132
+00:06:24,340 --> 00:06:25,950
+Voc nunca ter problemas
+
+133
+00:06:25,950 --> 00:06:27,720
+para executar muitas funes.
+
+134
+00:06:27,720 --> 00:06:29,870
+Voc vai precisar de muitas funes para isso.
+
+135
+00:06:31,370 --> 00:06:33,610
+Agora, alguns vdeos atrs,
+
+136
+00:06:33,610 --> 00:06:37,950
+vimos alguns cdigos que se pareciam com isso.
+
+137
+00:06:37,950 --> 00:06:42,370
+Este cdigo foi usado para encontrar nmeros primos.
+
+138
+00:06:42,370 --> 00:06:44,230
+E se voc no conseguir recuperar esse
+
+139
+00:06:44,230 --> 00:06:46,490
+cdigo aqui, volte alguns vdeos e voc o encontrar.
+
+140
+00:06:46,490 --> 00:06:50,470
+Est no loop de quatro, nas duas palavras-chave video, o
+
+141
+00:06:50,470 --> 00:06:51,810
+break e continue.
+
+142
+00:06:53,300 --> 00:06:56,540
+Ento, o que isto faz  encontrar nmeros primos.
+
+143
+00:06:57,670 --> 00:06:59,330
+Mas  um pedao de cdigo bastante longo.
+
+144
+00:06:59,330 --> 00:07:02,130
+E seria muito mais compreensvel
+
+145
+00:07:02,130 --> 00:07:05,950
+se pudssemos extrair algumas dessas coisas em funes.
+
+146
+00:07:06,790 --> 00:07:08,480
+Se eu no disser o que esse
+
+147
+00:07:08,480 --> 00:07:11,090
+cdigo faz, no seria fcil para voc saber o que ele faz.
+
+148
+00:07:11,090 --> 00:07:13,580
+Mas se extrairmos, ser.
+
+149
+00:07:15,470 --> 00:07:18,090
+Vamos comear fazendo isso.
+
+150
+00:07:18,090 --> 00:07:20,060
+Ns vamos cortar este pedao
+
+151
+00:07:20,060 --> 00:07:23,960
+de cdigo e vamos cham-lo de verificar se prime n.
+
+152
+00:07:25,690 --> 00:07:30,690
+Agora verifique se primo,  provvel que vai levar em um nmero.
+
+153
+00:07:31,300 --> 00:07:33,176
+E vamos ver exatamente o que
+
+154
+00:07:33,176 --> 00:07:35,550
+isso significa em um momento e verificar se
+
+155
+00:07:35,550 --> 00:07:36,940
+ um nmero primo.
+
+156
+00:07:38,580 --> 00:07:40,320
+No entanto, essa funo no existe.
+
+157
+00:07:40,320 --> 00:07:42,790
+Temos que defini-lo e
+
+158
+00:07:42,790 --> 00:07:46,650
+devemos defini-lo antes de chamarmos a funo.
+
+159
+00:07:46,650 --> 00:07:48,250
+Por isso, deve ser definido acima.
+
+160
+00:07:48,250 --> 00:07:49,770
+Ento vamos colar aqui.
+
+161
+00:07:52,790 --> 00:07:55,230
+Agora, isso aqui no  uma funo.
+
+162
+00:07:55,230 --> 00:07:56,900
+Mas podemos coloc-lo dentro
+
+163
+00:07:56,900 --> 00:08:01,050
+de uma funo, fazendo def checar se primo n.
+
+164
+00:08:08,250 --> 00:08:09,700
+L voc tem isso.
+
+165
+00:08:09,700 --> 00:08:11,620
+Agora colocamos esse cdigo em uma funo.
+
+166
+00:08:11,620 --> 00:08:13,380
+E eu aprecio que agora temos
+
+167
+00:08:13,380 --> 00:08:14,960
+algo dentro de nossas chaves e
+
+168
+00:08:14,960 --> 00:08:17,700
+no est muito claro o que , ento deixe-me explicar.
+
+169
+00:08:20,040 --> 00:08:22,240
+Ns temos nosso loop de quatro que anteriormente
+
+170
+00:08:22,240 --> 00:08:24,520
+estava bem no topo deste loop de quatro.
+
+171
+00:08:24,520 --> 00:08:26,640
+E isso cria uma varivel chamada n.
+
+172
+00:08:27,850 --> 00:08:32,560
+Ento ns estamos pulando para a verificao se a funo principal.
+
+173
+00:08:32,560 --> 00:08:35,260
+Isso executa a funo que foi definida acima.
+
+174
+00:08:35,260 --> 00:08:37,730
+E coloca o n dentro dos parnteses.
+
+175
+00:08:39,284 --> 00:08:40,960
+E voc pode pensar neste
+
+176
+00:08:40,960 --> 00:08:44,020
+par de colchetes como uma espcie de dispositivo de teletransporte.
+
+177
+00:08:44,020 --> 00:08:49,020
+O valor de n aqui ser atribudo a n aqui.
+
+178
+00:08:53,070 --> 00:08:56,240
+Se mudarmos isso em nmero, ento devemos mudar todos
+
+179
+00:08:56,240 --> 00:08:58,940
+os n aqui para o nmero dois.
+
+180
+00:09:04,350 --> 00:09:05,550
+Acho que pegamos todos eles.
+
+181
+00:09:07,030 --> 00:09:09,081
+Ento a mesma coisa acontece.
+
+182
+00:09:09,081 --> 00:09:11,330
+N aqui, o valor de n, que
+
+183
+00:09:11,330 --> 00:09:13,810
+vai ser dois, ou trs, ou quatro,
+
+184
+00:09:13,810 --> 00:09:15,650
+agora ser atribudo ao nmero.
+
+185
+00:09:15,650 --> 00:09:18,060
+Ento o nmero vai ser dois, e trs,
+
+186
+00:09:18,060 --> 00:09:20,810
+e depois quatro, sempre que executarmos essa coisa aqui.
+
+187
+00:09:22,560 --> 00:09:24,420
+E ento ns vamos apenas passar
+
+188
+00:09:24,420 --> 00:09:25,960
+pela nossa funo como antes.
+
+189
+00:09:27,100 --> 00:09:28,340
+E esta funo vai
+
+190
+00:09:28,340 --> 00:09:30,130
+verificar se o nmero que
+
+191
+00:09:30,130 --> 00:09:33,780
+recebemos dentro dos parnteses  um nmero primo ou no.
+
+192
+00:09:37,535 --> 00:09:40,230
+E a maneira como podemos verificar isso,
+
+193
+00:09:41,680 --> 00:09:46,680
+ que podemos excluir essas coisas aqui e dizer "Verifique se cinco primos", que
+
+194
+00:09:46,800 --> 00:09:48,330
+ um nmero primo.
+
+195
+00:09:48,330 --> 00:09:49,590
+E se corrermos
+
+196
+00:09:52,600 --> 00:09:55,720
+isso, acho que estragamos algo l em cima.
+
+197
+00:09:56,700 --> 00:09:58,180
+Algum erro de recuo l.
+
+198
+00:09:58,180 --> 00:10:01,450
+Else tem que estar no mesmo nvel que os quatro.
+
+199
+00:10:01,450 --> 00:10:02,700
+E vamos correr isso de novo.
+
+200
+00:10:05,840 --> 00:10:08,270
+Agora percebemos que cinco  um nmero primo.
+
+201
+00:10:08,270 --> 00:10:10,710
+Mas ns no percebemos se qualquer outro nmero 
+
+202
+00:10:10,710 --> 00:10:12,760
+um nmero primo, apenas os cinco, porque
+
+203
+00:10:12,760 --> 00:10:14,850
+esse  o nmero que ns analisamos.
+
+204
+00:10:14,850 --> 00:10:17,760
+Ento, aqui, cinco so atribudos ao nmero da varivel
+
+205
+00:10:17,760 --> 00:10:20,810
+que foi usado em todo esse trecho de cdigo.
+
+206
+00:10:22,560 --> 00:10:27,560
+Se voltarmos e voltarmos ao nosso loop aqui, agora vamos
+
+207
+00:10:28,660 --> 00:10:30,480
+comear um dois.
+
+208
+00:10:30,480 --> 00:10:32,480
+Ns vamos verificar se  um nmero primo.
+
+209
+00:10:32,480 --> 00:10:33,490
+Ento ns vamos para as trs, vamos
+
+210
+00:10:33,490 --> 00:10:34,440
+checar se  um nmero primo.
+
+211
+00:10:34,440 --> 00:10:36,840
+Ento ns vamos para as quatro e assim por diante e assim por diante.
+
+212
+00:10:37,750 --> 00:10:41,720
+Agora, tenho certeza de que isso  mais legvel.
+
+213
+00:10:41,720 --> 00:10:43,480
+No porque o cdigo seja mais simples,
+
+214
+00:10:43,480 --> 00:10:44,890
+o cdigo  o mesmo.
+
+215
+00:10:44,890 --> 00:10:46,440
+Mas porque agora tem um nome.
+
+216
+00:10:46,440 --> 00:10:48,260
+E quando voc l isso, voc pode
+
+217
+00:10:48,260 --> 00:10:50,700
+dizer: "Ok, eu no tenho certeza exatamente" o que este
+
+218
+00:10:50,700 --> 00:10:53,198
+cdigo faz, mas eu sei que ele verifica se o
+
+219
+00:10:53,198 --> 00:10:57,200
+nmero aqui  um nmero primo ou no. "A propsito, esse
+
+220
+00:10:58,430 --> 00:11:01,950
+nmero  chamado de parmetro.
+
+221
+00:11:01,950 --> 00:11:03,990
+Isso  o que ,  assim que  chamado.
+
+222
+00:11:03,990 --> 00:11:07,210
+Quando voc define que sua funo pode
+
+223
+00:11:07,210 --> 00:11:10,560
+receber um valor que  chamado de parmetro.
+
+224
+00:11:10,560 --> 00:11:14,040
+E o n aqui, esse  o valor que estamos enviando,
+
+225
+00:11:14,980 --> 00:11:16,520
+isso  chamado de argumento.
+
+226
+00:11:16,520 --> 00:11:20,000
+Ento n  chamado de argumento.
+
+227
+00:11:20,000 --> 00:11:23,240
+E aqui, o nmero  chamado de parmetro.
+
+228
+00:11:29,547 --> 00:11:30,380
+Isso  o que  chamado.
+
+229
+00:11:30,380 --> 00:11:32,080
+Ento, o parmetro  o final de
+
+230
+00:11:32,080 --> 00:11:33,870
+recebimento, o argumento  o final que d.
+
+231
+00:11:33,870 --> 00:11:36,630
+Ok, vamos voltar aqui.
+
+232
+00:11:36,630 --> 00:11:37,840
+E, claro, podemos
+
+233
+00:11:37,840 --> 00:11:41,020
+colocar isso em outra funo se quisermos fazer isso.
+
+234
+00:11:41,020 --> 00:11:44,470
+Def check primes.
+
+235
+00:11:45,430 --> 00:11:49,420
+E ento ns poderamos fazer isso l.
+
+236
+00:11:49,420 --> 00:11:51,510
+Agora, se executarmos este cdigo novamente,
+
+237
+00:11:51,510 --> 00:11:54,930
+nos pedem para digitar nosso nome porque est acima.
+
+238
+00:11:54,930 --> 00:11:57,180
+E ento nada acontece.
+
+239
+00:11:57,180 --> 00:11:59,430
+Porque, novamente, essa funo foi definida, mas
+
+240
+00:11:59,430 --> 00:12:00,460
+no foi executada.
+
+241
+00:12:00,460 --> 00:12:02,290
+Ento temos que execut-lo.
+
+242
+00:12:02,290 --> 00:12:06,200
+Verifique se h primos l.
+
+243
+00:12:06,200 --> 00:12:10,620
+Agora, quando o rodarmos novamente, veremos a sada.
+
+244
+00:12:10,620 --> 00:12:13,230
+Dois  um nmero primo, trs  um nmero primo e assim por diante.
+
+245
+00:12:15,000 --> 00:12:19,710
+Como poderamos fazer para que no subisse at 10?
+
+246
+00:12:19,710 --> 00:12:23,180
+Como poderamos fazer isso subir para qualquer
+
+247
+00:12:23,180 --> 00:12:25,640
+nmero que analisssemos, entre colchetes?
+
+248
+00:12:25,640 --> 00:12:27,270
+Ento imagine eu quero colocar 100 aqui.
+
+249
+00:12:28,670 --> 00:12:32,430
+E ento faa esse loop passar de dois para 100.
+
+250
+00:12:32,430 --> 00:12:33,530
+Como voc faria isso?
+
+251
+00:12:38,496 --> 00:12:39,329
+Como voc conseguiu isso?
+
+252
+00:12:39,329 --> 00:12:42,640
+Tudo a fazer  criar um novo parmetro aqui.
+
+253
+00:12:43,479 --> 00:12:44,312
+Eu vou ligar para o meu limite.
+
+254
+00:12:44,312 --> 00:12:46,760
+Voc pode cham-los como quiser, a propsito.
+
+255
+00:12:46,760 --> 00:12:48,540
+E ento  s us-lo l.
+
+256
+00:12:50,210 --> 00:12:52,680
+Agora isso vai ser um pouco mais longo.
+
+257
+00:12:52,680 --> 00:12:55,400
+Mas voc recebe todos os nmeros at 100 l.
+
+258
+00:12:57,570 --> 00:12:58,640
+Muito legal, n?
+
+259
+00:13:01,020 --> 00:13:03,710
+Tudo bem, agora temos isso aqui.
+
+260
+00:13:03,710 --> 00:13:05,500
+Eu s queria te dar
+
+261
+00:13:05,500 --> 00:13:08,470
+um ltimo pedacinho de informao antes de continuarmos.
+
+262
+00:13:08,470 --> 00:13:12,250
+E  isso, lembre-se de funes so definidas na ordem
+
+263
+00:13:12,250 --> 00:13:14,780
+em que aparecem no seu arquivo.
+
+264
+00:13:15,652 --> 00:13:17,330
+Neste caso, verifique se primo  definido primeiro
+
+265
+00:13:17,330 --> 00:13:19,430
+e, em seguida, verifique se primo  definido em segundo lugar.
+
+266
+00:13:20,470 --> 00:13:22,690
+Eles no so executados.
+
+267
+00:13:22,690 --> 00:13:25,070
+Portanto, no percorremos esse loop quando
+
+268
+00:13:25,070 --> 00:13:26,760
+a funo  definida.
+
+269
+00:13:27,920 --> 00:13:32,610
+Ento, porque checar se o primo  usado dentro dos primos
+
+270
+00:13:32,610 --> 00:13:37,040
+de cheques, ns podemos realmente colocar os cheques na frente.
+
+271
+00:13:41,930 --> 00:13:43,940
+Agora, parece que isso pode
+
+272
+00:13:43,940 --> 00:13:47,790
+estar errado porque os primos de cheques usam cheque se primo.
+
+273
+00:13:47,790 --> 00:13:50,930
+E verifique se o primo no existe neste momento e hora.
+
+274
+00:13:50,930 --> 00:13:52,930
+S existe depois.
+
+275
+00:13:52,930 --> 00:13:55,330
+Mas lembre-se, ns definimos a funo
+
+276
+00:13:55,330 --> 00:13:57,090
+primeiro, depois definimos essa.
+
+277
+00:13:57,090 --> 00:13:59,610
+E s executamos check primes aqui
+
+278
+00:13:59,610 --> 00:14:01,460
+quando ambos j esto definidos.
+
+279
+00:14:01,460 --> 00:14:03,810
+Ento, quando entramos em check primes, verificamos
+
+280
+00:14:03,810 --> 00:14:05,330
+se o primo j
+
+281
+00:14:05,330 --> 00:14:08,600
+estava definido porque foi definido antes de executarmos a funo.
+
+282
+00:14:08,600 --> 00:14:09,820
+E a razo
+
+283
+00:14:09,820 --> 00:14:12,870
+pela qual estou lhe dizendo isso 
+
+284
+00:14:12,870 --> 00:14:16,422
+porque, pessoalmente, sei que eu e muitas outras pessoas
+
+285
+00:14:16,422 --> 00:14:20,210
+gostamos de ter, a funo mais importante no topo.
+
+286
+00:14:20,210 --> 00:14:21,450
+E neste caso, a funo
+
+287
+00:14:21,450 --> 00:14:22,700
+mais importante  verificar os primos.
+
+288
+00:14:23,540 --> 00:14:25,730
+E enquanto voc l esse cdigo, voc
+
+289
+00:14:25,730 --> 00:14:28,260
+pode l-lo como um jornal, de cima para baixo.
+
+290
+00:14:28,260 --> 00:14:30,080
+Verifique os primos, ok, o que isso faz?
+
+291
+00:14:30,080 --> 00:14:31,840
+Leva em um limite e vai em um
+
+292
+00:14:31,840 --> 00:14:32,980
+lao de dois para limitar.
+
+293
+00:14:32,980 --> 00:14:34,800
+E para cada nmero, verifica se  primo.
+
+294
+00:14:34,800 --> 00:14:36,980
+Legal, o que verificar se o prime faz?
+
+295
+00:14:36,980 --> 00:14:39,290
+Ok, vamos para a prxima linha e descubra.
+
+296
+00:14:39,290 --> 00:14:41,810
+Bem,  se eles esto no caminho errado em torno da primeira coisa
+
+297
+00:14:41,810 --> 00:14:43,730
+que voc v  esta verificao se a funo principal.
+
+298
+00:14:43,730 --> 00:14:45,960
+E voc se pergunta: "Onde  usado?
+
+299
+00:14:45,960 --> 00:14:47,880
+"Por que eu me importo com essa funo? "E voc no
+
+300
+00:14:47,880 --> 00:14:49,170
+vai descobrir at que
+
+301
+00:14:49,170 --> 00:14:51,500
+voc tenha ido at o final do arquivo.
+
+302
+00:14:51,500 --> 00:14:56,410
+Ento eu gosto de ter as funes que usam
+
+303
+00:14:56,410 --> 00:14:58,640
+outras funes no topo.
+
+304
+00:14:58,640 --> 00:15:00,630
+E se a sua funo usar
+
+305
+00:15:00,630 --> 00:15:02,970
+vrias funes, todas elas estaro por baixo.
+
+306
+00:15:02,970 --> 00:15:05,810
+ claro que voc no pode chamar a
+
+307
+00:15:05,810 --> 00:15:08,440
+funo antes de ela ser definida, mas
+
+308
+00:15:08,440 --> 00:15:10,870
+voc pode us-la antes de ser definida,
+
+309
+00:15:10,870 --> 00:15:13,870
+se ela no estiver sendo chamada at depois.
+
+310
+00:15:13,870 --> 00:15:15,290
+Ento, espero que isso faa algum sentido.
+
+311
+00:15:15,290 --> 00:15:16,830
+Eu sei que  bastante
+
+312
+00:15:16,830 --> 00:15:20,390
+artificial, o modo que, voc sabe, definir e chamar todos os trabalhos juntos.
+
+313
+00:15:20,390 --> 00:15:22,640
+Mas apenas pense como um computador.
+
+314
+00:15:22,640 --> 00:15:25,160
+As funes s so executadas quando
+
+315
+00:15:25,160 --> 00:15:27,190
+voc as chama aqui.
+
+316
+00:15:28,190 --> 00:15:29,240
+ isso para este vdeo.
+
+317
+00:15:29,240 --> 00:15:32,140
+Ns conversamos sobre funes, argumentos e parmetros.
+
+318
+00:15:32,140 --> 00:15:33,670
+E assim espero que tenha sido til.
+
+319
+00:15:33,670 --> 00:15:35,530
+Por favor, faa perguntas no curso q e
+
+320
+00:15:35,530 --> 00:15:36,890
+a, se voc tiver alguma.
+
+321
+00:15:36,890 --> 00:15:38,610
+Estamos l para te ajudar.
+
+322
+00:15:38,610 --> 00:15:39,900
+E no queremos que
+
+323
+00:15:39,900 --> 00:15:42,810
+voc fique confuso, se alguma coisa parece confusa.
+
+324
+00:15:42,810 --> 00:15:44,020
+Ento  isso para este vdeo.
+
+325
+00:15:44,020 --> 00:15:45,470
+Eu vou te ver no prximo.
+

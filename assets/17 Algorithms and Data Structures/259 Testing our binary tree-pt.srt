@@ -1,0 +1,232 @@
+1
+00:00:00,418 --> 00:00:01,318
+Jos: Ol, bem vindo de volta.
+
+2
+00:00:01,318 --> 00:00:03,797
+Neste vdeo, vamos apenas verificar a nossa rvore binria,
+
+3
+00:00:03,797 --> 00:00:05,548
+Certifique-se de que est tudo funcionando.
+
+4
+00:00:05,548 --> 00:00:08,791
+Porque os ltimos vdeos foram muito intensos.
+
+5
+00:00:08,791 --> 00:00:11,049
+O que eu escrevi aqui  apenas, voc
+
+6
+00:00:11,049 --> 00:00:12,305
+sabe, importar nossas bibliotecas.
+
+7
+00:00:12,305 --> 00:00:16,274
+Crie uma nova rvore binria com seis na cabea.
+
+8
+00:00:16,274 --> 00:00:18,775
+E ento, criei alguns ns: cinco, trs,
+
+9
+00:00:18,775 --> 00:00:21,707
+nove, sete, oito, sete. 5, 12 e 11 e
+
+10
+00:00:21,707 --> 00:00:24,588
+eu os adicionei  rvore em ordem e depois
+
+11
+00:00:24,588 --> 00:00:27,809
+com a excluso de nove, que est aqui em cima,
+
+12
+00:00:27,809 --> 00:00:29,659
+e ento estamos imprimindo a rvore.
+
+13
+00:00:29,659 --> 00:00:33,742
+Ento, esta rvore, eu estou indo s para mover isso
+
+14
+00:00:34,861 --> 00:00:37,123
+aqui, esconder isso, l vamos ns.
+
+15
+00:00:37,123 --> 00:00:40,373
+Esta rvore comea s seis e adiciona cinco, que
+
+16
+00:00:41,776 --> 00:00:44,024
+ser adicionada  esquerda de seis.
+
+17
+00:00:44,024 --> 00:00:45,061
+Em seguida, adiciona trs, que
+
+18
+00:00:45,061 --> 00:00:46,343
+ser adicionado  esquerda de cinco.
+
+19
+00:00:46,343 --> 00:00:48,821
+Em seguida, adiciona nove, que ser adicionado 
+
+20
+00:00:48,821 --> 00:00:50,382
+esquerda,  direita, de seis.
+
+21
+00:00:50,382 --> 00:00:51,982
+Em seguida, adiciona sete, que
+
+22
+00:00:51,982 --> 00:00:53,844
+ser adicionado  esquerda de nove.
+
+23
+00:00:53,844 --> 00:00:55,358
+Em seguida, adiciona oito, que ser
+
+24
+00:00:55,358 --> 00:00:56,817
+adicionado  direita de sete.
+
+25
+00:00:56,817 --> 00:01:00,038
+Em seguida, adicione 7. 5, que ser adicionado
+
+26
+00:01:00,038 --> 00:01:01,392
+ esquerda de oito.
+
+27
+00:01:01,392 --> 00:01:04,413
+Ento, est reconstruindo esta rvore
+
+28
+00:01:04,413 --> 00:01:07,634
+aqui s porque vamos excluir nove
+
+29
+00:01:07,634 --> 00:01:11,407
+e vamos imprimir a rvore em ordem.
+
+30
+00:01:11,407 --> 00:01:14,740
+Espero que o que vemos seja um oito aqui.
+
+31
+00:01:15,745 --> 00:01:16,744
+Isso foi deletado.
+
+32
+00:01:16,744 --> 00:01:17,788
+Isso foi deletado.
+
+33
+00:01:17,788 --> 00:01:19,515
+E isso apontando para l.
+
+34
+00:01:19,515 --> 00:01:21,766
+ isso que queremos ver.
+
+35
+00:01:21,766 --> 00:01:25,274
+Vamos descobrir, com o aplicativo.
+
+36
+00:01:25,274 --> 00:01:27,470
+E ficamos, seria bom se tivssemos uma
+
+37
+00:01:27,470 --> 00:01:30,730
+rvore bem impressa para que no tivssemos que nos aprofundar
+
+38
+00:01:30,730 --> 00:01:33,460
+em nosso algoritmo para saber qual  a estrutura.
+
+39
+00:01:33,460 --> 00:01:36,808
+No entanto, temos, da esquerda para a
+
+40
+00:01:36,808 --> 00:01:40,517
+direita, trs, que  aqui, cinco, que 
+
+41
+00:01:40,517 --> 00:01:42,431
+aqui, seis, que est aqui.
+
+42
+00:01:42,431 --> 00:01:45,231
+Ento, vamos para a direita e depois para a esquerda, porque a
+
+43
+00:01:45,231 --> 00:01:48,066
+cada novo n a primeira coisa que fazemos  ir para a esquerda.
+
+44
+00:01:48,066 --> 00:01:50,985
+Ento, temos sete, depois vamos para a esquerda, nada l.
+
+45
+00:01:50,985 --> 00:01:53,870
+Ns vamos para a direita, 7. 5, ento voltamos ao topo
+
+46
+00:01:53,870 --> 00:01:54,946
+e ganhamos oito.
+
+47
+00:01:54,946 --> 00:01:58,946
+Ento ns acertamos e vamos para a esquerda 11 e depois para 12.
+
+48
+00:02:00,462 --> 00:02:04,129
+Ento, como voc pode ver, nosso mtodo delete funciona.
+
+49
+00:02:04,979 --> 00:02:07,803
+Que , muito legal antes de tudo.
+
+50
+00:02:07,803 --> 00:02:12,803
+Mas tambm, voc pode tentar excluir seu filho nico e nenhum ramo
+
+51
+00:02:13,239 --> 00:02:16,443
+filho tambm se voc quiser dar uma chance.
+
+52
+00:02:16,443 --> 00:02:20,322
+E agora voc sabe exatamente como implementar uma rvore binria.
+
+53
+00:02:20,322 --> 00:02:22,110
+Se voc for perguntado em uma
+
+54
+00:02:22,110 --> 00:02:24,536
+entrevista, ou um desafio de codificao, ou qualquer
+
+55
+00:02:24,536 --> 00:02:27,654
+coisa assim, voc pode faz-lo e tambm, espero que voc tenha
+
+56
+00:02:27,654 --> 00:02:31,908
+achado interessante apenas aprender um pouco mais sobre alguns conceitos profundos de cincia da computao.
+
+57
+00:02:31,908 --> 00:02:34,401
+Obrigado por se juntar a mim neste vdeo e
+
+58
+00:02:34,401 --> 00:02:35,423
+vou ver-te no prximo.
+

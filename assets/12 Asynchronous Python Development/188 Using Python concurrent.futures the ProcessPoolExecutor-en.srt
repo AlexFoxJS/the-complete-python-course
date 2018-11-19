@@ -1,0 +1,224 @@
+1
+00:00:00,240 --> 00:00:01,340
+<v Male Narrator>Hi, welcome back.</v>
+
+2
+00:00:01,340 --> 00:00:03,970
+Again, just a short video on the improvements
+
+3
+00:00:03,970 --> 00:00:06,280
+you can make to this processing code,
+
+4
+00:00:06,280 --> 00:00:07,400
+multiprocessing code.
+
+5
+00:00:07,400 --> 00:00:09,700
+Instead of using the multiprocessing module,
+
+6
+00:00:09,700 --> 00:00:12,040
+you can just use the concurrent futures module.
+
+7
+00:00:12,930 --> 00:00:15,350
+And you can import the Process Pool Executor.
+
+8
+00:00:15,350 --> 00:00:17,060
+Same thing as a Thread Pool Executor,
+
+9
+00:00:17,060 --> 00:00:19,072
+only it creates processes instead and
+
+10
+00:00:19,072 --> 00:00:21,300
+the actual process is gonna be exactly the same,
+
+11
+00:00:21,300 --> 00:00:22,900
+so we're gonna delete these two,
+
+12
+00:00:23,810 --> 00:00:26,720
+and these two here, and we're gonna say
+
+13
+00:00:26,720 --> 00:00:31,190
+with Process Pool, Process Pool Executor.
+
+14
+00:00:31,190 --> 00:00:32,870
+Max workers, there's gonna be two
+
+15
+00:00:32,870 --> 00:00:34,620
+because we have two things we want to run.
+
+16
+00:00:34,620 --> 00:00:39,620
+As pool, pool.submit, and complex calculation.
+
+17
+00:00:41,250 --> 00:00:44,040
+And then we're gonna duplicate that, and that's it.
+
+18
+00:00:44,040 --> 00:00:46,090
+Okay, just a little bit simpler code.
+
+19
+00:00:46,090 --> 00:00:49,420
+If you want your pool to stay alive
+
+20
+00:00:49,420 --> 00:00:50,550
+throughout your entire programme,
+
+21
+00:00:50,550 --> 00:00:52,990
+then maybe, ya know, submit a task,
+
+22
+00:00:52,990 --> 00:00:55,340
+get a result back, and bring the process back
+
+23
+00:00:55,340 --> 00:00:58,240
+into your pool of processes, so that you can reuse it.
+
+24
+00:00:59,220 --> 00:01:01,590
+You can do that with the Process Pool Executor.
+
+25
+00:01:01,590 --> 00:01:04,300
+All you have to do is not use with, instead, ya know,
+
+26
+00:01:04,300 --> 00:01:07,690
+define it as a variable and then you can submit tasks
+
+27
+00:01:07,690 --> 00:01:10,440
+to it and wait for them to finish,
+
+28
+00:01:10,440 --> 00:01:12,870
+and the process will go back into the pool
+
+29
+00:01:12,870 --> 00:01:13,950
+so that you can reuse it.
+
+30
+00:01:13,950 --> 00:01:15,800
+So, if you have a larger application,
+
+31
+00:01:15,800 --> 00:01:17,550
+it could be interesting to create a few processes
+
+32
+00:01:17,550 --> 00:01:19,350
+at the start, so that you don't have to
+
+33
+00:01:19,350 --> 00:01:20,940
+constantly be creating new processes,
+
+34
+00:01:20,940 --> 00:01:23,410
+'cause that can take a few milliseconds.
+
+35
+00:01:24,360 --> 00:01:27,180
+So, that's just a potential performance improvement,
+
+36
+00:01:27,180 --> 00:01:29,180
+nothing you have to worry about for now.
+
+37
+00:01:30,050 --> 00:01:32,060
+Anyway, just wanted to tell you a bit about how
+
+38
+00:01:32,060 --> 00:01:33,770
+to use this Process Pool Executor
+
+39
+00:01:33,770 --> 00:01:35,500
+because, again, it's a very popular thing
+
+40
+00:01:35,500 --> 00:01:37,800
+when you're doing multi-threaded code.
+
+41
+00:01:37,800 --> 00:01:39,530
+Suddenly you encounter that, you know,
+
+42
+00:01:39,530 --> 00:01:40,770
+you have to do two things at once
+
+43
+00:01:40,770 --> 00:01:42,820
+because they both need the CPU.
+
+44
+00:01:42,820 --> 00:01:44,910
+What you'll normally do in multi-threaded code
+
+45
+00:01:44,910 --> 00:01:49,640
+in that case is you will then submit a task
+
+46
+00:01:49,640 --> 00:01:52,850
+that requires a CPU over to a Process Pool Executor,
+
+47
+00:01:52,850 --> 00:01:54,330
+so that it can run on a separate core
+
+48
+00:01:54,330 --> 00:01:56,070
+and then bring back the result.
+
+49
+00:01:57,010 --> 00:01:58,490
+Okay, so using Process Pool Executor
+
+50
+00:01:58,490 --> 00:02:01,010
+is actually quite common in multi-threaded code
+
+51
+00:02:01,010 --> 00:02:04,760
+when you need to do that in two cores.
+
+52
+00:02:04,760 --> 00:02:05,880
+Not so common to, you know,
+
+53
+00:02:05,880 --> 00:02:08,590
+run complex multi-core applications in Python
+
+54
+00:02:08,590 --> 00:02:11,510
+because it's just not that good for it.
+
+55
+00:02:11,510 --> 00:02:12,343
+Okay?
+
+56
+00:02:12,343 --> 00:02:14,490
+That's it for this video, I'll see you on the next one.
+

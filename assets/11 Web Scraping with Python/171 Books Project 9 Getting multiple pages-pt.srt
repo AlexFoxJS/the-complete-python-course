@@ -1,0 +1,228 @@
+1
+00:00:00,208 --> 00:00:01,797
+Jose: Ol e bem vindo de volta.
+
+2
+00:00:01,797 --> 00:00:02,963
+Neste vdeo, estamos
+
+3
+00:00:02,963 --> 00:00:05,504
+analisando como obter dados de vrias pginas.
+
+4
+00:00:05,504 --> 00:00:07,351
+Ento, o mais importante 
+
+5
+00:00:07,351 --> 00:00:10,127
+que vejamos como as diferentes pginas se
+
+6
+00:00:10,127 --> 00:00:12,652
+parecem e como podemos chegar at elas.
+
+7
+00:00:12,652 --> 00:00:15,438
+Quaisquer padres que voc possa reconhecer ao
+
+8
+00:00:15,438 --> 00:00:18,590
+fazer isso iro ajud-lo muito em sua programao.
+
+9
+00:00:18,590 --> 00:00:21,563
+Como voc pode ver, a URL agora mesmo desta
+
+10
+00:00:21,563 --> 00:00:24,063
+pgina  livros dot toscrape dot com.
+
+11
+00:00:26,320 --> 00:00:29,730
+Se descermos para o fundo e passarmos para a
+
+12
+00:00:29,730 --> 00:00:32,265
+prxima pgina, a propsito, h 50 deles.
+
+13
+00:00:32,265 --> 00:00:35,104
+Este ser um nmero importante mais tarde.
+
+14
+00:00:35,104 --> 00:00:38,264
+Voc pode ver que a URL muda.
+
+15
+00:00:38,264 --> 00:00:43,141
+E isso muda para barra barra de pgina dois traos.
+
+16
+00:00:43,141 --> 00:00:46,141
+Mas antes no era um trao de pgina.
+
+17
+00:00:47,186 --> 00:00:49,350
+Assim, podemos ver que fomos para a pgina
+
+18
+00:00:49,350 --> 00:00:50,979
+dois e, se formos para a
+
+19
+00:00:50,979 --> 00:00:53,364
+prxima pgina, ser a pgina trs e assim por diante.
+
+20
+00:00:53,364 --> 00:00:56,938
+Ento, o que acontece se formos para a primeira pgina?
+
+21
+00:00:56,938 --> 00:00:58,754
+Esta  a mesma pgina
+
+22
+00:00:58,754 --> 00:01:00,360
+que vimos anteriormente no incio.
+
+23
+00:01:00,360 --> 00:01:05,330
+Mas agora ele tem uma barra de slash, um html.
+
+24
+00:01:05,330 --> 00:01:08,580
+Isso significa que a home page 
+
+25
+00:01:10,421 --> 00:01:14,737
+a pgina de barra do catlogo um, ou pode ser
+
+26
+00:01:14,737 --> 00:01:17,171
+apenas livros dot toscrape dot com.
+
+27
+00:01:17,171 --> 00:01:19,555
+Como todas as pginas podem ser
+
+28
+00:01:19,555 --> 00:01:21,637
+acessadas em uma barra, isso
+
+29
+00:01:21,637 --> 00:01:23,862
+pode ser til para extrair todos
+
+30
+00:01:23,862 --> 00:01:25,612
+os dados de que precisamos.
+
+31
+00:01:26,477 --> 00:01:30,044
+Agora tudo bem, a prxima coisa  se voc quiser ir para
+
+32
+00:01:30,044 --> 00:01:31,847
+a prxima pgina, tudo que voc
+
+33
+00:01:31,847 --> 00:01:33,751
+precisa fazer  solicitar um URL diferente.
+
+34
+00:01:33,751 --> 00:01:35,442
+Voc no precisa clicar no boto.
+
+35
+00:01:35,442 --> 00:01:36,943
+Voc no precisa fazer botes de clique
+
+36
+00:01:36,943 --> 00:01:37,938
+do Python ou algo assim.
+
+37
+00:01:37,938 --> 00:01:40,265
+No que isso funcione, voc no pode fazer
+
+38
+00:01:40,265 --> 00:01:42,130
+isso com o conhecimento que temos.
+
+39
+00:01:42,130 --> 00:01:45,096
+Mas voc pode solicitar um URL totalmente diferente.
+
+40
+00:01:45,096 --> 00:01:47,245
+Ento, se voc quiser obter dados
+
+41
+00:01:47,245 --> 00:01:50,336
+de 50 pginas, que  o que temos, basta
+
+42
+00:01:50,336 --> 00:01:54,014
+fazer um loop for 50 vezes e, a cada vez, retirar
+
+43
+00:01:54,014 --> 00:01:57,339
+todos os livros da pgina e coloc-los em uma lista.
+
+44
+00:01:57,339 --> 00:01:59,289
+E no final voc terminar com uma lista
+
+45
+00:01:59,289 --> 00:02:00,907
+grande de todos os seus livros.
+
+46
+00:02:00,907 --> 00:02:04,146
+Eu recomendo que voc tente isso agora
+
+47
+00:02:04,146 --> 00:02:07,847
+e, em seguida, vamos implementar isso um pouco melhor
+
+48
+00:02:07,847 --> 00:02:12,597
+e tambm vamos ver como extrair os 50 deste lugar aqui
+
+49
+00:02:12,597 --> 00:02:16,258
+para que, se o nmero de pginas mudar,
+
+50
+00:02:16,258 --> 00:02:18,768
+voc s vai conseguir ou voc
+
+51
+00:02:18,768 --> 00:02:23,440
+obter todas as pginas ou menos pginas se houver menos pginas.
+
+52
+00:02:23,440 --> 00:02:25,302
+Ok,  isso para este vdeo.
+
+53
+00:02:25,302 --> 00:02:26,926
+V e tente implementar isso.
+
+54
+00:02:26,926 --> 00:02:30,179
+Pegue as 50 pginas chamando esta url
+
+55
+00:02:30,179 --> 00:02:32,889
+em vez da URL que temos
+
+56
+00:02:32,889 --> 00:02:35,511
+agora e depois implementaremos isso.
+
+57
+00:02:35,511 --> 00:02:37,678
+Vejo voc no prximo vdeo.
+

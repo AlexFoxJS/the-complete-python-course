@@ -1,0 +1,660 @@
+1
+00:00:00,000 --> 00:00:01,050
+<v Jose>Welcome back.</v>
+
+2
+00:00:01,050 --> 00:00:05,010
+In this video we're talking about the Dining Philosophers.
+
+3
+00:00:05,010 --> 00:00:08,230
+The Dining Philosophers is a common problem
+
+4
+00:00:08,230 --> 00:00:09,370
+in computer science.
+
+5
+00:00:09,370 --> 00:00:11,810
+It's an example or an illustration
+
+6
+00:00:11,810 --> 00:00:14,090
+of a very common thing in computers.
+
+7
+00:00:15,890 --> 00:00:18,250
+So here we've got five philosophers
+
+8
+00:00:18,250 --> 00:00:20,770
+sitting around a table for food.
+
+9
+00:00:21,750 --> 00:00:25,080
+There is one fork between each pair of philosophers.
+
+10
+00:00:25,080 --> 00:00:27,380
+So we've got five forks, five philosophers
+
+11
+00:00:28,560 --> 00:00:32,250
+and each philosopher has endless hunger and endless food.
+
+12
+00:00:32,250 --> 00:00:34,240
+So let's say there's a lot of food on the table
+
+13
+00:00:34,240 --> 00:00:35,830
+and they are extremely hungry.
+
+14
+00:00:35,830 --> 00:00:39,370
+But in order to begin eating, one philosopher
+
+15
+00:00:39,370 --> 00:00:42,210
+must have two forks; one for each hand.
+
+16
+00:00:43,230 --> 00:00:45,260
+So as you can see there is not enough forks
+
+17
+00:00:45,260 --> 00:00:46,610
+for everybody to go around.
+
+18
+00:00:47,570 --> 00:00:50,340
+So how would the philosophers tackle their problem
+
+19
+00:00:50,340 --> 00:00:53,150
+without talking to one another?
+
+20
+00:00:53,150 --> 00:00:54,760
+Well,
+
+21
+00:00:54,760 --> 00:00:58,380
+obviously there is a problem which is if each one of them
+
+22
+00:00:59,270 --> 00:01:00,520
+picks up one fork.
+
+23
+00:01:01,370 --> 00:01:03,560
+If each one picks up their left fork, say,
+
+24
+00:01:03,560 --> 00:01:05,210
+or in this case their right fork,
+
+25
+00:01:07,660 --> 00:01:09,780
+they then are gonna wait then they're gonna
+
+26
+00:01:09,780 --> 00:01:11,620
+pick up the right fork and wait,
+
+27
+00:01:11,620 --> 00:01:13,010
+and they're gonna eat,
+
+28
+00:01:13,010 --> 00:01:14,910
+put the right fork down then put the left fork down
+
+29
+00:01:14,910 --> 00:01:16,060
+and then start again.
+
+30
+00:01:16,060 --> 00:01:19,260
+But if everybody picks up their right fork
+
+31
+00:01:20,230 --> 00:01:22,040
+and then they're gonna wait for the left fork
+
+32
+00:01:22,040 --> 00:01:24,090
+to become available they could be waiting
+
+33
+00:01:24,090 --> 00:01:26,120
+for a long time because every philosopher
+
+34
+00:01:26,120 --> 00:01:28,250
+is also waiting for the other fork
+
+35
+00:01:28,250 --> 00:01:29,440
+to become available.
+
+36
+00:01:29,440 --> 00:01:32,090
+None of them releases their fork
+
+37
+00:01:32,090 --> 00:01:34,100
+so they'll all end up starving
+
+38
+00:01:34,100 --> 00:01:36,450
+waiting for the other fork to become available.
+
+39
+00:01:37,750 --> 00:01:41,810
+So if the solution involves waiting for the fork
+
+40
+00:01:41,810 --> 00:01:45,340
+to become available they could potentially starve
+
+41
+00:01:45,340 --> 00:01:46,640
+and so we don't want that.
+
+42
+00:01:48,750 --> 00:01:51,780
+The problem is that if all the philosophers
+
+43
+00:01:51,780 --> 00:01:53,720
+pick up the fork simultaneously
+
+44
+00:01:53,720 --> 00:01:55,600
+nobody can pick up the other fork
+
+45
+00:01:56,650 --> 00:01:58,450
+so they keep waiting indefinitely
+
+46
+00:01:58,450 --> 00:02:00,380
+and they end up starving.
+
+47
+00:02:00,380 --> 00:02:02,920
+Similarly, if any of the philosophers
+
+48
+00:02:02,920 --> 00:02:05,130
+does manage to start eating, somehow,
+
+49
+00:02:05,130 --> 00:02:09,050
+taking up two forks they may never stop eating
+
+50
+00:02:10,098 --> 00:02:12,250
+and so the other philosophers are forever
+
+51
+00:02:12,250 --> 00:02:14,440
+without two forks and now they've got to share
+
+52
+00:02:14,440 --> 00:02:17,190
+two forks amongst four philosophers, that's even worse.
+
+53
+00:02:18,180 --> 00:02:20,580
+Sorry, three forks amongst four philosophers.
+
+54
+00:02:20,580 --> 00:02:23,020
+So what can you do to solve this problem?
+
+55
+00:02:23,870 --> 00:02:25,300
+There are many ways to solve the problem
+
+56
+00:02:25,300 --> 00:02:27,740
+and these are normally covered in concurrency courses,
+
+57
+00:02:27,740 --> 00:02:30,170
+computer science degrees, you know, so on.
+
+58
+00:02:30,170 --> 00:02:32,490
+Not gonna get into too much depth.
+
+59
+00:02:32,490 --> 00:02:35,080
+But normally the easiest, simplest way,
+
+60
+00:02:35,080 --> 00:02:37,620
+which is how Python itself does it,
+
+61
+00:02:37,620 --> 00:02:40,720
+is to have a waiter at the table, like this one.
+
+62
+00:02:41,990 --> 00:02:45,270
+So what can happen now, or the way we could restructure
+
+63
+00:02:45,270 --> 00:02:48,650
+our algorithm is to say that a philosopher
+
+64
+00:02:48,650 --> 00:02:51,260
+can request two forks from the waiter
+
+65
+00:02:52,560 --> 00:02:55,560
+and the waiter will give it to them if they are available.
+
+66
+00:02:55,560 --> 00:02:57,180
+And then when a philosopher has two forks
+
+67
+00:02:57,180 --> 00:03:00,810
+they're gonna eat for a fixed amount of time
+
+68
+00:03:00,810 --> 00:03:02,210
+and after they're gonna return the forks
+
+69
+00:03:02,210 --> 00:03:04,490
+to the waiter and the waiter can then
+
+70
+00:03:04,490 --> 00:03:06,750
+give it to other philosophers and so forth.
+
+71
+00:03:06,750 --> 00:03:08,840
+So something like this could happen,
+
+72
+00:03:08,840 --> 00:03:11,560
+one philosopher could ask for two forks
+
+73
+00:03:12,440 --> 00:03:15,150
+and then the waiter will be like, "sure",
+
+74
+00:03:15,150 --> 00:03:16,500
+take two forks on the table
+
+75
+00:03:17,560 --> 00:03:20,380
+and give them to the philosopher.
+
+76
+00:03:20,380 --> 00:03:22,550
+Now this philosopher has two forks
+
+77
+00:03:22,550 --> 00:03:25,300
+and all the other philosophers are doing nothing.
+
+78
+00:03:25,300 --> 00:03:27,940
+Then some time passes,
+
+79
+00:03:27,940 --> 00:03:30,470
+maybe, 10 minutes,
+
+80
+00:03:30,470 --> 00:03:32,920
+and then the waiter will take the forks back.
+
+81
+00:03:32,920 --> 00:03:34,610
+"Give me them back", and I will take
+
+82
+00:03:34,610 --> 00:03:37,150
+the forks back and put them back on the table.
+
+83
+00:03:39,340 --> 00:03:42,600
+Now one philosopher has not starved which is good.
+
+84
+00:03:42,600 --> 00:03:44,930
+The other four, however, not so lucky.
+
+85
+00:03:45,890 --> 00:03:48,090
+Instead what could happen is something like this:
+
+86
+00:03:48,090 --> 00:03:51,480
+We could get all the philosophers asking
+
+87
+00:03:51,480 --> 00:03:55,140
+for their forks, more or less simultaneously.
+
+88
+00:03:55,140 --> 00:03:59,350
+Remember, nothing can truly happen simultaneously.
+
+89
+00:03:59,350 --> 00:04:01,040
+At least, not in Python.
+
+90
+00:04:01,040 --> 00:04:01,873
+Okay?
+
+91
+00:04:01,873 --> 00:04:04,130
+Because there is a limited number of forks,
+
+92
+00:04:04,130 --> 00:04:05,440
+in Python, let's say.
+
+93
+00:04:06,650 --> 00:04:10,120
+So all of these people ask for their forks
+
+94
+00:04:10,120 --> 00:04:11,710
+more or less simultaneously,
+
+95
+00:04:11,710 --> 00:04:16,030
+but there is someone that asks for it first.
+
+96
+00:04:16,030 --> 00:04:18,050
+So that person, let's say number one,
+
+97
+00:04:19,210 --> 00:04:21,220
+is the first person on that list
+
+98
+00:04:21,220 --> 00:04:23,520
+that you see on the bottom right.
+
+99
+00:04:23,520 --> 00:04:25,640
+The next person to ask for forks was number two,
+
+100
+00:04:25,640 --> 00:04:27,210
+and then three, then four, and then five.
+
+101
+00:04:27,210 --> 00:04:29,910
+So let's say they ask for them in order.
+
+102
+00:04:29,910 --> 00:04:32,170
+So what happens then is
+
+103
+00:04:32,170 --> 00:04:33,670
+the waiter first get two forks
+
+104
+00:04:34,750 --> 00:04:35,890
+gives them away to number one,
+
+105
+00:04:35,890 --> 00:04:39,550
+number one is now on a different list, lets say.
+
+106
+00:04:40,400 --> 00:04:42,210
+Now he's on a different waiting area.
+
+107
+00:04:42,210 --> 00:04:44,520
+On an eating waiting area let's say.
+
+108
+00:04:45,450 --> 00:04:47,760
+Then we still have forks available,
+
+109
+00:04:47,760 --> 00:04:50,540
+so the waiter would take two forks
+
+110
+00:04:50,540 --> 00:04:55,540
+and remove two from the list of waiting for forks.
+
+111
+00:04:55,810 --> 00:04:57,820
+Give them the forks, and put them in the list
+
+112
+00:04:57,820 --> 00:05:00,370
+of, say, eating.
+
+113
+00:05:00,370 --> 00:05:03,190
+So now we've got one and two are eating.
+
+114
+00:05:03,190 --> 00:05:05,800
+Three, four, and five are waiting.
+
+115
+00:05:06,990 --> 00:05:10,120
+Then number one finishes eating after some time.
+
+116
+00:05:10,120 --> 00:05:12,280
+So the waiter gets the forks back.
+
+117
+00:05:12,280 --> 00:05:15,080
+Number one disappears from the eating list,
+
+118
+00:05:15,080 --> 00:05:16,580
+forks go back on the table,
+
+119
+00:05:16,580 --> 00:05:20,590
+number one goes now at the end of the queue.
+
+120
+00:05:20,590 --> 00:05:22,780
+Three, four, five, and then one.
+
+121
+00:05:22,780 --> 00:05:25,770
+Similarly after some time number two finishes eating,
+
+122
+00:05:25,770 --> 00:05:28,650
+disappears from there, and goes back on to the other list.
+
+123
+00:05:28,650 --> 00:05:30,620
+Now if we were to repeat this process
+
+124
+00:05:30,620 --> 00:05:33,570
+the next person to get the forks would be number three
+
+125
+00:05:33,570 --> 00:05:36,010
+and then number four, then number five,
+
+126
+00:05:36,010 --> 00:05:37,780
+and then we would start over.
+
+127
+00:05:37,780 --> 00:05:41,810
+So as you can see this enables each philosopher to eat.
+
+128
+00:05:41,810 --> 00:05:45,700
+Not all at once, but they all get to eat eventually.
+
+129
+00:05:48,280 --> 00:05:49,590
+So what's happening here is that we have
+
+130
+00:05:49,590 --> 00:05:51,900
+a limited number of resources.
+
+131
+00:05:51,900 --> 00:05:53,740
+In this cases forks.
+
+132
+00:05:53,740 --> 00:05:56,090
+And with these resources we can, at most,
+
+133
+00:05:56,090 --> 00:05:58,990
+run two things at the same time, two philosophers,
+
+134
+00:06:00,070 --> 00:06:03,540
+because two philosophers take up four forks
+
+135
+00:06:03,540 --> 00:06:06,270
+so there's only ever one fork left over
+
+136
+00:06:06,270 --> 00:06:09,240
+and that philosopher cannot eat with just one fork.
+
+137
+00:06:09,240 --> 00:06:12,160
+So it does not matter how long and hard we think
+
+138
+00:06:13,800 --> 00:06:15,570
+the simple truth is there is no way
+
+139
+00:06:15,570 --> 00:06:18,130
+that we can have three philosophers eating at once.
+
+140
+00:06:19,688 --> 00:06:21,810
+But what we can do though is trick the mind
+
+141
+00:06:21,810 --> 00:06:25,110
+into thinking they're all eating at the same time.
+
+142
+00:06:25,110 --> 00:06:28,300
+If instead of giving each of them five minutes
+
+143
+00:06:28,300 --> 00:06:30,070
+before releasing their forks
+
+144
+00:06:30,070 --> 00:06:33,010
+we give them, say, five seconds
+
+145
+00:06:33,010 --> 00:06:35,450
+or 50 milliseconds,
+
+146
+00:06:35,450 --> 00:06:37,590
+someone looking may not be able to tell
+
+147
+00:06:37,590 --> 00:06:40,660
+that they're not eating at the same time.
+
+148
+00:06:40,660 --> 00:06:41,660
+Very much like a movie.
+
+149
+00:06:41,660 --> 00:06:44,330
+Just a set of still images one after another.
+
+150
+00:06:44,330 --> 00:06:47,400
+If the passing of forks happens sufficiently quickly
+
+151
+00:06:47,400 --> 00:06:49,540
+we won't be able to notice that it's not happening
+
+152
+00:06:49,540 --> 00:06:50,540
+all at once.
+
+153
+00:06:51,490 --> 00:06:54,670
+So if each philosopher eats for one millisecond
+
+154
+00:06:54,670 --> 00:06:57,220
+it would look to an observer that they're all
+
+155
+00:06:57,220 --> 00:07:00,730
+eating at the same time whereas really they are not.
+
+156
+00:07:01,620 --> 00:07:05,850
+So remember, even if we cant see it it doesn't mean
+
+157
+00:07:05,850 --> 00:07:09,090
+that it's happening all that once, okay?
+
+158
+00:07:09,090 --> 00:07:11,480
+And in Python this is particularly important
+
+159
+00:07:11,480 --> 00:07:15,030
+because Python cannot run multiple things at the same time.
+
+160
+00:07:15,030 --> 00:07:18,110
+We're gonna look into this more very soon.
+
+161
+00:07:19,520 --> 00:07:22,970
+So now that we know about the Dining Philosophers problem
+
+162
+00:07:22,970 --> 00:07:25,940
+we are ready to move on and start looking
+
+163
+00:07:25,940 --> 00:07:29,380
+at how things happen in Python.
+
+164
+00:07:29,380 --> 00:07:30,630
+With that said,
+
+165
+00:07:30,630 --> 00:07:32,330
+I'll see you on the next video.
+

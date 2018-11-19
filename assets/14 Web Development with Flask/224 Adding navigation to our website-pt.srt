@@ -1,0 +1,448 @@
+1
+00:00:00,180 --> 00:00:01,620
+Jose: Ol e bem vindo de volta.
+
+2
+00:00:01,620 --> 00:00:04,290
+Algo que realmente me incomoda sobre o nosso aplicativo 
+
+3
+00:00:04,290 --> 00:00:07,030
+que, uma vez que voc est em um post, voc
+
+4
+00:00:07,030 --> 00:00:08,720
+no pode voltar para a pgina
+
+5
+00:00:08,720 --> 00:00:10,920
+inicial, a menos que voc pressione o boto Voltar.
+
+6
+00:00:10,920 --> 00:00:14,820
+Da mesma forma, voc no pode criar uma nova postagem com facilidade,
+
+7
+00:00:14,820 --> 00:00:18,690
+a menos que voc mesmo digite o URL, / post / create.
+
+8
+00:00:19,740 --> 00:00:20,573
+E mesmo quando voc
+
+9
+00:00:20,573 --> 00:00:22,980
+est aqui, voc no pode voltar para a pgina inicial tambm.
+
+10
+00:00:22,980 --> 00:00:24,050
+Por isso,  sempre
+
+11
+00:00:24,050 --> 00:00:26,760
+uma boa ideia adicionar uma navegao adequada s suas
+
+12
+00:00:26,760 --> 00:00:28,490
+pginas para que seus usurios e
+
+13
+00:00:28,490 --> 00:00:30,710
+voc possam acess-los um pouco mais facilmente.
+
+14
+00:00:30,710 --> 00:00:33,270
+Vamos para o PyCharm e fazer isso agora.
+
+15
+00:00:34,730 --> 00:00:37,840
+Vou parar o aplicativo antes de tudo e minimizar isso.
+
+16
+00:00:37,840 --> 00:00:39,690
+E para adicionar os links, tudo
+
+17
+00:00:39,690 --> 00:00:43,320
+o que temos a fazer  pensar em onde queremos coloc-los.
+
+18
+00:00:44,760 --> 00:00:47,250
+Pessoalmente, acho que cada pgina deve ter um link
+
+19
+00:00:47,250 --> 00:00:49,270
+para a pgina inicial, ento vou adicionar
+
+20
+00:00:49,270 --> 00:00:50,950
+o link para a pgina inicial
+
+21
+00:00:50,950 --> 00:00:52,430
+dentro da base em HTML.
+
+22
+00:00:53,770 --> 00:00:56,440
+Este contedo do bloco ser substitudo
+
+23
+00:00:56,440 --> 00:00:59,420
+pelo contedo filho a cada pgina.
+
+24
+00:00:59,420 --> 00:01:01,070
+Ento, se voc colocar algo
+
+25
+00:01:01,070 --> 00:01:03,750
+aqui, no estar presente em nenhuma das pginas.
+
+26
+00:01:03,750 --> 00:01:07,030
+S porque quando voc est em casa. jinja2 por exemplo,
+
+27
+00:01:07,030 --> 00:01:09,050
+isso vai substituir isso.
+
+28
+00:01:09,050 --> 00:01:11,171
+No vai adicionar a isso.
+
+29
+00:01:11,171 --> 00:01:12,820
+Ento, se voc quiser colocar algo em
+
+30
+00:01:12,820 --> 00:01:14,770
+cada pgina, coloque-o fora do bloco de contedo.
+
+31
+00:01:15,860 --> 00:01:19,970
+O que vamos fazer aqui  adicionar um URL  pgina inicial.
+
+32
+00:01:19,970 --> 00:01:21,560
+E eu acho que voc pode fazer isso.
+
+33
+00:01:21,560 --> 00:01:24,970
+Adicione uma nova tag ncora, adicione a
+
+34
+00:01:24,970 --> 00:01:28,930
+href e aponte para a url_for da pgina inicial.
+
+35
+00:01:28,930 --> 00:01:29,763
+Tente isso.
+
+36
+00:01:29,763 --> 00:01:31,220
+Pause o vdeo e experimente.
+
+37
+00:01:35,500 --> 00:01:36,730
+Tenho certeza que voc conseguiu.
+
+38
+00:01:36,730 --> 00:01:38,730
+Tudo o que precisamos fazer
+
+39
+00:01:38,730 --> 00:01:43,730
+ criar uma nova tag, dar uma href, url_for e a pgina inicial aqui.
+
+40
+00:01:46,860 --> 00:01:50,580
+Em seguida, feche a tag e digite em casa, por exemplo.
+
+41
+00:01:51,990 --> 00:01:55,460
+Observe como o href precisa dessas aspas em torno
+
+42
+00:01:55,460 --> 00:01:57,040
+dele porque o contedo
+
+43
+00:01:57,040 --> 00:01:59,560
+href deve estar entre aspas para HTML.
+
+44
+00:02:00,720 --> 00:02:03,900
+Isso aqui ser substitudo pelo URL ou
+
+45
+00:02:03,900 --> 00:02:07,720
+o ponto final da sua funo inicial, esse aqui.
+
+46
+00:02:09,020 --> 00:02:10,510
+Se executarmos o aplicativo agora
+
+47
+00:02:10,510 --> 00:02:12,990
+e voltarmos ao Chrome e fizermos a atualizao,
+
+48
+00:02:12,990 --> 00:02:15,760
+poderemos ver que perdemos a postagem do blog antes
+
+49
+00:02:15,760 --> 00:02:17,770
+de tudo, mas temos essa casa l.
+
+50
+00:02:17,770 --> 00:02:20,700
+Se formos para um post especfico, essa casa ainda est l.
+
+51
+00:02:22,190 --> 00:02:23,710
+Algo que no est l, porm,
+
+52
+00:02:23,710 --> 00:02:25,870
+ a capacidade de criar um novo post.
+
+53
+00:02:26,840 --> 00:02:28,430
+Acho que criar uma nova postagem
+
+54
+00:02:28,430 --> 00:02:30,130
+deve estar apenas na pgina inicial.
+
+55
+00:02:30,130 --> 00:02:32,010
+Ento vamos parar o nosso
+
+56
+00:02:32,010 --> 00:02:33,870
+aplicativo, minimizar isso e ir
+
+57
+00:02:33,870 --> 00:02:36,980
+at a pgina inicial e abaixo, adicionar outro link.
+
+58
+00:02:36,980 --> 00:02:39,340
+Mais uma vez, acho que voc pode fazer isso.
+
+59
+00:02:43,980 --> 00:02:45,150
+Espero que voc tenha isso.
+
+60
+00:02:45,150 --> 00:02:46,390
+Para criar um novo post,
+
+61
+00:02:46,390 --> 00:02:48,930
+tudo o que temos a fazer  novamente o mesmo.
+
+62
+00:02:48,930 --> 00:02:51,630
+Ento, crie uma tag que  uma tag
+
+63
+00:02:51,630 --> 00:02:53,340
+de ncora e uma href,
+
+64
+00:02:54,510 --> 00:02:57,070
+digite url_for e, em seguida, aqui o nome
+
+65
+00:02:57,070 --> 00:03:02,070
+da funo que lhe dar sua criao. jinja2, essa  a funo
+
+66
+00:03:02,450 --> 00:03:04,700
+de criao, ento vamos l.
+
+67
+00:03:05,920 --> 00:03:07,300
+No precisa de argumentos.
+
+68
+00:03:07,300 --> 00:03:09,580
+Qualquer argumento pode ir para l depois
+
+69
+00:03:09,580 --> 00:03:11,680
+de uma vrgula, mas no precisa de
+
+70
+00:03:12,890 --> 00:03:14,520
+nenhum, porque no requer parmetros.
+
+71
+00:03:15,940 --> 00:03:17,420
+ isso a.
+
+72
+00:03:17,420 --> 00:03:21,140
+Tentei vrias vezes e depois digite create post, crie uma
+
+73
+00:03:21,140 --> 00:03:22,850
+nova postagem por exemplo, feche
+
+74
+00:03:22,850 --> 00:03:24,560
+a tag e  isso.
+
+75
+00:03:25,660 --> 00:03:27,500
+Mais uma vez, podemos executar
+
+76
+00:03:27,500 --> 00:03:29,910
+nosso aplicativo, passar por aqui, atualizar e
+
+77
+00:03:29,910 --> 00:03:33,020
+agora podemos ver isso criar uma nova postagem l.
+
+78
+00:03:33,020 --> 00:03:35,380
+Temos uma navegao melhor por l que podemos
+
+79
+00:03:35,380 --> 00:03:36,270
+navegar em nossa
+
+80
+00:03:36,270 --> 00:03:39,150
+pgina sem ter que digitar as URLs por conta prpria.
+
+81
+00:03:41,290 --> 00:03:44,780
+Eu quero que voc perceba que estes so apenas blocos de construo.
+
+82
+00:03:44,780 --> 00:03:46,180
+Voc tem seus links.
+
+83
+00:03:46,180 --> 00:03:48,530
+Voc tem suas tags p, suas
+
+84
+00:03:48,530 --> 00:03:50,080
+listas e algumas coisas
+
+85
+00:03:50,080 --> 00:03:54,110
+no Flask como url_for, redirecionamentos, modelos de renderizao, a capacidade
+
+86
+00:03:54,110 --> 00:03:56,530
+de mostrar informaes e h inmeras
+
+87
+00:03:56,530 --> 00:03:58,760
+coisas que voc j pode
+
+88
+00:03:58,760 --> 00:04:00,630
+fazer com esse conhecimento.
+
+89
+00:04:00,630 --> 00:04:03,680
+Concedido, o site poderia parecer um pouco melhor.
+
+90
+00:04:03,680 --> 00:04:06,120
+Voc quer olhar CSS para isso.
+
+91
+00:04:06,120 --> 00:04:07,490
+Este no  o curso para
+
+92
+00:04:07,490 --> 00:04:09,700
+isso porque este no  um curso na web.
+
+93
+00:04:09,700 --> 00:04:12,640
+Mas se voc quiser olhar CSS para estilizar a
+
+94
+00:04:12,640 --> 00:04:13,580
+pgina, faa com
+
+95
+00:04:13,580 --> 00:04:16,360
+que parea um pouco melhor, adicione um pouco
+
+96
+00:04:16,360 --> 00:04:19,610
+de cor, adicione tamanhos de fonte diferentes, talvez no coloque
+
+97
+00:04:19,610 --> 00:04:21,020
+tudo do lado esquerdo
+
+98
+00:04:21,020 --> 00:04:22,520
+da pgina, talvez coloque coisas
+
+99
+00:04:22,520 --> 00:04:23,370
+centralizadas no meio
+
+100
+00:04:23,370 --> 00:04:25,930
+ou algo assim Assim, voc pode aprender sobre
+
+101
+00:04:25,930 --> 00:04:29,680
+isso e  bastante simples fazer alguns sites simples, mas bonitos.
+
+102
+00:04:29,680 --> 00:04:33,040
+E agora, com o Python, voc pode fazer muitas coisas.
+
+103
+00:04:33,040 --> 00:04:35,680
+Voc conhece o Python muito bem agora.
+
+104
+00:04:35,680 --> 00:04:37,850
+Voc pode armazenar coisas em um banco
+
+105
+00:04:37,850 --> 00:04:39,910
+de dados e fazer inmeras outras coisas
+
+106
+00:04:39,910 --> 00:04:42,170
+em termos de dar informaes ao usurio
+
+107
+00:04:42,170 --> 00:04:43,340
+e calcular as coisas.
+
+108
+00:04:44,270 --> 00:04:47,104
+Espero que isso abra novas portas para voc
+
+109
+00:04:47,104 --> 00:04:49,900
+em termos de comunicao com seus usurios.
+
+110
+00:04:49,900 --> 00:04:51,600
+Espero que voc tenha gostado desta
+
+111
+00:04:51,600 --> 00:04:54,750
+seo e estou feliz em gui-lo atravs do desenvolvimento do Flask.
+
+112
+00:04:54,750 --> 00:04:56,300
+Eu vou te ver no prximo vdeo.
+

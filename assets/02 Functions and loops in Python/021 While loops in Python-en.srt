@@ -1,0 +1,780 @@
+1
+00:00:00,210 --> 00:00:01,460
+<v Instructor>Hi and welcome back.</v>
+
+2
+00:00:01,460 --> 00:00:04,240
+In this video we're gonna look at the while loop.
+
+3
+00:00:05,130 --> 00:00:08,290
+The while loop and the any loop allows us
+
+4
+00:00:08,290 --> 00:00:10,880
+to run something multiple times.
+
+5
+00:00:10,880 --> 00:00:13,580
+Okay, why might you want to run something many times?
+
+6
+00:00:14,970 --> 00:00:19,970
+For example, imagine you have a thermometer, an oven,
+
+7
+00:00:20,140 --> 00:00:23,510
+and you want to continuously check the temperature
+
+8
+00:00:23,510 --> 00:00:25,440
+of the oven, turn the oven on
+
+9
+00:00:25,440 --> 00:00:27,560
+if the temperature is under some sort of amount,
+
+10
+00:00:27,560 --> 00:00:29,820
+or turn the oven off if the temperature's reached
+
+11
+00:00:29,820 --> 00:00:30,700
+a certain amount.
+
+12
+00:00:31,960 --> 00:00:34,090
+Here's an example of using a loop
+
+13
+00:00:34,090 --> 00:00:37,210
+to repeat this checking continuously.
+
+14
+00:00:38,390 --> 00:00:41,300
+The while loop is a particular form of a loop,
+
+15
+00:00:41,300 --> 00:00:45,610
+Python has two, and in this loop we can repeat something
+
+16
+00:00:45,610 --> 00:00:48,060
+for as long as a condition is true.
+
+17
+00:00:49,200 --> 00:00:51,550
+Here's how you might go about it.
+
+18
+00:00:51,550 --> 00:00:53,270
+Let's have a variable is programmer
+
+19
+00:00:53,270 --> 00:00:54,370
+and that's going to be true.
+
+20
+00:00:54,370 --> 00:00:57,410
+And we're gonna say while is programmer is true,
+
+21
+00:00:58,700 --> 00:01:00,880
+print 'hello world'.
+
+22
+00:01:03,230 --> 00:01:05,440
+Now we know from the if statement
+
+23
+00:01:05,440 --> 00:01:06,990
+that this is an optional thing,
+
+24
+00:01:07,960 --> 00:01:11,050
+so we can just have while is programmer,
+
+25
+00:01:11,050 --> 00:01:13,110
+we're gonna print 'hello world'.
+
+26
+00:01:13,110 --> 00:01:16,230
+Now, I cannot recommend that you run this,
+
+27
+00:01:16,230 --> 00:01:17,240
+although I'm gonna run it anyway
+
+28
+00:01:17,240 --> 00:01:19,440
+and I may regret it, the computer may crash.
+
+29
+00:01:21,290 --> 00:01:23,010
+Okay, there you go.
+
+30
+00:01:23,010 --> 00:01:25,000
+So a lot of 'hello worlds' were printed out.
+
+31
+00:01:25,000 --> 00:01:27,730
+I don't think you can see my navigation bar
+
+32
+00:01:27,730 --> 00:01:29,050
+there too easily, there you go.
+
+33
+00:01:29,050 --> 00:01:31,540
+There's a lot of hello worlds.
+
+34
+00:01:31,540 --> 00:01:34,890
+And that's because is programmer is always true.
+
+35
+00:01:34,890 --> 00:01:38,130
+So we're just running and running and running continuously.
+
+36
+00:01:38,130 --> 00:01:40,960
+This is called an infinite loop
+
+37
+00:01:40,960 --> 00:01:43,790
+because we've got a loop that is repeating continuously
+
+38
+00:01:43,790 --> 00:01:46,110
+without ever stopping.
+
+39
+00:01:46,110 --> 00:01:48,880
+We've not told it when to stop, so it just doesn't.
+
+40
+00:01:50,010 --> 00:01:55,010
+We could run this loop once, like so.
+
+41
+00:01:55,150 --> 00:01:56,030
+And then we could run it
+
+42
+00:01:56,030 --> 00:01:58,280
+and we would only print 'hello world' once.
+
+43
+00:01:58,280 --> 00:02:00,640
+Obviously this is a pretty silly loop.
+
+44
+00:02:00,640 --> 00:02:02,590
+You could just not have the loop at all
+
+45
+00:02:02,590 --> 00:02:04,750
+and just print 'hello world' once.
+
+46
+00:02:04,750 --> 00:02:07,270
+But normally this stopping condition
+
+47
+00:02:07,270 --> 00:02:10,270
+would be a result of some other part
+
+48
+00:02:10,270 --> 00:02:12,000
+of the system doing something.
+
+49
+00:02:12,000 --> 00:02:14,370
+For example, we could ask the user
+
+50
+00:02:14,370 --> 00:02:16,670
+whether they have become a programmer already.
+
+51
+00:02:18,870 --> 00:02:20,810
+So let's modify this loop slightly.
+
+52
+00:02:20,810 --> 00:02:23,640
+Let's start by saying is programmer is false.
+
+53
+00:02:24,530 --> 00:02:28,210
+We'll change the four loop to while not is programmer.
+
+54
+00:02:28,210 --> 00:02:31,380
+We're gonna say learn programming
+
+55
+00:02:31,380 --> 00:02:32,840
+and then we're gonna ask the user whether
+
+56
+00:02:32,840 --> 00:02:34,460
+they've become a programmer already.
+
+57
+00:02:34,460 --> 00:02:37,860
+User is programmer is going to be input.
+
+58
+00:02:39,050 --> 00:02:41,510
+"Are you a programmer yet?"
+
+59
+00:02:42,450 --> 00:02:44,940
+Now, they're gonna say yes or no.
+
+60
+00:02:44,940 --> 00:02:48,790
+So we'll say is programmer equal,
+
+61
+00:02:48,790 --> 00:02:51,040
+user is programmer equal equal, yes.
+
+62
+00:02:52,400 --> 00:02:55,610
+Now we know that all variables
+
+63
+00:02:55,610 --> 00:02:57,570
+are assigned with this equal sign
+
+64
+00:02:57,570 --> 00:03:02,100
+and what happens is that we execute the right part first,
+
+65
+00:03:02,100 --> 00:03:04,200
+then we assign the variable to that.
+
+66
+00:03:04,200 --> 00:03:06,680
+So in here, we're gonna run this input,
+
+67
+00:03:06,680 --> 00:03:08,180
+we're gonna ask the user something,
+
+68
+00:03:08,180 --> 00:03:09,560
+as we've seen in the past.
+
+69
+00:03:09,560 --> 00:03:11,370
+The user's gonna be able to type something.
+
+70
+00:03:11,370 --> 00:03:13,990
+Whatever they type is going to be in this variable.
+
+71
+00:03:15,140 --> 00:03:17,350
+For example, let's say they've typed "no."
+
+72
+00:03:18,810 --> 00:03:20,300
+Again, we've got another variable here
+
+73
+00:03:20,300 --> 00:03:23,940
+with an equal sign, we're gonna evaluate this right side
+
+74
+00:03:23,940 --> 00:03:25,080
+of the expression first,
+
+75
+00:03:25,080 --> 00:03:28,300
+and then we're gonna put it inside this variable.
+
+76
+00:03:28,300 --> 00:03:33,000
+"No," which is what the user typed, equal, equal, yes.
+
+77
+00:03:33,000 --> 00:03:34,720
+This is going to be false,
+
+78
+00:03:34,720 --> 00:03:37,890
+so is programmer is going to be false.
+
+79
+00:03:37,890 --> 00:03:40,480
+However, if they typed yes to begin with,
+
+80
+00:03:40,480 --> 00:03:42,660
+then yes is going to be equal to yes,
+
+81
+00:03:42,660 --> 00:03:44,610
+and this is going to be true.
+
+82
+00:03:44,610 --> 00:03:46,780
+The is programmer variable will be true,
+
+83
+00:03:46,780 --> 00:03:48,500
+and the loop will stop.
+
+84
+00:03:48,500 --> 00:03:49,333
+Let's run this.
+
+85
+00:03:50,850 --> 00:03:53,990
+We've got learn programming, badly misspelt,
+
+86
+00:03:53,990 --> 00:03:54,955
+I just realised that.
+
+87
+00:03:54,955 --> 00:03:56,600
+Sorry about that.
+
+88
+00:03:56,600 --> 00:03:58,670
+Are you a programmer yet and we're gonna say "no,"
+
+89
+00:03:58,670 --> 00:04:01,880
+so it's gonna ask us again, "no, no, no, no."
+
+90
+00:04:01,880 --> 00:04:03,690
+You don't become a programmer so quickly,
+
+91
+00:04:03,690 --> 00:04:06,760
+but after some time, let's say a few weeks,
+
+92
+00:04:06,760 --> 00:04:10,740
+or a couple of months, we can now say "yes,"
+
+93
+00:04:10,740 --> 00:04:11,707
+and then it stops.
+
+94
+00:04:11,707 --> 00:04:13,210
+That's a pretty crappy loop,
+
+95
+00:04:13,210 --> 00:04:15,140
+it doesn't even congratulate us.
+
+96
+00:04:15,140 --> 00:04:17,800
+Don't worry, there will be plenty of congratulations
+
+97
+00:04:17,800 --> 00:04:19,250
+when you become a programmer.
+
+98
+00:04:21,480 --> 00:04:22,530
+Okay, so this is an example
+
+99
+00:04:22,530 --> 00:04:24,550
+of something you could do with that while loop.
+
+100
+00:04:24,550 --> 00:04:26,393
+Maybe not the most useful example,
+
+101
+00:04:26,393 --> 00:04:29,201
+but nonetheless, it can be done.
+
+102
+00:04:29,201 --> 00:04:31,810
+A while loop can also be used
+
+103
+00:04:31,810 --> 00:04:35,330
+to repeat something a specific number of times.
+
+104
+00:04:35,330 --> 00:04:36,540
+How may we do that?
+
+105
+00:04:37,440 --> 00:04:40,070
+Well, let's define a variable which I'm gonna call i
+
+106
+00:04:40,070 --> 00:04:42,810
+for index and it's gonna be equal to zero.
+
+107
+00:04:42,810 --> 00:04:44,860
+While i is less that ten,
+
+108
+00:04:44,860 --> 00:04:49,430
+we're going to print something like, repeated i times.
+
+109
+00:04:50,590 --> 00:04:54,750
+And then, of course, i is zero at the start.
+
+110
+00:04:54,750 --> 00:04:56,810
+We're going to check whether i is less than ten,
+
+111
+00:04:56,810 --> 00:04:59,280
+which is true, so we're gonna run this.
+
+112
+00:05:00,220 --> 00:05:03,650
+Then we're gonna go back, i is gonna still be zero,
+
+113
+00:05:03,650 --> 00:05:06,130
+it's less than ten, so we're gonna repeat it again,
+
+114
+00:05:06,130 --> 00:05:07,710
+and then again, and again, and again, and again.
+
+115
+00:05:07,710 --> 00:05:11,100
+i is always zero, so this is gonna be an infinite loop.
+
+116
+00:05:11,100 --> 00:05:14,320
+What do we do in order to make this not an infinite loop?
+
+117
+00:05:16,590 --> 00:05:19,630
+You go it, all we have to do is say i is equal
+
+118
+00:05:19,630 --> 00:05:21,590
+to i plus one.
+
+119
+00:05:21,590 --> 00:05:24,120
+Again, the right side evaluates first,
+
+120
+00:05:24,120 --> 00:05:27,940
+zero plus one is one, then it gets put back into i.
+
+121
+00:05:27,940 --> 00:05:30,180
+So now i will be equal to one.
+
+122
+00:05:30,180 --> 00:05:32,780
+Next time the loop runs, i is one.
+
+123
+00:05:32,780 --> 00:05:35,020
+One plus one is two, i will be two.
+
+124
+00:05:35,020 --> 00:05:36,321
+Then two plus one, three plus one,
+
+125
+00:05:36,321 --> 00:05:37,700
+four plus one and so forth.
+
+126
+00:05:37,700 --> 00:05:42,060
+Eventually i becomes ten, and ten is not less than ten,
+
+127
+00:05:42,060 --> 00:05:44,490
+this becomes false, and we stop running.
+
+128
+00:05:44,490 --> 00:05:45,323
+Let's run that.
+
+129
+00:05:47,240 --> 00:05:48,930
+First it asks us whether we're a programmer.
+
+130
+00:05:48,930 --> 00:05:50,870
+Well, we've been able to create this loop down here,
+
+131
+00:05:50,870 --> 00:05:52,480
+so let's say "yes."
+
+132
+00:05:53,400 --> 00:05:55,860
+And then as you can see it repeats ten times,
+
+133
+00:05:55,860 --> 00:05:57,560
+from zero down to nine.
+
+134
+00:05:58,790 --> 00:06:00,270
+This is how you can use a while loop
+
+135
+00:06:00,270 --> 00:06:02,940
+to repeat something a number of times.
+
+136
+00:06:02,940 --> 00:06:04,460
+However, in the next few videos we're gonna learn
+
+137
+00:06:04,460 --> 00:06:06,350
+an even better way of doing that.
+
+138
+00:06:07,540 --> 00:06:09,390
+Okay, as I said earlier, I'm just gonna give you
+
+139
+00:06:09,390 --> 00:06:11,510
+another example with the temperature.
+
+140
+00:06:11,510 --> 00:06:13,410
+Temperature gonna be fifteen.
+
+141
+00:06:13,410 --> 00:06:16,270
+While the temperature is less than twenty.
+
+142
+00:06:16,270 --> 00:06:18,390
+We're gonna print heating,
+
+143
+00:06:19,610 --> 00:06:21,840
+and we're gonna say temperature is equal
+
+144
+00:06:21,840 --> 00:06:23,840
+to temperature plus one.
+
+145
+00:06:24,890 --> 00:06:27,850
+So we're gonna heat, presumably, five times.
+
+146
+00:06:27,850 --> 00:06:29,170
+Let's run that.
+
+147
+00:06:29,170 --> 00:06:30,920
+Again, we'll say yes to the programming,
+
+148
+00:06:30,920 --> 00:06:32,910
+and then we've got heating five times
+
+149
+00:06:32,910 --> 00:06:35,122
+because temperature became fifteen, then sixteen,
+
+150
+00:06:35,122 --> 00:06:38,070
+seventeen, eighteen, nineteen, and then twenty.
+
+151
+00:06:38,070 --> 00:06:41,590
+Of course, we can reduce this and shorten it
+
+152
+00:06:41,590 --> 00:06:43,730
+so that instead of temperature equals temperature plus one,
+
+153
+00:06:43,730 --> 00:06:45,530
+we could just say plus equal one.
+
+154
+00:06:45,530 --> 00:06:47,200
+And that means the same thing.
+
+155
+00:06:47,200 --> 00:06:48,033
+Okay?
+
+156
+00:06:48,033 --> 00:06:50,690
+This means temperature equal temperature plus one.
+
+157
+00:06:50,690 --> 00:06:53,320
+Similarly here, i plus equal one.
+
+158
+00:06:55,260 --> 00:06:58,250
+Of course, instead of continuously rising the temperature,
+
+159
+00:06:58,250 --> 00:07:00,330
+we would get this temperature from a sensor,
+
+160
+00:07:00,330 --> 00:07:02,530
+or a raspberry pie, or a thermometer,
+
+161
+00:07:02,530 --> 00:07:03,830
+or something like that.
+
+162
+00:07:03,830 --> 00:07:06,810
+So this while loop would only heat
+
+163
+00:07:06,810 --> 00:07:09,380
+while the temperature is less than certain amount.
+
+164
+00:07:10,540 --> 00:07:11,505
+Something important to note is,
+
+165
+00:07:11,505 --> 00:07:16,505
+is that as soon as the temperature reaches twenty,
+
+166
+00:07:17,590 --> 00:07:20,170
+this while loop ends, so even if the temperature
+
+167
+00:07:20,170 --> 00:07:23,260
+were to go below twenty later on,
+
+168
+00:07:23,260 --> 00:07:25,680
+this while loop wouldn't keep running.
+
+169
+00:07:25,680 --> 00:07:26,780
+It would have stopped.
+
+170
+00:07:26,780 --> 00:07:30,600
+So we would need to have some way of restarting this loop
+
+171
+00:07:30,600 --> 00:07:33,210
+when the temperature reaches less than twenty.
+
+172
+00:07:34,060 --> 00:07:36,680
+We'll look into that later on in the course.
+
+173
+00:07:36,680 --> 00:07:39,090
+We'll look at how we can do that sort of stuff.
+
+174
+00:07:40,040 --> 00:07:42,190
+I just wanted to show you the syntax of the four loop,
+
+175
+00:07:42,190 --> 00:07:43,978
+how you go about writing them,
+
+176
+00:07:43,978 --> 00:07:45,660
+because as we progress through the course,
+
+177
+00:07:45,660 --> 00:07:47,670
+again, we'll be working on some projects
+
+178
+00:07:47,670 --> 00:07:50,250
+and you sort of have to know they syntax of Python
+
+179
+00:07:50,250 --> 00:07:53,430
+before you can delve into some more advanced projects.
+
+180
+00:07:53,430 --> 00:07:55,670
+Think of these as getting the tools you need
+
+181
+00:07:55,670 --> 00:07:58,120
+to start doing your woodworking maybe,
+
+182
+00:07:58,120 --> 00:08:00,700
+or your gardening in your garden.
+
+183
+00:08:00,700 --> 00:08:02,970
+If you don't have any tools,
+
+184
+00:08:02,970 --> 00:08:06,160
+it's gonna be pretty difficult for you to do any projects.
+
+185
+00:08:06,160 --> 00:08:07,570
+But as soon as you've got a few chisels
+
+186
+00:08:07,570 --> 00:08:08,403
+and some sanders and sandpaper,
+
+187
+00:08:08,403 --> 00:08:12,670
+you can start doing a bunch of stuff.
+
+188
+00:08:12,670 --> 00:08:14,740
+Of course, this course is gonna bring you
+
+189
+00:08:14,740 --> 00:08:16,830
+much more than chiselling.
+
+190
+00:08:16,830 --> 00:08:19,040
+It's gonna give you a lot more tools
+
+191
+00:08:19,040 --> 00:08:21,910
+and you'll learn a lot about those as we progress.
+
+192
+00:08:23,010 --> 00:08:24,530
+As I said, this course is going to bring you
+
+193
+00:08:24,530 --> 00:08:25,900
+to an expert level.
+
+194
+00:08:25,900 --> 00:08:27,850
+So let's move on into the next video
+
+195
+00:08:27,850 --> 00:08:29,300
+and continue learning Python.
+

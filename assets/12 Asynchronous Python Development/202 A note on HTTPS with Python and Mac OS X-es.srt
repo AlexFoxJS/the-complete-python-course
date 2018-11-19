@@ -1,0 +1,260 @@
+1
+00:00:00,822 --> 00:00:02,136
+Jos: Hola, bienvenido de nuevo.
+
+2
+00:00:02,136 --> 00:00:04,360
+Solo quera darle un poco
+
+3
+00:00:04,360 --> 00:00:08,059
+de informacin sobre Mac OS, si usa Mac OS
+
+4
+00:00:08,059 --> 00:00:09,309
+y https URL.
+
+5
+00:00:10,892 --> 00:00:14,841
+Como puede ver aqu, hemos solicitado http: // google. com.
+
+6
+00:00:14,841 --> 00:00:19,602
+En nuestra aplicacin, hemos solicitado http: // books. raspar. com.
+
+7
+00:00:19,602 --> 00:00:21,583
+Y nunca hicimos una solicitud de https.
+
+8
+00:00:21,583 --> 00:00:24,264
+Por ejemplo, algo como esto.
+
+9
+00:00:24,264 --> 00:00:27,588
+Esta es la gran tienda de John Lewis en el Reino
+
+10
+00:00:27,588 --> 00:00:29,755
+Unido, pero su sitio web tiene https.
+
+11
+00:00:31,590 --> 00:00:34,764
+Si acaba de instalar Python, tal vez al comienzo
+
+12
+00:00:34,764 --> 00:00:37,070
+del curso o recientemente, y est
+
+13
+00:00:37,070 --> 00:00:40,518
+usando Python 3. 6 o 3. 7, es
+
+14
+00:00:40,518 --> 00:00:44,414
+posible que cuando ejecutas este programa falle.
+
+15
+00:00:44,414 --> 00:00:47,420
+Vinculado a esta conferencia, tengo un cdigo
+
+16
+00:00:47,420 --> 00:00:52,146
+que puedes ejecutar para ver si tu Python est configurado correctamente.
+
+17
+00:00:52,146 --> 00:00:54,830
+Si ejecuta este cdigo falla, eso
+
+18
+00:00:54,830 --> 00:00:58,425
+significa que tiene una pieza perdida de configuracin
+
+19
+00:00:58,425 --> 00:01:00,280
+en su cdigo de Python.
+
+20
+00:01:00,280 --> 00:01:03,530
+Esto est bien si est usando Mac OS X.
+
+21
+00:01:05,598 --> 00:01:09,410
+Su Python no viene con una biblioteca que
+
+22
+00:01:09,410 --> 00:01:11,258
+necesita para verificar esencialmente
+
+23
+00:01:11,258 --> 00:01:14,508
+que estos dominios sean realmente seguros.
+
+24
+00:01:15,780 --> 00:01:20,447
+Por lo tanto, OS X, Mac OS X proporciona versiones obsoletas o
+
+25
+00:01:21,535 --> 00:01:24,733
+antiguas de una biblioteca importante para su verificacin.
+
+26
+00:01:24,733 --> 00:01:26,800
+Esta biblioteca se llama OpenSSL y
+
+27
+00:01:26,800 --> 00:01:29,583
+Python 3. 6 y 3. 7 me
+
+28
+00:01:29,583 --> 00:01:33,519
+cans de usar estas versiones viejas obsoletas, entonces Las versiones ms nuevas tambin se envan con su propia versin
+
+29
+00:01:33,519 --> 00:01:37,307
+ahora Python 3. 6 y 3. 7, y probablemente versiones anteriores. de esta biblioteca.
+
+30
+00:01:37,307 --> 00:01:40,980
+Debido a que es su propia versin, significa que todos
+
+31
+00:01:40,980 --> 00:01:42,944
+los certificados, ya sabes, claves
+
+32
+00:01:42,944 --> 00:01:45,950
+y cosas por el estilo, en las que
+
+33
+00:01:45,950 --> 00:01:49,611
+su computadora confa de manera predeterminada, su computadora dice, johnlewis. com es, ya sabes, esto es seguro porque este
+
+34
+00:01:49,611 --> 00:01:51,965
+certificado fue creado por esta organizacin
+
+35
+00:01:51,965 --> 00:01:54,941
+en la que confiamos.
+
+36
+00:01:54,941 --> 00:01:57,703
+Python no confa en esas organizaciones de
+
+37
+00:01:57,703 --> 00:02:00,377
+manera predeterminada porque es una biblioteca
+
+38
+00:02:00,377 --> 00:02:03,999
+completamente diferente a la que viene en su computadora.
+
+39
+00:02:03,999 --> 00:02:06,660
+Entonces, si quiere hacer que Python
+
+40
+00:02:06,660 --> 00:02:08,846
+pueda usarse con https, lo
+
+41
+00:02:08,846 --> 00:02:11,577
+que tiene que hacer es instalar
+
+42
+00:02:11,577 --> 00:02:15,080
+algo que est dentro de su carpeta de Python.
+
+43
+00:02:15,080 --> 00:02:17,118
+As que lo voy a mencionar.
+
+44
+00:02:17,118 --> 00:02:19,468
+Lo que quiere ver es que
+
+45
+00:02:19,468 --> 00:02:22,287
+quiere encontrar su carpeta Python en sus aplicaciones
+
+46
+00:02:22,287 --> 00:02:24,501
+y observar cmo es Python 3. 6 y
+
+47
+00:02:24,501 --> 00:02:27,834
+luego tengo Python 3. 7 aqu, que es una nueva versin, aqu hay algo llamado
+
+48
+00:02:29,146 --> 00:02:30,679
+Instal Certificates. mando.
+
+49
+00:02:30,679 --> 00:02:34,529
+Todo lo que tienes que hacer es hacer doble clic en eso.
+
+50
+00:02:34,529 --> 00:02:38,574
+Cuando haces eso, esto funcionar.
+
+51
+00:02:38,574 --> 00:02:42,099
+De acuerdo, entonces todo lo que tienes que hacer es hacer doble clic en
+
+52
+00:02:42,099 --> 00:02:43,964
+eso, eso va a instalar los certificados que
+
+53
+00:02:43,964 --> 00:02:45,716
+necesitas para confiar en estos dominios seguros.
+
+54
+00:02:45,716 --> 00:02:48,423
+Una vez ms, el cdigo vinculado en esta
+
+55
+00:02:48,423 --> 00:02:52,140
+conferencia contiene ms informacin sobre por qu sucede esto y,
+
+56
+00:02:52,140 --> 00:02:53,868
+ya sabes, cmo puede solucionarlo.
+
+57
+00:02:53,868 --> 00:02:57,402
+As que eso es todo por este video, solo quera contarte sobre
+
+58
+00:02:57,402 --> 00:02:59,586
+esto porque es un problema frecuente cuando
+
+59
+00:02:59,586 --> 00:03:00,487
+comienzas a hacer
+
+60
+00:03:00,487 --> 00:03:01,643
+estas solicitudes y puede
+
+61
+00:03:01,643 --> 00:03:03,409
+ser un gran dolor de cabeza
+
+62
+00:03:03,409 --> 00:03:06,173
+resolver, especialmente si no sabes lo que ests buscando. para.
+
+63
+00:03:06,173 --> 00:03:08,064
+Eso es todo por este video, nos vemos en el prximo.
+
+64
+00:03:08,064 --> 00:03:09,827
+&nbsp;
+
+65
+00:03:09,827 --> 00:03:12,456
+&nbsp;
+

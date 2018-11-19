@@ -1,0 +1,612 @@
+1
+00:00:00,120 --> 00:00:01,390
+<v Jose>Hi, welcome back.</v>
+
+2
+00:00:01,390 --> 00:00:05,340
+In this video, we are going to show all the movies,
+
+3
+00:00:05,340 --> 00:00:06,920
+or allow the user to look at the movies
+
+4
+00:00:06,920 --> 00:00:08,560
+that we've already entered.
+
+5
+00:00:08,560 --> 00:00:11,120
+In the last video, we added the functionality
+
+6
+00:00:11,120 --> 00:00:13,590
+to allow users to add new movies,
+
+7
+00:00:13,590 --> 00:00:15,530
+so we're gonna check that one.
+
+8
+00:00:15,530 --> 00:00:17,270
+Then, we're gonna tackle this one here,
+
+9
+00:00:17,270 --> 00:00:19,090
+show all their movies.
+
+10
+00:00:20,500 --> 00:00:22,070
+So, we've got our menu,
+
+11
+00:00:22,070 --> 00:00:24,470
+in which, while the user doesn't type Q,
+
+12
+00:00:24,470 --> 00:00:26,340
+we're gonna run through these if statements,
+
+13
+00:00:26,340 --> 00:00:27,610
+and if they type L,
+
+14
+00:00:27,610 --> 00:00:29,960
+we're gonna run this show_movies function.
+
+15
+00:00:29,960 --> 00:00:32,690
+That should probably go through each movie
+
+16
+00:00:32,690 --> 00:00:34,850
+dictionary in our list,
+
+17
+00:00:34,850 --> 00:00:36,710
+and print it out nicely.
+
+18
+00:00:36,710 --> 00:00:39,120
+So, let's go and implement that.
+
+19
+00:00:39,120 --> 00:00:42,060
+Now, the menu function, the first function it used,
+
+20
+00:00:42,060 --> 00:00:44,170
+was the add_movie function,
+
+21
+00:00:44,170 --> 00:00:47,180
+so, that's directly defined underneath it.
+
+22
+00:00:47,180 --> 00:00:50,260
+The next function it uses, is the show_movies function,
+
+23
+00:00:50,260 --> 00:00:54,120
+so, that should go directly underneath add_movie.
+
+24
+00:00:54,120 --> 00:00:56,040
+As you can see, we're gonna define the functions
+
+25
+00:00:56,040 --> 00:00:58,640
+in the order in which they are used,
+
+26
+00:00:58,640 --> 00:01:01,050
+and I find this is great for readability.
+
+27
+00:01:02,700 --> 00:01:03,620
+So, let's do that,
+
+28
+00:01:03,620 --> 00:01:06,330
+show_movies, like that.
+
+29
+00:01:07,920 --> 00:01:09,030
+So, what do we want to do
+
+30
+00:01:09,030 --> 00:01:11,640
+in order to show some details of each movie?
+
+31
+00:01:11,640 --> 00:01:15,230
+Well, we're gonna have to go over each movie in our list,
+
+32
+00:01:15,230 --> 00:01:17,610
+and print its details out nicely.
+
+33
+00:01:17,610 --> 00:01:18,680
+I'm sure you can do this,
+
+34
+00:01:18,680 --> 00:01:20,610
+so if you've not done this already,
+
+35
+00:01:20,610 --> 00:01:22,260
+pause the video and give it a go.
+
+36
+00:01:25,800 --> 00:01:29,930
+Okay, now for movie in movies,
+
+37
+00:01:29,930 --> 00:01:32,520
+we're going to print some stuff out.
+
+38
+00:01:32,520 --> 00:01:33,570
+So, we're gonna print
+
+39
+00:01:36,290 --> 00:01:39,760
+name is going to be movie name.
+
+40
+00:01:42,250 --> 00:01:45,590
+Notice, how I'm using double quotation marks here,
+
+41
+00:01:45,590 --> 00:01:47,210
+because we've got a single quotation mark
+
+42
+00:01:47,210 --> 00:01:51,560
+inside this dictionary usage,
+
+43
+00:01:51,560 --> 00:01:52,800
+this quiet rack in notation,
+
+44
+00:01:52,800 --> 00:01:56,110
+so we'll need to use double quotation marks on the outside.
+
+45
+00:02:13,732 --> 00:02:14,680
+There we have it.
+
+46
+00:02:14,680 --> 00:02:18,340
+Now, we are printing the name, director, and release year
+
+47
+00:02:18,340 --> 00:02:20,530
+of each of our movies.
+
+48
+00:02:20,530 --> 00:02:23,740
+That means that we no longer need line 67, print movies,
+
+49
+00:02:23,740 --> 00:02:25,420
+because we'll be able to check
+
+50
+00:02:25,420 --> 00:02:26,920
+that the movies that we're adding
+
+51
+00:02:26,920 --> 00:02:29,410
+are there directly in our menu.
+
+52
+00:02:30,620 --> 00:02:33,030
+Now, let's go and write click our app,
+
+53
+00:02:33,030 --> 00:02:34,620
+and run it again,
+
+54
+00:02:34,620 --> 00:02:36,870
+and now we should be able to add a new movie,
+
+55
+00:02:37,870 --> 00:02:40,040
+and that is gonna be The Matrix.
+
+56
+00:02:40,040 --> 00:02:44,060
+The directors are, those are the years 1994,
+
+57
+00:02:44,060 --> 00:02:48,010
+and now we should be able to type L, to see our movies.
+
+58
+00:02:48,010 --> 00:02:50,360
+As you can see, we've got the name is The Matrix,
+
+59
+00:02:50,360 --> 00:02:53,940
+director is the Wachowskis, and release year is 1994.
+
+60
+00:02:54,840 --> 00:02:56,780
+Then we type Q to exit.
+
+61
+00:02:58,320 --> 00:03:02,860
+You can click right here in order to dock,
+
+62
+00:03:02,860 --> 00:03:05,530
+or hide, that thing there,
+
+63
+00:03:05,530 --> 00:03:07,780
+the console, so that it'll only appear
+
+64
+00:03:07,780 --> 00:03:09,130
+when you run the app again.
+
+65
+00:03:10,900 --> 00:03:12,760
+Now, something I've noticed earlier,
+
+66
+00:03:12,760 --> 00:03:16,550
+is that the spacing between our various
+
+67
+00:03:16,550 --> 00:03:19,390
+inputs wasn't great, so what I'm going to do,
+
+68
+00:03:19,390 --> 00:03:23,100
+is I'm going to add backslash N here,
+
+69
+00:03:23,950 --> 00:03:25,740
+at the start of this string,
+
+70
+00:03:25,740 --> 00:03:27,800
+and backslash N is a special character
+
+71
+00:03:27,800 --> 00:03:30,630
+that means add a new line.
+
+72
+00:03:30,630 --> 00:03:34,070
+So now, when we run our app.py again,
+
+73
+00:03:34,070 --> 00:03:35,980
+we'll see that, if we add a new movie,
+
+74
+00:03:35,980 --> 00:03:40,290
+and we type The Matrix, Wachowskis, 1994,
+
+75
+00:03:40,290 --> 00:03:43,570
+the next line is, has a space before it,
+
+76
+00:03:43,570 --> 00:03:45,130
+so that's just a bit nicer.
+
+77
+00:03:45,130 --> 00:03:46,950
+Okay, then can stop the app.
+
+78
+00:03:46,950 --> 00:03:48,760
+Notice, that when you stop the app manually,
+
+79
+00:03:48,760 --> 00:03:50,830
+you get an error, but that's totally fine,
+
+80
+00:03:50,830 --> 00:03:52,070
+that just means that you've,
+
+81
+00:03:52,070 --> 00:03:54,100
+sort of, interrupted the application,
+
+82
+00:03:55,300 --> 00:03:58,910
+while the application was waiting for some keyboard input.
+
+83
+00:04:00,180 --> 00:04:02,030
+We don't care about that.
+
+84
+00:04:02,030 --> 00:04:05,030
+Okay, now we've added this show_movies functionality,
+
+85
+00:04:05,030 --> 00:04:08,530
+there is something else though, that I'd like us to do,
+
+86
+00:04:09,460 --> 00:04:11,850
+which is we realise that this,
+
+87
+00:04:11,850 --> 00:04:15,650
+these three lines here, do something very particular.
+
+88
+00:04:15,650 --> 00:04:20,040
+They output movie details in a printable format.
+
+89
+00:04:21,450 --> 00:04:25,290
+So, it is a possibility for us to extract
+
+90
+00:04:25,290 --> 00:04:27,390
+these into a function.
+
+91
+00:04:27,390 --> 00:04:29,170
+It's almost always a good idea,
+
+92
+00:04:29,170 --> 00:04:31,300
+to look at your application,
+
+93
+00:04:31,300 --> 00:04:34,980
+and see which pieces of functionality are self-contained,
+
+94
+00:04:34,980 --> 00:04:37,030
+and can be extracted into a function,
+
+95
+00:04:37,030 --> 00:04:38,940
+to make your programme more readable.
+
+96
+00:04:39,920 --> 00:04:40,990
+So, what we're gonna do,
+
+97
+00:04:40,990 --> 00:04:42,790
+is we're gonna define a new function
+
+98
+00:04:44,016 --> 00:04:46,770
+show_movie_details, and that's going to take
+
+99
+00:04:46,770 --> 00:04:49,290
+a parameter movie,
+
+100
+00:04:49,290 --> 00:04:51,300
+and then what it's going to do inside it,
+
+101
+00:04:51,300 --> 00:04:53,710
+is it's going to do all this stuff.
+
+102
+00:04:53,710 --> 00:04:54,860
+It's gonna print the name, director,
+
+103
+00:04:54,860 --> 00:04:56,850
+and release year of this movie.
+
+104
+00:04:56,850 --> 00:04:58,660
+Now, inside show_movies,
+
+105
+00:04:58,660 --> 00:05:00,070
+we can call that function
+
+106
+00:05:00,070 --> 00:05:03,520
+instead of having these three print statements.
+
+107
+00:05:07,640 --> 00:05:10,810
+Okay, now for each movie variable
+
+108
+00:05:10,810 --> 00:05:12,550
+inside the movies list,
+
+109
+00:05:12,550 --> 00:05:16,330
+we're going to pass that, the value of that movie variable,
+
+110
+00:05:16,330 --> 00:05:19,720
+the dictionary, and make it equal to this movie variable
+
+111
+00:05:19,720 --> 00:05:21,610
+defined in this function.
+
+112
+00:05:21,610 --> 00:05:24,800
+However, remember the concept of scope.
+
+113
+00:05:24,800 --> 00:05:27,510
+This movie variable here,
+
+114
+00:05:27,510 --> 00:05:31,740
+only exists within this loop, and within this function.
+
+115
+00:05:31,740 --> 00:05:34,440
+So, this movie, and this movie variable,
+
+116
+00:05:34,440 --> 00:05:37,960
+are different variables all together.
+
+117
+00:05:37,960 --> 00:05:40,490
+It is only the value, the dictionary,
+
+118
+00:05:40,490 --> 00:05:44,080
+that we are teleporting from this function call
+
+119
+00:05:44,080 --> 00:05:46,050
+into this parameter.
+
+120
+00:05:46,050 --> 00:05:47,700
+So, the value of the variable,
+
+121
+00:05:47,700 --> 00:05:50,010
+is now being assigned to this movie,
+
+122
+00:05:50,010 --> 00:05:51,920
+even though they have the same name,
+
+123
+00:05:51,920 --> 00:05:53,220
+they are different variables
+
+124
+00:05:53,220 --> 00:05:56,100
+because this one is only alive in this function.
+
+125
+00:05:57,260 --> 00:05:59,750
+Okay, that's a really important thing,
+
+126
+00:05:59,750 --> 00:06:01,890
+and we will frequently use the same name
+
+127
+00:06:01,890 --> 00:06:04,520
+for things, just because it makes sense.
+
+128
+00:06:04,520 --> 00:06:06,170
+After all, what we're doing,
+
+129
+00:06:06,170 --> 00:06:08,710
+is we are showing things about a movie.
+
+130
+00:06:08,710 --> 00:06:10,200
+It makes sense for our variable,
+
+131
+00:06:10,200 --> 00:06:11,749
+and this function to be called movie.
+
+132
+00:06:11,749 --> 00:06:14,340
+But, it also makes sense for it to be called movie here,
+
+133
+00:06:14,340 --> 00:06:17,610
+and that is fine, because of the concept of scope.
+
+134
+00:06:18,690 --> 00:06:20,530
+Over time, you'll get less confused
+
+135
+00:06:20,530 --> 00:06:22,600
+by things like these, if you are confused by it.
+
+136
+00:06:22,600 --> 00:06:24,500
+If you're not confused by it, awesome.
+
+137
+00:06:25,530 --> 00:06:27,770
+Okay, now we've got our new function,
+
+138
+00:06:27,770 --> 00:06:29,280
+which is being called,
+
+139
+00:06:29,280 --> 00:06:30,990
+and I think this is looking a lot better,
+
+140
+00:06:30,990 --> 00:06:33,950
+because our programme is much cleaner now.
+
+141
+00:06:33,950 --> 00:06:36,580
+In Python, once you're done with a function,
+
+142
+00:06:36,580 --> 00:06:38,940
+you can always collapse it,
+
+143
+00:06:38,940 --> 00:06:42,880
+by pressing this little minus icon on the left.
+
+144
+00:06:42,880 --> 00:06:46,470
+That's just gonna make your programme a bit nicer to read.
+
+145
+00:06:46,470 --> 00:06:48,570
+Of course, remember you can always uncollapse it
+
+146
+00:06:48,570 --> 00:06:51,150
+by pressing the plus, if you ever wanna look at it.
+
+147
+00:06:52,100 --> 00:06:55,920
+Okay, now the last thing we have to do, is our find_movie.
+
+148
+00:06:55,920 --> 00:06:57,350
+Let's do that in the very next video,
+
+149
+00:06:57,350 --> 00:07:00,420
+but first, of course, let's check this one here.
+
+150
+00:07:00,420 --> 00:07:02,540
+We've allowed the users to show all the movies,
+
+151
+00:07:02,540 --> 00:07:05,060
+we've only got one task left
+
+152
+00:07:05,060 --> 00:07:07,890
+before we are finished with this project.
+
+153
+00:07:07,890 --> 00:07:09,690
+I'll see you in the very next video.
+

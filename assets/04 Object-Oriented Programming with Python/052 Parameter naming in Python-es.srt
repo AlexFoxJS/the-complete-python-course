@@ -1,0 +1,312 @@
+1
+00:00:00,190 --> 00:00:01,400
+Jos: Hola y bienvenido de nuevo.
+
+2
+00:00:01,400 --> 00:00:05,340
+En este video, solo quera darle un pequeo bocado
+
+3
+00:00:05,340 --> 00:00:09,410
+de informacin adicional sobre argumentos y nombres de parmetros.
+
+4
+00:00:11,250 --> 00:00:14,270
+Recuerde, la programacin solo de objetos se usa
+
+5
+00:00:14,270 --> 00:00:17,510
+para ayudar a conceptualizar las interacciones entre los objetos.
+
+6
+00:00:18,420 --> 00:00:20,650
+Entonces, entre partes de tu sistema.
+
+7
+00:00:20,650 --> 00:00:22,670
+Entonces, cuando tienes un alumno, ahora
+
+8
+00:00:22,670 --> 00:00:26,080
+sabes que puedes interactuar con algo que representa a un alumno.
+
+9
+00:00:26,080 --> 00:00:28,270
+Si tuviera una clase de pelcula, sabra
+
+10
+00:00:28,270 --> 00:00:30,830
+que puede interactuar con algo que representa una pelcula.
+
+11
+00:00:31,760 --> 00:00:35,010
+Entonces, definamos esta pelcula.
+
+12
+00:00:37,647 --> 00:00:38,890
+Recuerde, tenemos una clase, y
+
+13
+00:00:38,890 --> 00:00:41,590
+luego tenemos el nombre de la clase, dos puntos, y luego
+
+14
+00:00:41,590 --> 00:00:43,410
+podemos definir las funciones debajo de ella.
+
+15
+00:00:44,440 --> 00:00:47,440
+Todo lo que quera hacer era definir una funcin de inicio dunder.
+
+16
+00:00:48,670 --> 00:00:51,910
+Eso requiere tres parmetros: uno mismo, ese es el objeto actual
+
+17
+00:00:51,910 --> 00:00:54,090
+con el que estamos tratando que se
+
+18
+00:00:54,090 --> 00:00:56,850
+acaba de crear antes de llamar a esta funcin.
+
+19
+00:00:56,850 --> 00:00:59,838
+Nombre y ao, esos son dos parmetros.
+
+20
+00:00:59,838 --> 00:01:04,210
+Entonces, lo que vamos a hacer es un yo. nombre es nombre,
+
+21
+00:01:04,210 --> 00:01:06,160
+yo. ao es ao.
+
+22
+00:01:07,640 --> 00:01:11,240
+Y esto normalmente confunde un poco a mis alumnos, porque tenemos
+
+23
+00:01:11,240 --> 00:01:13,840
+esta variable que estamos creando aqu, el nombre
+
+24
+00:01:13,840 --> 00:01:15,757
+y, a medida que avanzas, a
+
+25
+00:01:15,757 --> 00:01:19,280
+esta variable que ya has creado aqu, que tambin es nombre,
+
+26
+00:01:19,280 --> 00:01:21,670
+nombre = nombre, qu est pasando en?
+
+27
+00:01:23,930 --> 00:01:27,370
+Este nombre aqu, recuerda, no es una
+
+28
+00:01:27,370 --> 00:01:30,740
+variable, es una propiedad del yo.
+
+29
+00:01:30,740 --> 00:01:33,900
+Esta variable no se est creando aqu, se est
+
+30
+00:01:33,900 --> 00:01:35,800
+creando dentro de uno mismo, eso
+
+31
+00:01:35,800 --> 00:01:37,730
+es lo que significa el punto.
+
+32
+00:01:37,730 --> 00:01:40,700
+Entonces estamos definiendo una nueva variable o propiedad dentro
+
+33
+00:01:40,700 --> 00:01:45,410
+de uno mismo, que se llama nombre, y que es igual al valor de
+
+34
+00:01:45,410 --> 00:01:47,920
+la variable de nombre que existe en
+
+35
+00:01:47,920 --> 00:01:50,060
+el alcance actual, esta funcin, ese
+
+36
+00:01:50,060 --> 00:01:51,410
+es el parmetro aqu.
+
+37
+00:01:52,520 --> 00:01:53,720
+Entonces esto est totalmente bien.
+
+38
+00:01:54,750 --> 00:01:57,260
+Ahora nuestro objeto va a tener un nombre de
+
+39
+00:01:57,260 --> 00:01:59,580
+propiedad, al igual que nuestro estudiante, y su valor
+
+40
+00:01:59,580 --> 00:02:01,230
+es igual a este parmetro aqu.
+
+41
+00:02:01,230 --> 00:02:05,900
+Estas son dos partes completamente distintas de nuestro cdigo y partes de
+
+42
+00:02:05,900 --> 00:02:08,430
+la estructura de clases y objetos.
+
+43
+00:02:09,470 --> 00:02:11,510
+Entonces podemos imprimir (Movie ('TheMatrix, 1994'). nombre).
+
+44
+00:02:17,618 --> 00:02:19,050
+Esto es, por cierto, solo
+
+45
+00:02:19,050 --> 00:02:21,200
+una forma abreviada de hacer esto, no es
+
+46
+00:02:21,200 --> 00:02:23,470
+muy til porque solo ests creando esta pelcula y
+
+47
+00:02:23,470 --> 00:02:25,240
+no la ests asignando a una variable.
+
+48
+00:02:25,240 --> 00:02:27,440
+Pero ya sabes, puedes hacer eso, puedes crear
+
+49
+00:02:27,440 --> 00:02:29,360
+una pelcula, puedes imprimir su nombre, puedes
+
+50
+00:02:29,360 --> 00:02:31,500
+ejecutarlo y sacas The Matrix, est bien.
+
+51
+00:02:33,620 --> 00:02:38,620
+Por supuesto, puede almacenar esta pelcula dentro de una variable de matriz.
+
+52
+00:02:40,500 --> 00:02:42,380
+Y luego puedes imprimir la matriz. nombre, eso
+
+53
+00:02:42,380 --> 00:02:43,810
+tambin es genial.
+
+54
+00:02:45,160 --> 00:02:47,690
+Puedes poner objetos dentro de las listas y, a medida que
+
+55
+00:02:47,690 --> 00:02:49,080
+se cae, puedes ponerlos en diccionarios,
+
+56
+00:02:49,080 --> 00:02:51,280
+puedes ponerlos en cualquier lugar que quieras, de acuerdo?
+
+57
+00:02:51,280 --> 00:02:56,250
+Un objeto es solo un valor, como una cadena es, o un int.
+
+58
+00:02:57,580 --> 00:03:00,090
+Puede colocar objetos en cualquier lugar donde pueda poner
+
+59
+00:03:00,090 --> 00:03:02,520
+una cuerda, o un nmero entero, siempre que
+
+60
+00:03:02,520 --> 00:03:04,590
+tenga sentido, por ejemplo, no puede agregar
+
+61
+00:03:04,590 --> 00:03:07,903
+un objeto a otro objeto, que probablemente no tenga mucho sentido.
+
+62
+00:03:07,903 --> 00:03:11,120
+Ms adelante veremos cmo puede hacerlo, pero
+
+63
+00:03:11,120 --> 00:03:13,776
+todava no puede hacerlo todava.
+
+64
+00:03:13,776 --> 00:03:15,700
+Del mismo modo, no puede,
+
+65
+00:03:15,700 --> 00:03:18,070
+por ejemplo, multiplicar un objeto por otro.
+
+66
+00:03:18,070 --> 00:03:19,480
+Eso probablemente no tiene
+
+67
+00:03:19,480 --> 00:03:21,680
+sentido, no puedes multiplicar dos estudiantes juntos.
+
+68
+00:03:21,680 --> 00:03:24,870
+De acuerdo, esto probablemente sea cada vez ms inapropiado.
+
+69
+00:03:24,870 --> 00:03:27,520
+No puedes multiplicar dos pelculas juntas, por ejemplo.
+
+70
+00:03:28,690 --> 00:03:31,210
+Entonces, eso es lo que son los objetos.
+
+71
+00:03:31,210 --> 00:03:35,600
+Son conceptualizaciones de entidades en su programa, y esa es
+
+72
+00:03:35,600 --> 00:03:39,725
+una frase bastante llena de jerga, pero eso es
+
+73
+00:03:39,725 --> 00:03:41,320
+lo que son.
+
+74
+00:03:41,320 --> 00:03:42,550
+Se usan para representar
+
+75
+00:03:42,550 --> 00:03:44,100
+cosas con las que deseas interactuar.
+
+76
+00:03:45,090 --> 00:03:46,940
+De acuerdo, y eso es todo por este
+
+77
+00:03:46,940 --> 00:03:50,000
+video, solo quera reiterar una vez ms de qu se trata todo esto.
+
+78
+00:03:50,000 --> 00:03:53,580
+Y pasemos a la siguiente, nos vemos all.
+

@@ -1,0 +1,384 @@
+1
+00:00:00,624 --> 00:00:01,491
+<v Jose>Hi, and welcome back.</v>
+
+2
+00:00:01,491 --> 00:00:02,933
+In this video we're going to start
+
+3
+00:00:02,933 --> 00:00:05,581
+with our book-scraping project.
+
+4
+00:00:05,581 --> 00:00:07,356
+It is going to be set-up very similarly
+
+5
+00:00:07,356 --> 00:00:09,359
+to our quote-scraping project,
+
+6
+00:00:09,359 --> 00:00:11,894
+just so you fully understand how I
+
+7
+00:00:11,894 --> 00:00:14,364
+recommend setting up the scraping projects.
+
+8
+00:00:14,364 --> 00:00:17,526
+So, once again let's create our files.
+
+9
+00:00:17,526 --> 00:00:22,097
+We've got app.py and for this project app.py is going
+
+10
+00:00:22,097 --> 00:00:24,897
+to be a sort of test file type thing
+
+11
+00:00:24,897 --> 00:00:26,584
+where we're going to be running some
+
+12
+00:00:26,584 --> 00:00:29,943
+of the commands written in our other files.
+
+13
+00:00:29,943 --> 00:00:32,378
+Then, we're going to have a few Python packages.
+
+14
+00:00:32,378 --> 00:00:34,031
+Locators is going to be one of them
+
+15
+00:00:34,031 --> 00:00:34,864
+and that's the one we're going
+
+16
+00:00:34,864 --> 00:00:37,051
+to be working on in this video.
+
+17
+00:00:37,051 --> 00:00:38,776
+We are also gonna have pages,
+
+18
+00:00:38,776 --> 00:00:40,667
+of course, for the different pages
+
+19
+00:00:40,667 --> 00:00:42,500
+we'll have and parsers
+
+20
+00:00:44,424 --> 00:00:47,679
+which are for specific sections of the page
+
+21
+00:00:47,679 --> 00:00:50,131
+that we want to extract data from.
+
+22
+00:00:50,131 --> 00:00:51,865
+So, pages and parsers pretty similar.
+
+23
+00:00:51,865 --> 00:00:54,750
+Think of it as sort of containers and components
+
+24
+00:00:54,750 --> 00:00:57,984
+if you've ever done any component development.
+
+25
+00:00:57,984 --> 00:01:01,029
+Or, just as, you know, whole pages
+
+26
+00:01:01,029 --> 00:01:03,963
+that interact with parsers to extract information.
+
+27
+00:01:03,963 --> 00:01:07,691
+In the locators, we're gonna add two files for now.
+
+28
+00:01:07,691 --> 00:01:10,318
+The old books page, which is going
+
+29
+00:01:10,318 --> 00:01:13,693
+to be that page we've already seen, and we're also going
+
+30
+00:01:13,693 --> 00:01:17,276
+to add books locators, book locators. Okay?
+
+31
+00:01:24,048 --> 00:01:26,347
+Inside the book locators we are going
+
+32
+00:01:26,347 --> 00:01:28,309
+to create a class BookLocators:
+
+33
+00:01:28,309 --> 00:01:31,172
+And, in here, we are going to put in the locators
+
+34
+00:01:31,172 --> 00:01:33,599
+that we came up with earlier
+
+35
+00:01:33,599 --> 00:01:35,089
+that I showed you in the previous video
+
+36
+00:01:35,089 --> 00:01:36,356
+in that presentation.
+
+37
+00:01:36,356 --> 00:01:39,302
+We're gonna have a NAME_LOCATOR
+
+38
+00:01:39,302 --> 00:01:43,385
+and this is going to be article.product_pod h3 a'
+
+39
+00:01:44,408 --> 00:01:46,838
+And, we're gonna press command d or control d
+
+40
+00:01:46,838 --> 00:01:48,038
+if you're on Windows.
+
+41
+00:01:48,038 --> 00:01:49,448
+Just duplicate this and we're gonna
+
+42
+00:01:49,448 --> 00:01:51,814
+name this Link_Locator.
+
+43
+00:01:51,814 --> 00:01:53,974
+Notice how these two are the same for now?
+
+44
+00:01:53,974 --> 00:01:55,866
+But, I'm keeping them as a separate locators
+
+45
+00:01:55,866 --> 00:01:59,098
+just in case the website decides to change later on.
+
+46
+00:01:59,098 --> 00:02:00,298
+This is going to make my programme
+
+47
+00:02:00,298 --> 00:02:02,371
+a little bit more resilient.
+
+48
+00:02:02,371 --> 00:02:04,156
+Then, we're gonna have a PRICE_LOCATOR
+
+49
+00:02:04,156 --> 00:02:07,279
+which is going to be used to get that p tag
+
+50
+00:02:07,279 --> 00:02:08,995
+that contains the price.
+
+51
+00:02:08,995 --> 00:02:12,662
+So, again article.product_pod p.price_color'
+
+52
+00:02:14,313 --> 00:02:17,734
+It's interesting that it's got this class here price colour.
+
+53
+00:02:17,734 --> 00:02:21,494
+That's just because the price of the item has a colour,
+
+54
+00:02:21,494 --> 00:02:23,336
+so that's what the website's decided to go for
+
+55
+00:02:23,336 --> 00:02:26,395
+in terms of the class name and but depending on the website,
+
+56
+00:02:26,395 --> 00:02:28,748
+it may be different.
+
+57
+00:02:28,748 --> 00:02:30,125
+Finally, we've got a RATING_LOCATOR
+
+58
+00:02:30,125 --> 00:02:34,042
+Which again, article.product_pod p.star-rating'
+
+59
+00:02:35,380 --> 00:02:36,840
+If you make any typos on this,
+
+60
+00:02:36,840 --> 00:02:38,777
+you'll get some errors later on.
+
+61
+00:02:38,777 --> 00:02:40,726
+So, just make sure that these are correct.
+
+62
+00:02:40,726 --> 00:02:43,057
+All of them have a article.product.pod to start
+
+63
+00:02:43,057 --> 00:02:48,057
+because the entire book is enclosed in this article tag.
+
+64
+00:02:48,502 --> 00:02:50,529
+And, then we are looking for a h3
+
+65
+00:02:50,529 --> 00:02:53,220
+within that article anywhere inside it.
+
+66
+00:02:53,220 --> 00:02:56,394
+And, then a that should be within this h3.
+
+67
+00:02:56,394 --> 00:02:59,465
+Similarly here and same with these.
+
+68
+00:02:59,465 --> 00:03:03,183
+Now, let's go over to our page locators.
+
+69
+00:03:03,183 --> 00:03:06,850
+We're gonna have class AllBooksPageLocators:
+
+70
+00:03:08,540 --> 00:03:10,809
+And, here we're going to just have one thing for now.
+
+71
+00:03:10,809 --> 00:03:12,930
+We're going to add more later.
+
+72
+00:03:12,930 --> 00:03:16,558
+And, this is going to allow us to find all of the books.
+
+73
+00:03:16,558 --> 00:03:20,618
+So, the locator that we place here should be able to find
+
+74
+00:03:20,618 --> 00:03:23,618
+each list item that contains a book.
+
+75
+00:03:24,587 --> 00:03:27,177
+The contents of that list item we're then gonna pass
+
+76
+00:03:27,177 --> 00:03:30,500
+to the book parser which is going to use these locators
+
+77
+00:03:30,500 --> 00:03:33,343
+to locate exact information.
+
+78
+00:03:33,343 --> 00:03:34,208
+So, here we're gonna go
+
+79
+00:03:34,208 --> 00:03:37,458
+for div.page_inner section li.col-xs-6'
+
+80
+00:03:43,177 --> 00:03:45,341
+If you want to be more explicit and you want
+
+81
+00:03:45,341 --> 00:03:50,168
+to add all of the classes inside this li tag you can do that
+
+82
+00:03:50,168 --> 00:03:53,751
+by just doing .col-sm-4.col-md-3.col-lg-3'.
+
+83
+00:03:57,615 --> 00:03:59,540
+So, I'm gonna leave it as this.
+
+84
+00:03:59,540 --> 00:04:01,805
+Feel free to skip on these classes,
+
+85
+00:04:01,805 --> 00:04:03,490
+or maybe just include one of them.
+
+86
+00:04:03,490 --> 00:04:05,119
+But, I'd recommend including at least one class.
+
+87
+00:04:05,119 --> 00:04:06,708
+Just in case there are other list items
+
+88
+00:04:06,708 --> 00:04:08,710
+elsewhere on the page.
+
+89
+00:04:08,710 --> 00:04:10,557
+Well, elsewhere inside this section,
+
+90
+00:04:10,557 --> 00:04:12,690
+that people may get confused.
+
+91
+00:04:12,690 --> 00:04:14,241
+So, make sure to include at least one
+
+92
+00:04:14,241 --> 00:04:17,375
+of the classes just to be sure.
+
+93
+00:04:17,375 --> 00:04:19,354
+Now, with these locators we are ready now
+
+94
+00:04:19,354 --> 00:04:21,539
+to move on to the next video.
+
+95
+00:04:21,539 --> 00:04:24,650
+We're going to be using them to extract information.
+
+96
+00:04:24,650 --> 00:04:25,841
+I'll see you there.
+

@@ -1,0 +1,636 @@
+1
+00:00:00,038 --> 00:00:01,356
+Jose: Ol e bem vindo de volta.
+
+2
+00:00:01,356 --> 00:00:04,165
+Vamos falar sobre expresses regulares.
+
+3
+00:00:04,165 --> 00:00:07,136
+A primeira coisa, e mais importante, 
+
+4
+00:00:07,136 --> 00:00:11,265
+que quando escrevemos expresses regulares, estamos escrevendo com uma linguagem.
+
+5
+00:00:11,265 --> 00:00:13,755
+Agora, as expresses regulares no so
+
+6
+00:00:13,755 --> 00:00:16,922
+uma linguagem de programao, mas ainda h alguma
+
+7
+00:00:16,922 --> 00:00:21,222
+sintaxe e algumas palavras-chave que precisamos saber quando usamos expresses regulares.
+
+8
+00:00:21,222 --> 00:00:23,083
+E usamos a sintaxe e
+
+9
+00:00:23,083 --> 00:00:25,465
+as palavras-chave para expressar o que queremos.
+
+10
+00:00:25,465 --> 00:00:27,578
+Ento, vamos dar uma olhada em alguns
+
+11
+00:00:27,578 --> 00:00:30,638
+exemplos de expresses regulares para sabermos o que .
+
+12
+00:00:30,638 --> 00:00:32,055
+Aqui est algum texto.
+
+13
+00:00:33,416 --> 00:00:37,155
+E, como voc pode ver neste texto, existem alguns padres.
+
+14
+00:00:37,155 --> 00:00:39,467
+Voc pode identificar esse padro, acho que 
+
+15
+00:00:39,467 --> 00:00:41,389
+um padro razoavelmente direto, voc pode
+
+16
+00:00:41,389 --> 00:00:45,564
+ver um a, seguido por um nmero, seguido por um espao, e esse tipo
+
+17
+00:00:45,564 --> 00:00:47,417
+de repetio  repetido cinco vezes.
+
+18
+00:00:47,417 --> 00:00:49,679
+Voc tem um nmero, espao,
+
+19
+00:00:49,679 --> 00:00:52,387
+nmero, espao, nmero, espao, nmero, espao, nmero.
+
+20
+00:00:52,387 --> 00:00:54,025
+Observe como no h
+
+21
+00:00:54,025 --> 00:00:57,019
+espao no final, ento  interessante.
+
+22
+00:00:57,019 --> 00:01:00,769
+O outro padro que est l  este:
+
+23
+00:01:01,940 --> 00:01:05,690
+a1 espao, a3 espao, a9 espao, a5 espao, a4.
+
+24
+00:01:05,690 --> 00:01:08,049
+Ento essa  a string inteira.
+
+25
+00:01:08,049 --> 00:01:10,882
+Ento, em expresses regulares, podemos
+
+26
+00:01:12,171 --> 00:01:13,754
+usar a linguagem
+
+27
+00:01:15,014 --> 00:01:19,173
+para definir os padres que estamos procurando.
+
+28
+00:01:19,173 --> 00:01:22,547
+Ento, aqui ns poderamos definir, vamos procurar por um padro que 
+
+29
+00:01:22,547 --> 00:01:25,465
+um a seguido por um nmero seguido por um espao.
+
+30
+00:01:25,465 --> 00:01:29,783
+E os corredores de expresses regulares nos diziam:
+
+31
+00:01:29,783 --> 00:01:32,478
+"Ei, encontramos alguns exemplos desse
+
+32
+00:01:32,478 --> 00:01:34,395
+padro neste texto".
+
+33
+00:01:34,395 --> 00:01:35,849
+OK.
+
+34
+00:01:35,849 --> 00:01:37,444
+Vamos dar uma olhada em
+
+35
+00:01:37,444 --> 00:01:40,760
+outro exemplo que vamos analisar, apenas alguns exemplos de padres para
+
+36
+00:01:40,760 --> 00:01:43,635
+que voc saiba, um pouco do que estamos procurando.
+
+37
+00:01:43,635 --> 00:01:45,463
+Aqui est outro padro.
+
+38
+00:01:45,463 --> 00:01:48,465
+Temos espao para Jose comma, Rolf espao para
+
+39
+00:01:48,465 --> 00:01:50,632
+vrgula, espao para Charlie, Adam.
+
+40
+00:01:52,470 --> 00:01:56,767
+Ento, o que eu vejo aqui so alguns caracteres, como letras, seguidos por
+
+41
+00:01:56,767 --> 00:02:00,684
+uma vrgula, seguidos por um espao. OK?
+
+42
+00:02:01,915 --> 00:02:04,079
+Este  um padro, potencialmente.
+
+43
+00:02:04,079 --> 00:02:06,672
+Claro que o outro padro  toda
+
+44
+00:02:06,672 --> 00:02:11,041
+a string novamente, mas isso ser um caso para cada instncia.
+
+45
+00:02:11,041 --> 00:02:13,531
+Vamos olhar para este. Aqui esto algumas
+
+46
+00:02:13,531 --> 00:02:15,812
+URLs, alguns endereos da internet.
+
+47
+00:02:15,812 --> 00:02:18,969
+E o que vejo  uma das duas coisas.
+
+48
+00:02:18,969 --> 00:02:23,097
+O primeiro, eu vejo um monte de personagens, seguido por
+
+49
+00:02:23,097 --> 00:02:26,513
+um personagem de nova linha, lembre-se da barra
+
+50
+00:02:26,513 --> 00:02:28,587
+invertida n, que vimos antes.
+
+51
+00:02:28,587 --> 00:02:29,960
+Ento, aqui os personagens
+
+52
+00:02:29,960 --> 00:02:33,254
+incluem letras, eles incluem o ponto, o clon, as barras.
+
+53
+00:02:33,254 --> 00:02:35,270
+Voc tem um monte de personagens l, e
+
+54
+00:02:35,270 --> 00:02:36,915
+voc tem uma nova linha no final.
+
+55
+00:02:36,915 --> 00:02:41,171
+Ento esse  um dos padres que vejo aqui.
+
+56
+00:02:41,171 --> 00:02:44,437
+O outro padro onde voc analisa cada linha, voc
+
+57
+00:02:44,437 --> 00:02:47,048
+pode ver que cada linha  bastante
+
+58
+00:02:47,048 --> 00:02:48,679
+semelhante com a linha abaixo.
+
+59
+00:02:48,679 --> 00:02:53,046
+Voc tem http no comeo. Todos esses padres, todas
+
+60
+00:02:53,046 --> 00:02:56,546
+essas linhas tm http no incio.
+
+61
+00:02:57,742 --> 00:03:00,742
+s vezes, o https  seguido por um s.
+
+62
+00:03:01,918 --> 00:03:06,356
+Em trs dos casos, voc tem http, seguido por um s.
+
+63
+00:03:06,356 --> 00:03:09,710
+E em todos os casos, isso  seguido
+
+64
+00:03:09,710 --> 00:03:12,127
+por dois pontos, barra, barra.
+
+65
+00:03:13,054 --> 00:03:15,887
+s vezes isso  seguido por www.
+
+66
+00:03:18,610 --> 00:03:23,093
+E isso  seguido por alguns personagens,
+
+67
+00:03:23,093 --> 00:03:26,814
+como google, facebook, twitter, udemy, tecladocode.
+
+68
+00:03:26,814 --> 00:03:30,814
+E, finalmente, isso sempre  seguido por dot com.
+
+69
+00:03:31,923 --> 00:03:33,900
+Ento, como voc pode ver, essa
+
+70
+00:03:33,900 --> 00:03:38,837
+no  uma definio de todas as URLs, porque algumas URLs, como voc sabe, terminam
+
+71
+00:03:38,837 --> 00:03:43,254
+em dot net, ou dot me, ou em dot it, ou qualquer outra coisa.
+
+72
+00:03:44,695 --> 00:03:47,408
+Este  apenas o final dos padres
+
+73
+00:03:47,408 --> 00:03:50,324
+que podemos ver no texto que estamos analisando.
+
+74
+00:03:50,324 --> 00:03:54,379
+Ento, o http est sempre l, s vezes voc tem um s.
+
+75
+00:03:54,379 --> 00:03:57,387
+Depois de qualquer um desses, voc tem
+
+76
+00:03:57,387 --> 00:04:00,302
+dois pontos, barra, barra. s vezes voc tem
+
+77
+00:04:00,302 --> 00:04:03,237
+www, em outros casos voc s tem os
+
+78
+00:04:03,237 --> 00:04:05,570
+personagens, e voc sempre tem pontocom.
+
+79
+00:04:06,530 --> 00:04:10,613
+Aqui est um exemplo final. Voc tem alguns e-mails.
+
+80
+00:04:11,669 --> 00:04:14,601
+Ento, o que eu vejo aqui  uma
+
+81
+00:04:14,601 --> 00:04:18,434
+combinao de letras, nmeros, pontos e sublinhados, que voc pode ver,
+
+82
+00:04:19,436 --> 00:04:20,726
+por exemplo, "Jose" 
+
+83
+00:04:20,726 --> 00:04:22,810
+uma combinao de letras, "rolf" 
+
+84
+00:04:22,810 --> 00:04:26,910
+uma combinao de letras, "char. ment " uma combinao de
+
+85
+00:04:26,910 --> 00:04:29,279
+letras e pontos," Anna " uma
+
+86
+00:04:29,279 --> 00:04:32,563
+combinao de letras," jen45 " uma combinao de
+
+87
+00:04:32,563 --> 00:04:35,874
+letras e nmeros, e" someone_is_awesome " uma combinao
+
+88
+00:04:35,874 --> 00:04:38,000
+de letras e sublinhados.
+
+89
+00:04:38,000 --> 00:04:39,253
+Ento voc tem essa combinao
+
+90
+00:04:39,253 --> 00:04:41,726
+de personagens potencialmente diferentes, e isso sempre  seguido
+
+91
+00:04:41,726 --> 00:04:42,976
+por um smbolo @.
+
+92
+00:04:44,958 --> 00:04:47,661
+Como voc pode ver, em todos os casos, no
+
+93
+00:04:47,661 --> 00:04:50,161
+importa a combinao, voc acaba tendo um smbolo @.
+
+94
+00:04:52,051 --> 00:04:54,837
+E isso  sempre seguido por alguns caracteres,
+
+95
+00:04:54,837 --> 00:04:57,399
+e parece que esses personagens so sempre letras.
+
+96
+00:04:57,399 --> 00:05:00,200
+Voc tem tecladocode, voc tem o google, twitter,
+
+97
+00:05:00,200 --> 00:05:01,867
+gmail, icloud e exemplo.
+
+98
+00:05:02,855 --> 00:05:06,361
+Aqueles so seguidos por um ponto, um perodo.
+
+99
+00:05:06,361 --> 00:05:09,016
+Voc tem tecladocode e ento voc tem dot, google
+
+100
+00:05:09,016 --> 00:05:12,258
+e ento voc tem dot, twitter ento voc tem dot, e
+
+101
+00:05:12,258 --> 00:05:13,341
+assim por diante.
+
+102
+00:05:14,299 --> 00:05:16,748
+E finalmente voc tem alguns personagens.
+
+103
+00:05:16,748 --> 00:05:19,523
+E parece, a partir desse exemplo, que
+
+104
+00:05:19,523 --> 00:05:22,773
+esses personagens sempre sero ou com, eu ou net.
+
+105
+00:05:23,876 --> 00:05:27,618
+E ento voc acaba com dot com, dot me ou dot net.
+
+106
+00:05:27,618 --> 00:05:31,369
+Mas  claro que podemos ser bastante espertos e podemos dizer
+
+107
+00:05:31,369 --> 00:05:33,715
+que voc sabe,  possvel que, se
+
+108
+00:05:33,715 --> 00:05:36,446
+o que estamos vendo for e-mails, os personagens
+
+109
+00:05:36,446 --> 00:05:39,354
+no final possam ser ligeiramente diferentes, em alguns casos.
+
+110
+00:05:39,354 --> 00:05:41,811
+Ns no estamos vendo eles aqui, mas voc sabe, poderia
+
+111
+00:05:41,811 --> 00:05:42,847
+ser, poderia ser diferente.
+
+112
+00:05:42,847 --> 00:05:46,066
+No vamos dizer que s pode ser com, eu e net.
+
+113
+00:05:46,066 --> 00:05:50,483
+Talvez digamos que eles podem ser qualquer personagem.
+
+114
+00:05:50,483 --> 00:05:53,791
+Ento, obter o regex, expresses regulares,  uma
+
+115
+00:05:53,791 --> 00:05:57,303
+questo de ver os padres, ser capaz de identificar
+
+116
+00:05:57,303 --> 00:05:59,824
+os padres, ser capaz de olhar
+
+117
+00:05:59,824 --> 00:06:02,687
+para um texto e dizer: "Ok, esses
+
+118
+00:06:02,687 --> 00:06:07,066
+so os caracteres e smbolos potenciais que eu posso ver, isso
+
+119
+00:06:07,066 --> 00:06:09,470
+ a ordem em que vo
+
+120
+00:06:09,470 --> 00:06:13,104
+aparecer "e, claro, voc precisa ser capaz de expressar
+
+121
+00:06:13,104 --> 00:06:15,354
+esses padres usando a linguagem.
+
+122
+00:06:15,354 --> 00:06:19,343
+Ento  isso que vamos aprender no prximo vdeo.
+
+123
+00:06:19,343 --> 00:06:22,413
+Mas eu vou te dizer que existem quatro componentes
+
+124
+00:06:22,413 --> 00:06:23,993
+mais importantes no regex.
+
+125
+00:06:23,993 --> 00:06:26,946
+Voc vai estar usando estes essencialmente o tempo todo.
+
+126
+00:06:26,946 --> 00:06:31,561
+Primeiro  o ponto. O ponto significa "qualquer coisa".
+
+127
+00:06:31,561 --> 00:06:34,474
+Letras, nmeros, smbolos, qualquer coisa que voc possa
+
+128
+00:06:34,474 --> 00:06:35,807
+pensar, exceto novas linhas.
+
+129
+00:06:37,934 --> 00:06:40,446
+Lembre-se do caractere de nova linha,
+
+130
+00:06:40,446 --> 00:06:43,940
+slash n, o ponto significa "qualquer coisa", exceto isso.
+
+131
+00:06:43,940 --> 00:06:47,273
+Os smbolos mais significam "um ou mais de".
+
+132
+00:06:48,887 --> 00:06:52,565
+O asterisco significa "zero ou mais de" e
+
+133
+00:06:52,565 --> 00:06:56,942
+o ponto de interrogao significa "zero ou um de".
+
+134
+00:06:56,942 --> 00:06:59,760
+Ento, vamos analisar uma expresso usando
+
+135
+00:06:59,760 --> 00:07:01,798
+essas partes da sintaxe.
+
+136
+00:07:01,798 --> 00:07:03,548
+Jose @ tecladocode. com.
+
+137
+00:07:04,557 --> 00:07:09,307
+Voc poderia dizer que isso  estrela do ponto. O ponto significa "qualquer coisa",
+
+138
+00:07:10,732 --> 00:07:13,669
+o comeo significa "zero ou mais de".
+
+139
+00:07:13,669 --> 00:07:16,712
+Ento, isso  "zero ou mais de qualquer coisa".
+
+140
+00:07:16,712 --> 00:07:19,769
+Naturalmente, praticamente qualquer padro vai combinar isso, porque voc tem
+
+141
+00:07:19,769 --> 00:07:21,795
+zero ou mais de qualquer coisa,
+
+142
+00:07:21,795 --> 00:07:24,646
+que pode ser qualquer caractere ou smbolo ou qualquer
+
+143
+00:07:24,646 --> 00:07:28,252
+outra coisa, ento  claro que esse padro vai combinar com isso.
+
+144
+00:07:28,252 --> 00:07:32,222
+Voc tem dot plus, o positivo significa "um ou mais de".
+
+145
+00:07:32,222 --> 00:07:35,297
+Ento aqui voc tem um ponto, voc tem
+
+146
+00:07:35,297 --> 00:07:39,447
+pelo menos um caractere no padro, ento ele vai combinar.
+
+147
+00:07:39,447 --> 00:07:44,447
+Voc tambm pode ter algo como "jose @ tecladocode \. com ".
+
+148
+00:07:46,397 --> 00:07:48,403
+Ento aqui voc est combinando o
+
+149
+00:07:48,403 --> 00:07:51,621
+padro inteiro, mas  claro que voc tem que colocar
+
+150
+00:07:51,621 --> 00:07:55,411
+uma barra invertida na frente de qualquer smbolo que signifique algo em
+
+151
+00:07:55,411 --> 00:07:57,608
+expresses regulares, caso contrrio, significa "qualquer coisa".
+
+152
+00:07:57,608 --> 00:07:59,955
+Como sabemos o ponto em um padro de
+
+153
+00:07:59,955 --> 00:08:04,145
+expresso regular significa "qualquer coisa", ento voc tem que colocar uma barra invertida na
+
+154
+00:08:04,145 --> 00:08:07,895
+frente dele, ento isso significa o ponto, e no apenas qualquer smbolo.
+
+155
+00:08:10,666 --> 00:08:14,753
+Isso  um pouco abstrato, ento vamos para um editor de regex
+
+156
+00:08:14,753 --> 00:08:17,029
+melhor e vamos ver um monte de
+
+157
+00:08:17,029 --> 00:08:19,979
+exemplos no prximo vdeo, para que voc comece a
+
+158
+00:08:19,979 --> 00:08:23,394
+ter uma ideia de como essas expresses regulares funcionam .
+
+159
+00:08:23,394 --> 00:08:27,561
+Ento, com isso dito, vejo vocs no prximo vdeo.
+

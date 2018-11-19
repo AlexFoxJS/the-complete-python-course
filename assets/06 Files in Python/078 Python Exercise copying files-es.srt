@@ -1,0 +1,1732 @@
+1
+00:00:00,210 --> 00:00:01,610
+Jos: Hola, y bienvenido de nuevo.
+
+2
+00:00:01,610 --> 00:00:05,450
+En este video vamos a hablar sobre copiar un
+
+3
+00:00:05,450 --> 00:00:09,030
+archivo, y lo haremos con un pequeo ejercicio.
+
+4
+00:00:09,030 --> 00:00:11,070
+Lo que hice fue, en lugar de mi
+
+5
+00:00:11,070 --> 00:00:13,890
+proyecto, simplemente mantener las cosas simples, cre un nuevo archivo de
+
+6
+00:00:13,890 --> 00:00:14,980
+Python llamado friends. py.
+
+7
+00:00:15,903 --> 00:00:19,490
+A lo largo de este proyecto vamos a ejecutar este archivo.
+
+8
+00:00:19,490 --> 00:00:21,050
+Tambin cre dos archivos
+
+9
+00:00:21,050 --> 00:00:25,130
+de texto: friends_friends. txt y personas TXT.
+
+10
+00:00:26,520 --> 00:00:30,300
+Personas dentro txt puedes escribir muchos nombres.
+
+11
+00:00:32,720 --> 00:00:35,360
+Ir con los artculos
+
+12
+00:00:40,180 --> 00:00:42,410
+bsicos de declado.
+
+13
+00:00:42,410 --> 00:00:43,820
+Comenzando con Rolf, por supuesto.
+
+14
+00:00:43,820 --> 00:00:46,470
+Tengo algunos Charlies all.
+
+15
+00:00:46,470 --> 00:00:48,970
+Estas personas son personas que estn
+
+16
+00:00:49,910 --> 00:00:51,870
+cerca de usted, digamos.
+
+17
+00:00:53,460 --> 00:00:56,730
+Dentro de nuestros amigos archivo py ahora vamos
+
+18
+00:00:56,730 --> 00:01:00,180
+a escribir un programa corto que va a,
+
+19
+00:01:00,180 --> 00:01:03,960
+primero, pedirle al usuario una lista de tres amigos.
+
+20
+00:01:05,490 --> 00:01:09,510
+Luego, por cada amigo, le diremos al usuario si estn
+
+21
+00:01:09,510 --> 00:01:11,180
+en la misma ciudad.
+
+22
+00:01:16,468 --> 00:01:19,620
+Finalmente, para cada amigo que se encuentre en
+
+23
+00:01:19,620 --> 00:01:22,950
+la misma ciudad, los guardaremos en el archivo friends_friends.
+
+24
+00:01:30,710 --> 00:01:31,543
+OKAY?
+
+25
+00:01:33,290 --> 00:01:34,180
+Tiene que hacer
+
+26
+00:01:34,180 --> 00:01:36,360
+tres cosas; primero, pregunta al usuario por tres amigos.
+
+27
+00:01:36,360 --> 00:01:40,800
+Puede hacer esto utilizando el mtodo de divisin de cadena,
+
+28
+00:01:40,800 --> 00:01:43,400
+o puede pedir tres amigos distintos.
+
+29
+00:01:43,400 --> 00:01:45,450
+Est bien, tres entradas.
+
+30
+00:01:45,450 --> 00:01:48,580
+Entonces tendrs que abrir a la gente. txt, y
+
+31
+00:01:48,580 --> 00:01:51,030
+lea todas las lneas.
+
+32
+00:01:51,030 --> 00:01:53,860
+Usted puede insinuar: readlines.
+
+33
+00:01:55,350 --> 00:01:59,520
+Readlines podra ser interesante para este ejercicio.
+
+34
+00:01:59,520 --> 00:02:02,280
+Te recomiendo que lo busques en Google y veas lo que puedes encontrar.
+
+35
+00:02:02,280 --> 00:02:04,100
+Pero, por supuesto, vamos a implementar esto en
+
+36
+00:02:04,100 --> 00:02:05,600
+un proyecto en solo un momento.
+
+37
+00:02:06,630 --> 00:02:09,910
+Quieres leer todas las lneas en personas, y eso
+
+38
+00:02:09,910 --> 00:02:12,670
+te dar una lista de cadenas, una
+
+39
+00:02:12,670 --> 00:02:13,800
+cadena por lnea.
+
+40
+00:02:13,800 --> 00:02:17,290
+Esos son los amigos o, mejor dicho, son las personas cercanas.
+
+41
+00:02:17,290 --> 00:02:20,490
+Luego, vamos a comparar las personas en ese archivo
+
+42
+00:02:20,490 --> 00:02:23,210
+con los amigos que el usuario ingres.
+
+43
+00:02:23,210 --> 00:02:25,870
+Si el amigo est entre esas personas, le
+
+44
+00:02:25,870 --> 00:02:29,480
+diremos al usuario y tambin las incluiremos en este archivo.
+
+45
+00:02:29,480 --> 00:02:32,360
+Estamos copiando efectivamente el archivo de personas en
+
+46
+00:02:32,360 --> 00:02:35,230
+el archivo friends_friends, de forma selectiva, lo que
+
+47
+00:02:35,230 --> 00:02:38,230
+permite al usuario elegir qu amigos quieren copiar.
+
+48
+00:02:39,800 --> 00:02:44,620
+As que, aconsejara ahora, s que esta es una empresa ms grande
+
+49
+00:02:44,620 --> 00:02:47,440
+que la que hemos hecho anteriormente, y
+
+50
+00:02:47,440 --> 00:02:50,360
+no necesariamente espero que hagas esto de inmediato.
+
+51
+00:02:50,360 --> 00:02:54,030
+Sin embargo, al construir proyectos y luchar un poco
+
+52
+00:02:54,030 --> 00:02:58,610
+es la mejor manera de aprender y de familiarizarse realmente con
+
+53
+00:02:58,610 --> 00:03:00,200
+la investigacin que tiene
+
+54
+00:03:00,200 --> 00:03:02,920
+que hacer para poder dominar la programacin.
+
+55
+00:03:02,920 --> 00:03:05,370
+Te animo a pausar el video,
+
+56
+00:03:05,370 --> 00:03:08,640
+prubalo durante quizs 20 o 30 minutos, y luego
+
+57
+00:03:08,640 --> 00:03:11,560
+vuelve, y continuaremos implementando este proyecto aqu, y
+
+58
+00:03:11,560 --> 00:03:14,540
+te explicar todas las opciones que estoy haciendo
+
+59
+00:03:14,540 --> 00:03:16,980
+en orden para hacer que funcione
+
+60
+00:03:16,980 --> 00:03:17,813
+Vamos a por ello.
+
+61
+00:03:23,150 --> 00:03:28,020
+Estoy seguro de que al menos conseguiste un lugar con este proyecto.
+
+62
+00:03:28,020 --> 00:03:30,810
+Estoy seguro de que ha logrado hacer algunas
+
+63
+00:03:30,810 --> 00:03:33,280
+de las cosas aqu si no todas.
+
+64
+00:03:34,520 --> 00:03:36,250
+Ahora, si tiene algn problema
+
+65
+00:03:36,250 --> 00:03:38,550
+y cosas de las que no est
+
+66
+00:03:38,550 --> 00:03:41,980
+seguro, no dude en preguntar en el curso de preguntas
+
+67
+00:03:41,980 --> 00:03:44,040
+y respuestas antes de ver esto,
+
+68
+00:03:44,040 --> 00:03:49,040
+y estar encantado de ayudarle para resolver cualquier duda que tenga, ya que tu propia investigacin.
+
+69
+00:03:49,070 --> 00:03:51,300
+Pero una vez que est listo, podemos
+
+70
+00:03:51,300 --> 00:03:53,480
+continuar y completar este proyecto aqu.
+
+71
+00:03:53,480 --> 00:03:55,310
+Lo primero que debe hacer es pedirle
+
+72
+00:03:55,310 --> 00:03:56,940
+al usuario una lista de tres amigos.
+
+73
+00:03:58,060 --> 00:04:01,260
+Para esto voy a usar la funcin de entrada, por supuesto.
+
+74
+00:04:01,260 --> 00:04:04,010
+Voy a decir: "Introduce tres nombres de amigo",
+
+75
+00:04:04,010 --> 00:04:06,620
+separados por comas (sin espacios, por favor):
+
+76
+00:04:14,120 --> 00:04:16,970
+"Estos nombres de amigos van a ser algo
+
+77
+00:04:16,970 --> 00:04:18,870
+as como Rolf, Jos, Charlie.
+
+78
+00:04:18,870 --> 00:04:22,210
+Algo as es lo que el usuario va a ingresar.
+
+79
+00:04:22,210 --> 00:04:24,900
+Entonces, esto va a ser una cadena que
+
+80
+00:04:24,900 --> 00:04:27,809
+tiene tres nombres de amigos separados por comas.
+
+81
+00:04:27,809 --> 00:04:31,940
+Siempre que tenga una cadena que tenga un separador, como la coma
+
+82
+00:04:31,940 --> 00:04:35,100
+en este caso, puede hacerlo. divisin.
+
+83
+00:04:37,430 --> 00:04:38,660
+Lo que hace
+
+84
+00:04:38,660 --> 00:04:42,510
+es, en lugar de una cadena con dos comas y
+
+85
+00:04:42,510 --> 00:04:45,220
+tres nombres, ofrecerle algo que se vea as.
+
+86
+00:04:49,040 --> 00:04:51,260
+Esa es una lista de tres elementos.
+
+87
+00:04:51,260 --> 00:04:52,750
+Observe cmo las comas se
+
+88
+00:04:52,750 --> 00:04:55,130
+han ido, son parte de la lista,
+
+89
+00:04:55,130 --> 00:04:59,840
+y en su lugar, los elementos se componen en una lista de nombres individuales.
+
+90
+00:05:01,480 --> 00:05:03,040
+Eso es lo que hace este mtodo de divisin.
+
+91
+00:05:03,040 --> 00:05:05,110
+No estoy seguro de si hemos visto eso antes.
+
+92
+00:05:05,110 --> 00:05:07,150
+Pero, sin embargo, as es
+
+93
+00:05:07,150 --> 00:05:10,610
+como puedes dividir una cadena en mltiples partes constituyentes.
+
+94
+00:05:10,610 --> 00:05:13,400
+Por supuesto, si le hubieras preguntado al amigo uno,
+
+95
+00:05:13,400 --> 00:05:15,200
+y le hubieras dicho: "entrada ('Escribe
+
+96
+00:05:16,316 --> 00:05:18,530
+tu primer amigo:')", eso es genial.
+
+97
+00:05:18,530 --> 00:05:20,440
+Esa es la manera en que esperara que
+
+98
+00:05:20,440 --> 00:05:22,940
+lo hicieras si no supieras acerca de este mtodo dividido.
+
+99
+00:05:22,940 --> 00:05:23,773
+Est bien.
+
+100
+00:05:25,550 --> 00:05:27,630
+Ahora que tenemos una lista de amigos.
+
+101
+00:05:27,630 --> 00:05:30,030
+Por supuesto, si preguntaras por amigo
+
+102
+00:05:30,030 --> 00:05:32,210
+uno, amigo dos, amigo tres, entonces
+
+103
+00:05:32,210 --> 00:05:34,780
+esperara que, en algn momento, hayas creado
+
+104
+00:05:34,780 --> 00:05:38,370
+una lista de amigo uno, amigo dos y amigo tres.
+
+105
+00:05:38,370 --> 00:05:40,170
+De esta forma, tendras una lista
+
+106
+00:05:40,170 --> 00:05:42,530
+de amigos en lugar de tres variables independientes.
+
+107
+00:05:42,530 --> 00:05:44,960
+Esta sera una gran manera de hacerlo sin
+
+108
+00:05:44,960 --> 00:05:47,680
+la funcin de divisin, el mtodo de divisin, lo siento.
+
+109
+00:05:48,830 --> 00:05:50,370
+Ahora que tenemos una lista
+
+110
+00:05:50,370 --> 00:05:53,480
+de amigos, podemos abrir personas. txt, y lelo para que
+
+111
+00:05:53,480 --> 00:05:55,890
+conozcamos a las personas que estn cerca.
+
+112
+00:05:56,780 --> 00:06:00,790
+De nuevo, vamos a abrir personas. txt en modo lectura, por supuesto,
+
+113
+00:06:00,790 --> 00:06:02,760
+porque solo lo estamos leyendo.
+
+114
+00:06:02,760 --> 00:06:04,110
+No vamos a escribirlo en
+
+115
+00:06:04,110 --> 00:06:06,370
+este archivo; vamos a escribir en el otro archivo.
+
+116
+00:06:06,370 --> 00:06:07,920
+Y luego vamos a buscar a las
+
+117
+00:06:07,920 --> 00:06:10,343
+personas que estn en la misma ciudad o personas que estn cerca.
+
+118
+00:06:10,343 --> 00:06:14,380
+people_nearby va a ser un archivo, o personas. lneas de lectura
+
+119
+00:06:18,562 --> 00:06:22,500
+El mtodo readlines que suger como pista antes, bsicamente solo leer
+
+120
+00:06:23,430 --> 00:06:25,260
+el archivo, pero te da
+
+121
+00:06:25,260 --> 00:06:28,890
+una lista de line1, line2, line3, line4, que es una
+
+122
+00:06:31,520 --> 00:06:34,500
+forma bastante prctica de leer un archivo, especialmente
+
+123
+00:06:34,500 --> 00:06:37,690
+porque hemos tiene un amigo por archivo, un amigo
+
+124
+00:06:37,690 --> 00:06:40,300
+por lnea en nuestro archivo de datos.
+
+125
+00:06:41,290 --> 00:06:42,830
+Esa es una buena manera de hacerlo.
+
+126
+00:06:42,830 --> 00:06:46,200
+Si, a travs de su investigacin, no encontr este mtodo,
+
+127
+00:06:46,200 --> 00:06:47,410
+est totalmente bien.
+
+128
+00:06:47,410 --> 00:06:49,110
+Estoy seguro de que, en ese momento,
+
+129
+00:06:49,110 --> 00:06:50,710
+si no poda encontrar ese mtodo,
+
+130
+00:06:50,710 --> 00:06:52,920
+ese era el punto en el que pensaba:
+
+131
+00:06:52,920 --> 00:06:55,470
+"Tengo que seguir viendo esto", y eso est totalmente bien.
+
+132
+00:06:55,470 --> 00:06:58,140
+Por supuesto, no espero que sepa todo
+
+133
+00:06:58,140 --> 00:07:01,200
+sobre los archivos cuando an no lo hemos cubierto.
+
+134
+00:07:01,200 --> 00:07:04,010
+No obstante, siempre es bueno hacer una investigacin.
+
+135
+00:07:04,940 --> 00:07:05,990
+Incluso si no encuentras
+
+136
+00:07:05,990 --> 00:07:08,100
+nada, es bueno entrenarte para hacer eso.
+
+137
+00:07:08,100 --> 00:07:10,160
+Al final, por supuesto, vamos a cerrar el archivo.
+
+138
+00:07:10,160 --> 00:07:12,320
+Ahora que lo hemos ledo y tenemos nuestros
+
+139
+00:07:12,320 --> 00:07:14,910
+contenidos en esta variable, ya no necesitamos el archivo para
+
+140
+00:07:14,910 --> 00:07:17,710
+nada, porque an podemos acceder a la variable con los valores.
+
+141
+00:07:19,780 --> 00:07:23,500
+A continuacin, descubriremos qu personas son
+
+142
+00:07:23,500 --> 00:07:26,740
+amigos que tambin estn cerca.
+
+143
+00:07:29,530 --> 00:07:32,140
+La mejor manera de hacerlo sera con un conjunto.
+
+144
+00:07:33,670 --> 00:07:35,350
+Hemos visto conjuntos antes.
+
+145
+00:07:35,350 --> 00:07:38,050
+Lo que har ahora es decir algo as
+
+146
+00:07:38,050 --> 00:07:40,380
+como friends_set es un grupo de amigos.
+
+147
+00:07:41,800 --> 00:07:44,310
+Esto convierte la lista de amigos
+
+148
+00:07:44,310 --> 00:07:48,740
+aqu en un conjunto, eliminando duplicados, y tambin desordenado, y nos
+
+149
+00:07:48,740 --> 00:07:50,690
+permite hacer cosas como interseccin,
+
+150
+00:07:50,690 --> 00:07:52,440
+que sern bastante tiles.
+
+151
+00:07:53,320 --> 00:07:56,700
+Luego convertiramos a la gente en un conjunto.
+
+152
+00:08:01,890 --> 00:08:03,070
+Ahora tenemos dos juegos,
+
+153
+00:08:03,070 --> 00:08:05,270
+uno de amigos y otro de personas cercanas.
+
+154
+00:08:05,270 --> 00:08:07,830
+Por lo tanto, sabemos, por supuesto, que para obtener los
+
+155
+00:08:07,830 --> 00:08:10,830
+que coinciden, los amigos que estn cerca, solo tenemos que cruzarlos.
+
+156
+00:08:14,530 --> 00:08:17,100
+Haremos friends_set. intersection (people_nearby_set), y
+
+157
+00:08:19,680 --> 00:08:21,720
+eso le brinda a los
+
+158
+00:08:21,720 --> 00:08:23,530
+amigos que estn cerca, porque
+
+159
+00:08:23,530 --> 00:08:27,170
+le da los elementos que coinciden en friends_set y people_nearby_set.
+
+160
+00:08:28,780 --> 00:08:30,820
+Ahora que tenemos a nuestros amigos que
+
+161
+00:08:30,820 --> 00:08:34,830
+estn cerca, podemos abrir los friends_friends. archivo txt
+
+162
+00:08:34,830 --> 00:08:37,960
+Digamos que el archivo
+
+163
+00:08:37,960 --> 00:08:42,960
+friends_friends_file estar abierto ('friends_friends. txt ', y esta vez va
+
+164
+00:08:43,040 --> 00:08:44,700
+a estar en modo
+
+165
+00:08:44,700 --> 00:08:47,631
+escritura porque vamos a escribirle algunos datos.
+
+166
+00:08:47,631 --> 00:08:49,930
+Entonces podemos repetir sobre Lo
+
+167
+00:08:49,930 --> 00:08:54,780
+nuestros amigos cercanos para un amigo en las cercanas. siento, es friends_nearby_set. Voy a llamarlo friends_nearby_set, solo por coherencia ya
+
+168
+00:08:54,780 --> 00:08:57,820
+que todos se llaman set.
+
+169
+00:08:57,820 --> 00:08:59,270
+Simplemente vamos a decir: "Oye, este amigo est cerca. "Vamos a
+
+170
+00:08:59,270 --> 00:09:02,960
+decir '(amigo) est cerca!
+
+171
+00:09:05,290 --> 00:09:07,990
+'Renete con ellos. 'Tambin vamos a
+
+172
+00:09:10,100 --> 00:09:12,190
+guardarlos en el archivo.
+
+173
+00:09:12,190 --> 00:09:14,630
+Eso sera near_friends_file. escribe, y luego amigo.
+
+174
+00:09:15,610 --> 00:09:17,940
+Ahora, hay un par de problemas con este cdigo aqu.
+
+175
+00:09:17,940 --> 00:09:22,940
+Entonces, lo primero que tenemos Lo siento, solo presion
+
+176
+00:09:26,380 --> 00:09:30,640
+que hacer, por supuesto, antes de ejecutarlo es. el botn Siri all por accidente. Es una pantalla tctil, esta cosa del archivo tctil.
+
+177
+00:09:30,640 --> 00:09:32,470
+Tenemos que cerrar el archivo.
+
+178
+00:09:32,470 --> 00:09:34,750
+Recuerde cerrarlo, de lo contrario, se mantendr abierto entre las
+
+179
+00:09:34,750 --> 00:09:36,960
+ejecuciones, incluso despus de que haya cerrado el programa.
+
+180
+00:09:36,960 --> 00:09:40,020
+No es algo bueno
+
+181
+00:09:40,020 --> 00:09:43,190
+Vamos a ejecutarlo.
+
+182
+00:09:45,450 --> 00:09:48,210
+Podemos ver que nos pide que ingresemos
+
+183
+00:09:48,210 --> 00:09:50,610
+tres nombres de amigos separados por comas.
+
+184
+00:09:50,610 --> 00:09:51,460
+Podemos ingresar a Rolf, Charlie y Rudolph, por ejemplo.
+
+185
+00:09:53,260 --> 00:09:54,093
+Ese no existe, pero deberamos llegar, no?
+
+186
+00:09:55,600 --> 00:09:58,110
+Hmm.
+
+187
+00:09:58,110 --> 00:09:59,220
+No obtenemos nada.
+
+188
+00:09:59,220 --> 00:10:03,420
+Revisemos el archivo de friends_friends.
+
+189
+00:10:03,420 --> 00:10:06,270
+No tiene nada.
+
+190
+00:10:09,160 --> 00:10:10,800
+Me pregunto por qu es as.
+
+191
+00:10:10,800 --> 00:10:11,750
+Bueno, qu sucede cuando nos encontramos con un error?
+
+192
+00:10:12,890 --> 00:10:14,690
+Por supuesto, debemos mirar la lista de verificacin que proporcion
+
+193
+00:10:16,600 --> 00:10:17,450
+antes, en la ltima seccin,
+
+194
+00:10:19,932 --> 00:10:21,380
+de mirar nuestro cdigo antes que nada.
+
+195
+00:10:22,820 --> 00:10:26,520
+Voy a minimizar esto aqu.
+
+196
+00:10:26,520 --> 00:10:30,090
+Vamos a, una vez ms, revisar este cdigo
+
+197
+00:10:30,090 --> 00:10:32,610
+y lo que est haciendo.
+
+198
+00:10:32,610 --> 00:10:34,410
+Le pedimos al usuario alguna informacin;
+
+199
+00:10:34,410 --> 00:10:36,310
+eso se divide en la coma.
+
+200
+00:10:36,310 --> 00:10:37,143
+Ahora, tengo bastante
+
+201
+00:10:37,143 --> 00:10:39,470
+experiencia, y s que esta divisin parece razonable,
+
+202
+00:10:41,480 --> 00:10:43,370
+y s que esto proporcionar una lista.
+
+203
+00:10:43,370 --> 00:10:45,550
+Esto se ve bien hasta ahora.
+
+204
+00:10:45,550 --> 00:10:47,500
+Estamos abriendo un archivo para leer.
+
+205
+00:10:47,500 --> 00:10:51,050
+Hicimos esto antes, y funcion bien.
+
+206
+00:10:51,050 --> 00:10:53,450
+Usa la misma sintaxis
+
+207
+00:10:54,490 --> 00:10:56,200
+Esto esta bien.
+
+208
+00:10:56,200 --> 00:10:57,660
+Entonces estamos leyendo las lneas.
+
+209
+00:10:57,660 --> 00:10:59,650
+No hemos ledo las lneas anteriormente, por lo que no estamos muy
+
+210
+00:10:59,650 --> 00:11:00,690
+seguros de lo que est haciendo.
+
+211
+00:11:00,690 --> 00:11:02,590
+Entonces estamos cerrando el archivo; esto parece legtimo
+
+212
+00:11:02,590 --> 00:11:04,080
+Luego creamos un grupo de nuestros amigos.
+
+213
+00:11:04,080 --> 00:11:06,470
+Hemos analizado los conjuntos anteriormente, pero no estoy
+
+214
+00:11:06,470 --> 00:11:09,730
+seguro de si realmente convertimos una lista en un conjunto.
+
+215
+00:11:10,930 --> 00:11:13,630
+Tal vez esto es algo que
+
+216
+00:11:13,630 --> 00:11:16,230
+debemos analizar antes de continuar.
+
+217
+00:11:16,230 --> 00:11:17,970
+Como puede ver, hay
+
+218
+00:11:17,970 --> 00:11:21,300
+un par de incgnitas en este programa.
+
+219
+00:11:22,170 --> 00:11:23,400
+Qu est haciendo exactamente readlines?
+
+220
+00:11:23,400 --> 00:11:26,220
+Qu est haciendo exactamente?
+
+221
+00:11:26,220 --> 00:11:27,100
+Lo estamos llamando de nuevo.
+
+222
+00:11:27,100 --> 00:11:29,350
+Te digo que estos te estn dando
+
+223
+00:11:29,350 --> 00:11:32,060
+sets, y esta es la interseccin de los dos,
+
+224
+00:11:32,060 --> 00:11:34,914
+as que estos deberan ser los amigos que coincidan.
+
+225
+00:11:34,914 --> 00:11:36,960
+Pero entonces, todo lo que estamos haciendo es abrir el
+
+226
+00:11:36,960 --> 00:11:38,700
+archivo para escribir, iterar sobre los amigos e imprimirlos.
+
+227
+00:11:38,700 --> 00:11:40,670
+Realmente no hay nada que pueda salir mal aqu.
+
+228
+00:11:40,670 --> 00:11:43,260
+Las nicas cosas que pueden salir mal son las lneas de
+
+229
+00:11:43,260 --> 00:11:45,680
+lectura porque no estamos seguros de lo que est haciendo.
+
+230
+00:11:45,680 --> 00:11:48,580
+Lo hemos usado, y te he dicho lo que
+
+231
+00:11:48,580 --> 00:11:51,130
+hace, pero tal vez hay algn pequeo matiz
+
+232
+00:11:52,000 --> 00:11:53,920
+del que no estamos seguros.
+
+233
+00:11:53,920 --> 00:11:56,870
+Y, por supuesto, un conjunto.
+
+234
+00:11:56,870 --> 00:12:00,170
+No obtuvimos un error
+
+235
+00:12:00,170 --> 00:12:02,130
+La lista de verificacin para el manejo de errores dice que debe
+
+236
+00:12:02,130 --> 00:12:03,550
+copiar el error, y en Google, pasarlo en.
+
+237
+00:12:03,550 --> 00:12:04,880
+No hay error aqu
+
+238
+00:12:06,430 --> 00:12:07,960
+Entonces, tal vez no queremos ir a Google todava.
+
+239
+00:12:07,960 --> 00:12:10,640
+Podramos revisar nuestro programa como la computadora, verificar exactamente
+
+240
+00:12:10,640 --> 00:12:12,680
+lo que ingresamos, exactamente lo que resulta,
+
+241
+00:12:12,680 --> 00:12:13,780
+y exactamente lo que
+
+242
+00:12:13,780 --> 00:12:16,130
+hace todo, pero es ms difcil hacerlo porque
+
+243
+00:12:17,200 --> 00:12:20,070
+no estamos 100% seguros de todo lo que hacemos. una
+
+244
+00:12:20,070 --> 00:12:22,100
+sola lnea de cdigo est haciendo.
+
+245
+00:12:22,100 --> 00:12:25,920
+Si alguna vez ests en una etapa en la que no ests 100%
+
+246
+00:12:25,920 --> 00:12:27,880
+seguro de que algo est haciendo lo
+
+247
+00:12:27,880 --> 00:12:30,290
+que esperas, debes ser sincero contigo mismo y
+
+248
+00:12:30,290 --> 00:12:32,650
+decir: "Nunca antes lo haba hecho antes.
+
+249
+00:12:33,660 --> 00:12:37,540
+"Tal vez est haciendo algo inesperado. "He corrido esto antes, as que s
+
+250
+00:12:37,540 --> 00:12:40,330
+exactamente cul es el problema,
+
+251
+00:12:41,400 --> 00:12:44,190
+pero t no sabes esto.
+
+252
+00:12:44,190 --> 00:12:46,210
+Entonces, lo primero que debe hacer es establecer
+
+253
+00:12:47,390 --> 00:12:49,560
+un punto de interrupcin
+
+254
+00:12:49,560 --> 00:12:52,870
+donde se sienta menos cmodo, o ms bien, donde comienza su malestar.
+
+255
+00:12:52,870 --> 00:12:54,380
+Establezca un punto de
+
+256
+00:12:54,380 --> 00:12:57,930
+interrupcin, y luego simplemente ejecute el programa usando el depurador.
+
+257
+00:12:57,930 --> 00:13:00,660
+Debugger es extremadamente til.
+
+258
+00:13:00,660 --> 00:13:05,660
+Como puede ver, lo primero que obtenemos es la consola, y nos
+
+259
+00:13:05,670 --> 00:13:08,800
+pide que ingresemos tres nombres de amigos.
+
+260
+00:13:08,800 --> 00:13:09,990
+Vamos a entrar en
+
+261
+00:13:10,870 --> 00:13:12,960
+lo mismo que antes: Rolf, Charlie, Rudolph.
+
+262
+00:13:12,960 --> 00:13:15,050
+Entonces, tenemos nuestra lista de amigos.
+
+263
+00:13:15,050 --> 00:13:17,200
+Puedes verlo aqu abajo.
+
+264
+00:13:18,510 --> 00:13:19,610
+Es una lista de tres elementos.
+
+265
+00:13:19,610 --> 00:13:21,750
+Tenemos mucha confianza en el mtodo de
+
+266
+00:13:24,450 --> 00:13:27,830
+divisin, y, de hecho, parece darnos lo que queramos, una lista
+
+267
+00:13:27,830 --> 00:13:28,830
+de tres elementos:
+
+268
+00:13:28,830 --> 00:13:30,910
+Rolf, Charlie y Rudolph all abajo.
+
+269
+00:13:30,910 --> 00:13:33,090
+A continuacin, abrimos el archivo y sabemos lo que hace.
+
+270
+00:13:33,090 --> 00:13:35,720
+Solo nos da un TextIOWrapper.
+
+271
+00:13:35,720 --> 00:13:37,220
+Esa es solo una clase
+
+272
+00:13:37,220 --> 00:13:39,210
+que nos permite interactuar con el archivo.
+
+273
+00:13:40,860 --> 00:13:43,390
+Y luego tenemos gente. lneas de lectura
+
+274
+00:13:43,390 --> 00:13:45,750
+Vamos a presionar paso a la siguiente lnea.
+
+275
+00:13:45,750 --> 00:13:47,650
+Ahora observe cmo people_nearby ha adquirido un valor despus
+
+276
+00:13:47,650 --> 00:13:48,950
+de leer las lneas, y el
+
+277
+00:13:50,310 --> 00:13:52,320
+valor es un valor bastante extrao.
+
+278
+00:13:53,880 --> 00:13:56,780
+Tenemos a Rolf \ n, Jose \ n, Chris \
+
+279
+00:13:58,090 --> 00:14:00,610
+n, etc., hasta Steve, que no tiene \ n.
+
+280
+00:14:00,610 --> 00:14:02,682
+Ahora, lo mencion antes, creo, lo
+
+281
+00:14:02,682 --> 00:14:05,050
+que \ n significa: cuando estbamos trabajando
+
+282
+00:14:06,010 --> 00:14:11,010
+en un men para el proyecto del mouse hacia abajo, y es una nueva lnea.
+
+283
+00:14:13,530 --> 00:14:16,500
+Si abrimos personas. txt, puede ver que cada lnea tiene
+
+284
+00:14:17,410 --> 00:14:21,930
+algo al final que le dice al editor que pase a
+
+285
+00:14:22,770 --> 00:14:23,990
+la siguiente lnea.
+
+286
+00:14:23,990 --> 00:14:27,080
+De lo contrario, todo continuar en la misma lnea.
+
+287
+00:14:28,160 --> 00:14:30,530
+Ese personaje es el \ n personaje.
+
+288
+00:14:30,530 --> 00:14:34,140
+Significa nueva lnea.
+
+289
+00:14:34,140 --> 00:14:37,150
+As que pasamos a la siguiente lnea, y luego a la
+
+290
+00:14:37,150 --> 00:14:39,940
+nueva lnea al final, a la siguiente lnea, y as sucesivamente.
+
+291
+00:14:40,870 --> 00:14:43,670
+No puedes ver ese personaje, pero existe, est all.
+
+292
+00:14:43,670 --> 00:14:45,370
+As es como el archivo de texto sabe dividir esto en lneas.
+
+293
+00:14:45,370 --> 00:14:47,970
+No es magia.
+
+294
+00:14:47,970 --> 00:14:49,470
+Hay algo all dicindolo: "Ir
+
+295
+00:14:49,470 --> 00:14:53,160
+a la siguiente lnea", y ese es este \ n personaje.
+
+296
+00:14:53,160 --> 00:14:56,406
+Bien, entonces, ahora es probable que sepamos cul es el problema, pero
+
+297
+00:14:56,406 --> 00:14:57,780
+sigamos con los conjuntos solo
+
+298
+00:14:57,780 --> 00:14:59,360
+para analizar exactamente qu est pasando.
+
+299
+00:14:59,360 --> 00:15:02,310
+Tenemos un conjunto ahora de tres elementos.
+
+300
+00:15:04,010 --> 00:15:07,560
+Observe cmo no estn en orden, o no en
+
+301
+00:15:07,560 --> 00:15:09,470
+el mismo orden que antes.
+
+302
+00:15:09,470 --> 00:15:11,290
+Tenemos un conjunto de gente cerca.
+
+303
+00:15:11,290 --> 00:15:13,730
+Observe cmo hemos convertido el conjunto aqu, pero de nuevo,
+
+304
+00:15:13,730 --> 00:15:15,040
+cada elemento tiene this \ n.
+
+305
+00:15:15,040 --> 00:15:17,380
+Por supuesto, cuando hacemos la interseccin, es un conjunto vaco.
+
+306
+00:15:17,380 --> 00:15:20,340
+Porque Charlie no es igual a Charlie \ n,
+
+307
+00:15:20,340 --> 00:15:23,210
+y Rolf no es igual a Rolf \ n.
+
+308
+00:15:23,210 --> 00:15:26,970
+Esto no va a funcionar.
+
+309
+00:15:26,970 --> 00:15:31,970
+Y, al final, por supuesto, iteramos sobre un conjunto
+
+310
+00:15:32,410 --> 00:15:36,590
+vaco, no pasa nada, y cerramos el archivo.
+
+311
+00:15:36,590 --> 00:15:39,860
+Qu podemos hacer?
+
+312
+00:15:40,750 --> 00:15:41,920
+Bueno, lo primero que hara
+
+313
+00:15:43,110 --> 00:15:46,150
+sera una lista de comprensin, y en esa lista de comprensin convertira
+
+314
+00:15:46,150 --> 00:15:48,270
+las lneas en lneas sin \ n al final.
+
+315
+00:15:50,760 --> 00:15:52,100
+As que hagmoslo.
+
+316
+00:15:53,770 --> 00:15:56,180
+Enumerar la comprensin, vamos a decir
+
+317
+00:15:56,180 --> 00:15:59,190
+lnea, strip for line en las personas. lneas de lectura
+
+318
+00:15:59,190 --> 00:16:04,190
+Luego voy a establecer el punto de interrupcin aqu, y vamos a depurar
+
+319
+00:16:05,320 --> 00:16:06,170
+de nuevo.
+
+320
+00:16:07,740 --> 00:16:10,740
+Ingrese nuestros tres nombres.
+
+321
+00:16:10,740 --> 00:16:15,060
+Ahora observe cmo las personas cercanas ya no tienen el \ n.
+
+322
+00:16:16,150 --> 00:16:18,030
+Esto es lo que hace el mtodo strip.
+
+323
+00:16:18,030 --> 00:16:19,430
+Cualquier espacio en blanco, como
+
+324
+00:16:21,370 --> 00:16:22,530
+espacios normales, pestaas o
+
+325
+00:16:26,990 --> 00:16:31,370
+caracteres de nueva lnea, se eliminan del inicio y del final de la cadena.
+
+326
+00:16:31,370 --> 00:16:34,330
+En este caso, los \ ns se eliminaron del final
+
+327
+00:16:34,330 --> 00:16:38,540
+de las cadenas, de modo que terminamos simplemente con una cadena sin espacio en blanco.
+
+328
+00:16:38,540 --> 00:16:41,020
+Eso es lo que hace este mtodo de tira.
+
+329
+00:16:41,020 --> 00:16:46,020
+Bastante mtodo til all.
+
+330
+00:16:46,312 --> 00:16:50,360
+Ahora tenemos la lista de personas
+
+331
+00:16:50,360 --> 00:16:53,840
+cerca, los conjuntos van a coincidir.
+
+332
+00:16:53,840 --> 00:16:56,220
+Tienes Charlie y Charlie, Rudolph y
+
+333
+00:16:56,220 --> 00:16:58,140
+nada, y Rolf y Rolf.
+
+334
+00:16:58,140 --> 00:17:01,250
+As que echemos un vistazo, fjate si el conjunto friends_nearby tiene los valores
+
+335
+00:17:02,170 --> 00:17:03,980
+que queremos, y de hecho lo hace.
+
+336
+00:17:03,980 --> 00:17:06,340
+Tenemos a Rolf y Charlie, nuestros dos amigos.
+
+337
+00:17:06,340 --> 00:17:07,780
+Y, para ser sincero, las
+
+338
+00:17:07,780 --> 00:17:09,980
+primeras veces que ejecutas tus programas puede ser
+
+339
+00:17:09,980 --> 00:17:13,400
+beneficioso ejecutarlos usando el depurador porque simplemente te permite ir lnea por
+
+340
+00:17:13,400 --> 00:17:15,650
+lnea, examinando exactamente lo que est sucediendo.
+
+341
+00:17:16,720 --> 00:17:19,330
+Hemos abierto el archivo aqu.
+
+342
+00:17:19,330 --> 00:17:21,730
+Vamos a iterar sobre nuestros amigos.
+
+343
+00:17:21,730 --> 00:17:23,370
+El primero que recibimos es Rolf.
+
+344
+00:17:23,370 --> 00:17:25,730
+Recuerde, el conjunto no est ordenado, por lo que podra ser cualquiera.
+
+345
+00:17:25,730 --> 00:17:27,210
+Entonces estamos imprimiendo algo.
+
+346
+00:17:27,210 --> 00:17:28,540
+Vamos y revisemos la consola.
+
+347
+00:17:28,540 --> 00:17:30,110
+Podemos ver que Rolf est cerca.
+
+348
+00:17:30,110 --> 00:17:32,910
+Deberamos encontrarnos con l.
+
+349
+00:17:34,120 --> 00:17:35,080
+Luego vamos a escribir en el archivo de amigos.
+
+350
+00:17:35,080 --> 00:17:36,830
+Eso ha sucedido, pero no creo que
+
+351
+00:17:36,830 --> 00:17:38,340
+el archivo an contenga nada; no,
+
+352
+00:17:38,340 --> 00:17:40,030
+porque no se guardar, en realidad, en
+
+353
+00:17:40,030 --> 00:17:42,300
+el disco hasta que cierremos el archivo o hasta
+
+354
+00:17:42,300 --> 00:17:45,010
+que sobrepasemos el bfer, que no es algo de lo que
+
+355
+00:17:45,010 --> 00:17:46,830
+vamos a hablar en este video, pero, no obstante.
+
+356
+00:17:46,830 --> 00:17:49,260
+Esos son los nicos dos momentos
+
+357
+00:17:49,260 --> 00:17:53,720
+en que el archivo realmente se guarda en el disco.
+
+358
+00:17:53,720 --> 00:17:55,480
+No se guarda al instante,
+
+359
+00:17:55,480 --> 00:17:57,170
+para mejorar el rendimiento.
+
+360
+00:17:57,170 --> 00:17:58,390
+Entonces, de nuevo, Charlie, pasan las mismas cosas.
+
+361
+00:17:58,390 --> 00:18:00,040
+Luego pasamos a cerrar el archivo, y lo cerramos.
+
+362
+00:18:00,040 --> 00:18:01,540
+Hemos visto que Rolf est
+
+363
+00:18:01,540 --> 00:18:04,230
+cerca y Charlie est cerca en la consola, y
+
+364
+00:18:04,230 --> 00:18:06,430
+nuestro archivo debera tener ahora a nuestros amigos.
+
+365
+00:18:06,430 --> 00:18:09,610
+Pero, por supuesto, no incluimos un carcter \ n, por lo que
+
+366
+00:18:09,610 --> 00:18:11,280
+estos amigos estn todos en una lnea.
+
+367
+00:18:11,280 --> 00:18:13,440
+Si volvemos con nuestros amigos py, y ponemos un \ n
+
+368
+00:18:13,440 --> 00:18:16,140
+after friend, eso significa que cuando escribamos en
+
+369
+00:18:16,140 --> 00:18:19,810
+el archivo escribiremos el nombre del amigo, y luego tambin
+
+370
+00:18:19,810 --> 00:18:21,660
+escribiremos este carcter de nueva
+
+371
+00:18:23,380 --> 00:18:25,140
+lnea invisible
+
+372
+00:18:25,140 --> 00:18:29,300
+que nos mover a la siguiente lnea, luego lo haremos escribe el
+
+373
+00:18:29,300 --> 00:18:30,800
+siguiente amigo all, tambin.
+
+374
+00:18:30,800 --> 00:18:33,250
+Adems, la razn por la que agrego una nueva lnea
+
+375
+00:18:33,250 --> 00:18:35,280
+al final es porque Peppy me lo pide.
+
+376
+00:18:35,280 --> 00:18:37,120
+Tiene esta lnea ondulada gris all.
+
+377
+00:18:37,120 --> 00:18:40,350
+As que s.
+
+378
+00:18:40,350 --> 00:18:42,260
+DE ACUERDO.
+
+379
+00:18:42,260 --> 00:18:44,290
+Ahora estamos contentos con la forma en que se
+
+380
+00:18:44,290 --> 00:18:46,370
+ejecuta nuestro programa, podemos eliminar el punto de interrupcin
+
+381
+00:18:47,450 --> 00:18:48,930
+y simplemente jugarlo en modo normal.
+
+382
+00:18:48,930 --> 00:18:49,763
+Entonces podemos ingresar tres amigos.
+
+383
+00:18:49,763 --> 00:18:51,650
+Puedes ver que obtenemos que Rolf est cerca, Jos est cerca.
+
+384
+00:18:51,650 --> 00:18:53,660
+Renete con ellos.
+
+385
+00:18:53,660 --> 00:18:56,350
+Pens que tenamos a Ann en la gente, pero creo que es Anna.
+
+386
+00:18:56,350 --> 00:19:00,210
+S.
+
+387
+00:19:03,560 --> 00:19:06,190
+Y luego podemos ir a ver a nuestros amigos cercanos, y vemos que
+
+388
+00:19:06,190 --> 00:19:07,210
+ahora estn en dos lneas.
+
+389
+00:19:07,210 --> 00:19:09,920
+Tambin note, sin embargo, que tenemos la lnea nmero tres, que
+
+390
+00:19:09,920 --> 00:19:10,810
+es una lnea vaca.
+
+391
+00:19:10,810 --> 00:19:12,890
+No tenamos eso en las personas.
+
+392
+00:19:12,890 --> 00:19:16,280
+Y, para ser honesto, creo que deberamos tener una lnea
+
+393
+00:19:16,280 --> 00:19:20,020
+vaca al final, as que cada lnea es la misma.
+
+394
+00:19:20,020 --> 00:19:21,400
+Cada lnea tiene el carcter de nueva lnea, a diferencia
+
+395
+00:19:21,400 --> 00:19:23,190
+de la ltima lnea que no tiene el carcter de nueva lnea.
+
+396
+00:19:24,400 --> 00:19:26,980
+Entonces estoy bien con esto; por supuesto, si no
+
+397
+00:19:26,980 --> 00:19:29,650
+lo est, puede intentar experimentar con su cdigo, hacer que
+
+398
+00:19:29,650 --> 00:19:31,890
+solo imprima el carcter de lnea nueva cuando
+
+399
+00:19:31,890 --> 00:19:34,150
+no est imprimiendo el ltimo elemento del conjunto.
+
+400
+00:19:34,150 --> 00:19:37,420
+Puede usar la funcin de enumerar para eso.
+
+401
+00:19:37,420 --> 00:19:39,910
+No entrar en esto en este video
+
+402
+00:19:39,910 --> 00:19:42,010
+ya que ahora estamos bastante largos.
+
+403
+00:19:42,010 --> 00:19:46,080
+Eso es todo por este video.
+
+404
+00:19:46,080 --> 00:19:48,350
+Hemos creado una pequea aplicacin que copia un archivo de forma selectiva.
+
+405
+00:19:48,350 --> 00:19:50,600
+Hemos aprendido sobre muchas cosas, primero,
+
+406
+00:19:50,600 --> 00:19:52,400
+sobre los personajes de la
+
+407
+00:19:53,260 --> 00:19:54,170
+nueva lnea; estn
+
+408
+00:19:54,170 --> 00:19:59,170
+en todas partes, y tenemos que eliminarlos si no queremos tener espacio en blanco.
+
+409
+00:19:59,690 --> 00:20:02,130
+Eso incluye espacios, pestaas y caracteres de
+
+410
+00:20:02,130 --> 00:20:04,060
+nueva lnea en una cadena.
+
+411
+00:20:04,060 --> 00:20:06,660
+Hemos aprendido sobre el mtodo readlines del archivo que
+
+412
+00:20:06,660 --> 00:20:09,330
+nos permite leer cada lnea del archivo como un elemento
+
+413
+00:20:09,330 --> 00:20:10,410
+separado en una lista.
+
+414
+00:20:10,410 --> 00:20:12,340
+No s si hemos visto el mtodo
+
+415
+00:20:13,350 --> 00:20:16,100
+de divisin antes, pero si no lo hicimos, entonces hemos
+
+416
+00:20:16,100 --> 00:20:18,350
+aprendido sobre eso; si lo hicimos, lo hemos revisado.
+
+417
+00:20:18,350 --> 00:20:20,390
+Nos permite dividir una cadena en partes constituyentes de
+
+418
+00:20:21,280 --> 00:20:23,370
+acuerdo con un personaje en particular en esa cadena.
+
+419
+00:20:23,370 --> 00:20:25,170
+Luego, tambin hemos revisado los conjuntos y el uso
+
+420
+00:20:25,170 --> 00:20:26,940
+de la interseccin para calcular los elementos coincidentes.
+
+421
+00:20:26,940 --> 00:20:30,460
+Recuerdas que te dije cuando miramos
+
+422
+00:20:30,460 --> 00:20:33,530
+los sets que seran bastante tiles?
+
+423
+00:20:34,870 --> 00:20:37,520
+Ellos son bastante tiles.
+
+424
+00:20:37,520 --> 00:20:39,410
+Finalmente, tambin hemos revisado la escritura en un
+
+425
+00:20:39,410 --> 00:20:40,870
+archivo, algo un poco ms til.
+
+426
+00:20:40,870 --> 00:20:42,660
+Entonces, eso es todo por este video.
+
+427
+00:20:42,660 --> 00:20:44,420
+Gracias por quedarte conmigo,
+
+428
+00:20:44,420 --> 00:20:46,970
+y te ver en el prximo.
+
+429
+00:20:46,970 --> 00:20:48,370
+Buen trabajo hoy.
+
+430
+00:20:49,890 --> 00:20:51,950
+&nbsp;
+
+431
+00:20:51,950 --> 00:20:53,640
+&nbsp;
+
+432
+00:20:53,640 --> 00:20:54,850
+&nbsp;
+
+433
+00:20:54,850 --> 00:20:55,690
+&nbsp;
+

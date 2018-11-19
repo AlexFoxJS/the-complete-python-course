@@ -1,0 +1,36 @@
+<html>
+                <head>
+                <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                <title>243 Solution ABCs</title>
+                </head>
+                <body>
+                <div class="container">
+                <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <p class="lead"><p>Welcome back to another coding exercise solution!</p>
+
+<p>This is my solution to the coding exercise. Again, it may be slightly different from yours!</p>
+
+<pre class="prettyprint linenums">from abc import ABCMeta, abstractmethod
+
+
+class Animal(metaclass=ABCMeta):
+    def hungry(self):
+        print('I want to eat {}!'.format(self.get_favourite_food()))
+
+    @abstractmethod
+    def get_favourite_food(self):
+        pass
+</pre>
+
+<p>Let me know how you got on!</p>
+
+<p>Kind regards,</p>
+
+<p>— Jose and the Teclado team</p></p>
+                </div>
+                </div>
+                </div>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+                </body>
+                </html>

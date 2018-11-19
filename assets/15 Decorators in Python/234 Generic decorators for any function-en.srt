@@ -1,0 +1,256 @@
+1
+00:00:00,099 --> 00:00:02,097
+<v Jose>Hi, and welcome back, in this video we are</v>
+
+2
+00:00:02,097 --> 00:00:06,205
+looking at generic decorators for any function.
+
+3
+00:00:06,205 --> 00:00:09,309
+We saw this code a few videos ago, when we defined our
+
+4
+00:00:09,309 --> 00:00:12,463
+user_has_permission decorator, notice that this decorator
+
+5
+00:00:12,463 --> 00:00:14,804
+doesn't take any arguments,
+
+6
+00:00:14,804 --> 00:00:18,027
+and then we have a function inside it, that takes in
+
+7
+00:00:18,027 --> 00:00:23,027
+an argument, the original function takes in an argument too,
+
+8
+00:00:23,127 --> 00:00:27,655
+and we talked about how, making the decorator have this
+
+9
+00:00:27,655 --> 00:00:31,459
+argument here, in order for it to be able to pass to
+
+10
+00:00:31,459 --> 00:00:35,635
+the original function, it actually couples the decorator
+
+11
+00:00:35,635 --> 00:00:38,252
+to this function specifically because they must have
+
+12
+00:00:38,252 --> 00:00:41,678
+the same signatures, the secure_func and the my_function
+
+13
+00:00:41,678 --> 00:00:44,850
+must have the same signature, the same number of arguments,
+
+14
+00:00:44,850 --> 00:00:48,683
+and indeed we looked at that when we use this,
+
+15
+00:00:51,464 --> 00:00:54,552
+in another() function...
+
+16
+00:00:54,552 --> 00:00:57,922
+We got something that, an error, essentially, we said
+
+17
+00:00:57,922 --> 00:01:02,922
+print(another('movies')), we get...
+
+18
+00:01:06,137 --> 00:01:09,734
+This, "another() takes 0 positional arguments but
+
+19
+00:01:09,734 --> 00:01:14,003
+1 was given", because we passed in a panel to that function,
+
+20
+00:01:14,003 --> 00:01:17,900
+but this function did not accept a panel, and if we didn't
+
+21
+00:01:17,900 --> 00:01:19,959
+call it with 'movies' there, because that wouldn't make
+
+22
+00:01:19,959 --> 00:01:24,959
+any sense, if we call it like this function suggests,
+
+23
+00:01:25,109 --> 00:01:28,626
+and we run it, we now get another error which is
+
+24
+00:01:28,626 --> 00:01:32,372
+"secure_func missing 1 required positional argument".
+
+25
+00:01:32,372 --> 00:01:37,178
+Remember, another() gets replaced by secure_func using the
+
+26
+00:01:37,178 --> 00:01:41,839
+decorator, and secure_func does require the panel.
+
+27
+00:01:41,839 --> 00:01:45,946
+But we are not calling it with a panel, so it cannot work.
+
+28
+00:01:45,946 --> 00:01:48,813
+As you can see neither of these functions is happy,
+
+29
+00:01:48,813 --> 00:01:52,074
+with or without the argument, so what we must do is make our
+
+30
+00:01:52,074 --> 00:01:57,074
+decorator take in any number of arguments, and then pass
+
+31
+00:01:57,089 --> 00:02:00,589
+them all into the original function, so...
+
+32
+00:02:02,512 --> 00:02:07,512
+Like so, (*args, **kwargs), this takes any number of
+
+33
+00:02:07,889 --> 00:02:10,882
+positional arguments, and this takes any number of named
+
+34
+00:02:10,882 --> 00:02:15,299
+arguments, this is a tuple, this is a dictionary now.
+
+35
+00:02:16,383 --> 00:02:21,133
+So, we must pass them further into the original function.
+
+36
+00:02:22,966 --> 00:02:27,966
+We must pass all the arguments in this tuple, and to do that
+
+37
+00:02:28,003 --> 00:02:32,079
+we are going to do *args, and we must pass all the arguments
+
+38
+00:02:32,079 --> 00:02:35,292
+in this dictionary as named arguments, and in order to
+
+39
+00:02:35,292 --> 00:02:36,792
+do that, **kwargs.
+
+40
+00:02:40,019 --> 00:02:44,240
+Now they are happy, and if we run it, you'll see that we
+
+41
+00:02:44,240 --> 00:02:46,732
+get exactly what we'd expect.
+
+42
+00:02:46,732 --> 00:02:49,005
+"Password for movies panel is 1234."
+
+43
+00:02:49,005 --> 00:02:51,053
+And then "None", because this another() function doesn't
+
+44
+00:02:51,053 --> 00:02:53,395
+return anything, but if we were to print something out
+
+45
+00:02:53,395 --> 00:02:57,205
+or to return something, something would appear here.
+
+46
+00:02:57,205 --> 00:03:00,825
+This is how you make a decorator generic for any function
+
+47
+00:03:00,825 --> 00:03:04,555
+that it affects, and it's really important that you do that,
+
+48
+00:03:04,555 --> 00:03:06,812
+otherwise your decorator is only gonna work with some
+
+49
+00:03:06,812 --> 00:03:10,025
+functions and not others, and that can be quite confusing.
+
+50
+00:03:10,025 --> 00:03:13,850
+Particularly when you have a decorator like this one.
+
+51
+00:03:13,850 --> 00:03:16,122
+When they have a name that sort of makes sense and you
+
+52
+00:03:16,122 --> 00:03:19,445
+maybe wanna apply it on any function, you must remember
+
+53
+00:03:19,445 --> 00:03:21,028
+to make it generic.
+
+54
+00:03:23,175 --> 00:03:25,808
+This doesn't change at all by the way, if you have another
+
+55
+00:03:25,808 --> 00:03:28,410
+level of functions, if you have a decorator that accepts
+
+56
+00:03:28,410 --> 00:03:31,822
+arguments itself, this stays the same, and it will still
+
+57
+00:03:31,822 --> 00:03:34,346
+be a generic decorator.
+
+58
+00:03:34,346 --> 00:03:36,481
+So that's it for this video, I wanted to show you how to
+
+59
+00:03:36,481 --> 00:03:40,149
+make generic decorators for any function, and you'll be
+
+60
+00:03:40,149 --> 00:03:43,662
+encountering decorators throughout your Python journey
+
+61
+00:03:43,662 --> 00:03:45,678
+and also you'll be encountering situations where using a
+
+62
+00:03:45,678 --> 00:03:49,252
+decorator will be the best solution, and now you'll know
+
+63
+00:03:49,252 --> 00:03:52,041
+that they exist and how to use them.
+
+64
+00:03:52,041 --> 00:03:53,990
+I'll see you in the next video.
+

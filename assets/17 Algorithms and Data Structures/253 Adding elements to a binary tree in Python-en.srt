@@ -1,0 +1,840 @@
+1
+00:00:00,000 --> 00:00:01,410
+<v Speaker>Hi and welcome back.</v>
+
+2
+00:00:01,410 --> 00:00:02,243
+In this video we're going
+
+3
+00:00:02,243 --> 00:00:06,403
+to look at creating our first binary tree class.
+
+4
+00:00:07,440 --> 00:00:09,560
+Let's begin by creating a new project
+
+5
+00:00:09,560 --> 00:00:11,580
+that I've created here in my desktop
+
+6
+00:00:11,580 --> 00:00:13,420
+and then right click, and of course,
+
+7
+00:00:13,420 --> 00:00:15,530
+I'm creating a new Python file.
+
+8
+00:00:15,530 --> 00:00:17,663
+We're gonna call this app.py.
+
+9
+00:00:18,500 --> 00:00:20,850
+And I'm also going to create a couple other files
+
+10
+00:00:20,850 --> 00:00:22,300
+which I'm gonna call node.py,
+
+11
+00:00:24,030 --> 00:00:28,210
+and another one which I'm gonna call binary.tree.py.
+
+12
+00:00:28,210 --> 00:00:29,480
+Okay.
+
+13
+00:00:29,480 --> 00:00:32,530
+So we have three files: app, node, and binary tree.
+
+14
+00:00:32,530 --> 00:00:34,030
+I'm gonna keep them open up here
+
+15
+00:00:34,030 --> 00:00:36,720
+and I'm going to hide the side bar just
+
+16
+00:00:36,720 --> 00:00:38,563
+so we have a little bit more space.
+
+17
+00:00:39,500 --> 00:00:41,123
+And we're going to begin.
+
+18
+00:00:42,350 --> 00:00:47,280
+Our binary tree is going to have a starting point
+
+19
+00:00:47,280 --> 00:00:49,330
+which is going to be a node,
+
+20
+00:00:49,330 --> 00:00:52,720
+and then we're going to be able to add new nodes to it.
+
+21
+00:00:52,720 --> 00:00:56,420
+The first thing to do is to create our node class.
+
+22
+00:00:56,420 --> 00:00:59,969
+Our node class is just going to be a simple object
+
+23
+00:00:59,969 --> 00:01:03,864
+that has a value, a left, and a right node.
+
+24
+00:01:03,864 --> 00:01:06,048
+So we're gonna say class node
+
+25
+00:01:06,048 --> 00:01:09,715
+and it's gonna have an init method, a value,
+
+26
+00:01:11,400 --> 00:01:14,504
+and it's gonna have self.value = value,
+
+27
+00:01:14,504 --> 00:01:18,736
+self.left = none, self.right = none.
+
+28
+00:01:18,736 --> 00:01:19,569
+Okay.
+
+29
+00:01:19,569 --> 00:01:21,780
+So when we create a new node, it's just gonna start
+
+30
+00:01:21,780 --> 00:01:25,730
+as nothing, no children essentially.
+
+31
+00:01:25,730 --> 00:01:28,480
+Nothing on the left, nothing on the right.
+
+32
+00:01:28,480 --> 00:01:30,290
+And the value's gonna be whatever it is
+
+33
+00:01:30,290 --> 00:01:32,083
+that we pass to the init method.
+
+34
+00:01:32,980 --> 00:01:37,043
+Here I'm also going to add a short repr method just
+
+35
+00:01:37,043 --> 00:01:39,360
+because we're gonna be printing things out
+
+36
+00:01:39,360 --> 00:01:44,360
+and it may be handy to be able to get a nice representation
+
+37
+00:01:44,530 --> 00:01:46,710
+of the value of the node.
+
+38
+00:01:46,710 --> 00:01:49,110
+So this is the repr method, when we print it out we're
+
+39
+00:01:49,110 --> 00:01:51,653
+gonna see node five, for example.
+
+40
+00:01:53,760 --> 00:01:55,800
+Let's just verify this is all working
+
+41
+00:01:55,800 --> 00:01:58,490
+by writing a short script here in app.py.
+
+42
+00:01:58,490 --> 00:02:01,760
+We're gonna say from node, import node,
+
+43
+00:02:01,760 --> 00:02:03,747
+and then we're gonna create a new node,
+
+44
+00:02:03,747 --> 00:02:06,890
+then I'm gonna have the value five.
+
+45
+00:02:06,890 --> 00:02:08,210
+And then I'm gonna create a new node
+
+46
+00:02:08,210 --> 00:02:09,950
+that is gonna have the value nine,
+
+47
+00:02:09,950 --> 00:02:10,900
+and I'm gonna create a new node
+
+48
+00:02:10,900 --> 00:02:12,670
+that is gonna have the value 13.
+
+49
+00:02:12,670 --> 00:02:15,163
+I'm gonna assign these two variables:
+
+50
+00:02:16,470 --> 00:02:21,470
+left equal that, head equal that, and right equal that.
+
+51
+00:02:23,410 --> 00:02:24,610
+And now we're gonna do something
+
+52
+00:02:24,610 --> 00:02:29,610
+like head.left = left node, head.right = the right node,
+
+53
+00:02:31,010 --> 00:02:34,590
+and we should be able to do things like print the head,
+
+54
+00:02:34,590 --> 00:02:37,713
+print the head left, print the head right.
+
+55
+00:02:39,300 --> 00:02:40,540
+Pretty simple script.
+
+56
+00:02:40,540 --> 00:02:44,430
+Nothing really is going on except we've created our first,
+
+57
+00:02:44,430 --> 00:02:47,510
+sort of, binary tree here.
+
+58
+00:02:47,510 --> 00:02:50,430
+We've got our head node, and then we're setting the left
+
+59
+00:02:50,430 --> 00:02:52,210
+and right nodes so we're ending up with some sort
+
+60
+00:02:52,210 --> 00:02:54,063
+of triangular tree there.
+
+61
+00:02:54,930 --> 00:02:58,610
+If we run app.py we see node nine,
+
+62
+00:02:58,610 --> 00:03:00,763
+node five, node 13 printed out.
+
+63
+00:03:03,030 --> 00:03:04,980
+If you're interested, you know
+
+64
+00:03:04,980 --> 00:03:08,440
+that this is a pre-order traversal of the tree,
+
+65
+00:03:08,440 --> 00:03:12,250
+even though we've not really traversed anything yet.
+
+66
+00:03:12,250 --> 00:03:14,740
+We've just printed a few of the nodes out.
+
+67
+00:03:14,740 --> 00:03:16,800
+But the first thing we've printed is the head node,
+
+68
+00:03:16,800 --> 00:03:18,840
+then we've gone left and printed that node,
+
+69
+00:03:18,840 --> 00:03:20,650
+and then we've gone right and printed that node.
+
+70
+00:03:20,650 --> 00:03:24,233
+So this is an example of a pre-order simple traversal.
+
+71
+00:03:25,690 --> 00:03:27,490
+Okay, we've got this, now we're gonna delete
+
+72
+00:03:27,490 --> 00:03:30,543
+that and start working on our binary tree class.
+
+73
+00:03:31,610 --> 00:03:34,720
+In this video we're only going to work on adding a new node.
+
+74
+00:03:34,720 --> 00:03:37,530
+We're gonna implement what we've already see in the lecture
+
+75
+00:03:37,530 --> 00:03:39,516
+and then we're gonna add a few more videos
+
+76
+00:03:39,516 --> 00:03:43,223
+to talk about finding nodes and doing the traversal.
+
+77
+00:03:44,850 --> 00:03:47,230
+So we're gonna say from node import node,
+
+78
+00:03:47,230 --> 00:03:49,540
+and this is gonna be handy in just a moment.
+
+79
+00:03:49,540 --> 00:03:51,570
+And then we're gonna create our binary tree class,
+
+80
+00:03:51,570 --> 00:03:53,320
+it's gonna have an init method,
+
+81
+00:03:53,320 --> 00:03:57,553
+and that is going to require this starting point,
+
+82
+00:03:59,130 --> 00:04:01,870
+and it's gonna be self.head, self, head = head.
+
+83
+00:04:01,870 --> 00:04:03,400
+So this is gonna be the, sort of,
+
+84
+00:04:03,400 --> 00:04:06,100
+root of the binary tree, the head.
+
+85
+00:04:06,100 --> 00:04:09,006
+You'll see it called a root and you'll see it called a head,
+
+86
+00:04:09,006 --> 00:04:10,583
+either is fine.
+
+87
+00:04:11,850 --> 00:04:13,910
+Then we're gonna work on our add method,
+
+88
+00:04:13,910 --> 00:04:18,700
+which is taking a new node which is also going to be a node.
+
+89
+00:04:18,700 --> 00:04:20,880
+Notice how I'm adding type hinting here,
+
+90
+00:04:20,880 --> 00:04:23,800
+just so that Python can tell us
+
+91
+00:04:23,800 --> 00:04:25,873
+that a node has a value and so forth.
+
+92
+00:04:28,450 --> 00:04:32,410
+And then, once again, we're going to start at the very top
+
+93
+00:04:32,410 --> 00:04:37,410
+of the tree, so we're gonna say current node is self.head.
+
+94
+00:04:37,810 --> 00:04:39,200
+Now the current node is pointing
+
+95
+00:04:39,200 --> 00:04:41,283
+to the very top of our tree.
+
+96
+00:04:42,460 --> 00:04:44,823
+We now want to move through the tree,
+
+97
+00:04:45,900 --> 00:04:49,450
+until we either add a new node
+
+98
+00:04:49,450 --> 00:04:51,980
+or we reach the bottom of the tree.
+
+99
+00:04:51,980 --> 00:04:56,230
+So, while current node, we're gonna say,
+
+100
+00:04:56,230 --> 00:04:58,500
+if the new node value is equal
+
+101
+00:04:58,500 --> 00:05:00,850
+to the current node value, we've got a problem
+
+102
+00:05:00,850 --> 00:05:02,600
+because that means we're trying to add a node
+
+103
+00:05:02,600 --> 00:05:04,960
+that already exists in our tree.
+
+104
+00:05:04,960 --> 00:05:06,971
+We've sort of gone through our tree somehow,
+
+105
+00:05:06,971 --> 00:05:10,320
+and we've ended up with two nodes that are equal.
+
+106
+00:05:10,320 --> 00:05:12,370
+So here we're gonna raise a value error.
+
+107
+00:05:12,370 --> 00:05:16,403
+I'm gonna say a node with that value already exists.
+
+108
+00:05:18,890 --> 00:05:21,370
+Now we're gonna work on our elif.
+
+109
+00:05:21,370 --> 00:05:24,350
+If the new node value is less than the current node value,
+
+110
+00:05:24,350 --> 00:05:27,893
+if the new node value is less than the current node value,
+
+111
+00:05:29,020 --> 00:05:32,093
+then we are going to go left.
+
+112
+00:05:33,020 --> 00:05:35,573
+So we're gonna say if current node.left.
+
+113
+00:05:37,180 --> 00:05:40,123
+That means there is a node to the left.
+
+114
+00:05:41,130 --> 00:05:44,803
+We'll say current node = current node.left.
+
+115
+00:05:46,960 --> 00:05:48,000
+Simple enough.
+
+116
+00:05:48,000 --> 00:05:49,620
+If there is a node to the left
+
+117
+00:05:49,620 --> 00:05:51,657
+of where we currently are, that means
+
+118
+00:05:51,657 --> 00:05:53,700
+that we still have more travelling
+
+119
+00:05:53,700 --> 00:05:55,223
+to do in order to get there.
+
+120
+00:05:56,980 --> 00:05:59,740
+If there is no node, that means that the new node we want
+
+121
+00:05:59,740 --> 00:06:02,940
+to add belongs in it's place.
+
+122
+00:06:02,940 --> 00:06:07,660
+So we're gonna say current node.left = new node.
+
+123
+00:06:07,660 --> 00:06:10,090
+And of course we then break out of the loop
+
+124
+00:06:10,090 --> 00:06:14,653
+so we don't continue iterating over infinitely, essentially.
+
+125
+00:06:16,600 --> 00:06:20,300
+And then we're gonna add an elif if the new node.value
+
+126
+00:06:20,300 --> 00:06:22,563
+is greater than the current node value.
+
+127
+00:06:23,840 --> 00:06:24,673
+We do the same.
+
+128
+00:06:24,673 --> 00:06:29,110
+If current node.right, that means there is a node
+
+129
+00:06:29,110 --> 00:06:30,880
+to the right, we wanna go to it.
+
+130
+00:06:30,880 --> 00:06:33,633
+So we're gonna say current node = current node right.
+
+131
+00:06:34,560 --> 00:06:36,280
+Otherwise, we want to put a new node at the right
+
+132
+00:06:36,280 --> 00:06:39,530
+so we're gonna say current node right = new node.
+
+133
+00:06:39,530 --> 00:06:41,053
+And we will break again.
+
+134
+00:06:44,210 --> 00:06:45,210
+Hopefully this makes sense.
+
+135
+00:06:45,210 --> 00:06:46,620
+We've looked at in the lecture
+
+136
+00:06:46,620 --> 00:06:48,720
+which is why I'm going quite quickly through it.
+
+137
+00:06:48,720 --> 00:06:51,898
+But essentially all that happens is we have a node,
+
+138
+00:06:51,898 --> 00:06:54,133
+which is at the top of the tree,
+
+139
+00:06:55,160 --> 00:06:59,070
+and then we start iterating this loop.
+
+140
+00:06:59,070 --> 00:07:02,210
+At each point, if we encounter that we're adding a node
+
+141
+00:07:02,210 --> 00:07:03,923
+that is already there, we'll exit.
+
+142
+00:07:05,040 --> 00:07:09,482
+Otherwise, if the new node is less than the current node,
+
+143
+00:07:09,482 --> 00:07:11,773
+and this block sort of deals with going left.
+
+144
+00:07:12,710 --> 00:07:15,720
+Otherwise, if the new node is greater than the current node,
+
+145
+00:07:15,720 --> 00:07:17,863
+this code here deals with going right.
+
+146
+00:07:18,870 --> 00:07:22,560
+The left code says, if there is a node there,
+
+147
+00:07:22,560 --> 00:07:25,810
+move there, otherwise, add it.
+
+148
+00:07:25,810 --> 00:07:27,940
+And the right code does the same thing.
+
+149
+00:07:27,940 --> 00:07:29,680
+If there is a node to the right,
+
+150
+00:07:29,680 --> 00:07:32,193
+move there, otherwise, add it.
+
+151
+00:07:34,180 --> 00:07:37,530
+Notice that the nodes themselves don't change
+
+152
+00:07:37,530 --> 00:07:38,500
+as you go through this.
+
+153
+00:07:38,500 --> 00:07:43,080
+All you're doing is adding a sort of property here,
+
+154
+00:07:43,080 --> 00:07:44,923
+that makes it equal to the new node.
+
+155
+00:07:45,880 --> 00:07:50,880
+So what's happening in the background is the right property
+
+156
+00:07:51,040 --> 00:07:54,260
+becomes the same object that new node is.
+
+157
+00:07:54,260 --> 00:07:56,810
+It's a reference to the same place in memory.
+
+158
+00:07:56,810 --> 00:07:59,070
+We've looked at mutability before.
+
+159
+00:07:59,070 --> 00:08:03,400
+This current node.right is going to be the same entity,
+
+160
+00:08:03,400 --> 00:08:06,690
+the same thing in memory that new node is.
+
+161
+00:08:06,690 --> 00:08:10,610
+So as you run this multiple times, the current node right
+
+162
+00:08:10,610 --> 00:08:14,310
+and left, ends up constructing this tree.
+
+163
+00:08:14,310 --> 00:08:17,530
+You don't lose the value of new node when you reach the end
+
+164
+00:08:17,530 --> 00:08:22,410
+of the method because that value is now pointed at
+
+165
+00:08:22,410 --> 00:08:24,453
+by the property in each node.
+
+166
+00:08:25,440 --> 00:08:29,730
+And of course, the starting point of this chain
+
+167
+00:08:29,730 --> 00:08:32,503
+of properties is the head.
+
+168
+00:08:33,420 --> 00:08:36,110
+If you lose the head, the entire tree just sort
+
+169
+00:08:36,110 --> 00:08:38,870
+of disappears because you've got nothing that allows you
+
+170
+00:08:38,870 --> 00:08:42,010
+to reach any of the nodes.
+
+171
+00:08:42,010 --> 00:08:46,793
+What I mean is, the head points to other nodes.
+
+172
+00:08:48,000 --> 00:08:50,280
+If you somehow lose your reference to the head,
+
+173
+00:08:50,280 --> 00:08:53,220
+you have nothing pointing to the other nodes,
+
+174
+00:08:53,220 --> 00:08:54,670
+you don't have a way of accessing them
+
+175
+00:08:54,670 --> 00:08:56,330
+because there's nowhere in this code
+
+176
+00:08:56,330 --> 00:08:58,140
+that the children are stored.
+
+177
+00:08:58,140 --> 00:09:01,703
+The children are only stored as references in the head.
+
+178
+00:09:02,690 --> 00:09:06,110
+So, nonetheless, just an interesting thing there.
+
+179
+00:09:06,110 --> 00:09:08,760
+Make sure to not set the head to none
+
+180
+00:09:08,760 --> 00:09:10,750
+or anything like that cause then you're gonna sort
+
+181
+00:09:10,750 --> 00:09:12,000
+of lose your entire tree.
+
+182
+00:09:14,240 --> 00:09:16,760
+Now that we have this tree here,
+
+183
+00:09:16,760 --> 00:09:20,913
+we could write in our app a short script to add nodes,
+
+184
+00:09:21,770 --> 00:09:23,670
+but we don't really have a way of retrieving nodes.
+
+185
+00:09:23,670 --> 00:09:26,160
+We don't have a way of printing the tree out.
+
+186
+00:09:26,160 --> 00:09:29,380
+So there's not much that we can do there.
+
+187
+00:09:29,380 --> 00:09:30,920
+But let's do it anyway.
+
+188
+00:09:30,920 --> 00:09:34,440
+We'll do from binary tree import, binary tree.
+
+189
+00:09:38,080 --> 00:09:40,940
+And we're gonna say tree is a new binary tree
+
+190
+00:09:40,940 --> 00:09:43,890
+and the head is a new node,
+
+191
+00:09:43,890 --> 00:09:45,733
+which is gonna have the value nine.
+
+192
+00:09:46,780 --> 00:09:51,780
+Then we're gonna say tree.add a new node with value five.
+
+193
+00:09:53,230 --> 00:09:56,783
+And tree.add a new node with value 11.
+
+194
+00:09:58,850 --> 00:10:00,210
+What do you think's gonna happen
+
+195
+00:10:00,210 --> 00:10:05,210
+when we print tree.head, tree.head.left,
+
+196
+00:10:06,760 --> 00:10:09,713
+and tree.head.right?
+
+197
+00:10:11,540 --> 00:10:14,420
+Which node is going to be the head,
+
+198
+00:10:14,420 --> 00:10:16,860
+which node is going to be the left,
+
+199
+00:10:16,860 --> 00:10:18,660
+which node is going to be the right?
+
+200
+00:10:20,550 --> 00:10:21,433
+Let's try it out.
+
+201
+00:10:23,090 --> 00:10:27,057
+Notice how the head is nine, five is at the left,
+
+202
+00:10:27,057 --> 00:10:29,420
+and 11 is at the right so our code
+
+203
+00:10:29,420 --> 00:10:34,420
+has automatically placed the nodes where they belong,
+
+204
+00:10:34,490 --> 00:10:38,670
+because five was added after nine and you sort of went
+
+205
+00:10:38,670 --> 00:10:41,630
+through this and found out that five was indeed less
+
+206
+00:10:41,630 --> 00:10:44,593
+than nine, so we placed it at the left.
+
+207
+00:10:47,120 --> 00:10:47,953
+Okay.
+
+208
+00:10:47,953 --> 00:10:49,830
+In the next video, we're going to look at
+
+209
+00:10:49,830 --> 00:10:53,710
+how we can print out the tree in order,
+
+210
+00:10:53,710 --> 00:10:54,903
+so I'll see you there.
+

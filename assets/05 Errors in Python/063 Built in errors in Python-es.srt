@@ -1,0 +1,1684 @@
+1
+00:00:00,440 --> 00:00:01,510
+Jos: Hola y bienvenido de nuevo.
+
+2
+00:00:01,510 --> 00:00:05,550
+En este video, vamos a hablar sobre los errores en Python.
+
+3
+00:00:05,550 --> 00:00:07,610
+Vamos a hablar sobre algunos de ellos.
+
+4
+00:00:07,610 --> 00:00:09,010
+Solo quiero contarte algo
+
+5
+00:00:09,010 --> 00:00:10,360
+sobre estos errores incorporados.
+
+6
+00:00:10,360 --> 00:00:11,960
+Los errores que vienen con
+
+7
+00:00:11,960 --> 00:00:13,810
+Python, para que cuando aparezcan
+
+8
+00:00:13,810 --> 00:00:16,430
+en sus programas sabr exactamente lo que significan.
+
+9
+00:00:16,430 --> 00:00:18,780
+No tendr que perder el tiempo
+
+10
+00:00:18,780 --> 00:00:21,880
+tratando de descubrir qu son y cmo sucedieron.
+
+11
+00:00:22,870 --> 00:00:25,050
+Vamos a tomar unos pocos errores.
+
+12
+00:00:25,050 --> 00:00:28,610
+Vamos a hablar sobre IndexError y lo que significa.
+
+13
+00:00:28,610 --> 00:00:31,260
+A KeyError y NameError.
+
+14
+00:00:32,227 --> 00:00:34,817
+Este tipo de error ocurre cuando accede
+
+15
+00:00:34,817 --> 00:00:38,280
+a algo que no tiene sentido o que est mal.
+
+16
+00:00:38,280 --> 00:00:39,820
+Vamos a ver
+
+17
+00:00:39,820 --> 00:00:41,890
+AttributeError, que est bastante relacionado.
+
+18
+00:00:41,890 --> 00:00:43,670
+Luego veremos NotImplementedError.
+
+19
+00:00:43,670 --> 00:00:46,970
+Este es un error que puede usar, puede ser realmente til.
+
+20
+00:00:46,970 --> 00:00:49,930
+Vamos a ver RuntimeError o el error genrico.
+
+21
+00:00:49,930 --> 00:00:52,190
+luego vamos a ver tambin, SyntaxError.
+
+22
+00:00:52,190 --> 00:00:55,280
+Esto sucede cuando te equivocas al escribir el cdigo
+
+23
+00:00:55,280 --> 00:00:57,610
+de Python, no escribes el Python correcto.
+
+24
+00:00:57,610 --> 00:01:00,710
+Vamos a ver IndentationError y TabError.
+
+25
+00:01:00,710 --> 00:01:05,710
+Esto sucede cuando no se estropea con los espacios o
+
+26
+00:01:05,920 --> 00:01:08,890
+pestaas, o cuando los mezclas juntos.
+
+27
+00:01:08,890 --> 00:01:11,290
+Vamos a ver TypeError y ValueError.
+
+28
+00:01:12,740 --> 00:01:15,610
+Esto sucede cuando le da valores incorrectos
+
+29
+00:01:15,610 --> 00:01:19,350
+o valores del tipo incorrecto a algunas funciones incorporadas.
+
+30
+00:01:19,350 --> 00:01:22,115
+Luego veremos ImportError y cuando
+
+31
+00:01:22,115 --> 00:01:23,130
+eso suceda.
+
+32
+00:01:23,130 --> 00:01:24,730
+Tambin vamos a hablar
+
+33
+00:01:24,730 --> 00:01:27,440
+brevemente sobre DeprecationWarning y cmo puede usar eso.
+
+34
+00:01:28,900 --> 00:01:31,350
+Entonces IndexError, IndexError ocurre cuando
+
+35
+00:01:31,350 --> 00:01:33,137
+haces algo como esto.
+
+36
+00:01:33,137 --> 00:01:35,650
+Por cierto, las primeras tres lneas son solo
+
+37
+00:01:35,650 --> 00:01:37,780
+el tipo de introduccin de Python cuando
+
+38
+00:01:37,780 --> 00:01:39,320
+ejecuta Python en su consola.
+
+39
+00:01:39,320 --> 00:01:42,660
+Te ensear cmo hacerlo en un par de secciones.
+
+40
+00:01:42,660 --> 00:01:46,180
+Bsicamente, hemos definido amigos como Rolf y Anne.
+
+41
+00:01:46,180 --> 00:01:47,940
+Luego accedimos a amigos [2],
+
+42
+00:01:47,940 --> 00:01:50,410
+pero por supuesto, amigos [2] no existe
+
+43
+00:01:50,410 --> 00:01:53,720
+porque los amigos solo tienen dos cosas, cero y uno.
+
+44
+00:01:53,720 --> 00:01:56,610
+Cuando accedes a amigos [2], eso es un IndexError
+
+45
+00:01:56,610 --> 00:01:59,480
+porque accediste a un ndice que no exista.
+
+46
+00:01:59,480 --> 00:02:01,720
+En este caso, te dice que el ndice de la
+
+47
+00:02:01,720 --> 00:02:02,770
+lista estaba fuera de rango.
+
+48
+00:02:02,770 --> 00:02:04,260
+Ests tratando de acceder
+
+49
+00:02:04,260 --> 00:02:06,620
+a dos, pero solo vas a uno.
+
+50
+00:02:06,620 --> 00:02:08,730
+Este es un tipo de IndexError.
+
+51
+00:02:08,730 --> 00:02:11,930
+Observe cmo el Traceback le dice dnde est el archivo, la lnea y
+
+52
+00:02:13,404 --> 00:02:16,010
+el mdulo o la funcin en la que lo ejecut.
+
+53
+00:02:16,010 --> 00:02:19,230
+En este caso, porque estoy ejecutando Python en
+
+54
+00:02:19,230 --> 00:02:20,500
+modo de intrprete.
+
+55
+00:02:20,500 --> 00:02:23,420
+Eso significa que solo ests ejecutando Python de forma interactiva.
+
+56
+00:02:24,830 --> 00:02:26,750
+Se ejecuta tan pronto como escribe,
+
+57
+00:02:26,750 --> 00:02:30,010
+por lo que el archivo es lo que estoy escribiendo.
+
+58
+00:02:30,010 --> 00:02:31,300
+A eso se llama este archivo.
+
+59
+00:02:31,300 --> 00:02:33,450
+La lnea es la nmero uno porque, nuevamente,
+
+60
+00:02:33,450 --> 00:02:36,350
+cada lnea es la nmero uno en el modo interpretativo.
+
+61
+00:02:36,350 --> 00:02:38,730
+El mdulo es solo el mdulo que estoy
+
+62
+00:02:38,730 --> 00:02:41,200
+ejecutando, y eso solo significa cuando dice en
+
+63
+00:02:41,200 --> 00:02:44,390
+&lt;mdulo>, eso solo significa que est ejecutando la lnea directamente.
+
+64
+00:02:44,390 --> 00:02:46,340
+No ests pasando por ninguna funcin.
+
+65
+00:02:47,790 --> 00:02:50,980
+Por lo tanto, hay IndexError, sucede cuando accede a un ndice que
+
+66
+00:02:50,980 --> 00:02:52,420
+no exista o ejecuta un ndice
+
+67
+00:02:52,420 --> 00:02:53,970
+que de lo contrario es incorrecto.
+
+68
+00:02:55,490 --> 00:02:58,300
+Luego tenemos KeyError y esto es bastante
+
+69
+00:02:58,300 --> 00:03:00,100
+similar al que vimos anteriormente.
+
+70
+00:03:00,100 --> 00:03:03,090
+Pero ahora tenemos el cdigo, el nombre de la pelcula,
+
+71
+00:03:03,090 --> 00:03:06,750
+el director de la pelcula y el lanzamiento de la pelcula adecuados.
+
+72
+00:03:06,750 --> 00:03:08,870
+Sin embargo, debera ser ao.
+
+73
+00:03:09,800 --> 00:03:11,540
+Recuerde que en nuestro hito_1,
+
+74
+00:03:11,540 --> 00:03:13,520
+usamos la clave del ao.
+
+75
+00:03:13,520 --> 00:03:15,350
+Supongamos que hemos usado la clave del
+
+76
+00:03:15,350 --> 00:03:17,170
+ao para este fragmento de cdigo.
+
+77
+00:03:17,170 --> 00:03:20,320
+Lo que obtendremos entonces es este lindo Traceback.
+
+78
+00:03:20,320 --> 00:03:23,200
+Lo que tenemos ahora es KeyError y
+
+79
+00:03:23,200 --> 00:03:26,810
+la descripcin de este KeyError es bastante terrible.
+
+80
+00:03:26,810 --> 00:03:27,980
+No me gusta esta
+
+81
+00:03:27,980 --> 00:03:31,240
+descripcin porque solo dice que la clave que usaste mal.
+
+82
+00:03:31,240 --> 00:03:34,921
+Entonces dice, KeyError: 'lanzamiento'.
+
+83
+00:03:34,921 --> 00:03:37,490
+No es terriblemente til, pero ahora sabes que has usado
+
+84
+00:03:37,490 --> 00:03:39,300
+la tecla de liberacin en algn punto
+
+85
+00:03:39,300 --> 00:03:40,530
+donde no deberas haberlo hecho.
+
+86
+00:03:40,530 --> 00:03:42,570
+Entonces, si el Traceback es
+
+87
+00:03:42,570 --> 00:03:45,390
+bueno, le indicar qu lnea ocurri ese error.
+
+88
+00:03:45,390 --> 00:03:47,950
+Lo usaste aqu en el lanzamiento de
+
+89
+00:03:47,950 --> 00:03:51,200
+una pelcula y luego dice que esta lnea
+
+90
+00:03:51,200 --> 00:03:52,809
+estaba dentro de show_movie_details.
+
+91
+00:03:52,809 --> 00:03:55,840
+Show_movie_details se ejecut como show_movie_details con la
+
+92
+00:03:55,840 --> 00:03:57,800
+pelcula dentro y eso
+
+93
+00:03:57,800 --> 00:03:59,490
+sucedi dentro de show_movies.
+
+94
+00:03:59,490 --> 00:04:01,630
+Eso se ejecut dentro del men
+
+95
+00:04:01,630 --> 00:04:03,060
+y el men se
+
+96
+00:04:03,060 --> 00:04:06,330
+ejecut dentro del &lt;module> o el archivo que ejecut.
+
+97
+00:04:06,330 --> 00:04:08,520
+Observe cmo todos estos estn dentro
+
+98
+00:04:08,520 --> 00:04:12,220
+de un archivo llamado aplicacin. py porque as es como se
+
+99
+00:04:12,220 --> 00:04:13,520
+llamaba nuestro archivo en milestone_1.
+
+100
+00:04:14,730 --> 00:04:17,960
+Por lo tanto, KeyError ocurre cuando utiliza una clave de forma
+
+101
+00:04:17,960 --> 00:04:19,880
+incorrecta o, de lo contrario, la clave
+
+102
+00:04:19,880 --> 00:04:22,090
+no existe, pero la pelcula es un diccionario.
+
+103
+00:04:23,491 --> 00:04:25,490
+Tenemos la pelcula como
+
+104
+00:04:25,490 --> 00:04:29,290
+un diccionario y luego accedimos a la clave incorrecta.
+
+105
+00:04:29,290 --> 00:04:31,560
+Si la pelcula fuera una lista, como en el
+
+106
+00:04:31,560 --> 00:04:33,480
+ltimo video, obtendramos un tipo de error diferente.
+
+107
+00:04:34,680 --> 00:04:35,940
+Tambin tenemos NameError.
+
+108
+00:04:37,331 --> 00:04:39,910
+El NameError ocurre como vimos anteriormente,
+
+109
+00:04:39,910 --> 00:04:41,040
+en el ltimo
+
+110
+00:04:41,040 --> 00:04:43,770
+video, cuando la variable no est definida.
+
+111
+00:04:43,770 --> 00:04:46,630
+As que aqu, acabo de lanzar Python y dije print (hola).
+
+112
+00:04:46,630 --> 00:04:49,810
+La variable hola, pero por supuesto hola no est definida,
+
+113
+00:04:49,810 --> 00:04:54,080
+as que obtengo un NameError que dice que el nombre 'hola' no est definido.
+
+114
+00:04:54,960 --> 00:04:57,690
+Por supuesto, la impresin de la cadena 'hola'
+
+115
+00:04:57,690 --> 00:04:59,430
+todava funcionara porque el aguijn
+
+116
+00:04:59,430 --> 00:05:02,935
+'hola' es solo un conjunto de caracteres y nmeros, o smbolos.
+
+117
+00:05:02,935 --> 00:05:05,820
+Python no lo evala en absoluto a una variable,
+
+118
+00:05:05,820 --> 00:05:07,200
+as que eso funcionara.
+
+119
+00:05:07,200 --> 00:05:09,540
+Pero imprimir la variable 'hola' no funciona.
+
+120
+00:05:09,540 --> 00:05:12,118
+En realidad, es un error muy comn para
+
+121
+00:05:12,118 --> 00:05:14,910
+mis alumnos, donde lo olvidan, o ustedes se
+
+122
+00:05:14,910 --> 00:05:17,860
+olvidan de poner las comillas alrededor de la cadena.
+
+123
+00:05:17,860 --> 00:05:19,310
+Le sucede a todos.
+
+124
+00:05:19,310 --> 00:05:21,470
+Solo recuerda que si obtienes un
+
+125
+00:05:21,470 --> 00:05:23,880
+NameError por algo que va a imprimir,
+
+126
+00:05:23,880 --> 00:05:25,860
+simplemente comprueba si necesita comillas.
+
+127
+00:05:25,860 --> 00:05:26,940
+Eso es algo bastante popular,
+
+128
+00:05:26,940 --> 00:05:28,290
+as que mantn tus ojos a raya.
+
+129
+00:05:29,610 --> 00:05:31,520
+Miremos tambin AttributeError.
+
+130
+00:05:31,520 --> 00:05:33,630
+AttributeError es bastante popular cuando
+
+131
+00:05:33,630 --> 00:05:35,050
+comienzas a tratar objetos.
+
+132
+00:05:36,240 --> 00:05:38,710
+En este cdigo aqu, hemos ido a mi
+
+133
+00:05:38,710 --> 00:05:42,090
+lista de amigos que tiene tres cadenas: Roth, Jose y Charlie.
+
+134
+00:05:42,090 --> 00:05:45,110
+Luego tenemos algunos amigos que estn cerca: Roth y Anna.
+
+135
+00:05:46,260 --> 00:05:47,410
+Fjate que estas dos son
+
+136
+00:05:47,410 --> 00:05:49,760
+listas y luego estoy haciendo amigos. interseccin
+
+137
+00:05:49,760 --> 00:05:51,260
+de friends_nearby.
+
+138
+00:05:51,260 --> 00:05:53,440
+La interseccin es algo que podemos hacer con
+
+139
+00:05:53,440 --> 00:05:55,410
+los conjuntos, si recuerdas, miramos esto ms
+
+140
+00:05:55,410 --> 00:05:56,690
+temprano en el curso.
+
+141
+00:05:56,690 --> 00:05:58,970
+No es algo que puedas hacer con las listas.
+
+142
+00:05:58,970 --> 00:06:01,120
+Luego obtienes un AttributeError.
+
+143
+00:06:01,120 --> 00:06:04,863
+El objeto 'list' como ningn atributo 'intersection'.
+
+144
+00:06:04,863 --> 00:06:06,361
+No puedes hacer la interseccin
+
+145
+00:06:06,361 --> 00:06:08,560
+porque la lista no sabe qu es.
+
+146
+00:06:08,560 --> 00:06:10,350
+Entonces este es un mensaje de error ms agradable.
+
+147
+00:06:10,350 --> 00:06:13,030
+Te dice qu objeto intentaste usar, en este
+
+148
+00:06:13,030 --> 00:06:14,910
+caso un objeto de lista.
+
+149
+00:06:14,910 --> 00:06:17,620
+Y te dice lo que intentaste hacer que no
+
+150
+00:06:17,620 --> 00:06:20,530
+puedes hacer, en este caso, usa el atributo de interseccin.
+
+151
+00:06:24,123 --> 00:06:26,440
+Este es un error bastante agradable cuando lo obtienes, dices, est
+
+152
+00:06:26,440 --> 00:06:28,690
+bien, lo ech a perder, utilic la cosa incorrecta all.
+
+153
+00:06:30,070 --> 00:06:33,450
+Tenemos NotImplementedError y este es un error que no
+
+154
+00:06:33,450 --> 00:06:35,170
+ver muy a menudo, pero
+
+155
+00:06:35,170 --> 00:06:37,370
+es un error que puede usar.
+
+156
+00:06:38,730 --> 00:06:40,920
+As es como puedes usarlo.
+
+157
+00:06:40,920 --> 00:06:44,005
+Tenemos una clase que tiene un mtodo init, un constructor.
+
+158
+00:06:44,005 --> 00:06:45,750
+Y toma un nombre de usuario y una
+
+159
+00:06:45,750 --> 00:06:46,970
+contrasea, y luego los establece.
+
+160
+00:06:46,970 --> 00:06:48,590
+Luego tiene un mtodo de inicio de sesin.
+
+161
+00:06:49,530 --> 00:06:51,770
+Pero an no hemos trabajado en el mtodo de inicio de
+
+162
+00:06:51,770 --> 00:06:53,070
+sesin, por lo que an no funciona.
+
+163
+00:06:53,940 --> 00:06:57,480
+En lugar de devolver ninguno o
+
+164
+00:06:57,480 --> 00:07:01,253
+no hacer nada, podemos plantear un NotImplementedError.
+
+165
+00:07:01,253 --> 00:07:03,380
+Esta es la sintaxis para generar un error.
+
+166
+00:07:03,380 --> 00:07:04,760
+Vamos a ver esto
+
+167
+00:07:04,760 --> 00:07:06,980
+con ms detalle en los prximos videos.
+
+168
+00:07:06,980 --> 00:07:09,330
+Luego, dentro de los corchetes puede poner una pequea
+
+169
+00:07:09,330 --> 00:07:10,680
+descripcin que diga algo as
+
+170
+00:07:10,680 --> 00:07:12,820
+como: Esta caracterstica no se ha implementado todava.
+
+171
+00:07:12,820 --> 00:07:15,310
+Lo que suceder es que cuando alguien
+
+172
+00:07:15,310 --> 00:07:17,200
+llame a este mtodo, obtendrn
+
+173
+00:07:17,200 --> 00:07:19,440
+un error y dir NotImplementedError, esta
+
+174
+00:07:19,440 --> 00:07:21,510
+caracterstica no se ha implementado todava.
+
+175
+00:07:21,510 --> 00:07:24,920
+Entonces va a decir cuando llamaste al usuario. iniciar sesin.
+
+176
+00:07:26,110 --> 00:07:27,131
+Es un buen
+
+177
+00:07:27,131 --> 00:07:29,150
+error subir cuando todava no
+
+178
+00:07:29,150 --> 00:07:30,750
+has logrado implementar algo.
+
+179
+00:07:32,740 --> 00:07:35,880
+Un RuntimeError, RuntimeError es un error bastante genrico.
+
+180
+00:07:37,340 --> 00:07:39,850
+No es terriblemente claro cuando sucede.
+
+181
+00:07:39,850 --> 00:07:41,470
+Lo he visto un par
+
+182
+00:07:42,450 --> 00:07:44,570
+de veces, pero no es un error
+
+183
+00:07:44,570 --> 00:07:46,200
+que veas muy a menudo.
+
+184
+00:07:46,200 --> 00:07:48,240
+Esto es, esencialmente, un error de base.
+
+185
+00:07:48,240 --> 00:07:52,670
+Una clase base y otros errores heredan de este.
+
+186
+00:07:52,670 --> 00:07:56,580
+Otros errores como std this ser RuntimeErrors.
+
+187
+00:07:56,580 --> 00:07:58,140
+Un RuntimeError es solo un error que
+
+188
+00:07:58,140 --> 00:07:59,640
+ocurre cuando ests ejecutando tu programa.
+
+189
+00:07:59,640 --> 00:08:00,940
+Eso es bsicamente cualquier cosa.
+
+190
+00:08:02,150 --> 00:08:03,692
+Tenemos SyntaxError.
+
+191
+00:08:03,692 --> 00:08:06,570
+SyntaxError es cuando nos equivocamos en Python.
+
+192
+00:08:07,480 --> 00:08:08,890
+Aqu tenemos a alguien jugando en
+
+193
+00:08:08,890 --> 00:08:10,590
+la definicin de su clase de usuario.
+
+194
+00:08:10,590 --> 00:08:14,370
+Puedes ver, puedes ver lo que falta?
+
+195
+00:08:14,370 --> 00:08:19,370
+Para m, esto es como un gran espacio en blanco, donde algo debera estar.
+
+196
+00:08:19,660 --> 00:08:23,410
+Pero por supuesto para ti, puede que no sea tan obvio por el momento.
+
+197
+00:08:23,410 --> 00:08:25,500
+A medida que se familiarice con Python, a medida
+
+198
+00:08:25,500 --> 00:08:26,970
+que programa ms y se encuentra
+
+199
+00:08:26,970 --> 00:08:28,240
+con ms de estos errores.
+
+200
+00:08:28,240 --> 00:08:31,220
+Esto va a comenzar a convertirse en una cosa que
+
+201
+00:08:31,220 --> 00:08:32,670
+falta cada vez ms grande.
+
+202
+00:08:33,580 --> 00:08:35,680
+Cul es el colon?
+
+203
+00:08:35,680 --> 00:08:37,860
+El colon falta al final de la clase.
+
+204
+00:08:37,860 --> 00:08:40,710
+Esta es una sintaxis ilegal porque tienes el usuario de la
+
+205
+00:08:40,710 --> 00:08:42,630
+clase y luego espera dos puntos despus.
+
+206
+00:08:42,630 --> 00:08:46,240
+Entonces obtendr un SyntaxError, diciendo sintaxis ilegal.
+
+207
+00:08:47,810 --> 00:08:50,410
+Entonces tenemos IndentationError, bastante relacionado.
+
+208
+00:08:50,410 --> 00:08:53,270
+Tambin un problema con la sintaxis en Python.
+
+209
+00:08:53,270 --> 00:08:56,330
+El error puede surgir de algo como esto.
+
+210
+00:08:56,330 --> 00:08:58,530
+Usted defini la funcin add_two (x, y),
+
+211
+00:08:58,530 --> 00:09:01,350
+luego coloc dos puntos y recuerda que el bloque
+
+212
+00:09:01,350 --> 00:09:02,990
+de la funcin debe sangrarse.
+
+213
+00:09:02,990 --> 00:09:05,200
+Tiene que tener al menos dos
+
+214
+00:09:05,200 --> 00:09:07,490
+espacios en frente, preferiblemente cuatro espacios.
+
+215
+00:09:07,490 --> 00:09:10,735
+Este retorno x + y no tiene espacios en frente.
+
+216
+00:09:10,735 --> 00:09:12,610
+Entonces obtendras un IndentationError y
+
+217
+00:09:12,610 --> 00:09:15,090
+dira algo as como un bloque de
+
+218
+00:09:16,180 --> 00:09:18,010
+indentacin esperado despus de la
+
+219
+00:09:18,010 --> 00:09:19,950
+funcin para terminar, o algo as.
+
+220
+00:09:19,950 --> 00:09:22,900
+Bsicamente puedes hacer esto si quieres.
+
+221
+00:09:22,900 --> 00:09:25,180
+Puedes sangrar y pasar y eso
+
+222
+00:09:25,180 --> 00:09:28,280
+solo significa que esta funcin no hace nada.
+
+223
+00:09:28,280 --> 00:09:30,319
+Luego puedes poner el retorno x + y en la parte inferior.
+
+224
+00:09:30,319 --> 00:09:33,920
+Por supuesto, esto tambin sera un error,
+
+225
+00:09:33,920 --> 00:09:35,720
+sabes qu error sera?
+
+226
+00:09:37,920 --> 00:09:40,330
+Espero que lo hayas hecho, sera un
+
+227
+00:09:40,330 --> 00:09:42,920
+NameError porque, por supuesto, xey no se definiran.
+
+228
+00:09:42,920 --> 00:09:45,010
+Solo estn definidos dentro de la funcin.
+
+229
+00:09:45,010 --> 00:09:47,200
+Recuerde el concepto de alcance, no
+
+230
+00:09:47,200 --> 00:09:49,170
+viven fuera de la funcin.
+
+231
+00:09:49,170 --> 00:09:50,900
+Entonces, tan pronto como la funcin termina,
+
+232
+00:09:50,900 --> 00:09:52,440
+x y y ya no existen.
+
+233
+00:09:52,440 --> 00:09:55,400
+Los est usando aqu fuera de la funcin,
+
+234
+00:09:55,400 --> 00:09:59,280
+porque el cuerpo de la funcin es solo el bloque sangrado.
+
+235
+00:09:59,280 --> 00:10:00,330
+Esto le dara un
+
+236
+00:10:00,330 --> 00:10:01,740
+NameError, est tratando de usar xey,
+
+237
+00:10:01,740 --> 00:10:03,340
+dos cosas que no estn definidas.
+
+238
+00:10:05,134 --> 00:10:06,443
+Entonces tenemos un TabError.
+
+239
+00:10:06,443 --> 00:10:08,680
+Un error TabError es bastante frecuente
+
+240
+00:10:08,680 --> 00:10:10,530
+cuando se cambia entre editores.
+
+241
+00:10:10,530 --> 00:10:12,890
+As que tenga cuidado cuando cambie
+
+242
+00:10:12,890 --> 00:10:15,140
+de editor, esto no sucede.
+
+243
+00:10:15,140 --> 00:10:18,100
+Aqu tenemos una funcin add_two y
+
+244
+00:10:18,100 --> 00:10:20,460
+luego el cuerpo sangrado se
+
+245
+00:10:20,460 --> 00:10:22,090
+sangra con cuatro espacios.
+
+246
+00:10:22,090 --> 00:10:25,810
+Eso es lo que significa ese pequeo corchete.
+
+247
+00:10:25,810 --> 00:10:28,910
+El corchete en la parte inferior de la lnea.
+
+248
+00:10:28,910 --> 00:10:31,960
+Espacio, espacio, espacio, espacio, retorno x + y.
+
+249
+00:10:31,960 --> 00:10:33,130
+Entonces hay cuatro
+
+250
+00:10:33,130 --> 00:10:37,310
+espacios all, una sintaxis de Python totalmente legtima all.
+
+251
+00:10:37,310 --> 00:10:38,800
+Puede sangrar usando cuatro espacios,
+
+252
+00:10:38,800 --> 00:10:41,500
+pero luego observe cmo se ha definido la funcin
+
+253
+00:10:41,500 --> 00:10:43,800
+pow con un carcter de tabulacin al comienzo
+
+254
+00:10:43,800 --> 00:10:45,230
+en lugar de cuatro espacios.
+
+255
+00:10:45,230 --> 00:10:46,740
+A Python no le gusta mucho
+
+256
+00:10:46,740 --> 00:10:48,700
+cuando mezclas y combinas tipos de sangra.
+
+257
+00:10:50,090 --> 00:10:52,660
+En realidad, no estoy seguro de si
+
+258
+00:10:52,660 --> 00:10:57,170
+esto funcionara, pero ciertamente dentro de una funcin, no mezcle ni combine tipos.
+
+259
+00:10:57,170 --> 00:10:59,780
+Intenta no mezclar y unir los tipos de indentacin,
+
+260
+00:10:59,780 --> 00:11:01,310
+en cualquiera de tus programas.
+
+261
+00:11:01,310 --> 00:11:04,260
+Decida ahora si desea usar pestaas o espacios y
+
+262
+00:11:04,260 --> 00:11:05,410
+atenerse a eso.
+
+263
+00:11:05,410 --> 00:11:07,330
+Al menos dentro de un proyecto.
+
+264
+00:11:08,990 --> 00:11:10,970
+Entonces, de nuevo, estos son espacios.
+
+265
+00:11:10,970 --> 00:11:13,160
+Estas son pestaas, no las mezcles.
+
+266
+00:11:15,860 --> 00:11:17,540
+Por cierto, volvamos a
+
+267
+00:11:17,540 --> 00:11:19,130
+esto y rpidamente
+
+268
+00:11:19,130 --> 00:11:22,350
+mencionar la funcin pow, lo que hace.
+
+269
+00:11:22,350 --> 00:11:24,730
+Porque no creo que hayamos encontrado esta sintaxis antes.
+
+270
+00:11:24,730 --> 00:11:27,340
+Tenemos dos argumentos, n y esp,
+
+271
+00:11:28,254 --> 00:11:31,460
+y est regresando n veces veces exp.
+
+272
+00:11:31,460 --> 00:11:33,940
+Tiempos veces en Python solo significa para el poder de.
+
+273
+00:11:34,780 --> 00:11:37,510
+As que eso es n elevado a la exp.
+
+274
+00:11:37,510 --> 00:11:40,771
+Por ejemplo, dos a tres son ocho y as sucesivamente.
+
+275
+00:11:40,771 --> 00:11:43,200
+Sintaxis bastante ingeniosa en Python.
+
+276
+00:11:43,200 --> 00:11:44,033
+No creo que
+
+277
+00:11:44,033 --> 00:11:45,650
+nos hayamos encontrado, solo quera mencionarlo.
+
+278
+00:11:45,650 --> 00:11:47,400
+Pasemos a un TypeError.
+
+279
+00:11:48,330 --> 00:11:49,770
+El TypeError es bastante comn.
+
+280
+00:11:49,770 --> 00:11:52,550
+Un TypeError puede ocurrir cuando haces algo como esto.
+
+281
+00:11:52,550 --> 00:11:54,740
+En la primera lnea estamos agregando 5 + 5,
+
+282
+00:11:54,740 --> 00:11:55,720
+eso nos da 10.
+
+283
+00:11:55,720 --> 00:11:57,150
+Eso es lo que esperaramos.
+
+284
+00:11:57,150 --> 00:11:59,430
+La segunda lnea estamos agregando 'hi' + 'ha'
+
+285
+00:11:59,430 --> 00:12:01,710
+y nos est dando 'hiha' como es de
+
+286
+00:12:01,710 --> 00:12:03,860
+esperar porque se conecta y agrega las cuerdas.
+
+287
+00:12:03,860 --> 00:12:05,650
+Entonces estamos haciendo algo que no deberas hacer.
+
+288
+00:12:05,650 --> 00:12:09,900
+Que es agregar una cadena y un nmero, un nmero entero.
+
+289
+00:12:09,900 --> 00:12:12,430
+No hagas eso, porque eso ser un TypeError.
+
+290
+00:12:12,430 --> 00:12:16,390
+Has dado la funcin +, que es una funcin.
+
+291
+00:12:17,660 --> 00:12:20,600
+Dos tipos que no admite.
+
+292
+00:12:20,600 --> 00:12:22,316
+Ambas cosas deben ser del mismo
+
+293
+00:12:22,316 --> 00:12:24,460
+tipo y le has dado un int
+
+294
+00:12:24,460 --> 00:12:27,390
+y una cadena y dice tipos de operandos sin soporte.
+
+295
+00:12:27,390 --> 00:12:32,120
+Por cierto, el smbolo + es en realidad una funcin.
+
+296
+00:12:32,120 --> 00:12:34,960
+Es una funcin dunder como len.
+
+297
+00:12:34,960 --> 00:12:38,760
+Veremos ms adelante eso, en cmo puedes usarlo.
+
+298
+00:12:39,640 --> 00:12:43,980
+El int y el objeto de cadena tienen la funcin
+
+299
+00:12:43,980 --> 00:12:47,090
++ dunder definida y dice que no
+
+300
+00:12:47,090 --> 00:12:48,390
+puede agregarlos dos juntos.
+
+301
+00:12:48,390 --> 00:12:50,480
+Luego obtienes un TypeError.
+
+302
+00:12:50,480 --> 00:12:51,737
+Observe que
+
+303
+00:12:51,737 --> 00:12:54,840
+obtiene el TypeError porque alguien defini
+
+304
+00:12:54,840 --> 00:12:59,830
+las clases int y str como elevando este tipo de
+
+305
+00:12:59,830 --> 00:13:03,050
+error, cuando pasa de diferentes tipos.
+
+306
+00:13:03,050 --> 00:13:04,390
+No solo sucede mgicamente,
+
+307
+00:13:04,390 --> 00:13:06,260
+alguien realmente ha escrito el
+
+308
+00:13:06,260 --> 00:13:09,470
+cdigo para darle este error cuando haces esto.
+
+309
+00:13:09,470 --> 00:13:11,060
+As que recuerda que aqu no
+
+310
+00:13:11,060 --> 00:13:12,380
+hay magia, es todo programacin.
+
+311
+00:13:12,380 --> 00:13:13,980
+Alguien ha escrito el cdigo
+
+312
+00:13:13,980 --> 00:13:15,130
+que provoca este error.
+
+313
+00:13:16,650 --> 00:13:17,700
+Pasemos a ValueError.
+
+314
+00:13:17,700 --> 00:13:19,713
+ValueError tambin es muy comn.
+
+315
+00:13:19,713 --> 00:13:23,890
+Sucede cuando le das a las funciones de
+
+316
+00:13:24,880 --> 00:13:29,610
+bateo un valor del tipo correcto, pero, lo siento.
+
+317
+00:13:29,610 --> 00:13:32,370
+Un valor del tipo correcto de
+
+318
+00:13:32,370 --> 00:13:33,980
+valor potencial, pero incorrecto.
+
+319
+00:13:34,900 --> 00:13:36,120
+As que aqu hay un ejemplo.
+
+320
+00:13:36,120 --> 00:13:39,320
+Estamos convirtiendo int en una cadena int, que
+
+321
+00:13:39,320 --> 00:13:41,991
+normalmente es una buena opcin, pero
+
+322
+00:13:41,991 --> 00:13:44,400
+la cadena no puede contener decimales.
+
+323
+00:13:44,400 --> 00:13:46,820
+Si lo hace, dice: eh, realmente deberas convertir
+
+324
+00:13:46,820 --> 00:13:50,058
+esto en una carroza y eso es lo que deberas hacer.
+
+325
+00:13:50,058 --> 00:13:53,030
+Aqu llamamos a la funcin int con 20. 5 como una cadena
+
+326
+00:13:53,030 --> 00:13:55,397
+y dice, ValueError: literal invlido para int
+
+327
+00:13:55,397 --> 00:13:58,820
+() con base 10: '20. 5 '.
+
+328
+00:13:58,820 --> 00:14:01,420
+20. 5 no es algo que pueda darle a la funcin int.
+
+329
+00:14:02,690 --> 00:14:06,890
+Normalmente, solo las funciones de bateo generarn un ValueError.
+
+330
+00:14:06,890 --> 00:14:08,910
+Si desea subir ValueErrors, le
+
+331
+00:14:08,910 --> 00:14:11,050
+recomiendo que cree sus propios errores.
+
+332
+00:14:11,050 --> 00:14:13,600
+Lo cual vamos a ver ms adelante en esta seccin.
+
+333
+00:14:14,670 --> 00:14:16,445
+Ahora tenemos ImportError.
+
+334
+00:14:16,445 --> 00:14:17,910
+Un ImportError tambin es muy
+
+335
+00:14:17,910 --> 00:14:20,450
+popular y es un gran dolor en el culo.
+
+336
+00:14:20,450 --> 00:14:22,360
+Aqu es cuando sucede, tienes
+
+337
+00:14:22,360 --> 00:14:27,360
+un blog de importacin. Aplicacin interior py, luego
+
+338
+00:14:27,430 --> 00:14:32,370
+has blog. py. Dgalo desde el men de importacin de aplicaciones.
+
+339
+00:14:32,370 --> 00:14:35,420
+Imaginemos que desea ejecutar el men dentro del blog
+
+340
+00:14:35,420 --> 00:14:38,500
+o tal vez la aplicacin tiene algn tipo de
+
+341
+00:14:38,500 --> 00:14:40,770
+variable que desea importar o algo as.
+
+342
+00:14:40,770 --> 00:14:44,252
+Lo que sucede aqu es que la aplicacin est importando blog.
+
+343
+00:14:44,252 --> 00:14:48,300
+El blog est importando aplicaciones y qu ocurre cuando importas?
+
+344
+00:14:48,300 --> 00:14:50,290
+Bien, vaya al valor importado
+
+345
+00:14:50,290 --> 00:14:52,469
+y lo ejecute rpidamente, defina las
+
+346
+00:14:52,469 --> 00:14:54,840
+funciones, ejecute una importacin y as sucesivamente.
+
+347
+00:14:55,970 --> 00:14:58,270
+Una vez hecho esto, puede volver al archivo
+
+348
+00:14:58,270 --> 00:15:01,170
+original y continuar desde el mismo momento de la importacin.
+
+349
+00:15:01,170 --> 00:15:04,380
+Importacin de blog en realidad ejecuta blog. py.
+
+350
+00:15:04,380 --> 00:15:05,320
+Qu sucede cuando ejecutas blog? py?
+
+351
+00:15:05,320 --> 00:15:09,630
+Bueno, tiene que pasar a la aplicacin. py y ejecuta eso.
+
+352
+00:15:09,630 --> 00:15:11,160
+La primera lnea es el blog de
+
+353
+00:15:11,160 --> 00:15:13,240
+importacin, por lo que tiene que volver al blog e
+
+354
+00:15:13,240 --> 00:15:15,170
+importar la aplicacin y luego vuelve al blog, etc.
+
+355
+00:15:15,170 --> 00:15:18,500
+Este es un crculo grande y lo que sucede
+
+356
+00:15:19,370 --> 00:15:20,710
+es, s, importaciones circulares.
+
+357
+00:15:20,710 --> 00:15:21,780
+As es como se llaman.
+
+358
+00:15:21,780 --> 00:15:24,080
+Importacin de un archivo que importa el mismo archivo.
+
+359
+00:15:24,080 --> 00:15:25,640
+Obtendrs una importacin circular.
+
+360
+00:15:25,640 --> 00:15:29,170
+Esto no necesariamente tiene que suceder entre dos archivos.
+
+361
+00:15:29,170 --> 00:15:31,940
+Puede tener el archivo a que importa el archivo b que
+
+362
+00:15:31,940 --> 00:15:34,380
+importa el archivo c, que importa el archivo a.
+
+363
+00:15:35,240 --> 00:15:37,320
+Entonces puedes tener una importacin circular con muchos
+
+364
+00:15:37,320 --> 00:15:39,320
+archivos y puede ser un poco complicado.
+
+365
+00:15:39,320 --> 00:15:41,490
+Solo ten cuidado con tus importaciones.
+
+366
+00:15:41,490 --> 00:15:43,770
+Obtendr un ImportError y dir algo
+
+367
+00:15:43,770 --> 00:15:46,780
+sobre las lneas de importacin circular aqu.
+
+368
+00:15:46,780 --> 00:15:48,361
+Tenga cuidado, si obtiene un ImportError
+
+369
+00:15:48,361 --> 00:15:49,990
+haga una pregunta y las preguntas
+
+370
+00:15:49,990 --> 00:15:51,800
+y respuestas del curso estarn encantadas de ayudarlo.
+
+371
+00:15:53,370 --> 00:15:55,470
+Finalmente, echemos un vistazo a DeprecationWarning.
+
+372
+00:15:56,370 --> 00:15:58,620
+DeprecationWarning es como dice all,
+
+373
+00:15:58,620 --> 00:16:00,830
+una advertencia, no un error.
+
+374
+00:16:00,830 --> 00:16:03,240
+Sin embargo, Python lo trata de la misma manera.
+
+375
+00:16:03,240 --> 00:16:07,020
+Si produces uno, si levantas uno.
+
+376
+00:16:07,020 --> 00:16:08,720
+Tu programa seguir
+
+377
+00:16:08,720 --> 00:16:10,430
+bloqueado, pero significa
+
+378
+00:16:10,430 --> 00:16:13,222
+que hey algo malo sucedi aqu.
+
+379
+00:16:13,222 --> 00:16:17,220
+Esto que trataste de hacer es obsoleto.
+
+380
+00:16:17,220 --> 00:16:19,110
+Qu significa depreciado?
+
+381
+00:16:19,110 --> 00:16:22,980
+Obsoleto significa que ya no es la mejor
+
+382
+00:16:22,980 --> 00:16:24,770
+manera de hacer algo.
+
+383
+00:16:24,770 --> 00:16:26,840
+No hay una mejor manera de hacer lo
+
+384
+00:16:26,840 --> 00:16:28,470
+que sea que ests tratando de hacer.
+
+385
+00:16:28,470 --> 00:16:29,820
+Veamos este cdigo de ejemplo.
+
+386
+00:16:29,820 --> 00:16:32,550
+Tenemos clase de usuario y en la parte superior
+
+387
+00:16:32,550 --> 00:16:34,870
+tenemos base de datos de importacin de formulario.
+
+388
+00:16:34,870 --> 00:16:36,750
+La clase de usuario tiene un
+
+389
+00:16:37,770 --> 00:16:39,380
+constructor y luego tiene dos mtodos.
+
+390
+00:16:39,380 --> 00:16:41,670
+Un mtodo de registro que es un mtodo de
+
+391
+00:16:41,670 --> 00:16:43,990
+instancia que escribe en la base de datos el nombre
+
+392
+00:16:43,990 --> 00:16:45,670
+de usuario y la contrasea del usuario.
+
+393
+00:16:45,670 --> 00:16:48,373
+Luego tambin genera una advertencia de depreciacin.
+
+394
+00:16:48,373 --> 00:16:50,580
+Dice que UserRegister an funciona, pero
+
+395
+00:16:50,580 --> 00:16:51,540
+est en desuso.
+
+396
+00:16:52,860 --> 00:16:55,780
+Luego tenemos un mtodo de clase que se llama register_user y
+
+397
+00:16:55,780 --> 00:16:58,976
+que toma un nombre de usuario y una contrasea, y escribe en
+
+398
+00:16:58,976 --> 00:17:02,300
+la base de datos el nombre de usuario y la contrasea, y
+
+399
+00:17:02,300 --> 00:17:04,230
+devuelve un objeto de tipo usuario.
+
+400
+00:17:04,230 --> 00:17:05,810
+Me gusta este segundo mejor.
+
+401
+00:17:05,810 --> 00:17:07,381
+Es por eso que guard este ejemplo.
+
+402
+00:17:07,381 --> 00:17:09,430
+Sin embargo, fue solo para mostrarle que
+
+403
+00:17:09,430 --> 00:17:12,190
+puede plantear una advertencia de eliminacin de la depreciacin en
+
+404
+00:17:12,190 --> 00:17:13,380
+cualquiera de sus mtodos.
+
+405
+00:17:13,380 --> 00:17:17,900
+Decirle a quien lo usa eso, oye, esta ya no es la forma
+
+406
+00:17:17,900 --> 00:17:19,750
+aceptada de hacer las cosas.
+
+407
+00:17:22,550 --> 00:17:25,070
+Pero, hay un pero.
+
+408
+00:17:25,070 --> 00:17:27,600
+A menudo no plantears ninguna de estas excepciones,
+
+409
+00:17:27,600 --> 00:17:29,290
+excepto posiblemente la Advertencia de
+
+410
+00:17:29,290 --> 00:17:30,810
+Deprecacin, probablemente ni siquiera esa.
+
+411
+00:17:30,810 --> 00:17:33,170
+Normalmente subirs, NotImplementedError si
+
+412
+00:17:33,170 --> 00:17:35,170
+ests trabajando en algo.
+
+413
+00:17:36,250 --> 00:17:38,560
+No criars muchos de estos.
+
+414
+00:17:38,560 --> 00:17:40,590
+Debe crear sus propias excepciones,
+
+415
+00:17:40,590 --> 00:17:42,210
+con nombres an mejores.
+
+416
+00:17:43,890 --> 00:17:45,680
+Veremos exactamente qu significa eso
+
+417
+00:17:45,680 --> 00:17:47,430
+y qu nombre es mejor
+
+418
+00:17:47,430 --> 00:17:50,140
+y cmo puede crear sus propias excepciones.
+
+419
+00:17:50,140 --> 00:17:51,810
+Veamos eso ahora mismo
+
+420
+00:17:51,810 --> 00:17:53,320
+en el prximo video.
+
+421
+00:17:53,320 --> 00:17:54,270
+Te ver all.
+

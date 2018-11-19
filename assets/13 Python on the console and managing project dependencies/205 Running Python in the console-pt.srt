@@ -1,0 +1,776 @@
+1
+00:00:00,140 --> 00:00:01,480
+Instrutor: Ol e bem vindo de volta.
+
+2
+00:00:01,480 --> 00:00:02,650
+Neste vdeo, vamos
+
+3
+00:00:02,650 --> 00:00:05,440
+ver como executar o Python em nosso console.
+
+4
+00:00:06,390 --> 00:00:09,020
+s vezes, no teremos acesso ao PyCharm ou,
+
+5
+00:00:09,020 --> 00:00:12,900
+voc sabe, um IDE quando estivermos executando nossos programas em Python
+
+6
+00:00:12,900 --> 00:00:15,620
+porque estaremos em um servidor, por exemplo, queremos
+
+7
+00:00:15,620 --> 00:00:17,930
+compartilhar um programa com algum que no
+
+8
+00:00:17,930 --> 00:00:20,270
+o faa. tem esse IDE e assim
+
+9
+00:00:20,270 --> 00:00:22,740
+por diante, por isso pode ser til
+
+10
+00:00:22,740 --> 00:00:26,550
+poder executar nossos programas em Python fora de qualquer ambiente especfico.
+
+11
+00:00:27,460 --> 00:00:29,469
+Ento, o console,  uma interface
+
+12
+00:00:29,469 --> 00:00:32,340
+de texto para o seu computador, voc provavelmente
+
+13
+00:00:32,340 --> 00:00:34,670
+j se deparou com isso antes.
+
+14
+00:00:34,670 --> 00:00:38,090
+Voc basicamente pode executar qualquer coisa usando texto, voc
+
+15
+00:00:38,090 --> 00:00:42,040
+pode gostar de arquivos abertos, copi-los, voc pode executar programas,
+
+16
+00:00:42,040 --> 00:00:44,740
+voc sabe basicamente qualquer coisa que no
+
+17
+00:00:44,740 --> 00:00:47,070
+tenha uma interface grfica e muitas
+
+18
+00:00:47,070 --> 00:00:49,930
+coisas no software so feitas atravs do
+
+19
+00:00:49,930 --> 00:00:52,920
+console s porque voc sabe simplesmente no vale
+
+20
+00:00:52,920 --> 00:00:55,290
+a pena desenvolver uma boa interface grfica.
+
+21
+00:00:55,290 --> 00:00:56,900
+Se voc est fazendo uma
+
+22
+00:00:56,900 --> 00:01:00,750
+ferramenta, por exemplo, para ajud-lo a formatar seu cdigo, s vezes
+
+23
+00:01:00,750 --> 00:01:04,070
+voc no precisa de uma interface grfica para isso.
+
+24
+00:01:04,070 --> 00:01:06,220
+Se voc est acessando um banco
+
+25
+00:01:06,220 --> 00:01:09,750
+de dados, voc pode querer apenas executar os comandos
+
+26
+00:01:09,750 --> 00:01:12,250
+SQL e agora necessariamente tem uma interface
+
+27
+00:01:12,250 --> 00:01:13,840
+grfica que o acompanha.
+
+28
+00:01:13,840 --> 00:01:15,830
+Se voc est escrevendo cdigo, s vezes
+
+29
+00:01:15,830 --> 00:01:18,150
+voc pode no querer uma interface grfica para
+
+30
+00:01:18,150 --> 00:01:21,110
+escrever seu cdigo, talvez um editor de texto seja o suficiente.
+
+31
+00:01:21,110 --> 00:01:23,870
+H muitas situaes em que simplesmente no
+
+32
+00:01:23,870 --> 00:01:26,330
+h uma razo para ter uma boa
+
+33
+00:01:26,330 --> 00:01:29,130
+interface grfica para algo, ento quem desenvolveu
+
+34
+00:01:29,130 --> 00:01:32,040
+isso apenas transformou-a em um programa de texto.
+
+35
+00:01:32,040 --> 00:01:35,040
+E esses programas de texto normalmente so executados em um console.
+
+36
+00:01:36,140 --> 00:01:39,040
+Ento, para abrir um console no seu computador, voc
+
+37
+00:01:39,040 --> 00:01:42,490
+pode abrir cmd dot exe no Windows, se voc procurar por
+
+38
+00:01:42,490 --> 00:01:47,360
+ele basta digitar cmd dot exe na barra de pesquisa ou voc sabe o que
+
+39
+00:01:47,360 --> 00:01:49,510
+mais, depende da verso do Windows que
+
+40
+00:01:49,510 --> 00:01:51,060
+voc est usando, Tenho certeza
+
+41
+00:01:51,060 --> 00:01:53,280
+que vai aparecer,  uma coisa muito
+
+42
+00:01:53,280 --> 00:01:54,690
+popular no Windows.
+
+43
+00:01:54,690 --> 00:01:58,210
+Se voc estiver usando o Mac, voc quer abrir o aplicativo
+
+44
+00:01:58,210 --> 00:02:00,800
+de ponto terminal, este  o aplicativo que
+
+45
+00:02:00,800 --> 00:02:03,320
+o Mac oferece para iniciar um console.
+
+46
+00:02:03,320 --> 00:02:05,854
+E no Linux, voc pode abrir o aplicativo Terminal.
+
+47
+00:02:05,854 --> 00:02:09,460
+Qualquer um deles lhe dar essencialmente algo
+
+48
+00:02:09,460 --> 00:02:12,670
+que parece mais ou menos assim.
+
+49
+00:02:12,670 --> 00:02:16,110
+Vai ser uma caixa preta com algum
+
+50
+00:02:16,110 --> 00:02:20,100
+texto e voc pode digitar mais algum texto.
+
+51
+00:02:20,100 --> 00:02:24,140
+Aqui est um exemplo de digitao do Python nesse console.
+
+52
+00:02:24,140 --> 00:02:26,680
+Quando eu digito Python, o que
+
+53
+00:02:26,680 --> 00:02:30,378
+aparece  mais algum texto e, em seguida, trs
+
+54
+00:02:30,378 --> 00:02:33,540
+clipes de crocodilo na parte inferior e l
+
+55
+00:02:33,540 --> 00:02:37,010
+eu posso digitar algum cdigo Python e este
+
+56
+00:02:37,010 --> 00:02:41,030
+programa aqui imediatamente executar o cdigo Python que eu digito
+
+57
+00:02:41,030 --> 00:02:45,210
+e essencialmente me digita cdigo Python em tempo real e
+
+58
+00:02:45,210 --> 00:02:47,490
+veja a sada do cdigo imediatamente.
+
+59
+00:02:48,470 --> 00:02:51,960
+By the way, Python 2. 7  a verso que voc pode
+
+60
+00:02:51,960 --> 00:02:56,170
+ver aqui e esse  o padro no Mac OS 10, que  o que eu estou
+
+61
+00:02:56,170 --> 00:02:58,040
+usando, se voc estiver usando um sistema operacional
+
+62
+00:02:58,040 --> 00:03:00,030
+diferente, voc pode ver um nmero diferente aqui.
+
+63
+00:03:00,030 --> 00:03:02,970
+Por exemplo, neste exemplo aqui estou executando
+
+64
+00:03:02,970 --> 00:03:05,800
+o programa Python3. 7, que  tudo uma palavra
+
+65
+00:03:05,800 --> 00:03:08,480
+e que  um nico programa e, em seguida, voc pode
+
+66
+00:03:08,480 --> 00:03:13,410
+ver que isso executa o Python3. 7 0b1 que  o
+
+67
+00:03:13,410 --> 00:03:16,100
+beta quando eu estava gravando este
+
+68
+00:03:16,100 --> 00:03:18,250
+curso, Python3. 7 no tinha
+
+69
+00:03:18,250 --> 00:03:21,170
+sado ainda, mas j estava disponvel apenas para, voc
+
+70
+00:03:21,170 --> 00:03:22,270
+sabe, early adopters.
+
+71
+00:03:23,230 --> 00:03:27,634
+Ento Python e Python3. 7, programas completamente diferentes, embora
+
+72
+00:03:27,634 --> 00:03:31,320
+sejam essencialmente o mesmo Python, mas uma verso
+
+73
+00:03:31,320 --> 00:03:33,860
+diferente, so coisas completamente diferentes
+
+74
+00:03:33,860 --> 00:03:35,820
+para o nosso computador.
+
+75
+00:03:35,820 --> 00:03:37,750
+Voc pode digitar qualquer coisa aqui e
+
+76
+00:03:37,750 --> 00:03:40,210
+o que o computador vai fazer  tentar executar
+
+77
+00:03:40,210 --> 00:03:41,210
+o que voc digita
+
+78
+00:03:42,073 --> 00:03:45,610
+e acontece que Python e Python3. 7 so duas coisas
+
+79
+00:03:45,610 --> 00:03:48,350
+que nosso computador pode digitar.
+
+80
+00:03:50,000 --> 00:03:52,310
+By the way, no Windows isso s
+
+81
+00:03:52,310 --> 00:03:55,740
+vai funcionar se voc marcou adicionar Python para PATH durante a
+
+82
+00:03:55,740 --> 00:03:58,751
+instalao inicial, mas se voc no fez, voc pode
+
+83
+00:03:58,751 --> 00:04:01,230
+reinstal-lo e certifique-se de verific-lo e que 
+
+84
+00:04:01,230 --> 00:04:02,950
+essa caixinha l, pode olhar
+
+85
+00:04:02,950 --> 00:04:06,480
+um pouco diferente nas verses mais novas do Python, apenas certifique-se
+
+86
+00:04:06,480 --> 00:04:09,030
+de verific-lo, nesta caixa, se voc o vir
+
+87
+00:04:09,030 --> 00:04:10,570
+quando estiver no Windows, caso
+
+88
+00:04:10,570 --> 00:04:12,720
+contrrio ele no ser adicionado ao PATH
+
+89
+00:04:12,720 --> 00:04:15,760
+e no funcionar no seu terminal ou no seu console.
+
+90
+00:04:16,760 --> 00:04:18,460
+Ento, qual  o caminho?
+
+91
+00:04:18,460 --> 00:04:20,940
+Estamos falando sobre o PATH como algo
+
+92
+00:04:20,940 --> 00:04:23,190
+e esta  uma varivel global
+
+93
+00:04:23,190 --> 00:04:26,580
+que seu sistema operacional usa para especificar onde encontrar
+
+94
+00:04:26,580 --> 00:04:28,500
+programas que voc pode querer executar.
+
+95
+00:04:28,500 --> 00:04:30,410
+Ento, quando ns digitamos Python, que
+
+96
+00:04:30,410 --> 00:04:33,220
+ um programa e se o programa est
+
+97
+00:04:33,220 --> 00:04:37,630
+dentro de uma pasta e essa pasta est dentro do PATH, ento isso
+
+98
+00:04:37,630 --> 00:04:39,840
+ir funcionar, seu computador ser capaz
+
+99
+00:04:39,840 --> 00:04:42,400
+de encontrar o programa Python e ser
+
+100
+00:04:42,400 --> 00:04:43,250
+capaz de inici-lo.
+
+101
+00:04:44,190 --> 00:04:45,670
+Se no estiver em uma
+
+102
+00:04:45,670 --> 00:04:48,150
+pasta que esteja no PATH, ela no funcionar,
+
+103
+00:04:48,150 --> 00:04:50,570
+apenas informar que no conseguimos encontrar esse programa.
+
+104
+00:04:50,570 --> 00:04:52,310
+Aqui est um exemplo de eu executando um
+
+105
+00:04:52,310 --> 00:04:53,570
+programa que no foi encontrado.
+
+106
+00:04:53,570 --> 00:04:55,777
+Eu digitei ngrok, que  outro
+
+107
+00:04:55,777 --> 00:04:58,455
+programa, mas eu no o tenho no meu
+
+108
+00:04:58,455 --> 00:05:02,470
+PATH, ento ele apenas disse que o comando no foi encontrado.
+
+109
+00:05:02,470 --> 00:05:03,982
+Meu computador no sabe o que  isso.
+
+110
+00:05:03,982 --> 00:05:07,030
+Voc poderia ter instalado este programa, voc poderia saber
+
+111
+00:05:07,030 --> 00:05:09,350
+que voc baixou este programa, mas se
+
+112
+00:05:09,350 --> 00:05:13,890
+ele no estiver dentro de uma pasta que est em seu PATH, seu
+
+113
+00:05:13,890 --> 00:05:16,220
+computador no poder execut-lo atravs do terminal.
+
+114
+00:05:16,220 --> 00:05:17,590
+Ento, isso  importante, ok?
+
+115
+00:05:19,020 --> 00:05:20,910
+Assim voc pode ver o
+
+116
+00:05:20,910 --> 00:05:24,390
+que est no seu PATH digitando isso no Mac
+
+117
+00:05:24,390 --> 00:05:27,390
+OS 10 ou no Linux, basta digitar echo
+
+118
+00:05:27,390 --> 00:05:28,990
+dollar PATH e ele
+
+119
+00:05:28,990 --> 00:05:31,782
+informar todas as pastas que fazem parte
+
+120
+00:05:31,782 --> 00:05:34,670
+do seu PATH, qualquer programa que voc
+
+121
+00:05:34,670 --> 00:05:38,870
+tenha dentro dessas pastas seja executvel digitando o nome do programa.
+
+122
+00:05:38,870 --> 00:05:40,290
+Como voc pode ver,
+
+123
+00:05:40,290 --> 00:05:43,010
+voc tem algo como slash library, slash
+
+124
+00:05:43,010 --> 00:05:45,340
+frameworks barra slash dot slash slash
+
+125
+00:05:46,223 --> 00:05:47,800
+verses 3. 7 slash bin.
+
+126
+00:05:47,800 --> 00:05:51,830
+E ento voc tem dois pontos e a prxima pasta comea.
+
+127
+00:05:51,830 --> 00:05:53,190
+Ento voc tem
+
+128
+00:05:53,190 --> 00:05:54,960
+algumas pastas, ou eu
+
+129
+00:05:54,960 --> 00:05:58,840
+tenho algumas pastas aqui e como voc pode ver, uma
+
+130
+00:05:58,840 --> 00:06:03,840
+delas  a pasta binrias do Python3. 7 seguido por, voc sabe, alguma
+
+131
+00:06:04,251 --> 00:06:07,630
+verso do n 8. 5 seguido de alguma coisa de ruby,
+
+132
+00:06:07,630 --> 00:06:09,100
+h algumas coisas aqui, algumas pastas
+
+133
+00:06:09,100 --> 00:06:12,310
+e sempre que eu digito Python, o que o meu computador faz 
+
+134
+00:06:12,310 --> 00:06:14,420
+que ele est indo para essa pasta bin
+
+135
+00:06:14,420 --> 00:06:16,420
+e est verificando se o Python est l.
+
+136
+00:06:16,420 --> 00:06:19,720
+Se no for, ento passa para a prxima pasta e depois para a
+
+137
+00:06:19,720 --> 00:06:20,940
+prxima e assim por diante,
+
+138
+00:06:20,940 --> 00:06:22,510
+e se no puder encontr-la em
+
+139
+00:06:22,510 --> 00:06:25,210
+nenhuma delas, ela dir que o comando no foi encontrado, ok?
+
+140
+00:06:25,210 --> 00:06:28,410
+Ento, echo, dlar, PATH no Mac OS 10 ou no Linux lhe
+
+141
+00:06:28,410 --> 00:06:30,441
+diro o que est no seu PATH.
+
+142
+00:06:30,441 --> 00:06:34,350
+E no Windows h alguns passos, como de costume no Windows,
+
+143
+00:06:34,350 --> 00:06:37,350
+voc tem algumas coisas para fazer, mas eu anexei
+
+144
+00:06:37,350 --> 00:06:38,890
+um post de blog
+
+145
+00:06:38,890 --> 00:06:40,760
+para a seo de recursos
+
+146
+00:06:40,760 --> 00:06:43,116
+desta palestra, voc pode ver se voc
+
+147
+00:06:43,116 --> 00:06:45,743
+clicar no currculo e para baixo aqui no
+
+148
+00:06:45,743 --> 00:06:48,170
+canto superior esquerdo, e h um post
+
+149
+00:06:48,170 --> 00:06:51,440
+no blog anexado com algumas instrues para as vrias
+
+150
+00:06:51,440 --> 00:06:54,882
+verses do Windows, Windows 10, 8, 7 e assim por diante.
+
+151
+00:06:54,882 --> 00:06:56,350
+Ento voc pode dar uma olhada nisso.
+
+152
+00:06:57,300 --> 00:06:59,780
+Ento variveis de ambiente.
+
+153
+00:06:59,780 --> 00:07:02,630
+Bem, o PATH  um exemplo de uma varivel
+
+154
+00:07:02,630 --> 00:07:04,530
+de ambiente e estas so apenas
+
+155
+00:07:04,530 --> 00:07:08,220
+variveis globais disponveis para todos os programas que so executados no
+
+156
+00:07:08,220 --> 00:07:11,340
+ambiente e normalmente o ambiente  o seu computador.
+
+157
+00:07:11,340 --> 00:07:14,100
+Portanto, se voc tiver mais do que
+
+158
+00:07:14,100 --> 00:07:17,160
+o PATH como uma varivel de ambiente, seus
+
+159
+00:07:17,160 --> 00:07:19,260
+programas tero acesso ao caminho
+
+160
+00:07:19,260 --> 00:07:22,610
+e quaisquer outras variveis que voc decidir ter,
+
+161
+00:07:22,610 --> 00:07:25,030
+voc pode ter vrios, se desejar.
+
+162
+00:07:27,950 --> 00:07:30,780
+E aqui est como voc pode ver as variveis de ambiente
+
+163
+00:07:30,780 --> 00:07:31,940
+que voc j tem.
+
+164
+00:07:31,940 --> 00:07:36,430
+Portanto, se voc digitar export no Mac OS 10 ou
+
+165
+00:07:36,430 --> 00:07:38,210
+no Linux, ver todas
+
+166
+00:07:38,210 --> 00:07:40,600
+as variveis de ambiente disponveis atualmente.
+
+167
+00:07:40,600 --> 00:07:42,810
+Voc pode criar mais e no
+
+168
+00:07:42,810 --> 00:07:44,780
+saberemos como criar mais neste
+
+169
+00:07:44,780 --> 00:07:46,800
+curso, mas voc pode criar mais
+
+170
+00:07:46,800 --> 00:07:49,730
+e, em seguida, qualquer programa que voc iniciar
+
+171
+00:07:49,730 --> 00:07:52,350
+nesse ambiente ter acesso a essas variveis.
+
+172
+00:07:52,350 --> 00:07:54,180
+O recurso vinculado nesta palestra
+
+173
+00:07:54,180 --> 00:07:56,440
+explica como voc pode adicionar mais
+
+174
+00:07:56,440 --> 00:07:58,180
+variveis de ambiente no Windows.
+
+175
+00:07:58,180 --> 00:08:00,517
+Modificar seu PATH  algo que voc pode
+
+176
+00:08:00,517 --> 00:08:02,950
+fazer e, novamente, o recurso vinculado na palestra
+
+177
+00:08:02,950 --> 00:08:05,220
+explica como fazer isso, mas pode ser perigoso
+
+178
+00:08:05,220 --> 00:08:08,520
+porque o seu computador est realmente confiando no PATH para encontrar
+
+179
+00:08:08,520 --> 00:08:11,338
+muitos dos programas que ele usa o tempo todo, se
+
+180
+00:08:11,338 --> 00:08:13,540
+voc altere-o e torne o seu computador
+
+181
+00:08:13,540 --> 00:08:15,990
+incapaz de encontrar muitos dos programas de que
+
+182
+00:08:15,990 --> 00:08:17,710
+necessita, voc pode ter alguns problemas.
+
+183
+00:08:17,710 --> 00:08:20,550
+Portanto, apenas no altere o PATH, a menos que
+
+184
+00:08:20,550 --> 00:08:22,070
+voc saiba exatamente o que
+
+185
+00:08:22,070 --> 00:08:24,940
+est fazendo, apenas reinstale o Python se precisar fazer
+
+186
+00:08:24,940 --> 00:08:26,905
+no Windows e certifique-se de adicionar
+
+187
+00:08:26,905 --> 00:08:29,070
+o PATH para que ele funcione.
+
+188
+00:08:30,310 --> 00:08:31,260
+ isso para esta
+
+189
+00:08:31,260 --> 00:08:32,950
+palestra, eu s queria dar uma viso
+
+190
+00:08:32,950 --> 00:08:35,638
+geral rpida do que  o PATH e como voc pode abrir
+
+191
+00:08:35,638 --> 00:08:37,180
+o Python a partir do seu terminal.
+
+192
+00:08:37,180 --> 00:08:39,210
+No prximo vdeo, vamos mais algumas
+
+193
+00:08:39,210 --> 00:08:41,893
+mos e realmente escreveremos algum cdigo no terminal.
+
+194
+00:08:41,893 --> 00:08:43,970
+Eu vou te ver no prximo vdeo.
+

@@ -1,0 +1,420 @@
+1
+00:00:00,290 --> 00:00:01,680
+Jose: Ol e bem vindo de volta.
+
+2
+00:00:01,680 --> 00:00:02,530
+Finalmente, nesta
+
+3
+00:00:02,530 --> 00:00:05,640
+seo, tambm quis contar sobre a funo enumerar.
+
+4
+00:00:05,640 --> 00:00:07,810
+ uma funo que muitos desenvolvedores
+
+5
+00:00:07,810 --> 00:00:10,020
+iniciantes no conhecem at que eventualmente
+
+6
+00:00:10,020 --> 00:00:12,890
+encontrem essa instncia onde, voc sabe, pode
+
+7
+00:00:12,890 --> 00:00:14,250
+ser bastante til.
+
+8
+00:00:14,250 --> 00:00:16,710
+Ento eles vo fazer uma pergunta em algum lugar na internet, e
+
+9
+00:00:16,710 --> 00:00:18,450
+algum volta, quem est dizendo, oh,  claro.
+
+10
+00:00:18,450 --> 00:00:20,250
+Use a funo enumerar, sabe?
+
+11
+00:00:20,250 --> 00:00:22,390
+Faz exatamente o que voc precisa.
+
+12
+00:00:22,390 --> 00:00:24,410
+Ento aqui est um exemplo de
+
+13
+00:00:24,410 --> 00:00:27,040
+onde voc pode querer usar a funo enumerar.
+
+14
+00:00:27,040 --> 00:00:29,700
+Digamos que voc tenha uma lista de seus melhores amigos
+
+15
+00:00:29,700 --> 00:00:31,040
+e eu seja o primeiro.
+
+16
+00:00:32,640 --> 00:00:34,140
+E voc tem esses dois aqui.
+
+17
+00:00:35,290 --> 00:00:38,050
+Voc pode imprimir seus trs melhores amigos,
+
+18
+00:00:38,050 --> 00:00:43,050
+ claro, como de costume, dizendo que meu melhor amigo  top_friends, zero.
+
+19
+00:00:47,850 --> 00:00:52,000
+E voc pode copiar isso, e eu cometi um erro aqui.
+
+20
+00:00:54,680 --> 00:00:55,750
+L.
+
+21
+00:00:55,750 --> 00:00:58,800
+Claro, voc ter que mudar isso para um e dois.
+
+22
+00:00:58,800 --> 00:01:01,360
+E isso para dois e trs.
+
+23
+00:01:01,360 --> 00:01:02,310
+Voc poderia executar isso.
+
+24
+00:01:04,703 --> 00:01:08,500
+Eu esqueci essas coisas finais.
+
+25
+00:01:08,500 --> 00:01:09,333
+Voc poderia execut-los
+
+26
+00:01:09,333 --> 00:01:11,660
+e perceberia que seu melhor amigo  Jos,
+
+27
+00:01:11,660 --> 00:01:13,380
+que  um bom amigo.
+
+28
+00:01:14,380 --> 00:01:15,590
+Um pouco chato, claro.
+
+29
+00:01:15,590 --> 00:01:16,460
+Ns sabemos sobre loops.
+
+30
+00:01:16,460 --> 00:01:18,010
+Ns podemos usar loops, certo?
+
+31
+00:01:18,010 --> 00:01:20,140
+Ento, vamos usar loops.
+
+32
+00:01:20,140 --> 00:01:23,340
+Vamos dizer que eu na faixa de trs.
+
+33
+00:01:24,400 --> 00:01:26,210
+E depois vamos dizer print.
+
+34
+00:01:26,210 --> 00:01:31,210
+Meu top, eu mais um amigo  top_friends, eu
+
+35
+00:01:33,580 --> 00:01:35,610
+No esqueci nada dessa vez.
+
+36
+00:01:35,610 --> 00:01:37,130
+Esta  outra maneira,
+
+37
+00:01:37,130 --> 00:01:39,590
+potencialmente, de conseguir seus melhores amigos
+
+38
+00:01:39,590 --> 00:01:41,300
+e obter o nmero l.
+
+39
+00:01:42,210 --> 00:01:44,260
+Ns podemos executar isso, colocar a mesma coisa.
+
+40
+00:01:45,180 --> 00:01:47,390
+No entanto, quando voc tem que fazer
+
+41
+00:01:47,390 --> 00:01:49,500
+isso, quando voc deseja iterar sobre
+
+42
+00:01:49,500 --> 00:01:52,210
+algo, e voc precisa acessar o ndice, como
+
+43
+00:01:52,210 --> 00:01:54,290
+aqui voc precisa acessar o ndice
+
+44
+00:01:54,290 --> 00:01:57,470
+para que voc saiba onde est o loop, ento
+
+45
+00:01:58,640 --> 00:02:00,520
+a funo enumerar vem em acessvel.
+
+46
+00:02:00,520 --> 00:02:02,050
+ claro que, se voc no precisava
+
+47
+00:02:02,050 --> 00:02:03,910
+do ndice, e s queria listar seus trs melhores
+
+48
+00:02:03,910 --> 00:02:06,140
+amigos, vamos dizer que Jos  um dos meus melhores amigos.
+
+49
+00:02:06,140 --> 00:02:09,180
+Voc poderia dizer por amigo em top_friends.
+
+50
+00:02:09,180 --> 00:02:14,180
+E diga, amigo  um dos meus melhores amigos.
+
+51
+00:02:15,710 --> 00:02:16,543
+Isso  totalmente legal.
+
+52
+00:02:16,543 --> 00:02:17,720
+Voc no precisa do ndice para nada.
+
+53
+00:02:17,720 --> 00:02:19,740
+No precisa da funo enumerar para nada.
+
+54
+00:02:19,740 --> 00:02:21,580
+Mas no queremos fazer isso agora.
+
+55
+00:02:21,580 --> 00:02:23,800
+Queremos dizer meu top X amigo.
+
+56
+00:02:23,800 --> 00:02:25,270
+E para isso, voc precisa do ndice.
+
+57
+00:02:25,270 --> 00:02:27,740
+Voc precisa de quantas vezes voc passou pelo loop.
+
+58
+00:02:27,740 --> 00:02:29,510
+Para que voc saiba se  o primeiro, os
+
+59
+00:02:29,510 --> 00:02:30,610
+dois primeiros ou os trs primeiros.
+
+60
+00:02:31,450 --> 00:02:36,450
+Nesse caso, voc pode fazer por eu amigo comma em
+
+61
+00:02:37,000 --> 00:02:38,130
+enumerar, top_friends.
+
+62
+00:02:39,280 --> 00:02:42,997
+Novamente, isso  bem parecido com a desestruturao tripla
+
+63
+00:02:42,997 --> 00:02:46,660
+de chave e valor dos itens do dicionrio que
+
+64
+00:02:46,660 --> 00:02:48,890
+vimos anteriormente no curso, faz
+
+65
+00:02:48,890 --> 00:02:50,090
+a mesma coisa.
+
+66
+00:02:50,090 --> 00:02:52,150
+S agora em vez de top_friends
+
+67
+00:02:52,150 --> 00:02:53,880
+eu, voc pode fazer amigo.
+
+68
+00:02:53,880 --> 00:02:55,440
+E isso parece um pouco
+
+69
+00:02:55,440 --> 00:02:57,310
+melhor, e geralmente  apenas mais Pythonic.
+
+70
+00:02:57,310 --> 00:02:59,160
+ um trecho de cdigo melhor aqui.
+
+71
+00:02:59,160 --> 00:03:01,010
+Sempre que voc precisar iterar em
+
+72
+00:03:01,010 --> 00:03:02,930
+um loop e precisar acessar o ndice,
+
+73
+00:03:02,930 --> 00:03:04,000
+use a funo enumerate.
+
+74
+00:03:04,000 --> 00:03:05,350
+Isso  o que est l.
+
+75
+00:03:06,300 --> 00:03:07,290
+OK.
+
+76
+00:03:07,290 --> 00:03:09,830
+A funo enumerar fornece um gerador.
+
+77
+00:03:10,680 --> 00:03:12,430
+Ento, essas coisas, como voc pode
+
+78
+00:03:12,430 --> 00:03:13,810
+ver, esto todas interligadas.
+
+79
+00:03:13,810 --> 00:03:17,380
+Ento, se voc tivesse um gerador de
+
+80
+00:03:17,380 --> 00:03:20,520
+amigos, friend_g  o enumerado de top_friends.
+
+81
+00:03:20,520 --> 00:03:23,000
+Voc tambm pode imprimir prximo de friend_g.
+
+82
+00:03:23,000 --> 00:03:25,500
+E isso vai te dar uma tupple, tuple.
+
+83
+00:03:26,949 --> 00:03:28,910
+Eu preciso fazer uma camiseta que
+
+84
+00:03:28,910 --> 00:03:30,570
+diga,  tupple ou tuple?
+
+85
+00:03:30,570 --> 00:03:32,311
+Isso seria engraado.
+
+86
+00:03:32,311 --> 00:03:35,290
+Ento, como voc pode ver, a primeira tupla
+
+87
+00:03:35,290 --> 00:03:38,370
+que  retornada aqui  a zero comma Jose.
+
+88
+00:03:38,370 --> 00:03:39,750
+E  isso que est acontecendo aqui no loop de quatro.
+
+89
+00:03:39,750 --> 00:03:42,710
+ apenas pegar o prximo elemento de cada coisa, e
+
+90
+00:03:42,710 --> 00:03:45,334
+ desestrutur-los, como voc sabe que pode fazer.
+
+91
+00:03:45,334 --> 00:03:49,090
+K V  igual a prximo de um amigo.
+
+92
+00:03:49,090 --> 00:03:51,400
+Ento voc pode imprimir K, e voc pode imprimir
+
+93
+00:03:51,400 --> 00:03:53,550
+V, e isso s vai colocar zero em
+
+94
+00:03:53,550 --> 00:03:57,190
+K, Jos em V, e estes representam a chave e valor, a propsito.
+
+95
+00:03:57,190 --> 00:03:58,790
+Eles no so apenas letras aleatrias.
+
+96
+00:03:59,780 --> 00:04:01,930
+A desestruturao da tupla  algo que voc pode fazer.
+
+97
+00:04:01,930 --> 00:04:02,900
+Ns mencionamos isso antes.
+
+98
+00:04:02,900 --> 00:04:05,000
+ por isso que estou apenas passando por isso rapidamente.
+
+99
+00:04:06,000 --> 00:04:07,960
+E  assim que funciona a funo enumerar.
+
+100
+00:04:07,960 --> 00:04:10,210
+Por isso, permite obter o ndice, assim como o
+
+101
+00:04:10,210 --> 00:04:12,670
+valor, quando voc passa por cima de uma lista.
+
+102
+00:04:12,670 --> 00:04:14,740
+Pode ser til em algumas situaes.
+
+103
+00:04:15,760 --> 00:04:16,740
+Bem,  isso para este vdeo.
+
+104
+00:04:16,740 --> 00:04:17,573
+Obrigado por assistir,
+
+105
+00:04:17,573 --> 00:04:19,080
+e vejo vocs no prximo.
+

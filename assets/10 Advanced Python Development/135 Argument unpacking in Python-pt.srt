@@ -1,0 +1,944 @@
+1
+00:00:00,140 --> 00:00:01,610
+Jos: Ol, e bem vindo de volta.
+
+2
+00:00:01,610 --> 00:00:05,140
+Neste vdeo, estamos olhando para o argumento de desempacotamento.
+
+3
+00:00:05,140 --> 00:00:07,610
+Ns olhamos para a desestruturao
+
+4
+00:00:07,610 --> 00:00:10,880
+dupla, e isso  meio relacionado.
+
+5
+00:00:10,880 --> 00:00:12,420
+No  a mesma coisa,
+
+6
+00:00:12,420 --> 00:00:15,410
+mas  uma espcie de mo curta para fazer as coisas.
+
+7
+00:00:16,650 --> 00:00:18,330
+Dado o cdigo que temos aqui 
+
+8
+00:00:18,330 --> 00:00:19,320
+esquerda, que deve parecer
+
+9
+00:00:19,320 --> 00:00:21,480
+familiar,  o que escrevemos h alguns vdeos atrs.
+
+10
+00:00:21,480 --> 00:00:22,550
+Temos nossas contas
+
+11
+00:00:22,550 --> 00:00:25,480
+e temos uma funo para adicionar saldo a uma conta.
+
+12
+00:00:25,480 --> 00:00:28,420
+Vamos chamar a funo add_balance muitas vezes.
+
+13
+00:00:28,420 --> 00:00:30,570
+Imagine que temos uma lista de transaes
+
+14
+00:00:30,570 --> 00:00:33,020
+como essa lista que acabei de colar aqui.
+
+15
+00:00:33,020 --> 00:00:34,640
+Ento  uma lista de duplas.
+
+16
+00:00:34,640 --> 00:00:38,990
+Este diz a quantidade de mudanas que aconteceu
+
+17
+00:00:38,990 --> 00:00:41,840
+e esta a que isso aconteceu.
+
+18
+00:00:41,840 --> 00:00:44,220
+Ento, vamos repassar essas transaes.
+
+19
+00:00:44,220 --> 00:00:45,530
+Eu s vou pressionar entrar algumas
+
+20
+00:00:45,530 --> 00:00:47,060
+vezes aqui para te dar mais espao.
+
+21
+00:00:47,060 --> 00:00:48,330
+E digamos que queremos
+
+22
+00:00:48,330 --> 00:00:51,030
+adicionar todas essas transaes s nossas contas.
+
+23
+00:00:51,030 --> 00:00:52,410
+O que poderamos fazer?
+
+24
+00:00:52,410 --> 00:00:54,200
+Para t em
+
+25
+00:00:55,318 --> 00:00:59,740
+transaes, add_balancet [0], desculpe pelo suporte, t [0],
+
+26
+00:00:59,740 --> 00:01:02,240
+t [1] e  isso.
+
+27
+00:01:03,540 --> 00:01:05,917
+Ento, como voc pode ver o que isso
+
+28
+00:01:05,917 --> 00:01:08,511
+vai fazer,  claro que para cada transao
+
+29
+00:01:08,511 --> 00:01:13,511
+que  uma tupla, ela ir chamar t [0] e t [1] a quantidade e o
+
+30
+00:01:14,110 --> 00:01:18,090
+nome e pass-la para add_balance, o que  necessrio no quantidade e o
+
+31
+00:01:18,090 --> 00:01:19,940
+nome da conta que vai atualizar.
+
+32
+00:01:21,620 --> 00:01:25,645
+Agora estamos fazendo algo muito especfico aqui, o que 
+
+33
+00:01:25,645 --> 00:01:29,170
+uma coisa realmente popular para se fazer, na verdade.
+
+34
+00:01:29,170 --> 00:01:31,260
+E isso  que estamos
+
+35
+00:01:31,260 --> 00:01:36,210
+recebendo um itervel, como esta tupla aqui, e cada elemento da tupla,
+
+36
+00:01:36,210 --> 00:01:37,550
+neste caso, dois
+
+37
+00:01:37,550 --> 00:01:40,330
+elementos, estamos passando-os como argumentos para uma funo.
+
+38
+00:01:40,330 --> 00:01:42,140
+Observe como estamos passando o
+
+39
+00:01:42,140 --> 00:01:44,660
+primeiro argumento, o argumento com ndice zero,
+
+40
+00:01:44,660 --> 00:01:47,870
+para nossa funo t [0] como o primeiro argumento.
+
+41
+00:01:47,870 --> 00:01:49,550
+Portanto, o primeiro argumento da
+
+42
+00:01:49,550 --> 00:01:51,958
+funo tambm  o primeiro elemento da tupla.
+
+43
+00:01:51,958 --> 00:01:54,620
+O segundo argumento da funo  tambm o
+
+44
+00:01:54,620 --> 00:01:57,400
+segundo elemento da tupla e assim por diante.
+
+45
+00:01:57,400 --> 00:01:59,120
+Ento isso  uma coisa muito
+
+46
+00:01:59,120 --> 00:02:00,420
+popular, cada elemento da
+
+47
+00:02:00,420 --> 00:02:02,820
+tupla indo para o argumento de uma funo.
+
+48
+00:02:02,820 --> 00:02:04,400
+Ento o Python nos d uma abreviao.
+
+49
+00:02:04,400 --> 00:02:08,865
+Em vez disso, podemos fazer * e o
+
+50
+00:02:08,865 --> 00:02:10,970
+que isso faz 
+
+51
+00:02:10,970 --> 00:02:14,250
+descompactar o itervel em argumentos.
+
+52
+00:02:14,250 --> 00:02:18,750
+Ento passamos cada elemento de t como um
+
+53
+00:02:18,750 --> 00:02:21,830
+argumento separado para a funo.
+
+54
+00:02:21,830 --> 00:02:25,170
+Ento t [0], a quantia, ns iremos para a quantia,
+
+55
+00:02:25,170 --> 00:02:28,010
+t [1], checando, ns iremos para o nome.
+
+56
+00:02:28,010 --> 00:02:29,850
+Se tivermos mais elementos
+
+57
+00:02:29,850 --> 00:02:33,420
+aqui, eles tambm iriam para os parmetros subsequentes.
+
+58
+00:02:33,420 --> 00:02:36,750
+Claro que s temos dois elementos, dois parmetros.
+
+59
+00:02:36,750 --> 00:02:40,610
+Ento isso  chamado de desempacotamento de argumentos, e
+
+60
+00:02:40,610 --> 00:02:43,980
+este asterisco aqui  o operador de desempacotamento
+
+61
+00:02:43,980 --> 00:02:47,700
+que podemos usar para descompactar qualquer itervel em argumentos.
+
+62
+00:02:49,746 --> 00:02:51,210
+Ok, bem direto.
+
+63
+00:02:52,090 --> 00:02:56,870
+Agora eu tambm queria falar sobre argumentos nomeados.
+
+64
+00:02:56,870 --> 00:03:00,033
+Voc sabia que em qualquer chamada de funo no
+
+65
+00:03:00,033 --> 00:03:03,780
+Python, voc pode especificar o nome do parmetro que est
+
+66
+00:03:03,780 --> 00:03:05,470
+preenchendo com um determinado valor.
+
+67
+00:03:05,470 --> 00:03:10,470
+Ento voc pode dizer algo como amount = t [0], name = t [1].
+
+68
+00:03:11,860 --> 00:03:13,560
+Este  um Python totalmente
+
+69
+00:03:13,560 --> 00:03:16,240
+vlido, ento voc define o nome do argumento.
+
+70
+00:03:16,240 --> 00:03:17,980
+Sinto muito o nome do parmetro
+
+71
+00:03:17,980 --> 00:03:19,560
+e o valor do argumento.
+
+72
+00:03:19,560 --> 00:03:21,400
+E voc coloca um sinal de igual no meio.
+
+73
+00:03:21,400 --> 00:03:24,720
+Isso faz com que a funo chame um pouco mais legvel, de modo que
+
+74
+00:03:24,720 --> 00:03:25,810
+quando voc est olhando para
+
+75
+00:03:25,810 --> 00:03:29,550
+a funo voc sabe bem, t [0]  a quantidade, t [1]  o nome.
+
+76
+00:03:30,780 --> 00:03:33,010
+Torna-se um pouco menos til se voc
+
+77
+00:03:33,010 --> 00:03:34,910
+tiver uma instruo acima que diga
+
+78
+00:03:34,910 --> 00:03:39,910
+algo como amount = t [0] e vamos usar a quantidade adequada name = t.
+
+79
+00:03:41,470 --> 00:03:42,827
+Isso se torna um
+
+80
+00:03:42,827 --> 00:03:47,380
+pouco menos til, ento voc tem quantia = quantia, nome = nome.
+
+81
+00:03:47,380 --> 00:03:48,540
+Ento isso no  to
+
+82
+00:03:48,540 --> 00:03:50,630
+til, ento voc no faria isso nesse caso.
+
+83
+00:03:51,780 --> 00:03:55,024
+Mas quando voc tem uma varivel que talvez no
+
+84
+00:03:55,024 --> 00:03:58,070
+descreva o que as coisas esto to bem,
+
+85
+00:03:58,070 --> 00:03:59,610
+como essa coisa aqui.
+
+86
+00:03:59,610 --> 00:04:01,960
+Isso pode ser muito til porque agora voc
+
+87
+00:04:01,960 --> 00:04:05,910
+sabe que t [0] seja o que for, vai para a propriedade amount.
+
+88
+00:04:05,910 --> 00:04:07,850
+t [1] seja o que for, vai para a propriedade name.
+
+89
+00:04:07,850 --> 00:04:12,850
+Ento t [1] deve ser uma string, t [0] deve ser uma float que voc assume.
+
+90
+00:04:14,130 --> 00:04:16,454
+Um benefcio desses argumentos nomeados  que
+
+91
+00:04:16,454 --> 00:04:18,520
+voc pode coloc-los na ordem que desejar.
+
+92
+00:04:19,370 --> 00:04:21,610
+Ento, voc pode colocar este aqui e
+
+93
+00:04:21,610 --> 00:04:24,820
+este na frente, e este atrs, no importa,  com voc.
+
+94
+00:04:24,820 --> 00:04:27,450
+Ento isso  chamado de argumentos em poucas palavras.
+
+95
+00:04:27,450 --> 00:04:28,570
+Isso  tudo o que eles so.
+
+96
+00:04:28,570 --> 00:04:30,730
+Voc pode colocar o nome do parmetro
+
+97
+00:04:30,730 --> 00:04:33,000
+que voc est preenchendo na frente do valor,
+
+98
+00:04:33,000 --> 00:04:35,050
+e ento voc pode mistur-los se quiser.
+
+99
+00:04:37,710 --> 00:04:40,680
+Ento, na seo nove h um tempo atrs, ento
+
+100
+00:04:40,680 --> 00:04:42,880
+voc vai adicionar mais entradas aqui.
+
+101
+00:04:42,880 --> 00:04:45,260
+Na seo nove, analisamos este pedao de cdigo
+
+102
+00:04:45,260 --> 00:04:46,900
+aqui que estou prestes a colar.
+
+103
+00:04:46,900 --> 00:04:48,500
+Ns olhamos para este pedao de cdigo.
+
+104
+00:04:49,468 --> 00:04:50,350
+E se voc
+
+105
+00:04:50,350 --> 00:04:52,344
+se lembra, definimos um usurio de classe com
+
+106
+00:04:52,344 --> 00:04:54,681
+o mtodo init, o nome de usurio e a
+
+107
+00:04:54,681 --> 00:04:57,780
+senha eram dois argumentos do init e, em seguida, definimos as propriedades
+
+108
+00:04:57,780 --> 00:04:59,250
+username e password do objeto.
+
+109
+00:04:59,250 --> 00:05:01,260
+E ento ns temos um mtodo
+
+110
+00:05:01,260 --> 00:05:03,140
+de classe do dict que levou
+
+111
+00:05:03,140 --> 00:05:05,690
+em um dicionrio e criou um novo objeto
+
+112
+00:05:05,690 --> 00:05:09,560
+do tipo usurio, duas chaves, nome de usurio e senha nesse dicionrio.
+
+113
+00:05:11,210 --> 00:05:14,650
+Uma coisa interessante aqui que eu notei rapidamente quando olhamos
+
+114
+00:05:14,650 --> 00:05:16,320
+para esses dados,  que
+
+115
+00:05:16,320 --> 00:05:19,436
+ns temos as chaves de nome de usurio e
+
+116
+00:05:19,436 --> 00:05:21,590
+senha em nosso dicionrio, e ns
+
+117
+00:05:21,590 --> 00:05:25,730
+temos nomes de argumentos de nome de usurio e senha, ento eles
+
+118
+00:05:25,730 --> 00:05:26,630
+combinam.
+
+119
+00:05:26,630 --> 00:05:30,460
+Os dados que temos com uma chave de nome de usurio e senha correspondem
+
+120
+00:05:30,460 --> 00:05:32,980
+aos nomes dos argumentos nome de usurio e senha.
+
+121
+00:05:32,980 --> 00:05:35,030
+Ento, isso vai ser interessante em um momento.
+
+122
+00:05:35,870 --> 00:05:37,610
+Ento ns temos uma lista de usurios.
+
+123
+00:05:37,610 --> 00:05:40,400
+Podemos imaginar que eles esto vindo de um banco de dados ou algo assim.
+
+124
+00:05:40,400 --> 00:05:42,630
+Ns temos username  rolf, password 
+
+125
+00:05:42,630 --> 00:05:45,330
+123, username tecladoisawesome, password is youaretoo e estes
+
+126
+00:05:45,330 --> 00:05:46,640
+so dois dicionrios aqui.
+
+127
+00:05:46,640 --> 00:05:49,040
+E no final
+
+128
+00:05:49,040 --> 00:05:52,570
+mapeamos o usurio. from_dict mtodo para a lista de usurios,
+
+129
+00:05:52,570 --> 00:05:54,790
+de modo que chama do mtodo dict para
+
+130
+00:05:54,790 --> 00:05:56,210
+cada usurio, para cada dicionrio
+
+131
+00:05:56,210 --> 00:05:58,110
+aqui, passando o dicionrio para o mtodo
+
+132
+00:05:58,110 --> 00:05:59,580
+e, em seguida, fomos capazes de
+
+133
+00:05:59,580 --> 00:06:01,470
+criar um novo usurio de cada dicionrio.
+
+134
+00:06:03,360 --> 00:06:06,109
+E tambm,  claro, temos a opo
+
+135
+00:06:06,109 --> 00:06:11,109
+de dizer que user_objects  [User. from_dict (u) para u in Users].
+
+136
+00:06:11,410 --> 00:06:13,600
+Temos a opo de fazer essa compreenso
+
+137
+00:06:13,600 --> 00:06:16,740
+da lista tambm, embora na poca eu tenha sugerido que
+
+138
+00:06:17,829 --> 00:06:21,480
+a compreenso da lista era um pouco pior porque ns temos que
+
+139
+00:06:21,480 --> 00:06:23,430
+criar essa varivel vazia, a funo
+
+140
+00:06:23,430 --> 00:06:25,870
+j est definida, ento  muito til usar
+
+141
+00:06:25,870 --> 00:06:26,703
+isso aqui.
+
+142
+00:06:26,703 --> 00:06:29,048
+No precisamos criar uma defuno de almen.
+
+143
+00:06:29,048 --> 00:06:30,140
+ tudo de bom.
+
+144
+00:06:31,900 --> 00:06:35,100
+No entanto, agora que temos o argumento de desempacotamento,
+
+145
+00:06:35,100 --> 00:06:38,450
+e estou prestes a introduzir um novo tipo de descompactao.
+
+146
+00:06:38,450 --> 00:06:40,570
+Agora que temos o argumento de
+
+147
+00:06:40,570 --> 00:06:43,324
+desempacotamento, na verdade, no precisamos mais desse mtodo.
+
+148
+00:06:43,324 --> 00:06:46,440
+E, de fato, no precisamos disso tambm.
+
+149
+00:06:46,440 --> 00:06:48,630
+Porque o que vamos fazer
+
+150
+00:06:48,630 --> 00:06:50,440
+agora  fazer isso.
+
+151
+00:06:51,671 --> 00:06:52,740
+Ns vamos
+
+152
+00:06:53,690 --> 00:06:58,690
+fazer e dados, dados ['username'], dados ['senha'].
+
+153
+00:07:01,230 --> 00:07:02,671
+Ok, eu vou construir isso.
+
+154
+00:07:02,671 --> 00:07:05,230
+Isso no  novidade para vocs.
+
+155
+00:07:05,230 --> 00:07:07,160
+Somos iterveis sobre os usurios.
+
+156
+00:07:07,160 --> 00:07:10,470
+Estamos chamando cada dado do dicionrio para que este dicionrio seja
+
+157
+00:07:10,470 --> 00:07:13,550
+dado e, em seguida, esse dicionrio se torne um dado.
+
+158
+00:07:13,550 --> 00:07:16,020
+E toda vez que fazemos isso, estamos criando um novo
+
+159
+00:07:16,020 --> 00:07:19,840
+objeto de usurio passando para ele o nome de usurio e a senha dos dados.
+
+160
+00:07:21,110 --> 00:07:24,460
+Ento rolf vai para o nome de usurio, 123 vai para a senha.
+
+161
+00:07:24,460 --> 00:07:26,230
+Temos um novo usurio onde as
+
+162
+00:07:26,230 --> 00:07:29,550
+propriedades so nome de usurio e senha, ento sabemos disso.
+
+163
+00:07:29,550 --> 00:07:31,350
+Podemos tornar isso um
+
+164
+00:07:31,350 --> 00:07:36,190
+pouco pior e torn-lo username = data ['username'], password = data ['password'].
+
+165
+00:07:36,190 --> 00:07:40,610
+Novamente a mesma coisa s agora estamos usando argumentos nomeados.
+
+166
+00:07:40,610 --> 00:07:43,140
+Estamos dando um nome ao argumento que estamos passando
+
+167
+00:07:43,140 --> 00:07:45,760
+e que tem que coincidir com o permetro aqui.
+
+168
+00:07:45,760 --> 00:07:50,420
+Ento, estamos dizendo que o nome de usurio  a propriedade de nome de usurio dos dados,
+
+169
+00:07:51,810 --> 00:07:54,280
+a senha  a chave de senha dos dados.
+
+170
+00:07:55,600 --> 00:07:59,060
+Sempre que voc ver este nome de usurio  algo,
+
+171
+00:07:59,060 --> 00:08:02,930
+nome de usurio senha  algo senha no dicionrio, voc sabe
+
+172
+00:08:02,930 --> 00:08:04,980
+que voc tem triplication aqui.
+
+173
+00:08:04,980 --> 00:08:07,430
+H muitos nomes de usurios aqui.
+
+174
+00:08:07,430 --> 00:08:11,010
+Deve haver um caminho melhor e existe.
+
+175
+00:08:11,010 --> 00:08:12,980
+Em vez de fazer
+
+176
+00:08:14,270 --> 00:08:17,080
+isso, voc pode fazer isso.
+
+177
+00:08:20,000 --> 00:08:23,820
+Em vez de fazer isso, voc pode fazer isso.
+
+178
+00:08:27,630 --> 00:08:31,160
+Observe o asterisco duplo agora, e o que isto faz
+
+179
+00:08:31,160 --> 00:08:33,660
+ que este  um dicionrio descompactando.
+
+180
+00:08:33,660 --> 00:08:37,460
+Descompacta um dicionrio como argumentos nomeados
+
+181
+00:08:37,460 --> 00:08:38,940
+para uma funo.
+
+182
+00:08:38,940 --> 00:08:40,870
+Ento faz exatamente isso.
+
+183
+00:08:40,870 --> 00:08:43,370
+Diz que pega a chave do dicionrio h.
+
+184
+00:08:43,370 --> 00:08:45,390
+Neste caso,  o nome de usurio e senha.
+
+185
+00:08:46,700 --> 00:08:49,530
+E trate-os como argumentos nomeados para as funes.
+
+186
+00:08:49,530 --> 00:08:52,389
+Ento diga username  dados ['username'] e ento
+
+187
+00:08:52,389 --> 00:08:54,630
+esta  outra chave no dicionrio, senha.
+
+188
+00:08:54,630 --> 00:08:56,650
+Ento, vamos tratar isso como outro argumento nomeado
+
+189
+00:08:56,650 --> 00:08:57,850
+igual a senha de dados.
+
+190
+00:08:58,840 --> 00:09:02,090
+Portanto, esses dados de asterisco duplo fazem exatamente a
+
+191
+00:09:02,090 --> 00:09:03,720
+mesma coisa que isso.
+
+192
+00:09:03,720 --> 00:09:05,660
+Por que isso  importante?
+
+193
+00:09:05,660 --> 00:09:09,540
+ importante porque o dicionrio pode no estar em ordem.
+
+194
+00:09:09,540 --> 00:09:14,540
+E lembre-se que estes dois podem ser confusos e tudo bem.
+
+195
+00:09:15,710 --> 00:09:17,320
+Ento voc pode colocar a senha na
+
+196
+00:09:17,320 --> 00:09:19,010
+frente, se quiser, e ela ainda ir
+
+197
+00:09:19,010 --> 00:09:21,670
+para o lugar certo, porque o Python agora combina com o nome.
+
+198
+00:09:21,670 --> 00:09:24,300
+Ento, isso  importante porque quando voc tem os
+
+199
+00:09:24,300 --> 00:09:27,230
+dados do asterisco duplo, o dicionrio pode no estar em
+
+200
+00:09:27,230 --> 00:09:28,930
+ordem, e isso  importante aqui tambm.
+
+201
+00:09:31,450 --> 00:09:33,860
+No entanto, deixe-me dizer que a partir do Python 3. 7, os dicionrios
+
+202
+00:09:34,965 --> 00:09:37,000
+mantm a ordem e, quando
+
+203
+00:09:37,000 --> 00:09:39,680
+voc passa esse mapeamento para uma funo,
+
+204
+00:09:39,680 --> 00:09:42,130
+tambm mantm a ordem do dicionrio.
+
+205
+00:09:43,060 --> 00:09:45,470
+E no  mais um problema, mas mesmo assim voc
+
+206
+00:09:45,470 --> 00:09:48,640
+ainda pode fazer isso, e isso  uma boa coisa a fazer.
+
+207
+00:09:48,640 --> 00:09:50,910
+Se voc estivesse obtendo essas coisas de um banco
+
+208
+00:09:50,910 --> 00:09:53,490
+de dados, por exemplo, voc pode ver como ser capaz de
+
+209
+00:09:53,490 --> 00:09:56,440
+passar a parte inteira dos dados para uma funo pode ser til.
+
+210
+00:09:59,338 --> 00:10:03,020
+ assim que voc faz o argumento nomeado para descompactar ou
+
+211
+00:10:03,020 --> 00:10:04,230
+descompactar o dicionrio.
+
+212
+00:10:05,410 --> 00:10:08,860
+ claro que se seus usurios estivessem em um formato um pouco
+
+213
+00:10:10,490 --> 00:10:12,959
+diferente, se seus usurios estivessem no formato, eu apenas
+
+214
+00:10:12,959 --> 00:10:15,530
+copiaria minhas anotaes apenas para poupar voc da dor.
+
+215
+00:10:15,530 --> 00:10:19,570
+Se seus usurios estivessem nesse formato, o formato da tupla, em que
+
+216
+00:10:20,540 --> 00:10:23,420
+nome de usurio  o primeiro elemento e senha,
+
+217
+00:10:23,420 --> 00:10:27,520
+ o segundo elemento, voc sabe o que fazer em vez disso.
+
+218
+00:10:27,520 --> 00:10:28,470
+Eu s posso fazer isso.
+
+219
+00:10:29,670 --> 00:10:34,670
+Ento, para cada tupla aqui, voc vai pass-las como
+
+220
+00:10:34,824 --> 00:10:39,320
+argumentos normais, chamados argumentos posicionais e, portanto, a
+
+221
+00:10:39,320 --> 00:10:41,210
+mesma coisa aqui.
+
+222
+00:10:41,210 --> 00:10:42,890
+Voc pode pass-los como argumentos
+
+223
+00:10:42,890 --> 00:10:45,204
+posicionais para a funo do usurio, ento
+
+224
+00:10:45,204 --> 00:10:49,660
+neste caso rolf seria o primeiro parmetro, 123 seria o segundo parmetro.
+
+225
+00:10:49,660 --> 00:10:52,770
+E agora voc no sabe se  nome de usurio e senha, voc
+
+226
+00:10:52,770 --> 00:10:55,100
+sabe que  o nmero um e o nmero dois.
+
+227
+00:10:55,100 --> 00:10:56,900
+E isso  algo que voc pode fazer tambm.
+
+228
+00:10:56,900 --> 00:10:59,810
+ claro que somente se as propriedades estiverem nesse
+
+229
+00:10:59,810 --> 00:11:02,590
+tipo de itervel e no nesse tipo de mapeamento.
+
+230
+00:11:03,870 --> 00:11:05,280
+Ok,  isso para este vdeo.
+
+231
+00:11:05,280 --> 00:11:07,970
+Eu queria mostrar-lhe sobre essa descompactao e tambm sobre
+
+232
+00:11:07,970 --> 00:11:10,300
+argumentos nomeados, porque  uma coisa til para
+
+233
+00:11:10,300 --> 00:11:12,060
+saber, s vezes, tornar suas funes
+
+234
+00:11:12,060 --> 00:11:13,930
+um pouco mais fceis de entender.
+
+235
+00:11:13,930 --> 00:11:15,070
+Ento  isso para este vdeo.
+
+236
+00:11:15,070 --> 00:11:16,520
+Eu vou te ver no prximo.
+

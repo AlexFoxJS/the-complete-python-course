@@ -1,0 +1,324 @@
+1
+00:00:00,270 --> 00:00:01,710
+-: Hola y bienvenido de nuevo.
+
+2
+00:00:01,710 --> 00:00:03,990
+En este video, estamos buscando raspar esta
+
+3
+00:00:03,990 --> 00:00:06,640
+pgina de citas que ves aqu y vamos
+
+4
+00:00:06,640 --> 00:00:09,220
+a hacer eso antes de pasar a los
+
+5
+00:00:09,220 --> 00:00:11,830
+libros solo porque este es un poco ms simple.
+
+6
+00:00:11,830 --> 00:00:14,980
+Y lo que voy a ensearte en los prximos
+
+7
+00:00:14,980 --> 00:00:18,530
+videos es cmo estructurar tus aplicaciones de raspado para que
+
+8
+00:00:18,530 --> 00:00:20,880
+puedas hacer lo que quieras con ellas.
+
+9
+00:00:21,850 --> 00:00:24,060
+En esta seccin vamos a construir dos proyectos.
+
+10
+00:00:24,060 --> 00:00:25,720
+El raspador de pginas de citas,
+
+11
+00:00:25,720 --> 00:00:27,980
+y luego el raspador de pginas de libros
+
+12
+00:00:27,980 --> 00:00:30,530
+que en realidad ser muy similar, al menos en estructura.
+
+13
+00:00:31,670 --> 00:00:34,360
+Comencemos por analizar esta pgina de citas.
+
+14
+00:00:35,630 --> 00:00:39,700
+La URL, por cierto, es comillas. raspar. com, as que sintete
+
+15
+00:00:39,700 --> 00:00:41,890
+libre de echar un vistazo a ti
+
+16
+00:00:41,890 --> 00:00:44,040
+mismo si quieres jugar con l.
+
+17
+00:00:45,040 --> 00:00:46,890
+Lo que tenemos es que puedes ver
+
+18
+00:00:46,890 --> 00:00:48,520
+algunos elementos diferentes en la pantalla.
+
+19
+00:00:48,520 --> 00:00:51,080
+Tenemos algn tipo de ttulo aqu, tenemos una pgina
+
+20
+00:00:51,080 --> 00:00:54,500
+de inicio de sesin aqu en la parte superior derecha, tenemos 10
+
+21
+00:00:54,500 --> 00:00:55,860
+etiquetas principales, por lo que
+
+22
+00:00:55,860 --> 00:01:00,090
+presumiblemente se puede hacer clic en estos elementos, por lo que estos son enlaces.
+
+23
+00:01:00,090 --> 00:01:05,090
+Entonces tienes citas individuales en estos rectngulos aqu
+
+24
+00:01:05,140 --> 00:01:07,310
+este tipo de cartas.
+
+25
+00:01:07,310 --> 00:01:11,310
+Cada vez que veas algo que se ve estructurado como este,
+
+26
+00:01:11,310 --> 00:01:13,490
+sabes que ser un rasguo fcil.
+
+27
+00:01:13,490 --> 00:01:15,680
+Esta pgina est diseada para raspar, por
+
+28
+00:01:15,680 --> 00:01:19,640
+lo que, por supuesto, ser un poco ms simple que otras pginas
+
+29
+00:01:19,640 --> 00:01:21,850
+que puedes ver en la naturaleza.
+
+30
+00:01:21,850 --> 00:01:23,930
+Pero lo que vamos a aprender
+
+31
+00:01:23,930 --> 00:01:27,040
+en esta seccin realmente nos ayudar a raspar cualquier
+
+32
+00:01:27,040 --> 00:01:29,790
+pgina, no solo estas pginas ms simples.
+
+33
+00:01:29,790 --> 00:01:32,600
+Entonces, lo que tenemos aqu son varias tarjetas diferentes.
+
+34
+00:01:32,600 --> 00:01:36,750
+Y cada tarjeta contiene una cita, as como el autor y
+
+35
+00:01:36,750 --> 00:01:39,810
+un montn de etiquetas aqu que podemos raspar.
+
+36
+00:01:39,810 --> 00:01:41,900
+Lo que vamos a hacer es crear
+
+37
+00:01:41,900 --> 00:01:45,730
+un programa que nos proporcione los contenidos de la cita y tambin el autor.
+
+38
+00:01:46,700 --> 00:01:48,600
+Eso es todo, un programa bastante simple.
+
+39
+00:01:48,600 --> 00:01:51,510
+Nuevamente, lo que aprenda significar que podr
+
+40
+00:01:51,510 --> 00:01:54,840
+ampliar ese programa ms all de cualquier cantidad.
+
+41
+00:01:56,620 --> 00:01:59,780
+Comencemos por inspeccionar la fuente de la pgina solo
+
+42
+00:01:59,780 --> 00:02:01,520
+para saber cmo se ve.
+
+43
+00:02:02,820 --> 00:02:05,610
+Como puede ver aqu a la derecha,
+
+44
+00:02:05,610 --> 00:02:09,710
+tenemos el cuerpo del HTML que contiene todo el contenido.
+
+45
+00:02:09,710 --> 00:02:13,400
+Dentro de all tenemos un div que tiene un contenedor de clase.
+
+46
+00:02:13,400 --> 00:02:15,450
+Eso contiene todo el contenido tambin.
+
+47
+00:02:16,450 --> 00:02:20,270
+Y luego tenemos una fila que es un cuadro de encabezado, y
+
+48
+00:02:20,270 --> 00:02:22,240
+al lado tenemos otra fila, que
+
+49
+00:02:22,240 --> 00:02:23,890
+es el resto del contenido.
+
+50
+00:02:25,830 --> 00:02:30,830
+Dentro de esa fila tenemos una cantidad de, bueno, dos columnas.
+
+51
+00:02:30,928 --> 00:02:32,800
+Uno que es col-nd-8, y
+
+52
+00:02:34,003 --> 00:02:36,100
+el otro ne que es col-nd-4.
+
+53
+00:02:37,008 --> 00:02:40,680
+Y tambin tiene otra clase llamada tags-box.
+
+54
+00:02:40,680 --> 00:02:43,390
+Estas son las etiquetas, estas son las comillas.
+
+55
+00:02:43,390 --> 00:02:47,090
+En las comillas tenemos una cantidad de div, cada
+
+56
+00:02:47,090 --> 00:02:52,090
+div con una cita de clase que tiene una de las comillas.
+
+57
+00:02:52,200 --> 00:02:55,930
+Entonces sabemos que cada uno de estos divs ser
+
+58
+00:02:55,930 --> 00:03:00,110
+exactamente idntico a todos los dems excepto en el contenido.
+
+59
+00:03:00,110 --> 00:03:03,960
+Pero dentro de un div, tenemos un lapso que tiene
+
+60
+00:03:03,960 --> 00:03:06,091
+un texto de clase, y que
+
+61
+00:03:06,091 --> 00:03:11,091
+contiene la cita, y otro lapso que contiene una pequea etiqueta que contiene
+
+62
+00:03:11,120 --> 00:03:12,980
+el autor, tambin un enlace
+
+63
+00:03:12,980 --> 00:03:16,310
+que contiene la pgina de aproximadamente de ese autor.
+
+64
+00:03:18,012 --> 00:03:21,940
+Luego tiene otro div que contiene las etiquetas.
+
+65
+00:03:21,940 --> 00:03:25,426
+Hay algunas cosas aqu, y entre ellas hay una etiqueta
+
+66
+00:03:25,426 --> 00:03:28,390
+a y que tiene una etiqueta de clase.
+
+67
+00:03:29,770 --> 00:03:34,280
+Entonces dentro de esa etiqueta tenemos cambios, pensamientos
+
+68
+00:03:34,280 --> 00:03:36,300
+profundos, pensamiento, mundo, etc.
+
+69
+00:03:37,340 --> 00:03:39,480
+Si miraras alguna de estas citas,
+
+70
+00:03:39,480 --> 00:03:41,570
+veras que es esencialmente la misma.
+
+71
+00:03:41,570 --> 00:03:44,140
+Un lapso con etiquetas de clase y que contiene una cita.
+
+72
+00:03:44,140 --> 00:03:47,060
+Otro tramo que contiene una etiqueta by y small que
+
+73
+00:03:47,060 --> 00:03:50,280
+contiene el autor, y luego otro div aqu con las etiquetas.
+
+74
+00:03:50,280 --> 00:03:51,113
+Etctera.
+
+75
+00:03:52,020 --> 00:03:56,890
+As que sabemos que mientras consigamos obtener estos divs y
+
+76
+00:03:56,890 --> 00:04:01,580
+para cada div obtener estos datos, podremos extraer todos los
+
+77
+00:04:01,580 --> 00:04:04,140
+datos que necesitamos de la pgina.
+
+78
+00:04:04,140 --> 00:04:05,720
+As que vamos a hacer eso en el prximo video.
+
+79
+00:04:05,720 --> 00:04:09,440
+Vamos a estructurar nuestra nueva aplicacin para
+
+80
+00:04:09,440 --> 00:04:11,610
+poder entender esta pgina.
+
+81
+00:04:11,610 --> 00:04:13,330
+Te ver en el prximo video.
+

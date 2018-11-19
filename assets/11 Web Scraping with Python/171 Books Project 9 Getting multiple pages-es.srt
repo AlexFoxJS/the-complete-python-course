@@ -1,0 +1,228 @@
+1
+00:00:00,208 --> 00:00:01,797
+Jos: Hola y bienvenido de nuevo.
+
+2
+00:00:01,797 --> 00:00:02,963
+En este video
+
+3
+00:00:02,963 --> 00:00:05,504
+estamos viendo cmo obtener datos de mltiples pginas.
+
+4
+00:00:05,504 --> 00:00:07,351
+Entonces, lo ms importante es
+
+5
+00:00:07,351 --> 00:00:10,127
+que veamos cmo son las diferentes pginas
+
+6
+00:00:10,127 --> 00:00:12,652
+y cmo podemos acceder a ellas.
+
+7
+00:00:12,652 --> 00:00:15,438
+Cualquier patrn que pueda reconocer al hacer
+
+8
+00:00:15,438 --> 00:00:18,590
+esto le ayudar mucho en su programacin.
+
+9
+00:00:18,590 --> 00:00:21,563
+Como puede ver, la url ahora de esta
+
+10
+00:00:21,563 --> 00:00:24,063
+pgina es books dot toscrape dot com.
+
+11
+00:00:26,320 --> 00:00:29,730
+Si bajamos al fondo y pasamos a la siguiente pgina,
+
+12
+00:00:29,730 --> 00:00:32,265
+que por cierto, hay 50 de ellos.
+
+13
+00:00:32,265 --> 00:00:35,104
+Este va a ser un nmero importante ms adelante.
+
+14
+00:00:35,104 --> 00:00:38,264
+Puedes ver que la url cambia.
+
+15
+00:00:38,264 --> 00:00:43,141
+Y cambia a la barra diagonal de la pgina de diagonal dos.
+
+16
+00:00:43,141 --> 00:00:46,141
+Pero antes no era pgina uno.
+
+17
+00:00:47,186 --> 00:00:49,350
+As que podemos ver que hemos ido a la pgina
+
+18
+00:00:49,350 --> 00:00:50,979
+del tablero dos y si pasamos a la
+
+19
+00:00:50,979 --> 00:00:53,364
+pgina siguiente, ser la pgina del guin tres, y as sucesivamente.
+
+20
+00:00:53,364 --> 00:00:56,938
+Entonces, qu sucede si vamos a la primera pgina?
+
+21
+00:00:56,938 --> 00:00:58,754
+Esta es la misma pgina
+
+22
+00:00:58,754 --> 00:01:00,360
+que estbamos viendo al principio.
+
+23
+00:01:00,360 --> 00:01:05,330
+Pero ahora tiene una pgina de barra inclinada de slash en un punto html.
+
+24
+00:01:05,330 --> 00:01:08,580
+Eso significa que la pgina de inicio es
+
+25
+00:01:10,421 --> 00:01:14,737
+la pgina de barra diagonal del catlogo, o puede ser
+
+26
+00:01:14,737 --> 00:01:17,171
+simplemente books dot toscrape dot com.
+
+27
+00:01:17,171 --> 00:01:19,555
+Debido a que se puede acceder a todas las
+
+28
+00:01:19,555 --> 00:01:21,637
+pginas en la pgina de barras diagonales del
+
+29
+00:01:21,637 --> 00:01:23,862
+catlogo de barras, esto podra ser til para nosotros
+
+30
+00:01:23,862 --> 00:01:25,612
+al extraer todos los datos que necesitamos.
+
+31
+00:01:26,477 --> 00:01:30,044
+Ahora bien, lo siguiente es que si quieres ir a la siguiente
+
+32
+00:01:30,044 --> 00:01:31,847
+pgina, todo lo que tienes que
+
+33
+00:01:31,847 --> 00:01:33,751
+hacer es solicitar una url diferente.
+
+34
+00:01:33,751 --> 00:01:35,442
+No tiene que hacer clic en el botn.
+
+35
+00:01:35,442 --> 00:01:36,943
+No tiene que hacer botones de clic de
+
+36
+00:01:36,943 --> 00:01:37,938
+Python ni nada de eso.
+
+37
+00:01:37,938 --> 00:01:40,265
+No es que eso funcione, no puedes hacer
+
+38
+00:01:40,265 --> 00:01:42,130
+eso con el conocimiento que tenemos.
+
+39
+00:01:42,130 --> 00:01:45,096
+Pero puede solicitar una url diferente por completo.
+
+40
+00:01:45,096 --> 00:01:47,245
+Entonces, si quiere obtener datos de
+
+41
+00:01:47,245 --> 00:01:50,336
+50 pginas, que es lo que tenemos, solo tiene
+
+42
+00:01:50,336 --> 00:01:54,014
+que hacer un bucle for 50 veces y cada vez sacar
+
+43
+00:01:54,014 --> 00:01:57,339
+todos los libros de la pgina y ponerlos en una lista.
+
+44
+00:01:57,339 --> 00:01:59,289
+Y al final terminars con una gran
+
+45
+00:01:59,289 --> 00:02:00,907
+lista de todos tus libros.
+
+46
+00:02:00,907 --> 00:02:04,146
+Te recomiendo que pruebes esto ahora y luego
+
+47
+00:02:04,146 --> 00:02:07,847
+vamos a implementar esto un poco mejor y tambin
+
+48
+00:02:07,847 --> 00:02:12,597
+vamos a ver cmo extraer el 50 de este lugar aqu, de
+
+49
+00:02:12,597 --> 00:02:16,258
+modo que si el nmero de pginas cambia, ests
+
+50
+00:02:16,258 --> 00:02:18,768
+' solo va a obtener o
+
+51
+00:02:18,768 --> 00:02:23,440
+obtendr todas las pginas o menos pginas si hay menos pginas.
+
+52
+00:02:23,440 --> 00:02:25,302
+De acuerdo, eso es todo por este video.
+
+53
+00:02:25,302 --> 00:02:26,926
+Ve y trata de implementar esto.
+
+54
+00:02:26,926 --> 00:02:30,179
+Obtenga las 50 pginas llamando a esta URL en
+
+55
+00:02:30,179 --> 00:02:32,889
+lugar de la url que tenemos ahora
+
+56
+00:02:32,889 --> 00:02:35,511
+y luego iremos a implementarla nosotros mismos.
+
+57
+00:02:35,511 --> 00:02:37,678
+Nos vemos en el prximo video.
+

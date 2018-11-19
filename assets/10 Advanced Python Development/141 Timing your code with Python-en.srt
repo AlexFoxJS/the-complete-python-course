@@ -1,0 +1,1048 @@
+1
+00:00:00,480 --> 00:00:02,120
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:02,120 --> 00:00:04,760
+As well as the datetime module, used to deal with
+
+3
+00:00:04,760 --> 00:00:07,400
+objects containing both the date and time,
+
+4
+00:00:07,400 --> 00:00:11,100
+we also have a date module and a separate time module.
+
+5
+00:00:11,100 --> 00:00:14,330
+They're used to deal with dates and times separately.
+
+6
+00:00:14,330 --> 00:00:15,510
+In this video, we're going to look at
+
+7
+00:00:15,510 --> 00:00:17,410
+how to time your functions.
+
+8
+00:00:17,410 --> 00:00:20,823
+How long they take to run using the time module.
+
+9
+00:00:22,180 --> 00:00:24,260
+So how is that going to go?
+
+10
+00:00:24,260 --> 00:00:26,580
+Well, it's going to be really straight-forward.
+
+11
+00:00:26,580 --> 00:00:30,330
+Before we run the code that we want to time,
+
+12
+00:00:30,330 --> 00:00:33,070
+we're going to look at the current time.
+
+13
+00:00:33,070 --> 00:00:36,210
+After we run the code, we will also look at the current time
+
+14
+00:00:36,210 --> 00:00:39,570
+which will be a few seconds or a few milli-seconds later.
+
+15
+00:00:39,570 --> 00:00:41,510
+And then we subtract one from the other
+
+16
+00:00:41,510 --> 00:00:42,950
+and that's going to give us the difference
+
+17
+00:00:42,950 --> 00:00:45,440
+between the current time at the start and the current
+
+18
+00:00:45,440 --> 00:00:47,340
+time at the end and that's going to tell us
+
+19
+00:00:47,340 --> 00:00:49,343
+how long the code took to run.
+
+20
+00:00:50,260 --> 00:00:52,220
+Why might that be useful?
+
+21
+00:00:52,220 --> 00:00:55,990
+Sometimes, you won't know whether to use a specific code
+
+22
+00:00:55,990 --> 00:00:57,820
+or something else because you don't know
+
+23
+00:00:57,820 --> 00:01:00,860
+which one's faster if they both do the same thing.
+
+24
+00:01:00,860 --> 00:01:03,430
+For example, should you use list comprehensions
+
+25
+00:01:03,430 --> 00:01:05,440
+or list and Map?
+
+26
+00:01:05,440 --> 00:01:07,230
+We're going to look at that in this video.
+
+27
+00:01:07,230 --> 00:01:08,270
+Let's have a look at an example.
+
+28
+00:01:08,270 --> 00:01:11,940
+The first thing we're going to do is import the time module.
+
+29
+00:01:11,940 --> 00:01:14,420
+This has a bunch of functions that you can use
+
+30
+00:01:14,420 --> 00:01:16,043
+to deal with times.
+
+31
+00:01:16,950 --> 00:01:18,720
+And now we're going to come up with a function
+
+32
+00:01:18,720 --> 00:01:20,170
+that we will time.
+
+33
+00:01:20,170 --> 00:01:22,950
+We will look at how long it takes to run.
+
+34
+00:01:22,950 --> 00:01:27,510
+It's going to be a simple function that it's called
+
+35
+00:01:27,510 --> 00:01:29,770
+powers and takes in a single argument which is going
+
+36
+00:01:29,770 --> 00:01:32,890
+to be a number and then returns a simple list
+
+37
+00:01:32,890 --> 00:01:36,310
+comprehension that does something like this.
+
+38
+00:01:36,310 --> 00:01:41,310
+So it gives you a new list where x is in range limit.
+
+39
+00:01:41,360 --> 00:01:45,030
+So it goes from zero up to whatever number we give it
+
+40
+00:01:45,030 --> 00:01:48,123
+and each number is turned to the power of two.
+
+41
+00:01:48,970 --> 00:01:51,580
+So just gives it a bit of calculation there.
+
+42
+00:01:51,580 --> 00:01:54,060
+It's a pretty fast operation, it's really fast.
+
+43
+00:01:54,060 --> 00:01:56,393
+But we can see how long it takes.
+
+44
+00:01:57,860 --> 00:01:59,380
+Okay.
+
+45
+00:01:59,380 --> 00:02:02,220
+Now, just to show you exactly how this works,
+
+46
+00:02:02,220 --> 00:02:06,680
+we are going to print it out just for you to know
+
+47
+00:02:06,680 --> 00:02:08,240
+what it does.
+
+48
+00:02:08,240 --> 00:02:10,750
+You can see here, it starts at zero.
+
+49
+00:02:10,750 --> 00:02:13,770
+Zero to the power of two is zero, then it goes to one.
+
+50
+00:02:13,770 --> 00:02:15,953
+One to the power of two is one.
+
+51
+00:02:15,953 --> 00:02:18,620
+Two to the power of two is four.
+
+52
+00:02:18,620 --> 00:02:19,860
+Three to the power of two is nine.
+
+53
+00:02:19,860 --> 00:02:20,723
+And so forth.
+
+54
+00:02:21,980 --> 00:02:22,813
+Okay.
+
+55
+00:02:23,910 --> 00:02:27,000
+Now, let's start by timing this function.
+
+56
+00:02:27,000 --> 00:02:30,610
+The first thing to do is to get the current time
+
+57
+00:02:30,610 --> 00:02:32,610
+before we run the function.
+
+58
+00:02:32,610 --> 00:02:35,760
+So notice that up in here in line six, does not run
+
+59
+00:02:35,760 --> 00:02:36,593
+the function yet.
+
+60
+00:02:36,593 --> 00:02:37,920
+We've only defined it.
+
+61
+00:02:37,920 --> 00:02:39,540
+So what we're going to do, we're going to say
+
+62
+00:02:39,540 --> 00:02:41,623
+start is time dot time.
+
+63
+00:02:42,500 --> 00:02:47,500
+Time dot time is, well time module and the time of function
+
+64
+00:02:48,270 --> 00:02:51,630
+within that module gives you the current time
+
+65
+00:02:52,949 --> 00:02:57,949
+at the, well it gives you the current time since 1970.
+
+66
+00:02:58,280 --> 00:03:01,190
+So it gives you the number of seconds that have passed
+
+67
+00:03:01,190 --> 00:03:06,190
+since 1970 and that way you can look at it potentially
+
+68
+00:03:06,970 --> 00:03:08,333
+if current time.
+
+69
+00:03:10,340 --> 00:03:13,170
+Now it gives you it in seconds but it also includes
+
+70
+00:03:13,170 --> 00:03:17,070
+many decimal places to give you enough precision.
+
+71
+00:03:17,070 --> 00:03:19,440
+So if this were to take only a couple of milli-seconds
+
+72
+00:03:19,440 --> 00:03:22,310
+or a couple of nano-seconds, you would still know.
+
+73
+00:03:22,310 --> 00:03:25,070
+This is the current time at the start.
+
+74
+00:03:25,070 --> 00:03:30,070
+Then we are going to do powers of say 50,000, 500,000.
+
+75
+00:03:31,207 --> 00:03:33,313
+500,000, let's go 500,000.
+
+76
+00:03:35,110 --> 00:03:38,603
+And then we are going to calculate the end time.
+
+77
+00:03:40,408 --> 00:03:43,577
+What you can see is exactly the same thing but it's after
+
+78
+00:03:44,550 --> 00:03:47,770
+the function has ran so it gives us essentially
+
+79
+00:03:47,770 --> 00:03:51,300
+this can take some time and then we're going to look
+
+80
+00:03:51,300 --> 00:03:54,010
+at the end time after that has happened.
+
+81
+00:03:54,010 --> 00:03:57,450
+Cause remember these statements happen one after the other.
+
+82
+00:03:57,450 --> 00:04:00,920
+And then we're going to do print, end minus start.
+
+83
+00:04:00,920 --> 00:04:02,764
+End is going to be the larger number.
+
+84
+00:04:02,764 --> 00:04:06,130
+That's the number of seconds past since 1970.
+
+85
+00:04:06,130 --> 00:04:08,200
+Start is really the smaller number because it happened
+
+86
+00:04:08,200 --> 00:04:10,310
+earlier on so this is going to give us a positive
+
+87
+00:04:10,310 --> 00:04:13,604
+number which is the difference between end and start.
+
+88
+00:04:13,604 --> 00:04:16,230
+There is the number of seconds or milli-seconds
+
+89
+00:04:16,230 --> 00:04:18,073
+that this function here took to run.
+
+90
+00:04:19,180 --> 00:04:20,130
+Okay.
+
+91
+00:04:20,130 --> 00:04:22,880
+I'm noticing that my notes actually has one less zero's.
+
+92
+00:04:22,880 --> 00:04:25,210
+Let's just try it with one less zero there
+
+93
+00:04:25,210 --> 00:04:27,603
+in case we're going to be waiting here for a long time.
+
+94
+00:04:29,110 --> 00:04:31,060
+Yeah, that was a good shout I think.
+
+95
+00:04:31,060 --> 00:04:34,390
+As you can see, it's taking a little while to give
+
+96
+00:04:34,390 --> 00:04:36,340
+it a go and there you have it.
+
+97
+00:04:36,340 --> 00:04:39,163
+Six point seven nine seconds.
+
+98
+00:04:40,160 --> 00:04:43,380
+So, you know, that tells you how long this list
+
+99
+00:04:43,380 --> 00:04:44,793
+comprehension took to run.
+
+100
+00:04:45,640 --> 00:04:48,660
+As well as, you know, calling the function and so forth.
+
+101
+00:04:48,660 --> 00:04:52,710
+It could be slightly a few nano-seconds shorter
+
+102
+00:04:52,710 --> 00:04:54,060
+if we didn't have a function.
+
+103
+00:04:54,060 --> 00:04:57,520
+If we just did this in here but you know,
+
+104
+00:04:57,520 --> 00:04:59,410
+everything takes a little bit of time in Python
+
+105
+00:04:59,410 --> 00:05:01,150
+and in any programming language and so that's just
+
+106
+00:05:01,150 --> 00:05:02,950
+something that we have to deal with.
+
+107
+00:05:04,300 --> 00:05:06,670
+Now, this is how you time your code but of course,
+
+108
+00:05:06,670 --> 00:05:10,250
+adding this start and end time before and after
+
+109
+00:05:10,250 --> 00:05:12,470
+every piece of code you want to time, can be
+
+110
+00:05:12,470 --> 00:05:13,840
+a little bit cumbersome.
+
+111
+00:05:13,840 --> 00:05:16,940
+So instead, we can turn it into a function.
+
+112
+00:05:16,940 --> 00:05:20,550
+We can turn this stuff here, the measuring the start time
+
+113
+00:05:20,550 --> 00:05:22,930
+and the measurement at the end time into a sort of
+
+114
+00:05:22,930 --> 00:05:24,600
+measure runtime function.
+
+115
+00:05:24,600 --> 00:05:27,230
+That's what we're going to do in here.
+
+116
+00:05:27,230 --> 00:05:32,030
+Where I say measure runtime and that is going to take
+
+117
+00:05:32,030 --> 00:05:35,090
+another function that we want to measure.
+
+118
+00:05:35,090 --> 00:05:36,690
+Okay.
+
+119
+00:05:36,690 --> 00:05:39,210
+And at this, we're going to start by looking at the
+
+120
+00:05:39,210 --> 00:05:41,340
+current time, then we're going to run the function
+
+121
+00:05:41,340 --> 00:05:44,370
+and then we're going to look at the end time.
+
+122
+00:05:44,370 --> 00:05:47,223
+And then we're going to print end minus start.
+
+123
+00:05:48,470 --> 00:05:49,303
+Okay.
+
+124
+00:05:49,303 --> 00:05:52,050
+So basically, we're taking all of this and it's the
+
+125
+00:05:52,050 --> 00:05:55,600
+same thing that we have down here except now it's a bit
+
+126
+00:05:55,600 --> 00:05:59,650
+more generic because we can pass in any function we want.
+
+127
+00:05:59,650 --> 00:06:00,900
+Okay.
+
+128
+00:06:00,900 --> 00:06:03,020
+And the function we're going to pass it in now,
+
+129
+00:06:03,020 --> 00:06:06,450
+we're going to say measure run time of lambda powers
+
+130
+00:06:08,140 --> 00:06:09,297
+50,000, 500,000.
+
+131
+00:06:09,297 --> 00:06:10,913
+500,000 is correct.
+
+132
+00:06:11,940 --> 00:06:12,773
+Okay.
+
+133
+00:06:12,773 --> 00:06:16,070
+So we've defined a land function and when you call
+
+134
+00:06:16,070 --> 00:06:19,070
+this function, it will execute the powers function
+
+135
+00:06:19,070 --> 00:06:21,100
+with a given number.
+
+136
+00:06:21,100 --> 00:06:22,440
+Notice that we've had to do it this way,
+
+137
+00:06:22,440 --> 00:06:23,530
+passing a lambda function.
+
+138
+00:06:23,530 --> 00:06:26,070
+We can't just pass the powers function there,
+
+139
+00:06:26,070 --> 00:06:28,160
+although that would be nice because then we have
+
+140
+00:06:28,160 --> 00:06:31,490
+no way of passing the argument that it needs.
+
+141
+00:06:31,490 --> 00:06:33,520
+So the lambda function allows us to do that.
+
+142
+00:06:33,520 --> 00:06:37,000
+It now creates a function that has no arguments
+
+143
+00:06:37,000 --> 00:06:39,580
+but calls another function that does have arguments.
+
+144
+00:06:39,580 --> 00:06:42,790
+It's just an easier way to do this here.
+
+145
+00:06:42,790 --> 00:06:46,473
+Again, if we run that, we get this here.
+
+146
+00:06:48,140 --> 00:06:50,820
+I think I may have missed; I think we have a zero
+
+147
+00:06:50,820 --> 00:06:51,710
+or more before.
+
+148
+00:06:51,710 --> 00:06:54,220
+That's why it took so much less time.
+
+149
+00:06:54,220 --> 00:06:55,200
+But that's fine.
+
+150
+00:06:55,200 --> 00:06:56,860
+If we add one more.
+
+151
+00:06:56,860 --> 00:06:59,950
+It'll take the six point seven seconds ish,
+
+152
+00:06:59,950 --> 00:07:00,993
+around six seconds.
+
+153
+00:07:05,840 --> 00:07:06,673
+There we go.
+
+154
+00:07:06,673 --> 00:07:07,632
+Seven point four.
+
+155
+00:07:07,632 --> 00:07:09,730
+This is just the ending on the load that is currently
+
+156
+00:07:09,730 --> 00:07:13,310
+in replicate, how much power they can give our programme
+
+157
+00:07:13,310 --> 00:07:14,730
+compared to other people's programmes that are
+
+158
+00:07:14,730 --> 00:07:16,230
+also running at the same time.
+
+159
+00:07:17,340 --> 00:07:18,173
+Okay.
+
+160
+00:07:19,520 --> 00:07:23,250
+So, just as a small aside here, this measure runtime
+
+161
+00:07:23,250 --> 00:07:28,250
+function is of course, a decorator or a higher order
+
+162
+00:07:28,300 --> 00:07:33,300
+function and the powers function here is a first-class
+
+163
+00:07:34,450 --> 00:07:37,160
+function because we're passing it in or we could
+
+164
+00:07:37,160 --> 00:07:39,023
+pass it in as an argument.
+
+165
+00:07:40,411 --> 00:07:41,658
+Okay.
+
+166
+00:07:41,658 --> 00:07:45,940
+Now, if we just wanted to time the execution of small codes
+
+167
+00:07:45,940 --> 00:07:49,070
+snippets, we can look into a separate module
+
+168
+00:07:49,070 --> 00:07:51,003
+which is the timeit module.
+
+169
+00:07:51,880 --> 00:07:52,900
+Okay.
+
+170
+00:07:52,900 --> 00:07:56,630
+So we're going to import timeit down here
+
+171
+00:07:56,630 --> 00:07:58,860
+and I'm going to decrease this zero again
+
+172
+00:07:58,860 --> 00:08:00,820
+so we don't have to wait too long.
+
+173
+00:08:00,820 --> 00:08:05,710
+We've got the timeit module and the timeit module
+
+174
+00:08:05,710 --> 00:08:08,700
+has a timeit function inside it to which you can
+
+175
+00:08:08,700 --> 00:08:13,700
+pass a string and this string has to be a Python
+
+176
+00:08:13,713 --> 00:08:16,590
+statement that you want to time.
+
+177
+00:08:16,590 --> 00:08:19,963
+For example, we can take this thing here.
+
+178
+00:08:22,300 --> 00:08:25,450
+Instead of limit, we'll just pass ten and then it will
+
+179
+00:08:25,450 --> 00:08:28,033
+tell you how long this takes to run.
+
+180
+00:08:29,460 --> 00:08:32,010
+So it can be quite useful as well.
+
+181
+00:08:32,010 --> 00:08:37,010
+Now if we run this here, you can see that it's not
+
+182
+00:08:37,370 --> 00:08:39,180
+instant, right.
+
+183
+00:08:39,180 --> 00:08:41,360
+It's still loading even though the range only goes
+
+184
+00:08:41,360 --> 00:08:42,193
+up to ten.
+
+185
+00:08:43,030 --> 00:08:45,620
+That's because the timeit function actually runs this
+
+186
+00:08:45,620 --> 00:08:49,440
+many times over and then it gives you the total it took
+
+187
+00:08:49,440 --> 00:08:52,063
+to do many iterations.
+
+188
+00:08:53,020 --> 00:08:56,210
+So, it can be useful because you now have a statement
+
+189
+00:08:56,210 --> 00:09:00,290
+here that will not take a very long time to run
+
+190
+00:09:00,290 --> 00:09:02,830
+but the timeit module is telling you sort of an
+
+191
+00:09:02,830 --> 00:09:05,150
+average or a total across many iterations,
+
+192
+00:09:05,150 --> 00:09:06,530
+how long it's going to take.
+
+193
+00:09:06,530 --> 00:09:09,840
+And that's precisely because if you only run it once
+
+194
+00:09:09,840 --> 00:09:12,380
+and you wanted to compare it against something else,
+
+195
+00:09:12,380 --> 00:09:17,227
+say for example, the timeit of list map lambda x,
+
+196
+00:09:19,910 --> 00:09:22,453
+x to the power of two range,
+
+197
+00:09:25,920 --> 00:09:26,753
+there we go.
+
+198
+00:09:27,670 --> 00:09:30,030
+Say you wanted to compare these two.
+
+199
+00:09:30,030 --> 00:09:34,680
+If you weren't just comparing this statement
+
+200
+00:09:34,680 --> 00:09:37,460
+to the range of ten against this one to the range of ten,
+
+201
+00:09:37,460 --> 00:09:39,450
+they're both going to take so little time
+
+202
+00:09:39,450 --> 00:09:42,480
+zero point zero zero zero zero zero something seconds
+
+203
+00:09:42,480 --> 00:09:44,900
+that you're not really going to have
+
+204
+00:09:44,900 --> 00:09:48,143
+a very good comparison there.
+
+205
+00:09:49,160 --> 00:09:53,160
+So by comparing across many thousands of iterations,
+
+206
+00:09:53,160 --> 00:09:56,080
+you do get a slightly nicer comparison.
+
+207
+00:09:56,080 --> 00:09:57,130
+Let's run that again.
+
+208
+00:10:00,580 --> 00:10:02,730
+By the way, remember this is quite slow because
+
+209
+00:10:02,730 --> 00:10:05,820
+replicates is not a very fast platform.
+
+210
+00:10:05,820 --> 00:10:07,080
+It's not meant for performance.
+
+211
+00:10:07,080 --> 00:10:09,530
+It's meant for functionality letting you run this
+
+212
+00:10:09,530 --> 00:10:10,780
+code on the cloud.
+
+213
+00:10:10,780 --> 00:10:12,310
+So if you run this on your computer, it's probably
+
+214
+00:10:12,310 --> 00:10:13,510
+going to be much faster.
+
+215
+00:10:15,800 --> 00:10:19,690
+But we will see which one is better
+
+216
+00:10:19,690 --> 00:10:20,880
+and we're probably going to find that they're
+
+217
+00:10:20,880 --> 00:10:22,410
+going to be more or less around the same,
+
+218
+00:10:22,410 --> 00:10:24,910
+maybe even Map is going to be a little bit slower.
+
+219
+00:10:27,770 --> 00:10:28,980
+Yep, there you have it.
+
+220
+00:10:28,980 --> 00:10:31,700
+Map's a little bit slower because you have to create
+
+221
+00:10:31,700 --> 00:10:34,280
+the generator; you have to map over it
+
+222
+00:10:34,280 --> 00:10:36,410
+and then you have to turn everything into a list
+
+223
+00:10:36,410 --> 00:10:38,590
+whereas the list comprehension just creates you a list
+
+224
+00:10:38,590 --> 00:10:40,530
+from the start.
+
+225
+00:10:40,530 --> 00:10:44,390 line:15% 
+This does beg the question: which one to use should you
+
+226
+00:10:44,390 --> 00:10:46,570 line:15% 
+not always use list comprehensions?
+
+227
+00:10:46,570 --> 00:10:48,150 line:15% 
+They seem to be faster.
+
+228
+00:10:48,150 --> 00:10:52,510 line:15% 
+And yet the answer is if you want a list of things,
+
+229
+00:10:52,510 --> 00:10:54,320 line:15% 
+use list comprehension.
+
+230
+00:10:54,320 --> 00:10:55,680 line:15% 
+It's faster.
+
+231
+00:10:55,680 --> 00:10:58,980 line:15% 
+I think it's more readable, certainly shorter
+
+232
+00:10:58,980 --> 00:11:02,230 line:15% 
+and there's no good reason why you shouldn't use it.
+
+233
+00:11:02,230 --> 00:11:05,530 line:15% 
+But if you wanted to use the items of this list,
+
+234
+00:11:05,530 --> 00:11:10,530 line:15% 
+these powers, one by one, then use Map and use
+
+235
+00:11:10,620 --> 00:11:12,100 line:15% 
+the generator it gives you.
+
+236
+00:11:12,100 --> 00:11:14,300 line:15% 
+Don't turn it into a list.
+
+237
+00:11:14,300 --> 00:11:17,380 line:15% 
+That way, you won't have to spend the time
+
+238
+00:11:17,380 --> 00:11:19,000 line:15% 
+getting your full list in order.
+
+239
+00:11:19,000 --> 00:11:21,450 line:15% 
+You can just use the items one by one as they are
+
+240
+00:11:21,450 --> 00:11:24,730 line:15% 
+generated by the Map function.
+
+241
+00:11:24,730 --> 00:11:27,250 line:15% 
+So it just depends on what, how you're going to consume
+
+242
+00:11:27,250 --> 00:11:30,803 line:15% 
+these things that you should decide which one to use.
+
+243
+00:11:31,950 --> 00:11:35,750 line:15% 
+Inhibition is also a matter of readability and as I said
+
+244
+00:11:35,750 --> 00:11:36,870 line:15% 
+earlier, for me, the list comprehension is much
+
+245
+00:11:36,870 --> 00:11:41,420 line:15% 
+more readable so I would almost always go for that
+
+246
+00:11:41,420 --> 00:11:43,780 line:15% 
+if given the choice.
+
+247
+00:11:43,780 --> 00:11:46,160 line:15% 
+But some people prefer Map because they are accustomed
+
+248
+00:11:46,160 --> 00:11:48,710 line:15% 
+to doing that end of their programming languages,
+
+249
+00:11:48,710 --> 00:11:51,830 line:15% 
+so that's also a good reason to use Maps instead
+
+250
+00:11:51,830 --> 00:11:52,730 line:15% 
+of comprehensions.
+
+251
+00:11:54,090 --> 00:11:55,144 line:15% 
+Anyway, that's it for this video.
+
+252
+00:11:55,144 --> 00:11:57,130 line:15% 
+I just wanted to give you a quick rundown on how
+
+253
+00:11:57,130 --> 00:11:59,800 line:15% 
+you can time your code and why you might want to do it
+
+254
+00:11:59,800 --> 00:12:01,840 line:15% 
+and hopefully this has been a nice experiment for you
+
+255
+00:12:01,840 --> 00:12:05,700 line:15% 
+to look more into comprehensions and Maps.
+
+256
+00:12:05,700 --> 00:12:08,460 line:15% 
+So again, you can use the time module, calculate the
+
+257
+00:12:08,460 --> 00:12:10,870
+starting and the end time for the thing you want
+
+258
+00:12:10,870 --> 00:12:12,190
+to time.
+
+259
+00:12:12,190 --> 00:12:15,910
+This can be useful in many scenarios and it's very flexible.
+
+260
+00:12:15,910 --> 00:12:19,090
+Or if you want to time small snippets of code, you can use
+
+261
+00:12:19,090 --> 00:12:23,780
+the timeit module and that can be also quick and easy.
+
+262
+00:12:23,780 --> 00:12:26,680
+That's it for this video and I'll see you on the next one.
+

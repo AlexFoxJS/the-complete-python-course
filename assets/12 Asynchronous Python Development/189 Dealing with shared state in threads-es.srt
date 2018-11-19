@@ -1,0 +1,728 @@
+1
+00:00:00,280 --> 00:00:01,270
+Instructor: Hola y bienvenido de nuevo.
+
+2
+00:00:01,270 --> 00:00:03,350
+En este video, vamos a
+
+3
+00:00:03,350 --> 00:00:06,660
+ver cmo ejecutar varios hilos a la vez
+
+4
+00:00:06,660 --> 00:00:09,090
+y compartir un estado entre ellos.
+
+5
+00:00:09,090 --> 00:00:11,008
+De acuerdo, entonces borr el nuevo archivo,
+
+6
+00:00:11,008 --> 00:00:14,920
+al que he llamado hilos no bloqueados. py, pero antes de comenzar
+
+7
+00:00:14,920 --> 00:00:17,670
+a escribir un cdigo, solo quera decirte algo.
+
+8
+00:00:17,670 --> 00:00:21,460
+Y eso es, qu es una operacin atmica?
+
+9
+00:00:21,460 --> 00:00:23,040
+Las operaciones atmicas son muy
+
+10
+00:00:23,040 --> 00:00:25,440
+importantes cuando haces cdigos de mltiples hilos.
+
+11
+00:00:25,440 --> 00:00:28,340
+Una operacin atmica es aquella que no se puede
+
+12
+00:00:28,340 --> 00:00:30,210
+interrumpir en el medio de ella.
+
+13
+00:00:30,210 --> 00:00:32,130
+Entonces no puedes interrumpir una operacin
+
+14
+00:00:32,130 --> 00:00:35,810
+atmica a mitad de camino cambiando a un nuevo hilo, de acuerdo?
+
+15
+00:00:35,810 --> 00:00:37,660
+Cada vez que ests haciendo una
+
+16
+00:00:37,660 --> 00:00:40,923
+operacin atmica, sabes que va a terminar antes de que
+
+17
+00:00:40,923 --> 00:00:43,910
+puedas desenchufar el hilo del ncleo y poner otro.
+
+18
+00:00:43,910 --> 00:00:47,070
+Por ejemplo, una declaracin impresa no puede imprimir solo la
+
+19
+00:00:47,070 --> 00:00:49,560
+mitad de la lnea y luego ser interrumpida.
+
+20
+00:00:50,520 --> 00:00:54,410
+Del mismo modo, aadiendo un deque o un dq si eres como yo
+
+21
+00:00:54,410 --> 00:00:57,110
+y te gusta decir que agregar un deque no
+
+22
+00:00:57,110 --> 00:00:59,190
+se puede interrumpir a la mitad.
+
+23
+00:00:59,190 --> 00:01:00,910
+Si comienzas a anexar un
+
+24
+00:01:00,910 --> 00:01:04,262
+deque, dices, ya sabes, deque. Agregar, sabes que la cosa
+
+25
+00:01:04,262 --> 00:01:06,510
+se agregar al deque antes de que
+
+26
+00:01:06,510 --> 00:01:09,010
+elimines el hilo del ncleo, de acuerdo?
+
+27
+00:01:09,010 --> 00:01:11,220
+Entonces, las operaciones atmicas son muy
+
+28
+00:01:11,220 --> 00:01:14,110
+importantes cuando tienes este estado compartido entre hilos.
+
+29
+00:01:15,780 --> 00:01:17,730
+Y vamos a ver un ejemplo de
+
+30
+00:01:17,730 --> 00:01:20,100
+dnde vamos a tener una funcin que no es
+
+31
+00:01:20,100 --> 00:01:22,300
+atmica y por qu eso plantea un problema.
+
+32
+00:01:22,300 --> 00:01:25,170
+Bien, entonces hagamos eso.
+
+33
+00:01:26,430 --> 00:01:29,440
+Voy a hacer, desde el hilo de importacin de subprocesos, voy a
+
+34
+00:01:29,440 --> 00:01:31,870
+utilizar buenos viejos subprocesos en lugar de ejecutar el
+
+35
+00:01:31,870 --> 00:01:33,670
+hilo de ejecucin, solo por esto, creo
+
+36
+00:01:34,940 --> 00:01:38,240
+que va a ser un poco ms fcil ver lo que est pasando.
+
+37
+00:01:38,240 --> 00:01:41,030
+Vamos a importar tiempo y tambin vamos a importar al
+
+38
+00:01:41,030 --> 00:01:43,190
+azar porque vamos a aleatorizar algunas cosas.
+
+39
+00:01:43,190 --> 00:01:45,780
+Entonces, vamos a tener una variable
+
+40
+00:01:45,780 --> 00:01:49,360
+global en nuestro archivo, que ser cero, de acuerdo?
+
+41
+00:01:49,360 --> 00:01:50,440
+Y luego tendremos una
+
+42
+00:01:50,440 --> 00:01:52,040
+funcin llamada contador de incrementos.
+
+43
+00:01:53,530 --> 00:01:54,830
+Y lo que esto
+
+44
+00:01:54,830 --> 00:01:57,627
+va a hacer, es decir, contador global, acceder
+
+45
+00:01:57,627 --> 00:01:59,637
+al contador de variables globales, hacer
+
+46
+00:01:59,637 --> 00:02:04,290
+contador ms uno igual, y luego imprimir el nuevo valor del contador es contador.
+
+47
+00:02:05,220 --> 00:02:07,990
+Y luego tambin imprimir unas pocas lneas para
+
+48
+00:02:09,290 --> 00:02:11,410
+que podamos separar los nuevos valores
+
+49
+00:02:11,410 --> 00:02:13,540
+del contador, uno antes que el otro.
+
+50
+00:02:13,540 --> 00:02:16,350
+Ahora, de lo que sabemos sobre el cdigo de un
+
+51
+00:02:16,350 --> 00:02:18,590
+solo subproceso, si lo hacemos para x en
+
+52
+00:02:21,130 --> 00:02:23,390
+el rango 10, y luego incrementamos el contador,
+
+53
+00:02:23,390 --> 00:02:25,330
+qu creemos que va a pasar?
+
+54
+00:02:29,310 --> 00:02:32,210
+Espero que hayas dicho, ya sabes, lo que
+
+55
+00:02:32,210 --> 00:02:35,930
+esperara es que comiences aqu, x ser cero, ya sabes, se
+
+56
+00:02:35,930 --> 00:02:37,050
+ejecutar 10 veces.
+
+57
+00:02:37,050 --> 00:02:39,000
+La primera vez que vayas al
+
+58
+00:02:39,000 --> 00:02:41,930
+contador de incrementos, acceders al contador global, que ser cero.
+
+59
+00:02:41,930 --> 00:02:44,700
+Lo aumentars por uno, as que ser uno.
+
+60
+00:02:44,700 --> 00:02:46,910
+Vas a imprimir que el nuevo valor de contador es uno.
+
+61
+00:02:46,910 --> 00:02:48,310
+Vas a imprimir estas lneas.
+
+62
+00:02:48,310 --> 00:02:49,930
+Entonces, vas a volver al final de la
+
+63
+00:02:49,930 --> 00:02:52,530
+funcin, vas a repetir que ests en el bucle, entrars aqu de
+
+64
+00:02:52,530 --> 00:02:55,024
+nuevo, el contador va a ser uno ahora, porque se aument antes.
+
+65
+00:02:55,024 --> 00:02:57,490
+Entonces vas a aumentarlo en uno subiendo a dos.
+
+66
+00:02:57,490 --> 00:02:59,370
+Vas a imprimir que el nuevo valor de contador
+
+67
+00:02:59,370 --> 00:03:01,190
+es dos, y as sucesivamente, para tres, cuatro, cinco,
+
+68
+00:03:01,190 --> 00:03:02,500
+seis, siete, ocho y as sucesivamente.
+
+69
+00:03:03,440 --> 00:03:05,430
+As que ejecutemos estos hilos no bloqueados, que
+
+70
+00:03:05,430 --> 00:03:07,050
+no estn usando ningn hilo, y
+
+71
+00:03:07,050 --> 00:03:09,240
+pueden ver que eso es lo que sucede.
+
+72
+00:03:09,240 --> 00:03:14,030
+Obtienes uno todo el camino hasta 10, cosas tan buenas.
+
+73
+00:03:14,030 --> 00:03:15,480
+Esto es lo que esperaramos.
+
+74
+00:03:16,710 --> 00:03:21,710
+Ahora, qu sucede si hacemos un hilo, estamos diciendo que t
+
+75
+00:03:22,700 --> 00:03:25,150
+es igual a hilo, y el
+
+76
+00:03:25,150 --> 00:03:27,350
+objetivo es contador de incremento?
+
+77
+00:03:28,700 --> 00:03:30,580
+Y luego vamos a eliminar este contador de incremento,
+
+78
+00:03:30,580 --> 00:03:32,580
+luego vamos a hacer t. comienzo.
+
+79
+00:03:34,350 --> 00:03:38,520
+Qu pensamos que va a pasar cuando ejecutamos esto?
+
+80
+00:03:38,520 --> 00:03:42,150
+Djame decirte que no vamos a ver ninguna diferencia.
+
+81
+00:03:42,150 --> 00:03:44,540
+De acuerdo, tenemos uno, dos, tres, cuatro, cinco,
+
+82
+00:03:44,540 --> 00:03:45,900
+seis, siete hasta 10.
+
+83
+00:03:45,900 --> 00:03:48,770
+Hm, est bien, entonces, cul era el propsito de los hilos
+
+84
+00:03:48,770 --> 00:03:50,670
+y se estn ejecutando al mismo tiempo?
+
+85
+00:03:53,790 --> 00:03:56,370
+Usar, escribir cdigo multiproceso es
+
+86
+00:03:56,370 --> 00:04:01,370
+peligroso, porque es posible que no veas el problema de inmediato.
+
+87
+00:04:01,490 --> 00:04:04,920
+El problema solo puede aparecer en algunas circunstancias.
+
+88
+00:04:04,920 --> 00:04:07,810
+Aqu es donde entrar el tiempo y el azar.
+
+89
+00:04:09,090 --> 00:04:10,754
+Lo que tenemos aqu es
+
+90
+00:04:10,754 --> 00:04:13,689
+que 10 veces vamos a repetir este bloque de cdigo.
+
+91
+00:04:13,689 --> 00:04:15,380
+Vamos a crear un nuevo hilo.
+
+92
+00:04:15,380 --> 00:04:17,430
+El objetivo va a ser contador de incremento.
+
+93
+00:04:17,430 --> 00:04:19,560
+Y luego comenzaremos el hilo, y
+
+94
+00:04:19,560 --> 00:04:21,140
+luego inmediatamente pasaremos al
+
+95
+00:04:21,140 --> 00:04:23,650
+siguiente hilo y lo vamos a iniciar,
+
+96
+00:04:23,650 --> 00:04:27,440
+pero esta funcin es tan rpida de ejecutar que antes
+
+97
+00:04:27,440 --> 00:04:30,570
+de que podamos comenzar el nuevo hilo, esa
+
+98
+00:04:30,570 --> 00:04:32,750
+funcin ya est en ejecucin.
+
+99
+00:04:32,750 --> 00:04:35,040
+Entonces, esencialmente, este es un cdigo secuencial.
+
+100
+00:04:35,040 --> 00:04:37,020
+Esencialmente, es un cdigo de un solo hilo.
+
+101
+00:04:37,020 --> 00:04:39,120
+Debido a que creas un nuevo hilo, comenzaste, para
+
+102
+00:04:39,120 --> 00:04:40,780
+el momento en que creaste un nuevo
+
+103
+00:04:40,780 --> 00:04:41,760
+hilo, ese ya est
+
+104
+00:04:41,760 --> 00:04:44,340
+terminado, as que esencialmente est sucediendo uno despus del otro.
+
+105
+00:04:44,340 --> 00:04:49,000
+Lo que vamos a hacer es dormir
+
+106
+00:04:50,040 --> 00:04:53,620
+al azar. al azar, de acuerdo?
+
+107
+00:04:53,620 --> 00:04:55,680
+Vamos a dormir un
+
+108
+00:04:56,560 --> 00:05:00,310
+poco aqu, esencialmente entre cada lnea, as.
+
+109
+00:05:03,330 --> 00:05:07,340
+Esta tcnica de agregar sueos al azar entre declaraciones cuando ests haciendo
+
+110
+00:05:07,340 --> 00:05:10,520
+cdigos de subprocesamiento mltiple se llama difuso, es muy
+
+111
+00:05:10,520 --> 00:05:13,250
+popular, porque nos va a permitir ver problemas.
+
+112
+00:05:13,250 --> 00:05:14,850
+De acuerdo, vamos a ejecutar este archivo de nuevo.
+
+113
+00:05:20,270 --> 00:05:22,540
+Ooh, eso no se ve tan bien ahora.
+
+114
+00:05:23,740 --> 00:05:25,810
+Entonces, como pueden ver, lo que pas
+
+115
+00:05:25,810 --> 00:05:29,190
+aqu ahora es que todos nuestros hilos se estaban ejecutando al mismo
+
+116
+00:05:29,190 --> 00:05:31,950
+tiempo, porque, ya saben, uno de ellos comenz entonces se
+
+117
+00:05:31,950 --> 00:05:33,740
+encontr con este sueo aleatorio, pero
+
+118
+00:05:33,740 --> 00:05:35,950
+en ese momento ya se haba iniciado otro
+
+119
+00:05:35,950 --> 00:05:37,640
+y se encontr con otro dormir.
+
+120
+00:05:37,640 --> 00:05:39,260
+Tienes algunos de ellos comenzando,
+
+121
+00:05:39,260 --> 00:05:41,510
+ya sabes, algunos de ellos estn aqu,
+
+122
+00:05:42,720 --> 00:05:46,180
+algunos estn aqu, y lo que sucede es que tienes
+
+123
+00:05:47,100 --> 00:05:52,100
+un par de hilos que obtienen el valor del contador en tres y lo aumentan
+
+124
+00:05:52,190 --> 00:05:54,930
+en uno, ambos al mismo tiempo, est bien?
+
+125
+00:05:54,930 --> 00:05:57,400
+As que tienes dos hilos entrando en el contador global.
+
+126
+00:05:57,400 --> 00:06:00,740
+Dos hilos se detienen aqu, el contador es tres.
+
+127
+00:06:00,740 --> 00:06:04,080
+Luego, ambos incrementan el contador por uno al mismo tiempo.
+
+128
+00:06:04,080 --> 00:06:05,920
+Entonces termina como cuatro.
+
+129
+00:06:05,920 --> 00:06:10,340
+Y luego ambos imprimen nuevos valores de contador cuatro, est bien?
+
+130
+00:06:10,340 --> 00:06:12,180
+As que el cdigo multiproceso con estado
+
+131
+00:06:12,180 --> 00:06:14,860
+compartido puede ser realmente complicado para hacerlo bien, porque dos
+
+132
+00:06:14,860 --> 00:06:17,500
+hilos pueden intentar acceder a la misma cosa al mismo
+
+133
+00:06:17,500 --> 00:06:19,020
+tiempo, y usted sabe que est
+
+134
+00:06:19,020 --> 00:06:21,320
+bien, puede acceder a la misma cosa al mismo
+
+135
+00:06:21,320 --> 00:06:23,690
+tiempo, pero puede que no terminar con lo que esperaras
+
+136
+00:06:23,690 --> 00:06:26,349
+Particularmente si todos los hilos estn cambiando
+
+137
+00:06:26,349 --> 00:06:28,660
+algo en esta variable al mismo tiempo.
+
+138
+00:06:30,240 --> 00:06:32,820
+Y puede que no lo veas a menos que
+
+139
+00:06:32,820 --> 00:06:35,560
+hagas esta tcnica fizzying o ya sabes, otras tcnicas.
+
+140
+00:06:37,010 --> 00:06:39,780
+Entonces, lo que tenemos aqu son todos nuestros
+
+141
+00:06:39,780 --> 00:06:43,370
+hilos en ejecucin, ya sabes, estn en mal estado, en esencia.
+
+142
+00:06:43,370 --> 00:06:46,010
+No podemos continuar con esto, y si eliminas
+
+143
+00:06:46,010 --> 00:06:48,920
+la confusin funcionara, hasta que lo sepas, tu computadora
+
+144
+00:06:48,920 --> 00:06:50,939
+funciona lentamente o tienes muchas cosas
+
+145
+00:06:50,939 --> 00:06:53,830
+corriendo al mismo tiempo en tu computadora y estos
+
+146
+00:06:53,830 --> 00:06:55,300
+hilos estn entrando y
+
+147
+00:06:55,300 --> 00:06:57,220
+saliendo. por supuesto muy rpido
+
+148
+00:06:57,220 --> 00:06:59,990
+Entonces puede comenzar a enfrentar problemas como este.
+
+149
+00:07:00,830 --> 00:07:04,250
+Por lo tanto, debe tener cuidado cuando escribe cdigo multiproceso.
+
+150
+00:07:04,250 --> 00:07:06,100
+Debes tener mucho cuidado.
+
+151
+00:07:06,100 --> 00:07:07,750
+Especialmente si los hilos son,
+
+152
+00:07:07,750 --> 00:07:09,270
+realmente solo si sus
+
+153
+00:07:09,270 --> 00:07:12,190
+hilos estn accediendo o modificando el estado compartido.
+
+154
+00:07:12,190 --> 00:07:14,250
+Aqu la variable es el estado compartido,
+
+155
+00:07:14,250 --> 00:07:17,490
+estos hilos tienen la mitad de esa variable compartida entre ellos.
+
+156
+00:07:17,490 --> 00:07:18,890
+Cosas peligrosas, de acuerdo?
+
+157
+00:07:20,580 --> 00:07:22,710
+Este cdigo, dicho sea de paso, y
+
+158
+00:07:22,710 --> 00:07:27,430
+tambin el cdigo que sigue, proviene de una charla realizada por uno de los desarrolladores
+
+159
+00:07:27,430 --> 00:07:29,960
+de Python, los creadores del lenguaje Python.
+
+160
+00:07:29,960 --> 00:07:31,160
+Voy a vincularlo a
+
+161
+00:07:31,160 --> 00:07:34,210
+esta charla al final de esta seccin, es realmente bueno.
+
+162
+00:07:34,210 --> 00:07:37,830
+Solo quiero guiarlo a travs de esto primero en mis palabras, solo para
+
+163
+00:07:37,830 --> 00:07:38,790
+ayudarlo a comprenderlo, y
+
+164
+00:07:38,790 --> 00:07:41,290
+luego puede ir a ver su charla ms adelante.
+
+165
+00:07:42,320 --> 00:07:47,080
+De acuerdo, si queramos asegurarnos de que las operaciones ocurrieran secuencialmente, como queremos hacer
+
+166
+00:07:47,080 --> 00:07:49,040
+un nuevo valor de contador es
+
+167
+00:07:49,040 --> 00:07:50,340
+uno, entonces el nuevo
+
+168
+00:07:50,340 --> 00:07:52,380
+valor de contador es dos, tres.
+
+169
+00:07:53,550 --> 00:07:57,130
+Entonces tendramos que hacer algo mucho ms complicado.
+
+170
+00:07:58,080 --> 00:07:59,940
+Pero nuevamente, si quiere asegurarse de
+
+171
+00:07:59,940 --> 00:08:02,740
+que las operaciones sucedan secuencialmente, no use hilos.
+
+172
+00:08:02,740 --> 00:08:04,380
+Eso es lo primero.
+
+173
+00:08:04,380 --> 00:08:06,160
+Si desea asegurarse de que
+
+174
+00:08:06,160 --> 00:08:08,160
+las operaciones se realicen de
+
+175
+00:08:08,160 --> 00:08:11,130
+forma secuencial pero desee usar hilos, entonces debe
+
+176
+00:08:11,130 --> 00:08:13,600
+configurar un sistema de cola, donde cada
+
+177
+00:08:13,600 --> 00:08:18,600
+hilo puede realizar la operacin de incrementar el contador, pero ocurren uno a uno.
+
+178
+00:08:19,510 --> 00:08:21,910
+Entonces, va a ser un cdigo
+
+179
+00:08:21,910 --> 00:08:24,420
+ms complicado, repasemos el siguiente video,
+
+180
+00:08:24,420 --> 00:08:28,410
+cmo hacer cola con un hilo para que las
+
+181
+00:08:28,410 --> 00:08:29,730
+operaciones sucedan secuencialmente.
+
+182
+00:08:29,730 --> 00:08:31,280
+Te ver en el prximo video.
+

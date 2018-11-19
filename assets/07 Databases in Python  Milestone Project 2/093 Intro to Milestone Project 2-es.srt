@@ -1,0 +1,576 @@
+1
+00:00:00,351 --> 00:00:01,184
+Narrador: Hola,
+
+2
+00:00:01,184 --> 00:00:04,739
+y bienvenidos a su segundo proyecto de hito.
+
+3
+00:00:04,739 --> 00:00:06,830
+Este proyecto va a ser genial.
+
+4
+00:00:06,830 --> 00:00:09,268
+Nos permitir almacenar los libros que estamos
+
+5
+00:00:09,268 --> 00:00:11,141
+leyendo y luego regresar y
+
+6
+00:00:11,141 --> 00:00:12,397
+marcarlos como ledos.
+
+7
+00:00:12,397 --> 00:00:13,529
+Entonces, por ejemplo, podemos hacer
+
+8
+00:00:13,529 --> 00:00:15,665
+un seguimiento de todo lo que hemos ledo hasta ahora
+
+9
+00:00:15,665 --> 00:00:17,464
+y de lo que queremos leer en el futuro.
+
+10
+00:00:17,464 --> 00:00:19,232
+La parte ms emocionante de este proyecto,
+
+11
+00:00:19,232 --> 00:00:21,724
+sin embargo, es la forma en que vamos a cebarlo.
+
+12
+00:00:21,724 --> 00:00:26,172
+Comenzaremos utilizando una base de datos en memoria, que
+
+13
+00:00:26,172 --> 00:00:28,976
+es solo una lista de Python.
+
+14
+00:00:28,976 --> 00:00:31,000
+Luego, lo ampliaremos, de modo que,
+
+15
+00:00:31,000 --> 00:00:32,726
+en lugar de guardar elementos
+
+16
+00:00:32,726 --> 00:00:35,167
+en una lista, los guarde en un archivo.
+
+17
+00:00:35,167 --> 00:00:37,579
+Y luego, vamos a extenderlo an ms,
+
+18
+00:00:37,579 --> 00:00:40,912
+como guardar cosas en una base de datos de continuacin.
+
+19
+00:00:42,274 --> 00:00:44,712
+Desarrollar el proyecto en estos tres pasos distintos
+
+20
+00:00:44,712 --> 00:00:46,278
+nos ayudar a comprender realmente
+
+21
+00:00:46,278 --> 00:00:47,796
+lo que sucede entre bastidores.
+
+22
+00:00:47,796 --> 00:00:50,437
+As que por favor tengan paciencia conmigo a medida que avancemos en esto.
+
+23
+00:00:50,437 --> 00:00:52,138
+Vamos a tener algunas sesiones
+
+24
+00:00:52,138 --> 00:00:54,570
+de codificacin, como la que ves en
+
+25
+00:00:54,570 --> 00:00:56,565
+tu video ahora intercalada con algunas
+
+26
+00:00:56,565 --> 00:00:59,249
+sesiones ligeramente ms tericas donde hablaremos sobre
+
+27
+00:00:59,249 --> 00:01:00,822
+bases de datos y
+
+28
+00:01:00,822 --> 00:01:03,067
+cmo funcionan, y tambin cmo usarlas.
+
+29
+00:01:03,067 --> 00:01:05,493
+Si no sabe qu es una base de datos, no se preocupe.
+
+30
+00:01:05,493 --> 00:01:07,190
+A travs de esta seccin,
+
+31
+00:01:07,190 --> 00:01:08,839
+comprender exactamente qu sucede dentro
+
+32
+00:01:08,839 --> 00:01:12,672
+de una base de datos y por qu queremos usarlos.
+
+33
+00:01:13,540 --> 00:01:14,674
+Sin embargo, su proyecto
+
+34
+00:01:14,674 --> 00:01:16,924
+de hito ser una lista de libros.
+
+35
+00:01:19,008 --> 00:01:20,517
+Entonces, en la prxima
+
+36
+00:01:20,517 --> 00:01:22,687
+conferencia, tendrs una breve explicacin de
+
+37
+00:01:22,687 --> 00:01:25,926
+lo que quiero que hagas para este proyecto.
+
+38
+00:01:25,926 --> 00:01:27,971
+Pero tambin quera darle
+
+39
+00:01:27,971 --> 00:01:29,979
+algunas instrucciones breves en
+
+40
+00:01:29,979 --> 00:01:33,283
+este video, solo para ayudarlo en su camino.
+
+41
+00:01:33,283 --> 00:01:35,999
+Nuestro proyecto va a tener dos archivos.
+
+42
+00:01:35,999 --> 00:01:38,582
+Va a tener un archivo de
+
+43
+00:01:39,447 --> 00:01:41,386
+aplicacin, y tambin tendr un
+
+44
+00:01:41,386 --> 00:01:43,719
+paquete, que se llamar utils.
+
+45
+00:01:43,719 --> 00:01:45,052
+No ITOs, utils.
+
+46
+00:01:46,332 --> 00:01:47,853
+Y dentro de utilidades, tendremos otro
+
+47
+00:01:47,853 --> 00:01:51,436
+archivo al que llamaremos base de datos. py.
+
+48
+00:01:52,729 --> 00:01:54,691
+Esta base de datos py se
+
+49
+00:01:54,691 --> 00:01:57,774
+ocupar de almacenar y recuperar libros
+
+50
+00:01:59,020 --> 00:02:00,520
+de una lista.
+
+51
+00:02:02,476 --> 00:02:03,590
+De acuerdo, entonces realmente no
+
+52
+00:02:03,590 --> 00:02:05,476
+va a ser una base de datos de continuacin,
+
+53
+00:02:05,476 --> 00:02:07,387
+va a ser una base de datos en memoria.
+
+54
+00:02:07,387 --> 00:02:09,877
+Y vamos a tener una lista de
+
+55
+00:02:09,877 --> 00:02:13,372
+libros, que va a ser una lista vaca para empezar.
+
+56
+00:02:13,372 --> 00:02:15,122
+Y tambin vamos a tener algunas funciones
+
+57
+00:02:15,122 --> 00:02:16,918
+aqu para agregar un nuevo libro a
+
+58
+00:02:16,918 --> 00:02:19,088
+nuestra lista, para recuperar los libros de nuestra
+
+59
+00:02:19,088 --> 00:02:20,069
+lista, y as sucesivamente.
+
+60
+00:02:20,069 --> 00:02:21,600
+El informe va a
+
+61
+00:02:21,600 --> 00:02:23,606
+tener mucha ms informacin sobre exactamente
+
+62
+00:02:23,606 --> 00:02:26,751
+el diseo de este archivo y cmo se usar.
+
+63
+00:02:26,751 --> 00:02:30,351
+En la aplicacin. py, vamos a tener nuestro men de usuario.
+
+64
+00:02:30,351 --> 00:02:31,308
+Por supuesto, esto va
+
+65
+00:02:31,308 --> 00:02:32,894
+a ser una aplicacin basada en
+
+66
+00:02:32,894 --> 00:02:35,732
+texto, no hemos considerado hacer interfaces grficas por el momento.
+
+67
+00:02:35,732 --> 00:02:39,227
+As que vamos a hacer todo a travs del texto.
+
+68
+00:02:39,227 --> 00:02:42,727
+Para eso, vamos a tener dos cosas.
+
+69
+00:02:44,144 --> 00:02:46,800
+El primero es que vamos a importar la base
+
+70
+00:02:46,800 --> 00:02:49,116
+de datos para que podamos ocuparnos de guardar
+
+71
+00:02:49,116 --> 00:02:51,487
+cosas en nuestra lista de libros, etc.
+
+72
+00:02:51,487 --> 00:02:54,795
+Y tambin vamos a tener una opcin de usuario.
+
+73
+00:02:54,795 --> 00:02:56,467
+Y esto va a ser
+
+74
+00:02:56,467 --> 00:02:58,587
+una cadena de varias lneas, que describir
+
+75
+00:02:58,587 --> 00:03:00,385
+al usuario lo que puede hacer.
+
+76
+00:03:00,385 --> 00:03:03,166
+As que solo voy a copiarlo de mis notas aqu.
+
+77
+00:03:03,166 --> 00:03:05,666
+Y as, tu eleccin aqu.
+
+78
+00:03:09,912 --> 00:03:10,899
+Entonces, la eleccin del usuario
+
+79
+00:03:10,899 --> 00:03:12,350
+es lo que vamos a imprimir para
+
+80
+00:03:12,350 --> 00:03:14,670
+que el usuario sepa qu tipo de cosas pueden escribir.
+
+81
+00:03:14,670 --> 00:03:15,503
+Y eso va
+
+82
+00:03:15,503 --> 00:03:18,544
+a ser 'a' para agregar un nuevo libro, 'l' para enumerar
+
+83
+00:03:18,544 --> 00:03:22,275
+todos los libros, 'r' para marcar un libro como ledo, 'd' para eliminar
+
+84
+00:03:22,275 --> 00:03:24,047
+un libro y 'q' para salir.
+
+85
+00:03:24,047 --> 00:03:25,400
+Ya hemos creado un men
+
+86
+00:03:25,400 --> 00:03:26,918
+para nuestro ltimo proyecto de
+
+87
+00:03:26,918 --> 00:03:28,998
+hito, para que sepa cmo funciona esto.
+
+88
+00:03:28,998 --> 00:03:31,472
+Tendremos un men aqu.
+
+89
+00:03:31,472 --> 00:03:33,231
+Y luego vamos a obtener
+
+90
+00:03:33,231 --> 00:03:34,814
+la entrada del usuario.
+
+91
+00:03:36,580 --> 00:03:38,929
+Y luego vamos a tener una entrada de
+
+92
+00:03:38,929 --> 00:03:40,853
+usuario no es 'q', y loop.
+
+93
+00:03:40,853 --> 00:03:44,916
+Y aqu vamos a preguntarle cosas al usuario.
+
+94
+00:03:44,916 --> 00:03:46,115
+Lo sentimos, no vamos a preguntarle nada
+
+95
+00:03:46,115 --> 00:03:46,948
+al usuario, pero vamos a
+
+96
+00:03:46,948 --> 00:03:48,096
+tratar con las entradas del usuario.
+
+97
+00:03:48,096 --> 00:03:49,849
+Entonces, si ingresan 'a', vamos a llamar
+
+98
+00:03:49,849 --> 00:03:51,868
+a una funcin que agrega un libro.
+
+99
+00:03:51,868 --> 00:03:52,983
+Si ingresan 'l', vamos
+
+100
+00:03:52,983 --> 00:03:55,464
+a llamar a una funcin que enumera todos los
+
+101
+00:03:55,464 --> 00:03:56,566
+libros, y as sucesivamente.
+
+102
+00:03:56,566 --> 00:03:59,626
+As que aqu abajo, probablemente
+
+103
+00:03:59,626 --> 00:04:03,557
+tengas algo que se parezca a prompt_add_book.
+
+104
+00:04:03,557 --> 00:04:05,140
+Y def list_books.
+
+105
+00:04:06,206 --> 00:04:08,289
+Y def prompt_read_book.
+
+106
+00:04:09,810 --> 00:04:12,060
+Y def prompt_delete_book.
+
+107
+00:04:13,416 --> 00:04:14,249
+Al igual que.
+
+108
+00:04:14,249 --> 00:04:15,778
+Entonces cada una de estas funciones debera hacer algo.
+
+109
+00:04:15,778 --> 00:04:19,102
+Probablemente este va a pedir el nombre del
+
+110
+00:04:19,102 --> 00:04:20,852
+libro y el autor.
+
+111
+00:04:22,744 --> 00:04:26,518
+Este mostrar todos los libros en nuestra lista.
+
+112
+00:04:26,518 --> 00:04:29,313
+Probablemente este pregunte por el nombre del libro
+
+113
+00:04:29,313 --> 00:04:32,313
+y lo cambie a 'leer' en nuestra lista.
+
+114
+00:04:33,336 --> 00:04:37,466
+Y este va a eliminar el libro de la lista.
+
+115
+00:04:37,466 --> 00:04:40,554
+Pida el nombre del libro y elimine el libro de la lista.
+
+116
+00:04:40,554 --> 00:04:44,052
+Entonces estas probablemente sean tus funciones.
+
+117
+00:04:44,052 --> 00:04:45,691
+En la gua de agregar libro,
+
+118
+00:04:45,691 --> 00:04:48,302
+vas a interactuar con el archivo de la base de
+
+119
+00:04:48,302 --> 00:04:51,135
+datos para agregar un nuevo libro a nuestra base de datos.
+
+120
+00:04:52,332 --> 00:04:53,836
+Lo que estoy pensando es que
+
+121
+00:04:53,836 --> 00:04:56,191
+un archivo de base de datos tendr algo como add_book.
+
+122
+00:04:56,191 --> 00:04:59,292
+Y eso tomar el nombre y el autor del libro.
+
+123
+00:04:59,292 --> 00:05:00,992
+Y probablemente va a
+
+124
+00:05:00,992 --> 00:05:03,492
+hacer algo como books_appen name es
+
+125
+00:05:06,113 --> 00:05:09,446
+name y author es author, y read es falso.
+
+126
+00:05:10,299 --> 00:05:13,869
+Porque no se ley al principio.
+
+127
+00:05:13,869 --> 00:05:14,702
+Bueno.
+
+128
+00:05:15,546 --> 00:05:17,107
+Ahora tendr que crear otras
+
+129
+00:05:17,107 --> 00:05:18,994
+funciones aqu para hacer algo como
+
+130
+00:05:18,994 --> 00:05:20,968
+recuperar todos los libros de nuestra lista.
+
+131
+00:05:20,968 --> 00:05:22,202
+Tendr que agregar
+
+132
+00:05:22,202 --> 00:05:25,675
+algo para modificar un libro para que se lea
+
+133
+00:05:25,675 --> 00:05:27,888
+y, por supuesto, eliminar un libro.
+
+134
+00:05:27,888 --> 00:05:28,919
+Y tambin tendr
+
+135
+00:05:28,919 --> 00:05:32,169
+que implementar este men aqu y todas estas funciones.
+
+136
+00:05:33,019 --> 00:05:34,708
+Lea el informe en la prxima conferencia.
+
+137
+00:05:34,708 --> 00:05:35,849
+Tiene un montn
+
+138
+00:05:35,849 --> 00:05:39,544
+ms de informacin sobre exactamente la motivacin detrs de este proyecto
+
+139
+00:05:39,544 --> 00:05:42,354
+y tambin algunos consejos y sugerencias para ayudarlo
+
+140
+00:05:42,354 --> 00:05:43,428
+en su camino.
+
+141
+00:05:43,428 --> 00:05:46,079
+Pero intente esto por su cuenta
+
+142
+00:05:46,079 --> 00:05:49,123
+antes de pasar al siguiente video de
+
+143
+00:05:49,123 --> 00:05:51,119
+programacin donde implementaremos esto.
+
+144
+00:05:51,119 --> 00:05:52,702
+Te ver pronto.
+

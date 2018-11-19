@@ -1,0 +1,856 @@
+1
+00:00:00,120 --> 00:00:01,320
+Jos: Hola y bienvenido de nuevo.
+
+2
+00:00:01,320 --> 00:00:02,580
+En este video vamos
+
+3
+00:00:02,580 --> 00:00:05,840
+a hablar sobre colas y pilas nuevamente y tambin vamos
+
+4
+00:00:05,840 --> 00:00:08,630
+a presentar un nuevo concepto que es muy
+
+5
+00:00:08,630 --> 00:00:11,913
+popular en programacin pero que a veces puede causar confusin.
+
+6
+00:00:13,160 --> 00:00:14,950
+Repasemos las colas y apilamos primero.
+
+7
+00:00:14,950 --> 00:00:18,260
+Recuerda este diagrama de antes, y cmo en una
+
+8
+00:00:18,260 --> 00:00:21,513
+cola agrega elementos nuevos al final, y cuando
+
+9
+00:00:22,380 --> 00:00:23,810
+elimina un elemento, siempre
+
+10
+00:00:23,810 --> 00:00:25,930
+se elimina desde el principio.
+
+11
+00:00:25,930 --> 00:00:27,530
+Esto es solo una cola como
+
+12
+00:00:27,530 --> 00:00:29,130
+una cola para el supermercado, por ejemplo.
+
+13
+00:00:30,150 --> 00:00:33,070
+Y una cola en Python, podemos implementar el uso de
+
+14
+00:00:33,070 --> 00:00:36,840
+listas, o el uso del mdulo de cubierta, o el mdulo de cola,
+
+15
+00:00:36,840 --> 00:00:37,963
+como hemos visto antes.
+
+16
+00:00:38,950 --> 00:00:43,910
+Aqu hay una muestra simple implementando una cola usando listas.
+
+17
+00:00:43,910 --> 00:00:45,570
+Aqu tenemos nuestra cola de clases.
+
+18
+00:00:45,570 --> 00:00:46,810
+Cuando creas un nuevo
+
+19
+00:00:46,810 --> 00:00:49,870
+objeto, se establece a ti mismo. elementos para ser una lista
+
+20
+00:00:49,870 --> 00:00:51,733
+vaca, y luego puede presionar y pop.
+
+21
+00:00:52,700 --> 00:00:56,300
+Pulsar y soltar son dos nombres que se utilizan con
+
+22
+00:00:56,300 --> 00:00:59,770
+frecuencia en el contexto de colas y pilas. Simplemente, no
+
+23
+00:00:59,770 --> 00:01:03,257
+estoy seguro de por qu se usan exactamente estos nombres,
+
+24
+00:01:03,257 --> 00:01:06,940
+pero se puede pensar que se trata de agregar un elemento
+
+25
+00:01:06,940 --> 00:01:08,790
+nuevo y eliminar un elemento.
+
+26
+00:01:08,790 --> 00:01:10,270
+Y dependiendo de si est
+
+27
+00:01:10,270 --> 00:01:13,510
+trabajando con una cola o una pila, la adicin o
+
+28
+00:01:13,510 --> 00:01:15,360
+eliminacin tendr lugar en otro lugar.
+
+29
+00:01:16,470 --> 00:01:20,300
+Aqu, cuando pulsamos una cola, agregamos un artculo, por lo que
+
+30
+00:01:20,300 --> 00:01:23,200
+agregamos el nuevo elemento al final de la cola.
+
+31
+00:01:23,200 --> 00:01:26,170
+Y cuando hacemos pop, lo que hacemos es
+
+32
+00:01:26,170 --> 00:01:28,230
+crear una variable temporal llamada head,
+
+33
+00:01:28,230 --> 00:01:31,130
+y configurarla para que sea self items zero.
+
+34
+00:01:31,130 --> 00:01:34,340
+Y luego nos establecemos a nosotros mismos. artculos para ser uno mismo. artculos a
+
+35
+00:01:34,340 --> 00:01:35,993
+partir del valor uno.
+
+36
+00:01:37,300 --> 00:01:38,850
+Y luego devolvemos la cabeza.
+
+37
+00:01:38,850 --> 00:01:43,040
+Esta no es una solucin muy confiable por cierto.
+
+38
+00:01:43,040 --> 00:01:45,820
+Qu pasa si solo dices un tem?
+
+39
+00:01:45,820 --> 00:01:49,320
+Pero solo quera ilustrar cmo funcionara una cola si
+
+40
+00:01:49,320 --> 00:01:51,320
+fuera a implementarla usted mismo.
+
+41
+00:01:51,320 --> 00:01:53,220
+Solo adelo al final y qutalo desde el
+
+42
+00:01:53,220 --> 00:01:54,750
+principio, y as es como lo usaras.
+
+43
+00:01:54,750 --> 00:01:55,910
+Crea un nuevo objeto de
+
+44
+00:01:55,910 --> 00:01:57,900
+cola y luego puede enviar valores a l.
+
+45
+00:01:57,900 --> 00:02:00,560
+Empujemos cinco, siete y 11, y
+
+46
+00:02:00,560 --> 00:02:03,770
+luego puede imprimir el resultado de estallar,
+
+47
+00:02:03,770 --> 00:02:07,190
+y eso va a imprimir cinco al principio.
+
+48
+00:02:07,190 --> 00:02:08,680
+Y luego dejarn siete
+
+49
+00:02:08,680 --> 00:02:10,650
+y 11 restantes en la cola.
+
+50
+00:02:10,650 --> 00:02:12,530
+Puedes volver a abrir y eso va
+
+51
+00:02:12,530 --> 00:02:15,830
+a explotar, como eliminar el siguiente elemento de la lista e imprimirlo.
+
+52
+00:02:15,830 --> 00:02:17,513
+Y deja tu lista con solo 11.
+
+53
+00:02:18,950 --> 00:02:21,710
+Con una pila es un poco diferente.
+
+54
+00:02:21,710 --> 00:02:24,320
+Esta es una pila y puedes eliminar elementos de la parte superior.
+
+55
+00:02:24,320 --> 00:02:27,020
+Y cuando tienes otro, vuelve a la cima.
+
+56
+00:02:27,980 --> 00:02:31,400
+Por lo tanto, los elementos ms antiguos estn siempre en la parte inferior, y los
+
+57
+00:02:31,400 --> 00:02:33,243
+elementos ms nuevos estn en la parte superior.
+
+58
+00:02:34,690 --> 00:02:37,240
+Y de nuevo, implementando esto en Python, tendras
+
+59
+00:02:37,240 --> 00:02:38,920
+aqu tu stack de clases que
+
+60
+00:02:38,920 --> 00:02:41,290
+de nuevo define self. artculos para ser una lista vaca.
+
+61
+00:02:41,290 --> 00:02:44,750
+Cuando presionas, presionas al comienzo de la lista.
+
+62
+00:02:44,750 --> 00:02:46,590
+As que estamos diciendo que s mismo. items ahora
+
+63
+00:02:46,590 --> 00:02:50,140
+es una lista de solo el nuevo elemento, que es
+
+64
+00:02:50,140 --> 00:02:52,990
+el parmetro, ms self. artculos.
+
+65
+00:02:52,990 --> 00:02:55,290
+Entonces eso unir las dos listas juntas.
+
+66
+00:02:55,290 --> 00:02:56,280
+Vas a terminar
+
+67
+00:02:56,280 --> 00:02:58,200
+esencialmente agregando un elemento al comienzo.
+
+68
+00:02:58,200 --> 00:03:01,060
+Y el pop se va a hacer solo. artculos. pop y como
+
+69
+00:03:01,060 --> 00:03:03,487
+puede ver, las listas nos permiten pop,
+
+70
+00:03:03,487 --> 00:03:06,210
+y eso simplemente elimina el ltimo elemento de
+
+71
+00:03:06,210 --> 00:03:08,170
+la lista y se lo devuelve,
+
+72
+00:03:08,170 --> 00:03:12,680
+por lo que la pila pop y la lista pop realmente hacen lo mismo.
+
+73
+00:03:12,680 --> 00:03:14,600
+Y nuevamente, ahora puedes empujar.
+
+74
+00:03:14,600 --> 00:03:16,690
+Pero fjate cmo cuando presionas cinco obtienes una
+
+75
+00:03:16,690 --> 00:03:18,969
+lista de solo cinco y cuando presionas siete,
+
+76
+00:03:18,969 --> 00:03:20,293
+los siete van al frente.
+
+77
+00:03:21,340 --> 00:03:23,430
+Y luego presionas 11, el 11 va por
+
+78
+00:03:23,430 --> 00:03:26,760
+delante y, a medida que lo haces, comienzas a quitrtelo del frente tambin.
+
+79
+00:03:26,760 --> 00:03:29,580
+Entonces ests agregando y quitando del mismo lugar.
+
+80
+00:03:29,580 --> 00:03:31,415
+Ya hemos visto colas y pilas.
+
+81
+00:03:31,415 --> 00:03:32,248
+Solo quera
+
+82
+00:03:32,248 --> 00:03:34,740
+darte un poco de cdigo sobre cmo
+
+83
+00:03:34,740 --> 00:03:37,000
+funcionan, porque de lo que hablaremos
+
+84
+00:03:37,000 --> 00:03:39,900
+a continuacin es algo que me parece realmente interesante.
+
+85
+00:03:39,900 --> 00:03:42,050
+Y es decir, el concepto
+
+86
+00:03:42,050 --> 00:03:44,700
+de, cuntos pasos se necesitan para
+
+87
+00:03:44,700 --> 00:03:46,270
+encontrar un elemento
+
+88
+00:03:46,270 --> 00:03:47,420
+en una cola
+
+89
+00:03:47,420 --> 00:03:50,353
+o una pila o una lista?
+
+90
+00:03:52,190 --> 00:03:53,990
+Djame revisarlo y estoy seguro
+
+91
+00:03:53,990 --> 00:03:56,470
+de que entenders de dnde vengo.
+
+92
+00:03:56,470 --> 00:03:59,810
+Podemos decir que estas colas y pilas y listas
+
+93
+00:03:59,810 --> 00:04:02,030
+y muchas otras estructuras de datos
+
+94
+00:04:02,030 --> 00:04:04,430
+tambin son lo que llamamos secuenciales.
+
+95
+00:04:04,430 --> 00:04:07,483
+Empiezas a buscar elementos en un extremo
+
+96
+00:04:08,510 --> 00:04:11,480
+y pasas hasta el otro extremo.
+
+97
+00:04:11,480 --> 00:04:14,121
+Entonces, si ests en una cola, comienzas en el
+
+98
+00:04:14,121 --> 00:04:16,480
+primer elemento y pasas al segundo, tercero, y
+
+99
+00:04:16,480 --> 00:04:18,423
+as sucesivamente, hasta llegar al ltimo elemento.
+
+100
+00:04:20,170 --> 00:04:22,400
+Esto significa que si ests buscando un elemento
+
+101
+00:04:22,400 --> 00:04:23,980
+en el medio, tienes que pasar
+
+102
+00:04:23,980 --> 00:04:26,660
+por todos los elementos a lo largo del camino.
+
+103
+00:04:26,660 --> 00:04:30,283
+Entonces, puede ser realmente til comenzar a mirar un extremo,
+
+104
+00:04:31,310 --> 00:04:32,590
+y luego examinar cada
+
+105
+00:04:32,590 --> 00:04:34,460
+elemento hasta llegar al ltimo.
+
+106
+00:04:34,460 --> 00:04:36,010
+Pero tambin puede ser bastante lento.
+
+107
+00:04:36,010 --> 00:04:39,140
+Digamos que solo quera obtener el ltimo elemento, no puede
+
+108
+00:04:39,140 --> 00:04:42,020
+hacer eso con una cola a menos que primero muestre
+
+109
+00:04:42,020 --> 00:04:43,870
+todos los elementos que le precedieron.
+
+110
+00:04:45,320 --> 00:04:46,180
+Aqu hay otro ejemplo.
+
+111
+00:04:46,180 --> 00:04:48,580
+Digamos que tiene una lista larga,
+
+112
+00:04:48,580 --> 00:04:51,400
+muy larga, y est buscando un elemento especfico.
+
+113
+00:04:51,400 --> 00:04:53,520
+Por ejemplo, esta lista aqu.
+
+114
+00:04:53,520 --> 00:04:55,823
+Digamos que estamos buscando el elemento 90.
+
+115
+00:04:58,840 --> 00:05:03,590
+Bueno, como puedes ver, tuvimos que dar muchos saltos.
+
+116
+00:05:03,590 --> 00:05:07,160
+Hemos pasado del 13 al 56, 38 y as sucesivamente
+
+117
+00:05:07,160 --> 00:05:09,563
+hasta que alcanzamos el elemento nmero 90.
+
+118
+00:05:11,470 --> 00:05:14,470
+Esto es porque una lista es secuencial.
+
+119
+00:05:14,470 --> 00:05:15,840
+Si est buscando un elemento,
+
+120
+00:05:15,840 --> 00:05:19,070
+lo nico que puede hacer realmente es comenzar desde el principio.
+
+121
+00:05:19,070 --> 00:05:22,940
+O tal vez puedas comenzar al final si eso es ms adecuado.
+
+122
+00:05:22,940 --> 00:05:24,905
+Pero de cualquier forma, debe comenzar en
+
+123
+00:05:24,905 --> 00:05:28,463
+un extremo y examinar cada elemento hasta que encuentre el que desea.
+
+124
+00:05:29,990 --> 00:05:31,480
+Entonces esto puede ser bastante lento.
+
+125
+00:05:31,480 --> 00:05:34,030
+Sera mejor si pudiramos
+
+126
+00:05:34,030 --> 00:05:36,650
+saber dnde est el elemento.
+
+127
+00:05:36,650 --> 00:05:39,413
+Pero, por supuesto, con una lista no podemos hacer eso.
+
+128
+00:05:56,870 --> 00:06:00,373
+Entonces, el nmero de pasos que hemos tenido
+
+129
+00:06:01,530 --> 00:06:03,750
+que hacer, es bastante pocos.
+
+130
+00:06:03,750 --> 00:06:05,720
+Nuestra lista aqu tiene 21 elementos.
+
+131
+00:06:05,720 --> 00:06:07,612
+No tienes que contarlos.
+
+132
+00:06:07,612 --> 00:06:09,100
+Slo creme aqu.
+
+133
+00:06:09,100 --> 00:06:13,873
+Entonces digamos que una variable arbitraria n es 21.
+
+134
+00:06:14,950 --> 00:06:18,143
+Si quisiramos encontrar el ltimo elemento en esta
+
+135
+00:06:19,460 --> 00:06:22,770
+lista, podramos ir desde el principio hasta cada
+
+136
+00:06:22,770 --> 00:06:24,850
+elemento hasta llegar al ltimo.
+
+137
+00:06:24,850 --> 00:06:27,860
+Entonces tenemos que realizar 21 tipos de saltos.
+
+138
+00:06:27,860 --> 00:06:30,110
+Tendramos que saltar al primer elemento
+
+139
+00:06:30,110 --> 00:06:30,943
+y saltar
+
+140
+00:06:30,943 --> 00:06:33,763
+al segundo elemento, y saltar al tercer elemento, etc.
+
+141
+00:06:36,050 --> 00:06:40,590
+Eso significa que para una lista, que es una
+
+142
+00:06:40,590 --> 00:06:44,090
+estructura secuencial, encontrar un elemento puede llevarnos
+
+143
+00:06:44,090 --> 00:06:45,730
+a n saltos.
+
+144
+00:06:45,730 --> 00:06:48,133
+Donde n es un nmero de elemento en la lista.
+
+145
+00:06:49,770 --> 00:06:52,310
+Tenga en cuenta que dice, hasta n saltos,
+
+146
+00:06:52,310 --> 00:06:54,920
+porque por supuesto si est encontrando el primer elemento,
+
+147
+00:06:54,920 --> 00:06:56,680
+eso solo le llevar un salto.
+
+148
+00:06:56,680 --> 00:06:58,220
+Pero si encuentras el ltimo elemento,
+
+149
+00:06:58,220 --> 00:06:59,903
+eso te llevar a n saltos.
+
+150
+00:07:01,780 --> 00:07:05,650
+Y hay un trmino especfico para esto.
+
+151
+00:07:05,650 --> 00:07:08,840
+Cuando te lleva hasta n saltos, para encontrar
+
+152
+00:07:08,840 --> 00:07:10,860
+el elemento en una estructura,
+
+153
+00:07:10,860 --> 00:07:15,060
+esto se llama, esto es lo que decimos es que
+
+154
+00:07:15,060 --> 00:07:18,337
+esta estructura tiene una complejidad de O (n).
+
+155
+00:07:19,740 --> 00:07:20,573
+Bueno?
+
+156
+00:07:20,573 --> 00:07:21,653
+Esa es solo la terminologa.
+
+157
+00:07:22,500 --> 00:07:24,990
+O significa complejidad de.
+
+158
+00:07:24,990 --> 00:07:27,910
+Y dentro de los corchetes ponemos lo que es la complejidad.
+
+159
+00:07:27,910 --> 00:07:30,170
+Y en este caso, la complejidad es n.
+
+160
+00:07:30,170 --> 00:07:33,123
+Porque necesitamos hasta n saltos para encontrar ese elemento.
+
+161
+00:07:34,050 --> 00:07:35,160
+Bueno?
+
+162
+00:07:35,160 --> 00:07:37,720
+Esto se llama complejidad.
+
+163
+00:07:37,720 --> 00:07:41,260
+Entonces, una vez ms, la complejidad de O (n) solo significa que necesitamos
+
+164
+00:07:41,260 --> 00:07:44,163
+una cantidad de saltos igual a la cantidad de elementos.
+
+165
+00:07:45,530 --> 00:07:47,302
+Nada terriblemente complicado all.
+
+166
+00:07:47,302 --> 00:07:49,640
+Cuando encuentras un elemento en
+
+167
+00:07:49,640 --> 00:07:52,060
+una lista, necesitas saltar varias
+
+168
+00:07:52,060 --> 00:07:55,290
+veces, eso es una complejidad O (n).
+
+169
+00:07:55,290 --> 00:07:57,410
+Y vamos a ver ms sobre la
+
+170
+00:07:57,410 --> 00:07:59,980
+complejidad en los prximos videos, as como sobre cmo
+
+171
+00:07:59,980 --> 00:08:02,510
+podemos, de alguna manera reducir eso con suerte.
+
+172
+00:08:02,510 --> 00:08:04,980
+Pero, por supuesto, en lugar de n
+
+173
+00:08:04,980 --> 00:08:07,010
+puedes tener otras cosas all.
+
+174
+00:08:07,010 --> 00:08:09,970
+Por ejemplo, O de n cuadrado, significa que
+
+175
+00:08:09,970 --> 00:08:12,070
+necesita hasta nueve saltos para navegar
+
+176
+00:08:12,070 --> 00:08:14,220
+una coleccin de tres elementos.
+
+177
+00:08:15,110 --> 00:08:17,700
+Tres cuadrados es nueve.
+
+178
+00:08:17,700 --> 00:08:20,760
+Entonces esto es lo que significa O (n) cuadrado.
+
+179
+00:08:20,760 --> 00:08:22,680
+Por supuesto, puedes ver inmediatamente que esto
+
+180
+00:08:22,680 --> 00:08:24,827
+va a ser ms lento que O (n).
+
+181
+00:08:26,490 --> 00:08:29,030
+Con O (n), y tienes una lista
+
+182
+00:08:29,030 --> 00:08:31,260
+de tres elementos, necesitas hacer tres saltos.
+
+183
+00:08:31,260 --> 00:08:33,880
+Con O (n) al cuadrado, si tienes una lista de
+
+184
+00:08:33,880 --> 00:08:35,303
+tres elementos, debes hacer nueve saltos.
+
+185
+00:08:36,600 --> 00:08:38,107
+Y puedes tener lo opuesto.
+
+186
+00:08:38,107 --> 00:08:40,830
+O de (log2n), lo que significa que tenemos que
+
+187
+00:08:40,830 --> 00:08:42,530
+hacer hasta tres saltos para
+
+188
+00:08:42,530 --> 00:08:44,940
+navegar una coleccin de siete elementos, por ejemplo.
+
+189
+00:08:44,940 --> 00:08:46,140
+Para un elemento de necesidad nueve.
+
+190
+00:08:48,180 --> 00:08:52,200
+Entonces, lo que est dentro de los corchetes
+
+191
+00:08:52,200 --> 00:08:55,930
+es, puedes pensarlo por ahora como el nmero
+
+192
+00:08:55,930 --> 00:08:59,007
+de saltos, para alcanzar el ltimo
+
+193
+00:08:59,007 --> 00:09:02,940
+elemento o el ms lejano de una coleccin.
+
+194
+00:09:02,940 --> 00:09:06,500
+En una lista, el elemento ms lejano es el ltimo elemento.
+
+195
+00:09:06,500 --> 00:09:09,700
+Y puede necesitar hasta n saltos para llegar
+
+196
+00:09:09,700 --> 00:09:11,860
+all si comienza desde el principio.
+
+197
+00:09:11,860 --> 00:09:14,970
+Y hay otras estructuras que no son
+
+198
+00:09:14,970 --> 00:09:19,000
+listas, donde se aplican estos otros tipos de complejidad.
+
+199
+00:09:19,000 --> 00:09:21,730
+Vamos a verlos en toda la seccin.
+
+200
+00:09:21,730 --> 00:09:23,400
+Y no se preocupe si no est
+
+201
+00:09:23,400 --> 00:09:25,450
+seguro de lo que significa, por ejemplo, (log2n).
+
+202
+00:09:25,450 --> 00:09:27,050
+Te animo a que lo
+
+203
+00:09:27,050 --> 00:09:28,353
+busques, pero eso es
+
+204
+00:09:28,353 --> 00:09:30,950
+tan complicado como se ver en esta seccin.
+
+205
+00:09:30,950 --> 00:09:33,292
+No vamos a entrar en complicadas matemticas.
+
+206
+00:09:33,292 --> 00:09:35,010
+No soy un gran admirador de las matemticas.
+
+207
+00:09:35,010 --> 00:09:36,580
+No soy muy bueno en eso.
+
+208
+00:09:36,580 --> 00:09:39,080
+No vamos a entrar en complicadas
+
+209
+00:09:39,080 --> 00:09:44,080
+matemticas, solo (log2n) es lo ms complicado que vamos a ver.
+
+210
+00:09:44,140 --> 00:09:46,960
+As que no te preocupes demasiado si no ests muy seguro,
+
+211
+00:09:46,960 --> 00:09:48,123
+todo va a estar bien.
+
+212
+00:09:49,710 --> 00:09:50,543
+Bueno?
+
+213
+00:09:50,543 --> 00:09:52,860
+Espero que hayas disfrutado este video.
+
+214
+00:09:52,860 --> 00:09:54,917
+Te ver en el prximo.
+

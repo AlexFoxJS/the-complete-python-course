@@ -1,0 +1,572 @@
+1
+00:00:00,080 --> 00:00:01,340
+Jos: Hola, y bienvenido!
+
+2
+00:00:01,340 --> 00:00:03,230
+En este video vamos a
+
+3
+00:00:03,230 --> 00:00:04,830
+ver nuestro prximo proyecto.
+
+4
+00:00:04,830 --> 00:00:07,800
+Que va a ser un proyecto de raspado similar,
+
+5
+00:00:07,800 --> 00:00:10,360
+solo que usar un sitio ms complejo, y
+
+6
+00:00:10,360 --> 00:00:12,810
+nuestro proyecto va a hacer algunas cosas ms.
+
+7
+00:00:13,980 --> 00:00:15,830
+Lo primero que debemos hacer
+
+8
+00:00:15,830 --> 00:00:17,400
+es pensar qu queremos
+
+9
+00:00:17,400 --> 00:00:19,920
+eliminar, qu queremos obtener del sitio.
+
+10
+00:00:19,920 --> 00:00:20,990
+Y en este caso,
+
+11
+00:00:20,990 --> 00:00:23,030
+nuestro proyecto va a hacer un par de cosas.
+
+12
+00:00:23,030 --> 00:00:25,280
+Pero, esencialmente, vamos a raspar
+
+13
+00:00:25,280 --> 00:00:27,960
+este sitio web de libros.
+
+14
+00:00:27,960 --> 00:00:29,580
+Y nuevamente, la URL
+
+15
+00:00:29,580 --> 00:00:32,465
+es: libros. raspar. com
+
+16
+00:00:32,465 --> 00:00:35,400
+El toscrape. El sitio com es una
+
+17
+00:00:35,400 --> 00:00:37,410
+coleccin de sitios web que podemos raspar
+
+18
+00:00:37,410 --> 00:00:39,430
+libremente y que han sido diseados para raspar.
+
+19
+00:00:39,430 --> 00:00:41,910
+Entonces son buenas cosas para probar.
+
+20
+00:00:43,630 --> 00:00:45,220
+Y lo que vamos a
+
+21
+00:00:45,220 --> 00:00:47,660
+hacer en nuestra aplicacin es que revisaremos todos
+
+22
+00:00:47,660 --> 00:00:48,870
+los libros que tenemos
+
+23
+00:00:48,870 --> 00:00:50,900
+en su coleccin, y vamos a
+
+24
+00:00:50,900 --> 00:00:52,940
+filtrarlos, vamos a ver qu unos que
+
+25
+00:00:52,940 --> 00:00:55,180
+podemos comprar en funcin del precio, el
+
+26
+00:00:55,180 --> 00:00:56,120
+nmero de visitas
+
+27
+00:00:56,120 --> 00:00:57,730
+y cosas por el estilo.
+
+28
+00:00:57,730 --> 00:01:00,730
+Esencialmente, hacer una forma ms rpida
+
+29
+00:01:00,730 --> 00:01:02,410
+y eficiente de navegar
+
+30
+00:01:02,410 --> 00:01:04,020
+la coleccin para
+
+31
+00:01:04,020 --> 00:01:06,510
+encontrar los libros que queremos comprar.
+
+32
+00:01:08,550 --> 00:01:09,480
+Entonces, como pueden ver,
+
+33
+00:01:09,480 --> 00:01:11,420
+este es el sitio web aqu a la
+
+34
+00:01:11,420 --> 00:01:13,680
+izquierda, y tenemos el inspector a la derecha.
+
+35
+00:01:13,680 --> 00:01:15,240
+Si desea abrir el inspector, puede hacer clic con
+
+36
+00:01:15,240 --> 00:01:18,540
+el botn derecho en cualquier lugar y presionar "Inspeccionar". "Y, lo que est
+
+37
+00:01:18,540 --> 00:01:19,880
+sucediendo aqu es
+
+38
+00:01:19,880 --> 00:01:22,830
+que tenemos 1,000 libros en el catlogo
+
+39
+00:01:22,830 --> 00:01:24,450
+o la coleccin, y
+
+40
+00:01:24,450 --> 00:01:27,720
+cada libro est en este formato, como podemos ver.
+
+41
+00:01:27,720 --> 00:01:28,855
+Hemos visto esto antes
+
+42
+00:01:28,855 --> 00:01:30,450
+al comienzo de la seccin.
+
+43
+00:01:30,450 --> 00:01:33,700
+Investigamos cmo extraer datos si solo
+
+44
+00:01:33,700 --> 00:01:36,370
+tenamos uno de estos libros.
+
+45
+00:01:36,370 --> 00:01:37,600
+Vamos a llevarlo un
+
+46
+00:01:37,600 --> 00:01:39,830
+poco ms all y raspar toda la pgina.
+
+47
+00:01:39,830 --> 00:01:41,550
+As que tenemos todos
+
+48
+00:01:41,550 --> 00:01:42,780
+estos libros en
+
+49
+00:01:43,810 --> 00:01:46,160
+este formato, y si vamos al
+
+50
+00:01:46,160 --> 00:01:48,870
+inspector y miramos el HTML, podemos comenzar
+
+51
+00:01:48,870 --> 00:01:51,750
+por encontrar el cuerpo de la pgina.
+
+52
+00:01:52,950 --> 00:01:54,600
+Ah tenemos un div que
+
+53
+00:01:54,600 --> 00:01:56,660
+contiene todo excepto el encabezado, y luego
+
+54
+00:01:56,660 --> 00:01:58,070
+hay una pgina interna que
+
+55
+00:01:58,070 --> 00:02:00,220
+tiene esencialmente todo el contenido y tambin
+
+56
+00:02:00,220 --> 00:02:01,940
+agrega un poco de mrgenes alrededor
+
+57
+00:02:01,940 --> 00:02:03,140
+de las esquinas.
+
+58
+00:02:03,140 --> 00:02:04,280
+Puedes ver que el, este
+
+59
+00:02:04,280 --> 00:02:06,000
+div aqu es un poco ms grande
+
+60
+00:02:06,000 --> 00:02:07,470
+que el otro, as que todo
+
+61
+00:02:07,470 --> 00:02:08,670
+lo que est sucediendo all
+
+62
+00:02:08,670 --> 00:02:10,490
+es que estamos limitando el contenido para
+
+63
+00:02:10,490 --> 00:02:12,190
+que se muestre un poco mejor.
+
+64
+00:02:13,060 --> 00:02:15,070
+Luego, tenemos las migas
+
+65
+00:02:15,070 --> 00:02:17,970
+de pan, tenemos la fila aqu,
+
+66
+00:02:17,970 --> 00:02:20,680
+y luego tenemos la barra lateral,
+
+67
+00:02:20,680 --> 00:02:22,440
+que tiene los diferentes temas.
+
+68
+00:02:22,440 --> 00:02:25,280
+Esto es algo que podramos raspar si quisiramos.
+
+69
+00:02:25,280 --> 00:02:28,600
+Y luego vamos a la coleccin de libros.
+
+70
+00:02:29,500 --> 00:02:31,850
+Entonces, aqu tenemos algunas cosas como
+
+71
+00:02:31,850 --> 00:02:34,830
+los diferentes resultados que tenemos y luego
+
+72
+00:02:34,830 --> 00:02:36,500
+hay una seccin, y
+
+73
+00:02:36,500 --> 00:02:39,740
+en esta seccin tenemos un div, y ese
+
+74
+00:02:39,740 --> 00:02:42,584
+div es el que contiene una fila
+
+75
+00:02:42,584 --> 00:02:44,420
+de clase "ol", esto es
+
+76
+00:02:44,420 --> 00:02:47,660
+una lista desordenada de los diferentes libros y
+
+77
+00:02:47,660 --> 00:02:50,060
+cada libro est dentro de un
+
+78
+00:02:50,060 --> 00:02:51,830
+elemento de elemento de lista.
+
+79
+00:02:51,830 --> 00:02:53,870
+Puedes ver que la imagen se repite porque
+
+80
+00:02:53,870 --> 00:02:56,460
+cada libro est dentro de un elemento de la lista.
+
+81
+00:02:57,600 --> 00:02:59,330
+Observe cmo los libros no
+
+82
+00:02:59,330 --> 00:03:01,730
+estn formateados como elementos de la lista,
+
+83
+00:03:01,730 --> 00:03:04,180
+pero, sin embargo, con HTML, esencialmente puede
+
+84
+00:03:04,180 --> 00:03:07,340
+mostrar todo lo que desee en cualquier elemento.
+
+85
+00:03:07,340 --> 00:03:08,970
+Entonces, en este caso, estn usando elementos
+
+86
+00:03:08,970 --> 00:03:10,430
+de la lista, tal vez pensaron que
+
+87
+00:03:10,430 --> 00:03:11,920
+era ms fcil para fines de desarrollo.
+
+88
+00:03:11,920 --> 00:03:14,370
+Normalmente, los elementos de la lista seran como vietas.
+
+89
+00:03:15,610 --> 00:03:18,090
+Ahora, dentro del elemento de la
+
+90
+00:03:18,090 --> 00:03:20,320
+lista est lo que ya sabemos.
+
+91
+00:03:20,320 --> 00:03:22,530
+Un artculo, que es el "producto_pod" que
+
+92
+00:03:22,530 --> 00:03:24,010
+hemos visto antes, luego
+
+93
+00:03:24,010 --> 00:03:26,520
+tenemos un div que contiene la imagen,
+
+94
+00:03:26,520 --> 00:03:28,160
+tenemos la calificacin de estrellas,
+
+95
+00:03:28,160 --> 00:03:29,110
+el ttulo, tenemos
+
+96
+00:03:29,110 --> 00:03:30,980
+el precio all, como as como
+
+97
+00:03:30,980 --> 00:03:33,050
+el botn "agregar a la cesta".
+
+98
+00:03:34,240 --> 00:03:35,710
+Entonces, lo que vamos
+
+99
+00:03:35,710 --> 00:03:38,570
+a hacer es, nuevamente, crear un analizador sintctico para
+
+100
+00:03:38,570 --> 00:03:40,260
+los libros que va a
+
+101
+00:03:40,260 --> 00:03:42,700
+ser cada elemento de la lista que
+
+102
+00:03:42,700 --> 00:03:44,010
+se va a pasar
+
+103
+00:03:44,010 --> 00:03:45,510
+a l, y cada analizador
+
+104
+00:03:45,510 --> 00:03:47,610
+buscar la informacin sobre ese libro
+
+105
+00:03:47,610 --> 00:03:48,760
+dentro de si mismo
+
+106
+00:03:50,100 --> 00:03:50,933
+Bueno.
+
+107
+00:03:50,933 --> 00:03:51,766
+Por lo
+
+108
+00:03:51,766 --> 00:03:54,340
+tanto, ser esencialmente una copia del ltimo
+
+109
+00:03:54,340 --> 00:03:56,190
+proyecto con alguna funcionalidad adicional,
+
+110
+00:03:56,190 --> 00:03:58,610
+y por supuesto ahora que tenemos precios
+
+111
+00:03:58,610 --> 00:04:00,670
+vamos a usar el mdulo de
+
+112
+00:04:00,670 --> 00:04:03,070
+expresiones regulares para obtener el precio como
+
+113
+00:04:03,070 --> 00:04:05,140
+un nmero, y tambin vamos a
+
+114
+00:04:05,140 --> 00:04:08,000
+tratar con sacar la calificacin de estrellas de
+
+115
+00:04:08,000 --> 00:04:11,320
+all y luego hacer algn tipo de clasificacin y filtrado
+
+116
+00:04:11,320 --> 00:04:12,730
+usando esa clasificacin de estrellas.
+
+117
+00:04:13,800 --> 00:04:15,830
+Sin embargo, mi consejo, como
+
+118
+00:04:16,820 --> 00:04:18,890
+de costumbre, es que, ahora que
+
+119
+00:04:18,890 --> 00:04:20,920
+hemos implementado el, "removedor", trate
+
+120
+00:04:20,920 --> 00:04:23,400
+de implementar este proyecto por su cuenta.
+
+121
+00:04:23,400 --> 00:04:25,280
+No va a ser fcil,
+
+122
+00:04:25,280 --> 00:04:27,250
+pero ya sabes muchas cosas que
+
+123
+00:04:27,250 --> 00:04:29,230
+necesitas para abordar esto, y si
+
+124
+00:04:29,230 --> 00:04:30,640
+estructuras tu proyecto usando
+
+125
+00:04:30,640 --> 00:04:33,210
+las pginas y los raspadores, esencialmente una
+
+126
+00:04:33,210 --> 00:04:35,710
+pgina para el, para esta pgina entera
+
+127
+00:04:35,710 --> 00:04:36,820
+y un raspador
+
+128
+00:04:36,820 --> 00:04:38,170
+para Lo siento, un
+
+129
+00:04:38,170 --> 00:04:40,510
+analizador para los libros, entonces deberas ser
+
+130
+00:04:40,510 --> 00:04:42,140
+capaz de abordar esto bastante
+
+131
+00:04:42,140 --> 00:04:42,973
+bien.
+
+132
+00:04:42,973 --> 00:04:43,806
+Y es posible
+
+133
+00:04:43,806 --> 00:04:45,630
+que no puedas hacer algunas de las
+
+134
+00:04:45,630 --> 00:04:47,110
+cosas ms avanzadas, pero podrs hacer
+
+135
+00:04:47,110 --> 00:04:48,460
+algunas cosas, as que definitivamente
+
+136
+00:04:48,460 --> 00:04:49,860
+te recomiendo que des un
+
+137
+00:04:49,860 --> 00:04:51,550
+descanso antes de pasar al siguiente video
+
+138
+00:04:51,550 --> 00:04:53,450
+y trates de implementarlo por tu cuenta. .
+
+139
+00:04:54,610 --> 00:04:55,443
+Bueno?
+
+140
+00:04:55,443 --> 00:04:56,700
+Una vez que hayas
+
+141
+00:04:56,700 --> 00:04:58,010
+hecho eso, pasemos al
+
+142
+00:04:58,010 --> 00:04:59,930
+siguiente video y comenzaremos a implementarlo all.
+
+143
+00:04:59,930 --> 00:05:00,880
+Te ver all.
+

@@ -1,0 +1,536 @@
+1
+00:00:00,211 --> 00:00:02,241
+Jose: Ol e bem vindo de volta.
+
+2
+00:00:02,241 --> 00:00:06,309
+Neste vdeo vamos falar sobre Binary Search.
+
+3
+00:00:06,309 --> 00:00:09,115
+Vamos comear olhando a lista que
+
+4
+00:00:09,115 --> 00:00:11,367
+tivemos no ltimo vdeo.
+
+5
+00:00:11,367 --> 00:00:13,239
+Aqui, ns temos um monte
+
+6
+00:00:13,239 --> 00:00:16,617
+de nmeros, e como voc sabe, se quisermos encontrar
+
+7
+00:00:16,617 --> 00:00:19,415
+um nmero especfico como 90, que est l
+
+8
+00:00:19,415 --> 00:00:21,431
+perto do fim, temos que comear
+
+9
+00:00:21,431 --> 00:00:25,884
+do comeo, e passar por cada nmero at que chegar a 90.
+
+10
+00:00:25,884 --> 00:00:30,498
+No entanto, existem maneiras de ser mais eficiente
+
+11
+00:00:30,498 --> 00:00:33,606
+na pesquisa de um nmero especfico.
+
+12
+00:00:33,606 --> 00:00:36,274
+Se classificarmos a lista primeiro, que
+
+13
+00:00:36,274 --> 00:00:38,966
+existem vrias formas de classificao, algumas
+
+14
+00:00:38,966 --> 00:00:41,032
+delas so mais rpidas do
+
+15
+00:00:41,032 --> 00:00:45,028
+que outras e ensinarei como classificar uma lista mais tarde.
+
+16
+00:00:45,028 --> 00:00:48,864
+Mas, se voc classificar a lista agora,  muito mais
+
+17
+00:00:48,864 --> 00:00:50,031
+fcil encontrar coisas.
+
+18
+00:00:52,251 --> 00:00:55,012
+Da mesma forma que se voc tem um
+
+19
+00:00:55,012 --> 00:00:58,690
+dicionrio, voc no comea em A e termina em Zed.
+
+20
+00:00:58,690 --> 00:01:02,462
+Por exemplo, se voc est procurando por xilofone,
+
+21
+00:01:02,462 --> 00:01:05,777
+voc comearia perto do fim porque saberia
+
+22
+00:01:05,777 --> 00:01:08,385
+que ele  ordenado alfabeticamente.
+
+23
+00:01:08,385 --> 00:01:10,923
+Quando suas listas e suas colees
+
+24
+00:01:10,923 --> 00:01:14,607
+so ordenadas, fica muito mais fcil encontrar coisas.
+
+25
+00:01:14,607 --> 00:01:17,104
+No entanto,  importante dizer que
+
+26
+00:01:17,104 --> 00:01:20,104
+s porque a lista  ordenada no
+
+27
+00:01:20,104 --> 00:01:22,260
+significa que suas buscas sero
+
+28
+00:01:22,260 --> 00:01:25,246
+mais eficientes, ou a complexidade delas ser menor.
+
+29
+00:01:25,246 --> 00:01:28,079
+Encontrar sequencialmente ainda  O-N.
+
+30
+00:01:29,060 --> 00:01:32,192
+Se voc quer encontrar 90, voc ainda tem que
+
+31
+00:01:32,192 --> 00:01:34,474
+comear no comeo e passar por cada
+
+32
+00:01:34,474 --> 00:01:36,676
+elemento, se voc est encontrando sequencialmente.
+
+33
+00:01:36,676 --> 00:01:40,176
+Ento, vamos encontrar de uma maneira diferente.
+
+34
+00:01:41,311 --> 00:01:43,482
+Vamos explorar uma maneira diferente de
+
+35
+00:01:43,482 --> 00:01:46,899
+pesquisar e encontrar um elemento que no seja seqencial.
+
+36
+00:01:47,940 --> 00:01:51,324
+Lembre-se de que um aspecto importante das listas
+
+37
+00:01:51,324 --> 00:01:54,207
+ que voc pode acessar qualquer elemento,
+
+38
+00:01:54,207 --> 00:01:56,389
+no precisa ser o primeiro elemento.
+
+39
+00:01:56,389 --> 00:01:58,411
+Ento voc pode acessar o ltimo
+
+40
+00:01:58,411 --> 00:02:01,507
+elemento ou um elemento no meio, se quiser.
+
+41
+00:02:01,507 --> 00:02:06,278
+Ento, vamos procurar 90 com um algoritmo ligeiramente diferente.
+
+42
+00:02:06,278 --> 00:02:08,534
+Em vez de comear no primeiro
+
+43
+00:02:08,534 --> 00:02:11,605
+elemento, vamos comear no elemento do meio.
+
+44
+00:02:11,605 --> 00:02:14,499
+O elemento do meio nesta lista  38,
+
+45
+00:02:14,499 --> 00:02:17,268
+que  o nmero de ndice 10.
+
+46
+00:02:17,268 --> 00:02:19,325
+Ento, nesse algoritmo, o que vamos
+
+47
+00:02:19,325 --> 00:02:21,845
+fazer  fazer a pergunta "90 
+
+48
+00:02:21,845 --> 00:02:24,614
+maior que 38?" "Ento, mais uma vez,
+
+49
+00:02:24,614 --> 00:02:27,266
+estamos procurando 90 e estamos apenas nos perguntando"
+
+50
+00:02:27,266 --> 00:02:30,802
+90  maior que 38? "A resposta  sim,
+
+51
+00:02:30,802 --> 00:02:33,971
+ento vamos descartar todos os valores mais
+
+52
+00:02:33,971 --> 00:02:37,623
+baixos, todos os valores menores ou iguais a
+
+53
+00:02:37,623 --> 00:02:39,793
+38 que vamos descartar.
+
+54
+00:02:39,793 --> 00:02:41,893
+Ns s vamos manter os valores
+
+55
+00:02:41,893 --> 00:02:43,226
+maiores que 38.
+
+56
+00:02:44,699 --> 00:02:45,625
+Por qu?
+
+57
+00:02:45,625 --> 00:02:47,635
+Como sabemos que a lista est
+
+58
+00:02:47,635 --> 00:02:52,234
+ordenada, qualquer valor que esteja  esquerda ser menor do que o valor
+
+59
+00:02:52,234 --> 00:02:53,567
+que estamos procurando, para
+
+60
+00:02:53,567 --> 00:02:55,251
+que no tenhamos que nos
+
+61
+00:02:55,251 --> 00:02:58,170
+preocupar com isso, nem precisamos pesquisar .
+
+62
+00:02:58,170 --> 00:03:00,864
+Vamos acalm-los para sinalizar que nos
+
+63
+00:03:00,864 --> 00:03:02,569
+esquecemos desses valores.
+
+64
+00:03:02,569 --> 00:03:05,784
+Ns os eliminamos, no vamos procurar l.
+
+65
+00:03:05,784 --> 00:03:09,027
+Ento vamos passar para o prximo
+
+66
+00:03:09,027 --> 00:03:10,548
+elemento do meio
+
+67
+00:03:10,548 --> 00:03:12,399
+do que resta.
+
+68
+00:03:12,399 --> 00:03:14,671
+Observe que a diviso de nmeros inteiros
+
+69
+00:03:14,671 --> 00:03:17,145
+no  arredondada, ento aqui terminamos com quatro
+
+70
+00:03:17,145 --> 00:03:19,728
+elementos  esquerda e cinco elementos  direita,
+
+71
+00:03:20,792 --> 00:03:23,345
+o que  um pequeno problema neste caso,
+
+72
+00:03:23,345 --> 00:03:25,317
+vai tornar as coisas um pouco
+
+73
+00:03:25,317 --> 00:03:28,292
+mais lentas para ns, mas mesmo assim acabamos em 59.
+
+74
+00:03:28,292 --> 00:03:29,889
+Ento, novamente, fazemos a mesma pergunta:
+
+75
+00:03:29,889 --> 00:03:32,146
+" 90 maior que 59?" "A resposta
+
+76
+00:03:32,146 --> 00:03:37,146
+ sim, ento descartamos novamente todos os valores mais baixos.
+
+77
+00:03:37,543 --> 00:03:40,754
+59 e abaixo podemos descartar porque sabemos que
+
+78
+00:03:40,754 --> 00:03:42,921
+90 no est em nenhum desses.
+
+79
+00:03:44,098 --> 00:03:47,523
+Mais uma vez, procuramos 90 passando para o prximo
+
+80
+00:03:47,523 --> 00:03:50,009
+elemento do meio do que resta.
+
+81
+00:03:50,009 --> 00:03:53,099
+Agora estamos s sete e sete.
+
+82
+00:03:53,099 --> 00:03:55,716
+Novamente voc se pergunta a mesma pergunta, "
+
+83
+00:03:55,716 --> 00:03:58,568
+90 maior que sete-um-sete? "A resposta desta vez
+
+84
+00:03:58,568 --> 00:04:01,621
+ no,  menos de sete e sete,
+
+85
+00:04:01,621 --> 00:04:05,003
+ento vamos descartar todos os valores certos de
+
+86
+00:04:05,003 --> 00:04:06,008
+todos os valores
+
+87
+00:04:06,008 --> 00:04:07,946
+mais altos, vamos descart-los.
+
+88
+00:04:07,946 --> 00:04:10,921
+Observe agora como temos dois valores restantes e
+
+89
+00:04:10,921 --> 00:04:13,671
+o prximo salto nos leva a 90.
+
+90
+00:04:15,526 --> 00:04:18,726
+Porque, mais uma vez, ns no arredondamos,
+
+91
+00:04:18,726 --> 00:04:23,301
+ento dois dividido por dois  um, ento isso nos
+
+92
+00:04:23,301 --> 00:04:24,884
+traz a este ndice
+
+93
+00:04:25,735 --> 00:04:29,061
+aqui, e nos perguntamos novamente, " 90 igual
+
+94
+00:04:29,061 --> 00:04:30,728
+a 90? "E
+
+95
+00:04:31,652 --> 00:04:35,001
+ns dizemos sim, ento encontramos.
+
+96
+00:04:35,001 --> 00:04:38,918
+Agora encontramos 90 e levamos apenas quatro saltos.
+
+97
+00:04:40,206 --> 00:04:41,893
+Se tivssemos feito isso
+
+98
+00:04:41,893 --> 00:04:44,476
+sequencialmente, isso nos levaria a 17 saltos.
+
+99
+00:04:45,889 --> 00:04:48,972
+Ento, acho que isso  muito mais rpido,
+
+100
+00:04:49,927 --> 00:04:53,629
+e acontece que o log 2 de 21, que 
+
+101
+00:04:53,629 --> 00:04:55,585
+o nmero de elementos nesta
+
+102
+00:04:55,585 --> 00:04:57,752
+lista,  igual a quatro pontos 39.
+
+103
+00:04:58,897 --> 00:05:02,222
+O que significa que esse tipo de pesquisa que fizemos,
+
+104
+00:05:02,222 --> 00:05:05,699
+que  chamada de pesquisa binria, , na verdade, oh
+
+105
+00:05:05,699 --> 00:05:07,032
+de log two n.
+
+106
+00:05:07,922 --> 00:05:10,339
+O que significa at cinco saltos.
+
+107
+00:05:11,644 --> 00:05:13,179
+Aqui fizemos quatro
+
+108
+00:05:13,179 --> 00:05:14,767
+saltos, se tivssemos
+
+109
+00:05:14,767 --> 00:05:17,997
+procurado 95, nos teriam levado cinco saltos.
+
+110
+00:05:17,997 --> 00:05:22,543
+Agora, o que vimos aqui  uma pesquisa binria.
+
+111
+00:05:22,543 --> 00:05:25,623
+Uma busca binria funciona, em cada salto,
+
+112
+00:05:25,623 --> 00:05:29,683
+tomando uma deciso que deixa voc entre duas opes.
+
+113
+00:05:29,683 --> 00:05:31,433
+V para a direita ou v para a esquerda.
+
+114
+00:05:33,456 --> 00:05:35,206
+V para a direita ou v para a esquerda.
+
+115
+00:05:37,303 --> 00:05:40,390
+Esta busca binria significa que, a cada
+
+116
+00:05:40,390 --> 00:05:43,160
+salto, voc est se livrando de
+
+117
+00:05:43,160 --> 00:05:46,704
+metade ou aproximadamente metade dos elementos restantes.
+
+118
+00:05:46,704 --> 00:05:51,213
+ por isso que isso  uma complexidade logartmica.
+
+119
+00:05:51,213 --> 00:05:54,403
+A complexidade  oh do log dois n,
+
+120
+00:05:54,403 --> 00:05:56,903
+que  muito melhor que o O-N.
+
+121
+00:05:58,058 --> 00:06:02,984
+De fato,  um inverso exponencial em complexidade, que 
+
+122
+00:06:02,984 --> 00:06:04,734
+muito mais rpido.
+
+123
+00:06:05,981 --> 00:06:09,534
+Esse tipo de pesquisa  um dos vrios algoritmos de
+
+124
+00:06:09,534 --> 00:06:11,618
+pesquisa que eu recomendo que voc
+
+125
+00:06:11,618 --> 00:06:13,427
+examine se estiver interessado.
+
+126
+00:06:13,427 --> 00:06:16,713
+Se no, saiba que existem maneiras de melhorar
+
+127
+00:06:16,713 --> 00:06:18,238
+os algoritmos existentes.
+
+128
+00:06:18,238 --> 00:06:22,723
+A pesquisa sequencial pode ser aprimorada pela pesquisa binria e,
+
+129
+00:06:22,723 --> 00:06:26,473
+como tal, esse tipo de desempenho, o assunto
+
+130
+00:06:27,399 --> 00:06:30,482
+da computao,  uma rea muito importante.
+
+131
+00:06:31,539 --> 00:06:33,450
+Agora, nos prximos vdeos, vamos
+
+132
+00:06:33,450 --> 00:06:37,278
+ver como podemos realizar a pesquisa binria em uma
+
+133
+00:06:37,278 --> 00:06:40,699
+estrutura ligeiramente diferente que no  uma lista.
+
+134
+00:06:40,699 --> 00:06:43,282
+Eu vou te ver no prximo vdeo.
+

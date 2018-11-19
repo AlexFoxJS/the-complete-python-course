@@ -1,0 +1,520 @@
+1
+00:00:00,200 --> 00:00:01,460
+-: Ol, bem vindo de volta.
+
+2
+00:00:01,460 --> 00:00:03,180
+Neste vdeo, vamos construir
+
+3
+00:00:03,180 --> 00:00:06,620
+nosso primeiro agendador de tarefas usando geradores
+
+4
+00:00:06,620 --> 00:00:08,370
+em vez de threads.
+
+5
+00:00:09,250 --> 00:00:11,910
+Anteriormente, criamos vrios encadeamentos e os
+
+6
+00:00:11,910 --> 00:00:13,560
+iniciamos, e havia um
+
+7
+00:00:13,560 --> 00:00:16,290
+planejador de tarefas em segundo plano,
+
+8
+00:00:16,290 --> 00:00:17,550
+o sistema operacional,
+
+9
+00:00:17,550 --> 00:00:19,350
+trazendo encadeamentos para um
+
+10
+00:00:19,350 --> 00:00:21,590
+ncleo e removendo-os do ncleo.
+
+11
+00:00:21,590 --> 00:00:23,200
+Agora vamos fazer a mesma
+
+12
+00:00:23,200 --> 00:00:26,090
+coisa, mas usando um gerador em vez disso.
+
+13
+00:00:26,090 --> 00:00:28,080
+By the way, o cdigo que
+
+14
+00:00:28,080 --> 00:00:33,080
+estou prestes a mostrar aqui  parcialmente retirado de outra conversa de David Beasley,
+
+15
+00:00:33,670 --> 00:00:35,410
+que  um cara fantstico.
+
+16
+00:00:35,410 --> 00:00:37,940
+Vou ligar-te a algumas das suas conversas depois.
+
+17
+00:00:37,940 --> 00:00:40,560
+Mas eu queria mostrar de novo, em minhas prprias palavras,
+
+18
+00:00:40,560 --> 00:00:42,710
+como fazer isso apenas para ajud-lo a entender.
+
+19
+00:00:43,690 --> 00:00:47,180
+Portanto, os threads no esto se saindo to bem em
+
+20
+00:00:47,180 --> 00:00:50,890
+Python, com a sobrecarga de comunicao e os problemas de GIL,
+
+21
+00:00:50,890 --> 00:00:53,320
+mas o uso de geradores  outra
+
+22
+00:00:53,320 --> 00:00:57,440
+maneira de obter multitarefa e fazer vrias coisas ao mesmo tempo em Python.
+
+23
+00:00:57,440 --> 00:01:01,100
+Mas, novamente, lembre-se de que a multitarefa  fazer coisas que parecem
+
+24
+00:01:01,100 --> 00:01:03,150
+estar acontecendo ao mesmo tempo, mas na
+
+25
+00:01:03,150 --> 00:01:04,350
+verdade no so.
+
+26
+00:01:05,560 --> 00:01:09,050
+O paralelismo  sobre fazer as coisas ao mesmo
+
+27
+00:01:09,050 --> 00:01:11,950
+tempo, e no Python no podemos fazer paralelismo
+
+28
+00:01:11,950 --> 00:01:15,550
+por causa do GIL, a menos que lancemos mltiplos processos.
+
+29
+00:01:16,720 --> 00:01:18,640
+Ento aqui temos nossa contagem
+
+30
+00:01:18,640 --> 00:01:20,540
+regressiva, e o que vamos
+
+31
+00:01:20,540 --> 00:01:23,340
+fazer  criar um conjunto de tarefas.
+
+32
+00:01:32,170 --> 00:01:35,650
+Ento aqui ns criamos trs tarefas que so
+
+33
+00:01:35,650 --> 00:01:38,280
+todas similares, todas elas so geradoras.
+
+34
+00:01:38,280 --> 00:01:40,060
+Uma contagem regressiva de dez, uma contagem regressiva de
+
+35
+00:01:40,060 --> 00:01:41,530
+cinco e uma contagem regressiva de 20.
+
+36
+00:01:42,650 --> 00:01:46,586
+Mas agora, podemos comear a fornecer fatias, em vez
+
+37
+00:01:46,586 --> 00:01:49,010
+de em um ncleo, podemos comear
+
+38
+00:01:49,010 --> 00:01:51,710
+a fornecer fatias no thread principal.
+
+39
+00:01:52,850 --> 00:01:57,760
+Ento, enquanto tarefas, isso significa apenas que, embora no seja vazio, ns
+
+40
+00:01:57,760 --> 00:02:01,880
+vamos fazer a tarefa  zero tarefas, essa  a
+
+41
+00:02:01,880 --> 00:02:03,510
+primeira tarefa aqui.
+
+42
+00:02:04,620 --> 00:02:07,540
+Ns vamos remover a tarefa da lista
+
+43
+00:02:08,450 --> 00:02:13,190
+e ento ns vamos tentar fazer x  o prximo da
+
+44
+00:02:13,190 --> 00:02:15,230
+tarefa, ns vamos imprimir x,
+
+45
+00:02:15,230 --> 00:02:18,330
+e ento ns vamos anexar a tarefa novamente.
+
+46
+00:02:19,210 --> 00:02:22,870
+Ok, ento tudo o que estamos fazendo aqui 
+
+47
+00:02:22,870 --> 00:02:25,990
+que vamos conseguir a primeira tarefa em nossa
+
+48
+00:02:25,990 --> 00:02:27,720
+lista, vamos remov-la da lista.
+
+49
+00:02:27,720 --> 00:02:30,520
+Nossa lista vai acabar como essas duas tarefas.
+
+50
+00:02:30,520 --> 00:02:31,980
+Ns vamos obter uma nova
+
+51
+00:02:31,980 --> 00:02:34,250
+varivel x, que ser a prxima das tarefas,
+
+52
+00:02:34,250 --> 00:02:36,130
+ou neste caso, dez para a primeira.
+
+53
+00:02:36,130 --> 00:02:37,640
+Ns vamos imprimir,
+
+54
+00:02:37,640 --> 00:02:39,320
+e depois vamos anex-lo
+
+55
+00:02:39,320 --> 00:02:42,050
+ao final da nossa lista novamente.
+
+56
+00:02:44,730 --> 00:02:47,370
+Se encontrarmos um "exceto" na iterao
+
+57
+00:02:47,370 --> 00:02:49,050
+de parada, lembre-se disso
+
+58
+00:02:49,050 --> 00:02:51,450
+ o que  levantado quando
+
+59
+00:02:52,740 --> 00:02:57,380
+ficamos sem valores de um gerador, ento vamos imprimir "tarefa finalizada",
+
+60
+00:02:57,380 --> 00:02:58,310
+e  isso.
+
+61
+00:02:58,310 --> 00:02:59,570
+Quando imprimimos "tarefa
+
+62
+00:02:59,570 --> 00:03:01,410
+finalizada", porque tentamos obter o
+
+63
+00:03:01,410 --> 00:03:02,760
+prximo valor de algo,
+
+64
+00:03:02,760 --> 00:03:06,019
+mas ele falha, no vamos anex-lo  tarefa.
+
+65
+00:03:06,019 --> 00:03:07,940
+Quando tentamos obter o prximo, e
+
+66
+00:03:07,940 --> 00:03:09,440
+isso nos faz parar a
+
+67
+00:03:09,440 --> 00:03:11,590
+iterao, no executaremos nenhum desses dois.
+
+68
+00:03:14,640 --> 00:03:16,660
+Tudo bem, vamos rodar esse arquivo.
+
+69
+00:03:18,730 --> 00:03:19,870
+E como voc pode
+
+70
+00:03:20,780 --> 00:03:22,520
+ver, ns comeamos no topo com
+
+71
+00:03:22,520 --> 00:03:24,650
+dez, cinco e 20, e eles descem
+
+72
+00:03:24,650 --> 00:03:27,860
+um por um at voc ver a tarefa terminada, so os
+
+73
+00:03:27,860 --> 00:03:30,050
+cinco, ento voc v a tarefa terminada, isso
+
+74
+00:03:30,050 --> 00:03:32,830
+ para os dez, e ento 20 meio que ocupa
+
+75
+00:03:32,830 --> 00:03:35,060
+todo o tempo na CPU, ou neste caso,
+
+76
+00:03:35,060 --> 00:03:37,060
+no thread principal e eventualmente termina tambm.
+
+77
+00:03:38,290 --> 00:03:41,140
+Considerando que estas tarefas so todas bastante simples,
+
+78
+00:03:41,140 --> 00:03:43,000
+elas realmente no fazem muito.
+
+79
+00:03:43,000 --> 00:03:47,070
+Mas este  um exemplo de multitarefa
+
+80
+00:03:48,010 --> 00:03:51,810
+no Python sem o uso de threads.
+
+81
+00:03:51,810 --> 00:03:53,740
+Voc tem uma tarefa fazendo
+
+82
+00:03:53,740 --> 00:03:54,900
+algo, outra tarefa
+
+83
+00:03:54,900 --> 00:03:56,750
+fazendo outra coisa, outra tarefa
+
+84
+00:03:56,750 --> 00:03:58,560
+fazendo algo totalmente separado, e
+
+85
+00:03:58,560 --> 00:04:02,040
+eles esto colaborando fazendo multitarefa colaborativa para concluir as
+
+86
+00:04:02,040 --> 00:04:03,730
+coisas todas ao mesmo tempo.
+
+87
+00:04:05,700 --> 00:04:07,630
+Voc pode ver como podemos
+
+88
+00:04:08,590 --> 00:04:13,590
+usar o rendimento em qualquer circunstncia para suspender uma tarefa temporariamente e depois traz-la
+
+89
+00:04:13,730 --> 00:04:16,420
+de volta em algum momento no futuro.
+
+90
+00:04:16,420 --> 00:04:18,870
+Por exemplo, se voc solicitasse entrada
+
+91
+00:04:18,870 --> 00:04:20,920
+do usurio, poderia produzir e
+
+92
+00:04:20,920 --> 00:04:23,040
+executar sua operao matemtica complexa.
+
+93
+00:04:23,040 --> 00:04:23,940
+Quando o usurio se
+
+94
+00:04:23,940 --> 00:04:25,560
+aplica, voc pode render sua operao matemtica
+
+95
+00:04:25,560 --> 00:04:28,410
+e voltar  sua entrada do usurio e lidar com isso.
+
+96
+00:04:28,410 --> 00:04:32,940
+Voltando ao exemplo da palestra h alguns vdeos atrs.
+
+97
+00:04:32,940 --> 00:04:34,970
+Ento, esses rendimentos, tudo que voc precisa
+
+98
+00:04:34,970 --> 00:04:36,720
+fazer  coloc-los no lugar certo
+
+99
+00:04:36,720 --> 00:04:39,590
+e, em seguida, voc poderia evitar operaes de bloqueio, voc poderia
+
+100
+00:04:39,590 --> 00:04:42,190
+evitar pontos no tempo em que seu cdigo Python est
+
+101
+00:04:42,190 --> 00:04:43,820
+apenas esperando para fazer as coisas.
+
+102
+00:04:46,120 --> 00:04:48,810
+Claro, se voc tem uma tarefa que no
+
+103
+00:04:48,810 --> 00:04:50,520
+rende, ento voc tem um
+
+104
+00:04:50,520 --> 00:04:52,950
+problema porque essa  apenas uma obstruo
+
+105
+00:04:52,950 --> 00:04:55,440
+da CPU, e se voc tem uma tarefa
+
+106
+00:04:55,440 --> 00:04:59,110
+que rende, mas leva muito tempo entre um rendimento e outra,
+
+107
+00:04:59,110 --> 00:05:01,490
+essa tarefa vai levar muito tempo e
+
+108
+00:05:01,490 --> 00:05:03,680
+a outra tarefa no ter tempo suficiente.
+
+109
+00:05:04,740 --> 00:05:06,980
+Se esse for o caso, se voc tiver
+
+110
+00:05:06,980 --> 00:05:09,880
+uma tarefa que leva muito tempo para ser executada enquanto os
+
+111
+00:05:09,880 --> 00:05:12,830
+outros demoram um tempo muito pequeno para ser executada, voc poder
+
+112
+00:05:12,830 --> 00:05:15,810
+transferir o trabalho para um thread separado ou para um processo
+
+113
+00:05:15,810 --> 00:05:17,850
+separado usando, como j visto j, o
+
+114
+00:05:17,850 --> 00:05:19,730
+executor do conjunto de encadeamentos ou o
+
+115
+00:05:19,730 --> 00:05:21,180
+executor do conjunto de processos.
+
+116
+00:05:24,675 --> 00:05:26,350
+E, na verdade, chamar o
+
+117
+00:05:26,350 --> 00:05:28,720
+prximo em uma funo e voltar para
+
+118
+00:05:28,720 --> 00:05:33,300
+uma funo suspensa  mais barato do que mudar de um thread para outro.
+
+119
+00:05:33,300 --> 00:05:35,720
+O Python foi desenvolvido para que isso seja realmente
+
+120
+00:05:35,720 --> 00:05:36,870
+barato, muito fcil de fazer.
+
+121
+00:05:36,870 --> 00:05:39,520
+Por isso, pode ser muito rpido usar esses geradores em
+
+122
+00:05:39,520 --> 00:05:41,820
+vez de encadeamentos, se  isso que voc precisa.
+
+123
+00:05:43,620 --> 00:05:44,453
+Agora, no
+
+124
+00:05:44,453 --> 00:05:46,830
+prximo vdeo, vamos ver um
+
+125
+00:05:46,830 --> 00:05:48,510
+pouco mais sobre isso,
+
+126
+00:05:48,510 --> 00:05:51,470
+e o objetivo dos prximos vdeos 
+
+127
+00:05:51,470 --> 00:05:53,780
+desenvolver seu conhecimento sobre como
+
+128
+00:05:53,780 --> 00:05:56,900
+esse desenvolvimento assncrono funciona at chegarmos ao
+
+129
+00:05:56,900 --> 00:06:00,910
+Python moderno e como o Python moderno desenvolvimento assncrono.
+
+130
+00:06:00,910 --> 00:06:03,300
+Ok, vejo vocs no prximo vdeo.
+

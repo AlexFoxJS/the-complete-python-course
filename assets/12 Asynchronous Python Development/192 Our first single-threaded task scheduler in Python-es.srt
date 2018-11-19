@@ -1,0 +1,520 @@
+1
+00:00:00,200 --> 00:00:01,460
+-: Hola, bienvenido de nuevo.
+
+2
+00:00:01,460 --> 00:00:03,180
+En este video, vamos
+
+3
+00:00:03,180 --> 00:00:06,620
+a construir nuestro primer programador de tareas usando
+
+4
+00:00:06,620 --> 00:00:08,370
+generadores en lugar de hilos.
+
+5
+00:00:09,250 --> 00:00:11,910
+Previamente, creamos un montn de hilos
+
+6
+00:00:11,910 --> 00:00:13,560
+y los comenzamos, y
+
+7
+00:00:13,560 --> 00:00:16,290
+haba un programador de tareas en segundo
+
+8
+00:00:16,290 --> 00:00:17,550
+plano, el sistema
+
+9
+00:00:17,550 --> 00:00:19,350
+operativo, incorporando hilos a
+
+10
+00:00:19,350 --> 00:00:21,590
+un ncleo y quitndolos del ncleo.
+
+11
+00:00:21,590 --> 00:00:23,200
+Ahora vamos a hacer lo
+
+12
+00:00:23,200 --> 00:00:26,090
+mismo, pero usando un generador en su lugar.
+
+13
+00:00:26,090 --> 00:00:28,080
+Por cierto, el cdigo que
+
+14
+00:00:28,080 --> 00:00:33,080
+les voy a mostrar aqu est parcialmente tomado de otra charla de David Beasley,
+
+15
+00:00:33,670 --> 00:00:35,410
+que es un tipo fantstico.
+
+16
+00:00:35,410 --> 00:00:37,940
+Voy a vincularlo a un par de sus palabras posteriores.
+
+17
+00:00:37,940 --> 00:00:40,560
+Pero quera mostrarle de nuevo, en mis propias palabras,
+
+18
+00:00:40,560 --> 00:00:42,710
+cmo hacer esto solo para ayudarlo a comprender.
+
+19
+00:00:43,690 --> 00:00:47,180
+Por lo tanto, los hilos no funcionan tan bien en
+
+20
+00:00:47,180 --> 00:00:50,890
+Python, con la sobrecarga de comunicacin y los problemas GIL, pero
+
+21
+00:00:50,890 --> 00:00:53,320
+el uso de generadores es otra forma
+
+22
+00:00:53,320 --> 00:00:57,440
+de lograr la multitarea y hacer varias cosas a la vez en Python.
+
+23
+00:00:57,440 --> 00:01:01,100
+Pero, nuevamente, recuerda que la multitarea est haciendo cosas que parecen
+
+24
+00:01:01,100 --> 00:01:03,150
+estar sucediendo al mismo tiempo, pero
+
+25
+00:01:03,150 --> 00:01:04,350
+realmente no lo son.
+
+26
+00:01:05,560 --> 00:01:09,050
+El paralelismo se trata de hacer las cosas al mismo
+
+27
+00:01:09,050 --> 00:01:11,950
+tiempo, y en Python no podemos hacer el
+
+28
+00:01:11,950 --> 00:01:15,550
+paralelismo debido al GIL a menos que lancemos mltiples procesos.
+
+29
+00:01:16,720 --> 00:01:18,640
+As que aqu tenemos nuestra cuenta
+
+30
+00:01:18,640 --> 00:01:20,540
+regresiva, y lo que vamos
+
+31
+00:01:20,540 --> 00:01:23,340
+a hacer es crear un conjunto de tareas.
+
+32
+00:01:32,170 --> 00:01:35,650
+As que aqu hemos creado tres tareas que son
+
+33
+00:01:35,650 --> 00:01:38,280
+todas similares, son todo este generador.
+
+34
+00:01:38,280 --> 00:01:40,060
+Una cuenta regresiva de diez, una cuenta regresiva de
+
+35
+00:01:40,060 --> 00:01:41,530
+cinco y una cuenta regresiva de 20.
+
+36
+00:01:42,650 --> 00:01:46,586
+Pero ahora, podemos comenzar a proporcionarles porciones, en lugar de
+
+37
+00:01:46,586 --> 00:01:49,010
+hacerlo en un ncleo, podemos comenzar
+
+38
+00:01:49,010 --> 00:01:51,710
+a proporcionarles porciones en el hilo principal.
+
+39
+00:01:52,850 --> 00:01:57,760
+Entonces, mientras que las tareas, esto solo significa que mientras no est
+
+40
+00:01:57,760 --> 00:02:01,880
+vaco, vamos a hacer la tarea de tareas cero, esa
+
+41
+00:02:01,880 --> 00:02:03,510
+es la primera tarea aqu.
+
+42
+00:02:04,620 --> 00:02:07,540
+Vamos a eliminar la tarea de la lista
+
+43
+00:02:08,450 --> 00:02:13,190
+y luego vamos a tratar de hacer x es la siguiente tarea,
+
+44
+00:02:13,190 --> 00:02:15,230
+vamos a imprimir x, y
+
+45
+00:02:15,230 --> 00:02:18,330
+luego vamos a agregar la tarea de nuevo.
+
+46
+00:02:19,210 --> 00:02:22,870
+De acuerdo, entonces todo lo que estamos haciendo aqu es que
+
+47
+00:02:22,870 --> 00:02:25,990
+vamos a obtener la primera tarea en nuestra lista,
+
+48
+00:02:25,990 --> 00:02:27,720
+la eliminaremos de la lista.
+
+49
+00:02:27,720 --> 00:02:30,520
+Nuestra lista terminar como estas dos tareas.
+
+50
+00:02:30,520 --> 00:02:31,980
+Vamos a obtener una nueva variable
+
+51
+00:02:31,980 --> 00:02:34,250
+x, que ser la siguiente de las tareas, o
+
+52
+00:02:34,250 --> 00:02:36,130
+en este caso, diez para la primera.
+
+53
+00:02:36,130 --> 00:02:37,640
+Vamos a imprimirlo,
+
+54
+00:02:37,640 --> 00:02:39,320
+y luego volveremos a
+
+55
+00:02:39,320 --> 00:02:42,050
+agregarlo al final de nuestra lista.
+
+56
+00:02:44,730 --> 00:02:47,370
+Si encontramos un "excepto" en la iteracin de
+
+57
+00:02:47,370 --> 00:02:49,050
+detencin, recuerde que esto es
+
+58
+00:02:49,050 --> 00:02:51,450
+lo que se genera cuando nos quedamos
+
+59
+00:02:52,740 --> 00:02:57,380
+sin valores de un generador, entonces simplemente vamos a imprimir "tarea terminada", y eso
+
+60
+00:02:57,380 --> 00:02:58,310
+es todo.
+
+61
+00:02:58,310 --> 00:02:59,570
+Cuando imprimimos "tarea terminada",
+
+62
+00:02:59,570 --> 00:03:01,410
+porque tratamos de obtener el siguiente
+
+63
+00:03:01,410 --> 00:03:02,760
+valor de algo pero
+
+64
+00:03:02,760 --> 00:03:06,019
+falla, no vamos a volver a agregarlo a la tarea.
+
+65
+00:03:06,019 --> 00:03:07,940
+Cuando intentamos obtener el siguiente, y eso
+
+66
+00:03:07,940 --> 00:03:09,440
+nos da la iteracin de
+
+67
+00:03:09,440 --> 00:03:11,590
+detencin, no ejecutaremos ninguno de estos dos.
+
+68
+00:03:14,640 --> 00:03:16,660
+Est bien, vamos a ejecutar este archivo.
+
+69
+00:03:18,730 --> 00:03:19,870
+Y como puede ver,
+
+70
+00:03:20,780 --> 00:03:22,520
+comenzamos en la parte superior con
+
+71
+00:03:22,520 --> 00:03:24,650
+diez, cinco y 20, y bajan uno por
+
+72
+00:03:24,650 --> 00:03:27,860
+uno hasta que ve la tarea terminada, esa es la cinco, luego
+
+73
+00:03:27,860 --> 00:03:30,050
+ve la tarea terminada, eso es para el
+
+74
+00:03:30,050 --> 00:03:32,830
+diez, y luego el 20 tipo de toma todo el
+
+75
+00:03:32,830 --> 00:03:35,060
+tiempo en la CPU, o en este caso,
+
+76
+00:03:35,060 --> 00:03:37,060
+en el hilo principal y finalmente termina tambin.
+
+77
+00:03:38,290 --> 00:03:41,140
+Mientras que estas tareas son bastante simples,
+
+78
+00:03:41,140 --> 00:03:43,000
+realmente no hacen mucho.
+
+79
+00:03:43,000 --> 00:03:47,070
+Pero este es un ejemplo de
+
+80
+00:03:48,010 --> 00:03:51,810
+multitarea en Python sin usar hilos.
+
+81
+00:03:51,810 --> 00:03:53,740
+Tienes una tarea haciendo
+
+82
+00:03:53,740 --> 00:03:54,900
+algo, otra haciendo
+
+83
+00:03:54,900 --> 00:03:56,750
+otra cosa, otra haciendo
+
+84
+00:03:56,750 --> 00:03:58,560
+algo completamente separado, y
+
+85
+00:03:58,560 --> 00:04:02,040
+colaboran realizando multitareas colaborativas para completar las cosas
+
+86
+00:04:02,040 --> 00:04:03,730
+al mismo tiempo.
+
+87
+00:04:05,700 --> 00:04:07,630
+Puede ver cmo podemos usar
+
+88
+00:04:08,590 --> 00:04:13,590
+el rendimiento en cualquier circunstancia para suspender temporalmente una tarea y luego
+
+89
+00:04:13,730 --> 00:04:16,420
+recuperarla en algn momento en el futuro.
+
+90
+00:04:16,420 --> 00:04:18,870
+Entonces, por ejemplo, si solicit la
+
+91
+00:04:18,870 --> 00:04:20,920
+entrada del usuario, podra ceder
+
+92
+00:04:20,920 --> 00:04:23,040
+y ejecutar su compleja operacin matemtica.
+
+93
+00:04:23,040 --> 00:04:23,940
+Cuando el usuario
+
+94
+00:04:23,940 --> 00:04:25,560
+aplica, puede ceder su operacin matemtica
+
+95
+00:04:25,560 --> 00:04:28,410
+y volver a la informacin del usuario y lidiar con eso.
+
+96
+00:04:28,410 --> 00:04:32,940
+Volviendo al ejemplo en la conferencia hace algunos videos.
+
+97
+00:04:32,940 --> 00:04:34,970
+Entonces, estos rendimientos, todo lo que tienes
+
+98
+00:04:34,970 --> 00:04:36,720
+que hacer es ponerlos en el
+
+99
+00:04:36,720 --> 00:04:39,590
+lugar correcto y luego podras evitar operaciones de bloqueo, podras
+
+100
+00:04:39,590 --> 00:04:42,190
+evitar puntos en el tiempo donde tu cdigo Python
+
+101
+00:04:42,190 --> 00:04:43,820
+solo est esperando hacer cosas.
+
+102
+00:04:46,120 --> 00:04:48,810
+Por supuesto, si tienes una tarea que no
+
+103
+00:04:48,810 --> 00:04:50,520
+cede, entonces tienes un problema
+
+104
+00:04:50,520 --> 00:04:52,950
+porque esa solo va a obstruir la
+
+105
+00:04:52,950 --> 00:04:55,440
+CPU, y si tienes una tarea que
+
+106
+00:04:55,440 --> 00:04:59,110
+rinde, pero lleva un tiempo muy largo entre un rendimiento y
+
+107
+00:04:59,110 --> 00:05:01,490
+otra, esa tarea tomar mucho tiempo y
+
+108
+00:05:01,490 --> 00:05:03,680
+la otra tarea no tendr suficiente tiempo.
+
+109
+00:05:04,740 --> 00:05:06,980
+Si ese es el caso, si tiene una
+
+110
+00:05:06,980 --> 00:05:09,880
+tarea que tarda mucho tiempo en ejecutarse mientras los dems
+
+111
+00:05:09,880 --> 00:05:12,830
+tardan una cantidad de tiempo muy pequea en ejecutarse, puede
+
+112
+00:05:12,830 --> 00:05:15,810
+descargar el trabajo a un subproceso separado o a un proceso
+
+113
+00:05:15,810 --> 00:05:17,850
+por separado, ya que ya visto, el
+
+114
+00:05:17,850 --> 00:05:19,730
+ejecutor del grupo de subprocesos o el
+
+115
+00:05:19,730 --> 00:05:21,180
+ejecutor del grupo de procesos.
+
+116
+00:05:24,675 --> 00:05:26,350
+Y en realidad, llamar al
+
+117
+00:05:26,350 --> 00:05:28,720
+siguiente en una funcin y regresar a
+
+118
+00:05:28,720 --> 00:05:33,300
+una funcin suspendida es ms barato que cambiar de un hilo a otro.
+
+119
+00:05:33,300 --> 00:05:35,720
+Python se ha desarrollado por lo que es realmente
+
+120
+00:05:35,720 --> 00:05:36,870
+barato, realmente fcil de hacer.
+
+121
+00:05:36,870 --> 00:05:39,520
+Por lo tanto, puede ser realmente rpido usar estos generadores en
+
+122
+00:05:39,520 --> 00:05:41,820
+lugar de hilos, si eso es lo que necesita.
+
+123
+00:05:43,620 --> 00:05:44,453
+Ahora, en
+
+124
+00:05:44,453 --> 00:05:46,830
+el prximo video, vamos a ver
+
+125
+00:05:46,830 --> 00:05:48,510
+algo ms de esto,
+
+126
+00:05:48,510 --> 00:05:51,470
+y el propsito de los siguientes videos
+
+127
+00:05:51,470 --> 00:05:53,780
+es desarrollar su conocimiento de cmo
+
+128
+00:05:53,780 --> 00:05:56,900
+funciona este desarrollo asncrono hasta que lleguemos a
+
+129
+00:05:56,900 --> 00:06:00,910
+Python moderno y cun moderno es Python desarrollo asincrnico.
+
+130
+00:06:00,910 --> 00:06:03,300
+De acuerdo, te ver en el prximo video.
+

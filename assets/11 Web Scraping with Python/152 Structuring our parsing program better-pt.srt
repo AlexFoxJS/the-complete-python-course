@@ -1,0 +1,448 @@
+1
+00:00:00,370 --> 00:00:01,490
+Narrador Masculino: Ol e bem vindo de volta.
+
+2
+00:00:01,490 --> 00:00:04,290
+Neste vdeo, estamos falando sobre como estruturar
+
+3
+00:00:04,290 --> 00:00:06,190
+seu programa e melhor lidar
+
+4
+00:00:06,190 --> 00:00:07,850
+com a anlise de HTML.
+
+5
+00:00:08,960 --> 00:00:09,793
+Ento, a primeira
+
+6
+00:00:09,793 --> 00:00:11,490
+coisa que quero fazer  na verdade
+
+7
+00:00:11,490 --> 00:00:13,570
+eu vou selecionar tudo no meu arquivo, no
+
+8
+00:00:13,570 --> 00:00:16,970
+meu arquivo HTML mdio, e ir e criar um novo arquivo que eu vou
+
+9
+00:00:16,970 --> 00:00:19,250
+chamar de anlise de HTML de classe, por exemplo.
+
+10
+00:00:21,040 --> 00:00:22,760
+E vou colar tudo.
+
+11
+00:00:22,760 --> 00:00:24,660
+E o que eu quero mostrar
+
+12
+00:00:24,660 --> 00:00:27,000
+ uma maneira de estruturar isso, de
+
+13
+00:00:27,000 --> 00:00:29,420
+modo que, em vez de apenas funes
+
+14
+00:00:29,420 --> 00:00:32,450
+nicas, voc tenha algo um pouco mais autnomo, uma classe.
+
+15
+00:00:32,450 --> 00:00:35,940
+E o que eu vou fazer  colocar tudo
+
+16
+00:00:35,940 --> 00:00:39,040
+isso, exceto o HTML, tudo isso em uma
+
+17
+00:00:39,040 --> 00:00:41,730
+classe que eu vou chamar ParsedItem, por exemplo.
+
+18
+00:00:42,670 --> 00:00:46,730
+E isso vai ser uma classe para levar em uma
+
+19
+00:00:47,810 --> 00:00:52,810
+pgina HTML, ou parte dela, e encontrar propriedades de um item, ok?
+
+20
+00:00:55,070 --> 00:01:00,070
+Ento, vai levar uma pgina, ou potencialmente uma seo de uma pgina,
+
+21
+00:01:00,320 --> 00:01:04,410
+e vai fazer voc mesmo. sopa igual BeautifulSoup
+
+22
+00:01:04,410 --> 00:01:09,410
+de pgina em html. parser, ok?
+
+23
+00:01:10,170 --> 00:01:12,660
+O bom disso  que agora, digamos
+
+24
+00:01:12,660 --> 00:01:16,050
+que voc tenha uma pgina com muitos desses artigos.
+
+25
+00:01:17,270 --> 00:01:21,560
+Voc poderia criar um ParsedItem para cada um desses artigos.
+
+26
+00:01:22,530 --> 00:01:25,130
+E a nica coisa que voc precisa
+
+27
+00:01:25,130 --> 00:01:29,010
+fazer , de certa forma, pegar a tag do artigo e
+
+28
+00:01:29,010 --> 00:01:31,820
+analis-la aqui e, em seguida, esse item seria
+
+29
+00:01:31,820 --> 00:01:34,150
+algo que representa essa seo da pgina.
+
+30
+00:01:35,080 --> 00:01:39,650
+Mas,  claro, todas essas funes precisam estar
+
+31
+00:01:39,650 --> 00:01:40,750
+l, certo?
+
+32
+00:01:40,750 --> 00:01:45,750
+Todos eles tm que ter em si mesmo, eu, self e self.
+
+33
+00:01:48,140 --> 00:01:51,000
+E voc no precisa mais de dois espaos, o
+
+34
+00:01:51,000 --> 00:01:53,440
+PEP 8 no gosta disso dentro da classe.
+
+35
+00:01:54,630 --> 00:01:57,210
+Ento, em vez de sopa, voc vai se fazer sozinho. sopa.
+
+36
+00:02:00,630 --> 00:02:05,630
+E o que est acontecendo agora  que, para essa sopa que voc
+
+37
+00:02:05,670 --> 00:02:08,630
+criou quando analisou essa parte da pgina
+
+38
+00:02:08,630 --> 00:02:11,860
+para essa classe, voc poder encontrar o nome,
+
+39
+00:02:11,860 --> 00:02:14,430
+o link e assim por diante para
+
+40
+00:02:14,430 --> 00:02:15,290
+cada item.
+
+41
+00:02:15,290 --> 00:02:19,310
+Ento, se voc tivesse muitos artigos, voc poderia simplesmente dar cada
+
+42
+00:02:19,310 --> 00:02:22,820
+um para essa classe e essa classe encontraria, dentro do
+
+43
+00:02:22,820 --> 00:02:26,460
+artigo, o nome do item ou o link do item
+
+44
+00:02:26,460 --> 00:02:28,120
+e assim por diante.
+
+45
+00:02:28,120 --> 00:02:30,340
+Agora, a fim de faz-los realmente
+
+46
+00:02:30,340 --> 00:02:33,620
+encontrar coisas, em vez de imprimir as coisas, vamos voltar.
+
+47
+00:02:33,620 --> 00:02:35,830
+Ento, em vez de imprimir, vamos retornar.
+
+48
+00:02:35,830 --> 00:02:38,410
+E voc vai ver como 
+
+49
+00:02:40,240 --> 00:02:42,750
+fcil lidar com todas essas coisas.
+
+50
+00:02:42,750 --> 00:02:45,850
+Eu vou deletar esse grupo de correspondncia de impresso l.
+
+51
+00:02:45,850 --> 00:02:48,380
+E ento ns vamos devolv-lo tambm.
+
+52
+00:02:50,390 --> 00:02:51,490
+Voc vai ver
+
+53
+00:02:51,490 --> 00:02:54,110
+como  fcil lidar com essas coisas agora.
+
+54
+00:02:54,110 --> 00:02:58,010
+Porque tudo que voc precisa fazer para obter
+
+55
+00:02:58,010 --> 00:03:02,270
+algo desse item  dizer ParsedItem ITEM HTML.
+
+56
+00:03:03,440 --> 00:03:05,660
+Este pode ser seu item e, em seguida,
+
+57
+00:03:05,660 --> 00:03:08,640
+dizer algo como imprimir item. encontrar classificao do item.
+
+58
+00:03:09,480 --> 00:03:14,220
+Em seguida, execute o arquivo e voc obtm trs para fora.
+
+59
+00:03:14,220 --> 00:03:16,320
+Ento, qual  o benefcio disso?
+
+60
+00:03:16,320 --> 00:03:19,930
+Bem, voc fez encapsulamento agora, essencialmente.
+
+61
+00:03:19,930 --> 00:03:22,190
+Voc encapsulou toda a lgica, armazenou
+
+62
+00:03:22,190 --> 00:03:26,080
+toda a lgica dentro dessa classe e agora pode reutilizar
+
+63
+00:03:26,080 --> 00:03:28,260
+a turma para cada um dos
+
+64
+00:03:28,260 --> 00:03:31,010
+artigos que voc tem em seu site.
+
+65
+00:03:31,010 --> 00:03:33,600
+Voc no precisa, de certa forma,
+
+66
+00:03:33,600 --> 00:03:37,330
+pensar em tentar fazer qualquer detalhamento em artigos
+
+67
+00:03:37,330 --> 00:03:39,540
+especficos usando localizadores mais complexos.
+
+68
+00:03:40,420 --> 00:03:43,780
+O que voc poderia fazer  se voc
+
+69
+00:03:43,780 --> 00:03:45,770
+tem um site maior com
+
+70
+00:03:45,770 --> 00:03:50,770
+muitos artigos, diga algo como sopa. encontre todos os artigos e, em seguida, para cada
+
+71
+00:03:52,520 --> 00:03:54,270
+item analisado, p para p nesse item.
+
+72
+00:03:55,520 --> 00:03:56,480
+Algo nesse sentido.
+
+73
+00:03:56,480 --> 00:03:58,100
+Ns vamos olhar exatamente como
+
+74
+00:03:58,100 --> 00:04:00,820
+seria, mas eu s quero que voc veja que,
+
+75
+00:04:00,820 --> 00:04:04,010
+em seguida, voc acabaria com uma lista desses itens analisados
+
+76
+00:04:04,010 --> 00:04:07,360
+e cada item seria capaz de encontrar sua prpria classificao ou
+
+77
+00:04:07,360 --> 00:04:08,940
+preo e assim por diante.
+
+78
+00:04:08,940 --> 00:04:10,810
+Se voc quiser torn-lo ainda melhor,
+
+79
+00:04:10,810 --> 00:04:13,170
+basta remover esse item de localizao porque
+
+80
+00:04:13,170 --> 00:04:14,930
+a classe j  chamada
+
+81
+00:04:14,930 --> 00:04:17,420
+de item, voc no precisa encontrar itens.
+
+82
+00:04:17,420 --> 00:04:19,820
+Tudo o que voc precisa fazer 
+
+83
+00:04:19,820 --> 00:04:22,930
+saber a classificao do item, o preo do item,
+
+84
+00:04:22,930 --> 00:04:26,100
+o link do item e o nome do item,
+
+85
+00:04:26,100 --> 00:04:30,570
+e voc mesmo tem, essencialmente, algo que pode vir de HTML, ou
+
+86
+00:04:30,570 --> 00:04:33,410
+pode ser uma classe que vem de reas
+
+87
+00:04:33,410 --> 00:04:34,990
+adjacentes ou algo parecido.
+
+88
+00:04:34,990 --> 00:04:38,140
+ uma boa API para os dados.
+
+89
+00:04:39,400 --> 00:04:40,640
+Se voc quiser melhorar
+
+90
+00:04:40,640 --> 00:04:44,150
+ainda mais, poder adicionar uma tag @property na frente de cada uma delas.
+
+91
+00:04:46,840 --> 00:04:51,840
+E isso agora  muito simples,
+
+92
+00:04:52,870 --> 00:04:54,180
+item. nome.
+
+93
+00:04:55,320 --> 00:04:57,040
+E  isso que voc tem no final,
+
+94
+00:04:57,040 --> 00:04:58,090
+A Light in the Attic.
+
+95
+00:04:59,630 --> 00:05:03,070
+Agora, quando voc est interagindo com um item, voc no sabe
+
+96
+00:05:03,070 --> 00:05:06,260
+se ele est vindo de um banco de dados ou
+
+97
+00:05:06,260 --> 00:05:09,150
+se est vindo de um arquivo CSV ou se
+
+98
+00:05:09,150 --> 00:05:10,850
+est vindo, de fato, de algum
+
+99
+00:05:10,850 --> 00:05:12,210
+HTML que voc est analisando.
+
+100
+00:05:12,210 --> 00:05:14,900
+Voc no sabe e no deveria se importar quando
+
+101
+00:05:14,900 --> 00:05:15,733
+est fazendo isso.
+
+102
+00:05:15,733 --> 00:05:18,710
+Portanto, essa  uma tima maneira de tornar
+
+103
+00:05:18,710 --> 00:05:22,220
+seus itens mais fceis de trabalhar quando voc est escrevendo
+
+104
+00:05:22,220 --> 00:05:24,770
+algo em uma parte diferente do programa.
+
+105
+00:05:24,770 --> 00:05:27,310
+Ento, eu s queria falar rapidamente
+
+106
+00:05:27,310 --> 00:05:30,910
+sobre esse mtodo de estruturar sua anlise, ento 
+
+107
+00:05:30,910 --> 00:05:33,520
+um pouco mais fcil trabalhar com ele.
+
+108
+00:05:33,520 --> 00:05:34,410
+Ento,  isso para este vdeo.
+
+109
+00:05:34,410 --> 00:05:35,390
+No prximo vamos olhar
+
+110
+00:05:35,390 --> 00:05:36,680
+para outra melhoria que voc
+
+111
+00:05:36,680 --> 00:05:39,740
+pode fazer, que  muito mais curta, e ento estaremos seguindo em frente.
+
+112
+00:05:39,740 --> 00:05:40,690
+Eu te vejo l.
+

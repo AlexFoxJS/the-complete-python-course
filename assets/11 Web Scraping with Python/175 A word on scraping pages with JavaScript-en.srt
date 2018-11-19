@@ -1,0 +1,292 @@
+1
+00:00:00,330 --> 00:00:01,440
+<v Narrator>Hi, and welcome back.</v>
+
+2
+00:00:01,440 --> 00:00:03,040
+In this video, I just wanted to give you
+
+3
+00:00:03,040 --> 00:00:06,030
+a few words of warning for
+
+4
+00:00:06,030 --> 00:00:08,340
+some of the pages you may try to scrape
+
+5
+00:00:08,340 --> 00:00:09,200
+will not work,
+
+6
+00:00:10,660 --> 00:00:14,000
+and the reason for that is JavaScript.
+
+7
+00:00:14,000 --> 00:00:16,430
+So, as I may have said before, JavaScript is
+
+8
+00:00:16,430 --> 00:00:19,720
+a programming language that your browser executes.
+
+9
+00:00:19,720 --> 00:00:22,790
+And it can be used for dealing with user interactions,
+
+10
+00:00:22,790 --> 00:00:23,623
+for example.
+
+11
+00:00:24,580 --> 00:00:27,980
+So when the user does something, maybe you get a window
+
+12
+00:00:27,980 --> 00:00:30,620
+that appears on your screen, or a modal, or maybe
+
+13
+00:00:30,620 --> 00:00:33,790
+you get some sort of alert, or something like that.
+
+14
+00:00:33,790 --> 00:00:36,290
+In some cases, you press the login button,
+
+15
+00:00:36,290 --> 00:00:39,120
+and then you get a nice window there where you can log in.
+
+16
+00:00:40,280 --> 00:00:44,270
+And those sort of things can happen because there is some
+
+17
+00:00:44,270 --> 00:00:48,470
+JavaScript code on the page that your browser can execute.
+
+18
+00:00:48,470 --> 00:00:50,440
+Your browser can run it.
+
+19
+00:00:50,440 --> 00:00:52,200
+However, when you download the page using
+
+20
+00:00:52,200 --> 00:00:55,790
+the Requests module, you don't have access to
+
+21
+00:00:55,790 --> 00:00:58,160
+running the JavaScript, because you don't have a browser.
+
+22
+00:00:58,160 --> 00:01:00,160
+You don't have a JavaScript interpreter.
+
+23
+00:01:01,120 --> 00:01:05,040
+So, if the page relies on JavaScript to change the content,
+
+24
+00:01:06,170 --> 00:01:09,130
+then it won't work with the Requests module.
+
+25
+00:01:09,130 --> 00:01:10,770
+And a word of warning is
+
+26
+00:01:10,770 --> 00:01:15,580
+some pages will actually be a blank page,
+
+27
+00:01:15,580 --> 00:01:18,990
+and then the content is populated using JavaScript.
+
+28
+00:01:18,990 --> 00:01:21,110
+So sometimes the page is completely blank,
+
+29
+00:01:21,110 --> 00:01:23,270
+and it's a lot of JavaScript code in the background
+
+30
+00:01:23,270 --> 00:01:26,070
+that's actually putting the content on the page.
+
+31
+00:01:26,070 --> 00:01:28,630
+When you download the page using Requests,
+
+32
+00:01:28,630 --> 00:01:30,110
+all you'll see is a blank page
+
+33
+00:01:30,110 --> 00:01:32,700
+because you cannot run the JavaScript.
+
+34
+00:01:32,700 --> 00:01:35,950
+So, if that happens to you, you know why it is.
+
+35
+00:01:35,950 --> 00:01:38,040
+It's because there's JavaScript code in there.
+
+36
+00:01:38,920 --> 00:01:41,470
+And the way you know that something's gone wrong,
+
+37
+00:01:41,470 --> 00:01:44,470
+is because you'll be able to inspect the page.
+
+38
+00:01:44,470 --> 00:01:46,820
+You'll see a bunch of content, and that's great,
+
+39
+00:01:46,820 --> 00:01:49,090
+but then when you download the pages in Requests,
+
+40
+00:01:49,090 --> 00:01:51,590
+the contents of the page will look very different.
+
+41
+00:01:52,810 --> 00:01:56,510
+You can see it just by printing it out in your Python code.
+
+42
+00:01:56,510 --> 00:01:57,490
+And if it looks very different,
+
+43
+00:01:57,490 --> 00:02:00,440
+it's because there's JavaScript code in there doing things.
+
+44
+00:02:01,310 --> 00:02:05,910
+There are ways, of course, to launch a browser using Python,
+
+45
+00:02:05,910 --> 00:02:08,630
+and interact with websites using the browser,
+
+46
+00:02:08,630 --> 00:02:10,840
+which is controlled by Python.
+
+47
+00:02:10,840 --> 00:02:12,760
+But those are a bit more advanced,
+
+48
+00:02:12,760 --> 00:02:15,460
+and I'll try to add content to cover that in the course,
+
+49
+00:02:15,460 --> 00:02:18,270
+but it's not here at the time that I'm recording this video.
+
+50
+00:02:18,270 --> 00:02:20,590
+It may be here by the time you're watching it.
+
+51
+00:02:20,590 --> 00:02:23,420
+So nonetheless, you'll need to use something called
+
+52
+00:02:23,420 --> 00:02:27,199
+Selenium if you want to interact with a page
+
+53
+00:02:27,199 --> 00:02:29,570
+that uses JavaScript.
+
+54
+00:02:29,570 --> 00:02:31,150
+So feel free to take the rest of the course,
+
+55
+00:02:31,150 --> 00:02:33,440
+see if Selenium content's up, and if not,
+
+56
+00:02:33,440 --> 00:02:36,350
+you can look online and see how you can use
+
+57
+00:02:36,350 --> 00:02:38,240
+Selenium to do that.
+
+58
+00:02:38,240 --> 00:02:40,310
+But that's only if the page you're interacting with
+
+59
+00:02:40,310 --> 00:02:41,240
+has JavaScript.
+
+60
+00:02:41,240 --> 00:02:43,850
+If it does not, like a lot of pages don't,
+
+61
+00:02:44,790 --> 00:02:46,590
+feel free to continue using Requests.
+
+62
+00:02:46,590 --> 00:02:48,360
+It will do exactly what you want.
+
+63
+00:02:48,360 --> 00:02:51,190
+And in many cases, the pages will have JavaScript,
+
+64
+00:02:51,190 --> 00:02:54,070
+but they will also be interactable with Requests,
+
+65
+00:02:54,070 --> 00:02:56,020
+because the JavaScript will be used to add
+
+66
+00:02:56,020 --> 00:02:57,630
+some sort of functionality,
+
+67
+00:02:57,630 --> 00:03:00,240
+not necessarily to change the entire page.
+
+68
+00:03:01,180 --> 00:03:02,680
+So give Requests a go first.
+
+69
+00:03:02,680 --> 00:03:04,580
+It's the simplest way of going about things.
+
+70
+00:03:04,580 --> 00:03:05,413
+And if that doesn't work,
+
+71
+00:03:05,413 --> 00:03:07,190
+and you really need to interact with that page,
+
+72
+00:03:07,190 --> 00:03:10,040
+look at Selenium in order to learn more.
+
+73
+00:03:11,250 --> 00:03:13,880
+That's it for this video, and I'll see you on the next one.
+

@@ -1,0 +1,1300 @@
+1
+00:00:00,160 --> 00:00:01,620
+Narrador: Hola y bienvenido.
+
+2
+00:00:01,620 --> 00:00:02,740
+En este video,
+
+3
+00:00:02,740 --> 00:00:05,120
+vamos a ver las funciones y argumentos.
+
+4
+00:00:06,130 --> 00:00:08,750
+Ya aprendimos un montn de Python.
+
+5
+00:00:08,750 --> 00:00:11,800
+Desde variables y tipos de datos, hasta bucles,
+
+6
+00:00:11,800 --> 00:00:13,460
+declaraciones f y diccionarios.
+
+7
+00:00:14,310 --> 00:00:17,000
+Las funciones son un concepto completamente nuevo, pero
+
+8
+00:00:17,000 --> 00:00:19,750
+estoy seguro de que lo captarn muy rpido.
+
+9
+00:00:20,750 --> 00:00:22,930
+En sus trminos ms simples, una
+
+10
+00:00:22,930 --> 00:00:26,530
+funcin es un nombre para un bloque de cdigo.
+
+11
+00:00:26,530 --> 00:00:30,240
+Cualquier cdigo que tenga, puede convertirlo en una funcin.
+
+12
+00:00:30,240 --> 00:00:31,440
+Veamos algunos cdigos.
+
+13
+00:00:35,580 --> 00:00:38,960
+Tenemos una lnea que define una variable.
+
+14
+00:00:38,960 --> 00:00:42,068
+Y eso ha sido asignado a esta entrada que
+
+15
+00:00:42,068 --> 00:00:44,040
+le pregunta al usuario su nombre
+
+16
+00:00:44,040 --> 00:00:45,420
+y les permite ingresarlo.
+
+17
+00:00:45,420 --> 00:00:47,330
+Y luego, cualquiera que sea el tipo
+
+18
+00:00:47,330 --> 00:00:49,190
+de usuario, se le asignar el nombre.
+
+19
+00:00:50,710 --> 00:00:52,450
+Y luego podemos decir, "Hola.
+
+20
+00:00:52,450 --> 00:00:54,340
+"Hola nombre. "Es algo
+
+21
+00:00:55,410 --> 00:00:56,850
+bastante bsico.
+
+22
+00:00:56,850 --> 00:00:59,500
+Hemos hecho esto antes, nada nuevo aqu.
+
+23
+00:00:59,500 --> 00:01:02,620
+Vamos a ejecutarlo y escriba nuestro nombre.
+
+24
+00:01:02,620 --> 00:01:04,700
+Y dice: "Hola, Jos. "Podemos convertir
+
+25
+00:01:05,970 --> 00:01:08,920
+esto en una funcin.
+
+26
+00:01:10,470 --> 00:01:15,470
+Hagmoslo diciendo def, esa es una palabra clave de Python.
+
+27
+00:01:16,180 --> 00:01:17,430
+Observe cmo se vuelve azul.
+
+28
+00:01:18,510 --> 00:01:20,290
+Algo as como saludar, este
+
+29
+00:01:20,290 --> 00:01:22,300
+ser el nombre de la funcin.
+
+30
+00:01:22,300 --> 00:01:25,370
+Abrir y cerrar corchetes es importante.
+
+31
+00:01:25,370 --> 00:01:30,260
+Coln, porque eso significa el inicio de un bloque de cdigo.
+
+32
+00:01:30,260 --> 00:01:32,590
+Y observe cmo este editor nos
+
+33
+00:01:32,590 --> 00:01:34,350
+da automticamente cuatro espacios.
+
+34
+00:01:34,350 --> 00:01:37,370
+Porque el cdigo que est debajo del
+
+35
+00:01:37,370 --> 00:01:39,160
+colon siempre debe sangrarse.
+
+36
+00:01:40,150 --> 00:01:41,330
+Y aqu, vamos
+
+37
+00:01:41,330 --> 00:01:43,940
+a poner exactamente lo mismo que pusimos antes.
+
+38
+00:01:45,960 --> 00:01:46,860
+Nada nuevo all.
+
+39
+00:01:47,730 --> 00:01:50,620
+Ahora, cada vez que ejecutamos esta funcin,
+
+40
+00:01:50,620 --> 00:01:52,660
+cada vez que ejecutamos esta
+
+41
+00:01:52,660 --> 00:01:57,040
+funcin, el cdigo se ejecutar de arriba abajo como es normal.
+
+42
+00:01:59,350 --> 00:02:02,880
+Entonces, est bien, qu significa eso entonces?
+
+43
+00:02:02,880 --> 00:02:05,670
+Vamos a convertir estos dos en comentarios.
+
+44
+00:02:08,870 --> 00:02:12,820
+Lo siento, mi mal, espacio, demasiados.
+
+45
+00:02:12,820 --> 00:02:17,500
+Eso es todo, Dios mo, es difcil de escribir.
+
+46
+00:02:19,040 --> 00:02:22,500
+As que obtuvimos nuestra funcin llamada saludar.
+
+47
+00:02:22,500 --> 00:02:24,380
+Y le pregunta al usuario su nombre.
+
+48
+00:02:24,380 --> 00:02:26,580
+Entonces, ejecutemos este cdigo y veamos qu sucede.
+
+49
+00:02:28,770 --> 00:02:31,440
+No pas nada, no estamos esperando nada.
+
+50
+00:02:31,440 --> 00:02:35,490
+Este cdigo no funciona, est bien, pero hace algo, pero en
+
+51
+00:02:35,490 --> 00:02:36,610
+realidad no le
+
+52
+00:02:36,610 --> 00:02:38,350
+pregunta al usuario su nombre
+
+53
+00:02:38,350 --> 00:02:40,000
+y no imprime nada.
+
+54
+00:02:40,000 --> 00:02:43,560
+Todo lo que hemos hecho aqu es que hemos definido una funcin.
+
+55
+00:02:43,560 --> 00:02:45,710
+Una funcin, si las has
+
+56
+00:02:45,710 --> 00:02:50,710
+visto en matemticas antes en el pasado, una funcin es como una caja.
+
+57
+00:02:52,380 --> 00:02:54,640
+Le das algunos valores y
+
+58
+00:02:54,640 --> 00:02:57,800
+te da ms valores, o hace algo.
+
+59
+00:02:57,800 --> 00:03:00,510
+En este caso, esta funcin, cuando la ejecutemos, le
+
+60
+00:03:00,510 --> 00:03:01,650
+preguntar al usuario su
+
+61
+00:03:01,650 --> 00:03:03,380
+nombre e imprimir un saludo.
+
+62
+00:03:03,380 --> 00:03:06,450
+Pero tenemos que ejecutar la funcin primero.
+
+63
+00:03:08,800 --> 00:03:12,260
+La forma en que ejecutamos una funcin, es que ingresamos
+
+64
+00:03:14,490 --> 00:03:18,230
+su nombre y luego ingresamos los corchetes de apertura y cierre.
+
+65
+00:03:21,090 --> 00:03:23,170
+De nuevo, antes de presionar play, tenemos
+
+66
+00:03:23,170 --> 00:03:25,490
+la palabra clave def, que es una
+
+67
+00:03:25,490 --> 00:03:28,240
+palabra clave de Python para definir una nueva funcin.
+
+68
+00:03:28,240 --> 00:03:30,340
+Inmediatamente despus, tenemos el nombre de la funcin
+
+69
+00:03:30,340 --> 00:03:32,540
+que puede incluir letras, nmeros y guiones bajos
+
+70
+00:03:32,540 --> 00:03:34,260
+pero, una vez ms, no puede comenzar
+
+71
+00:03:34,260 --> 00:03:36,410
+con un nmero, como una variable de Python.
+
+72
+00:03:36,410 --> 00:03:39,220
+Entonces tendrs tu par de corchetes.
+
+73
+00:03:39,220 --> 00:03:42,600
+En videos posteriores, vamos a poner las cosas entre corchetes, es
+
+74
+00:03:42,600 --> 00:03:45,580
+por eso que estn ah, pero no en este video.
+
+75
+00:03:45,580 --> 00:03:49,090
+Y luego tenemos este dos puntos, lo que significa el inicio de
+
+76
+00:03:49,090 --> 00:03:50,580
+un blog y lo que
+
+77
+00:03:50,580 --> 00:03:53,210
+est debajo de los dos puntos se sangrar.
+
+78
+00:03:53,210 --> 00:03:55,670
+Y todas las lneas que tienen sangra
+
+79
+00:03:55,670 --> 00:03:58,080
+van a ser parte de esta funcin.
+
+80
+00:03:58,080 --> 00:04:00,190
+Y cuando ejecuta la funcin, todas las
+
+81
+00:04:00,190 --> 00:04:01,340
+lneas sangradas se ejecutarn.
+
+82
+00:04:04,060 --> 00:04:05,210
+Bien, presionemos jugar.
+
+83
+00:04:06,100 --> 00:04:10,340
+Y como puede ver, obtenemos la palabra "ingrese su nombre" y
+
+84
+00:04:10,340 --> 00:04:12,120
+luego "hola", su nombre.
+
+85
+00:04:14,480 --> 00:04:17,630
+Vers que esto se llama ejecutar la funcin.
+
+86
+00:04:17,630 --> 00:04:19,220
+Pero con frecuencia puede verlo
+
+87
+00:04:19,220 --> 00:04:22,610
+llamado como ejecutar la funcin, o incluso, llamando a la
+
+88
+00:04:22,610 --> 00:04:25,690
+funcin, que es la ms popular por lejos.
+
+89
+00:04:25,690 --> 00:04:27,050
+Cada vez que ejecutas la funcin,
+
+90
+00:04:27,050 --> 00:04:29,230
+lo que ests haciendo es llamar a la funcin.
+
+91
+00:04:29,230 --> 00:04:31,616
+Porque ests diciendo, "Oye, saluda. "Y luego vas a
+
+92
+00:04:31,616 --> 00:04:33,020
+ejecutar lo que est ah,
+
+93
+00:04:33,020 --> 00:04:35,050
+un juego de palabras realmente malo, pero s.
+
+94
+00:04:35,920 --> 00:04:37,580
+Lo est llamando y va a comenzar a funcionar.
+
+95
+00:04:37,580 --> 00:04:41,150
+Y luego, cuando termina el tiempo de ejecucin, cuando ejecuta todo
+
+96
+00:04:41,150 --> 00:04:42,950
+el cdigo aqu, y llega
+
+97
+00:04:42,950 --> 00:04:44,470
+al final de la funcin.
+
+98
+00:04:44,470 --> 00:04:46,480
+Observe que aqu no hay ms cdigo
+
+99
+00:04:46,480 --> 00:04:48,570
+sangrado, que la siguiente lnea no est invalidada.
+
+100
+00:04:48,570 --> 00:04:53,560
+Luego vas a volver a donde sea que vayas.
+
+101
+00:04:53,560 --> 00:04:58,490
+Entonces, si imprimimos una lnea antes de ejecutar la funcin, entonces ejecutamos
+
+102
+00:04:58,490 --> 00:04:59,530
+la funcin.
+
+103
+00:04:59,530 --> 00:05:00,850
+Y luego imprimimos otra lnea
+
+104
+00:05:00,850 --> 00:05:03,750
+despus de que ejecutamos la funcin, vern a qu me refiero.
+
+105
+00:05:03,750 --> 00:05:05,880
+Lo imprimimos antes de la funcin porque
+
+106
+00:05:06,870 --> 00:05:08,850
+esa es la primera lnea aqu.
+
+107
+00:05:08,850 --> 00:05:11,480
+Luego ejecutamos la funcin de saludo, que
+
+108
+00:05:11,480 --> 00:05:14,700
+movi nuestro cdigo a la lnea nmero cinco.
+
+109
+00:05:14,700 --> 00:05:16,700
+Y luego nos piden que ingresemos nuestro nombre.
+
+110
+00:05:18,070 --> 00:05:20,310
+Luego imprimimos el nombre.
+
+111
+00:05:20,310 --> 00:05:24,060
+Y finalmente imprimimos, hola, despus de la funcin.
+
+112
+00:05:24,060 --> 00:05:27,850
+Entonces el flujo fue, comenzamos en la lnea nmero uno, bla,
+
+113
+00:05:27,850 --> 00:05:28,683
+bla, bla.
+
+114
+00:05:28,683 --> 00:05:30,420
+Llegamos al nmero cuatro, definimos la funcin.
+
+115
+00:05:30,420 --> 00:05:32,790
+Ahora esta funcin de saludo existe.
+
+116
+00:05:32,790 --> 00:05:36,200
+Pero no lo ejecutamos, no entramos en la funcin en s.
+
+117
+00:05:36,200 --> 00:05:39,524
+Entonces estas dos lneas de cdigo son completamente ignoradas por ahora.
+
+118
+00:05:39,524 --> 00:05:42,380
+Luego imprimimos antes de la funcin.
+
+119
+00:05:42,380 --> 00:05:44,450
+Luego llegamos a este saludo, que llama a
+
+120
+00:05:44,450 --> 00:05:46,790
+la funcin y saltamos a la lnea nmero cinco.
+
+121
+00:05:47,720 --> 00:05:51,090
+Pasamos por esto y luego imprimimos hola.
+
+122
+00:05:51,090 --> 00:05:53,270
+Y luego saltamos hacia atrs despus de
+
+123
+00:05:53,270 --> 00:05:54,950
+la funcin de saludo, lnea 11.
+
+124
+00:05:54,950 --> 00:05:57,680
+Nada all, la lnea 12 imprime hola.
+
+125
+00:05:57,680 --> 00:06:01,050
+As es como va este flujo de datos.
+
+126
+00:06:01,050 --> 00:06:04,330
+Cmo nuestro programa est saltando.
+
+127
+00:06:06,300 --> 00:06:10,060
+Las funciones de llamada, especialmente si tiene
+
+128
+00:06:10,060 --> 00:06:14,400
+muchas, estamos hablando de miles, puede ralentizar su programa.
+
+129
+00:06:14,400 --> 00:06:18,180
+Pero necesitas tener muchas funciones para que eso suceda.
+
+130
+00:06:18,180 --> 00:06:21,360
+As que no se preocupe por el
+
+131
+00:06:21,360 --> 00:06:24,340
+rendimiento cuando defina funciones, est bien.
+
+132
+00:06:24,340 --> 00:06:25,950
+Nunca vas a tener
+
+133
+00:06:25,950 --> 00:06:27,720
+problemas para ejecutar demasiadas funciones.
+
+134
+00:06:27,720 --> 00:06:29,870
+Vas a necesitar muchas funciones para eso.
+
+135
+00:06:31,370 --> 00:06:33,610
+Ahora, hace un par
+
+136
+00:06:33,610 --> 00:06:37,950
+de videos, miramos un cdigo que se vea as.
+
+137
+00:06:37,950 --> 00:06:42,370
+Este cdigo se us para encontrar nmeros primos.
+
+138
+00:06:42,370 --> 00:06:44,230
+Y si no puede recordar este
+
+139
+00:06:44,230 --> 00:06:46,490
+cdigo aqu, retroceda algunos videos y lo encontrar.
+
+140
+00:06:46,490 --> 00:06:50,470
+Est en el ciclo de cuatro, en las dos palabras clave
+
+141
+00:06:50,470 --> 00:06:51,810
+video, break y continue.
+
+142
+00:06:53,300 --> 00:06:56,540
+Entonces, lo que hace es encontrar nmeros primos.
+
+143
+00:06:57,670 --> 00:06:59,330
+Pero es un pedazo de cdigo bastante largo.
+
+144
+00:06:59,330 --> 00:07:02,130
+Y sera mucho ms comprensible si
+
+145
+00:07:02,130 --> 00:07:05,950
+pudiramos extraer algunas de estas cosas en funciones.
+
+146
+00:07:06,790 --> 00:07:08,480
+Si no le dije lo que hace
+
+147
+00:07:08,480 --> 00:07:11,090
+este cdigo, no le ser fcil saber lo que hace.
+
+148
+00:07:11,090 --> 00:07:13,580
+Pero si lo extraeremos, lo ser.
+
+149
+00:07:15,470 --> 00:07:18,090
+Comencemos haciendo esto.
+
+150
+00:07:18,090 --> 00:07:20,060
+Vamos a cortar este fragmento
+
+151
+00:07:20,060 --> 00:07:23,960
+de cdigo y vamos a llamarlo check si prime n.
+
+152
+00:07:25,690 --> 00:07:30,690
+Ahora verifique si es primo, probablemente tome un nmero.
+
+153
+00:07:31,300 --> 00:07:33,176
+Y vamos a ver exactamente lo que
+
+154
+00:07:33,176 --> 00:07:35,550
+esto significa en un momento, y verificaremos si se
+
+155
+00:07:35,550 --> 00:07:36,940
+trata de un nmero primo.
+
+156
+00:07:38,580 --> 00:07:40,320
+Sin embargo, esta funcin no existe.
+
+157
+00:07:40,320 --> 00:07:42,790
+Tenemos que definirlo y debemos
+
+158
+00:07:42,790 --> 00:07:46,650
+definirlo antes de llamar a la funcin.
+
+159
+00:07:46,650 --> 00:07:48,250
+Entonces debe ser definido arriba.
+
+160
+00:07:48,250 --> 00:07:49,770
+As que vamos a pegar aqu.
+
+161
+00:07:52,790 --> 00:07:55,230
+Ahora, esto aqu no es una funcin.
+
+162
+00:07:55,230 --> 00:07:56,900
+Pero podemos ponerlo dentro
+
+163
+00:07:56,900 --> 00:08:01,050
+de una funcin haciendo una comprobacin def si es primo n.
+
+164
+00:08:08,250 --> 00:08:09,700
+Ah tienes.
+
+165
+00:08:09,700 --> 00:08:11,620
+Ahora hemos puesto este cdigo en una funcin.
+
+166
+00:08:11,620 --> 00:08:13,380
+Y aprecio que ahora tenemos algo dentro
+
+167
+00:08:13,380 --> 00:08:14,960
+de nuestros corchetes y no est
+
+168
+00:08:14,960 --> 00:08:17,700
+muy claro de qu se trata, as que djenme explicar.
+
+169
+00:08:20,040 --> 00:08:22,240
+Tenemos nuestro ciclo de cuatro que estaba justo
+
+170
+00:08:22,240 --> 00:08:24,520
+en la parte superior de este ciclo de cuatro.
+
+171
+00:08:24,520 --> 00:08:26,640
+Y eso crea una variable llamada n.
+
+172
+00:08:27,850 --> 00:08:32,560
+Entonces estamos saltando a la funcin de verificacin si primer.
+
+173
+00:08:32,560 --> 00:08:35,260
+Esto ejecuta la funcin que se defini anteriormente.
+
+174
+00:08:35,260 --> 00:08:37,730
+Y pone la n dentro de los corchetes.
+
+175
+00:08:39,284 --> 00:08:40,960
+Y puedes pensar en este
+
+176
+00:08:40,960 --> 00:08:44,020
+par de corchetes como una especie de dispositivo de teletransportacin.
+
+177
+00:08:44,020 --> 00:08:49,020
+El valor de n aqu, se va a asignar a n aqu.
+
+178
+00:08:53,070 --> 00:08:56,240
+Si cambiamos esto en nmero, entonces debemos cambiar todas
+
+179
+00:08:56,240 --> 00:08:58,940
+las n aqu en el nmero dos.
+
+180
+00:09:04,350 --> 00:09:05,550
+Creo que los tenemos todos.
+
+181
+00:09:07,030 --> 00:09:09,081
+Entonces sucede lo mismo.
+
+182
+00:09:09,081 --> 00:09:11,330
+N aqu, el valor de n, que
+
+183
+00:09:11,330 --> 00:09:13,810
+va a ser dos, o tres, o cuatro,
+
+184
+00:09:13,810 --> 00:09:15,650
+ahora se asignar al nmero.
+
+185
+00:09:15,650 --> 00:09:18,060
+Entonces el nmero ser dos, y tres,
+
+186
+00:09:18,060 --> 00:09:20,810
+y luego cuatro, cada vez que ejecutemos esto aqu.
+
+187
+00:09:22,560 --> 00:09:24,420
+Y luego vamos a ejecutar
+
+188
+00:09:24,420 --> 00:09:25,960
+nuestra funcin como antes.
+
+189
+00:09:27,100 --> 00:09:28,340
+Y esta funcin va
+
+190
+00:09:28,340 --> 00:09:30,130
+a verificar si el nmero que
+
+191
+00:09:30,130 --> 00:09:33,780
+recibimos dentro de los corchetes aqu abajo es un nmero primo o no.
+
+192
+00:09:37,535 --> 00:09:40,230
+Y la forma en que podemos verificar
+
+193
+00:09:41,680 --> 00:09:46,680
+eso, es que podemos eliminar esto aqu y decir: "Comprobar si primero cinco", que
+
+194
+00:09:46,800 --> 00:09:48,330
+es un nmero primo.
+
+195
+00:09:48,330 --> 00:09:49,590
+Y si corremos
+
+196
+00:09:52,600 --> 00:09:55,720
+eso, creo que arruinamos algo ah arriba.
+
+197
+00:09:56,700 --> 00:09:58,180
+Algunos errores de sangra all.
+
+198
+00:09:58,180 --> 00:10:01,450
+Else tiene que estar en el mismo nivel que los cuatro.
+
+199
+00:10:01,450 --> 00:10:02,700
+Y corramos eso de nuevo.
+
+200
+00:10:05,840 --> 00:10:08,270
+Ahora obtenemos que cinco es un nmero primo.
+
+201
+00:10:08,270 --> 00:10:10,710
+Pero no obtenemos si otro nmero es
+
+202
+00:10:10,710 --> 00:10:12,760
+un nmero primo, solo los cinco,
+
+203
+00:10:12,760 --> 00:10:14,850
+porque ese es el nmero que analizamos.
+
+204
+00:10:14,850 --> 00:10:17,760
+Entonces, aqu, cinco se asignan al nmero de variable que se
+
+205
+00:10:17,760 --> 00:10:20,810
+ha usado a lo largo de todo este bit de cdigo.
+
+206
+00:10:22,560 --> 00:10:27,560
+Si volvemos y volvemos a nuestro ciclo aqu, ahora dnde vamos
+
+207
+00:10:28,660 --> 00:10:30,480
+a comenzar un dos.
+
+208
+00:10:30,480 --> 00:10:32,480
+Vamos a verificar si es un nmero primo.
+
+209
+00:10:32,480 --> 00:10:33,490
+Luego iremos a tres, vamos a
+
+210
+00:10:33,490 --> 00:10:34,440
+verificar si es un nmero primo.
+
+211
+00:10:34,440 --> 00:10:36,840
+Luego iremos a cuatro y as sucesivamente.
+
+212
+00:10:37,750 --> 00:10:41,720
+Ahora, estoy seguro de que esto es ms legible.
+
+213
+00:10:41,720 --> 00:10:43,480
+No porque el cdigo sea ms simple,
+
+214
+00:10:43,480 --> 00:10:44,890
+el cdigo es el mismo.
+
+215
+00:10:44,890 --> 00:10:46,440
+Pero porque ahora tiene un nombre.
+
+216
+00:10:46,440 --> 00:10:48,260
+Y cuando lees eso, puedes decir, "Est
+
+217
+00:10:48,260 --> 00:10:50,700
+bien, no estoy del todo seguro" de lo que
+
+218
+00:10:50,700 --> 00:10:53,198
+hace este cdigo, pero s que verifica "si el
+
+219
+00:10:53,198 --> 00:10:57,200
+nmero aqu es un nmero primo o no". "Por cierto, este
+
+220
+00:10:58,430 --> 00:11:01,950
+nmero se llama parmetro.
+
+221
+00:11:01,950 --> 00:11:03,990
+Eso es lo que es, as es como se llama.
+
+222
+00:11:03,990 --> 00:11:07,210
+Cuando define que su funcin puede
+
+223
+00:11:07,210 --> 00:11:10,560
+recibir un valor que se llama parmetro.
+
+224
+00:11:10,560 --> 00:11:14,040
+Y el n aqu, ese es el valor que estamos enviando,
+
+225
+00:11:14,980 --> 00:11:16,520
+eso se llama un argumento.
+
+226
+00:11:16,520 --> 00:11:20,000
+Entonces, n se llama argumento.
+
+227
+00:11:20,000 --> 00:11:23,240
+Y aqu, el nmero se llama parmetro.
+
+228
+00:11:29,547 --> 00:11:30,380
+As es como se llama.
+
+229
+00:11:30,380 --> 00:11:32,080
+Entonces el parmetro es el extremo
+
+230
+00:11:32,080 --> 00:11:33,870
+receptor, el argumento es el extremo otorgante.
+
+231
+00:11:33,870 --> 00:11:36,630
+Bien, regresemos aqu.
+
+232
+00:11:36,630 --> 00:11:37,840
+Y, por supuesto, podemos
+
+233
+00:11:37,840 --> 00:11:41,020
+poner esto en otra funcin si quisiramos hacer eso.
+
+234
+00:11:41,020 --> 00:11:44,470
+Verificadores de def.
+
+235
+00:11:45,430 --> 00:11:49,420
+Y luego podramos hacer eso all.
+
+236
+00:11:49,420 --> 00:11:51,510
+Ahora, si ejecutamos este cdigo nuevamente,
+
+237
+00:11:51,510 --> 00:11:54,930
+nos piden que ingresemos nuestro nombre porque eso est arriba.
+
+238
+00:11:54,930 --> 00:11:57,180
+Y luego no pasa nada
+
+239
+00:11:57,180 --> 00:11:59,430
+Porque, nuevamente, esta funcin ha sido definida pero
+
+240
+00:11:59,430 --> 00:12:00,460
+no se ha ejecutado.
+
+241
+00:12:00,460 --> 00:12:02,290
+Entonces tenemos que ejecutarlo.
+
+242
+00:12:02,290 --> 00:12:06,200
+Compruebe si los primos all.
+
+243
+00:12:06,200 --> 00:12:10,620
+Ahora cuando lo ejecutemos de nuevo, veremos la salida.
+
+244
+00:12:10,620 --> 00:12:13,230
+Dos es un nmero primo, tres es un nmero primo, y as sucesivamente.
+
+245
+00:12:15,000 --> 00:12:19,710
+Cmo podramos hacerlo para que no llegue a 10?
+
+246
+00:12:19,710 --> 00:12:23,180
+Cmo podramos hacerlo para que pase a cualquier nmero
+
+247
+00:12:23,180 --> 00:12:25,640
+que analicemos, dentro de los corchetes?
+
+248
+00:12:25,640 --> 00:12:27,270
+Entonces imagina que quiero poner 100 aqu.
+
+249
+00:12:28,670 --> 00:12:32,430
+Y luego hacer que este ciclo vaya de dos a 100.
+
+250
+00:12:32,430 --> 00:12:33,530
+Cmo lo haras t?
+
+251
+00:12:38,496 --> 00:12:39,329
+Cmo lo conseguiste
+
+252
+00:12:39,329 --> 00:12:42,640
+Todo por hacer, es crear un nuevo parmetro aqu.
+
+253
+00:12:43,479 --> 00:12:44,312
+Llamar a mi lmite.
+
+254
+00:12:44,312 --> 00:12:46,760
+Puede llamarlos como quiera, por cierto.
+
+255
+00:12:46,760 --> 00:12:48,540
+Y luego solo salo all.
+
+256
+00:12:50,210 --> 00:12:52,680
+Ahora esto va a ser un poco ms largo.
+
+257
+00:12:52,680 --> 00:12:55,400
+Pero obtienes todos los nmeros hasta 100 all.
+
+258
+00:12:57,570 --> 00:12:58,640
+Genial, eh?
+
+259
+00:13:01,020 --> 00:13:03,710
+De acuerdo, entonces ahora tenemos esto aqu.
+
+260
+00:13:03,710 --> 00:13:05,500
+Solo quera darle un
+
+261
+00:13:05,500 --> 00:13:08,470
+ltimo bocado de informacin antes de continuar.
+
+262
+00:13:08,470 --> 00:13:12,250
+Y es eso, recuerde que las funciones se definen en el
+
+263
+00:13:12,250 --> 00:13:14,780
+orden en que aparecen en su archivo.
+
+264
+00:13:15,652 --> 00:13:17,330
+En este caso, verifique si prime se define
+
+265
+00:13:17,330 --> 00:13:19,430
+primero y luego verifique si prime se define en segundo lugar.
+
+266
+00:13:20,470 --> 00:13:22,690
+Ellos no son ejecutados.
+
+267
+00:13:22,690 --> 00:13:25,070
+Entonces, no corremos por este circuito
+
+268
+00:13:25,070 --> 00:13:26,760
+cuando se define la funcin.
+
+269
+00:13:27,920 --> 00:13:32,610
+Por lo tanto, debido a que verifique si se usa primo dentro de
+
+270
+00:13:32,610 --> 00:13:37,040
+los primos de verificacin, podemos poner los primos de comprobacin al frente.
+
+271
+00:13:41,930 --> 00:13:43,940
+Ahora, parece que podra
+
+272
+00:13:43,940 --> 00:13:47,790
+estar mal porque Check Primes usa Check si Prime.
+
+273
+00:13:47,790 --> 00:13:50,930
+Y compruebe si prime no existe en este punto y tiempo.
+
+274
+00:13:50,930 --> 00:13:52,930
+Solo existe despus
+
+275
+00:13:52,930 --> 00:13:55,330
+Pero recuerde, definimos primero la
+
+276
+00:13:55,330 --> 00:13:57,090
+funcin, luego definimos esta.
+
+277
+00:13:57,090 --> 00:13:59,610
+Y solo corremos los primos aqu
+
+278
+00:13:59,610 --> 00:14:01,460
+cuando ambos ya estn definidos.
+
+279
+00:14:01,460 --> 00:14:03,810
+Entonces, cuando ingresamos a los primos de
+
+280
+00:14:03,810 --> 00:14:05,330
+comprobacin, verifique si primo ya
+
+281
+00:14:05,330 --> 00:14:08,600
+estaba definido porque estaba definido antes de ejecutar la funcin.
+
+282
+00:14:08,600 --> 00:14:09,820
+Y la razn
+
+283
+00:14:09,820 --> 00:14:12,870
+por la que te digo esto es porque,
+
+284
+00:14:12,870 --> 00:14:16,422
+personalmente, s que a m y a muchas otras personas
+
+285
+00:14:16,422 --> 00:14:20,210
+les gusta tener, la funcin ms importante en la parte superior.
+
+286
+00:14:20,210 --> 00:14:21,450
+Y en este caso, la
+
+287
+00:14:21,450 --> 00:14:22,700
+funcin ms importante es verificar primos.
+
+288
+00:14:23,540 --> 00:14:25,730
+Y a medida que lee este cdigo,
+
+289
+00:14:25,730 --> 00:14:28,260
+puede leerlo como un peridico, de arriba abajo.
+
+290
+00:14:28,260 --> 00:14:30,080
+Compruebe primos, est bien, qu hace eso?
+
+291
+00:14:30,080 --> 00:14:31,840
+Toma un lmite y va en un
+
+292
+00:14:31,840 --> 00:14:32,980
+bucle de dos al lmite.
+
+293
+00:14:32,980 --> 00:14:34,800
+Y para cada nmero, verifica si es un primo.
+
+294
+00:14:34,800 --> 00:14:36,980
+Genial, qu verifica si prime?
+
+295
+00:14:36,980 --> 00:14:39,290
+De acuerdo, pasemos a la siguiente lnea y descubramos.
+
+296
+00:14:39,290 --> 00:14:41,810
+Bueno, es si estn en el camino equivocado, lo primero que
+
+297
+00:14:41,810 --> 00:14:43,730
+se ve es esta comprobacin si la funcin principal.
+
+298
+00:14:43,730 --> 00:14:45,960
+Y te preguntas: "Dnde se usa?
+
+299
+00:14:45,960 --> 00:14:47,880
+"Por qu me importa esta funcin? "Y no lo
+
+300
+00:14:47,880 --> 00:14:49,170
+sabrs hasta que
+
+301
+00:14:49,170 --> 00:14:51,500
+hayas bajado al final del archivo.
+
+302
+00:14:51,500 --> 00:14:56,410
+Entonces me gusta tener las funciones que usan otras funciones
+
+303
+00:14:56,410 --> 00:14:58,640
+en la parte superior.
+
+304
+00:14:58,640 --> 00:15:00,630
+Y si su funcin usa
+
+305
+00:15:00,630 --> 00:15:02,970
+mltiples funciones, todas estarn debajo.
+
+306
+00:15:02,970 --> 00:15:05,810
+Por supuesto, no puede llamar a la funcin
+
+307
+00:15:05,810 --> 00:15:08,440
+antes de que se haya definido, pero
+
+308
+00:15:08,440 --> 00:15:10,870
+puede usarla antes de que se
+
+309
+00:15:10,870 --> 00:15:13,870
+defina si no se la llama hasta despus.
+
+310
+00:15:13,870 --> 00:15:15,290
+As que, afortunadamente, eso tiene un poco de sentido.
+
+311
+00:15:15,290 --> 00:15:16,830
+S que es bastante artificial,
+
+312
+00:15:16,830 --> 00:15:20,390
+la forma en que, ya sabes, definir y llamar a todos trabaja juntos.
+
+313
+00:15:20,390 --> 00:15:22,640
+Pero solo piense como una computadora.
+
+314
+00:15:22,640 --> 00:15:25,160
+Las funciones solo se ejecutan
+
+315
+00:15:25,160 --> 00:15:27,190
+cuando las llamas aqu.
+
+316
+00:15:28,190 --> 00:15:29,240
+Eso es todo por este video.
+
+317
+00:15:29,240 --> 00:15:32,140
+Hablamos sobre funciones, argumentos y parmetros.
+
+318
+00:15:32,140 --> 00:15:33,670
+Y entonces espero que sea til.
+
+319
+00:15:33,670 --> 00:15:35,530
+Haga preguntas en el curso qy
+
+320
+00:15:35,530 --> 00:15:36,890
+a, si tiene alguna.
+
+321
+00:15:36,890 --> 00:15:38,610
+Estamos ah para ayudarte.
+
+322
+00:15:38,610 --> 00:15:39,900
+Y no queremos
+
+323
+00:15:39,900 --> 00:15:42,810
+que te confundas, si algo te parece confuso.
+
+324
+00:15:42,810 --> 00:15:44,020
+Entonces eso es todo por este video.
+
+325
+00:15:44,020 --> 00:15:45,470
+Te ver en el prximo.
+

@@ -1,0 +1,224 @@
+1
+00:00:00,240 --> 00:00:01,340
+Narrador Masculino: Hola, bienvenido de nuevo.
+
+2
+00:00:01,340 --> 00:00:03,970
+De nuevo, solo un breve video sobre las mejoras
+
+3
+00:00:03,970 --> 00:00:06,280
+que puede realizar en este cdigo de procesamiento,
+
+4
+00:00:06,280 --> 00:00:07,400
+cdigo de multiprocesamiento.
+
+5
+00:00:07,400 --> 00:00:09,700
+En lugar de usar el mdulo de
+
+6
+00:00:09,700 --> 00:00:12,040
+multiprocesamiento, puede usar el mdulo de futuros simultneos.
+
+7
+00:00:12,930 --> 00:00:15,350
+Y puede importar Process Execution Executor.
+
+8
+00:00:15,350 --> 00:00:17,060
+Lo mismo que un Ejecutor
+
+9
+00:00:17,060 --> 00:00:19,072
+de Thread Pool, solo crea procesos
+
+10
+00:00:19,072 --> 00:00:21,300
+en su lugar y el proceso
+
+11
+00:00:21,300 --> 00:00:22,900
+real ser exactamente el
+
+12
+00:00:23,810 --> 00:00:26,720
+mismo, as que vamos a eliminar estos dos,
+
+13
+00:00:26,720 --> 00:00:31,190
+y estos dos aqu, y diremos con Process Pool, Process Pool Ejecutor.
+
+14
+00:00:31,190 --> 00:00:32,870
+Trabajadores mximos, habr dos porque
+
+15
+00:00:32,870 --> 00:00:34,620
+tenemos dos cosas que queremos ejecutar.
+
+16
+00:00:34,620 --> 00:00:39,620
+Como grupo, piscina. enviar y clculo complejo.
+
+17
+00:00:41,250 --> 00:00:44,040
+Y luego vamos a duplicar eso, y eso es todo.
+
+18
+00:00:44,040 --> 00:00:46,090
+De acuerdo, solo un cdigo un poco ms simple.
+
+19
+00:00:46,090 --> 00:00:49,420
+Si desea que su grupo permanezca con vida durante todo el
+
+20
+00:00:49,420 --> 00:00:50,550
+programa, entonces tal vez,
+
+21
+00:00:50,550 --> 00:00:52,990
+ya sabe, enve una tarea, obtenga un resultado
+
+22
+00:00:52,990 --> 00:00:55,340
+y vuelva a incluir el proceso en su
+
+23
+00:00:55,340 --> 00:00:58,240
+grupo de procesos para que pueda volver a utilizarlo.
+
+24
+00:00:59,220 --> 00:01:01,590
+Puede hacerlo con Process Process Executor.
+
+25
+00:01:01,590 --> 00:01:04,300
+Todo lo que tiene que hacer es no usar, en
+
+26
+00:01:04,300 --> 00:01:07,690
+su lugar, ya lo sabe, definirlo como una variable y luego puede
+
+27
+00:01:07,690 --> 00:01:10,440
+enviar tareas a l y esperar a que finalicen, y
+
+28
+00:01:10,440 --> 00:01:12,870
+el proceso volver al grupo para que pueda volver
+
+29
+00:01:12,870 --> 00:01:13,950
+a usarlo .
+
+30
+00:01:13,950 --> 00:01:15,800
+Por lo tanto, si tiene una
+
+31
+00:01:15,800 --> 00:01:17,550
+aplicacin ms grande, podra ser interesante
+
+32
+00:01:17,550 --> 00:01:19,350
+crear algunos procesos al principio, para
+
+33
+00:01:19,350 --> 00:01:20,940
+que no tenga que crear constantemente
+
+34
+00:01:20,940 --> 00:01:23,410
+nuevos procesos, porque eso puede tomar unos pocos milisegundos.
+
+35
+00:01:24,360 --> 00:01:27,180
+Entonces, eso es solo una potencial mejora en el rendimiento, nada
+
+36
+00:01:27,180 --> 00:01:29,180
+de lo que tenga que preocuparse por ahora.
+
+37
+00:01:30,050 --> 00:01:32,060
+De todos modos, solo quera contarte un poco
+
+38
+00:01:32,060 --> 00:01:33,770
+sobre cmo usar este Process Pool
+
+39
+00:01:33,770 --> 00:01:35,500
+Executor porque, una vez ms, es
+
+40
+00:01:35,500 --> 00:01:37,800
+algo muy popular cuando ests haciendo un cdigo multihilo.
+
+41
+00:01:37,800 --> 00:01:39,530
+De repente te encuentras con eso, ya
+
+42
+00:01:39,530 --> 00:01:40,770
+sabes, tienes que hacer dos
+
+43
+00:01:40,770 --> 00:01:42,820
+cosas a la vez porque ambos necesitan la CPU.
+
+44
+00:01:42,820 --> 00:01:44,910
+Lo que normalmente har en el cdigo
+
+45
+00:01:44,910 --> 00:01:49,640
+de subprocesos mltiples en ese caso es que enviar una tarea que requiere una CPU
+
+46
+00:01:49,640 --> 00:01:52,850
+a un Ejecutor de grupo de procesos, para que pueda
+
+47
+00:01:52,850 --> 00:01:54,330
+ejecutarse en un ncleo separado
+
+48
+00:01:54,330 --> 00:01:56,070
+y luego devolver el resultado.
+
+49
+00:01:57,010 --> 00:01:58,490
+De acuerdo, entonces el uso
+
+50
+00:01:58,490 --> 00:02:01,010
+de Process Pool Executor es bastante comn en
+
+51
+00:02:01,010 --> 00:02:04,760
+el cdigo de subprocesos mltiples cuando necesitas hacerlo en dos ncleos.
+
+52
+00:02:04,760 --> 00:02:05,880
+No es tan comn,
+
+53
+00:02:05,880 --> 00:02:08,590
+ya sabes, ejecutar aplicaciones complejas de mltiples ncleos en
+
+54
+00:02:08,590 --> 00:02:11,510
+Python porque simplemente no es tan bueno para eso.
+
+55
+00:02:11,510 --> 00:02:12,343
+Bueno?
+
+56
+00:02:12,343 --> 00:02:14,490
+Eso es todo por este video, nos vemos en el prximo.
+

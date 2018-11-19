@@ -1,0 +1,952 @@
+1
+00:00:00,270 --> 00:00:01,220
+Jos: Hola y bienvenido de nuevo.
+
+2
+00:00:01,220 --> 00:00:02,460
+En este video,
+
+3
+00:00:02,460 --> 00:00:05,730
+vamos a ver algo sustancialmente ms complicado.
+
+4
+00:00:05,730 --> 00:00:07,810
+As que por favor qudense
+
+5
+00:00:07,810 --> 00:00:12,160
+conmigo, y veamos cmo hacer cola en los hilos con estado compartido.
+
+6
+00:00:12,160 --> 00:00:14,960
+Lo primero que voy a hacer es importar algunas cosas.
+
+7
+00:00:19,619 --> 00:00:21,180
+As que voy a importar tiempo
+
+8
+00:00:21,180 --> 00:00:25,200
+y al azar, ya que sabemos que hacer nuestra fase, y voy a importar la cola.
+
+9
+00:00:25,200 --> 00:00:30,090
+El mdulo de cola tiene una cola que ser esencial para que nuestro programa funcione,
+
+10
+00:00:30,090 --> 00:00:31,890
+y voy a explicar exactamente
+
+11
+00:00:31,890 --> 00:00:34,080
+qu hace esta cola y por qu
+
+12
+00:00:34,080 --> 00:00:35,830
+es diferente de una cubierta.
+
+13
+00:00:37,530 --> 00:00:39,040
+Y luego, por supuesto, desde el
+
+14
+00:00:39,040 --> 00:00:41,020
+enhebrado, vamos a importar hilo para empezar.
+
+15
+00:00:41,020 --> 00:00:43,720
+Luego usaremos un ejecutor de grupo de subprocesos ms tarde.
+
+16
+00:00:43,720 --> 00:00:46,076
+Tendremos nuestro mostrador global,
+
+17
+00:00:46,076 --> 00:00:48,520
+y tambin tendremos dos colas.
+
+18
+00:00:48,520 --> 00:00:49,970
+Tendremos una cola de trabajos,
+
+19
+00:00:51,410 --> 00:00:53,260
+y tendremos una cola de espera.
+
+20
+00:00:58,880 --> 00:01:00,490
+Bueno.
+
+21
+00:01:00,490 --> 00:01:01,460
+La cola de
+
+22
+00:01:04,010 --> 00:01:08,450
+trabajos va a ser la coma, las cosas que se imprimirn, la
+
+23
+00:01:09,740 --> 00:01:14,740
+cola de contador es la cantidad por la que aumentar el contador.
+
+24
+00:01:16,210 --> 00:01:17,043
+Bueno.
+
+25
+00:01:18,750 --> 00:01:23,164
+Muy bien, ahora vamos a hacer algo que
+
+26
+00:01:23,164 --> 00:01:28,164
+es cada vez que queremos aumentar el contador, vamos
+
+27
+00:01:28,410 --> 00:01:32,490
+a poner uno en la cola.
+
+28
+00:01:32,490 --> 00:01:35,760
+Entonces, vamos a poner el nmero uno en esta fila.
+
+29
+00:01:35,760 --> 00:01:38,840
+Luego vamos a tener un cdigo mirando a travs de esta cola
+
+30
+00:01:38,840 --> 00:01:41,020
+y cada vez que aparece un nmero, va
+
+31
+00:01:41,020 --> 00:01:42,820
+a aumentar el contador en esa cantidad.
+
+32
+00:01:44,270 --> 00:01:46,460
+Al mismo tiempo, tendremos otro
+
+33
+00:01:46,460 --> 00:01:50,220
+hilo en esta cola de trabajos y cada
+
+34
+00:01:50,220 --> 00:01:53,530
+vez que vea algo aqu, lo imprimir.
+
+35
+00:01:53,530 --> 00:01:56,200
+Eso es esencialmente cmo funcionar este programa.
+
+36
+00:01:56,200 --> 00:01:59,220
+Hagamoslo.
+
+37
+00:01:59,220 --> 00:02:01,610
+Primero vamos a definir nuestro administrador de incrementos.
+
+38
+00:02:02,701 --> 00:02:04,970
+Recluiremos nuestro contador global.
+
+39
+00:02:04,970 --> 00:02:07,220
+Recuerda que varios hilos podran estar
+
+40
+00:02:08,900 --> 00:02:11,300
+haciendo esto al mismo tiempo, y luego
+
+41
+00:02:11,300 --> 00:02:12,630
+vamos a hacer, mientras
+
+42
+00:02:15,780 --> 00:02:19,340
+que es cierto que va a obtener el contador de
+
+43
+00:02:19,340 --> 00:02:23,060
+esta cola del contador y esta cola del contador aqu tiene
+
+44
+00:02:23,060 --> 00:02:25,060
+una cola de mltiples nmeros potencialmente
+
+45
+00:02:25,060 --> 00:02:27,860
+por la cual queremos aumentar el mostrador.
+
+46
+00:02:27,860 --> 00:02:32,860
+Entonces, el incremento va a ser cola de contador. obtener.
+
+47
+00:02:33,370 --> 00:02:34,600
+Bueno.
+
+48
+00:02:34,600 --> 00:02:37,910
+Y esto es importante porque esto espera
+
+49
+00:02:39,150 --> 00:02:42,200
+hasta que un artculo est disponible y
+
+50
+00:02:44,600 --> 00:02:46,470
+luego bloquea la cola.
+
+51
+00:02:47,970 --> 00:02:51,340
+De acuerdo, entonces, esto va a esperar hasta que
+
+52
+00:02:51,340 --> 00:02:54,530
+un artculo est disponible y, cuando lo est,
+
+53
+00:02:54,530 --> 00:02:59,210
+no permitir que ningn otro subproceso obtenga nada hasta que hayamos terminado.
+
+54
+00:03:00,860 --> 00:03:02,470
+Entonces diremos que el contador
+
+55
+00:03:04,660 --> 00:03:05,500
+antiguo es contador,
+
+56
+00:03:07,160 --> 00:03:09,630
+el contador ahora es el contador anterior ms
+
+57
+00:03:11,330 --> 00:03:12,240
+el incremento.
+
+58
+00:03:14,320 --> 00:03:18,500
+Luego, vamos a poner algo en la cola de trabajos,
+
+59
+00:03:18,500 --> 00:03:21,000
+un nuevo valor de contador es
+
+60
+00:03:23,070 --> 00:03:26,220
+contrario y tambin vamos a poner nuestras lneas,
+
+61
+00:03:26,220 --> 00:03:28,670
+est bien, vamos a poner estas
+
+62
+00:03:28,670 --> 00:03:33,670
+dos cosas y finalmente a hacer cola. tarea hecha
+
+63
+00:03:34,370 --> 00:03:38,080
+Esto desbloquea la cola, por lo que ahora
+
+64
+00:03:38,080 --> 00:03:39,900
+otro hilo podra volver
+
+65
+00:03:39,900 --> 00:03:42,850
+atrs y obtener algo si quisieran.
+
+66
+00:03:44,000 --> 00:03:46,080
+Entonces, tan pronto como algo entra
+
+67
+00:03:46,080 --> 00:03:48,210
+aqu, esta cola del contador est
+
+68
+00:03:48,210 --> 00:03:50,550
+bloqueada, el hilo tiene ese recurso, ningn
+
+69
+00:03:50,550 --> 00:03:53,010
+otro hilo puede acceder a este recurso
+
+70
+00:03:53,010 --> 00:03:56,290
+hasta que llamemos a la tarea y que marque la
+
+71
+00:03:56,290 --> 00:03:58,610
+cola como no bloqueada, otro hilo puede
+
+72
+00:03:58,610 --> 00:04:00,070
+pasar por esto consigue.
+
+73
+00:04:02,100 --> 00:04:02,933
+Bueno.
+
+74
+00:04:05,510 --> 00:04:06,750
+Ir.
+
+75
+00:04:06,750 --> 00:04:07,940
+Vamos a ejecutar este
+
+76
+00:04:10,650 --> 00:04:13,220
+objetivo va a ser el administrador de incrementos,
+
+77
+00:04:14,390 --> 00:04:16,940
+y daemon va a ser cierto, y lo
+
+78
+00:04:16,940 --> 00:04:19,070
+que esto significa es que este hilo
+
+79
+00:04:19,070 --> 00:04:23,700
+se ejecutar continuamente para siempre hasta que, hasta que encuentre un error esencialmente.
+
+80
+00:04:25,140 --> 00:04:27,040
+Y luego comenzaremos eso, est bien.
+
+81
+00:04:29,040 --> 00:04:32,930
+As que este hilo se ejecutar siempre siempre mientras sea verdadero, siempre mirando
+
+82
+00:04:32,930 --> 00:04:36,710
+esta cola de espera, tratando de obtener una cosa, esperar hasta que un
+
+83
+00:04:36,710 --> 00:04:38,690
+artculo est disponible y lo bloquear, y
+
+84
+00:04:38,690 --> 00:04:40,400
+luego lo reparar y va a
+
+85
+00:04:40,400 --> 00:04:42,600
+llamar a la tarea, luego volver a
+
+86
+00:04:42,600 --> 00:04:43,570
+repetirse, esperar a
+
+87
+00:04:43,570 --> 00:04:45,270
+que algo est disponible, etc.
+
+88
+00:04:47,530 --> 00:04:49,560
+Ahora, si queremos imprimir, vamos
+
+89
+00:04:50,700 --> 00:04:53,010
+a crear un administrador de impresora.
+
+90
+00:04:56,530 --> 00:04:59,280
+As que me desplazo hacia abajo aqu, de nuevo, esto
+
+91
+00:04:59,280 --> 00:05:02,920
+ser cierto, y va a poner las lneas en la cola de trabajos para
+
+92
+00:05:02,920 --> 00:05:06,680
+la lnea en la cola de trabajos. una y otra vez,
+
+93
+00:05:06,680 --> 00:05:09,010
+esto bloquea la cola, y
+
+94
+00:05:09,010 --> 00:05:11,760
+espera a que un artculo est
+
+95
+00:05:11,760 --> 00:05:13,210
+disponible, imprimir la
+
+96
+00:05:14,670 --> 00:05:16,870
+lnea y al final ser
+
+97
+00:05:16,870 --> 00:05:19,400
+la cola de trabajos. tarea hecha
+
+98
+00:05:20,350 --> 00:05:21,183
+Bueno.
+
+99
+00:05:23,340 --> 00:05:26,830
+Una vez ms, vamos a ejecutar esto como un hilo de daemon.
+
+100
+00:05:33,440 --> 00:05:34,890
+Entonces, vamos a comenzar eso.
+
+101
+00:05:36,870 --> 00:05:39,150
+Est bien, entonces el administrador de la impresora y
+
+102
+00:05:39,150 --> 00:05:42,440
+el administrador de incremento se ejecutarn continuamente debido a esa bandera daemon.
+
+103
+00:05:42,440 --> 00:05:46,518
+La parte final de nuestro programa es tratar de
+
+104
+00:05:46,518 --> 00:05:49,270
+aumentar el contador en s, as
+
+105
+00:05:49,270 --> 00:05:52,310
+que esto se ejecutar constantemente, obteniendo valores
+
+106
+00:05:52,310 --> 00:05:54,390
+de la cola de contador
+
+107
+00:05:54,390 --> 00:05:56,940
+y aumentando el contador por ellos.
+
+108
+00:05:56,940 --> 00:05:59,042
+Esto se va a ejecutar continuamente
+
+109
+00:05:59,042 --> 00:05:59,875
+imprimiendo cosas, todo
+
+110
+00:05:59,875 --> 00:06:02,060
+lo que tenemos que hacer es poner
+
+111
+00:06:02,060 --> 00:06:05,160
+algo en nuestra cola, as que vamos a crear otro
+
+112
+00:06:05,160 --> 00:06:07,140
+hilo, u otra funcin que va
+
+113
+00:06:07,140 --> 00:06:09,530
+a ser nuestro contador de incrementos y
+
+114
+00:06:09,530 --> 00:06:11,790
+esto es todo lo que vamos a
+
+115
+00:06:11,790 --> 00:06:15,940
+hacer es hacer cola de contador pongo uno, va a poner el
+
+116
+00:06:15,940 --> 00:06:19,330
+nmero uno en la cola, luego ser recibido por este
+
+117
+00:06:19,330 --> 00:06:21,810
+administrador de incrementos que va a incrementar
+
+118
+00:06:21,810 --> 00:06:24,860
+el contador en esa cantidad, y va a poner
+
+119
+00:06:24,860 --> 00:06:28,860
+dos cosas en la cola de trabajos que luego se va
+
+120
+00:06:28,860 --> 00:06:31,030
+a imprimir ellos mientras se ejecuta.
+
+121
+00:06:32,620 --> 00:06:33,453
+Bueno.
+
+122
+00:06:34,770 --> 00:06:37,590
+Entonces, vamos a hacer algunos hilos de trabajo.
+
+123
+00:06:37,590 --> 00:06:40,270
+Los hilos de trabajo son hilos donde el
+
+124
+00:06:40,270 --> 00:06:42,990
+objetivo es este contador de incrementos para el
+
+125
+00:06:44,410 --> 00:06:47,910
+hilo en el rango 10, vamos a hacer 10 y lo
+
+126
+00:06:49,120 --> 00:06:50,620
+nico que haremos es comenzarlos.
+
+127
+00:06:50,620 --> 00:06:54,980
+Por lo tanto, para el hilo en los hilos de trabajo, inicie el hilo, y vamos
+
+128
+00:06:56,120 --> 00:06:58,420
+a esperar a que terminen para el hilo en
+
+129
+00:06:58,420 --> 00:07:01,010
+los hilos de trabajo, hilo. nete y al
+
+130
+00:07:01,860 --> 00:07:03,050
+final vamos a
+
+131
+00:07:03,050 --> 00:07:04,260
+esperar que la
+
+132
+00:07:06,580 --> 00:07:11,090
+cola del contador termine, que no quede nada en la
+
+133
+00:07:11,090 --> 00:07:15,810
+cola y la cola de trabajos para que no quede nada.
+
+134
+00:07:15,810 --> 00:07:18,850
+Observe cmo nos estamos uniendo a las colas, no a los
+
+135
+00:07:18,850 --> 00:07:20,319
+subprocesos de daemon porque estos subprocesos
+
+136
+00:07:20,319 --> 00:07:23,000
+de daemon nunca se detendrn, siempre se ejecutarn, est bien.
+
+137
+00:07:23,000 --> 00:07:24,370
+Entonces, nos estamos uniendo a la cola.
+
+138
+00:07:24,370 --> 00:07:25,790
+Cuando se
+
+139
+00:07:27,421 --> 00:07:29,470
+vacen, esencialmente habremos terminado.
+
+140
+00:07:31,940 --> 00:07:35,820
+Como puede ver, esto es mucho ms complicado, ahora que ha
+
+141
+00:07:35,820 --> 00:07:37,700
+compartido estado, debe comenzar a
+
+142
+00:07:37,700 --> 00:07:39,820
+tener colas all para que sus
+
+143
+00:07:39,820 --> 00:07:42,040
+hilos no puedan interrumpirse entre s.
+
+144
+00:07:42,040 --> 00:07:43,040
+Vamos a ejecutar este
+
+145
+00:07:44,250 --> 00:07:45,300
+cdigo y ver qu pasa.
+
+146
+00:07:46,860 --> 00:07:51,630
+Oh, creo, oh s, lo siento, olvid un par de corchetes.
+
+147
+00:07:51,630 --> 00:07:54,260
+Lo que pones en la cola tiene
+
+148
+00:07:55,490 --> 00:07:57,780
+que ser un doble, mi mal.
+
+149
+00:07:57,780 --> 00:07:58,780
+Vamos a ejecutar esto de
+
+150
+00:08:00,490 --> 00:08:01,330
+nuevo y ah lo tienes.
+
+151
+00:08:01,330 --> 00:08:04,910
+Ahora obtienes tu cdigo que se ve secuencial.
+
+152
+00:08:06,260 --> 00:08:07,840
+Bueno.
+
+153
+00:08:07,840 --> 00:08:09,830
+Nuevamente, no podra usar hilos
+
+154
+00:08:09,830 --> 00:08:11,950
+y conseguira el mismo propsito, pero
+
+155
+00:08:11,950 --> 00:08:14,940
+si quisiera usar hilos, tendra que usar estas
+
+156
+00:08:14,940 --> 00:08:19,150
+colas, y de hecho, si agrega los pesos aleatorios, lo cual
+
+157
+00:08:19,150 --> 00:08:20,270
+haremos, ver que
+
+158
+00:08:21,610 --> 00:08:25,100
+este todava funciona, as que vamos a agregar estos pesos
+
+159
+00:08:25,100 --> 00:08:27,070
+en todas partes como all,
+
+160
+00:08:29,300 --> 00:08:32,330
+vamos a agregar algunos aqu, vamos a agregar
+
+161
+00:08:33,450 --> 00:08:35,210
+algunos aqu, vamos a agregar
+
+162
+00:08:36,340 --> 00:08:37,640
+algunos aqu, y luego
+
+163
+00:08:38,680 --> 00:08:40,380
+vamos a ejecutarlo de nuevo.
+
+164
+00:08:44,771 --> 00:08:49,550
+Y puede ver que ahora estamos esperando que nuestro cdigo pase por
+
+165
+00:08:49,550 --> 00:08:51,580
+esta cola, pero solo un
+
+166
+00:08:53,350 --> 00:08:54,880
+hilo puede atravesar este
+
+167
+00:08:54,880 --> 00:08:56,740
+incremento a la vez.
+
+168
+00:08:57,820 --> 00:09:00,970
+Entonces, esto sigue sucediendo uno por uno.
+
+169
+00:09:05,580 --> 00:09:08,770
+Entonces no terriblemente simple, djame decirte eso.
+
+170
+00:09:09,710 --> 00:09:12,410
+No es terriblemente simple, de nuevo podras usar un
+
+171
+00:09:12,410 --> 00:09:15,410
+ejecutador de grupo de subprocesos para mejorar este cdigo aqu
+
+172
+00:09:15,410 --> 00:09:17,350
+si quieres, no vamos a entrar
+
+173
+00:09:17,350 --> 00:09:20,200
+en eso pero el indicador de cdigo tiene esto all.
+
+174
+00:09:20,200 --> 00:09:23,210
+As que de nuevo para recapitular lo que sucede es
+
+175
+00:09:24,518 --> 00:09:27,980
+que decimos que vamos a acceder a esta variable global contraria,
+
+176
+00:09:28,876 --> 00:09:31,270
+bsicamente para decirle a Python que no queremos
+
+177
+00:09:31,270 --> 00:09:33,160
+crear una nueva variable llamada contador,
+
+178
+00:09:33,160 --> 00:09:34,910
+queremos usar el contador global.
+
+179
+00:09:36,430 --> 00:09:41,420
+Aqu, para cuando accedemos al valor del contador, esto ya ha impedido que dos
+
+180
+00:09:41,420 --> 00:09:44,850
+subprocesos lo hagan al mismo tiempo, as que espere hasta
+
+181
+00:09:44,850 --> 00:09:47,750
+que el artculo est disponible y luego se
+
+182
+00:09:47,750 --> 00:09:51,510
+bloquee, de modo que solo un subproceso pueda ejecutar esto a
+
+183
+00:09:51,510 --> 00:09:53,730
+la vez. y obtener un valor.
+
+184
+00:09:53,730 --> 00:09:56,550
+Si tiene 10 hilos llamando
+
+185
+00:09:56,550 --> 00:09:58,880
+a esto, solo uno
+
+186
+00:09:58,880 --> 00:10:01,200
+podr usar ese recurso.
+
+187
+00:10:01,200 --> 00:10:05,140
+Los otros nueve esperarn hasta que se llame a la
+
+188
+00:10:05,140 --> 00:10:07,000
+tarea y est disponible nuevamente.
+
+189
+00:10:07,000 --> 00:10:08,500
+As que tienes un
+
+190
+00:10:08,500 --> 00:10:11,930
+nico hilo obteniendo el incremento que es uno, luego
+
+191
+00:10:11,930 --> 00:10:14,650
+accedes al valor del contador actual que
+
+192
+00:10:14,650 --> 00:10:17,130
+ser cero, luego lo aumentars en el
+
+193
+00:10:17,130 --> 00:10:20,050
+incremento que es uno, lo convertirs en uno
+
+194
+00:10:20,050 --> 00:10:21,620
+y pondrs estas dos
+
+195
+00:10:22,670 --> 00:10:26,760
+cosas aqu en la cola de trabajos, luego la tarea para
+
+196
+00:10:26,760 --> 00:10:30,020
+volver al principio y otro hilo para hacer el get.
+
+197
+00:10:30,020 --> 00:10:32,660
+Cuando acceden al valor del contador, es uno
+
+198
+00:10:32,660 --> 00:10:34,990
+ahora, porque el estado anterior ya lo increment.
+
+199
+00:10:34,990 --> 00:10:37,400
+Y luego puedes aumentarlo nuevamente y as sucesivamente.
+
+200
+00:10:37,400 --> 00:10:39,820
+Entonces, esencialmente, lo que ests haciendo aqu, es que
+
+201
+00:10:39,820 --> 00:10:43,130
+ests creando este cuello de botella para los hilos para poder acceder
+
+202
+00:10:43,130 --> 00:10:45,680
+a un recurso uno a la vez, est bien.
+
+203
+00:10:47,000 --> 00:10:50,610
+Nuevamente, esto es esencialmente un cdigo de un
+
+204
+00:10:50,610 --> 00:10:54,020
+solo subproceso, pero muestra que cuando necesita
+
+205
+00:10:54,020 --> 00:10:57,500
+hilos para compartir un estado, necesita estas colas.
+
+206
+00:10:57,500 --> 00:11:00,610
+Piense en la impresora en su oficina, si tiene una,
+
+207
+00:11:00,610 --> 00:11:02,710
+la impresora de su oficina puede
+
+208
+00:11:02,710 --> 00:11:05,910
+recibir trabajos de muchas personas diferentes a la vez, pero
+
+209
+00:11:05,910 --> 00:11:08,520
+solo puede imprimir de a una por vez.
+
+210
+00:11:08,520 --> 00:11:10,710
+As que eso es lo que tenemos aqu, tenemos
+
+211
+00:11:10,710 --> 00:11:13,880
+una cola de trabajos de impresin y la impresora los imprime en cuanto
+
+212
+00:11:13,880 --> 00:11:16,550
+los ve tan pronto como los ve, pero no los hace
+
+213
+00:11:16,550 --> 00:11:19,470
+todos al mismo tiempo, sino que los hace. uno a uno.
+
+214
+00:11:20,380 --> 00:11:22,970
+De manera similar, debido a que estamos accediendo a
+
+215
+00:11:22,970 --> 00:11:26,400
+un recurso nico, el contador tambin debemos hacerlo uno por uno, si obtenemos
+
+216
+00:11:26,400 --> 00:11:28,080
+dos cosas incrementadas por el contador
+
+217
+00:11:28,080 --> 00:11:31,180
+de una vez, vimos que sucede en el ltimo video, simplemente
+
+218
+00:11:31,180 --> 00:11:34,320
+se ponen mentalmente y con esto comienza a cambiar al mismo tiempo.
+
+219
+00:11:34,320 --> 00:11:36,720
+Si conseguiste que tu impresora imprimiera dos cosas
+
+220
+00:11:36,720 --> 00:11:38,980
+a la vez, puedes imaginar cmo eso no
+
+221
+00:11:38,980 --> 00:11:40,680
+ira tan bien tampoco, ve una
+
+222
+00:11:40,680 --> 00:11:43,030
+especie de palabras de un documento y palabras
+
+223
+00:11:43,030 --> 00:11:44,950
+de otro impresas juntas, no sera lindo.
+
+224
+00:11:44,950 --> 00:11:49,480
+Cuando desee un recurso compartido, debe usar una cola
+
+225
+00:11:49,480 --> 00:11:52,970
+y la cola. Paquete de cola aqu el paquete de
+
+226
+00:11:52,970 --> 00:11:55,600
+cola es bueno porque tiene esta cosa de bloqueo y
+
+227
+00:11:55,600 --> 00:11:57,510
+esta tarea hecha, as que esto est
+
+228
+00:11:57,510 --> 00:12:00,300
+hecho para el acceso de mltiples hilos a una cola.
+
+229
+00:12:01,650 --> 00:12:04,470
+El mazo, que es algo que es atmico, no se
+
+230
+00:12:05,350 --> 00:12:07,730
+interrumpe cuando agregas o quitas elementos del mismo,
+
+231
+00:12:07,730 --> 00:12:10,417
+pero tampoco se bloquea, por lo que puedes tener varias
+
+232
+00:12:10,417 --> 00:12:13,630
+cosas, agregar cosas a un mazo al mismo tiempo, y eso
+
+233
+00:12:13,630 --> 00:12:15,440
+puede ser til en otras situaciones
+
+234
+00:12:15,440 --> 00:12:17,330
+como ver en las conversaciones que estn
+
+235
+00:12:17,330 --> 00:12:18,490
+vinculadas a usted ms adelante.
+
+236
+00:12:19,650 --> 00:12:20,680
+Eso es todo por
+
+237
+00:12:20,680 --> 00:12:23,470
+este video, espero que esto no te haya derretido el cerebro
+
+238
+00:12:23,470 --> 00:12:25,120
+y te ver en el prximo.
+

@@ -1,0 +1,788 @@
+1
+00:00:00,493 --> 00:00:01,724
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,724 --> 00:00:05,227
+In this video, we're going to turn our CSV's into JSON.
+
+3
+00:00:05,227 --> 00:00:07,763
+Just for us to understand a bit better how that works,
+
+4
+00:00:07,763 --> 00:00:08,723
+and whether there's any benefits
+
+5
+00:00:08,723 --> 00:00:11,851
+to using JSON instead of CSV.
+
+6
+00:00:11,851 --> 00:00:13,851
+Often I find that JSON does give you
+
+7
+00:00:13,851 --> 00:00:16,227
+a bit more flexibility and makes things
+
+8
+00:00:16,227 --> 00:00:19,010
+a bit easier, just because it very easy
+
+9
+00:00:19,010 --> 00:00:21,339
+to translate into Python dictionaries.
+
+10
+00:00:21,339 --> 00:00:22,419
+And also this just gives you a bit
+
+11
+00:00:22,419 --> 00:00:25,075
+more exposure to how Python works.
+
+12
+00:00:25,075 --> 00:00:26,835
+If you don't want to move this app
+
+13
+00:00:26,835 --> 00:00:28,803
+over to JSON, feel free to just go
+
+14
+00:00:28,803 --> 00:00:30,043
+into the next video and we're going
+
+15
+00:00:30,043 --> 00:00:33,259
+to look at databases instead.
+
+16
+00:00:33,259 --> 00:00:34,971
+First thing to do is to change our comment
+
+17
+00:00:34,971 --> 00:00:38,331
+up here to say we are using JSON.
+
+18
+00:00:38,331 --> 00:00:43,331
+Then I'm going to change the file to be books.json.
+
+19
+00:00:43,410 --> 00:00:45,993
+And now we will begin using our
+
+20
+00:00:47,603 --> 00:00:50,520
+interface here to create our files.
+
+21
+00:00:53,024 --> 00:00:55,641
+Now when we create a book table,
+
+22
+00:00:55,641 --> 00:00:58,935
+we are wanting to make sure the file is there.
+
+23
+00:00:58,935 --> 00:01:00,519
+And we're going to change this later on.
+
+24
+00:01:00,519 --> 00:01:03,151
+We're gonna get an error when we try to use this.
+
+25
+00:01:03,151 --> 00:01:06,651
+But let's leave it like that just for now.
+
+26
+00:01:07,820 --> 00:01:10,798
+Then let's first implement the get all
+
+27
+00:01:10,798 --> 00:01:13,692
+books function, because that's the easiest one.
+
+28
+00:01:13,692 --> 00:01:15,533
+So, I'm going to delete all of
+
+29
+00:01:15,533 --> 00:01:17,604
+this except the context manager.
+
+30
+00:01:17,604 --> 00:01:22,604
+And all that we have to return is json.load of the file.
+
+31
+00:01:22,778 --> 00:01:27,176
+Of course, we'll have to import JSON at the top.
+
+32
+00:01:27,176 --> 00:01:30,994
+Remember the JSON file is going to be a list,
+
+33
+00:01:30,994 --> 00:01:35,077
+that does stuff and has maybe some books in here.
+
+34
+00:01:36,422 --> 00:01:40,255
+Like name, is name, something like clean code,
+
+35
+00:01:42,398 --> 00:01:47,398
+author is gonna be Robert, and read is going to be true.
+
+36
+00:01:47,708 --> 00:01:50,166
+JSON can store true and false values.
+
+37
+00:01:50,166 --> 00:01:52,701
+So, feel free to store them directly in JSON,
+
+38
+00:01:52,701 --> 00:01:55,308
+which simplifies things a little bit.
+
+39
+00:01:55,308 --> 00:01:59,405
+So, it's going to be a list of dictionaries and that's cool.
+
+40
+00:01:59,405 --> 00:02:01,547
+So, when we get all the books,
+
+41
+00:02:01,547 --> 00:02:05,047
+we do json.load, and that gives us a list.
+
+42
+00:02:05,912 --> 00:02:07,952
+When we have our list, we can iterate over it
+
+43
+00:02:07,952 --> 00:02:10,096
+and we can do everything we could with a normal list,
+
+44
+00:02:10,096 --> 00:02:14,770
+just pretends that it's this that we've put in a variable.
+
+45
+00:02:14,770 --> 00:02:17,787
+So when we want to add a new book,
+
+46
+00:02:17,787 --> 00:02:20,939
+how are we going to do that?
+
+47
+00:02:20,939 --> 00:02:24,772
+Well, we need somehow to open up the JSON file
+
+48
+00:02:25,734 --> 00:02:28,484
+and write a new dictionary to it.
+
+49
+00:02:29,805 --> 00:02:31,637
+Now it's no longer as simple as
+
+50
+00:02:31,637 --> 00:02:34,028
+appending something at the end.
+
+51
+00:02:34,028 --> 00:02:35,540
+Because we have to append something
+
+52
+00:02:35,540 --> 00:02:38,285
+between this curly bracket and this square bracket,
+
+53
+00:02:38,285 --> 00:02:39,952
+something like this.
+
+54
+00:02:43,101 --> 00:02:45,053
+So it's not so easy, so what I'm going to do
+
+55
+00:02:45,053 --> 00:02:46,501
+is do the same thing that we did
+
+56
+00:02:46,501 --> 00:02:48,821
+with marking books as read and deleting them.
+
+57
+00:02:48,821 --> 00:02:51,437
+I'm going to open all the books, read them all,
+
+58
+00:02:51,437 --> 00:02:55,698
+append one using Python and then save them all back.
+
+59
+00:02:55,698 --> 00:02:58,948
+So, books is going to be get all books,
+
+60
+00:03:00,700 --> 00:03:03,010
+then we're going to do books, which, remember is a list,
+
+61
+00:03:03,010 --> 00:03:06,266
+so we can do append to it, and then we're going to append
+
+62
+00:03:06,266 --> 00:03:10,516
+a dictionary using the parameters that we got here,
+
+63
+00:03:13,177 --> 00:03:18,177
+and it's going to start off as false for the read status.
+
+64
+00:03:18,251 --> 00:03:22,287
+Of course, in the end, we want to save all the books.
+
+65
+00:03:22,287 --> 00:03:24,047
+And the books that we want to save
+
+66
+00:03:24,047 --> 00:03:27,127
+are the books that we've modified already.
+
+67
+00:03:27,127 --> 00:03:30,288
+Now, this save all books function is defined down here,
+
+68
+00:03:30,288 --> 00:03:33,886
+so we're going to just cut it and move it down
+
+69
+00:03:33,886 --> 00:03:36,293
+to save all books, but actually, apologies,
+
+70
+00:03:36,293 --> 00:03:41,293
+get all books is used first, so we are going to put it here.
+
+71
+00:03:48,652 --> 00:03:49,485
+There.
+
+72
+00:03:51,283 --> 00:03:54,511
+So, we will put it there, and instead,
+
+73
+00:03:54,511 --> 00:03:56,790
+of course, of doing all of this iteration,
+
+74
+00:03:56,790 --> 00:03:59,006
+all we have to do in the save all books file,
+
+75
+00:03:59,006 --> 00:04:02,756
+in the function is json.dump books into file,
+
+76
+00:04:04,539 --> 00:04:05,978
+and that's just going to save everything
+
+77
+00:04:05,978 --> 00:04:09,145
+as a JSON string, instead of as a CSV.
+
+78
+00:04:10,969 --> 00:04:12,913
+So now we've implemented our add book,
+
+79
+00:04:12,913 --> 00:04:15,978
+get all books and save all books functions.
+
+80
+00:04:15,978 --> 00:04:19,330
+We can go ahead and mark the book as read,
+
+81
+00:04:19,330 --> 00:04:21,754
+but you may realise that we don't actually
+
+82
+00:04:21,754 --> 00:04:26,316
+have to do anything, except turn this one into a true,
+
+83
+00:04:26,316 --> 00:04:29,419
+which is everything that we need to do.
+
+84
+00:04:29,419 --> 00:04:31,469
+Say we're ready for the delete book,
+
+85
+00:04:31,469 --> 00:04:32,810
+we're getting all the books, now they're coming
+
+86
+00:04:32,810 --> 00:04:35,107
+from the JSON file, saving all the books,
+
+87
+00:04:35,107 --> 00:04:37,131
+they're going to a JSON file, and in the middle,
+
+88
+00:04:37,131 --> 00:04:39,683
+we're just modifying the list,
+
+89
+00:04:39,683 --> 00:04:41,909
+so that it doesn't include the book that matches the name,
+
+90
+00:04:41,909 --> 00:04:45,476
+again, we don't have to do anything here.
+
+91
+00:04:45,476 --> 00:04:47,252
+Pretty nice, eh?
+
+92
+00:04:47,252 --> 00:04:49,708
+Not a lot has changed, the only thing that's changed
+
+93
+00:04:49,708 --> 00:04:52,244
+is the false and zero and one.
+
+94
+00:04:52,244 --> 00:04:56,552
+So if we go over to our app.py, we can go down here
+
+95
+00:04:56,552 --> 00:04:59,127
+and just remove this if book read equal to one,
+
+96
+00:04:59,127 --> 00:05:01,511
+change it to if book read.
+
+97
+00:05:01,511 --> 00:05:04,428
+Since that already assumes is true.
+
+98
+00:05:05,698 --> 00:05:08,778
+And that's it, we can then press play,
+
+99
+00:05:08,778 --> 00:05:11,691
+and you know, start adding books.
+
+100
+00:05:11,691 --> 00:05:14,474
+And I said earlier this is going to raise an error,
+
+101
+00:05:14,474 --> 00:05:17,402
+so I am going to enter a new book name.
+
+102
+00:05:17,402 --> 00:05:21,711
+This is going to be Python 101 by Jose Salvatierra,
+
+103
+00:05:21,711 --> 00:05:24,079
+this doesn't exist, by the way.
+
+104
+00:05:24,079 --> 00:05:25,829
+Oh, we get the error.
+
+105
+00:05:26,799 --> 00:05:28,503
+So, this is the error I was talking about earlier,
+
+106
+00:05:28,503 --> 00:05:32,086
+and it says, json.decoder.JSONDecoderError,
+
+107
+00:05:33,937 --> 00:05:38,594
+expecting a value in line one, column one, character zero.
+
+108
+00:05:38,594 --> 00:05:41,042
+Okay, so it was expecting a value.
+
+109
+00:05:41,042 --> 00:05:44,792
+Let's see what the book.json file says.
+
+110
+00:05:44,792 --> 00:05:48,216
+It's completely empty, nothing there.
+
+111
+00:05:48,216 --> 00:05:50,216
+Okay, so the error says it was expecting a value,
+
+112
+00:05:50,216 --> 00:05:52,552
+and evidently, it didn't find one.
+
+113
+00:05:52,552 --> 00:05:55,287
+So, why was it expecting a value?
+
+114
+00:05:55,287 --> 00:05:57,056
+Well, here you can see the line
+
+115
+00:05:57,056 --> 00:06:01,043
+that raised the JSONDecodeError, is not something we wrote,
+
+116
+00:06:01,043 --> 00:06:03,843
+it's inside this decoder.py file,
+
+117
+00:06:03,843 --> 00:06:06,868
+and now we're getting lines that we didn't write
+
+118
+00:06:06,868 --> 00:06:08,643
+because of course, we're using a module
+
+119
+00:06:08,643 --> 00:06:10,195
+that we didn't write, and this is
+
+120
+00:06:10,195 --> 00:06:13,421
+the module that raised the error.
+
+121
+00:06:13,421 --> 00:06:17,247
+Now error then appeared in this raw decode function,
+
+122
+00:06:17,247 --> 00:06:18,991
+so that's the next thing we get.
+
+123
+00:06:18,991 --> 00:06:21,887
+That was called from this decode function,
+
+124
+00:06:21,887 --> 00:06:24,127
+which was here, and then here,
+
+125
+00:06:24,127 --> 00:06:29,127
+and eventually we reach our code return json.load file.
+
+126
+00:06:29,402 --> 00:06:32,958
+And that was inside the get all books file, that function.
+
+127
+00:06:32,958 --> 00:06:37,586
+So let's go over there, and let's make this a bit smaller.
+
+128
+00:06:37,586 --> 00:06:38,754
+And it's saying that the error
+
+129
+00:06:38,754 --> 00:06:41,754
+was returned here, return json.load.
+
+130
+00:06:43,437 --> 00:06:47,770 line:15% 
+Why do you think there may be an error in this line?
+
+131
+00:06:51,331 --> 00:06:55,400
+Not sure what you came up with, but the problem here
+
+132
+00:06:55,400 --> 00:06:58,320
+is not, our books.json file is empty,
+
+133
+00:06:58,320 --> 00:07:01,088
+and that's not valid JSON.
+
+134
+00:07:01,088 --> 00:07:03,016
+Remember I said, some programmes would expect
+
+135
+00:07:03,016 --> 00:07:07,269
+your JSON file to have an object around it.
+
+136
+00:07:07,269 --> 00:07:09,709
+Some will allow a list to be in it
+
+137
+00:07:09,709 --> 00:07:11,629
+and Python's JSON module is one of these
+
+138
+00:07:11,629 --> 00:07:13,909
+that allow the list, and that's totally valid,
+
+139
+00:07:13,909 --> 00:07:15,845
+totally valid JSON.
+
+140
+00:07:15,845 --> 00:07:17,749
+There's a few more things that it can be,
+
+141
+00:07:17,749 --> 00:07:19,141
+but it certainly cannot be empty,
+
+142
+00:07:19,141 --> 00:07:21,669
+for that is not valid JSON.
+
+143
+00:07:21,669 --> 00:07:23,797
+So what we have to do is make sure that in
+
+144
+00:07:23,797 --> 00:07:28,797
+the create book table, we're initialising it to some value.
+
+145
+00:07:29,370 --> 00:07:31,746
+So what we're going to do is we're going to say
+
+146
+00:07:31,746 --> 00:07:35,663
+that the initial value has to be an empty list,
+
+147
+00:07:42,207 --> 00:07:45,191
+and then we'll need the variable up here as well, of course.
+
+148
+00:07:45,191 --> 00:07:47,263
+Now, as soon as we create the book table,
+
+149
+00:07:47,263 --> 00:07:50,343
+it's going to initialise the list's value to be an empty,
+
+150
+00:07:50,343 --> 00:07:52,983
+so defines the value to be an empty list,
+
+151
+00:07:52,983 --> 00:07:55,719
+and then when we go over to add a book
+
+152
+00:07:55,719 --> 00:07:58,303
+and we get all the books, what it's going to do is
+
+153
+00:07:58,303 --> 00:08:00,824
+it's going to read that empty list,
+
+154
+00:08:00,824 --> 00:08:03,431
+and then it's going to append to it,
+
+155
+00:08:03,431 --> 00:08:05,535
+and then it's going to save it back.
+
+156
+00:08:05,535 --> 00:08:07,545
+Now that we'll have some valid JSON in there,
+
+157
+00:08:07,545 --> 00:08:09,295
+let's run this again.
+
+158
+00:08:15,526 --> 00:08:17,846
+And you can see that it works.
+
+159
+00:08:17,846 --> 00:08:21,668
+And this book, by the way, 30 Days of Python is coming soon.
+
+160
+00:08:21,668 --> 00:08:23,188
+So if you do know somebody that is interested
+
+161
+00:08:23,188 --> 00:08:26,596
+in 30 Days of Python, let me know.
+
+162
+00:08:26,596 --> 00:08:29,500
+So now we've got our two books here.
+
+163
+00:08:29,500 --> 00:08:32,212
+And as you can see, we have not read them,
+
+164
+00:08:32,212 --> 00:08:34,564
+not read them, doesn't exist yet, of course,
+
+165
+00:08:34,564 --> 00:08:37,314
+but then we can mark one as read,
+
+166
+00:08:39,538 --> 00:08:40,994
+and listing them again now shows
+
+167
+00:08:40,994 --> 00:08:43,378
+that one of them is not read and that the other one is read.
+
+168
+00:08:43,378 --> 00:08:46,714
+Looking into books.json, we can see that
+
+169
+00:08:46,714 --> 00:08:51,555
+the JSON stored here represents what we're seeing there.
+
+170
+00:08:51,555 --> 00:08:55,305
+Two objects, Python 101 by me, read is false,
+
+171
+00:08:56,235 --> 00:08:58,043
+and another object 30 Days of Python by me,
+
+172
+00:08:58,043 --> 00:08:59,546
+and read is true.
+
+173
+00:08:59,546 --> 00:09:03,244
+Notice how when you call your file .json in PyCharm,
+
+174
+00:09:03,244 --> 00:09:05,636
+it starts giving you some nice syntax highlighting.
+
+175
+00:09:05,636 --> 00:09:07,313
+So that's pretty nice too.
+
+176
+00:09:07,313 --> 00:09:08,881
+And also notice how the false with
+
+177
+00:09:08,881 --> 00:09:11,993
+a capital f went down to a lowercase f,
+
+178
+00:09:11,993 --> 00:09:14,793
+and the true, the capital t went down to a lowercase t.
+
+179
+00:09:14,793 --> 00:09:16,978
+That's because these are the JavaScript equivalents
+
+180
+00:09:16,978 --> 00:09:20,052
+of Python's true and false with capital letters.
+
+181
+00:09:20,052 --> 00:09:21,748
+In JavaScript, they have lowercase letters.
+
+182
+00:09:21,748 --> 00:09:24,100
+JSON, means JavaScript Object Notations,
+
+183
+00:09:24,100 --> 00:09:27,277
+of course it's going down to lowercase as well.
+
+184
+00:09:27,277 --> 00:09:30,874
+That's it, we can delete books, we can delete Python 101,
+
+185
+00:09:30,874 --> 00:09:32,025
+since that one's not happening,
+
+186
+00:09:32,025 --> 00:09:34,794
+list them again, that's now like that.
+
+187
+00:09:34,794 --> 00:09:38,127
+And of course we can quit and then exit.
+
+188
+00:09:39,639 --> 00:09:42,143
+So that's how you would turn our programme
+
+189
+00:09:42,143 --> 00:09:44,962
+from CSV's over to JSON, and all we've had to do
+
+190
+00:09:44,962 --> 00:09:48,785
+is modify a couple of functions to tell our code now
+
+191
+00:09:48,785 --> 00:09:51,721
+to talk to a JSON instead of saving things
+
+192
+00:09:51,721 --> 00:09:54,705
+manually as strings into the file.
+
+193
+00:09:54,705 --> 00:09:56,867
+Pretty straightforward, and our app.py hasn't had
+
+194
+00:09:56,867 --> 00:10:01,867
+to change basically at all, other than this if there.
+
+195
+00:10:01,940 --> 00:10:02,972
+So that's it for this video.
+
+196
+00:10:02,972 --> 00:10:03,822
+Hope you learned something,
+
+197
+00:10:03,822 --> 00:10:05,572
+and I'll see you on the next one.
+

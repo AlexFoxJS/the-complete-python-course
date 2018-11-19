@@ -1,0 +1,448 @@
+1
+00:00:00,080 --> 00:00:01,200
+Instrutor: Ol e bem vindo de volta.
+
+2
+00:00:01,200 --> 00:00:02,310
+Neste vdeo, vamos
+
+3
+00:00:02,310 --> 00:00:03,957
+ver como retornar mais
+
+4
+00:00:03,957 --> 00:00:06,280
+algumas informaes adicionando outro endpoint e
+
+5
+00:00:06,280 --> 00:00:08,610
+fazendo com que ele nos devolva algo.
+
+6
+00:00:09,710 --> 00:00:11,700
+Nesta seo, vamos criar um
+
+7
+00:00:11,700 --> 00:00:16,700
+aplicativo de postagem, como um aplicativo de blog, mas mais simples.
+
+8
+00:00:16,950 --> 00:00:19,862
+ s armazenar as mensagens
+
+9
+00:00:19,862 --> 00:00:22,451
+que escrevemos e poderemos acessar
+
+10
+00:00:22,451 --> 00:00:24,850
+diferentes postagens usando endpoints.
+
+11
+00:00:26,000 --> 00:00:27,331
+A primeira coisa
+
+12
+00:00:27,331 --> 00:00:29,110
+que vou fazer  criar
+
+13
+00:00:29,110 --> 00:00:31,030
+alguns dados de teste, s
+
+14
+00:00:31,030 --> 00:00:32,920
+porque precisamos comear a ler
+
+15
+00:00:32,920 --> 00:00:35,960
+as postagens e, depois, vamos analisar as postagens.
+
+16
+00:00:37,150 --> 00:00:38,420
+Para poder ler um
+
+17
+00:00:38,420 --> 00:00:40,269
+post,  claro que precisamos
+
+18
+00:00:40,269 --> 00:00:42,550
+de alguns posts para poder l-los e
+
+19
+00:00:42,550 --> 00:00:44,080
+o jeito que eu
+
+20
+00:00:44,080 --> 00:00:46,390
+vou fazer isso  fazer algo assim.
+
+21
+00:00:48,300 --> 00:00:49,730
+Apenas digitando.
+
+22
+00:00:53,730 --> 00:00:56,427
+O que voc tem aqui 
+
+23
+00:00:56,427 --> 00:00:59,070
+posts varivel  uma varivel global
+
+24
+00:00:59,070 --> 00:01:03,700
+e  um dicionrio, um dicionrio que mapeia 0 para o contedo.
+
+25
+00:01:06,970 --> 00:01:08,940
+Este 0 aqui 
+
+26
+00:01:08,940 --> 00:01:11,280
+o ID do post.
+
+27
+00:01:11,280 --> 00:01:13,760
+Esse  um identificador nico para cada postagem.
+
+28
+00:01:13,760 --> 00:01:15,530
+Porque s temos um post, que
+
+29
+00:01:15,530 --> 00:01:17,060
+vai comear em 0, mas
+
+30
+00:01:17,060 --> 00:01:20,060
+depois vai subir para um e depois dois e assim
+
+31
+00:01:20,060 --> 00:01:22,280
+por diante,  medida que adicionamos mais posts.
+
+32
+00:01:22,280 --> 00:01:25,090
+Neste vdeo, porm, s poderemos
+
+33
+00:01:25,090 --> 00:01:26,700
+ler este post.
+
+34
+00:01:26,700 --> 00:01:28,000
+Para fazer
+
+35
+00:01:28,000 --> 00:01:30,200
+isso, vamos criar outro
+
+36
+00:01:31,529 --> 00:01:33,429
+endpoint e, nesse
+
+37
+00:01:35,660 --> 00:01:40,180
+endpoint, vamos fazer o app. route, int: post_id l.
+
+38
+00:01:43,410 --> 00:01:45,050
+O que isso est
+
+39
+00:01:45,050 --> 00:01:48,280
+fazendo agora  definir uma outra rota e
+
+40
+00:01:48,280 --> 00:01:50,390
+associ-la a essa funo aqui.
+
+41
+00:01:50,390 --> 00:01:51,223
+Mas como voc
+
+42
+00:01:51,223 --> 00:01:53,820
+pode ver, h um pouco de sintaxe estranha aqui.
+
+43
+00:01:53,820 --> 00:01:58,520
+Esses clipes de crocodilo, isso termina com os dois pontos e post_id, o
+
+44
+00:01:58,520 --> 00:02:01,510
+que isso vai fazer  que isso ser
+
+45
+00:02:01,510 --> 00:02:05,620
+substitudo por um inteiro, um nmero, que  o ID do post.
+
+46
+00:02:05,620 --> 00:02:09,340
+Por exemplo, quando um usurio envia uma
+
+47
+00:02:09,340 --> 00:02:10,680
+solicitao e tenta
+
+48
+00:02:11,650 --> 00:02:13,870
+acessar / post /
+
+49
+00:02:13,870 --> 00:02:16,610
+0, esse 0 substituir tudo isso.
+
+50
+00:02:16,610 --> 00:02:18,475
+Esta  uma sintaxe nica
+
+51
+00:02:18,475 --> 00:02:21,733
+do Flask que permitir que o 0 substitua
+
+52
+00:02:21,733 --> 00:02:25,870
+essa coisa toda e ento a ID do post ser
+
+53
+00:02:28,250 --> 00:02:30,160
+passada para a nossa funo,
+
+54
+00:02:30,160 --> 00:02:32,320
+como post_id sob esse parmetro.
+
+55
+00:02:32,320 --> 00:02:36,420
+Agora teremos acesso a post_id dentro da funo
+
+56
+00:02:36,420 --> 00:02:39,220
+para recuper-la do nosso dicionrio.
+
+57
+00:02:40,450 --> 00:02:43,080
+Se quisssemos recuperar este post do dicionrio, tudo o que
+
+58
+00:02:43,080 --> 00:02:45,340
+temos a fazer  postar. get (post_id).
+
+59
+00:02:46,610 --> 00:02:48,340
+Ns j vimos esse tipo de sintaxe antes.
+
+60
+00:02:48,340 --> 00:02:51,120
+Tudo o que ele faz  tentar obter
+
+61
+00:02:51,120 --> 00:02:53,090
+do dicionrio algo com essa chave
+
+62
+00:02:53,090 --> 00:02:54,940
+e, se falhar, no retornar nenhuma.
+
+63
+00:02:56,670 --> 00:02:58,580
+Ento, tudo o que estamos fazendo
+
+64
+00:02:58,580 --> 00:03:00,350
+, por exemplo, postar ID
+
+65
+00:03:00,350 --> 00:03:03,110
+0 deste dicionrio, que nos dar esse outro
+
+66
+00:03:03,110 --> 00:03:05,250
+dicionrio e que vai para o post.
+
+67
+00:03:06,960 --> 00:03:09,080
+Ento podemos retornar uma
+
+68
+00:03:09,080 --> 00:03:13,670
+string mais complexa, como por exemplo, postar ttulo,
+
+69
+00:03:15,070 --> 00:03:18,510
+o contedo vai ser postar contedo.
+
+70
+00:03:21,030 --> 00:03:22,380
+Algo assim.
+
+71
+00:03:22,380 --> 00:03:23,950
+Nada terrivelmente complicado.
+
+72
+00:03:23,950 --> 00:03:25,740
+Tudo o que est acontecendo aqui 
+
+73
+00:03:25,740 --> 00:03:28,250
+que estamos recuperando a postagem do nosso dicionrio e,
+
+74
+00:03:28,250 --> 00:03:29,680
+em seguida, estamos retornando uma
+
+75
+00:03:29,680 --> 00:03:31,370
+string que contm o ttulo e
+
+76
+00:03:31,370 --> 00:03:33,540
+o contedo, apenas para que algum que a
+
+77
+00:03:33,540 --> 00:03:34,890
+solicite possa ler a postagem.
+
+78
+00:03:35,920 --> 00:03:38,310
+Mais uma vez, voc deve se acostumar
+
+79
+00:03:38,310 --> 00:03:39,990
+a fazer isso quando estiver
+
+80
+00:03:39,990 --> 00:03:42,320
+desenvolvendo aplicativos maiores, como faremos nesta seo.
+
+81
+00:03:42,320 --> 00:03:44,860
+Certifique-se de apertar o play e test-lo.
+
+82
+00:03:44,860 --> 00:03:48,620
+Tudo o que temos a fazer  voltar para o Chrome,
+
+83
+00:03:48,620 --> 00:03:49,720
+executar o aplicativo.
+
+84
+00:03:49,720 --> 00:03:52,160
+Como voc pode ver, nada muda com o
+
+85
+00:03:52,160 --> 00:03:53,750
+hello world, mas agora podemos
+
+86
+00:03:53,750 --> 00:03:55,150
+acessar o post 0.
+
+87
+00:03:56,480 --> 00:03:58,650
+E a voc tem algum contedo extra.
+
+88
+00:03:58,650 --> 00:03:59,920
+Postar Ol, mundo
+
+89
+00:03:59,920 --> 00:04:03,882
+e o contedo  Essa  minha primeira postagem no blog.
+
+90
+00:04:03,882 --> 00:04:05,840
+O que aprendemos agora  como
+
+91
+00:04:05,840 --> 00:04:09,300
+usar isso no banco de dados de memria, neste dicionrio
+
+92
+00:04:09,300 --> 00:04:10,150
+que est
+
+93
+00:04:10,150 --> 00:04:12,470
+agindo como um banco de dados de
+
+94
+00:04:12,470 --> 00:04:15,250
+memria e retornar algum contedo atravs de um
+
+95
+00:04:15,250 --> 00:04:16,940
+navegador para um usurio.
+
+96
+00:04:16,940 --> 00:04:19,350
+Voc pode ver como, se colocarmos isso
+
+97
+00:04:19,350 --> 00:04:22,930
+l fora, em um servidor que muitas pessoas pudessem acessar,
+
+98
+00:04:22,930 --> 00:04:24,830
+todos poderiam acessar esse endereo
+
+99
+00:04:24,830 --> 00:04:27,490
+usando seus computadores, em toda a Internet.
+
+100
+00:04:27,490 --> 00:04:29,780
+ claro que retornar essa string simples
+
+101
+00:04:29,780 --> 00:04:33,010
+e tambm ter apenas um nico post dentro de nosso
+
+102
+00:04:33,010 --> 00:04:34,820
+cdigo no  muito til.
+
+103
+00:04:34,820 --> 00:04:37,146
+Se adicionarmos um banco de dados e
+
+104
+00:04:37,146 --> 00:04:38,920
+tivermos a capacidade de criar novos
+
+105
+00:04:38,920 --> 00:04:41,790
+posts, de repente isso se tornar muito mais til.
+
+106
+00:04:43,350 --> 00:04:44,230
+ isso para este vdeo.
+
+107
+00:04:44,230 --> 00:04:45,434
+Eu s queria mostrar
+
+108
+00:04:45,434 --> 00:04:47,860
+a voc como devolver as informaes existentes.
+
+109
+00:04:47,860 --> 00:04:49,960
+Vamos ver como podemos definir
+
+110
+00:04:49,960 --> 00:04:51,000
+isso um
+
+111
+00:04:51,000 --> 00:04:53,980
+pouco melhor usando HTML no prximo vdeo.
+
+112
+00:04:53,980 --> 00:04:54,813
+Vejo voc l.
+

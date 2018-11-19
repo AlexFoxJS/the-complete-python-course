@@ -1,0 +1,700 @@
+1
+00:00:00,000 --> 00:00:01,400
+Instrutor: Ol, e bem vindo de volta.
+
+2
+00:00:01,400 --> 00:00:02,770
+Neste vdeo estamos
+
+3
+00:00:02,770 --> 00:00:05,450
+falando de classes e iteradores de geradores.
+
+4
+00:00:06,960 --> 00:00:09,830
+Aqui vou mostrar uma aula que implementa o
+
+5
+00:00:09,830 --> 00:00:13,446
+gerador de 100 nmeros que fizemos no ltimo vdeo.
+
+6
+00:00:13,446 --> 00:00:17,170
+Ento eu vou chamar de FirstHundredGenerator.
+
+7
+00:00:18,513 --> 00:00:22,340
+Assim, e depois vamos definir um mtodo init.
+
+8
+00:00:23,610 --> 00:00:26,450
+O que vai apenas iniciar o nmero
+
+9
+00:00:27,547 --> 00:00:30,378
+como zero e, em seguida, vamos definir
+
+10
+00:00:30,378 --> 00:00:32,770
+um prximo underscore, sublinhado, prximo mtodo.
+
+11
+00:00:32,770 --> 00:00:36,030
+Quando voc define um prximo mtodo em uma
+
+12
+00:00:36,030 --> 00:00:41,030
+classe, qualquer objeto que voc pode chamar prximo do meu objeto, assim.
+
+13
+00:00:41,320 --> 00:00:43,260
+Ento, isso  novamente, um mtodo dunder
+
+14
+00:00:43,260 --> 00:00:45,380
+que permite que voc chame o prximo nele.
+
+15
+00:00:45,380 --> 00:00:47,320
+Tambm diz ao Python algo muito importante.
+
+16
+00:00:47,320 --> 00:00:49,800
+Vamos ver isso daqui a pouco.
+
+17
+00:00:49,800 --> 00:00:53,270
+Ento, se quisssemos gerar 100 nmeros, tudo o que
+
+18
+00:00:54,610 --> 00:00:58,770
+temos a fazer  obter auto. nmero, devolv-lo
+
+19
+00:00:58,770 --> 00:01:02,110
+e increment-lo por um.
+
+20
+00:01:02,110 --> 00:01:04,880
+Ento, se eu. nmero  menor que 100,
+
+21
+00:01:04,880 --> 00:01:06,930
+no vamos usar a palavra-chave yield aqui,
+
+22
+00:01:06,930 --> 00:01:09,880
+a propsito, porque voc no precisa de um gerador de classes.
+
+23
+00:01:11,120 --> 00:01:14,280
+Desculpe, em uma dessas coisas. (risos) S no
+
+24
+00:01:14,280 --> 00:01:16,970
+vou dizer nada que possa
+
+25
+00:01:16,970 --> 00:01:19,100
+ser mal interpretado como errado.
+
+26
+00:01:20,237 --> 00:01:22,910
+S para no te confundir.
+
+27
+00:01:22,910 --> 00:01:25,540
+O que fazer , se o nmero
+
+28
+00:01:25,540 --> 00:01:27,110
+for menor que 100,
+
+29
+00:01:28,010 --> 00:01:31,980
+ns colocamos isso em uma varivel, ento incrementamos o nmero em
+
+30
+00:01:33,150 --> 00:01:35,640
+um, e ento retornamos o nmero atual,
+
+31
+00:01:35,640 --> 00:01:37,410
+que era o valor anterior,
+
+32
+00:01:37,410 --> 00:01:38,520
+ento  zero.
+
+33
+00:01:38,520 --> 00:01:42,010
+Ns aumentamos a auto. nmero por um, retornamos zero.
+
+34
+00:01:42,010 --> 00:01:42,843
+OK.
+
+35
+00:01:44,340 --> 00:01:46,130
+Agora importante na classe,
+
+36
+00:01:46,130 --> 00:01:47,980
+temos que, se queremos
+
+37
+00:01:47,980 --> 00:01:49,220
+parar de retornar
+
+38
+00:01:50,200 --> 00:01:53,800
+nmeros, assim, no estamos usando um loop aqui
+
+39
+00:01:53,800 --> 00:01:57,560
+para nos parar quando chegarmos a 100.
+
+40
+00:01:57,560 --> 00:02:00,950
+Ento, quando chegarmos a 100, temos que
+
+41
+00:02:00,950 --> 00:02:04,400
+lanar um erro especial chamado Stop Iteration.
+
+42
+00:02:04,400 --> 00:02:06,720
+Parar erro de iterao informa
+
+43
+00:02:06,720 --> 00:02:10,130
+ao Python que chegamos ao final desse gerador.
+
+44
+00:02:11,540 --> 00:02:15,610
+Estou dizendo gerador e estou vacilando um pouco, hum aqui.
+
+45
+00:02:15,610 --> 00:02:19,690
+Como esse  essencialmente um gerador, voc comea
+
+46
+00:02:19,690 --> 00:02:21,020
+no zero, depois
+
+47
+00:02:22,500 --> 00:02:27,080
+decide se deseja retornar um novo nmero, obtm esse nmero,
+
+48
+00:02:28,620 --> 00:02:31,060
+depois o retorna e, em
+
+49
+00:02:31,060 --> 00:02:33,070
+seguida, o programa pra.
+
+50
+00:02:33,070 --> 00:02:37,080
+Mas seu objeto permanece e ele se lembra de si mesmo. nmero.
+
+51
+00:02:37,080 --> 00:02:41,120
+Ento, se tivermos meu gen, e esse  nosso
+
+52
+00:02:41,120 --> 00:02:42,610
+primeiro cem gerador l.
+
+53
+00:02:42,610 --> 00:02:45,477
+Meu gen. nmero 
+
+54
+00:02:45,477 --> 00:02:47,590
+claro zero no incio.
+
+55
+00:02:48,450 --> 00:02:49,283
+Certo?
+
+56
+00:02:50,559 --> 00:02:52,230
+Vamos te mostrar isso.
+
+57
+00:02:52,230 --> 00:02:54,760
+Meu gen o nmero zero no comeo.
+
+58
+00:02:54,760 --> 00:02:58,430
+Se voc fizer o meu gen. prximo como assim, e
+
+59
+00:02:58,430 --> 00:02:59,650
+depois imprimir o
+
+60
+00:02:59,650 --> 00:03:02,120
+meu gen. nmero novamente, voc
+
+61
+00:03:04,260 --> 00:03:05,190
+ganha um.
+
+62
+00:03:05,190 --> 00:03:06,220
+Isso faz sentido certo?
+
+63
+00:03:06,220 --> 00:03:09,010
+Porque o prximo mtodo aqui  verificar se o nmero
+
+64
+00:03:09,010 --> 00:03:10,240
+ menor que 100 e,
+
+65
+00:03:10,240 --> 00:03:11,640
+em seguida, increment-lo em um.
+
+66
+00:03:13,530 --> 00:03:15,150
+Ento, tudo isso faz sentido.
+
+67
+00:03:15,150 --> 00:03:17,810
+Agora, para fazer com que se comporte
+
+68
+00:03:18,880 --> 00:03:22,410
+como um gerador, acabamos de dizer o prximo da minha
+
+69
+00:03:22,410 --> 00:03:23,243
+gerao, assim.
+
+70
+00:03:24,270 --> 00:03:27,120
+Ento podemos rodar isso de novo, e a mesma coisa sai.
+
+71
+00:03:28,560 --> 00:03:30,770
+ claro que o prximo
+
+72
+00:03:30,770 --> 00:03:35,740
+da minha gerao est retornando o nmero que tinha antes de increment-lo.
+
+73
+00:03:35,740 --> 00:03:38,980
+Ento, ao invs de imprimir meu gen. nmero aqui, podemos apenas imprimir
+
+74
+00:03:40,060 --> 00:03:43,150
+na prxima gerao, e aqui tambm podemos imprimir o
+
+75
+00:03:43,150 --> 00:03:45,630
+prximo da minha gerao, e obteremos a
+
+76
+00:03:45,630 --> 00:03:47,660
+mesma sada, zero e um.
+
+77
+00:03:47,660 --> 00:03:49,970
+A primeira vez que chamamos a seguir, obtemos o
+
+78
+00:03:49,970 --> 00:03:53,740
+valor atual, que  zero, mas aumentamos. nmero por um.
+
+79
+00:03:53,740 --> 00:03:55,340
+Da prxima vez que ligamos
+
+80
+00:03:55,340 --> 00:03:57,830
+para o prximo, ns aumentamos novamente esse nmero
+
+81
+00:03:57,830 --> 00:04:00,500
+em um, mas retornamos o valor anterior, que  um.
+
+82
+00:04:01,470 --> 00:04:03,730
+Ento agora isso est se comportando exatamente como
+
+83
+00:04:03,730 --> 00:04:06,100
+um gerador e, na verdade, isso  um gerador.
+
+84
+00:04:06,100 --> 00:04:09,320
+No est armazenando todos os valores at 100 em uma lista.
+
+85
+00:04:09,320 --> 00:04:10,990
+Est dando a eles um por um.
+
+86
+00:04:10,990 --> 00:04:14,520
+Est gerando-os como voc chama a prxima funo.
+
+87
+00:04:15,390 --> 00:04:16,870
+Desculpe, o prximo mtodo.
+
+88
+00:04:16,870 --> 00:04:19,820
+A propsito, dunder next  novo em Python trs.
+
+89
+00:04:19,820 --> 00:04:21,070
+Ento, se voc estiver
+
+90
+00:04:21,070 --> 00:04:24,410
+usando o Python dois, ter que definir o prximo sem o sublinhado.
+
+91
+00:04:24,410 --> 00:04:25,690
+Isso  apenas para o Python dois.
+
+92
+00:04:25,690 --> 00:04:28,760
+Se voc estiver usando o Python, use trs dunder a seguir.
+
+93
+00:04:30,142 --> 00:04:30,975
+Ok, todos
+
+94
+00:04:31,820 --> 00:04:35,620
+os objetos que possuem este mtodo dunder next so
+
+95
+00:04:35,620 --> 00:04:37,240
+chamados de iteradores.
+
+96
+00:04:39,030 --> 00:04:41,740
+Todos os geradores, como este, so iteradores,
+
+97
+00:04:41,740 --> 00:04:43,500
+mas no o contrrio.
+
+98
+00:04:43,500 --> 00:04:46,941
+Ento voc pode ter iteradores que no geram nmeros.
+
+99
+00:04:46,941 --> 00:04:50,180
+Por exemplo, se voc modificar seu primeiro
+
+100
+00:04:50,180 --> 00:04:53,860
+gerador de nmeros para retornar parte de uma
+
+101
+00:04:53,860 --> 00:04:57,490
+lista como, primeiro cem iterador, no gerador, voc
+
+102
+00:04:57,490 --> 00:05:00,300
+pode ter um mtodo init aqui,
+
+103
+00:05:00,300 --> 00:05:02,470
+que diz auto. nmeros , um,
+
+104
+00:05:04,450 --> 00:05:06,090
+dois, trs, quatro, cinco.
+
+105
+00:05:06,090 --> 00:05:08,000
+Obviamente no , no primeiro
+
+106
+00:05:08,000 --> 00:05:11,450
+cem, que  primeiro cinco iterador, eu sou zero.
+
+107
+00:05:13,240 --> 00:05:15,160
+Ento esse  o ndice que voc vai comear a retornar.
+
+108
+00:05:15,160 --> 00:05:16,900
+Zero, e os nmeros que estamos
+
+109
+00:05:16,900 --> 00:05:18,470
+retornando so de um a cinco.
+
+110
+00:05:18,470 --> 00:05:23,110
+Ento, novamente, o prximo mtodo aqui vai dizer se eu for
+
+111
+00:05:23,110 --> 00:05:26,610
+menos do que auto. nmeros, retorne
+
+112
+00:05:28,160 --> 00:05:30,080
+eu. nmeros I.
+
+113
+00:05:31,970 --> 00:05:32,803
+Certo?
+
+114
+00:05:32,803 --> 00:05:35,490
+Else raise stop iteration.
+
+115
+00:05:35,490 --> 00:05:37,890
+Desculpe, voc no pode ver isso muito bem, mas
+
+116
+00:05:37,890 --> 00:05:38,723
+l vamos ns.
+
+117
+00:05:40,190 --> 00:05:42,770
+Ento, tudo o que estamos fazendo aqui  que no geramos nada.
+
+118
+00:05:42,770 --> 00:05:44,960
+Estamos dizendo que se eu for menor
+
+119
+00:05:44,960 --> 00:05:48,700
+do que, a propsito, temos que,  claro, temos que fazer isso,
+
+120
+00:05:48,700 --> 00:05:50,140
+eu mais igual a
+
+121
+00:05:51,180 --> 00:05:52,850
+um e retornar a corrente.
+
+122
+00:05:52,850 --> 00:05:54,730
+Temos que incrementar um, e
+
+123
+00:05:54,730 --> 00:05:56,930
+temos que incrementar um por um.
+
+124
+00:05:58,090 --> 00:06:00,590
+Mais uma vez, no estamos gerando novos nmeros.
+
+125
+00:06:01,540 --> 00:06:04,270
+Estamos mantendo o controle de eu, o ndice que estamos atualmente,
+
+126
+00:06:04,270 --> 00:06:06,830
+voc tem que fazer isso de alguma forma para isso,
+
+127
+00:06:06,830 --> 00:06:08,780
+isso deve ser auto. Eu pelo caminho.
+
+128
+00:06:08,780 --> 00:06:11,820
+Voc pode dizer que eu no preparei este exemplo, mas
+
+129
+00:06:11,820 --> 00:06:13,230
+eu queria mostrar rapidamente que
+
+130
+00:06:13,230 --> 00:06:15,590
+nem todos os geradores, nem todos os iteradores,
+
+131
+00:06:15,590 --> 00:06:16,880
+precisam ser geradores.
+
+132
+00:06:16,880 --> 00:06:19,050
+Nesse caso, voc no est gerando os nmeros,
+
+133
+00:06:19,050 --> 00:06:21,085
+voc os est retornando de uma lista.
+
+134
+00:06:21,085 --> 00:06:23,600
+Ento, apenas um exemplo rpido l.
+
+135
+00:06:23,600 --> 00:06:26,340
+Voc ter isso no cdigo de exemplo da
+
+136
+00:06:26,340 --> 00:06:28,190
+seo, se me lembrar de adicion-lo.
+
+137
+00:06:28,190 --> 00:06:33,190
+Ento, aqui, o que fazemos quando definimos o prximo mtodo,
+
+138
+00:06:33,560 --> 00:06:35,040
+definimos um iterador,
+
+139
+00:06:35,040 --> 00:06:38,260
+algo que voc pode passar um por
+
+140
+00:06:38,260 --> 00:06:40,938
+um, chamando a prxima funo.
+
+141
+00:06:40,938 --> 00:06:44,000
+Ele no precisa necessariamente gerar todos os seus nmeros, mas pode,
+
+142
+00:06:44,000 --> 00:06:46,890
+mas, novamente, ele tambm pode retorn-los de uma lista, de um
+
+143
+00:06:46,890 --> 00:06:48,540
+envio ou de qualquer outro lugar.
+
+144
+00:06:49,980 --> 00:06:52,620
+Ento, em Python  importante.
+
+145
+00:06:52,620 --> 00:06:56,160
+Iteradores so aqueles objetos que
+
+146
+00:06:56,160 --> 00:06:59,110
+possuem um prximo mtodo dunder.
+
+147
+00:06:59,110 --> 00:07:01,530
+Voc pode ligar em seguida para eles.
+
+148
+00:07:01,530 --> 00:07:04,400
+Ns nos temos um iterador,
+
+149
+00:07:04,400 --> 00:07:05,750
+mas no podemos
+
+150
+00:07:05,750 --> 00:07:07,630
+fazer por eu em
+
+151
+00:07:07,630 --> 00:07:09,020
+meu gen, em
+
+152
+00:07:09,960 --> 00:07:11,440
+meu gen.
+
+153
+00:07:14,720 --> 00:07:15,670
+Voc no pode fazer isso.
+
+154
+00:07:15,670 --> 00:07:17,220
+Deixe-me dizer isso agora.
+
+155
+00:07:18,460 --> 00:07:22,070
+Se executarmos isso, voc receber um erro que diz:
+
+156
+00:07:22,070 --> 00:07:24,800
+primeiro, 100 objetos geradores no so iterveis,
+
+157
+00:07:25,750 --> 00:07:29,930
+mas eu disse que  um iterador e  um iterador.
+
+158
+00:07:29,930 --> 00:07:31,760
+O que um iterador significa  que
+
+159
+00:07:31,760 --> 00:07:33,280
+voc pode chamar a prxima
+
+160
+00:07:33,280 --> 00:07:35,550
+funo, e isso lhe dar o prximo valor.
+
+161
+00:07:35,550 --> 00:07:39,600
+Mas um iterador e um itervel so coisas diferentes.
+
+162
+00:07:39,600 --> 00:07:41,600
+Voc pode iterar por um itervel e
+
+163
+00:07:42,840 --> 00:07:45,820
+o iterador  usado para obter o prximo valor de
+
+164
+00:07:45,820 --> 00:07:47,870
+uma sequncia ou de valores gerados.
+
+165
+00:07:49,020 --> 00:07:52,160
+Ento, o que temos aqui 
+
+166
+00:07:52,160 --> 00:07:54,430
+um iterador e no itervel.
+
+167
+00:07:54,430 --> 00:07:56,200
+Ns vamos aprender no prximo vdeo
+
+168
+00:07:56,200 --> 00:07:57,760
+como criar um itervel, para
+
+169
+00:07:57,760 --> 00:07:59,470
+que possamos passar por cima disso,
+
+170
+00:07:59,470 --> 00:08:02,490
+ou de fato fazer coisas como a soma de minha gerao,
+
+171
+00:08:02,490 --> 00:08:05,800
+ou voc sabe, o que quer que seja que voc queira fazer.
+
+172
+00:08:05,800 --> 00:08:07,230
+Lista do meu gen.
+
+173
+00:08:07,230 --> 00:08:11,600
+Essas coisas aqui precisam de um itervel e no de um iterador.
+
+174
+00:08:11,600 --> 00:08:13,820
+Ento vamos fazer isso no prximo vdeo.
+
+175
+00:08:13,820 --> 00:08:14,770
+Eu te vejo l.
+

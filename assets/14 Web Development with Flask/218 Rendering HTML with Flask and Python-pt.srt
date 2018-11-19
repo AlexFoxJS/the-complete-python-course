@@ -1,0 +1,532 @@
+1
+00:00:00,070 --> 00:00:01,140
+Jos: Ol, bem vindo de volta.
+
+2
+00:00:01,140 --> 00:00:03,220
+Neste vdeo, vamos criar nosso
+
+3
+00:00:03,220 --> 00:00:05,990
+primeiro arquivo HTML e retorn-lo para nossos
+
+4
+00:00:05,990 --> 00:00:09,140
+usurios, em vez de uma string simples.
+
+5
+00:00:10,280 --> 00:00:11,870
+Quando voc cria um aplicativo
+
+6
+00:00:11,870 --> 00:00:15,530
+Flask, o Flask comea a procurar por uma pasta de modelos.
+
+7
+00:00:15,530 --> 00:00:18,200
+Ento, vamos criar um novo diretrio e cham-lo de modelos, e
+
+8
+00:00:18,200 --> 00:00:22,300
+isso tem que estar ao lado do aplicativo. py.
+
+9
+00:00:22,300 --> 00:00:25,130
+Ento, na mesma pasta que o app. py , bem,
+
+10
+00:00:25,130 --> 00:00:28,200
+observe como estes so ambos na mesma pasta.
+
+11
+00:00:28,200 --> 00:00:32,730
+Agora voc pode dizer ao app. py, seu aplicativo Flask, para
+
+12
+00:00:32,730 --> 00:00:35,983
+retornar algum arquivo HTML que est dentro
+
+13
+00:00:35,983 --> 00:00:38,180
+desta pasta de templates.
+
+14
+00:00:38,180 --> 00:00:39,890
+Primeiro de tudo, vamos
+
+15
+00:00:39,890 --> 00:00:43,760
+criar nosso arquivo HTML e depois vamos devolv-lo.
+
+16
+00:00:43,760 --> 00:00:45,580
+Ento, vamos criar um novo arquivo.
+
+17
+00:00:46,540 --> 00:00:49,490
+Ns vamos cham-lo, POST. HTML, por exemplo.
+
+18
+00:00:51,340 --> 00:00:54,020
+Isso pode conter qualquer HTML que voc quiser.
+
+19
+00:00:54,020 --> 00:00:56,210
+Ento, vamos comear com algum HTML bsico.
+
+20
+00:00:57,970 --> 00:01:02,970
+Todo o HTML tem que ter um DOCTYPE de HTML que diz que
+
+21
+00:01:03,100 --> 00:01:06,770
+ HTML cinco, e ento voc pode ter uma cabea
+
+22
+00:01:08,190 --> 00:01:09,420
+e um corpo.
+
+23
+00:01:09,420 --> 00:01:11,600
+E no corpo voc pode ter seu contedo HTML.
+
+24
+00:01:11,600 --> 00:01:14,400
+Ento, isso  basicamente a estrutura bsica do
+
+25
+00:01:14,400 --> 00:01:16,790
+HTML, diz ao navegador que recebe o
+
+26
+00:01:16,790 --> 00:01:21,790
+arquivo que este  um arquivo HTML e ento tem o contedo HTML dentro dele.
+
+27
+00:01:21,820 --> 00:01:25,210
+H uma cabea, que pode incluir coisas como estilos e scripts
+
+28
+00:01:25,210 --> 00:01:26,580
+java e coisas assim, coisas
+
+29
+00:01:26,580 --> 00:01:28,350
+que o usurio no vai ver,
+
+30
+00:01:28,350 --> 00:01:30,120
+mas que podem mudar a pgina.
+
+31
+00:01:30,120 --> 00:01:33,630
+E no corpo, esto as coisas que o usurio ver.
+
+32
+00:01:33,630 --> 00:01:35,700
+Ento aqui no corpo, podemos
+
+33
+00:01:35,700 --> 00:01:38,220
+colocar, por exemplo, h1, Hello, world.
+
+34
+00:01:39,300 --> 00:01:42,020
+E ento podemos ter uma tag p, que 
+
+35
+00:01:42,020 --> 00:01:45,820
+uma tag de pargrafo, dizendo: "Esse  meu primeiro post, por exemplo".
+
+36
+00:01:47,590 --> 00:01:49,470
+Agora temos esse arquivo HTML post dot.
+
+37
+00:01:49,470 --> 00:01:54,300
+Podemos voltar ao aplicativo. py, e diga ao nosso ponto
+
+38
+00:01:54,300 --> 00:01:57,210
+final, aqui, essa raiz, para renderizar esse
+
+39
+00:01:57,210 --> 00:01:59,410
+template e retorn-lo ao usurio.
+
+40
+00:01:59,410 --> 00:02:01,300
+Ns vamos ter que importar outra coisa do Flask.
+
+41
+00:02:01,300 --> 00:02:02,260
+Ns vamos
+
+42
+00:02:02,260 --> 00:02:06,160
+fazer do Flask, import Flask, comma render_template.
+
+43
+00:02:07,330 --> 00:02:10,010
+Ento, ao invs de retornar essa string
+
+44
+00:02:10,010 --> 00:02:14,470
+aqui, vamos retornar, render_template do post. HTML
+
+45
+00:02:16,630 --> 00:02:18,650
+Ok, observe como ainda no
+
+46
+00:02:18,650 --> 00:02:20,090
+usamos nossa varivel POST.
+
+47
+00:02:20,090 --> 00:02:22,110
+Ns vamos fazer isso em apenas um momento.
+
+48
+00:02:22,110 --> 00:02:24,450
+Por enquanto, vamos executar o aplicativo e garantir
+
+49
+00:02:24,450 --> 00:02:25,610
+que tudo esteja funcionando.
+
+50
+00:02:25,610 --> 00:02:28,100
+Ento, o aplicativo funciona bem.
+
+51
+00:02:28,100 --> 00:02:30,430
+E se passarmos para a URL que tnhamos antes
+
+52
+00:02:30,430 --> 00:02:32,550
+e atualizarmos a pgina, agora voc pode ver
+
+53
+00:02:32,550 --> 00:02:34,150
+que ela parece um pouco diferente.
+
+54
+00:02:34,150 --> 00:02:36,570
+Ns temos agora um ttulo, que  este
+
+55
+00:02:36,570 --> 00:02:38,950
+pedao maior de texto, que diz: Ol, mundo.
+
+56
+00:02:38,950 --> 00:02:42,380
+E ns temos, este  o meu primeiro post, em um pargrafo.
+
+57
+00:02:42,380 --> 00:02:44,230
+Isso est parecendo um pouco melhor,
+
+58
+00:02:44,230 --> 00:02:46,850
+porque agora  um arquivo HTML, ao contrrio
+
+59
+00:02:46,850 --> 00:02:49,560
+de apenas uma string que vem do nosso servidor.
+
+60
+00:02:49,560 --> 00:02:53,070
+Voltando ao PyCharm, agora podemos parar o
+
+61
+00:02:53,070 --> 00:02:55,920
+aplicativo, escond-lo e voltar para c.
+
+62
+00:02:55,920 --> 00:02:58,070
+E agora usaremos nossa postagem para
+
+63
+00:02:58,070 --> 00:03:01,730
+nos certificarmos de que estamos exibindo essas informaes em nossa
+
+64
+00:03:01,730 --> 00:03:05,240
+pgina, em vez do contedo esttico de nossa pgina HTML.
+
+65
+00:03:06,970 --> 00:03:10,010
+Dentro de uma pgina HTML que 
+
+66
+00:03:10,010 --> 00:03:12,740
+renderizada com o Flask, podemos incluir variveis.
+
+67
+00:03:15,390 --> 00:03:19,210
+Por exemplo, podemos incluir o ttulo do post.
+
+68
+00:03:20,942 --> 00:03:24,160
+E observe como eu usei chaves duplas, ento
+
+69
+00:03:24,160 --> 00:03:26,910
+usei isso como se fosse um dicionrio,
+
+70
+00:03:26,910 --> 00:03:30,250
+e depois fiz as duas chaves de fechamento.
+
+71
+00:03:30,250 --> 00:03:32,630
+O Jinja2  construdo sobre o Python e
+
+72
+00:03:32,630 --> 00:03:34,070
+tem muito da mesma sintaxe.
+
+73
+00:03:34,070 --> 00:03:36,720
+Ento, o que estamos fazendo aqui 
+
+74
+00:03:36,720 --> 00:03:38,950
+passarmos para este modelo um dicionrio
+
+75
+00:03:38,950 --> 00:03:41,300
+chamado POST, e o template poder
+
+76
+00:03:41,300 --> 00:03:45,170
+substituir isso para o que quer que isso avalie.
+
+77
+00:03:45,170 --> 00:03:47,090
+O ttulo do POST, provavelmente.
+
+78
+00:03:47,090 --> 00:03:48,170
+Da mesma forma, aqui,
+
+79
+00:03:49,860 --> 00:03:51,120
+o contedo do POST.
+
+80
+00:03:53,370 --> 00:03:55,300
+Agora, esse modelo vai olhar
+
+81
+00:03:55,300 --> 00:03:58,040
+a varivel POST e tentar obter o ttulo
+
+82
+00:03:58,040 --> 00:04:01,640
+e o contedo dele para renderizar o modelo com eles.
+
+83
+00:04:01,640 --> 00:04:04,550
+Mas  claro, devemos dar a varivel
+
+84
+00:04:04,550 --> 00:04:06,760
+POST que ela ir procurar.
+
+85
+00:04:06,760 --> 00:04:11,570
+Ento, dentro de render_template, depois do nome
+
+86
+00:04:11,570 --> 00:04:15,840
+do template, podemos passar argumentos nomeados, assim.
+
+87
+00:04:15,840 --> 00:04:20,840
+Este argumento nomeado do POST se tornar este POST aqui.
+
+88
+00:04:22,330 --> 00:04:25,040
+E este POST aqui,  claro,  o
+
+89
+00:04:25,040 --> 00:04:30,040
+valor do argumento que  o que recuperamos de nossa base de dados na memria.
+
+90
+00:04:30,210 --> 00:04:32,990
+Para tornar as coisas mais simples,
+
+91
+00:04:32,990 --> 00:04:36,190
+poderamos simplesmente excluir isso e coloc-lo l.
+
+92
+00:04:36,190 --> 00:04:39,460
+E assim, estamos dizendo que o POST no
+
+93
+00:04:39,460 --> 00:04:43,800
+template ser esse valor, posts. get de post_id.
+
+94
+00:04:43,800 --> 00:04:45,320
+E o que vai acontecer  que
+
+95
+00:04:45,320 --> 00:04:46,820
+vamos recuperar isso do nosso banco de
+
+96
+00:04:46,820 --> 00:04:49,190
+dados, vamos pass-lo para o modelo com o nome, POST.
+
+97
+00:04:49,190 --> 00:04:51,670
+O modelo pode usar esse
+
+98
+00:04:51,670 --> 00:04:55,900
+nome para acessar as propriedades e substituir o contedo.
+
+99
+00:04:57,480 --> 00:04:58,950
+Vamos executar o aplicativo novamente.
+
+100
+00:04:58,950 --> 00:05:01,770
+By the way, como um aparte, lembre-se de parar
+
+101
+00:05:01,770 --> 00:05:05,050
+o seu aplicativo toda vez que voc quiser fazer outra coisa.
+
+102
+00:05:05,050 --> 00:05:08,070
+O frasco no funciona bem se voc esquecer de parar o aplicativo.
+
+103
+00:05:08,070 --> 00:05:09,915
+OK? Apenas lembre-se de parar.
+
+104
+00:05:09,915 --> 00:05:11,160
+Eu no mencionei isso antes.
+
+105
+00:05:11,160 --> 00:05:12,100
+Me desculpe.
+
+106
+00:05:12,100 --> 00:05:14,330
+Lembre-se de parar seu aplicativo depois de
+
+107
+00:05:14,330 --> 00:05:16,230
+cada vez que voc quiser reinici-lo,
+
+108
+00:05:16,230 --> 00:05:17,670
+porque se no, ele no
+
+109
+00:05:17,670 --> 00:05:21,390
+vai deixar voc, porque o aplicativo est usando este nmero, 5.000, para comunicao.
+
+110
+00:05:21,390 --> 00:05:22,880
+E se voc tentar iniciar o aplicativo
+
+111
+00:05:22,880 --> 00:05:24,530
+duas vezes, ambos tentaro usar o mesmo
+
+112
+00:05:24,530 --> 00:05:26,600
+nmero para se comunicar e no vo gostar disso.
+
+113
+00:05:26,600 --> 00:05:27,720
+Portanto, certifique-se de interromper seu
+
+114
+00:05:27,720 --> 00:05:29,320
+aplicativo todas as vezes e reinicie-o.
+
+115
+00:05:30,200 --> 00:05:32,710
+Agora, voltando ao Chrome, podemos atualizar a
+
+116
+00:05:32,710 --> 00:05:35,370
+pgina e perceber como ela mudar muito pouco.
+
+117
+00:05:35,370 --> 00:05:37,750
+Agora diz: Este  o meu primeiro post no blog.
+
+118
+00:05:37,750 --> 00:05:40,560
+Ao contrrio, este  meu primeiro post, o que eu disse antes.
+
+119
+00:05:40,560 --> 00:05:42,270
+Isso porque esse
+
+120
+00:05:42,270 --> 00:05:46,230
+contedo agora est vindo daqui, nosso dicionrio.
+
+121
+00:05:46,230 --> 00:05:49,650
+Parando o aplicativo novamente e ocultando isso.
+
+122
+00:05:49,650 --> 00:05:52,570
+Isso ocorre porque aqui estamos passando essas informaes
+
+123
+00:05:52,570 --> 00:05:54,840
+para o modelo para que ele
+
+124
+00:05:54,840 --> 00:05:58,300
+possa renderiz-lo antes de envi-lo de volta para o navegador.
+
+125
+00:05:59,640 --> 00:06:02,730
+Isso  realmente importante, porque agora podemos incorporar as
+
+126
+00:06:02,730 --> 00:06:06,130
+coisas em um modelo, fazer com que parea no apenas
+
+127
+00:06:06,130 --> 00:06:08,130
+agradvel, mas tambm incluir as informaes
+
+128
+00:06:08,130 --> 00:06:10,350
+que desejamos em nossos programas em Python.
+
+129
+00:06:11,610 --> 00:06:13,860
+Nos prximos vdeos, vamos analisar a
+
+130
+00:06:13,860 --> 00:06:16,500
+funcionalidade do link de extenso e, claro,
+
+131
+00:06:16,500 --> 00:06:18,870
+adicionar novas postagens para que o programa
+
+132
+00:06:18,870 --> 00:06:21,410
+possa se tornar mais e mais dinmico.
+
+133
+00:06:21,410 --> 00:06:23,160
+E eu vejo voc no prximo vdeo.
+

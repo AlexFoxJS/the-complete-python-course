@@ -1,0 +1,1020 @@
+1
+00:00:00,000 --> 00:00:01,110
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,110 --> 00:00:01,970
+In this video we will be going
+
+3
+00:00:01,970 --> 00:00:04,880
+to look at adding error pages.
+
+4
+00:00:04,880 --> 00:00:08,290
+If we run our app and we go back to Chrome,
+
+5
+00:00:08,290 --> 00:00:12,230
+we can refresh and see that this still works.
+
+6
+00:00:12,230 --> 00:00:14,220
+But if we change this to post number one
+
+7
+00:00:14,220 --> 00:00:17,590
+for example, it does not.
+
+8
+00:00:17,590 --> 00:00:21,010
+It just sort of breaks and nothing really happens.
+
+9
+00:00:23,360 --> 00:00:24,800
+What we're seeing here
+
+10
+00:00:24,800 --> 00:00:27,660
+is that there is no content
+
+11
+00:00:27,660 --> 00:00:30,590
+to be put in here in the template
+
+12
+00:00:31,840 --> 00:00:34,170
+so instead of you know getting a page
+
+13
+00:00:34,170 --> 00:00:36,670
+that says we can't find this post,
+
+14
+00:00:36,670 --> 00:00:38,720
+what we're getting is nothing.
+
+15
+00:00:40,170 --> 00:00:42,100
+This is not great so let's stop our app,
+
+16
+00:00:42,100 --> 00:00:43,650
+remember to stop your app every time
+
+17
+00:00:43,650 --> 00:00:44,880
+and hide this away
+
+18
+00:00:44,880 --> 00:00:46,150
+and what we're going to do is,
+
+19
+00:00:46,150 --> 00:00:49,070
+if we can't find the post in our database
+
+20
+00:00:49,070 --> 00:00:51,490
+which is our dictionary here, we're going to return
+
+21
+00:00:51,490 --> 00:00:54,590
+a different template which is going to be an error page
+
+22
+00:00:54,590 --> 00:00:56,240
+or a not found page.
+
+23
+00:00:57,760 --> 00:00:59,200
+So again we're going to extract
+
+24
+00:00:59,200 --> 00:01:00,860
+this back to a variable just because
+
+25
+00:01:00,860 --> 00:01:03,640
+we need to use it in multiple places now.
+
+26
+00:01:03,640 --> 00:01:05,190
+We're going to say post is that
+
+27
+00:01:06,790 --> 00:01:09,680
+and if not post,
+
+28
+00:01:09,680 --> 00:01:12,420
+remember post will be none
+
+29
+00:01:12,420 --> 00:01:15,620
+if it is not found because the get method returns none
+
+30
+00:01:15,620 --> 00:01:17,470
+if it wasn't found in the dictionary.
+
+31
+00:01:18,550 --> 00:01:21,370
+So post will evaluate to true
+
+32
+00:01:21,370 --> 00:01:25,890
+if it is something and to false if it is none.
+
+33
+00:01:25,890 --> 00:01:28,690
+Not false will be true.
+
+34
+00:01:28,690 --> 00:01:31,086
+So then we will run this if statement,
+
+35
+00:01:31,086 --> 00:01:33,000
+so if the post was not found,
+
+36
+00:01:33,000 --> 00:01:35,230
+we will run the if statement.
+
+37
+00:01:35,230 --> 00:01:36,430
+Just gonna run a wee comment here
+
+38
+00:01:36,430 --> 00:01:38,980
+to make this a bit clearer.
+
+39
+00:01:38,980 --> 00:01:42,290
+Post will be none if not found,
+
+40
+00:01:42,290 --> 00:01:46,110
+not none evaluates to true
+
+41
+00:01:46,110 --> 00:01:48,220
+because none evaluates to false
+
+42
+00:01:48,220 --> 00:01:50,360
+and as you know, the if statement only runs
+
+43
+00:01:50,360 --> 00:01:51,960
+when the condition here is true
+
+44
+00:01:51,960 --> 00:01:53,760
+so if this was not found,
+
+45
+00:01:53,760 --> 00:01:54,650
+we want to run
+
+46
+00:01:55,550 --> 00:01:56,650
+return render template
+
+47
+00:01:57,961 --> 00:02:00,550
+and we're going to do a 404 dot HTML page.
+
+48
+00:02:02,130 --> 00:02:05,240
+And then we're gonna pass it in a message to say,
+
+49
+00:02:05,240 --> 00:02:08,973
+something like, a post with ID, post ID,
+
+50
+00:02:08,973 --> 00:02:12,680
+was not found, okay?
+
+51
+00:02:12,680 --> 00:02:16,450
+And of course down here, post is going to be equal to post
+
+52
+00:02:16,450 --> 00:02:18,100
+which is what we created up here.
+
+53
+00:02:19,340 --> 00:02:21,950
+Notice that there is a grey squiggly line,
+
+54
+00:02:21,950 --> 00:02:23,040
+that's because the variable has
+
+55
+00:02:23,040 --> 00:02:24,960
+the same name as the function,
+
+56
+00:02:24,960 --> 00:02:28,290
+not a great convention, this is my bad,
+
+57
+00:02:28,290 --> 00:02:30,720
+I don't recommend naming the function and the variables
+
+58
+00:02:30,720 --> 00:02:33,560
+the same way, but it's normally fine.
+
+59
+00:02:33,560 --> 00:02:35,260
+It's only not fine if you wanna call
+
+60
+00:02:35,260 --> 00:02:36,760
+this function from within your code
+
+61
+00:02:36,760 --> 00:02:39,840
+which would be a bit of a strange thing to do.
+
+62
+00:02:39,840 --> 00:02:42,010
+So this is okay, maybe not the best idea,
+
+63
+00:02:42,010 --> 00:02:44,660
+PyCharm doesn't like it very much but it still works.
+
+64
+00:02:45,740 --> 00:02:47,030
+So what we've got here is,
+
+65
+00:02:47,030 --> 00:02:48,630
+if the post was not found, we're gonna return
+
+66
+00:02:48,630 --> 00:02:51,280
+this other template and we're gonna give it
+
+67
+00:02:51,280 --> 00:02:54,830
+this variable that the template can use.
+
+68
+00:02:54,830 --> 00:02:57,630
+So let's go into our templates and create
+
+69
+00:02:57,630 --> 00:03:00,370
+a new HTML file, which we're gonna call
+
+70
+00:03:00,370 --> 00:03:04,010
+404 dot HTML.
+
+71
+00:03:06,450 --> 00:03:08,960
+Notice how when you create a new HTML file,
+
+72
+00:03:08,960 --> 00:03:11,360
+this is already all prefilled for you
+
+73
+00:03:11,360 --> 00:03:13,340
+so you can keep some of this,
+
+74
+00:03:13,340 --> 00:03:15,270
+like the title of the page and so forth,
+
+75
+00:03:15,270 --> 00:03:18,740
+or you can just delete it and we're gonna add in
+
+76
+00:03:18,740 --> 00:03:21,750
+our body here, what we want the page to return.
+
+77
+00:03:22,860 --> 00:03:26,680
+So it's gonna be H1 and we're gonna say 404,
+
+78
+00:03:26,680 --> 00:03:30,450
+post not found and then just add a P tag,
+
+79
+00:03:30,450 --> 00:03:33,420
+we're gonna put our message.
+
+80
+00:03:33,420 --> 00:03:35,787
+Our message remember is the variable we passed in
+
+81
+00:03:35,787 --> 00:03:39,220
+that is going to get replaced by a post
+
+82
+00:03:39,220 --> 00:03:41,650
+with ID, post ID was not found.
+
+83
+00:03:42,880 --> 00:03:45,340
+So make sure that you've stopped running your app earlier,
+
+84
+00:03:45,340 --> 00:03:47,170
+we can run it again.
+
+85
+00:03:47,170 --> 00:03:49,680
+Go back to Chrome, refresh this page
+
+86
+00:03:49,680 --> 00:03:51,840
+that didn't return anything before
+
+87
+00:03:51,840 --> 00:03:55,310
+and now you can see we get a nice 404, post not found
+
+88
+00:03:55,310 --> 00:03:59,260
+and then it says a post with ID one was not found.
+
+89
+00:03:59,260 --> 00:04:03,319
+If we go back to post zero, we get our post contents
+
+90
+00:04:03,319 --> 00:04:05,940
+so this is great,
+
+91
+00:04:05,940 --> 00:04:07,710
+we're now dealing with user input
+
+92
+00:04:07,710 --> 00:04:09,290
+in a very nice way.
+
+93
+00:04:09,290 --> 00:04:11,560
+If we couldn't do what they needed,
+
+94
+00:04:11,560 --> 00:04:14,270
+we can return a message that is appropriate
+
+95
+00:04:14,270 --> 00:04:17,870
+as opposed to nothing or potentially an error message.
+
+96
+00:04:18,930 --> 00:04:20,460
+Again remember to stop your app
+
+97
+00:04:20,460 --> 00:04:22,830
+and minimise that, and now we're gonna look
+
+98
+00:04:22,830 --> 00:04:27,100
+at a couple improvements to this multi-template.
+
+99
+00:04:27,100 --> 00:04:28,690
+As you can see, both our pages,
+
+100
+00:04:28,690 --> 00:04:32,400
+404 and post have essentially the same structure,
+
+101
+00:04:32,400 --> 00:04:35,380
+they've got this doctype that's got this HTML,
+
+102
+00:04:35,380 --> 00:04:38,430
+and empty head, a body and the only difference between
+
+103
+00:04:38,430 --> 00:04:40,900
+the two, other than the indentation
+
+104
+00:04:40,900 --> 00:04:44,410
+is this, the post has this H1 and the P tag
+
+105
+00:04:44,410 --> 00:04:46,550
+with this post title and content
+
+106
+00:04:46,550 --> 00:04:48,860
+and the 404 has an H1 and P tag
+
+107
+00:04:48,860 --> 00:04:51,050
+with a different message entirely.
+
+108
+00:04:52,340 --> 00:04:56,099
+Jinja2 which is the engine that's driving this templating
+
+109
+00:04:56,099 --> 00:05:00,920
+does have support for, you know,
+
+110
+00:05:00,920 --> 00:05:03,290
+this sort of inheritance.
+
+111
+00:05:03,290 --> 00:05:05,210
+So we can make a base template
+
+112
+00:05:05,210 --> 00:05:09,400
+that will contain all of this body and HTML
+
+113
+00:05:09,400 --> 00:05:12,050
+and then we can make these two child templates
+
+114
+00:05:12,050 --> 00:05:14,540
+that only include this content here.
+
+115
+00:05:15,927 --> 00:05:18,290
+That way we'll have a little bit less duplicated content.
+
+116
+00:05:18,290 --> 00:05:20,370
+Let's go ahead, right click our templates
+
+117
+00:05:20,370 --> 00:05:23,254
+and create a new file.
+
+118
+00:05:23,254 --> 00:05:26,330
+I wanna call this file, base dot Jinja2.
+
+119
+00:05:27,650 --> 00:05:30,360
+Now the reason I'm going for Jinja2 and not HTML here
+
+120
+00:05:30,360 --> 00:05:34,140
+is because in some editors, not in PyCharm Community Edition
+
+121
+00:05:34,140 --> 00:05:35,770
+but in some editors, you'll get
+
+122
+00:05:35,770 --> 00:05:37,680
+a bit better syntax highlighting
+
+123
+00:05:37,680 --> 00:05:38,960
+if you use dot Jinja2.
+
+124
+00:05:40,050 --> 00:05:42,560
+If you are using PyCharm Community Edition,
+
+125
+00:05:42,560 --> 00:05:45,830
+I advise you stick with dot HTML
+
+126
+00:05:45,830 --> 00:05:48,630
+just because you're gonna get slightly nicer highlighting.
+
+127
+00:05:48,630 --> 00:05:50,540
+If you're using other editors,
+
+128
+00:05:50,540 --> 00:05:53,350
+I recommend you use dot Jinja2 and you instal
+
+129
+00:05:53,350 --> 00:05:54,620
+any packages you need in order
+
+130
+00:05:54,620 --> 00:05:57,280
+to get the syntax highlighting to work, okay?
+
+131
+00:05:57,280 --> 00:05:59,070
+In this editor, you're not gonna see syntax highlighting
+
+132
+00:05:59,070 --> 00:06:01,110
+but this is the best thing to do
+
+133
+00:06:01,110 --> 00:06:02,440
+if you are using a different editor
+
+134
+00:06:02,440 --> 00:06:04,220
+that does support that.
+
+135
+00:06:04,220 --> 00:06:07,130
+Optionally, if you are using PyCharm Professional Edition,
+
+136
+00:06:07,130 --> 00:06:09,420
+which is not free, you'll also get
+
+137
+00:06:09,420 --> 00:06:11,940
+nice syntax highlighting with this.
+
+138
+00:06:11,940 --> 00:06:14,291
+So as part of this, creating this superclass,
+
+139
+00:06:14,291 --> 00:06:17,450
+per se, super template, we're going to be changing over
+
+140
+00:06:17,450 --> 00:06:18,283
+to Jinja2.
+
+141
+00:06:19,410 --> 00:06:21,960
+First thing we're going to do, is to say
+
+142
+00:06:21,960 --> 00:06:24,340
+what is in a base template?
+
+143
+00:06:24,340 --> 00:06:26,170
+Well in a base template you've got,
+
+144
+00:06:26,170 --> 00:06:27,320
+essentially all of this
+
+145
+00:06:28,230 --> 00:06:30,010
+but you don't want the content,
+
+146
+00:06:30,010 --> 00:06:33,090
+you want this content, this H1 tag and the P tags
+
+147
+00:06:33,090 --> 00:06:34,700
+to come from the children.
+
+148
+00:06:35,590 --> 00:06:38,590
+So instead, in Jinja2, now we can use
+
+149
+00:06:38,590 --> 00:06:42,540
+this syntax to say block content
+
+150
+00:06:43,490 --> 00:06:45,140
+and down here end block.
+
+151
+00:06:46,560 --> 00:06:49,560
+As you can see there is an opening curly brace
+
+152
+00:06:49,560 --> 00:06:51,330
+and a percent symbol,
+
+153
+00:06:51,330 --> 00:06:53,730
+then we've got block content
+
+154
+00:06:53,730 --> 00:06:55,790
+and percent symbol and a closing brace.
+
+155
+00:06:55,790 --> 00:06:58,180
+Then we've got, you know, some content in here
+
+156
+00:06:58,180 --> 00:07:00,090
+if we want and at the end we've got
+
+157
+00:07:00,090 --> 00:07:01,980
+this end block set of tags.
+
+158
+00:07:02,880 --> 00:07:05,660
+You can put any content you want here
+
+159
+00:07:05,660 --> 00:07:08,696
+but more interestingly, you can copy this
+
+160
+00:07:08,696 --> 00:07:12,320
+and put it into 404 HTML,
+
+161
+00:07:13,380 --> 00:07:17,740
+now the 404 HTML tag can have its content here
+
+162
+00:07:17,740 --> 00:07:21,590
+and it will be replaced for this stuff in base dot Jinja2.
+
+163
+00:07:22,970 --> 00:07:24,870
+So I'm gonna undo that
+
+164
+00:07:24,870 --> 00:07:28,850
+and just put it up here just so I can then copy this,
+
+165
+00:07:28,850 --> 00:07:30,770
+put it in there and get rid of that.
+
+166
+00:07:30,770 --> 00:07:34,480
+As you can see 404 HTML now looks much simpler
+
+167
+00:07:34,480 --> 00:07:37,960
+and if we go over to post dot HTML, we can do the same.
+
+168
+00:07:37,960 --> 00:07:42,220
+So we can go and copy this
+
+169
+00:07:42,220 --> 00:07:43,240
+paste it in here,
+
+170
+00:07:44,540 --> 00:07:45,420
+copy this,
+
+171
+00:07:46,581 --> 00:07:49,220
+paste it in here, make sure to fix the annotation.
+
+172
+00:07:49,220 --> 00:07:52,560
+Now post dot HTML also looks a bit simpler.
+
+173
+00:07:52,560 --> 00:07:56,962
+These pages are just children on base dot Jinja2,
+
+174
+00:07:56,962 --> 00:08:00,700
+they don't need all the duplicate code for the HTML
+
+175
+00:08:00,700 --> 00:08:03,100
+and you know head tags, body tags,
+
+176
+00:08:03,100 --> 00:08:08,100
+because the content here will be injected into this block
+
+177
+00:08:08,450 --> 00:08:11,050
+that we've defined at base dot Jinja2.
+
+178
+00:08:11,050 --> 00:08:13,630
+Of course, the million dollar question is,
+
+179
+00:08:13,630 --> 00:08:16,330
+how do they know they are children of that?
+
+180
+00:08:16,330 --> 00:08:17,870
+We've not said it anywhere.
+
+181
+00:08:17,870 --> 00:08:19,500
+Indeed we have to say that.
+
+182
+00:08:20,750 --> 00:08:23,670
+So we'll say extend base dot Jinja2.
+
+183
+00:08:25,765 --> 00:08:27,200
+We'll copy that and put it in post as well,
+
+184
+00:08:27,200 --> 00:08:29,240
+make sure we do not forget that.
+
+185
+00:08:29,240 --> 00:08:32,970
+Now these children are actually extending base dot Jinja2.
+
+186
+00:08:32,970 --> 00:08:35,560
+When we render this template using Flask,
+
+187
+00:08:35,560 --> 00:08:36,610
+the first thing it'll do,
+
+188
+00:08:36,610 --> 00:08:37,450
+sorry about that,
+
+189
+00:08:37,450 --> 00:08:39,580
+first thing it'll do is it'll go
+
+190
+00:08:39,580 --> 00:08:42,820
+and extend Jinja2 so all the scaffolding
+
+191
+00:08:42,820 --> 00:08:46,060
+from base dot Jinja2 is going to be applied
+
+192
+00:08:46,060 --> 00:08:48,460
+to this template and this block of content
+
+193
+00:08:48,460 --> 00:08:51,410
+is going to replace this block of content here
+
+194
+00:08:51,410 --> 00:08:54,576
+so we're gonna get a nice HTML file without the
+
+195
+00:08:54,576 --> 00:08:57,230
+bloat and the duplication.
+
+196
+00:08:57,230 --> 00:08:59,270
+So that's good.
+
+197
+00:08:59,270 --> 00:09:01,190
+As part of this again, we're going to migrate
+
+198
+00:09:01,190 --> 00:09:04,112
+to dot Jinja2 just to make sure, make it clear
+
+199
+00:09:04,112 --> 00:09:06,880
+that these templates are Jinja2 templates
+
+200
+00:09:06,880 --> 00:09:10,040
+and not HTML only templates, so I'm going to rename these
+
+201
+00:09:10,040 --> 00:09:12,700
+by right clicking them, go to refactor and rename
+
+202
+00:09:14,360 --> 00:09:15,510
+and change that to Jinja2.
+
+203
+00:09:15,510 --> 00:09:17,070
+We're gonna lose the syntax highlighting
+
+204
+00:09:17,070 --> 00:09:19,390
+which is not great in this editor
+
+205
+00:09:19,390 --> 00:09:22,820
+so again if you are using PyCharm Community Edition
+
+206
+00:09:22,820 --> 00:09:25,420
+like I am, don't do this,
+
+207
+00:09:25,420 --> 00:09:27,800
+stick to HTML, it may be slightly easier.
+
+208
+00:09:27,800 --> 00:09:30,510
+You won't get syntax highlighting for Jinja
+
+209
+00:09:30,510 --> 00:09:33,030
+but you will get syntax highlighting for HTML.
+
+210
+00:09:33,030 --> 00:09:35,050
+If you are using a different editor though,
+
+211
+00:09:35,050 --> 00:09:39,100
+feel free to move to Jinja2 and instal whatever it is
+
+212
+00:09:39,100 --> 00:09:41,750
+you need to instal to get the syntax highlighting.
+
+213
+00:09:42,770 --> 00:09:44,680
+It's up to you, it doesn't really matter
+
+214
+00:09:44,680 --> 00:09:46,620
+to Python at all.
+
+215
+00:09:46,620 --> 00:09:49,010
+Now instead of HTML here in these templates,
+
+216
+00:09:49,010 --> 00:09:53,410
+make sure to use dot Jinja2.
+
+217
+00:09:53,410 --> 00:09:55,280
+Just because the names have to be correct,
+
+218
+00:09:55,280 --> 00:09:56,960
+doesn't matter what it is at the end
+
+219
+00:09:56,960 --> 00:09:59,040
+but it has to be correct.
+
+220
+00:09:59,040 --> 00:10:01,600
+Now that we've got this, we can press play
+
+221
+00:10:01,600 --> 00:10:03,400
+and make sure this is all working
+
+222
+00:10:03,400 --> 00:10:05,670
+by going to Chrome and refreshing,
+
+223
+00:10:05,670 --> 00:10:07,120
+this seems to be fine.
+
+224
+00:10:07,120 --> 00:10:09,870
+Go to a different post, this seems to be fine still.
+
+225
+00:10:11,220 --> 00:10:13,230
+So all our changes here are working,
+
+226
+00:10:13,230 --> 00:10:15,020
+remember to stop your app,
+
+227
+00:10:15,020 --> 00:10:17,430
+minimise that and we can do a short review
+
+228
+00:10:17,430 --> 00:10:19,650
+of what we've just looked at.
+
+229
+00:10:19,650 --> 00:10:23,270
+All that we've done is added this error page,
+
+230
+00:10:23,270 --> 00:10:25,240
+so if the post was not found and we're returning
+
+231
+00:10:25,240 --> 00:10:27,130
+a different template entirely,
+
+232
+00:10:27,130 --> 00:10:29,000
+and we're passing this short message.
+
+233
+00:10:30,390 --> 00:10:33,500
+Now we've also create a base Jinja file
+
+234
+00:10:33,500 --> 00:10:36,021
+which is all the HTML scaffolding
+
+235
+00:10:36,021 --> 00:10:40,210
+plus this special block syntax.
+
+236
+00:10:40,210 --> 00:10:43,208
+In any child that extends that file,
+
+237
+00:10:43,208 --> 00:10:46,087
+we then have this block again
+
+238
+00:10:46,087 --> 00:10:49,530
+and we can include any HTML we want inside that block
+
+239
+00:10:49,530 --> 00:10:52,530
+and it will replace the contents in base dot Jinja2.
+
+240
+00:10:53,610 --> 00:10:56,363
+Make sure the spell these blocks correctly, you know,
+
+241
+00:10:56,363 --> 00:10:59,990
+block should be lowercase b, you should have these tags
+
+242
+00:10:59,990 --> 00:11:01,380
+opening at the end.
+
+243
+00:11:01,380 --> 00:11:05,010
+Some of my students insist on typing block with a capital B,
+
+244
+00:11:05,010 --> 00:11:08,200
+that won't work, you know, it has to be lowercase b.
+
+245
+00:11:08,200 --> 00:11:10,656
+This here though, the content block
+
+246
+00:11:10,656 --> 00:11:14,320
+is essentially a name, so you can call it whatever you want
+
+247
+00:11:14,320 --> 00:11:16,763
+you can put whatever you want inside content,
+
+248
+00:11:16,763 --> 00:11:21,170
+you can call it something else if that makes more sense
+
+249
+00:11:21,170 --> 00:11:24,110
+to you, you can call it block body for example
+
+250
+00:11:24,110 --> 00:11:26,110
+if that makes more sense to you.
+
+251
+00:11:29,230 --> 00:11:30,063
+And that's it.
+
+252
+00:11:30,063 --> 00:11:31,660
+That simplifies our code greatly
+
+253
+00:11:31,660 --> 00:11:36,030
+and allows us to give the users this nice error message.
+
+254
+00:11:36,030 --> 00:11:37,370
+That's it for this video,
+
+255
+00:11:37,370 --> 00:11:39,020
+and I'll see you on the next one.
+

@@ -1,0 +1,836 @@
+1
+00:00:00,100 --> 00:00:01,160
+Jos: Ol, e bem vindo de volta.
+
+2
+00:00:01,160 --> 00:00:04,280
+Neste vdeo vamos falar sobre os gerenciadores de
+
+3
+00:00:04,280 --> 00:00:06,850
+contexto e vamos desenvolver os nossos.
+
+4
+00:00:06,850 --> 00:00:09,540
+Isso no  algo em que muitos cursos de
+
+5
+00:00:09,540 --> 00:00:12,460
+Python entram, ento voc deve se sentir muito bem por
+
+6
+00:00:12,460 --> 00:00:14,630
+estar mergulhando profundamente no funcionamento interno do
+
+7
+00:00:14,630 --> 00:00:17,510
+Python e em como fazer algumas coisas bastante avanadas.
+
+8
+00:00:17,510 --> 00:00:19,500
+Na ltima seo, analisamos os arquivos
+
+9
+00:00:19,500 --> 00:00:21,830
+e, particularmente, em um novo bit da sintaxe.
+
+10
+00:00:21,830 --> 00:00:24,260
+Assim dito, algo assim, eu vou coloc-lo aqui e
+
+11
+00:00:24,260 --> 00:00:25,740
+vou deletar daqui a pouco.
+
+12
+00:00:25,740 --> 00:00:26,780
+Com algo, algo,
+
+13
+00:00:26,780 --> 00:00:29,010
+algo, algo, algo, algo, dois pontos
+
+14
+00:00:30,310 --> 00:00:31,550
+e depois fazer coisas.
+
+15
+00:00:32,470 --> 00:00:35,628
+E isso aqui foi o gerenciador de contexto.
+
+16
+00:00:35,628 --> 00:00:38,130
+E, por contexto, queremos dizer que o
+
+17
+00:00:38,130 --> 00:00:39,860
+status atual do aplicativo no
+
+18
+00:00:39,860 --> 00:00:43,520
+ponto em que este bloco  executado  modificado por essa
+
+19
+00:00:43,520 --> 00:00:45,670
+instruo, que  controlado por essa instruo.
+
+20
+00:00:45,670 --> 00:00:48,140
+Voc pode at ver,  gerenciado por ele.
+
+21
+00:00:49,700 --> 00:00:51,920
+E isso significa que ele modifica
+
+22
+00:00:51,920 --> 00:00:54,400
+o status, ou o contexto, quando voc
+
+23
+00:00:54,400 --> 00:00:57,150
+entra, e tambm o modifica quando voc sai.
+
+24
+00:00:57,150 --> 00:00:59,750
+Isso permite que voc faa algumas configuraes quando
+
+25
+00:00:59,750 --> 00:01:01,760
+comear, e algumas demoram quando voc terminar.
+
+26
+00:01:03,370 --> 00:01:05,120
+Podemos criar nossos prprios gerenciadores de contexto.
+
+27
+00:01:05,120 --> 00:01:06,880
+Isso  razoavelmente simples.
+
+28
+00:01:07,931 --> 00:01:12,050
+Para que possamos usar essa sintaxe para nossas conexes de banco de dados.
+
+29
+00:01:12,890 --> 00:01:15,330
+Ns podemos ver, e eu tenho sido
+
+30
+00:01:15,330 --> 00:01:17,800
+bastante explcito ao longo desta seo, por
+
+31
+00:01:17,800 --> 00:01:19,540
+exemplo, copiando e colando cdigo.
+
+32
+00:01:19,540 --> 00:01:21,660
+Podemos ver que temos uma configurao.
+
+33
+00:01:22,570 --> 00:01:24,826
+E ns temos uma queda, e
+
+34
+00:01:24,826 --> 00:01:28,180
+isso acontece para todas as funes neste arquivo,
+
+35
+00:01:28,180 --> 00:01:31,430
+basicamente, exceto por este que no tem commit.
+
+36
+00:01:31,430 --> 00:01:32,263
+Ento, como voc
+
+37
+00:01:32,263 --> 00:01:36,750
+pode ver, h aqui uma boa ideia que est usando um gerenciador de contexto,
+
+38
+00:01:36,750 --> 00:01:39,980
+para que no tenhamos que fazer isso todas as vezes.
+
+39
+00:01:41,730 --> 00:01:44,850
+Vamos criar um gerenciador de contexto para nossas conexes de banco de
+
+40
+00:01:44,850 --> 00:01:46,460
+dados, para que no tenhamos que
+
+41
+00:01:46,460 --> 00:01:48,260
+abrir e fechar a conexo todas as vezes.
+
+42
+00:01:50,150 --> 00:01:51,660
+Para criar um gerenciador de
+
+43
+00:01:51,660 --> 00:01:55,340
+contexto, tudo o que precisamos fazer  entrar em nosso pacote utils,
+
+44
+00:01:55,340 --> 00:01:56,660
+por exemplo, e criar
+
+45
+00:01:56,660 --> 00:02:01,640
+um novo arquivo Python, que eu chamarei de database_connection. py.
+
+46
+00:02:03,600 --> 00:02:06,760
+Esta conexo com o banco de dados vai importar o sqlite3,
+
+47
+00:02:06,760 --> 00:02:08,970
+porque ele vai realmente se conectar ao banco
+
+48
+00:02:08,970 --> 00:02:11,240
+de dados e precisa conectar o sqlite3.
+
+49
+00:02:11,240 --> 00:02:15,610
+E vai ser uma classe, classe de conexo de banco de dados.
+
+50
+00:02:17,140 --> 00:02:19,220
+Uma conexo de banco de
+
+51
+00:02:19,220 --> 00:02:23,060
+dados, para poder ser usada como um gerenciador de
+
+52
+00:02:23,060 --> 00:02:26,680
+contexto,  claro que precisa de dois mtodos dunder.
+
+53
+00:02:26,680 --> 00:02:28,340
+Lembre-se que os mtodos dunder so
+
+54
+00:02:28,340 --> 00:02:30,550
+a maneira que tudo acontece em Python e
+
+55
+00:02:30,550 --> 00:02:32,850
+se voc quiser usar uma instruo com, voc
+
+56
+00:02:32,850 --> 00:02:34,380
+precisa de dois mtodos Dunder.
+
+57
+00:02:34,380 --> 00:02:39,020
+Voc precisa entrar e precisa sair.
+
+58
+00:02:41,350 --> 00:02:44,410
+Observe como o mtodo de sada tem alguns argumentos aqui.
+
+59
+00:02:44,410 --> 00:02:46,400
+Ns vamos falar sobre o que so nos
+
+60
+00:02:46,400 --> 00:02:48,650
+prximos vdeos, ento no se preocupe muito com eles agora.
+
+61
+00:02:49,590 --> 00:02:52,010
+Naturalmente, o mtodo enter dunder  chamado
+
+62
+00:02:52,010 --> 00:02:54,980
+quando voc entra no gerenciador de contexto logo
+
+63
+00:02:54,980 --> 00:02:56,370
+antes de comear a
+
+64
+00:02:56,370 --> 00:02:59,130
+execut-lo, e o mtodo de sada  executado
+
+65
+00:02:59,130 --> 00:03:02,010
+logo que voc sai do gerenciador de contexto.
+
+66
+00:03:02,010 --> 00:03:04,880
+Quando agora temos esses dois mtodos, podemos passar para
+
+67
+00:03:04,880 --> 00:03:07,830
+o banco de dados. py, podemos remover a
+
+68
+00:03:07,830 --> 00:03:10,890
+importao sqlite3 e, em vez disso, podemos
+
+69
+00:03:10,890 --> 00:03:15,890
+dizer, da conexo com o banco de dados, observe como estou usando
+
+70
+00:03:15,980 --> 00:03:17,570
+uma importao relativa aqui. database_connection, import, classe de conexo de banco de dados.
+
+71
+00:03:17,570 --> 00:03:21,750
+Agora, em vez de fazer isso, ou melhor, em
+
+72
+00:03:22,760 --> 00:03:27,410
+vez de fazer isso aqui, podemos dizer com conexo de
+
+73
+00:03:27,410 --> 00:03:29,670
+banco de dados, como conexo,
+
+74
+00:03:29,670 --> 00:03:34,210
+e ento podemos apenas manter essas coisas aqui.
+
+75
+00:03:35,550 --> 00:03:37,650
+Claro, isso tem que ser indentado para que eles
+
+76
+00:03:38,680 --> 00:03:40,680
+estejam dentro desse bloco de gerenciadores de contexto.
+
+77
+00:03:40,680 --> 00:03:44,090
+Ok, esta  a sintaxe com a conexo com o banco de dados,
+
+78
+00:03:45,960 --> 00:03:48,910
+crie um novo objeto do tipo conexo de banco de dados
+
+79
+00:03:48,910 --> 00:03:51,280
+como esta varivel de conexo, esta  a varivel
+
+80
+00:03:52,160 --> 00:03:53,920
+que criamos agora para que possa ser
+
+81
+00:03:53,920 --> 00:03:55,570
+usada dentro do gerenciador de contexto.
+
+82
+00:03:55,570 --> 00:03:58,610
+E ento, podemos criar um cursor com ele e, em
+
+83
+00:03:58,610 --> 00:04:00,660
+seguida, podemos executar o que quisermos.
+
+84
+00:04:00,660 --> 00:04:03,350
+ claro que poderamos fazer com que esta conexo
+
+85
+00:04:03,350 --> 00:04:06,360
+de banco de dados retornasse um objeto de cursor, mas
+
+86
+00:04:06,360 --> 00:04:08,080
+acho que seria bastante confuso.
+
+87
+00:04:08,080 --> 00:04:12,360
+Uma conexo de banco de dados provavelmente deve retornar uma
+
+88
+00:04:12,360 --> 00:04:14,780
+conexo e no um cursor.
+
+89
+00:04:14,780 --> 00:04:15,700
+Ento,  claro,
+
+90
+00:04:17,640 --> 00:04:20,410
+nossos mtodos de entrada e sada no fazem nada ainda.
+
+91
+00:04:20,410 --> 00:04:22,020
+Portanto, esta varivel de conexo aqui no conter nenhum.
+
+92
+00:04:22,020 --> 00:04:25,880
+ o que esse mtodo de entrada retorna.
+
+93
+00:04:26,790 --> 00:04:29,750
+Passe apenas significa no fazer nada.
+
+94
+00:04:29,750 --> 00:04:31,480
+Todas as funes, todos os mtodos
+
+95
+00:04:31,480 --> 00:04:35,825
+no Python retornam nenhum por padro, portanto, essa varivel de conexo no ser nenhuma.
+
+96
+00:04:35,825 --> 00:04:38,740
+Ns no queremos fazer isso.
+
+97
+00:04:38,740 --> 00:04:39,890
+Claro, aqui tambm
+
+98
+00:04:40,820 --> 00:04:44,340
+estamos criando um novo objeto, portanto, se quisermos, no 
+
+99
+00:04:44,340 --> 00:04:47,950
+necessrio, mas se quisermos, tambm podemos ter um mtodo init aqui.
+
+100
+00:04:47,950 --> 00:04:50,850
+Este mtodo init ser chamado primeiro quando inicializarmos
+
+101
+00:04:51,720 --> 00:04:53,870
+este objeto e ento o mtodo
+
+102
+00:04:53,870 --> 00:04:55,860
+enter ser chamado quando entrarmos
+
+103
+00:04:55,860 --> 00:04:57,933
+no gerenciador de contexto e o
+
+104
+00:04:57,933 --> 00:05:00,559
+mtodo de sada ser chamado quando deixarmos
+
+105
+00:05:00,559 --> 00:05:02,338
+o gerenciador de contexto.
+
+106
+00:05:02,338 --> 00:05:03,938
+Claro, temos que inicializar a conexo.
+
+107
+00:05:05,850 --> 00:05:08,410
+Ns temos que fazer isso sqlite3. conecte, ento vamos fazer isso.
+
+108
+00:05:08,410 --> 00:05:13,410
+Eu acho que devemos fazer o sqlite3. conecte aqui, no mtodo
+
+109
+00:05:14,110 --> 00:05:18,410
+enter, para que
+
+110
+00:05:18,410 --> 00:05:20,090
+possamos retornar sqlite3. conectar, dados. db.
+
+111
+00:05:20,090 --> 00:05:24,550
+Agora, quando voltamos ao banco de dados. py, esta varivel de conexo  agora
+
+112
+00:05:26,270 --> 00:05:28,260
+um resultado de conexo sqlite3.
+
+113
+00:05:29,240 --> 00:05:34,240
+ o resultado de qualquer mtodo de entrada retornado.
+
+114
+00:05:35,280 --> 00:05:39,460
+Ento est correto.
+
+115
+00:05:39,460 --> 00:05:40,440
+Agora, tudo isso
+
+116
+00:05:41,287 --> 00:05:45,230
+funcionar, mas quando chegarmos ao fim, ainda no adicionamos nenhum cdigo
+
+117
+00:05:45,230 --> 00:05:47,450
+para confirmar e fechar a conexo.
+
+118
+00:05:47,450 --> 00:05:49,120
+Ento, temos que fazer isso aqui no mtodo de sada.
+
+119
+00:05:49,120 --> 00:05:51,960
+Agora, no temos acesso a essa conexo
+
+120
+00:05:53,740 --> 00:05:56,547
+dentro dessa classe, no h como acessar
+
+121
+00:05:56,547 --> 00:05:58,250
+a conexo que temos
+
+122
+00:05:58,250 --> 00:06:01,430
+e ela no  passada para ns como parmetro.
+
+123
+00:06:01,430 --> 00:06:04,210
+Ento, o que fazer  usar
+
+124
+00:06:05,090 --> 00:06:07,690
+esse mtodo init para dizer self. conexo  nenhuma.
+
+125
+00:06:07,690 --> 00:06:11,040
+Ento, vamos dizer auto. conexo  essa conexo
+
+126
+00:06:11,940 --> 00:06:14,400
+aqui, retorne eu. conexo.
+
+127
+00:06:14,400 --> 00:06:18,040
+Agora, estamos fazendo a mesma coisa, mas
+
+128
+00:06:19,010 --> 00:06:20,470
+definimos uma nova propriedade de
+
+129
+00:06:20,470 --> 00:06:22,130
+nossa classe de conexo de banco
+
+130
+00:06:22,130 --> 00:06:23,830
+de dados que armazenar este sqlite3. connect result, o mtodo enter
+
+131
+00:06:23,830 --> 00:06:27,640
+retornar, o que significa que 
+
+132
+00:06:27,640 --> 00:06:29,650
+utilizvel em nosso banco de dados. py, e agora temos acesso a
+
+133
+00:06:29,650 --> 00:06:32,290
+ele aqui no nosso
+
+134
+00:06:32,290 --> 00:06:34,600
+mtodo de sada, bem como auto. conexo, para que possamos
+
+135
+00:06:34,600 --> 00:06:36,680
+fazer auto. conexo. cometer e
+
+136
+00:06:36,680 --> 00:06:39,520
+auto. conexo. fechar.
+
+137
+00:06:39,520 --> 00:06:42,150
+Existem alguns casos
+
+138
+00:06:43,650 --> 00:06:46,670
+em que no precisamos nos comprometer, mas no h problema em
+
+139
+00:06:46,670 --> 00:06:48,540
+deixar isso l, mesmo quando no precisamos.
+
+140
+00:06:48,540 --> 00:06:50,490
+O sqlite simplesmente no far nada, se chamarmos
+
+141
+00:06:50,490 --> 00:06:52,740
+commit mas no houver nada para confirmar, nenhuma alterao ser
+
+142
+00:06:52,740 --> 00:06:54,640
+feita no banco de dados, portanto, tudo bem.
+
+143
+00:06:54,640 --> 00:06:57,220
+Ok, eu melhoraria isso dizendo tambm eu. host = host e passa
+
+144
+00:06:57,220 --> 00:07:02,220
+isso aqui como um parmetro
+
+145
+00:07:06,690 --> 00:07:10,550
+para o mtodo init e, em vez de dados. db, use-se. hospedeiro.
+
+146
+00:07:10,550 --> 00:07:13,640
+Dessa forma, quando voltarmos ao nosso banco de dados. py, podemos
+
+147
+00:07:14,860 --> 00:07:17,410
+dizer dados. DB aqui, e isso torna
+
+148
+00:07:17,410 --> 00:07:20,110
+as coisas um pouco mais explcitas.
+
+149
+00:07:20,110 --> 00:07:21,580
+Podemos ver que agora estamos conectados
+
+150
+00:07:21,580 --> 00:07:23,450
+a um banco de dados chamado dados. db, estamos obtendo a conexo aqui, presumivelmente
+
+151
+00:07:23,450 --> 00:07:25,770
+tudo est sendo tratado,
+
+152
+00:07:25,770 --> 00:07:27,990
+incluindo o fechamento da conexo e tudo mais.
+
+153
+00:07:27,990 --> 00:07:30,680
+Isso parece bem parecido
+
+154
+00:07:30,680 --> 00:07:32,920
+com livros abertos. txt no modo de leitura como arquivo,
+
+155
+00:07:32,920 --> 00:07:37,920
+como voc pode ver, o open aqui
+
+156
+00:07:38,166 --> 00:07:41,090
+tambm  uma classe, est criando um novo objeto
+
+157
+00:07:41,090 --> 00:07:44,140
+do tipo open, e est obtendo dois parmetros para
+
+158
+00:07:44,140 --> 00:07:47,480
+o mtodo init, e ento a funo enter dentro desta
+
+159
+00:07:47,480 --> 00:07:49,820
+classe est retornando um arquivo para o
+
+160
+00:07:49,820 --> 00:07:52,190
+qual estamos usando como esta varivel aqui.
+
+161
+00:07:52,190 --> 00:07:53,530
+Muito o mesmo, claro, isso tem
+
+162
+00:07:54,480 --> 00:07:55,850
+outro argumento l, mas tudo bem.
+
+163
+00:07:55,850 --> 00:07:58,640
+O que fizemos foi criar um novo objeto, e
+
+164
+00:07:59,630 --> 00:08:01,950
+damos a ele o que queremos fazer
+
+165
+00:08:01,950 --> 00:08:04,440
+com esse objeto, conectar ao banco de dados. db, e isso vai resolver tudo
+
+166
+00:08:04,440 --> 00:08:06,490
+para ns.
+
+167
+00:08:06,490 --> 00:08:09,090
+Isto com a declarao  uma maneira muito Python de escrever cdigo.
+
+168
+00:08:09,090 --> 00:08:12,670
+No  algo que outras linguagens de programao tenham, e
+
+169
+00:08:12,670 --> 00:08:14,780
+eu realmente encorajo voc a us-lo.
+
+170
+00:08:14,780 --> 00:08:17,060
+Agora que conseguimos,  claro, podemos copi-lo
+
+171
+00:08:18,180 --> 00:08:20,410
+e us-lo em todas as nossas funes.
+
+172
+00:08:20,410 --> 00:08:24,610
+No livro, fazemos exatamente a mesma coisa.
+
+173
+00:08:26,190 --> 00:08:28,580
+Observe como esse gerenciador de contexto tambm vai se
+
+174
+00:08:28,580 --> 00:08:30,870
+comprometer no final, ento nada para fazer aqui.
+
+175
+00:08:30,870 --> 00:08:33,990
+Tambm aqui, podemos, claro, fazer tudo isso.
+
+176
+00:08:34,860 --> 00:08:39,860
+Ns no temos que fechar a conexo, e podemos retornar livros
+
+177
+00:08:40,930 --> 00:08:43,160
+dentro ou fora do gerenciador
+
+178
+00:08:43,160 --> 00:08:44,150
+de contexto,
+
+179
+00:08:44,150 --> 00:08:46,410
+depende de voc, no importa.
+
+180
+00:08:46,410 --> 00:08:48,210
+Eu vou deixar l fora s por diverso.
+
+181
+00:08:48,210 --> 00:08:52,360
+Ns podemos fazer isso aqui tambm,  claro, e
+
+182
+00:08:53,791 --> 00:08:56,770
+ns podemos, claro, tambm fazer isso aqui.
+
+183
+00:08:59,100 --> 00:09:01,050
+Agora esse cdigo  muito mais simples.
+
+184
+00:09:04,830 --> 00:09:07,510
+Nenhum desses cdigos tem que lidar com a conexo com um banco
+
+185
+00:09:08,530 --> 00:09:10,920
+de dados ou com o commit ou fechamento da conexo.
+
+186
+00:09:10,920 --> 00:09:13,940
+Tudo isso  feito para ns com esse gerenciador de contexto.
+
+187
+00:09:13,940 --> 00:09:16,590
+Isso significa que se nos esquecermos de nos comprometer ou
+
+188
+00:09:17,700 --> 00:09:19,330
+fecharmos ou algo assim, agora no
+
+189
+00:09:19,330 --> 00:09:20,950
+podemos mais esquecer, porque assim que
+
+190
+00:09:20,950 --> 00:09:22,540
+fazemos isso tudo  tratado por ns.
+
+191
+00:09:22,540 --> 00:09:25,490
+Voc poderia tentar criar outro gerenciador de contexto que
+
+192
+00:09:27,610 --> 00:09:30,630
+gera o cursor e, em seguida, usar um nico
+
+193
+00:09:30,630 --> 00:09:32,430
+gerenciador de contexto para ambos.
+
+194
+00:09:32,430 --> 00:09:35,280
+Voc pode tentar isso, se quiser, brincar com ele
+
+195
+00:09:35,280 --> 00:09:37,320
+e ver o que surge, se 
+
+196
+00:09:37,320 --> 00:09:38,680
+algo que lhe interessa.
+
+197
+00:09:38,680 --> 00:09:40,810
+Os gerenciadores de contexto so realmente empolgantes
+
+198
+00:09:40,810 --> 00:09:42,490
+e  muito legal trabalhar
+
+199
+00:09:42,490 --> 00:09:44,100
+com eles e realmente entender
+
+200
+00:09:44,100 --> 00:09:45,960
+o que est acontecendo nos bastidores.
+
+201
+00:09:45,960 --> 00:09:48,000
+Com quase tudo em Python, o que
+
+202
+00:09:48,000 --> 00:09:50,760
+est acontecendo  que algum mtodo dunder est sendo chamado.
+
+203
+00:09:50,760 --> 00:09:53,420
+Quando voc faz isso, o mtodo init 
+
+204
+00:09:56,017 --> 00:09:59,630
+chamado primeiro para o objeto que voc est inicializando, depois o
+
+205
+00:09:59,630 --> 00:10:02,520
+mtodo enter e finalmente o mtodo exit no final.
+
+206
+00:10:02,520 --> 00:10:04,960
+No prximo vdeo, vamos olhar para estas trs coisas aqui, ento
+
+207
+00:10:04,960 --> 00:10:06,040
+no v a lugar nenhum.
+
+208
+00:10:06,040 --> 00:10:08,480
+Eu vou te ver no prximo vdeo.
+
+209
+00:10:08,480 --> 00:10:10,030
+&nbsp;
+

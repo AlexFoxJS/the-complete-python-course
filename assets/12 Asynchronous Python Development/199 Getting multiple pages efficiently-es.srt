@@ -1,0 +1,888 @@
+1
+00:00:00,150 --> 00:00:01,600
+Jos: Hola y bienvenido de nuevo.
+
+2
+00:00:01,600 --> 00:00:03,710
+En este video vamos a hacer
+
+3
+00:00:03,710 --> 00:00:06,610
+que sea un poco ms eficiente obtener varias pginas.
+
+4
+00:00:07,880 --> 00:00:10,080
+Aqu en esta funcin puede ver que
+
+5
+00:00:10,080 --> 00:00:12,420
+hemos tenido que crear una sesin de cliente.
+
+6
+00:00:13,610 --> 00:00:15,120
+Y cada sesin, como
+
+7
+00:00:15,120 --> 00:00:17,300
+dije antes, contiene un conjunto de
+
+8
+00:00:17,300 --> 00:00:21,535
+conexiones para que no todas las conexiones tengan que crearse cada vez.
+
+9
+00:00:21,535 --> 00:00:23,130
+Tambin contiene un almacenamiento de cookies,
+
+10
+00:00:23,130 --> 00:00:25,610
+por lo que las cookies que los sitios web
+
+11
+00:00:25,610 --> 00:00:29,380
+nos envan se pueden compartir entre las solicitudes realizadas con la misma sesin.
+
+12
+00:00:29,380 --> 00:00:30,840
+Si no est seguro de qu
+
+13
+00:00:30,840 --> 00:00:33,030
+son las cookies, adjunto un enlace de recurso a
+
+14
+00:00:33,030 --> 00:00:35,680
+esta conferencia con solo una breve explicacin de lo que son.
+
+15
+00:00:35,680 --> 00:00:40,170
+Entonces usamos la sesin que usa una conexin de ese grupo
+
+16
+00:00:40,170 --> 00:00:42,690
+que acaba de crearse para obtener
+
+17
+00:00:42,690 --> 00:00:44,260
+la URL y obtener
+
+18
+00:00:44,260 --> 00:00:46,770
+el contenido, y as sucesivamente.
+
+19
+00:00:46,770 --> 00:00:48,490
+Enva una solicitud al servidor
+
+20
+00:00:48,490 --> 00:00:51,090
+y luego espera que los datos vuelvan.
+
+21
+00:00:51,090 --> 00:00:52,670
+La funcin puede suspenderse en ese
+
+22
+00:00:52,670 --> 00:00:54,090
+punto hasta que vuelvan los datos.
+
+23
+00:00:55,270 --> 00:00:58,330
+Pero, por supuesto, dijimos que hemos creado un grupo de
+
+24
+00:00:58,330 --> 00:01:00,410
+conexiones aqu en la sesin del cliente
+
+25
+00:01:00,410 --> 00:01:03,970
+para que no tengamos que volver a crear la conexin cada vez.
+
+26
+00:01:03,970 --> 00:01:06,000
+Pero realmente no lo hemos hecho, porque
+
+27
+00:01:06,000 --> 00:01:07,460
+cada vez que hacemos esto,
+
+28
+00:01:07,460 --> 00:01:09,040
+creamos un nuevo grupo de conexiones,
+
+29
+00:01:09,040 --> 00:01:10,480
+por lo que en lugar
+
+30
+00:01:10,480 --> 00:01:12,980
+de una sola conexin, estamos creando un montn de
+
+31
+00:01:12,980 --> 00:01:14,990
+conexiones cada vez que queremos buscar una pgina.
+
+32
+00:01:14,990 --> 00:01:17,340
+Y luego solo estamos usando uno de ellos.
+
+33
+00:01:17,340 --> 00:01:18,630
+Entonces esto no es genial
+
+34
+00:01:18,630 --> 00:01:21,300
+En cambio, lo que deberamos hacer es crear
+
+35
+00:01:21,300 --> 00:01:25,360
+la sesin y usarla para todas las URL que queremos solicitar en
+
+36
+00:01:25,360 --> 00:01:28,360
+lugar de crear una sesin cada vez que deseemos
+
+37
+00:01:28,360 --> 00:01:29,700
+solicitar una URL.
+
+38
+00:01:30,750 --> 00:01:31,890
+Entonces, la forma
+
+39
+00:01:31,890 --> 00:01:33,570
+en que vamos a hacer
+
+40
+00:01:33,570 --> 00:01:36,680
+esto es dividir esto en otra cosa que nos
+
+41
+00:01:36,680 --> 00:01:38,100
+permita crear mltiples tareas.
+
+42
+00:01:39,140 --> 00:01:40,870
+As que def asincr,
+
+43
+00:01:40,870 --> 00:01:42,920
+obtener varias pginas, y
+
+44
+00:01:42,920 --> 00:01:44,869
+para esto vamos a
+
+45
+00:01:44,869 --> 00:01:49,869
+pasar el bucle y tambin las URL que queremos obtener.
+
+46
+00:01:50,350 --> 00:01:53,710
+Tenga en cuenta que este es un argumento
+
+47
+00:01:53,710 --> 00:01:57,920
+desempaquetado all, por lo que podemos pasar muchos argumentos diferentes,
+
+48
+00:01:57,920 --> 00:02:00,920
+uno por cada URL que queremos obtener.
+
+49
+00:02:00,920 --> 00:02:04,060
+Entonces vamos a decir que las tareas son una lista vaca.
+
+50
+00:02:04,060 --> 00:02:06,636
+Async con aiohttp. clienteSesin.
+
+51
+00:02:06,636 --> 00:02:09,572
+Y para la sesin del cliente, podemos
+
+52
+00:02:09,572 --> 00:02:12,600
+pasar el ciclo que queremos usar, que
+
+53
+00:02:12,600 --> 00:02:14,750
+es el que creamos aqu.
+
+54
+00:02:14,750 --> 00:02:17,330
+Y su parmetro va a ser este ciclo.
+
+55
+00:02:17,330 --> 00:02:22,070
+La razn para hacer eso es solo que no
+
+56
+00:02:22,070 --> 00:02:24,141
+crea un nuevo bucle.
+
+57
+00:02:24,141 --> 00:02:27,900
+Ahora cuando haces asyncio. get_event_loop, no importa dnde
+
+58
+00:02:27,900 --> 00:02:30,000
+lo haga en su programa,
+
+59
+00:02:30,000 --> 00:02:32,700
+siempre le dar el mismo ciclo.
+
+60
+00:02:32,700 --> 00:02:35,690
+Pero en caso de que te olvides de hacer eso,
+
+61
+00:02:35,690 --> 00:02:38,030
+pasar el loop aqu puede ser bastante til.
+
+62
+00:02:38,030 --> 00:02:39,870
+Simplemente no se crea uno nuevo que
+
+63
+00:02:39,870 --> 00:02:43,330
+quizs se ejecute de manera independiente o no se ejecute hasta que est completo.
+
+64
+00:02:44,400 --> 00:02:46,480
+Entonces, esto es solo una proteccin segura
+
+65
+00:02:46,480 --> 00:02:48,980
+para asegurarse de usar el ciclo que defini anteriormente.
+
+66
+00:02:50,147 --> 00:02:53,990
+Entonces, con una sesin de cliente de aiohttp como sesin, vamos
+
+67
+00:02:53,990 --> 00:02:56,448
+a completar nuestra lista de tareas y
+
+68
+00:02:56,448 --> 00:02:57,820
+esperar por ellas.
+
+69
+00:03:00,248 --> 00:03:03,430
+Entonces, para cada URL que tenemos aqu, vamos
+
+70
+00:03:03,430 --> 00:03:06,220
+a decir tareas. Agregar, buscar
+
+71
+00:03:07,680 --> 00:03:11,280
+la pgina de esta sesin, lo
+
+72
+00:03:11,280 --> 00:03:14,200
+siento, la URL, como tal.
+
+73
+00:03:15,250 --> 00:03:18,190
+Ahora cuando hacemos esto, lo que hacemos
+
+74
+00:03:18,190 --> 00:03:21,720
+es llamar a esta funcin de bsqueda de pgina.
+
+75
+00:03:21,720 --> 00:03:23,630
+Eso crea una coroutine y eso
+
+76
+00:03:23,630 --> 00:03:26,220
+luego se pone en nuestra lista de tareas.
+
+77
+00:03:27,080 --> 00:03:31,300
+Al final del ciclo, pero dentro de esta
+
+78
+00:03:31,300 --> 00:03:32,240
+declaracin, este
+
+79
+00:03:32,240 --> 00:03:36,820
+administrador de contexto, los vamos a esperar, de acuerdo?
+
+80
+00:03:36,820 --> 00:03:41,630
+Entonces las tareas agrupadas van a ser asincio. reunir.
+
+81
+00:03:43,360 --> 00:03:46,140
+Y esta va a ser nuestra tarea.
+
+82
+00:03:46,140 --> 00:03:48,840
+Una vez ms, todo lo que hacemos es
+
+83
+00:03:48,840 --> 00:03:51,640
+recopilar todas las tareas que hemos incluido en
+
+84
+00:03:51,640 --> 00:03:53,930
+nuestra lista y las tratamos como una
+
+85
+00:03:53,930 --> 00:03:57,100
+tarea nica para que luego podamos ejecutarla en un bucle
+
+86
+00:03:57,100 --> 00:03:59,650
+como ciclo de ejecucin hasta que se complete.
+
+87
+00:03:59,650 --> 00:04:03,100
+Excepto que en lugar de ejecutarlos usando este
+
+88
+00:04:03,100 --> 00:04:05,270
+ciclo, los vamos a esperar.
+
+89
+00:04:06,660 --> 00:04:10,568
+As que regrese esperando tareas agrupadas.
+
+90
+00:04:10,568 --> 00:04:14,090
+Esto, todo lo que va a hacer, como
+
+91
+00:04:14,090 --> 00:04:18,390
+saben, es rendimiento, por lo que nos permitir suspender
+
+92
+00:04:18,390 --> 00:04:20,802
+la ejecucin aqu, y esperar
+
+93
+00:04:20,802 --> 00:04:24,410
+hasta que ocurra algo aqu y luego reanudar
+
+94
+00:04:24,410 --> 00:04:26,820
+la funcin y posiblemente repetir
+
+95
+00:04:26,820 --> 00:04:29,512
+todo eso hasta que esto vuelva.
+
+96
+00:04:29,512 --> 00:04:33,730
+Y esto volver cuando todas las tareas hayan finalizado.
+
+97
+00:04:35,840 --> 00:04:39,250
+Entonces, cuando hacemos esto, ahora podemos ejecutar hasta que
+
+98
+00:04:39,250 --> 00:04:40,930
+estos completos obtengan varias pginas.
+
+99
+00:04:41,980 --> 00:04:44,710
+Terminemos este cdigo antes de revisarlo y asegurarnos
+
+100
+00:04:44,710 --> 00:04:46,560
+de que todo tenga sentido.
+
+101
+00:04:46,560 --> 00:04:49,690
+Esta pgina de bsqueda sigue creando su propia
+
+102
+00:04:49,690 --> 00:04:51,757
+sesin aqu, no queremos hacer eso.
+
+103
+00:04:51,757 --> 00:04:53,540
+Entonces, lo que vamos a
+
+104
+00:04:53,540 --> 00:04:56,560
+hacer es eliminarlo por completo y luego asegurarnos de
+
+105
+00:04:56,560 --> 00:04:57,710
+pasar la sesin, smession.
+
+106
+00:04:57,710 --> 00:04:59,100
+Asegrate de pasar la
+
+107
+00:04:59,100 --> 00:05:00,440
+sesin, escrito correctamente all.
+
+108
+00:05:00,440 --> 00:05:02,260
+Entonces psalo aqu tambin.
+
+109
+00:05:04,780 --> 00:05:09,350
+Solo para que eso tenga acceso a una sesin que hemos creado.
+
+110
+00:05:10,660 --> 00:05:13,820
+Ahora est bien, ahora nuestras tareas
+
+111
+00:05:13,820 --> 00:05:16,490
+ya no sern captadas, solo
+
+112
+00:05:16,490 --> 00:05:18,930
+van a ser estas cadenas.
+
+113
+00:05:18,930 --> 00:05:22,410
+Y no los llamaremos tareas,
+
+114
+00:05:22,410 --> 00:05:24,646
+los llamaremos URL.
+
+115
+00:05:24,646 --> 00:05:28,150
+Entonces ahora tenemos 50 veces Google. com dentro de nuestras
+
+116
+00:05:28,150 --> 00:05:30,280
+listas, y lo que podemos
+
+117
+00:05:30,280 --> 00:05:31,610
+hacer es ejecutar
+
+118
+00:05:32,920 --> 00:05:36,107
+hasta completar nuestra obtencin de varias pginas
+
+119
+00:05:36,107 --> 00:05:38,650
+con el bucle y las URL.
+
+120
+00:05:39,778 --> 00:05:43,390
+Observe cmo las URL son URL estrella.
+
+121
+00:05:43,390 --> 00:05:46,580
+Y entonces tambin debemos pasar los argumentos
+
+122
+00:05:46,580 --> 00:05:47,760
+individualmente desempaquendolos.
+
+123
+00:05:47,760 --> 00:05:50,880
+Si lo prefiere, puede pasar una lista, eso tambin estara bien
+
+124
+00:05:50,880 --> 00:05:51,750
+y entonces todo
+
+125
+00:05:51,750 --> 00:05:53,890
+lo que tendra que hacer es eliminarlos tambin.
+
+126
+00:05:53,890 --> 00:05:56,390
+Depende de ti cmo quieres hacer eso.
+
+127
+00:05:57,520 --> 00:06:00,600
+Bien, entonces lo que tenemos ahora, revisemos eso, son
+
+128
+00:06:00,600 --> 00:06:03,450
+50 cadenas de Google. com.
+
+129
+00:06:04,630 --> 00:06:09,080
+Luego los pasamos todos a esta funcin para obtener varias pginas y
+
+130
+00:06:09,080 --> 00:06:12,270
+tambin pasamos el ciclo que se est ejecutando como
+
+131
+00:06:12,270 --> 00:06:13,580
+un programador de tareas.
+
+132
+00:06:14,850 --> 00:06:16,050
+Entonces entran all.
+
+133
+00:06:17,110 --> 00:06:19,220
+El bucle est utilizando la sesin del cliente
+
+134
+00:06:19,220 --> 00:06:21,340
+solo para que no cree un nuevo bucle
+
+135
+00:06:21,340 --> 00:06:22,950
+en caso de que nos olvidemos
+
+136
+00:06:22,950 --> 00:06:24,730
+de pasarlo o nos olvidemos de crear uno.
+
+137
+00:06:24,730 --> 00:06:27,710
+Dir hey, no me pasaste nada,
+
+138
+00:06:27,710 --> 00:06:29,080
+algo est mal.
+
+139
+00:06:29,080 --> 00:06:30,700
+As que esto es
+
+140
+00:06:30,700 --> 00:06:34,210
+una salvaguarda, y las URL, vamos a iterar
+
+141
+00:06:34,210 --> 00:06:37,710
+sobre ellas y anexar la corutina que crean
+
+142
+00:06:37,710 --> 00:06:39,900
+en nuestra lista de tareas.
+
+143
+00:06:39,900 --> 00:06:44,029
+Recuerde, podramos suspender la ejecucin de la funcin antes
+
+144
+00:06:44,029 --> 00:06:47,487
+o durante esta creacin de la sesin.
+
+145
+00:06:47,487 --> 00:06:50,778
+Pero dentro de l, una vez que ingresamos, no
+
+146
+00:06:50,778 --> 00:06:52,380
+se suspende en ningn momento.
+
+147
+00:06:52,380 --> 00:06:54,530
+Todo lo que hace, escribe sobre todas
+
+148
+00:06:54,530 --> 00:06:56,840
+las URL y crea todas las corutinas
+
+149
+00:06:56,840 --> 00:06:58,710
+sincrnicamente, una tras otra, no hay
+
+150
+00:06:58,710 --> 00:07:00,722
+suspensin en ningn lugar dentro de aqu.
+
+151
+00:07:00,722 --> 00:07:02,840
+Entonces creamos todas las corutinas
+
+152
+00:07:02,840 --> 00:07:05,460
+y luego las reuniremos como una sola.
+
+153
+00:07:05,460 --> 00:07:09,210
+Lo que hace es esencialmente esperar cada
+
+154
+00:07:09,210 --> 00:07:12,964
+tarea y solo regresa cuando estn completos.
+
+155
+00:07:12,964 --> 00:07:17,964
+Entonces lo esperamos, por lo que si queremos suspender podemos suspender cada tarea
+
+156
+00:07:19,720 --> 00:07:22,090
+o podemos suspenderla antes de comenzar
+
+157
+00:07:22,090 --> 00:07:23,630
+cualquier tarea, o podemos
+
+158
+00:07:23,630 --> 00:07:24,750
+suspenderla al final
+
+159
+00:07:24,750 --> 00:07:26,200
+una vez que todas
+
+160
+00:07:26,200 --> 00:07:27,931
+las tareas hayan finalizado.
+
+161
+00:07:27,931 --> 00:07:31,070
+Eso significa que estas tareas que agrupamos
+
+162
+00:07:31,070 --> 00:07:34,859
+aqu se ejecutan individualmente en este ciclo de eventos.
+
+163
+00:07:34,859 --> 00:07:39,190
+Y eso es lo que hace este grupo.
+
+164
+00:07:39,190 --> 00:07:41,770
+Luego volvemos la espera de eso,
+
+165
+00:07:41,770 --> 00:07:43,650
+por lo que esta
+
+166
+00:07:43,650 --> 00:07:46,980
+funcin solo regresa cuando esto ha terminado de
+
+167
+00:07:46,980 --> 00:07:49,710
+ejecutarse, pero puede suspenderse en el camino.
+
+168
+00:07:49,710 --> 00:07:51,340
+Entonces, cuando ha terminado de ejecutarse,
+
+169
+00:07:51,340 --> 00:07:53,710
+eso vuelve y ese es el final y esa
+
+170
+00:07:53,710 --> 00:07:56,920
+funcin se ha ejecutado hasta que se haya completado, por eso es
+
+171
+00:07:58,275 --> 00:08:00,210
+que funcionamos hasta que se complete.
+
+172
+00:08:00,210 --> 00:08:01,610
+Ejecutar hasta que se complete
+
+173
+00:08:01,610 --> 00:08:04,450
+la ejecucin hasta que este retorno realmente se ejecute.
+
+174
+00:08:04,450 --> 00:08:05,740
+Y eso solo se
+
+175
+00:08:05,740 --> 00:08:08,260
+ejecutar cuando se haya esperado por completo
+
+176
+00:08:08,260 --> 00:08:10,320
+y esto se haya completado.
+
+177
+00:08:11,360 --> 00:08:13,290
+Y una vez que eso sucede, podemos
+
+178
+00:08:13,290 --> 00:08:15,900
+imprimir que todos tomaron la cantidad de tiempo que tomaron.
+
+179
+00:08:18,010 --> 00:08:19,920
+Parece un poco ms complejo,
+
+180
+00:08:19,920 --> 00:08:21,810
+pero hay una mejora clave
+
+181
+00:08:21,810 --> 00:08:23,930
+en el rendimiento, que es que
+
+182
+00:08:23,930 --> 00:08:28,930
+no est creando una sesin para cada una de las pginas que desea recuperar.
+
+183
+00:08:29,890 --> 00:08:32,180
+Y, por supuesto, siempre que
+
+184
+00:08:32,180 --> 00:08:33,658
+crees tu bucle
+
+185
+00:08:33,658 --> 00:08:36,790
+de evento primero, esto aqu no es necesario.
+
+186
+00:08:36,790 --> 00:08:41,020
+No podras pasarlo si quieres.
+
+187
+00:08:41,020 --> 00:08:43,320
+Depende totalmente de usted, cualquiera de
+
+188
+00:08:43,320 --> 00:08:45,521
+ellos funcionar, por lo que
+
+189
+00:08:45,521 --> 00:08:50,220
+puede ejecutar esto y, como ver, todava obtiene lo mismo, s?
+
+190
+00:08:51,530 --> 00:08:54,000
+Observe cmo parecen tomar un poco ms de
+
+191
+00:08:54,000 --> 00:08:55,790
+tiempo ahora y esto podra deberse
+
+192
+00:08:55,790 --> 00:08:57,660
+a una serie de razones, alguien
+
+193
+00:08:57,660 --> 00:09:00,710
+ms usando Internet en la casa o Google siendo ms
+
+194
+00:09:00,710 --> 00:09:03,760
+criticado por alguien haciendo solicitudes o cualquier otra cosa.
+
+195
+00:09:06,350 --> 00:09:08,110
+Si quiere pasar el ciclo,
+
+196
+00:09:08,110 --> 00:09:09,290
+esto tambin est bien
+
+197
+00:09:09,290 --> 00:09:11,610
+y esto es lo que hicimos antes.
+
+198
+00:09:11,610 --> 00:09:13,110
+Y funcionar de la misma manera.
+
+199
+00:09:13,110 --> 00:09:15,130
+Parece que ahora es ms rpido, posiblemente
+
+200
+00:09:15,130 --> 00:09:17,380
+porque no tuvo que ir y obtener
+
+201
+00:09:17,380 --> 00:09:19,040
+el bucle cada vez, por
+
+202
+00:09:20,020 --> 00:09:23,100
+lo que posiblemente tambin sea una mejora en el rendimiento.
+
+203
+00:09:24,660 --> 00:09:25,780
+De todos modos, eso es todo por este video.
+
+204
+00:09:25,780 --> 00:09:28,350
+Solo quera mostrarte cmo hacer esto
+
+205
+00:09:28,350 --> 00:09:31,870
+un poco ms genrico para que luego puedas
+
+206
+00:09:31,870 --> 00:09:36,070
+usar esto en nuestro programa de raspado de libros.
+
+207
+00:09:37,150 --> 00:09:39,870
+Entonces, si quieres continuar y probar eso, intenta convertir nuestro
+
+208
+00:09:39,870 --> 00:09:42,270
+raspador de libros en algo que use estas
+
+209
+00:09:42,270 --> 00:09:44,640
+dos funciones y un bucle de eventos para
+
+210
+00:09:44,640 --> 00:09:47,960
+obtener todas las pginas en lugar de obtenerlas de forma sincrnica, estoy
+
+211
+00:09:47,960 --> 00:09:50,176
+bastante seguro de que puedes hacerlo ahora. .
+
+212
+00:09:50,176 --> 00:09:53,510
+Todo lo que tiene que hacer es importar un
+
+213
+00:09:53,510 --> 00:09:55,360
+par de bibliotecas que ya
+
+214
+00:09:55,360 --> 00:09:57,550
+hemos instalado, copiar estas funciones, y
+
+215
+00:09:57,550 --> 00:10:00,430
+luego, en lugar de ir a travs de
+
+216
+00:10:00,430 --> 00:10:02,418
+cada URL de una en
+
+217
+00:10:02,418 --> 00:10:07,321
+una, consguelas todas al mismo tiempo primero y luego podr para usar sus contenidos
+
+218
+00:10:07,321 --> 00:10:10,300
+De nuevo, puede ser un poco complicado, puede
+
+219
+00:10:10,300 --> 00:10:13,010
+tomar algo de tiempo y algo de investigacin.
+
+220
+00:10:13,010 --> 00:10:17,610
+Una vez que haya terminado o si desea ver cmo
+
+221
+00:10:17,610 --> 00:10:20,917
+lo hacemos, regrese y lo implementaremos juntos.
+
+222
+00:10:20,917 --> 00:10:23,270
+De acuerdo, nos vemos en el prximo video.
+

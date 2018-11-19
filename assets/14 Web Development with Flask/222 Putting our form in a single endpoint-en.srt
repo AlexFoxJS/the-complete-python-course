@@ -1,0 +1,272 @@
+1
+00:00:00,000 --> 00:00:01,150
+<v Narrator>Hi and welcome back.</v>
+
+2
+00:00:01,150 --> 00:00:02,910
+In this video, we're going to be simplifying
+
+3
+00:00:02,910 --> 00:00:04,530
+our Flask code a little bit
+
+4
+00:00:04,530 --> 00:00:07,880
+by allowing our end point here
+
+5
+00:00:07,880 --> 00:00:12,420
+to both give the U to the form and receive the data.
+
+6
+00:00:12,420 --> 00:00:14,230
+So it's just going to be a little bit nicer,
+
+7
+00:00:14,230 --> 00:00:17,180
+fewer routes for users to access
+
+8
+00:00:17,180 --> 00:00:21,000
+and just generally, a bit easier to navigate.
+
+9
+00:00:21,000 --> 00:00:24,110
+What we're going to do is we're going to do two things.
+
+10
+00:00:24,110 --> 00:00:25,860
+We're going to allow this end point
+
+11
+00:00:27,050 --> 00:00:30,060
+to see get requests as well.
+
+12
+00:00:30,060 --> 00:00:33,400
+Now, the browser does get requests.
+
+13
+00:00:34,820 --> 00:00:37,170
+The form does post requests.
+
+14
+00:00:37,170 --> 00:00:40,930
+So we know that if we get a request that is get,
+
+15
+00:00:40,930 --> 00:00:44,100
+that's the browser wanting to load the page.
+
+16
+00:00:44,100 --> 00:00:47,150
+And probably the user wanting to see the form.
+
+17
+00:00:48,030 --> 00:00:49,700
+If users see the post request,
+
+18
+00:00:49,700 --> 00:00:52,130
+we know that the form sending us data.
+
+19
+00:00:52,130 --> 00:00:54,900
+And therefore we should deal with that form data.
+
+20
+00:00:56,070 --> 00:01:00,220
+So, if the request method is post,
+
+21
+00:01:01,330 --> 00:01:03,210
+we're going to do all of this stuff.
+
+22
+00:01:04,060 --> 00:01:06,040
+Get the title from the form,
+
+23
+00:01:06,040 --> 00:01:07,760
+get the content from the form,
+
+24
+00:01:07,760 --> 00:01:09,280
+you know create a new post
+
+25
+00:01:09,280 --> 00:01:12,710
+and then redirect the user to the post.
+
+26
+00:01:12,710 --> 00:01:13,730
+As soon as we return,
+
+27
+00:01:13,730 --> 00:01:15,870
+you know this from general Python knowledge,
+
+28
+00:01:15,870 --> 00:01:18,570
+as soon as we would return I think, the function ends.
+
+29
+00:01:19,450 --> 00:01:22,300
+So if we have another return down here,
+
+30
+00:01:28,050 --> 00:01:31,100
+this return will only execute
+
+31
+00:01:31,100 --> 00:01:33,100
+if we did not execute this one.
+
+32
+00:01:34,480 --> 00:01:37,140
+And we will always execute this one
+
+33
+00:01:37,140 --> 00:01:39,650
+if the request method is post.
+
+34
+00:01:39,650 --> 00:01:42,000
+So if the request method is not post,
+
+35
+00:01:42,000 --> 00:01:44,450
+we will jump right to this return.
+
+36
+00:01:46,446 --> 00:01:49,330
+And that means that if the browser makes a get request,
+
+37
+00:01:49,330 --> 00:01:51,640
+we are going to render the template.
+
+38
+00:01:51,640 --> 00:01:54,120
+If we receive a post request from the form,
+
+39
+00:01:54,120 --> 00:01:56,640
+we're going to deal with that data.
+
+40
+00:01:56,640 --> 00:02:00,030
+Now we no longer need /post/form
+
+41
+00:02:00,030 --> 00:02:02,040
+because this end point can be both.
+
+42
+00:02:02,040 --> 00:02:03,700
+And it's just a little bit simpler
+
+43
+00:02:03,700 --> 00:02:05,160
+to have the same end point dealing
+
+44
+00:02:05,160 --> 00:02:08,540
+with both serving the way of creating data
+
+45
+00:02:08,540 --> 00:02:10,620
+as well as dealing with that data input.
+
+46
+00:02:11,840 --> 00:02:14,540
+Our create.jinja2 also has to change
+
+47
+00:02:14,540 --> 00:02:17,380
+so that this action here can now be removed.
+
+48
+00:02:18,420 --> 00:02:20,430
+If you remove the action,
+
+49
+00:02:20,430 --> 00:02:24,650
+that means use the current page that you're at.
+
+50
+00:02:24,650 --> 00:02:25,870
+And because the current page
+
+51
+00:02:25,870 --> 00:02:27,820
+is the page that serves the template,
+
+52
+00:02:28,670 --> 00:02:31,280
+is also the page that takes in the data,
+
+53
+00:02:31,280 --> 00:02:33,500
+we don't need an action there.
+
+54
+00:02:33,500 --> 00:02:35,350
+This also simplifies things
+
+55
+00:02:35,350 --> 00:02:37,130
+because if you move this form around
+
+56
+00:02:37,130 --> 00:02:40,160
+or you change the URLs or anything like that,
+
+57
+00:02:40,160 --> 00:02:41,700
+things can break the form.
+
+58
+00:02:41,700 --> 00:02:42,930
+But now because it's the same page,
+
+59
+00:02:42,930 --> 00:02:44,810
+both giving the form to the user
+
+60
+00:02:44,810 --> 00:02:46,790
+and accepting the form's input,
+
+61
+00:02:46,790 --> 00:02:49,210
+it's just a bit more stable.
+
+62
+00:02:50,280 --> 00:02:52,680
+And so this way here simplifies your code a little bit,
+
+63
+00:02:52,680 --> 00:02:54,330
+makes it a bit easier to work with.
+
+64
+00:02:54,330 --> 00:02:56,810
+And also reduces the amount of code you've got.
+
+65
+00:02:56,810 --> 00:02:58,520
+All good things.
+
+66
+00:02:58,520 --> 00:02:59,750
+So that's it for this video.
+
+67
+00:02:59,750 --> 00:03:00,820
+I wanted to show you how to do this.
+
+68
+00:03:00,820 --> 00:03:02,470
+And I'll see you on the next one.
+

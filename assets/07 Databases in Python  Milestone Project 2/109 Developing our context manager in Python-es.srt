@@ -1,0 +1,836 @@
+1
+00:00:00,100 --> 00:00:01,160
+Jos: Hola, y bienvenido de nuevo.
+
+2
+00:00:01,160 --> 00:00:04,280
+En este video vamos a hablar sobre los administradores
+
+3
+00:00:04,280 --> 00:00:06,850
+de contexto y vamos a desarrollar el nuestro.
+
+4
+00:00:06,850 --> 00:00:09,540
+Esto no es algo en lo que entrenan muchos
+
+5
+00:00:09,540 --> 00:00:12,460
+cursos de Python, por lo que deberas sentirte muy bien
+
+6
+00:00:12,460 --> 00:00:14,630
+al profundizar en el funcionamiento interno de
+
+7
+00:00:14,630 --> 00:00:17,510
+Python y en cmo hacer algunas cosas bastante avanzadas.
+
+8
+00:00:17,510 --> 00:00:19,500
+En la ltima seccin miramos archivos
+
+9
+00:00:19,500 --> 00:00:21,830
+y particularmente en un nuevo bit de sintaxis.
+
+10
+00:00:21,830 --> 00:00:24,260
+Dicho esto, algo as, voy a ponerlo aqu y
+
+11
+00:00:24,260 --> 00:00:25,740
+lo eliminar en un momento.
+
+12
+00:00:25,740 --> 00:00:26,780
+Con algo, algo,
+
+13
+00:00:26,780 --> 00:00:29,010
+algo, algo, algo, algo, colon, y
+
+14
+00:00:30,310 --> 00:00:31,550
+luego hacer cosas.
+
+15
+00:00:32,470 --> 00:00:35,628
+Y este aqu fue el administrador de contexto.
+
+16
+00:00:35,628 --> 00:00:38,130
+Y por contexto queremos decir que el estado
+
+17
+00:00:38,130 --> 00:00:39,860
+actual de la aplicacin en el
+
+18
+00:00:39,860 --> 00:00:43,520
+punto en el que se ejecuta este bloque, se modifica con esta
+
+19
+00:00:43,520 --> 00:00:45,670
+afirmacin, que est controlada por esa declaracin.
+
+20
+00:00:45,670 --> 00:00:48,140
+Incluso se puede ver, es administrado por l.
+
+21
+00:00:49,700 --> 00:00:51,920
+Y eso significa que modifica
+
+22
+00:00:51,920 --> 00:00:54,400
+el estado, o el contexto, cuando
+
+23
+00:00:54,400 --> 00:00:57,150
+ingresas, y tambin lo modifica cuando sales.
+
+24
+00:00:57,150 --> 00:00:59,750
+Eso te permite hacer algunos ajustes cuando
+
+25
+00:00:59,750 --> 00:01:01,760
+comiences, y algunos demoler cuando termines.
+
+26
+00:01:03,370 --> 00:01:05,120
+Podemos crear nuestros propios administradores de contexto.
+
+27
+00:01:05,120 --> 00:01:06,880
+Eso es razonablemente sencillo.
+
+28
+00:01:07,931 --> 00:01:12,050
+Para que podamos usar esa sintaxis para nuestras conexiones de base de datos.
+
+29
+00:01:12,890 --> 00:01:15,330
+Podemos ver, y he sido muy explcito
+
+30
+00:01:15,330 --> 00:01:17,800
+a lo largo de esta seccin en,
+
+31
+00:01:17,800 --> 00:01:19,540
+por ejemplo, copiar y pegar cdigo.
+
+32
+00:01:19,540 --> 00:01:21,660
+Podemos ver que tenemos una configuracin.
+
+33
+00:01:22,570 --> 00:01:24,826
+Y tenemos un derribo, y esto
+
+34
+00:01:24,826 --> 00:01:28,180
+sucede para cada funcin en este archivo, ms o
+
+35
+00:01:28,180 --> 00:01:31,430
+menos, a excepcin de este que no tiene un compromiso.
+
+36
+00:01:31,430 --> 00:01:32,263
+Entonces, como pueden
+
+37
+00:01:32,263 --> 00:01:36,750
+ver, aqu hay una buena idea que es usar un administrador de contexto, para
+
+38
+00:01:36,750 --> 00:01:39,980
+que no tengamos que hacer esto todo el tiempo.
+
+39
+00:01:41,730 --> 00:01:44,850
+Vamos a crear un administrador de contexto para nuestras conexiones de base de
+
+40
+00:01:44,850 --> 00:01:46,460
+datos, para que no tengamos que abrir
+
+41
+00:01:46,460 --> 00:01:48,260
+y cerrar la conexin todo el tiempo.
+
+42
+00:01:50,150 --> 00:01:51,660
+Para crear un administrador de contexto,
+
+43
+00:01:51,660 --> 00:01:55,340
+todo lo que tenemos que hacer es ir a nuestro paquete utils, por
+
+44
+00:01:55,340 --> 00:01:56,660
+ejemplo, y crear un nuevo
+
+45
+00:01:56,660 --> 00:02:01,640
+archivo de Python, que voy a llamar a database_connection. py.
+
+46
+00:02:03,600 --> 00:02:06,760
+Esta conexin de base de datos va a importar sqlite3,
+
+47
+00:02:06,760 --> 00:02:08,970
+porque realmente se conectar a la base
+
+48
+00:02:08,970 --> 00:02:11,240
+de datos y necesita que sqlite3 se conecte.
+
+49
+00:02:11,240 --> 00:02:15,610
+Y va a ser una clase, una clase de conexin de base de datos.
+
+50
+00:02:17,140 --> 00:02:19,220
+Una conexin de base de
+
+51
+00:02:19,220 --> 00:02:23,060
+datos, para poder ser utilizado como un administrador
+
+52
+00:02:23,060 --> 00:02:26,680
+de contexto, por supuesto necesita dos mtodos dunder.
+
+53
+00:02:26,680 --> 00:02:28,340
+Recuerde que los mtodos dunder
+
+54
+00:02:28,340 --> 00:02:30,550
+son la manera en que todo sucede
+
+55
+00:02:30,550 --> 00:02:32,850
+en Python y si desea usar una
+
+56
+00:02:32,850 --> 00:02:34,380
+instruccin with, necesita dos mtodos Dunder.
+
+57
+00:02:34,380 --> 00:02:39,020
+Necesita ingresar y necesita salir.
+
+58
+00:02:41,350 --> 00:02:44,410
+Observe cmo el mtodo de salida tiene algunos argumentos aqu.
+
+59
+00:02:44,410 --> 00:02:46,400
+Vamos a hablar sobre lo que estos son en los prximos
+
+60
+00:02:46,400 --> 00:02:48,650
+videos, as que no te preocupes demasiado por ellos en este momento.
+
+61
+00:02:49,590 --> 00:02:52,010
+Naturalmente, el mtodo de ingresar, se
+
+62
+00:02:52,010 --> 00:02:54,980
+llama cuando ingresas al administrador de contexto justo
+
+63
+00:02:54,980 --> 00:02:56,370
+antes de comenzar a
+
+64
+00:02:56,370 --> 00:02:59,130
+ejecutarlo, y el mtodo de salida se
+
+65
+00:02:59,130 --> 00:03:02,010
+ejecuta justo cuando sales del administrador de contexto.
+
+66
+00:03:02,010 --> 00:03:04,880
+Cuando ahora tenemos estos dos mtodos, podemos pasar a
+
+67
+00:03:04,880 --> 00:03:07,830
+la base de datos. py, podemos eliminar la
+
+68
+00:03:07,830 --> 00:03:10,890
+importacin de sqlite3, y en su lugar podemos
+
+69
+00:03:10,890 --> 00:03:15,890
+decir que, desde la conexin de la base de datos, observe cmo estoy
+
+70
+00:03:15,980 --> 00:03:17,570
+usando una importacin relativa aqu. database_connection, import, clase de conexin de base de datos.
+
+71
+00:03:17,570 --> 00:03:21,750
+Ahora, en lugar de hacer esto, o ms bien,
+
+72
+00:03:22,760 --> 00:03:27,410
+en lugar de hacer esto aqu, podemos decir con conexin
+
+73
+00:03:27,410 --> 00:03:29,670
+a la base de datos,
+
+74
+00:03:29,670 --> 00:03:34,210
+como conexin, y luego podemos mantener esto aqu.
+
+75
+00:03:35,550 --> 00:03:37,650
+Por supuesto, esto debe sangrarse para que estn
+
+76
+00:03:38,680 --> 00:03:40,680
+dentro de este bloque de administrador de contexto.
+
+77
+00:03:40,680 --> 00:03:44,090
+De acuerdo, esta es la sintaxis con la conexin de la base de
+
+78
+00:03:45,960 --> 00:03:48,910
+datos, crea un nuevo objeto de tipo conexin a la base de
+
+79
+00:03:48,910 --> 00:03:51,280
+datos como esta variable de conexin, esta es la
+
+80
+00:03:52,160 --> 00:03:53,920
+variable que creamos ahora para que pueda
+
+81
+00:03:53,920 --> 00:03:55,570
+ser utilizada dentro del administrador de contexto.
+
+82
+00:03:55,570 --> 00:03:58,610
+Y luego, podemos crear un cursor con l, y
+
+83
+00:03:58,610 --> 00:04:00,660
+luego podemos ejecutar lo que queramos.
+
+84
+00:04:00,660 --> 00:04:03,350
+Por supuesto, podramos hacer que esta conexin de
+
+85
+00:04:03,350 --> 00:04:06,360
+base de datos devuelva un objeto de cursor, pero
+
+86
+00:04:06,360 --> 00:04:08,080
+creo que eso sera bastante confuso.
+
+87
+00:04:08,080 --> 00:04:12,360
+Una conexin de base de datos probablemente debera devolver una
+
+88
+00:04:12,360 --> 00:04:14,780
+conexin, y no un cursor.
+
+89
+00:04:14,780 --> 00:04:15,700
+Entonces, por supuesto,
+
+90
+00:04:17,640 --> 00:04:20,410
+nuestros mtodos de entrada y salida todava no hacen nada.
+
+91
+00:04:20,410 --> 00:04:22,020
+Entonces, esta variable de conexin aqu no contendr ninguna.
+
+92
+00:04:22,020 --> 00:04:25,880
+Eso es lo que devuelve este mtodo de entrada.
+
+93
+00:04:26,790 --> 00:04:29,750
+Pasar solo significa no hacer nada.
+
+94
+00:04:29,750 --> 00:04:31,480
+Todas las funciones, todos los mtodos
+
+95
+00:04:31,480 --> 00:04:35,825
+en Python no devuelven ninguno por defecto, por lo que esta variable de conexin ser none.
+
+96
+00:04:35,825 --> 00:04:38,740
+No queremos hacer eso.
+
+97
+00:04:38,740 --> 00:04:39,890
+Por supuesto, aqu tambin
+
+98
+00:04:40,820 --> 00:04:44,340
+estamos creando un nuevo objeto, por lo tanto, si lo deseamos, no
+
+99
+00:04:44,340 --> 00:04:47,950
+es necesario, pero si queremos, tambin podemos tener un mtodo init aqu.
+
+100
+00:04:47,950 --> 00:04:50,850
+Este mtodo init se llamar primero cuando inicialicemos
+
+101
+00:04:51,720 --> 00:04:53,870
+este objeto y luego se llamar
+
+102
+00:04:53,870 --> 00:04:55,860
+al mtodo enter mientras ingresemos
+
+103
+00:04:55,860 --> 00:04:57,933
+al administrador de contexto y se
+
+104
+00:04:57,933 --> 00:05:00,559
+llamar al mtodo de salida cuando salgamos
+
+105
+00:05:00,559 --> 00:05:02,338
+del administrador de contexto.
+
+106
+00:05:02,338 --> 00:05:03,938
+Por supuesto, tenemos que inicializar la conexin.
+
+107
+00:05:05,850 --> 00:05:08,410
+Tenemos que hacer esto sqlite3. conctate, as que hagmoslo.
+
+108
+00:05:08,410 --> 00:05:13,410
+Creo que deberamos hacer el sqlite3. conctese aqu, en el
+
+109
+00:05:14,110 --> 00:05:18,410
+mtodo enter, para que
+
+110
+00:05:18,410 --> 00:05:20,090
+podamos devolver sqlite3. conectar, datos. db.
+
+111
+00:05:20,090 --> 00:05:24,550
+Ahora, cuando regresemos a la base de datos. py, esta variable de conexin ahora es
+
+112
+00:05:26,270 --> 00:05:28,260
+un resultado de conexin sqlite3.
+
+113
+00:05:29,240 --> 00:05:34,240
+Es el resultado de lo que devuelva el mtodo de entrada.
+
+114
+00:05:35,280 --> 00:05:39,460
+Entonces, eso es correcto.
+
+115
+00:05:39,460 --> 00:05:40,440
+Ahora, todo esto
+
+116
+00:05:41,287 --> 00:05:45,230
+funcionar, pero cuando lleguemos al final, an no hemos agregado ningn cdigo
+
+117
+00:05:45,230 --> 00:05:47,450
+para confirmar y cerrar la conexin.
+
+118
+00:05:47,450 --> 00:05:49,120
+Entonces, tenemos que hacer eso aqu en el mtodo de salida.
+
+119
+00:05:49,120 --> 00:05:51,960
+Ahora, no tenemos acceso a esta conexin dentro
+
+120
+00:05:53,740 --> 00:05:56,547
+de esta clase, no hay forma de
+
+121
+00:05:56,547 --> 00:05:58,250
+acceder a la conexin que
+
+122
+00:05:58,250 --> 00:06:01,430
+tenemos, y no se nos pasa como parmetro.
+
+123
+00:06:01,430 --> 00:06:04,210
+Entonces, qu hacer es usar este
+
+124
+00:06:05,090 --> 00:06:07,690
+mtodo init para decir uno mismo. la conexin es ninguna.
+
+125
+00:06:07,690 --> 00:06:11,040
+Entonces, vamos a decir s mismo. la conexin es esta conexin
+
+126
+00:06:11,940 --> 00:06:14,400
+aqu, regreso yo. conexin.
+
+127
+00:06:14,400 --> 00:06:18,040
+Ahora, estamos haciendo lo mismo, pero hemos
+
+128
+00:06:19,010 --> 00:06:20,470
+definido una nueva propiedad de nuestra
+
+129
+00:06:20,470 --> 00:06:22,130
+clase de conexin de base de
+
+130
+00:06:22,130 --> 00:06:23,830
+datos que va a almacenar este sqlite3. connect result, el mtodo enter lo
+
+131
+00:06:23,830 --> 00:06:27,640
+devolver, lo que significa que se
+
+132
+00:06:27,640 --> 00:06:29,650
+puede usar desde nuestra base de datos. py, y ahora tenemos acceso aqu
+
+133
+00:06:29,650 --> 00:06:32,290
+en nuestro mtodo de
+
+134
+00:06:32,290 --> 00:06:34,600
+salida, as como a s mismo. conexin, por lo que podemos hacer
+
+135
+00:06:34,600 --> 00:06:36,680
+uno mismo. conexin. cometer, y
+
+136
+00:06:36,680 --> 00:06:39,520
+yo. conexin. cerca.
+
+137
+00:06:39,520 --> 00:06:42,150
+En algunos
+
+138
+00:06:43,650 --> 00:06:46,670
+casos no necesitaremos comprometernos, pero est bien dejarlo
+
+139
+00:06:46,670 --> 00:06:48,540
+all incluso cuando no sea necesario.
+
+140
+00:06:48,540 --> 00:06:50,490
+El sqlite simplemente no har nada, si llamamos a commit
+
+141
+00:06:50,490 --> 00:06:52,740
+pero no hay nada que confirmar, no se realiza ningn cambio
+
+142
+00:06:52,740 --> 00:06:54,640
+en la base de datos, as que esto est bien.
+
+143
+00:06:54,640 --> 00:06:57,220
+De acuerdo, mejorara esto diciendo tambin yo. host = host, y pase
+
+144
+00:06:57,220 --> 00:07:02,220
+esto aqu como un parmetro
+
+145
+00:07:06,690 --> 00:07:10,550
+para el mtodo init, y en lugar de datos. db, usa uno mismo. anfitrin.
+
+146
+00:07:10,550 --> 00:07:13,640
+De esa manera, cuando volvamos a nuestra base de datos. py, podemos
+
+147
+00:07:14,860 --> 00:07:17,410
+decir datos. DB aqu, y eso hace
+
+148
+00:07:17,410 --> 00:07:20,110
+las cosas un poco ms explcitas.
+
+149
+00:07:20,110 --> 00:07:21,580
+Podemos ver que ahora estamos conectados
+
+150
+00:07:21,580 --> 00:07:23,450
+a una base de datos llamada datos. db, estamos obteniendo la conexin aqu, presumiblemente
+
+151
+00:07:23,450 --> 00:07:25,770
+todo est siendo manejado,
+
+152
+00:07:25,770 --> 00:07:27,990
+incluyendo el cierre de la conexin y todo eso.
+
+153
+00:07:27,990 --> 00:07:30,680
+Esto se ve bastante similar
+
+154
+00:07:30,680 --> 00:07:32,920
+a, con libros abiertos. txt en modo de lectura como archivo,
+
+155
+00:07:32,920 --> 00:07:37,920
+como puede ver, la apertura aqu tambin es
+
+156
+00:07:38,166 --> 00:07:41,090
+una clase, est creando un nuevo objeto de tipo
+
+157
+00:07:41,090 --> 00:07:44,140
+abierto, y est obteniendo dos parmetros para el mtodo
+
+158
+00:07:44,140 --> 00:07:47,480
+init, y luego la funcin de entrada dentro de esta
+
+159
+00:07:47,480 --> 00:07:49,820
+clase est regresando un archivo para el
+
+160
+00:07:49,820 --> 00:07:52,190
+cual estamos usando como esta variable aqu.
+
+161
+00:07:52,190 --> 00:07:53,530
+Casi lo mismo, por supuesto, esto
+
+162
+00:07:54,480 --> 00:07:55,850
+tiene otro argumento all, pero est bien.
+
+163
+00:07:55,850 --> 00:07:58,640
+Lo que hemos hecho es crear un nuevo
+
+164
+00:07:59,630 --> 00:08:01,950
+objeto, y le hemos dado lo que
+
+165
+00:08:01,950 --> 00:08:04,440
+queremos hacer con ese objeto, conctese a databse. DB, y eso va a manejar
+
+166
+00:08:04,440 --> 00:08:06,490
+todo por nosotros.
+
+167
+00:08:06,490 --> 00:08:09,090
+Esto con declaracin es una forma muy pitonica de escribir cdigo.
+
+168
+00:08:09,090 --> 00:08:12,670
+No es algo que tengan otros lenguajes de programacin, y realmente
+
+169
+00:08:12,670 --> 00:08:14,780
+te animo a que lo uses.
+
+170
+00:08:14,780 --> 00:08:17,060
+Ahora que lo tenemos, por supuesto, podemos
+
+171
+00:08:18,180 --> 00:08:20,410
+copiarlo y usarlo en todas nuestras funciones.
+
+172
+00:08:20,410 --> 00:08:24,610
+En el libro de at, hacemos exactamente lo mismo.
+
+173
+00:08:26,190 --> 00:08:28,580
+Observe cmo este gestor de contexto tambin se comprometer al
+
+174
+00:08:28,580 --> 00:08:30,870
+final, por lo que no hay nada que hacer aqu.
+
+175
+00:08:30,870 --> 00:08:33,990
+Tambin aqu, podemos, por supuesto, hacer todo esto.
+
+176
+00:08:34,860 --> 00:08:39,860
+No tenemos que cerrar la conexin, y podemos devolver libros
+
+177
+00:08:40,930 --> 00:08:43,160
+dentro o fuera del administrador
+
+178
+00:08:43,160 --> 00:08:44,150
+de contexto,
+
+179
+00:08:44,150 --> 00:08:46,410
+depende de usted, no importa.
+
+180
+00:08:46,410 --> 00:08:48,210
+Voy a dejarlo afuera, solo por patear.
+
+181
+00:08:48,210 --> 00:08:52,360
+Podemos hacerlo aqu tambin, por supuesto, y podemos,
+
+182
+00:08:53,791 --> 00:08:56,770
+por supuesto, tambin hacerlo aqu.
+
+183
+00:08:59,100 --> 00:09:01,050
+Ahora este cdigo es mucho ms simple.
+
+184
+00:09:04,830 --> 00:09:07,510
+Ninguno de estos cdigos tiene que ver con conectarse a una
+
+185
+00:09:08,530 --> 00:09:10,920
+base de datos o confirmar o cerrar la conexin.
+
+186
+00:09:10,920 --> 00:09:13,940
+Todo esto se hace por nosotros con este administrador de contexto.
+
+187
+00:09:13,940 --> 00:09:16,590
+Eso significa que si nos olvidamos de comprometernos o cerrar
+
+188
+00:09:17,700 --> 00:09:19,330
+algo o algo, ahora ya no
+
+189
+00:09:19,330 --> 00:09:20,950
+podemos olvidarlo, porque tan pronto como
+
+190
+00:09:20,950 --> 00:09:22,540
+hacemos esto, todo se maneja para nosotros.
+
+191
+00:09:22,540 --> 00:09:25,490
+Podra tratar de crear otro administrador de contexto
+
+192
+00:09:27,610 --> 00:09:30,630
+que genere el cursor, y luego usar un nico
+
+193
+00:09:30,630 --> 00:09:32,430
+administrador de contexto para ambos.
+
+194
+00:09:32,430 --> 00:09:35,280
+Puedes intentarlo si quieres, jugar con l y ver
+
+195
+00:09:35,280 --> 00:09:37,320
+qu te ocurre, si eso es
+
+196
+00:09:37,320 --> 00:09:38,680
+algo que te interesa.
+
+197
+00:09:38,680 --> 00:09:40,810
+Los administradores de contexto son realmente emocionantes,
+
+198
+00:09:40,810 --> 00:09:42,490
+y es genial trabajar con ellos,
+
+199
+00:09:42,490 --> 00:09:44,100
+y realmente finalmente entender lo
+
+200
+00:09:44,100 --> 00:09:45,960
+que est sucediendo detrs de escena.
+
+201
+00:09:45,960 --> 00:09:48,000
+Con casi todo en Python, lo que
+
+202
+00:09:48,000 --> 00:09:50,760
+est sucediendo es que se llama a algn mtodo dunder.
+
+203
+00:09:50,760 --> 00:09:53,420
+Cuando lo haga, se llama primero al mtodo
+
+204
+00:09:56,017 --> 00:09:59,630
+init para el objeto que est inicializando, luego al mtodo enter
+
+205
+00:09:59,630 --> 00:10:02,520
+y finalmente al mtodo de salida al final.
+
+206
+00:10:02,520 --> 00:10:04,960
+En el siguiente video vamos a ver estas tres cosas aqu, as
+
+207
+00:10:04,960 --> 00:10:06,040
+que no vayas a ninguna parte.
+
+208
+00:10:06,040 --> 00:10:08,480
+Te ver en el prximo video.
+
+209
+00:10:08,480 --> 00:10:10,030
+&nbsp;
+

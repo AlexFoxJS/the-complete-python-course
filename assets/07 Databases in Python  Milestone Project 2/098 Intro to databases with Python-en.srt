@@ -1,0 +1,580 @@
+1
+00:00:00,420 --> 00:00:01,660 line:15% 
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,660 --> 00:00:04,727 line:15% 
+In this video, we're going to look at databases.
+
+3
+00:00:04,727 --> 00:00:08,722
+Let's first talk about databases as a general concept,
+
+4
+00:00:08,722 --> 00:00:11,150
+and then over the next few videos
+
+5
+00:00:11,150 --> 00:00:13,510
+we'll move on to talk more concisely
+
+6
+00:00:13,510 --> 00:00:16,630
+about what SQLite is and what it does,
+
+7
+00:00:16,630 --> 00:00:19,060
+and then we will re-implement our milestone project
+
+8
+00:00:19,060 --> 00:00:20,330
+using databases.
+
+9
+00:00:21,255 --> 00:00:24,920
+A database is a place where we can store data.
+
+10
+00:00:24,920 --> 00:00:27,040
+Now, we all know this already,
+
+11
+00:00:27,040 --> 00:00:28,616
+but let me give you a bit more information
+
+12
+00:00:28,616 --> 00:00:30,750
+about how databases work.
+
+13
+00:00:31,970 --> 00:00:35,448
+Normally, databases are organised into tables,
+
+14
+00:00:35,448 --> 00:00:38,140
+and each table holds information about one thing
+
+15
+00:00:38,140 --> 00:00:41,310
+in your system, such as cars, or customers,
+
+16
+00:00:41,310 --> 00:00:42,960
+or shops, et cetera.
+
+17
+00:00:42,960 --> 00:00:44,360
+Something more or less like this
+
+18
+00:00:44,360 --> 00:00:45,880
+could be for your customers.
+
+19
+00:00:47,260 --> 00:00:49,470
+On the left, you've got an ID column,
+
+20
+00:00:49,470 --> 00:00:51,474
+that's an identifier for each customer.
+
+21
+00:00:51,474 --> 00:00:54,880
+Then you've got a name and then you've got an address.
+
+22
+00:00:54,880 --> 00:00:56,400
+The reason we've got an identifier
+
+23
+00:00:56,400 --> 00:00:58,700
+is because two customers could have the same name
+
+24
+00:00:58,700 --> 00:01:01,360
+or the same address, so neither name or address
+
+25
+00:01:01,360 --> 00:01:03,495
+allows us to identify one customer.
+
+26
+00:01:03,495 --> 00:01:06,110
+They could identify multiple customers.
+
+27
+00:01:06,110 --> 00:01:08,320
+So that's why we have an ID.
+
+28
+00:01:08,320 --> 00:01:11,790
+If each customer had a unique email address, for example,
+
+29
+00:01:11,790 --> 00:01:14,920
+we could use that as the ID instead of a number.
+
+30
+00:01:14,920 --> 00:01:19,920
+But frequently, we use numeric IDs for things in our tables.
+
+31
+00:01:19,930 --> 00:01:24,380
+Normally it starts at one and it goes up one per row
+
+32
+00:01:24,380 --> 00:01:25,660
+that you've got.
+
+33
+00:01:25,660 --> 00:01:27,350
+As you can see, this table has three columns,
+
+34
+00:01:27,350 --> 00:01:29,590
+ID, name, and address,
+
+35
+00:01:29,590 --> 00:01:32,300
+and four rows from one to four.
+
+36
+00:01:34,950 --> 00:01:38,152
+SQLite, which is the database we're gonna be using,
+
+37
+00:01:38,152 --> 00:01:42,850
+is a small, fast, and reliable database engine
+
+38
+00:01:42,850 --> 00:01:45,530
+which can run in memory, more or less
+
+39
+00:01:45,530 --> 00:01:49,400
+like our Python List did, without saving any data
+
+40
+00:01:49,400 --> 00:01:52,210
+to the actual, physical disc.
+
+41
+00:01:52,210 --> 00:01:54,500
+Or, it can also run by saving all data
+
+42
+00:01:54,500 --> 00:01:56,960
+to a single data file.
+
+43
+00:01:56,960 --> 00:01:59,564
+That's it, one file on your computer that contains
+
+44
+00:01:59,564 --> 00:02:01,890
+all your data in your database.
+
+45
+00:02:03,070 --> 00:02:06,770
+Now, there is a benefit to having a single data file,
+
+46
+00:02:06,770 --> 00:02:09,520
+which is that it makes everything quite lightweight,
+
+47
+00:02:09,520 --> 00:02:12,210
+quite small, quite easy to move around
+
+48
+00:02:12,210 --> 00:02:15,160
+from one computer to another or from one device to another.
+
+49
+00:02:15,160 --> 00:02:20,160
+And SQLite is frequently used with small devices
+
+50
+00:02:20,750 --> 00:02:25,130
+like your phones, smartphones, iPhones, Android phones.
+
+51
+00:02:25,130 --> 00:02:27,520
+It's also used with embedded applications,
+
+52
+00:02:27,520 --> 00:02:30,720
+and it's also used in reasonably light
+
+53
+00:02:30,720 --> 00:02:34,150
+and simple desktop and ware applications as well.
+
+54
+00:02:35,730 --> 00:02:38,270
+You interact with SQLite using SQL,
+
+55
+00:02:38,270 --> 00:02:41,000
+and that means Structured Query Language,
+
+56
+00:02:41,000 --> 00:02:42,640
+and the Structured Query Language
+
+57
+00:02:42,640 --> 00:02:44,420
+is an English-like language
+
+58
+00:02:44,420 --> 00:02:46,340
+that's developed specifically for interacting
+
+59
+00:02:46,340 --> 00:02:48,230
+with relational databases.
+
+60
+00:02:48,230 --> 00:02:50,300
+We're gonna look at what a relational database means
+
+61
+00:02:50,300 --> 00:02:51,320
+in a moment.
+
+62
+00:02:51,320 --> 00:02:54,630
+SQL allows for things like selecting data from a database,
+
+63
+00:02:54,630 --> 00:02:58,480
+or inserting it, creating tables, filtering through data,
+
+64
+00:02:58,480 --> 00:03:00,470
+ordering data, and a lot more stuff.
+
+65
+00:03:01,460 --> 00:03:04,500
+By the way, some people say S-Q-L instead of SQL,
+
+66
+00:03:04,500 --> 00:03:05,874
+it's up to you which one you say.
+
+67
+00:03:05,874 --> 00:03:09,400
+Don't hate for me saying SQL.
+
+68
+00:03:09,400 --> 00:03:12,530
+And there are other database systems apart from SQLite,
+
+69
+00:03:12,530 --> 00:03:16,640
+such as the oh-so-popular MySQL, and others like PostgreSQL,
+
+70
+00:03:16,640 --> 00:03:18,240
+Oracle, and many more.
+
+71
+00:03:19,895 --> 00:03:24,895
+Okay, so let's look at an example of a relational database.
+
+72
+00:03:27,170 --> 00:03:31,710
+SQLite, Postgre, MySQL are all relational database systems.
+
+73
+00:03:31,710 --> 00:03:34,330
+And in a relational database, there is functionality
+
+74
+00:03:34,330 --> 00:03:38,190
+to extract and analyse data in ways tailored
+
+75
+00:03:38,190 --> 00:03:41,110
+for when some data is related to some other data.
+
+76
+00:03:42,000 --> 00:03:43,420
+Here's an example.
+
+77
+00:03:43,420 --> 00:03:47,790
+Here we've got two tables, Users and Purchases.
+
+78
+00:03:49,410 --> 00:03:51,220
+Now, it may not be directly obvious
+
+79
+00:03:51,220 --> 00:03:54,340
+that these two pieces of data are related,
+
+80
+00:03:54,340 --> 00:03:57,800
+but if you see, the Users has an ID column,
+
+81
+00:03:57,800 --> 00:04:00,300
+the Purchases has a customer ID column,
+
+82
+00:04:00,300 --> 00:04:02,890
+so the data here's related because
+
+83
+00:04:02,890 --> 00:04:06,090
+by looking at this data together, you can see that
+
+84
+00:04:06,090 --> 00:04:10,480
+two of these purchases were made by the user number one,
+
+85
+00:04:10,480 --> 00:04:12,910
+and that has a name and an address.
+
+86
+00:04:12,910 --> 00:04:15,200
+So you can relate these pieces of data
+
+87
+00:04:15,200 --> 00:04:19,140
+by using the customer ID column on the Purchases table,
+
+88
+00:04:19,140 --> 00:04:21,280
+and the ID column on the Users table.
+
+89
+00:04:22,580 --> 00:04:23,880
+So that's pretty handy.
+
+90
+00:04:26,650 --> 00:04:30,210
+Most database engines create complex folder structures
+
+91
+00:04:30,210 --> 00:04:33,100
+and save data in various different ways,
+
+92
+00:04:33,100 --> 00:04:35,020
+but SQLite is quite simple in that it creates
+
+93
+00:04:35,020 --> 00:04:37,170
+a single file that contains all your data.
+
+94
+00:04:38,760 --> 00:04:42,590
+SQLite has a limitation, which is that we can only perform
+
+95
+00:04:42,590 --> 00:04:45,470
+one write operation at a time.
+
+96
+00:04:46,610 --> 00:04:48,300
+That means that if you've got two users
+
+97
+00:04:48,300 --> 00:04:51,980
+trying to write some data to the database at the same time,
+
+98
+00:04:51,980 --> 00:04:53,700
+they are not going to be able to do that.
+
+99
+00:04:53,700 --> 00:04:56,140
+Only one person is going to be able to write,
+
+100
+00:04:56,140 --> 00:04:58,330
+and then the other will have to write afterwards.
+
+101
+00:04:58,330 --> 00:04:59,960
+They will have to wait.
+
+102
+00:04:59,960 --> 00:05:03,130
+However, SQLite does allow multiple read operations
+
+103
+00:05:03,130 --> 00:05:05,030
+at the same time, so if you have a lot of users
+
+104
+00:05:05,030 --> 00:05:07,010
+using your programme at the same time,
+
+105
+00:05:07,010 --> 00:05:08,820
+interacting with the same SQLite database,
+
+106
+00:05:08,820 --> 00:05:10,950
+they can all read data at the same time.
+
+107
+00:05:11,790 --> 00:05:15,090
+Most database systems, like PostgreSQL or MySQL,
+
+108
+00:05:15,090 --> 00:05:18,840
+allow for many of those at once, either write or read.
+
+109
+00:05:20,180 --> 00:05:22,140
+For example, imagine you were writing a Python app
+
+110
+00:05:22,140 --> 00:05:25,460
+handling hundreds of users at once performing operations
+
+111
+00:05:25,460 --> 00:05:28,402
+like purchasing items, SQLite would not be suitable
+
+112
+00:05:28,402 --> 00:05:31,440
+because only one user could save their purchase
+
+113
+00:05:31,440 --> 00:05:33,400
+and commit their purchase at a time.
+
+114
+00:05:33,400 --> 00:05:36,958
+So another database type could be better in that scenario.
+
+115
+00:05:36,958 --> 00:05:39,660
+However, if you've got SQLite on your phone,
+
+116
+00:05:39,660 --> 00:05:41,440
+well you're the only user,
+
+117
+00:05:41,440 --> 00:05:43,470
+SQLite could be pretty nice for that.
+
+118
+00:05:44,350 --> 00:05:47,330
+So SQLite is very fast at reading data,
+
+119
+00:05:47,330 --> 00:05:50,110
+not so fast and not so efficient at writing data.
+
+120
+00:05:52,650 --> 00:05:55,910
+Now, when we interact with a SQLite database,
+
+121
+00:05:55,910 --> 00:06:00,540
+you can either open the data file with a text editor,
+
+122
+00:06:00,540 --> 00:06:04,610
+that's just a blank, or not a blank, but a text file
+
+123
+00:06:04,610 --> 00:06:07,109
+that has a bunch of SQLite data in it,
+
+124
+00:06:07,109 --> 00:06:11,710
+but normally I recommend using a proper data browser
+
+125
+00:06:11,710 --> 00:06:14,592
+like this one, sqlitebrowser.org.
+
+126
+00:06:14,592 --> 00:06:16,660
+As we progress through this section,
+
+127
+00:06:16,660 --> 00:06:19,180
+I am going to be using sqlitebrowser.org
+
+128
+00:06:19,180 --> 00:06:22,260
+to look at the data in our database.
+
+129
+00:06:22,260 --> 00:06:25,090
+Feel free to download it as well
+
+130
+00:06:25,090 --> 00:06:26,260
+so that you can interact
+
+131
+00:06:26,260 --> 00:06:28,770
+with your SQLite databases a bit more easily.
+
+132
+00:06:29,782 --> 00:06:32,860
+That is the end of this video.
+
+133
+00:06:32,860 --> 00:06:35,290
+Just wanted to look quickly at what a database is,
+
+134
+00:06:35,290 --> 00:06:37,220
+what tables are, what relational tables
+
+135
+00:06:37,220 --> 00:06:38,740
+and relational databases are,
+
+136
+00:06:38,740 --> 00:06:41,650
+and how SQLite compares to some of its competitors.
+
+137
+00:06:41,650 --> 00:06:44,690
+Just remember, it's not so good for many users.
+
+138
+00:06:44,690 --> 00:06:46,880
+It's pretty good for a single user.
+
+139
+00:06:46,880 --> 00:06:48,190
+And give you a bit more information
+
+140
+00:06:48,190 --> 00:06:51,090
+on how to look at the data in your database,
+
+141
+00:06:51,090 --> 00:06:52,570
+sqlitebrowser.org.
+
+142
+00:06:52,570 --> 00:06:55,500
+It's a pretty good and free software that you can use
+
+143
+00:06:55,500 --> 00:06:57,100
+to look at that.
+
+144
+00:06:57,100 --> 00:06:58,320
+So that's it for this video.
+
+145
+00:06:58,320 --> 00:06:59,770
+I'll see you on the next one.
+

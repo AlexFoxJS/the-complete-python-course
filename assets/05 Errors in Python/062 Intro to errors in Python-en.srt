@@ -1,0 +1,1228 @@
+1
+00:00:00,130 --> 00:00:01,530
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,530 --> 00:00:04,730
+In this section we're looking at errors in Python.
+
+3
+00:00:04,730 --> 00:00:07,670
+Python's got a long history with errors,
+
+4
+00:00:07,670 --> 00:00:09,420
+and errors are really useful.
+
+5
+00:00:09,420 --> 00:00:11,290
+And especially the way they're used in Python
+
+6
+00:00:11,290 --> 00:00:13,270
+as we're gonna see throughout this section,
+
+7
+00:00:13,270 --> 00:00:14,950
+makes errors powerful,
+
+8
+00:00:14,950 --> 00:00:17,520
+and they make your code very readable.
+
+9
+00:00:17,520 --> 00:00:19,660
+So in this section we're going to look at errors,
+
+10
+00:00:19,660 --> 00:00:21,294
+how you can use them, how you can create them,
+
+11
+00:00:21,294 --> 00:00:23,320
+how you can deal with them.
+
+12
+00:00:25,114 --> 00:00:27,610
+At the start, nobody likes errors.
+
+13
+00:00:27,610 --> 00:00:31,090
+Let's says we've got something like this line here.
+
+14
+00:00:31,090 --> 00:00:33,330
+Print my_variable.
+
+15
+00:00:33,330 --> 00:00:36,750
+Now notice how I've not created my_variable before,
+
+16
+00:00:36,750 --> 00:00:40,850
+and this editor already shows me a small cross sign
+
+17
+00:00:40,850 --> 00:00:43,890
+saying that there's undefined variable, my_variable.
+
+18
+00:00:43,890 --> 00:00:47,130
+Well let's say we didn't have that hint there.
+
+19
+00:00:47,130 --> 00:00:48,820
+Python hasn't ran yet,
+
+20
+00:00:48,820 --> 00:00:53,500
+so this code is perfectly reasonable in terms of its syntax.
+
+21
+00:00:53,500 --> 00:00:55,450
+We're printing some variable
+
+22
+00:00:55,450 --> 00:00:58,070
+that Python doesn't know whether it exists or not,
+
+23
+00:00:58,070 --> 00:00:59,580
+until the point that it runs.
+
+24
+00:01:00,560 --> 00:01:02,890
+So what will happen when we run this?
+
+25
+00:01:04,350 --> 00:01:06,830
+What type of error will we get?
+
+26
+00:01:06,830 --> 00:01:08,610
+Well, we will get a NameError.
+
+27
+00:01:09,805 --> 00:01:12,540
+As you can see up here, we get a traceback,
+
+28
+00:01:12,540 --> 00:01:14,620
+we're gonna look at exactly what those are,
+
+29
+00:01:14,620 --> 00:01:19,262
+and then it tells us in file Python in line one,
+
+30
+00:01:19,262 --> 00:01:20,750
+and at the end it says a NameError
+
+31
+00:01:20,750 --> 00:01:23,450
+and then it gives you a small description of the error.
+
+32
+00:01:23,450 --> 00:01:25,700
+The name, my_variable, is not defined.
+
+33
+00:01:26,800 --> 00:01:28,500
+It's great to receive this error
+
+34
+00:01:28,500 --> 00:01:30,340
+as opposed to some other error,
+
+35
+00:01:30,340 --> 00:01:33,090
+because once you know what it means,
+
+36
+00:01:33,090 --> 00:01:35,000
+you can easily find the source of that problem.
+
+37
+00:01:35,000 --> 00:01:37,010
+You can say, "Okay, my_variable's not defined,
+
+38
+00:01:37,010 --> 00:01:39,870
+"so I must have used my_variable somewhere,
+
+39
+00:01:40,950 --> 00:01:42,880
+"and it wasn't defined when I used it."
+
+40
+00:01:42,880 --> 00:01:45,550
+And it tells you where that problem was, which is line one.
+
+41
+00:01:45,550 --> 00:01:49,010
+So all you have to do is go to line one and find my_variable
+
+42
+00:01:49,010 --> 00:01:52,290
+and say, "Okay, why does it not exist at this point?"
+
+43
+00:01:52,290 --> 00:01:53,123
+And of course the reason is
+
+44
+00:01:53,123 --> 00:01:55,680
+'cause we've not defined it above,
+
+45
+00:01:55,680 --> 00:01:58,980
+and we can do that, equals 123,
+
+46
+00:01:58,980 --> 00:02:01,530
+and then we can re-run this and now this all works.
+
+47
+00:02:03,540 --> 00:02:05,210
+It would be much worse
+
+48
+00:02:05,210 --> 00:02:08,050
+if instead of a NameError with a nice description,
+
+49
+00:02:08,050 --> 00:02:10,940
+you just got an arbitrary error.
+
+50
+00:02:13,830 --> 00:02:15,830
+I'm running this to get the error again,
+
+51
+00:02:15,830 --> 00:02:17,920
+and notice how it tells you where it is
+
+52
+00:02:17,920 --> 00:02:19,940
+and the name of the error and a description.
+
+53
+00:02:19,940 --> 00:02:22,160
+If you didn't get any of this,
+
+54
+00:02:22,160 --> 00:02:25,610
+it would be hours, it would take you hours or possibly days
+
+55
+00:02:25,610 --> 00:02:28,690
+to find a simple error like this one in a large application.
+
+56
+00:02:28,690 --> 00:02:30,670
+Rather large applications, commercial applications,
+
+57
+00:02:30,670 --> 00:02:32,730
+have tens of thousands or hundreds of thousands
+
+58
+00:02:32,730 --> 00:02:34,140
+of lines of code,
+
+59
+00:02:34,140 --> 00:02:35,810
+so if you got something that said,
+
+60
+00:02:35,810 --> 00:02:37,610
+error, an error has occurred,
+
+61
+00:02:38,720 --> 00:02:42,660
+and that's all the info it gave you, you would struggle.
+
+62
+00:02:42,660 --> 00:02:46,380
+So the name of the error, NameError, is really useful,
+
+63
+00:02:46,380 --> 00:02:49,420
+but even more useful is the traceback.
+
+64
+00:02:49,420 --> 00:02:51,840
+This is also called a stack trace in many languages.
+
+65
+00:02:51,840 --> 00:02:54,050
+Traceback is stack trace, more or less the same thing,
+
+66
+00:02:54,050 --> 00:02:57,440
+and what it tells you is where the error happened,
+
+67
+00:02:57,440 --> 00:03:00,690
+and because we're running this file directly,
+
+68
+00:03:00,690 --> 00:03:03,150
+it says it happened in this file.
+
+69
+00:03:03,990 --> 00:03:06,040
+Now this editor is an online editor,
+
+70
+00:03:06,040 --> 00:03:08,960
+so we don't actually have a file,
+
+71
+00:03:08,960 --> 00:03:11,330
+but it seems that the file is called Python
+
+72
+00:03:11,330 --> 00:03:13,290
+or something like that.
+
+73
+00:03:13,290 --> 00:03:14,710
+Tells you where it happened and so forth.
+
+74
+00:03:14,710 --> 00:03:17,350
+So this traceback is a pretty simple traceback
+
+75
+00:03:17,350 --> 00:03:18,600
+that has one line,
+
+76
+00:03:18,600 --> 00:03:21,780
+and then it tells you where your error happened.
+
+77
+00:03:21,780 --> 00:03:25,040
+Let's look at a slightly more complex traceback,
+
+78
+00:03:25,040 --> 00:03:26,900
+which has more than a single line,
+
+79
+00:03:26,900 --> 00:03:29,930
+and I'll explain what's happening in a larger traceback.
+
+80
+00:03:29,930 --> 00:03:30,763
+It's really important
+
+81
+00:03:30,763 --> 00:03:32,900
+for you to be able to read these tracebacks
+
+82
+00:03:32,900 --> 00:03:34,180
+to understand what they mean,
+
+83
+00:03:34,180 --> 00:03:36,340
+so that you can solve your own errors.
+
+84
+00:03:38,150 --> 00:03:40,940
+Here we've got a slightly more complex traceback.
+
+85
+00:03:41,930 --> 00:03:45,300
+This time the traceback has four different lines.
+
+86
+00:03:46,640 --> 00:03:48,240
+Now it's really important
+
+87
+00:03:48,240 --> 00:03:51,090
+that at the very bottom of the traceback
+
+88
+00:03:51,090 --> 00:03:52,580
+you're still getting the same thing
+
+89
+00:03:52,580 --> 00:03:53,920
+that you got in the previous traceback.
+
+90
+00:03:53,920 --> 00:03:55,410
+You've got the name, which is,
+
+91
+00:03:55,410 --> 00:03:58,355
+in this case it's a TypeError.
+
+92
+00:03:58,355 --> 00:04:00,030
+And then you've got a small description,
+
+93
+00:04:00,030 --> 00:04:00,863
+and it says,
+
+94
+00:04:00,863 --> 00:04:04,290
+list indices must be integers or slices, not string.
+
+95
+00:04:05,690 --> 00:04:07,080
+And then as you go up
+
+96
+00:04:07,080 --> 00:04:10,470
+it gives you information of where the error happened.
+
+97
+00:04:10,470 --> 00:04:14,900
+Now, we're gonna talk about this stack trace right now.
+
+98
+00:04:14,900 --> 00:04:18,880
+So let's give you a quick description on what is going on.
+
+99
+00:04:18,880 --> 00:04:22,290
+So at the very bottom it gives you the error that was raised
+
+100
+00:04:22,290 --> 00:04:23,390
+and a description, as we've just seen.
+
+101
+00:04:23,390 --> 00:04:25,280
+In this case it's a TypeError.
+
+102
+00:04:26,580 --> 00:04:29,930
+Then it gives you what line of your code raised the errors.
+
+103
+00:04:29,930 --> 00:04:33,150
+That's the very next line above the TypeError.
+
+104
+00:04:33,150 --> 00:04:35,460
+In this case, the line that gave us an error
+
+105
+00:04:35,460 --> 00:04:37,980
+was print, and then a formatted string
+
+106
+00:04:37,980 --> 00:04:42,770
+that says, name and in curly brackets, movies, name.
+
+107
+00:04:42,770 --> 00:04:45,520
+So this is the line of our code that gave us the error.
+
+108
+00:04:46,800 --> 00:04:51,410 line:15% 
+Then it also tells us what function that line is in.
+
+109
+00:04:51,410 --> 00:04:52,700 line:15% 
+That's just the line above.
+
+110
+00:04:52,700 --> 00:04:56,660 line:15% 
+It says, File /Users/jslvtr/Dropbox/teclado/courses/
+
+111
+00:04:56,660 --> 00:05:00,770 line:15% 
+complete-python-course/section3/milestone_1/app dot py.
+
+112
+00:05:00,770 --> 00:05:02,200 line:15% 
+It says, line 40.
+
+113
+00:05:02,200 --> 00:05:05,560 line:15% 
+Another variant it says, in show_movie_details.
+
+114
+00:05:06,590 --> 00:05:09,390 line:15% 
+So this is the function that the error happened in,
+
+115
+00:05:09,390 --> 00:05:11,310 line:15% 
+the show_movie_details function.
+
+116
+00:05:13,330 --> 00:05:18,330 line:15% 
+Now the line above is where that function was called.
+
+117
+00:05:18,490 --> 00:05:20,350 line:15% 
+So this function, show_movie_details
+
+118
+00:05:20,350 --> 00:05:25,080 line:15% 
+was called as show_movie_details with movie as an argument,
+
+119
+00:05:25,080 --> 00:05:27,500 line:15% 
+and the line directly above tells you
+
+120
+00:05:27,500 --> 00:05:30,080 line:15% 
+in which function that function call happened,
+
+121
+00:05:30,080 --> 00:05:31,830 line:15% 
+that's in the show_movies function.
+
+122
+00:05:32,930 --> 00:05:34,050 line:15% 
+The show_movies function
+
+123
+00:05:34,050 --> 00:05:35,880 line:15% 
+was called inside the menu function,
+
+124
+00:05:35,880 --> 00:05:38,610 line:15% 
+and the menu function was called directly in the module,
+
+125
+00:05:38,610 --> 00:05:40,350 line:15% 
+which is the file that we execute.
+
+126
+00:05:41,490 --> 00:05:45,900 line:15% 
+So it tells you where your error happened,
+
+127
+00:05:45,900 --> 00:05:48,763 line:15% 
+what function that was in, what function that was in,
+
+128
+00:05:48,763 --> 00:05:51,560 line:15% 
+what function that was in, and so forth,
+
+129
+00:05:51,560 --> 00:05:54,040 line:15% 
+until you reached the file that you executed.
+
+130
+00:05:54,040 --> 00:05:57,700
+So this is the code that raised that error.
+
+131
+00:05:58,650 --> 00:06:01,740
+Now, we've got add_movie, show_movies,
+
+132
+00:06:01,740 --> 00:06:03,720
+and then at the bottom, show_movie_details.
+
+133
+00:06:03,720 --> 00:06:04,800
+I'm sure you remember this code.
+
+134
+00:06:04,800 --> 00:06:08,590
+We wrote this for the first milestone project.
+
+135
+00:06:08,590 --> 00:06:11,970
+And what we've got is an add_movie
+
+136
+00:06:11,970 --> 00:06:15,960
+we are appending to our movies list presumably,
+
+137
+00:06:15,960 --> 00:06:18,590
+a dictionary that has name, director, and year.
+
+138
+00:06:19,760 --> 00:06:23,900
+In the show_movies function, we're taking a movie list,
+
+139
+00:06:23,900 --> 00:06:25,280
+where it's writing over it,
+
+140
+00:06:25,280 --> 00:06:28,450
+and for each movie we're showing the movie details.
+
+141
+00:06:29,770 --> 00:06:31,400
+Inside show_movie_details,
+
+142
+00:06:31,400 --> 00:06:34,850
+that takes one parameter, which is called movie,
+
+143
+00:06:34,850 --> 00:06:37,650
+and then it's printing three sets of details.
+
+144
+00:06:37,650 --> 00:06:40,635
+Now do you notice anything weird
+
+145
+00:06:40,635 --> 00:06:42,802
+inside show_movie_details?
+
+146
+00:06:46,520 --> 00:06:48,670
+Well I noticed something, which is there.
+
+147
+00:06:48,670 --> 00:06:52,010
+And that's that the name is now inside curly braces,
+
+148
+00:06:52,010 --> 00:06:53,930
+movies, name.
+
+149
+00:06:53,930 --> 00:06:55,510
+Where as the other two print statements
+
+150
+00:06:55,510 --> 00:06:58,910
+are movie, director and movie, year.
+
+151
+00:06:58,910 --> 00:07:01,210
+Notice how the first one has movies there.
+
+152
+00:07:02,840 --> 00:07:05,710
+So what's happening here is that we're trying to access
+
+153
+00:07:05,710 --> 00:07:09,320
+this name key of a dictionary,
+
+154
+00:07:09,320 --> 00:07:13,260
+but what we're accessing it in is the movies list.
+
+155
+00:07:13,260 --> 00:07:16,250
+So then it tells you, you cannot use this key thing
+
+156
+00:07:16,250 --> 00:07:18,660
+to access an item inside a list.
+
+157
+00:07:18,660 --> 00:07:20,240
+You must only do that
+
+158
+00:07:20,240 --> 00:07:23,570
+when the thing you're accessing in is a dictionary.
+
+159
+00:07:23,570 --> 00:07:24,990
+So if that was movie,
+
+160
+00:07:24,990 --> 00:07:27,400
+then we could access the name key of it.
+
+161
+00:07:27,400 --> 00:07:29,710
+Because it's movies, it's a list,
+
+162
+00:07:29,710 --> 00:07:31,990
+we cannot access the name key of it.
+
+163
+00:07:31,990 --> 00:07:32,930
+Movies, by the way,
+
+164
+00:07:32,930 --> 00:07:35,830
+was defined at the top of the file as a list,
+
+165
+00:07:35,830 --> 00:07:38,460
+and that's why movies is a list.
+
+166
+00:07:38,460 --> 00:07:41,910
+And the movie argument parameter there is a dictionary
+
+167
+00:07:41,910 --> 00:07:45,060
+that was passed in from the show_movies function.
+
+168
+00:07:45,060 --> 00:07:47,320
+So it told us, the stack trace told us
+
+169
+00:07:47,320 --> 00:07:49,970
+that the error happened on this print statement
+
+170
+00:07:49,970 --> 00:07:52,670
+inside the show_movie_details function,
+
+171
+00:07:52,670 --> 00:07:54,670
+and the show_movie_details function was called
+
+172
+00:07:54,670 --> 00:07:57,140
+inside the show_movies function,
+
+173
+00:07:57,140 --> 00:07:59,800
+which is exactly what you can see there.
+
+174
+00:07:59,800 --> 00:08:00,720
+The show_movies function
+
+175
+00:08:00,720 --> 00:08:03,110
+was called from within the menu function,
+
+176
+00:08:03,110 --> 00:08:06,220
+which you don't see in this code, but it was slightly above.
+
+177
+00:08:06,220 --> 00:08:08,800
+And the menu function was called at the file level.
+
+178
+00:08:12,160 --> 00:08:14,930
+So how do you deal with these errors?
+
+179
+00:08:14,930 --> 00:08:18,010
+What do you do when you encounter one of these errors?
+
+180
+00:08:18,010 --> 00:08:18,932
+And a lot of students,
+
+181
+00:08:18,932 --> 00:08:20,670
+a lot of my students encounter errors,
+
+182
+00:08:20,670 --> 00:08:21,610
+and the first thing they do,
+
+183
+00:08:21,610 --> 00:08:23,980
+which is a perfectly reasonable thing to do by the way,
+
+184
+00:08:23,980 --> 00:08:25,700
+is they go and ask in the course Q&amp;A, and they say,
+
+185
+00:08:25,700 --> 00:08:27,430
+"Look, I've got this error.
+
+186
+00:08:27,430 --> 00:08:29,040
+"Help me."
+
+187
+00:08:29,040 --> 00:08:31,670
+Now I'm happy to help you, but,
+
+188
+00:08:31,670 --> 00:08:33,000
+if the first thing you do
+
+189
+00:08:33,000 --> 00:08:35,940
+is go and ask me to solve your problem,
+
+190
+00:08:35,940 --> 00:08:38,660
+which I'm happy to do because that's what I'm here for,
+
+191
+00:08:38,660 --> 00:08:41,010
+you're learning is gonna be slightly impaired.
+
+192
+00:08:41,010 --> 00:08:43,120
+So here's my recommendation for when you get an error.
+
+193
+00:08:43,120 --> 00:08:43,953
+What to do.
+
+194
+00:08:44,880 --> 00:08:46,580
+The first thing to do, that a lot of people miss,
+
+195
+00:08:46,580 --> 00:08:48,370
+is you have to look at your code.
+
+196
+00:08:48,370 --> 00:08:51,860
+You have to look at the line that the error happened in,
+
+197
+00:08:51,860 --> 00:08:53,810
+and see if you notice anything strange
+
+198
+00:08:53,810 --> 00:08:55,050
+with the surrounding lines.
+
+199
+00:08:55,050 --> 00:08:57,040
+For example, in that function there,
+
+200
+00:08:57,040 --> 00:08:59,200
+we were using the wrong variable.
+
+201
+00:08:59,200 --> 00:09:01,070
+I know it's a single letter of a difference,
+
+202
+00:09:01,070 --> 00:09:03,310
+but for Python that is a world of a difference.
+
+203
+00:09:03,310 --> 00:09:05,320
+So look at the code carefully,
+
+204
+00:09:05,320 --> 00:09:06,670
+and it's gonna take some time for you
+
+205
+00:09:06,670 --> 00:09:10,680
+to really start spotting those brackets,
+
+206
+00:09:10,680 --> 00:09:12,630
+or an s that's missing or not there,
+
+207
+00:09:12,630 --> 00:09:14,890
+or small character differences.
+
+208
+00:09:14,890 --> 00:09:16,760
+And at the blink of an eye, it's gonna take some time
+
+209
+00:09:16,760 --> 00:09:19,660
+for you to get accustomed to that, but you will get there.
+
+210
+00:09:20,900 --> 00:09:21,860
+The next thing to do is,
+
+211
+00:09:21,860 --> 00:09:24,950
+if you can't spot anything by just looking at the code,
+
+212
+00:09:24,950 --> 00:09:26,650
+just copy the error and the message,
+
+213
+00:09:26,650 --> 00:09:30,060
+just the very last line and put it into Google,
+
+214
+00:09:30,060 --> 00:09:31,960
+and see if something comes up in StackOverflow.
+
+215
+00:09:31,960 --> 00:09:34,800
+Normally, there's always somebody that's asked,
+
+216
+00:09:34,800 --> 00:09:36,710
+"What does this error mean?"
+
+217
+00:09:36,710 --> 00:09:40,080
+And if you put in a NameError,
+
+218
+00:09:40,080 --> 00:09:42,580
+variable blah blah blah doesn't exist into Google,
+
+219
+00:09:42,580 --> 00:09:44,240
+you'll get somebody that's asked,
+
+220
+00:09:44,240 --> 00:09:45,370
+"I don't know what this means,"
+
+221
+00:09:45,370 --> 00:09:46,870
+and somebody that's replied,
+
+222
+00:09:46,870 --> 00:09:49,440
+"This means your variable's not defined."
+
+223
+00:09:49,440 --> 00:09:51,180
+So it's always helpful to put things into Google
+
+224
+00:09:51,180 --> 00:09:52,300
+and see what comes up.
+
+225
+00:09:52,300 --> 00:09:54,400
+Maybe there'll be something helpful there.
+
+226
+00:09:55,575 --> 00:09:57,590
+Now if neither of these help,
+
+227
+00:09:57,590 --> 00:10:00,050
+you have to start taking a more methodical approach
+
+228
+00:10:00,050 --> 00:10:01,300
+to identifying the error.
+
+229
+00:10:02,240 --> 00:10:04,300
+This is, look at the code again,
+
+230
+00:10:04,300 --> 00:10:05,820
+but this time, much more slowly,
+
+231
+00:10:05,820 --> 00:10:08,510
+and run through it as if you were a computer.
+
+232
+00:10:08,510 --> 00:10:12,200
+That means start at the very top of your code.
+
+233
+00:10:12,200 --> 00:10:16,150
+Think, "What data am I giving the computer in this line?"
+
+234
+00:10:16,150 --> 00:10:17,920
+Then move over to the next line and think,
+
+235
+00:10:17,920 --> 00:10:20,260
+"What data am I giving it in this line?"
+
+236
+00:10:20,260 --> 00:10:22,490
+And then into the next line and so forth.
+
+237
+00:10:22,490 --> 00:10:27,410
+Mimic what the computer is doing exactly in every function.
+
+238
+00:10:27,410 --> 00:10:31,330
+We're going to get a lot more expert in doing this
+
+239
+00:10:31,330 --> 00:10:32,680
+over the next few sections.
+
+240
+00:10:33,670 --> 00:10:36,280
+But as you do this, do you notice anything
+
+241
+00:10:36,280 --> 00:10:39,060
+that could potentially be a source of an error?
+
+242
+00:10:39,060 --> 00:10:41,190
+But rather the error may not be in the line,
+
+243
+00:10:41,190 --> 00:10:42,430
+or rather the error source
+
+244
+00:10:42,430 --> 00:10:45,150
+may not be in the line that raised the error,
+
+245
+00:10:45,150 --> 00:10:46,440
+but rather in a different line
+
+246
+00:10:46,440 --> 00:10:48,950
+that maybe set the variable to the wrong value
+
+247
+00:10:48,950 --> 00:10:50,100
+or something like that.
+
+248
+00:10:51,920 --> 00:10:55,630
+If this doesn't help, run only some parts of the code.
+
+249
+00:10:55,630 --> 00:10:56,463
+For example,
+
+250
+00:10:56,463 --> 00:10:59,560
+try only running the show_movie_details function
+
+251
+00:10:59,560 --> 00:11:03,540
+with a dictionary as an argument, see if that works.
+
+252
+00:11:03,540 --> 00:11:04,500
+If that works,
+
+253
+00:11:04,500 --> 00:11:07,430
+try running the function that calls that function
+
+254
+00:11:07,430 --> 00:11:09,370
+with some arguments.
+
+255
+00:11:09,370 --> 00:11:10,490
+And then trying running the function
+
+256
+00:11:10,490 --> 00:11:12,340
+that calls that function with some arguments.
+
+257
+00:11:12,340 --> 00:11:14,170
+As you incrementally run your code,
+
+258
+00:11:14,170 --> 00:11:17,240
+eventually you'll reach a step where the error will happen,
+
+259
+00:11:17,240 --> 00:11:20,070
+and you'll say, "Okay, the error must happen
+
+260
+00:11:20,070 --> 00:11:22,370
+"some point between these two function calls."
+
+261
+00:11:24,100 --> 00:11:28,570
+And finally, if this doesn't work either, use a debugger.
+
+262
+00:11:28,570 --> 00:11:30,460
+We're going to learn how to, in the next couple of videos.
+
+263
+00:11:30,460 --> 00:11:32,150
+Python has an excellent debugger,
+
+264
+00:11:32,150 --> 00:11:34,080
+and we're going to really be using that.
+
+265
+00:11:34,080 --> 00:11:37,530
+And that debugger helps you step through your code
+
+266
+00:11:37,530 --> 00:11:40,430
+and identify what variables are.
+
+267
+00:11:40,430 --> 00:11:43,210
+It lets you sort of stop at a certain point in your code
+
+268
+00:11:43,210 --> 00:11:45,350
+and inspect the current status of your programme
+
+269
+00:11:45,350 --> 00:11:46,183
+and so forth.
+
+270
+00:11:46,183 --> 00:11:47,016
+It's really useful.
+
+271
+00:11:47,980 --> 00:11:49,920
+And of course, at any point,
+
+272
+00:11:49,920 --> 00:11:52,010
+I know this is quite tricky
+
+273
+00:11:52,010 --> 00:11:55,200
+to go through all of these steps without despair,
+
+274
+00:11:55,200 --> 00:11:58,980
+so at any point, ask questions in the course Q&amp;A.
+
+275
+00:11:58,980 --> 00:12:01,520
+We're here to help, and so make use of that.
+
+276
+00:12:02,700 --> 00:12:06,210
+Now if you ask a question in the course Q&amp;A,
+
+277
+00:12:06,210 --> 00:12:09,060
+which again, you should do if you're stuck,
+
+278
+00:12:09,060 --> 00:12:11,370
+make sure that you give us all the information
+
+279
+00:12:11,370 --> 00:12:12,650
+that you've already gathered
+
+280
+00:12:12,650 --> 00:12:15,710
+through your search for fixing this error.
+
+281
+00:12:15,710 --> 00:12:18,010
+That way we don't have to then start at the top
+
+282
+00:12:18,010 --> 00:12:20,040
+and do the same thing again.
+
+283
+00:12:20,040 --> 00:12:21,190
+So if you tell us,
+
+284
+00:12:21,190 --> 00:12:23,300
+"I've looked on my code and I can't spot anything,"
+
+285
+00:12:23,300 --> 00:12:24,440
+then, "I've gone into Google
+
+286
+00:12:24,440 --> 00:12:26,400
+"and found that this error means that."
+
+287
+00:12:26,400 --> 00:12:28,210
+And, "Here's my code by the way,"
+
+288
+00:12:28,210 --> 00:12:30,530
+and, "Here's the data that I'm givin' it."
+
+289
+00:12:30,530 --> 00:12:32,120
+Now we can really quickly see,
+
+290
+00:12:32,120 --> 00:12:34,410
+okay, you've given it this data, that all looks correct,
+
+291
+00:12:34,410 --> 00:12:35,700
+this error means that.
+
+292
+00:12:35,700 --> 00:12:38,890
+We can then piece the pieces of the puzzle together
+
+293
+00:12:38,890 --> 00:12:40,360
+and find that answer much quicker.
+
+294
+00:12:40,360 --> 00:12:42,060
+So when you have a question in the course Q&amp;A
+
+295
+00:12:42,060 --> 00:12:44,350
+give us all the information you can.
+
+296
+00:12:44,350 --> 00:12:47,560
+And then the answer will come really quickly.
+
+297
+00:12:47,560 --> 00:12:50,130
+We aim to have all your answers within 24 hours,
+
+298
+00:12:50,130 --> 00:12:51,260
+but of course that's only possible
+
+299
+00:12:51,260 --> 00:12:54,170
+if we don't have a back and forth between me and you
+
+300
+00:12:54,170 --> 00:12:57,590
+trying to find out what the source of the problem could be.
+
+301
+00:12:57,590 --> 00:12:58,760
+So that's it for this video.
+
+302
+00:12:58,760 --> 00:13:01,040
+This is an intro to errors.
+
+303
+00:13:01,040 --> 00:13:03,760
+Really errors in Python, but also in programming as a whole.
+
+304
+00:13:03,760 --> 00:13:07,170
+This is something you should be doing as you programme,
+
+305
+00:13:07,170 --> 00:13:08,850
+in any programming language.
+
+306
+00:13:08,850 --> 00:13:10,060
+So that's it for this video.
+
+307
+00:13:10,060 --> 00:13:11,510
+I'll see you on the next one.
+

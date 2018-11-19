@@ -1,0 +1,1236 @@
+1
+00:00:00,140 --> 00:00:01,240
+<v Jose>Hi, and welcome back!</v>
+
+2
+00:00:01,240 --> 00:00:02,410
+In this video, we're talking
+
+3
+00:00:02,410 --> 00:00:03,960
+about reraising errors
+
+4
+00:00:03,960 --> 00:00:05,520
+and the on success block.
+
+5
+00:00:06,430 --> 00:00:09,150
+As you can see, I've written some code here.
+
+6
+00:00:09,150 --> 00:00:10,360
+That's just because I didn't want to
+
+7
+00:00:10,360 --> 00:00:12,730
+bore you going through, writing all of this code,
+
+8
+00:00:12,730 --> 00:00:14,850
+especially because it's only example code.
+
+9
+00:00:16,030 --> 00:00:18,160
+This code is also available
+
+10
+00:00:18,160 --> 00:00:20,960
+in the code lecture on GitHub,
+
+11
+00:00:20,960 --> 00:00:24,140
+and that lecture is at the start of this section.
+
+12
+00:00:24,140 --> 00:00:26,260
+So, if you've not yet downloaded or had a look
+
+13
+00:00:26,260 --> 00:00:28,330
+at the code for this section,
+
+14
+00:00:28,330 --> 00:00:30,610
+you can go to the first lecture of the section
+
+15
+00:00:30,610 --> 00:00:33,030
+and go to the GitHub link that's there
+
+16
+00:00:33,030 --> 00:00:35,000
+and you can see this code.
+
+17
+00:00:35,000 --> 00:00:38,160
+The resource that's attached to this lecture
+
+18
+00:00:38,160 --> 00:00:39,840
+contains an explanation
+
+19
+00:00:39,840 --> 00:00:44,230
+for some reasonably related sample code as well,
+
+20
+00:00:44,230 --> 00:00:46,090
+but it's not exactly the same thing.
+
+21
+00:00:46,090 --> 00:00:48,620
+Just because the resource attached this lecture
+
+22
+00:00:48,620 --> 00:00:49,700
+has some explanations
+
+23
+00:00:49,700 --> 00:00:52,310
+and it uses some pseudo-code
+
+24
+00:00:52,310 --> 00:00:53,940
+to explain some concepts.
+
+25
+00:00:53,940 --> 00:00:55,810
+The code that I'm seeing here on my screen,
+
+26
+00:00:55,810 --> 00:00:57,380
+the code that you're seeing on your screen,
+
+27
+00:00:57,380 --> 00:00:58,600
+is on the GitHub.
+
+28
+00:00:58,600 --> 00:01:00,670
+So, feel free to download it and have a look
+
+29
+00:01:00,670 --> 00:01:01,503
+if you want.
+
+30
+00:01:02,406 --> 00:01:03,350
+Now, what we've got
+
+31
+00:01:03,350 --> 00:01:05,880
+is a user class, nothing new here,
+
+32
+00:01:05,880 --> 00:01:08,540
+it's got an init method that takes in a name
+
+33
+00:01:08,540 --> 00:01:10,090
+and our property "engagement,"
+
+34
+00:01:10,090 --> 00:01:11,860
+our variable "engagement,"
+
+35
+00:01:11,860 --> 00:01:14,090
+and then sets the name to be "name,"
+
+36
+00:01:14,090 --> 00:01:15,520
+and the "engagement metrics" to be
+
+37
+00:01:15,520 --> 00:01:17,940
+the "engagement" property there.
+
+38
+00:01:17,940 --> 00:01:20,040
+Then there's also got a dunder wrapper function
+
+39
+00:01:20,040 --> 00:01:21,700
+that returns the user's name
+
+40
+00:01:21,700 --> 00:01:23,330
+in a nicely formatted string.
+
+41
+00:01:24,860 --> 00:01:26,780
+This User class is going to be used
+
+42
+00:01:26,780 --> 00:01:28,994
+by this "get_user_score" function,
+
+43
+00:01:28,994 --> 00:01:30,644
+that takes in a "user" parameter.
+
+44
+00:01:31,490 --> 00:01:34,500
+This is going to try to return whatever the
+
+45
+00:01:34,500 --> 00:01:36,860
+"perform_calculation" function gives us,
+
+46
+00:01:36,860 --> 00:01:38,100
+with the engagement metrics
+
+47
+00:01:38,100 --> 00:01:40,170
+of the user passed in,
+
+48
+00:01:40,170 --> 00:01:42,040
+and if it fails, it's going to print out
+
+49
+00:01:42,040 --> 00:01:44,910
+"Incorrect values provided," with a KeyError.
+
+50
+00:01:45,968 --> 00:01:48,281
+"Perform_calculation" takes in the user's
+
+51
+00:01:48,281 --> 00:01:51,500
+"engagement_metrics" as a parameter,
+
+52
+00:01:51,500 --> 00:01:53,030
+there as an argument,
+
+53
+00:01:53,030 --> 00:01:55,070
+and returns the "clicks" property
+
+54
+00:01:55,070 --> 00:01:57,790
+of that "metrics," multiply by five,
+
+55
+00:01:57,790 --> 00:01:59,700
+and the "hits" multiplied by two.
+
+56
+00:01:59,700 --> 00:02:01,780
+So, imagine this is a user
+
+57
+00:02:01,780 --> 00:02:03,290
+that's visiting a website,
+
+58
+00:02:03,290 --> 00:02:06,270
+and we want to calculate their score
+
+59
+00:02:06,270 --> 00:02:09,150
+for, to see how engaged they are with our brand.
+
+60
+00:02:10,060 --> 00:02:11,660
+If the "clicks" multiplied by five
+
+61
+00:02:11,660 --> 00:02:12,960
+and the "metrics,"
+
+62
+00:02:12,960 --> 00:02:14,720
+the "hits" multiplied by two
+
+63
+00:02:14,720 --> 00:02:15,970
+gives us a particular value,
+
+64
+00:02:15,970 --> 00:02:17,130
+we're gonna say, you know,
+
+65
+00:02:17,130 --> 00:02:18,680
+this person is very engaged.
+
+66
+00:02:20,290 --> 00:02:21,320
+We've also got down here
+
+67
+00:02:21,320 --> 00:02:22,314
+another function called
+
+68
+00:02:22,314 --> 00:02:24,760
+"send_engagement_notification,"
+
+69
+00:02:24,760 --> 00:02:27,080
+and this would send them an email saying
+
+70
+00:02:27,080 --> 00:02:29,130
+"Thank you for being so engaged with our brand,
+
+71
+00:02:29,130 --> 00:02:30,650
+here's a coupon code
+
+72
+00:02:30,650 --> 00:02:33,580
+for you to download or something."
+
+73
+00:02:33,580 --> 00:02:35,290
+Of course, this doesn't actually send any emails
+
+74
+00:02:35,290 --> 00:02:37,170
+right now, but we could do that,
+
+75
+00:02:37,170 --> 00:02:38,360
+and we'll look at sending emails
+
+76
+00:02:38,360 --> 00:02:39,510
+later on in the course.
+
+77
+00:02:41,400 --> 00:02:42,870
+Then, at the very bottom, we're creating
+
+78
+00:02:42,870 --> 00:02:45,680
+a user, Rolf is the name,
+
+79
+00:02:45,680 --> 00:02:47,220
+and these are the engagement metrics.
+
+80
+00:02:47,220 --> 00:02:49,980
+He's done 61 clicks and 100 hits.
+
+81
+00:02:50,960 --> 00:02:52,510
+And then we're going to call the
+
+82
+00:02:52,510 --> 00:02:55,070
+"get_user_score" function here for my user.
+
+83
+00:02:55,070 --> 00:02:57,160
+So this is the sample code we've got,
+
+84
+00:02:57,160 --> 00:02:58,630
+not too much code, I hope,
+
+85
+00:02:58,630 --> 00:03:00,960
+fairly understandable I hope.
+
+86
+00:03:03,450 --> 00:03:05,360
+It can sometimes be handy to do something
+
+87
+00:03:05,360 --> 00:03:06,290
+with an exception,
+
+88
+00:03:06,290 --> 00:03:09,110
+handle it, like we do here.
+
+89
+00:03:09,110 --> 00:03:12,380
+But then it can also be useful to not silence it.
+
+90
+00:03:12,380 --> 00:03:15,260
+IE, keep letting it bubble up
+
+91
+00:03:15,260 --> 00:03:17,110
+and eventually crash your programme
+
+92
+00:03:17,110 --> 00:03:19,430
+so you know that you've done something wrong
+
+93
+00:03:19,430 --> 00:03:20,340
+at some point.
+
+94
+00:03:22,470 --> 00:03:24,260
+For example, the exception here,
+
+95
+00:03:24,260 --> 00:03:26,290
+"KeyError" is caught,
+
+96
+00:03:26,290 --> 00:03:27,960
+and if we were to mess up
+
+97
+00:03:27,960 --> 00:03:30,610
+and create our users with a
+
+98
+00:03:30,610 --> 00:03:33,750
+"click" key instead of "clicks,"
+
+99
+00:03:33,750 --> 00:03:35,460
+this is going to fail with a KeyError
+
+100
+00:03:35,460 --> 00:03:37,520
+because "clicks" won't be a key
+
+101
+00:03:37,520 --> 00:03:40,390
+of our "metrics" dictionary that is down here.
+
+102
+00:03:42,050 --> 00:03:43,670
+So, let's run user_score.
+
+103
+00:03:43,670 --> 00:03:46,230
+Remember, right click it and run it.
+
+104
+00:03:46,230 --> 00:03:48,300
+And you'll see that we get:
+
+105
+00:03:48,300 --> 00:03:49,500
+"Incorrect values provided
+
+106
+00:03:49,500 --> 00:03:50,950
+to our calculation function."
+
+107
+00:03:51,888 --> 00:03:53,570
+And we get that because, of course,
+
+108
+00:03:53,570 --> 00:03:55,450
+the KeyError was raised
+
+109
+00:03:55,450 --> 00:03:56,650
+and we then printed this out
+
+110
+00:03:56,650 --> 00:03:58,480
+and nothing else happened.
+
+111
+00:03:58,480 --> 00:04:02,010
+If we are not paying attention, we may miss that.
+
+112
+00:04:02,010 --> 00:04:03,300
+Let's face it,
+
+113
+00:04:03,300 --> 00:04:04,920
+if-- this is the only line
+
+114
+00:04:04,920 --> 00:04:06,690
+of output in our programme right now,
+
+115
+00:04:06,690 --> 00:04:08,350
+but if this was a long programme,
+
+116
+00:04:08,350 --> 00:04:10,120
+there may be many lines of output
+
+117
+00:04:10,120 --> 00:04:11,370
+and you may miss that one
+
+118
+00:04:12,210 --> 00:04:13,730
+amongst all the other ones.
+
+119
+00:04:13,730 --> 00:04:15,230
+So, the best thing to do,
+
+120
+00:04:15,230 --> 00:04:17,780
+at least while you're developing,
+
+121
+00:04:17,780 --> 00:04:21,730
+is to allow the errors to continue bubbling up
+
+122
+00:04:21,730 --> 00:04:23,610
+and crash your programme.
+
+123
+00:04:23,610 --> 00:04:25,170
+When you're going to give your programme
+
+124
+00:04:25,170 --> 00:04:26,140
+to your users,
+
+125
+00:04:26,140 --> 00:04:27,140
+make sure that your programme
+
+126
+00:04:27,140 --> 00:04:29,350
+doesn't crash too easily.
+
+127
+00:04:29,350 --> 00:04:32,230
+And that may mean catching the error somewhere,
+
+128
+00:04:32,230 --> 00:04:35,320
+or not allowing it to continue bubbling up.
+
+129
+00:04:35,320 --> 00:04:37,060
+The way we allow it to bubble up,
+
+130
+00:04:37,060 --> 00:04:39,140
+is we just type "raise."
+
+131
+00:04:40,050 --> 00:04:42,810
+And that has to be inside the "except" block.
+
+132
+00:04:42,810 --> 00:04:45,950
+So, inside the "except" block, we can "raise,"
+
+133
+00:04:45,950 --> 00:04:46,930
+and what that does is,
+
+134
+00:04:46,930 --> 00:04:49,240
+that reraises the error
+
+135
+00:04:49,240 --> 00:04:52,090
+that got us into this block in the first place.
+
+136
+00:04:52,090 --> 00:04:54,190
+So, if we press play again,
+
+137
+00:04:54,190 --> 00:04:56,520
+you'll see that now we get our traceback
+
+138
+00:04:56,520 --> 00:04:59,630
+after we get our print.
+
+139
+00:04:59,630 --> 00:05:02,700
+The traceback now says KeyError: 'clicks'
+
+140
+00:05:02,700 --> 00:05:04,740
+and that was used here, in "metrics,"
+
+141
+00:05:04,740 --> 00:05:08,050
+"clicks" I multiply by five, and so forth.
+
+142
+00:05:08,050 --> 00:05:09,300
+This was inside the
+
+143
+00:05:09,300 --> 00:05:10,600
+"perform_calculation" function,
+
+144
+00:05:10,600 --> 00:05:12,490
+as you can see here,
+
+145
+00:05:12,490 --> 00:05:14,080
+and this was called up here
+
+146
+00:05:14,080 --> 00:05:15,560
+as you can see in this line.
+
+147
+00:05:16,420 --> 00:05:18,590
+This was inside the "get_user_score" function,
+
+148
+00:05:18,590 --> 00:05:20,400
+as you can see here,
+
+149
+00:05:20,400 --> 00:05:21,810
+and that was called here,
+
+150
+00:05:21,810 --> 00:05:24,620
+which is down here, line 27,
+
+151
+00:05:24,620 --> 00:05:26,520
+and that is in your module,
+
+152
+00:05:26,520 --> 00:05:28,470
+which is your file that you're running.
+
+153
+00:05:29,500 --> 00:05:31,670
+So it's the file that you're running.
+
+154
+00:05:31,670 --> 00:05:33,930
+Okay, this is, again, the stack trace,
+
+155
+00:05:33,930 --> 00:05:35,830
+you need to get good at understanding
+
+156
+00:05:35,830 --> 00:05:36,760
+and following the stack trace,
+
+157
+00:05:36,760 --> 00:05:38,360
+that's a really important skill.
+
+158
+00:05:39,810 --> 00:05:41,700
+So, the "raise" keyword here
+
+159
+00:05:41,700 --> 00:05:45,060
+must go inside the except block,
+
+160
+00:05:45,060 --> 00:05:47,670
+otherwise you cannot use raise on its own.
+
+161
+00:05:47,670 --> 00:05:50,420
+You have to give it the error you want to raise.
+
+162
+00:05:50,420 --> 00:05:51,630
+But that's only if you use it
+
+163
+00:05:51,630 --> 00:05:53,000
+outside the except block.
+
+164
+00:05:53,000 --> 00:05:55,190
+If you use it inside the except block,
+
+165
+00:05:55,190 --> 00:05:56,420
+you can just type "raise"
+
+166
+00:05:56,420 --> 00:05:57,970
+and it will reraise the error
+
+167
+00:05:57,970 --> 00:05:59,820
+that got you here in the first place.
+
+168
+00:06:02,460 --> 00:06:04,550
+Okay, now let's say that we want to
+
+169
+00:06:04,550 --> 00:06:07,180
+send an engagement notification to this user,
+
+170
+00:06:07,180 --> 00:06:09,469
+if we
+
+171
+00:06:09,469 --> 00:06:10,770
+got some
+
+172
+00:06:10,770 --> 00:06:13,720
+limits of clicks or something.
+
+173
+00:06:13,720 --> 00:06:18,230
+Let's say, that if the user's score is
+
+174
+00:06:18,230 --> 00:06:19,260
+over 500,
+
+175
+00:06:19,260 --> 00:06:21,310
+we want to send them a notification.
+
+176
+00:06:23,200 --> 00:06:25,900
+We only want to send the notification,
+
+177
+00:06:26,780 --> 00:06:28,010
+and by the way, I'm gonna remove this
+
+178
+00:06:28,010 --> 00:06:29,670
+raise thing here for now,
+
+179
+00:06:30,600 --> 00:06:33,460
+we only want to send the notification if
+
+180
+00:06:33,460 --> 00:06:36,180
+we didn't raise an error,
+
+181
+00:06:36,180 --> 00:06:37,120
+of course.
+
+182
+00:06:37,120 --> 00:06:38,940
+We only want to send the notification
+
+183
+00:06:38,940 --> 00:06:40,930
+if the perform_calculation succeeded
+
+184
+00:06:40,930 --> 00:06:42,990
+and we got a correct score.
+
+185
+00:06:44,560 --> 00:06:45,710
+So, how may we do that?
+
+186
+00:06:47,430 --> 00:06:50,000
+Well, we've seen the "finally" block.
+
+187
+00:06:50,000 --> 00:06:52,030
+We can say "send_engagement_notification"
+
+188
+00:06:52,030 --> 00:06:53,250
+to "user,"
+
+189
+00:06:55,260 --> 00:06:57,800
+but the "finally" block runs
+
+190
+00:06:57,800 --> 00:06:58,990
+no matter what.
+
+191
+00:06:59,910 --> 00:07:01,810
+The "try" is gonna run,
+
+192
+00:07:01,810 --> 00:07:04,210
+the "except" may or may not run,
+
+193
+00:07:04,210 --> 00:07:05,970
+and the "finally" will run.
+
+194
+00:07:05,970 --> 00:07:08,200
+So, "finally" is always going to run
+
+195
+00:07:08,200 --> 00:07:10,910
+after the try except block no matter what,
+
+196
+00:07:10,910 --> 00:07:13,170
+unless, of course, you reraise the exception
+
+197
+00:07:13,170 --> 00:07:14,500
+and your programme crashes.
+
+198
+00:07:14,500 --> 00:07:16,850
+If you do that, the "finally" won't run either.
+
+199
+00:07:18,680 --> 00:07:20,300
+But, let's assume we don't want to
+
+200
+00:07:20,300 --> 00:07:22,300
+reraise the exception, but we want
+
+201
+00:07:22,300 --> 00:07:25,271
+the engagement notification to send
+
+202
+00:07:25,271 --> 00:07:28,070
+if our user does have the correct score.
+
+203
+00:07:29,690 --> 00:07:32,050
+Well, we can use an "else," actually.
+
+204
+00:07:33,410 --> 00:07:36,980
+And that's a pretty bizarre thing to use here,
+
+205
+00:07:37,860 --> 00:07:39,930
+because what it means
+
+206
+00:07:39,930 --> 00:07:40,780
+is that we're going to
+
+207
+00:07:40,780 --> 00:07:42,840
+try to run this thing here,
+
+208
+00:07:44,280 --> 00:07:47,080
+and if there is no error,
+
+209
+00:07:47,080 --> 00:07:49,090
+we are then going to go to the "else."
+
+210
+00:07:49,090 --> 00:07:51,400
+So this "else" is only going to run
+
+211
+00:07:51,400 --> 00:07:53,300
+if an error does not happen,
+
+212
+00:07:53,300 --> 00:07:57,010
+unlike the "finally," which runs every time.
+
+213
+00:07:57,010 --> 00:07:57,843
+Of course it's telling us
+
+214
+00:07:57,843 --> 00:07:58,970
+this code is unreachable,
+
+215
+00:07:58,970 --> 00:08:00,960
+because if this code succeeds,
+
+216
+00:08:00,960 --> 00:08:02,110
+we are returning
+
+217
+00:08:02,110 --> 00:08:03,750
+which means we're exiting the function,
+
+218
+00:08:03,750 --> 00:08:05,300
+so this is never going to run.
+
+219
+00:08:05,300 --> 00:08:06,880
+Either we will have this error,
+
+220
+00:08:06,880 --> 00:08:08,560
+in which case this won't run,
+
+221
+00:08:08,560 --> 00:08:10,100
+or we will have this return,
+
+222
+00:08:10,100 --> 00:08:11,580
+in which case this won't run.
+
+223
+00:08:11,580 --> 00:08:14,200
+So we just have to remove the return there.
+
+224
+00:08:15,170 --> 00:08:17,320
+And if we did want to perform a calculation here
+
+225
+00:08:17,320 --> 00:08:18,670
+and just return that value,
+
+226
+00:08:19,510 --> 00:08:20,650
+and then we should do that
+
+227
+00:08:20,650 --> 00:08:22,280
+and we should not use this construct.
+
+228
+00:08:22,280 --> 00:08:24,620
+Instead this should go down here.
+
+229
+00:08:26,180 --> 00:08:27,013
+Right.
+
+230
+00:08:28,660 --> 00:08:30,600
+So, this function maybe should be renamed
+
+231
+00:08:30,600 --> 00:08:32,710
+to something else other than "get_user_score,"
+
+232
+00:08:32,710 --> 00:08:34,280
+if we want it to do this.
+
+233
+00:08:35,180 --> 00:08:36,013
+Okay.
+
+234
+00:08:36,013 --> 00:08:37,430
+Maybe it should be
+
+235
+00:08:39,131 --> 00:08:40,881
+"email_engaged_users"
+
+236
+00:08:43,960 --> 00:08:44,793
+or "_user"
+
+237
+00:08:45,790 --> 00:08:46,790
+something like that.
+
+238
+00:08:48,360 --> 00:08:50,140
+Okay, so I just wanted to show you this construct
+
+239
+00:08:50,140 --> 00:08:51,750
+because it's not a popular thing
+
+240
+00:08:51,750 --> 00:08:53,980
+and not a lot of Python developers know about it,
+
+241
+00:08:53,980 --> 00:08:55,570
+and indeed if you go on the Internet
+
+242
+00:08:55,570 --> 00:08:59,320
+and look at tutorials for try except in Python,
+
+243
+00:08:59,320 --> 00:09:01,180
+I guarantee that almost none of them
+
+244
+00:09:01,180 --> 00:09:03,060
+will mention this "else."
+
+245
+00:09:03,060 --> 00:09:04,810
+And it's not that used,
+
+246
+00:09:04,810 --> 00:09:06,990
+but it's interesting to know about it
+
+247
+00:09:06,990 --> 00:09:08,800
+just in case you wanna run something
+
+248
+00:09:08,800 --> 00:09:10,630
+only if an error doesn't occur,
+
+249
+00:09:10,630 --> 00:09:12,240
+like send an email notification.
+
+250
+00:09:13,120 --> 00:09:15,370
+We will be using this later on in the course.
+
+251
+00:09:16,750 --> 00:09:18,780
+So that's it for this video,
+
+252
+00:09:18,780 --> 00:09:21,430
+we've looked at the on success block,
+
+253
+00:09:21,430 --> 00:09:22,320
+that's this one here,
+
+254
+00:09:22,320 --> 00:09:24,900
+because this happens when we succeed
+
+255
+00:09:24,900 --> 00:09:26,890
+in our try except.
+
+256
+00:09:26,890 --> 00:09:29,000
+And we've also looked at reraising exceptions,
+
+257
+00:09:29,000 --> 00:09:29,833
+which is very simple,
+
+258
+00:09:29,833 --> 00:09:33,170
+just put a "raise" inside the "except" block,
+
+259
+00:09:33,170 --> 00:09:34,980
+and if our exception does happen,
+
+260
+00:09:34,980 --> 00:09:36,700
+we will raise it again.
+
+261
+00:09:38,060 --> 00:09:40,550
+So, by the way, I changed the "clicks,"
+
+262
+00:09:40,550 --> 00:09:42,560
+the "click" back to "clicks,"
+
+263
+00:09:42,560 --> 00:09:45,120
+so now we should be able to run this.
+
+264
+00:09:45,120 --> 00:09:47,190
+And, of course, I've also renamed the function,
+
+265
+00:09:47,190 --> 00:09:48,284
+so let's
+
+266
+00:09:48,284 --> 00:09:50,040
+make sure that we're calling the right function.
+
+267
+00:09:50,040 --> 00:09:51,850
+We should be able to run it
+
+268
+00:09:51,850 --> 00:09:52,683
+and...
+
+269
+00:09:52,683 --> 00:09:53,789
+Oh, this one here.
+
+270
+00:09:53,789 --> 00:09:55,970
+Sorry, I can change it.
+
+271
+00:09:57,280 --> 00:09:59,410
+Now we see that the notification was sent
+
+272
+00:09:59,410 --> 00:10:01,040
+to user Rolf,
+
+273
+00:10:02,360 --> 00:10:04,840
+because we performed the calculation,
+
+274
+00:10:04,840 --> 00:10:06,610
+and then we send the engagement notification
+
+275
+00:10:06,610 --> 00:10:08,110
+and if we wanted, of course, to check
+
+276
+00:10:08,110 --> 00:10:11,050
+that the user score is correct,
+
+277
+00:10:11,050 --> 00:10:13,030
+we could do something like
+
+278
+00:10:13,030 --> 00:10:15,440
+user.score is that,
+
+279
+00:10:15,440 --> 00:10:19,470
+and then, if user.score is greater than 500,
+
+280
+00:10:19,470 --> 00:10:20,740
+send the notification.
+
+281
+00:10:21,670 --> 00:10:24,000
+Now, we've said that user.score here
+
+282
+00:10:24,000 --> 00:10:25,050
+is equal to something,
+
+283
+00:10:25,050 --> 00:10:26,960
+but user.score was not defined
+
+284
+00:10:26,960 --> 00:10:28,000
+in the init method.
+
+285
+00:10:28,000 --> 00:10:29,210
+This is a bad practise.
+
+286
+00:10:29,210 --> 00:10:31,600
+You should generally define all the properties
+
+287
+00:10:31,600 --> 00:10:32,860
+in the init method,
+
+288
+00:10:32,860 --> 00:10:34,620
+just so you know what exists.
+
+289
+00:10:36,160 --> 00:10:39,160
+So you can define the score as a zero in here,
+
+290
+00:10:39,160 --> 00:10:41,290
+and then this is not creating a new property.
+
+291
+00:10:41,290 --> 00:10:44,340
+Although you can, it's not advised.
+
+292
+00:10:44,340 --> 00:10:45,940
+And now this is just updating it,
+
+293
+00:10:45,940 --> 00:10:46,773
+which is better.
+
+294
+00:10:48,480 --> 00:10:50,320
+Now we can see that a notification was sent
+
+295
+00:10:50,320 --> 00:10:51,430
+to the user Rolf,
+
+296
+00:10:51,430 --> 00:10:53,400
+because their score is greater than 500.
+
+297
+00:10:53,400 --> 00:10:57,140
+Indeed, 61 times five, plus 100 times two
+
+298
+00:10:57,140 --> 00:10:59,380
+is 502.
+
+299
+00:10:59,380 --> 00:11:00,213
+I think.
+
+300
+00:11:01,080 --> 00:11:01,913
+I'm pretty sure.
+
+301
+00:11:02,850 --> 00:11:05,730
+Let's not say it is any number,
+
+302
+00:11:05,730 --> 00:11:07,110
+it is greater than 500.
+
+303
+00:11:07,110 --> 00:11:08,880
+That's what I know,
+
+304
+00:11:08,880 --> 00:11:12,570
+so that's why we're sending a notification there.
+
+305
+00:11:12,570 --> 00:11:13,770
+Anyway, that's it for this video,
+
+306
+00:11:13,770 --> 00:11:14,730
+I won't keep you any longer.
+
+307
+00:11:14,730 --> 00:11:17,220
+This was a try, except, else
+
+308
+00:11:17,220 --> 00:11:19,800
+and how to reraise exceptions as well.
+
+309
+00:11:19,800 --> 00:11:21,250
+I'll see you on the next one.
+

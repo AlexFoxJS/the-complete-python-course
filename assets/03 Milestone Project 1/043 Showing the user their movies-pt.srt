@@ -1,0 +1,612 @@
+1
+00:00:00,120 --> 00:00:01,390
+Jos: Ol, bem vindo de volta.
+
+2
+00:00:01,390 --> 00:00:05,340
+Neste vdeo, vamos mostrar todos os filmes ou permitir que
+
+3
+00:00:05,340 --> 00:00:06,920
+o usurio veja os
+
+4
+00:00:06,920 --> 00:00:08,560
+filmes que j inserimos.
+
+5
+00:00:08,560 --> 00:00:11,120
+No ltimo vdeo, adicionamos a funcionalidade para
+
+6
+00:00:11,120 --> 00:00:13,590
+permitir que os usurios adicionem novos filmes,
+
+7
+00:00:13,590 --> 00:00:15,530
+por isso vamos verificar essa.
+
+8
+00:00:15,530 --> 00:00:17,270
+Ento, vamos abordar este aqui,
+
+9
+00:00:17,270 --> 00:00:19,090
+mostrar todos os seus filmes.
+
+10
+00:00:20,500 --> 00:00:22,070
+Ento, ns temos o nosso
+
+11
+00:00:22,070 --> 00:00:24,470
+menu, no qual, enquanto o usurio no digitar
+
+12
+00:00:24,470 --> 00:00:26,340
+Q, ns vamos passar por essas
+
+13
+00:00:26,340 --> 00:00:27,610
+instrues if, e se
+
+14
+00:00:27,610 --> 00:00:29,960
+elas digitarem L, ns vamos rodar essa funo show_movies.
+
+15
+00:00:29,960 --> 00:00:32,690
+Isso provavelmente deve passar por
+
+16
+00:00:32,690 --> 00:00:34,850
+cada dicionrio em nossa
+
+17
+00:00:34,850 --> 00:00:36,710
+lista e imprimi-lo bem.
+
+18
+00:00:36,710 --> 00:00:39,120
+Ento, vamos implementar isso.
+
+19
+00:00:39,120 --> 00:00:42,060
+Agora, a funo de menu, a primeira
+
+20
+00:00:42,060 --> 00:00:44,170
+funo usada, era a funo
+
+21
+00:00:44,170 --> 00:00:47,180
+add_movie, portanto, diretamente definida abaixo dela.
+
+22
+00:00:47,180 --> 00:00:50,260
+A prxima funo usada  a funo
+
+23
+00:00:50,260 --> 00:00:54,120
+show_movies, portanto, deve ir diretamente abaixo do add_movie.
+
+24
+00:00:54,120 --> 00:00:56,040
+Como voc pode ver, vamos definir
+
+25
+00:00:56,040 --> 00:00:58,640
+as funes na ordem em que elas so
+
+26
+00:00:58,640 --> 00:01:01,050
+usadas, e acho isso timo para legibilidade.
+
+27
+00:01:02,700 --> 00:01:03,620
+Ento, vamos
+
+28
+00:01:03,620 --> 00:01:06,330
+fazer isso, show_movies, assim.
+
+29
+00:01:07,920 --> 00:01:09,030
+Ento, o que queremos
+
+30
+00:01:09,030 --> 00:01:11,640
+fazer para mostrar alguns detalhes de cada filme?
+
+31
+00:01:11,640 --> 00:01:15,230
+Bem, vamos ter que passar por cima de cada filme da
+
+32
+00:01:15,230 --> 00:01:17,610
+nossa lista, e imprimir seus detalhes bem.
+
+33
+00:01:17,610 --> 00:01:18,680
+Tenho certeza que voc
+
+34
+00:01:18,680 --> 00:01:20,610
+pode fazer isso, ento se voc no tiver
+
+35
+00:01:20,610 --> 00:01:22,260
+feito isso, pause o vdeo e tente.
+
+36
+00:01:25,800 --> 00:01:29,930
+Ok, agora para filmes em filmes,
+
+37
+00:01:29,930 --> 00:01:32,520
+vamos imprimir algumas coisas.
+
+38
+00:01:32,520 --> 00:01:33,570
+Ento, ns vamos
+
+39
+00:01:36,290 --> 00:01:39,760
+imprimir o nome vai ser o nome do filme.
+
+40
+00:01:42,250 --> 00:01:45,590
+Observe, como estou usando aspas duplas aqui,
+
+41
+00:01:45,590 --> 00:01:47,210
+porque temos uma aspa
+
+42
+00:01:47,210 --> 00:01:51,560
+simples dentro do uso do dicionrio, esse rack quieto em
+
+43
+00:01:51,560 --> 00:01:52,800
+notao, ento precisaremos
+
+44
+00:01:52,800 --> 00:01:56,110
+usar aspas duplas do lado de fora.
+
+45
+00:02:13,732 --> 00:02:14,680
+L ns temos isso.
+
+46
+00:02:14,680 --> 00:02:18,340
+Agora, estamos imprimindo o nome, o diretor e o ano de
+
+47
+00:02:18,340 --> 00:02:20,530
+lanamento de cada um dos nossos filmes.
+
+48
+00:02:20,530 --> 00:02:23,740
+Isso significa que no precisamos mais da linha 67,
+
+49
+00:02:23,740 --> 00:02:25,420
+imprimir filmes, porque poderemos verificar
+
+50
+00:02:25,420 --> 00:02:26,920
+se os filmes que
+
+51
+00:02:26,920 --> 00:02:29,410
+estamos adicionando esto l diretamente em nosso menu.
+
+52
+00:02:30,620 --> 00:02:33,030
+Agora, vamos escrever nosso aplicativo e
+
+53
+00:02:33,030 --> 00:02:34,620
+execut-lo novamente, e agora
+
+54
+00:02:34,620 --> 00:02:36,870
+devemos adicionar um novo filme,
+
+55
+00:02:37,870 --> 00:02:40,040
+e esse ser o Matrix.
+
+56
+00:02:40,040 --> 00:02:44,060
+Os diretores so, esses so os anos de 1994, e agora
+
+57
+00:02:44,060 --> 00:02:48,010
+devemos ser capazes de digitar L, para ver nossos filmes.
+
+58
+00:02:48,010 --> 00:02:50,360
+Como voc pode ver, ns temos o nome 
+
+59
+00:02:50,360 --> 00:02:53,940
+The Matrix, o diretor  o Wachowskis, e o ano de lanamento  1994.
+
+60
+00:02:54,840 --> 00:02:56,780
+Ento ns digitamos Q para sair.
+
+61
+00:02:58,320 --> 00:03:02,860
+Voc pode clicar aqui para encaixar ou ocultar essa coisa,
+
+62
+00:03:02,860 --> 00:03:05,530
+o console, para que ele aparea
+
+63
+00:03:05,530 --> 00:03:07,780
+somente quando voc executar o
+
+64
+00:03:07,780 --> 00:03:09,130
+aplicativo novamente.
+
+65
+00:03:10,900 --> 00:03:12,760
+Agora, algo que eu notei
+
+66
+00:03:12,760 --> 00:03:16,550
+anteriormente,  que o espaamento entre as nossas vrias entradas
+
+67
+00:03:16,550 --> 00:03:19,390
+no foi timo, ento o que eu
+
+68
+00:03:19,390 --> 00:03:23,100
+vou fazer  adicionar uma barra invertida N aqui, no
+
+69
+00:03:23,950 --> 00:03:25,740
+incio desta string, e barra
+
+70
+00:03:25,740 --> 00:03:27,800
+invertida N  um caractere
+
+71
+00:03:27,800 --> 00:03:30,630
+especial que significa adicionar uma nova linha.
+
+72
+00:03:30,630 --> 00:03:34,070
+Ento agora, quando ns executamos nosso aplicativo. py novamente, vamos ver
+
+73
+00:03:34,070 --> 00:03:35,980
+que, se adicionarmos um
+
+74
+00:03:35,980 --> 00:03:40,290
+novo filme, e digitarmos Matrix, Wachowskis, 1994, a prxima linha
+
+75
+00:03:40,290 --> 00:03:43,570
+, tem um espao antes, ento 
+
+76
+00:03:43,570 --> 00:03:45,130
+apenas um pouco melhor.
+
+77
+00:03:45,130 --> 00:03:46,950
+Ok, ento pode parar o aplicativo.
+
+78
+00:03:46,950 --> 00:03:48,760
+Observe que, quando voc para
+
+79
+00:03:48,760 --> 00:03:50,830
+o aplicativo manualmente, voc recebe um
+
+80
+00:03:50,830 --> 00:03:52,070
+erro, mas isso 
+
+81
+00:03:52,070 --> 00:03:54,100
+totalmente correto, isso significa que voc
+
+82
+00:03:55,300 --> 00:03:58,910
+interrompeu o aplicativo enquanto o aplicativo aguardava alguma entrada do teclado.
+
+83
+00:04:00,180 --> 00:04:02,030
+Ns no nos importamos com isso.
+
+84
+00:04:02,030 --> 00:04:05,030
+Ok, agora adicionamos essa funcionalidade de show_movies,
+
+85
+00:04:05,030 --> 00:04:08,530
+mas h algo mais que eu gostaria que fizssemos,
+
+86
+00:04:09,460 --> 00:04:11,850
+o que  que percebemos que
+
+87
+00:04:11,850 --> 00:04:15,650
+isso, essas trs linhas aqui, fazem algo muito particular.
+
+88
+00:04:15,650 --> 00:04:20,040
+Eles exibem detalhes do filme em um formato imprimvel.
+
+89
+00:04:21,450 --> 00:04:25,290
+Ento,  uma possibilidade para ns extrairmos
+
+90
+00:04:25,290 --> 00:04:27,390
+isso em uma funo.
+
+91
+00:04:27,390 --> 00:04:29,170
+ quase sempre uma boa
+
+92
+00:04:29,170 --> 00:04:31,300
+ideia analisar o seu aplicativo e
+
+93
+00:04:31,300 --> 00:04:34,980
+ver quais partes da funcionalidade so independentes e podem ser
+
+94
+00:04:34,980 --> 00:04:37,030
+extradas em uma funo para tornar
+
+95
+00:04:37,030 --> 00:04:38,940
+seu programa mais legvel.
+
+96
+00:04:39,920 --> 00:04:40,990
+Ento, o que
+
+97
+00:04:40,990 --> 00:04:42,790
+vamos fazer  definir uma
+
+98
+00:04:44,016 --> 00:04:46,770
+nova funo show_movie_details, e isso vai levar
+
+99
+00:04:46,770 --> 00:04:49,290
+um filme de parmetro, e ento
+
+100
+00:04:49,290 --> 00:04:51,300
+o que vai fazer dentro
+
+101
+00:04:51,300 --> 00:04:53,710
+dele,  fazer todas essas coisas.
+
+102
+00:04:53,710 --> 00:04:54,860
+Vai imprimir o nome, o
+
+103
+00:04:54,860 --> 00:04:56,850
+diretor e o ano de lanamento deste filme.
+
+104
+00:04:56,850 --> 00:04:58,660
+Agora, dentro de show_movies, podemos
+
+105
+00:04:58,660 --> 00:05:00,070
+chamar essa funo em
+
+106
+00:05:00,070 --> 00:05:03,520
+vez de ter essas trs instrues de impresso.
+
+107
+00:05:07,640 --> 00:05:10,810
+Ok, agora para cada varivel de filme dentro
+
+108
+00:05:10,810 --> 00:05:12,550
+da lista de filmes,
+
+109
+00:05:12,550 --> 00:05:16,330
+vamos passar isso, o valor dessa varivel de filme,
+
+110
+00:05:16,330 --> 00:05:19,720
+o dicionrio e torn-lo igual a essa varivel
+
+111
+00:05:19,720 --> 00:05:21,610
+de filme definida nesta funo.
+
+112
+00:05:21,610 --> 00:05:24,800
+No entanto, lembre-se do conceito de escopo.
+
+113
+00:05:24,800 --> 00:05:27,510
+Esta varivel de filme aqui
+
+114
+00:05:27,510 --> 00:05:31,740
+s existe dentro deste loop e dentro desta funo.
+
+115
+00:05:31,740 --> 00:05:34,440
+Ento, esse filme e essa
+
+116
+00:05:34,440 --> 00:05:37,960
+varivel de filme so variveis diferentes.
+
+117
+00:05:37,960 --> 00:05:40,490
+ apenas o valor, o dicionrio,
+
+118
+00:05:40,490 --> 00:05:44,080
+que estamos teletransportando a partir dessa chamada de
+
+119
+00:05:44,080 --> 00:05:46,050
+funo para esse parmetro.
+
+120
+00:05:46,050 --> 00:05:47,700
+Ento, o valor da varivel,
+
+121
+00:05:47,700 --> 00:05:50,010
+agora est sendo atribudo a este filme,
+
+122
+00:05:50,010 --> 00:05:51,920
+mesmo que eles tenham o mesmo
+
+123
+00:05:51,920 --> 00:05:53,220
+nome, eles so variveis
+
+124
+00:05:53,220 --> 00:05:56,100
+diferentes porque este  apenas vivo nesta funo.
+
+125
+00:05:57,260 --> 00:05:59,750
+Ok, isso  uma coisa realmente importante,
+
+126
+00:05:59,750 --> 00:06:01,890
+e freqentemente usamos o mesmo nome
+
+127
+00:06:01,890 --> 00:06:04,520
+para as coisas, s porque faz sentido.
+
+128
+00:06:04,520 --> 00:06:06,170
+Afinal, o que estamos
+
+129
+00:06:06,170 --> 00:06:08,710
+fazendo  mostrar coisas sobre um filme.
+
+130
+00:06:08,710 --> 00:06:10,200
+Faz sentido para nossa varivel, e
+
+131
+00:06:10,200 --> 00:06:11,749
+essa funo  chamada de filme.
+
+132
+00:06:11,749 --> 00:06:14,340
+Mas, tambm faz sentido que ele seja chamado de
+
+133
+00:06:14,340 --> 00:06:17,610
+filme aqui, e isso  bom, por causa do conceito de escopo.
+
+134
+00:06:18,690 --> 00:06:20,530
+Com o tempo, voc ficar menos confuso com
+
+135
+00:06:20,530 --> 00:06:22,600
+coisas como essas, se estiver confuso com isso.
+
+136
+00:06:22,600 --> 00:06:24,500
+Se voc no est confuso com isso, incrvel.
+
+137
+00:06:25,530 --> 00:06:27,770
+Ok, agora temos nossa nova funo, que
+
+138
+00:06:27,770 --> 00:06:29,280
+est sendo chamada, e acho
+
+139
+00:06:29,280 --> 00:06:30,990
+que isso est parecendo muito
+
+140
+00:06:30,990 --> 00:06:33,950
+melhor, porque nosso programa est muito mais limpo agora.
+
+141
+00:06:33,950 --> 00:06:36,580
+Em Python, depois que voc terminar
+
+142
+00:06:36,580 --> 00:06:38,940
+de usar uma funo, voc sempre
+
+143
+00:06:38,940 --> 00:06:42,880
+poder reduzi-la pressionando este pequeno cone de menos  esquerda.
+
+144
+00:06:42,880 --> 00:06:46,470
+Isso s vai tornar o seu programa mais agradvel de ler.
+
+145
+00:06:46,470 --> 00:06:48,570
+ claro, lembre-se de que voc sempre pode
+
+146
+00:06:48,570 --> 00:06:51,150
+solt-lo pressionando o sinal de mais, se voc quiser v-lo.
+
+147
+00:06:52,100 --> 00:06:55,920
+Ok, agora a ltima coisa que temos que fazer  o nosso find_movie.
+
+148
+00:06:55,920 --> 00:06:57,350
+Vamos fazer isso no
+
+149
+00:06:57,350 --> 00:07:00,420
+prximo vdeo, mas primeiro, claro, vamos verificar este aqui.
+
+150
+00:07:00,420 --> 00:07:02,540
+Permitimos que os usurios mostrem
+
+151
+00:07:02,540 --> 00:07:05,060
+todos os filmes, s temos uma
+
+152
+00:07:05,060 --> 00:07:07,890
+tarefa antes de terminarmos este projeto.
+
+153
+00:07:07,890 --> 00:07:09,690
+Vejo voc no prximo vdeo.
+

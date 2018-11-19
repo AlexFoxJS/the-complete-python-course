@@ -1,0 +1,568 @@
+1
+00:00:00,032 --> 00:00:01,738
+Jos: Hola, y bienvenido de nuevo.
+
+2
+00:00:01,738 --> 00:00:03,775
+En este video, veremos el uso
+
+3
+00:00:03,775 --> 00:00:07,455
+de la biblioteca de solicitudes para descargar el contenido de
+
+4
+00:00:07,455 --> 00:00:10,377
+la pgina para que podamos analizarlo con BeautifulSoup.
+
+5
+00:00:10,377 --> 00:00:12,241
+Lo primero que debemos hacer
+
+6
+00:00:12,241 --> 00:00:14,894
+es, una vez ms, instalar una biblioteca.
+
+7
+00:00:14,894 --> 00:00:16,870
+Pasemos a nuestras Preferencias que,
+
+8
+00:00:16,870 --> 00:00:19,187
+recuerda en una Mac, est bajo
+
+9
+00:00:19,187 --> 00:00:20,992
+PyCharm Community Edition y Preferencias.
+
+10
+00:00:20,992 --> 00:00:23,603
+En Windows, creo, est bajo File.
+
+11
+00:00:23,603 --> 00:00:25,372
+Y debera estar all abajo en alguna parte.
+
+12
+00:00:25,372 --> 00:00:27,351
+Vayamos a sus Preferencias, y una
+
+13
+00:00:27,351 --> 00:00:29,801
+vez ms, busque la seccin Proyecto aqu, y
+
+14
+00:00:29,801 --> 00:00:31,567
+luego vaya al intrprete del proyecto.
+
+15
+00:00:31,567 --> 00:00:34,025
+Presione el cono ms aqu
+
+16
+00:00:34,025 --> 00:00:36,525
+y encuentre la biblioteca de solicitudes.
+
+17
+00:00:37,444 --> 00:00:39,693
+Puedes ver que ya lo tengo
+
+18
+00:00:39,693 --> 00:00:44,281
+instalado, pero si an no lo tienes instalado, solo presiona instalar.
+
+19
+00:00:44,281 --> 00:00:46,677
+De acuerdo, lo tengo aqu as que
+
+20
+00:00:46,677 --> 00:00:50,101
+voy a presionar instal, en realidad, solo para actualizarlo.
+
+21
+00:00:50,101 --> 00:00:54,079
+Actualzalo a la ltima versin, y eso debera estar bien.
+
+22
+00:00:54,079 --> 00:00:57,330
+De acuerdo, ahora que lo tenemos instalado, podemos usar
+
+23
+00:00:57,330 --> 00:01:00,184
+la biblioteca de solicitudes desde nuestro cdigo Python.
+
+24
+00:01:00,184 --> 00:01:02,711
+Entonces, creemos un nuevo archivo de
+
+25
+00:01:02,711 --> 00:01:04,794
+Python, que voy a llamar
+
+26
+00:01:04,794 --> 00:01:06,294
+a scraping_books. py.
+
+27
+00:01:08,702 --> 00:01:12,285
+Y aqu vamos a hacer solicitudes de importacin.
+
+28
+00:01:13,518 --> 00:01:18,126
+Tambin vamos a hacer desde la importacin de bs4 BeautifulSoup.
+
+29
+00:01:18,126 --> 00:01:22,160
+Ahora, si quiere descubrir el contenido de la pgina y
+
+30
+00:01:22,160 --> 00:01:25,465
+descargar las pginas en Python, todo lo que
+
+31
+00:01:25,465 --> 00:01:29,125
+tendr que hacer alguna vez es hacer algo como esto.
+
+32
+00:01:29,125 --> 00:01:31,125
+Pgina = solicitudes. obtener y luego,
+
+33
+00:01:32,709 --> 00:01:34,858
+como una cadena, debe poner la
+
+34
+00:01:34,858 --> 00:01:36,490
+pgina que desea cargar.
+
+35
+00:01:36,490 --> 00:01:41,490
+As que eso es, por ejemplo, http: // www. ejemplo. com, y luego,
+
+36
+00:01:42,197 --> 00:01:44,981
+imprimir (pgina. contenido).
+
+37
+00:01:44,981 --> 00:01:46,662
+Entonces ejemplo. com es
+
+38
+00:01:46,662 --> 00:01:50,723
+un sitio de muestra que tambin puede usar solo para probar cosas.
+
+39
+00:01:50,723 --> 00:01:52,313
+Y lo que est sucediendo aqu
+
+40
+00:01:52,313 --> 00:01:54,615
+es que estamos pidiendo el mdulo de solicitudes,
+
+41
+00:01:54,615 --> 00:01:57,615
+y estamos llamando a la funcin get dentro de ese mdulo.
+
+42
+00:01:59,468 --> 00:02:01,384
+La funcin get
+
+43
+00:02:01,384 --> 00:02:02,658
+hace algunas
+
+44
+00:02:02,658 --> 00:02:03,491
+transacciones
+
+45
+00:02:05,551 --> 00:02:06,967
+http en segundo
+
+46
+00:02:06,967 --> 00:02:08,850
+plano, algunas solicitudes http.
+
+47
+00:02:08,850 --> 00:02:11,238
+Es un poco ms tcnico de lo
+
+48
+00:02:11,238 --> 00:02:13,550
+que vamos a entrar en este curso.
+
+49
+00:02:13,550 --> 00:02:17,208
+Pero esencialmente, va y le pregunta al
+
+50
+00:02:17,208 --> 00:02:20,833
+servidor dnde est el sitio web almacenado,
+
+51
+00:02:20,833 --> 00:02:22,220
+para la pgina.
+
+52
+00:02:22,220 --> 00:02:24,472
+Y luego el servidor puede decidir responder con el
+
+53
+00:02:24,472 --> 00:02:27,232
+contenido de la pgina, o puede decidir responder con otra cosa.
+
+54
+00:02:27,232 --> 00:02:29,263
+El servidor bsicamente puede decidir
+
+55
+00:02:29,263 --> 00:02:32,096
+qu hacer cuando esto sucede, cuando lo solicitamos.
+
+56
+00:02:32,998 --> 00:02:35,987
+Y con suerte, responder con el contenido de la pgina.
+
+57
+00:02:35,987 --> 00:02:38,146
+Eso es lo que normalmente sucede.
+
+58
+00:02:38,146 --> 00:02:39,813
+Una vez que tenemos
+
+59
+00:02:42,777 --> 00:02:45,876
+eso, recibimos el contenido de la pgina, y
+
+60
+00:02:45,876 --> 00:02:48,643
+tambin un par de pequeos fragmentos de
+
+61
+00:02:48,643 --> 00:02:51,772
+informacin, como un cdigo de estado, que nos
+
+62
+00:02:51,772 --> 00:02:55,758
+dice si hubo un error o no, y algunas cosas ms.
+
+63
+00:02:55,758 --> 00:02:57,787
+Las otras cosas no son terriblemente importantes.
+
+64
+00:02:57,787 --> 00:03:00,186
+El contenido es lo que ms nos interesa.
+
+65
+00:03:00,186 --> 00:03:03,686
+Entonces, el mdulo de solicitudes convierte esa respuesta que
+
+66
+00:03:03,686 --> 00:03:05,128
+proviene del servidor, que
+
+67
+00:03:05,128 --> 00:03:09,217
+est en ese tipo de formato complejo, la convierte en un
+
+68
+00:03:09,217 --> 00:03:13,907
+objeto en Python al que podemos acceder a la propiedad de contenido.
+
+69
+00:03:13,907 --> 00:03:18,259
+Entonces, ejecutemos este archivo y veamos qu sucede.
+
+70
+00:03:18,259 --> 00:03:21,565
+Como puede ver, tenemos una cadena aqu.
+
+71
+00:03:21,565 --> 00:03:25,934
+Es una cadena bastante larga porque los contenidos se
+
+72
+00:03:25,934 --> 00:03:28,970
+descargan todos en una sola lnea.
+
+73
+00:03:28,970 --> 00:03:31,912
+Pero puede ver que hay una etiqueta &lt;p>
+
+74
+00:03:31,912 --> 00:03:33,595
+aqu: este dominio est establecido
+
+75
+00:03:33,595 --> 00:03:36,483
+para ser utilizado como ejemplo ilustrativo en documentos.
+
+76
+00:03:36,483 --> 00:03:37,316
+Entonces esto es lo que estamos haciendo.
+
+77
+00:03:37,316 --> 00:03:41,755
+Entonces este es el ejemplo. El sitio web de com parece.
+
+78
+00:03:41,755 --> 00:03:44,338
+Tiene una etiqueta &lt;h1>, una etiqueta &lt;p>
+
+79
+00:03:45,244 --> 00:03:48,262
+y algo ms de informacin, que es un enlace.
+
+80
+00:03:48,262 --> 00:03:50,009
+Y si haces clic con el
+
+81
+00:03:50,009 --> 00:03:52,601
+botn derecho y lo inspecciona, que es lo que
+
+82
+00:03:52,601 --> 00:03:56,934
+he hecho aqu, ves que obtienes el cuerpo, que es la seccin principal en html.
+
+83
+00:03:57,856 --> 00:04:01,294
+Luego hay un &lt;div> que es solo un bloque de contenido,
+
+84
+00:04:01,294 --> 00:04:04,292
+y dentro de ese &lt;div> tenemos tres etiquetas principales.
+
+85
+00:04:04,292 --> 00:04:06,724
+La etiqueta &lt;h1>, la etiqueta &lt;p>, que
+
+86
+00:04:06,724 --> 00:04:09,748
+contiene el prrafo, y otra etiqueta &lt;p>, que contiene
+
+87
+00:04:09,748 --> 00:04:12,298
+una etiqueta &lt;a>, que es un enlace.
+
+88
+00:04:12,298 --> 00:04:14,235
+Y eso tiene un atributo 'href',
+
+89
+00:04:14,235 --> 00:04:15,820
+que es el enlace al
+
+90
+00:04:15,820 --> 00:04:18,931
+que va, y el texto que contiene es ms informacin.
+
+91
+00:04:18,931 --> 00:04:20,857
+Volvamos a PyCharm, y
+
+92
+00:04:20,857 --> 00:04:25,151
+vamos a intentar analizar a travs de este cdigo html.
+
+93
+00:04:25,151 --> 00:04:27,508
+Esencialmente responder con algo como esto.
+
+94
+00:04:27,508 --> 00:04:29,804
+El html de la pgina.
+
+95
+00:04:29,804 --> 00:04:32,286
+Si quisiramos, tambin podramos
+
+96
+00:04:32,286 --> 00:04:34,726
+analizarlo con BeautifulSoup.
+
+97
+00:04:34,726 --> 00:04:38,914
+Podramos hacer algo como soup = BeautifulSoup
+
+98
+00:04:38,914 --> 00:04:41,866
+de la pgina. contenido y, por supuesto,
+
+99
+00:04:41,866 --> 00:04:45,426
+debemos darle el 'html. analizador 'y luego podemos
+
+100
+00:04:45,426 --> 00:04:50,205
+imprimir, por ejemplo, imprimir (sopa. encontrar), hay un h1 en la pgina, lo
+
+101
+00:04:50,205 --> 00:04:52,384
+s porque he visto la pgina antes ,. cadena, y luego podramos imprimir esto.
+
+102
+00:04:52,384 --> 00:04:55,139
+Y puede ver que obtenemos el Dominio de ejemplo.
+
+103
+00:04:55,139 --> 00:04:59,122
+Todo lo que hicimos aqu no es nada nuevo.
+
+104
+00:04:59,122 --> 00:05:00,808
+Tenemos el contenido de la pgina, esto es nuevo.
+
+105
+00:05:00,808 --> 00:05:03,891
+Entonces las otras cosas no son nuevas.
+
+106
+00:05:05,375 --> 00:05:07,853
+Creamos un objeto BeautifulSoup, lo analizamos en
+
+107
+00:05:07,853 --> 00:05:09,416
+el contenido de la
+
+108
+00:05:09,416 --> 00:05:10,993
+pgina, que es el
+
+109
+00:05:10,993 --> 00:05:13,553
+contenido html de la pgina, dado el 'html'. analizador, porque eso es lo que usar
+
+110
+00:05:13,553 --> 00:05:15,009
+para analizar
+
+111
+00:05:15,009 --> 00:05:16,909
+el contenido y tratar de entenderlo.
+
+112
+00:05:16,909 --> 00:05:19,088
+Y finalmente, encontramos 'h1' y lo hemos impreso como una cadena.
+
+113
+00:05:19,088 --> 00:05:23,838
+Bueno.
+
+114
+00:05:25,029 --> 00:05:25,862
+Lo nuevo aqu es esto conseguir.
+
+115
+00:05:27,095 --> 00:05:29,530
+Y todo lo que estamos haciendo, puedes pensar que es obtener
+
+116
+00:05:29,530 --> 00:05:30,799
+el contenido de la pgina.
+
+117
+00:05:30,799 --> 00:05:33,421
+Lo que sucede en el fondo es un poco ms
+
+118
+00:05:33,421 --> 00:05:34,362
+tcnico, como mencion antes.
+
+119
+00:05:34,362 --> 00:05:36,114
+Nada de lo que debas preocuparte.
+
+120
+00:05:36,114 --> 00:05:38,974
+Adems, puedes, por supuesto, hacer todo lo
+
+121
+00:05:38,974 --> 00:05:41,111
+que hicimos en los ltimos videos.
+
+122
+00:05:41,111 --> 00:05:42,772
+Puedes hacer sopa select_one, y luego
+
+123
+00:05:42,772 --> 00:05:45,688
+puedes darle un
+
+124
+00:05:45,688 --> 00:05:48,271
+tipo diferente de locator, como
+
+125
+00:05:49,220 --> 00:05:50,387
+este, 'href'.
+
+126
+00:05:53,547 --> 00:05:54,380
+Y aqu, a
+
+127
+00:05:54,380 --> 00:05:56,780
+lo que estamos accediendo es a la etiqueta &lt;a>, que
+
+128
+00:05:56,780 --> 00:06:00,023
+est dentro de una etiqueta &lt;p>, y estamos accediendo al atributo 'href' de eso.
+
+129
+00:06:00,023 --> 00:06:02,576
+Entonces este va a ser un enlace.
+
+130
+00:06:02,576 --> 00:06:04,914
+Puede ejecutar esto de nuevo.
+
+131
+00:06:04,914 --> 00:06:07,110
+Oh, lo siento, esto debera ser corchetes, mi mal.
+
+132
+00:06:07,110 --> 00:06:11,277
+Y tenemos ahora, este enlace aqu.
+
+133
+00:06:12,226 --> 00:06:14,809
+Por lo tanto, este es un ejemplo
+
+134
+00:06:16,330 --> 00:06:18,219
+de cmo puede descargar una
+
+135
+00:06:18,219 --> 00:06:21,357
+pgina y acceder a algunas propiedades y algunas etiquetas.
+
+136
+00:06:21,357 --> 00:06:24,513
+Vamos a ver otro ejemplo en los prximos
+
+137
+00:06:24,513 --> 00:06:27,196
+videos con algunas cosas ms interesantes pasando.
+
+138
+00:06:27,196 --> 00:06:31,045
+Vamos a ver esa librera que vimos antes.
+
+139
+00:06:31,045 --> 00:06:34,118
+Y vamos a comenzar, ms o menos, a entender
+
+140
+00:06:34,118 --> 00:06:36,431
+varias piezas de datos al mismo tiempo.
+
+141
+00:06:36,431 --> 00:06:39,366
+Entonces, dicho esto, te ver en el siguiente video.
+
+142
+00:06:39,366 --> 00:06:41,923
+&nbsp;
+

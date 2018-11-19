@@ -1,0 +1,384 @@
+1
+00:00:00,520 --> 00:00:01,450
+Instrutor: Oi bem vindo de volta.
+
+2
+00:00:01,450 --> 00:00:04,020
+Neste vdeo, estamos analisando as propriedades.
+
+3
+00:00:05,130 --> 00:00:07,020
+Lembre-se de como mencionamos que
+
+4
+00:00:07,020 --> 00:00:09,940
+os valores definidos aqui no construtor no
+
+5
+00:00:09,940 --> 00:00:12,970
+mtodo init so chamados de propriedades porque o
+
+6
+00:00:12,970 --> 00:00:16,440
+objeto tem esse valor agora definido dentro dele.
+
+7
+00:00:16,440 --> 00:00:19,840
+Nome, escola, notas e salrio.
+
+8
+00:00:20,730 --> 00:00:22,300
+De fato, quando criamos um
+
+9
+00:00:22,300 --> 00:00:25,315
+objeto, podemos imprimir rolf. salrio.
+
+10
+00:00:25,315 --> 00:00:27,774
+E o que isso nos diz 
+
+11
+00:00:27,774 --> 00:00:30,490
+que estamos acessando um valor dentro do objeto.
+
+12
+00:00:31,630 --> 00:00:33,310
+Assim que queremos acessar uma
+
+13
+00:00:33,310 --> 00:00:35,280
+funo, temos que chamar a funo
+
+14
+00:00:35,280 --> 00:00:37,140
+incluindo os colchetes no final.
+
+15
+00:00:38,037 --> 00:00:40,810
+E tudo isso  bom,
+
+16
+00:00:40,810 --> 00:00:43,294
+mas por exemplo, vamos pensar
+
+17
+00:00:43,294 --> 00:00:46,600
+no salrio semanal, vamos deletar isso.
+
+18
+00:00:46,600 --> 00:00:48,610
+Eu penso no salrio semanal de rolf.
+
+19
+00:00:50,080 --> 00:00:52,180
+Aprendemos no passado que funes e,
+
+20
+00:00:52,180 --> 00:00:53,900
+portanto, mtodos, uma vez que
+
+21
+00:00:53,900 --> 00:00:55,920
+so apenas funes dentro de uma
+
+22
+00:00:55,920 --> 00:00:59,950
+classe, so pedaos de cdigo que fazem alguma coisa, executam uma ao.
+
+23
+00:01:01,590 --> 00:01:03,550
+No entanto, o mtodo de
+
+24
+00:01:03,550 --> 00:01:07,320
+salrio semanal no executa e aes, apenas calcula um valor.
+
+25
+00:01:08,290 --> 00:01:12,105
+Ento, seria muito bom se pudssemos ter
+
+26
+00:01:12,105 --> 00:01:14,430
+salrio semanal como tal.
+
+27
+00:01:14,430 --> 00:01:17,170
+Rolf o salrio semanal, no  mais uma funo.
+
+28
+00:01:17,170 --> 00:01:19,474
+Agora  apenas uma propriedade do
+
+29
+00:01:19,474 --> 00:01:21,870
+objeto porque no h ao a fazer.
+
+30
+00:01:21,870 --> 00:01:23,630
+No  como se estivssemos dizendo para o
+
+31
+00:01:23,630 --> 00:01:25,670
+rolf, voc sabe, ir trabalhar ou fazer alguma coisa.
+
+32
+00:01:25,670 --> 00:01:28,550
+Estamos apenas recebendo um valor do objeto.
+
+33
+00:01:30,100 --> 00:01:32,495
+E voc s pode fazer
+
+34
+00:01:32,495 --> 00:01:37,495
+isso quando a funo no aceita argumentos alm do self, ok.
+
+35
+00:01:37,560 --> 00:01:40,398
+Se a funo usa apenas um argumento prprio
+
+36
+00:01:40,398 --> 00:01:43,650
+e a funo no  uma que faz as coisas,
+
+37
+00:01:43,650 --> 00:01:45,390
+mas apenas calcula um valor
+
+38
+00:01:45,390 --> 00:01:47,560
+baseado nas propriedades do eu, acho
+
+39
+00:01:49,040 --> 00:01:53,330
+que isso faz sentido fazer dessa maneira, porque agora voc est acessando o
+
+40
+00:01:53,330 --> 00:01:55,420
+arquivo semanal. salrio e voc sabe,
+
+41
+00:01:55,420 --> 00:01:57,730
+voc no se importa se  calculado.
+
+42
+00:01:57,730 --> 00:02:00,230
+E voc no se importa se isso  apenas esttico.
+
+43
+00:02:00,230 --> 00:02:03,550
+Voc sabe, que este salrio semanal  o salrio semanal do rolf.
+
+44
+00:02:03,550 --> 00:02:05,560
+E se isso mudar porque voc aumenta
+
+45
+00:02:05,560 --> 00:02:07,260
+o salrio, tudo bem, voc sabe.
+
+46
+00:02:07,260 --> 00:02:08,670
+Voc no necessariamente se preocupa
+
+47
+00:02:08,670 --> 00:02:11,750
+com isso, apenas se importa em obter o valor correto.
+
+48
+00:02:11,750 --> 00:02:14,470
+Ento, obviamente, se fizermos isso, isso no funcionar, pois
+
+49
+00:02:14,470 --> 00:02:16,140
+o Python esperar o colchete
+
+50
+00:02:16,140 --> 00:02:17,300
+de abertura e fechamento.
+
+51
+00:02:17,300 --> 00:02:19,180
+Vamos correr e eu vou te mostrar.
+
+52
+00:02:20,870 --> 00:02:23,810
+Veja agora o que obtemos  um
+
+53
+00:02:23,810 --> 00:02:26,930
+mtodo vinculado WorkingStudent. weekly_salary do objeto WorkingStudent.
+
+54
+00:02:26,930 --> 00:02:28,110
+O que isso
+
+55
+00:02:28,110 --> 00:02:31,520
+est nos dizendo  o que imprimimos  esse mtodo.
+
+56
+00:02:31,520 --> 00:02:34,643
+Ns imprimimos a definio deste mtodo.
+
+57
+00:02:34,643 --> 00:02:36,960
+Dentro dele temos, voc sabe, o endereo de
+
+58
+00:02:36,960 --> 00:02:39,150
+memria do objeto e assim por diante.
+
+59
+00:02:39,150 --> 00:02:41,261
+Se quisermos fazer isso, temos
+
+60
+00:02:41,261 --> 00:02:44,470
+que usar o que  chamado de delator.
+
+61
+00:02:44,470 --> 00:02:48,170
+E este  um declarator muito popular chamado @property.
+
+62
+00:02:48,170 --> 00:02:50,842
+O declarator @property transforma esse mtodo
+
+63
+00:02:50,842 --> 00:02:53,880
+em algo que pode ser usado assim.
+
+64
+00:02:56,710 --> 00:02:59,750
+Agora temos 581. 25, e lembre-se de
+
+65
+00:02:59,750 --> 00:03:02,061
+que no adicionamos os colchetes.
+
+66
+00:03:02,061 --> 00:03:03,810
+Ento este  um decalarador, vamos olhar
+
+67
+00:03:03,810 --> 00:03:04,900
+para os declaradores mais
+
+68
+00:03:04,900 --> 00:03:06,530
+tarde no curso, no apenas agora.
+
+69
+00:03:06,530 --> 00:03:08,915
+Eu s queria apresentar este nico declarador aqui,
+
+70
+00:03:08,915 --> 00:03:10,740
+porque  uma boa maneira de,
+
+71
+00:03:10,740 --> 00:03:12,830
+voc sabe, adicionar algumas coisas avanadas do
+
+72
+00:03:12,830 --> 00:03:14,780
+Python ao longo do curso.
+
+73
+00:03:14,780 --> 00:03:16,446
+Isso no  algo terrivelmente
+
+74
+00:03:16,446 --> 00:03:19,250
+complexo, embora entender o modo como os declaradores
+
+75
+00:03:19,250 --> 00:03:22,130
+funcionam seja mais complexo, no precisamos fazer isso agora.
+
+76
+00:03:22,130 --> 00:03:23,680
+Ns vamos olhar para isso mais tarde.
+
+77
+00:03:23,680 --> 00:03:26,850
+E eu quero que voc comece a ficar mais avanado.
+
+78
+00:03:26,850 --> 00:03:29,840
+ assim que voc pode alterar um
+
+79
+00:03:29,840 --> 00:03:34,840
+mtodo simples sem argumento em uma propriedade, ou algo que pode
+
+80
+00:03:35,120 --> 00:03:36,410
+ser acessado como
+
+81
+00:03:36,410 --> 00:03:38,100
+se fosse propriedade.
+
+82
+00:03:39,450 --> 00:03:41,320
+E isso  timo
+
+83
+00:03:41,320 --> 00:03:43,760
+porque agora sabemos que nenhuma ao
+
+84
+00:03:43,760 --> 00:03:47,000
+ir surgir como resultado do uso dessa propriedade.
+
+85
+00:03:47,000 --> 00:03:49,960
+Ns apenas sabemos que este  um valor que estamos saindo.
+
+86
+00:03:49,960 --> 00:03:52,370
+Mais uma vez, enfatizo isso importante.
+
+87
+00:03:52,370 --> 00:03:55,960
+Se voc estiver realizando uma ao, como se conectar a um
+
+88
+00:03:55,960 --> 00:03:59,000
+banco de dados ou abrir um arquivo ou, voc
+
+89
+00:03:59,000 --> 00:04:00,774
+sabe, se comunicar com algum
+
+90
+00:04:00,774 --> 00:04:03,380
+tipo de servio da Web, ou estiver interagindo
+
+91
+00:04:03,380 --> 00:04:05,080
+com outro objeto ou qualquer
+
+92
+00:04:05,080 --> 00:04:08,730
+ao, por favor, no use o @ declarador de propriedade.
+
+93
+00:04:08,730 --> 00:04:11,082
+Use-o somente quando estiver
+
+94
+00:04:11,082 --> 00:04:14,560
+calculando valores das prprias propriedades do objeto.
+
+95
+00:04:15,500 --> 00:04:17,050
+Tudo bem,  isso para este
+
+96
+00:04:17,050 --> 00:04:18,680
+vdeo, e eu vejo voc no prximo.
+

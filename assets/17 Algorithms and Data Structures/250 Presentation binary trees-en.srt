@@ -1,0 +1,500 @@
+1
+00:00:00,170 --> 00:00:01,680
+<v Instructor>Hi and welcome back.</v>
+
+2
+00:00:01,680 --> 00:00:03,040
+In this video, we're going to talk
+
+3
+00:00:03,040 --> 00:00:04,717
+about binary trees.
+
+4
+00:00:04,717 --> 00:00:07,970
+A binary tree, like a list or a set,
+
+5
+00:00:07,970 --> 00:00:09,780
+is another data structure
+
+6
+00:00:09,780 --> 00:00:13,022
+that we can use to hold some values.
+
+7
+00:00:13,022 --> 00:00:17,720
+However, it is structured a little differently from a list.
+
+8
+00:00:17,720 --> 00:00:18,997
+Let's have a look.
+
+9
+00:00:18,997 --> 00:00:20,750
+In the last video,
+
+10
+00:00:20,750 --> 00:00:22,220
+We looked at binary search,
+
+11
+00:00:22,220 --> 00:00:24,717
+where we started at the middle of our list,
+
+12
+00:00:24,717 --> 00:00:29,000
+and then sort of constructed an algorithm
+
+13
+00:00:29,000 --> 00:00:30,892
+that allowed us to search.
+
+14
+00:00:30,892 --> 00:00:35,070
+If you take the values that this algorithm comes up with,
+
+15
+00:00:35,070 --> 00:00:37,620
+you actually end up with a binary tree.
+
+16
+00:00:37,620 --> 00:00:38,930
+Let's have a look.
+
+17
+00:00:38,930 --> 00:00:40,690
+If you start at the middle of this list,
+
+18
+00:00:40,690 --> 00:00:42,312
+and you take the first value,
+
+19
+00:00:42,312 --> 00:00:47,312
+let's make that value the starting point of our tree.
+
+20
+00:00:47,470 --> 00:00:48,820
+So we'll just move it down.
+
+21
+00:00:49,780 --> 00:00:52,007
+And this is gonna be the starting point.
+
+22
+00:00:52,007 --> 00:00:53,700
+In binary search,
+
+23
+00:00:53,700 --> 00:00:56,720
+we then discarded one half of these values
+
+24
+00:00:56,720 --> 00:01:01,146
+and moved over to the middle of the remaining segment.
+
+25
+00:01:01,146 --> 00:01:04,910
+We're gonna do, without discarding any values,
+
+26
+00:01:04,910 --> 00:01:07,281
+we're gonna do that for both segments.
+
+27
+00:01:07,281 --> 00:01:09,770
+So we're gonna move over to the middle
+
+28
+00:01:09,770 --> 00:01:11,770
+of the remaining segments.
+
+29
+00:01:11,770 --> 00:01:13,650
+So we're gonna start in the middle of each segment here,
+
+30
+00:01:13,650 --> 00:01:16,207
+which takes us to seven and 59.
+
+31
+00:01:16,207 --> 00:01:18,780
+And we're going to take those two values,
+
+32
+00:01:18,780 --> 00:01:22,889
+and we're gonna make them appear underneath 38.
+
+33
+00:01:22,889 --> 00:01:26,529
+So this tree is now starting to be constructed.
+
+34
+00:01:26,529 --> 00:01:31,230
+38 has, sort of, what we say two children, seven and 59.
+
+35
+00:01:31,230 --> 00:01:32,890
+Seven is at the left,
+
+36
+00:01:32,890 --> 00:01:34,751
+59 is at the right.
+
+37
+00:01:34,751 --> 00:01:36,510
+If we do this again,
+
+38
+00:01:36,510 --> 00:01:38,777
+now we're gonna end up with four values,
+
+39
+00:01:38,777 --> 00:01:40,820
+because we're gonna move over
+
+40
+00:01:40,820 --> 00:01:45,820
+to the middle of the remaining segments in each case.
+
+41
+00:01:45,850 --> 00:01:46,683
+And once again,
+
+42
+00:01:46,683 --> 00:01:47,970
+we're gonna move these values down
+
+43
+00:01:47,970 --> 00:01:51,000
+and make them children of the previous one.
+
+44
+00:01:51,000 --> 00:01:52,800
+So now seven has two children,
+
+45
+00:01:52,800 --> 00:01:54,043
+59 has two children.
+
+46
+00:01:56,050 --> 00:01:57,690
+Once again, we're gonna repeat,
+
+47
+00:01:57,690 --> 00:02:01,470
+and get the half point of the remaining segments.
+
+48
+00:02:01,470 --> 00:02:03,213
+Now we end up with eight values.
+
+49
+00:02:03,213 --> 00:02:05,567
+And we move them down here.
+
+50
+00:02:05,567 --> 00:02:09,150
+And finally, there's not that many left,
+
+51
+00:02:09,150 --> 00:02:10,690
+there's not 16 values left,
+
+52
+00:02:10,690 --> 00:02:14,834
+so we're gonna move over to the remaining few values,
+
+53
+00:02:14,834 --> 00:02:18,453
+and we're gonna move them down as a group.
+
+54
+00:02:21,020 --> 00:02:22,351
+So, as you can see,
+
+55
+00:02:22,351 --> 00:02:25,100
+we end up with something that looks like a tree.
+
+56
+00:02:25,100 --> 00:02:27,593
+If we add the branches in, it becomes a bit clearer.
+
+57
+00:02:27,593 --> 00:02:32,593
+We have elements that have children below them.
+
+58
+00:02:33,490 --> 00:02:35,890
+And then a child can have children as well,
+
+59
+00:02:35,890 --> 00:02:37,539
+it can have two children,
+
+60
+00:02:37,539 --> 00:02:39,230
+or it can have one child.
+
+61
+00:02:39,230 --> 00:02:40,300
+And what happens is,
+
+62
+00:02:40,300 --> 00:02:44,040
+every node has an element,
+
+63
+00:02:44,040 --> 00:02:47,501
+or another node that is smaller than it to the left,
+
+64
+00:02:47,501 --> 00:02:49,898
+and an element that is bigger than it to the right.
+
+65
+00:02:49,898 --> 00:02:52,340
+Taking the example of 38,
+
+66
+00:02:52,340 --> 00:02:55,847
+it has the node seven to the left, which is smaller than 38,
+
+67
+00:02:55,847 --> 00:03:00,162
+and it has the node 59 to the right, that is bigger than 38.
+
+68
+00:03:00,162 --> 00:03:05,162
+So with this structure, we can very easily perform
+
+69
+00:03:05,950 --> 00:03:07,830
+a binary search.
+
+70
+00:03:07,830 --> 00:03:11,760
+So the binary tree is used to perform binary searches.
+
+71
+00:03:11,760 --> 00:03:13,830
+Let's look for the element 90.
+
+72
+00:03:13,830 --> 00:03:17,550
+90, you can see, is down there on the right.
+
+73
+00:03:17,550 --> 00:03:21,320
+To perform a binary search, now all we have to do
+
+74
+00:03:21,320 --> 00:03:23,608
+is start at the top of the tree,
+
+75
+00:03:23,608 --> 00:03:27,346
+and then decide whether we wanna go left or right.
+
+76
+00:03:27,346 --> 00:03:31,183
+Because 90 is bigger than 38,
+
+77
+00:03:31,183 --> 00:03:32,646
+we go right.
+
+78
+00:03:32,646 --> 00:03:37,646
+Then, because 90 is bigger than 59, we'll go right.
+
+79
+00:03:38,980 --> 00:03:43,461
+And now, 90 is smaller than 717, so we go left.
+
+80
+00:03:43,461 --> 00:03:47,730
+And that's that, we found it.
+
+81
+00:03:47,730 --> 00:03:49,919
+So it's just the same as performing a binary search.
+
+82
+00:03:49,919 --> 00:03:52,630
+The binary tree is structured this way
+
+83
+00:03:52,630 --> 00:03:54,370
+so that we can search easily
+
+84
+00:03:54,370 --> 00:03:57,340
+and we end up with smaller elements on the left,
+
+85
+00:03:57,340 --> 00:03:58,730
+larger elements on the right,
+
+86
+00:03:58,730 --> 00:04:01,470
+and we just have to sort of go through each.
+
+87
+00:04:01,470 --> 00:04:04,390
+Of course, the binary tree has to be ordered in this way
+
+88
+00:04:04,390 --> 00:04:05,460
+for it to work.
+
+89
+00:04:05,460 --> 00:04:07,560
+We're going to look at how to create binary trees
+
+90
+00:04:07,560 --> 00:04:09,769
+like this in the next few videos.
+
+91
+00:04:09,769 --> 00:04:14,642
+So once again, the binary tree is just,
+
+92
+00:04:14,642 --> 00:04:17,770
+well, you can think of it as a representation
+
+93
+00:04:17,770 --> 00:04:21,630
+of the ordered list after you perform a binary search on it.
+
+94
+00:04:21,630 --> 00:04:24,050
+If you take the list, and if you take
+
+95
+00:04:24,050 --> 00:04:26,290
+the binary tree left to right,
+
+96
+00:04:26,290 --> 00:04:29,460
+notice how the left most value in this tree,
+
+97
+00:04:29,460 --> 00:04:31,712
+the one on the very left is the number one,
+
+98
+00:04:31,712 --> 00:04:35,400
+and the next value to the right is the number three,
+
+99
+00:04:35,400 --> 00:04:37,920
+the next one is number four, the next one is number five,
+
+100
+00:04:37,920 --> 00:04:39,730
+and the next one number seven, and so forth.
+
+101
+00:04:39,730 --> 00:04:41,710
+So if you take the entire tree,
+
+102
+00:04:41,710 --> 00:04:43,170
+and you put it left to right,
+
+103
+00:04:43,170 --> 00:04:46,290
+when you end up with is, once again,
+
+104
+00:04:46,290 --> 00:04:48,333
+your sorted list.
+
+105
+00:04:50,440 --> 00:04:55,400
+So this is a pretty interesting piece of knowledge.
+
+106
+00:04:55,400 --> 00:04:57,980
+You may not find yourself using binary trees
+
+107
+00:04:57,980 --> 00:05:01,470
+all that often in your software development careers,
+
+108
+00:05:01,470 --> 00:05:03,651
+but nonetheless, they are sort of everywhere
+
+109
+00:05:03,651 --> 00:05:05,510
+when you do software.
+
+110
+00:05:05,510 --> 00:05:07,340
+You get them in data bases,
+
+111
+00:05:07,340 --> 00:05:09,360
+you've got them when you need
+
+112
+00:05:09,360 --> 00:05:11,598
+to search through a large list.
+
+113
+00:05:11,598 --> 00:05:14,923
+And so it's interesting to know about these binary trees.
+
+114
+00:05:16,440 --> 00:05:17,273
+In the next few videos,
+
+115
+00:05:17,273 --> 00:05:18,850
+we're going to learn about how to construct
+
+116
+00:05:18,850 --> 00:05:23,010
+binary trees, how to search through a binary tree in code,
+
+117
+00:05:23,010 --> 00:05:23,853
+and so on.
+
+118
+00:05:25,010 --> 00:05:29,288
+So, hopefully, what a binary tree is makes sense.
+
+119
+00:05:29,288 --> 00:05:34,000
+It's just a structure that has branches
+
+120
+00:05:34,000 --> 00:05:36,120
+with the larger branches to the right,
+
+121
+00:05:36,120 --> 00:05:38,270
+smaller branches to the left,
+
+122
+00:05:38,270 --> 00:05:41,200
+and then allows us to produce,
+
+123
+00:05:41,200 --> 00:05:44,100
+to very easily implement a binary search algorithm.
+
+124
+00:05:44,100 --> 00:05:46,430
+And that's it for this video,
+
+125
+00:05:46,430 --> 00:05:48,080
+and I'll see you on the next one.
+

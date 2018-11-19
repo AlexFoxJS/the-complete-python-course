@@ -1,0 +1,1044 @@
+1
+00:00:00,340 --> 00:00:01,250
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,250 --> 00:00:04,770
+In this video we'll talk about dates and times.
+
+3
+00:00:04,770 --> 00:00:06,070
+Working with dates and times
+
+4
+00:00:06,070 --> 00:00:08,030
+is an extremely useful skill,
+
+5
+00:00:08,030 --> 00:00:10,490
+but it can be quite confusing.
+
+6
+00:00:10,490 --> 00:00:12,080
+In this video we'll look at simplifying
+
+7
+00:00:12,080 --> 00:00:14,090
+working with dates and times slightly
+
+8
+00:00:14,090 --> 00:00:15,980
+using Python built-in modules.
+
+9
+00:00:17,880 --> 00:00:20,070
+Now I cannot teach you everything there is to know
+
+10
+00:00:20,070 --> 00:00:21,130
+about dates and times.
+
+11
+00:00:21,130 --> 00:00:23,340
+There's just too much and it's always
+
+12
+00:00:23,340 --> 00:00:25,410
+a contentious and difficult topic,
+
+13
+00:00:25,410 --> 00:00:28,060
+but I can help you and start you in the journey,
+
+14
+00:00:28,060 --> 00:00:31,240
+tell you a bit about how I work with dates and times
+
+15
+00:00:31,240 --> 00:00:34,591
+and how you can work with your users and dates and times.
+
+16
+00:00:34,591 --> 00:00:38,760
+The main date and time module in Python is called datetime.
+
+17
+00:00:39,610 --> 00:00:42,690
+And confusingly enough, one of the most important classes
+
+18
+00:00:42,690 --> 00:00:45,400
+in that module is also called datetime.
+
+19
+00:00:45,400 --> 00:00:49,000
+So we're gonna be doing from datetime import datetime.
+
+20
+00:00:49,000 --> 00:00:51,720
+So here we're importing this datetime class
+
+21
+00:00:51,720 --> 00:00:54,857
+which is going to allow us to do some stuff,
+
+22
+00:00:54,857 --> 00:00:58,130
+for example datetime.now.
+
+23
+00:00:59,060 --> 00:01:02,020
+Datetime.now is going to give us the current time
+
+24
+00:01:02,020 --> 00:01:04,190
+of our operating system.
+
+25
+00:01:04,190 --> 00:01:07,875
+And as you can see the current time for me is 15:45.
+
+26
+00:01:07,875 --> 00:01:11,410
+Been recording for awhile, should probably stop soon.
+
+27
+00:01:11,410 --> 00:01:16,270
+Now this is giving you what's naive datetime object.
+
+28
+00:01:17,690 --> 00:01:21,450
+A naive object doesn't know about timezones.
+
+29
+00:01:21,450 --> 00:01:25,036
+So it has no information about the timezone.
+
+30
+00:01:25,036 --> 00:01:29,930
+Therefore if I give this time to a computer
+
+31
+00:01:29,930 --> 00:01:33,651
+in the United States it's not going to know
+
+32
+00:01:33,651 --> 00:01:37,172
+that they should show a different time.
+
+33
+00:01:37,172 --> 00:01:38,500
+They're are going to think,
+
+34
+00:01:38,500 --> 00:01:43,010
+okay the time is shown is 3:45, that's cool.
+
+35
+00:01:45,930 --> 00:01:48,438
+What they don't know is that I am in the UK
+
+36
+00:01:48,438 --> 00:01:51,040
+and this is a time in the UK.
+
+37
+00:01:52,400 --> 00:01:55,588
+So without a timezone information like this thing here,
+
+38
+00:01:55,588 --> 00:01:58,543
+datetime objects are, I'd say,
+
+39
+00:01:58,543 --> 00:02:00,450
+not very useful.
+
+40
+00:02:01,610 --> 00:02:04,120
+And that's because you cannot give them to anybody.
+
+41
+00:02:04,120 --> 00:02:05,870
+You can't show it to your user,
+
+42
+00:02:05,870 --> 00:02:07,724
+because you don't know if that time is correct
+
+43
+00:02:07,724 --> 00:02:09,010
+when you're showing it to them.
+
+44
+00:02:09,010 --> 00:02:11,428
+You don't know where the user is
+
+45
+00:02:11,428 --> 00:02:14,460
+and where you were when you recorded this time,
+
+46
+00:02:14,460 --> 00:02:16,450
+so you cannot possibly show them
+
+47
+00:02:16,450 --> 00:02:18,410
+in a way that's relevant to them.
+
+48
+00:02:18,410 --> 00:02:19,810
+For example, if I went to the United States
+
+49
+00:02:19,810 --> 00:02:22,620
+with this time, it would be in the future,
+
+50
+00:02:22,620 --> 00:02:23,980
+so not great.
+
+51
+00:02:24,826 --> 00:02:28,284
+So what to do is, we can say print,
+
+52
+00:02:28,284 --> 00:02:30,110
+oh, oh, oh, not that.
+
+53
+00:02:30,110 --> 00:02:34,680
+print(datetime.now), but we can also
+
+54
+00:02:34,680 --> 00:02:37,413
+pass it in the timezone that we want it in.
+
+55
+00:02:37,413 --> 00:02:39,580
+So for that we have import datetime
+
+56
+00:02:39,580 --> 00:02:41,140
+and also we have to import timezone
+
+57
+00:02:41,140 --> 00:02:43,060
+from the datetime module.
+
+58
+00:02:43,060 --> 00:02:46,530
+And what we're gonna do is say timezone.utc.
+
+59
+00:02:46,530 --> 00:02:48,810
+UTC is not actually a timezone,
+
+60
+00:02:48,810 --> 00:02:51,120
+but it is the universal time standard,
+
+61
+00:02:51,120 --> 00:02:52,700
+it is the central time,
+
+62
+00:02:52,700 --> 00:02:54,471
+and normally matching GMT
+
+63
+00:02:54,471 --> 00:02:59,471
+and it essentially allows everybody to talk about time
+
+64
+00:03:02,470 --> 00:03:04,430
+with the same frame of reference.
+
+65
+00:03:04,430 --> 00:03:07,628
+So somebody in America who talks about the time in UTC
+
+66
+00:03:07,628 --> 00:03:10,250
+is going to be talking about the same time
+
+67
+00:03:10,250 --> 00:03:13,310
+that I'm talking about when I talk about time in UTC.
+
+68
+00:03:13,310 --> 00:03:15,040
+Even though it's not an actual timezone,
+
+69
+00:03:15,040 --> 00:03:18,540
+no country follows UTC as a timezone.
+
+70
+00:03:18,540 --> 00:03:21,380
+If we print this out, you'll see that the time is the same,
+
+71
+00:03:21,380 --> 00:03:24,760
+but now we have what's called an aware object,
+
+72
+00:03:24,760 --> 00:03:28,620
+timezone aware object that says, plus 00:00.
+
+73
+00:03:30,317 --> 00:03:34,421
+What this means is that the current time in UTC
+
+74
+00:03:34,421 --> 00:03:39,421
+is equal to the time in UTC with no offset.
+
+75
+00:03:41,432 --> 00:03:45,440
+Okay, so the time here on the left is the UTC time
+
+76
+00:03:45,440 --> 00:03:47,920
+and now we have that the offset,
+
+77
+00:03:47,920 --> 00:03:52,610
+where this time was taken is zero.
+
+78
+00:03:52,610 --> 00:03:55,710
+So now we know it's a UTC time, because the offset is zero.
+
+79
+00:03:56,755 --> 00:04:01,755
+This time here, was also a UTC time,
+
+80
+00:04:02,730 --> 00:04:06,110
+but that's because my timezone right now
+
+81
+00:04:06,110 --> 00:04:10,220
+also has an offset of zero, because right now I am in GMT
+
+82
+00:04:10,220 --> 00:04:13,790
+and GMT also has an offset of zero compared to UTC.
+
+83
+00:04:14,670 --> 00:04:18,560
+However, if I did this in the summer
+
+84
+00:04:20,280 --> 00:04:22,000
+and I did this in the summer as well,
+
+85
+00:04:22,000 --> 00:04:23,470
+these would be different.
+
+86
+00:04:23,470 --> 00:04:26,650
+This would show one hour more or less,
+
+87
+00:04:26,650 --> 00:04:29,740
+I can't remember exactly which way it goes,
+
+88
+00:04:29,740 --> 00:04:31,310
+but it will show a different time
+
+89
+00:04:31,310 --> 00:04:35,040
+because I would be in BST, 'cause the UK changes timezone
+
+90
+00:04:35,040 --> 00:04:36,270
+with daylight savings.
+
+91
+00:04:37,560 --> 00:04:42,326
+So why am I slowing down so much with this thing.
+
+92
+00:04:42,326 --> 00:04:46,180
+It's really important that you get dates correct.
+
+93
+00:04:46,180 --> 00:04:48,380
+Otherwise your application is gonna be showing your users
+
+94
+00:04:48,380 --> 00:04:49,920
+times in the past or in the future.
+
+95
+00:04:49,920 --> 00:04:51,600
+It's gonna be really confusing.
+
+96
+00:04:51,600 --> 00:04:54,890
+So what I normally recommend is
+
+97
+00:04:54,890 --> 00:04:59,890
+your programmes should always work with UTC times.
+
+98
+00:05:00,220 --> 00:05:03,310
+Store UTC times in your database,
+
+99
+00:05:03,310 --> 00:05:05,919
+work with UTC times in your code.
+
+100
+00:05:05,919 --> 00:05:09,000
+When a user gives you a time, like if you ask them,
+
+101
+00:05:09,000 --> 00:05:13,020
+enter the current date, convert that to UTC,
+
+102
+00:05:13,020 --> 00:05:14,440
+and work with UTC.
+
+103
+00:05:15,566 --> 00:05:17,808
+And you shall only convert it to a different timezone
+
+104
+00:05:17,808 --> 00:05:21,330
+when you show the user the time.
+
+105
+00:05:22,240 --> 00:05:26,100
+So if I go to America and I have this time stored,
+
+106
+00:05:26,100 --> 00:05:28,950
+what I can do is I can say this time was taken
+
+107
+00:05:28,950 --> 00:05:31,150
+in a timezone plus zero,
+
+108
+00:05:31,150 --> 00:05:33,560
+let's convert it now to minus seven
+
+109
+00:05:33,560 --> 00:05:35,730
+when we go to some place in America.
+
+110
+00:05:35,730 --> 00:05:37,750
+Subtract seven hours from this
+
+111
+00:05:37,750 --> 00:05:40,550
+and now I can show this in their timezone
+
+112
+00:05:40,550 --> 00:05:43,770
+and the date and time will now match.
+
+113
+00:05:43,770 --> 00:05:45,670
+So only when you show it to a user,
+
+114
+00:05:45,670 --> 00:05:47,320
+which you must know their timezone
+
+115
+00:05:47,320 --> 00:05:48,960
+in order to do that of course,
+
+116
+00:05:48,960 --> 00:05:51,320
+you convert it to their timezone.
+
+117
+00:05:51,320 --> 00:05:53,820
+All the rest of the time, you're working with UTC
+
+118
+00:05:53,820 --> 00:05:56,120
+and that's just gonna simplify things massive.
+
+119
+00:05:57,590 --> 00:06:00,570
+Okay, so something else that you can do is of course
+
+120
+00:06:00,570 --> 00:06:04,899
+you can do timedeltas, timedelta.
+
+121
+00:06:04,899 --> 00:06:08,160
+A timedelta is a just a difference in time.
+
+122
+00:06:08,160 --> 00:06:10,080
+So you can say that for example,
+
+123
+00:06:10,080 --> 00:06:14,073
+today is datetime.now and timezone.utc
+
+124
+00:06:14,073 --> 00:06:19,073
+and tomorrow is today plus timedelta days equal one.
+
+125
+00:06:21,050 --> 00:06:23,869
+What this does, is it gets your current date,
+
+126
+00:06:23,869 --> 00:06:27,450
+date and time and it adds a timedelta,
+
+127
+00:06:27,450 --> 00:06:29,070
+which is a difference in time.
+
+128
+00:06:29,070 --> 00:06:31,840
+The delta, I think comes from mathematics.
+
+129
+00:06:31,840 --> 00:06:33,880
+Essentially it just means a difference in time
+
+130
+00:06:33,880 --> 00:06:35,350
+and the difference that you're applying,
+
+131
+00:06:35,350 --> 00:06:38,370
+that you're adding is one day, 24 hours.
+
+132
+00:06:41,860 --> 00:06:45,850
+Now of course the time is going to be the same time
+
+133
+00:06:45,850 --> 00:06:47,280
+tomorrow as it is today.
+
+134
+00:06:47,280 --> 00:06:51,300
+So again, print today, print tomorrow,
+
+135
+00:06:51,300 --> 00:06:53,235
+run this thing, show it to you
+
+136
+00:06:53,235 --> 00:06:57,640
+and we have the 10th of February at 15:51,
+
+137
+00:06:57,640 --> 00:06:59,630
+11th of February at 15:51.
+
+138
+00:06:59,630 --> 00:07:03,340
+So as you can see, same everything except for the day.
+
+139
+00:07:04,210 --> 00:07:06,980
+And now this leads nicely into the next thing.
+
+140
+00:07:06,980 --> 00:07:09,020
+If you want to format the date
+
+141
+00:07:09,020 --> 00:07:12,260
+and show it in a slightly nicer way you can do that.
+
+142
+00:07:12,260 --> 00:07:13,400
+So that's good.
+
+143
+00:07:13,400 --> 00:07:15,250
+And normally you'd see of course,
+
+144
+00:07:15,250 --> 00:07:17,830
+if you're in the UK, you'd see the day in front,
+
+145
+00:07:17,830 --> 00:07:19,488
+then the month and then then year.
+
+146
+00:07:19,488 --> 00:07:21,010
+And if you're in America,
+
+147
+00:07:21,010 --> 00:07:23,340
+you would have a very weird way of doing things
+
+148
+00:07:23,340 --> 00:07:25,780
+and you'd show the month first.
+
+149
+00:07:27,709 --> 00:07:29,942
+Or if your Python, you show the day last,
+
+150
+00:07:29,942 --> 00:07:31,400
+which is just...
+
+151
+00:07:32,250 --> 00:07:33,770
+There's actually a reason for this,
+
+152
+00:07:33,770 --> 00:07:35,640
+which is for sorting.
+
+153
+00:07:35,640 --> 00:07:36,950
+The year goes first, then the month,
+
+154
+00:07:36,950 --> 00:07:38,780
+and then the day for sorting.
+
+155
+00:07:38,780 --> 00:07:41,080
+And, but of course for readability, not so great.
+
+156
+00:07:41,080 --> 00:07:42,820
+So what you can do, is you can do
+
+157
+00:07:42,820 --> 00:07:47,820
+print today.strftime, that means string format time.
+
+158
+00:07:51,570 --> 00:07:52,900
+And inside the brackets you give it
+
+159
+00:07:52,900 --> 00:07:54,900
+the format that you want.
+
+160
+00:07:54,900 --> 00:07:56,940
+So in my case I'm going to do dash d,
+
+161
+00:07:56,940 --> 00:08:01,590
+sorry %d-%m-%Y, big Y, that's important, %H-%M.
+
+162
+00:08:04,771 --> 00:08:09,771
+Percent d tells the strftime function, our method,
+
+163
+00:08:10,170 --> 00:08:13,840
+to print out the days, so that's gonna be 10.
+
+164
+00:08:13,840 --> 00:08:17,000
+Percent little m, it says months,
+
+165
+00:08:17,000 --> 00:08:20,890
+percent big Y says the year a four digit.
+
+166
+00:08:20,890 --> 00:08:22,830
+Percent H gives you the hours
+
+167
+00:08:22,830 --> 00:08:24,900
+and percent M gives you the minutes.
+
+168
+00:08:24,900 --> 00:08:27,010
+So you can print this out
+
+169
+00:08:27,010 --> 00:08:29,840
+and you can see that you get now a nice format,
+
+170
+00:08:29,840 --> 00:08:31,640
+where the day is in front, then the month,
+
+171
+00:08:31,640 --> 00:08:34,900
+and the year, 10th of February, 2018.
+
+172
+00:08:34,900 --> 00:08:38,080
+The time is 15:53 and we have lost some precision there,
+
+173
+00:08:38,080 --> 00:08:42,020
+but you can regain it if you want by adding %s there.
+
+174
+00:08:43,640 --> 00:08:45,540
+And you can see you get 40 now.
+
+175
+00:08:45,540 --> 00:08:47,500
+You can also add in the milliseconds
+
+176
+00:08:47,500 --> 00:08:50,050
+and the timezone information as well if you want.
+
+177
+00:08:50,050 --> 00:08:53,870
+What's important to remember is that this printout here,
+
+178
+00:08:53,870 --> 00:08:56,869
+doesn't have the timezone information printed out,
+
+179
+00:08:56,869 --> 00:09:00,540
+but the object itself still has the timezone information,
+
+180
+00:09:00,540 --> 00:09:03,160
+okay, we've not lost that, we've just not printed it out,
+
+181
+00:09:03,160 --> 00:09:05,270
+because the way we formatted the string
+
+182
+00:09:05,270 --> 00:09:08,916
+matches this data that we've asked for.
+
+183
+00:09:08,916 --> 00:09:12,480
+Okay, similarly, oh sorry deleted that.
+
+184
+00:09:12,480 --> 00:09:14,670
+You can ask the user for the date,
+
+185
+00:09:14,670 --> 00:09:17,210
+like user date is input.
+
+186
+00:09:17,210 --> 00:09:21,310
+Enter the date in YYYY-mm-dd format
+
+187
+00:09:22,230 --> 00:09:24,280
+and then you can convert it,
+
+188
+00:09:25,675 --> 00:09:30,675
+datetime.strptime, this case, user_date, %y-%m-%d.
+
+189
+00:09:34,830 --> 00:09:36,909
+And make sure to have a big Y there.
+
+190
+00:09:36,909 --> 00:09:39,800
+And then you can print user_date out.
+
+191
+00:09:39,800 --> 00:09:40,860
+Let's print it out.
+
+192
+00:09:40,860 --> 00:09:42,730
+I'll explain what it is in a moment.
+
+193
+00:09:42,730 --> 00:09:45,340
+Now we can see that it asks for a particular date,
+
+194
+00:09:45,340 --> 00:09:49,410
+let's say in 2010-05-05
+
+195
+00:09:49,410 --> 00:09:53,800
+and now we get 2010-05-05 00:00:00.
+
+196
+00:09:53,800 --> 00:09:56,580
+We don't have timezone information in here either.
+
+197
+00:09:57,480 --> 00:09:59,050
+So what's happening?
+
+198
+00:09:59,050 --> 00:10:02,257
+We've asked the datetime module to call the strptime,
+
+199
+00:10:02,257 --> 00:10:05,150
+which means string parse time.
+
+200
+00:10:05,150 --> 00:10:07,550
+This is string format time.
+
+201
+00:10:08,472 --> 00:10:10,010
+Parse time.
+
+202
+00:10:10,010 --> 00:10:13,380
+Then we've put in our string that we want to parse.
+
+203
+00:10:13,380 --> 00:10:15,110
+That's whatever the user entered,
+
+204
+00:10:15,110 --> 00:10:19,460
+presumably in this format, YYYY-mm-dd.
+
+205
+00:10:19,460 --> 00:10:21,900
+And then we've said, okay, and by the way
+
+206
+00:10:21,900 --> 00:10:23,340
+this string is gonna be in this format
+
+207
+00:10:23,340 --> 00:10:24,900
+so now you can understand.
+
+208
+00:10:24,900 --> 00:10:29,755
+%Y is four digit year, %m is two digit months,
+
+209
+00:10:29,755 --> 00:10:32,600
+%d is two digit days.
+
+210
+00:10:32,600 --> 00:10:37,570
+So now the strptime function has the date and it's format
+
+211
+00:10:37,570 --> 00:10:38,990
+and it can join it together
+
+212
+00:10:38,990 --> 00:10:41,031
+and give us a new datetime object
+
+213
+00:10:41,031 --> 00:10:43,920
+that has the appropriate data in it.
+
+214
+00:10:43,920 --> 00:10:45,900
+But of course we've not given it the hours, minutes,
+
+215
+00:10:45,900 --> 00:10:48,840
+or seconds so all those default to zero.
+
+216
+00:10:52,580 --> 00:10:54,860
+Notice how we don't have any timezone information there.
+
+217
+00:10:54,860 --> 00:10:55,990
+We'll have to ask the user
+
+218
+00:10:55,990 --> 00:10:57,710
+for timezone information separately
+
+219
+00:10:57,710 --> 00:11:01,200
+and we would have to include it in this parse string.
+
+220
+00:11:01,200 --> 00:11:02,850
+Or in deed if we wanted to print it out,
+
+221
+00:11:02,850 --> 00:11:04,750
+we'd have to print it out down here.
+
+222
+00:11:06,060 --> 00:11:07,490
+I can't remember from the top of my head exactly
+
+223
+00:11:07,490 --> 00:11:08,610
+what percent it is.
+
+224
+00:11:08,610 --> 00:11:12,040
+I think it's %zed, but I am going to include a PDF
+
+225
+00:11:12,040 --> 00:11:14,470
+on dating parsing and formatting, just these things here,
+
+226
+00:11:14,470 --> 00:11:16,373
+what they mean and how you use them,
+
+227
+00:11:16,373 --> 00:11:19,050
+attached to the resources section of this lecture.
+
+228
+00:11:19,050 --> 00:11:20,110
+So don't go anywhere.
+
+229
+00:11:20,110 --> 00:11:22,120
+Download that if you're keen on knowing a bit more
+
+230
+00:11:22,120 --> 00:11:24,030
+about these dates, how you'd format them,
+
+231
+00:11:24,030 --> 00:11:26,320
+and how you parse them and yeah.
+
+232
+00:11:26,320 --> 00:11:29,640
+I just wanted to tell you a bit about these datetime module,
+
+233
+00:11:29,640 --> 00:11:32,210
+some of the things you can do with it.
+
+234
+00:11:32,210 --> 00:11:33,043
+Other thing you can do by the way,
+
+235
+00:11:33,043 --> 00:11:36,670
+timedelta you can have hours, you can have minutes,
+
+236
+00:11:36,670 --> 00:11:39,100
+you can have seconds, you can have weeks in there.
+
+237
+00:11:39,100 --> 00:11:40,710
+So there's a few things you can do
+
+238
+00:11:40,710 --> 00:11:43,054
+in terms of adding timedeltas there.
+
+239
+00:11:43,054 --> 00:11:45,954
+You can of course subtract timedeltas as well if you want.
+
+240
+00:11:46,990 --> 00:11:49,450
+There's more to do with dates and times,
+
+241
+00:11:49,450 --> 00:11:52,654
+but I cannot possibly cover all of the datetime module
+
+242
+00:11:52,654 --> 00:11:55,970
+without boring you to death, first of all,
+
+243
+00:11:55,970 --> 00:12:00,250
+and also without some more specific use case for these.
+
+244
+00:12:00,250 --> 00:12:02,352
+So if you do have an questions about dates and times
+
+245
+00:12:02,352 --> 00:12:04,070
+ask away in the Slack Channel,
+
+246
+00:12:04,070 --> 00:12:05,820
+even if they're all related to the course,
+
+247
+00:12:05,820 --> 00:12:07,470
+I'll be glad to help you out.
+
+248
+00:12:07,470 --> 00:12:10,670
+And that's really the best way to continue going about it.
+
+249
+00:12:10,670 --> 00:12:13,596
+As you have questions about date and time, find out,
+
+250
+00:12:13,596 --> 00:12:17,323
+research through the Python official documentation,
+
+251
+00:12:17,323 --> 00:12:21,200
+what other people ask in Slack and in Stack Overflow
+
+252
+00:12:21,200 --> 00:12:22,979
+and that's really going to give you
+
+253
+00:12:22,979 --> 00:12:25,230
+any other tools that you need.
+
+254
+00:12:25,230 --> 00:12:28,160
+But in terms of dealing with simple dates and times
+
+255
+00:12:28,160 --> 00:12:31,000
+in your programmes, this should be enough to get you started.
+
+256
+00:12:31,000 --> 00:12:34,350
+You've datetime objects, timedeltas,
+
+257
+00:12:34,350 --> 00:12:36,040
+and you know about timezones as well.
+
+258
+00:12:36,040 --> 00:12:38,768
+And you also are able to format the time
+
+259
+00:12:38,768 --> 00:12:41,969
+and parse any user input as well.
+
+260
+00:12:41,969 --> 00:12:43,409
+So that's it for this video.
+
+261
+00:12:43,409 --> 00:12:46,209
+I hope you've liked it and I'll see you on the next one.
+

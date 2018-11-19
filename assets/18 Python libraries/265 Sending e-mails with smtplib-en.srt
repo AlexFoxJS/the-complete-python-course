@@ -1,0 +1,580 @@
+1
+00:00:00,240 --> 00:00:01,420
+<v Jose>Hi and welcome back.</v>
+
+2
+00:00:01,420 --> 00:00:05,000
+In this video, we are going to look at sending emails.
+
+3
+00:00:05,000 --> 00:00:08,240
+Sending emails with Python can be done in multiple ways.
+
+4
+00:00:08,240 --> 00:00:11,050
+The simplest way, though, is you can send the email
+
+5
+00:00:11,050 --> 00:00:13,230
+by using your personal email account.
+
+6
+00:00:13,230 --> 00:00:15,360
+For example, if you have a gmail account,
+
+7
+00:00:15,360 --> 00:00:18,123
+you can send emails using that account and Python.
+
+8
+00:00:19,030 --> 00:00:22,750
+Something you may not know is that emails all go,
+
+9
+00:00:22,750 --> 00:00:26,280
+or the majority of them go through something called smtp.
+
+10
+00:00:26,280 --> 00:00:30,980
+Smtp is a protocol, very much like http is,
+
+11
+00:00:30,980 --> 00:00:33,720
+used to communicate between two different things.
+
+12
+00:00:33,720 --> 00:00:36,520
+In this case, we're gonna use smtp to communicate
+
+13
+00:00:36,520 --> 00:00:40,570
+between our Python code and the gmail servers,
+
+14
+00:00:40,570 --> 00:00:43,530
+and we're gonna tell gmail servers to login using our
+
+15
+00:00:43,530 --> 00:00:45,823
+gmail account and send an email.
+
+16
+00:00:47,320 --> 00:00:50,803
+So let's create a new Python file that I'm going to call
+
+17
+00:00:50,803 --> 00:00:54,261
+email_smtplib.py,
+
+18
+00:00:54,261 --> 00:00:56,590
+and we're going to start sending email.
+
+19
+00:00:56,590 --> 00:01:00,290
+It's actually really straightforward when you have all
+
+20
+00:01:00,290 --> 00:01:01,123
+the code together.
+
+21
+00:01:01,123 --> 00:01:02,520
+So the first thing we're gonna do is we're going to
+
+22
+00:01:02,520 --> 00:01:03,813
+import smtplib.
+
+23
+00:01:04,710 --> 00:01:08,859
+Smtplib comes with Python and it's used to talk to
+
+24
+00:01:08,859 --> 00:01:10,913
+an smtp server.
+
+25
+00:01:11,770 --> 00:01:16,010
+Gmail servers are smtp servers and you can communicate
+
+26
+00:01:16,010 --> 00:01:20,033
+with them directly by using this library, okay?
+
+27
+00:01:21,400 --> 00:01:24,940
+So, what we're gonna do is we are going to start off
+
+28
+00:01:24,940 --> 00:01:29,080
+by connecting to the smtp server.
+
+29
+00:01:29,080 --> 00:01:32,518
+What we're gonna do, is we're gonna do smtp_connector
+
+30
+00:01:32,518 --> 00:01:37,518
+is smtplib.SMTP, and in here we're gonna pass in
+
+31
+00:01:38,430 --> 00:01:41,910
+a host name that is going to be smtp.gmail.com
+
+32
+00:01:41,910 --> 00:01:43,670
+for the gmail servers.
+
+33
+00:01:43,670 --> 00:01:47,640
+If you're using a different server, like Hotmail or Yahoo,
+
+34
+00:01:47,640 --> 00:01:51,471
+or anything else, make sure to figure out the smtp server
+
+35
+00:01:51,471 --> 00:01:55,930
+and also the port name, that for gmail is 587.
+
+36
+00:01:55,930 --> 00:02:00,000
+Okay, this is normally the port for smtp servers, 587.
+
+37
+00:02:00,000 --> 00:02:03,140
+So make sure to figure out what the host name is,
+
+38
+00:02:03,140 --> 00:02:05,300
+and what the port is.
+
+39
+00:02:05,300 --> 00:02:10,010
+Then we're gonna do smtp_connector.starttls,
+
+40
+00:02:10,010 --> 00:02:12,480
+and this just starts a secure connection to it.
+
+41
+00:02:12,480 --> 00:02:15,910
+In some cases, tls won't be required to connect
+
+42
+00:02:15,910 --> 00:02:19,730
+to your smtp server, so in those cases you won't
+
+43
+00:02:19,730 --> 00:02:24,210
+have to do this and then smtp_connector.login,
+
+44
+00:02:24,210 --> 00:02:26,370
+and we're gonna give him our email account,
+
+45
+00:02:26,370 --> 00:02:29,992
+you@gmail.com, and our password.
+
+46
+00:02:29,992 --> 00:02:31,990
+Of course, I'm not gonna type out
+
+47
+00:02:31,990 --> 00:02:34,270
+my email and password here.
+
+48
+00:02:34,270 --> 00:02:36,220
+I hope you understand that,
+
+49
+00:02:36,220 --> 00:02:39,820
+but nonetheless that is all you have to do.
+
+50
+00:02:39,820 --> 00:02:43,640
+Now it is possible that when you press play,
+
+51
+00:02:43,640 --> 00:02:45,590
+for example if we press play right now,
+
+52
+00:02:47,170 --> 00:02:48,820
+we will of course get an error.
+
+53
+00:02:48,820 --> 00:02:51,930
+In this case, username and password not accepted.
+
+54
+00:02:51,930 --> 00:02:55,260
+If you type in your username, email account and your
+
+55
+00:02:55,260 --> 00:02:59,520
+password correctly, you may still get an error,
+
+56
+00:02:59,520 --> 00:03:01,760
+and that will happen of course if you're using
+
+57
+00:03:01,760 --> 00:03:03,513
+two-factor authentication.
+
+58
+00:03:04,420 --> 00:03:06,560
+If you're using two-factor authentication,
+
+59
+00:03:06,560 --> 00:03:10,880
+you'll need to get a special type of password that your
+
+60
+00:03:10,880 --> 00:03:14,620
+provider will give you, which is an app password normally,
+
+61
+00:03:14,620 --> 00:03:16,630
+so I'm going to add a we don't string here at the top
+
+62
+00:03:16,630 --> 00:03:19,270
+of the file to say that, okay?
+
+63
+00:03:19,270 --> 00:03:20,790
+So if you get...
+
+64
+00:03:22,917 --> 00:03:25,999
+"An SMTPAuthenticationError even when
+
+65
+00:03:25,999 --> 00:03:27,027
+"your password is correct, it's possible that
+
+66
+00:03:27,027 --> 00:03:29,427
+"you have 2-factor authentication enabled.
+
+67
+00:03:29,427 --> 00:03:31,797
+"You'll need to use an App Password to log in
+
+68
+00:03:31,797 --> 00:03:33,627
+"instead of your normal password."
+
+69
+00:03:34,490 --> 00:03:36,650
+Now, particularly in the case of gmail,
+
+70
+00:03:36,650 --> 00:03:39,187
+there is something else, that if you don't have
+
+71
+00:03:39,187 --> 00:03:41,080
+two factor authentication enabled,
+
+72
+00:03:41,080 --> 00:03:45,194
+you'll have to allow access by less secure apps in gmail.
+
+73
+00:03:45,194 --> 00:03:48,040
+You're app here, that logs in with your
+
+74
+00:03:48,040 --> 00:03:50,800
+username and password directly, is what gmail classifies
+
+75
+00:03:50,800 --> 00:03:53,310
+as a less secure app.
+
+76
+00:03:53,310 --> 00:03:55,530
+So through your gmail security preferences,
+
+77
+00:03:55,530 --> 00:03:59,410
+you can enable less secure apps so that you can test this
+
+78
+00:03:59,410 --> 00:04:02,540
+out, and of course remember to deactivate less secure apps
+
+79
+00:04:02,540 --> 00:04:05,883
+once you finish learning about sending our email, okay?
+
+80
+00:04:06,870 --> 00:04:11,170
+If you use an app password or you enable less secure apps,
+
+81
+00:04:11,170 --> 00:04:13,890
+and you don't have 2FA enabled, this should work
+
+82
+00:04:13,890 --> 00:04:16,220
+and you shouldn't get any errors.
+
+83
+00:04:16,220 --> 00:04:19,140
+But of course we don't have an email that we're sending yet.
+
+84
+00:04:19,140 --> 00:04:21,810
+We haven't written anything to send.
+
+85
+00:04:21,810 --> 00:04:23,710
+So we can do that.
+
+86
+00:04:23,710 --> 00:04:26,030
+We're gonna use the email module that is present in
+
+87
+00:04:26,030 --> 00:04:26,863
+Python 3.
+
+88
+00:04:26,863 --> 00:04:31,097
+We're gonna say from email.message import EmailMessage.
+
+89
+00:04:32,195 --> 00:04:35,590
+This EmailMessage class is a way of constructing
+
+90
+00:04:35,590 --> 00:04:38,740
+an email message very easily, so what we'll do
+
+91
+00:04:38,740 --> 00:04:41,200
+is we'll create a new EmailMessage object,
+
+92
+00:04:41,200 --> 00:04:43,710
+and then we'll just set the subject
+
+93
+00:04:46,970 --> 00:04:49,230
+to be something like Test email.
+
+94
+00:04:49,230 --> 00:04:54,230
+The from to be your email, you@gmail.com
+
+95
+00:04:58,440 --> 00:05:01,860
+And the to, to be whoever you wanna send an email to.
+
+96
+00:05:01,860 --> 00:05:06,140
+This email will actually go to someone, so feel free to
+
+97
+00:05:06,140 --> 00:05:07,920
+send that email to someone you know.
+
+98
+00:05:07,920 --> 00:05:09,470
+Preferably don't send them to me.
+
+99
+00:05:09,470 --> 00:05:11,830
+I could get quite a lot of emails if we do that,
+
+100
+00:05:11,830 --> 00:05:13,680
+but you can send them to someone else,
+
+101
+00:05:13,680 --> 00:05:18,680
+someoneelse@gmail.com, okay?
+
+102
+00:05:18,960 --> 00:05:21,573
+Then you're gonna do email.set_content,
+
+103
+00:05:23,310 --> 00:05:26,310
+and here you can type in some text content
+
+104
+00:05:26,310 --> 00:05:28,430
+that the email will contain.
+
+105
+00:05:28,430 --> 00:05:30,680
+What you'll normally do in these cases, when you want
+
+106
+00:05:30,680 --> 00:05:33,450
+to set the content of an email, if it's, you know,
+
+107
+00:05:33,450 --> 00:05:37,369
+simple content, you will at some point here,
+
+108
+00:05:37,369 --> 00:05:40,157
+create something called email_content
+
+109
+00:05:41,570 --> 00:05:44,313
+and use a multi line string to say something like,
+
+110
+00:05:44,313 --> 00:05:46,683
+"Dear Sir/Madam,
+
+111
+00:05:47,537 --> 00:05:50,727
+"I am sending you an e-mail with Python.
+
+112
+00:05:50,727 --> 00:05:51,843
+"I hope you like it.
+
+113
+00:05:53,174 --> 00:05:55,587
+"Kind regards, me."
+
+114
+00:05:56,480 --> 00:06:00,973
+And then you can just set the email content like that.
+
+115
+00:06:02,410 --> 00:06:05,130
+Now that you've got your email and you've got
+
+116
+00:06:05,130 --> 00:06:08,450
+your connection to the smtp server, all you have to do
+
+117
+00:06:08,450 --> 00:06:09,983
+is say smtp_connector.send_message,
+
+118
+00:06:11,697 --> 00:06:15,663
+and you're email object that we created up here,
+
+119
+00:06:15,663 --> 00:06:19,790
+and that has all our headers, subject, from, and to,
+
+120
+00:06:19,790 --> 00:06:23,243
+and the content, and then remember to quit
+
+121
+00:06:23,243 --> 00:06:25,510
+the smtp_connector as well.
+
+122
+00:06:25,510 --> 00:06:28,060
+That closes the connection to your account,
+
+123
+00:06:28,060 --> 00:06:29,313
+and all is good.
+
+124
+00:06:30,780 --> 00:06:32,777
+This is all you need to send an email, using your
+
+125
+00:06:32,777 --> 00:06:36,060
+personal account as well as taking care of the security
+
+126
+00:06:36,060 --> 00:06:39,290
+concerns of your email provider.
+
+127
+00:06:39,290 --> 00:06:42,170
+Of course, for many apps, as soon as you release them,
+
+128
+00:06:42,170 --> 00:06:43,910
+and you sort of put them out there, give them to your
+
+129
+00:06:43,910 --> 00:06:48,350
+users to use, you don't really want to be sending email
+
+130
+00:06:49,202 --> 00:06:51,440
+with your personal account, so a stop cap
+
+131
+00:06:51,440 --> 00:06:54,410
+can be to create another gmail account that is
+
+132
+00:06:54,410 --> 00:06:58,910
+for your business, but gmail doesn't really like that,
+
+133
+00:06:58,910 --> 00:07:02,410
+so what we normally do, instead of using smtplib,
+
+134
+00:07:02,410 --> 00:07:05,253
+which is a way to send, you know, a few emails.
+
+135
+00:07:06,250 --> 00:07:08,070
+What we do instead normally, if we want to send a lot
+
+136
+00:07:08,070 --> 00:07:11,330
+of emails, is we use an email sending service.
+
+137
+00:07:11,330 --> 00:07:15,080
+There are a couple of them like Mailgun or SendGrid,
+
+138
+00:07:15,080 --> 00:07:17,610
+and in this course, we're going to be looking at Mailgun
+
+139
+00:07:17,610 --> 00:07:19,717
+in order to be sending email to
+
+140
+00:07:19,717 --> 00:07:22,793
+a larger scale of users.
+
+141
+00:07:23,640 --> 00:07:25,575
+So this is how you can send email with smtplib
+
+142
+00:07:25,575 --> 00:07:28,080
+to send small amounts of emails,
+
+143
+00:07:28,080 --> 00:07:29,700
+using your personal account.
+
+144
+00:07:29,700 --> 00:07:32,730
+In the next video, we're going to look at using Mailgun.
+
+145
+00:07:32,730 --> 00:07:33,680
+I'll see you there.
+

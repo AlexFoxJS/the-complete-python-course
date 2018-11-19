@@ -1,0 +1,688 @@
+1
+00:00:00,140 --> 00:00:01,450
+<v Instructor>Hi and welcome back.</v>
+
+2
+00:00:01,450 --> 00:00:04,610
+In this video, we're going to not use virtual environments
+
+3
+00:00:04,610 --> 00:00:07,630
+but use something else that builds on top of them
+
+4
+00:00:07,630 --> 00:00:10,390
+in order to make dealing with these projects and
+
+5
+00:00:10,390 --> 00:00:12,510
+dependencies a little bit easier.
+
+6
+00:00:14,500 --> 00:00:16,840
+Enter pipenv.
+
+7
+00:00:16,840 --> 00:00:21,080
+Pipenv, spelled like this, is a new library
+
+8
+00:00:21,080 --> 00:00:23,200
+that has now become the standard for managing
+
+9
+00:00:23,200 --> 00:00:25,720
+projects and dependencies in Python.
+
+10
+00:00:26,770 --> 00:00:31,770
+Virtualnv was the standard up until maybe a year ago or so.
+
+11
+00:00:32,210 --> 00:00:34,180
+But now pipenv has taken over just because
+
+12
+00:00:34,180 --> 00:00:37,440
+it's slightly better and slight simpler to work with.
+
+13
+00:00:38,400 --> 00:00:40,400
+The first thing we have to do is
+
+14
+00:00:40,400 --> 00:00:43,120
+delete the virtual environment we've already created
+
+15
+00:00:43,120 --> 00:00:45,560
+if we are going to use pipenv instead.
+
+16
+00:00:46,430 --> 00:00:48,330
+In order to delete a virtual environment,
+
+17
+00:00:48,330 --> 00:00:53,330
+make sure to stop using it by typing "deactivate".
+
+18
+00:00:53,770 --> 00:00:57,240
+If you type deactivate, once you've activated
+
+19
+00:00:57,240 --> 00:00:58,980
+you will come out of the virtual environment.
+
+20
+00:00:58,980 --> 00:01:01,220
+I'll show you exactly what I mean.
+
+21
+00:01:01,220 --> 00:01:04,730
+I'm going to do activate/venv/bin/activate, or sorry,
+
+22
+00:01:04,730 --> 00:01:08,960
+source venv/bin/activate and then deactivate
+
+23
+00:01:08,960 --> 00:01:10,590
+will just bring you out of it.
+
+24
+00:01:10,590 --> 00:01:14,190
+As you can see, the venv inside the brackets disappears
+
+25
+00:01:14,190 --> 00:01:16,450
+and we're back at our normal Python.
+
+26
+00:01:17,320 --> 00:01:21,630
+You can double check by typing which Python
+
+27
+00:01:21,630 --> 00:01:24,497
+and you can see that we're no longer using the virtual
+
+28
+00:01:24,497 --> 00:01:26,610
+environment's Python here, you're using the system Python.
+
+29
+00:01:28,280 --> 00:01:31,760
+Okay, then we're going to remove the virtualnv folder
+
+30
+00:01:31,760 --> 00:01:35,760
+that we've created so we're going to do rm -rf venv.
+
+31
+00:01:36,680 --> 00:01:39,560
+I'm not actually sure of the Windows command, so
+
+32
+00:01:39,560 --> 00:01:41,970
+I'll make sure that it appears here on the lecture.
+
+33
+00:01:41,970 --> 00:01:44,400
+But what this does, is it deletes the folder that
+
+34
+00:01:44,400 --> 00:01:47,580
+we've created called venv, so just type that.
+
+35
+00:01:48,911 --> 00:01:52,400
+When you type ls again, you'll see that the venv folder
+
+36
+00:01:52,400 --> 00:01:56,450
+is gone, it no longer exists because we have now removed it.
+
+37
+00:01:56,450 --> 00:02:00,200
+This remove command is what it does, it removes things.
+
+38
+00:02:01,470 --> 00:02:05,100
+Then, the next thing you must do is make sure you use pip,
+
+39
+00:02:05,100 --> 00:02:10,100
+and make sure you use pip 3.6 or 3.7 to instal pipenv.
+
+40
+00:02:11,720 --> 00:02:14,180
+I've already got it installed, but if you don't have
+
+41
+00:02:14,180 --> 00:02:17,010
+it installed and you get some sort of error, you may have
+
+42
+00:02:17,010 --> 00:02:21,250
+to do pip3.7 instal dash dash upgrade pip.
+
+43
+00:02:22,240 --> 00:02:26,820
+That, and just allows pip to upgrade itself
+
+44
+00:02:26,820 --> 00:02:28,890
+to the latest version.
+
+45
+00:02:28,890 --> 00:02:32,200
+And then you'll be able to do pip3.7 instal pipenv again.
+
+46
+00:02:33,440 --> 00:02:35,870
+Once you've got pipenv installed,
+
+47
+00:02:35,870 --> 00:02:40,280
+all you have to do is type pipenv,
+
+48
+00:02:41,270 --> 00:02:43,790
+and then you get all the commands and
+
+49
+00:02:43,790 --> 00:02:45,560
+usage examples that you may need.
+
+50
+00:02:47,020 --> 00:02:51,110
+The most important one is the instal, okay?
+
+51
+00:02:52,679 --> 00:02:57,030
+If you have a requirements.txt file already created
+
+52
+00:02:58,110 --> 00:03:03,110
+then typing pipenv instal is going to use that
+
+53
+00:03:03,830 --> 00:03:07,540
+requirements.txt and it's going to instal all the packages
+
+54
+00:03:07,540 --> 00:03:12,000
+in that requirements.txt into the new environment.
+
+55
+00:03:15,010 --> 00:03:17,330
+Notice the first thing this does, it creates a virtualnv
+
+56
+00:03:17,330 --> 00:03:20,270
+for the project, and then it, sort of, it goes through
+
+57
+00:03:20,270 --> 00:03:24,110
+and it instals a bunch of things and it creates
+
+58
+00:03:24,110 --> 00:03:27,780
+a pipfile, and it creates a pipfile.lock, we're
+
+59
+00:03:27,780 --> 00:03:30,460
+gonna explain what these are in just a moment.
+
+60
+00:03:30,460 --> 00:03:35,430
+And at the end, you have your set up complete.
+
+61
+00:03:35,430 --> 00:03:37,680
+If you type ls, you can see that there's a couple more
+
+62
+00:03:37,680 --> 00:03:41,490
+things now, you've got a pipfile and you've got pipfile.lock
+
+63
+00:03:43,150 --> 00:03:46,040
+Let's open up the pipfile to see what's in it.
+
+64
+00:03:46,040 --> 00:03:49,600
+So I'm gonna do cat pipfile to see the contents
+
+65
+00:03:49,600 --> 00:03:52,950
+of the pipfile, so these here are the contents
+
+66
+00:03:52,950 --> 00:03:54,250
+of the pipfile.
+
+67
+00:03:55,470 --> 00:03:59,380
+You've got a source url, that's where you're downloading
+
+68
+00:03:59,380 --> 00:04:00,620
+your packages from.
+
+69
+00:04:01,500 --> 00:04:04,628
+Verify_ssl, whether you want to make sure that the
+
+70
+00:04:04,628 --> 00:04:06,890
+certificates you're using for ssl are correct.
+
+71
+00:04:06,890 --> 00:04:10,090
+The name of where you're downloading from, that's a source.
+
+72
+00:04:10,090 --> 00:04:11,680
+And then the important part here,
+
+73
+00:04:11,680 --> 00:04:13,530
+are the packages you've installed.
+
+74
+00:04:13,530 --> 00:04:15,500
+And notice how they are coming direct from my
+
+75
+00:04:15,500 --> 00:04:17,240
+requirements.txt file.
+
+76
+00:04:18,120 --> 00:04:20,200
+So, this is all good.
+
+77
+00:04:22,100 --> 00:04:27,100
+The pipfile.lock is much longer.
+
+78
+00:04:30,010 --> 00:04:32,680
+As you can see, it is quite long and it has
+
+79
+00:04:32,680 --> 00:04:33,980
+a lot of stuff in it.
+
+80
+00:04:35,260 --> 00:04:36,900
+I typed the command up here,
+
+81
+00:04:36,900 --> 00:04:40,550
+so all of this is my pipfile.lock.
+
+82
+00:04:41,970 --> 00:04:45,500
+And what this is, is a bunch of hashes.
+
+83
+00:04:45,500 --> 00:04:50,230
+And these hashes are the version,
+
+84
+00:04:50,230 --> 00:04:52,050
+and sort of the some of the contents of the
+
+85
+00:04:52,050 --> 00:04:55,470
+libraries that we've installed and coded into this.
+
+86
+00:04:55,470 --> 00:04:57,560
+So, essentially, the entire library
+
+87
+00:04:57,560 --> 00:05:00,130
+has been converted into this number.
+
+88
+00:05:00,130 --> 00:05:03,340
+If the library changes, the number will change.
+
+89
+00:05:04,370 --> 00:05:06,620
+So what is the point of having these numbers?
+
+90
+00:05:06,620 --> 00:05:11,620
+Well this number is a representation of the library,
+
+91
+00:05:11,730 --> 00:05:14,850
+like if the library changes, the number changes.
+
+92
+00:05:14,850 --> 00:05:17,150
+So let's say that somebody hacks into the place
+
+93
+00:05:17,150 --> 00:05:20,120
+you're installing your libraries from, and then
+
+94
+00:05:20,120 --> 00:05:22,910
+change the library without changing the version number.
+
+95
+00:05:23,870 --> 00:05:27,839
+You could potentially instal the hacked library by accident
+
+96
+00:05:27,839 --> 00:05:31,410
+because you wouldn't have a way to tell.
+
+97
+00:05:31,410 --> 00:05:34,920
+But if the entire library is converted into a number,
+
+98
+00:05:34,920 --> 00:05:37,800
+and this number is generated from the library,
+
+99
+00:05:37,800 --> 00:05:39,940
+so that if the library changes, the number is going to
+
+100
+00:05:39,940 --> 00:05:42,940
+change as well, you're not going to be able to instal
+
+101
+00:05:42,940 --> 00:05:45,490
+a wrong library by accident, because now you're checking
+
+102
+00:05:45,490 --> 00:05:47,470
+against this hash.
+
+103
+00:05:48,430 --> 00:05:51,710
+Really, the way this works is quite complex,
+
+104
+00:05:51,710 --> 00:05:54,240
+but that is the general idea behind it, so that
+
+105
+00:05:54,240 --> 00:05:57,570
+if the library changes, with or without you knowing,
+
+106
+00:05:57,570 --> 00:06:01,150
+you're not going to accidentally have installed a wrong
+
+107
+00:06:01,150 --> 00:06:05,190
+version or a hacked version, essentially.
+
+108
+00:06:06,270 --> 00:06:08,420
+So that is the purpose of the pipfile.lock.
+
+109
+00:06:09,430 --> 00:06:12,800
+Now we can remove our requirements.txt file,
+
+110
+00:06:12,800 --> 00:06:15,900
+because all of it's contents are inside our pipfile.
+
+111
+00:06:15,900 --> 00:06:19,250
+Instead of sharing a requirements.txt file with people,
+
+112
+00:06:19,250 --> 00:06:22,490
+you can now share a pipfile and the
+
+113
+00:06:22,490 --> 00:06:24,220
+pipfile.lock with people.
+
+114
+00:06:24,220 --> 00:06:29,220
+If they have both of those and they type pipenv instal,
+
+115
+00:06:29,360 --> 00:06:32,120
+the pipenv is gonna get the contents of the pipfile
+
+116
+00:06:32,120 --> 00:06:34,320
+and the pipfile.lock and make sure
+
+117
+00:06:34,320 --> 00:06:36,950
+to instal everything that you need.
+
+118
+00:06:38,920 --> 00:06:43,510
+Now because we've got a pipfile.lock, we don't actually need
+
+119
+00:06:43,510 --> 00:06:47,210
+a couple of things inside our pipfile, which get added there
+
+120
+00:06:47,210 --> 00:06:51,240
+by virtue of us having a requirements.txt file.
+
+121
+00:06:52,900 --> 00:06:55,750
+So if you remember the requirements.txt file had the
+
+122
+00:06:55,750 --> 00:06:58,510
+version numbers of everything we needed.
+
+123
+00:06:58,510 --> 00:07:02,480
+But the pipfile.lock also has the version numbers
+
+124
+00:07:02,480 --> 00:07:06,530
+of everything, and it has added security, which is
+
+125
+00:07:06,530 --> 00:07:09,360
+this number that is generated from the library.
+
+126
+00:07:09,360 --> 00:07:12,720
+So now, we have the version numbers and the security
+
+127
+00:07:12,720 --> 00:07:16,140
+on the pipfile.lock and on the pipfile.
+
+128
+00:07:17,160 --> 00:07:19,750
+We don't need it in two places, so we can actually tell the
+
+129
+00:07:19,750 --> 00:07:23,470
+pipfile to instal any version of the library.
+
+130
+00:07:24,380 --> 00:07:26,640
+Then, pipenv is going to make sure
+
+131
+00:07:26,640 --> 00:07:29,110
+to instal the one in the pipfile.lock.
+
+132
+00:07:30,000 --> 00:07:33,530
+So, let's go ahead and modify our pipfile.
+
+133
+00:07:33,530 --> 00:07:38,500
+And I'm going to do this by using the vi command.
+
+134
+00:07:38,500 --> 00:07:40,930
+I'm going to type vi pipfile, this is not available
+
+135
+00:07:40,930 --> 00:07:42,220
+on Windows, you may want to just open
+
+136
+00:07:42,220 --> 00:07:44,820
+it with a notepad or with PyCharm.
+
+137
+00:07:45,660 --> 00:07:48,860
+But this is going to let me modify this folder here,
+
+138
+00:07:48,860 --> 00:07:51,760
+and all I'm going to do is remove the version numbers,
+
+139
+00:07:52,855 --> 00:07:55,340
+and replace them by asterisks.
+
+140
+00:07:59,250 --> 00:08:02,190
+Make sure to not forget the quotation marks around things.
+
+141
+00:08:03,110 --> 00:08:05,460
+That can be quite a dangerous things to forget.
+
+142
+00:08:10,930 --> 00:08:15,230
+Now that we've got all of these, using any version,
+
+143
+00:08:15,230 --> 00:08:19,960
+as opposed to a specific version, we can save that,
+
+144
+00:08:19,960 --> 00:08:20,850
+that is what I've done there.
+
+145
+00:08:20,850 --> 00:08:23,810
+I'm not going to go into how vi works in this course,
+
+146
+00:08:23,810 --> 00:08:27,590
+it's a bit more just different content, it's not really
+
+147
+00:08:27,590 --> 00:08:29,490
+more advanced, it's just a bit different,
+
+148
+00:08:29,490 --> 00:08:32,540
+and not really the place for that.
+
+149
+00:08:32,540 --> 00:08:35,800
+But now that you've modified the file, what the pipfile is
+
+150
+00:08:35,800 --> 00:08:38,790
+saying is "these are the libraries I need."
+
+151
+00:08:38,790 --> 00:08:41,010
+What the pipfile.lock is saying is
+
+152
+00:08:41,010 --> 00:08:43,200
+"these are the versions I need."
+
+153
+00:08:43,200 --> 00:08:46,090
+So now you have these two files here, the pipfile.lock has
+
+154
+00:08:46,090 --> 00:08:49,320
+a lot of information and exactly what you want to download,
+
+155
+00:08:49,320 --> 00:08:52,780
+and if it doesn't match exactly, you're gonna get an error,
+
+156
+00:08:52,780 --> 00:08:55,070
+and it's gonna say, "hey, we're trying to instal this, but
+
+157
+00:08:55,070 --> 00:08:56,870
+it doesn't match what we thought it should be,
+
+158
+00:08:56,870 --> 00:08:59,830
+this number, so we're not gonna do it."
+
+159
+00:08:59,830 --> 00:09:01,150
+And that's for security.
+
+160
+00:09:01,150 --> 00:09:02,490
+And the pipfile is telling you,
+
+161
+00:09:02,490 --> 00:09:04,240
+"these are the libraries you need."
+
+162
+00:09:05,240 --> 00:09:08,750
+So this now is a better setup, a more secure setup
+
+163
+00:09:08,750 --> 00:09:13,060
+than just using requirements.txt and that is why pipenv
+
+164
+00:09:13,060 --> 00:09:14,510
+has now become the new standard
+
+165
+00:09:14,510 --> 00:09:16,620
+in Python for dependency management.
+
+166
+00:09:18,170 --> 00:09:22,170
+Once you've got your pipfile and your pipfile.lock created,
+
+167
+00:09:22,170 --> 00:09:25,750
+and you've done your pipenv instal, what's actually
+
+168
+00:09:25,750 --> 00:09:28,401
+happened in the background, we saw that earlier up here,
+
+169
+00:09:28,401 --> 00:09:32,650
+is that there was a virtual environment created.
+
+170
+00:09:32,650 --> 00:09:34,410
+Let's have a look at what this virtual environment
+
+171
+00:09:34,410 --> 00:09:36,640
+looks like in the very next video.
+
+172
+00:09:36,640 --> 00:09:37,590
+I'll see you there.
+
