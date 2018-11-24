@@ -7,16 +7,20 @@ def create_book_table():
 	connection = sqlite3.connect('data.db')
 	cursor = connection.cursor()
 
-	cursor.execute('CREATE TABLE books(name text primary key, author text, read integer)')
+	cursor.execute('CREATE TABLE IF NOT EXISTS books(name text primary key, author text, read integer)')
 
 	connection.commit()
 	connection.close()
 
 
 def add_book(name, author):
-	books = get_all_books()
-	books.append({'name': name, 'author': author, 'read': False})
-	_save_all_books(books)
+	connection = sqlite3.connect('data.db')
+	cursor = connection.cursor()
+
+	cursor.execute('INSERT INTO books VALUES(?, ?, 0)', (name, author))
+
+	connection.commit()
+	connection.close()
 
 
 def get_all_books():
