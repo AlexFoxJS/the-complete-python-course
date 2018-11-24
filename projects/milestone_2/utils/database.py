@@ -6,12 +6,15 @@ def add_book(name, author):
 
 
 def show_books():
-	print(books)
+	return books
 
 
 def read_book(name):
-	pass
+	for book in books:
+		if book["name"] == name:
+			book["read"] = True
 
 
 def delete_book(name):
-	pass
+	global books
+	books = [book for book in books if book["name"] != name]
