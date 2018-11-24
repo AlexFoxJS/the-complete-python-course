@@ -13,6 +13,7 @@ Your choice: """
 
 
 def menu():
+	database.create_book_file()
 	user_input = input(USER_CHOICE)
 
 	while user_input != 'q':
@@ -38,18 +39,22 @@ def prompt_add_book():
 
 
 def list_books():
-	books = database.show_books()
+	books = database.get_all_books()
 
-	print('\nBooks list:')
+	if len(books) == 0:
+		print('\nBooks list empty!')
+	else:
+		print('\nBooks list:')
+
 	for i in range(int(len(books))):
-		read = 'Yes' if books[i]["read"] else 'No'
-		print(f'{i+1}. {books[i]["name"]} by {books[i]["author"]}, read: {read}')
+		read = 'Yes' if books[i]["read"] == '1' else 'No'
+		print(f'{i+1}. "{books[i]["name"]}" by {books[i]["author"]}, read: {read}')
 
 
 def prompt_read_book():
 	name = input('Enter name of the book you just finished reading: ')
 
-	database.read_book(name)
+	database.mark_book_as_read(name)
 
 
 def prompt_delete_book():
