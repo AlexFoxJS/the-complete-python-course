@@ -24,8 +24,15 @@ def add_book(name, author):
 
 
 def get_all_books():
-	with open(books_file, 'r') as file:
-		return json.load(file)
+	connection = sqlite3.connect('data.db')
+	cursor = connection.cursor()
+
+	cursor.execute('SELECT * FROM books')
+	books = [{'name': row[0], 'author': row[1], 'read': row[2]} for row in cursor.fetchall()]
+
+	connection.close()
+
+	return books
 
 
 def _save_all_books(books):
