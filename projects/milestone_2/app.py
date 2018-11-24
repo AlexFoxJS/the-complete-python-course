@@ -47,7 +47,7 @@ def list_books():
 		print('\nBooks list:')
 
 	for i in range(int(len(books))):
-		read = 'Yes' if books[i]["read"] == '1' else 'No'
+		read = 'Yes' if books[i]["read"] else 'No'
 		print(f'{i+1}. "{books[i]["name"]}" by {books[i]["author"]}, read: {read}')
 
 
